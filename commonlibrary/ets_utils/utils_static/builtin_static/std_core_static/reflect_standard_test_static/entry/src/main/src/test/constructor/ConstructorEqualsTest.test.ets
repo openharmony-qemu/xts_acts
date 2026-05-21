@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,13 +14,10 @@
  * limitations under the License.
  */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { looseConstructor } from '../class/VoidFn.test';
-
 function asCtorList(cls: Class): Array<reflect.Constructor> {
-  return cls.getConstructors() as Array<reflect.Constructor>;
+  return Utils.fixedArrayToArray(cls.getConstructors());
 }
 
 class MyClass001 {
@@ -108,7 +106,6 @@ class MyClass028 {
     public constructor(value?: int | string) {}
   }
 
-
 export default function ConstructorEqualsTest(): void {
   describe('ConstructorEqualsTest', () => {
     beforeAll(() => {
@@ -129,7 +126,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -144,7 +141,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -160,7 +157,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = asCtorList(Class.from<NoArgCtor003>())[0];
         let b = asCtorList(Class.from<IntCtor003>())[0];
         let result = a.equals(b);
@@ -175,7 +172,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorA = asCtorList(Class.from<ClassA004>())[0];
         let ctorB = asCtorList(Class.from<ClassB004>())[0];
         expect(ctorA.equals(ctorB)).assertFalse();
@@ -184,14 +181,14 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0500
      * @tc.name testConstructorEquals005
-     * @tc.desc Verify ConstructorEquals case 005: null is parameters
+     * @tc.desc Verify ConstructorEquals case 005: different constructor is false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asCtorList(Class.from<MyClass001>())[0];
-        let result = looseConstructor(ctor as Object).equals(null);
+        let result = ctor.equals(asCtorList(Class.from<MyClass025>())[0]);
         expect(result).assertFalse();
     });
 
@@ -203,7 +200,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asCtorList(Class.from<MyClass001>())[0];
         let other = asCtorList(Class.from<MyClass007>())[0];
         let result = ctor.equals(other);
@@ -218,7 +215,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -235,7 +232,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
         let ctor0 = asCtorList(cls)[0];
         expect(ctor0.equals(ctor0)).assertTrue();
@@ -249,7 +246,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = asCtorList(Class.from<MyClass009>())[0];
         let b = asCtorList(Class.from<MyClass001>())[0];
         expect(a.equals(b)).assertFalse();
@@ -263,7 +260,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = asCtorList(Class.from<MyClass010>())[0];
         let b = asCtorList(Class.from<IntCtor003>())[0];
         expect(a.equals(b)).assertFalse();
@@ -277,7 +274,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a = asCtorList(Class.from<MyClass011>())[0];
         let b = asCtorList(Class.from<IntCtor003>())[0];
         expect(a.equals(b)).assertFalse();
@@ -291,7 +288,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = asCtorList(Class.from<MyClass012>());
         expect(constructors.length).assertLarger(0);
         expect(constructors[0].equals(constructors[0])).assertTrue();
@@ -305,7 +302,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -322,7 +319,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -338,7 +335,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let c0 = asCtorList(cls)[0];
         expect(c0.equals(c0)).assertTrue();
@@ -352,7 +349,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -367,7 +364,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -385,7 +382,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -402,7 +399,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass019>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -418,7 +415,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -433,7 +430,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = asCtorList(Class.from<MyClass021>());
         expect(constructors.length).assertLarger(0);
     });
@@ -446,7 +443,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor1 = asCtorList(Class.from<AbstractClass022>())[0];
         let ctor2 = asCtorList(Class.from<AbstractClass022>())[0];
         expect(ctor1.equals(ctor2)).assertTrue();
@@ -460,7 +457,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor1 = asCtorList(Class.from<FinalClass023>())[0];
         let ctor2 = asCtorList(Class.from<FinalClass023>())[0];
         expect(ctor1.equals(ctor2)).assertTrue();
@@ -474,7 +471,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = asCtorList(Class.from<ParentClass024>())[0];
         let childCtor = asCtorList(Class.from<ChildClass024>())[0];
         expect(parentCtor.equals(childCtor)).assertFalse();
@@ -488,7 +485,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass025>();
         let cls2 = Class.from<MyClass025>();
         let ctors1 = asCtorList(cls1);
@@ -508,7 +505,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass026>();
         let ctor1 = asCtorList(cls)[0];
         let ctor2 = asCtorList(cls)[0];
@@ -539,7 +536,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorsA = asCtorList(Class.from<ClassA027>());
         let ctorsB = asCtorList(Class.from<ClassB027>());
 
@@ -563,7 +560,7 @@ export default function ConstructorEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorEquals028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorEquals028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = asCtorList(Class.from<MyClass028>());
         expect(constructors.length).assertLarger(0);
         expect(constructors[0].equals(constructors[0])).assertTrue();

@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -95,7 +95,6 @@ class MyClass020 {
     public constructor(value?: int) {}
   }
 
-
 export default function ConstructorIsPublicTest(): void {
   describe('ConstructorIsPublicTest', () => {
     beforeAll(() => {
@@ -116,7 +115,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let isPublic = constructors[0].isPublic();
@@ -131,7 +130,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass001>().getConstructors()[0].isPublic()).assertTrue();
     });
 
@@ -143,7 +142,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
         let constructors = cls.getConstructors();
         let isPublic = constructors[0].isPublic();
@@ -159,11 +158,8 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass004>();
-        let constructors = cls.getConstructors();
-        let isPublic = constructors[0].isPublic();
-        expect(isPublic).assertFalse();
+    it('testConstructorIsPublic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass004>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -174,11 +170,8 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass005>();
-        let constructors = cls.getConstructors();
-        let isPublic = constructors[0].isPublic();
-        expect(isPublic).assertFalse();
+    it('testConstructorIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass005>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -189,7 +182,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         let isPublic = ctorRef.isPublic();
         expect(isPublic).assertTrue();
@@ -203,7 +196,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass007>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
         expect(ctorRef.getParametersNum()).assertEqual(1);
@@ -217,7 +210,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<AbstractClass008>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
     });
@@ -230,7 +223,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass009>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
     });
@@ -243,7 +236,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let isPublic = constructors[0].isPublic();
@@ -259,7 +252,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
         let isPublic = ctor.isPublic();
         expect(isPublic === true || isPublic === false).assertTrue();
@@ -273,7 +266,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass012>().getConstructors();
         expect(constructors.length).assertEqual(1);
         expect(constructors[0].isPublic()).assertTrue();
@@ -287,7 +280,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<GenericClass013<int>>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
     });
@@ -300,7 +293,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass014>().getConstructors()[0];
         let childCtor = Class.from<ChildClass014>().getConstructors()[0];
         expect(parentCtor.isPublic()).assertTrue();
@@ -315,7 +308,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
         let isPublic = ctor.isPublic();
         expect(isPublic === true || isPublic === false).assertTrue();
@@ -329,7 +322,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass016>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
         expect(ctorRef.getName()).assertEqual("constructor");
@@ -344,7 +337,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass017>().getConstructors()[0];
         let c2 = Class.from<FinalClass017>().getConstructors()[0];
         let c3 = Class.from<NormalClass017>().getConstructors()[0];
@@ -361,7 +354,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass018>().getConstructors();
         let publicCount = 0;
         for (let i = 0; i < constructors.length; i++) {
@@ -380,7 +373,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
         expect(ctorRef.isPublic()).assertTrue();
         expect(ctorRef.isPrivate()).assertFalse();
@@ -397,7 +390,7 @@ export default function ConstructorIsPublicTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPublic020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPublic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass020>().getConstructors();
         let publicConstructors: Array<reflect.Constructor> = [];
         for (let i = 0; i < constructors.length; i++) {

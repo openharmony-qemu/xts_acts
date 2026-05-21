@@ -1,3 +1,4 @@
+'use static'
 export function wrapVoidFn(fn: () => (void | undefined)): () => void {
   return (): void => {
     fn();

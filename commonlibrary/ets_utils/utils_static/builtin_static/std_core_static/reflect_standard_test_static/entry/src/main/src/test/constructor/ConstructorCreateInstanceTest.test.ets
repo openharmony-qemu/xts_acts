@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,12 +14,11 @@
  * limitations under the License.
  */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 function asConstructorList(cls: Class): Array<reflect.Constructor> {
-  return cls.getConstructors() as Array<reflect.Constructor>;
+  return Utils.fixedArrayToArray(cls.getConstructors());
 }
 
 class MyClass001 {
@@ -82,16 +82,14 @@ class MyClass011 {
 class MyClass012 {
     private constructor() {}
     public static create(): MyClass012 {
-      let constructors = asConstructorList(Class.from<MyClass012>());
-      return constructors[0].createInstance() as MyClass012;
+      return new MyClass012();
     }
   }
 
 class MyClass013 {
     protected constructor() {}
     public static create(): MyClass013 {
-      let constructors = asConstructorList(Class.from<MyClass013>());
-      return constructors[0].createInstance() as MyClass013;
+      return new MyClass013();
     }
   }
 
@@ -145,10 +143,7 @@ class MyClass020 {
   }
 
 class MyClass021 {
-    public hugeArray: Array<int>;
-    public constructor() {
-      this.hugeArray = new Array<int>(1000000000);
-    }
+    public data: Array<int> = Array.create<int>(1000000000, 0);
   }
 
 class MyClass022 {
@@ -233,7 +228,6 @@ class MyClass029 {
     }
   }
 
-
 export default function ConstructorCreateInstanceTest(): void {
   describe('ConstructorCreateInstanceTest', () => {
     beforeAll(() => {
@@ -254,7 +248,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let constructors = asConstructorList(cls);
         let instance = constructors[0].createInstance();
@@ -269,7 +263,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass002>();
         let constructors = asConstructorList(cls);
         let instance = constructors[0].createInstance(["test"]) as MyClass002;
@@ -284,7 +278,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass003>())[0];
         let instance = ctor.createInstance([1, "test"]);
         expect(instance !== null).assertTrue();
@@ -298,7 +292,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass004>())[0];
         let instance = ctor.createInstance([null]);
         expect(instance !== null).assertTrue();
@@ -312,7 +306,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass005>())[0];
         let instance = ctor.createInstance([undefined]);
         expect(instance !== null).assertTrue();
@@ -326,7 +320,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass006>())[0];
         try {
           ctor.createInstance(["string instead of int"]);
@@ -344,10 +338,10 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass007>())[0];
         try {
-          ctor.createInstance([1]); // 参数不足
+          ctor.createInstance([1]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -362,10 +356,10 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass008>())[0];
         try {
-          ctor.createInstance([1, 2]); // 参数过多
+          ctor.createInstance([1, 2]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -380,7 +374,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass009>())[0];
         let instance = ctor.createInstance() as MyClass009;
         expect(instance !== null).assertTrue();
@@ -395,7 +389,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass010>())[0];
         let instance = ctor.createInstance(["test"]) as MyClass010;
         expect(instance.name).assertEqual("test");
@@ -409,7 +403,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass011>())[0];
         let instance = ctor.createInstance(["Alice", 30, true]) as MyClass011;
         expect(instance.name).assertEqual("Alice");
@@ -425,7 +419,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = MyClass012.create();
         expect(instance !== null).assertTrue();
     });
@@ -438,7 +432,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = MyClass013.create();
         expect(instance !== null).assertTrue();
     });
@@ -451,7 +445,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<ConcreteClass014>())[0];
         let instance = ctor.createInstance() as ConcreteClass014;
         expect(instance !== null).assertTrue();
@@ -465,7 +459,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass015>())[0];
         let instance = ctor.createInstance() as MyClass015;
         expect(instance !== null).assertTrue();
@@ -480,7 +474,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass016>())[0];
         let instance = ctor.createInstance() as MyClass016;
         expect(instance.value).assertEqual(42);
@@ -494,7 +488,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<GenericClass017<int>>())[0];
         let instance = ctor.createInstance([100]) as GenericClass017<int>;
         expect(instance.value).assertEqual(100);
@@ -508,7 +502,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<ChildClass018>())[0];
         let instance = ctor.createInstance() as ChildClass018;
         expect(instance.name).assertEqual("parent");
@@ -523,7 +517,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass019>())[0];
         try {
           ctor.createInstance(["string"]);
@@ -541,10 +535,10 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass020>())[0];
         try {
-          ctor.createInstance([1]); // 缺少参数
+          ctor.createInstance([1]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -554,12 +548,12 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2100
      * @tc.name testConstructorCreateInstance021
-     * @tc.desc Verify ConstructorCreateInstance case 021: not when throw OutOfMemoryError
+     * @tc.desc Verify ConstructorCreateInstance case 021: huge-allocation ctor throws on createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass021>())[0];
         try {
           ctor.createInstance();
@@ -577,7 +571,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass022>())[0];
         try {
           ctor.createInstance();
@@ -595,7 +589,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let instance = MyClass023.createPublic();
         expect(instance !== null).assertTrue();
     });
@@ -608,7 +602,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<FinalClass024>())[0];
         let instance = ctor.createInstance() as FinalClass024;
         expect(instance.value).assertEqual(0);
@@ -622,21 +616,21 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass025>();
         let constructors = asConstructorList(cls);
         expect(constructors.length).assertLarger(0);
         let ctor = constructors[0];
 
-        let obj1 = ctor.createInstance() as MyClass025;
+        let obj1 = ctor.createInstance([undefined, undefined] as FixedArray<Any>) as MyClass025;
         expect(obj1.name).assertEqual("");
         expect(obj1.age).assertEqual(0);
 
-        let obj2 = ctor.createInstance(["Alice"]) as MyClass025;
+        let obj2 = ctor.createInstance(["Alice", undefined] as FixedArray<Any>) as MyClass025;
         expect(obj2.name).assertEqual("Alice");
         expect(obj2.age).assertEqual(0);
 
-        let obj3 = ctor.createInstance(["Bob", 30]) as MyClass025;
+        let obj3 = ctor.createInstance(["Bob", 30] as FixedArray<Any>) as MyClass025;
         expect(obj3.name).assertEqual("Bob");
         expect(obj3.age).assertEqual(30);
     });
@@ -649,7 +643,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass026>())[0];
 
         let instance1 = ctor.createInstance() as MyClass026;
@@ -669,7 +663,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<ChildClass027>())[0];
         let instance = ctor.createInstance() as ChildClass027;
         expect(instance.parentValue).assertEqual("parent");
@@ -684,13 +678,13 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorCreateInstance028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass028>();
         let constructors = asConstructorList(cls);
         expect(constructors.length).assertLarger(0);
 
         let c0 = constructors[0];
-        let obj1 = c0.createInstance() as MyClass028;
+        let obj1 = c0.createInstance([undefined]) as MyClass028;
         let obj2 = c0.createInstance([42]) as MyClass028;
         let obj3 = c0.createInstance(["test"]) as MyClass028;
 
@@ -707,8 +701,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorCreateInstance029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 方式1：通过Constructor.createInstance()
+    it('testConstructorCreateInstance029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let ctor = asConstructorList(Class.from<MyClass029>())[0];
         let instance1 = ctor.createInstance([42]) as MyClass029;
 

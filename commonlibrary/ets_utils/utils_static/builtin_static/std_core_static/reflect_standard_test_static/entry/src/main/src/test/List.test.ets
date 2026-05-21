@@ -32,7 +32,7 @@ import ClassGetStaticMethodTest from './class/ClassGetStaticMethodTest.test';
 import ClassGetStaticMethodsTest from './class/ClassGetStaticMethodsTest.test';
 import ClassGetSuperTest from './class/ClassGetSuperTest.test';
 import ClassGetUnionConstituentTypesTest from './class/ClassGetUnionConstituentTypesTest.test';
-import runClassInitializeTest from './class/ClassInitializeTest.test';
+import ClassInitializeTest from './class/ClassInitializeTest.test';
 import ClassIsAbstractTest from './class/ClassIsAbstractTest.test';
 import ClassIsEnumTest from './class/ClassIsEnumTest.test';
 import ClassIsFinalTest from './class/ClassIsFinalTest.test';
@@ -56,7 +56,6 @@ import ConstructorIsPrivateTest from './constructor/ConstructorIsPrivateTest.tes
 import ConstructorIsProtectedTest from './constructor/ConstructorIsProtectedTest.test';
 import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test';
 
-
 export default function testsuite(): void {
 
   ClassCreateInstanceTest();
@@ -78,7 +77,7 @@ export default function testsuite(): void {
   ClassGetStaticMethodsTest();
   ClassGetSuperTest();
   ClassGetUnionConstituentTypesTest();
-  runClassInitializeTest();
+  ClassInitializeTest();
   ClassIsAbstractTest();
   ClassIsEnumTest();
   ClassIsFinalTest();

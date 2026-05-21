@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -98,7 +98,6 @@ class MyClass021 {
     public constructor(x: int, y: string) {}
   }
 
-
 export default function ConstructorGetReturnTypeTest(): void {
   describe('ConstructorGetReturnTypeTest', () => {
     beforeAll(() => {
@@ -119,7 +118,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let returnType = constructors[0].getReturnType();
@@ -134,7 +133,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass003>().getConstructors()[0];
         expect(ctor.getReturnType().getName()).assertEqual("void");
     });
@@ -147,7 +146,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
         let constructors = cls.getConstructors();
         let returnType = constructors[0].getReturnType();
@@ -163,7 +162,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass004>().getConstructors();
         for (let i = 0; i < constructors.length; i++) {
           expect(constructors[i].getReturnType().getName()).assertEqual("void");
@@ -178,7 +177,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass005>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -191,7 +190,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -204,7 +203,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass007>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -217,11 +216,11 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass005>().getConstructors();
         let returnType = constructors[0].getReturnType();
         expect(typeof returnType).assertEqual("object");
-        expect(returnType.getName !== null).assertTrue();
+        expect(returnType.getName()).assertEqual("void");
     });
 
     /**
@@ -232,7 +231,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
         let returnType = ctor.getReturnType();
         expect(returnType.getName()).assertEqual("void");
@@ -247,13 +246,13 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
         let returnType = ctor.getReturnType();
-        expect(returnType.getName() !== null).assertTrue();
-        expect(returnType.isPrimitive() !== null).assertTrue();
-        expect(returnType.isInterface() !== null).assertTrue();
-        expect(returnType.isFinal() !== null).assertTrue();
+        expect(returnType.getName()).assertEqual("void");
+        expect(returnType.isPrimitive()).assertTrue();
+        expect(returnType.isInterface()).assertFalse();
+        expect(returnType.isFinal()).assertTrue();
     });
 
     /**
@@ -264,7 +263,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<AbstractClass011>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -277,7 +276,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass012>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -290,7 +289,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<GenericClass013<int>>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
@@ -303,7 +302,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass014>().getConstructors()[0];
         let childCtor = Class.from<ChildClass014>().getConstructors()[0];
         expect(parentCtor.getReturnType().getName()).assertEqual("void");
@@ -318,7 +317,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
         let returnType = ctor.getReturnType();
         expect(returnType.getName()).assertEqual("void");
@@ -332,7 +331,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass016>();
         let constructors = cls.getConstructors();
         for (let i = 0; i < constructors.length; i++) {
@@ -348,7 +347,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass017>().getConstructors()[0];
         let c2 = Class.from<FinalClass017>().getConstructors()[0];
         let c3 = Class.from<NormalClass017>().getConstructors()[0];
@@ -365,7 +364,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass018>().getConstructors();
         for (let i = 0; i < constructors.length; i++) {
           expect(constructors[i].getReturnType().getName()).assertEqual("void");
@@ -380,10 +379,10 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
-        expect(ctorRef.getOwner().getName()).assertEqual("MyClass019");
+        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "MyClass019")).assertTrue();
     });
 
     /**
@@ -394,7 +393,7 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass020>();
         let ctorRef = cls.getConstructors()[0];
         let method = cls.getStaticMethod("staticMethod");
@@ -411,14 +410,13 @@ export default function ConstructorGetReturnTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorGetReturnType021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorGetReturnType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass021>().getConstructors()[0];
 
-        // 构造函数的特征
         expect(ctorRef.getName()).assertEqual("constructor");
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
         expect(ctorRef.getParametersNum()).assertEqual(2);
-        expect(ctorRef.getOwner().getName()).assertEqual("MyClass021");
+        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "MyClass021")).assertTrue();
     });
 
   });
