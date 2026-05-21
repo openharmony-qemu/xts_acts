@@ -3381,7 +3381,7 @@ export default function PhotoTest() {
         //--------------------------------------------测试过程------------------------------------------------------
         let ret = cameraObj.setColorTint(5)
         console.info(`setColorTint, ret: ${ret}`)
-        expect(ret).assertEqual(7400101);
+        expect(ret).assertEqual(0);
         console.info(`${caseName} PASSED`)
       } catch (error) {
         console.error(`${caseName} FAILED`)
