@@ -31,7 +31,7 @@ struct Child_AD {
         .onClick(() => {
           this.Array = [10];
         })
-        .key('state1')
+        .key('PropArray_state1')
         .height('5%')
 
       Text("切换变量Array<boolean>类型[1]-->[true]").height('5%')
@@ -39,7 +39,7 @@ struct Child_AD {
         .onClick(() => {
           this.Array = [true];
         })
-        .key('state2')
+        .key('PropArray_state2')
         .height('5%')
 
       Text("切换变量boolean类型[1]-->true").height('5%')
@@ -47,7 +47,7 @@ struct Child_AD {
         .onClick(() => {
           this.Array = true;
         })
-        .key('state3')
+        .key('PropArray_state3')
         .height('5%')
 
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
@@ -55,7 +55,7 @@ struct Child_AD {
         .onClick(() => {
           this.Array = [$r('app.string.number')];
         })
-        .key('state4')
+        .key('PropArray_state4')
         .height('5%')
 
     }.width('100%')

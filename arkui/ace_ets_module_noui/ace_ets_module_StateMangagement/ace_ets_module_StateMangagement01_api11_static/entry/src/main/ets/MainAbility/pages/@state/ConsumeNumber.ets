@@ -67,7 +67,7 @@ struct Child_CN {
         .onClick(():void => {
           this.count = 10;
         })
-        .key('state1')
+        .key('ConsumeNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -75,7 +75,7 @@ struct Child_CN {
         .onClick(():void => {
           this.count = new Num5(20);
         })
-        .key('state2')
+        .key('ConsumeNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -83,7 +83,7 @@ struct Child_CN {
         .onClick(():void => {
           this.count = '30';
         })
-        .key('state3')
+        .key('ConsumeNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -91,7 +91,7 @@ struct Child_CN {
         .onClick(():void => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('ConsumeNumber_state4')
         .height('5%')
 
       Text("切换变量赋值Boolean").height('5%')
@@ -99,7 +99,7 @@ struct Child_CN {
         .onClick(():void => {
           this.count = true;
         })
-        .key('state5')
+        .key('ConsumeNumber_state5')
         .height('5%')
 
     }
