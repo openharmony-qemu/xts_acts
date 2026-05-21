@@ -106,7 +106,7 @@ export default function DeviceKvStoreReturnValue(){
           reject(new Error('not resolved in 2 second, reject it.'));
         }, 2000);
       });
-      await getDeviceId.then((deviceId: string): Promise<void> => {
+      await getDeviceId.then((deviceId: string): void => {
         console.info(TAG + 'beforeAll getDeviceId=' + JSON.stringify(deviceId));
         localDeviceId = deviceId;
       }).catch((error: Error) => {
@@ -1393,7 +1393,7 @@ export default function DeviceKvStoreReturnValue(){
         console.info(TAG + ' --------- SUB_DDM_DKV_ReturnValue_1800 begin---------  ');
         console.info(TAG + `entries: ${entries}`);
 
-        await kvStore!.putBatch(entries).catch((err: Error): Promise<void> => {
+        await kvStore!.putBatch(entries).catch((err: Error): void => {
           console.error(TAG + `Failed to putBatch.code is ${err.code},message is ${err.message}`);
           expect(null).assertFail();
           done();
