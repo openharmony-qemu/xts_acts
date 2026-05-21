@@ -179,7 +179,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1100
-     * @tc.desc Verify getByteLength() return type is number or int
+     * @tc.desc Verify getByteLength() return type is int
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -188,7 +188,7 @@ export default function arrayBufferGetByteLengthTest(): void {
       const buffer = new ArrayBuffer(8);
       let result = buffer.getByteLength();
       let kind: string = typeof result;
-      expect(kind === 'number' || kind === 'int').assertTrue();
+      expect(kind === 'int').assertTrue();
     });
 
     /**

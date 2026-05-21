@@ -131,7 +131,7 @@ export default function arrayBufferToStringTest(): void {
     /**
      * @tc.name testArrayBufferToString0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_0800
-     * @tc.desc Verify result instanceof String is true
+     * @tc.desc Verify result.length equals "[object ArrayBuffer]".length
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -139,13 +139,13 @@ export default function arrayBufferToStringTest(): void {
     it('testArrayBufferToString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       let result = buffer.toString();
-      expect(result instanceof String).assertEqual(true);
+      expect(result.length).assertEqual("[object ArrayBuffer]".length);
     });
 
     /**
      * @tc.name testArrayBufferToString0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_0900
-     * @tc.desc Verify result.length equals "[object ArrayBuffer]".length
+     * @tc.desc Verify result === "[object ArrayBuffer]" is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -153,36 +153,36 @@ export default function arrayBufferToStringTest(): void {
     it('testArrayBufferToString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       let result = buffer.toString();
-      expect(result.length).assertEqual("[object ArrayBuffer]".length);
+      expect(result === "[object ArrayBuffer]").assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferToString0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_1000
-     * @tc.desc Verify result === "[object ArrayBuffer]" is true
+     * @tc.desc Verify result1 === result2 is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferToString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.toString();
-      expect(result === "[object ArrayBuffer]").assertTrue();
+      let result1 = buffer.toString();
+      let result2 = buffer.toString();
+      expect(result1 === result2).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferToString0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_1100
-     * @tc.desc Verify result1 === result2 is true
+     * @tc.desc Verify result equals "[object ArrayBuffer]"
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferToString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      let result1 = buffer.toString();
-      let result2 = buffer.toString();
-      expect(result1 === result2).assertTrue();
+      const buffer = new ArrayBuffer(8, 16);
+      let result = buffer.toString();
+      expect(result).assertEqual("[object ArrayBuffer]");
     });
 
     /**
@@ -195,6 +195,7 @@ export default function arrayBufferToStringTest(): void {
      */
     it('testArrayBufferToString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
+      buffer.resize(4);
       let result = buffer.toString();
       expect(result).assertEqual("[object ArrayBuffer]");
     });
@@ -209,7 +210,7 @@ export default function arrayBufferToStringTest(): void {
      */
     it('testArrayBufferToString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
-      buffer.resize(4);
+      buffer.resize(0);
       let result = buffer.toString();
       expect(result).assertEqual("[object ArrayBuffer]");
     });
@@ -223,9 +224,9 @@ export default function arrayBufferToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferToString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8, 16);
-      buffer.resize(0);
-      let result = buffer.toString();
+      const buffer = new ArrayBuffer(16);
+      const sliced = buffer.slice(4, 8);
+      let result = sliced.toString();
       expect(result).assertEqual("[object ArrayBuffer]");
     });
 
@@ -238,21 +239,6 @@ export default function arrayBufferToStringTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferToString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(16);
-      const sliced = buffer.slice(4, 8);
-      let result = sliced.toString();
-      expect(result).assertEqual("[object ArrayBuffer]");
-    });
-
-    /**
-     * @tc.name testArrayBufferToString0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_1600
-     * @tc.desc Verify result equals "[object ArrayBuffer]"
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferToString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const view = new Uint8Array(buffer);
       view[0] = 72;
