@@ -15,38 +15,26 @@
  */
 
 import {
-  afterAll,
-  afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
   it,
   Level,
   Size,
-  TestType
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-class ArrayBufferGetByteLengthPlainForMindmap {
-}
-
 export default function arrayBufferGetByteLengthTest(): void {
   describe('ArrayBufferGetByteLengthTest', (): void => {
-    beforeAll((): void => {
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
     });
 
     /**
      * @tc.name testArrayBufferGetByteLength0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0100
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -60,7 +48,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0200
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 12 and equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -75,7 +63,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0300
-     * @tc.desc Verify sliced.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify sliced.getByteLength() returns 6 after slice(2, 8)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -90,7 +78,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0400
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 0 for zero-length ArrayBuffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -104,7 +92,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0500
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -118,7 +106,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0600
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 8 and equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -133,7 +121,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0700
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -147,7 +135,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0800
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 65536
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -161,7 +149,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0900
-     * @tc.desc Verify sliced.getByteLength() succeeds and result byteLength is 6
+     * @tc.desc Verify sliced.getByteLength() returns 6 and equals sliced.byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -177,7 +165,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1000
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 4 for resizable ArrayBuffer(4, 16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -191,7 +179,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1100
-     * @tc.desc Verify buffer.getByteLength() succeeds and equality relationship check passes
+     * @tc.desc Verify getByteLength() return type is number or int
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -206,7 +194,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1200
-     * @tc.desc Verify buffer.getByteLength() succeeds and numeric type check passes
+     * @tc.desc Verify getByteLength() returns an integer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -220,7 +208,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1300
-     * @tc.desc Verify buffer.getByteLength() succeeds and boundary value comparison check passes
+     * @tc.desc Verify getByteLength() returns a non-negative value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -234,7 +222,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1400
-     * @tc.desc Verify new ArrayBuffer(8) succeeds and equality relationship check passes
+     * @tc.desc Verify multiple getByteLength() calls return consistent results
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,7 +238,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1500
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -263,7 +251,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1600
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -276,7 +264,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1700
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -289,7 +277,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1800
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 6
+     * @tc.desc Verify sliced.getByteLength() equals sliced.byteLength after slice(2, 8)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -304,7 +292,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_1900
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -317,7 +305,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2000
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength for ArrayBuffer.from("ABC", "utf8")
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -330,7 +318,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2100
-     * @tc.desc Verify buffer.resize(10) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 10 after resize(10)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -345,7 +333,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2200
-     * @tc.desc Verify buffer.resize(2) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 2 after resize(2)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -360,7 +348,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2300
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 0 after resize(0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -375,7 +363,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2400
-     * @tc.desc Verify buffer.resize(16) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 16 after resize(16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -390,7 +378,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2500
-     * @tc.desc Verify buffer.resize(8) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 8, 12, and 4 after resize(8), resize(12), and resize(4)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -408,7 +396,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2600
-     * @tc.desc Verify buffer.resize(10) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength after resize on resizable buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -424,7 +412,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2700
-     * @tc.desc Verify buffer.getByteLength() succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -438,7 +426,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2800
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 24
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -452,7 +440,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2900
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 32
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -466,7 +454,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3000
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 48
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -480,7 +468,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3100
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 64
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -494,7 +482,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3200
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() returns 0 after resize(0) on resizable buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -509,7 +497,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3300
-     * @tc.desc Verify buffer.resize(0) succeeds and result matches expected
+     * @tc.desc Verify getByteLength() equals byteLength after resize(0) on resizable buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -523,7 +511,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3400
-     * @tc.desc Verify buffer.resize(0) succeeds and equality relationship check passes
+     * @tc.desc Verify consecutive getByteLength() calls return equal values after resize(0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -535,6 +523,5 @@ export default function arrayBufferGetByteLengthTest(): void {
       let result2 = buffer.getByteLength();
       expect(result1 === result2).assertTrue();
     });
-    return;
   });
 }
