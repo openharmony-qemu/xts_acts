@@ -30,8 +30,8 @@ class Item {
   }
 }
 
-export default function BuiltinsSetForeachTest() {
-  describe('BuiltinsSetForeachTest', () => {
+export default function CollectionsSetForeachTest() {
+  describe('CollectionsSetForeachTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -54,14 +54,14 @@ export default function BuiltinsSetForeachTest() {
     })
 
     /**
-     * @tc.name    builtinsSetForeachTest0100
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0100
+     * @tc.name    collectionsSetForeachTest0100
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0100
      * @tc.desc    Traverse non-empty Set with strings, verify callback call count and parameters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest001';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c']);
@@ -80,14 +80,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0200
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0200
+     * @tc.name    collectionsSetForeachTest0200
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0200
      * @tc.desc    Traverse empty Set, verify callback is not called
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest003';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
@@ -102,14 +102,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0300
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0300
+     * @tc.name    collectionsSetForeachTest0300
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0300
      * @tc.desc    Traverse Set with number values, verify parameter correctness
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest004';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([10, 20, 30]);
@@ -131,14 +131,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0400
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0400
+     * @tc.name    collectionsSetForeachTest0400
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0400
      * @tc.desc    Traverse Set with boolean values, verify callback parameters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest005';
       console.info(`${caseName}, test start`);
       const set: collections.Set<boolean> = new collections.Set<boolean>([true, false, true]);
@@ -155,14 +155,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0500
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0500
+     * @tc.name    collectionsSetForeachTest0500
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0500
      * @tc.desc    Traverse Set with null and undefined, verify callback execution
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest006';
       console.info(`${caseName}, test start`);
       const set: collections.Set<null | undefined> = new collections.Set<null | undefined>([null, undefined, null]);
@@ -180,14 +180,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0600
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0600
+     * @tc.name    collectionsSetForeachTest0600
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0600
      * @tc.desc    Verify callback receives the original Set as third parameter
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest007';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1]);
@@ -202,14 +202,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0700
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0700
+     * @tc.name    collectionsSetForeachTest0700
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0700
      * @tc.desc    Traverse Set with single element, verify callback is called once
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest008';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['only-element']);
@@ -224,14 +224,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0800
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0800
+     * @tc.name    collectionsSetForeachTest0800
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0800
      * @tc.desc    Callback with no parameters (still executes normally)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest009';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
@@ -246,14 +246,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest0900
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_0900
+     * @tc.name    collectionsSetForeachTest0900
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_0900
      * @tc.desc    Traverse Set with duplicate values (only unique values are processed)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetForeachTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    it('collectionsSetForeachTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const caseName = 'SetForEachCollectionsTest010';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 1, 2, 2, 3]);
@@ -272,14 +272,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1000
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1000
+     * @tc.name    collectionsSetForeachTest1000
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1000
      * @tc.desc    Delete and re-add element during traversal (element is visited twice)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetForeachTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('collectionsSetForeachTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const caseName = 'SetForEachCollectionsTest015';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
@@ -303,14 +303,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1100
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1100
+     * @tc.name    collectionsSetForeachTest1100
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1100
      * @tc.desc    Traverse Set with NaN (treated as equal to itself)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetForeachTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('collectionsSetForeachTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const caseName = 'SetForEachCollectionsTest016';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, 1, NaN]);
@@ -327,14 +327,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1200
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1200
+     * @tc.name    collectionsSetForeachTest1200
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1200
      * @tc.desc    Traverse Set with 0 and -0 (treated as equal)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetForeachTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('collectionsSetForeachTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const caseName = 'SetForEachCollectionsTest017';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([0, -0, 100]);
@@ -351,14 +351,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1300
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1300
+     * @tc.name    collectionsSetForeachTest1300
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1300
      * @tc.desc    Traverse Set with BigInt values (same value is processed once)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetForeachTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('collectionsSetForeachTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const caseName = 'SetForEachCollectionsTest019';
       console.info(`${caseName}, test start`);
       const big1 = 123n;
@@ -377,14 +377,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1400
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1400
+     * @tc.name    collectionsSetForeachTest1400
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1400
      * @tc.desc    Callback throws error (traversal is interrupted)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest021';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
@@ -413,14 +413,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1500
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1500
+     * @tc.name    collectionsSetForeachTest1500
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1500
      * @tc.desc    forEach() on Set with elements added via spread operator
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest033';
       console.info(`${caseName}, test start`);
       const original: number[] = [1, 2, 3];
@@ -438,14 +438,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1600
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1600
+     * @tc.name    collectionsSetForeachTest1600
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1600
      * @tc.desc    Callback uses all three parameters correctly
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest034';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['test']);
@@ -462,14 +462,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1700
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1700
+     * @tc.name    collectionsSetForeachTest1700
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1700
      * @tc.desc    forEach() with callback that returns a value (ignored)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest036';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
@@ -487,14 +487,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1800
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1800
+     * @tc.name    collectionsSetForeachTest1800
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1800
      * @tc.desc    Large values in Set (Number.MAX_SAFE_INTEGER)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest037';
       console.info(`${caseName}, test start`);
       const safeInt = Number.MAX_SAFE_INTEGER;
@@ -511,14 +511,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest1900
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_1900
+     * @tc.name    collectionsSetForeachTest1900
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_1900
      * @tc.desc    forEach() on Set created from another Set
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetForeachTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('collectionsSetForeachTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       const caseName = 'SetForEachCollectionsTest038';
       console.info(`${caseName}, test start`);
       const original: collections.Set<string> = new collections.Set<string>(['a', 'b']);
@@ -534,14 +534,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2000
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2000
+     * @tc.name    collectionsSetForeachTest2000
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2000
      * @tc.desc    forEach() on Set with sparse array elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest042';
       console.info(`${caseName}, test start`);
       const sparseArr: (number | undefined)[] = [1, undefined, 3];
@@ -559,14 +559,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2100
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2100
+     * @tc.name    collectionsSetForeachTest2100
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2100
      * @tc.desc    Very long string values in Set
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest047';
       console.info(`${caseName}, test start`);
       const longStr = 'a'.repeat(10000);
@@ -582,14 +582,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2200
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2200
+     * @tc.name    collectionsSetForeachTest2200
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2200
      * @tc.desc    Callback uses closure to modify external variable
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest053';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
@@ -604,14 +604,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2300
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2300
+     * @tc.name    collectionsSetForeachTest2300
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2300
      * @tc.desc    forEach() on Set with elements added in different ways
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest054';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
@@ -635,14 +635,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2400
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2400
+     * @tc.name    collectionsSetForeachTest2400
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2400
      * @tc.desc    forEach() called on a Set in a detached iframe
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest062';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
@@ -658,14 +658,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2500
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2500
+     * @tc.name    collectionsSetForeachTest2500
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2500
      * @tc.desc    Callback that throws and catches its own error
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest063';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
@@ -696,14 +696,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2600
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2600
+     * @tc.name    collectionsSetForeachTest2600
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2600
      * @tc.desc    Set containing both NaN and other numeric values
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest086';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, 1, NaN, 2, NaN]);
@@ -719,14 +719,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2700
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2700
+     * @tc.name    collectionsSetForeachTest2700
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2700
      * @tc.desc    forEach() in a strict mode function
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest092';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
@@ -746,14 +746,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2800
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2800
+     * @tc.name    collectionsSetForeachTest2800
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2800
      * @tc.desc    Callback that modifies a closed-over variable in outer scope
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest093';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
@@ -772,14 +772,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest2900
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_2900
+     * @tc.name    collectionsSetForeachTest2900
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_2900
      * @tc.desc    Traverse Set with elements that are class instances
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest112';
       console.info(`${caseName}, test start`);
       const set: collections.Set<Item> = new collections.Set<Item>([new Item(1), new Item(2), new Item(1)]);
@@ -794,14 +794,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest3000
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_3000
+     * @tc.name    collectionsSetForeachTest3000
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_3000
      * @tc.desc    forEach() with callback that uses nullish coalescing
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest113';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number | null | string | undefined> = new collections.Set<number | null | string | undefined>([0, '', null, undefined, 42, 'hello']);
@@ -823,14 +823,14 @@ export default function BuiltinsSetForeachTest() {
     });
 
     /**
-     * @tc.name    builtinsSetForeachTest3100
-     * @tc.number  SUB_BUILTINS_SET_FOREACH_TEST_3100
+     * @tc.name    collectionsSetForeachTest3100
+     * @tc.number  SUB_COLLECTIONS_SET_FOREACH_TEST_3100
      * @tc.desc    forEach() with callback that uses String.prototype.replaceAll()
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL4
      */
-    it('builtinsSetForeachTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
+    it('collectionsSetForeachTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, (): void => {
       const caseName = 'SetForEachCollectionsTest127';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a.b.c', 'x.y.z', '1.2.3']);

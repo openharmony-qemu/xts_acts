@@ -29,8 +29,8 @@ class MyClass {
   }
 }
 
-export default function BuiltinsSetTest() {
-  describe('BuiltinsSetTest', () => {
+export default function CollectionsSetTest() {
+  describe('CollectionsSetTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -53,15 +53,15 @@ export default function BuiltinsSetTest() {
     })
 
     /**
-     * @tc.name    builtinsSetTest0100
-     * @tc.number  SUB_BUILTINS_SET_TEST_0100
+     * @tc.name    collectionsSetTest0100
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0100
      * @tc.desc    Basic functionality: set string key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0100';
+    it('collectionsSetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0100';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('name', 'Alice');
@@ -72,15 +72,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0200
-     * @tc.number  SUB_BUILTINS_SET_TEST_0200
+     * @tc.name    collectionsSetTest0200
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0200
      * @tc.desc    Overwrite existing key with new value
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0200';
+    it('collectionsSetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0200';
       console.info(`${caseName}, test start`);
       const map = new collections.Map<string, number>([['age', 20]]);
       map.set('age', 21);
@@ -90,15 +90,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0300
-     * @tc.number  SUB_BUILTINS_SET_TEST_0300
+     * @tc.name    collectionsSetTest0300
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0300
      * @tc.desc    Set number key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0300';
+    it('collectionsSetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0300';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(42, 'answer');
@@ -108,15 +108,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0400
-     * @tc.number  SUB_BUILTINS_SET_TEST_0400
+     * @tc.name    collectionsSetTest0400
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0400
      * @tc.desc    Set boolean key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0400';
+    it('collectionsSetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0400';
       console.info(`${caseName}, test start`);
       const map: collections.Map<boolean, string> = new collections.Map<boolean, string>();
       map.set(true, 'active');
@@ -127,15 +127,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0500
-     * @tc.number  SUB_BUILTINS_SET_TEST_0500
+     * @tc.name    collectionsSetTest0500
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0500
      * @tc.desc    Set null key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0500';
+    it('collectionsSetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0500';
       console.info(`${caseName}, test start`);
       const map: collections.Map<null, string> = new collections.Map<null, string>();
       map.set(null, 'null value');
@@ -145,15 +145,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0600
-     * @tc.number  SUB_BUILTINS_SET_TEST_0600
+     * @tc.name    collectionsSetTest0600
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0600
      * @tc.desc    Set undefined key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0600';
+    it('collectionsSetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0600';
       console.info(`${caseName}, test start`);
       const map: collections.Map<undefined, string> = new collections.Map<undefined, string>();
       map.set(undefined, 'undefined value');
@@ -163,15 +163,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0700
-     * @tc.number  SUB_BUILTINS_SET_TEST_0700
+     * @tc.name    collectionsSetTest0700
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0700
      * @tc.desc    Set bigint key-value pair
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest0700';
+    it('collectionsSetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest0700';
       console.info(`${caseName}, test start`);
       const bigintKey = 123n;
       const map: collections.Map<bigint, string> = new collections.Map<bigint, string>();
@@ -182,15 +182,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0800
-     * @tc.number  SUB_BUILTINS_SET_TEST_0800
+     * @tc.name    collectionsSetTest0800
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0800
      * @tc.desc    Set multiple key-value pairs
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0800';
+    it('collectionsSetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0800';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1)
@@ -204,15 +204,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest0900
-     * @tc.number  SUB_BUILTINS_SET_TEST_0900
+     * @tc.name    collectionsSetTest0900
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_0900
      * @tc.desc    Set with same value for different keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest0900';
+    it('collectionsSetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest0900';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('x', 10)
@@ -226,15 +226,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1000
-     * @tc.number  SUB_BUILTINS_SET_TEST_1000
+     * @tc.name    collectionsSetTest1000
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1000
      * @tc.desc    Set returns the map instance
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest1000';
+    it('collectionsSetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest1000';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       const result = map.set('key', 'value');
@@ -243,15 +243,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1100
-     * @tc.number  SUB_BUILTINS_SET_TEST_1100
+     * @tc.name    collectionsSetTest1100
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1100
      * @tc.desc    Chaining set operations
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest1100';
+    it('collectionsSetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest1100';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       map.set('a', 1)
@@ -263,15 +263,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1200
-     * @tc.number  SUB_BUILTINS_SET_TEST_1200
+     * @tc.name    collectionsSetTest1200
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1200
      * @tc.desc    Set with empty string key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest1200';
+    it('collectionsSetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest1200';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('', 'empty string');
@@ -281,15 +281,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1300
-     * @tc.number  SUB_BUILTINS_SET_TEST_1300
+     * @tc.name    collectionsSetTest1300
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1300
      * @tc.desc    Set with numeric string vs number key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1300';
+    it('collectionsSetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1300';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string | number, string | number> = new collections.Map<string | number, string | number>();
       map.set('123', 'string')
@@ -301,15 +301,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1400
-     * @tc.number  SUB_BUILTINS_SET_TEST_1400
+     * @tc.name    collectionsSetTest1400
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1400
      * @tc.desc    Set with negative number key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest1400';
+    it('collectionsSetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest1400';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(-42, 'negative');
@@ -320,15 +320,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1500
-     * @tc.number  SUB_BUILTINS_SET_TEST_1500
+     * @tc.name    collectionsSetTest1500
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1500
      * @tc.desc    Set with zero and negative zero
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1500';
+    it('collectionsSetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1500';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(0, 'zero')
@@ -339,15 +339,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1600
-     * @tc.number  SUB_BUILTINS_SET_TEST_1600
+     * @tc.name    collectionsSetTest1600
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1600
      * @tc.desc    Set with NaN as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1600';
+    it('collectionsSetTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1600';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(NaN, 'not a number');
@@ -358,15 +358,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1700
-     * @tc.number  SUB_BUILTINS_SET_TEST_1700
+     * @tc.name    collectionsSetTest1700
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1700
      * @tc.desc    Set with Infinity as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1700';
+    it('collectionsSetTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1700';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(Infinity, 'infinite');
@@ -377,15 +377,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1800
-     * @tc.number  SUB_BUILTINS_SET_TEST_1800
+     * @tc.name    collectionsSetTest1800
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1800
      * @tc.desc    Set with -Infinity as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1800';
+    it('collectionsSetTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1800';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(-Infinity, 'negative infinite');
@@ -396,15 +396,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest1900
-     * @tc.number  SUB_BUILTINS_SET_TEST_1900
+     * @tc.name    collectionsSetTest1900
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_1900
      * @tc.desc    Set with very large number key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest1900';
+    it('collectionsSetTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest1900';
       console.info(`${caseName}, test start`);
       const largeNum = Number.MAX_SAFE_INTEGER;
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -415,15 +415,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2000
-     * @tc.number  SUB_BUILTINS_SET_TEST_2000
+     * @tc.name    collectionsSetTest2000
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2000
      * @tc.desc    Set with very small number key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2000';
+    it('collectionsSetTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2000';
       console.info(`${caseName}, test start`);
       const smallNum = Number.MIN_SAFE_INTEGER;
       const map: collections.Map<number, string> = new collections.Map<number, string>();
@@ -434,15 +434,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2100
-     * @tc.number  SUB_BUILTINS_SET_TEST_2100
+     * @tc.name    collectionsSetTest2100
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2100
      * @tc.desc    Set with float number key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest2100';
+    it('collectionsSetTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest2100';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number, string> = new collections.Map<number, string>();
       map.set(3.14, 'pi');
@@ -452,15 +452,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2200
-     * @tc.number  SUB_BUILTINS_SET_TEST_2200
+     * @tc.name    collectionsSetTest2200
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2200
      * @tc.desc    Set with string containing special characters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2200';
+    it('collectionsSetTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2200';
       console.info(`${caseName}, test start`);
       const key = '!@#$%^&*()_+{}:"<>?`~';
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -471,15 +471,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2300
-     * @tc.number  SUB_BUILTINS_SET_TEST_2300
+     * @tc.name    collectionsSetTest2300
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2300
      * @tc.desc    Set with multi-line string key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2300';
+    it('collectionsSetTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2300';
       console.info(`${caseName}, test start`);
       const key = 'line1\nline2';
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -490,15 +490,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2400
-     * @tc.number  SUB_BUILTINS_SET_TEST_2400
+     * @tc.name    collectionsSetTest2400
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2400
      * @tc.desc    Set with Unicode character key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2400';
+    it('collectionsSetTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2400';
       console.info(`${caseName}, test start`);
       const key = '€';
       const map: collections.Map<string, string> = new collections.Map<string, string>();
@@ -509,15 +509,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2500
-     * @tc.number  SUB_BUILTINS_SET_TEST_2500
+     * @tc.name    collectionsSetTest2500
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2500
      * @tc.desc    Set with Map instance as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2500';
+    it('collectionsSetTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2500';
       console.info(`${caseName}, test start`);
       const keyMap: collections.Map<string, string> = new collections.Map<string, string>();
       const map: collections.Map<collections.Map<string, string>, string> = new collections.Map<collections.Map<string, string>, string>();
@@ -528,15 +528,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2600
-     * @tc.number  SUB_BUILTINS_SET_TEST_2600
+     * @tc.name    collectionsSetTest2600
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2600
      * @tc.desc    Set with Set instance as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2600';
+    it('collectionsSetTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2600';
       console.info(`${caseName}, test start`);
       const keySet: collections.Set<string> = new collections.Set<string>();
       const map: collections.Map<collections.Set<string>, string> = new collections.Map<collections.Set<string>, string>();
@@ -547,15 +547,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2700
-     * @tc.number  SUB_BUILTINS_SET_TEST_2700
+     * @tc.name    collectionsSetTest2700
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2700
      * @tc.desc    Set with class as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2700';
+    it('collectionsSetTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2700';
       console.info(`${caseName}, test start`);
       const instance = new TestClass();
       const map: collections.Map<TestClass, string> = new collections.Map<TestClass, string>();
@@ -566,15 +566,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2800
-     * @tc.number  SUB_BUILTINS_SET_TEST_2800
+     * @tc.name    collectionsSetTest2800
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2800
      * @tc.desc    Set with class instance as key
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest2800';
+    it('collectionsSetTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest2800';
       console.info(`${caseName}, test start`);
       const instance = new TestClass();
       const map: collections.Map<TestClass, string> = new collections.Map<TestClass, string>();
@@ -585,15 +585,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest2900
-     * @tc.number  SUB_BUILTINS_SET_TEST_2900
+     * @tc.name    collectionsSetTest2900
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_2900
      * @tc.desc    Set with empty map and add entries
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest2900';
+    it('collectionsSetTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest2900';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       expect(map.size).assertEqual(0);
@@ -607,15 +607,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3000
-     * @tc.number  SUB_BUILTINS_SET_TEST_3000
+     * @tc.name    collectionsSetTest3000
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3000
      * @tc.desc    Set after delete
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest3000';
+    it('collectionsSetTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest3000';
       console.info(`${caseName}, test start`);
       const map = new collections.Map<string, string>([['key', 'value']]);
       map.delete('key');
@@ -628,15 +628,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3100
-     * @tc.number  SUB_BUILTINS_SET_TEST_3100
+     * @tc.name    collectionsSetTest3100
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3100
      * @tc.desc    Set after clear
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest3100';
+    it('collectionsSetTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest3100';
       console.info(`${caseName}, test start`);
       const map = new collections.Map<string, number>([['a', 1], ['b', 2]]);
       map.clear();
@@ -648,15 +648,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3200
-     * @tc.number  SUB_BUILTINS_SET_TEST_3200
+     * @tc.name    collectionsSetTest3200
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3200
      * @tc.desc    Set with same key multiple times
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetTest3200';
+    it('collectionsSetTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetTest3200';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'first');
@@ -669,15 +669,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3300
-     * @tc.number  SUB_BUILTINS_SET_TEST_3300
+     * @tc.name    collectionsSetTest3300
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3300
      * @tc.desc    Set with large number of entries
      * @tc.type    Function
      * @tc.size    LargeTest
      * @tc.level   LEVEL3
      */
-    it('builtinsSetTest3300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
-      const caseName = 'builtinsSetTest3300';
+    it('collectionsSetTest3300', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, (): void => {
+      const caseName = 'collectionsSetTest3300';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, number> = new collections.Map<string, number>();
       const count = 10000;
@@ -689,15 +689,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3400
-     * @tc.number  SUB_BUILTINS_SET_TEST_3400
+     * @tc.name    collectionsSetTest3400
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3400
      * @tc.desc    Set with key that is a number converted to string
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3400';
+    it('collectionsSetTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3400';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number | string, string> = new collections.Map<number | string, string>();
       map.set(123, 'number')
@@ -710,15 +710,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3500
-     * @tc.number  SUB_BUILTINS_SET_TEST_3500
+     * @tc.name    collectionsSetTest3500
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3500
      * @tc.desc    Set with boolean true and number 1
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3500';
+    it('collectionsSetTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3500';
       console.info(`${caseName}, test start`);
       const map: collections.Map<boolean | number, string> = new collections.Map<boolean | number, string>();
       map.set(true, 'boolean')
@@ -731,15 +731,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3600
-     * @tc.number  SUB_BUILTINS_SET_TEST_3600
+     * @tc.name    collectionsSetTest3600
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3600
      * @tc.desc    Set with boolean false and number 0
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3600';
+    it('collectionsSetTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3600';
       console.info(`${caseName}, test start`);
       const map: collections.Map<boolean | number, string> = new collections.Map<boolean | number, string>();
       map.set(false, 'boolean')
@@ -752,15 +752,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3700
-     * @tc.number  SUB_BUILTINS_SET_TEST_3700
+     * @tc.name    collectionsSetTest3700
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3700
      * @tc.desc    Set with key that is a string with different cases
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3700';
+    it('collectionsSetTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3700';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('Key', 'capitalized')
@@ -773,15 +773,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3800
-     * @tc.number  SUB_BUILTINS_SET_TEST_3800
+     * @tc.name    collectionsSetTest3800
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3800
      * @tc.desc    Set with key that is a string with whitespace
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3800';
+    it('collectionsSetTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3800';
       console.info(`${caseName}, test start`);
       const map: collections.Map<string, string> = new collections.Map<string, string>();
       map.set('key', 'no space')
@@ -794,15 +794,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest3900
-     * @tc.number  SUB_BUILTINS_SET_TEST_3900
+     * @tc.name    collectionsSetTest3900
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_3900
      * @tc.desc    Set with key that is a BigInt and a Number with same value
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest3900';
+    it('collectionsSetTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest3900';
       console.info(`${caseName}, test start`);
       const map: collections.Map<bigint | number, string> = new collections.Map<bigint | number, string>();
       map.set(42n, 'bigint')
@@ -815,15 +815,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest4000
-     * @tc.number  SUB_BUILTINS_SET_TEST_4000
+     * @tc.name    collectionsSetTest4000
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_4000
      * @tc.desc    Set with class and its name as keys
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest4000';
+    it('collectionsSetTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest4000';
       console.info(`${caseName}, test start`);
       const myClass = new MyClass('');
       const map: collections.Map<MyClass | string, string> = new collections.Map<MyClass | string, string>();
@@ -837,15 +837,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest4100
-     * @tc.number  SUB_BUILTINS_SET_TEST_4100
+     * @tc.name    collectionsSetTest4100
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_4100
      * @tc.desc    Set with undefined and string 'undefined'
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest4100';
+    it('collectionsSetTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest4100';
       console.info(`${caseName}, test start`);
       const map: collections.Map<undefined | string, string> = new collections.Map<undefined | string, string>();
       map.set(undefined, 'undefined value')
@@ -858,15 +858,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest4200
-     * @tc.number  SUB_BUILTINS_SET_TEST_4200
+     * @tc.name    collectionsSetTest4200
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_4200
      * @tc.desc    Set with null and string 'null'
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest4200';
+    it('collectionsSetTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest4200';
       console.info(`${caseName}, test start`);
       const map: collections.Map<null | string, string> = new collections.Map<null | string, string>();
       map.set(null, 'null value')
@@ -879,15 +879,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest4300
-     * @tc.number  SUB_BUILTINS_SET_TEST_4300
+     * @tc.name    collectionsSetTest4300
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_4300
      * @tc.desc    Set with NaN and string 'NaN'
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest4300';
+    it('collectionsSetTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest4300';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number | string, string> = new collections.Map<number | string, string>();
       map.set(NaN, 'nan value')
@@ -900,15 +900,15 @@ export default function BuiltinsSetTest() {
     });
 
     /**
-     * @tc.name    builtinsSetTest4400
-     * @tc.number  SUB_BUILTINS_SET_TEST_4400
+     * @tc.name    collectionsSetTest4400
+     * @tc.number  SUB_COLLECTIONS_SET_TEST_4400
      * @tc.desc    Set with Infinity and string 'Infinity'
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetTest4400';
+    it('collectionsSetTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetTest4400';
       console.info(`${caseName}, test start`);
       const map: collections.Map<number | string, string> = new collections.Map<number | string, string>();
       map.set(Infinity, 'infinity value')

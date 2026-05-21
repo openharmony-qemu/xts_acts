@@ -25,8 +25,8 @@ class TestClass {
   }
 }
 
-export default function BuiltinsSetSymbolIteratorTest() {
-  describe('BuiltinsSetSymbolIteratorTest', () => {
+export default function CollectionsSetSymbolIteratorTest() {
+  describe('CollectionsSetSymbolIteratorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -49,15 +49,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     })
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0100
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0100
+     * @tc.name    collectionsSetSymbolIteratorTest0100
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0100
      * @tc.desc    Verify Array constructor creates array with multiple number elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0100';
+    it('collectionsSetSymbolIteratorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3, 4);
       expect(arr.length).assertEqual(4);
@@ -67,15 +67,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0200
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0200
+     * @tc.name    collectionsSetSymbolIteratorTest0200
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0200
      * @tc.desc    Verify Array constructor creates array with multiple string elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0200';
+    it('collectionsSetSymbolIteratorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<string>('a', 'b', 'c');
       expect(arr.length).assertEqual(3);
@@ -85,15 +85,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0300
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0300
+     * @tc.name    collectionsSetSymbolIteratorTest0300
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0300
      * @tc.desc    Verify Array constructor creates array with multiple boolean elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0300';
+    it('collectionsSetSymbolIteratorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<boolean>(true, false, true);
       expect(arr.length).assertEqual(3);
@@ -103,15 +103,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0400
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0400
+     * @tc.name    collectionsSetSymbolIteratorTest0400
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0400
      * @tc.desc    Verify Array constructor creates array with null elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0400';
+    it('collectionsSetSymbolIteratorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<null | number>(null, 2, null);
       expect(arr.length).assertEqual(3);
@@ -121,15 +121,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0500
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0500
+     * @tc.name    collectionsSetSymbolIteratorTest0500
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0500
      * @tc.desc    Verify Array constructor creates array with undefined elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0500';
+    it('collectionsSetSymbolIteratorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<undefined | string>(undefined, 'test', undefined);
       expect(arr.length).assertEqual(3);
@@ -139,15 +139,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0600
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0600
+     * @tc.name    collectionsSetSymbolIteratorTest0600
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0600
      * @tc.desc    Verify Array constructor creates array with object elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0600';
+    it('collectionsSetSymbolIteratorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0600';
       console.info(`${caseName}, test start`);
       const arr1 = collections.Array.of<number>(1, 2);
       const arr2 = collections.Array.of<number>(3, 4);
@@ -159,15 +159,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0700
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0700
+     * @tc.name    collectionsSetSymbolIteratorTest0700
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0700
      * @tc.desc    Verify Array constructor creates array with function elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0700';
+    it('collectionsSetSymbolIteratorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0700';
       console.info(`${caseName}, test start`);
       const big1 = 10n;
       const big2 = 20n;
@@ -179,15 +179,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0800
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0800
+     * @tc.name    collectionsSetSymbolIteratorTest0800
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0800
      * @tc.desc    Verify Array constructor without new keyword creates array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0800';
+    it('collectionsSetSymbolIteratorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0800';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3);
       expect(arr.length).assertEqual(3);
@@ -197,15 +197,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest0900
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_0900
+     * @tc.name    collectionsSetSymbolIteratorTest0900
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_0900
      * @tc.desc    Verify Array constructor without arguments creates empty array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest0900';
+    it('collectionsSetSymbolIteratorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest0900';
       console.info(`${caseName}, test start`);
       const arr = new collections.Array<string>();
       expect(arr.length).assertEqual(0);
@@ -214,15 +214,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1000
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1000
+     * @tc.name    collectionsSetSymbolIteratorTest1000
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1000
      * @tc.desc    Verify Array constructor with max safe integer length
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1000';
+    it('collectionsSetSymbolIteratorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1000';
       console.info(`${caseName}, test start`);
       const maxSafeInt = 1000000;
       const arr = collections.Array.create<number>(maxSafeInt, 0);
@@ -231,15 +231,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1100
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1100
+     * @tc.name    collectionsSetSymbolIteratorTest1100
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1100
      * @tc.desc    Verify Array constructor with single element that is an array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1100';
+    it('collectionsSetSymbolIteratorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1100';
       console.info(`${caseName}, test start`);
       const element = collections.Array.of<number>(1, 2, 3);
       const arr = collections.Array.of<collections.Array<number>>(element);
@@ -249,15 +249,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1200
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1200
+     * @tc.name    collectionsSetSymbolIteratorTest1200
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1200
      * @tc.desc    Verify Array constructor with negative zero treated as zero
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1200';
+    it('collectionsSetSymbolIteratorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1200';
       console.info(`${caseName}, test start`);
       const arr = new collections.Array<number>();
       expect(arr.length).assertEqual(0);
@@ -265,15 +265,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1300
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1300
+     * @tc.name    collectionsSetSymbolIteratorTest1300
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1300
      * @tc.desc    Verify Array constructor creates array with class instances
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1300';
+    it('collectionsSetSymbolIteratorTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1300';
       console.info(`${caseName}, test start`);
       const instance1 = new TestClass('first');
       const instance2 = new TestClass('second');
@@ -286,15 +286,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1400
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1400
+     * @tc.name    collectionsSetSymbolIteratorTest1400
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1400
      * @tc.desc    Verify Array constructor with length and then filled
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1400';
+    it('collectionsSetSymbolIteratorTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(3, 5);
       expect(arr.length).assertEqual(3);
@@ -304,15 +304,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1500
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1500
+     * @tc.name    collectionsSetSymbolIteratorTest1500
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1500
      * @tc.desc    Verify Array constructor with length is instanceof Array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1500';
+    it('collectionsSetSymbolIteratorTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(5, 0);
       expect(arr.length).assertEqual(5);
@@ -322,15 +322,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1600
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1600
+     * @tc.name    collectionsSetSymbolIteratorTest1600
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1600
      * @tc.desc    Verify Array constructor with elements is instanceof Array
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1600';
+    it('collectionsSetSymbolIteratorTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3);
       expect(arr.length).assertEqual(3);
@@ -341,15 +341,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1700
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1700
+     * @tc.name    collectionsSetSymbolIteratorTest1700
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1700
      * @tc.desc    Verify Array constructor creates array with empty string elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1700';
+    it('collectionsSetSymbolIteratorTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<string>('', '', '');
       expect(arr.length).assertEqual(3);
@@ -359,15 +359,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1800
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1800
+     * @tc.name    collectionsSetSymbolIteratorTest1800
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1800
      * @tc.desc    Verify Array constructor creates array with multi-line string elements
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1800';
+    it('collectionsSetSymbolIteratorTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1800';
       console.info(`${caseName}, test start`);
       const str1 = 'line1\nline2';
       const str2 = 'a\nb\nc';
@@ -379,15 +379,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest1900
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_1900
+     * @tc.name    collectionsSetSymbolIteratorTest1900
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_1900
      * @tc.desc    Verify Array constructor with elements and then unshift
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest1900';
+    it('collectionsSetSymbolIteratorTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest1900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(2, 3);
       arr.unshift(1);
@@ -398,15 +398,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2000
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2000
+     * @tc.name    collectionsSetSymbolIteratorTest2000
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2000
      * @tc.desc    Verify Array constructor with length is not frozen
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2000';
+    it('collectionsSetSymbolIteratorTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(3, 0);
       arr[0] = 1;
@@ -415,15 +415,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2100
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2100
+     * @tc.name    collectionsSetSymbolIteratorTest2100
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2100
      * @tc.desc    Verify Array constructor with length and then join
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2100';
+    it('collectionsSetSymbolIteratorTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2100';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number | undefined>(3, undefined);
       arr[0] = 1;
@@ -433,15 +433,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2200
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2200
+     * @tc.name    collectionsSetSymbolIteratorTest2200
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2200
      * @tc.desc    Verify Array constructor with elements and then join
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2200';
+    it('collectionsSetSymbolIteratorTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<string>('a', 'b', 'c');
       expect(arr.join('')).assertEqual('abc');
@@ -449,15 +449,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2300
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2300
+     * @tc.name    collectionsSetSymbolIteratorTest2300
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2300
      * @tc.desc    Verify Array constructor with length and then indexOf
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2300';
+    it('collectionsSetSymbolIteratorTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number | undefined>(5, undefined);
       arr[2] = 10;
@@ -467,15 +467,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2400
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2400
+     * @tc.name    collectionsSetSymbolIteratorTest2400
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2400
      * @tc.desc    Verify Array constructor with elements and then includes
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2400';
+    it('collectionsSetSymbolIteratorTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<boolean>(true, false, true);
       expect(arr.includes(true)).assertEqual(true);
@@ -484,15 +484,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2500
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2500
+     * @tc.name    collectionsSetSymbolIteratorTest2500
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2500
      * @tc.desc    Verify Array constructor with length and then map function
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2500';
+    it('collectionsSetSymbolIteratorTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(3, 2);
       const mapped = arr.map(x => x * 3);
@@ -503,15 +503,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2600
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2600
+     * @tc.name    collectionsSetSymbolIteratorTest2600
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2600
      * @tc.desc    Verify Array constructor with elements and then filter function
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2600';
+    it('collectionsSetSymbolIteratorTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2600';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3, 4, 5);
       const filtered = arr.filter(x => x % 2 === 0);
@@ -522,15 +522,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2700
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2700
+     * @tc.name    collectionsSetSymbolIteratorTest2700
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2700
      * @tc.desc    Verify Array constructor with elements and then reduce function
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2700';
+    it('collectionsSetSymbolIteratorTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2700';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3, 4);
       const sum = arr.reduce((acc: number, curr: number) => acc + curr, 0);
@@ -539,15 +539,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2800
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2800
+     * @tc.name    collectionsSetSymbolIteratorTest2800
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2800
      * @tc.desc    Verify Array constructor with length 1 and element that is zero
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2800';
+    it('collectionsSetSymbolIteratorTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2800';
       console.info(`${caseName}, test start`);
       const arr = new collections.Array<number>();
       expect(arr.length).assertEqual(0);
@@ -559,15 +559,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest2900
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_2900
+     * @tc.name    collectionsSetSymbolIteratorTest2900
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_2900
      * @tc.desc    Verify Array constructor with length and then sorted
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest2900';
+    it('collectionsSetSymbolIteratorTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest2900';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(3, 0);
       arr[0] = 3;
@@ -580,15 +580,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3000
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3000
+     * @tc.name    collectionsSetSymbolIteratorTest3000
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3000
      * @tc.desc    Verify Array constructor with elements and then reversed
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3000';
+    it('collectionsSetSymbolIteratorTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3000';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3);
       const reversed = arr.reverse();
@@ -598,15 +598,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3100
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3100
+     * @tc.name    collectionsSetSymbolIteratorTest3100
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3100
      * @tc.desc    Verify Array constructor with large number of elements (1000)
      * @tc.type    Function
      * @tc.size    LargeTest
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest3100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3100';
+    it('collectionsSetSymbolIteratorTest3100', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3100';
       console.info(`${caseName}, test start`);
       const elements: number[] = [];
       for (let i = 0; i < 1000; i++) {
@@ -620,15 +620,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3200
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3200
+     * @tc.name    collectionsSetSymbolIteratorTest3200
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3200
      * @tc.desc    Verify Array constructor with elements and then spread operator
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3200';
+    it('collectionsSetSymbolIteratorTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3200';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3);
       const newArr = collections.Array.of<number>(...Array.from(arr), 4, 5);
@@ -638,15 +638,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3300
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3300
+     * @tc.name    collectionsSetSymbolIteratorTest3300
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3300
      * @tc.desc    Verify Array constructor with elements and then JSON stringify
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetSymbolIteratorTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3300';
+    it('collectionsSetSymbolIteratorTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3300';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number | string>(1, 'two', 3);
       const json = JSON.stringify(Array.from(arr));
@@ -655,15 +655,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3400
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3400
+     * @tc.name    collectionsSetSymbolIteratorTest3400
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3400
      * @tc.desc    Verify Array constructor with elements and then isArray check
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3400';
+    it('collectionsSetSymbolIteratorTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3400';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.of<number>(1, 2, 3);
       expect(Array.isArray(arr)).assertEqual(false);
@@ -671,15 +671,15 @@ export default function BuiltinsSetSymbolIteratorTest() {
     });
 
     /**
-     * @tc.name    builtinsSetSymbolIteratorTest3500
-     * @tc.number  SUB_BUILTINS_SET_SYMBOL_ITERATOR_TEST_3500
+     * @tc.name    collectionsSetSymbolIteratorTest3500
+     * @tc.number  SUB_COLLECTIONS_SET_SYMBOL_ITERATOR_TEST_3500
      * @tc.desc    Verify Array constructor with length and then isArray check
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetSymbolIteratorTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetSymbolIteratorTest3500';
+    it('collectionsSetSymbolIteratorTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetSymbolIteratorTest3500';
       console.info(`${caseName}, test start`);
       const arr = collections.Array.create<number>(5, 0);
       expect(Array.isArray(arr)).assertEqual(false);

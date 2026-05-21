@@ -25,8 +25,8 @@ class MyClass {
   }
 }
 
-export default function BuiltinsSetEntriesTest() {
-  describe('BuiltinsSetEntriesTest', () => {
+export default function CollectionsSetEntriesTest() {
+  describe('CollectionsSetEntriesTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -49,15 +49,15 @@ export default function BuiltinsSetEntriesTest() {
     })
 
     /**
-     * @tc.name    builtinsSetEntriesTest0100
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0100
+     * @tc.name    collectionsSetEntriesTest0100
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0100
      * @tc.desc    Iterate non-empty Set with strings, verify each entry is [value, value]
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0100';
+    it('collectionsSetEntriesTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['a', 'b', 'c']);
       const iterator = set.entries();
@@ -81,15 +81,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0200
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0200
+     * @tc.name    collectionsSetEntriesTest0200
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0200
      * @tc.desc    Iterate non-empty Set with numbers, verify entry format
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0200';
+    it('collectionsSetEntriesTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([10, 20, 30]);
       const entries = Array.from(set.entries());
@@ -102,15 +102,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0300
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0300
+     * @tc.name    collectionsSetEntriesTest0300
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0300
      * @tc.desc    Iterate empty Set, verify iterator is empty
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0300';
+    it('collectionsSetEntriesTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       const iterator = set.entries();
@@ -123,15 +123,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0400
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0400
+     * @tc.name    collectionsSetEntriesTest0400
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0400
      * @tc.desc    Verify iteration order matches insertion order
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0400';
+    it('collectionsSetEntriesTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>();
       set.add('third');
@@ -149,15 +149,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0500
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0500
+     * @tc.name    collectionsSetEntriesTest0500
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0500
      * @tc.desc    Verify each call to entries() returns new iterator
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0500';
+    it('collectionsSetEntriesTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const iterator1 = set.entries();
@@ -172,15 +172,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0600
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0600
+     * @tc.name    collectionsSetEntriesTest0600
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0600
      * @tc.desc    Iterate Set with boolean values, verify entry format
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0600';
+    it('collectionsSetEntriesTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<boolean> = new collections.Set<boolean>([true, false, true]);
       const entries = Array.from(set.entries());
@@ -193,15 +193,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0700
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0700
+     * @tc.name    collectionsSetEntriesTest0700
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0700
      * @tc.desc    Iterate Set with null and undefined, verify entries
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0700';
+    it('collectionsSetEntriesTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<null | undefined> = new collections.Set<null | undefined>([null, undefined, null]);
       const entries = Array.from(set.entries());
@@ -214,15 +214,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0800
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0800
+     * @tc.name    collectionsSetEntriesTest0800
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0800
      * @tc.desc    Use for...of loop to iterate entries
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0800';
+    it('collectionsSetEntriesTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['x', ' y', 'z']);
       const entries: [string, string][] = [];
@@ -240,15 +240,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest0900
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_0900
+     * @tc.name    collectionsSetEntriesTest0900
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_0900
      * @tc.desc    Iterate Set with single element, verify entry
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest0900';
+    it('collectionsSetEntriesTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest0900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['only-element']);
       const iterator = set.entries();
@@ -263,15 +263,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1000
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1000
+     * @tc.name    collectionsSetEntriesTest1000
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1000
      * @tc.desc    Verify entries() ignores passed parameters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest1000';
+    it('collectionsSetEntriesTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest1000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const iterator = set.entries();
@@ -286,15 +286,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1100
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1100
+     * @tc.name    collectionsSetEntriesTest1100
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1100
      * @tc.desc    Iterate Set with NaN (treated as equal to itself)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest1100';
+    it('collectionsSetEntriesTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest1100';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([NaN, 1, NaN]);
       const entries = Array.from(set.entries());
@@ -309,15 +309,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1200
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1200
+     * @tc.name    collectionsSetEntriesTest1200
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1200
      * @tc.desc    Iterate Set with 0 and -0 (treated as equal)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest1200';
+    it('collectionsSetEntriesTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest1200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([0, -0, 100]);
       const entries = Array.from(set.entries());
@@ -329,15 +329,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1300
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1300
+     * @tc.name    collectionsSetEntriesTest1300
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1300
      * @tc.desc    Iterate Set with BigInt values
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest1300';
+    it('collectionsSetEntriesTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest1300';
       console.info(`${caseName}, test start`);
       const big1 = 123n;
       const big2 = 123n;
@@ -351,15 +351,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1400
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1400
+     * @tc.name    collectionsSetEntriesTest1400
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1400
      * @tc.desc    Modify Set during iteration, verify iterator uses snapshot (no new elements)
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetEntriesTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'builtinsSetEntriesTest1400';
+    it('collectionsSetEntriesTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'collectionsSetEntriesTest1400';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const iterator = set.entries();
@@ -379,15 +379,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1500
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1500
+     * @tc.name    collectionsSetEntriesTest1500
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1500
      * @tc.desc    Delete Set element during iteration, verify iterator skips deleted element
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL3
      */
-    it('builtinsSetEntriesTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-      const caseName = 'builtinsSetEntriesTest1500';
+    it('collectionsSetEntriesTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      const caseName = 'collectionsSetEntriesTest1500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       const iterator = set.entries();
@@ -407,15 +407,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1600
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1600
+     * @tc.name    collectionsSetEntriesTest1600
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1600
      * @tc.desc    Verify iterator doesn't include elements added after iterator creation
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest1600';
+    it('collectionsSetEntriesTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest1600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2]);
       const iterator = set.entries();
@@ -432,15 +432,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1700
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1700
+     * @tc.name    collectionsSetEntriesTest1700
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1700
      * @tc.desc    Verify entries() works with very large numbers
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest1700';
+    it('collectionsSetEntriesTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest1700';
       console.info(`${caseName}, test start`);
       const largeNum = Number.MAX_SAFE_INTEGER;
       const set: collections.Set<number> = new collections.Set<number>([largeNum, largeNum + 1]);
@@ -454,15 +454,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1800
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1800
+     * @tc.name    collectionsSetEntriesTest1800
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1800
      * @tc.desc    Verify entries() with Set containing negative numbers
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest1800';
+    it('collectionsSetEntriesTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest1800';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([-1, -2, -3]);
       const entries = Array.from(set.entries());
@@ -476,15 +476,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest1900
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_1900
+     * @tc.name    collectionsSetEntriesTest1900
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_1900
      * @tc.desc    Verify entries() with Set containing float numbers
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest1900';
+    it('collectionsSetEntriesTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest1900';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1.5, 2.5, 3.5]);
       const entries = Array.from(set.entries());
@@ -498,15 +498,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2000
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2000
+     * @tc.name    collectionsSetEntriesTest2000
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2000
      * @tc.desc    Verify entries() with Set containing empty strings
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest2000';
+    it('collectionsSetEntriesTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest2000';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['', '', 'non-empty']);
       const entries = Array.from(set.entries());
@@ -519,15 +519,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2100
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2100
+     * @tc.name    collectionsSetEntriesTest2100
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2100
      * @tc.desc    Verify entries() with Set containing multi-line strings
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest2100';
+    it('collectionsSetEntriesTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest2100';
       console.info(`${caseName}, test start`);
       const multiLine = 'line1\nline2';
       const set: collections.Set<string> = new collections.Set<string>([multiLine]);
@@ -540,15 +540,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2200
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2200
+     * @tc.name    collectionsSetEntriesTest2200
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2200
      * @tc.desc    Verify entries() with Set containing special characters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL1
      */
-    it('builtinsSetEntriesTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const caseName = 'builtinsSetEntriesTest2200';
+    it('collectionsSetEntriesTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const caseName = 'collectionsSetEntriesTest2200';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['!', '@', '#', '$', '%']);
       const entries = Array.from(set.entries());
@@ -564,15 +564,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2300
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2300
+     * @tc.name    collectionsSetEntriesTest2300
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2300
      * @tc.desc    Verify entries() with Set containing Unicode characters
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest2300';
+    it('collectionsSetEntriesTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest2300';
       console.info(`${caseName}, test start`);
       const set: collections.Set<string> = new collections.Set<string>(['😀', '🌍', '📚']);
       const entries = Array.from(set.entries());
@@ -586,15 +586,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2400
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2400
+     * @tc.name    collectionsSetEntriesTest2400
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2400
      * @tc.desc    Verify entries() with Set containing class instances
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest2400';
+    it('collectionsSetEntriesTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest2400';
       console.info(`${caseName}, test start`);
 
       const instance1 = new MyClass(1);
@@ -609,15 +609,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2500
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2500
+     * @tc.name    collectionsSetEntriesTest2500
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2500
      * @tc.desc    Verify iterator continues correctly after partial iteration
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest2500';
+    it('collectionsSetEntriesTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest2500';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3, 4, 5]);
       const iterator = set.entries();
@@ -641,15 +641,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2600
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2600
+     * @tc.name    collectionsSetEntriesTest2600
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2600
      * @tc.desc    Verify entries() works after clearing the Set
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest2600';
+    it('collectionsSetEntriesTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest2600';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>([1, 2, 3]);
       set.clear();
@@ -660,15 +660,15 @@ export default function BuiltinsSetEntriesTest() {
     });
 
     /**
-     * @tc.name    builtinsSetEntriesTest2700
-     * @tc.number  SUB_BUILTINS_SET_ENTRIES_TEST_2700
+     * @tc.name    collectionsSetEntriesTest2700
+     * @tc.number  SUB_COLLECTIONS_SET_ENTRIES_TEST_2700
      * @tc.desc    Verify entries() on a Set that has had elements added and removed
      * @tc.type    Function
      * @tc.size    MEDIUMTEST
      * @tc.level   LEVEL2
      */
-    it('builtinsSetEntriesTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const caseName = 'builtinsSetEntriesTest2700';
+    it('collectionsSetEntriesTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const caseName = 'collectionsSetEntriesTest2700';
       console.info(`${caseName}, test start`);
       const set: collections.Set<number> = new collections.Set<number>();
       set.add(1);
