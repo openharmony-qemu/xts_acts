@@ -244,7 +244,7 @@ export default function arrayBufferAtTest(): void {
       buffer.set(0, Int.toByte(10))
       buffer.set(1, Int.toByte(20))
       expect(buffer.at(0) < buffer.at(1)).assertTrue()
-      expect(buffer.at(0) === 10).assertTrue()
+      expect(buffer.at(0)).assertEqual(Int.toByte(10))
     });
 
     /**

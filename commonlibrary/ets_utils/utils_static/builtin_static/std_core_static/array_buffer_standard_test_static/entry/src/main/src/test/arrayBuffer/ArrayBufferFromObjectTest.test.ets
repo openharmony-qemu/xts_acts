@@ -921,7 +921,7 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
-      expect(result != null).assertTrue();
+      expect(result !== null).assertTrue();
     });
 
     /**
@@ -938,7 +938,7 @@ export default function arrayBufferFromObjectTest(): void {
       view[0] = 72;
       view[1] = 105;
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
-      expect(result != null).assertTrue();
+      expect(result !== null).assertTrue();
     });
 
     /**
@@ -1039,7 +1039,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6500
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify Uint8Array view bytes match UTF-8 encoding of abc
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -384,7 +384,7 @@ export default function arrayBufferFromOneTest(): void {
     it('testArrayBufferFromOne0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: ValueArray<byte> = [Int.toByte(1)];
       const result = ArrayBuffer.from(arr);
-      expect(result != null).assertTrue();
+      expect(result !== null).assertTrue();
     });
 
     /**
@@ -495,6 +495,22 @@ export default function arrayBufferFromOneTest(): void {
       arr[0] = Int.toByte(99);
       expect(result.at(0)).assertEqual(Int.toByte(1));
       expect(result.at(1)).assertEqual(Int.toByte(2));
+    });
+
+    /**
+     * @tc.name testArrayBufferFromOne0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_3000
+     * @tc.desc Verify modifying ArrayBuffer via set does not affect source ValueArray<byte>
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromOne0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ValueArray<byte> = [Int.toByte(10), Int.toByte(20)];
+      const result = ArrayBuffer.from(arr);
+      result.set(0, Int.toByte(99));
+      expect(arr[0]).assertEqual(Int.toByte(10));
+      expect(arr[1]).assertEqual(Int.toByte(20));
     });
 
     /**

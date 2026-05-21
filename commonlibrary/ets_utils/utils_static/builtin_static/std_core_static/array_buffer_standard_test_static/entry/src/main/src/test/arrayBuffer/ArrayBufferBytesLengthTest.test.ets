@@ -348,19 +348,17 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_2500
-     * @tc.desc Verify len equals 6
+     * @tc.desc Verify bytesLength with utf-16le encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let len = ArrayBuffer.bytesLength('ABC', 'utf-16le')
-        expect(len).assertEqual(6)
+        ArrayBuffer.bytesLength('ABC', 'utf-16le')
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError')
-        let fallback = ArrayBuffer.bytesLength('ABC', 'utf16le')
-        expect(fallback).assertEqual(6)
       }
     });
 
@@ -447,20 +445,14 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_3200
-     * @tc.desc Verify len equals 3
+     * @tc.desc Verify bytesLength with utf-8 encoding returns len 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let len = ArrayBuffer.bytesLength('ABC', 'utf-8')
-        expect(len).assertEqual(3)
-      } catch (e) {
-        expect(e.name).assertEqual('IllegalArgumentError')
-        let fallback = ArrayBuffer.bytesLength('ABC', 'utf8')
-        expect(fallback).assertEqual(3)
-      }
+      let len = ArrayBuffer.bytesLength('ABC', 'utf-8')
+      expect(len).assertEqual(3)
     });
 
     /**
@@ -517,38 +509,34 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_3600
-     * @tc.desc Verify len equals 3
+     * @tc.desc Verify bytesLength with UTF8 encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let len = ArrayBuffer.bytesLength('ABC', 'UTF8')
-        expect(len).assertEqual(3)
+        ArrayBuffer.bytesLength('ABC', 'UTF8')
+        expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError')
-        let fallback = ArrayBuffer.bytesLength('ABC', 'utf8')
-        expect(fallback).assertEqual(3)
       }
     });
 
     /**
      * @tc.name testArrayBufferBytesLength0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_3700
-     * @tc.desc Verify len equals 3
+     * @tc.desc Verify bytesLength with Utf8 encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let len = ArrayBuffer.bytesLength('ABC', 'Utf8')
-        expect(len).assertEqual(3)
+        ArrayBuffer.bytesLength('ABC', 'Utf8')
+        expect().assertFail()
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError')
-        let fallback = ArrayBuffer.bytesLength('ABC', 'utf8')
-        expect(fallback).assertEqual(3)
       }
     });
 

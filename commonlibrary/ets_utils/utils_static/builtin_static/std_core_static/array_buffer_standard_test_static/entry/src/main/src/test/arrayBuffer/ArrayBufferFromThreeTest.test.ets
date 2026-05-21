@@ -415,7 +415,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2400
-     * @tc.desc Verify byteLength typeof is number or int
+     * @tc.desc Verify byteLength typeof is int
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

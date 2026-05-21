@@ -358,38 +358,34 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2500
-     * @tc.desc Verify buf.byteLength equals 3
+     * @tc.desc Verify ArrayBuffer.from with UTF8 encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from('ABC', 'UTF8');
-        expect(buf.byteLength).assertEqual(3);
+        ArrayBuffer.from('ABC', 'UTF8');
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
-        const fallback = ArrayBuffer.from('ABC', 'utf8');
-        expect(fallback.byteLength).assertEqual(3);
       }
     });
 
     /**
      * @tc.name testArrayBufferFromFive0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2600
-     * @tc.desc Verify buf.byteLength equals 3
+     * @tc.desc Verify ArrayBuffer.from with Utf8 encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from('ABC', 'Utf8');
-        expect(buf.byteLength).assertEqual(3);
+        ArrayBuffer.from('ABC', 'Utf8');
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError');
-        const fallback = ArrayBuffer.from('ABC', 'utf8');
-        expect(fallback.byteLength).assertEqual(3);
       }
     });
 
