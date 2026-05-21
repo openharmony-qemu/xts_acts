@@ -46,7 +46,7 @@ export default function testsuite() {
     HttpRequestMaxAutoRedirectsWithInterceptorTest();
     HttpRequestCustomMethodTest();
     HttpRequestCustomResponseHeaderTest();
-    if (sim.getMaxSIMCount() > 1) {
+    if (sim.getMaxSimCount() > 1) {
       HttpRequestGmssl();
       HttpRequestDataCATest();
       HttpRequestMethodTest();
