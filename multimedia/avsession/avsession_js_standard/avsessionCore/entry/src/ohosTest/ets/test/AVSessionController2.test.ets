@@ -295,7 +295,7 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_SET_SUPPORTED_LOOP_MODES_PARAM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG}: setSupportedLoopModesAllModes003 start`);
       let loopModes: Array<avSession.LoopMode> = [
-        avSession.LoopMode.LOOP_MODE_NONE,
+        avSession.LoopMode.LOOP_MODE_SEQUENCE,
         avSession.LoopMode.LOOP_MODE_SINGLE,
         avSession.LoopMode.LOOP_MODE_LIST,
         avSession.LoopMode.LOOP_MODE_SHUFFLE
@@ -554,7 +554,7 @@ export default function abilityTest() {
       try {
         let result: Array<number> = await controller?.getSupportedPlaySpeeds();
         console.info(`${TAG}: getSupportedPlaySpeeds result without setting: ${JSON.stringify(result)}`);
-        expect(result).assertNotNull();
+        expect(result).not().assertNull();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.info(`${TAG}: error: ${e.code}`);
@@ -641,7 +641,7 @@ export default function abilityTest() {
       try {
         let result: Array<avSession.LoopMode> = await controller?.getSupportedLoopModes();
         console.info(`${TAG}: getSupportedLoopModes result without setting: ${JSON.stringify(result)}`);
-        expect(result).assertNotNull();
+        expect(result).not().assertNull();
       } catch (error) {
         let e: BusinessError = error as BusinessError;
         console.info(`${TAG}: error: ${e.code}`);
@@ -1258,7 +1258,7 @@ export default function abilityTest() {
         controller?.onSupportedLoopModesChange(callback1);
         controller?.onSupportedLoopModesChange(callback2);
         controller?.offSupportedLoopModesChange(callback1);
-        let loopModes: Array<avSession.LoopMode> = [avSession.LoopMode.LOOP_MODE_NONE];
+        let loopModes: Array<avSession.LoopMode> = [avSession.LoopMode.LOOP_MODE_SEQUENCE];
         await session?.setSupportedLoopModes(loopModes);
         await sleep(500);
         expect(callback1Triggered).assertFalse();
