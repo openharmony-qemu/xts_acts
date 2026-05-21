@@ -336,7 +336,7 @@ struct Index {
               try {
                 console.info('testFetchCookieCallbackErrorCode401Static start');
                 let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.fetchCookie(invalidUrl, (error: BusinessError | null, cookie: string) => {
+                web_webview.WebCookieManager.fetchCookie(invalidUrl, (error, cookie) => {
                   if (error) {
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(error.code, 2026052006);
@@ -443,7 +443,7 @@ struct Index {
               try {
                 console.info('testConfigCookieCallbackErrorCode401Static start');
                 let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.configCookie(invalidUrl, 'a=b', (error: BusinessError | null) => {
+                web_webview.WebCookieManager.configCookie(invalidUrl, 'a=b', (error) => {
                   if (error) {
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(error.code, 2026052012);
@@ -500,8 +500,12 @@ struct Index {
             case 'testSaveCookieAsyncPromiseErrorCode401Static': {
               try {
                 console.info('testSaveCookieAsyncPromiseErrorCode401Static start');
-                let saveCookieAsyncFn = web_webview.WebCookieManager.saveCookieAsync as Object as (param: number) => Promise<void>;
-                saveCookieAsyncFn(1)
+                let saveCookieAsyncPromise: () => Promise<void> = (): Promise<void> => {
+                  return web_webview.WebCookieManager.saveCookieAsync();
+                }
+                let saveCookieAsyncFn: (param: Object) => Promise<void> =
+                  saveCookieAsyncPromise as (param: Object) => Promise<void>;
+                saveCookieAsyncFn(1 as Object)
                   .then(() => {
                     console.info('testSaveCookieAsyncPromiseErrorCode401Static no error');
                     Utils.emitEvent(0, 2026052015);
@@ -546,8 +550,12 @@ struct Index {
             case 'testClearSessionCookiePromiseErrorCode401Static': {
               try {
                 console.info('testClearSessionCookiePromiseErrorCode401Static start');
-                let clearSessionCookieFn = web_webview.WebCookieManager.clearSessionCookie as Object as (param: number) => Promise<void>;
-                clearSessionCookieFn(1)
+                let clearSessionCookiePromise: () => Promise<void> = (): Promise<void> => {
+                  return web_webview.WebCookieManager.clearSessionCookie();
+                }
+                let clearSessionCookieFn: (param: Object) => Promise<void> =
+                  clearSessionCookiePromise as (param: Object) => Promise<void>;
+                clearSessionCookieFn(1 as Object)
                   .then(() => {
                     console.info('testClearSessionCookiePromiseErrorCode401Static no error');
                     Utils.emitEvent(0, 2026052018);
