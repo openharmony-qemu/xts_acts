@@ -80,7 +80,7 @@ async function clickButtonDriver(){
 
 }
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
-    
+  
     let want: Want = {
       bundleName: "com.example.actswindowtest.static",
       abilityName: 'StartAbility'
@@ -101,7 +101,7 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
     await Utils.msSleep(1000)
     let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
     return windowStageStart;
-
+  
 }
 
 async function terminateAbility(caseName: string) {
@@ -144,7 +144,7 @@ export default function DisplayTest():void {
         let isSupportRotate = false;
         beforeAll(async (): Promise<void> => {
             isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
-            console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
+ 	        console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
             hilog.info(domain, tag, 'beforeAll start');
             abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -254,8 +254,8 @@ export default function DisplayTest():void {
                 done();
             });
         });
-
-            /**
+        
+        /**
     * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0340
     * @tc.name        testGetDefaultDisplaySync_SyncFunction_static_0200
     * @tc.desc        To test the sync function of obtaining the target display by id
@@ -301,7 +301,7 @@ export default function DisplayTest():void {
         let caseName : string = 'testCaptureStatusChange_VirtualScreenCreateDestroy_static_0100';
         let msgStr : string = 'jsunittest ' + caseName + ' ';
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
-
+        
         let captureStatus: boolean = false;
         let callbackTriggered:boolean = false;
         let callback : Callback<boolean> = (status: boolean) => {
@@ -309,7 +309,7 @@ export default function DisplayTest():void {
             captureStatus = status;
             callbackTriggered = true;
         };
-
+        
         let option: display.VirtualScreenConfig = {
             name: 'screen01',
             width: 100,
@@ -317,13 +317,13 @@ export default function DisplayTest():void {
             density: 2,
             surfaceId: ''
         };
-
-        try {
+        
+        try {        
             // 创建虚拟屏
             let vid = await display.createVirtualScreen(option);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
             await Utils.msSleep(3000);
-
+            
             // 注册监听
             display.onCaptureStatusChange(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'register onCaptureStatusChange success');
@@ -332,7 +332,7 @@ export default function DisplayTest():void {
             // 销毁虚拟屏
             await display.destroyVirtualScreen(vid);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in destroyVirtualScreen');
-
+            
             // 验证销毁虚拟屏后返回false
             await Utils.msSleep(3000);
             while (!callbackTriggered) {
@@ -340,11 +340,11 @@ export default function DisplayTest():void {
             }
             hilog.info(0x0000, '[ANI]', msgStr + 'after destroyVirtualScreen, captureStatus: ' + captureStatus);
             expect(captureStatus === false).assertTrue();
-
+            
             // 注销监听（传入callback参数）
             display.offCaptureStatusChange(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'offCaptureStatusChange success');
-
+            
             done();
         }
         catch (err) {
@@ -661,7 +661,7 @@ export default function DisplayTest():void {
                 done()
             });
         })
-
+        
 
         /**
          * @tc.number      SUB_BASIC_WMS_FOLDSTATUS_0100
@@ -1167,13 +1167,13 @@ export default function DisplayTest():void {
             }
         });
         /**
-         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
-         * @tc.name      testIsCapturedByBundleName_default_static_0100
-         * @tc.desc      check current device capture status with bundleName list input
-         * @tc.size      MediumTest
-         * @tc.type      Function
-         * @tc.level     Level0
-         */
+ 	          * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ 	          * @tc.name      testIsCapturedByBundleName_default_static_0100
+ 	          * @tc.desc      check current device capture status with bundleName list input
+ 	          * @tc.size      MediumTest
+ 	          * @tc.type      Function
+ 	          * @tc.level     Level0
+ 	          */
         it('testIsCapturedByBundleName_default_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             let caseName: string = 'testIsCapturedByBundleName_default_static_0100';
             let msgStr: string = 'jsunittest ' + caseName + ' ';
@@ -2107,7 +2107,7 @@ export default function DisplayTest():void {
         expect(displayClass!.screenShape !=null ).assertTrue();
         expect(displayClass!.x).assertLargerOrEqual(0);
         expect(displayClass!.y).assertLargerOrEqual(0);
-
+        
         done();
       });
 
@@ -2210,7 +2210,7 @@ export default function DisplayTest():void {
         /**
          * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
          * @tc.name      test_CreateVirtualScreen01_static
-         * @tc.desc      test_CreateVirtualScreen01
+         * @tc.desc      test_CreateVirtualScreen01 
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level 3
@@ -2310,7 +2310,7 @@ export default function DisplayTest():void {
                         expect(false).assertTrue();
                         done();
                     })
-
+                    
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
                     expect(false).assertTrue();
@@ -2394,7 +2394,7 @@ export default function DisplayTest():void {
                     expect(false).assertTrue();
                     done();
                 }
-
+                
             }
         });
         /**
@@ -2458,12 +2458,12 @@ export default function DisplayTest():void {
                 }).catch((err: Error) :PromiseLike<void>|undefined=> {
                     hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
                     if (!isSyscapSessionManagerSupported) {
-                      expect(err.code).assertEqual(801)
-                      done();
-                    } else {
-                      expect(err.code).assertEqual(1400001);
-                      done();
-                    }
+                        expect(err.code).assertEqual(801)
+                        done();
+                      } else {
+                        expect(err.code).assertEqual(1400001);
+                        done();
+                      }
                 })
             } catch (err) {
                 err = err as BusinessError;
@@ -3071,7 +3071,7 @@ export default function DisplayTest():void {
         let caseName : string = 'testOnAdd_VirtualScreenCreate_static_0100';
         let msgStr : string = 'jsunittest ' + caseName + ' ';
         hilog.info(0x0000, '[ANI]', msgStr + 'begin');
-
+        
         let receivedScreenId: Long = -1;
         let callbackTriggered:boolean = false;
         let callback: Callback<Long> = (screenId: Long) => {
@@ -3079,7 +3079,7 @@ export default function DisplayTest():void {
             hilog.info(0x0000, '[ANI]', msgStr + 'onAdd callback received. Data: ' + JSON.stringify(screenId));
             receivedScreenId = screenId;
         };
-
+        
         let option: display.VirtualScreenConfig = {
             name: 'screen01',
             width: 100,
@@ -3087,12 +3087,12 @@ export default function DisplayTest():void {
             density: 2,
             surfaceId: ''
         };
-
+        
         try {
             // 注册监听
             display.onAdd(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'register onAdd success');
-
+            
             // 创建虚拟屏
             let vid = await display.createVirtualScreen(option);
             hilog.info(0x0000, '[ANI]', msgStr + 'Success in createVirtualScreen, screendId : ' + vid);
@@ -3115,21 +3115,21 @@ export default function DisplayTest():void {
                         done();
                 }
             }
-
+            
             // 验证onAdd回调被触发，接收到有效的screenId（大于等于 1000）
             while (!callbackTriggered) {
                 await Utils.msSleep(100);
             }
             hilog.info(0x0000, '[ANI]', msgStr + 'receivedScreenId: ' + receivedScreenId);
             expect(receivedScreenId >= 1000).assertTrue();
-
+            
             // 注销监听
             display.offAdd(callback);
             hilog.info(0x0000, '[ANI]', msgStr + 'offAdd success');
-
+            
             // 清理：销毁创建的虚拟屏
             await display.destroyVirtualScreen(vid);
-
+            
             done();
         }
         catch (err) {
