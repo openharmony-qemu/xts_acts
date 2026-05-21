@@ -245,11 +245,11 @@ struct Index {
                 web_webview.WebCookieManager.fetchCookieSync('');
                 Utils.emitEvent(0, 2026052001);
               } catch (error) {
-                const actualCode = String((error as BusinessError).code);
-                const actualMsg = String((error as BusinessError).message);
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
                 const actualResult = `${actualCode}${actualMsg}`;
                 console.error(`actualResult: ${actualResult}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052001);
+                Utils.emitEvent(error.code, 2026052001);
               }
               break;
             }
@@ -264,12 +264,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052002);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052002);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052002);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052002);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052002);
               }
               break;
             }
@@ -283,12 +283,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052003);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052003);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052003);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052003);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052003);
               }
               break;
             }
@@ -303,12 +303,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052004);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052004);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052004);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052004);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052004);
               }
               break;
             }
@@ -322,12 +322,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052005);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052005);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052005);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052005);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052005);
               }
               break;
             }
@@ -339,8 +339,8 @@ struct Index {
                 web_webview.WebCookieManager.fetchCookie('https://www.example.com', invalidCallback);
                 Utils.emitEvent(0, 2026052006);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052006);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052006);
               }
               break;
             }
@@ -358,8 +358,8 @@ struct Index {
                   Utils.emitEvent(0, 2026052007);
                 });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052007);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052007);
               }
               break;
             }
@@ -370,11 +370,11 @@ struct Index {
                 web_webview.WebCookieManager.configCookieSync('', 'a=b');
                 Utils.emitEvent(0, 2026052008);
               } catch (error) {
-                const actualCode = String((error as BusinessError).code);
-                const actualMsg = String((error as BusinessError).message);
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
                 const actualResult = `${actualCode}${actualMsg}`;
                 console.error(`actualResult: ${actualResult}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052008);
+                Utils.emitEvent(error.code, 2026052008);
               }
               break;
             }
@@ -385,11 +385,11 @@ struct Index {
                 web_webview.WebCookieManager.configCookieSync('https://www.example.com', 'invalid_cookie_without_equal');
                 Utils.emitEvent(0, 2026052009);
               } catch (error) {
-                const actualCode = String((error as BusinessError).code);
-                const actualMsg = String((error as BusinessError).message);
+                const actualCode = String(error.code);
+                const actualMsg = String(error.message);
                 const actualResult = `${actualCode}${actualMsg}`;
                 console.error(`actualResult: ${actualResult}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052009);
+                Utils.emitEvent(error.code, 2026052009);
               }
               break;
             }
@@ -403,12 +403,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052010);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052010);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052010);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052010);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052010);
               }
               break;
             }
@@ -422,12 +422,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052011);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052011);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052011);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052011);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052011);
               }
               break;
             }
@@ -439,8 +439,8 @@ struct Index {
                 web_webview.WebCookieManager.configCookie('https://www.example.com', 'a=b', invalidCallback);
                 Utils.emitEvent(0, 2026052012);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052012);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052012);
               }
               break;
             }
@@ -458,8 +458,8 @@ struct Index {
                   Utils.emitEvent(0, 2026052013);
                 });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052013);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052013);
               }
               break;
             }
@@ -477,8 +477,8 @@ struct Index {
                   Utils.emitEvent(0, 2026052014);
                 });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052014);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052014);
               }
               break;
             }
@@ -497,12 +497,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052015);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052015);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052015);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052015);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052015);
               }
               break;
             }
@@ -514,8 +514,8 @@ struct Index {
                 web_webview.WebCookieManager.saveCookieAsync(invalidCallback);
                 Utils.emitEvent(0, 2026052016);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052016);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052016);
               }
               break;
             }
@@ -527,8 +527,8 @@ struct Index {
                 web_webview.WebCookieManager.clearAllCookies(invalidCallback);
                 Utils.emitEvent(0, 2026052017);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052017);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052017);
               }
               break;
             }
@@ -547,12 +547,12 @@ struct Index {
                     Utils.emitEvent(0, 2026052018);
                   })
                   .catch((error) => {
-                    console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                    Utils.emitEvent((error as BusinessError).code, 2026052018);
+                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                    Utils.emitEvent(error.code, 2026052018);
                   });
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052018);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052018);
               }
               break;
             }
@@ -564,8 +564,8 @@ struct Index {
                 web_webview.WebCookieManager.clearSessionCookie(invalidCallback);
                 Utils.emitEvent(0, 2026052019);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052019);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052019);
               }
               break;
             }
@@ -577,8 +577,8 @@ struct Index {
                 this.controller.loadUrl('https://www.example.com', invalidHeaders);
                 Utils.emitEvent(0, 2026052020);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052020);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052020);
               }
               break;
             }
@@ -590,8 +590,8 @@ struct Index {
                 detachedController.loadUrl('https://www.example.com');
                 Utils.emitEvent(0, 2026052021);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052021);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052021);
               }
               break;
             }
@@ -602,8 +602,8 @@ struct Index {
                 this.controller.loadUrl('');
                 Utils.emitEvent(0, 2026052022);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052022);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052022);
               }
               break;
             }
@@ -614,8 +614,8 @@ struct Index {
                 this.controller.loadUrl('resource://rawfile/not_exists.abc');
                 Utils.emitEvent(0, 2026052023);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052023);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052023);
               }
               break;
             }
@@ -627,8 +627,8 @@ struct Index {
                 detachedController.getUserAgent();
                 Utils.emitEvent(0, 2026052024);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052024);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052024);
               }
               break;
             }
@@ -640,8 +640,8 @@ struct Index {
                 this.controller.setCustomUserAgent(invalidUserAgent);
                 Utils.emitEvent(0, 2026052025);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052025);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052025);
               }
               break;
             }
@@ -653,8 +653,8 @@ struct Index {
                 detachedController.setCustomUserAgent('custom-agent');
                 Utils.emitEvent(0, 2026052026);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052026);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052026);
               }
               break;
             }
@@ -666,8 +666,8 @@ struct Index {
                 detachedController.enableIntelligentTrackingPrevention(true);
                 Utils.emitEvent(0, 2026052027);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052027);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052027);
               }
               break;
             }
@@ -679,8 +679,8 @@ struct Index {
                 this.controller.enableIntelligentTrackingPrevention(invalidEnable);
                 Utils.emitEvent(0, 2026052028);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052028);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052028);
               }
               break;
             }
@@ -692,8 +692,8 @@ struct Index {
                 detachedController.isIntelligentTrackingPreventionEnabled();
                 Utils.emitEvent(0, 2026052029);
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
-                Utils.emitEvent((error as BusinessError).code, 2026052029);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
+                Utils.emitEvent(error.code, 2026052029);
               }
               break;
             }
@@ -712,7 +712,7 @@ struct Index {
                 this.controller.setDownloadDelegate(delegate);
                 this.controller.startDownload('https://www.example.com');
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(false, 2026052030);
               }
               break;
@@ -732,7 +732,7 @@ struct Index {
                 this.controller.setDownloadDelegate(delegate);
                 this.controller.startDownload('https://www.example.com');
               } catch (error) {
-                console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(false, 2026052031);
               }
               break;
@@ -804,7 +804,7 @@ struct Index {
             console.info("isUserAgentClientHintsEnabled:", enabled);
             webview.WebviewController.setUserAgentClientHintsEnabled(false);
           } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+            console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
           }
         })
     }
