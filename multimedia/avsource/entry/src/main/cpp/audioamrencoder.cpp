@@ -28,617 +28,275 @@ static bool IsAmrLibAvailable()
     return access(AMR_LIB_PATH, F_OK) == 0;
 }
 
-// AMR-NB: fixed 8000 Hz, mono
-#define AMRNB_SAMPLE_RATE       (8000)
-#define AMRNB_SAMPLE_RATE_INVALID_LOW  (7999)
-#define AMRNB_SAMPLE_RATE_INVALID_HIGH (8001)
+#define AMRNB_RATE   (8000)
+#define AMRWB_RATE   (16000)
+#define CHANNEL_MONO (1)
 
-// AMR-WB: fixed 16000 Hz, mono
-#define AMRWB_SAMPLE_RATE       (16000)
-#define AMRWB_SAMPLE_RATE_INVALID_LOW  (15999)
-#define AMRWB_SAMPLE_RATE_INVALID_HIGH (16001)
-
-// Channel counts
-#define CHANNEL_MONO   (1)
-#define CHANNEL_INVALID_ZERO  (0)
-#define CHANNEL_INVALID_STEREO (2)
-
-// AMR-NB bitrates (bps)
-#define AMRNB_BITRATE_MR475  (4750)
-#define AMRNB_BITRATE_MR515  (5150)
-#define AMRNB_BITRATE_MR59   (5900)
-#define AMRNB_BITRATE_MR67   (6700)
-#define AMRNB_BITRATE_MR74   (7400)
-#define AMRNB_BITRATE_MR795  (7950)
-#define AMRNB_BITRATE_MR102  (10200)
-#define AMRNB_BITRATE_MR122  (12200)
-
-// AMR-WB bitrates (bps)
-#define AMRWB_BITRATE_6600   (6600)
-#define AMRWB_BITRATE_8850   (8850)
-#define AMRWB_BITRATE_12650  (12650)
-#define AMRWB_BITRATE_14250  (14250)
-#define AMRWB_BITRATE_15850  (15850)
-#define AMRWB_BITRATE_18250  (18250)
-#define AMRWB_BITRATE_19850  (19850)
-#define AMRWB_BITRATE_23050  (23050)
-#define AMRWB_BITRATE_23850  (23850)
-
-#define BITRATE_INVALID_LOW  (4749)
-#define BITRATE_INVALID_HIGH (12201)
-
-using namespace std;
-
-static bool IsSupportAmrNb()
+static napi_value NapiReturn(napi_env env, int32_t val)
 {
-    OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
-    return capability != nullptr;
+    napi_value r = nullptr;
+    napi_create_int32(env, val, &r);
+    return r;
 }
 
-static bool IsSupportAmrNbEncoder()
+static napi_value ReturnIfNoLib(napi_env env)
 {
-    OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
-    return capability != nullptr;
+    if (!IsAmrLibAvailable()) {
+        return NapiReturn(env, SUCCESS);
+    }
+    return nullptr;
 }
 
-static bool IsSupportAmrWb()
+static int32_t ConfigCheck(OH_AVCodec *codec, int32_t sampleRate, int32_t channel, int64_t bitrate)
 {
-    OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
-    return capability != nullptr;
+    OH_AVFormat *fmt = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(fmt, OH_MD_KEY_AUD_SAMPLE_RATE, sampleRate);
+    OH_AVFormat_SetIntValue(fmt, OH_MD_KEY_AUD_CHANNEL_COUNT, channel);
+    if (bitrate > 0) {
+        OH_AVFormat_SetLongValue(fmt, OH_MD_KEY_BITRATE, bitrate);
+    }
+    OH_AVErrCode ret = OH_AudioCodec_Configure(codec, fmt);
+    OH_AudioCodec_Reset(codec);
+    OH_AVFormat_Destroy(fmt);
+    return (ret == AV_ERR_OK) ? 0 : 1;
 }
 
-static bool IsSupportAmrWbEncoder()
+static bool IsSupportCodec(const char *mime, bool isEncoder)
 {
-    OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
-    return capability != nullptr;
+    return OH_AVCodec_GetCapability(mime, isEncoder) != nullptr;
 }
 
-// ── AMR-NB Decoder: Sample Rate ───────────────────────────────────
 static napi_value AmrNbDecoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        // valid: 8000
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 7999
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE_INVALID_LOW);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 8001
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE_INVALID_HIGH);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRNB_RATE, CHANNEL_MONO, 0) != 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE - 1, CHANNEL_MONO, 0) == 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE + 1, CHANNEL_MONO, 0) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-NB Decoder: Channel Count ─────────────────────────────────
 static napi_value AmrNbDecoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE);
-        // valid: mono
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 0
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_INVALID_ZERO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: stereo
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_INVALID_STEREO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRNB_RATE, CHANNEL_MONO, 0) != 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE, 0, 0) == 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE, 2, 0) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-NB Encoder: Bitrate ───────────────────────────────────────
 static napi_value AmrNbEncoderBitrateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        int64_t br[] = {4750, 5150, 5900, 6700, 7400, 7950, 10200, 12200};
+        for (auto b : br) {
+            if (ConfigCheck(codec, AMRNB_RATE, CHANNEL_MONO, b) != 0) err++;
         }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        int64_t validBitrates[] = {AMRNB_BITRATE_MR475, AMRNB_BITRATE_MR515, AMRNB_BITRATE_MR59,
-                                   AMRNB_BITRATE_MR67,  AMRNB_BITRATE_MR74,  AMRNB_BITRATE_MR795,
-                                   AMRNB_BITRATE_MR102, AMRNB_BITRATE_MR122};
-        for (auto br : validBitrates) {
-            OH_AVFormat *format = OH_AVFormat_Create();
-            OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE);
-            OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-            OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, br);
-            ret = OH_AudioCodec_Configure(codec, format);
-            if (ret != AV_ERR_OK) {
-                errNum++;
-            }
-            OH_AudioCodec_Reset(codec);
-            OH_AVFormat_Destroy(format);
-        }
-        // invalid bitrate
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, BITRATE_INVALID_LOW);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (ConfigCheck(codec, AMRNB_RATE, CHANNEL_MONO, 4749) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-NB Encoder: Sample Rate Validation ────────────────────────
 static napi_value AmrNbEncoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        // valid: 8000
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, AMRNB_BITRATE_MR122);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 7999
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE_INVALID_LOW);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 8001
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRNB_SAMPLE_RATE_INVALID_HIGH);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRNB_RATE, CHANNEL_MONO, 12200) != 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE - 1, CHANNEL_MONO, 12200) == 0) err++;
+        if (ConfigCheck(codec, AMRNB_RATE + 1, CHANNEL_MONO, 12200) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-WB Decoder: Sample Rate ───────────────────────────────────
 static napi_value AmrWbDecoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        // valid: 16000
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 15999
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE_INVALID_LOW);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 16001
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE_INVALID_HIGH);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRWB_RATE, CHANNEL_MONO, 0) != 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE - 1, CHANNEL_MONO, 0) == 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE + 1, CHANNEL_MONO, 0) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-WB Decoder: Channel Count ─────────────────────────────────
 static napi_value AmrWbDecoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE);
-        // valid: mono
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 0
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_INVALID_ZERO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: stereo
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_INVALID_STEREO);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRWB_RATE, CHANNEL_MONO, 0) != 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE, 0, 0) == 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE, 2, 0) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-WB Encoder: Bitrate ───────────────────────────────────────
 static napi_value AmrWbEncoderBitrateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        int64_t validBitrates[] = {AMRWB_BITRATE_6600,  AMRWB_BITRATE_8850,  AMRWB_BITRATE_12650,
-                                   AMRWB_BITRATE_14250, AMRWB_BITRATE_15850, AMRWB_BITRATE_18250,
-                                   AMRWB_BITRATE_19850, AMRWB_BITRATE_23050, AMRWB_BITRATE_23850};
-        for (auto br : validBitrates) {
-            OH_AVFormat *format = OH_AVFormat_Create();
-            OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE);
-            OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-            OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, br);
-            ret = OH_AudioCodec_Configure(codec, format);
-            if (ret != AV_ERR_OK) {
-                errNum++;
-            }
-            OH_AudioCodec_Reset(codec);
-            OH_AVFormat_Destroy(format);
-        }
-        if (errNum == 0) {
-            backParam = SUCCESS;
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        int64_t br[] = {6600, 8850, 12650, 14250, 15850, 18250, 19850, 23050, 23850};
+        for (auto b : br) {
+            if (ConfigCheck(codec, AMRWB_RATE, CHANNEL_MONO, b) != 0) err++;
         }
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── AMR-WB Encoder: Sample Rate Validation ────────────────────────
 static napi_value AmrWbEncoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
-        if (codec == nullptr) {
-            napi_value r = nullptr;
-            napi_create_int32(env, FAIL, &r);
-            return r;
-        }
-        int32_t errNum = 0;
-        OH_AVErrCode ret;
-        // valid: 16000
-        OH_AVFormat *format = OH_AVFormat_Create();
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE);
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, CHANNEL_MONO);
-        OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, AMRWB_BITRATE_23850);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret != AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 15999
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE_INVALID_LOW);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AudioCodec_Reset(codec);
-        // invalid: 16001
-        OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, AMRWB_SAMPLE_RATE_INVALID_HIGH);
-        ret = OH_AudioCodec_Configure(codec, format);
-        if (ret == AV_ERR_OK) {
-            errNum++;
-        }
-        OH_AVFormat_Destroy(format);
-        if (errNum == 0) {
-            backParam = SUCCESS;
-        }
+        if (codec == nullptr) return NapiReturn(env, FAIL);
+        int32_t err = 0;
+        if (ConfigCheck(codec, AMRWB_RATE, CHANNEL_MONO, 23850) != 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE - 1, CHANNEL_MONO, 23850) == 0) err++;
+        if (ConfigCheck(codec, AMRWB_RATE + 1, CHANNEL_MONO, 23850) == 0) err++;
         OH_AudioCodec_Destroy(codec);
+        if (err == 0) backParam = SUCCESS;
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true);
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── Create by name checks ─────────────────────────────────────────
 static napi_value AmrNbDecoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrnb");
-        if (codec != nullptr) {
-            OH_AudioCodec_Destroy(codec);
-            backParam = SUCCESS;
-        }
+        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrnb");
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrnb");
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
 static napi_value AmrNbEncoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrNbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_NB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrnb");
-        if (codec != nullptr) {
-            OH_AudioCodec_Destroy(codec);
-            backParam = SUCCESS;
-        }
+        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrnb");
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrnb");
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
 static napi_value AmrWbDecoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWb()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, false)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrwb");
-        if (codec != nullptr) {
-            OH_AudioCodec_Destroy(codec);
-            backParam = SUCCESS;
-        }
+        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrwb");
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Amrwb");
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
 static napi_value AmrWbEncoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
-    if (!IsAmrLibAvailable()) {
-        napi_value r = nullptr;
-        napi_create_int32(env, SUCCESS, &r);
-        return r;
-    }
+    napi_value early = ReturnIfNoLib(env);
+    if (early != nullptr) return early;
     int backParam = FAIL;
-    if (IsSupportAmrWbEncoder()) {
+    if (IsSupportCodec(OH_AVCODEC_MIMETYPE_AUDIO_AMR_WB, true)) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrwb");
-        if (codec != nullptr) {
-            OH_AudioCodec_Destroy(codec);
-            backParam = SUCCESS;
-        }
+        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
     } else {
-        OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrwb");
-        if (codec == nullptr) {
-            backParam = SUCCESS;
-        }
+        OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Amrwb");
+        if (c == nullptr) backParam = SUCCESS;
     }
-    napi_value result = nullptr;
-    napi_create_int32(env, backParam, &result);
-    return result;
+    return NapiReturn(env, backParam);
 }
 
-// ── NAPI Module Registration ──────────────────────────────────────
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
