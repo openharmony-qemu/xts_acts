@@ -32,7 +32,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0100
      * @tc.desc Verify buffer.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -46,7 +46,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0200
      * @tc.desc Verify buffer.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -60,7 +60,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0300
      * @tc.desc Verify buffer.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -74,7 +74,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0400
      * @tc.desc Verify buffer.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -90,7 +90,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0500
      * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -104,7 +104,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0600
      * @tc.desc Verify buffer.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -118,7 +118,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0700
      * @tc.desc Verify buffer.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -132,7 +132,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0800
      * @tc.desc Verify buffer.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -146,7 +146,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_000900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0900
      * @tc.desc Verify buffer.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -160,7 +160,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1000
      * @tc.desc Verify buffer.resize(-1) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -178,7 +178,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1100
      * @tc.desc Verify buffer.resize(7) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -196,7 +196,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1200
      * @tc.desc Verify buffer.resize(2147483647) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -214,7 +214,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1300
      * @tc.desc Verify buffer.resize(Utils.nullAsInt()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -232,7 +232,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1400
      * @tc.desc Verify buffer.resize(Utils.undefinedAsInt()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -250,7 +250,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1500
      * @tc.desc Verify buffer.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -264,7 +264,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1600
      * @tc.desc Verify buffer.resize(Utils.stringAsInt('4')) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -282,7 +282,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1700
      * @tc.desc Verify buffer.resize(Utils.booleanAsInt(true)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -300,7 +300,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1800
      * @tc.desc Verify buffer.resize(Utils.castToInt(badObj)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -319,7 +319,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_001900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1900
      * @tc.desc Verify buffer.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -333,7 +333,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2000
      * @tc.desc Verify buffer.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -347,7 +347,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2100
      * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -361,7 +361,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2200
      * @tc.desc Verify buffer.byteLength equals 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -375,7 +375,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2300
      * @tc.desc Verify buffer.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -395,7 +395,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2400
      * @tc.desc Verify buffer.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -411,7 +411,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2500
      * @tc.desc Verify result is undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -426,7 +426,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2600
      * @tc.desc Verify ret1 is undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -443,7 +443,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2700
      * @tc.desc Verify buffer.byteLength equals 7
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -457,7 +457,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2800
      * @tc.desc Verify buffer.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -471,7 +471,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_002900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_2900
      * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -485,7 +485,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3000
      * @tc.desc Verify buffer.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -501,7 +501,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3100
      * @tc.desc Verify buffer.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -520,7 +520,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3200
      * @tc.desc Verify buffer.byteLength equals 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -536,7 +536,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3300
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -555,7 +555,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3400
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -573,7 +573,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3500
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -590,7 +590,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3600
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -610,7 +610,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3700
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -629,7 +629,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3800
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -647,7 +647,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_003900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3900
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -666,7 +666,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4000
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -687,7 +687,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4100
      * @tc.desc Verify TypedArray view bytes match expected values after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -706,7 +706,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4200
      * @tc.desc Verify buffer.resize(6) throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -724,7 +724,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4300
      * @tc.desc Verify buffer.resize(4) throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -742,7 +742,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4400
      * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -758,7 +758,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4500
      * @tc.desc Verify buffer.resize(-100) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -776,7 +776,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4600
      * @tc.desc Verify buffer.resize(1000) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -794,7 +794,7 @@ export default function arrayBufferResizeTest(): void {
 
     /**
      * @tc.name testArrayBufferResize0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_004700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4700
      * @tc.desc Verify buffer.resize(-2147483648) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
