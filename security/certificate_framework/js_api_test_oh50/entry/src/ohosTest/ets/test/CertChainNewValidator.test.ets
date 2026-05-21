@@ -270,7 +270,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -301,7 +301,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -331,7 +331,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]),
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -362,7 +362,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -393,7 +393,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -423,7 +423,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509Cert, validatorParams);
+          await validator.validateCert(leafX509Cert, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -452,7 +452,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let userId: Uint8Array = new Uint8Array(129);
           validatorParams.userId = userId;
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -483,7 +483,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(undefined, validatorParams);
+          await validator.validateCert(undefined, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -505,7 +505,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
         try {
           let algName: string = "PKIX";
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, undefined);
+          await validator.validateCert(leafX509CertGm, undefined);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -535,7 +535,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafExpiredX509CertGm, validatorParams);
+          await validator.validateCert(leafExpiredX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -565,7 +565,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ])
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafYetX509CertGm, validatorParams);
+          await validator.validateCert(leafYetX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -595,7 +595,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]),
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafYetX509CertGm, validatorParams);
+          await validator.validateCert(leafYetX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -623,11 +623,11 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
               0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
               0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
             ]),
-            validateDate: true,
+            validateCertDate: true,
             date: "20260408012032Z" // YYYYMMDDHHMMSSZ
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -658,7 +658,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "490408012032Z" // YYMMDDHHMMSSZ - RFC5280-4.1.2.5.1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -689,7 +689,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "500408012032Z" // YYMMDDHHMMSSZ - 不符合规范要求，RFC5280-4.1.2.5.1，对比用例1600
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -720,7 +720,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: "20490408012032Z" // YYYYMMDDHHMMSSZ - 符合规范要求，RFC5280-4.1.2.5.1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -751,7 +751,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: ["user1.example.com", "user2.example.com"] // 含匹配和不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -782,7 +782,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: ["user2.example.com", "user1.example.cn", ".*", "*", "*.*.*"] // 不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -813,7 +813,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin3@example.com"] // 不匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -844,7 +844,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin1@example.com", "admin2@example.com"] // 数组长度大于1，规格是1
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -875,7 +875,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: ["admin2@example.com"] // 匹配
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -902,7 +902,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: undefined
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -927,7 +927,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             trustedCerts: [rootX509Cert, interX509Cert],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -953,7 +953,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interX509Cert]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -979,7 +979,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [rootX509Cert, interX509Cert]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1006,7 +1006,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1037,7 +1037,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: [cert.KeyUsageType.KEYUSAGE_DECIPHER_ONLY]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafKeyUsageOnlyDecryptX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafKeyUsageOnlyDecryptX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1071,7 +1071,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1102,7 +1102,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: [cert.KeyUsageType.KEYUSAGE_CRL_SIGN]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafKeyUsageOnlyDecryptX509CertGm, validatorParams);
+        await validator.validateCert(leafKeyUsageOnlyDecryptX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1133,7 +1133,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: []
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1175,7 +1175,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1206,7 +1206,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           keyUsage: undefined
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1237,7 +1237,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             keyUsage: [0x8000]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1268,7 +1268,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_HAS_EXPIRED]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafExpiredX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1299,7 +1299,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_NOT_YET_VALID]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafYetX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1331,7 +1331,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: [cert.CertResult.ERR_CERT_HOSTNAME_MISMATCH] // 仅支持特定场景错误码
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1366,7 +1366,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafExpiredX509CertGm, validatorParams);
+        await validator.validateCert(leafExpiredX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1397,7 +1397,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: []
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafExpiredX509CertGm, validatorParams);
+        await validator.validateCert(leafExpiredX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1409,7 +1409,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_3900
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_3900
-     * @tc.desc   完整校验，设置过期待校验实体证书，设置validateDate为false的功能测试
+     * @tc.desc   完整校验，设置过期待校验实体证书，设置validateCertDate为false的功能测试
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -1425,10 +1425,10 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
           ]),
-          validateDate: false
+          validateCertDate: false
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        let chainResult: cert.CertValidationResult = await validator.validate(leafExpiredX509CertGm, validatorParams);
+        let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm, validatorParams);
         expect(chainResult.certChain.length).assertEqual(3);
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1461,7 +1461,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1495,7 +1495,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ])
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1530,7 +1530,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           hostnames: hostnamesArray
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1562,7 +1562,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           hostnames: [longHostname]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1594,7 +1594,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           emailAddresses: [longEmail]
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1625,7 +1625,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20360406132433A"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1656,7 +1656,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20241231Z"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1687,7 +1687,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           date: "20241231235959000Z"
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1722,7 +1722,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           ignoreErrs: ignoreErrsArray
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-        await validator.validate(leafX509CertGm, validatorParams);
+        await validator.validateCert(leafX509CertGm, validatorParams);
         expect(null).assertFail();
       } catch (error) {
         console.error(`"${error}", error code: ${error.code}`);
@@ -1756,7 +1756,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1782,7 +1782,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interNoCertSignX509CertGm]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1812,7 +1812,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1838,7 +1838,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interDefaultX509CertGm]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1869,7 +1869,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             date: ""
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1896,7 +1896,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafSystemCaX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafSystemCaX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1924,7 +1924,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafSystemCaX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafSystemCaX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
           let signAlgName: string = chainResult.certChain[0].getSignatureAlgName();
           expect(signAlgName).assertEqual("SM3withSM2");
@@ -1961,7 +1961,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafExpiredX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -1988,7 +1988,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2015,7 +2015,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(1);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2042,7 +2042,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm2, validatorParams);
+          await validator.validateCert(leafX509CertGm2, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2069,7 +2069,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm2, validatorParams);
+          await validator.validateCert(leafX509CertGm2, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2095,7 +2095,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             allowDownloadIntermediateCa: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509Cert, validatorParams);
+          await validator.validateCert(leafX509Cert, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2119,14 +2119,14 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert],
             untrustedCerts: [interExpiredX509Cert],
-            validateDate: true,
+            validateCertDate: true,
             ignoreErrs: [
               cert.CertResult.ERR_CERT_NOT_YET_VALID,
               cert.CertResult.ERR_CERT_HAS_EXPIRED
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafYetX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2150,13 +2150,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert],
             untrustedCerts: [interExpiredX509Cert],
-            validateDate: false,
+            validateCertDate: false,
             keyUsage: [
               cert.KeyUsageType.KEYUSAGE_ENCIPHER_ONLY // 只对叶子证书作用，中间证书密钥没有加密用途
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafYetX509Cert, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafYetX509Cert, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2186,7 +2186,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2219,7 +2219,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2250,7 +2250,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2280,7 +2280,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2310,7 +2310,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2343,7 +2343,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2374,7 +2374,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2405,7 +2405,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2441,7 +2441,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2474,7 +2474,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2504,7 +2504,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2538,7 +2538,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2572,7 +2572,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2607,7 +2607,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2637,7 +2637,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             }
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2663,7 +2663,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interCaCertGm], // 另一本中间证书 1e276aec.0
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafCaCertGm, validatorParams);
+          await validator.validateCert(leafCaCertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2688,7 +2688,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interDefaultX509CertGm],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2714,7 +2714,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             untrustedCerts: [interDefaultX509CertGm],
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2741,7 +2741,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             partialChain: true
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafDefaultX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(2);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2772,7 +2772,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             emailAddresses: [""] // 空字符串
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2803,7 +2803,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             hostnames: [""] // 空字符串
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafX509CertGm, validatorParams);
+          await validator.validateCert(leafX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2827,10 +2827,10 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCaCertGm],
             untrustedCerts: [interDefaultX509CertGm, rootDefaultX509CertGm],
-            validateDate: false
+            validateCertDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafDefaultX509CertGm, validatorParams);
+          await validator.validateCert(leafDefaultX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2854,10 +2854,10 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
-            validateDate: false
+            validateCertDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          await validator.validate(leafUnkownCriticalExtensionX509CertGm, validatorParams);
+          await validator.validateCert(leafUnkownCriticalExtensionX509CertGm, validatorParams);
           expect(null).assertFail();
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
@@ -2881,13 +2881,13 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm],
             untrustedCerts: [interDefaultX509CertGm],
-            validateDate: false,
+            validateCertDate: false,
             ignoreErrs: [
               cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION
             ]
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
-          let chainResult: cert.CertValidationResult = await validator.validate(leafUnkownCriticalExtensionX509CertGm, validatorParams);
+          let chainResult: cert.CertValidationResult = await validator.validateCert(leafUnkownCriticalExtensionX509CertGm, validatorParams);
           expect(chainResult.certChain.length).assertEqual(3);
         } catch (error) {
           console.error(`"${error}", error code: ${error.code}`);
