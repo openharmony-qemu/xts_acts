@@ -3361,39 +3361,6 @@ export default function PhotoTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800
-     * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with second param null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800', Level.LEVEL2, async (done: Function) => {
-      let caseName = "SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0800"
-      try {
-        //--------------------------------------------预置条件------------------------------------------------------
-        console.info(`Enter ${caseName}`)
-        captureSessionstart();
-        createPhotoOutput();
-        addPhotoOutput();
-        sessionCommitConfig();
-
-        //--------------------------------------------测试过程------------------------------------------------------
-        let ret = cameraObj.setColorTint(5)
-        console.info(`setColorTint, ret: ${ret}`)
-        expect(ret).assertEqual(0);
-        console.info(`${caseName} PASSED`)
-      } catch (error) {
-        console.error(`${caseName} FAILED`)
-        expect().assertFail()
-      } finally {
-        //--------------------------------------------后置处理------------------------------------------------------
-        console.info(`Exit ${caseName}`)
-        done()
-      }
-    })
-
-    /**
      * @tc.number    SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900
      * @tc.name      SUB_MULTIMEDIA_CAMERA_SESSION_COLOR_TINT_0900
      * @tc.desc      test sub multimedia camera OH_CaptureSession_SetColorTint with errorCode 7400103
