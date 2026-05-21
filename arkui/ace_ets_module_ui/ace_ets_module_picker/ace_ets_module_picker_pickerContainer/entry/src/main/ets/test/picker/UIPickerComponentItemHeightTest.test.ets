@@ -60,7 +60,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0100
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0100
      * @tc.name UIPickerComponentItemHeightTest_0100
      * @tc.desc test itemHeight with default value
      * @tc.level: Level 2
@@ -81,7 +81,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0200
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0200
      * @tc.name UIPickerComponentItemHeightTest_0200
      * @tc.desc test itemHeight with LengthMetrics vp 40
      * @tc.level: Level 2
@@ -106,7 +106,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0300
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0300
      * @tc.name UIPickerComponentItemHeightTest_0300
      * @tc.desc test itemHeight with LengthMetrics vp 50
      * @tc.level: Level 2
@@ -131,7 +131,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0400
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0400
      * @tc.name UIPickerComponentItemHeightTest_0400
      * @tc.desc test itemHeight with LengthMetrics vp 64
      * @tc.level: Level 2
@@ -156,7 +156,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0500
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0500
      * @tc.name UIPickerComponentItemHeightTest_0500
      * @tc.desc test itemHeight with LengthMetrics px 40
      * @tc.level: Level 2
@@ -181,7 +181,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0600
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0600
      * @tc.name UIPickerComponentItemHeightTest_0600
      * @tc.desc test itemHeight with LengthMetrics fp 20
      * @tc.level: Level 2
@@ -206,7 +206,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0700
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0700
      * @tc.name UIPickerComponentItemHeightTest_0700
      * @tc.desc test itemHeight with less than min value (30vp)
      * @tc.level: Level 2
@@ -231,7 +231,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0800
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0800
      * @tc.name UIPickerComponentItemHeightTest_0800
      * @tc.desc test itemHeight with greater than max value (70vp)
      * @tc.level: Level 2
@@ -256,7 +256,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_0900
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_0900
      * @tc.name UIPickerComponentItemHeightTest_0900
      * @tc.desc test itemHeight with undefined
      * @tc.level: Level 2
@@ -281,7 +281,7 @@ export default function UIPickerComponentItemHeightTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentItemHeightTest_1000
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_ITEMHEIGHT_1000
      * @tc.name UIPickerComponentItemHeightTest_1000
      * @tc.desc test itemHeight with null
      * @tc.level: Level 2

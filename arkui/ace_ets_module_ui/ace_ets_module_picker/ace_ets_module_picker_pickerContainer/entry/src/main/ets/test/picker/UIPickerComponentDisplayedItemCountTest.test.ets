@@ -60,7 +60,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0100
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0100
      * @tc.name UIPickerComponentDisplayedItemCountTest_0100
      * @tc.desc test displayedItemCount with default value
      * @tc.level: Level 2
@@ -81,7 +81,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0200
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0200
      * @tc.name UIPickerComponentDisplayedItemCountTest_0200
      * @tc.desc test displayedItemCount with number 2 (even, should become 3)
      * @tc.level: Level 2
@@ -106,7 +106,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0300
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0300
      * @tc.name UIPickerComponentDisplayedItemCountTest_0300
      * @tc.desc test displayedItemCount with number 3
      * @tc.level: Level 2
@@ -131,7 +131,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0400
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0400
      * @tc.name UIPickerComponentDisplayedItemCountTest_0400
      * @tc.desc test displayedItemCount with number 5
      * @tc.level: Level 2
@@ -156,7 +156,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0500
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0500
      * @tc.name UIPickerComponentDisplayedItemCountTest_0500
      * @tc.desc test displayedItemCount with number 7
      * @tc.level: Level 2
@@ -181,7 +181,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0600
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0600
      * @tc.name UIPickerComponentDisplayedItemCountTest_0600
      * @tc.desc test displayedItemCount with number 9
      * @tc.level: Level 2
@@ -206,7 +206,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0700
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0700
      * @tc.name UIPickerComponentDisplayedItemCountTest_0700
      * @tc.desc test displayedItemCount with even number 4 (should become 5)
      * @tc.level: Level 2
@@ -231,7 +231,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0800
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0800
      * @tc.name UIPickerComponentDisplayedItemCountTest_0800
      * @tc.desc test displayedItemCount with even number 8 (should become 9)
      * @tc.level: Level 2
@@ -256,7 +256,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_0900
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_0900
      * @tc.name UIPickerComponentDisplayedItemCountTest_0900
      * @tc.desc test displayedItemCount with decimal 3.5 (should floor to 3)
      * @tc.level: Level 2
@@ -281,7 +281,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_1000
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_1000
      * @tc.name UIPickerComponentDisplayedItemCountTest_1000
      * @tc.desc test displayedItemCount with less than min (1, should use default 7)
      * @tc.level: Level 2
@@ -306,7 +306,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_1100
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_1100
      * @tc.name UIPickerComponentDisplayedItemCountTest_1100
      * @tc.desc test displayedItemCount with greater than max (10, should use default 7)
      * @tc.level: Level 2
@@ -331,7 +331,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_1200
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_1200
      * @tc.name UIPickerComponentDisplayedItemCountTest_1200
      * @tc.desc test displayedItemCount with undefined
      * @tc.level: Level 2
@@ -356,7 +356,7 @@ export default function UIPickerComponentDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number UIPickerComponentDisplayedItemCountTest_1300
+     * @tc.number SUB_ARKUI_UIPICKER_COMPONENT_DISPLAYEDITEMCOUNT_1300
      * @tc.name UIPickerComponentDisplayedItemCountTest_1300
      * @tc.desc test displayedItemCount with null
      * @tc.level: Level 2
