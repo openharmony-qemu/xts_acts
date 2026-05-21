@@ -1011,7 +1011,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeySmartClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0101
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0200
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1031,7 +1031,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeySmartPointClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0201
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1062,7 +1062,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1082,7 +1082,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingWithPointDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1113,7 +1113,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1143,7 +1143,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0700
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, DOUBLE_CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
