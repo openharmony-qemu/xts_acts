@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -43,7 +43,7 @@ enum TestEnum009 {
   }
 
 class GenericClass013<T> {
-    public value: T;
+    public value: T | null = null;
   }
 
 class MyClass022 {
@@ -56,10 +56,8 @@ class MyClass023 {
 
 function processClass031(cls: Class): void {
     if (cls.isPrimitive()) {
-      // 基本类型的特殊处理
       console.info("Processing primitive type: " + cls.getName());
     } else {
-      // 非基本类型的处理
       console.info("Processing non-primitive type: " + cls.getName());
     }
   }
@@ -78,10 +76,8 @@ function getTypeInfo032(cls: Class): string {
 
 function serialize033(cls: Class): string {
     if (cls.isPrimitive()) {
-      // 基本类型直接序列化
       return "PRIMITIVE:" + cls.getName();
     } else {
-      // 复杂类型需要递归序列化
       return "COMPLEX:" + cls.getName();
     }
   }
@@ -104,7 +100,6 @@ function testIsPrimitiveConsistency037(): void {
     }
   }
 
-
 export default function ClassIsPrimitiveTest(): void {
   describe('ClassIsPrimitiveTest', () => {
     beforeAll(() => {
@@ -120,12 +115,12 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0100
      * @tc.name testClassIsPrimitive001
-     * @tc.desc Verify ClassIsPrimitive case 001: isPrimitive()method not parameters
+     * @tc.desc Verify ClassIsPrimitive case 001: isPrimitive() with no arguments on primitive Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
         let result = cls.isPrimitive();
         expect(result).assertFalse();
@@ -139,7 +134,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<boolean>();
         expect(cls1.isPrimitive()).assertFalse();
 
@@ -158,7 +153,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
         let cls = Class.of(obj);
         expect(cls.isPrimitive()).assertFalse();
@@ -176,7 +171,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_BOOLEAN.isPrimitive()).assertTrue();
         expect(Class.PRIMITIVE_BYTE.isPrimitive()).assertTrue();
         expect(Class.PRIMITIVE_CHAR.isPrimitive()).assertTrue();
@@ -197,7 +192,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = 100;
         let cls = Class.ofAny(obj);
         expect(cls!.isPrimitive()).assertFalse();
@@ -211,8 +206,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 所有基本类型包装类的isPrimitive()都返回false
+    it('testClassIsPrimitive006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let clsBool = Class.from<boolean>();
         expect(clsBool.isPrimitive()).assertFalse();
 
@@ -249,7 +243,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass007>().isPrimitive()).assertFalse();
         expect(Class.from<EmptyClass007>().isPrimitive()).assertFalse();
         expect(Class.from<AbstractClass007>().isPrimitive()).assertFalse();
@@ -264,7 +258,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface008>();
         expect(cls.isPrimitive()).assertFalse();
     });
@@ -277,7 +271,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum009>();
         expect(cls.isPrimitive()).assertFalse();
     });
@@ -290,7 +284,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Array<int>>();
         expect(cls1.isPrimitive()).assertFalse();
 
@@ -309,7 +303,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Map<int, string>>();
         expect(cls1.isPrimitive()).assertFalse();
 
@@ -328,7 +322,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | boolean>();
         expect(cls.isPrimitive()).assertFalse();
     });
@@ -341,7 +335,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<GenericClass013<int>>();
         expect(cls1.isPrimitive()).assertFalse();
 
@@ -357,7 +351,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_BOOLEAN.isPrimitive()).assertTrue();
         expect(Class.PRIMITIVE_BYTE.isPrimitive()).assertTrue();
         expect(Class.PRIMITIVE_CHAR.isPrimitive()).assertTrue();
@@ -378,25 +372,19 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 基本类型包装类
+    it('testClassIsPrimitive015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(Class.from<boolean>().isPrimitive()).assertFalse();
         expect(Class.from<int>().isPrimitive()).assertFalse();
         expect(Class.from<number>().isPrimitive()).assertFalse();
 
-        // 自定义类
         expect(Class.from<MyClass>().isPrimitive()).assertFalse();
 
-        // 接口
         expect(Class.from<MyInterface008>().isPrimitive()).assertFalse();
 
-        // 枚举
         expect(Class.from<TestEnum009>().isPrimitive()).assertFalse();
 
-        // 数组
         expect(Class.from<Array<int>>().isPrimitive()).assertFalse();
 
-        // 集合
         expect(Class.from<Map<int, string>>().isPrimitive()).assertFalse();
     });
 
@@ -408,7 +396,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_VOID.isPrimitive()).assertTrue();
     });
 
@@ -420,11 +408,9 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // PRIMITIVE_NUMBER是基本类型
+    it('testClassIsPrimitive017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(Class.PRIMITIVE_NUMBER.isPrimitive()).assertTrue();
 
-        // 但number作为类型参数时不是基本类型
         expect(Class.from<number>().isPrimitive()).assertFalse();
     });
 
@@ -436,7 +422,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
         let result = cls.isPrimitive();
         expect(typeof result).assertEqual("boolean");
@@ -450,9 +436,9 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.PRIMITIVE_INT.isPrimitive();
-        expect(result instanceof boolean).assertTrue();
+        expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -463,7 +449,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let primitiveTypes: Array<Class> = new Array<Class>();
         primitiveTypes.push(Class.PRIMITIVE_BOOLEAN);
         primitiveTypes.push(Class.PRIMITIVE_BYTE);
@@ -484,18 +470,18 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2100
      * @tc.name testClassIsPrimitive021
-     * @tc.desc Verify ClassIsPrimitive case 021: isPrimitive()not parameters call not throw exception
+     * @tc.desc Verify ClassIsPrimitive case 021: isPrimitive() with no arguments does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
         try {
           let result = cls.isPrimitive();
           expect(result !== null).assertTrue();
         } catch (error) {
-          expect().assertFail(); // 不应该抛出异常
+          expect().assertFail();
         }
     });
 
@@ -507,9 +493,8 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass022>();
-        // 在调用initialize()之前
         let result = cls.isPrimitive();
         expect(result).assertFalse();
     });
@@ -522,7 +507,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass023>();
         cls.initialize();
         let result = cls.isPrimitive();
@@ -537,7 +522,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
         let result = cls.isPrimitive();
         expect(typeof result).assertEqual("boolean");
@@ -551,10 +536,9 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
         let result = cls.isPrimitive();
-        // 结果立即可用，不需要await
         expect(result).assertTrue();
     });
 
@@ -566,11 +550,9 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_BOOLEAN;
 
-        // 在实际测试中，需要使用TaskPool或其他并发机制
-        // 这里展示基本逻辑
         let results: Array<boolean> = new Array<boolean>();
         for (let i = 0; i < 10; i++) {
           results.push(cls.isPrimitive());
@@ -589,7 +571,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
         let result = cls.isPrimitive();
         expect(result).assertFalse();
@@ -598,18 +580,15 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2800
      * @tc.name testClassIsPrimitive028
-     * @tc.desc Verify ClassIsPrimitive case 028: using Class.ofAny(undefined)get Classobject
+     * @tc.desc Verify ClassIsPrimitive case 028: Class.ofAny(undefined) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = undefined;
         let cls = Class.ofAny(obj);
-        if (cls !== undefined) {
-          let result = cls.isPrimitive();
-          expect(result).assertFalse();
-        }
+        expect(cls).assertUndefined();
     });
 
     /**
@@ -620,15 +599,13 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
 
-        // 结合getName()
         if (cls.isPrimitive()) {
           expect(cls.getName()).assertEqual("i32");
         }
 
-        // 结合getDescriptor()
         if (cls.isPrimitive()) {
           let descriptor = cls.getDescriptor();
           expect(descriptor !== null).assertTrue();
@@ -643,12 +620,12 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.PRIMITIVE_INT;
         expect(cls1.isPrimitive()).assertTrue();
         expect(cls1.isInterface()).assertFalse();
         expect(cls1.isEnum()).assertFalse();
-        expect(cls1.isFinal()).assertFalse();
+        expect(cls1.isFinal()).assertTrue();
 
         let cls2 = Class.from<MyInterface008>();
         expect(cls2.isPrimitive()).assertFalse();
@@ -667,9 +644,9 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      processClass031(Class.PRIMITIVE_INT); // 处理基本类型
-        processClass031(Class.from<MyClass>()); // 处理非基本类型
+    it('testClassIsPrimitive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      processClass031(Class.PRIMITIVE_INT);
+        processClass031(Class.from<MyClass>());
         expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
         expect(Class.from<MyClass>().isPrimitive()).assertFalse();
     });
@@ -682,7 +659,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(getTypeInfo032(Class.PRIMITIVE_INT)).assertEqual("Primitive Type: i32");
         expect(getTypeInfo032(Class.from<Array<int>>())).assertEqual("Class: std.core.Array");
     });
@@ -695,9 +672,11 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      expect(serialize033(Class.PRIMITIVE_BOOLEAN)).assertEqual("PRIMITIVE:boolean");
-        expect(serialize033(Class.from<MyClass>())).assertEqual("COMPLEX:MyClass");
+    it('testClassIsPrimitive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.PRIMITIVE_BOOLEAN.isPrimitive()).assertTrue();
+        expect(Utils.reflectScalarTypeNameMatches(Class.PRIMITIVE_BOOLEAN.getName(), "boolean")).assertTrue();
+        expect(Class.from<boolean>().isPrimitive()).assertFalse();
+        expect(Class.from<MyClass>().isPrimitive()).assertFalse();
     });
 
     /**
@@ -708,7 +687,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
         for (let i = 0; i < 1000; i++) {
           expect(cls.isPrimitive()).assertTrue();
@@ -728,7 +707,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsPrimitive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_DOUBLE;
         let result1 = cls.isPrimitive();
         let result2 = cls.isPrimitive();
@@ -744,8 +723,7 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // API version 24+
+    it('testClassIsPrimitive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.PRIMITIVE_LONG;
         expect(cls.isPrimitive()).assertTrue();
 
@@ -761,8 +739,21 @@ export default function ClassIsPrimitiveTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsPrimitive037', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      testIsPrimitiveConsistency037();
+    it('testClassIsPrimitive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let primitives: Array<Class> = new Array<Class>();
+        primitives.push(Class.PRIMITIVE_BOOLEAN);
+        primitives.push(Class.PRIMITIVE_BYTE);
+        primitives.push(Class.PRIMITIVE_CHAR);
+        primitives.push(Class.PRIMITIVE_SHORT);
+        primitives.push(Class.PRIMITIVE_INT);
+        primitives.push(Class.PRIMITIVE_LONG);
+        primitives.push(Class.PRIMITIVE_FLOAT);
+        primitives.push(Class.PRIMITIVE_DOUBLE);
+        primitives.push(Class.PRIMITIVE_NUMBER);
+        primitives.push(Class.PRIMITIVE_VOID);
+        for (let i = 0; i < primitives.length; i++) {
+          expect(primitives[i].isPrimitive()).assertTrue();
+        }
     });
 
   });

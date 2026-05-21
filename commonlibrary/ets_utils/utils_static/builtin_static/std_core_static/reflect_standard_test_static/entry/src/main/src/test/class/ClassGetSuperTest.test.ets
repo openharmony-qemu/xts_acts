@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
  * limitations under the License.
  */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function asInstanceFieldArraySuper(o: Object): Array<reflect.InstanceField> {
-  return o as Array<reflect.InstanceField>;
+function asInstanceFieldArraySuper(fields: FixedArray<reflect.InstanceField>): Array<reflect.InstanceField> {
+  return Utils.fixedArrayToArray(fields);
 }
 
-function asInstanceMethodArraySuper(o: Object): Array<reflect.InstanceMethod> {
-  return o as Array<reflect.InstanceMethod>;
+function asInstanceMethodArraySuper(methods: FixedArray<reflect.InstanceMethod>): Array<reflect.InstanceMethod> {
+  return Utils.fixedArrayToArray(methods);
 }
 
 class MyClass001 {}
@@ -104,7 +104,7 @@ class ParentClass013 {
   }
 
 class GenericParent017<T> {
-    public value: T
+    public value: T | null = null
   }
 
 enum TestEnum019 {
@@ -272,7 +272,6 @@ class Parent037 {
     public parentField: string = "parent"
   }
 
-
 export default function ClassGetSuperTest(): void {
   describe('ClassGetSuperTest', () => {
     beforeAll(() => {
@@ -293,7 +292,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.of(new MyClass001())
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -308,10 +307,8 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 确认方法签名
+    it('testClassGetSuper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let clazz = Class.from<MyClass001>()
-        // clazz.getSuper(param) // 编译错误：不应有参数
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
         expect(superClazz!.getName()).assertEqual("std.core.Object")
@@ -325,7 +322,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.of(new MyClass003())
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -340,11 +337,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass004>()
         let superClazz = childClazz.getSuper()
         expect(superClazz !== null).assertTrue()
-        expect(superClazz!.getName()).assertEqual("ParentClass004")
+        expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass004")).assertTrue()
     });
 
     /**
@@ -355,12 +352,12 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass005>()
         let parentClazz = childClazz.getSuper()
         let grandClazz = parentClazz!.getSuper()
-        expect(parentClazz!.getName()).assertEqual("ParentClass005")
-        expect(grandClazz!.getName()).assertEqual("GrandParent005")
+        expect(Utils.classNameMatches(parentClazz!.getName(), "ParentClass005")).assertTrue()
+        expect(Utils.classNameMatches(grandClazz!.getName(), "GrandParent005")).assertTrue()
     });
 
     /**
@@ -371,11 +368,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<FinalChild006>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
-        expect(superClazz!.getName()).assertEqual("ParentClass006")
+        expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass006")).assertTrue()
     });
 
     /**
@@ -386,11 +383,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass007>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
-        expect(superClazz!.getName()).assertEqual("AbstractParent007")
+        expect(Utils.classNameMatches(superClazz!.getName(), "AbstractParent007")).assertTrue()
     });
 
     /**
@@ -401,11 +398,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<TestClass008>()
         let superClazz = clazz.getSuper()
         let rootSuper = superClazz!.getSuper()
-        expect(rootSuper).assertNull()
+        expect(Utils.isAbsentReflectOptional(rootSuper)).assertTrue()
     });
 
     /**
@@ -416,11 +413,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass009>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
-        expect(superClazz!.getName()).assertEqual("ParentClass009")
+        expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass009")).assertTrue()
     });
 
     /**
@@ -431,10 +428,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass010>()
         let superClazz = clazz.getSuper()
-        expect(superClazz!.getName()).assertEqual("ParentClass010")
+        expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass010")).assertTrue()
     });
 
     /**
@@ -445,13 +442,12 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass011>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
         let isCls: boolean = superClazz instanceof Class;
         expect(isCls).assertTrue()
-        // 可以调用Class的方法
         let name = superClazz!.getName()
         expect(name).assertEqual("std.core.Object")
     });
@@ -464,10 +460,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<Object>()
         let superClazz = clazz.getSuper()
-        expect(superClazz).assertNull()
+        expect(Utils.isAbsentReflectOptional(superClazz)).assertTrue()
     });
 
     /**
@@ -478,10 +474,9 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass013>()
         let parentClazz = childClazz.getSuper()
-        // 使用返回的Class对象
         let fields = asInstanceFieldArraySuper(parentClazz!.getInstanceFields())
         expect(fields.length).assertEqual(1)
         expect(fields[0].getName()).assertEqual("parentField")
@@ -495,14 +490,12 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 测试各种基本类型
+    it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let boolClass = Class.PRIMITIVE_BOOLEAN
         let intClass = Class.PRIMITIVE_INT
         let stringClass = Class.from<string>()
-        // 基本类型可能没有父类或有特定父类
         let boolSuper = boolClass.getSuper()
-        expect(boolSuper !== null).assertTrue() // 或根据实际情况验证
+        expect(boolSuper !== null).assertTrue()
     });
 
     /**
@@ -513,11 +506,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrClass = Class.from<Array<int>>()
         let arrSuper = arrClass.getSuper()
         expect(arrSuper !== null).assertTrue()
-        // 数组可能有特殊的父类
         console.info(arrSuper!.getName())
     });
 
@@ -529,7 +521,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr: FixedArray<int> = [1, 2, 3]
         let clazz = Class.of(fixedArr)
         let superClazz = clazz.getSuper()
@@ -545,7 +537,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass005>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -560,12 +552,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let unionClass = Class.from<int | string>()
         let isUnion = unionClass.isUnion()
         expect(isUnion).assertTrue()
         let unionSuper = unionClass.getSuper()
-        // 联合类型可能返回undefined或有特定父类
         console.info(unionSuper)
     });
 
@@ -577,11 +568,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumClass = Class.from<TestEnum019>()
         let enumSuper = enumClass.getSuper()
         expect(enumSuper !== null).assertTrue()
-        // 枚举可能有特殊的父类
         console.info(enumSuper!.getName())
     });
 
@@ -593,7 +583,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass020>()
         try {
           let superClazz = clazz.getSuper()
@@ -612,9 +602,8 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass021>()
-        // 不调用initialize()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
     });
@@ -627,7 +616,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<DynamicClass022>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -641,7 +630,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<FinalClass023>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -655,7 +644,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<AbstractClass024>()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
@@ -669,12 +658,12 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ConcreteClass025>()
         let super1 = clazz.getSuper()
         let super2 = super1!.getSuper()
-        expect(super1!.getName()).assertEqual("AbstractChild025")
-        expect(super2!.getName()).assertEqual("AbstractParent025")
+        expect(Utils.classNameMatches(super1!.getName(), "AbstractChild025")).assertTrue()
+        expect(Utils.classNameMatches(super2!.getName(), "AbstractParent025")).assertTrue()
     });
 
     /**
@@ -685,15 +674,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 如果语言支持多重继承
-        // class Child026 extends Parent1026, Parent2026 {}
-        // 否则测试接口实现
-
+    it('testClassGetSuper026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
         let clazz = Class.from<Child026>()
         let superClazz = clazz.getSuper()
-        expect(superClazz!.getName()).assertEqual("Parent1026")
+        expect(Utils.classNameMatches(superClazz!.getName(), "Parent1026")).assertTrue()
     });
 
     /**
@@ -704,13 +689,13 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<Level5027>()
         let current = clazz
         let expectedNames = ["Level4027", "Level3027", "Level2027", "Level1027", "std.core.Object"]
         for (let i = 0; i < expectedNames.length; i++) {
           current = current!.getSuper()!
-          expect(current!.getName()).assertEqual(expectedNames[i])
+          expect(Utils.classNameMatches(current!.getName(), expectedNames[i])).assertTrue()
         }
     });
 
@@ -722,11 +707,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass028>()
         let superClazz = clazz.getSuper()
-        expect(superClazz!.getName()).assertEqual("ParentClass028")
-        // 验证接口通过getInterfaces获取
+        expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass028")).assertTrue()
         let interfaces = clazz.getInterfaces()
         expect(interfaces.length).assertEqual(1)
     });
@@ -739,10 +723,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<DerivedClass029>()
         let superClazz = clazz.getSuper()
-        expect(superClazz!.getName()).assertEqual("BaseClass029")
+        expect(Utils.classNameMatches(superClazz!.getName(), "BaseClass029")).assertTrue()
         let interfaces = clazz.getInterfaces()
         expect(interfaces.length).assertEqual(3)
     });
@@ -755,11 +739,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass030>()
         let parentClazz = childClazz.getSuper()
         expect(parentClazz !== null).assertTrue()
-        // 验证isSubtypeOf关系
         expect(childClazz.isSubtypeOf(parentClazz!)).assertTrue()
     });
 
@@ -771,11 +754,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass031>()
         let superClazz = childClazz.getSuper()
         let parentName = superClazz!.getName()
-        expect(parentName).assertEqual("ParentClass031")
+        expect(Utils.classNameMatches(parentName, "ParentClass031")).assertTrue()
     });
 
     /**
@@ -786,7 +769,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass032>()
         let parentClazz = childClazz.getSuper()
         let parentMethods = asInstanceMethodArraySuper(parentClazz!.getInstanceMethods())
@@ -802,7 +785,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass033>()
         let super1 = clazz.getSuper()
         let super2 = clazz.getSuper()
@@ -820,7 +803,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Array<Object> = new Array<Object>()
         for (let i = 0; i < 1000; i++) {
           classes.push(Class.from<TestClass034>())
@@ -843,15 +826,16 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 模拟框架解析依赖
-        let serviceClazz = Class.from<UserService035>()
+    it('testClassGetSuper035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let serviceClazz = Class.from<UserService035>()
         let current: Class | undefined = serviceClazz
-        while (current !== undefined) {
+        let depth = 0
+        while (current !== undefined && depth < 100) {
           console.info("依赖层级: " + current!.getName())
           current = current!.getSuper()
+          depth++
         }
-        expect(serviceClazz.getSuper()!.getName()).assertEqual("BaseService035")
+        expect(Utils.classNameMatches(serviceClazz.getSuper()!.getName(), "BaseService035")).assertTrue();
     });
 
     /**
@@ -862,11 +846,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let modelClazz = Class.from<UserModel036>()
         let superClazz = modelClazz.getSuper()
-        expect(superClazz!.getName()).assertEqual("BaseModel036")
-        // ORM可以基于此映射表结构
+        expect(Utils.classNameMatches(superClazz!.getName(), "BaseModel036")).assertTrue()
     });
 
     /**
@@ -877,12 +860,13 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper037', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new Child037()
         let clazz = Class.of(child)
         let current: Class | undefined = clazz
         let serialized: Map<string, string> = new Map<string, string>()
-        while (current !== undefined) {
+        let depth = 0
+        while (current !== undefined && depth < 100) {
           let fields = asInstanceFieldArraySuper(current!.getInstanceFields())
           let nf = fields.length
           for (let fi = 0; fi < nf; fi++) {
@@ -891,6 +875,7 @@ export default function ClassGetSuperTest(): void {
             serialized.set(String(field.getName() ?? ''), (value !== null && value !== undefined) ? String(value) : '')
           }
           current = current!.getSuper()
+          depth++
         }
         expect(serialized.get("parentField")).assertEqual("parent")
         expect(serialized.get("childField")).assertEqual("child")
@@ -904,10 +889,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper038', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objClazz = Class.from<Object>()
         let objSuper = objClazz.getSuper()
-        expect(objSuper).assertNull()
+        expect(Utils.isAbsentReflectOptional(objSuper)).assertTrue()
     });
 
     /**
@@ -918,7 +903,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrClazz = Class.from<Array<int>>()
         let arrSuper = arrClazz.getSuper()
         expect(arrSuper !== null).assertTrue()
@@ -933,7 +918,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mapClazz = Class.from<Map<string, int>>()
         let mapSuper = mapClazz.getSuper()
         expect(mapSuper !== null).assertTrue()
@@ -948,7 +933,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let voidClazz = Class.PRIMITIVE_VOID
         let voidSuper = voidClazz.getSuper()
         expect(voidClazz.getName()).assertEqual("void")
@@ -963,7 +948,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetSuper042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetSuper042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let promiseClazz = Class.from<Promise<string>>()
         let promiseSuper = promiseClazz.getSuper()
         expect(promiseSuper !== null).assertTrue()

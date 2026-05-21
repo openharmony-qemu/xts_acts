@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -48,7 +48,6 @@ final class FinalWithMethods008 {
       return "final"
     }
     public setValue(v: int): void {
-      // implementation
     }
   }
 
@@ -259,9 +258,9 @@ final class FinalClass052 {}
 
 function generateClassCode052(cls: Class): string {
     if (cls.isFinal()) {
-      return `// ${cls.getName()} is final, cannot be extended`
+      return `
     } else {
-      return `// ${cls.getName()} can be extended`
+      return `
     }
   }
 
@@ -278,7 +277,6 @@ final class AppConfig053 {
 function validateClassDesign053(cls: Class, shouldBeFinal: boolean): boolean {
     return cls.isFinal() === shouldBeFinal
   }
-
 
 export default function ClassIsFinalTest(): void {
   describe('ClassIsFinalTest', () => {
@@ -300,7 +298,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass001>()
         let result = cls.isFinal()
         expect(result).assertEqual(true)
@@ -314,7 +312,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyFinalClass002>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -327,7 +325,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyFinalClass003()
         let cls = Class.of(obj)
         expect(cls.isFinal()).assertEqual(true)
@@ -341,7 +339,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyFinalClass004()
         let cls = Class.ofAny(obj)!
         expect(cls.isFinal()).assertEqual(true)
@@ -355,7 +353,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyFinalClass005()
         expect(obj.checkFinal()).assertEqual(true)
     });
@@ -368,7 +366,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StandardFinalClass006>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -381,7 +379,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalWithConstructor007>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -394,7 +392,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalWithMethods008>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -407,7 +405,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalChild009>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -420,7 +418,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NormalClass010>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -433,7 +431,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass011>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -446,7 +444,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OpenClass012>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -459,7 +457,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface013>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -472,7 +470,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isFinal()).assertEqual(false)
         expect(Class.PRIMITIVE_BOOLEAN.isFinal()).assertEqual(false)
         expect(Class.from<string>().isFinal()).assertEqual(false)
@@ -486,7 +484,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<int>()
         let cls = Class.of(arr)
         expect(cls.isFinal()).assertEqual(false)
@@ -500,7 +498,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr = new FixedArray<int>(10)
         let cls = Class.of(fixedArr)
         expect(cls.isFinal()).assertEqual(false)
@@ -514,7 +512,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -527,7 +525,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum018>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -540,7 +538,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass019>()
         let result = cls.isFinal()
         expect(typeof result).assertEqual("boolean")
@@ -554,7 +552,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass020>()
         let result = cls.isFinal()
         expect(result).assertEqual(false)
@@ -568,11 +566,8 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 以下代码应该在编译时报错
+    it('testClassIsFinal021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-        // 编译错误: Cannot extend a final class
-        // class Child extends FinalBase021 {}
         expect(Class.from<FinalBase021>().isFinal()).assertTrue();
     });
 
@@ -584,7 +579,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalImplementsInterface022>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -597,7 +592,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass023>()
         let childCls = Class.from<ChildClass023>()
         expect(parentCls.isFinal()).assertEqual(false)
@@ -612,7 +607,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let grandCls = Class.from<GrandParent024>()
         let parentCls = Class.from<Parent024>()
         let childCls = Class.from<FinalChild024>()
@@ -629,7 +624,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finalCls = Class.from<FinalDerived025>()
         let baseCls = finalCls.getSuper()!
         expect(finalCls.isFinal()).assertEqual(true)
@@ -644,7 +639,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let derivedCls = Class.from<Derived026>()
         let baseCls = derivedCls.getSuper()!
         expect(derivedCls.isFinal()).assertEqual(false)
@@ -659,10 +654,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-// 此测试仅用于验证未捕获异常的行为，跳过执行
-        // 以下代码应该在编译时报错
-        // final abstract class InvalidClass {} // 编译错误
+    it('testClassIsFinal027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass011>();
         expect(cls.isAbstract()).assertTrue();
         expect(cls.isFinal()).assertFalse();
@@ -676,7 +668,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass028>()
         expect(cls.isFinal()).assertEqual(true)
         expect(cls.isAbstract()).assertEqual(false)
@@ -690,7 +682,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass029>()
         expect(cls.isFinal()).assertEqual(true)
         expect(cls.isInterface()).assertEqual(false)
@@ -704,7 +696,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface030>()
         expect(cls.isInterface()).assertEqual(true)
         expect(cls.isFinal()).assertEqual(false)
@@ -718,7 +710,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass031>()
         expect(cls.isFinal()).assertEqual(true)
         expect(cls.isEnum()).assertEqual(false)
@@ -732,7 +724,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum032>()
         expect(cls.isEnum()).assertEqual(true)
         expect(cls.isFinal()).assertEqual(false)
@@ -746,7 +738,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass033>()
         expect(cls.isFinal()).assertEqual(true)
         expect(cls.isPrimitive()).assertEqual(false)
@@ -760,7 +752,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isPrimitive()).assertEqual(true)
         expect(Class.PRIMITIVE_INT.isFinal()).assertEqual(false)
     });
@@ -773,7 +765,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let baseCls = Class.from<Base035>()
         let childCls = Class.from<FinalChild035>()
         expect(childCls.isSubtypeOf(baseCls)).assertEqual(true)
@@ -789,7 +781,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyFinalClass036>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -802,7 +794,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal037', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyClass037>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -815,7 +807,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal038', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<FinalClass1038>()
         let cls2 = Class.from<FinalClass2038>()
         let cls3 = Class.from<FinalClass3038>()
@@ -832,7 +824,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finalCls = Class.from<FinalClass039>()
         let normalCls = Class.from<NormalClass039>()
         expect(finalCls.isFinal()).assertEqual(true)
@@ -847,7 +839,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerCls = Class.from<OuterFinal040>()
         let innerCls = Class.from<InnerClass040>()
         expect(outerCls.isFinal()).assertEqual(true)
@@ -862,7 +854,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<GenericFinalClass041<int>>()
         let cls2 = Class.from<GenericFinalClass041<string>>()
         expect(cls1.isFinal()).assertEqual(true)
@@ -877,7 +869,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass042<int>>()
         expect(cls.isFinal()).assertEqual(false)
     });
@@ -890,7 +882,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal043', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicFinalClass043>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -903,7 +895,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal044', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InternalFinalClass044>()
         expect(cls.isFinal()).assertEqual(true)
     });
@@ -916,7 +908,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal045', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass045>()
         let result1 = cls.isFinal()
         let result2 = cls.isFinal()
@@ -934,7 +926,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal046', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Class[] = [
           Class.from<Final1046>(),
           Class.from<Final2046>(),
@@ -955,8 +947,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 使用TaskPool测试并发访问
+    it('testClassIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.from<FinalClass001>();
         for (let i = 0; i < 50; i++) {
           expect(cls.isFinal()).assertTrue();
@@ -971,10 +962,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal048', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-// 此测试仅用于验证未捕获异常的行为，跳过执行
-        // 所有Class.from<T>()和Class.of()返回的对象都是有效的Class实例
-        // 不存在无效Class对象的情况
+    it('testClassIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<TestClass020>().isFinal()).assertFalse();
     });
 
@@ -986,11 +974,8 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal049', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 以下代码应该在编译时报错
+    it('testClassIsFinal049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-        // 编译错误: Cannot extend a final class
-        // final class FinalChild extends FinalBase049 {}
         expect(Class.from<FinalBase049>().isFinal()).assertTrue();
     });
 
@@ -1002,7 +987,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal050', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalMultiInterface050>()
         expect(cls.isFinal()).assertEqual(true)
         expect(cls.getInterfaces().length).assertEqual(2)
@@ -1016,7 +1001,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal051', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(canBeInherited051(Class.from<FinalClass051>())).assertEqual(false)
         expect(canBeInherited051(Class.from<AbstractClass051>())).assertEqual(false)
         expect(canBeInherited051(Class.from<NormalClass051>())).assertEqual(true)
@@ -1030,7 +1015,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal052', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsFinal052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let code1 = generateClassCode052(Class.from<FinalClass052>())
         let code2 = generateClassCode052(Class.from<NormalClass052>())
 
@@ -1046,11 +1031,8 @@ export default function ClassIsFinalTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsFinal053', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 业务规则：所有配置类应该是final的
+    it('testClassIsFinal053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
-
-        // 业务规则：所有工具类不应该是final的
 
 
         expect(validateClassDesign053(Class.from<AppConfig053>(), true)).assertEqual(true)

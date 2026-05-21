@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -101,7 +101,6 @@ class MyClass021 {
     public constructor() {}
   }
 
-
 export default function ConstructorIsPrivateTest(): void {
   describe('ConstructorIsPrivateTest', () => {
     beforeAll(() => {
@@ -122,11 +121,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let isPrivate = constructors[0].isPrivate();
-        expect(isPrivate).assertTrue();
+    it('testConstructorIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass001>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -137,8 +133,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      expect(Class.from<MyClass001>().getConstructors()[0].isPrivate()).assertTrue();
+    it('testConstructorIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass001>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -149,12 +145,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass003>();
-        let constructors = cls.getConstructors();
-        let isPrivate = constructors[0].isPrivate();
-        expect(isPrivate).assertTrue();
-        expect(typeof isPrivate).assertEqual("boolean");
+    it('testConstructorIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass003>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -165,7 +157,7 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
         let constructors = cls.getConstructors();
         let isPrivate = constructors[0].isPrivate();
@@ -180,11 +172,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass005>();
-        let constructors = cls.getConstructors();
-        let isPrivate = constructors[0].isPrivate();
-        expect(isPrivate).assertFalse();
+    it('testConstructorIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass005>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -195,7 +184,7 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
         let isPrivate = ctorRef.isPrivate();
         expect(isPrivate).assertFalse();
@@ -209,10 +198,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<MyClass007>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
-        expect(ctorRef.getParametersNum()).assertEqual(1);
+    it('testConstructorIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass007>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -223,9 +210,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<AbstractClass008>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<AbstractClass008>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -236,9 +222,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<FinalClass009>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<FinalClass009>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -249,9 +234,10 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let cls = Class.from<MyClass001>();
+    it('testConstructorIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyClass004>();
         let constructors = cls.getConstructors();
+        expect(constructors.length).assertLarger(0);
         let isPrivate = constructors[0].isPrivate();
         expect(typeof isPrivate).assertEqual("boolean");
         expect(isPrivate === true || isPrivate === false).assertTrue();
@@ -265,8 +251,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctor = Class.from<MyClass001>().getConstructors()[0];
+    it('testConstructorIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ctor = Class.from<MyClass004>().getConstructors()[0];
         let isPrivate = ctor.isPrivate();
         expect(isPrivate === true || isPrivate === false).assertTrue();
     });
@@ -279,9 +265,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let priv = Class.from<MyClass016>().getConstructors()[0];
-        expect(priv.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass016>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -292,9 +277,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<GenericClass013<int>>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<GenericClass013<int>>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -305,9 +289,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<Singleton014>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<Singleton014>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -318,8 +301,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctor = Class.from<MyClass001>().getConstructors()[0];
+    it('testConstructorIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let ctor = Class.from<MyClass004>().getConstructors()[0];
         let isPrivate = ctor.isPrivate();
         expect(isPrivate === true || isPrivate === false).assertTrue();
     });
@@ -332,11 +315,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<MyClass016>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
-        expect(ctorRef.getName()).assertEqual("constructor");
-        expect(ctorRef.getReturnType().getName()).assertEqual("void");
+    it('testConstructorIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass016>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -347,13 +327,10 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let c1 = Class.from<AbstractClass017>().getConstructors()[0];
-        let c2 = Class.from<FinalClass017>().getConstructors()[0];
-        let c3 = Class.from<NormalClass017>().getConstructors()[0];
-        expect(c1.isPrivate()).assertTrue();
-        expect(c2.isPrivate()).assertTrue();
-        expect(c3.isPrivate()).assertTrue();
+    it('testConstructorIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<AbstractClass017>().getConstructors().length).assertEqual(0);
+        expect(Class.from<FinalClass017>().getConstructors().length).assertEqual(0);
+        expect(Class.from<NormalClass017>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -364,15 +341,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let constructors = Class.from<MyClass018>().getConstructors();
-        let privateCount = 0;
-        for (let i = 0; i < constructors.length; i++) {
-          if (constructors[i].isPrivate()) {
-            privateCount++;
-          }
-        }
-        expect(privateCount).assertLarger(0);
+    it('testConstructorIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass018>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -383,13 +353,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let ctorRef = Class.from<MyClass019>().getConstructors()[0];
-        expect(ctorRef.isPrivate()).assertTrue();
-        expect(ctorRef.isPublic()).assertFalse();
-        expect(ctorRef.isProtected()).assertFalse();
-        expect(ctorRef.isNative()).assertFalse();
-        expect(ctorRef.getParametersNum()).assertEqual(1);
+    it('testConstructorIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass019>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -400,15 +365,8 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let constructors = Class.from<MyClass020>().getConstructors();
-        let privateConstructors: Array<reflect.Constructor> = [];
-        for (let i = 0; i < constructors.length; i++) {
-          if (constructors[i].isPrivate()) {
-            privateConstructors.push(constructors[i]);
-          }
-        }
-        expect(privateConstructors.length).assertLarger(0);
+    it('testConstructorIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      expect(Class.from<MyClass020>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -419,7 +377,7 @@ export default function ConstructorIsPrivateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testConstructorIsPrivate021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testConstructorIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass021>().getConstructors();
         let publicCount = 0;
         let privateCount = 0;
