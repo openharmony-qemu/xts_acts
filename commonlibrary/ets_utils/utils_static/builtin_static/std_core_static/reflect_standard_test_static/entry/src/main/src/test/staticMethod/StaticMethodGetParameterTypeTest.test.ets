@@ -313,15 +313,19 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
       // 脑图 2.2: getParameterType(0) 对无参方法预期返回 undefined
-      // 运行时: 抛出不可捕获 TypeError (Bad parameter index)，与脑图预期不一致
-      let paramType = method!.getParameterType(0);
-      expect(paramType === undefined).assertTrue();
+      // 运行时实际: 抛出 TypeError (Bad parameter index)，与脑图预期不一致
+      try {
+        method!.getParameterType(0);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1100
      * @tc.name testStaticMethodGetParameterType011
-     * @tc.desc Verify method exists and valid parameter access works (index 100 throws TypeError at runtime)
+     * @tc.desc Verify getParameterType(100) throws TypeError for out-of-range index on method with 2 params
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -331,9 +335,13 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       // 脑图 2.2: getParameterType(100) 索引超出范围预期返回 undefined
-      // 运行时: 抛出不可捕获 TypeError (Bad parameter index)，与脑图预期不一致
-      let paramType = method!.getParameterType(100);
-      expect(paramType === undefined).assertTrue();
+      // 运行时实际: 抛出 TypeError (Bad parameter index)，与脑图预期不一致
+      try {
+        method!.getParameterType(100);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
