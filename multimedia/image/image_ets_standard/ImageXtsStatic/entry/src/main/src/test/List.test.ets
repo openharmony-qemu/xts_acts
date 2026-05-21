@@ -10,6 +10,11 @@ import ImageAuxiliaryPictureGetMetadataStaticTest from "./image/AuxiliaryPicture
 import ImagePackerStaticTest from "./image/ImagePacker.test";
 import ImageMetadataTestStatic from "./image/imageSource/ImageMetadata.test";
 import createUnpremultipliedPixelMapSyncTest from "./testStatic/image/image/createUnpremultipliedPixelMap.test";
+import imagePackerPackToDataFromPixelmapSequenceStaticSuppTest
+  from "./image/ImagePacker/packToDataFromPixelmapSequenceStatic.test";
+import imagePackerPackToFileFromPixelmapSequenceSUppStaticTest
+  from "./image/ImagePacker/packToFileFromPixelmapSequenceStatic.test";
+import ImagePackerReleaseStaticSuppTest from "./image/ImagePacker/releaseStatic.test";
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -24,4 +29,7 @@ export default function testsuite(): void {
   ImageGetComponentSupp();
   ImageMetadataTestStatic();
   createUnpremultipliedPixelMapSyncTest();
+  imagePackerPackToDataFromPixelmapSequenceStaticSuppTest();
+  imagePackerPackToFileFromPixelmapSequenceSUppStaticTest();
+  ImagePackerReleaseStaticSuppTest();
 }
