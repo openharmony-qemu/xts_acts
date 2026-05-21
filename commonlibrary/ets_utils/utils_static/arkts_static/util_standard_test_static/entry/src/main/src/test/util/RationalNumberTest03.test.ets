@@ -14,14 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { util } from '@kit.ArkTS';
-
-async function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
+import Utils from '../Util.test';
 
 export default function RationalNumber03Test(): void {
   describe('RationalNumber03Test', () => {
@@ -34,7 +27,7 @@ export default function RationalNumber03Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

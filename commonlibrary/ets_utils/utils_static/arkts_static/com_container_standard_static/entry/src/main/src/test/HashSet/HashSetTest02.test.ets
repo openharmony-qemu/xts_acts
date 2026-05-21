@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { HashSet } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 type NumberArray = Array<number | undefined>;
 
@@ -208,14 +209,6 @@ interface ComplexDataStructure {
   score: number | null;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function HashSet02Test(): void {
   describe('HashSet02Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -227,7 +220,7 @@ export default function HashSet02Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
