@@ -403,7 +403,7 @@ export default function arrayBufferLikeTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferLike0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer: ArrayBufferLike = new ArrayBuffer(NaN);
+      const buffer: ArrayBufferLike = new ArrayBuffer(Double.NaN);
       expect(buffer.byteLength).assertEqual(0);
       expect(buffer instanceof ArrayBuffer).assertTrue();
     });
@@ -418,7 +418,7 @@ export default function arrayBufferLikeTest(): void {
      */
     it('testArrayBufferLike0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const len: int = Double.toInt(Infinity);
+        const len: int = Double.toInt(Double.POSITIVE_INFINITY);
         const buffer: ArrayBufferLike = new ArrayBuffer(len);
         expect().assertFail();
       } catch (e) {

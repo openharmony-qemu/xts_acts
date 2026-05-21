@@ -255,7 +255,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArrayBuffer.isView(NaN)).assertFalse();
+      expect(ArrayBuffer.isView(Double.NaN)).assertFalse();
     });
 
     /**
@@ -473,7 +473,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n: number = Infinity;
+      let n: number = Double.POSITIVE_INFINITY;
       expect(ArrayBuffer.isView(n)).assertFalse();
     });
 
@@ -486,7 +486,7 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n: number = -Infinity;
+      let n: number = Double.NEGATIVE_INFINITY;
       expect(ArrayBuffer.isView(n)).assertFalse();
     });
 

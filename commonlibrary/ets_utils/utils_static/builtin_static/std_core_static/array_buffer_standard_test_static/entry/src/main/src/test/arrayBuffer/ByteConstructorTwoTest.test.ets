@@ -259,7 +259,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const n: number = NaN;
+        const n: number = Double.NaN;
         new Byte(Utils.castToByte(n as Object));
         expect().assertFail();
       } catch (e) {
@@ -277,7 +277,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const n: number = Infinity;
+        const n: number = Double.POSITIVE_INFINITY;
         new Byte(Utils.castToByte(n as Object));
         expect().assertFail();
       } catch (e) {
@@ -295,7 +295,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const n: number = -Infinity;
+        const n: number = Double.NEGATIVE_INFINITY;
         new Byte(Utils.castToByte(n as Object));
         expect().assertFail();
       } catch (e) {

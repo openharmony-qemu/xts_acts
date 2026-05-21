@@ -159,7 +159,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
-      let result = buffer.slice(Double.toInt(NaN));
+      let result = buffer.slice(Double.toInt(Double.NaN));
       let resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8)
       expect(resultView[0]).assertEqual(Int.toByte(10))
@@ -175,7 +175,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Infinity));
+      let result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY));
       expect(result.byteLength).assertEqual(0)
 
     });
@@ -192,7 +192,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
-      let result = buffer.slice(Double.toInt(-Infinity));
+      let result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY));
       expect(result.byteLength).assertEqual(8)
 
     });
@@ -335,7 +335,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, Double.toInt(NaN));
+      let result = buffer.slice(0, Double.toInt(Double.NaN));
       expect(result.byteLength).assertEqual(0)
 
     });
@@ -353,7 +353,7 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[0] = 1;
       int8[1] = 2;
       int8[3] = 4;
-      let result = buffer.slice(0, Double.toInt(Infinity));
+      let result = buffer.slice(0, Double.toInt(Double.POSITIVE_INFINITY));
       expect(result.byteLength).assertEqual(8)
 
     });
@@ -367,7 +367,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, Double.toInt(-Infinity));
+      let result = buffer.slice(0, Double.toInt(Double.NEGATIVE_INFINITY));
       expect(result.byteLength).assertEqual(0)
 
     });
@@ -857,7 +857,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(NaN, Double.toInt(NaN));
+      let result = buffer.slice(Double.toInt(Double.NaN), Double.toInt(Double.NaN));
       expect(result.byteLength).assertEqual(0)
 
     });
@@ -875,7 +875,7 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
-      let result = buffer.slice(Double.toInt(NaN), 3);
+      let result = buffer.slice(Double.toInt(Double.NaN), 3);
       let resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3)
       expect(resultView[0]).assertEqual(Int.toByte(10))
@@ -891,7 +891,7 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Infinity), 5);
+      let result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY), 5);
       expect(result.byteLength).assertEqual(0)
 
     });
@@ -908,7 +908,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let int8 = new Int8Array(buffer);
       int8[2] = 30;
       int8[7] = 80;
-      let result = buffer.slice(2, Double.toInt(Infinity));
+      let result = buffer.slice(2, Double.toInt(Double.POSITIVE_INFINITY));
       let resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(6)
       expect(resultView[0]).assertEqual(Int.toByte(30))
@@ -927,7 +927,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[7] = 80;
-      let result = buffer.slice(-Infinity, Double.toInt(Infinity));
+      let result = buffer.slice(Double.NEGATIVE_INFINITY, Double.toInt(Double.POSITIVE_INFINITY));
       let resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8)
       expect(resultView[0]).assertEqual(Int.toByte(10))
