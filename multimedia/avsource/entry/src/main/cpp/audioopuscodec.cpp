@@ -23,11 +23,6 @@
 #define SUCCESS (0)
 #define OPUS_LIB_PATH "/system/lib64/libopus_codec.z.so"
 
-static bool IsOpusLibAvailable()
-{
-    return access(OPUS_LIB_PATH, F_OK) == 0;
-}
-
 #define SAMPLE_RATE_8000   (8000)
 #define SAMPLE_RATE_12000  (12000)
 #define SAMPLE_RATE_16000  (16000)
@@ -41,6 +36,16 @@ static bool IsOpusLibAvailable()
 #define CHANNEL_INVALID_HIGH  (3)
 #define BITRATE_6KBPS   (6000)
 #define BITRATE_64KBPS  (64000)
+#define BITRATE_BELOW_MIN (5999)
+#define BITRATE_ABOVE_MAX (510001)
+#define VALID_RATE_COUNT (5)
+#define INVALID_RATE_COUNT (2)
+#define COMBO_TEST_COUNT (9)
+
+static bool IsOpusLibAvailable()
+{
+    return access(OPUS_LIB_PATH, F_OK) == 0;
+}
 
 static napi_value NapiReturn(napi_env env, int32_t val)
 {
@@ -76,43 +81,41 @@ static int32_t ConfigCheck(OH_AVCodec *codec, int32_t sampleRate, int32_t channe
     return (ret == AV_ERR_OK) ? 0 : 1;
 }
 
-static int32_t RunParamTest(bool isEncoder, int32_t rates[], int32_t rateCount,
-                            int32_t channel, int64_t bitrate, int32_t invalidRates[], int32_t invCount)
-{
-    OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, isEncoder);
-    if (codec == nullptr) {
-        return -1;
-    }
-    int32_t err = 0;
-    for (int32_t i = 0; i < rateCount; i++) {
-        if (ConfigCheck(codec, rates[i], channel, bitrate) != 0) {
-            err++;
-        }
-    }
-    for (int32_t i = 0; i < invCount; i++) {
-        if (ConfigCheck(codec, invalidRates[i], channel, bitrate) == 0) {
-            err++;
-        }
-    }
-    OH_AudioCodec_Destroy(codec);
-    return err;
-}
-
 static napi_value DecoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t valid[] = {SAMPLE_RATE_8000, SAMPLE_RATE_12000, SAMPLE_RATE_16000,
                            SAMPLE_RATE_24000, SAMPLE_RATE_48000};
         int32_t inv[] = {SAMPLE_RATE_INVALID_LOW, SAMPLE_RATE_INVALID_HIGH};
-        if (RunParamTest(false, valid, 5, CHANNEL_MONO, 0, inv, 2) == 0) {
+        int32_t err = 0;
+        for (int32_t i = 0; i < VALID_RATE_COUNT; i++) {
+            if (ConfigCheck(codec, valid[i], CHANNEL_MONO, 0) != 0) {
+                err++;
+            }
+        }
+        for (int32_t i = 0; i < INVALID_RATE_COUNT; i++) {
+            if (ConfigCheck(codec, inv[i], CHANNEL_MONO, 0) == 0) {
+                err++;
+            }
+        }
+        OH_AudioCodec_Destroy(codec);
+        if (err == 0) {
             backParam = SUCCESS;
         }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -120,21 +123,37 @@ static napi_value DecoderSampleRateCheck(napi_env env, napi_callback_info info)
 static napi_value DecoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
-        if (codec == nullptr) return NapiReturn(env, FAIL);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t err = 0;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, 0) != 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_STEREO, 0) != 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_ZERO, 0) == 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_HIGH, 0) == 0) err++;
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, 0) != 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_STEREO, 0) != 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_ZERO, 0) == 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_HIGH, 0) == 0) {
+            err++;
+        }
         OH_AudioCodec_Destroy(codec);
-        if (err == 0) backParam = SUCCESS;
+        if (err == 0) {
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, false);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -142,18 +161,38 @@ static napi_value DecoderChannelCountCheck(napi_env env, napi_callback_info info
 static napi_value EncoderSampleRateCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t valid[] = {SAMPLE_RATE_8000, SAMPLE_RATE_12000, SAMPLE_RATE_16000,
                            SAMPLE_RATE_24000, SAMPLE_RATE_48000};
         int32_t inv[] = {SAMPLE_RATE_INVALID_LOW, SAMPLE_RATE_INVALID_HIGH};
-        if (RunParamTest(true, valid, 5, CHANNEL_MONO, BITRATE_64KBPS, inv, 2) == 0) {
+        int32_t err = 0;
+        for (int32_t i = 0; i < VALID_RATE_COUNT; i++) {
+            if (ConfigCheck(codec, valid[i], CHANNEL_MONO, BITRATE_64KBPS) != 0) {
+                err++;
+            }
+        }
+        for (int32_t i = 0; i < INVALID_RATE_COUNT; i++) {
+            if (ConfigCheck(codec, inv[i], CHANNEL_MONO, BITRATE_64KBPS) == 0) {
+                err++;
+            }
+        }
+        OH_AudioCodec_Destroy(codec);
+        if (err == 0) {
             backParam = SUCCESS;
         }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -161,21 +200,37 @@ static napi_value EncoderSampleRateCheck(napi_env env, napi_callback_info info)
 static napi_value EncoderChannelCountCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (codec == nullptr) return NapiReturn(env, FAIL);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t err = 0;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, BITRATE_64KBPS) != 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_STEREO, BITRATE_64KBPS) != 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_ZERO, BITRATE_64KBPS) == 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_HIGH, BITRATE_64KBPS) == 0) err++;
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, BITRATE_64KBPS) != 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_STEREO, BITRATE_64KBPS) != 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_ZERO, BITRATE_64KBPS) == 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_INVALID_HIGH, BITRATE_64KBPS) == 0) {
+            err++;
+        }
         OH_AudioCodec_Destroy(codec);
-        if (err == 0) backParam = SUCCESS;
+        if (err == 0) {
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -183,23 +238,37 @@ static napi_value EncoderChannelCountCheck(napi_env env, napi_callback_info info
 static napi_value EncoderBitrateCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (codec == nullptr) return NapiReturn(env, FAIL);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t err = 0;
         int64_t rates[] = {6000, 16000, 32000, 64000, 96000, 128000, 256000, 510000};
         for (auto br : rates) {
-            if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, br) != 0) err++;
+            if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, br) != 0) {
+                err++;
+            }
         }
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, 5999) == 0) err++;
-        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, 510001) == 0) err++;
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, BITRATE_BELOW_MIN) == 0) {
+            err++;
+        }
+        if (ConfigCheck(codec, SAMPLE_RATE_48000, CHANNEL_MONO, BITRATE_ABOVE_MAX) == 0) {
+            err++;
+        }
         OH_AudioCodec_Destroy(codec);
-        if (err == 0) backParam = SUCCESS;
+        if (err == 0) {
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -207,22 +276,32 @@ static napi_value EncoderBitrateCheck(napi_env env, napi_callback_info info)
 static napi_value EncoderBitrateSampleRateComboCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (codec == nullptr) return NapiReturn(env, FAIL);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t err = 0;
         int32_t r[] = {8000, 8000, 12000, 16000, 24000, 48000, 48000, 48000, 48000};
         int64_t b[] = {6000, 32000, 16000, 32000, 64000, 64000, 128000, 256000, 510000};
-        for (int i = 0; i < 9; i++) {
-            if (ConfigCheck(codec, r[i], CHANNEL_MONO, b[i]) != 0) err++;
+        for (int i = 0; i < COMBO_TEST_COUNT; i++) {
+            if (ConfigCheck(codec, r[i], CHANNEL_MONO, b[i]) != 0) {
+                err++;
+            }
         }
         OH_AudioCodec_Destroy(codec);
-        if (err == 0) backParam = SUCCESS;
+        if (err == 0) {
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -230,17 +309,32 @@ static napi_value EncoderBitrateSampleRateComboCheck(napi_env env, napi_callback
 static napi_value EncoderStereoSampleRateCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
+        OH_AVCodec *codec = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
+        if (codec == nullptr) {
+            return NapiReturn(env, FAIL);
+        }
         int32_t valid[] = {SAMPLE_RATE_8000, SAMPLE_RATE_12000, SAMPLE_RATE_16000,
                            SAMPLE_RATE_24000, SAMPLE_RATE_48000};
-        if (RunParamTest(true, valid, 5, CHANNEL_STEREO, BITRATE_64KBPS, nullptr, 0) == 0) {
+        int32_t err = 0;
+        for (int32_t i = 0; i < VALID_RATE_COUNT; i++) {
+            if (ConfigCheck(codec, valid[i], CHANNEL_STEREO, BITRATE_64KBPS) != 0) {
+                err++;
+            }
+        }
+        OH_AudioCodec_Destroy(codec);
+        if (err == 0) {
             backParam = SUCCESS;
         }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_OPUS, true);
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -248,14 +342,21 @@ static napi_value EncoderStereoSampleRateCheck(napi_env env, napi_callback_info 
 static napi_value DecoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Opus");
-        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
+        if (codec != nullptr) {
+            OH_AudioCodec_Destroy(codec);
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Decoder.Audio.Opus");
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -263,14 +364,21 @@ static napi_value DecoderCreateByNameCheck(napi_env env, napi_callback_info info
 static napi_value EncoderCreateByNameCheck(napi_env env, napi_callback_info info)
 {
     napi_value early = ReturnIfNoLib(env);
-    if (early != nullptr) return early;
+    if (early != nullptr) {
+        return early;
+    }
     int backParam = FAIL;
     if (IsSupportOpus()) {
         OH_AVCodec *codec = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Opus");
-        if (codec != nullptr) { OH_AudioCodec_Destroy(codec); backParam = SUCCESS; }
+        if (codec != nullptr) {
+            OH_AudioCodec_Destroy(codec);
+            backParam = SUCCESS;
+        }
     } else {
         OH_AVCodec *c = OH_AudioCodec_CreateByName("OH.Media.Codec.Encoder.Audio.Opus");
-        if (c == nullptr) backParam = SUCCESS;
+        if (c == nullptr) {
+            backParam = SUCCESS;
+        }
     }
     return NapiReturn(env, backParam);
 }
@@ -279,14 +387,14 @@ EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
-        {"DecoderSampleRateCheck", nullptr, DecoderSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"DecoderChannelCountCheck", nullptr, DecoderChannelCountCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"EncoderSampleRateCheck", nullptr, EncoderSampleRateCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
-        {"EncoderChannelCountCheck", nullptr, EncoderChannelCountCheck, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+        {"DecoderSampleRateCheck", nullptr, DecoderSampleRateCheck, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"DecoderChannelCountCheck", nullptr, DecoderChannelCountCheck, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"EncoderSampleRateCheck", nullptr, EncoderSampleRateCheck, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"EncoderChannelCountCheck", nullptr, EncoderChannelCountCheck, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
         {"EncoderBitrateCheck", nullptr, EncoderBitrateCheck, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"EncoderBitrateSampleRateComboCheck", nullptr, EncoderBitrateSampleRateComboCheck,
