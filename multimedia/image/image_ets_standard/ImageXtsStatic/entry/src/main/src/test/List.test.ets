@@ -15,6 +15,12 @@ import imagePackerPackToDataFromPixelmapSequenceStaticSuppTest
 import imagePackerPackToFileFromPixelmapSequenceSUppStaticTest
   from "./image/ImagePacker/packToFileFromPixelmapSequenceStatic.test";
 import ImagePackerReleaseStaticSuppTest from "./image/ImagePacker/releaseStatic.test";
+import createAuxiliaryPictureTest from "./testStatic/image/image/createAuxiliaryPicture.test";
+import ImageCreateImageCreatorTestSupp from "./testStatic/image/image/createImageCreator.test";
+import createImagePackerTest from "./testStatic/image/image/createImagePacker.test";
+import createImageReceiverPackerTest from "./testStatic/image/image/createImageReceiver.test";
+import createImageSourceTest from "./testStatic/image/image/createImageSource.test";
+
 
 export default function testsuite(): void {
   metaDataStaticTest();
@@ -28,6 +34,11 @@ export default function testsuite(): void {
   CrateImageSourceTest();
   ImageGetComponentSupp();
   ImageMetadataTestStatic();
+  createAuxiliaryPictureTest();
+  ImageCreateImageCreatorTestSupp();
+  createImagePackerTest();
+  createImageReceiverPackerTest();
+  createImageSourceTest();
   createUnpremultipliedPixelMapSyncTest();
   imagePackerPackToDataFromPixelmapSequenceStaticSuppTest();
   imagePackerPackToFileFromPixelmapSequenceSUppStaticTest();

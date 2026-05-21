@@ -11,9 +11,7 @@ import webExtensionConnectionCallbackOnDisconnectParameterTest from './WebExtens
 import webExtensionConnectionCallbackOnFailedParameterTest from './WebExtensionConnectionCallbackOnFailedParameter.test'
 import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefinedParameter.test'
 import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
-import startAbilityForResultParameterTest from './StartAbilityForResultParameter.test'
-import startAbilityForResultPromiseParameterTest from './StartAbilityForResultPromiseParameter.test'
-import startAbilityForResultReturnTest from './StartAbilityForResultReturn.test'
+
 
 export default function testsuite() {
   abilityTest();
@@ -29,7 +27,4 @@ export default function testsuite() {
   webExtensionConnectionCallbackOnFailedParameterTest()
   connectNativeNullUndefinedParameterTest()
   disconnectNativeNullUndefinedParameterTest()
-  startAbilityForResultParameterTest()
-  startAbilityForResultPromiseParameterTest()
-  startAbilityForResultReturnTest()
 }

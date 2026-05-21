@@ -97,17 +97,19 @@ static void VencFormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *user
 {
     cout << "Format Changed" << endl;
     int currentFormat = 0;
+    int32_t layerId = 0;
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_WIDTH, &g_picWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_WIDTH, &g_picWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_HEIGHT, &g_picHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_WIDTH, &g_keyWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_HEIGHT, &g_keyHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT, &currentFormat);
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_ENCODER_TEMPORAL_LAYER_ID, &layerId);
     std::cout << "currentFormat:" << currentFormat << std::endl;
     enc_sample->onStreamChangedKey = currentFormat;
     cout << "format info: " << OH_AVFormat_DumpInfo(format) << ", OH_MD_KEY_VIDEO_PIC_WIDTH: " << g_picWidth
     << ", OH_MD_KEY_VIDEO_PIC_HEIGHT: "<< g_picHeight << ", OH_MD_KEY_WIDTH: " << g_keyWidth
-    << ", OH_MD_KEY_HEIGHT: " << g_keyHeight << endl;
+    << ", OH_MD_KEY_HEIGHT: " << g_keyHeight << "layerId: " << layerId <<endl;
 }
 
 static void onEncInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)

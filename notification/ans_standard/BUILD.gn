@@ -91,7 +91,13 @@ group("ans_standard") {
       "actsNotificationAnsSubscribeNotificationTest:ActsNotificationAnsSubscribeNotificationTest",
       "actsNotificationAnsSubscribeNotificationNoSystemTestStatic:ActsNotificationAnsSubscribeNotificationNoSystemStaticTest",
       "actsNotificationAnsGetAppListSortingThirdTestStatic:ActsNotificationAnsGetAppListSortingThirdStaticTest",
-      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest"
+      "actsNotificationAnsGetAppListSortingTest:ActsNotificationAnsGetAppListSortingTest",
+      "actsNotificationAnsThreePartyWatchWithinAbilityTest:ActsNotificationAnsThreePartyWatchWithinAbilityTest",
+      "actsNotificationAnsThreePartyWatchWithOutAbilityTest:ActsNotificationAnsThreePartyWatchWithOutAbilityTest",
+      "actsNotificationAnsDisableNotificationFeatureNoSystemTestStatic:ActsNotificationAnsDisableNotificationFeatureNoSystemStaticTest",
+      "actsNotificationAnsNoDisplayedIconNoSystemTestStatic:ActsNotificationAnsNoDisplayedIconNoSystemStaticTest",
+      "actsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothStaticTest",
+      "actsNotificationAnsNoDisplayedIconNoSystemTest:ActsNotificationAnsNoDisplayedIconNoSystemTest"
     ]
   }
 }

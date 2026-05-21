@@ -1730,6 +1730,925 @@ export default function AVMetadata() {
     });
 
     /**
+ 	      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1300
+ 	      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1300
+ 	      * @tc.desc   Local Video playback control test
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL0
+ 	      */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1300', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+        expect(metadata.album).assertEqual("media");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1400', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata.albumArtist}`);
+        expect(metadata.albumArtist).assertEqual("media_test");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1500', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, artist: ${metadata.artist}`);
+        expect(metadata.artist).assertEqual("元数据测试");
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, author: ${metadata.author}`);
+        expect(metadata.author).assertEqual("media");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1700', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, dateTime: ${metadata.dateTime}`);
+        console.info(TAG, `fetchMetadata callback success, dateTimeFormat: ${metadata.dateTimeFormat}`);
+        expect(metadata.dateTime).assertEqual("2015-11-23");
+        expect(metadata.dateTimeFormat).assertEqual("2015-11-23 00:00:00");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1800', Level.LEVEL0,async (done: Function) => {
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success   22222222222');
+      // 获取元数据
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video album :${metadata.album}}`);
+        expect(metadata.album).assertEqual("media");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_1900', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, genre: ${metadata.composer}`);
+        expect(metadata.composer).assertEqual("测试");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2000', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, duration: ${metadata.duration}`);
+        expect(metadata.duration).assertEqual("219600");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2100', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, genre: ${metadata.genre}`);
+        expect(metadata.genre).assertEqual("Lyrical");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2200', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, hasAudio: ${metadata.hasAudio}`);
+        expect(metadata.hasAudio).assertEqual("yes");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2300', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, hasVideo: ${metadata.hasVideo}`);
+        expect(metadata.hasVideo).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2400', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, mimeType: ${metadata.mimeType}`);
+        expect(metadata.mimeType).assertEqual("audio/mpeg");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2500', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, trackCount: ${metadata.trackCount}`);
+        expect(metadata.trackCount).assertEqual("2");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, sampleRate: ${metadata.sampleRate}`);
+        expect(metadata.sampleRate).assertEqual('48000');
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2700', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, title: ${metadata.title}`);
+        expect(metadata.title).assertEqual("test");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2800', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, videoHeight: ${metadata.videoHeight}`);
+        expect(metadata.videoHeight).assertEqual("1276");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_2900', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, videoWidth: ${metadata.videoWidth}`);
+        expect(metadata.videoWidth).assertEqual("1702");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3000', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, videoOrientation: ${metadata.videoOrientation}`);
+        expect(metadata.videoOrientation).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3100', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, album: ${metadata.album}`);
+        expect(metadata.album).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3200', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, albumArtist: ${metadata.albumArtist}`);
+        expect(metadata.albumArtist).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3300', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, artist: ${metadata.artist}`);
+        expect(metadata.artist).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3400', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success, author: ${metadata.author}`);
+        expect(metadata.author).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3500', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video dateTime :${metadata.dateTime}}`);
+        expect(metadata.dateTime).assertEqual("2017-08-05 19:28:32");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video composer :${metadata.composer}}`);
+        expect(metadata.composer).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3700', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video duration :${metadata.duration}}`);
+        expect(metadata.duration).assertEqual("5826");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3800', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video genre :${metadata.genre}}`);
+        expect(metadata.genre).assertEqual("");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_3900', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video hasAudio :${metadata.hasAudio}}`);
+        expect(metadata.hasAudio).assertEqual("yes");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4000', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video hasVideo :${metadata.hasVideo}}`);
+        expect(metadata.hasVideo).assertEqual("yes");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4100', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video mimeType :${metadata.mimeType}}`);
+        expect(metadata.mimeType).assertEqual("video/mp4");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4200', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video trackCount :${metadata.trackCount}}`);
+        expect(metadata.trackCount).assertEqual("2");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA__TIMEOUT_PROMISE_FUNCTION_4300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA__TIMEOUT_PROMISE_FUNCTION_4300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA__TIMEOUT_PROMISE_FUNCTION_4300', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video sampleRate :${metadata.sampleRate}}`);
+        expect(metadata.sampleRate).assertEqual("48000");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4400', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata.videoWidth}}`);
+        expect(metadata.videoHeight).assertEqual("480");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4500', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video videoWidth :${metadata.videoWidth}}`);
+        expect(metadata.videoWidth).assertEqual("640");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TIMEOUT_PROMISE_FUNCTION_4600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      let timeoutMs = 3000;
+      await avMetadataExtractor.fetchMetadataWithTimeout(timeoutMs).then((metadata) => {
+        if (metadata) {
+        console.info(TAG, `fetchMetadata callback success video videoOrientation :${metadata.videoOrientation}}`);
+        expect(metadata.videoOrientation).assertEqual("270");
+        avMetadataExtractor.release();
+        }
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0100
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_TIMEOUT_PROMISE_FUNCTION_0100
      * @tc.desc   Online http Video playback control test

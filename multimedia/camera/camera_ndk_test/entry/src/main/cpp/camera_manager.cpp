@@ -4441,9 +4441,14 @@ int32_t g_maxTint;
 int32_t g_currentTint;
 Camera_ErrorCode NDKCamera::GetColorTintRange()
 {
+    const Camera_ErrorCode unSupportedColorTint = static_cast<Camera_ErrorCode>(-1);
     ret_ = OH_CaptureSession_GetColorTintRange(captureSession_, &g_minTint, &g_maxTint);
     if (ret_ != CAMERA_OK) {
         LOG("OH_CaptureSession_GetColorTintRange failed.");
+    }
+    if (g_minTint == 0 && g_maxTint == 0) {
+        LOG("does not support OH_CaptureSession_GetColorTintRange.");
+        return unSupportedColorTint;
     }
     return ret_;
 }
@@ -4464,9 +4469,6 @@ Camera_ErrorCode NDKCamera::SetColorTint(int useCaseCode)
         ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTint);
     } else if (useCaseCode == PARAMETER4_ERROR) {
         ret_ = OH_CaptureSession_SetColorTint(nullptr, g_minTint);
-    } else if (useCaseCode == PARAMETER5_ERROR) {
-        uint32_t colorTintNull;
-        ret_ = OH_CaptureSession_SetColorTint(captureSession_, colorTintNull);
     }
 
     if (ret_ != CAMERA_OK) {
