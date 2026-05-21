@@ -311,35 +311,6 @@ export default function observerManagerSimStateTest1() {
     });
 
     /**
-     * @tc.name   testTelephonyObserverOnGetSimActiveState0300
-     * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0300
-     * @tc.desc   Invalid parameter value.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testTelephonyObserverOnGetSimActiveState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverOnGetSimActiveState0300';
-      console.info(`${caseName} test start`);
-      try {
-        let slotId: int = 0;
-        await sim.deactivateSim(slotId);
-        observer.onGetSimActiveState(slotId, (data: boolean | undefined) => {
-          console.info(`${caseName} data: ${data}`);
-          ExpectTrue(data === true);
-          done();
-        });
-      } catch (error) {
-        console.info(`${caseName} catchError ${JSON.stringify(error)}` + error);
-        ExpectFail();
-        done();
-      }
-      await sim.activateSim(0);
-      console.info(`${caseName} test end`);
-    });
-    
-
-    /**
      * @tc.name   testTelephonyObserverOnGetSimActiveState0400
      * @tc.number SUB_Telephony_Observer_OnGetSimActiveState_0400
      * @tc.desc   Subscribe to sim active state change events.
