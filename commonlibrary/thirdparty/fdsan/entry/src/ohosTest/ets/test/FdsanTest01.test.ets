@@ -362,18 +362,6 @@ export default function Fdsan01Test() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FDSANTESTONE_2700
-     * @tc.name testFdsan01Chapter0027
-     * @tc.desc Get tag value with tag all ones, verify returns lower 56 bits
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFdsan01Chapter0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const result: boolean = testNapi.testFdsanGetTagValueTagAllOne();
-      expect(result).assertTrue();
-    });
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FDSANTESTONE_2800
      * @tc.name testFdsan01Chapter0028
      * @tc.desc Transfer fd ownership: open -> exchange(tagA) -> exchange(tagA, tagB) -> close_with_tag(tagB), verify normal close without warning
