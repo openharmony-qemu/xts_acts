@@ -1267,7 +1267,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
     /**
      * @tc.name   SUB_Security_Cert_Framework_New_Chain_Func_3900
      * @tc.number SUB_Security_Cert_Framework_New_Chain_Func_3900
-     * @tc.desc   完整校验，设置过期待校验实体证书，设置validateCertDate为false的功能测试
+     * @tc.desc   完整校验，设置过期待校验实体证书，设置validateDate为false的功能测试
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
