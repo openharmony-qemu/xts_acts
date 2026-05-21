@@ -257,7 +257,8 @@ struct Index {
             case 'testFetchCookiePromiseErrorCode401Static': {
               try {
                 console.info('testFetchCookiePromiseErrorCode401Static start');
-                web_webview.WebCookieManager.fetchCookie(null)
+                let invalidUrl: string = null as string;
+                web_webview.WebCookieManager.fetchCookie(invalidUrl)
                   .then(() => {
                     console.info('testFetchCookiePromiseErrorCode401Static no error');
                     Utils.emitEvent(0, 2026052002);
@@ -295,7 +296,8 @@ struct Index {
             case 'testFetchCookiePromiseIncognitoErrorCode401Static': {
               try {
                 console.info('testFetchCookiePromiseIncognitoErrorCode401Static start');
-                web_webview.WebCookieManager.fetchCookie(null, false)
+                let invalidUrl: string = null as string;
+                web_webview.WebCookieManager.fetchCookie(invalidUrl, false)
                   .then(() => {
                     console.info('testFetchCookiePromiseIncognitoErrorCode401Static no error');
                     Utils.emitEvent(0, 2026052004);
@@ -333,7 +335,8 @@ struct Index {
             case 'testFetchCookieCallbackErrorCode401Static': {
               try {
                 console.info('testFetchCookieCallbackErrorCode401Static start');
-                web_webview.WebCookieManager.fetchCookie(null, (error, cookie) => {
+                let invalidUrl: string = null as string;
+                web_webview.WebCookieManager.fetchCookie(invalidUrl, (error: BusinessError | null, cookie: string) => {
                   if (error) {
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(error.code, 2026052006);
@@ -439,7 +442,8 @@ struct Index {
             case 'testConfigCookieCallbackErrorCode401Static': {
               try {
                 console.info('testConfigCookieCallbackErrorCode401Static start');
-                web_webview.WebCookieManager.configCookie(null, 'a=b', (error) => {
+                let invalidUrl: string = null as string;
+                web_webview.WebCookieManager.configCookie(invalidUrl, 'a=b', (error: BusinessError | null) => {
                   if (error) {
                     console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                     Utils.emitEvent(error.code, 2026052012);
@@ -496,7 +500,7 @@ struct Index {
             case 'testSaveCookieAsyncPromiseErrorCode401Static': {
               try {
                 console.info('testSaveCookieAsyncPromiseErrorCode401Static start');
-                let saveCookieAsyncFn = web_webview.WebCookieManager.saveCookieAsync as unknown as (param: number) => Promise<void>;
+                let saveCookieAsyncFn = web_webview.WebCookieManager.saveCookieAsync as Object as (param: number) => Promise<void>;
                 saveCookieAsyncFn(1)
                   .then(() => {
                     console.info('testSaveCookieAsyncPromiseErrorCode401Static no error');
@@ -516,7 +520,8 @@ struct Index {
             case 'testSaveCookieAsyncCallbackErrorCode401Static': {
               try {
                 console.info('testSaveCookieAsyncCallbackErrorCode401Static start');
-                web_webview.WebCookieManager.saveCookieAsync(null);
+                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
+                web_webview.WebCookieManager.saveCookieAsync(invalidCallback);
                 Utils.emitEvent(0, 2026052016);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -528,7 +533,8 @@ struct Index {
             case 'testClearAllCookiesCallbackErrorCode401Static': {
               try {
                 console.info('testClearAllCookiesCallbackErrorCode401Static start');
-                web_webview.WebCookieManager.clearAllCookies(null);
+                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
+                web_webview.WebCookieManager.clearAllCookies(invalidCallback);
                 Utils.emitEvent(0, 2026052017);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -540,7 +546,7 @@ struct Index {
             case 'testClearSessionCookiePromiseErrorCode401Static': {
               try {
                 console.info('testClearSessionCookiePromiseErrorCode401Static start');
-                let clearSessionCookieFn = web_webview.WebCookieManager.clearSessionCookie as unknown as (param: number) => Promise<void>;
+                let clearSessionCookieFn = web_webview.WebCookieManager.clearSessionCookie as Object as (param: number) => Promise<void>;
                 clearSessionCookieFn(1)
                   .then(() => {
                     console.info('testClearSessionCookiePromiseErrorCode401Static no error');
@@ -560,7 +566,8 @@ struct Index {
             case 'testClearSessionCookieCallbackErrorCode401Static': {
               try {
                 console.info('testClearSessionCookieCallbackErrorCode401Static start');
-                web_webview.WebCookieManager.clearSessionCookie(null);
+                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
+                web_webview.WebCookieManager.clearSessionCookie(invalidCallback);
                 Utils.emitEvent(0, 2026052019);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -572,7 +579,9 @@ struct Index {
             case 'testLoadUrlErrorCode401Static': {
               try {
                 console.info('testLoadUrlErrorCode401Static start');
-                this.controller.loadUrl(null, [{ headerKey: 'headerKey', headerValue: 'headerValue' }]);
+                let invalidUrl: string = null as string;
+                let headers: Array<webview.WebHeader> = [{ headerKey: 'headerKey', headerValue: 'headerValue' }];
+                this.controller.loadUrl(invalidUrl, headers);
                 Utils.emitEvent(0, 2026052020);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -634,7 +643,8 @@ struct Index {
             case 'testSetCustomUserAgentErrorCode401Static': {
               try {
                 console.info('testSetCustomUserAgentErrorCode401Static start');
-                this.controller.setCustomUserAgent(null);
+                let invalidUserAgent: string = null as string;
+                this.controller.setCustomUserAgent(invalidUserAgent);
                 Utils.emitEvent(0, 2026052025);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -672,7 +682,8 @@ struct Index {
             case 'testEnableIntelligentTrackingPreventionErrorCode401Static': {
               try {
                 console.info('testEnableIntelligentTrackingPreventionErrorCode401Static start');
-                this.controller.enableIntelligentTrackingPrevention(null);
+                let invalidEnable: boolean = null as boolean;
+                this.controller.enableIntelligentTrackingPrevention(invalidEnable);
                 Utils.emitEvent(0, 2026052028);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
