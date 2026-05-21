@@ -159,16 +159,16 @@ export default function documentPcPickerCallback() {
     });
 
     /**
-     * @tc.name   test_PcDocumentpicker_Select_Callback_static_006
-     * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0600
+     * @tc.name   test_PcDocumentpicker_Select_Callback_static_007
+     * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0700
      * @tc.desc   select with option authMode
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("test_PcDocumentpicker_Select_Callback_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it("test_PcDocumentpicker_Select_Callback_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
-      let testNum = "test_PcDocumentpicker_Select_Callback_static_006";
+      let testNum = "test_PcDocumentpicker_Select_Callback_static_007";
       let option: picker.DocumentSelectOptions = {
         allowsMulFolderSelection : false
       };
