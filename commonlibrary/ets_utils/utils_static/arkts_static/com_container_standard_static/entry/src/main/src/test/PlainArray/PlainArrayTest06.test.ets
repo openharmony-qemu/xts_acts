@@ -14,6 +14,7 @@
  */
 import { PlainArray } from '@kit.ArkTS';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import Utils from '../Util.test';
 
 interface GeneratedTypeLiteralInterface_3 {
   code: number;
@@ -151,20 +152,12 @@ interface CircularObject {
   sibling?: CircularObject
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
-
 export default function PlainArray06Test(): void {
   describe('PlainArray06Test', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

@@ -270,7 +270,7 @@ export default function rdbStoreRekeyExEtsTest() {
           }
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.encrypt = true;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           let resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -333,7 +333,7 @@ export default function rdbStoreRekeyExEtsTest() {
           }
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           const valueBucket1: data_relationalStore.ValuesBucket = {
@@ -453,7 +453,7 @@ export default function rdbStoreRekeyExEtsTest() {
           }
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           const valueBucket1: data_relationalStore.ValuesBucket = {
@@ -514,7 +514,7 @@ export default function rdbStoreRekeyExEtsTest() {
           }
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           const valueBucket1: data_relationalStore.ValuesBucket = {
@@ -574,7 +574,7 @@ export default function rdbStoreRekeyExEtsTest() {
           }
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           const valueBucket1: data_relationalStore.ValuesBucket = {
@@ -856,7 +856,7 @@ export default function rdbStoreRekeyExEtsTest() {
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyEx success");
-          rdbStore.close();
+          await rdbStore.close();
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
@@ -1011,7 +1011,7 @@ export default function rdbStoreRekeyExEtsTest() {
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyEx success");
-          rdbStore.close();
+          await rdbStore.close();
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
@@ -1124,7 +1124,7 @@ export default function rdbStoreRekeyExEtsTest() {
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam1);
           console.log(TAG + "rekeyEx success");
-          rdbStore.close();
+          await rdbStore.close();
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           console.log(TAG + "getrdbstore success");
           expect().assertFail();
@@ -1175,7 +1175,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "insert success")
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyEx success")
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
           let resultSet = await rdbStore.querySql("SELECT * FROM test");
@@ -1226,7 +1226,7 @@ export default function rdbStoreRekeyExEtsTest() {
           console.log(TAG + "insert success")
           await rdbStore.rekeyEx(cryptoParam);
           console.log(TAG + "rekeyEx success")
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.encrypt = true;
           storeConfig.cryptoParam = cryptoParam;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);
@@ -1281,7 +1281,7 @@ export default function rdbStoreRekeyExEtsTest() {
           await rdbStore.insert("test", valueBucket);
           await rdbStore.rekeyEx(cryptoParam1);
           console.log(TAG + "rekeyEx success")
-          rdbStore.close();
+          await rdbStore.close();
           storeConfig.encrypt = false;
           storeConfig.cryptoParam = cryptoParam1;
           rdbStore = await data_relationalStore.getRdbStore(context!, storeConfig);

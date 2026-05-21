@@ -14,6 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import { LightWeightSet } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 class testLightWeightSet{
   name:string = ' ';
@@ -65,14 +66,6 @@ interface NestedObj {
   data: NestedMid;
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function LightWeightSetTest04(): void {
   describe('LightWeightSetTest04', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -84,7 +77,7 @@ export default function LightWeightSetTest04(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

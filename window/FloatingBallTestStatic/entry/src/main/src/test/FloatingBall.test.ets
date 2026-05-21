@@ -2623,6 +2623,7 @@ export default function FloatingBallTest(): void {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(200);
         try{
           floatingBallController.restoreMainWindow({} as Want).then(() => {
             console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
@@ -2726,6 +2727,7 @@ export default function FloatingBallTest(): void {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500);
         //点击闪控球
         let button: Component | null = await driver!.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
@@ -2784,6 +2786,7 @@ export default function FloatingBallTest(): void {
       try {
         floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500);
         floatingBallController.restoreMainWindow(want).then(() => {
           console.info(CaseName+  ' Succeeded in restoring floating ball main window.');
           expect(false).assertTrue();
@@ -3362,6 +3365,7 @@ export default function FloatingBallTest(): void {
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await Utils.msSleep(500); 
         //点击闪控球
         let button: Component | null = await driver!.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);

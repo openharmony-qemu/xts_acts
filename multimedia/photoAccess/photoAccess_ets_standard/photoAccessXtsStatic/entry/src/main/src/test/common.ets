@@ -61,7 +61,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
         hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
       });
-    await Utils.msSleep(5000);
+    await Utils.msSleep(1000);
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
     for (let i = 0; i < arr.length; i++) {
       let dr = Driver.create();

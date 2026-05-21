@@ -3187,6 +3187,7 @@ export default function abilityTest() {
       try {
         let floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await sleep(500);
         //点击闪控球
         let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);
@@ -3921,6 +3922,7 @@ export default function abilityTest() {
       try {
         let floatingBallController = await floatingBall.create(config);
         await floatingBallController.startFloatingBall(startParams);
+        await sleep(500);
         //点击闪控球
         let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
         console.info(CaseName+ ' button: ' + button);

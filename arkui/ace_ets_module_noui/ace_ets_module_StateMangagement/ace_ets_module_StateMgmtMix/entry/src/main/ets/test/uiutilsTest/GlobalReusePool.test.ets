@@ -17,7 +17,7 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest';
-import { IReusableInfo, IReusePool } from '@kit.ArkUI';
+import { IReusableInfo, IReusePool, UIUtils } from '@kit.ArkUI';
 import CommonFunc from '../../MainAbility/common/Common';
 
 
@@ -114,7 +114,12 @@ export default function GlobalReusePoolTest() {
       let getReusePool: IReusePool| undefined = AppStorage.get('getReusePoolNotUndefined');
       expect(getReusePool).not().assertUndefined()
       let iReusableInfoArray: IReusableInfo[]| undefined = AppStorage.get('IReusableInfoArray');
-      expect(iReusableInfoArray?.length).assertLarger(0)
+      expect(iReusableInfoArray?.length).assertLarger(0);
+      expect(getReusePool?.getReusableInfo(null, null)).assertUndefined();
+      expect(getReusePool?.getReusableInfo(undefined, undefined)).assertUndefined();
+      expect(getReusePool?.getReusableInfo(undefined, '')).assertUndefined();
+      expect(UIUtils.getCustomComponentContext(null)).assertUndefined();
+      expect(UIUtils.getCustomComponentContext(undefined)).assertUndefined();
       hilog.info(0x0000, 'GlobalReusePoolTest', 'globalReusePool_getReusableInfo_withReuseId_0100 END');
     });
 

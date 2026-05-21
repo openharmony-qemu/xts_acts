@@ -44,6 +44,7 @@ group("window") {
     "windowEvent:ActsWindowEventTest",
     "WindowKeyBorad:ActsWindowKeyBoradTest",
     "WindowLayout:ActsWindowLayoutTest",
-    "WindowImmersive:ActsWindowImmersiveTest"
+    "WindowImmersive:ActsWindowImmersiveTest",
+    "ActsWindowControlsTestStatic:ActsWindowControlsStaticTest"
   ]
 }

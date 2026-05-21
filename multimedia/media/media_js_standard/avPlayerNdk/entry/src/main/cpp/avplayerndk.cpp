@@ -80,6 +80,9 @@ static OH_AVPlayer *g_player;
 #define LOGE(format, ...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, 0xFF00, LOG_MSG_TAG, format, ##__VA_ARGS__))
 #define LOGD(format, ...) ((void)OH_LOG_Print(LOG_APP, LOG_DEBUG, 0xFF00, LOG_MSG_TAG, format, ##__VA_ARGS__))
 
+constexpr int32_t US_TO_MS = 1000;
+constexpr int32_t MAX_ERROR_MS = 500;
+
 void waitAvPlayerStateChange(OH_AVPlayer *player, AVPlayerState state)
 {
     AVPlayerState currentStage;
@@ -1684,6 +1687,7 @@ typedef struct NdkAVPlayerSetPlaybackRateUser {
     AVPlayerState avState = AV_IDLE;
     float rate = 1.0f;
     float setRate = 1.0f;
+    int64_t lastPts {0};
 } NdkAVPlayerSetPlaybackRateUser;
 
 void NdkAVPlayerSetPlaybackRateUser::CreateSurface(NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser)
@@ -3358,6 +3362,206 @@ static napi_value NAPI_Global_setLoudnessGain4(napi_env env, napi_callback_info 
     napi_create_int32(env, backParam, &result);
     return result;
 }
+
+static void AVPlayerPCMOutputCallbackImpl(OH_AVPlayer *player, OH_AVBuffer *pcmBuffer, void *userData)
+{
+    NdkAVPlayerSetPlaybackRateUser *user = reinterpret_cast<NdkAVPlayerSetPlaybackRateUser *>(userData);
+    if (user == nullptr || player == nullptr) {
+        LOGE("AVPlayerPCMOutputCallbackImpl user is nullptr");
+        return;
+    }
+ 
+    OH_AVCodecBufferAttr attr;
+    OH_AVErrCode errCode = OH_AVBuffer_GetBufferAttr(pcmBuffer, &attr);
+    if (errCode != AV_ERR_OK) {
+        LOGE("OhAvPlayerSetPCMOutputCallback SetPCMOutputCallback errCode:%{public}d", errCode);
+    }
+    if (attr.flags != AVCODEC_BUFFER_FLAGS_EOS) {
+        user->lastPts = attr.pts;
+    }
+}
+ 
+int OhAvPlayerSetPCMOutputCallback()
+{
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+ 
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+ 
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+ 
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMOutputCallback(player, AVPlayerPCMOutputCallbackImpl, ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMOutputCallback SetPCMOutputCallback errCode:%{public}d", errCode);
+    OH_AVPlayer_Prepare(player);
+ 
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVPlayer_Play(player);
+    waitAvPlayerStateChange(player, AV_PLAYING);
+ 
+    // wait for completed
+    int32_t duration;
+    errCode = OH_AVPlayer_GetDuration(player, &duration);
+    LOG("OhAvPlayerSetPCMOutputCallback GetDuration errCode:%{public}d, duraiton:%{public}d", errCode, duration);
+    std::this_thread::sleep_for(std::chrono::milliseconds(duration));
+    waitAvPlayerStateChange(player, AV_COMPLETED);
+    LOG("OhAvPlayerSetPCMOutputCallback lastPts %{public}ld", ndkAVPlayerUser->lastPts);
+ 
+    // check audio bypass output pts
+    if (std::abs((ndkAVPlayerUser->lastPts / US_TO_MS) - duration) < MAX_ERROR_MS) {
+        backParam = SUCCESS;
+    }
+ 
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    return backParam;
+}
+ 
+template <typename Func> napi_value NapiTry(napi_env env, Func&& func)
+{
+    try {
+        return func();
+    } catch (const std::exception& e) {
+        napi_throw_error(env, nullptr, e.what());
+    } catch (...) {
+        napi_throw_error(env, nullptr, "Unknown native error");
+    }
+    return nullptr;
+}
+
+struct AsyncWorkData {
+    napi_env env;
+    napi_deferred deferred;
+    napi_async_work work;
+    int (*testFunc)();
+    int result;
+    std::string errorMsg;
+};
+ 
+static void ExecuteWork(napi_env env, void* data)
+{
+    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
+    try {
+        workData->result = workData->testFunc();
+    } catch (const std::exception& e) {
+        workData->errorMsg = e.what();
+        workData->result = -1;
+    } catch (...) {
+        workData->errorMsg = "Unknown error occurred";
+        workData->result = -1;
+    }
+}
+ 
+static void CompleteWork(napi_env env, napi_status status, void* data)
+{
+    AsyncWorkData* workData = static_cast<AsyncWorkData*>(data);
+    
+    if (status != napi_ok) {
+        goto cleanup;
+    }
+ 
+    if (!workData->errorMsg.empty()) {
+        napi_value error;
+        napi_create_string_utf8(env, workData->errorMsg.c_str(), NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, workData->deferred, error);
+    } else {
+        napi_value result;
+        napi_create_int32(env, workData->result, &result);
+        napi_resolve_deferred(env, workData->deferred, result);
+    }
+ 
+cleanup:
+    napi_delete_async_work(env, workData->work);
+    delete workData;
+}
+ 
+static napi_value CreateAsyncWrapper(napi_env env, napi_callback_info info, int (*testFunc)())
+{
+    return NapiTry(env, [env, info, testFunc]() {
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+ 
+        AsyncWorkData* workData = new AsyncWorkData();
+        workData->env = env;
+        workData->deferred = deferred;
+        workData->testFunc = testFunc;
+        workData->result = 0;
+ 
+        napi_value workName;
+        napi_create_string_utf8(env, "AVPlayerNdkTest", NAPI_AUTO_LENGTH, &workName);
+        napi_status createStatus =
+            napi_create_async_work(env, nullptr, workName, ExecuteWork, CompleteWork, workData, &workData->work);
+        if (createStatus != napi_ok) {
+            goto cleanup;
+        }
+ 
+        napi_queue_async_work(env, workData->work);
+ 
+        return promise;
+ 
+    cleanup:
+        delete workData;
+        napi_reject_deferred(env, deferred, nullptr);
+    });
+}
+
+static napi_value OhAvPlayerSetPCMOutputCallbackWrapper(napi_env env, napi_callback_info info)
+{
+    return CreateAsyncWrapper(env, info, OhAvPlayerSetPCMOutputCallback);
+}
+
+static napi_value OhAvPlayerSetPCMOutputCallbackWrapperErr(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    OH_AVPlayer *player = nullptr;
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+ 
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+ 
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+ 
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMOutputCallback(player, AVPlayerPCMOutputCallbackImpl, ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMOutputCallback SetPCMOutputCallback errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value OhAvPlayerSetPCMOutputCallbackWrapperError(napi_env env, napi_callback_info info)
+{
+    int backParam = FAIL;
+    napi_value result = nullptr;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    NdkAVPlayerSetPlaybackRateUser *ndkAVPlayerUser = new NdkAVPlayerSetPlaybackRateUser();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError };
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    waitAvPlayerStateChange(player, AV_INITIALIZED);
+    OH_AVPlayer_Prepare(player);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVErrCode errCode = OH_AVPlayer_SetPCMOutputCallback(player, AVPlayerPCMOutputCallbackImpl, ndkAVPlayerUser);
+    LOG("OhAvPlayerSetPCMOutputCallback SetPCMOutputCallback errCode:%{public}d", errCode);
+    if (errCode == AV_ERR_OPERATE_NOT_PERMIT) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3541,6 +3745,12 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr},
         {"avPlayerBufferingTypeEnum", nullptr, NAPI_Global_AVPlayerBufferingTypeEnum, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"avPlayerSetPCMOutputCallback", nullptr, OhAvPlayerSetPCMOutputCallbackWrapper, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"avPlayerSetPCMOutputCallbackErr", nullptr, OhAvPlayerSetPCMOutputCallbackWrapperErr, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"avPlayerSetPCMOutputCallbackError", nullptr, OhAvPlayerSetPCMOutputCallbackWrapperError, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

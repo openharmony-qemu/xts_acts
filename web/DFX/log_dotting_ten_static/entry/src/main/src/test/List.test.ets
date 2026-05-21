@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import  WebEngineVersion from './WebViewActiveWebEngineVersion.test'
+import EnableAdvancedSecurityModeTest from './EnableAdvancedSecurityMode.test'
 export default function testsuite() {
   WebEngineVersion();
+  EnableAdvancedSecurityModeTest();
 }

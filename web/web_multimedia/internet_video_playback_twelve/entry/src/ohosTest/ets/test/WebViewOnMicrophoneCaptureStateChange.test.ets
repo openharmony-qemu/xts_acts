@@ -86,11 +86,13 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       }
 
       let buttonThree = await driver.waitForComponent(ON.text('允许'),10000);
-      if(buttonThree) {
-        await buttonThree.click();
+      let buttonFive = await driver.waitForComponent(ON.text('始终允许'),10000);
+      if(buttonThree || buttonFive) {
+        await buttonThree?.click();
+        await buttonFive?.click();
       } else {
         let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
-        await buttonFour.click();
+        await buttonFour?.click();
       }
       let buttonOne = await driver.waitForComponent(ON.text('开启麦克风'),10000);
       await buttonOne.click();
