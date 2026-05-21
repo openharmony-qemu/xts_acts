@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsVideoProcessTestStatic") {
+ohos_js_app_static_suite("ActsVideoProcessingEngineTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsVideoProcessTestStatic"
+  hap_name = "ActsVideoProcessingEngineTest"
   part_name = "video_processing_engine"
   subsystem_name = "multimedia"
 }
