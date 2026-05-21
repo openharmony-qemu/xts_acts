@@ -146,8 +146,9 @@ struct WebOnPermissionRequest {
                     await waitForExist(async () => {
                       try {
                         const component = await driver.findComponent(ON.text('允许'));
-                        if(component) {
-                          return component !== null;
+                        const component2 = await driver.findComponent(ON.text('始终允许'));
+                        if(component || component2) {
+                          return true;
                         } else {
                           let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
                           return buttonFour !== null;
@@ -158,11 +159,13 @@ struct WebOnPermissionRequest {
                     }, "allowButton", true)
 
                     const component = await driver.findComponent(ON.text('允许'));
-                    if(component) {
-                      await component.click();
+                    const component2 = await driver.findComponent(ON.text('始终允许'));
+                    if (component || component2) {
+                      await component?.click();
+                      await component2?.click();
                     } else {
                       let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
-                      await buttonFour.click();
+                      await buttonFour?.click();
                     }
            
                     const result = await waitForExist(async () => {
@@ -233,14 +236,17 @@ struct WebOnPermissionRequest {
                     await waitForExist(async () => {
                       try {
                         const component = await driver.findComponent(ON.text('允许'));
-                        return component !== null;
+                        const component2 = await driver.findComponent(ON.text('始终允许'));
+                        return component !== null || component2 !== null;
                       } catch {
                         return false;
                       }
                     }, "allowButton", true)
 
                     const component = await driver.findComponent(ON.text('允许'));
-                    await component.click();
+                    const component2 = await driver.findComponent(ON.text('始终允许'));
+                    await component?.click();
+                    await component2?.click();
 
 
                     const result = await waitForExist(async () => {
@@ -310,14 +316,17 @@ struct WebOnPermissionRequest {
                     await waitForExist(async () => {
                       try {
                         const component = await driver.findComponent(ON.text('允许'));
-                        return component !== null;
+                        const component2 = await driver.findComponent(ON.text('始终允许'));
+                        return component !== null || component2 !== null;
                       } catch {
                         return false;
                       }
                     }, "allowButton", true)
 
                     const component = await driver.findComponent(ON.text('允许'));
-                    await component.click();
+                    const component2 = await driver.findComponent(ON.text('始终允许'));
+                    await component?.click();
+                    await component2?.click();
 
 
                     const result = await waitForExist(async () => {
@@ -387,14 +396,17 @@ struct WebOnPermissionRequest {
                     await waitForExist(async () => {
                       try {
                         const component = await driver.findComponent(ON.text('允许'));
-                        return component !== null;
+                        const component2 = await driver.findComponent(ON.text('始终允许'));
+                        return component !== null || component2 !== null;
                       } catch {
                         return false;
                       }
                     }, "allowButton", true)
 
                     const component = await driver.findComponent(ON.text('允许'));
-                    await component.click();
+                    const component2 = await driver.findComponent(ON.text('始终允许'));
+                    await component?.click();
+                    await component2?.click();
 
 
                     const result = await waitForExist(async () => {
