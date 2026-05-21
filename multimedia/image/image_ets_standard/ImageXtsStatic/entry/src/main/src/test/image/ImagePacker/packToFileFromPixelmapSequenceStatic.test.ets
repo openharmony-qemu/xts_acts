@@ -137,8 +137,8 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
 
 
     /**
-     * @tc.number  SUB_MEDIA_IMAGE_image_Packer_packToFileFromPixelmapSequence_promise_SUPP_static_0300
      * @tc.name    SUB_MEDIA_IMAGE_image_Packer_packToFileFromPixelmapSequence_promise_SUPP_static_0300
+     * @tc.number  SUB_MEDIA_IMAGE_image_Packer_packToFileFromPixelmapSequence_promise_SUPP_static_0300
      * @tc.desc    Packer.packToFileFromPixelmapSequence,disposalTypes: []
      * @tc.size    MEDIUM
      * @tc.type    Function
@@ -493,15 +493,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
       done();
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01000
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01000
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1000
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1000
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01000', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01000';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1000';
       const inputPathUri = 'test6.gif';
       const outputPathUri = 'output_test6.gif';
       let ops: image.PackingOptionsForSequence = {
@@ -527,15 +527,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01100
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01100
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1100
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1100
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01100';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1100';
       const inputPathUri = 'test6.gif';
       const outputPathUri = 'output_test6.gif';
       let ops: image.PackingOptionsForSequence = {
@@ -560,15 +560,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01200
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01200
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1200
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1200
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01200';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1200';
       const inputPathUri = 'test.jpg';
       const outputPathUri = 'output_test.jpg';
       let ops: image.PackingOptionsForSequence = {
@@ -592,15 +592,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
       done();
     })
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01300
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01300
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1300
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1300
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01300', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01300';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1300';
       const inputPathUri = 'test.svg';
       const outputPathUri = 'output_test.svg';
       let ops: image.PackingOptionsForSequence = {
@@ -627,15 +627,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
 
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01400
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01400
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1400
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1400
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01400', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01400';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1400';
       const inputPathUri = 'test_exif_v2.png';
       const outputPathUri = 'output_test.png';
       let ops: image.PackingOptionsForSequence = {
@@ -660,15 +660,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01500
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01500
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1500
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1500
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01500', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01500';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1500';
       const inputPathUri = 'test8.bmp';
       const outputPathUri = 'output_test8.bmp';
       let ops: image.PackingOptionsForSequence = {
@@ -694,15 +694,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
 
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01600
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01600
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1600
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1600
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01600', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01600';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1600';
       const inputPathUri = 'test_aisr.ico';
       const outputPathUri = 'output_testaisr.ico';
       let ops: image.PackingOptionsForSequence = {
@@ -727,15 +727,15 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01700
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01700
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1700
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1700
      * @tc.desc   imagePacker_packToFileFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01700', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_01700';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToFileFromPixelmapSequence_promise_SUPP_static_1700';
       const inputPathUri = 'test_exif_v3.webp';
       const outputPathUri = 'output_test_v3.webp';
       
