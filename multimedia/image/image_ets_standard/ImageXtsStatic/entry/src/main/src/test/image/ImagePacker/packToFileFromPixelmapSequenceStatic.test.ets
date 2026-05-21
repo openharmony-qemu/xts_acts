@@ -85,7 +85,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
         await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
         let state = await fs.stat(file.fd);
         console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-        expect(state.size > 0).assertTrue;
+        expect(state.size > 0).assertTrue();
         await Packer.release();
       } catch (err) {
         console.error(TAG, testName, `Faild Error, errorCode: ${err.code},errorMessage: ${err.message}`)
@@ -125,7 +125,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
         console.info(TAG,testName,'Succeeded in packToFileMultiFrames.');
         let state= await fs.stat( file.fd);
         console.info(TAG,testName,'Succeeded in fs.stat.',state);
-        expect(state.size > 0).assertTrue;
+        expect(state.size > 0).assertTrue();
         await Packer.release();
         done();
       } catch (error) {
@@ -167,7 +167,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
         console.info(TAG,testName,'Succeeded in packToFileFromPixelmapSequence.');
         let state = await fs.stat(file.fd);
         console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-        expect(state.size > 0).assertTrue;
+        expect(state.size > 0).assertTrue();
         await Packer.release();
         done();
       } catch (error) {
@@ -203,7 +203,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
           await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
         })
       } catch (error) {
@@ -239,7 +239,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -274,7 +274,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -309,7 +309,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -344,7 +344,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -379,7 +379,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -414,7 +414,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -449,7 +449,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -483,7 +483,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -516,7 +516,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -549,7 +549,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -582,7 +582,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -614,7 +614,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -649,7 +649,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -682,7 +682,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -716,7 +716,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
@@ -750,7 +750,7 @@ export default function imagePackerPackToFileFromPixelmapSequenceSUppStaticTest(
             await Packer.packToFileFromPixelmapSequence(pixelMapList, file.fd, ops);
             let state = await fs.stat(file.fd);
             console.info(TAG,testName,'Succeeded in fs.stat.',JSON.stringify(state));
-            expect(state.size > 0).assertTrue;
+            expect(state.size > 0).assertTrue();
             await Packer.release();
           })
       } catch (error) {
