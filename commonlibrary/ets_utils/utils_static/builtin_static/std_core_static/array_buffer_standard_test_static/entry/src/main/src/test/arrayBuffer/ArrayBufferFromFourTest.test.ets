@@ -155,7 +155,7 @@ export default function arrayBufferFromFourTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: double[] = [1.0, Number.NaN, 3.0];
+      const arr: double[] = [1.0, Double.NaN, 3.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
     });
@@ -169,7 +169,7 @@ export default function arrayBufferFromFourTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: double[] = [1.0, Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY];
+      const arr: double[] = [1.0, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
     });

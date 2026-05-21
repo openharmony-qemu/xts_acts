@@ -237,7 +237,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1600
-     * @tc.desc Verify kind === 'number' || kind === 'int' is true
+     * @tc.desc Verify kind === 'int' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,7 +245,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     it('testArrayBufferByteLengthField0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const kind: string = typeof buffer.byteLength;
-      expect(kind === 'number' || kind === 'int').assertTrue();
+      expect(kind === 'int').assertTrue();
     });
 
     /**

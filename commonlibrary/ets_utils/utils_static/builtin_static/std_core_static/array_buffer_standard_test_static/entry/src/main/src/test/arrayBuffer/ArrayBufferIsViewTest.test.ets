@@ -350,7 +350,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2500
-     * @tc.desc Verify kind === 'boolean' || kind === 'Boolean' is true
+     * @tc.desc Verify kind === 'boolean' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -359,13 +359,13 @@ export default function arrayBufferIsViewTest(): void {
       const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
       let kind: string = typeof ArrayBuffer.isView(view);
-      expect(kind === 'boolean' || kind === 'Boolean').assertTrue();
+      expect(kind === 'boolean').assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferIsView0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2600
-     * @tc.desc Verify ArrayBuffer.isView returns true
+     * @tc.desc Verify typeof ArrayBuffer.isView(view) equals 'boolean'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -373,7 +373,7 @@ export default function arrayBufferIsViewTest(): void {
     it('testArrayBufferIsView0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
-      expect(typeof ArrayBuffer.isView(view) !== 'number').assertTrue();
+      expect(typeof ArrayBuffer.isView(view) === 'boolean').assertTrue();
     });
 
     /**
@@ -407,14 +407,14 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2900
-     * @tc.desc Verify kind === 'boolean' || kind === 'Boolean' is true
+     * @tc.desc Verify kind === 'boolean'is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let kind: string = typeof ArrayBuffer.isView(Utils.plainObject());
-      expect(kind === 'boolean' || kind === 'Boolean').assertTrue();
+      expect(kind === 'boolean').assertTrue();
     });
 
     /**

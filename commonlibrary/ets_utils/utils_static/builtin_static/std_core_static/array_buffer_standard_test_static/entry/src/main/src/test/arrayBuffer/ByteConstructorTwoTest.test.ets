@@ -519,7 +519,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3400
-     * @tc.desc Verify Utils.isRuntimeNumericOrIntTypeof(typeof val) || typeof val === 'byte' is true
+     * @tc.desc Verify typeof val === 'byte' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -527,7 +527,7 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
       const val: byte = b.toByte();
-      expect(Utils.isRuntimeNumericOrIntTypeof(typeof val) || typeof val === 'byte').assertTrue();
+      expect(typeof val === 'byte').assertTrue();
     });
   });
 }

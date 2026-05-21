@@ -679,7 +679,7 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, Double.toInt(Number.NaN), 8);
+      const result = Utils.fromObjectWithBuffer(src, Double.toInt(Double.NaN), 8);
       expect(result.byteLength).assertEqual(8);
     });
 
@@ -907,7 +907,7 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(Number.NaN));
+      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(Double.NaN));
       expect(result.byteLength).assertEqual(0);
     });
 

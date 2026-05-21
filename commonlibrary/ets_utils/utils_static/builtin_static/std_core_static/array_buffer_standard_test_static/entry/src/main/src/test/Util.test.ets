@@ -2,13 +2,13 @@ class PlainObject {
 }
 
 class PlainRecord {
-  a: int = 1;
+  a: Int = 1;
 }
 
 function utilVoidFn(): void {
 }
 
-function utilIntReturningFn(): int {
+function utilIntReturningFn(): Int {
   return 1;
 }
 
@@ -29,7 +29,7 @@ export default class Utils {
     return Utils.fnReturningIntAsObject(utilIntReturningFn);
   }
 
-  static async msSleep(count: int): Promise<void> {
+  static async msSleep(count: Int): Promise<void> {
     return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void): void => {
       setTimeout((): void => {
         resolve(Promise.resolve());
@@ -37,11 +37,7 @@ export default class Utils {
     });
   }
 
-  static isRuntimeNumericOrIntTypeof(kind: string): boolean {
-    return kind === 'int';
-  }
-
-  static fromObjectWithBuffer(src: ArrayBuffer, byteOffset: int, length: int): ArrayBuffer {
+  static fromObjectWithBuffer(src: ArrayBuffer, byteOffset: Int, length: Int): ArrayBuffer {
     return ArrayBuffer.fromObject(src as Object, byteOffset, length);
   }
 
@@ -85,23 +81,23 @@ export default class Utils {
     return Utils.castToString(Utils.booleanAsObject(v));
   }
 
-  static nullAsInt(): int {
+  static nullAsInt(): Int {
     return Utils.castToInt(Utils.nullAsObject());
   }
 
-  static undefinedAsInt(): int {
+  static undefinedAsInt(): Int {
     return Utils.castToInt(Utils.undefinedAsObject());
   }
 
-  static booleanAsInt(v: boolean): int {
+  static booleanAsInt(v: boolean): Int {
     return Utils.castToInt(Utils.booleanAsObject(v));
   }
 
-  static stringAsInt(s: string): int {
+  static stringAsInt(s: string): Int {
     return Utils.castToInt(s as Object);
   }
 
-  static fnReturningIntAsObject(fn: () => int): Object {
+  static fnReturningIntAsObject(fn: () => Int): Object {
     return fn as Object;
   }
 
@@ -109,20 +105,20 @@ export default class Utils {
     return v;
   }
 
-  static repeatString(unit: string, count: int): string {
+  static repeatString(unit: string, count: Int): string {
     let out: string = '';
-    for (let i: int = 0; i < count; i++) {
+    for (let i: Int = 0; i < count; i++) {
       out = out + unit;
     }
     return out;
   }
 
-  static buildLongString(unit: string, totalLen: int): string {
-    const chunkSize: int = 100;
+  static buildLongString(unit: string, totalLen: Int): string {
+    const chunkSize: Int = 100;
     const chunk: string = Utils.repeatString(unit, chunkSize);
     let out: string = '';
-    const reps: int = totalLen / chunkSize;
-    for (let i: int = 0; i < reps; i++) {
+    const reps: Int = totalLen / chunkSize;
+    for (let i: Int = 0; i < reps; i++) {
       out = out + chunk;
     }
     return out;
@@ -136,20 +132,20 @@ export default class Utils {
     return v as ArrayBuffer;
   }
 
-  static castToInt(v: Object): int {
-    return v as int;
+  static castToInt(v: Object): Int {
+    return v as Int;
   }
 
   static castToUint8Array(v: Object): Uint8Array {
     return v as Uint8Array;
   }
 
-  static castToValueArrayByte(v: Object): ValueArray<byte> {
-    return v as ValueArray<byte>;
+  static castToValueArrayByte(v: Object): ValueArray<Byte> {
+    return v as ValueArray<Byte>;
   }
 
-  static castToByte(v: Object): byte {
-    return v as byte;
+  static castToByte(v: Object): Byte {
+    return v as Byte;
   }
 
   static numberAsString(n: number): string {
@@ -160,11 +156,11 @@ export default class Utils {
     return Utils.castToArrayBuffer(n as Object);
   }
 
-  static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: int, length?: int): ArrayBuffer {
+  static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: Int, length?: Int): ArrayBuffer {
     if (length !== undefined) {
       return ArrayBuffer.from(src, byteOffset, length);
     }
-    const tail: int = (src.byteLength as int) - byteOffset;
+    const tail: Int = src.byteLength - byteOffset;
     try {
       const r = ArrayBuffer.from(src, byteOffset);
       if (r.byteLength === tail) {
