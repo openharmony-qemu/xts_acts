@@ -575,7 +575,7 @@ export default function webViewControllerJsunit() {
     /**
      * @tc.name   testLoadUrlStatic101
      * @tc.number SUB_WEB_ERRORCODE_EXT_0120
-     * @tc.desc   loadUrl(url, headers)错误码覆盖，传null headers校验401
+     * @tc.desc   loadUrl(url, headers)错误码覆盖，传null url校验401
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
