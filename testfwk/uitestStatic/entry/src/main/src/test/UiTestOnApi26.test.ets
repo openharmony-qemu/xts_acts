@@ -22,7 +22,7 @@ let domain: int = 0x0000;
 let tag: string = 'uitestTag';
 const TestTag = 'uitestTag';
 const waitUiReadyMs: int = 1000;
-const DeviceErrorCode = 17000007;
+const ParameterErrorCode = 17000007;
 
 export default function uitestOnApi26Test(): void {
   describe('UitestOnApi26Test', (): void => {
@@ -65,7 +65,7 @@ export default function uitestOnApi26Test(): void {
 
     /**
      * @tc.name   testOnIsBeforeComponentInvalid_static
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0101
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0200
      * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -86,14 +86,14 @@ export default function uitestOnApi26Test(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsBeforeComponentInvalid_static,error.code, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(DeviceErrorCode);
+        expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnIsBeforeComponentInvalid_static over`);
     });
 
     /**
      * @tc.name   testOnIsAfterComponentValid_static
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0200
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
      * @tc.desc   Test On.isAfter(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -122,7 +122,7 @@ export default function uitestOnApi26Test(): void {
 
     /**
      * @tc.name   testOnIsAfterComponentInvalid_static
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0201
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0400
      * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -144,14 +144,14 @@ export default function uitestOnApi26Test(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnIsAfterComponentInvalid_static,error.code, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(DeviceErrorCode);
+        expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnIsAfterComponentInvalid_static over`);
     });
 
     /**
      * @tc.name   testOnWithinComponentValid_static
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0500
      * @tc.desc   Test On.within(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -181,7 +181,7 @@ export default function uitestOnApi26Test(): void {
 
     /**
      * @tc.name   testOnWithinComponentInvalid_static
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0301
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0600
      * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -203,7 +203,7 @@ export default function uitestOnApi26Test(): void {
         expect().assertFail();
       } catch (error) {
         console.info(`testOnWithinComponentInvalid_static,error.code, ${JSON.stringify(error)}`);
-        expect(error.code).assertEqual(DeviceErrorCode);
+        expect(error.code).assertEqual(ParameterErrorCode);
       }
       console.info(`testOnWithinComponentInvalid_static over`);
     });
