@@ -219,7 +219,7 @@ napi_value VideoDecodeSyncSs265Func0020Test(napi_env env, napi_callback_info inf
         }
         return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 napi_value VideoSwdecH265Speed0010Test(napi_env env, napi_callback_info info)
@@ -297,7 +297,7 @@ napi_value VideoSwdecH265Speed0030Test(napi_env env, napi_callback_info info)
         }
         return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
 napi_value VideoSwdecH265Speed0040Test(napi_env env, napi_callback_info info)
