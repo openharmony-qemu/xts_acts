@@ -163,7 +163,7 @@ export default function HttpRequestTlsEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlsEnablePartialChain0100
-     * @tc.number SUB_NetworkMgr_Http_RequestTlsEnablePartialChain0100
+     * @tc.number SUB_NetworkMgr_Http_RequestTls_EnablePartialChain_0100
      * @tc.desc   Verify that the request succeeds when TLS enablePartialChain is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -235,7 +235,7 @@ export default function HttpRequestTlsEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlsEnablePartialChain0200
-     * @tc.number SUB_NetworkMgr_Http_RequestTlsEnablePartialChain0200
+     * @tc.number SUB_NetworkMgr_Http_RequestTls_EnablePartialChain_0200
      * @tc.desc   Verify that the request fails when TLS enablePartialChain is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -307,7 +307,7 @@ export default function HttpRequestTlsEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlsEnablePartialChain0300
-     * @tc.number SUB_NetworkMgr_Http_RequestTlsEnablePartialChain0300
+     * @tc.number SUB_NetworkMgr_Http_RequestTls_EnablePartialChain_0300
      * @tc.desc   Verify that the request succeeds when TLS enablePartialChain is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -370,7 +370,7 @@ export default function HttpRequestTlsEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlsEnablePartialChain0400
-     * @tc.number SUB_NetworkMgr_Http_RequestTlsEnablePartialChain0400
+     * @tc.number SUB_NetworkMgr_Http_RequestTls_EnablePartialChain_0400
      * @tc.desc   Verify that the request succeeds when TLS enablePartialChain is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -442,7 +442,7 @@ export default function HttpRequestTlsEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlsEnablePartialChain0500
-     * @tc.number SUB_NetworkMgr_Http_RequestTlsEnablePartialChain0500
+     * @tc.number SUB_NetworkMgr_Http_RequestTls_EnablePartialChain_0500
      * @tc.desc   Verify that the request succeeds when TLS enablePartialChain is not set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
