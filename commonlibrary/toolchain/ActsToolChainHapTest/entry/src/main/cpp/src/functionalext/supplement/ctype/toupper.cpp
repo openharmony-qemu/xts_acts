@@ -65,7 +65,7 @@ void Toupper0300(void)
  * @tc.desc      : Test the result of passing special characters into toupper
  * @tc.level     : Level 2
  */
-void toupper_0400(void)
+void Toupper0400(void)
 {
     char ch = '$';
     char result = toupper(ch);
@@ -79,7 +79,7 @@ void toupper_0400(void)
  * @tc.desc      : Test the result of passing whitespace character into toupper
  * @tc.level     : Level 2
  */
-void toupper_0500(void)
+void Toupper0500(void)
 {
     char ch = ' ';
     char result = toupper(ch);
@@ -115,7 +115,7 @@ void Toupper0600(void)
  * @tc.desc      : Test the result of passing all uppercase characters into toupper
  * @tc.level     : Level 2
  */
-void toupper_0700(void)
+void Toupper0700(void)
 {
     char str1[] = "HELLOWORLD";
     size_t sizeStr = sizeof(str1);
@@ -159,10 +159,10 @@ static int ToupperTestImpl(int argc, char *argv[])
     Toupper0100();
     Toupper0200();
     Toupper0300();
-    toupper_0400();
-    toupper_0500();
+    Toupper0400();
+    Toupper0500();
     Toupper0600();
-    toupper_0700();
+    Toupper0700();
     Toupper0800();
     return g_tStatus;
 }

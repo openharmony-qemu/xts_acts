@@ -43,29 +43,29 @@ const int FILE_THIRTYTHREE = 33;
  * @tc.desc      : Determine whether the file read position is as expected
  * @tc.level     : Level 2
  */
-void lseek64_0100(void)
+void Lseek640100(void)
 {
-    off_t DataArry[TEST_BUFFER_SIZE] = {1, 2, 4, 8};
+    off_t dataArry[TEST_BUFFER_SIZE] = {1, 2, 4, 8};
     off_t offset = 0;
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/lseek64_function_test.c";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/lseek64_function_test.c";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     if (fd < 0) {
         t_error("open file failed\n");
         return;
     }
     for (int i = 0; i < TEST_BUFFER_SIZE; i++) {
         lseek64(fd, 0, SEEK_SET);
-        offset = lseek64(fd, DataArry[i], SEEK_SET);
-        if (offset != DataArry[i]) {
+        offset = lseek64(fd, dataArry[i], SEEK_SET);
+        if (offset != dataArry[i]) {
             EXPECT_FALSE("lseek64_0100", 1);
         }
     }
     close(fd);
-    int ret = access(file_path, F_OK);
+    int ret = access(filePath, F_OK);
     if (ret != -1) {
-        ret = remove(file_path);
+        ret = remove(filePath);
     }
 }
 
@@ -77,16 +77,16 @@ void lseek64_0100(void)
 void Lseek0100(void)
 {
     char *wrstring = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0100", 0, fd);
-    int retwrite = write(fd, wrstring, sizeof(wrstring));
+    int retWrite = write(fd, wrstring, sizeof(wrstring));
     off_t data = lseek(fd, 0L, SEEK_SET);
     EXPECT_EQ("lseek_0100", (int)data, FILE_ZERO);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 /**
@@ -97,16 +97,16 @@ void Lseek0100(void)
 void Lseek0200(void)
 {
     char *wrstring = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0200", 0, fd);
-    int retwrite = write(fd, wrstring, sizeof(wrstring));
+    int retWrite = write(fd, wrstring, sizeof(wrstring));
     off_t data = lseek(fd, 8L, SEEK_SET);
     EXPECT_EQ("lseek_0200", (int)data, FILE_EIGHT);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 /**
@@ -117,17 +117,17 @@ void Lseek0200(void)
 void Lseek0300(void)
 {
     char *wrstring = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0300", 0, fd);
-    int retwrite = write(fd, wrstring, sizeof(wrstring));
+    int retWrite = write(fd, wrstring, sizeof(wrstring));
     off_t data = lseek(fd, 10L, SEEK_SET);
     data = lseek(fd, 0L, SEEK_CUR);
     EXPECT_EQ("lseek_0300", (int)data, FILE_TEN);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 /**
@@ -138,16 +138,16 @@ void Lseek0300(void)
 void Lseek0400(void)
 {
     char str[] = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0400", 0, fd);
-    int retwrite = write(fd, str, sizeof(str));
+    int retWrite = write(fd, str, sizeof(str));
     off_t data = lseek(fd, -1L, SEEK_END);
     EXPECT_EQ("lseek_0400", (int)data, FILE_TWENTWO);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 /**
@@ -158,16 +158,16 @@ void Lseek0400(void)
 void Lseek0500(void)
 {
     char str[] = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0500", 0, fd);
-    int retwrite = write(fd, str, sizeof(str));
+    int retWrite = write(fd, str, sizeof(str));
     off_t data = lseek(fd, -10L, SEEK_SET);
     EXPECT_EQ("lseek_0500", (int)data, FILE_NEGA);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 /**
@@ -178,20 +178,20 @@ void Lseek0500(void)
 void Lseek0600(void)
 {
     char str[] = "This is a test sample!";
-    const char *dir_path = "/data/storage/el2/base/files";
-    const char *file_path = "/data/storage/el2/base/files/readtest.txt";
-    mkdir(dir_path, DIR_MODE_0777);
-    int fd = open(file_path, O_RDWR | O_CREAT, FILE_MODE_0777);
+    const char *dirPath = "/data/storage/el2/base/files";
+    const char *filePath = "/data/storage/el2/base/files/readtest.txt";
+    mkdir(dirPath, DIR_MODE_0777);
+    int fd = open(filePath, O_RDWR | O_CREAT, FILE_MODE_0777);
     EXPECT_STRLT("lseek_0600", 0, fd);
-    int retwrite = write(fd, str, sizeof(str));
+    int retWrite = write(fd, str, sizeof(str));
     off_t data = lseek(fd, 10L, SEEK_END);
     EXPECT_EQ("lseek_0600", (int)data, FILE_THIRTYTHREE);
     close(fd);
-    remove(file_path);
+    remove(filePath);
 }
 
 static TEST_FUN G_Fun_Array[] = {
-    lseek64_0100,
+    Lseek640100,
     Lseek0100,
     Lseek0200,
     Lseek0300,

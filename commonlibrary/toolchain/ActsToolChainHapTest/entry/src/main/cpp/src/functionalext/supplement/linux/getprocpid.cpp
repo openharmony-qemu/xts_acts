@@ -49,8 +49,8 @@ void Getprocpid0100(void)
     EXPECT_EQ("getprocpid_0100", pid1 > 1, true);
     pid_t pid2 = getprocpid();
     EXPECT_EQ("getprocpid_0100", pid1, pid2);
-    pid_t getpid_val = getpid();
-    EXPECT_EQ("getprocpid_0100", pid1, getpid_val);
+    pid_t getpidVal = getpid();
+    EXPECT_EQ("getprocpid_0100", pid1, getpidVal);
 }
 
 /**
@@ -135,7 +135,7 @@ void Getprocpid0300(void)
     free(stack);
 }
 
-static void *pthread_func(void *arg)
+static void *PthreadFunc(void *arg)
 {
     typedef int (*getproctid_func)();
     getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
@@ -165,12 +165,12 @@ void Getproctid0100(void)
     }
     pid_t pid1 = getproctid();
     EXPECT_EQ("getproctid_0100", pid1 > 1, true);
-    pid_t gettid_val = gettid();
-    EXPECT_EQ("getproctid_0100", pid1, gettid_val);
+    pid_t gettidVal = gettid();
+    EXPECT_EQ("getproctid_0100", pid1, gettidVal);
 
     void *retVal = NULL;
     pthread_t thread;
-    int ret = pthread_create(&thread, NULL, pthread_func, &pid1);
+    int ret = pthread_create(&thread, NULL, PthreadFunc, &pid1);
     EXPECT_EQ("getproctid_0100", ret, 0);
 
     ret = pthread_join(thread, &retVal);
@@ -272,7 +272,7 @@ static int GetprocpidTestImpl(int argc, char *argv[])
 
 int GetprocpidTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetprocpidTestImpl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetprocpidTestImpl(1, libcArgv);
 }

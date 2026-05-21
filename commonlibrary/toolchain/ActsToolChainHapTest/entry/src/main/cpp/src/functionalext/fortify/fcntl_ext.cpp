@@ -26,23 +26,23 @@
 #define FILE_MODE_ALL (0777)
 #define SANDBOX_PATH "/data/storage/el2/base/cache/test_file"
 
-#ifdef open64
-#undef open64
+#ifdef open
+#undef open
 #endif
 
-#ifdef openat64
-#undef openat64
+#ifdef openat
+#undef openat
 #endif
 
-#define open64 open
-#define openat64 openat
+#define OPEN64 open
+#define OPENAT64 openat
 
 /**
  * @tc.name     : open_0010
  * @tc.desc     : test open normal condition
  * @tc.level    : Level 0
  */
-static void open_0010(void)
+static void Open0010(void)
 {
     errno = 0;
     int fd = open(SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
@@ -90,7 +90,7 @@ static void Open0020(void)
  * @tc.desc     : test open O_TMPFILE without mode
  * @tc.level    : Level 2
  */
-static void open_0030(void)
+static void Open0030(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -124,11 +124,11 @@ static void open_0030(void)
  * @tc.desc     : test open only O_RDWR
  * @tc.level    : Level 1
  */
-static void open_0040(void)
+static void Open0040(void)
 {
     errno = 0;
     int fd = open(SANDBOX_PATH, O_RDWR);
-    EXPECT_NE(open_0040, fd, -1);
+    EXPECT_NE(Open0040, fd, -1);
     close(fd);
     return;
 }
@@ -138,7 +138,7 @@ static void open_0040(void)
  * @tc.desc     : test openat normal condition
  * @tc.level    : Level 0
  */
-static void openat_0010(void)
+static void Openat0010(void)
 {
     errno = 0;
     int fd = openat(AT_FDCWD, SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
@@ -152,7 +152,7 @@ static void openat_0010(void)
  * @tc.desc     : test openat O_CREAT without mode
  * @tc.level    : Level 2
  */
-static void openat_0020(void)
+static void Openat0020(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -186,7 +186,7 @@ static void openat_0020(void)
  * @tc.desc     : test openat O_TMPFILE without mode
  * @tc.level    : Level 2
  */
-static void openat_0030(void)
+static void Openat0030(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -231,25 +231,25 @@ static void openat_0040(void)
 
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
 /**
- * @tc.name     : open64_0010
- * @tc.desc     : test open64 normal condition
+ * @tc.name     : open_0010
+ * @tc.desc     : test open normal condition
  * @tc.level    : Level 0
  */
-static void open64_0010(void)
+static void Open640010(void)
 {
     errno = 0;
-    int fd = open64(SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
+    int fd = open(SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
     TEST(fd != -1);
     close(fd);
     return;
 }
 
 /**
- * @tc.name     : open64_0020
- * @tc.desc     : test open64 O_CREAT without mode
+ * @tc.name     : open_0020
+ * @tc.desc     : test open O_CREAT without mode
  * @tc.level    : Level 2
  */
-static void open64_0020(void)
+static void Open640020(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -265,7 +265,7 @@ static void open64_0020(void)
             t_error("fork failed: %s\n", strerror(errno));
             break;
         case 0:
-            open64(SANDBOX_PATH, flags);
+            open(SANDBOX_PATH, flags);
             exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
@@ -279,11 +279,11 @@ static void open64_0020(void)
 }
 
 /**
- * @tc.name     : open64_0030
- * @tc.desc     : test open64 O_TMPFILE without mode
+ * @tc.name     : open_0030
+ * @tc.desc     : test open O_TMPFILE without mode
  * @tc.level    : Level 2
  */
-static void open64_0030(void)
+static void Open640030(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -299,7 +299,7 @@ static void open64_0030(void)
             t_error("fork failed: %s\n", strerror(errno));
             break;
         case 0:
-            open64(SANDBOX_PATH, flags);
+            open(SANDBOX_PATH, flags);
             exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
@@ -314,13 +314,13 @@ static void open64_0030(void)
 
 /**
  * @tc.name     : Open640040
- * @tc.desc     : test open64 only O_RDWR
+ * @tc.desc     : test open only O_RDWR
  * @tc.level    : Level 1
  */
 static void Open640040(void)
 {
     errno = 0;
-    int fd = open64(SANDBOX_PATH, O_RDWR);
+    int fd = open(SANDBOX_PATH, O_RDWR);
     EXPECT_NE(Open640040, fd, -1);
     close(fd);
     return;
@@ -328,13 +328,13 @@ static void Open640040(void)
 
 /**
  * @tc.name     : Openat640010
- * @tc.desc     : test openat64 normal condition
+ * @tc.desc     : test openat normal condition
  * @tc.level    : Level 0
  */
 static void Openat640010(void)
 {
     errno = 0;
-    int fd = openat64(AT_FDCWD, SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
+    int fd = openat(AT_FDCWD, SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
     TEST(fd != -1);
     close(fd);
     return;
@@ -342,7 +342,7 @@ static void Openat640010(void)
 
 /**
  * @tc.name     : Openat640020
- * @tc.desc     : test openat64 O_CREAT without mode
+ * @tc.desc     : test openat O_CREAT without mode
  * @tc.level    : Level 2
  */
 static void Openat640020(void)
@@ -361,7 +361,7 @@ static void Openat640020(void)
             t_error("fork failed: %s\n", strerror(errno));
             break;
         case 0:
-            openat64(AT_FDCWD, SANDBOX_PATH, flags);
+            openat(AT_FDCWD, SANDBOX_PATH, flags);
             exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
@@ -376,7 +376,7 @@ static void Openat640020(void)
 
 /**
  * @tc.name     : Openat640030
- * @tc.desc     : test openat64 O_TMPFILE without mode
+ * @tc.desc     : test openat O_TMPFILE without mode
  * @tc.level    : Level 2
  */
 static void Openat640030(void)
@@ -395,7 +395,7 @@ static void Openat640030(void)
             t_error("fork failed: %s\n", strerror(errno));
             break;
         case 0:
-            openat64(AT_FDCWD, SANDBOX_PATH, flags);
+            openat(AT_FDCWD, SANDBOX_PATH, flags);
             exit(0);
         default:
             waitpid(pid, &status, WUNTRACED);
@@ -410,13 +410,13 @@ static void Openat640030(void)
 
 /**
  * @tc.name     : Openat640040
- * @tc.desc     : test openat64 only O_RDWR
+ * @tc.desc     : test openat only O_RDWR
  * @tc.level    : Level 1
  */
 static void Openat640040(void)
 {
     errno = 0;
-    int fd = openat64(AT_FDCWD, SANDBOX_PATH, O_RDWR);
+    int fd = openat(AT_FDCWD, SANDBOX_PATH, O_RDWR);
     EXPECT_NE(Openat640040, fd, -1);
     close(fd);
     return;
@@ -426,12 +426,12 @@ static void Openat640040(void)
 static int FcntlExtTestImpl(int argc, char *argv[])
 {
     RemoveAllSpecialHandler(SIGABRT);
-    open_0010();
-    open_0040();
-    openat_0010();
+    Open0010();
+    Open0040();
+    Openat0010();
     openat_0040();
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
-    open64_0010();
+    Open640010();
     Open640040();
     Openat640010();
     Openat640040();
@@ -441,7 +441,7 @@ static int FcntlExtTestImpl(int argc, char *argv[])
 
 int FcntlExtTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return FcntlExtTestImpl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return FcntlExtTestImpl(1, libcArgv);
 }

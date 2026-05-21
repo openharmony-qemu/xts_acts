@@ -24,7 +24,7 @@
  * @tc.desc      : Convert uppercase to lowercase by tolower
  * @tc.level     : Level 0
  */
-void tolower_0100(void)
+void Tolower0100(void)
 {
     char ch = 'A';
     char result = tolower(ch);
@@ -66,7 +66,7 @@ void Tolower0300(void)
  * @tc.desc      : Test the result of passing special characters into tolower
  * @tc.level     : Level 2
  */
-void tolower_0400(void)
+void Tolower0400(void)
 {
     char ch = '$';
     char result = tolower(ch);
@@ -116,7 +116,7 @@ void Tolower0600(void)
  * @tc.desc      : Test the result of passing all uppercase characters into tolower
  * @tc.level     : Level 2
  */
-void tolower_0700(void)
+void Tolower0700(void)
 {
     char str1[] = "HELLOWORLD";
     size_t sizeStr = sizeof(str1);
@@ -138,7 +138,7 @@ void tolower_0700(void)
  * @tc.desc      : Test the result of passing Uncertain characters into tolower
  * @tc.level     : Level 2
  */
-void tolower_0800(void)
+void Tolower0800(void)
 {
     char str1[] = "Hello world!";
     size_t sizeStr = sizeof(str1);
@@ -158,14 +158,14 @@ void tolower_0800(void)
 static int TolowerTestImpl(int argc, char *argv[])
 {
     g_tStatus = 0;
-    tolower_0100();
+    Tolower0100();
     Tolower0200();
     Tolower0300();
-    tolower_0400();
+    Tolower0400();
     Tolower0500();
     Tolower0600();
-    tolower_0700();
-    tolower_0800();
+    Tolower0700();
+    Tolower0800();
     return g_tStatus;
 }
 

@@ -35,7 +35,7 @@ typedef void (*TEST_FUNC)(void);
 
 typedef void* (*DlopenExtFunc)(const char*, int, void*);
 static DlopenExtFunc g_dlopen_ext = NULL;
-static bool g_dlopen_ext_available = false;
+static bool g_dlopenExtAvailable = false;
 
 int g_test = BASE_NUM;
 extern void TestF(void)
@@ -53,8 +53,8 @@ static void DlopenRandomization0100(void)
     void *handle = dlopen(LIB_NAME, RTLD_NOW);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (handle) {
-        int close_ret = dlclose(handle);
-        EXPECT_EQ(__FUNCTION__, close_ret, 0);
+        int closeRet = dlclose(handle);
+        EXPECT_EQ(__FUNCTION__, closeRet, 0);
     } else {
     }
 }
@@ -111,20 +111,20 @@ static void DlopenRandomization0300(void)
  */
 static void DlopenRandomization0400(void)
 {
-    void *ori_handle = dlopen(LIB_NAME, RTLD_NOW);
+    void *oriHandle = dlopen(LIB_NAME, RTLD_NOW);
     void *handle = 0;
-    EXPECT_PTRNE(__FUNCTION__, ori_handle, 0);
-    if (!ori_handle) {
+    EXPECT_PTRNE(__FUNCTION__, oriHandle, 0);
+    if (!oriHandle) {
         return;
     }
     int i = TEST_COUNTS;
     while (i--) {
         handle = dlopen(LIB_NAME, RTLD_NOW);
-        EXPECT_PTREQ(__FUNCTION__, ori_handle, handle);
+        EXPECT_PTREQ(__FUNCTION__, oriHandle, handle);
     }
     i = TEST_COUNTS + 1;
     while (i--) {
-        dlclose(ori_handle);
+        dlclose(oriHandle);
     }
 }
 
@@ -169,15 +169,15 @@ static void DlopenRandomization0600(void)
  */
 static void DlopenExtRandomization0100(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     DlExtinfo extinfo = {0};
     void *handle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (handle) {
-        int close_ret = dlclose(handle);
-        EXPECT_EQ(__FUNCTION__, close_ret, 0);
+        int closeRet = dlclose(handle);
+        EXPECT_EQ(__FUNCTION__, closeRet, 0);
     } else {
     }
 }
@@ -189,7 +189,7 @@ static void DlopenExtRandomization0100(void)
  */
 static void DlopenExtRandomization0200(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     DlExtinfo extinfo = {0};
@@ -224,7 +224,7 @@ static void DlopenExtRandomization0200(void)
  */
 static void DlopenExtRandomization0300(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     DlExtinfo extinfo = {0};
@@ -242,24 +242,24 @@ static void DlopenExtRandomization0300(void)
  */
 static void DlopenExtRandomization0400(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     DlExtinfo extinfo = {0};
-    void *ori_handle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
+    void *oriHandle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
     void *handle = 0;
-    EXPECT_PTRNE(__FUNCTION__, ori_handle, 0);
-    if (!ori_handle) {
+    EXPECT_PTRNE(__FUNCTION__, oriHandle, 0);
+    if (!oriHandle) {
         return;
     }
     int i = TEST_COUNTS;
     while (i--) {
         handle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
-        EXPECT_PTREQ(__FUNCTION__, ori_handle, handle);
+        EXPECT_PTREQ(__FUNCTION__, oriHandle, handle);
     }
     i = TEST_COUNTS + 1;
     while (i--) {
-        dlclose(ori_handle);
+        dlclose(oriHandle);
     }
 }
 
@@ -271,7 +271,7 @@ static void DlopenExtRandomization0400(void)
  */
 static void DlopenExtRandomization0600(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     void *handle;
@@ -309,7 +309,7 @@ static void DlopenExtRandomization0600(void)
  */
 static void DlopenExtRandomization0800(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
     DlExtinfo extinfo = {
@@ -348,14 +348,14 @@ static void DlopenExtRandomization0800(void)
  */
 static void DlopenExtRandomization0900(void)
 {
-    if (!g_dlopen_ext_available) {
+    if (!g_dlopenExtAvailable) {
         return;
     }
-    void *parent_handle = 0;
-    void *child_handle = 0;
-    void *parent_sym = 0;
-    void *child_sym = 0;
-    void *get_child_sym = 0;
+    void *parentHandle = 0;
+    void *childHandle = 0;
+    void *parentSym = 0;
+    void *childSym = 0;
+    void *getChildSym = 0;
     int fd[PIPE_FD];
     if (pipe(fd) < 0) {
         EXPECT_FALSE(__FUNCTION__, true);
@@ -366,27 +366,27 @@ static void DlopenExtRandomization0900(void)
     };
     pid_t pid = fork();
     if (pid == 0) {
-        child_handle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
-        EXPECT_PTRNE(__FUNCTION__, child_handle, 0);
-        if (!child_handle) {
+        childHandle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
+        EXPECT_PTRNE(__FUNCTION__, childHandle, 0);
+        if (!childHandle) {
             exit(-1);
         }
-        child_sym = dlsym(child_handle, "test");
-        write(fd[1], &child_sym, sizeof(void *));
-        dlclose(child_handle);
+        childSym = dlsym(childHandle, "test");
+        write(fd[1], &childSym, sizeof(void *));
+        dlclose(childHandle);
         exit(0);
     }
-    parent_handle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
-    EXPECT_PTRNE(__FUNCTION__, parent_handle, 0);
-    if (!parent_handle) {
+    parentHandle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
+    EXPECT_PTRNE(__FUNCTION__, parentHandle, 0);
+    if (!parentHandle) {
         return;
     };
-    parent_sym = dlsym(parent_handle, "test");
-    dlclose(parent_handle);
+    parentSym = dlsym(parentHandle, "test");
+    dlclose(parentHandle);
     int status;
     waitpid(pid, &status, 0);
-    read(fd[0], &get_child_sym, sizeof(void *));
-    EXPECT_PTREQ(__FUNCTION__, parent_sym, get_child_sym);
+    read(fd[0], &getChildSym, sizeof(void *));
+    EXPECT_PTREQ(__FUNCTION__, parentSym, getChildSym);
     close(fd[0]);
     close(fd[1]);
 }
@@ -527,7 +527,7 @@ static void DlopenRandomization0900(void)
 {
 }
 
-TEST_FUNC test_cases[] = {
+TEST_FUNC g_testCases[] = {
     DlopenRandomization0100,
     DlopenRandomization0300,
     DlopenRandomization0400,
@@ -553,25 +553,24 @@ TEST_FUNC test_cases[] = {
 
 static int LdsoRandomizationTestTestImpl(int argc, char *argv[])
 {
-    
     // Try to get dlopen_ext function via dlsym
     g_dlopen_ext = (DlopenExtFunc)dlsym(RTLD_DEFAULT, "dlopen_ext");
     if (g_dlopen_ext) {
-        g_dlopen_ext_available = true;
+        g_dlopenExtAvailable = true;
     } else {
-        g_dlopen_ext_available = false;
+        g_dlopenExtAvailable = false;
     }
     
-    size_t case_counts = sizeof(test_cases) / sizeof(TEST_FUNC);
-    for (size_t case_num = 0; case_num < case_counts; case_num++) {
-        test_cases[case_num]();
+    size_t caseCounts = sizeof(g_testCases) / sizeof(TEST_FUNC);
+    for (size_t case_num = 0; case_num < caseCounts; case_num++) {
+        g_testCases[case_num]();
     }
     return g_tStatus;
 }
 
 int LdsoRandomizationTestTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return LdsoRandomizationTestTestImpl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return LdsoRandomizationTestTestImpl(1, libcArgv);
 }

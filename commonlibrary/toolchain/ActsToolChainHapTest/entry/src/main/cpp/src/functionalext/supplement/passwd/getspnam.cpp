@@ -38,7 +38,7 @@
 void Getspnam0100(void)
 {
     struct spwd *spwd = NULL;
-    const char *spwd_name = "root";
+    const char *spwdName = "root";
 
     typedef struct spwd* (*GetspnamFunc)(const char *name);
     GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
@@ -46,10 +46,10 @@ void Getspnam0100(void)
         return;
     }
 
-    spwd = getspnam(spwd_name);
+    spwd = getspnam(spwdName);
     EXPECT_PTRNE("getspnam_0100", spwd, NULL);
     if (spwd) {
-        EXPECT_EQ("getspnam_0100", strcmp(spwd_name, spwd->sp_namp), 0);
+        EXPECT_EQ("getspnam_0100", strcmp(spwdName, spwd->sp_namp), 0);
     }
 }
 
@@ -58,7 +58,7 @@ void Getspnam0100(void)
  * @tc.desc      : Buffer size not be able to hold name.(normal: buffer_size > strlen(name)+100)
  * @tc.level     : Level 2
  */
-void getspnam_0200(void)
+void Getspnam0200(void)
 {
     errno = 0;
     struct spwd *spwd = NULL;
@@ -163,7 +163,7 @@ void Getspnam0600(void)
 
 static int GetspnamTestImpl(int argc, char *argv[])
 {
-    getspnam_0200();
+    Getspnam0200();
     Getspnam0300();
     Getspnam0400();
     Getspnam0500();
@@ -174,7 +174,7 @@ static int GetspnamTestImpl(int argc, char *argv[])
 
 int GetspnamTest(void)
 {
-    static char __libc_prog[] = "libc_test";
-    char *__libc_argv[] = { __libc_prog, NULL };
-    return GetspnamTestImpl(1, __libc_argv);
+    static char libcProg[] = "libc_test";
+    char *libcArgv[] = { libcProg, NULL };
+    return GetspnamTestImpl(1, libcArgv);
 }

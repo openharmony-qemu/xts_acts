@@ -13,17 +13,17 @@
 
 #define TEST(r, f, x, m) ( \
     errno=0, ((r) = (f)) == (x) || \
-    (t_error("%s failed (" m ")\n", #f, r, x, strerror(errno)), 0) )
+    (t_error("%s failed (" m ")\n", #f, r, x, strerror(errno)), 0))
 
 #define TEST_S(s, x, m) ( \
     !strcmp((s), (x)) || \
-    (t_error("[%s] != [%s] (%s)\n", s, x, m), 0) )
+    (t_error("[%s] != [%s] (%s)\n", s, x, m), 0))
 
-static FILE *Writetemp(const char *data)
+static FILE *WriteTemp(const char *data)
 {
     // Use HAP sandbox path instead of tmpfile()
-    const char *tmp_path = "/data/storage/el2/base/cache/fscanf_temp.txt";
-    FILE *f = fopen(tmp_path, "w+");
+    const char *tmpPath = "/data/storage/el2/base/cache/fscanf_temp.txt";
+    FILE *f = fopen(tmpPath, "w+");
     if (!f) {
         return 0;
     }
@@ -49,7 +49,7 @@ void WriteContent()
     fclose(fp);
 }
 
-void check_content()
+void CheckContent()
 {
     FILE *fp;
     int res;
@@ -68,19 +68,22 @@ void check_content()
     fclose(fp);
 }
 
-void test_read_large_data()
+void TestReadLargeData()
 {
     WriteContent();
-    check_content();
+    CheckContent();
     remove(TMP_FILE);
 }
 
 
 static int FscanfTestImpl(void)
 {
-    int i, x, y;
+    int i;
+    int x;
+    int y;
     double u;
-    char a[100], b[100];
+    char a[100];
+    char b[100];
     FILE *f;
     int p[2];
 
@@ -107,7 +110,7 @@ static int FscanfTestImpl(void)
     fclose(f);
     close(p[1]);
 
-    TEST(i, !!(f=Writetemp("      42")), 1, "failed to make temp file");
+    TEST(i, !!(f=WriteTemp("      42")), 1, "failed to make temp file");
     if (f) {
         x=y=-1;
         TEST(i, fscanf(f, " %n%*d%n", &x, &y), 0, "%d != %d");
@@ -118,7 +121,7 @@ static int FscanfTestImpl(void)
         fclose(f);
     }
 
-    TEST(i, !!(f=Writetemp("[abc123]....x")), 1, "failed to make temp file");
+    TEST(i, !!(f=WriteTemp("[abc123]....x")), 1, "failed to make temp file");
     if (f) {
         x=y=-1;
         TEST(i, fscanf(f, "%10[^]]%n%10[].]%n", a, &x, b, &y), 2, "%d != %d");
@@ -158,7 +161,7 @@ static int FscanfTestImpl(void)
     }
     */
 
-    TEST(i, !!(f=Writetemp("0x.1p4    012")), 1, "failed to make temp file");
+    TEST(i, !!(f=WriteTemp("0x.1p4    012")), 1, "failed to make temp file");
     if (f) {
         x=y=-1;
         u=-1;
@@ -171,7 +174,7 @@ static int FscanfTestImpl(void)
         fclose(f);
     }
 
-    TEST(i, !!(f=Writetemp("0xx")), 1, "failed to make temp file");
+    TEST(i, !!(f=WriteTemp("0xx")), 1, "failed to make temp file");
     if (f) {
         x=y=-1;
         TEST(i, fscanf(f, "%x%n", &x, &y), 0, "%d != %d");
@@ -182,7 +185,7 @@ static int FscanfTestImpl(void)
         fclose(f);
     }
 
-    test_read_large_data();
+    TestReadLargeData();
 
     return g_tStatus;
 }

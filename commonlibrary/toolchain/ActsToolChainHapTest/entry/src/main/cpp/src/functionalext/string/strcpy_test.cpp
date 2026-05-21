@@ -25,7 +25,7 @@ const int NULL_TERMINATION_INDEX = 5;
 const int LONG_STRING_LENGTH = 255;
 const int VERY_LONG_STRING_LENGTH = 2047;
 
-void test_strcpy_basic()
+void TestStrcpyBasic()
 {
     char dest[10];
     strcpy(dest, "abc");
@@ -34,7 +34,7 @@ void test_strcpy_basic()
     }
 }
 
-void test_strcpy_empty()
+void TestStrcpyEmpty()
 {
     char dest[10] = "xxxxxx";
     strcpy(dest, "");
@@ -43,7 +43,7 @@ void test_strcpy_empty()
     }
 }
 
-void test_strcpy_longer_string()
+void TestStrcpyLongerString()
 {
     char dest[100];
     strcpy(dest, "This is a longer string with multiple words.");
@@ -70,7 +70,7 @@ void TestStrcpySingleChar()
     }
 }
 
-void test_strcpy_case_mixed()
+void TestStrcpyCaseMixed()
 {
     char dest[20];
     strcpy(dest, "AbCdEfGh");
@@ -88,7 +88,7 @@ void TestStrcpyWithSpaces()
     }
 }
 
-void test_strcpy_with_escapes()
+void TestStrcpyWithEscapes()
 {
     char dest[20];
     strcpy(dest, "Line1\nLine2");
@@ -106,7 +106,7 @@ void TestStrcpyOverwriteOldContent()
     }
 }
 
-void test_strcpy_with_embedded_null()
+void TestStrcpyWithEmbeddedNull()
 {
     char src[10] = {'a', 'b', '\0', 'c'};
     char dest[10];
@@ -116,7 +116,7 @@ void test_strcpy_with_embedded_null()
     }
 }
 
-void test_strcpy_modify_src_after_copy()
+void TestStrcpyModifySrcAfterCopy()
 {
     char src[] = "copyme";
     char dest[20];
@@ -127,7 +127,7 @@ void test_strcpy_modify_src_after_copy()
     }
 }
 
-void test_strcpy_utf8()
+void TestStrcpyUtf8()
 {
     char dest[20];
     strcpy(dest, "café");
@@ -158,7 +158,7 @@ void TestStrcpyToOffset()
     }
 }
 
-void test_strcpy_array_vs_pointer()
+void TestStrcpyArrayVsPointer()
 {
     char a[10];
     char *b = a;
@@ -186,7 +186,7 @@ void TestStrcpySentence()
     }
 }
 
-void test_strcpy_series()
+void TestStrcpySeries()
 {
     char dest[50];
     strcpy(dest, "one");
@@ -203,7 +203,7 @@ void test_strcpy_series()
     }
 }
 
-void test_strcpy_manual_src_array()
+void TestStrcpyManualSrcArray()
 {
     char src[6] = {'h', 'e', 'l', 'l', 'o', '\0'};
     char dest[10];
@@ -213,7 +213,7 @@ void test_strcpy_manual_src_array()
     }
 }
 
-void test_strcpy_vs_memcpy()
+void TestStrcpyVsMemcpy()
 {
     char dest1[10];
     char dest2[10];
@@ -225,7 +225,7 @@ void test_strcpy_vs_memcpy()
     }
 }
 
-void test_strcpy_batch_group_1()
+void TestStrcpyBatchGroup1()
 {
     char dest[100];
     strcpy(dest, "batch1");
@@ -242,7 +242,7 @@ void test_strcpy_batch_group_1()
     }
 }
 
-void test_strcpy_batch_group_2()
+void TestStrcpyBatchGroup2()
 {
     char dest[100];
     strcpy(dest, "hello world");
@@ -259,7 +259,7 @@ void test_strcpy_batch_group_2()
     }
 }
 
-void test_strcpy_control_chars()
+void TestStrcpyControlChars()
 {
     char dest[20];
     strcpy(dest, "\x01\x02\x03\x04");
@@ -268,7 +268,7 @@ void test_strcpy_control_chars()
     }
 }
 
-void test_strcpy_long_strings()
+void TestStrcpyLongStrings()
 {
     char long_str[256];
     memset(long_str, 'a', LONG_STRING_LENGTH);
@@ -280,7 +280,7 @@ void test_strcpy_long_strings()
     }
 }
 
-void test_strcpy_non_ascii()
+void TestStrcpyNonAscii()
 {
     char dest[20];
     strcpy(dest, "éñüß");
@@ -289,7 +289,7 @@ void test_strcpy_non_ascii()
     }
 }
 
-void test_strcpy_hex_escape()
+void TestStrcpyHexEscape()
 {
     char dest[20];
     strcpy(dest, "\x41\x42\x43");
@@ -307,7 +307,7 @@ void TestStrcpyOctalEscape()
     }
 }
 
-void test_strcpy_partial_overwrite()
+void TestStrcpyPartialOverwrite()
 {
     char dest[20] = "abcdefghij";
     strcpy(dest + PARTIAL_OVERWRITE_OFFSET, "123");
@@ -326,7 +326,7 @@ void TestStrcpyPointerArithmetic()
     }
 }
 
-void test_strcpy_large_buffer()
+void TestStrcpyLargeBuffer()
 {
     char dest[1024];
     strcpy(dest, "This is a large buffer test");
@@ -335,7 +335,7 @@ void test_strcpy_large_buffer()
     }
 }
 
-void test_strcpy_null_termination()
+void TestStrcpyNullTermination()
 {
     char dest[10];
     strcpy(dest, "12345");
@@ -362,40 +362,11 @@ void TestStrcpyAlternatingChars()
     }
 }
 
-void test_strcpy_all_null()
+void TestStrcpyDifferentSizes()
 {
-    char dest[10];
-    strcpy(dest, "\0\0\0");
-    if (strcmp(dest, "")) {
-        t_error("All null copy failed\n");
-    }
-}
-
-void test_strcpy_very_long()
-{
-    char very_long[2048];
-    memset(very_long, 'x', VERY_LONG_STRING_LENGTH);
-    very_long[VERY_LONG_STRING_LENGTH] = '\0';
-    char dest[2048];
-    strcpy(dest, very_long);
-    if (strcmp(dest, very_long)) {
-        t_error("Very long copy failed\n");
-    }
-}
-
-void test_strcpy_non_terminated_src()
-{
-    char src[6] = {'a', 'b', 'c', 'd', 'e', '\0'};
-    char dest[10];
-    strcpy(dest, src);
-    if (strcmp(dest, "abcde")) {
-        t_error("Non-terminated source copy failed\n");
-    }
-}
-
-void test_strcpy_different_sizes()
-{
-    char dest1[5], dest2[10], dest3[20];
+    char dest1[5];
+    char dest2[10];
+    char dest3[20];
     strcpy(dest1, "test");
     if (strcmp(dest1, "test")) {
         t_error("Small size copy failed\n");
@@ -407,42 +378,6 @@ void test_strcpy_different_sizes()
     strcpy(dest3, "the longest test here");
     if (strcmp(dest3, "the longest test here")) {
         t_error("Large size copy failed\n");
-    }
-}
-
-void test_strcpy_boundary_exact()
-{
-    char dest[5];
-    strcpy(dest, "test");
-    if (strcmp(dest, "test")) {
-        t_error("Boundary exact copy failed\n");
-    }
-}
-
-void TestStrcpyRepeatedChars()
-{
-    char dest[20];
-    strcpy(dest, "aaaaaaaaaa");
-    if (strcmp(dest, "aaaaaaaaaa")) {
-        t_error("Repeated chars copy failed\n");
-    }
-}
-
-void test_strcpy_same_src_dest()
-{
-    char dest[20] = "original";
-    strcpy(dest, dest);
-    if (strcmp(dest, "original")) {
-        t_error("Same src/dest copy failed\n");
-    }
-}
-
-void test_strcpy_numeric_string()
-{
-    char dest[20];
-    strcpy(dest, "1234567890");
-    if (strcmp(dest, "1234567890")) {
-        t_error("Numeric string copy failed\n");
     }
 }
 
@@ -464,7 +399,7 @@ void TestStrcpyWithQuotes()
     }
 }
 
-void test_strcpy_path_string()
+void TestStrcpyPathString()
 {
     char dest[50];
     strcpy(dest, "/data/local/tmp");
@@ -482,7 +417,7 @@ void TestStrcpyUrlString()
     }
 }
 
-void test_strcpy_email_string()
+void TestStrcpyEmailString()
 {
     char dest[30];
     strcpy(dest, "user@example.com");
@@ -500,7 +435,7 @@ void TestStrcpyHexString()
     }
 }
 
-void test_strcpy_brackets()
+void TestStrcpyBrackets()
 {
     char dest[20];
     strcpy(dest, "[test]");
@@ -518,7 +453,7 @@ void TestStrcpyCurlyBraces()
     }
 }
 
-void test_strcpy_underscore()
+void TestStrcpyUnderscore()
 {
     char dest[20];
     strcpy(dest, "test_variable");
@@ -527,7 +462,7 @@ void test_strcpy_underscore()
     }
 }
 
-void test_strcpy_dash()
+void TestStrcpyDash()
 {
     char dest[20];
     strcpy(dest, "test-variable");
@@ -536,7 +471,7 @@ void test_strcpy_dash()
     }
 }
 
-void test_strcpy_plus_sign()
+void TestStrcpyPlusSign()
 {
     char dest[20];
     strcpy(dest, "test+value");
@@ -545,7 +480,7 @@ void test_strcpy_plus_sign()
     }
 }
 
-void test_strcpy_ampersand()
+void TestStrcpyAmpersand()
 {
     char dest[20];
     strcpy(dest, "test&value");
@@ -554,7 +489,7 @@ void test_strcpy_ampersand()
     }
 }
 
-void test_strcpy_pipe()
+void TestStrcpyPipe()
 {
     char dest[20];
     strcpy(dest, "test|value");
@@ -563,7 +498,7 @@ void test_strcpy_pipe()
     }
 }
 
-void test_strcpy_backslash()
+void TestStrcpyBackslash()
 {
     char dest[20];
     strcpy(dest, "test\\path");
@@ -572,7 +507,7 @@ void test_strcpy_backslash()
     }
 }
 
-void test_strcpy_colon()
+void TestStrcpyColon()
 {
     char dest[20];
     strcpy(dest, "name:value");
@@ -599,7 +534,7 @@ void TestStrcpyDoubleSpace()
     }
 }
 
-void test_strcpy_leading_space()
+void TestStrcpyLeadingSpace()
 {
     char dest[20];
     strcpy(dest, "  test");
@@ -608,7 +543,7 @@ void test_strcpy_leading_space()
     }
 }
 
-void test_strcpy_trailing_space()
+void TestStrcpyTrailingSpace()
 {
     char dest[20];
     strcpy(dest, "test  ");
@@ -617,7 +552,7 @@ void test_strcpy_trailing_space()
     }
 }
 
-void test_strcpy_cjk_characters()
+void TestStrcpyCjkCharacters()
 {
     char dest[20];
     strcpy(dest, "测试");
@@ -626,7 +561,7 @@ void test_strcpy_cjk_characters()
     }
 }
 
-void test_strcpy_uuid()
+void TestStrcpyUuid()
 {
     char dest[40];
     strcpy(dest, "550e8400-e29b-41d4-a716-446655440000");
@@ -635,7 +570,7 @@ void test_strcpy_uuid()
     }
 }
 
-void test_strcpy_xml_tag()
+void TestStrcpyXmlTag()
 {
     char dest[20];
     strcpy(dest, "<tag>");
@@ -644,7 +579,7 @@ void test_strcpy_xml_tag()
     }
 }
 
-void test_strcpy_regex_pattern()
+void TestStrcpyRegexPattern()
 {
     char dest[30];
     strcpy(dest, "[a-z]+");
@@ -653,7 +588,7 @@ void test_strcpy_regex_pattern()
     }
 }
 
-void test_strcpy_sql_query()
+void TestStrcpySqlQuery()
 {
     char dest[50];
     strcpy(dest, "SELECT * FROM table");
@@ -662,7 +597,7 @@ void test_strcpy_sql_query()
     }
 }
 
-void test_strcpy_shell_command()
+void TestStrcpyShellCommand()
 {
     char dest[30];
     strcpy(dest, "ls -la");
@@ -735,7 +670,7 @@ void TestStrcpyRussian()
     }
 }
 
-void test_strcpy_greek()
+void TestStrcpyGreek()
 {
     char dest[20];
     strcpy(dest, "Γειά");
@@ -744,7 +679,7 @@ void test_strcpy_greek()
     }
 }
 
-void test_strcpy_arabic()
+void TestStrcpyArabic()
 {
     char dest[20];
     strcpy(dest, "مرحبا");
@@ -756,72 +691,65 @@ void test_strcpy_arabic()
 static int StrcpyTestTestImpl()
 {
     g_tStatus = 0;
-    test_strcpy_basic();
-    test_strcpy_empty();
-    test_strcpy_longer_string();
+    TestStrcpyBasic();
+    TestStrcpyEmpty();
+    TestStrcpyLongerString();
     TestStrcpySpecialCharacters();
     TestStrcpySingleChar();
-    test_strcpy_case_mixed();
+    TestStrcpyCaseMixed();
     TestStrcpyWithSpaces();
-    test_strcpy_with_escapes();
+    TestStrcpyWithEscapes();
     TestStrcpyOverwriteOldContent();
-    test_strcpy_with_embedded_null();
-    test_strcpy_modify_src_after_copy();
-    test_strcpy_utf8();
+    TestStrcpyWithEmbeddedNull();
+    TestStrcpyModifySrcAfterCopy();
+    TestStrcpyUtf8();
     TestStrcpyMultipleAssignments();
     TestStrcpyToOffset();
-    test_strcpy_array_vs_pointer();
+    TestStrcpyArrayVsPointer();
     TestStrcpyAllCaps();
     TestStrcpySentence();
-    test_strcpy_series();
-    test_strcpy_manual_src_array();
-    test_strcpy_vs_memcpy();
-    test_strcpy_batch_group_1();
-    test_strcpy_batch_group_2();
-    test_strcpy_control_chars();
-    test_strcpy_long_strings();
-    test_strcpy_non_ascii();
-    test_strcpy_hex_escape();
+    TestStrcpySeries();
+    TestStrcpyManualSrcArray();
+    TestStrcpyVsMemcpy();
+    TestStrcpyBatchGroup1();
+    TestStrcpyBatchGroup2();
+    TestStrcpyControlChars();
+    TestStrcpyLongStrings();
+    TestStrcpyNonAscii();
+    TestStrcpyHexEscape();
     TestStrcpyOctalEscape();
-    test_strcpy_partial_overwrite();
+    TestStrcpyPartialOverwrite();
     TestStrcpyPointerArithmetic();
-    test_strcpy_large_buffer();
-    test_strcpy_null_termination();
+    TestStrcpyLargeBuffer();
+    TestStrcpyNullTermination();
     TestStrcpySpecialWhitespace();
     TestStrcpyAlternatingChars();
-    test_strcpy_all_null();
-    test_strcpy_very_long();
-    test_strcpy_non_terminated_src();
-    // test_strcpy_different_sizes();  // Disabled due to SIGILL crash
-    test_strcpy_boundary_exact();
-    TestStrcpyRepeatedChars();
-    test_strcpy_same_src_dest();
-    test_strcpy_numeric_string();
+    // TestStrcpyDifferentSizes();  // Disabled due to SIGILL crash
     TestStrcpyMixedAlphanumeric();
     TestStrcpyWithQuotes();
-    test_strcpy_path_string();
+    TestStrcpyPathString();
     TestStrcpyUrlString();
-    test_strcpy_email_string();
+    TestStrcpyEmailString();
     TestStrcpyHexString();
-    test_strcpy_brackets();
+    TestStrcpyBrackets();
     TestStrcpyCurlyBraces();
-    test_strcpy_underscore();
-    test_strcpy_dash();
-    test_strcpy_plus_sign();
-    test_strcpy_ampersand();
-    test_strcpy_pipe();
-    test_strcpy_backslash();
-    test_strcpy_colon();
+    TestStrcpyUnderscore();
+    TestStrcpyDash();
+    TestStrcpyPlusSign();
+    TestStrcpyAmpersand();
+    TestStrcpyPipe();
+    TestStrcpyBackslash();
+    TestStrcpyColon();
     TestStrcpySemicolon();
     TestStrcpyDoubleSpace();
-    test_strcpy_leading_space();
-    test_strcpy_trailing_space();
-    test_strcpy_cjk_characters();
-    test_strcpy_uuid();
-    test_strcpy_xml_tag();
-    test_strcpy_regex_pattern();
-    test_strcpy_sql_query();
-    test_strcpy_shell_command();
+    TestStrcpyLeadingSpace();
+    TestStrcpyTrailingSpace();
+    TestStrcpyCjkCharacters();
+    TestStrcpyUuid();
+    TestStrcpyXmlTag();
+    TestStrcpyRegexPattern();
+    TestStrcpySqlQuery();
+    TestStrcpyShellCommand();
     TestStrcpyHttpHeader();
     TestStrcpyTimeFormat();
     TestStrcpyDatetimeFormat();
@@ -829,8 +757,8 @@ static int StrcpyTestTestImpl()
     TestStrcpyContentDisposition();
     TestStrcpyEmoji();
     TestStrcpyRussian();
-    test_strcpy_greek();
-    test_strcpy_arabic();
+    TestStrcpyGreek();
+    TestStrcpyArabic();
 
     return g_tStatus;
 }

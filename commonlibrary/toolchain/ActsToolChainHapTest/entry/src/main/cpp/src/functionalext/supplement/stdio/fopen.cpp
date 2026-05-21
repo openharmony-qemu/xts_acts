@@ -64,13 +64,13 @@ void Fopen0100(void)
     
     // 检查文件是否存在
     struct stat st;
-    int stat_ret = stat(filepath, &st);
-    if (stat_ret == 0) {
+    int statRet = stat(filepath, &st);
+    if (statRet == 0) {
     }
     
     errno = 0;
     fptr = fopen(filepath, "r");
-    int open_errno = errno;
+    int openErrno = errno;
     bool writeFailedFlag = false;
     bool consistentFlag = false;
     if (fptr != NULL) {
@@ -109,7 +109,7 @@ void fopen_0200(void)
  * @tc.desc       : Verify fopen("w") and fclose and fread and fwrite and fopen success, fread failed, fwrite success
  * @tc.level      : level 0.
  */
-void fopen_0300(void)
+void Fopen0300(void)
 {
     int32_t rsize = 0;
     char abc[100] = {0};
@@ -171,7 +171,7 @@ void Fopen0400(void)
  * @tc.desc       : Verify fopen("a") and fclose and fread and fwrite and fopen success, fread success, fwrite success
  * @tc.level      : level 0.
  */
-void fopen_0500(void)
+void Fopen0500(void)
 {
     char abc[100] = {0};
     const char *add = "this is tempory test!to write";
@@ -345,9 +345,9 @@ static int FopenTestImpl(void)
 {
     Fopen0100();
     fopen_0200();
-    fopen_0300();
+    Fopen0300();
     Fopen0400();
-    fopen_0500();
+    Fopen0500();
     Fopen0600();
     Fopen0700();
     Fopen0800();

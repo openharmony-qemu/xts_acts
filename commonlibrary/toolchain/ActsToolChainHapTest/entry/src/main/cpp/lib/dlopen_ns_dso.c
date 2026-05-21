@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <dlfcn.h>
-void sayhello()
+void SayHello()
 {
-   printf("hello world!\n");
+    printf("hello world!\n");
 }
 
-void* call_dlopen(const char* name)
+void* CallDlopen(const char* name)
 {
-   return dlopen(name, RTLD_NOW);
+    return dlopen(name, RTLD_NOW);
 }
