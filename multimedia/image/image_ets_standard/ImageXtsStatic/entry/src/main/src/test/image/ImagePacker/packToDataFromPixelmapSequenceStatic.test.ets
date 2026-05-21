@@ -170,7 +170,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0100
-     * @tc.number SUB_MEDIA_IMAGE_IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_001
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0100
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -200,7 +200,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0200
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_002
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0200
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -228,7 +228,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0300
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_003
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0300
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -257,7 +257,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0400
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_004
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0400
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -286,7 +286,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0500
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_005
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0500
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -314,7 +314,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0600
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_006
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0600
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -343,7 +343,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0700
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_007
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0700
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0800
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_008
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0800
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -401,7 +401,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0900
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_009
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_0900
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -429,7 +429,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_010
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -457,7 +457,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_011
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -484,7 +484,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_012
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -511,7 +511,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_013
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -539,7 +539,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_015
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -566,7 +566,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_016
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -593,7 +593,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
  
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_018
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -620,7 +620,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_019
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -647,7 +647,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0100
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_001
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0100
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -677,7 +677,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0200
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_020
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0200
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -707,7 +707,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0300
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_0300
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0300
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -737,7 +737,7 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     /**
      * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0400
-     * @tc.number IMAGE_PACKER_PACK_TO_DATA_FROM_PIXEL_MAP_SEQUENCE_0400
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_abnormal_promise_SUPP_static_0400
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
