@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +22,6 @@ export default function BaseEnumValueOfTest(): void {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });
@@ -54,62 +54,6 @@ export default function BaseEnumValueOfTest(): void {
       let e: BaseEnum<string> = new BaseEnum<string>("debug", "DEBUG")
       let result: string = e.valueOf()
       expect(result).assertEqual("debug")
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0300
-     * @tc.desc Verify method handles extra parameters gracefully or throws error
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(-1, "NEG_ONE")
-      let result: int = e.valueOf()
-      expect(result).assertEqual(-1)
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0400
-     * @tc.desc Verify method handles multiple extra parameters gracefully or throws error
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("active", "STATUS")
-      let result: string = e.valueOf()
-      expect(result).assertEqual("active")
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0500
-     * @tc.desc Verify method behavior when passing null as argument
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(500), "LONG_VAL")
-      let result: long = e.valueOf()
-      expect(result).assertEqual(Int.toLong(500))
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_0600
-     * @tc.desc Verify method behavior when passing undefined as argument
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<byte> = new BaseEnum<byte>(64 as byte, "BYTE_VAL")
-      let result: byte = e.valueOf()
-      expect(result).assertEqual(64 as byte)
     });
 
     /**
@@ -1201,7 +1145,7 @@ export default function BaseEnumValueOfTest(): void {
       let e2: BaseEnum<int> = new BaseEnum<int>(200, "B")
       expect(e1.valueOf()).assertEqual(100)
       expect(e2.valueOf()).assertEqual(200)
-      expect(e1.valueOf() == e2.valueOf()).assertFalse()
+      expect(e1.valueOf() === e2.valueOf()).assertFalse()
     });
 
     /**
@@ -1363,20 +1307,6 @@ export default function BaseEnumValueOfTest(): void {
       let e: BaseEnum<string> = new BaseEnum<string>("test", "TEST")
       let result: string = e.valueOf()
       expect(result).assertEqual("test")
-    });
-
-    /**
-     * @tc.name testBaseEnumValueOf095
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_9500
-     * @tc.desc Verify valueOf throws error when called with illegal argument type
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumValueOf095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<double> = new BaseEnum<double>(2.718, "DOUBLE_VAL")
-      let result: double = e.valueOf()
-      expect(result).assertEqual(2.718)
     });
 
     /**

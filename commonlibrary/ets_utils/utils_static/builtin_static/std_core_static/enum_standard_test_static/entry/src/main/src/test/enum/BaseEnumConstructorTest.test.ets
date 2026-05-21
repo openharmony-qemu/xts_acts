@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +22,6 @@ export default function BaseEnumConstructorTest(): void {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
-      await Utils.msSleep(30);
     });
     afterEach((): void => {
     });
@@ -508,8 +508,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(NaN), "NAN_FLOAT");
-      expect(Number.isNaN(Float.toDouble(e.valueOf()))).assertTrue();
+      const e = new BaseEnum<float>(Double.toFloat(Float.NaN), "NAN_FLOAT");
+      expect(isNaN(Float.toDouble(e.valueOf()))).assertTrue();
     });
 
     /**
@@ -626,8 +626,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(NaN, "NAN_DOUBLE");
-      expect(Number.isNaN(e.valueOf())).assertTrue();
+      const e = new BaseEnum<double>(Double.NaN, "NAN_DOUBLE");
+      expect(isNaN(e.valueOf())).assertTrue();
     });
 
     /**
@@ -639,8 +639,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(Infinity, "INF_DOUBLE");
-      expect(e.valueOf()).assertEqual(Infinity);
+      const e = new BaseEnum<double>(Double.POSITIVE_INFINITY, "INF_DOUBLE");
+       expect(e.valueOf()).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -652,8 +652,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<double>(-Infinity, "NEG_INF_DOUBLE");
-      expect(e.valueOf()).assertEqual(-Infinity);
+      const e = new BaseEnum<double>(Double.NEGATIVE_INFINITY, "NEG_INF_DOUBLE");
+      expect(e.valueOf()).assertEqual(Double.NEGATIVE_INFINITY);
     });
 
     /**
