@@ -570,7 +570,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
               0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
               0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
             ]),
-            validateCertDate: true,
+            validateDate: true,
             date: "20260408012032Z" // YYYYMMDDHHMMSSZ
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
@@ -1283,7 +1283,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39,
             0x30, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x39
           ]),
-          validateCertDate: false
+          validateDate: false
         };
         let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
         let chainResult: cert.CertValidationResult = await validator.validateCert(leafExpiredX509CertGm!, validatorParams);
@@ -1977,7 +1977,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert!],
             untrustedCerts: [interExpiredX509Cert!],
-            validateCertDate: true,
+            validateDate: true,
             ignoreErrs: [
               cert.CertResult.ERR_CERT_NOT_YET_VALID,
               cert.CertResult.ERR_CERT_HAS_EXPIRED
@@ -2008,7 +2008,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootExpiredX509Cert!],
             untrustedCerts: [interExpiredX509Cert!],
-            validateCertDate: false,
+            validateDate: false,
             keyUsage: [
               cert.KeyUsageType.KEYUSAGE_ENCIPHER_ONLY // 只对叶子证书作用，中间证书密钥没有加密用途
             ]
@@ -2655,7 +2655,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootCaCertGm!],
             untrustedCerts: [interDefaultX509CertGm!, rootDefaultX509CertGm!],
-            validateCertDate: false
+            validateDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
           await validator.validateCert(leafDefaultX509CertGm!, validatorParams);
@@ -2682,7 +2682,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
-            validateCertDate: false
+            validateDate: false
           };
           let validator: cert.CertChainValidator = cert.createCertChainValidator(algName);
           await validator.validateCert(leafUnkownCriticalExtensionX509CertGm!, validatorParams);
@@ -2709,7 +2709,7 @@ export default function certFrameworkCertChainNewValidatorTestUnit() {
           let validatorParams: cert.CertValidationParams = {
             trustedCerts: [rootDefaultX509CertGm!],
             untrustedCerts: [interDefaultX509CertGm!],
-            validateCertDate: false,
+            validateDate: false,
             ignoreErrs: [
               cert.CertResult.ERR_UNKNOWN_CRITICAL_EXTENSION
             ]
