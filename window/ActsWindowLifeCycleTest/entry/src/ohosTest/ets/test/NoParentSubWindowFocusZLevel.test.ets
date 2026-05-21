@@ -69,7 +69,7 @@ export default function NoParentSubWindowFocusZLevel() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
-    let canIUseRes:boolean = false;
+    let canIUseRes: boolean = false;
     let isPCMode: boolean = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
