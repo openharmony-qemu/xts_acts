@@ -192,12 +192,11 @@ export default function graphicImagePixelMapAPI22() {
       try {
         pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
         console.info('www data createCroppedAndScaledPixelMapSync pass');
-        expect().assertFail();
+        await pixelMap.release();
         done();
       }catch(err){
         console.info('www data createCroppedAndScaledPixelMapSync error', JSON.stringify(err));
-        expect(Number(err.code) == 7600205).assertTrue();
-        await pixelMap.release();
+        expect().assertFail();
         done();
       }
     });
@@ -328,7 +327,7 @@ export default function graphicImagePixelMapAPI22() {
         console.info('www data createCroppedAndScaledPixelMap pass');
       }).catch((err: BusinessError) => {
         console.info('www data createCroppedAndScaledPixelMap error', JSON.stringify(err));
-        expect(Number(err.code) == 7600205).assertTrue();
+        expect().assertFail();
       });
       await pixelMap.release();
       done();

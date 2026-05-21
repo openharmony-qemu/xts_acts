@@ -711,13 +711,11 @@ export default function graphicImagePixelMap5() {
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
           console.info('graphicImagePixelMap5_3700 pass');
-          expect().assertFail();
           await pixelMap?.release();
           done();
         }catch(err){
           console.info('graphicImagePixelMap5_3700 error', JSON.stringify(err.code));
-          expect(Number(err.code) === 7600205).assertTrue();
-          await pixelMap?.release();
+          expect().assertFail();
           done();
         }
       })
@@ -853,7 +851,7 @@ export default function graphicImagePixelMap5() {
           console.info('graphicImagePixelMap5_4100 pass');
         }).catch((err: BusinessError) => {
           console.info('graphicImagePixelMap5_4100 error', JSON.stringify(err.code));
-          expect(Number(err.code) === 7600205).assertTrue();
+          expect().assertFail();
         });
         await pixelMap?.release();
         done();
