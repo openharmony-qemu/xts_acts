@@ -428,15 +428,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1000
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1000
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01000';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1000', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1000';
       let path = 'test6.gif';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -456,15 +456,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1100
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1100
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01100';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1100';
       let path = 'test6.gif';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -483,15 +483,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1200
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1200
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01200';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1200';
       let path = 'test.jpg';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -510,15 +510,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1300
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1300
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01300';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1300';
       let path = 'test.svg';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -538,15 +538,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
 
     
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1400
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1400
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01400';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1400';
       let path = 'test_exif_v2.png';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -565,15 +565,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1500
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1500
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01500';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1500';
       let path = 'test8.bmp';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -592,15 +592,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
  
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1600
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1600
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01600';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1600', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1600';
       let path = 'test_aisr.ico';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
@@ -619,15 +619,15 @@ export default function imagePackerPackToDataFromPixelmapSequenceStaticSuppTest(
     })
 
     /**
-     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700
-     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700
+     * @tc.name   SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1700
+     * @tc.number SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1700
      * @tc.desc   imagePacker_packToDataFromPixelmapSequence
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_01700';
+    it('SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1700', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_imagePacker_packToDataFromPixelmapSequence_promise_SUPP_static_1700';
       let path = 'test_exif_v3.webp';
       let ops: image.PackingOptionsForSequence = {
         frameCount: 3,
