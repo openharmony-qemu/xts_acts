@@ -20,9 +20,12 @@ export default function audioOpusCodecTest() {
   describe('audioOpusCodecTest', () => {
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0100
-     * @tc.name      : testDecoderSampleRateCheck
-     * @tc.desc      : Test Opus decoder sample rate configuration
+     * @tc.name   testDecoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0100
+     * @tc.desc   test DecoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDecoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.DecoderSampleRateCheck()).assertEqual(0);
@@ -30,9 +33,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0200
-     * @tc.name      : testDecoderChannelCountCheck
-     * @tc.desc      : Test Opus decoder channel count configuration
+     * @tc.name   testDecoderChannelCountCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0200
+     * @tc.desc   test DecoderChannelCountCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDecoderChannelCountCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.DecoderChannelCountCheck()).assertEqual(0);
@@ -40,9 +46,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0300
-     * @tc.name      : testEncoderSampleRateCheck
-     * @tc.desc      : Test Opus encoder sample rate configuration
+     * @tc.name   testEncoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0300
+     * @tc.desc   test EncoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderSampleRateCheck()).assertEqual(0);
@@ -50,9 +59,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0400
-     * @tc.name      : testEncoderChannelCountCheck
-     * @tc.desc      : Test Opus encoder channel count configuration
+     * @tc.name   testEncoderChannelCountCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0400
+     * @tc.desc   test EncoderChannelCountCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderChannelCountCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderChannelCountCheck()).assertEqual(0);
@@ -60,9 +72,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0500
-     * @tc.name      : testEncoderBitrateCheck
-     * @tc.desc      : Test Opus encoder bitrate configuration
+     * @tc.name   testEncoderBitrateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0500
+     * @tc.desc   test EncoderBitrateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderBitrateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderBitrateCheck()).assertEqual(0);
@@ -70,9 +85,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0600
-     * @tc.name      : testEncoderBitrateSampleRateComboCheck
-     * @tc.desc      : Test Opus encoder bitrate and sample rate combination
+     * @tc.name   testEncoderBitrateSampleRateComboCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0600
+     * @tc.desc   test EncoderBitrateSampleRateComboCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderBitrateSampleRateComboCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderBitrateSampleRateComboCheck()).assertEqual(0);
@@ -80,9 +98,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0700
-     * @tc.name      : testEncoderStereoSampleRateCheck
-     * @tc.desc      : Test Opus encoder stereo sample rate configuration
+     * @tc.name   testEncoderStereoSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0700
+     * @tc.desc   test EncoderStereoSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderStereoSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderStereoSampleRateCheck()).assertEqual(0);
@@ -90,9 +111,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0800
-     * @tc.name      : testDecoderCreateByNameCheck
-     * @tc.desc      : Test Opus decoder create by name
+     * @tc.name   testDecoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0800
+     * @tc.desc   test DecoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDecoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.DecoderCreateByNameCheck()).assertEqual(0);
@@ -100,9 +124,12 @@ export default function audioOpusCodecTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_0900
-     * @tc.name      : testEncoderCreateByNameCheck
-     * @tc.desc      : Test Opus encoder create by name
+     * @tc.name   testEncoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOOPUSCODEC_INTERFACE_TEST_0900
+     * @tc.desc   test EncoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEncoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioopuscodec.EncoderCreateByNameCheck()).assertEqual(0);

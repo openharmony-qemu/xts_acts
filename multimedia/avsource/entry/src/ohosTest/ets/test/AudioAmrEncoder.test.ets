@@ -20,9 +20,12 @@ export default function audioAmrEncoderTest() {
   describe('audioAmrEncoderTest', () => {
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0100
-     * @tc.name      : testAmrNbDecoderSampleRateCheck
-     * @tc.desc      : Test AMR-NB decoder sample rate configuration
+     * @tc.name   testAmrNbDecoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0100
+     * @tc.desc   test AmrNbDecoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbDecoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbDecoderSampleRateCheck()).assertEqual(0);
@@ -30,9 +33,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0200
-     * @tc.name      : testAmrNbDecoderChannelCountCheck
-     * @tc.desc      : Test AMR-NB decoder channel count configuration
+     * @tc.name   testAmrNbDecoderChannelCountCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0200
+     * @tc.desc   test AmrNbDecoderChannelCountCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbDecoderChannelCountCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbDecoderChannelCountCheck()).assertEqual(0);
@@ -40,9 +46,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0300
-     * @tc.name      : testAmrNbEncoderBitrateCheck
-     * @tc.desc      : Test AMR-NB encoder bitrate configuration
+     * @tc.name   testAmrNbEncoderBitrateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0300
+     * @tc.desc   test AmrNbEncoderBitrateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbEncoderBitrateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbEncoderBitrateCheck()).assertEqual(0);
@@ -50,9 +59,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0400
-     * @tc.name      : testAmrNbEncoderSampleRateCheck
-     * @tc.desc      : Test AMR-NB encoder sample rate configuration
+     * @tc.name   testAmrNbEncoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0400
+     * @tc.desc   test AmrNbEncoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbEncoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbEncoderSampleRateCheck()).assertEqual(0);
@@ -60,9 +72,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0500
-     * @tc.name      : testAmrWbDecoderSampleRateCheck
-     * @tc.desc      : Test AMR-WB decoder sample rate configuration
+     * @tc.name   testAmrWbDecoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0500
+     * @tc.desc   test AmrWbDecoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbDecoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbDecoderSampleRateCheck()).assertEqual(0);
@@ -70,9 +85,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0600
-     * @tc.name      : testAmrWbDecoderChannelCountCheck
-     * @tc.desc      : Test AMR-WB decoder channel count configuration
+     * @tc.name   testAmrWbDecoderChannelCountCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0600
+     * @tc.desc   test AmrWbDecoderChannelCountCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbDecoderChannelCountCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbDecoderChannelCountCheck()).assertEqual(0);
@@ -80,9 +98,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0700
-     * @tc.name      : testAmrWbEncoderBitrateCheck
-     * @tc.desc      : Test AMR-WB encoder bitrate configuration
+     * @tc.name   testAmrWbEncoderBitrateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0700
+     * @tc.desc   test AmrWbEncoderBitrateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbEncoderBitrateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbEncoderBitrateCheck()).assertEqual(0);
@@ -90,9 +111,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0800
-     * @tc.name      : testAmrWbEncoderSampleRateCheck
-     * @tc.desc      : Test AMR-WB encoder sample rate configuration
+     * @tc.name   testAmrWbEncoderSampleRateCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0800
+     * @tc.desc   test AmrWbEncoderSampleRateCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbEncoderSampleRateCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbEncoderSampleRateCheck()).assertEqual(0);
@@ -100,9 +124,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_0900
-     * @tc.name      : testAmrNbDecoderCreateByNameCheck
-     * @tc.desc      : Test AMR-NB decoder create by name
+     * @tc.name   testAmrNbDecoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_0900
+     * @tc.desc   test AmrNbDecoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbDecoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbDecoderCreateByNameCheck()).assertEqual(0);
@@ -110,9 +137,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_1000
-     * @tc.name      : testAmrNbEncoderCreateByNameCheck
-     * @tc.desc      : Test AMR-NB encoder create by name
+     * @tc.name   testAmrNbEncoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_1000
+     * @tc.desc   test AmrNbEncoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrNbEncoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrNbEncoderCreateByNameCheck()).assertEqual(0);
@@ -120,9 +150,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_1100
-     * @tc.name      : testAmrWbDecoderCreateByNameCheck
-     * @tc.desc      : Test AMR-WB decoder create by name
+     * @tc.name   testAmrWbDecoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_1100
+     * @tc.desc   test AmrWbDecoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbDecoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbDecoderCreateByNameCheck()).assertEqual(0);
@@ -130,9 +163,12 @@ export default function audioAmrEncoderTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_1200
-     * @tc.name      : testAmrWbEncoderCreateByNameCheck
-     * @tc.desc      : Test AMR-WB encoder create by name
+     * @tc.name   testAmrWbEncoderCreateByNameCheck
+     * @tc.number SUB_MULTIMEDIA_AVCODEC_AUDIOAMRENCODER_INTERFACE_TEST_1200
+     * @tc.desc   test AmrWbEncoderCreateByNameCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAmrWbEncoderCreateByNameCheck', Level.LEVEL2, async (done: Function) => {
       expect(audioamrencoder.AmrWbEncoderCreateByNameCheck()).assertEqual(0);
