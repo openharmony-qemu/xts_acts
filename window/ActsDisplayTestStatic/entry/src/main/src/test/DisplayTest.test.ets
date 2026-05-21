@@ -188,7 +188,7 @@ export default function DisplayTest():void {
                 //     }
                 // }
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
                 hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
                 if(err.code == 801){
@@ -348,7 +348,7 @@ export default function DisplayTest():void {
             done();
         }
         catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
             if (err.code === 801) {
                 hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
@@ -1331,7 +1331,7 @@ export default function DisplayTest():void {
 
                 done();
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + err.code);
                 if (err.code === 801) {
                     hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
@@ -1994,7 +1994,7 @@ export default function DisplayTest():void {
                 done();
             }
             catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to obtain the default display object. Code: ${err.code}, message: ${err.message}`);
                 if (err.code == 801) {
                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -2164,7 +2164,7 @@ export default function DisplayTest():void {
                     done();
                 }
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();
@@ -2199,7 +2199,7 @@ export default function DisplayTest():void {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code != 801) {
                     expect(false).assertTrue();
@@ -2237,7 +2237,7 @@ export default function DisplayTest():void {
                     })
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801).assertTrue();
                 done();
@@ -2264,7 +2264,7 @@ export default function DisplayTest():void {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2317,7 +2317,7 @@ export default function DisplayTest():void {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2345,7 +2345,7 @@ export default function DisplayTest():void {
                      done();
                  })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2385,7 +2385,7 @@ export default function DisplayTest():void {
                      done();
                  })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
                 if(err.code == 801){
                     expect(err.code == 801).assertTrue();
@@ -2418,7 +2418,7 @@ export default function DisplayTest():void {
                     done();
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 if (err.code === 801) {
                     done();
@@ -2466,7 +2466,7 @@ export default function DisplayTest():void {
                       }
                 })
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
                 expect(err.code == 801);
                 done();
@@ -2527,7 +2527,7 @@ export default function DisplayTest():void {
                 });
 
             } catch (err) {
-                err = err as BusinessError;
+                
                 hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
                 expect(false).assertTrue();
                 done();
@@ -2558,7 +2558,7 @@ export default function DisplayTest():void {
                 expect(false).assertTrue();
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004);
                 expect(e.message!=null).assertTrue();
@@ -2587,7 +2587,7 @@ export default function DisplayTest():void {
                 expect(false).assertTrue();
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004)
                 expect(e.message!=null).assertTrue();
@@ -2627,7 +2627,7 @@ export default function DisplayTest():void {
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2670,7 +2670,7 @@ export default function DisplayTest():void {
                 expect(relativePosition.displayId).assertEqual(0)
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2718,7 +2718,7 @@ export default function DisplayTest():void {
                 }
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
                 if (e.code === 801) {
                     expect(e.message!=null).assertTrue();
@@ -2757,7 +2757,7 @@ export default function DisplayTest():void {
             expect(false).assertTrue();
             done();
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
             expect(e.code).assertEqual(1400004)
             done()
@@ -2781,7 +2781,7 @@ export default function DisplayTest():void {
             expect(brightnessInfo.maxHeadroom).assertLarger(0);
             done();
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
             if (e.code == 801) {
                 done()
@@ -2863,7 +2863,7 @@ export default function DisplayTest():void {
             await Utils.msSleep(100);
             done();
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
@@ -2933,7 +2933,7 @@ export default function DisplayTest():void {
                 }
             })
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. Cause: ${e}`);
             await terminateAbility(caseName);
             expect(false).assertTrue();
@@ -2956,7 +2956,7 @@ export default function DisplayTest():void {
             expect(false).assertTrue();
             done();
         } catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(domain, tag, caseName + 'error in getDisplayByIdSync, err : ' + JSON.stringify(err));
             expect(err.code === 401).assertTrue();
             done();
@@ -3108,7 +3108,7 @@ export default function DisplayTest():void {
                     }
                 })
             }catch (err) {
-                err = err as BusinessError;
+                
                 hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
                 if (err.code === 801) {
                         hilog.info(domain, tag, caseName + 'device not support makeUnique');
@@ -3133,7 +3133,7 @@ export default function DisplayTest():void {
             done();
         }
         catch (err) {
-            err = err as BusinessError;
+            
             hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
             if (err.code === 801) {
                 hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
@@ -3193,7 +3193,7 @@ export default function DisplayTest():void {
             }
         })
         }catch (err) {
-        err = err as BusinessError;
+        
         hilog.error(0x0000, '[ANI]', msgStr + 'Failed to make unique screen, err: ' + err.code);
             if (err.code === 801) {
                     hilog.info(domain, tag, caseName + 'device not support makeUnique');
@@ -3218,7 +3218,7 @@ export default function DisplayTest():void {
         done();
     }
     catch (err) {
-        err = err as BusinessError;
+        
         hilog.info(0x0000, '[ANI]', msgStr + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
         if (err.code === 801) {
         hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
@@ -3532,7 +3532,7 @@ export default function DisplayTest():void {
         done();
         }
         catch (err) {
-        err = err as BusinessError;
+        
         hilog.info(domain, tag, caseName + 'error in createVirtualScreen or destroyVirtualScreen, err : ' + JSON.stringify(err));
         if (err.code === 801) {
             hilog.info(domain, tag, caseName + 'device not support createVirtualScreen');
@@ -3557,7 +3557,7 @@ export default function DisplayTest():void {
         console.log(`${caseName} brightnessInfo: ${JSON.stringify(brightnessInfo)}`);
         done();
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         if (e.code === 801) {
             done()
@@ -3595,7 +3595,7 @@ export default function DisplayTest():void {
                 expect(position.y).assertLargerOrEqual(0);
                 done();
             } catch (e) {
-                e = e as BusinessError;
+                
                 console.error(`${caseName} Failed. err: ${JSON.stringify(e)}`);
                 expect(e.code).assertEqual(1400004)
                 done()
@@ -3742,7 +3742,7 @@ export default function DisplayTest():void {
             await Utils.msSleep(100);
             done();
         } catch (e) {
-            e = e as BusinessError;
+            
             console.error(`${caseName} Failed. Cause: ${e}`);
             if (e.code == 801) {
                 done()
