@@ -12,7 +12,6 @@
         {
             "type": "ShellKit",
 
-
             "run-command": [
                 "hilog -Q pidoff",
                 "rm -rf /storage/media/100/local/files/Videos/*",
@@ -25,9 +24,6 @@
                 "mkdir -p /data/tmp/case",
                 "chmod -R 777 /data/tmp/case "
             ],
-
-
-
             "teardown-command": [
                 "power-shell setmode 600",
                 "rm -rf /data/app/el2/100/database/ohos.acts.multimedia.image.xts.static/*",
@@ -55,6 +51,8 @@
                 "./resource/image/sample2.jfif ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test_reladeMetadata.png ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/jpeg_xmp.jpg ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/test_exif_v3.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
+                "./resource/image/fake.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/test_exif_v3.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/fake.dng ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",
                 "./resource/image/C027.heic ->/data/app/el2/100/base/ohos.acts.multimedia.image.xts.static/haps/entry/files",

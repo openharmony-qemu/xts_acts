@@ -25,6 +25,7 @@ import {
   Level
 } from '../../../../hypium/index';
 import { ArrayList } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface Address03 {
   street: string;
@@ -78,20 +79,12 @@ class PersonIndex03 {
   }
 }
 
-async function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (value: Error) => void) => {
-    setTimeout(() => {
-      resolve(Promise.resolve())
-    }, count)
-  })
-}
-
 export default function ArrayList_03Test(): void {
   describe('ArrayList_03Test', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

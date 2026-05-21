@@ -14,14 +14,7 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import { uri } from '@kit.ArkTS';
-
-async function sleep(time: int): Promise<int> {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0);
-    }, time);
-  });
-}
+import Utils from '../Util.test';
 
 export default function URI04Test(): void {
   describe('URI04Test', () => {
@@ -34,7 +27,7 @@ export default function URI04Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     });
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.
