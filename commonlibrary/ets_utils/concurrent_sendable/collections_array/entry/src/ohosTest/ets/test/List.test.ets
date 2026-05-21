@@ -13,16 +13,16 @@
  * limitations under the License.
  */
 
-import BuiltinsArrayCombinationTest from './BuiltinsArrayCombinationTest.test';
-import BuiltinsArrayCombinationSecondTest from './BuiltinsArrayCombinationSecondTest.test';
-import BuiltinsArrayCombinationThirdTest from './BuiltinsArrayCombinationThirdTest.test';
-import BuiltinsArrayCombinationFourthTest from './BuiltinsArrayCombinationFourthTest.test';
+import CollectionsArrayCombinationTest from './CollectionsArrayCombinationTest.test';
+import CollectionsArrayCombinationSecondTest from './CollectionsArrayCombinationSecondTest.test';
+import CollectionsArrayCombinationThirdTest from './CollectionsArrayCombinationThirdTest.test';
+import CollectionsArrayCombinationFourthTest from './CollectionsArrayCombinationFourthTest.test';
 
 export default function testsuite() {
-  BuiltinsArrayCombinationTest();
-  BuiltinsArrayCombinationSecondTest();
-  BuiltinsArrayCombinationThirdTest();
-  BuiltinsArrayCombinationFourthTest();
+  CollectionsArrayCombinationTest();
+  CollectionsArrayCombinationSecondTest();
+  CollectionsArrayCombinationThirdTest();
+  CollectionsArrayCombinationFourthTest();
   
 };
 
