@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,17 +14,16 @@
  * limitations under the License.
  */
 
-
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
 
-function asStaticFieldArray(o: Object): Array<reflect.StaticField> {
-  return o as Array<reflect.StaticField>;
+function asStaticFieldArray(fields: FixedArray<reflect.StaticField>): Array<reflect.StaticField> {
+  return Utils.fixedArrayToArray(fields);
 }
 
-function asInstanceFieldArrayFromCls(o: Object): Array<reflect.InstanceField> {
-  return o as Array<reflect.InstanceField>;
+function asInstanceFieldArrayFromCls(fields: FixedArray<reflect.InstanceField>): Array<reflect.InstanceField> {
+  return Utils.fixedArrayToArray(fields);
 }
 
 class MyClass001 {
@@ -46,7 +46,7 @@ class MixedTypes005 {
   }
 
 class EmptyClass006 {
-      private static field: string = ''; // 只有private静态字段
+      private static field: string = '';
   }
 
 class PrivateOnly007 {
@@ -99,15 +99,111 @@ class ValueClass013 {
 class LargeClass018 {
       public static f1: int = 1;
       public static f2: int = 2;
-      // ... 假设有100个静态字段
+      public static f3: int = 3;
+      public static f4: int = 4;
+      public static f5: int = 5;
+      public static f6: int = 6;
+      public static f7: int = 7;
+      public static f8: int = 8;
+      public static f9: int = 9;
+      public static f10: int = 10;
+      public static f11: int = 11;
+      public static f12: int = 12;
+      public static f13: int = 13;
+      public static f14: int = 14;
+      public static f15: int = 15;
+      public static f16: int = 16;
+      public static f17: int = 17;
+      public static f18: int = 18;
+      public static f19: int = 19;
+      public static f20: int = 20;
+      public static f21: int = 21;
+      public static f22: int = 22;
+      public static f23: int = 23;
+      public static f24: int = 24;
+      public static f25: int = 25;
+      public static f26: int = 26;
+      public static f27: int = 27;
+      public static f28: int = 28;
+      public static f29: int = 29;
+      public static f30: int = 30;
+      public static f31: int = 31;
+      public static f32: int = 32;
+      public static f33: int = 33;
+      public static f34: int = 34;
+      public static f35: int = 35;
+      public static f36: int = 36;
+      public static f37: int = 37;
+      public static f38: int = 38;
+      public static f39: int = 39;
+      public static f40: int = 40;
+      public static f41: int = 41;
+      public static f42: int = 42;
+      public static f43: int = 43;
+      public static f44: int = 44;
+      public static f45: int = 45;
+      public static f46: int = 46;
+      public static f47: int = 47;
+      public static f48: int = 48;
+      public static f49: int = 49;
+      public static f50: int = 50;
+      public static f51: int = 51;
+      public static f52: int = 52;
+      public static f53: int = 53;
+      public static f54: int = 54;
+      public static f55: int = 55;
+      public static f56: int = 56;
+      public static f57: int = 57;
+      public static f58: int = 58;
+      public static f59: int = 59;
+      public static f60: int = 60;
+      public static f61: int = 61;
+      public static f62: int = 62;
+      public static f63: int = 63;
+      public static f64: int = 64;
+      public static f65: int = 65;
+      public static f66: int = 66;
+      public static f67: int = 67;
+      public static f68: int = 68;
+      public static f69: int = 69;
+      public static f70: int = 70;
+      public static f71: int = 71;
+      public static f72: int = 72;
+      public static f73: int = 73;
+      public static f74: int = 74;
+      public static f75: int = 75;
+      public static f76: int = 76;
+      public static f77: int = 77;
+      public static f78: int = 78;
+      public static f79: int = 79;
+      public static f80: int = 80;
+      public static f81: int = 81;
+      public static f82: int = 82;
+      public static f83: int = 83;
+      public static f84: int = 84;
+      public static f85: int = 85;
+      public static f86: int = 86;
+      public static f87: int = 87;
+      public static f88: int = 88;
+      public static f89: int = 89;
+      public static f90: int = 90;
+      public static f91: int = 91;
+      public static f92: int = 92;
+      public static f93: int = 93;
+      public static f94: int = 94;
+      public static f95: int = 95;
+      public static f96: int = 96;
+      public static f97: int = 97;
+      public static f98: int = 98;
+      public static f99: int = 99;
       public static f100: int = 100;
   }
 
 class SpecialNames019 {
-      public static fieldHyphen: string = '';
       public static field_name: string = '';
-      public static fieldZh: string = '';
-      public static field123: string = '';
+      public static 字段名: string = '';
+      public static 名字: string = '';
+      public static имя: string = '';
   }
 
 class AccessTest020 {
@@ -134,7 +230,6 @@ class InitClass024 {
       public static computed: int = 42 + 58;
   }
 
-
 export default function ClassGetStaticFieldsTest(): void {
   describe('ClassGetStaticFieldsTest', () => {
     beforeAll(() => {
@@ -155,24 +250,23 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
         let cls = Class.from<MyClass001>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(1); // 只有public静态字段
+        expect(fields.length).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICFIELDS_0200
      * @tc.name testClassGetStaticFields002
-     * @tc.desc Verify ClassGetStaticFields case 002: method not parameters
+     * @tc.desc Verify ClassGetStaticFields case 002: getStaticFields() with no arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 错误用法：传递参数
         try {
             let fields = looseReflect(cls as Object).getStaticFields('invalid');
             expect().assertFail();
@@ -189,7 +283,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass003>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         
@@ -208,7 +302,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass003>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         for (let i = 0; i < fields.length; i++) {
@@ -225,7 +319,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypes005>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(5);
@@ -239,7 +333,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyClass006>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(0);
@@ -253,10 +347,10 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateOnly007>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(0); // private和protected都不可见
+        expect(fields.length).assertEqual(0);
     });
 
     /**
@@ -267,7 +361,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstClass008>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(2);
@@ -281,14 +375,13 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass009>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(1); // 只有name
+        expect(fields.length).assertEqual(1);
         
-        // 通过父类Class对象获取父类静态字段
         let parentFields = asStaticFieldArray(cls.getSuper()!.getStaticFields());
-        expect(parentFields.length).assertEqual(1); // 只有age
+        expect(parentFields.length).assertEqual(1);
     });
 
     /**
@@ -299,16 +392,16 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child010>();
         let childFields = asStaticFieldArray(childCls.getStaticFields());
-        expect(childFields.length).assertEqual(1); // 只有c
+        expect(childFields.length).assertEqual(1);
         
         let parentFields = asStaticFieldArray(childCls.getSuper()!.getStaticFields());
-        expect(parentFields.length).assertEqual(1); // 只有b
+        expect(parentFields.length).assertEqual(1);
         
         let grandParentFields = asStaticFieldArray(childCls.getSuper()!.getSuper()!.getStaticFields());
-        expect(grandParentFields.length).assertEqual(1); // 只有a
+        expect(grandParentFields.length).assertEqual(1);
     });
 
     /**
@@ -319,15 +412,13 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let derivedCls = Class.from<Derived011>();
         let fields = asStaticFieldArray(derivedCls.getStaticFields());
         
-        // 只能获取Derived自己的静态字段
         expect(fields.length).assertEqual(1);
         expect(fields[0].getName()).assertEqual('derivedField');
         
-        // Base的静态字段需要通过Base类获取
         let baseCls = Class.from<Base011>();
         let baseFields = asStaticFieldArray(baseCls.getStaticFields());
         expect(baseFields.length).assertEqual(1);
@@ -341,7 +432,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass012>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         
@@ -362,7 +453,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ValueClass013>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         let field = fields[0];
@@ -380,7 +471,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         try {
             let fields = looseReflect(cls as Object).getStaticFields('extra');
@@ -398,15 +489,11 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 未调用initialize时
-        try {
-            let fields = asStaticFieldArray(cls.getStaticFields());
-            // 可能需要先initialize
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+        let fields = asStaticFieldArray(cls.getStaticFields());
+        expect(fields.length).assertEqual(1);
+        expect(fields[0].getName()).assertEqual('name');
     });
 
     /**
@@ -417,11 +504,11 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 假设getStaticFields被标记为废弃
+    it('testClassGetStaticFields016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.from<MyClass001>();
-        let fields = asStaticFieldArray(cls.getStaticFields()); // 应显示弃用警告
-        expect(fields !== null).assertTrue();
+        let fields = asStaticFieldArray(cls.getStaticFields());
+        expect(fields.length).assertEqual(1);
+        expect(fields[0].getName()).assertEqual('name');
     });
 
     /**
@@ -432,11 +519,11 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      // 不需要await
+    it('testClassGetStaticFields017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.from<MyClass001>();
-        let fields = asStaticFieldArray(cls.getStaticFields()); // 同步调用
-        expect(fields !== null).assertTrue();
+        let fields = asStaticFieldArray(cls.getStaticFields());
+        expect(fields.length).assertEqual(1);
+        expect(fields[0].getName()).assertEqual('name');
     });
 
     /**
@@ -447,7 +534,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LargeClass018>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(100);
@@ -461,10 +548,30 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SpecialNames019>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(4);
+        let hasFieldName = false;
+        let hasFieldZh = false;
+        let hasName = false;
+        let hasCyrillicName = false;
+        for (let i = 0; i < fields.length; i++) {
+          let n = fields[i].getName();
+          if (n === 'field_name') {
+            hasFieldName = true;
+          } else if (n === '字段名') {
+            hasFieldZh = true;
+          } else if (n === '名字') {
+            hasName = true;
+          } else if (n === 'имя') {
+            hasCyrillicName = true;
+          }
+        }
+        expect(hasFieldName).assertTrue();
+        expect(hasFieldZh).assertTrue();
+        expect(hasName).assertTrue();
+        expect(hasCyrillicName).assertTrue();
     });
 
     /**
@@ -475,11 +582,10 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AccessTest020>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         
-        // 只有public字段可见
         expect(fields.length).assertEqual(1);
         expect(fields[0].getName()).assertEqual('publicField');
     });
@@ -492,7 +598,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyTest021>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         expect(fields.length).assertEqual(2);
@@ -516,15 +622,13 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedClass022>();
         
-        // getStaticFields只返回静态字段
         let staticFields = asStaticFieldArray(cls.getStaticFields());
         expect(staticFields.length).assertEqual(1);
         expect(staticFields[0].getName()).assertEqual('staticField');
         
-        // getInstanceFields只返回实例字段
         let instanceFields = asInstanceFieldArrayFromCls(cls.getInstanceFields());
         expect(instanceFields.length).assertEqual(1);
         expect(instanceFields[0].getName()).assertEqual('instanceField');
@@ -538,13 +642,12 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         let fields1 = asStaticFieldArray(cls.getStaticFields());
         let fields2 = asStaticFieldArray(cls.getStaticFields());
         
         expect(fields1.length).assertEqual(fields2.length);
-        // 验证字段内容相同
         for (let i = 0; i < fields1.length; i++) {
             expect(fields1[i].getName()).assertEqual(fields2[i].getName());
         }
@@ -558,7 +661,7 @@ export default function ClassGetStaticFieldsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassGetStaticFields024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassGetStaticFields024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InitClass024>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         

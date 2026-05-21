@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -42,7 +42,6 @@ abstract class MultiAbstractClass008 {
 
 abstract class Child009 extends Parent009 {
     public override method1(): void {}
-    // method2未实现，Child仍是抽象类
   }
 
 abstract class Parent009 {
@@ -87,14 +86,14 @@ enum TestEnum016 {
 
 class MyClass021 {}
 
-class Level3022 extends Level2022 {
-    public override method(): void {}
+abstract class Level1022 {
+    public abstract method(): void;
   }
 
 abstract class Level2022 extends Level1022 {}
 
-abstract class Level1022 {
-    public abstract method(): void;
+class Level3022 extends Level2022 {
+    public override method(): void {}
   }
 
 abstract class EmptyAbstractClass023 {}
@@ -136,7 +135,7 @@ interface MyInterface033 {}
 
 abstract class AbstractClass033 {}
 
-class FinalClass034 {}
+final class FinalClass034 {}
 
 abstract class AbstractClass034 {}
 
@@ -262,7 +261,6 @@ interface Interface1050 {
 
 abstract class PartialImpl051 implements MyInterface051 {
     public method1(): void {}
-    // method2和method3未实现，类仍为抽象
   }
 
 interface MyInterface051 {
@@ -270,7 +268,6 @@ interface MyInterface051 {
     method2(): void;
     method3(): void;
   }
-
 
 export default function ClassIsAbstractTest(): void {
   describe('ClassIsAbstractTest', () => {
@@ -287,12 +284,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0100
      * @tc.name testClassIsAbstract001
-     * @tc.desc Verify ClassIsAbstract case 001: isAbstract()method not parameters
+     * @tc.desc Verify ClassIsAbstract case 001: isAbstract() with no arguments
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract001', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass001>();
         let result = cls.isAbstract();
         expect(result).assertTrue();
@@ -306,7 +303,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract002', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NormalClass010>();
       expect(cls.isAbstract()).assertFalse();
     });
@@ -314,12 +311,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0300
      * @tc.name testClassIsAbstract003
-     * @tc.desc Verify ClassIsAbstract case 003: using Class.from<T>()get object after call isAbstract
+     * @tc.desc Verify ClassIsAbstract case 003: Class.from<T>() then isAbstract() returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract003', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyAbstractClass003>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -332,7 +329,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract004', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyAbstractClass004>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -340,28 +337,25 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0500
      * @tc.name testClassIsAbstract005
-     * @tc.desc Verify ClassIsAbstract case 005: using Class.ofAny()get object after call isAbstract
+     * @tc.desc Verify ClassIsAbstract case 005: Class.ofAny() then isAbstract() on wrapper Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract005', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
-      let anyObj: Any = null as Object;
-        let cls = Class.ofAny(anyObj);
-        if (cls !== undefined) {
-          expect(cls.isAbstract()).assertTrue();
-        }
+    it('testClassIsAbstract005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.ofAny(undefined as Any);
+        expect(cls).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0600
      * @tc.name testClassIsAbstract006
-     * @tc.desc Verify ClassIsAbstract case 006: is abstract return true
+     * @tc.desc Verify ClassIsAbstract case 006: abstract class isAbstract() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract006', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass006>();
         let result = cls.isAbstract();
         expect(result).assertEqual(true);
@@ -371,12 +365,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0700
      * @tc.name testClassIsAbstract007
-     * @tc.desc Verify ClassIsAbstract case 007: abstractmethod return true
+     * @tc.desc Verify ClassIsAbstract case 007: abstract class with abstract method returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract007', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ClassWithAbstractMethod007>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -384,12 +378,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0800
      * @tc.name testClassIsAbstract008
-     * @tc.desc Verify ClassIsAbstract case 008: multiple method return true
+     * @tc.desc Verify ClassIsAbstract case 008: abstract class with multiple abstract methods returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract008', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiAbstractClass008>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -402,7 +396,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract009', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Child009>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -410,12 +404,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1000
      * @tc.name testClassIsAbstract010
-     * @tc.desc Verify ClassIsAbstract case 010: return false
+     * @tc.desc Verify ClassIsAbstract case 010: concrete class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract010', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NormalClass010>();
         let result = cls.isAbstract();
         expect(result).assertFalse();
@@ -425,12 +419,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1100
      * @tc.name testClassIsAbstract011
-     * @tc.desc Verify ClassIsAbstract case 011: instance return false
+     * @tc.desc Verify ClassIsAbstract case 011: normal instance class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract011', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass011>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -438,12 +432,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1200
      * @tc.name testClassIsAbstract012
-     * @tc.desc Verify ClassIsAbstract case 012: method return false
+     * @tc.desc Verify ClassIsAbstract case 012: class with only concrete methods returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract012', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteChild012>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -451,12 +445,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1300
      * @tc.name testClassIsAbstract013
-     * @tc.desc Verify ClassIsAbstract case 013: static return false
+     * @tc.desc Verify ClassIsAbstract case 013: class with static members isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract013', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticClass013>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -464,12 +458,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1400
      * @tc.name testClassIsAbstract014
-     * @tc.desc Verify ClassIsAbstract case 014: is final return false
+     * @tc.desc Verify ClassIsAbstract case 014: final class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract014', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass014>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -477,12 +471,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1500
      * @tc.name testClassIsAbstract015
-     * @tc.desc Verify ClassIsAbstract case 015: interface call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 015: interface Class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract015', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface015>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -490,12 +484,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1600
      * @tc.name testClassIsAbstract016
-     * @tc.desc Verify ClassIsAbstract case 016: call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 016: enum Class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract016', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum016>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -503,12 +497,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1700
      * @tc.name testClassIsAbstract017
-     * @tc.desc Verify ClassIsAbstract case 017: type Classobject call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 017: type Class object call isAbstract return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract017', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isAbstract()).assertFalse();
         expect(Class.PRIMITIVE_BOOLEAN.isAbstract()).assertFalse();
         expect(Class.from<string>().isAbstract()).assertFalse();
@@ -517,12 +511,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1800
      * @tc.name testClassIsAbstract018
-     * @tc.desc Verify ClassIsAbstract case 018: array type call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 018: array type call isAbstract return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract018', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [];
         let cls = Class.of(arr);
         expect(cls.isAbstract()).assertFalse();
@@ -531,12 +525,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1900
      * @tc.name testClassIsAbstract019
-     * @tc.desc Verify ClassIsAbstract case 019: FixedArraytype call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 019: FixedArray type call isAbstract return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract019', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr: FixedArray<int> = [1, 2, 3];
         let cls = Class.of(fixedArr);
         expect(cls.isAbstract()).assertFalse();
@@ -545,12 +539,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2000
      * @tc.name testClassIsAbstract020
-     * @tc.desc Verify ClassIsAbstract case 020: type call isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 020: type call isAbstract return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract020', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -558,12 +552,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2100
      * @tc.name testClassIsAbstract021
-     * @tc.desc Verify ClassIsAbstract case 021: std.core.Objectcall isAbstractreturn false
+     * @tc.desc Verify ClassIsAbstract case 021: Object Class isAbstract() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract021', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass021>();
         let objSuper = cls.getSuper();
         if (objSuper !== undefined) {
@@ -579,7 +573,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract022', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Level1022>().isAbstract()).assertTrue();
         expect(Class.from<Level2022>().isAbstract()).assertTrue();
         expect(Class.from<Level3022>().isAbstract()).assertFalse();
@@ -588,12 +582,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2300
      * @tc.name testClassIsAbstract023
-     * @tc.desc Verify ClassIsAbstract case 023: empty abstract class return true
+     * @tc.desc Verify ClassIsAbstract case 023: empty abstract class isAbstract() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract023', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyAbstractClass023>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -601,12 +595,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2400
      * @tc.name testClassIsAbstract024
-     * @tc.desc Verify ClassIsAbstract case 024: field is abstract return true
+     * @tc.desc Verify ClassIsAbstract case 024: abstract class with fields isAbstract() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract024', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractWithFields024>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -614,12 +608,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2500
      * @tc.name testClassIsAbstract025
-     * @tc.desc Verify ClassIsAbstract case 025: abstract class method return true
+     * @tc.desc Verify ClassIsAbstract case 025: abstract class with mixed methods returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract025', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedClass025>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -627,12 +621,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2600
      * @tc.name testClassIsAbstract026
-     * @tc.desc Verify ClassIsAbstract case 026: abstract class interface when isAbstractreturn true
+     * @tc.desc Verify ClassIsAbstract case 026: abstract class implementing interface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract026', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractImpl026>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -645,7 +639,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract027', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
         expect(cls.isAbstract()).assertFalse();
     });
@@ -658,7 +652,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract028', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.ofAny(undefined);
         expect(cls).assertEqual(undefined);
     });
@@ -671,7 +665,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract029', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let anyCls: Any = Class.from<AbstractClass029>() as Any;
         let cls = anyCls as Class;
         expect(cls.isAbstract()).assertTrue();
@@ -680,12 +674,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3000
      * @tc.name testClassIsAbstract030
-     * @tc.desc Verify ClassIsAbstract case 030: generic abstract class call isAbstractreturn true
+     * @tc.desc Verify ClassIsAbstract case 030: generic abstract class isAbstract() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract030', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericAbstractClass030<int>>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -698,7 +692,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract031', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intCls = Class.from<GenericAbstract031<int>>();
         let strCls = Class.from<GenericAbstract031<string>>();
         expect(intCls.isAbstract()).assertTrue();
@@ -713,7 +707,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract032', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConditionalClass032>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -721,12 +715,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3300
      * @tc.name testClassIsAbstract033
-     * @tc.desc Verify ClassIsAbstract case 033: verify isAbstract isInterfacenot when is true
+     * @tc.desc Verify ClassIsAbstract case 033: abstract class vs interface isAbstract/isInterface mutual exclusion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract033', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absCls = Class.from<AbstractClass033>();
         let ifaceCls = Class.from<MyInterface033>();
         expect(absCls.isAbstract()).assertTrue();
@@ -743,11 +737,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract034', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absCls = Class.from<AbstractClass034>();
         let finalCls = Class.from<FinalClass034>();
         expect(absCls.isAbstract() && absCls.isFinal()).assertFalse();
-        expect(finalCls.isAbstract() || finalCls.isFinal()).assertTrue();
+        expect(finalCls.isAbstract()).assertFalse();
+        expect(finalCls.isFinal()).assertTrue();
     });
 
     /**
@@ -758,7 +753,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract035', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls = Class.from<TestEnum035>();
         let absCls = Class.from<AbstractClass035>();
         expect(enumCls.isEnum()).assertTrue();
@@ -770,12 +765,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3600
      * @tc.name testClassIsAbstract036
-     * @tc.desc Verify ClassIsAbstract case 036: isAbstractreturn true call createInstanceshould throw exception
+     * @tc.desc Verify ClassIsAbstract case 036: abstract class createInstance throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract036', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass036>();
         expect(cls.isAbstract()).assertTrue();
         try {
@@ -789,12 +784,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3700
      * @tc.name testClassIsAbstract037
-     * @tc.desc Verify ClassIsAbstract case 037: isAbstractreturn false call createInstance
+     * @tc.desc Verify ClassIsAbstract case 037: concrete class createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract037', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass037>();
         expect(cls.isAbstract()).assertFalse();
         let obj = cls.createInstance();
@@ -809,7 +804,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract038', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ConcreteChild038>();
         let parentCls = childCls.getSuper();
         expect(childCls.isAbstract()).assertFalse();
@@ -821,12 +816,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3900
      * @tc.name testClassIsAbstract039
-     * @tc.desc Verify ClassIsAbstract case 039: specified behavior
+     * @tc.desc Verify ClassIsAbstract case 039: repeated isAbstract() calls are consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract039', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Factory039>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -839,7 +834,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract040', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteFactory040>();
         expect(cls.isAbstract()).assertFalse();
     });
@@ -852,7 +847,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract041', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Template041>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -865,7 +860,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract042', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ifaceCls = Class.from<Strategy042>();
         let absCls = Class.from<AbstractStrategy042>();
         expect(ifaceCls.isInterface()).assertTrue();
@@ -875,12 +870,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4300
      * @tc.name testClassIsAbstract043
-     * @tc.desc Verify ClassIsAbstract case 043: specified behavior
+     * @tc.desc Verify ClassIsAbstract case 043: isAbstract() return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract043', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let observerCls = Class.from<Observer043>();
         let subjectCls = Class.from<Subject043>();
         expect(observerCls.isAbstract()).assertTrue();
@@ -890,12 +885,12 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4400
      * @tc.name testClassIsAbstract044
-     * @tc.desc Verify ClassIsAbstract case 044: Classobject call isAbstractreturn same
+     * @tc.desc Verify ClassIsAbstract case 044: same Class object returns same isAbstract() result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract044', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass044>();
         let result1 = cls.isAbstract();
         let result2 = cls.isAbstract();
@@ -913,7 +908,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract045', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<AbstractClass045>();
         let cls2 = Class.from<AbstractClass045>();
         expect(cls1.isAbstract()).assertEqual(cls2.isAbstract());
@@ -927,7 +922,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract046', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Array<Class> = new Array<Class>();
         classes.push(Class.from<Abs1046>());
         classes.push(Class.from<Abs2046>());
@@ -947,7 +942,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract047', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicAbstract047>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -960,7 +955,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract048', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InnerAbstract048>();
         expect(cls.isAbstract()).assertTrue();
     });
@@ -973,7 +968,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract049', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Base049>().isAbstract()).assertTrue();
         expect(Class.from<Middle049>().isAbstract()).assertTrue();
         expect(Class.from<Top049>().isAbstract()).assertTrue();
@@ -988,7 +983,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract050', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractImpl050>();
         expect(cls.isAbstract()).assertTrue();
         expect(cls.isInterface()).assertFalse();
@@ -1002,7 +997,7 @@ export default function ClassIsAbstractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testClassIsAbstract051', (TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2) as int, (): void => {
+    it('testClassIsAbstract051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PartialImpl051>();
         expect(cls.isAbstract()).assertTrue();
     });
