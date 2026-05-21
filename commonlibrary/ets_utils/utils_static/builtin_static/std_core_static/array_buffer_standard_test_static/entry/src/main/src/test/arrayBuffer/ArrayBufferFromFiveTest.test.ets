@@ -13,1501 +13,778 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import {
-  afterAll,
-  afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
   it,
   Level,
   Size,
-  TestType
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-class ArrayBufferFromSixPlainForMindmap {
-}
-
-class ArrayBufferLikePlainForMindmap {
-}
-
-
-function fromFiveBuildLongA(n: int): string {
-  let s: string = '';
-  for (let i: int = 0; i < n; i++) {
-    s += 'A';
-  }
-  return s;
-}
-
 export default function arrayBufferFromFiveTest(): void {
   describe('ArrayBufferFromFiveTest', (): void => {
-    beforeAll((): void => {
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
     });
 
     /**
      * @tc.name testArrayBufferFromFive0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0100
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 3
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
+      const buf = ArrayBuffer.from('ABC', 'utf8');
       expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0200
-     * @tc.desc Verify ArrayBuffer.from("utf8", "utf8") succeeds and result byteLength is 4
+     * @tc.desc Verify buf.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("utf8", "utf8");
-      expect(buf.byteLength).assertEqual(4);
+      const buf = ArrayBuffer.from('Hello123', 'utf8');
+      expect(buf.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0300
-     * @tc.desc Verify ArrayBuffer.from("AB", "utf8") succeeds and result byteLength is 2
+     * @tc.desc Verify buf.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("AB", "utf8");
-      expect(buf.byteLength).assertEqual(2);
+      const buf = ArrayBuffer.from('', 'utf8');
+      expect(buf.byteLength).assertEqual(0);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0400
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and result byteLength is 1
+     * @tc.desc Verify buf.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("x", "utf8");
-      expect(buf.byteLength).assertEqual(1);
+      const buf = ArrayBuffer.from('你好', 'utf8');
+      expect(buf.byteLength).assertEqual(6);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0500
-     * @tc.desc Verify ArrayBuffer.from("XY", "utf8") succeeds and result byteLength is 2
+     * @tc.desc Verify buf.byteLength equals 15
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("XY", "utf8");
-      expect(buf.byteLength).assertEqual(2);
-      expect(buf.at(1)).assertEqual(89);
+      const buf = ArrayBuffer.from('こんにちは', 'utf8');
+      expect(buf.byteLength).assertEqual(15);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0600
-     * @tc.desc Verify ArrayBuffer.from("ABCD", "utf8") succeeds and result byteLength is 4
+     * @tc.desc Verify buf.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABCD", "utf8");
+      const buf = ArrayBuffer.from('😀', 'utf8');
       expect(buf.byteLength).assertEqual(4);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0700
-     * @tc.desc Verify ArrayBuffer.from("WXYZ", "utf8") succeeds and result byteLength is 4
+     * @tc.desc Verify buf.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("WXYZ", "utf8");
-      expect(buf.byteLength).assertEqual(4);
+      const buf = ArrayBuffer.from('A😀B', 'utf8');
+      expect(buf.byteLength).assertEqual(6);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0800
-     * @tc.desc Verify ArrayBuffer.from("Hello123", "utf8") succeeds and result byteLength is 8
+     * @tc.desc Verify buf.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("Hello123", "utf8");
-      expect(buf.byteLength).assertEqual(8);
+      const buf = ArrayBuffer.from('A\tB\nC', 'utf8');
+      expect(buf.byteLength).assertEqual(5);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0900
-     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result byteLength is 0
+     * @tc.desc Verify buf.byteLength equals 13
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("", "utf8");
-      expect(buf.byteLength).assertEqual(0);
-      expect(buf instanceof ArrayBuffer).assertTrue();
+      const buf = ArrayBuffer.from('Hello, World!', 'utf8');
+      expect(buf.byteLength).assertEqual(13);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1000
-     * @tc.desc Verify ArrayBuffer.from("你好", "utf8") succeeds and result byteLength is 6
+     * @tc.desc Verify buf.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("你好", "utf8");
-      expect(buf.byteLength).assertEqual(6);
+      const buf = ArrayBuffer.from('A\\B\\C', 'utf8');
+      expect(buf.byteLength).assertEqual(5);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1100
-     * @tc.desc Verify ArrayBuffer.from("こんにちは", "utf8") succeeds and result byteLength is 15
+     * @tc.desc Verify buf.byteLength equals 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("こんにちは", "utf8");
-      expect(buf.byteLength).assertEqual(15);
+      const buf = ArrayBuffer.from(Utils.buildLongString('A', 10000), 'utf8');
+      expect(buf.byteLength).assertEqual(10000);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1200
-     * @tc.desc Verify ArrayBuffer.from("😀", "utf8") succeeds and result byteLength is 4
+     * @tc.desc Verify buf.byteLength equals 3000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("😀", "utf8");
-      expect(buf.byteLength).assertEqual(4);
+      const buf = ArrayBuffer.from(Utils.buildLongString('你', 1000), 'utf8');
+      expect(buf.byteLength).assertEqual(3000);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1300
-     * @tc.desc Verify ArrayBuffer.from("A😀B", "utf8") succeeds and result byteLength is 6
+     * @tc.desc Verify buf.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A😀B", "utf8");
-      expect(buf.byteLength).assertEqual(6);
+      const buf = ArrayBuffer.from('A', 'utf8');
+      expect(buf.byteLength).assertEqual(1);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1400
-     * @tc.desc Verify ArrayBuffer.from("A\tB\nC", "utf8") succeeds and result byteLength is 5
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A\tB\nC", "utf8");
-      expect(buf.byteLength).assertEqual(5);
+      const buf = ArrayBuffer.from('ABC', 'utf-8');
+      expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1500
-     * @tc.desc Verify ArrayBuffer.from("Hello, World!", "utf8") succeeds and result byteLength is 13
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("Hello, World!", "utf8");
-      expect(buf.byteLength).assertEqual(13);
+      const buf = ArrayBuffer.from('ABC', 'ascii');
+      expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1600
-     * @tc.desc Verify ArrayBuffer.from("A\\B\\C", "utf8") succeeds and result byteLength is 5
+     * @tc.desc Verify buf.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A\\B\\C", "utf8");
-      expect(buf.byteLength).assertEqual(5);
+      const buf = ArrayBuffer.from('ABC', 'utf16le');
+      expect(buf.byteLength).assertEqual(6);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1700
-     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") succeeds and result byteLength is 10000
+     * @tc.desc Verify buf.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let longStr: string = "";
-      for (let i: int = 0; i < 10000; i++) {
-        longStr += "A";
-      }
-      const buf = ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8");
-      expect(buf.byteLength).assertEqual(10000);
+      const buf = ArrayBuffer.from('ABC', 'ucs2');
+      expect(buf.byteLength).assertEqual(6);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1800
-     * @tc.desc Verify ArrayBuffer.from(longStr, "utf8") succeeds and result byteLength is 3000
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let longStr: string = "";
-      for (let i: int = 0; i < 1000; i++) {
-        longStr += "你";
-      }
-      const buf = ArrayBuffer.from(longStr, "utf8");
-      expect(buf.byteLength).assertEqual(3000);
+      const buf = ArrayBuffer.from('QUJD', 'base64');
+      expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_1900
-     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A", "utf8");
-      expect(buf.byteLength).assertEqual(1);
-      expect(buf.at(0)).assertEqual(65);
+      const buf = ArrayBuffer.from('414243', 'hex');
+      expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2000
-     * @tc.desc Verify ArrayBuffer.from("A\B\C", "utf8") succeeds and result byteLength is 3
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A\B\C", "utf8");
+      const buf = ArrayBuffer.from('ABC', 'latin1');
       expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2100
-     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8") succeeds and result byteLength is 10000
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const buf = ArrayBuffer.from(fromFiveBuildLongA(10000), "utf8");
-      expect(buf.byteLength).assertEqual(10000);
+      const buf = ArrayBuffer.from('ABC', 'binary');
+      expect(buf.byteLength).assertEqual(3);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2200
-     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
+     * @tc.desc Verify ArrayBuffer.from('ABC', '') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badNum: number = 1.5;
-      const buf = ArrayBuffer.from("A", "utf8");
-      expect(buf.byteLength).assertEqual(1);
+      try {
+        ArrayBuffer.from('ABC', '');
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IllegalArgumentError');
+      }
     });
 
     /**
      * @tc.name testArrayBufferFromFive0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2300
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), "utf8") throws Error with current input
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'invalid_encoding') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badBool: boolean = true;
       try {
-        const buf = ArrayBuffer.from(Utils.castToString(null as Object), "utf8");
+        ArrayBuffer.from('ABC', 'invalid_encoding');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferFromFive0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2400
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") throws Error with current input
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'xyz123') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8");
+        ArrayBuffer.from('ABC', 'xyz123');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferFromFive0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2500
-     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8") throws Error with current input
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let badArr = new Array<number>();
-      badArr.pushOne(1);
-      badArr.pushOne(2);
-      badArr.pushOne(3);
       try {
-        const _badNum2: number = 123;
-        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum2), "utf8");
+        const buf = ArrayBuffer.from('ABC', 'UTF8');
+        expect(buf.byteLength).assertEqual(3);
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
+        const fallback = ArrayBuffer.from('ABC', 'utf8');
+        expect(fallback.byteLength).assertEqual(3);
       }
-      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferFromFive0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2600
-     * @tc.desc Verify ArrayBuffer.from("Go", "utf8") succeeds and result byteLength is 2
+     * @tc.desc Verify buf.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("Go", "utf8");
-      expect(buf.byteLength).assertEqual(2);
+      try {
+        const buf = ArrayBuffer.from('ABC', 'Utf8');
+        expect(buf.byteLength).assertEqual(3);
+      } catch (e) {
+        expect(e.name).assertEqual('IllegalArgumentError');
+        const fallback = ArrayBuffer.from('ABC', 'utf8');
+        expect(fallback.byteLength).assertEqual(3);
+      }
     });
 
     /**
      * @tc.name testArrayBufferFromFive0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2700
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf-8") succeeds and result byteLength is 3
+     * @tc.desc Verify buf.byteLength equals 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf-8");
-      expect(buf.byteLength).assertEqual(3);
+      const buf = ArrayBuffer.from('你好世界', 'utf8');
+      expect(buf.byteLength).assertEqual(12);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2800
-     * @tc.desc Verify ArrayBuffer.from("ABC", "ascii") succeeds and result byteLength is 3
+     * @tc.desc Verify buf.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "ascii");
-      expect(buf.byteLength).assertEqual(3);
+      const buf = ArrayBuffer.from('😀🎉', 'utf8');
+      expect(buf.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_2900
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf16le") succeeds and result byteLength is 6
+     * @tc.desc Verify buf.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf16le");
-      expect(buf.byteLength).assertEqual(6);
+      const buf = ArrayBuffer.from('A你好B', 'utf8');
+      expect(buf.byteLength).assertEqual(8);
     });
 
     /**
      * @tc.name testArrayBufferFromFive0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3000
-     * @tc.desc Verify ArrayBuffer.from("ABC", "ucs2") succeeds and result byteLength is 6
+     * @tc.desc Verify buf1.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "ucs2");
-      expect(buf.byteLength).assertEqual(6);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3100
-     * @tc.desc Verify ArrayBuffer.from("QUJD", "base64") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("QUJD", "base64");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3200
-     * @tc.desc Verify ArrayBuffer.from("414243", "hex") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("414243", "hex");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3300
-     * @tc.desc Verify ArrayBuffer.from("ABC", "latin1") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "latin1");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3400
-     * @tc.desc Verify ArrayBuffer.from("ABC", "binary") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "binary");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3500
-     * @tc.desc Verify ArrayBuffer.from("414243", "hex") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const buf = ArrayBuffer.from("414243", "hex");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3600
-     * @tc.desc Verify ArrayBuffer.from("ABC", "latin1") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const buf = ArrayBuffer.from("ABC", "latin1");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3700
-     * @tc.desc Verify ArrayBuffer.from("ABC", "binary") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      const buf = ArrayBuffer.from("ABC", "binary");
-      expect(buf.byteLength).assertEqual(3);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3800
-     * @tc.desc Verify ArrayBuffer.from("ABC", "UTF8") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "UTF8");
-        expect(buf.byteLength).assertEqual(3);
-      } catch (e) {
-        try {
-          const buf = ArrayBuffer.from("ABC", "UTF8");
-          expect(buf.byteLength).assertEqual(3);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          const buf = ArrayBuffer.from("ABC", "utf8");
-          expect(buf.byteLength).assertEqual(3);
-        }
-      }
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3900
-     * @tc.desc Verify ArrayBuffer.from("ABC", "Utf8") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "Utf8");
-        expect(buf.byteLength).assertEqual(3);
-      } catch (e) {
-        try {
-          const buf = ArrayBuffer.from("ABC", "Utf8");
-          expect(buf.byteLength).assertEqual(3);
-        } catch (e) {
-          expect(e !== null && e !== undefined).assertTrue();
-          Utils.assertThrownErrorCodeIsNumber(e);
-          const buf = ArrayBuffer.from("ABC", "utf8");
-          expect(buf.byteLength).assertEqual(3);
-        }
-      }
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4000
-     * @tc.desc Verify ArrayBuffer.from("ABC", "UTF8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: string = "ABC";
-      try {
-        const buf = ArrayBuffer.from("ABC", "UTF8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength(text, "utf8")).assertEqual(3);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4100
-     * @tc.desc Verify ArrayBuffer.from("ABC", "Utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: string = "ABC";
-      try {
-        const buf = ArrayBuffer.from("ABC", "Utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength(text, "utf8")).assertEqual(3);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4200
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(null as Object)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badEnc: number = 123;
-      try {
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(null as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4300
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badEnc: boolean = true;
-      try {
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(undefined as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4400
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const _badNum4: number = 123;
-        const buf = ArrayBuffer.from("ABC", Utils.numberAsString(_badNum4));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4500
-     * @tc.desc Verify ArrayBuffer.from("Test", "utf8") succeeds and result byteLength is 4
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("Test", "utf8");
-      expect(buf.byteLength).assertEqual(4);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4600
-     * @tc.desc Verify ArrayBuffer.from("你好世界", "utf8") succeeds and result byteLength is 12
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("你好世界", "utf8");
-      expect(buf.byteLength).assertEqual(12);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4700
-     * @tc.desc Verify ArrayBuffer.from("😀🎉", "utf8") succeeds and result byteLength is 8
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("😀🎉", "utf8");
-      expect(buf.byteLength).assertEqual(8);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4800
-     * @tc.desc Verify ArrayBuffer.from("A你好B", "utf8") succeeds and result byteLength is 8
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A你好B", "utf8");
-      expect(buf.byteLength).assertEqual(8);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4900
-     * @tc.desc Verify ArrayBuffer.from("A", "ascii") succeeds and result byteLength is 1
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A", "ascii");
-      expect(buf.byteLength).assertEqual(1);
-      expect(buf.at(0)).assertEqual(65);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5000
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf1 = ArrayBuffer.from("ABC", "utf8");
-      const buf2 = ArrayBuffer.from("ABC", "utf16le");
+      const buf1 = ArrayBuffer.from('ABC', 'utf8');
+      const buf2 = ArrayBuffer.from('ABC', 'utf16le');
       expect(buf1.byteLength).assertEqual(3);
       expect(buf2.byteLength).assertEqual(6);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5100
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
+     * @tc.name testArrayBufferFromFive0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3100
+     * @tc.desc Verify return value is ArrayBuffer instance
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferFromFive0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
       expect(buf instanceof ArrayBuffer).assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5200
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
+     * @tc.name testArrayBufferFromFive0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3200
+     * @tc.desc Verify typeof buf === 'object' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
-      expect(typeof buf === "object").assertTrue();
+    it('testArrayBufferFromFive0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
+      expect(typeof buf === 'object').assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5300
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and null validity check passes
+     * @tc.name testArrayBufferFromFive0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3300
+     * @tc.desc Verify value is not null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferFromFive0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
       expect(buf !== null).assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5400
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
+     * @tc.name testArrayBufferFromFive0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3400
+     * @tc.desc Verify value is not undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
-      expect(buf instanceof ArrayBuffer).assertTrue()
+    it('testArrayBufferFromFive0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
+      expect(buf !== undefined).assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5500
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and instance type check passes
+     * @tc.name testArrayBufferFromFive0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3500
+     * @tc.desc Verify typeof buf.byteLength equals 'int'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
-      expect(Utils.isRuntimeNumericOrIntTypeof(typeof buf.byteLength)).assertTrue();
+    it('testArrayBufferFromFive0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
+      expect(typeof buf.byteLength).assertEqual('int');
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5600
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and result byteLength is 2
+     * @tc.name testArrayBufferFromFive0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3600
+     * @tc.desc Verify sliced.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferFromFive0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABC', 'utf8');
       const sliced = buf.slice(0, 2);
       expect(sliced.byteLength).assertEqual(2);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5700
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and equality relationship check passes
+     * @tc.name testArrayBufferFromFive0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3700
+     * @tc.desc Verify buf1 !== buf2 is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf1 = ArrayBuffer.from("ABC", "utf8");
-      const buf2 = ArrayBuffer.from("ABC", "utf8");
+    it('testArrayBufferFromFive0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf1 = ArrayBuffer.from('ABC', 'utf8');
+      const buf2 = ArrayBuffer.from('ABC', 'utf8');
       expect(buf1 !== buf2).assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5800
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3800
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "ABC";
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+    it('testArrayBufferFromFive0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = 'ABC';
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5900
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3900
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "你好世界";
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+    it('testArrayBufferFromFive0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = '你好世界';
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6000
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4000
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "😀🎉";
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+    it('testArrayBufferFromFive0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = '😀🎉';
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6100
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4100
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "Hello你好😀";
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+    it('testArrayBufferFromFive0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = 'Hello你好😀';
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6200
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4200
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "A\tB\nC";
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+    it('testArrayBufferFromFive0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = 'A\tB\nC';
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6300
-     * @tc.desc Verify ArrayBuffer.from("ABCDE", "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4300
+     * @tc.desc Verify ArrayBuffer.stringify returns 'BC'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("ABCDE", "utf8");
-      const partial = ArrayBuffer.stringify(buf, "utf8", 1, 3);
-      expect(partial).assertEqual("BC");
+    it('testArrayBufferFromFive0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('ABCDE', 'utf8');
+      const partial = ArrayBuffer.stringify(buf, 'utf8', 1, 3);
+      expect(partial).assertEqual('BC');
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6400
-     * @tc.desc Verify ArrayBuffer.from(original, "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4400
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let original: string = "";
-      for (let i: int = 0; i < 1000; i++) {
-        original += "AB";
+    it('testArrayBufferFromFive0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const pair: string = Utils.repeatString('AB', 2);
+      let original: string = '';
+      for (let i: int = 0; i < 100; i++) {
+        original += pair;
       }
-      const buf = ArrayBuffer.from(original, "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
+      const buf = ArrayBuffer.from(original, 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6500
-     * @tc.desc Verify ArrayBuffer.from(original, "utf16le") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4500
+     * @tc.desc Verify ArrayBuffer.stringify returns original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const original: string = "ABC";
-      const buf = ArrayBuffer.from(original, "utf16le");
-      const restored = ArrayBuffer.stringify(buf, "utf16le", 0, buf.byteLength);
+    it('testArrayBufferFromFive0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const original: string = 'ABC';
+      const buf = ArrayBuffer.from(original, 'utf16le');
+      const restored = ArrayBuffer.stringify(buf, 'utf16le', 0, buf.byteLength);
       expect(restored).assertEqual(original);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6600
-     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result byteLength is 0
+     * @tc.name testArrayBufferFromFive0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4600
+     * @tc.desc Verify return value is ArrayBuffer instance and buf.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("", "utf8");
-      expect(buf.byteLength).assertEqual(0);
-      expect(ArrayBuffer.stringify(buf, "utf8", 0, 0)).assertEqual("");
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6700
-     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and instance type check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("", "utf8");
+    it('testArrayBufferFromFive0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('', 'utf8');
       expect(buf instanceof ArrayBuffer).assertTrue();
       expect(buf.byteLength).assertEqual(0);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6800
-     * @tc.desc Verify ArrayBuffer.from("", "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4700
+     * @tc.desc Verify ArrayBuffer.stringify returns ''
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("", "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
-      expect(restored).assertEqual("");
+    it('testArrayBufferFromFive0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('', 'utf8');
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
+      expect(restored).assertEqual('');
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_6900
-     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result byteLength is 1
+     * @tc.name testArrayBufferFromFive0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4800
+     * @tc.desc Verify buf.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A", "utf8");
+    it('testArrayBufferFromFive0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from('A', 'utf8');
       expect(buf.byteLength).assertEqual(1);
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
-      expect(restored).assertEqual("A");
+      const restored = ArrayBuffer.stringify(buf, 'utf8', 0, buf.byteLength);
+      expect(restored).assertEqual('A');
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7000
-     * @tc.desc Verify ArrayBuffer.from(bigStr, "utf8") succeeds and result byteLength is 102400
+     * @tc.name testArrayBufferFromFive0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4900
+     * @tc.desc Verify buf.byteLength equals 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let bigStr: string = "";
-      for (let i: int = 0; i < 102400; i++) {
-        bigStr += "X";
-      }
-      const buf = ArrayBuffer.from(bigStr, "utf8");
-      expect(buf.byteLength).assertEqual(102400);
+    it('testArrayBufferFromFive0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = ArrayBuffer.from(Utils.buildLongString('A', 10000), 'utf8');
+      expect(buf.byteLength).assertEqual(10000);
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7100
-     * @tc.desc Verify ArrayBuffer.from("A", "utf8") succeeds and result matches expected
+     * @tc.name testArrayBufferFromFive0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5000
+     * @tc.desc Verify ArrayBuffer.from('ABC', 'notexist') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from("A", "utf8");
-      const restored = ArrayBuffer.stringify(buf, "utf8", 0, buf.byteLength);
-      expect(restored).assertEqual("A");
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7200
-     * @tc.desc Verify ArrayBuffer.from(fromFiveBuildLongA(100000), "utf8") succeeds and result byteLength is 100000
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from(fromFiveBuildLongA(100000), "utf8");
-      expect(buf.byteLength).assertEqual(100000);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7300
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), "utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: string = "XY";
+    it('testArrayBufferFromFive0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from(Utils.castToString(null as Object), "utf8");
+        ArrayBuffer.from('ABC', 'notexist');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength(text, "ascii")).assertEqual(2);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7400
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8") throws Error with current input
+     * @tc.name testArrayBufferFromFive0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5100
+     * @tc.desc Verify ArrayBuffer.from('ABC', '12345') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const text: string = "Z";
+    it('testArrayBufferFromFive0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), "utf8");
+        ArrayBuffer.from('ABC', '12345');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength(text, "latin1")).assertEqual(1);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7500
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(undefined as Object)) throws Error with current input
+     * @tc.name testArrayBufferFromFive0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5200
+     * @tc.desc Verify ArrayBuffer.from('ABC', '!@#$%') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFive0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(undefined as Object));
+        ArrayBuffer.from('ABC', '!@#$%');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
 
     /**
-     * @tc.name testArrayBufferFromFive0076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7600
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object)) throws Error with current input
+     * @tc.name testArrayBufferFromFive0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_5300
+     * @tc.desc Verify ArrayBuffer.from('ABC', ' ') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFive0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFive0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const buf = ArrayBuffer.from(Utils.castToString(null as Object), Utils.castToString(null as Object));
+        ArrayBuffer.from('ABC', '   ');
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
+        expect(e.name).assertEqual('IllegalArgumentError');
       }
-      expect(true).assertFail();
     });
-
-    /**
-     * @tc.name testArrayBufferFromFive0077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7700
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Ob... throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from(Utils.castToString(undefined as Object), Utils.castToString(undefined as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0078
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7800
-     * @tc.desc Verify ArrayBuffer.from("ABC", "notexist") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "notexist");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        const fallback = ArrayBuffer.from("", "utf8");
-        expect(fallback.byteLength).assertEqual(0);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0079
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_7900
-     * @tc.desc Verify ArrayBuffer.from("ABC", "") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0080
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8000
-     * @tc.desc Verify ArrayBuffer.from("ABC", "12345") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "12345");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0081
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8100
-     * @tc.desc Verify ArrayBuffer.from("ABC", "!@#$%") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", "!@#$%");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0082
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8200
-     * @tc.desc Verify ArrayBuffer.from("ABC", "   ") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badNum: number = 456;
-      try {
-        const buf = ArrayBuffer.from("ABC", "   ");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0083
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8300
-     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badBool: boolean = false;
-      try {
-        const _badNum6: number = 123;
-        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum6), "utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0084
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8400
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(true as Object), "utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from(Utils.castToString(true as Object), "utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0085
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8500
-     * @tc.desc Verify ArrayBuffer.from({}, "utf8") succeeds and null validity check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buf: ArrayBuffer;
-      try {
-        buf = ArrayBuffer.from({}, "utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(buf instanceof ArrayBuffer).assertEqual(true);
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0086
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8600
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let badArr = new Array<number>();
-        badArr.pushOne(1);
-        badArr.pushOne(2);
-        badArr.pushOne(3);
-        const buf = ArrayBuffer.from(Utils.castToString(badArr as Object), "utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0087
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8700
-     * @tc.desc Verify ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8") throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badEnc: number = 789;
-      try {
-        const buf = ArrayBuffer.from(Utils.castToString(new ArrayBuffer(10) as Object), "utf8");
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength("Hi", "utf8")).assertEqual(2);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0088
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8800
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(true as Object)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const badEnc: boolean = false;
-      try {
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(true as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength("No", "utf8")).assertEqual(2);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0089
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_8900
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const plain = new ArrayBufferFromSixPlainForMindmap();
-      try {
-        const plainEnc = new ArrayBufferFromSixPlainForMindmap();
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(plainEnc as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        expect(ArrayBuffer.bytesLength("Q", "utf8")).assertEqual(1);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0090
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9000
-     * @tc.desc Verify ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const buf = ArrayBuffer.from("ABC", Utils.castToString(["utf8"] as Object));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromFive0091
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_9100
-     * @tc.desc Verify ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10)) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFive0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const _badNum9: number = 123;
-        const _badNum10: number = 456;
-        const buf = ArrayBuffer.from(Utils.numberAsString(_badNum9), Utils.numberAsString(_badNum10));
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e);
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    return;
   });
 }
