@@ -1214,11 +1214,11 @@ export default function DisplayNdkTest() {
           console.log(`${caseName} result: ${JSON.stringify(result)}`);
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
-          let cap:string = displayClass.getDisplayCapability();
-          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
-          console.info(`Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
           expect(result).assertEqual(0);
           if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+            let cap:string = displayClass.getDisplayCapability();
+            let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+            console.info(`Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
             if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
               try {
                 let moveConfiguration: window.MoveConfiguration = {
