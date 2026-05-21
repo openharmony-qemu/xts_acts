@@ -40,32 +40,34 @@ let netHandle = connection.getDefaultNetSync();
 
 export default function testsuite() {
   if (netHandle.netId != 0 && canIUse("SystemCapability.Communication.NetStack")) {
-  HttpInterceptorForSafeCheckTest();
-  HttpRequestInterceptor();
-  HttpRequestMaxAutoRedirectsTest();
-  HttpRequestMaxAutoRedirectsWithInterceptorTest();
-  HttpRequestCustomMethodTest();
-  HttpRequestCustomResponseHeaderTest();
-  if (sim.getMaxSimCount() > 1) {
-    HttpRequestGmssl();
-    HttpRequestDataCATest();
-    HttpRequestMethodTest();
-    HttpRequestAndDestroyTest();
-    HttpRequestInStreamTest();
-    HttpRequestOptionsTest();
-    HttpRequestSniTest();
-    httpErrorCodeTest();
-    HttpRequestInactivityMsTest();
-    HttpRequestPatchTest();
-    HttpRequestSyncTest();
-    HttpRequestReuseConnectionsTest();
-    HttpRequestEnableAutoCookieTest();
-    HttpRequestSocket5Test();
-    
+    HttpInterceptorForSafeCheckTest();
+    HttpRequestInterceptor();
+    HttpRequestMaxAutoRedirectsTest();
+    HttpRequestMaxAutoRedirectsWithInterceptorTest();
+    HttpRequestCustomMethodTest();
+    HttpRequestCustomResponseHeaderTest();
+    if (sim.getMaxSIMCount() > 1) {
+      HttpRequestGmssl();
+      HttpRequestDataCATest();
+      HttpRequestMethodTest();
+      HttpRequestAndDestroyTest();
+      HttpRequestInStreamTest();
+      HttpRequestOptionsTest();
+      HttpRequestSniTest();
+      httpErrorCodeTest();
+      HttpRequestInactivityMsTest();
+      HttpRequestPatchTest();
+      HttpRequestSyncTest();
+      HttpRequestReuseConnectionsTest();
+      HttpRequestEnableAutoCookieTest();
+      HttpRequestSocket5Test();
+	  HttpRequestTlcpEnablePartialChainTest();
+	  HttpRequestTlsEnablePartialChainTest();
+	  
+    } else {
+      EmptyTest();
+    }
   } else {
     EmptyTest();
   }
-} else {
-  EmptyTest();
-}
 }
