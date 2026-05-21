@@ -594,7 +594,9 @@ static bool MultiThreadClose(int fd, uint64_t tagA, uint64_t tagB, std::atomic<b
     bool ok1 = (pthread_create(&t1, nullptr, ThreadFunc1, d1) == 0);
     bool ok2 = (pthread_create(&t2, nullptr, ThreadFunc2, d2) == 0);
     if (!ok1 || !ok2) {
-        if (ok1) pthread_join(t1, nullptr);
+        if (ok1) {
+            pthread_join(t1, nullptr);
+        }
         delete d1;
         delete d2;
         close(fd);
@@ -1101,8 +1103,8 @@ static napi_value RegisterEntryModule(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testFdsanComMoveSemanticsRaii", nullptr, FdsanComMoveSemanticsRaii, nullptr, nullptr, nullptr, napi_default,
          nullptr},
-        {"testFdsanComNestedErrorLevelWarnAlways", nullptr, FdsanComNestedErrorLevelWarnAlways, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+        {"testFdsanComNestedErrorLevelWarnAlways", nullptr, FdsanComNestedErrorLevelWarnAlways, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
         {"testFdsanComMultiThreadMixedOperation", nullptr, FdsanComMultiThreadMixedOperation, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testFdsanDoubleCloseSameThread", nullptr, FdsanDoubleCloseSameThread, nullptr, nullptr, nullptr, napi_default,
