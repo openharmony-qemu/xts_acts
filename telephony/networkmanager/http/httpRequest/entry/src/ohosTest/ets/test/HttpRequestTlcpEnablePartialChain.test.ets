@@ -167,7 +167,7 @@ export default function HttpRequestTlcpEnablePartialChainTest() {
   describe('HttpRequestTlcpEnablePartialChainTest', () => {
     /**
      * @tc.name   testNetworkMgrHttpRequestTlcpEnablePartialChain0100
-     * @tc.number SUB_NetworkMgr_Http_RequestTlcpEnablePartialChain0100
+     * @tc.number SUB_NetworkMgr_Http_RequestTlcp_EnablePartialChain_0100
      * @tc.desc   Verify that the request succeeds when TLCP enablePartialChain is true.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -229,7 +229,7 @@ export default function HttpRequestTlcpEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlcpEnablePartialChain0200
-     * @tc.number SUB_NetworkMgr_Http_RequestTlcpEnablePartialChain0200
+     * @tc.number SUB_NetworkMgr_Http_RequestTlcp_EnablePartialChain_0200
      * @tc.desc   Verify that the request fails when TLCP enablePartialChain is false.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -275,7 +275,7 @@ export default function HttpRequestTlcpEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlcpEnablePartialChain0300
-     * @tc.number SUB_NetworkMgr_Http_RequestTlcpEnablePartialChain0300
+     * @tc.number SUB_NetworkMgr_Http_RequestTlcp_EnablePartialChain_0300
      * @tc.desc   Verify that the request succeeds when TLCP enablePartialChain is undefined.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -320,7 +320,7 @@ export default function HttpRequestTlcpEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlcpEnablePartialChain0400
-     * @tc.number SUB_NetworkMgr_Http_RequestTlcpEnablePartialChain0400
+     * @tc.number SUB_NetworkMgr_Http_RequestTlcp_EnablePartialChain_0400
      * @tc.desc   Verify that the request succeeds when TLCP enablePartialChain is null.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -358,7 +358,7 @@ export default function HttpRequestTlcpEnablePartialChainTest() {
 
     /**
      * @tc.name   testNetworkMgrHttpRequestTlcpEnablePartialChain0500
-     * @tc.number SUB_NetworkMgr_Http_RequestTlcpEnablePartialChain0500
+     * @tc.number SUB_NetworkMgr_Http_RequestTlcp_EnablePartialChain_0500
      * @tc.desc   Verify that the request succeeds when TLCP enablePartialChain is not set.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
