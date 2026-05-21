@@ -15,99 +15,31 @@
  */
 
 import {
-  afterAll,
-  afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
   it,
   Level,
   Size,
-  TestType
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function arrayBufferAtTest(): void {
   describe('ArrayBufferAtTest', (): void => {
-    beforeAll((): void => {
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
     });
 
     /**
      * @tc.name testArrayBufferAt0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0100
-     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(11)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferAt0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(3)
-      buffer.set(0, Int.toByte(65))
-      buffer.set(1, Int.toByte(66))
-      buffer.set(2, Int.toByte(67))
-      let result = buffer.at(0)
-      expect(result).assertEqual(Int.toByte(65))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0200
-     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(3)
-      buffer.set(0, Int.toByte(65))
-      expect(buffer.at(0)).assertEqual(Int.toByte(65))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0300
-     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(3)
-      buffer.set(1, Int.toByte(66))
-      expect(buffer.at(1)).assertEqual(Int.toByte(66))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0400
-     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(3)
-      buffer.set(2, Int.toByte(67))
-      expect(buffer.at(2)).assertEqual(Int.toByte(67))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0500
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       buffer.set(0, Int.toByte(11))
       buffer.set(1, Int.toByte(22))
@@ -117,14 +49,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0600
-     * @tc.desc Verify buffer.at(2) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0200
+     * @tc.desc Verify buffer.at(2) returns Int.toByte(30)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(5)
       buffer.set(0, Int.toByte(10))
       buffer.set(1, Int.toByte(20))
@@ -136,14 +68,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0700
-     * @tc.desc Verify buffer.at(3) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0300
+     * @tc.desc Verify buffer.at(3) returns Int.toByte(40)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       buffer.set(0, Int.toByte(10))
       buffer.set(1, Int.toByte(20))
@@ -154,138 +86,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0800
-     * @tc.desc Verify buffer.at(-1) throws Error with current input
+     * @tc.name testArrayBufferAt0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0400
+     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(10))
-      try {
-        buffer.at(-1)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0900
-     * @tc.desc Verify buffer.at(-100) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      try {
-        buffer.at(-100)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1000
-     * @tc.desc Verify buffer.at(4) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(10))
-      try {
-        buffer.at(4)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1100
-     * @tc.desc Verify buffer.at(100) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      try {
-        buffer.at(100)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1200
-     * @tc.desc Verify buffer.at(posMax) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      let posMax: int = 2147483647
-      try {
-        buffer.at(posMax)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1300
-     * @tc.desc Verify buffer.at(1) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(1)
-      buffer.set(0, Int.toByte(42))
-      try {
-        buffer.at(1)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1400
-     * @tc.desc Verify new ArrayBuffer(3) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(3)
       buffer.set(0, Int.toByte(65))
       buffer.set(1, Int.toByte(66))
@@ -296,28 +104,28 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1500
-     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0500
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       let result = buffer.at(0)
       expect(result).assertEqual(Int.toByte(0))
     });
 
     /**
-     * @tc.name testArrayBufferAt0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1600
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
+     * @tc.name testArrayBufferAt0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0600
+     * @tc.desc Verify buffer.at returns expected bytes at 4 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       buffer.set(0, Int.toByte(10))
       buffer.set(2, Int.toByte(30))
@@ -328,14 +136,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1700
-     * @tc.desc Verify new ArrayBuffer(2) succeeds and returned data content matches expected
+     * @tc.name testArrayBufferAt0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0700
+     * @tc.desc Verify buffer.at returns expected bytes at 2 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(10))
       expect(buffer.at(0)).assertEqual(Int.toByte(10))
@@ -344,14 +152,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1800
-     * @tc.desc Verify new ArrayBuffer(2) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0800
+     * @tc.desc Verify r1 equals Int.toByte(42)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(42))
       let r1 = buffer.at(0)
@@ -363,14 +171,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1900
-     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_0900
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(127)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(127))
       let result = buffer.at(0)
@@ -378,14 +186,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2000
-     * @tc.desc Verify buffer.at(0) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1000
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(-128)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(-128))
       let result = buffer.at(0)
@@ -393,14 +201,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2100
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1100
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(65)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       buffer.set(0, Int.toByte(65))
       let result: byte = buffer.at(0)
@@ -408,14 +216,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2200
-     * @tc.desc Verify new ArrayBuffer(2) succeeds and result matches expected
+     * @tc.name testArrayBufferAt0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1200
+     * @tc.desc Verify sum equals 30
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(10))
       buffer.set(1, Int.toByte(20))
@@ -424,14 +232,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2300
-     * @tc.desc Verify new ArrayBuffer(2) succeeds and boundary value comparison check passes
+     * @tc.name testArrayBufferAt0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1300
+     * @tc.desc Verify at(0) is less than at(1) and buffer.at(0) === 10 is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2)
       buffer.set(0, Int.toByte(10))
       buffer.set(1, Int.toByte(20))
@@ -440,92 +248,41 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2400
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and result byteLength is 4
+     * @tc.name testArrayBufferAt0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1400
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(42)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      expect(buffer.byteLength).assertEqual(4)
-      buffer.set(0, Int.toByte(101))
-      buffer.set(1, Int.toByte(102))
-      buffer.set(2, Int.toByte(103))
-      buffer.set(3, Int.toByte(104))
-      expect(buffer.at(0)).assertEqual(Int.toByte(101))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2500
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(11))
-      buffer.set(1, Int.toByte(22))
-      buffer.set(2, Int.toByte(33))
-      buffer.set(3, Int.toByte(44))
-      expect(buffer.at(3)).assertEqual(Int.toByte(44))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2600
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(1, Int.toByte(100))
-      expect(buffer.at(0)).assertEqual(Int.toByte(0))
-      expect(buffer.at(2)).assertEqual(Int.toByte(0))
-      expect(buffer.at(3)).assertEqual(Int.toByte(0))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2700
-     * @tc.desc Verify new ArrayBuffer(1) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(1)
       buffer.set(0, Int.toByte(42))
       expect(buffer.at(0)).assertEqual(Int.toByte(42))
     });
 
     /**
-     * @tc.name testArrayBufferAt0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2800
-     * @tc.desc Verify new ArrayBuffer(1) succeeds and returned data content matches expected
+     * @tc.name testArrayBufferAt0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1500
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(1)
       expect(buffer.at(0)).assertEqual(Int.toByte(0))
     });
 
     /**
-     * @tc.name testArrayBufferAt0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2900
-     * @tc.desc Verify new ArrayBuffer(256) succeeds and returned data content matches expected
+     * @tc.name testArrayBufferAt0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1600
+     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(256)
       buffer.set(0, Int.toByte(1))
       buffer.set(127, Int.toByte(127))
@@ -536,94 +293,267 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
+     * @tc.name testArrayBufferAt0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1700
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      buffer.set(0, Int.toByte(10))
+      try {
+        buffer.at(-1)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1800
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      try {
+        buffer.at(-100)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_1900
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      try {
+        buffer.at(-2)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2000
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      let posMin: int = -2147483648
+      try {
+        buffer.at(posMin)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2100
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(1)
+      buffer.set(0, Int.toByte(42))
+      try {
+        buffer.at(1)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2200
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      buffer.set(0, Int.toByte(10))
+      try {
+        buffer.at(4)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2300
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      try {
+        buffer.at(1000)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2400
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4)
+      let posMax: int = 2147483647
+      try {
+        buffer.at(posMax)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2500
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(0)
+      try {
+        buffer.at(-1)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2600
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(0)
+      try {
+        buffer.at(10)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2700
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4, 8)
+      buffer.set(0, Int.toByte(10))
+      buffer.resize(0)
+      try {
+        buffer.at(0)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2800
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(4, 8)
+      buffer.resize(0)
+      try {
+        buffer.at(3)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAt0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_2900
+     * @tc.desc Verify buffer2.at(0) returns Int.toByte(65)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAt0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer1 = new ArrayBuffer(4, 16)
+      buffer1.set(0, Int.toByte(10))
+      buffer1.resize(0)
+      let buffer2 = new ArrayBuffer(2)
+      buffer2.set(0, Int.toByte(65))
+      expect(buffer2.at(0)).assertEqual(Int.toByte(65))
+    });
+
+    /**
      * @tc.name testArrayBufferAt0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3000
-     * @tc.desc Verify buffer.at(-1) throws Error with current input
+     * @tc.desc Verify buffer.at(0) returns Int.toByte(65)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferAt0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(10))
-      expect(buffer.byteLength).assertEqual(4)
-      try {
-        buffer.at(-1)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3100
-     * @tc.desc Verify buffer.at(-2) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      try {
-        buffer.at(-2)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3200
-     * @tc.desc Verify buffer.at(posMin) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      let posMin: int = -2147483648
-      try {
-        buffer.at(posMin)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3300
-     * @tc.desc Verify buffer.at(pos) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(10))
-      let pos: int = buffer.byteLength as int
-      try {
-        buffer.at(pos)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
+      let buffer = new ArrayBuffer(3)
+      buffer.set(0, Int.toByte(65))
+      buffer.set(1, Int.toByte(66))
+      buffer.set(2, Int.toByte(67))
+      let result = buffer.at(0)
+      expect(result).assertEqual(Int.toByte(65))
     });
 
     /**
      * @tc.name testArrayBufferAt0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3400
-     * @tc.desc Verify buffer.at(1000) throws Error with current input
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -631,162 +561,45 @@ export default function arrayBufferAtTest(): void {
     it('testArrayBufferAt0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       try {
-        buffer.at(1000)
+        buffer.at(100)
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
       }
-      expect(true).assertFail();
     });
 
     /**
      * @tc.name testArrayBufferAt0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3500
-     * @tc.desc Verify buffer.at(posMax) throws Error with current input
+     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferAt0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(16)
-      buffer.set(0, Int.toByte(7))
-      let posMax: int = 2147483647
-      try {
-        buffer.at(posMax)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
+      let buffer = new ArrayBuffer(4)
+      buffer.set(1, Int.toByte(100))
+      expect(buffer.at(0)).assertEqual(Int.toByte(0))
+      expect(buffer.at(2)).assertEqual(Int.toByte(0))
+      expect(buffer.at(3)).assertEqual(Int.toByte(0))
     });
 
     /**
      * @tc.name testArrayBufferAt0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3600
-     * @tc.desc Verify buffer.at(1) throws Error with current input
+     * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferAt0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(1)
-      buffer.set(0, Int.toByte(42))
-      expect(buffer.byteLength).assertEqual(1)
-      expect(buffer.at(0)).assertEqual(Int.toByte(42))
-      try {
-        buffer.at(1)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3700
-     * @tc.desc Verify buffer.at(0) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(0)
       try {
         buffer.at(0)
+        expect().assertFail();
       } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
+        expect(e.name).assertEqual('IndexOutOfBoundsError')
       }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3800
-     * @tc.desc Verify buffer.at(-1) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(0)
-      try {
-        buffer.at(-1)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3900
-     * @tc.desc Verify buffer.at(10) throws Error with current input
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(0)
-      try {
-        buffer.at(10)
-      } catch (e) {
-        expect(e !== null && e !== undefined).assertTrue();
-        Utils.assertThrownErrorCodeIsNumber(e)
-        return;
-      }
-      expect(true).assertFail();
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4000
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      buffer.set(0, Int.toByte(10))
-      expect(buffer.detached).assertFalse()
-      expect(buffer.at(0)).assertEqual(Int.toByte(10))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4100
-     * @tc.desc Verify new ArrayBuffer(4) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      expect(buffer.detached).assertFalse()
-      expect(buffer.at(0)).assertEqual(Int.toByte(0))
-      expect(buffer.at(3)).assertEqual(Int.toByte(0))
-    });
-
-    /**
-     * @tc.name testArrayBufferAt0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_4200
-     * @tc.desc Verify new ArrayBuffer(2) succeeds and returned data content matches expected
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferAt0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer2 = new ArrayBuffer(2)
-      buffer2.set(0, Int.toByte(65))
-      expect(buffer2.at(0)).assertEqual(Int.toByte(65))
     });
   });
 }
