@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -323,28 +324,74 @@ export default function HilogTsTest() {
       hilog.info(domain, tag, 'testHilogTsApiStatic16 end');
     })
 
-        /**
-         * @tc.name   testHilogTsApiStatic17
-         * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1700
-         * @tc.desc   hilog begin interface test.
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL2
-         */
-        it('testHilogTsApiStatic17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-          hilog.info(domain, tag, 'testHilogTsApiStatic16 start');
-          try{
-            hilog.debug(0x0000, tag, "test hilog.debug() without parameter args");
-            hilog.info(0x0000, tag, "test hilog.info() without parameter args");
-            hilog.error(0x0000, tag, "test hilog.error() without parameter args");
-            hilog.warn(0x0000, tag, "test hilog.warn() without parameter args");
-            hilog.fatal(0x0000, tag, "test hilog.fatal() without parameter args");
-          } catch (error){
-            hilog.error(domain, tag, `testHilogTsApiStatic01 got an error: ${JSON.stringify(error)}`)
-            expect().assertFail()
-          }
-          hilog.info(domain, tag, 'testHilogTsApiStatic16 end');
-        })
+    /**
+      * @tc.name   testHilogTsApiStatic17
+      * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1700
+      * @tc.desc   hilog begin interface test.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+    it('testHilogTsApiStatic17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic16 start');
+      try{
+        hilog.debug(0x0000, tag, "test hilog.debug() without parameter args");
+        hilog.info(0x0000, tag, "test hilog.info() without parameter args");
+        hilog.error(0x0000, tag, "test hilog.error() without parameter args");
+        hilog.warn(0x0000, tag, "test hilog.warn() without parameter args");
+        hilog.fatal(0x0000, tag, "test hilog.fatal() without parameter args");
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic17 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic16 end');
+    })
+
+    /**
+     * @tc.name   testHilogTsApiStatic18
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1800
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic18 start');
+      try{
+        hilog.debug(domain, tag, "%{public}s World %{private}d",);
+        hilog.info(domain, tag, "%{public}s World %{private}d", );
+        hilog.error(domain, tag, "%{public}s World %{private}d",);
+        hilog.warn(domain, tag, "%{public}s World %{private}d", );
+        hilog.fatal(domain, tag,"%{public}s World %{private}d", );
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic18 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic18 end');
+    })
+
+    /**
+     * @tc.name   testHilogTsApiStatic19
+     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1900
+     * @tc.desc   hilog begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHilogTsApiStatic19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'testHilogTsApiStatic19 start');
+      try{
+        hilog.debug(domain, tag, "%{public}s World %{private}d", undefined);
+        hilog.info(domain, tag, "%{public}s World %{private}d", undefined);
+        hilog.error(domain, tag, "%{public}s World %{private}d", undefined);
+        hilog.warn(domain, tag, "%{public}s World %{private}d", undefined);
+        hilog.fatal(domain, tag,"%{public}s World %{private}d", undefined);
+      } catch (error){
+        hilog.error(domain, tag, `testHilogTsApiStatic19 got an error: ${JSON.stringify(error)}`)
+        expect().assertFail()
+      }
+      hilog.info(domain, tag, 'testHilogTsApiStatic19 end');
+    })
 
     /**
      * @tc.name   SUB_DFX_DFT_DefaultLevel_Static_0100

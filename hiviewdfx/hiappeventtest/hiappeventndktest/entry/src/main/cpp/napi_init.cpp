@@ -25,6 +25,8 @@
 #define PARAM_0 0
 #define PARAM_1 1
 
+#undef LOG_DOMAIN
+#define LOG_DOMAIN 0xD003200
 #undef LOG_TAG
 #define LOG_TAG "testTag"
 
@@ -2180,6 +2182,122 @@ static napi_value Add(napi_env env, napi_callback_info info)
     return sum;
 }
 
+static napi_value TestHiAppEventReportFrameworkMemAnomaly1(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_SUCCESS) {
+        code = HIAPPEVENT_SUCCESS;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly2(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_REACT_NATIVE_HERMES, "0.73.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly3(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_KMP_KOTLIN, "1.9.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly4(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_INVALID_PARAM_VALUE){
+        code = HIAPPEVENT_INVALID_PARAM_VALUE;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly5(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_OPERATE_FAILED){
+        code = HIAPPEVENT_OPERATE_FAILED;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly6(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly7(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, NULL, "test memory leak");
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly8(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LogType::LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", NULL);
+    OH_LOG_INFO(LogType::LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value TestHiAppEventReportFrameworkMemAnomaly9(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", "a");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly10(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    char longDesc[1001] = {0};
+    memset(longDesc, 'a', 1000);
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", longDesc);
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly11(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "a", "test memory leak");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value TestHiAppEventReportFrameworkMemAnomaly12(napi_env env, napi_callback_info info) {
+    OH_LOG_INFO(LOG_APP, "testTag start");
+    char longVersion[257] = {0};
+    memset(longVersion, 'a', 256);
+    int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, longVersion, "test memory leak");
+    OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
+    if (code == HIAPPEVENT_REPORT_FREQUENCY_EXCEEDED){
+        code = HIAPPEVENT_REPORT_FREQUENCY_EXCEEDED;
+    }
+    napi_value result;
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
 static napi_value NAPI_Global_add(napi_env env, napi_callback_info info) {
 }
 EXTERN_C_START
@@ -2324,6 +2442,18 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OhHiappEventSetEventConfig42", nullptr, OhHiappEventSetEventConfig42, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OhHiappEventSetEventConfig43", nullptr, OhHiappEventSetEventConfig43, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"OhHiappEventSetEventConfigMinidump", nullptr, OhHiappEventSetEventConfigMinidump, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly1", nullptr, TestHiAppEventReportFrameworkMemAnomaly1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly2", nullptr, TestHiAppEventReportFrameworkMemAnomaly2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly3", nullptr, TestHiAppEventReportFrameworkMemAnomaly3, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly4", nullptr, TestHiAppEventReportFrameworkMemAnomaly4, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly5", nullptr, TestHiAppEventReportFrameworkMemAnomaly5, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly6", nullptr, TestHiAppEventReportFrameworkMemAnomaly6, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly7", nullptr, TestHiAppEventReportFrameworkMemAnomaly7, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly8", nullptr, TestHiAppEventReportFrameworkMemAnomaly8, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly9", nullptr, TestHiAppEventReportFrameworkMemAnomaly9, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly10", nullptr, TestHiAppEventReportFrameworkMemAnomaly10, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly11", nullptr, TestHiAppEventReportFrameworkMemAnomaly11, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestHiAppEventReportFrameworkMemAnomaly12", nullptr, TestHiAppEventReportFrameworkMemAnomaly12, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"add", nullptr, NAPI_Global_add, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
