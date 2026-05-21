@@ -54,6 +54,49 @@ async function clickButtonDriver(){
 
 }
 
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
+  
+  let want: Want = {
+    bundleName: "com.example.actswindowtest.static",
+    abilityName: 'StartAbility'
+  };
+  if (options) {
+    context.startAbility(want, options).then(() => {
+      hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+    }).catch((err: Error):PromiseLike<void>|undefined => {
+      hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    context.startAbility(want).then(() => {
+      hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
+    }).catch((err: Error):PromiseLike<void>|undefined => {
+      hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await Utils.msSleep(1000)
+  let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+  return windowStageStart;
+
+}
+
+async function terminateAbility(caseName: string) {
+let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+try {
+  if (pageContext !== null && pageContext !== undefined) {
+    hilog.info(domain, tag,`${caseName} terminateSelf begin`);
+  }
+  pageContext.terminateSelf().then(() => {
+    hilog.info(domain, tag,`${caseName} terminateSelf success`);
+  }).catch((err: Error):PromiseLike<void>|undefined => {
+    hilog.error(domain, tag,`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+} catch (e) {
+  hilog.error(domain, tag,`${caseName} pageContext.terminateSelf fail, err: ${JSON.stringify(e)}`);
+}
+await Utils.msSleep(1000)
+}
+
+
 export default function FloatingBallTest(): void {
   describe('FloatingBallTest', (): void => {
     hilog.info(domain, tag, 'FloatingBallTest start');
@@ -244,7 +287,7 @@ export default function FloatingBallTest(): void {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             expect(issupportFloatingBall).assertEqual(false);
             done();
           }else{
@@ -286,7 +329,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -336,7 +379,7 @@ export default function FloatingBallTest(): void {
         }).catch((err: Error):void => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             done();
           }else{
             expect(false).assertTrue();
@@ -397,7 +440,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -449,7 +492,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -499,7 +542,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -548,7 +591,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -598,7 +641,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -641,7 +684,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -690,7 +733,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -739,7 +782,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -783,7 +826,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -829,7 +872,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -873,7 +916,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -921,7 +964,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -965,7 +1008,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1011,7 +1054,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1055,7 +1098,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1098,7 +1141,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1144,7 +1187,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1190,7 +1233,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1234,7 +1277,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1277,7 +1320,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1323,7 +1366,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1369,7 +1412,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1413,7 +1456,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1456,7 +1499,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1512,7 +1555,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1559,7 +1602,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1617,7 +1660,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1672,7 +1715,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1731,7 +1774,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1790,7 +1833,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1850,7 +1893,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1910,7 +1953,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1966,7 +2009,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2001,7 +2044,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2066,7 +2109,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2115,7 +2158,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2160,7 +2203,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2214,7 +2257,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2269,7 +2312,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2317,7 +2360,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2382,7 +2425,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2448,7 +2491,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2490,7 +2533,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2550,7 +2593,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2604,7 +2647,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2650,7 +2693,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2706,7 +2749,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2756,7 +2799,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -2828,7 +2871,7 @@ export default function FloatingBallTest(): void {
           }
         }).catch((err: Error):void => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
-          if(err.code == 801){
+          if(err.code == 801 && !isFloatingBallEnabled){
             done();
           }else{
             expect(false).assertTrue();
@@ -2942,7 +2985,7 @@ export default function FloatingBallTest(): void {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code == 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -2987,7 +3030,7 @@ export default function FloatingBallTest(): void {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code == 801 && !isFloatingBallEnabled){
           done();
         } else if(e.code == 1300022) {
           expect(e.code).assertEqual(1300022);
@@ -3051,7 +3094,7 @@ export default function FloatingBallTest(): void {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code == 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3108,7 +3151,7 @@ export default function FloatingBallTest(): void {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code == 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3172,7 +3215,121 @@ export default function FloatingBallTest(): void {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code == 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_long_press_delete
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0800
+     * @tc.desc   test onDestroy callback triggered when floatingBall deleted by long press
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_long_press_delete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_long_press_delete';
+      let destroyReason: string = '';
+      let driver: Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onDestroy = (reason: string) => {
+        console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+        destroyReason = reason;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(500);
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName + ' button: ' + button);
+        let Bounds = await button!.getBounds();
+        console.info(CaseName + ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.longClick(Bounds.left, Bounds.top);
+        console.info(CaseName + ' Succeeded in long clicking floating ball.');
+        await Utils.msSleep(1000);
+        let deleteButton = await driver.findComponent(ON.text('删除'));
+        console.info(CaseName + ' deleteButton: ' + deleteButton);
+        if (deleteButton) {
+          await deleteButton.click();
+          console.info(CaseName + ' Succeeded in clicking delete button.');
+        }
+        await Utils.msSleep(500);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('LONG_PRESS_SINGLE_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_main_window_destroy
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0900
+     * @tc.desc   test onDestroy callback triggered when ability is terminated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_main_window_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      let CaseName:string = 'test_onDestroy_main_window_destroy';
+      let destroyReason: string = '';
+      try {
+        let context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+        await startAbility(CaseName, context);
+        console.info(CaseName + ' Succeeded in starting StartAbility.');
+        await Utils.msSleep(1000);
+        let newContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext;
+        console.info(CaseName + ' Got new context: ' + newContext);
+        let config: floatingBall.FloatingBallConfiguration = {
+          context: newContext,
+        };
+        let startParams: floatingBall.FloatingBallParams = {
+          template: floatingBall.FloatingBallTemplate.SIMPLE,
+          title: 'title',
+        };
+        let floatingBallController = await floatingBall.create(config);
+        let onDestroy = (reason: string) => {
+          console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+          destroyReason = reason;
+        };
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await Utils.msSleep(500);
+        await terminateAbility(CaseName);
+        console.info(CaseName + ' Succeeded in terminating StartAbility.');
+        await Utils.msSleep(1000);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('MAIN_WINDOW_DESTROY_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3233,7 +3390,7 @@ export default function FloatingBallTest(): void {
         let exception: BusinessError = error as BusinessError;
         console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
         expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
+        if(exception.code == 801 && !isFloatingBallEnabled){
           done();
         }
         else{

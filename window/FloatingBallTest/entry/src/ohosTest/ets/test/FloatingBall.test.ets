@@ -66,6 +66,43 @@ async function getPixelMap(context:common.UIAbilityContext,resource:Resource,siz
   }
 
 }
+
+let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
+
+async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartAbility'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility(caseName: string) {
+  let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+
 export default function abilityTest() {
   describe('FloatingBallTest', () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -481,7 +518,7 @@ export default function abilityTest() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
+        if (exception.code === 801 && !isFloatingBallEnabled) {
           done();
         } else {
           expect(exception.code).assertEqual(1300019);
@@ -496,7 +533,7 @@ export default function abilityTest() {
         done();
       } catch (exception) {
         console.error(msgStr + 'Failed2. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
+        if (exception.code === 801 && !isFloatingBallEnabled) {
           done();
         } else {
           expect(exception.code).assertEqual(1300019);
@@ -532,7 +569,7 @@ export default function abilityTest() {
         await floatingBallController.startFloatingBall(startParams);
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
+        if (exception.code === 801 && !isFloatingBallEnabled) {
           isSupport = false;
         }
       }
@@ -591,7 +628,7 @@ export default function abilityTest() {
         await floatingBallController.startFloatingBall(startParams);
       } catch (exception) {
         console.error(msgStr + 'Failed. Cause:' + JSON.stringify(exception.code)+` message:${exception.message}`);
-        if (exception.code === 801) {
+        if (exception.code === 801 && !isFloatingBallEnabled) {
           isSupport = false;
         }
       }
@@ -736,7 +773,7 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code === 801 && !isFloatingBallEnabled){
             expect(issupportFloatingBall).assertEqual(false);
             done();
           }else{
@@ -776,7 +813,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -821,7 +858,7 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
           console.error(CaseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
           expect(err.message!=null).assertTrue();
-          if(err.code == 801){
+          if(err.code === 801 && !isFloatingBallEnabled){
             done();
           }else if(err.code == 1300019){
              done();
@@ -883,7 +920,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -934,7 +971,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -978,7 +1015,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1023,7 +1060,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1068,7 +1105,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1114,7 +1151,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1159,7 +1196,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -1202,7 +1239,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1247,7 +1284,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1293,7 +1330,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1338,7 +1375,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1381,7 +1418,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1423,7 +1460,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else if(e.code == 1300019){
            done();
@@ -1469,7 +1506,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1514,7 +1551,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1557,7 +1594,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1599,7 +1636,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1644,7 +1681,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1689,7 +1726,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1732,7 +1769,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1774,7 +1811,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1819,7 +1856,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1864,7 +1901,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1907,7 +1944,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -1949,7 +1986,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2004,7 +2041,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2050,7 +2087,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2107,7 +2144,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2161,7 +2198,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2219,7 +2256,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2277,7 +2314,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2336,7 +2373,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2395,7 +2432,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2450,7 +2487,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2484,7 +2521,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2548,7 +2585,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2596,7 +2633,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2640,7 +2677,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2693,7 +2730,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2747,7 +2784,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2794,7 +2831,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2859,7 +2896,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2924,7 +2961,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -2965,7 +3002,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -3019,7 +3056,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }else{
           expect(false).assertTrue();
@@ -3071,7 +3108,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -3116,7 +3153,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -3172,7 +3209,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -3221,7 +3258,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -3293,7 +3330,7 @@ export default function abilityTest() {
           await sleep(1000);
         }).catch(async (err: BusinessError) => {
           console.error(caseName+ ` Failed to create floating ball controller. Cause:${err.code}, message:${err.message}`);
-          if(err.code == 801){
+          if(err.code === 801 && !isFloatingBallEnabled){
             done();
           }else{
             expect(false).assertTrue();
@@ -3404,7 +3441,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3449,7 +3486,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else if(e.code == 1300022) {
           expect(e.code).assertEqual(1300022);
@@ -3513,7 +3550,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3570,7 +3607,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3634,7 +3671,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else {
           expect(false).assertTrue();
@@ -3674,7 +3711,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else if(e.code == 1300019) {
           expect(e.code).assertEqual(1300019);
@@ -3728,7 +3765,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
         expect(e.message != null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         } else if(e.code == 1300019) {
           expect(e.code).assertEqual(1300019);
@@ -3746,6 +3783,118 @@ export default function abilityTest() {
       }
     })
 
+    /**
+     * @tc.name   test_onDestroy_long_press_delete
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0800
+     * @tc.desc   test onDestroy callback triggered when floatingBall deleted by long press
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_long_press_delete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_onDestroy_long_press_delete';
+      let destroyReason: string = '';
+      let driver: Driver = Driver.create();
+      let config: floatingBall.FloatingBallConfiguration = {
+        context: context,
+      };
+      let startParams: floatingBall.FloatingBallParams = {
+        template: floatingBall.FloatingBallTemplate.SIMPLE,
+        title: 'title',
+      };
+      let onDestroy = (reason: string) => {
+        console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+        destroyReason = reason;
+      };
+      try {
+        let floatingBallController = await floatingBall.create(config);
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await sleep(500);
+        let button = await driver.findComponent(ON.id('FloatingBallSimpleTemplate'));
+        console.info(CaseName + ' button: ' + button);
+        let Bounds = await button.getBounds();
+        console.info(CaseName + ' Bounds: ' + JSON.stringify(Bounds));
+        await driver.longClick(Bounds.left, Bounds.top);
+        console.info(CaseName + ' Succeeded in long clicking floating ball.');
+        await sleep(1000);
+        let deleteButton = await driver.findComponent(ON.text('删除'));
+        console.info(CaseName + ' deleteButton: ' + deleteButton);
+        if (deleteButton) {
+          await deleteButton.click();
+          console.info(CaseName + ' Succeeded in clicking delete button.');
+        }
+        await sleep(500);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('LONG_PRESS_SINGLE_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
+
+    /**
+     * @tc.name   test_onDestroy_main_window_destroy
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_DESTROY_0900
+     * @tc.desc   test onDestroy callback triggered when ability is terminated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_onDestroy_main_window_destroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      let CaseName:string = 'test_onDestroy_main_window_destroy';
+      let destroyReason: string = '';
+      try {
+        await startAbility(CaseName, context);
+        console.info(CaseName + ' Succeeded in starting StartAbility.');
+        await sleep(1000);
+        let newContext = AppStorage.get('contextTest') as common.UIAbilityContext;
+        console.info(CaseName + ' Got new context: ' + newContext);
+        let config: floatingBall.FloatingBallConfiguration = {
+          context: newContext,
+        };
+        let startParams: floatingBall.FloatingBallParams = {
+          template: floatingBall.FloatingBallTemplate.SIMPLE,
+          title: 'title',
+        };
+        let floatingBallController = await floatingBall.create(config);
+        let onDestroy = (reason: string) => {
+          console.info(CaseName + ' Floating ball destroy callback triggered, reason: ' + reason);
+          destroyReason = reason;
+        };
+        floatingBallController.onDestroy(onDestroy);
+        console.info(CaseName + ' Succeeded in registering destroy callback.');
+        await floatingBallController.startFloatingBall(startParams);
+        console.info(CaseName + ' Succeeded in starting floating ball.');
+        await sleep(500);
+        await terminateAbility(CaseName);
+        console.info(CaseName + ' Succeeded in terminating StartAbility.');
+        await sleep(1000);
+        console.info(CaseName + ' destroyReason: ' + destroyReason);
+        expect(destroyReason).assertEqual('MAIN_WINDOW_DESTROY_STOP');
+        console.log(CaseName + ' end.');
+        done();
+      } catch(e) {
+        console.error(CaseName + ' Failed. Cause: ' + e.code + ', message: ' + e.message);
+        expect(e.message != null).assertTrue();
+        if(e.code === 801 && !isFloatingBallEnabled){
+          done();
+        } else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    })
 
     /**
      * @tc.name   test_restoreMainWindow_ability
@@ -3793,7 +3942,7 @@ export default function abilityTest() {
       } catch(e) {
         console.error( CaseName+  `Failed. Cause:${e.code}, message:${e.message}`);
         expect(e.message!=null).assertTrue();
-        if(e.code == 801){
+        if(e.code === 801 && !isFloatingBallEnabled){
           done();
         }
         else{
@@ -3803,5 +3952,5 @@ export default function abilityTest() {
       }
     })
 
-  })
+    })
 }
