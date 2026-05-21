@@ -33,21 +33,21 @@ export default function abilityTest() {
         let targetHeight = 1024;
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0001
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0001
         * @tc.desc   test create function
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0001", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 let imageProcessor = videoProcessingEngine.create() as videoProcessingEngine.ImageProcessor;
                 expect(imageProcessor != null).assertTrue();
                 done();
             } catch (err) {
-                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0001 failed, error is' + err.message);
+                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0001 failed, error is' + err.message);
                 if (err.code != undefined) {
                     expect(false).assertTrue();
                 }
@@ -56,14 +56,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0002
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0002
         * @tc.number SUB_MULTIMEDIA_AV_CODEC_NATIVE_AVCODEC_VIDEOENCODER_VIDEO_PROCESS_TS_0002
         * @tc.desc   test sync interface
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0002", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -89,7 +89,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap.isStrideAlignment).assertFalse();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0002 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0002 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -100,14 +100,14 @@ export default function abilityTest() {
 
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0003
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0003
         * @tc.desc   test procedure of high level algo
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0003", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -123,7 +123,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0003 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0003 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -133,14 +133,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0004
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0004
         * @tc.desc   test procedure of medium level algo
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -156,7 +156,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0004 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0004 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -166,14 +166,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0005
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0005
         * @tc.desc   test procedure of low level algo
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0005", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -189,7 +189,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0005 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0005 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -199,14 +199,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0006
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0006
         * @tc.desc   test procedure of NONE level algo
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0006", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -222,7 +222,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap != null).assertTrue();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0006 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0006 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -232,14 +232,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0007
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0007
         * @tc.desc   test sync method
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0007", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -257,7 +257,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap.isStrideAlignment).assertFalse();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0007 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0007 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -267,14 +267,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0008
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0008
         * @tc.desc   test async method
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0008", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -300,7 +300,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap.isStrideAlignment).assertFalse();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0008 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0008 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -310,14 +310,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0009
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0009
         * @tc.desc   test async method
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0009", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -335,7 +335,7 @@ export default function abilityTest() {
                     expect(enhancedPixelmap.isStrideAlignment).assertFalse();
                     done();
                 } catch (err) {
-                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0009 failed, error is' + err.message);
+                    console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0009 failed, error is' + err.message);
                     if (err.code != undefined) {
                         expect(false).assertTrue();
                     }
@@ -345,55 +345,55 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0010
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0010
         * @tc.desc   test initializeEnvironment
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0010", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 videoProcessingEngine.initializeEnvironment();
                 done();
             } catch (err) {
-                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0010 failed, error is' + err.message);
+                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0010 failed, error is' + err.message);
                 expect(err.code == undefined).assertTrue();
                 done();
             }
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0011
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0011
         * @tc.desc   test initializeEnvironment and deinitializeEnvironment
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0011", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try {
                 videoProcessingEngine.initializeEnvironment();
                 videoProcessingEngine.deinitializeEnvironment();
                 done();
             } catch (err) {
-                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0011 failed, error is' + err.message);
+                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0011 failed, error is' + err.message);
                 expect(err.code == undefined).assertTrue();
                 done();
             }
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0012
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0012
         * @tc.desc   test async method
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0012", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -420,7 +420,7 @@ export default function abilityTest() {
                 expect(enhancedPixelmap != null).assertTrue();
                 done();
             } catch (err) {
-                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0012 failed, error is' + err.message);
+                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0012 failed, error is' + err.message);
                 if (err.code != undefined) {
                     expect(false).assertTrue();
                 }
@@ -429,14 +429,14 @@ export default function abilityTest() {
         })
 
         /**
-        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013
-        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013
+        * @tc.name   SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0013
+        * @tc.number SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0013
         * @tc.desc   test async method
         * @tc.type   FUNCTION
         * @tc.size   MEDIUMTEST
         * @tc.level  LEVEL0
         */
-        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
+        it("SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0013", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             if (!fs.accessSync("/system/lib64/libvideoprocessingengine_ext.z.so")) {
                 expect(true).assertTrue();
@@ -467,7 +467,7 @@ export default function abilityTest() {
                     pixelMap, 1024, 1024, videoProcessingEngine.QualityLevel.NONE);
                 done();
             } catch (err) {
-                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_TS_0013 failed, error is' + err.message);
+                console.info('SUB_MULTIMEDIA_VIDEO_PROCESSING_ENGINE_STATIC_0013 failed, error is' + err.message);
                 if (err.code != undefined) {
                     expect(false).assertTrue();
                 }
