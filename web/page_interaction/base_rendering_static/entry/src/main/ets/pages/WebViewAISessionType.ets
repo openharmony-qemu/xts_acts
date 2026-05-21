@@ -135,6 +135,10 @@ struct WebViewAISessionType {
                 Utils.emitEvent(this.callbackResult == 'onDestroyAISession', 2026060113)
                 break;
               }
+              case 'testAiSessionTypeStatic25': {
+                Utils.emitEvent(AISessionType.TRANSLATOR, 2026060125)
+                break;
+              }
               default:
                 break;
             }

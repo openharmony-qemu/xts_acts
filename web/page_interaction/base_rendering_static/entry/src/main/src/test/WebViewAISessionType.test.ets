@@ -264,5 +264,22 @@ export default function webViewAISessionTypeJsunit() {
       await Utils.msSleep(2000);
       done();
     })
+
+    /**
+     * @tc.name   testAiSessionTypeStatic25
+     * @tc.number SUB_WEB_AISESSIONTYPE_STATIC_2500
+     * @tc.desc   test AISessionType.TRANSLATOR.
+     * @tc.size   MEDIUMTEST
+     * @tc.type   FUNCTION
+     * @tc.level  LEVEL0
+     */
+    it('testAiSessionTypeStatic25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      Utils.emitEvent("testAiSessionTypeStatic25", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("testAiSessionTypeStatic25", 1, 2026060125, done);
+      inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
   })
 }
