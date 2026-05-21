@@ -28,6 +28,7 @@ export default function BaseEnumToStringTest(): void {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(1);
     });
     afterEach((): void => {
     });

@@ -89,6 +89,7 @@ export default function BaseEnumTest(): void {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
+      await Utils.msSleep(1);
     });
     afterEach((): void => {
     });
@@ -442,8 +443,8 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(9223372036854775807), "LONG_MAX")
-      expect(e.valueOf()).assertEqual(Int.toLong(9223372036854775807))
+      let e: BaseEnum<long> = new BaseEnum<long>(9223372036854775807, "LONG_MAX")
+      expect(e.valueOf()).assertEqual(9223372036854775807)
     });
 
     /**
@@ -1346,8 +1347,8 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<long> = new BaseEnum<long>(Int.toLong(9223372036854775807), "LONG_MAX")
-      expect(e.valueOf()).assertEqual(Int.toLong(9223372036854775807))
+      let e: BaseEnum<long> = new BaseEnum<long>(9223372036854775807, "LONG_MAX")
+      expect(e.valueOf()).assertEqual(9223372036854775807)
     });
 
     /**
