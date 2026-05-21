@@ -14,12 +14,11 @@
  */
 
 #include <dlfcn_ext.h>
-#include <errno.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cerrno>
+#include <cstdint>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
 #include <sys/wait.h>
 
 #include "functionalext.h"
@@ -34,12 +33,12 @@ static const char *LIB_NAME_A = "/data/storage/el1/bundle/libs/arm/libldso_rando
 
 typedef void (*TEST_FUNC)(void);
 
-typedef void* (*dlopen_ext_func)(const char*, int, void*);
-static dlopen_ext_func g_dlopen_ext = NULL;
+typedef void* (*DlopenExtFunc)(const char*, int, void*);
+static DlopenExtFunc g_dlopen_ext = NULL;
 static bool g_dlopen_ext_available = false;
 
 int g_test = BASE_NUM;
-extern void test_f(void)
+extern void TestF(void)
 {
     ++g_test;
 }
@@ -49,7 +48,7 @@ extern void test_f(void)
  * @tc.desc      : Call the dlopen interface to load a valid dynamic library
  * @tc.level     : Level0
  */
-static void dlopen_randomization_0100(void)
+static void DlopenRandomization0100(void)
 {
     void *handle = dlopen(LIB_NAME, RTLD_NOW);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
@@ -65,7 +64,7 @@ static void dlopen_randomization_0100(void)
  * @tc.desc      : Call the dlopen interface to load NULL
  * @tc.level     : Level1
  */
-static void dlopen_randomization_0200(void)
+static void DlopenRandomization0200(void)
 {
     void *handle = dlopen(NULL, RTLD_NOW);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
@@ -79,7 +78,7 @@ static void dlopen_randomization_0200(void)
         return;
     }
     EXPECT_EQ(__FUNCTION__, BASE_NUM, *i);
-    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "test_f"));
+    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "TestF"));
     EXPECT_PTRNE(__FUNCTION__, test, 0);
     if (!test) {
         dlclose(handle);
@@ -96,7 +95,7 @@ static void dlopen_randomization_0200(void)
  * @tc.desc      : Call the dlopen interface to load a invalid dynamic library
  * @tc.level     : Level2
  */
-static void dlopen_randomization_0300(void)
+static void DlopenRandomization0300(void)
 {
     void *handle = dlopen("test_invaild.so", RTLD_NOW);
     EXPECT_PTREQ(__FUNCTION__, handle, 0);
@@ -110,7 +109,7 @@ static void dlopen_randomization_0300(void)
  * @tc.desc      : Repeatedly calling the dlopen interface to load the same dynamic library
  * @tc.level     : Level1
  */
-static void dlopen_randomization_0400(void)
+static void DlopenRandomization0400(void)
 {
     void *ori_handle = dlopen(LIB_NAME, RTLD_NOW);
     void *handle = 0;
@@ -135,7 +134,7 @@ static void dlopen_randomization_0400(void)
  *                 and call the dlsym interface to get symbol address
  * @tc.level     : Level1
  */
-static void dlopen_randomization_0600(void)
+static void DlopenRandomization0600(void)
 {
     void *handle;
     int *i;
@@ -168,7 +167,7 @@ static void dlopen_randomization_0600(void)
  * @tc.desc      : Call the dlopen_ext interface to load a valid dynamic library
  * @tc.level     : Level0
  */
-static void dlopen_ext_randomization_0100(void)
+static void DlopenExtRandomization0100(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -188,7 +187,7 @@ static void dlopen_ext_randomization_0100(void)
  * @tc.desc      : Call the dlopen interface to load NULL
  * @tc.level     : Level1
  */
-static void dlopen_ext_randomization_0200(void)
+static void DlopenExtRandomization0200(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -206,7 +205,7 @@ static void dlopen_ext_randomization_0200(void)
         return;
     }
     EXPECT_EQ(__FUNCTION__, BASE_NUM, *i);
-    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "test_f"));
+    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "TestF"));
     EXPECT_PTRNE(__FUNCTION__, test, 0);
     if (!test) {
         dlclose(handle);
@@ -223,7 +222,7 @@ static void dlopen_ext_randomization_0200(void)
  * @tc.desc      : Call the dlopen interface to load a invalid dynamic library
  * @tc.level     : Level2
  */
-static void dlopen_ext_randomization_0300(void)
+static void DlopenExtRandomization0300(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -241,7 +240,7 @@ static void dlopen_ext_randomization_0300(void)
  * @tc.desc      : Repeatedly calling the dlopen_ext interface to load the same dynamic library
  * @tc.level     : Level1
  */
-static void dlopen_ext_randomization_0400(void)
+static void DlopenExtRandomization0400(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -270,7 +269,7 @@ static void dlopen_ext_randomization_0400(void)
  *                 and call the dlsym interface to get symbol address
  * @tc.level     : Level1
  */
-static void dlopen_ext_randomization_0600(void)
+static void DlopenExtRandomization0600(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -308,7 +307,7 @@ static void dlopen_ext_randomization_0600(void)
  *                 call the dlopen_ext interface to load a valid dynamic library
  * @tc.level     : Level1
  */
-static void dlopen_ext_randomization_0800(void)
+static void DlopenExtRandomization0800(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -328,7 +327,7 @@ static void dlopen_ext_randomization_0800(void)
         return;
     }
     EXPECT_EQ(__FUNCTION__, BASE_NUM, *i);
-    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "test_f"));
+    TEST_FUNC test = reinterpret_cast<TEST_FUNC>(dlsym(handle, "TestF"));
     EXPECT_PTRNE(__FUNCTION__, test, 0);
     if (!test) {
         dlclose(handle);
@@ -347,7 +346,7 @@ static void dlopen_ext_randomization_0800(void)
  *                 and then call the dlsym interface to get symbol address
  * @tc.level     : Level1
  */
-static void dlopen_ext_randomization_0900(void)
+static void DlopenExtRandomization0900(void)
 {
     if (!g_dlopen_ext_available) {
         return;
@@ -397,7 +396,7 @@ static void dlopen_ext_randomization_0900(void)
  * @tc.desc      : Call the dlopen_ns interface to load a valid dynamic library
  * @tc.level     : Level0
  */
-static void dlopen_ns_randomization_0100(void)
+static void DlopenNsRandomization0100(void)
 {
     // dlopen_ns not available, skip test
 }
@@ -407,7 +406,7 @@ static void dlopen_ns_randomization_0100(void)
  * @tc.desc      : Call the dlopen_ns interface to load NULL
  * @tc.level     : Level1
  */
-static void dlopen_ns_randomization_0200(void)
+static void DlopenNsRandomization0200(void)
 {
     // dlopen_ns not available, skip test
 }
@@ -417,7 +416,7 @@ static void dlopen_ns_randomization_0200(void)
  * @tc.desc      : Call the dlopen_ns interface to load a invalid dynamic library
  * @tc.level     : Level2
  */
-static void dlopen_ns_randomization_0300(void)
+static void DlopenNsRandomization0300(void)
 {
     // dlopen_ns not available, skip test
 }
@@ -427,7 +426,7 @@ static void dlopen_ns_randomization_0300(void)
  * @tc.desc      : Repeatedly calling the dlopen_ns interface to load the same dynamic library
  * @tc.level     : Level1
  */
-static void dlopen_ns_randomization_0400(void)
+static void DlopenNsRandomization0400(void)
 {
     // dlopen_ns not available, skip test
 }
@@ -438,7 +437,7 @@ static void dlopen_ns_randomization_0400(void)
  *                 and call the dlsym interface to get symbol address
  * @tc.level     : Level1
  */
-static void dlopen_ns_randomization_0600(void)
+static void DlopenNsRandomization0600(void)
 {
     // dlopen_ns not available, skip test
 }
@@ -448,7 +447,7 @@ static void dlopen_ns_randomization_0600(void)
  * @tc.desc      : Call the dlsym interface to get symbol address, handle is invalid
  * @tc.level     : Level2
  */
-static void dlsym_randomization_0300(void)
+static void DlsymRandomization0300(void)
 {
     void *sym = dlsym((void *)0xFFFF, "invalid_function");
     EXPECT_PTREQ(__FUNCTION__, sym, NULL);
@@ -459,7 +458,7 @@ static void dlsym_randomization_0300(void)
  * @tc.desc      : Call the dlsym interface to get symbol address, handle is setted to RTLD_DEFAULT, and name is valid
  * @tc.level     : Level1
  */
-static void dlsym_randomization_0400(void)
+static void DlsymRandomization0400(void)
 {
     void *sym = dlsym(RTLD_DEFAULT, "fopen");
     EXPECT_PTRNE(__FUNCTION__, sym, NULL);
@@ -470,7 +469,7 @@ static void dlsym_randomization_0400(void)
  * @tc.desc      : Call the dlsym interface to get symbol address, handle is setted to RTLD_DEFAULT, and name is invalid
  * @tc.level     : Level2
  */
-static void dlsym_randomization_0500(void)
+static void DlsymRandomization0500(void)
 {
     void *sym = dlsym(RTLD_DEFAULT, "invalid_func");
     EXPECT_PTREQ(__FUNCTION__, sym, NULL);
@@ -482,7 +481,7 @@ static void dlsym_randomization_0500(void)
  * @tc.desc      : Call the dlsym interface to get symbol address, handle is setted to RTLD_NEXT, and name is valid
  * @tc.level     : Level1
  */
-static void dlsym_randomization_0600(void)
+static void DlsymRandomization0600(void)
 {
     void *sym = dlsym(RTLD_NEXT, "fopen");
     EXPECT_PTRNE(__FUNCTION__, sym, NULL);
@@ -493,7 +492,7 @@ static void dlsym_randomization_0600(void)
  * @tc.desc      : Call the dlsym interface to get symbol address, handle is setted to RTLD_NEXT, and name is invalid
  * @tc.level     : Level2
  */
-static void dlsym_randomization_0700(void)
+static void DlsymRandomization0700(void)
 {
     void *sym = dlsym(RTLD_NEXT, "invalid_func");
     EXPECT_PTREQ(__FUNCTION__, sym, NULL);
@@ -504,7 +503,7 @@ static void dlsym_randomization_0700(void)
  * @tc.desc      : Call the dlclose interface to unload dynamic library
  * @tc.level     : Level2
  */
-static void dlclose_randomization_0100(void)
+static void DlcloseRandomization0100(void)
 {
     int ret = dlclose(NULL);
     EXPECT_EQ(__FUNCTION__, -1, ret);
@@ -515,19 +514,8 @@ static void dlclose_randomization_0100(void)
  * @tc.desc      : Call the dlopen interface to load libc.so
  * @tc.level     : Level1
  */
-static void dlopen_randomization_0800(void)
+static void DlopenRandomization0800(void)
 {
-    // Skip this test - HAP environment cannot access /system files
-    /*
-    if (sizeof(void *) == LEN_OF_POINTER) {
-        system("cp /system/lib64/libc.so .");
-    } else {
-        system("cp /system/lib/libc.so .");
-    }
-    void *handle = dlopen("./libc.so", RTLD_NOW);
-    EXPECT_PTRNE(__FUNCTION__, handle, 0);
-    system("rm ./libc.so");
-    */
 }
 
 /**
@@ -535,56 +523,39 @@ static void dlopen_randomization_0800(void)
  * @tc.desc      : Call the dlopen interface to load ld.so
  * @tc.level     : Level1
  */
-static void dlopen_randomization_0900(void)
+static void DlopenRandomization0900(void)
 {
-    // Skip this test - HAP environment cannot access /system files
-    /*
-    void *handle = NULL;
-    if (sizeof(void *) == LEN_OF_POINTER) {
-        system("cp /system/lib/ld-musl-aarch64.so.1 .");
-        handle = dlopen("./ld-musl-aarch64.so.1", RTLD_NOW);
-        system("rm ld-musl-aarch64.so.1");
-    } else {
-        system("cp /system/lib/ld-musl-arm.so.1 .");
-        handle = dlopen("./ld-musl-arm.so.1", RTLD_NOW);
-        system("rm ./ld-musl-arm.so.1");
-    }
-    EXPECT_PTRNE(__FUNCTION__, handle, 0);
-    */
 }
 
 TEST_FUNC test_cases[] = {
-    dlopen_randomization_0100,
-    // dlopen_randomization_0200, // requires dlsym on main program symbols (not supported in HAP)
-    dlopen_randomization_0300,
-    dlopen_randomization_0400,
-    dlopen_randomization_0600,
-    dlopen_ext_randomization_0100,
-    // dlopen_ext_randomization_0200, // requires dlsym on main program symbols (not supported in HAP)
-    dlopen_ext_randomization_0300,
-    dlopen_ext_randomization_0400,
-    dlopen_ext_randomization_0600,
-    // dlopen_ext_randomization_0800, // requires dlsym on main program symbols (not supported in HAP)
-    dlopen_ext_randomization_0900,
-    dlopen_ns_randomization_0100,
-    dlopen_ns_randomization_0200,
-    dlopen_ns_randomization_0300,
-    dlopen_ns_randomization_0400,
-    dlopen_ns_randomization_0600,
-    dlsym_randomization_0300,
-    dlsym_randomization_0400,
-    dlsym_randomization_0500,
-    // dlsym_randomization_0600, // RTLD_NEXT not supported in HAP environment
-    dlsym_randomization_0700,
-    dlclose_randomization_0100,
-    dlopen_randomization_0800,
-    dlopen_randomization_0900,
+    DlopenRandomization0100,
+    DlopenRandomization0300,
+    DlopenRandomization0400,
+    DlopenRandomization0600,
+    DlopenExtRandomization0100,
+    DlopenExtRandomization0300,
+    DlopenExtRandomization0400,
+    DlopenExtRandomization0600,
+    DlopenExtRandomization0900,
+    DlopenNsRandomization0100,
+    DlopenNsRandomization0200,
+    DlopenNsRandomization0300,
+    DlopenNsRandomization0400,
+    DlopenNsRandomization0600,
+    DlsymRandomization0300,
+    DlsymRandomization0400,
+    DlsymRandomization0500,
+    DlsymRandomization0700,
+    DlcloseRandomization0100,
+    DlopenRandomization0800,
+    DlopenRandomization0900,
 };
 
-static int LdsoRandomizationTestTest_impl(int argc, char *argv[]){
+static int LdsoRandomizationTestTestImpl(int argc, char *argv[])
+{
     
     // Try to get dlopen_ext function via dlsym
-    g_dlopen_ext = (dlopen_ext_func)dlsym(RTLD_DEFAULT, "dlopen_ext");
+    g_dlopen_ext = (DlopenExtFunc)dlsym(RTLD_DEFAULT, "dlopen_ext");
     if (g_dlopen_ext) {
         g_dlopen_ext_available = true;
     } else {
@@ -602,5 +573,5 @@ int LdsoRandomizationTestTest(void)
 {
     static char __libc_prog[] = "libc_test";
     char *__libc_argv[] = { __libc_prog, NULL };
-    return LdsoRandomizationTestTest_impl(1, __libc_argv);
+    return LdsoRandomizationTestTestImpl(1, __libc_argv);
 }

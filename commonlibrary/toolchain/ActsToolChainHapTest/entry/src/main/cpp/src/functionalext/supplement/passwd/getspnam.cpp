@@ -20,9 +20,9 @@
  * IN THE SOFTWARE.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <shadow.h>
-#include <string.h>
+#include <cstring>
 #include <dlfcn.h>
 #include "functionalext.h"
 #include "test.h"
@@ -35,13 +35,13 @@
  * @tc.desc      : Get user database files. Test precondtions: /etc/shadow.
  * @tc.level     : Level 0
  */
-void getspnam_0100(void)
+void Getspnam0100(void)
 {
     struct spwd *spwd = NULL;
     const char *spwd_name = "root";
 
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -63,8 +63,8 @@ void getspnam_0200(void)
     errno = 0;
     struct spwd *spwd = NULL;
 
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -79,12 +79,12 @@ void getspnam_0200(void)
  * @tc.desc      : Test the function of getspnam with invalid input(name).
  * @tc.level     : Level 2
  */
-void getspnam_0300(void)
+void Getspnam0300(void)
 {
     errno = 0;
     struct spwd *spwd;
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -99,13 +99,13 @@ void getspnam_0300(void)
  * @tc.desc      : Test the function of getspnam with invalid input(name).
  * @tc.level     : Level 2
  */
-void getspnam_0400(void)
+void Getspnam0400(void)
 {
     errno = 0;
     struct spwd *spwd;
 
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -120,13 +120,13 @@ void getspnam_0400(void)
  * @tc.desc      : Test the function of getspnam with invalid input(name).
  * @tc.level     : Level 2
  */
-void getspnam_0500(void)
+void Getspnam0500(void)
 {
     errno = 0;
     struct spwd *spwd;
 
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -141,7 +141,7 @@ void getspnam_0500(void)
  * @tc.desc      : The length of name is greater than the NAME_MAX.
  * @tc.level     : Level 2
  */
-void getspnam_0600(void)
+void Getspnam0600(void)
 {
     errno = 0;
     struct spwd *spwd;
@@ -150,8 +150,8 @@ void getspnam_0600(void)
     memset(name, 1, MAX_NAME - 1);
     name[MAX_NAME - 1] = '\0';
 
-    typedef struct spwd* (*getspnam_func)(const char *name);
-    getspnam_func getspnam = (getspnam_func)dlsym(RTLD_DEFAULT, "getspnam");
+    typedef struct spwd* (*GetspnamFunc)(const char *name);
+    GetspnamFunc getspnam = (GetspnamFunc)dlsym(RTLD_DEFAULT, "getspnam");
     if (!getspnam) {
         return;
     }
@@ -161,14 +161,13 @@ void getspnam_0600(void)
     EXPECT_PTREQ("getspnam_0600", spwd, NULL);
 }
 
-static int GetspnamTest_impl(int argc, char *argv[]){
-    // Skip getspnam_0100 - /etc/shadow not accessible in HAP environment
-    // getspnam_0100();
+static int GetspnamTestImpl(int argc, char *argv[])
+{
     getspnam_0200();
-    getspnam_0300();
-    getspnam_0400();
-    getspnam_0500();
-    getspnam_0600();
+    Getspnam0300();
+    Getspnam0400();
+    Getspnam0500();
+    Getspnam0600();
 
     return g_tStatus;
 }
@@ -177,5 +176,5 @@ int GetspnamTest(void)
 {
     static char __libc_prog[] = "libc_test";
     char *__libc_argv[] = { __libc_prog, NULL };
-    return GetspnamTest_impl(1, __libc_argv);
+    return GetspnamTestImpl(1, __libc_argv);
 }

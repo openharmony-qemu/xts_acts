@@ -22,7 +22,8 @@ static const int32_t ATEXIT_INIT_LEN = 0;
 static const int32_t ATEXIT_INCREASE_LEN = 1;
 static const int32_t ATEXIT_COUNT = 32;
 static const int32_t ATEXIT_SLOT_LEN = 10;
-static void ExitFunc(void *arg){};
+static void ExitFunc(void *arg)
+{};
 
 /**
  * @tc.name:      cxa_atexit_0100

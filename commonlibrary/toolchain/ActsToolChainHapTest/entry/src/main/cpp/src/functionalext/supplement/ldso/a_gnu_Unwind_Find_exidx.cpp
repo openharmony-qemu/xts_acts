@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <dlfcn.h>
 
 #include "functionalext.h"

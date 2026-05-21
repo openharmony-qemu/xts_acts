@@ -14,7 +14,7 @@
  */
 
 #include <dlfcn.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include "functionalext.h"
 
 

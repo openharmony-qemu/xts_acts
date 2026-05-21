@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include <cstdio>
+#include <cstring>
+#include <cctype>
 #include "test.h"
 
 /**
@@ -23,7 +23,7 @@
  * @tc.desc      : Convert lowercase to uppercase via toupper
  * @tc.level     : Level 0
  */
-void toupper_0100(void)
+void Toupper0100(void)
 {
     char ch = 'a';
     char result = toupper(ch);
@@ -37,7 +37,7 @@ void toupper_0100(void)
  * @tc.desc      : Test the result of passing numbers into toupper
  * @tc.level     : Level 1
  */
-void toupper_0200(void)
+void Toupper0200(void)
 {
     char ch = 2;
     char result = toupper(ch);
@@ -51,7 +51,7 @@ void toupper_0200(void)
  * @tc.desc      : Test the result of passing capital letters into toupper
  * @tc.level     : Level 1
  */
-void toupper_0300(void)
+void Toupper0300(void)
 {
     char ch = 'A';
     char result = toupper(ch);
@@ -93,7 +93,7 @@ void toupper_0500(void)
  * @tc.desc      : Test the result of passing all lowercase characters into toupper
  * @tc.level     : Level 2
  */
-void toupper_0600(void)
+void Toupper0600(void)
 {
     char str1[] = "helloworld";
     size_t sizeStr = sizeof(str1);
@@ -137,7 +137,7 @@ void toupper_0700(void)
  * @tc.desc      : Test the result of passing Uncertain characters into toupper
  * @tc.level     : Level 2
  */
-void toupper_0800(void)
+void Toupper0800(void)
 {
     char str1[] = "Hello world!";
     size_t sizeStr = sizeof(str1);
@@ -154,15 +154,16 @@ void toupper_0800(void)
     }
 }
 
-static int ToupperTest_impl(int argc, char *argv[]){
-    toupper_0100();
-    toupper_0200();
-    toupper_0300();
+static int ToupperTestImpl(int argc, char *argv[])
+{
+    Toupper0100();
+    Toupper0200();
+    Toupper0300();
     toupper_0400();
     toupper_0500();
-    toupper_0600();
+    Toupper0600();
     toupper_0700();
-    toupper_0800();
+    Toupper0800();
     return g_tStatus;
 }
 
@@ -170,5 +171,5 @@ int ToupperTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return ToupperTest_impl(1, libcArgv);
+    return ToupperTestImpl(1, libcArgv);
 }

@@ -2,7 +2,7 @@
 #include <dlfcn.h>
 void sayhello()
 {
-   printf ("hello world!\n"); 
+   printf("hello world!\n");
 }
 
 void* call_dlopen(const char* name)

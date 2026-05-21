@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include <stdlib.h>
+#include <cstdlib>
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
@@ -22,6 +22,8 @@
 #define TEST_BUFFER_SIZE 64
 #define TEST_DIR_PATH "/data/storage/el2/base/files"
 #define TEST_FILE_PATH "/data/storage/el2/base/files/pread_test.txt"
+#define DIR_MODE_0777 0777
+#define FILE_MODE_0777 0777
 
 /**
  * @tc.name      : pread_0100
@@ -34,8 +36,8 @@ void pread_0100(void)
     char buffer[TEST_BUFFER_SIZE];
     memset(buffer, 0x0, sizeof(buffer));
     
-    mkdir(TEST_DIR_PATH, 0777);
-    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, 0777);
+    mkdir(TEST_DIR_PATH, DIR_MODE_0777);
+    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, FILE_MODE_0777);
     if (fd < 0) {
         EXPECT_STRLT("pread_0100", 0, fd);
         return;
@@ -61,8 +63,8 @@ void pread_0200(void)
     char buffer[TEST_BUFFER_SIZE];
     memset(buffer, 0x0, sizeof(buffer));
     
-    mkdir(TEST_DIR_PATH, 0777);
-    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, 0777);
+    mkdir(TEST_DIR_PATH, DIR_MODE_0777);
+    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, FILE_MODE_0777);
     if (fd < 0) {
         EXPECT_STRLT("pread_0200", 0, fd);
         return;
@@ -87,8 +89,8 @@ void pread_0300(void)
     char buffer[TEST_BUFFER_SIZE];
     memset(buffer, 0x0, sizeof(buffer));
     
-    mkdir(TEST_DIR_PATH, 0777);
-    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, 0777);
+    mkdir(TEST_DIR_PATH, DIR_MODE_0777);
+    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, FILE_MODE_0777);
     if (fd < 0) {
         EXPECT_STRLT("pread_0300", 0, fd);
         return;
@@ -101,7 +103,8 @@ void pread_0300(void)
     remove(TEST_FILE_PATH);
 }
 
-static int PreadTest_impl(void){
+static int PreadTest_impl(void)
+{
     pread_0100();
     pread_0200();
     pread_0300();

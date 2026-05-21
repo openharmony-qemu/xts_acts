@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include <cstdio>
+#include <cstring>
+#include <cctype>
 #include "test.h"
 
 
@@ -38,7 +38,7 @@ void tolower_0100(void)
  * @tc.desc      : Test the result obtained by passing a number to tolower
  * @tc.level     : Level 1
  */
-void tolower_0200(void)
+void Tolower0200(void)
 {
     char ch = 2;
     char result = tolower(ch);
@@ -52,7 +52,7 @@ void tolower_0200(void)
  * @tc.desc      : Test the result of passing lowercase letters to tolower
  * @tc.level     : Level 1
  */
-void tolower_0300(void)
+void Tolower0300(void)
 {
     char ch = 'a';
     char result = tolower(ch);
@@ -80,7 +80,7 @@ void tolower_0400(void)
  * @tc.desc      : Test the result of passing whitespace character into tolower
  * @tc.level     : Level 2
  */
-void tolower_0500(void)
+void Tolower0500(void)
 {
     char ch = ' ';
     char result = tolower(ch);
@@ -94,7 +94,7 @@ void tolower_0500(void)
  * @tc.desc      : Test the result of passing all lowercase characters into tolower
  * @tc.level     : Level 2
  */
-void tolower_0600(void)
+void Tolower0600(void)
 {
     char str1[] = "helloworld";
     size_t sizeStr = sizeof(str1);
@@ -155,14 +155,15 @@ void tolower_0800(void)
     }
 }
 
-static int TolowerTest_impl(int argc, char *argv[]){
+static int TolowerTestImpl(int argc, char *argv[])
+{
     g_tStatus = 0;
     tolower_0100();
-    tolower_0200();
-    tolower_0300();
+    Tolower0200();
+    Tolower0300();
     tolower_0400();
-    tolower_0500();
-    tolower_0600();
+    Tolower0500();
+    Tolower0600();
     tolower_0700();
     tolower_0800();
     return g_tStatus;
@@ -172,5 +173,5 @@ int TolowerTest(void)
 {
     static char libcProg[] = "libc_test";
     char *libcArgv[] = { libcProg, NULL };
-    return TolowerTest_impl(1, libcArgv);
+    return TolowerTestImpl(1, libcArgv);
 }

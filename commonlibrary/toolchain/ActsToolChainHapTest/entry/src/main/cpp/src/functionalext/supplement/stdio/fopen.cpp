@@ -14,13 +14,12 @@
  */
 
 #include <fcntl.h>
-#include <stdbool.h>
-#include <stdio.h> 
-#include <sys/stat.h>  
-#include <unistd.h>  
-#include <stdlib.h>
-#include <errno.h>
-#include <string.h>
+#include <cstdio>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <cstdlib>
+#include <cerrno>
+#include <cstring>
 #include "functionalext.h"
 
 
@@ -36,7 +35,7 @@ const int32_t CREAT_MODE = 0666;  // 八进制，表示 rw-rw-rw-
  * @tc.desc       : Verify fopen("r") and fclose fread and fwrite, fopen success, fread success, fwrite failed
  * @tc.level      : level 0.
  */
-void fopen_0100(void)
+void Fopen0100(void)
 {
     char abc[100] = {0};
     const char *add = "this is tempory test!";
@@ -141,7 +140,7 @@ void fopen_0300(void)
  * @tc.desc       : Verify fopen("w") and fclose and fread and fwrite and fopen success, fread failed, fwrite success
  * @tc.level      : level 1.
  */
-void fopen_0400(void)
+void Fopen0400(void)
 {
     int32_t rsize = 0;
     char abc[100] = {0};
@@ -227,7 +226,7 @@ void fopen_0500(void)
  * @tc.desc       : Verify fopen("a") and fclose and fread and fwrite and fopen success, fread success, fwrite success
  * @tc.level      : level 1.
  */
-void fopen_0600(void)
+void Fopen0600(void)
 {
     int32_t rsize = 0;
     char abc[100] = {0};
@@ -259,7 +258,7 @@ void fopen_0600(void)
  * @tc.desc       : Verify fopen("b") and fclose and fread and fwrite and fopen failed
  * @tc.level      : level 2.
  */
-void fopen_0700(void)
+void Fopen0700(void)
 {
     FILE *fptr = fopen("./tempory_test.txt", "b");
     int32_t flag = INIT_LEN;
@@ -276,10 +275,10 @@ void fopen_0700(void)
  * @tc.desc       : Verify fopen("a") and fclose and fread and fwrite and fopen failed
  * @tc.level      : level 2.
  */
-void fopen_0800(void)
+void Fopen0800(void)
 {
     struct stat info;
-    if(stat("/data/local/tmp/libc-test-empty/", &info) == 0 && S_ISDIR(info.st_mode) ) {
+    if (stat("/data/local/tmp/libc-test-empty/", &info) == 0 && S_ISDIR(info.st_mode)) {
         system("rm -rf /data/local/tmp/libc-test-empty/");
     }
     FILE *fptr = fopen("/data/local/tmp/libc-test-empty/tempory_test.txt", "a");
@@ -291,7 +290,7 @@ void fopen_0800(void)
  * @tc.desc       : Verify fopen("ae") and fclose and fread and fwrite and fopen success, fread success, fwrite success
  * @tc.level      : level 0.
  */
-void fopen_0900(void)
+void Fopen0900(void)
 {
     char abc[100] = {0};
     const char *add = "this is tempory test!to write";
@@ -342,20 +341,21 @@ void fopen_0900(void)
     EXPECT_TRUE("fopen_0900", consistentFlag);
 }
 
-static int FopenTest_impl(void){
-    fopen_0100();
+static int FopenTestImpl(void)
+{
+    Fopen0100();
     fopen_0200();
     fopen_0300();
-    fopen_0400();
+    Fopen0400();
     fopen_0500();
-    fopen_0600();
-    fopen_0700();
-    fopen_0800();
-    fopen_0900();
+    Fopen0600();
+    Fopen0700();
+    Fopen0800();
+    Fopen0900();
     return g_tStatus;
 }
 
 int FopenTest(void)
 {
-    return FopenTest_impl();
+    return FopenTestImpl();
 }

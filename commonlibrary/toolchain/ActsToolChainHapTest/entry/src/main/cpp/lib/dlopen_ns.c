@@ -15,10 +15,12 @@ typedef void*(*CALL_DLOPEN_PTR)(const char *);
 void main_dlopen_ndk_so()
 {
     void *handle = dlopen(ndk_so, RTLD_NOW);
-    if (!handle)
+    if (!handle) {
         t_error("main dlopen ndk so %s failed: %s\n", ndk_so, dlerror());
-    if (dlclose(handle))
+    }
+    if (dlclose(handle)) {
         t_error("dlclose %s failed : %s \n", ndk_so, dlerror());
+    }
 }
 
 // Test whether it is ok for system so to dlopen ndk so.
@@ -65,21 +67,26 @@ void dlopen_same_so_twice_by_same_ns(char * dllPath_ns)
     dlns_create(&dlns1, dllPath_ns);
 
     void* handle1 = dlopen_ns(&dlns1, dllName, RTLD_NOW);
-    if(!handle1)
+    if (!handle1) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns1.name, dllName, dlerror());
+    }
 
     void* handle2 = dlopen_ns(&dlns1, dllName, RTLD_NOW);
-    if(!handle2)
+    if (!handle2) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns1.name, dllName, dlerror());
+    }
 
-    if (handle1 != handle2)
+    if (handle1 != handle2) {
         t_error("dlopen same so(%s) by same ns but handle is different %s \n", dllName);
+    }
 
-    if(dlclose(handle1))
+    if (dlclose(handle1)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 
-    if(dlclose(handle2))
+    if (dlclose(handle2)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 }
 
 // Test whether dlopen same so by different ns to get different handle.
@@ -94,21 +101,26 @@ void dlopen_same_so_by_different_ns(char * dllPath_ns)
     dlns_create(&dlns2, dllPath_ns);
 
     void* handle1 = dlopen_ns(&dlns1, dllName, RTLD_NOW);
-    if(!handle1)
+    if (!handle1) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns1.name, dllName, dlerror());
+    }
 
     void* handle2 = dlopen_ns(&dlns2, dllName, RTLD_NOW);
-    if(!handle2)
+    if (!handle2) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns2.name, dllName, dlerror());
+    }
 
-    if (handle1 == handle2)
+    if (handle1 == handle2) {
         t_error("dlopen same so(%s) by same ns but handle is different %s \n", dllName);
+    }
 
-    if(dlclose(handle1))
+    if (dlclose(handle1)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 
-    if(dlclose(handle2))
+    if (dlclose(handle2)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 }
 
 // Test whether dlopen same so by inherit ns to get same handle.
@@ -124,21 +136,26 @@ void dlopen_same_so_by_different_inherit_ns(char * dllPath_ns)
     dlns_inherit(&dlns2, &dlns1, dllName);
 
     void* handle1 = dlopen_ns(&dlns1, dllName, RTLD_NOW);
-    if(!handle1)
+    if (!handle1) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns1.name, dllName, dlerror());
+    }
 
     void* handle2 = dlopen_ns(&dlns2, dllName, RTLD_NOW);
-    if(!handle2)
+    if (!handle2) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns2.name, dllName, dlerror());
+    }
 
-    if (handle1 != handle2)
+    if (handle1 != handle2) {
         t_error("dlopen same so(%s) by inherit ns but handle is different %s \n", dllName);
+    }
 
-    if(dlclose(handle1))
+    if (dlclose(handle1)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 
-    if(dlclose(handle2))
+    if (dlclose(handle2)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 }
 
 void dlopen_seperated(char * dllPath_ns)
@@ -152,25 +169,29 @@ void dlopen_seperated(char * dllPath_ns)
     void* handle = NULL;
     // current ns can't load this so.
     handle = dlopen_ns(&dlns1, dllName, RTLD_NOW);
-    if(handle)
+    if (handle) {
         t_error("dlopen_ns(ns=%s, name=%s) failed : %s \n", dlns1.name, dllName, dlerror());
+    }
 
     // current ns can load the so by absolute path.
     char absolute_path_1[512];
     snprintf(absolute_path_1, sizeof(absolute_path_1), "%s/%s", dllPath_ns, dllName);
     handle = dlopen_ns(&dlns1, absolute_path_1, RTLD_NOW);
-    if (!handle)
+    if (!handle) {
         t_error("%s can load %s by absolute path but failed : %s \n", dlns1.name, absolute_path_1, dlerror());
+    }
 
-    if(dlclose(handle))
+    if (dlclose(handle)) {
         t_error("dlclose %s failed : %s \n", absolute_path_1, dlerror());
+    }
 
     // current ns can't load the so by absolute path if it has inaccessible dependent so.
     char absolute_path_2[512];
     snprintf(absolute_path_2, sizeof(absolute_path_2), "%s/%s", dllPath_ns, SO_HAS_DEPENDENCES);
     handle = dlopen_ns(&dlns1, absolute_path_2, RTLD_NOW);
-    if (handle)
+    if (handle) {
         t_error("%s can't load %s by absolute path because but it has inaccessible dependent so but succeed : %s \n", dlns1.name, absolute_path_2, dlerror());
+    }
 }
 
 void dlopen_inherit(char* dllPath_ns)
@@ -186,7 +207,7 @@ void dlopen_inherit(char* dllPath_ns)
 
     // inherit_A can't load the so because search path is NULL.
     void* handle1 = dlopen_ns(&inherit_A, dllName, RTLD_LAZY);
-    if(handle1){
+    if (handle1) {
         t_error("dlopen_ns_by_ini_no_inherit handle %s should not open successfully \n", dllName);
         dlclose(handle1);
     }
@@ -194,16 +215,18 @@ void dlopen_inherit(char* dllPath_ns)
     // inherit_A can load the so by inherit_B.
     dlns_inherit(&inherit_A, &inherit_B, dllName);
     void* handle2 = dlopen_ns(&inherit_A, dllName, RTLD_LAZY);
-    if(!handle2)
+    if (!handle2) {
         t_error("dlopen_ns_by_dlns_inherir handle get error %s open failed : %s \n", dllName, dlerror());
+    }
 
-    if(dlclose(handle2))
+    if (dlclose(handle2)) {
         t_error("dlclose_by_dlns_inherir handle %s close failed : %s\n", dllName, dlerror());
+    }
 
     // inherit_A can't load the so by inherit ns if the so isn't in shared libs.
     dlns_inherit(&inherit_A, &inherit_B, dllName2);
     void* handle3 = dlopen_ns(&inherit_A, dllName, RTLD_LAZY);
-    if(handle3){
+    if (handle3) {
         t_error("dlopen_ns_by_ini_no_inherit handle2 %s should not open successfully \n", dllName);
         dlclose(handle3);
     }
@@ -225,21 +248,25 @@ void dlopen_inherit_check_can_pass(char* dllPath_ns)
     dlns_inherit(&transitivity_C, &dlns_default, "libc++.so");
 
     void* handleB = dlopen_ns(&transitivity_B, dllName, RTLD_LAZY);
-    if(!handleB)
+    if (!handleB) {
         t_error("dlopen_ns_by_inherit_transitivity handleB get error %s open failed : %s \n", dllName, dlerror());
+    }
 
     void* handleC = dlopen_ns(&transitivity_C, dllName, RTLD_LAZY);
-    if(!handleC)
+    if (!handleC) {
         t_error("dlopen_ns_by_inherit_transitivity handleC get error %s open failed : %s \n", dllName, dlerror());
+    }
 
-    if(dlclose(handleC))
+    if (dlclose(handleC)) {
         t_error("dlclose_by_inherit_transitivity handleC %s close failed : %s\n", dllName, dlerror());
-    if(dlclose(handleB))
+    }
+    if (dlclose(handleB)) {
         t_error("dlclose_by_inherit_transitivity handleB %s close failed : %s\n", dllName, dlerror());
+    }
 
     // transitivity_A can't load so because inherit can't pass.
     void* handleA = dlopen_ns(&transitivity_A, dllName, RTLD_LAZY);
-    if(handleA){
+    if (handleA) {
         t_error("dlopen_ns_by_inherit_transitivity handleA %s should not open successfully \n", dllName);
         dlclose(handleA);
     }
@@ -251,22 +278,25 @@ void dlopen_test_dlns_create2()
     dlns_init(&dlns, "ns_for_create2");
     // ns_for_create2 doesn't exist, it will use default ns to search so.
     void* handle = dlopen_ns(&dlns, dllName, RTLD_LAZY);
-    if(!handle)
+    if (!handle) {
         t_error("dlopen_ns %s use a non-existent ns failed: %s\n", dllName, dlerror());
+    }
 
-    if(dlclose(handle))
+    if (dlclose(handle)) {
         t_error("dlclose %s failed : %s \n", dllName, dlerror());
+    }
 
     // 0: ns_for_create2 doesn't inherit default ns.
     dlns_create2(&dlns, errPath_ns, 0);
     void* handle2 = dlopen_ns(&dlns, dllName, RTLD_LAZY);
-    if(handle2)
+    if (handle2) {
         t_error("%s namespace can't see %s but dlopen succee.\n", "ns_for_create2", dllName);
+    }
 }
 
 int main(int argc, char *argv[])
 {
-    char buf[512],path[512];
+    char buf[512], path[512];
     char* i;
     //带so的路径
     if (!t_pathrel(buf, sizeof buf, argv[0], "libdlopen_ns_dso.so")) {
@@ -278,7 +308,7 @@ int main(int argc, char *argv[])
         t_error("failed to obtain relative path to path\n");
         return 1;
 	}
-    path[strlen (path) -1 ] ='\0';
+    path[strlen(path) - 1] = '\0';
     main_dlopen_ndk_so();
     system_so_dlopen_ndk_so();
     ndk_so_dlopen_default_ns_so();

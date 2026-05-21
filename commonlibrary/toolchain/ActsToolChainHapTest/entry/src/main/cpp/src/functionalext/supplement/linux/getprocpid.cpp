@@ -22,10 +22,10 @@
 
 #include <malloc.h>
 #include <sched.h>
-#include <signal.h>
+#include <csignal>
 #include <unistd.h>
 #include <pthread.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <sys/wait.h>
 #include <dlfcn.h>
 #include "functionalext.h"
@@ -38,7 +38,7 @@ const int STACK_SIZE = 1024 * 1024 *4;
  * @tc.desc      : Get the pid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getprocpid_0100(void)
+void Getprocpid0100(void)
 {
     typedef int (*getprocpid_func)();
     getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
@@ -58,7 +58,7 @@ void getprocpid_0100(void)
  * @tc.desc      : Get the pid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getprocpid_0200(void)
+void Getprocpid0200(void)
 {
     typedef int (*getprocpid_func)();
     getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
@@ -84,7 +84,7 @@ void getprocpid_0200(void)
     EXPECT_EQ("getprocpid_0200", WIFEXITED(status), true);
 }
 
-static int child_func(void *arg)
+static int ChildFunc(void *arg)
 {
     typedef int (*getprocpid_func)();
     getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
@@ -106,7 +106,7 @@ static int child_func(void *arg)
  * @tc.desc      : Get the pid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getprocpid_0300(void)
+void Getprocpid0300(void)
 {
     typedef int (*getprocpid_func)();
     getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
@@ -122,7 +122,7 @@ void getprocpid_0300(void)
         return;
     }
 
-    pid_t child = clone(child_func, (char *)stack + STACK_SIZE, CLONE_NEWPID | SIGCHLD, &pid1);
+    pid_t child = clone(ChildFunc, (char *)stack + STACK_SIZE, CLONE_NEWPID | SIGCHLD, &pid1);
     if (child < 0) {
     }
     EXPECT_EQ("getprocpid_0300", child > 0, true);
@@ -156,7 +156,7 @@ static void *pthread_func(void *arg)
  * @tc.desc      : Get the tid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getproctid_0100(void)
+void Getproctid0100(void)
 {
     typedef int (*getproctid_func)();
     getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
@@ -183,7 +183,7 @@ void getproctid_0100(void)
  * @tc.desc      : Get the tid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getproctid_0200(void)
+void Getproctid0200(void)
 {
     typedef int (*getproctid_func)();
     getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
@@ -210,7 +210,7 @@ void getproctid_0200(void)
     EXPECT_EQ("getproctid_0200", WIFEXITED(status), true);
 }
 
-static int child_func_tid(void *arg)
+static int ChildFuncTid(void *arg)
 {
     typedef int (*getproctid_func)();
     getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
@@ -232,7 +232,7 @@ static int child_func_tid(void *arg)
  * @tc.desc      : Get the tid by parsing the proc information
  * @tc.level     : Level 0
  */
-void getproctid_0300(void)
+void Getproctid0300(void)
 {
     typedef int (*getproctid_func)();
     getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
@@ -248,7 +248,7 @@ void getproctid_0300(void)
         return;
     }
 
-    pid_t child = clone(child_func_tid, (char *)stack + STACK_SIZE, CLONE_NEWPID | SIGCHLD, &pid1);
+    pid_t child = clone(ChildFuncTid, (char *)stack + STACK_SIZE, CLONE_NEWPID | SIGCHLD, &pid1);
     if (child < 0) {
     }
     EXPECT_EQ("getproctid_0300", child > 0, true);
@@ -261,15 +261,12 @@ void getproctid_0300(void)
     free(stack);
 }
 
-static int GetprocpidTest_impl(int argc, char *argv[]){
-    getprocpid_0100();
-    getprocpid_0200();
-    // Skip getprocpid_0300 - CLONE_NEWPID not supported in HAP environment
-    // getprocpid_0300();
-    getproctid_0100();
-    getproctid_0200();
-    // Skip getproctid_0300 - CLONE_NEWPID not supported in HAP environment
-    // getproctid_0300();
+static int GetprocpidTestImpl(int argc, char *argv[])
+{
+    Getprocpid0100();
+    Getprocpid0200();
+    Getproctid0100();
+    Getproctid0200();
     return g_tStatus;
 }
 
@@ -277,5 +274,5 @@ int GetprocpidTest(void)
 {
     static char __libc_prog[] = "libc_test";
     char *__libc_argv[] = { __libc_prog, NULL };
-    return GetprocpidTest_impl(1, __libc_argv);
+    return GetprocpidTestImpl(1, __libc_argv);
 }

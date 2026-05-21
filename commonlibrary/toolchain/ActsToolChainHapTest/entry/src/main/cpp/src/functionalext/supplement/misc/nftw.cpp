@@ -13,12 +13,12 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <ftw.h>
-#include <limits.h>
+#include <climits>
 #include <fcntl.h>
 #include <unistd.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <dirent.h>
 #include <pthread.h>
 #include <sys/stat.h>
@@ -29,6 +29,11 @@
 #define TEST_DIGIT_TWO 2
 #define TEST_PATH_DEPTH 5
 #define TEST_NFTW_PATH "/data/storage/el2/base/files/nftwPath"
+#define DIR_MODE_0755 0755
+#define FILE_MODE_0644 0644
+#define FILE_MODE_0666 0666
+#define FILE_MODE_0000 0000
+#define FILE_MODE_0444 0444
 
 static pthread_mutex_t g_nftwMutex = PTHREAD_MUTEX_INITIALIZER;
 
@@ -57,7 +62,7 @@ static int nftw_callback(const char *pathname, const struct stat *sb, int flag, 
     return 0;
 }
 
-void remove_directory(const char *path)
+void RemoveDirectory(const char *path)
 {
     DIR *dir;
     struct dirent *entry;
@@ -77,7 +82,7 @@ void remove_directory(const char *path)
             if (result >= sizeof(filepath)) {
                 t_error("%s error in snprintf! \n", __func__);
             }
-            remove_directory(filepath);
+            RemoveDirectory(filepath);
         } else {
             int result = snprintf(filepath, sizeof(filepath), "%s/%s", path, entry->d_name);
             if (result >= sizeof(filepath)) {
@@ -99,7 +104,7 @@ void remove_directory(const char *path)
 
 void nftw_build_testfile(const char *path)
 {
-    if (mkdir(path, 0755) == -1) {
+    if (mkdir(path, DIR_MODE_0755) == -1) {
         t_error("%s error in mkdir test nftw path! %s \n", __func__, path);
         return;
     }
@@ -110,7 +115,7 @@ void nftw_build_testfile(const char *path)
         t_error("%s error in snprintf! \n", __func__);
     }
     // Create plain file
-    int fd = open(file, O_WRONLY | O_CREAT, 0644);
+    int fd = open(file, O_WRONLY | O_CREAT, FILE_MODE_0644);
     if (fd == -1) {
         t_error("%s error in open normal_file.txt! \n", __func__);
         return;
@@ -122,7 +127,7 @@ void nftw_build_testfile(const char *path)
         t_error("%s error in snprintf! \n", __func__);
     }
     // Create non-executable file
-    fd = open(file, O_WRONLY | O_CREAT, 0666);
+    fd = open(file, O_WRONLY | O_CREAT, FILE_MODE_0666);
     if (fd == -1) {
         t_error("%s error in open normal_file.txt! \n", __func__);
         return;
@@ -134,7 +139,7 @@ void nftw_build_testfile(const char *path)
         t_error("%s error in snprintf! \n", __func__);
     }
     // Create unauthorized file
-    fd = open(file, O_WRONLY | O_CREAT, 0000);
+    fd = open(file, O_WRONLY | O_CREAT, FILE_MODE_0000);
     if (fd == -1) {
         t_error("%s error in open normal_file.txt! \n", __func__);
         return;
@@ -158,7 +163,7 @@ void nftw_build_testfile(const char *path)
         t_error("%s error in snprintf! \n", __func__);
     }
     //Create Read-only files
-    fd = open(file, O_WRONLY | O_CREAT, 0444);
+    fd = open(file, O_WRONLY | O_CREAT, FILE_MODE_0444);
     if (fd == -1) {
         t_error("%s error in open read_only_file.txt! \n", __func__);
         return;
@@ -203,7 +208,7 @@ void nftw_0100(void)
  * @tc.desc      : Traverse directory /data, but the maximum number of file descriptors is 0
  * @tc.level     : Level 0
  */
-void nftw_0200(void)
+void Nftw0200(void)
 {
     int ret = nftw(TEST_NFTW_PATH, nftw_callback, 0, FTW_PHYS);
     EXPECT_EQ("nftw_0200", ret, 0);
@@ -214,7 +219,7 @@ void nftw_0200(void)
  * @tc.desc      : The file path length exceeds PATH_MAX, traverse the directory
  * @tc.level     : Level 2
  */
-void nftw_0300(void)
+void Nftw0300(void)
 {
     char path[PATH_MAX * TEST_DIGIT_TWO];
     memset(path, 'a', sizeof(path));
@@ -224,18 +229,19 @@ void nftw_0300(void)
     EXPECT_EQ("nftw_0300", errno, ENAMETOOLONG);
 }
 
-static int NftwTest_impl(void){
+static int NftwTestImpl(void)
+{
     pthread_mutex_lock(&g_nftwMutex);
     nftw_build_testDir();
     nftw_0100();
-    nftw_0200();
-    nftw_0300();
-    remove_directory(TEST_NFTW_PATH);
+    Nftw0200();
+    Nftw0300();
+    RemoveDirectory(TEST_NFTW_PATH);
     pthread_mutex_unlock(&g_nftwMutex);
     return g_tStatus;
 }
 
 int NftwTest(void)
 {
-    return NftwTest_impl();
+    return NftwTestImpl();
 }

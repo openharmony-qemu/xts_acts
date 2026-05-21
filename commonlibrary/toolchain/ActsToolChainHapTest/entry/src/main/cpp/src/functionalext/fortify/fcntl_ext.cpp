@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
-#include <signal.h>
-#include <string.h>
+#include <csignal>
+#include <cstring>
 #include <sys/wait.h>
 #include <sigchain.h>
 #include "fortify_test.h"
@@ -52,11 +52,11 @@ static void open_0010(void)
 }
 
 /**
- * @tc.name     : open_0020
+ * @tc.name     : Open0020
  * @tc.desc     : test open O_CREAT without mode
  * @tc.level    : Level 2
  */
-static void open_0020(void)
+static void Open0020(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -313,25 +313,25 @@ static void open64_0030(void)
 }
 
 /**
- * @tc.name     : open64_0040
+ * @tc.name     : Open640040
  * @tc.desc     : test open64 only O_RDWR
  * @tc.level    : Level 1
  */
-static void open64_0040(void)
+static void Open640040(void)
 {
     errno = 0;
     int fd = open64(SANDBOX_PATH, O_RDWR);
-    EXPECT_NE(open64_0040, fd, -1);
+    EXPECT_NE(Open640040, fd, -1);
     close(fd);
     return;
 }
 
 /**
- * @tc.name     : openat64_0010
+ * @tc.name     : Openat640010
  * @tc.desc     : test openat64 normal condition
  * @tc.level    : Level 0
  */
-static void openat64_0010(void)
+static void Openat640010(void)
 {
     errno = 0;
     int fd = openat64(AT_FDCWD, SANDBOX_PATH, O_RDWR | O_CREAT, FILE_MODE_ALL);
@@ -341,11 +341,11 @@ static void openat64_0010(void)
 }
 
 /**
- * @tc.name     : openat64_0020
+ * @tc.name     : Openat640020
  * @tc.desc     : test openat64 O_CREAT without mode
  * @tc.level    : Level 2
  */
-static void openat64_0020(void)
+static void Openat640020(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -375,11 +375,11 @@ static void openat64_0020(void)
 }
 
 /**
- * @tc.name     : openat64_0030
+ * @tc.name     : Openat640030
  * @tc.desc     : test openat64 O_TMPFILE without mode
  * @tc.level    : Level 2
  */
-static void openat64_0030(void)
+static void Openat640030(void)
 {
     errno = 0;
     struct sigaction sigabrt = {
@@ -409,39 +409,32 @@ static void openat64_0030(void)
 }
 
 /**
- * @tc.name     : openat64_0040
+ * @tc.name     : Openat640040
  * @tc.desc     : test openat64 only O_RDWR
  * @tc.level    : Level 1
  */
-static void openat64_0040(void)
+static void Openat640040(void)
 {
     errno = 0;
     int fd = openat64(AT_FDCWD, SANDBOX_PATH, O_RDWR);
-    EXPECT_NE(openat64_0040, fd, -1);
+    EXPECT_NE(Openat640040, fd, -1);
     close(fd);
     return;
 }
 #endif
 
-static int FcntlExtTest_impl(int argc, char *argv[]){
+static int FcntlExtTestImpl(int argc, char *argv[])
+{
     RemoveAllSpecialHandler(SIGABRT);
     open_0010();
-    // open_0020();
-    // open_0030();
     open_0040();
     openat_0010();
-    // openat_0020();
-    // openat_0030();
     openat_0040();
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
     open64_0010();
-    // open64_0020();
-    // open64_0030();
-    open64_0040();
-    openat64_0010();
-    // openat64_0020();
-    // openat64_0030();
-    openat64_0040();
+    Open640040();
+    Openat640010();
+    Openat640040();
 #endif
     return g_tStatus;
 }
@@ -450,5 +443,5 @@ int FcntlExtTest(void)
 {
     static char __libc_prog[] = "libc_test";
     char *__libc_argv[] = { __libc_prog, NULL };
-    return FcntlExtTest_impl(1, __libc_argv);
+    return FcntlExtTestImpl(1, __libc_argv);
 }

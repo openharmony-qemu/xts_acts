@@ -22,6 +22,8 @@
 #define BUFFER_SIZE 8
 #define TEST_DIR_PATH "/data/storage/el2/base/files"
 #define TEST_FILE_PATH "/data/storage/el2/base/files/preadv_test.txt"
+#define DIR_MODE_0777 0777
+#define FILE_MODE_0777 0777
 
 /**
  * @tc.name      : preadv_0100
@@ -43,8 +45,8 @@ void preadv_0100(void)
     iov[1].iov_base = buf2;
     iov[1].iov_len = sizeof(buf2) / sizeof(char);
 
-    mkdir(TEST_DIR_PATH, 0777);
-    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, 0777);
+    mkdir(TEST_DIR_PATH, DIR_MODE_0777);
+    int fd = open(TEST_FILE_PATH, O_RDWR | O_CREAT | O_TRUNC, FILE_MODE_0777);
     if (fd == -1) {
         EXPECT_NE("preadv_0100", fd, ERREXPECT);
         return;
@@ -84,7 +86,8 @@ void preadv_0200(void)
     EXPECT_EQ("preadv_0200", ret, EOF);
 }
 
-static int PreadvTest_impl(void){
+static int PreadvTest_impl(void)
+{
     preadv_0100();
     preadv_0200();
     return g_tStatus;
