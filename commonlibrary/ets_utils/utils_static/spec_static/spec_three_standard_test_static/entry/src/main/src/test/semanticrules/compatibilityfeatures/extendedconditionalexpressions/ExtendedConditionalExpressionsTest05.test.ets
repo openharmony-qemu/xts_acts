@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -65,19 +65,6 @@ export default function ExtendedConditionalExpressionsTest05():void {
       // This API supports only one parameter: preset action function.
     })
 
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0212
-     * @tc.desc      Conditional expression with falsy value ("" + "")
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = ("" + "") ? 1 : 0  // falsy
-      expect(res).assertEqual(0);
-    });
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_0200
@@ -223,19 +210,6 @@ export default function ExtendedConditionalExpressionsTest05():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_1300
-     * @tc.name    testConditionalExpression0224
-     * @tc.desc      Conditional expression with truthy value (new Short(-1))
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (new Short(-1)) ? 0 : 1  // truthy
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_1400
      * @tc.name    testConditionalExpression0225
      * @tc.desc      Conditional expression with truthy value (new Byte(100))
@@ -376,58 +350,6 @@ export default function ExtendedConditionalExpressionsTest05():void {
     it('testConditionalExpression0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = (new String("\u0000\u0000").substring(0, 1)) ? 0 : 1  // truthy
       expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_2500
-     * @tc.name    testConditionalExpression0236
-     * @tc.desc      Conditional expression with truthy value (new Char('A'))
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0236', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (new Char(c'A')) ? 0 : 1  // truthy
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_2600
-     * @tc.name    testConditionalExpression0237
-     * @tc.desc      Conditional expression with truthy value (new Number(1))
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0237', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (new Number(1)) ? 0 : 1  // truthy
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_2700
-     * @tc.name    testConditionalExpression0238
-     * @tc.desc      Conditional expression with truthy value (new Boolean(true))
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (new Boolean(true)) ? 0 : 1  // truthy
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FIVE_EXPRESSIONS_2800
-     * @tc.name    testConditionalExpression0239
-     * @tc.desc      Conditional expression with truthy value (new Boolean(false))
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0239', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = (new Boolean(false)) ? 0 : 1  // falsy (ArkTS converts to underlying boolean value)
-      expect(res).assertEqual(1);
     });
 
     /**

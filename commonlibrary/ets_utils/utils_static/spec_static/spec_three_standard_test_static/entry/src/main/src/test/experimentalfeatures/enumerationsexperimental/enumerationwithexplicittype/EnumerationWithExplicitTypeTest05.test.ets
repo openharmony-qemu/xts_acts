@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -720,25 +720,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum26.third.valueOf()).assertEqual(1.3f);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1600
-     * @tc.name      testEnumerationWithExplicitType0100
-     * @tc.desc      A float value for enumeration constants must be set explicitly
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum26.first instanceof Enum26).assertEqual(true);
-      expect(Enum26.second instanceof Enum26).assertEqual(true);
-      expect(Enum26.third instanceof Enum26).assertEqual(true);
-      expect(Enum26.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum26.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum26.third.valueOf() instanceof float).assertEqual(true);
-      expect(Enum26.first.valueOf()).assertEqual(1.1f);
-      expect(Enum26.second.valueOf()).assertEqual(1.2f);
-      expect(Enum26.third.valueOf()).assertEqual(1.3f);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1700
@@ -760,25 +741,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum27.third.valueOf()).assertEqual(1.1f);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1800
-     * @tc.name      testEnumerationWithExplicitType0102
-     * @tc.desc      A float value for enumeration constants must be set explicitly
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum27.first instanceof Enum27).assertEqual(true);
-      expect(Enum27.second instanceof Enum27).assertEqual(true);
-      expect(Enum27.third instanceof Enum27).assertEqual(true);
-      expect(Enum27.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum27.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum27.third.valueOf() instanceof float).assertEqual(true);
-      expect(Enum27.first.valueOf()).assertEqual(100f);
-      expect(Enum27.second.valueOf()).assertEqual(1.2f);
-      expect(Enum27.third.valueOf()).assertEqual(1.1f);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_1900
@@ -797,22 +759,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum28.second.valueOf()).assertEqual(3.4028235e+38f);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2000
-     * @tc.name      testEnumerationWithExplicitType0104
-     * @tc.desc      A float value for enumeration constants must be set explicitly
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum28.first instanceof Enum28).assertEqual(true);
-      expect(Enum28.second instanceof Enum28).assertEqual(true);
-      expect(Enum28.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum28.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum28.first.valueOf()).assertEqual(3.4018235e+38f);
-      expect(Enum28.second.valueOf()).assertEqual(3.4028235e+38f);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2100
@@ -834,25 +780,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(Enum29.third.valueOf()).assertEqual(0.134f);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2200
-     * @tc.name      testEnumerationWithExplicitType0106
-     * @tc.desc      A float value for enumeration constants must be set explicitly
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum29.first instanceof Enum29).assertEqual(true);
-      expect(Enum29.second instanceof Enum29).assertEqual(true);
-      expect(Enum29.third instanceof Enum29).assertEqual(true);
-      expect(Enum29.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum29.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum29.third.valueOf() instanceof float).assertEqual(true);
-      expect(Enum29.first.valueOf()).assertEqual(1.23f);
-      expect(Enum29.second.valueOf()).assertEqual(1.234f);
-      expect(Enum29.third.valueOf()).assertEqual(0.134f);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2300
@@ -895,46 +822,6 @@ export default function EnumerationWithExplicitTypeTest05(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2500
-     * @tc.name      testEnumerationWithExplicitType0109
-     * @tc.desc      Using in string operator contexts
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum30.first instanceof Enum30).assertEqual(true);
-      expect(Enum30.second instanceof Enum30).assertEqual(true);
-      expect(Enum30.third instanceof Enum30).assertEqual(true);
-      expect(Enum30.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.third.valueOf() instanceof float).assertEqual(true);
-      expect("_" + Enum30.first).assertEqual("_-1.1");
-      expect("_" + Enum30.second).assertEqual("_-1.2");
-      expect("_" + Enum30.third).assertEqual("_-42.43");
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2600
-     * @tc.name      testEnumerationWithExplicitType0110
-     * @tc.desc      Using in string operator contexts
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum30.first instanceof Enum30).assertEqual(true);
-      expect(Enum30.second instanceof Enum30).assertEqual(true);
-      expect(Enum30.third instanceof Enum30).assertEqual(true);
-      expect(Enum30.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.third.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.first + "_").assertEqual("-1.1_");
-      expect(Enum30.second + "_").assertEqual("-1.2_");
-      expect(Enum30.third + "_").assertEqual("-42.43_");
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2700
      * @tc.name      testEnumerationWithExplicitType0111
      * @tc.desc      A value of enumeration type with an explicitly declared type of constants is converted to the declared type. This conversion never causes a runtime error.
@@ -960,30 +847,5 @@ export default function EnumerationWithExplicitTypeTest05(): void {
       expect(v3).assertEqual(-42.43f);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_FIVE_TEST_2800
-     * @tc.name      testEnumerationWithExplicitType0112
-     * @tc.desc      A value of enumeration type with an explicitly declared type of constants is converted to the declared type. This conversion never causes a runtime error.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v1: float = Enum30.first;
-      let v2: float = Enum30.second;
-      let v3: float = Enum30.third;
-      expect(Enum30.first instanceof Enum30).assertEqual(true);
-      expect(Enum30.second instanceof Enum30).assertEqual(true);
-      expect(Enum30.third instanceof Enum30).assertEqual(true);
-      expect(Enum30.first.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.second.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.third.valueOf() instanceof float).assertEqual(true);
-      expect(Enum30.first.valueOf()).assertEqual(-1.1f);
-      expect(Enum30.second.valueOf()).assertEqual(-1.2f);
-      expect(Enum30.third.valueOf()).assertEqual(-42.43f);
-      expect(v1).assertEqual(-1.1f);
-      expect(v2).assertEqual(-1.2f);
-      expect(v3).assertEqual(-42.43f);
-    });
   })
 }

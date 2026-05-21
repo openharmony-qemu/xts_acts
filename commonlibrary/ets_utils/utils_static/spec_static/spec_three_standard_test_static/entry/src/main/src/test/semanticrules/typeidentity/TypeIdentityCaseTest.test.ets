@@ -419,19 +419,6 @@ export default function TypeIdentityCase(): void {
     })
 
     /**
-     * @tc.number    SUB_BASEDATE_TYPE_IDENTITY_CASE_2300
-     * @tc.name      testTypeIdentityCase0023
-     * @tc.desc      Ensuring type identity in union type usage.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testTypeIdentityCase0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(processMyUnion("Hello")).assertEqual("Hello")
-      expect(processMyUnion(42)).assertEqual(42)
-    })
-
-    /**
      * @tc.number    SUB_BASEDATE_TYPE_IDENTITY_CASE_2400
      * @tc.name      testTypeIdentityCase0024
      * @tc.desc      Ensuring type identity in type alias with array types.

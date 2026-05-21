@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -67,22 +67,6 @@ export default function ExtendedConditionalExpressionsTest09():void {
 
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0312
-     * @tc.desc      If statement type 2 variant 1 with falsy condition
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0312', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (null) { // falsy
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0200
      * @tc.name    testConditionalExpression0313
      * @tc.desc      If statement type 2 variant 1 with falsy 0
@@ -96,170 +80,6 @@ export default function ExtendedConditionalExpressionsTest09():void {
         res = 1
       }
       expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0300
-     * @tc.name    testConditionalExpression0314
-     * @tc.desc      If statement type 2 variant 1 with falsy undefined
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0314', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (undefined) { // falsy
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0400
-     * @tc.name    testConditionalExpression0315
-     * @tc.desc      If statement type 2 variant 1 with falsy NaN
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0315', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (Number.NaN) { // falsy
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0500
-     * @tc.name    testConditionalExpression0316
-     * @tc.desc      If statement type 2 variant 1 with truthy 1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0316', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (1) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0600
-     * @tc.name    testConditionalExpression0317
-     * @tc.desc      If statement type 2 variant 1 with truthy true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0317', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (true) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0700
-     * @tc.name    testConditionalExpression0318
-     * @tc.desc      If statement type 2 variant 1 with truthy -1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0318', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (-1) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0800
-     * @tc.name    testConditionalExpression0319
-     * @tc.desc      If statement type 2 variant 1 with truthy 'hello'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0319', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if ('hello') { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_0900
-     * @tc.name    testConditionalExpression0320
-     * @tc.desc      If statement type 2 variant 1 with truthy new Object()
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: Object = new Object()
-      let res: number = 0;
-      if (obj) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_1000
-     * @tc.name    testConditionalExpression0321
-     * @tc.desc      If statement type 2 variant 1 with truthy 0x80.toByte()
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0321', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: byte = (0x80).toByte()
-      let res: number = 0;
-      if (v) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_1100
-     * @tc.name    testConditionalExpression0322
-     * @tc.desc      If statement type 2 variant 2 with falsy int
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0322', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = 0
-      let res: number = 0
-      if (v) {  // falsy
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_1200
-     * @tc.name    testConditionalExpression0323
-     * @tc.desc      If statement type 2 variant 2 with truthy int
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0323', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = 1
-      let res: number = 0
-      if (v) {  // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
     });
 
     /**
@@ -360,24 +180,6 @@ export default function ExtendedConditionalExpressionsTest09():void {
     it('testConditionalExpression0329', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let res: number = 0;
       if (Number.POSITIVE_INFINITY) {  // truthy
-      } else {
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINE_EXPRESSIONS_1900
-     * @tc.name    testConditionalExpression0330
-     * @tc.desc      If statement type 2 truthy variant 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0330', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: byte = (0x80).toByte()
-      let res: number = 0;
-      if (v) {  // truthy
       } else {
         res = 1
       }

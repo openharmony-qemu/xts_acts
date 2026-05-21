@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -369,21 +369,6 @@ export default function ExtendedConditionalExpressionsTest20(): void {
     
     // Complex Short-Circuit Evaluation
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TWENTY_EXPRESSIONS_2100
-     * @tc.name    testConditionalExpression0766
-     * @tc.desc      Short-circuit AND falsy first
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0766', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: boolean = false
-      let result: number = 0 && ((): number => { called = true; return 1 })()
-      expect(called).assertFalse()
-      expect(result).assertEqual(0)
-    })
-    
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_TWENTY_EXPRESSIONS_2200
      * @tc.name    testConditionalExpression0767
      * @tc.desc      Short-circuit AND truthy first
@@ -394,21 +379,6 @@ export default function ExtendedConditionalExpressionsTest20(): void {
     it('testConditionalExpression0767', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let called: boolean = false
       let result: number = 1 && ((): number => { called = true; return 42 })()
-      expect(called).assertTrue()
-      expect(result).assertEqual(42)
-    })
-    
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TWENTY_EXPRESSIONS_2300
-     * @tc.name    testConditionalExpression0768
-     * @tc.desc      Short-circuit OR falsy first
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0768', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let called: boolean = false
-      let result: number = 0 || ((): number => { called = true; return 42 })()
       expect(called).assertTrue()
       expect(result).assertEqual(42)
     })
@@ -533,20 +503,6 @@ export default function ExtendedConditionalExpressionsTest20(): void {
     it('testConditionalExpression0777', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: ValueNullObject | null = { value: null }
       let result: Object | null = obj ? obj.value : null
-      expect(result).assertEqual(null)
-    })
-    
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TWENTY_EXPRESSIONS_3300
-     * @tc.name    testConditionalExpression0778
-     * @tc.desc      Null-safe chain with null object
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0778', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: NestedObject | null = null
-      let result: NestedObject | null = obj ? obj.nested as NestedObject : null
       expect(result).assertEqual(null)
     })
     

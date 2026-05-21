@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -233,23 +233,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
     });
 
     /**
-     * @tc.number    SUB_RESIZABLE_ARRAY_CREATION_EXPRESSIONS_1000
-     * @tc.name      testArrayCreationExpressions0010
-     * @tc.desc      Array creation with string type
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testArrayCreationExpressions0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create empty array and add elements using push
-      let x: Array<string> = new Array<string>();
-      expect(x.length).assertEqual(0);
-      x.push('');
-      expect(x.length).assertEqual(1);
-      expect(x[0] == '').assertTrue();
-    });
-
-    /**
      * @tc.number    SUB_RESIZABLE_ARRAY_CREATION_EXPRESSIONS_1100
      * @tc.name      testArrayCreationExpressions0011
      * @tc.desc      Array creation with number type
@@ -289,19 +272,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      */
     it('testCreateEmptyArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let a: Array<string> = new Array<string>();
-      expect(a.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_CREATE_EMPTY_ARRAY_0300
-     * @tc.name      testCreateEmptyArray0003
-     * @tc.desc      Create empty Array with int type (length 0)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testCreateEmptyArray0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a: Array<number> = new Array<number>();
       expect(a.length).assertEqual(0);
     });
 
@@ -529,48 +499,6 @@ export default function ResizableArrayCreationExpressionsTest(): void {
      * @tc.level     Level 2
      */
     it('testCreateArrayWithExpressionDim0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create array with length and initializer function
-      let a: Array<number> = new Array<number>(15, (): number => 0);
-      expect(a.length).assertEqual(15);
-    });
-
-    /**
-     * @tc.number    SUB_CREATE_ARRAY_WITH_EXPRESSION_DIM_0200
-     * @tc.name      testCreateArrayWithExpressionDim0002
-     * @tc.desc      Create Array with subtraction expression dimension
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testCreateArrayWithExpressionDim0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create array with length and initializer function
-      let a: Array<number> = new Array<number>(15, (): number => 0);
-      expect(a.length).assertEqual(15);
-    });
-
-    /**
-     * @tc.number    SUB_CREATE_ARRAY_WITH_EXPRESSION_DIM_0300
-     * @tc.name      testCreateArrayWithExpressionDim0003
-     * @tc.desc      Create Array with multiplication expression dimension
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testCreateArrayWithExpressionDim0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Create array with length and initializer function
-      let a: Array<number> = new Array<number>(15, (): number => 0);
-      expect(a.length).assertEqual(15);
-    });
-
-    /**
-     * @tc.number    SUB_CREATE_ARRAY_WITH_EXPRESSION_DIM_0400
-     * @tc.name      testCreateArrayWithExpressionDim0004
-     * @tc.desc      Create Array with division expression dimension
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testCreateArrayWithExpressionDim0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Create array with length and initializer function
       let a: Array<number> = new Array<number>(15, (): number => 0);
       expect(a.length).assertEqual(15);

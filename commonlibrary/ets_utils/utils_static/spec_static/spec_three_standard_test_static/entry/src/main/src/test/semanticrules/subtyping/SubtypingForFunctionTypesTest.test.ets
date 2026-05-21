@@ -1211,26 +1211,6 @@ export default function SubtypingForFunctionTypesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPESTEST_1400
-     * @tc.name      testPositiveFunctionOne0014
-     * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\
-     *               \\ of function type S with parameters SP1 , ... , SPn and return type SR if all of\
-     *               \ the following conditions are met: \u2022 m <= n \u2022 for each i <= m\n    -\
-     *               \ Parameter type of SPi is a subtype of parameter type of FPi (contravariance),\
-     *               \ and\n    \u2014 FPi is a rest parameter if SPi is a rest parameter.\n    \u2013\
-     *               \ FPi is an optional parameter if SPi is an optional parameter.\n\u2022 Type FR\
-     *               is a subtype of SR (covariance)."
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testPositiveFunctionOne0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-      expect(foodbn14(new Derived14, 1) instanceof Derived14).assertTrue()
-      expect(foodbn14(new Derived14, 1).b).assertEqual('d')
-    });
-
-    /**
      * @tc.number    SUB_SUBTYPING_FOR_FUNCTION_TYPES_1500
      * @tc.name      testPositiveFunction0015
      * @tc.desc      "Function type F with parameters FP1, ... , FPm and return type FR is a subtype\

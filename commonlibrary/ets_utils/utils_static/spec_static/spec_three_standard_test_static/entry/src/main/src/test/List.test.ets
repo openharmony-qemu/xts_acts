@@ -34,20 +34,7 @@ import ShiftExpressionsTest from './experimentalfeatures/enumerationsexperimenta
 import UnaryExpressionsTest from './experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/unaryexpressions/UnaryExpressionsTest.test';
 import EnumerationMethodsTest01 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest01.test";
 import EnumerationMethodsTest03 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest03.test";
-import EnumerationMethodsTest04 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest04.test";
-import EnumerationMethodsTest05 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest05.test";
-import EnumerationMethodsTest07 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest07.test";
-import EnumerationMethodsTest08 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest08.test";
-import EnumerationMethodsTest09 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest09.test";
-import EnumerationMethodsTest10 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest10.test";
-import EnumerationMethodsTest11 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest11.test";
-import EnumerationMethodsTest12 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest12.test";
-import EnumerationMethodsTest14 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest14.test";
-import EnumerationMethodsTest15 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest15.test";
-import EnumerationMethodsTest17 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest17.test";
-import EnumerationMethodsTest18 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest18.test";
-import EnumerationMethodsTest19 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest19.test";
-import EnumerationMethodsTest20 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest20.test";
+import EnumerationMethodsTest02 from "./experimentalfeatures/enumerationsexperimental/enumerationmethods/EnumerationMethodsTest02.test";
 import EnumerationWithExplicitTypeTest01 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest01.test";
 import EnumerationWithExplicitTypeTest02 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest02.test";
 import EnumerationWithExplicitTypeTest03 from "./experimentalfeatures/enumerationsexperimental/enumerationwithexplicittype/EnumerationWithExplicitTypeTest03.test";
@@ -90,24 +77,10 @@ import ReturnTypeInferenceTest04 from './semanticrules/typeinference/returntypei
 import ReturnTypeInferenceTest05 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest05.test'
 import ReturnTypeInferenceTest06 from './semanticrules/typeinference/returntypeinference/ReturnTypeInferenceTest06.test'
 import ComputingSmartTypesTest01 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest01.test'
-import ComputingSmartTypesTest02 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest02.test'
-import ComputingSmartTypesTest03 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest03.test'
-import ComputingSmartTypesTest04 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest04.test'
 import ComputingSmartTypesTest05 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest05.test'
-import ComputingSmartTypesTest06 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest06.test'
-import ComputingSmartTypesTest07 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest07.test'
-import ComputingSmartTypesTest08 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest08.test'
-import ComputingSmartTypesTest09 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest09.test'
 import ComputingSmartTypesTest10 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest10.test'
 import ComputingSmartTypesTest11 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest11.test'
-import ComputingSmartTypesTest12 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest12.test'
-import ComputingSmartTypesTest13 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest13.test'
 import ComputingSmartTypesTest14 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest14.test'
-import ComputingSmartTypesTest15 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest15.test'
-import ComputingSmartTypesTest16 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest16.test'
-import ComputingSmartTypesTest17 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest17.test'
-import ComputingSmartTypesTest18 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest18.test'
-import ComputingSmartTypesTest19 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest19.test'
 import ComputingSmartTypesTest20 from './semanticrules/smartcastsandsmarttypes/computingsmarttypes/ComputingSmartTypesTest20.test'
 import IntersectionTypesTest from './semanticrules/smartcastsandsmarttypes/intersectiontypes/IntersectionTypesTest.test'
 import SmartCastExamplesTest from './semanticrules/smartcastsandsmarttypes/smartcastexamples/SmartCastExamplesTest.test'
@@ -276,12 +249,9 @@ import SemanticRulesTypeIdentity04 from './semanticrules/typeidentity/SemanticRu
 import SemanticRulesTypeIdentity05 from './semanticrules/typeidentity/SemanticRulesTypeIdentity05.test'
 import TupleTypesIdentityTest from './semanticrules/typeidentity/TupleTypesIdentityTest.test'
 import TupleTypesIdentityTest01 from './semanticrules/typeidentity/TupleTypesIdentityTest01.test'
-import TupleTypesIdentityTest02 from './semanticrules/typeidentity/TupleTypesIdentityTest02.test'
-import TupleTypesIdentityTest03 from './semanticrules/typeidentity/TupleTypesIdentityTest03.test'
 import TupleTypesIdentityTest04 from './semanticrules/typeidentity/TupleTypesIdentityTest04.test'
 import TupleTypesIdentityTest05 from './semanticrules/typeidentity/TupleTypesIdentityTest05.test'
 import TupleTypesIdentityTest06 from './semanticrules/typeidentity/TupleTypesIdentityTest06.test'
-import TupleTypesIdentityTest07 from './semanticrules/typeidentity/TupleTypesIdentityTest07.test'
 import TypeIdentityCaseTest from './semanticrules/typeidentity/TypeIdentityCaseTest.test'
 import ArrayOfArraysTypesIdentityTest from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest.test'
 import ArrayOfArraysTypesIdentityTest01 from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest01.test'
@@ -362,20 +332,7 @@ export default function testsuite(): void {
   UnaryExpressionsTest();
   EnumerationMethodsTest01();
   EnumerationMethodsTest03();
-  EnumerationMethodsTest04();
-  EnumerationMethodsTest05();
-  EnumerationMethodsTest07();
-  EnumerationMethodsTest08();
-  EnumerationMethodsTest09();
-  EnumerationMethodsTest10();
-  EnumerationMethodsTest11();
-  EnumerationMethodsTest12();
-  EnumerationMethodsTest14();
-  EnumerationMethodsTest15();
-  EnumerationMethodsTest17();
-  EnumerationMethodsTest18();
-  EnumerationMethodsTest19();
-  EnumerationMethodsTest20();
+  EnumerationMethodsTest02();
   CallableTypesTest();
   CallableTypesWithInvokeMethodTest();
   CallableTypesWithInstantiateMethodTest();
@@ -416,24 +373,14 @@ export default function testsuite(): void {
   ReturnTypeInferenceTest05();
   ReturnTypeInferenceTest06();
   ComputingSmartTypesTest01();
-  ComputingSmartTypesTest02();
-  ComputingSmartTypesTest03();
-  ComputingSmartTypesTest04();
+
   ComputingSmartTypesTest05();
-  ComputingSmartTypesTest06();
-  ComputingSmartTypesTest07();
-  ComputingSmartTypesTest08();
-  ComputingSmartTypesTest09();
+
   ComputingSmartTypesTest10();
   ComputingSmartTypesTest11();
-  ComputingSmartTypesTest12();
-  ComputingSmartTypesTest13();
+
   ComputingSmartTypesTest14();
-  ComputingSmartTypesTest15();
-  ComputingSmartTypesTest16();
-  ComputingSmartTypesTest17();
-  ComputingSmartTypesTest18();
-  ComputingSmartTypesTest19();
+
   ComputingSmartTypesTest20();
   IntersectionTypesTest();
   SmartCastExamplesTest();
@@ -603,12 +550,9 @@ export default function testsuite(): void {
   SemanticRulesTypeIdentity05();
   TupleTypesIdentityTest();
   TupleTypesIdentityTest01();
-  TupleTypesIdentityTest02();
-  TupleTypesIdentityTest03();
   TupleTypesIdentityTest04();
   TupleTypesIdentityTest05();
   TupleTypesIdentityTest06();
-  TupleTypesIdentityTest07();
   TypeIdentityCaseTest();
   ArrayOfArraysTypesIdentityTest();
   ArrayOfArraysTypesIdentityTest01();

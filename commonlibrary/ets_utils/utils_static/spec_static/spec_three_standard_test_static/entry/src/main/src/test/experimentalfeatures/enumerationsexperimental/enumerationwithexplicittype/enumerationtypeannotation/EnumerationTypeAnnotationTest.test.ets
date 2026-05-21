@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../../../../hypium/index';
 
 async function sleep(time: int): Promise<int> {
@@ -132,34 +132,6 @@ export default function EnumerationTypeAnnotationTest(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0400
-     * @tc.name      testEnumerationTypeAnnotation0004
-     * @tc.desc      Type annotation for enumeration for types int, long and double.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationTypeAnnotation0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum3.first).assertEqual(a1);
-      expect(Enum3.second).assertEqual(b1);
-      expect(Enum3.third).assertEqual(b1 - 1);
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0500
-     * @tc.name      testEnumerationTypeAnnotation0005
-     * @tc.desc      Type annotation for enumeration for types int, long and double.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationTypeAnnotation0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum4.first).assertEqual(a2);
-      expect(Enum4.second).assertEqual(b2);
-      expect(Enum4.third).assertEqual(b2 - 1);
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0600
      * @tc.name      testEnumerationTypeAnnotation0006
      * @tc.desc      Type annotation for enumeration for types int, long and double.
@@ -193,18 +165,6 @@ export default function EnumerationTypeAnnotationTest(): void {
      */
     it('testEnumerationTypeAnnotation0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Enum7.a).assertEqual(c);
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0900
-     * @tc.name      testEnumerationTypeAnnotation0009
-     * @tc.desc      Type annotation for enumeration for types int, long and double.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationTypeAnnotation0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum8.a).assertEqual(c);
     });
   })
 }

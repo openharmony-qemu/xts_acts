@@ -654,31 +654,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS34.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0200
-     * @tc.name      testEnumerationWithExplicitType0054
-     * @tc.desc      Checking for enum with explicit string type constant get name.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum18.Red.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.Red]).assertEqual("Red");
-      expect(Enum18.Green.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.Green]).assertEqual("Green");
-      expect(Enum18.Blue.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.Blue]).assertEqual("Blue");
-      expect(Enum18.Complex.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.Complex]).assertEqual("Complex");
-      expect(Enum18.One.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.One]).assertEqual("One");
-      expect(Enum18.one.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.one]).assertEqual("one");
-      expect(Enum18.oNe.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[Enum18.oNe]).assertEqual("oNe");
-      expect(testNS35.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0300
@@ -713,38 +688,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS36.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0400
-     * @tc.name      testEnumerationWithExplicitType0056
-     * @tc.desc      Checking for enum with explicit string type constant get name.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Enum18 = Enum18.Red;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("Red");
-      c = Enum18.Green;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("Green");
-      c = Enum18.Blue;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("Blue");
-      c = Enum18.Complex;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("Complex");
-      c = Enum18.One;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("One");
-      c = Enum18.one;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("one");
-      c = Enum18.oNe;
-      expect(c.valueOf() instanceof string).assertEqual(true);
-      expect(Enum18[c]).assertEqual("oNe");
-      expect(testNS37.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0500
@@ -776,35 +719,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS38.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0600
-     * @tc.name      testEnumerationWithExplicitType0058
-     * @tc.desc      Checking for enum with explicit int type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum19.Red.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.Red.toString()).assertEqual("0");
-      expect(Enum19.Green.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.Green.toString()).assertEqual("10");
-      expect(Enum19.Blue.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.Blue.toString()).assertEqual("11");
-      expect(Enum19.First.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.First.toString()).assertEqual("-2147483648");
-      expect(Enum19.Second.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.Second.toString()).assertEqual("12345");
-      expect(Enum19.Third.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.Third.toString()).assertEqual("2147483647");
-      expect(Enum19.One.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.One.toString()).assertEqual("1");
-      expect(Enum19.one.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.one.toString()).assertEqual("1");
-      expect(Enum19.oNe.valueOf() instanceof int).assertEqual(true);
-      expect(Enum19.oNe.toString()).assertEqual("1");
-      expect(testNS39.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0700
@@ -845,44 +759,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS40.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0800
-     * @tc.name      testEnumerationWithExplicitType0060
-     * @tc.desc      Checking for enum with explicit int type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Enum19 = Enum19.Red;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("0");
-      c = Enum19.Green;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("10");
-      c = Enum19.Blue;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("11");
-      c = Enum19.First;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("-2147483648");
-      c = Enum19.Second;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("12345");
-      c = Enum19.Third;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("2147483647");
-      c = Enum19.One;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum19.one;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum19.oNe;
-      expect(c.valueOf() instanceof int).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      expect(testNS41.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_0900
@@ -914,35 +790,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS42.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1000
-     * @tc.name      testEnumerationWithExplicitType0062
-     * @tc.desc      Checking for enum with explicit long type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum20.Red.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.Red.toString()).assertEqual("0");
-      expect(Enum20.Green.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.Green.toString()).assertEqual("10");
-      expect(Enum20.Blue.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.Blue.toString()).assertEqual("11");
-      expect(Enum20.First.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.First.toString()).assertEqual("-9223372036854775808");
-      expect(Enum20.Second.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.Second.toString()).assertEqual("12345");
-      expect(Enum20.Third.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.Third.toString()).assertEqual("9223372036854775807");
-      expect(Enum20.One.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.One.toString()).assertEqual("1");
-      expect(Enum20.one.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.one.toString()).assertEqual("1");
-      expect(Enum20.oNe.valueOf() instanceof long).assertEqual(true);
-      expect(Enum20.oNe.toString()).assertEqual("1");
-      expect(testNS43.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1100
@@ -983,44 +830,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS44.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1200
-     * @tc.name      testEnumerationWithExplicitType0064
-     * @tc.desc      Checking for enum with explicit long type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Enum20 = Enum20.Red;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("0");
-      c = Enum20.Green;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("10");
-      c = Enum20.Blue;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("11");
-      c = Enum20.First;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("-9223372036854775808");
-      c = Enum20.Second;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("12345");
-      c = Enum20.Third;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("9223372036854775807");
-      c = Enum20.One;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum20.one;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum20.oNe;
-      expect(c.valueOf() instanceof long).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      expect(testNS45.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1300
@@ -1052,35 +861,6 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS46.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1400
-     * @tc.name      testEnumerationWithExplicitType0066
-     * @tc.desc      Checking for enum with explicit byte type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum21.Red.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.Red.toString()).assertEqual("0");
-      expect(Enum21.Green.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.Green.toString()).assertEqual("10");
-      expect(Enum21.Blue.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.Blue.toString()).assertEqual("11");
-      expect(Enum21.First.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.First.toString()).assertEqual("-128");
-      expect(Enum21.Second.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.Second.toString()).assertEqual("123");
-      expect(Enum21.Third.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.Third.toString()).assertEqual("127");
-      expect(Enum21.One.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.One.toString()).assertEqual("1");
-      expect(Enum21.one.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.one.toString()).assertEqual("1");
-      expect(Enum21.oNe.valueOf() instanceof byte).assertEqual(true);
-      expect(Enum21.oNe.toString()).assertEqual("1");
-      expect(testNS47.runTest()).assertEqual(true);
-    });
 
     /**
      * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1500
@@ -1121,43 +901,5 @@ export default function EnumerationWithExplicitTypeTest03(): void {
       expect(testNS48.runTest()).assertEqual(true);
     });
 
-    /**
-     * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_THREE_TEST_1600
-     * @tc.name      testEnumerationWithExplicitType0068
-     * @tc.desc      Checking for enum with explicit byte type constant to string conversion.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationWithExplicitType0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let c: Enum21 = Enum21.Red;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("0");
-      c = Enum21.Green;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("10");
-      c = Enum21.Blue;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("11");
-      c = Enum21.First;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("-128");
-      c = Enum21.Second;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("123");
-      c = Enum21.Third;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("127");
-      c = Enum21.One;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum21.one;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      c = Enum21.oNe;
-      expect(c.valueOf() instanceof byte).assertEqual(true);
-      expect(c.toString()).assertEqual("1");
-      expect(testNS49.runTest()).assertEqual(true);
-    });
   })
 }

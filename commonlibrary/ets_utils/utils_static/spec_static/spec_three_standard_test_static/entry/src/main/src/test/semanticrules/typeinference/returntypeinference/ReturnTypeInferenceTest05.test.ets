@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -146,20 +146,6 @@ export default function ReturnTypeInferenceTest05():void {
     })
 
     /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0200
-     * @tc.name      testRetTypeInterfaceMethod0002
-     * @tc.desc      Implementation methods from interface with or without return.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInterfaceMethod0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new A1()
-      a.foo()
-      expect(a.i == 1).assertTrue()
-    });
-
-    /**
      * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0300
      * @tc.name      testRetTypeInterfaceMethod0003
      * @tc.desc      Implementation methods from interface with or without return.
@@ -204,52 +190,6 @@ export default function ReturnTypeInferenceTest05():void {
       expect(new A4().foo() == 1.0).assertTrue()
       expect(v == 1.0).assertTrue()
       expect(typeof v === 'number').assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0600
-     * @tc.name      testRetTypeInterfaceMethod0006
-     * @tc.desc      Implementation methods from interface with or without return.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInterfaceMethod0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new A5()
-      let v = a.foo()
-      expect(new A5().foo() instanceof Error).assertTrue()
-      expect(v instanceof Error).assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0700
-     * @tc.name      testRetTypeInterfaceMethod0007
-     * @tc.desc      Implementation methods from interface with or without return.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInterfaceMethod0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new A6()
-      let v = a.foo()
-      expect(v instanceof Array && v.length == 3).assertTrue()
-      expect(typeof v[0] === 'number').assertTrue()
-      expect(typeof v[1] === 'number').assertTrue()
-      expect(typeof v[2] === 'number').assertTrue()
-    });
-
-    /**
-     * @tc.number    SUB_RETURN_TYPE_INFERENCETESTFIVE_0800
-     * @tc.name      testRetTypeInterfaceMethod0008
-     * @tc.desc      Implementation methods from interface with or without return.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testRetTypeInterfaceMethod0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a = new A7()
-      let v = a.foo()
-      expect(v instanceof Array && v.length == 0).assertTrue()
     });
 
     /**

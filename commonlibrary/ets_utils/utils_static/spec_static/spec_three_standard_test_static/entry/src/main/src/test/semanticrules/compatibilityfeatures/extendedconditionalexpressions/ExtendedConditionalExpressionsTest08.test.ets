@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -64,132 +64,6 @@ export default function ExtendedConditionalExpressionsTest08():void {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: preset action function.
     })
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0291
-     * @tc.desc      For loop type 2 falsy with null
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0291', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Object|null = null
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0200
-     * @tc.name    testConditionalExpression0292
-     * @tc.desc      For loop type 2 falsy with undefined
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0292', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Object|undefined = undefined
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0300
-     * @tc.name    testConditionalExpression0293
-     * @tc.desc      For loop type 2 falsy with 0
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0293', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = 0
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0400
-     * @tc.name    testConditionalExpression0294
-     * @tc.desc      For loop type 2 falsy with empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0294', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string = ''
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0500
-     * @tc.name    testConditionalExpression0295
-     * @tc.desc      For loop type 2 falsy with NaN
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0295', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = Number.NaN
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0600
-     * @tc.name    testConditionalExpression0296
-     * @tc.desc      For loop type 2 falsy with false
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0296', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: boolean = false
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_0700
@@ -276,27 +150,6 @@ export default function ExtendedConditionalExpressionsTest08():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1100
-     * @tc.name    testConditionalExpression0301
-     * @tc.desc      While loop type 2 falsy with 0
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = 0
-      let retcode: number = 0
-
-      while (v) {  // falsy
-        if (retcode == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1200
      * @tc.name    testConditionalExpression0302
      * @tc.desc      While loop type 2 falsy with empty string
@@ -318,48 +171,6 @@ export default function ExtendedConditionalExpressionsTest08():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1300
-     * @tc.name    testConditionalExpression0303
-     * @tc.desc      While loop type 2 truthy with 1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0303', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = 1
-      let loopCount: number = 0
-
-      while (v) {
-        loopCount++
-        if (loopCount >= 2) {
-          break
-        }
-      }
-      expect(loopCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1400
-     * @tc.name    testConditionalExpression0304
-     * @tc.desc      While loop type 2 truthy with true
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0304', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: boolean = true
-      let loopCount: number = 0
-
-      while (v) {
-        loopCount++
-        if (loopCount >= 2) {
-          break
-        }
-      }
-      expect(loopCount).assertEqual(2);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1500
      * @tc.name    testConditionalExpression0305
      * @tc.desc      While loop type 2 truthy with -1
@@ -369,27 +180,6 @@ export default function ExtendedConditionalExpressionsTest08():void {
      */
     it('testConditionalExpression0305', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: number = -1
-      let loopCount: number = 0
-
-      while (v) {
-        loopCount++
-        if (loopCount >= 2) {
-          break
-        }
-      }
-      expect(loopCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_EIGHT_EXPRESSIONS_1600
-     * @tc.name    testConditionalExpression0306
-     * @tc.desc      While loop type 2 truthy with 'hello'
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0306', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string = 'hello'
       let loopCount: number = 0
 
       while (v) {

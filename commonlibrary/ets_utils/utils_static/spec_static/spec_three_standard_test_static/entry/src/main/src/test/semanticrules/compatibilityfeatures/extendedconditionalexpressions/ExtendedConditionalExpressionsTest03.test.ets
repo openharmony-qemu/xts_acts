@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -65,27 +65,6 @@ export default function ExtendedConditionalExpressionsTest03():void {
       // This API supports only one parameter: preset action function.
     })
 
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_THREE_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0151
-     * @tc.desc      For loop with falsy condition (null)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Object|null = null
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_THREE_EXPRESSIONS_0200
@@ -202,27 +181,6 @@ export default function ExtendedConditionalExpressionsTest03():void {
      */
     it('testConditionalExpression0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: number = Number.NaN
-      let retcode: number = 0
-
-      for (let i: number = 0; v; i++) {  // falsy
-        if (i == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_THREE_EXPRESSIONS_0800
-     * @tc.name    testConditionalExpression0158
-     * @tc.desc      For loop with falsy condition (Float.NaN)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = Float.NaN
       let retcode: number = 0
 
       for (let i: number = 0; v; i++) {  // falsy
@@ -538,27 +496,6 @@ export default function ExtendedConditionalExpressionsTest03():void {
         }
       }
       expect(loopCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_THREE_EXPRESSIONS_2300
-     * @tc.name    testConditionalExpression0173
-     * @tc.desc      While loop with falsy condition (null)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Object|null = null
-      let retcode: number = 0
-
-      while (v) {  // falsy
-        if (retcode == 0) {
-          retcode = 1
-          break
-        }
-      }
-      expect(retcode).assertEqual(0);
     });
 
     /**

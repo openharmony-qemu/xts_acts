@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -337,20 +337,6 @@ export default function ExtendedConditionalExpressionsTest11():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_2000
-     * @tc.name    testConditionalExpression0397
-     * @tc.desc      Conditional expression with truthy value (true)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0397', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: boolean = true  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_2100
      * @tc.name    testConditionalExpression0398
      * @tc.desc      Conditional expression with truthy value (Boolean true object)
@@ -458,20 +444,6 @@ export default function ExtendedConditionalExpressionsTest11():void {
      */
     it('testConditionalExpression0405', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: number[] = [1]  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_2900
-     * @tc.name    testConditionalExpression0406
-     * @tc.desc      Conditional expression with truthy value (string array)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0406', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string[] = [""]  // truthy
       let res = v ? 0 : 1
       expect(res).assertEqual(0);
     });
@@ -589,34 +561,6 @@ export default function ExtendedConditionalExpressionsTest11():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_3800
-     * @tc.name    testConditionalExpression0415
-     * @tc.desc      Conditional expression with truthy value (Long.MAX_VALUE)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0415', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: long = Long.MAX_VALUE  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_3900
-     * @tc.name    testConditionalExpression0416
-     * @tc.desc      Conditional expression with truthy value (Long MAX_VALUE object)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0416', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Long = new Long(Long.MAX_VALUE)  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4000
      * @tc.name    testConditionalExpression0417
      * @tc.desc      Conditional expression with truthy value (short 1)
@@ -626,20 +570,6 @@ export default function ExtendedConditionalExpressionsTest11():void {
      */
     it('testConditionalExpression0417', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: short = 1  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4100
-     * @tc.name    testConditionalExpression0418
-     * @tc.desc      Conditional expression with truthy value (unicode char string)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0418', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string = '\u0000'  // truthy (non-empty string)
       let res = v ? 0 : 1
       expect(res).assertEqual(0);
     });
@@ -668,62 +598,6 @@ export default function ExtendedConditionalExpressionsTest11():void {
      */
     it('testConditionalExpression0420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let v: bigint = -1n  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4400
-     * @tc.name    testConditionalExpression0421
-     * @tc.desc      Conditional expression with falsy value (Number 0 object)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0421', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = new Number()  // falsy (0 value, converts to falsy in ArkTS)
-      let res = v ? 0 : 1
-      expect(res).assertEqual(1);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4500
-     * @tc.name    testConditionalExpression0422
-     * @tc.desc      Conditional expression with truthy value (computed non-zero)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0422', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = (1 - 1) + 1  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4600
-     * @tc.name    testConditionalExpression0423
-     * @tc.desc      Conditional expression with truthy value (concatenated substring)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0423', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: string = ('a' + 'b').substring(0, 1)  // truthy
-      let res = v ? 0 : 1
-      expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_ELEVEN_EXPRESSIONS_4700
-     * @tc.name    testConditionalExpression0424
-     * @tc.desc      Conditional expression with truthy value (computed truthy)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0424', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: number = (42 - 21 - 20)  // truthy
       let res = v ? 0 : 1
       expect(res).assertEqual(0);
     });

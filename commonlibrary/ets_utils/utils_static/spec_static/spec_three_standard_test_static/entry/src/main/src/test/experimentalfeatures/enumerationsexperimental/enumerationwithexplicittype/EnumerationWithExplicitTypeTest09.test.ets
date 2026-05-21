@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
 * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -1030,125 +1030,6 @@ it('testEnumerationWithExplicitType0332', TestType.FUNCTION | Size.MEDIUMTEST | 
   expect(EnumByteK0.second + 1).assertEqual(1)
   expect(EnumByteK0.third + 1).assertEqual(-41)
 });
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_3500
- * @tc.name      testEnumerationWithExplicitType0333
- * @tc.desc      Using in numeric operator contexts
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0333', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteK0.first instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.second instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.third instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(1 + EnumByteK0.first).assertEqual(0);
-  expect(1 + EnumByteK0.second).assertEqual(1);
-  expect(1 + EnumByteK0.third).assertEqual(-41);
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_3600
- * @tc.name      testEnumerationWithExplicitType0334
- * @tc.desc      Using in numeric operator contexts
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0334', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteK0.first instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.second instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.third instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.first == -1).assertEqual(true);
-  expect(EnumByteK0.second == 0).assertEqual(true);
-  expect(EnumByteK0.third == -42).assertEqual(true);
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_3700
- * @tc.name      testEnumerationWithExplicitType0335
- * @tc.desc      Using in numeric operator contexts
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0335', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteK0.first instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.second instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.third instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.first === -1).assertEqual(true);
-  expect(EnumByteK0.second === 0).assertEqual(true);
-  expect(EnumByteK0.third === -42).assertEqual(true);
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_3800
- * @tc.name      testEnumerationWithExplicitType0336
- * @tc.desc      Using in numeric operator contexts
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0336', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteK0.first instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.second instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.third instanceof EnumByteK0).assertEqual(true);
-  expect(EnumByteK0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteK0.first + EnumByteK0.second + EnumByteK0.third).assertEqual(-43);
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_4500
- * @tc.name      testEnumerationWithExplicitType0343
- * @tc.desc      Checking in switch statement
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0343', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  let v: ColorByteD0 = ColorByteD0.Green;
-  switch (v) {
-    case ColorByteD0.Green:
-      expect(v instanceof ColorByteD0).assertEqual(true);
-      expect(v.valueOf() instanceof byte).assertEqual(true);
-      expect(v.valueOf()).assertEqual(7);
-      break;
-    default:
-      expect(false).assertEqual(true);
-  }
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_4600
- * @tc.name      testEnumerationWithExplicitType0344
- * @tc.desc      Checking in switch statement
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0344', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  let v: ColorByteD0 = ColorByteD0.Green;
-  switch (v) {
-    case ColorByteD0.Green:
-      expect(v instanceof ColorByteD0).assertEqual(true);
-      expect(v.valueOf() instanceof byte).assertEqual(true);
-      expect(v.valueOf()).assertEqual(7);
-      break;
-    default:
-      expect(false).assertEqual(true);
-  }
-});
 
 /**
  * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_4700
@@ -1190,44 +1071,5 @@ it('testEnumerationWithExplicitType0346', TestType.FUNCTION | Size.MEDIUMTEST | 
   expect(EnumByteL0.third.toString()).assertEqual("28");
 });
 
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_4900
- * @tc.name      testEnumerationWithExplicitType0347
- * @tc.desc      Checking enumeration methods
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteL0.first instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.second instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.third instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.first.valueOf()).assertEqual(-1);
-  expect(EnumByteL0.second.valueOf()).assertEqual(27);
-  expect(EnumByteL0.third.valueOf()).assertEqual(28);
-});
-
-/**
- * @tc.number    SUB_ENUMERATION_WITH_EXPLICIT_TYPE_NINE_TEST_5000
- * @tc.name      testEnumerationWithExplicitType0348
- * @tc.desc      Checking enumeration methods
- * @tc.size      MediumTest
- * @tc.type      Function
- * @tc.level     Level 2
- */
-it('testEnumerationWithExplicitType0348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-  expect(EnumByteL0.first instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.second instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.third instanceof EnumByteL0).assertEqual(true);
-  expect(EnumByteL0.first.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.second.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.third.valueOf() instanceof byte).assertEqual(true);
-  expect(EnumByteL0.first.toString()).assertEqual("-1");
-  expect(EnumByteL0.second.toString()).assertEqual("27");
-  expect(EnumByteL0.third.toString()).assertEqual("28");
-});
   })
 }

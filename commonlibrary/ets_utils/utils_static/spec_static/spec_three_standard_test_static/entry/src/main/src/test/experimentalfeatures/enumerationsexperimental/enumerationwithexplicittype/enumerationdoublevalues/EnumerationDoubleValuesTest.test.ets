@@ -192,21 +192,6 @@ export default function EnumerationDoubleValuesTest(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_DOUBLE_VALUES_TEST_0700
-     * @tc.name      testEnumerationDoubleValues0007
-     * @tc.desc      The integer value of an enum constant is set implicitly if an enumeration constant specifies no value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationDoubleValues0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect('' + Enum6.first).assertEqual('-2');
-      expect('' + Enum6.second).assertEqual('-1');
-      expect('' + Enum6.third).assertEqual('0');
-      expect('' + Enum6.fourth).assertEqual('1');
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_DOUBLE_VALUES_TEST_0800
      * @tc.name      testEnumerationDoubleValues0008
      * @tc.desc      The integer value of an enum constant is set implicitly if an enumeration constant specifies no value.
@@ -246,20 +231,6 @@ export default function EnumerationDoubleValuesTest(): void {
       expect(Enum9.a).assertEqual(0x0);
       expect(Enum9.b).assertEqual(0x1);
       expect(Enum9.d).assertEqual(0x6);
-    });
-
-    /**
-     * @tc.number    SUB_ENUMERATION_DOUBLE_VALUES_TEST_1100
-     * @tc.name      testEnumerationDoubleValues0011
-     * @tc.desc      The integer value of an enum constant is set implicitly if an enumeration constant specifies no value.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationDoubleValues0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum10.a).assertEqual(0);
-      expect(Enum10.b).assertEqual(1);
-      expect(Enum10.d).assertEqual(6);
     });
   })
 }

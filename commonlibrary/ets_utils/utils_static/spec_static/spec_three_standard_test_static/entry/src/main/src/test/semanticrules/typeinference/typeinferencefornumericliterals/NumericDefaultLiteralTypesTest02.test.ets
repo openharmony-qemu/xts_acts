@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -659,54 +659,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_3900
-     * @tc.name      testNumericLogicalComplement0039
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~16;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4000
-     * @tc.name      testNumericLogicalComplement0040
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~127;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~127);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4100
-     * @tc.name      testNumericLogicalComplement0041
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~128;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~128);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4200
      * @tc.name      testNumericLogicalComplement0042
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -720,54 +672,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : int = ~32767;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(~32767);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4300
-     * @tc.name      testNumericLogicalComplement0043
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~32768;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~32768);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4400
-     * @tc.name      testNumericLogicalComplement0044
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~2147483647;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~2147483647);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4500
-     * @tc.name      testNumericLogicalComplement0045
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : long = ~2147483648;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(~2147483648);
     });
 
     /**
@@ -787,38 +691,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4700
-     * @tc.name      testNumericLogicalComplement0047
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~-16;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4800
-     * @tc.name      testNumericLogicalComplement0048
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~-128;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-128);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_4900
      * @tc.name      testNumericLogicalComplement0049
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -832,22 +704,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : int = ~-129;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(~-129);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5000
-     * @tc.name      testNumericLogicalComplement0050
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~-32768;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-32768);
     });
 
     /**
@@ -867,38 +723,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5200
-     * @tc.name      testNumericLogicalComplement0052
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = ~-2147483648;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-2147483648);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5300
-     * @tc.name      testNumericLogicalComplement0053
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : long = ~-2147483649;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(~-2147483649);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5400
      * @tc.name      testNumericLogicalComplement0054
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -912,118 +736,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : long = ~-9223372036854775807;
       expect(a instanceof long).assertTrue();
       expect(a).assertEqual(~-9223372036854775807);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5500
-     * @tc.name      testNumericLogicalComplement0055
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~16;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5600
-     * @tc.name      testNumericLogicalComplement0056
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~126;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~126);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5700
-     * @tc.name      testNumericLogicalComplement0057
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~127;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~127);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5800
-     * @tc.name      testNumericLogicalComplement0058
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~32766;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~32766);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_5900
-     * @tc.name      testNumericLogicalComplement0059
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~32767;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~32767);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_6000
-     * @tc.name      testNumericLogicalComplement0060
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : int = -~2147483647;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~2147483647);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_6100
-     * @tc.name      testNumericLogicalComplement0061
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplement0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let a : long = -~2147483648;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(-~2147483648);
     });
 
     /**
@@ -1433,57 +1145,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_8700
-     * @tc.name      testNumericLogicalComplementConst0087
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~16;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_8800
-     * @tc.name      testNumericLogicalComplementConst0088
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~127;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~127);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_8900
-     * @tc.name      testNumericLogicalComplementConst0089
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~128;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~128);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9000
      * @tc.name      testNumericLogicalComplementConst0090
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -1498,57 +1159,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : int = value;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(~32767);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9100
-     * @tc.name      testNumericLogicalComplementConst0091
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~32768;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~32768);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9200
-     * @tc.name      testNumericLogicalComplementConst0092
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~2147483647;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~2147483647);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9300
-     * @tc.name      testNumericLogicalComplementConst0093
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : long = ~2147483648;
-      let a : long = value;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(~2147483648);
     });
 
     /**
@@ -1569,40 +1179,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9500
-     * @tc.name      testNumericLogicalComplementConst0095
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~-16;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9600
-     * @tc.name      testNumericLogicalComplementConst0096
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~-128;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-128);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9700
      * @tc.name      testNumericLogicalComplementConst0097
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -1617,23 +1193,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : int = value;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(~-129);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_TYPESTESTTWO_9800
-     * @tc.name      testNumericLogicalComplementConst0098
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~-32768;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-32768);
     });
 
     /**
@@ -1654,40 +1213,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0100
-     * @tc.name      testNumericLogicalComplementConst0001
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = ~-2147483648;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(~-2147483648);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0200
-     * @tc.name      testNumericLogicalComplementConst0002
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : long = ~-2147483649;
-      let a : long = value;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(~-2147483649);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0300
      * @tc.name      testNumericLogicalComplementConst0003
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -1705,74 +1230,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
     });
 
     /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0400
-     * @tc.name      testNumericLogicalComplementConst0004
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~16;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~16);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0500
-     * @tc.name      testNumericLogicalComplementConst0005
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~126;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~126);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0600
-     * @tc.name      testNumericLogicalComplementConst0006
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~127;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~127);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0700
-     * @tc.name      testNumericLogicalComplementConst0007
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~32766;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~32766);
-    });
-
-    /**
      * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0800
      * @tc.name      testNumericLogicalComplementConst0008
      * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
@@ -1787,40 +1244,6 @@ export default function NumericDefaultLiteralTypesTest02():void {
       let a : int = value;
       expect(a instanceof int).assertTrue();
       expect(a).assertEqual(-~32767);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_0900
-     * @tc.name      testNumericLogicalComplementConst0009
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : int = -~2147483647;
-      let a : int = value;
-      expect(a instanceof int).assertTrue();
-      expect(a).assertEqual(-~2147483647);
-    });
-
-    /**
-     * @tc.number    SUB_NUMERIC_DEFAULT_LITERAL_A_TYPESTESTTWO_1000
-     * @tc.name      testNumericLogicalComplementConst0010
-     * @tc.desc      The type of expression of a numeric type for Constant Expressions is first
-     * evaluated from the expression. The evaluated numeric result type can be inferred
-     * to a numeric target type from the context.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it("testNumericLogicalComplementConst0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value : long = -~2147483648;
-      let a : long = value;
-      expect(a instanceof long).assertTrue();
-      expect(a).assertEqual(-~2147483648);
     });
 
     /**

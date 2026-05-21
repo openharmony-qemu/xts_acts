@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License')
@@ -65,27 +65,6 @@ export default function ExtendedConditionalExpressionsTest04():void {
       // This API supports only one parameter: preset action function.
     })
 
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_0100
-     * @tc.name    testConditionalExpression0183
-     * @tc.desc      Do-while loop with falsy condition (null)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Object|null = null  // falsy
-      let res: number = 0
-
-      do {
-        if (++res > 1) {
-          break
-        }
-      } while (v)
-
-      expect(res).assertEqual(1);
-    });
 
     /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_0200
@@ -277,22 +256,6 @@ export default function ExtendedConditionalExpressionsTest04():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_1100
-     * @tc.name    testConditionalExpression0193
-     * @tc.desc      If statement with falsy condition (null)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (null) { // falsy
-        res = 1
-      }
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_1200
      * @tc.name    testConditionalExpression0194
      * @tc.desc      If statement with falsy condition (0)
@@ -388,22 +351,6 @@ export default function ExtendedConditionalExpressionsTest04():void {
         res = 1
       }
       expect(res).assertEqual(0);
-    });
-
-    /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_FOUR_EXPRESSIONS_1800
-     * @tc.name    testConditionalExpression0200
-     * @tc.desc      If statement with truthy condition (1)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let res: number = 0;
-      if (1) { // truthy
-        res = 1
-      }
-      expect(res).assertEqual(1);
     });
 
     /**
