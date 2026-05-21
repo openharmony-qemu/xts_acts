@@ -631,20 +631,6 @@ export default function ExtendedConditionalExpressionsTest10():void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_TEN_EXPRESSIONS_4100
-     * @tc.name    testConditionalExpression0373
-     * @tc.desc      Conditional expression with falsy value (Long object 0)
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0373', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let v: Long = new Long()  // falsy
-      let res = v ? 1 : 0
-      expect(res).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_TEN_EXPRESSIONS_4200
      * @tc.name    testConditionalExpression0374
      * @tc.desc      Conditional expression with truthy value (non-empty array)

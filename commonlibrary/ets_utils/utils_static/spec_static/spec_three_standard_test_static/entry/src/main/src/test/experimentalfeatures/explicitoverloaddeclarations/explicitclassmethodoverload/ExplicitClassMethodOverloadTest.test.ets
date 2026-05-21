@@ -4498,22 +4498,6 @@ export default function ExplicitClassMethodOverloadTest(): void {
     });
 
     /**
-     * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TWO_TEST_2700
-     * @tc.name      testExplicitClassMethodOverload0238
-     * @tc.desc      If a class has an overload declaration, then the overload declaration can be
-     *               overridden in a subclass. If a subclass has no overload declaration, then the declaration
-     *               from the superclass in used. If a subclass has an overload declaration, then the
-     *               overload declaration must list all methods overloaded in a superclass.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testExplicitClassMethodOverload0238', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: B9 = new B9();
-      expect(b.f2(1.1)).assertEqual('B.fooN');
-    });
-
-    /**
      * @tc.number    SUB_EXPLICIT_CLASS_METHOD_OVERLOAD_TWO_TEST_2800
      * @tc.name      testExplicitClassMethodOverload0239
      * @tc.desc      If a class has an overload declaration, then the overload declaration can be

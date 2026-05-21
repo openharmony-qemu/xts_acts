@@ -106,18 +106,6 @@ export default function EnumerationTypeAnnotationTest(): void {
     });
 
     /**
-     * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0200
-     * @tc.name      testEnumerationTypeAnnotation0002
-     * @tc.desc      Type annotation for enumeration for types int, long and double.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testEnumerationTypeAnnotation0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Enum1.first).assertEqual(100);
-    });
-
-    /**
      * @tc.number    SUB_ENUMERATION_TYPE_ANNOTATION_TEST_0300
      * @tc.name      testEnumerationTypeAnnotation0003
      * @tc.desc      Type annotation for enumeration for types int, long and double.

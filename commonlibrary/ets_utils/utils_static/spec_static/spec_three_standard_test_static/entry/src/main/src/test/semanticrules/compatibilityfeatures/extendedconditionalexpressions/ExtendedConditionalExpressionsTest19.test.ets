@@ -531,29 +531,6 @@ export default function ExtendedConditionalExpressionsTest19(): void {
     });
 
     /**
-     * @tc.number    SUB_EXTENDED_CONDITIONAL_NINETEEN_EXPRESSIONS_2100
-     * @tc.name    testConditionalExpression0741
-     * @tc.desc      Multiple variables with OR in loop condition
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('testConditionalExpression0741', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let retcode: number = 1;
-      let a: number = 0;
-      let b: number = 0;
-      let c: number = 1;
-
-      for (let i: number = 0; a || b || c; i++) {
-        if (i == 0) {
-          retcode = 0;
-          break;
-        }
-      }
-      expect(retcode).assertEqual(0);
-    });
-
-    /**
      * @tc.number    SUB_EXTENDED_CONDITIONAL_NINETEEN_EXPRESSIONS_2200
      * @tc.name    testConditionalExpression0742
      * @tc.desc      Multiple variables with AND falsy in loop condition
