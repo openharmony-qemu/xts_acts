@@ -1,6 +1,34 @@
-import { expect } from '../../../hypium/index';
+class PlainObject {
+}
+
+class PlainRecord {
+  a: int = 1;
+}
+
+function utilVoidFn(): void {
+}
+
+function utilIntReturningFn(): int {
+  return 1;
+}
 
 export default class Utils {
+  static plainObject(): Object {
+    return new PlainObject() as Object;
+  }
+
+  static plainRecordAsObject(): Object {
+    return new PlainRecord() as Object;
+  }
+
+  static voidFnAsObject(): Object {
+    return utilVoidFn as Object;
+  }
+
+  static intReturningFnAsObject(): Object {
+    return Utils.fnReturningIntAsObject(utilIntReturningFn);
+  }
+
   static async msSleep(count: int): Promise<void> {
     return new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void): void => {
       setTimeout((): void => {
@@ -9,24 +37,95 @@ export default class Utils {
     });
   }
 
-  /**
-   * `typeof` for lengths / `getByteLength` / reflected error `code` on OH: Hypium may report `int` not `number`.
-   */
   static isRuntimeNumericOrIntTypeof(kind: string): boolean {
-    return kind === 'number' || kind === 'int';
+    return kind === 'int';
   }
 
-  /** STA `fromObject` first parameter is `Object`; centralize the required ArrayBuffer widening cast. */
   static fromObjectWithBuffer(src: ArrayBuffer, byteOffset: int, length: int): ArrayBuffer {
     return ArrayBuffer.fromObject(src as Object, byteOffset, length);
   }
 
-  /**
-   * Static ArkTS negative-test bridges: widen to `Object`, then cast to the API parameter type.
-   * Replaces scattered `(value as Object) as T` patterns so invalid-arg tests compile on CI.
-   */
   static boxAsObject(v: number): Object {
     return v as Object;
+  }
+
+  static booleanAsObject(v: boolean): Object {
+    return v as Object;
+  }
+
+  static nullAsObject(): Object {
+    return (null as Object);
+  }
+
+  static undefinedAsObject(): Object {
+    return (undefined as Object);
+  }
+
+  static arrayNumberAsObject(arr: Array<number>): Object {
+    return arr as Object;
+  }
+
+  static uint8ArrayAsObject(arr: Uint8Array): Object {
+    return arr as Object;
+  }
+
+  static dataViewAsObject(dv: DataView): Object {
+    return dv as Object;
+  }
+
+  static nullAsString(): string {
+    return Utils.castToString(Utils.nullAsObject());
+  }
+
+  static undefinedAsString(): string {
+    return Utils.castToString(Utils.undefinedAsObject());
+  }
+
+  static booleanAsString(v: boolean): string {
+    return Utils.castToString(Utils.booleanAsObject(v));
+  }
+
+  static nullAsInt(): int {
+    return Utils.castToInt(Utils.nullAsObject());
+  }
+
+  static undefinedAsInt(): int {
+    return Utils.castToInt(Utils.undefinedAsObject());
+  }
+
+  static booleanAsInt(v: boolean): int {
+    return Utils.castToInt(Utils.booleanAsObject(v));
+  }
+
+  static stringAsInt(s: string): int {
+    return Utils.castToInt(s as Object);
+  }
+
+  static fnReturningIntAsObject(fn: () => int): Object {
+    return fn as Object;
+  }
+
+  static fromObjectClassArg(v: Object): Object {
+    return v;
+  }
+
+  static repeatString(unit: string, count: int): string {
+    let out: string = '';
+    for (let i: int = 0; i < count; i++) {
+      out = out + unit;
+    }
+    return out;
+  }
+
+  static buildLongString(unit: string, totalLen: int): string {
+    const chunkSize: int = 100;
+    const chunk: string = Utils.repeatString(unit, chunkSize);
+    let out: string = '';
+    const reps: int = totalLen / chunkSize;
+    for (let i: int = 0; i < reps; i++) {
+      out = out + chunk;
+    }
+    return out;
   }
 
   static castToString(v: Object): string {
@@ -49,23 +148,10 @@ export default class Utils {
     return v as ValueArray<byte>;
   }
 
-  static castToArrayBufferLike(v: Object): ArrayBufferLike {
-    return v as ArrayBufferLike;
-  }
-
-  static castToDoubleArray(v: Object): double[] {
-    return v as double[];
-  }
-
   static castToByte(v: Object): byte {
     return v as byte;
   }
 
-  static castToObject(v: Object): Object {
-    return v;
-  }
-
-  /** `number` must be assigned to a variable before `as Object` (no literal-to-ESValue cast). */
   static numberAsString(n: number): string {
     return Utils.castToString(n as Object);
   }
@@ -74,9 +160,6 @@ export default class Utils {
     return Utils.castToArrayBuffer(n as Object);
   }
 
-  /**
-   * `ArrayBuffer.from(buffer, byteOffset)` when length omitted: ES copies to end; OH may throw without explicit length.
-   */
   static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: int, length?: int): ArrayBuffer {
     if (length !== undefined) {
       return ArrayBuffer.from(src, byteOffset, length);
@@ -88,74 +171,7 @@ export default class Utils {
         return r;
       }
     } catch (e) {
-      // use explicit tail length on OH
     }
     return ArrayBuffer.from(src, byteOffset, tail);
-  }
-
-  /** Assert catch parameter is a runtime Error with simple class name containing `simpleNamePart` (review: use err name, not only non-null). */
-  static assertThrownExceptionNameContains(thrown: Error, simpleNamePart: string): void {
-    const fullName: string = Class.of(thrown).getName();
-    expect(fullName.indexOf(simpleNamePart) >= 0).assertTrue();
-  }
-
-  /**
-   * Review 检视结果.txt §5: `catch` must receive the API/runtime Error, not Hypium AssertException from assertFail in the same try.
-   * If `run` returns normally, the test fails via assertFail after the try/catch.
-   */
-  static assertExpectThrow(run: () => void): void {
-    try {
-      run();
-    } catch (e) {
-      Utils.assertThrownErrorCodeIsNumber(e);
-      return;
-    }
-    expect(true).assertFail();
-  }
-
-  /**
-   * XTS.CHECK.ERROR_CODE.01: prefer numeric `code` when present; else strict std.core simple type name from Class.of(thrown).getName().
-   * Catch identifier type is Error per ArkTS spec §8.15.1.
-   */
-  static thrownErrorCodeIsAcceptable(thrown: Error): boolean {
-    const cls = Class.of(thrown);
-    const byName = reflect.getInstanceFieldsRecursiveByName(cls, 'code');
-    if (byName !== undefined && byName !== null) {
-      const val = byName.getValue(thrown);
-      if (Utils.isRuntimeNumericOrIntTypeof(typeof val)) {
-        return true;
-      }
-    }
-    try {
-      const raw: Object =
-        (reflect.Value.of(thrown) as ClassValue).getFieldByName('code').getData() as Object;
-      if (Utils.isRuntimeNumericOrIntTypeof(typeof raw)) {
-        return true;
-      }
-    } catch (e) {
-      // std.core.* often has no reflect.Value `code` path on device
-    }
-    const fullName = cls.getName();
-    const errorTypeArr = fullName.split('.');
-    const errType = errorTypeArr[errorTypeArr.length - 1];
-    return errType === 'RangeError' ||
-      errType === 'IllegalArgumentError' ||
-      errType === 'TypeError' ||
-      errType === 'IndexOutOfBoundsError' ||
-      errType === 'ClassCastError' ||
-      errType === 'BusinessError' ||
-      errType === 'Error' ||
-      errType === 'ArgumentError' ||
-      errType === 'IllegalStateError' ||
-      errType === 'ReferenceError' ||
-      errType === 'SyntaxError' ||
-      errType === 'EvalError' ||
-      errType === 'URIError' ||
-      errType === 'InternalError' ||
-      errType === 'OutOfMemoryError';
-  }
-
-  static assertThrownErrorCodeIsNumber(thrown: Error): void {
-    expect(Utils.thrownErrorCodeIsAcceptable(thrown)).assertTrue();
   }
 }
