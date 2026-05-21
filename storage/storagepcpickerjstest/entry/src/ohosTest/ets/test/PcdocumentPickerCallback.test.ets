@@ -220,7 +220,7 @@ export default function documentpcPickerCallback(abilityContext: Context) {
     /**
      * @tc.name   test_Documentpicker_Select_Pc_Callback_008
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_CALLBACK_0800
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option allowsMulFolderSelection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -247,7 +247,7 @@ export default function documentpcPickerCallback(abilityContext: Context) {
     /**
      * @tc.name   test_Documentpicker_Select_Pc_Callback_009
      * @tc.number SUB_STORAGE_DOCUMENTPICKER_SELECT_PC_CALLBACK_0900
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option allowsMulFolderSelection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1

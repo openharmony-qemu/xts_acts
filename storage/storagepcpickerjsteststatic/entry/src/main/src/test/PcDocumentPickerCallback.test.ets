@@ -144,7 +144,7 @@ export default function documentPcPickerCallback() {
     /**
      * @tc.name   test_PcDocumentpicker_Select_Callback_static_006
      * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0600
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option allowsMulFolderSelection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
@@ -161,7 +161,7 @@ export default function documentPcPickerCallback() {
     /**
      * @tc.name   test_PcDocumentpicker_Select_Callback_static_007
      * @tc.number SUB_STORAGE_PCDOCUMENTPICKER_SELECT_CALLBACK_STATIC_0700
-     * @tc.desc   select with option authMode
+     * @tc.desc   select with option allowsMulFolderSelection
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
