@@ -15,77 +15,68 @@
  */
 
 import {
-  afterAll,
-  afterEach,
-  beforeAll,
   beforeEach,
   describe,
   expect,
   it,
   Level,
   Size,
-  TestType
+  TestType,
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 export default function arrayBufferDetachedFieldTest(): void {
   describe('ArrayBufferDetachedFieldTest', (): void => {
-    beforeAll((): void => {
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0100
-     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0200
-     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(1);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0300
-     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 32);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0400
-     * @tc.desc Verify buffer.resize(10) succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -93,56 +84,56 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(10);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0500
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0600
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(65536);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0700
-     * @tc.desc Verify ArrayBuffer.from("ABC", "utf8") succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = ArrayBuffer.from("ABC", "utf8");
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0800
-     * @tc.desc Verify sliced.detached succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -150,14 +141,14 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const sliced = buffer.slice(4, 10);
-      let result = sliced.detached;
+      const result = sliced.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0900
-     * @tc.desc Verify buffer.detached succeeds and property state check passes
+     * @tc.desc Verify result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -165,77 +156,63 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const sliced = buffer.slice(4, 10);
-      let result = buffer.detached;
+      const result = buffer.detached;
       expect(result).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1000
-     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
+     * @tc.desc Verify result1 === result2 && result2 === result3 && result1 === false is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      expect(buffer.detached).assertFalse();
+      const result1 = buffer.detached;
+      const result2 = buffer.detached;
+      const result3 = buffer.detached;
+      expect(result1 === result2 && result2 === result3 && result1 === false).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1100
-     * @tc.desc Verify new ArrayBuffer(8) succeeds and equality relationship check passes
+     * @tc.desc Verify detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result1 = buffer.detached;
-      let result2 = buffer.detached;
-      let result3 = buffer.detached;
-      expect(result1 === result2 && result2 === result3).assertTrue();
-      expect(result1).assertFalse();
+      const view = new DataView(buffer);
+      expect(buffer.detached).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1200
-     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
+     * @tc.desc Verify detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      const view = new DataView(buffer);
+      const arr = new Int8Array(buffer);
       expect(buffer.detached).assertFalse();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1300
-     * @tc.desc Verify new ArrayBuffer(8) succeeds and property state check passes
+     * @tc.desc Verify detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      const arr = new Int8Array(buffer);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1400
-     * @tc.desc Verify new ArrayBuffer(16) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
       const i8 = new Int8Array(buffer);
       const u8 = new Uint8Array(buffer);
@@ -244,138 +221,97 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
+     * @tc.name testArrayBufferDetachedField0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1400
+     * @tc.desc Verify typeof result equals "boolean"
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferDetachedField0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.detached;
+      expect(typeof result).assertEqual("boolean");
+    });
+
+    /**
      * @tc.name testArrayBufferDetachedField0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1500
-     * @tc.desc Verify buffer.detached succeeds and result matches expected
+     * @tc.desc Verify result === false is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.detached;
-      expect(typeof result).assertEqual("boolean");
+      const result = buffer.detached;
+      expect(result === false).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1600
-     * @tc.desc Verify buffer.detached succeeds and equality relationship check passes
+     * @tc.desc Verify result !== true is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.detached;
-      expect(result === false).assertTrue();
-      expect(result).assertEqual(false);
+      const result = buffer.detached;
+      expect(result !== true).assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1700
-     * @tc.desc Verify buffer.detached succeeds and equality relationship check passes
+     * @tc.desc Verify typeof result !== 'object' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let result = buffer.detached;
-      expect(result !== true).assertTrue();
+      const result = buffer.detached;
+      expect(typeof result !== 'object').assertTrue();
     });
 
     /**
      * @tc.name testArrayBufferDetachedField0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1800
-     * @tc.desc Verify buffer.resize(0) succeeds and equality relationship check passes
+     * @tc.desc Verify detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferDetachedField0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      let result = buffer.detached;
-      expect(result === true || result === false).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1900
-     * @tc.desc Verify buffer.resize(0) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(0);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2000
-     * @tc.desc Verify buffer.resize(0) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(1);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2100
-     * @tc.desc Verify buffer.resize(0) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(1024);
       expect(buffer.detached).assertFalse();
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2200
-     * @tc.desc Verify buffer.resize(0) succeeds and property state check passes
+     * @tc.name testArrayBufferDetachedField0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1900
+     * @tc.desc Verify detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4, 16);
-      buffer.resize(0);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2300
-     * @tc.desc Verify buffer.resize(16) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(16);
       expect(buffer.detached).assertFalse();
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2400
-     * @tc.desc Verify buffer.resize(8) succeeds and property state check passes
+     * @tc.name testArrayBufferDetachedField0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2000
+     * @tc.desc Verify detached is false and detached is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(8);
       expect(buffer.detached).assertFalse();
@@ -386,98 +322,33 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2500
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and property state check passes
+     * @tc.name testArrayBufferDetachedField0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2100
+     * @tc.desc Verify API call throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      let d = buffer.detached;
-      expect(d === false).assertTrue();
-      expect(d).assertEqual(false);
-      expect(buffer.detached !== true).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2600
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8, 16);
+      try {
+        (buffer as Record<string, Object>)["detached"] = true as Object;
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
       expect(buffer.detached).assertFalse();
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2700
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and property state check passes
+     * @tc.name testArrayBufferDetachedField0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2200
+     * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      const _ = new DataView(buffer);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2800
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
-      buffer.slice(0, 4);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2900
-     * @tc.desc Verify ArrayBuffer.from("x", "utf8") succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = ArrayBuffer.from("x", "utf8");
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3000
-     * @tc.desc Verify buffer.resize(4) succeeds and property state check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(2, 8);
-      buffer.resize(4);
-      expect(buffer.detached).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3100
-     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
       expect(buffer.byteLength).assertEqual(0);
@@ -485,30 +356,30 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3200
-     * @tc.desc Verify buffer.resize(0) succeeds and equality relationship check passes
+     * @tc.name testArrayBufferDetachedField0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2300
+     * @tc.desc Verify result1 === result2 && result1 === false is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
-      let result1 = buffer.detached;
-      let result2 = buffer.detached;
+      const result1 = buffer.detached;
+      const result2 = buffer.detached;
       expect(result1 === result2 && result1 === false).assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3300
-     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
+     * @tc.name testArrayBufferDetachedField0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2400
+     * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(0);
       expect(buffer.byteLength).assertEqual(0);
@@ -516,14 +387,14 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3400
-     * @tc.desc Verify buffer.resize(10) succeeds and result byteLength is 0
+     * @tc.name testArrayBufferDetachedField0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2500
+     * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(10);
       buffer.resize(0);
@@ -532,14 +403,14 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3500
-     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
+     * @tc.name testArrayBufferDetachedField0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2600
+     * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0, 8);
       buffer.resize(0);
       expect(buffer.byteLength).assertEqual(0);
@@ -547,39 +418,18 @@ export default function arrayBufferDetachedFieldTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferDetachedField0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3600
-     * @tc.desc Verify buffer.resize(0) succeeds and result byteLength is 0
+     * @tc.name testArrayBufferDetachedField0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2700
+     * @tc.desc Verify typeof result === 'boolean' && result === false is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferDetachedField0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferDetachedField0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
-      expect(buffer.byteLength).assertEqual(0);
-      let d1 = buffer.detached;
-      let d2 = buffer.detached;
-      expect(d1).assertFalse();
-      expect(d2).assertFalse();
-      expect(d1 === d2).assertTrue();
+      const result = buffer.detached;
+      expect(typeof result === 'boolean' && result === false).assertTrue();
     });
-
-    /**
-     * @tc.name testArrayBufferDetachedField0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_3700
-     * @tc.desc Verify buffer.resize(0) succeeds and instance type check passes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferDetachedField0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8, 16);
-      buffer.resize(0);
-      let result = buffer.detached;
-      expect(typeof result).assertEqual("boolean");
-      expect(result === false).assertTrue();
-    });
-    return;
   });
 }
