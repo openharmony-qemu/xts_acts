@@ -342,7 +342,7 @@ export default function arrayBufferFromSevenTest(): void {
       for (let i: int = 0; i < 6; i++) {
         view[i] = i;
       }
-      const result = ArrayBuffer.from(source, (source.byteLength as int), 0);
+      const result = ArrayBuffer.from(source, source.byteLength, 0);
       expect(result.byteLength).assertEqual(0);
     });
 
@@ -444,7 +444,7 @@ export default function arrayBufferFromSevenTest(): void {
       for (let i: int = 0; i < 8; i++) {
         view[i] = i;
       }
-      const result = ArrayBuffer.from(source, 3, (source.byteLength as int) - 3);
+      const result = ArrayBuffer.from(source, 3, source.byteLength - 3);
       expect(result.byteLength).assertEqual(5);
     });
 
@@ -462,7 +462,7 @@ export default function arrayBufferFromSevenTest(): void {
       for (let i: int = 0; i < 8; i++) {
         view[i] = i;
       }
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
     });
 
@@ -707,9 +707,9 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
       const result = ArrayBuffer.from(source, 1, 3);
       const ref = new ArrayBuffer(0);
-      expect(result instanceof ArrayBuffer).assertTrue();
-      expect(result != null).assertTrue();
+      expect(result !== null).assertTrue();
       expect(result !== undefined).assertTrue();
+      expect(result instanceof ArrayBuffer).assertTrue();
       expect(typeof result.byteLength).assertEqual('int');
       expect(Class.of(result) === Class.of(ref)).assertTrue();
       const r2 = Utils.fromArrayBufferWithOffset(source, 2);
@@ -928,8 +928,8 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       const result = ArrayBuffer.from(source, 0, 0);
-      expect(result.byteLength).assertEqual(0);
       expect(result instanceof ArrayBuffer).assertTrue();
+      expect(result.byteLength).assertEqual(0);
     });
 
     /**
@@ -942,7 +942,7 @@ export default function arrayBufferFromSevenTest(): void {
      */
     it('testArrayBufferFromSeven0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
-      const result = ArrayBuffer.from(source, (source.byteLength as int), 0);
+      const result = ArrayBuffer.from(source, source.byteLength, 0);
       expect(result.byteLength).assertEqual(0);
     });
 
@@ -975,9 +975,9 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
       const view = new Int8Array(source);
       view[7] = 77;
-      const result = ArrayBuffer.from(source, (source.byteLength as int) - 1, 1);
+      const result = ArrayBuffer.from(source, source.byteLength - 1, 1);
       expect(result.byteLength).assertEqual(1);
-      expect(result.at(0)).assertEqual(source.at((source.byteLength as int) - 1));
+      expect(result.at(0)).assertEqual(source.at(source.byteLength - 1));
     });
 
     /**
@@ -1064,7 +1064,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0570
-     * @tc.desc Verify ArrayBuffer.from(source, (source.byteLength as int), 1) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, source.byteLength, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1072,7 +1072,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, (source.byteLength as int), 1);
+        ArrayBuffer.from(source, source.byteLength, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
