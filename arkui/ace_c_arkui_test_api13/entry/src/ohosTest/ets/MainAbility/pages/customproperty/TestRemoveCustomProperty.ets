@@ -30,7 +30,7 @@ struct TestRemoveCustomProperty {
       }).onAppear(() => {
         render.testRemoveCustomProperty(this.PAGE_TAG);
       })
-      Button('CustomProperty').key('buttonCustomProperty')
+      Button('CustomProperty').key('TestRemoveCustomProperty_buttonCustomProperty')
         .onClick(()=>{
           let uiContext:UIContext = this.getUIContext();
           if (uiContext) {
@@ -42,7 +42,7 @@ struct TestRemoveCustomProperty {
             }
           }
         }).margin({top:4})
-      Text(this.customPropertyValue + '').key('customPropertyValue')
+      Text(this.customPropertyValue + '').key('TestRemoveCustomProperty_customPropertyValue')
     }
   }
 }

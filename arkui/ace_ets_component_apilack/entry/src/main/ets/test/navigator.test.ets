@@ -59,7 +59,7 @@ export default function navigatorTargetJsunit() {
       console.info("[testnavigatorTarget0001] component strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Navigator');
-      expect(JSON.parse(strJson).$attrs.target).assertEqual("pages/index");
+      expect(JSON.parse(strJson).$attrs.target).assertEqual("MainAbility/pages/index/index");
       console.info("[testnavigatorTarget0001] target value :" + JSON.parse(strJson).$attrs.target);
 
     });
