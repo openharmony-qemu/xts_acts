@@ -947,105 +947,6 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1500
-     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1500
-     * @tc.desc   Reduce Notification alerts
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    // it('SUB_Notification_Ans_Reduce_alerts_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-    //   async (done: () => void): Promise<void> => {
-    //     let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1500'
-    //     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-    //     abilityDelegator.executeShellCommand("aa start -b com.huawei.hmos.settings -a com.huawei.hmos.settings.MainAbility")
-    //     let driver = Driver.create();
-    //     await Utils.msSleep(1000);
-    //     let scrollBar: Component = await driver.findComponent(ON.type('Row')) as Component
-    //     console.info(TEST_SUITE_NAME + TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-    //     expect(scrollBar != null).assertTrue()
-    //     await scrollBar.scrollToBottom();
-    //     await driver.assertComponentExist(ON.text('情景模式'));
-    //     let button = await driver.findComponent(ON.text('情景模式'));
-    //     if (button !== null) {
-    //       console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-    //       await button.click()
-    //       await Utils.msSleep(500)
-    //     } else {
-    //       expect(false).assertTrue();
-    //       done()
-    //     }
-    //     await driver.assertComponentExist(ON.text('立即开启'));
-    //     let button2 = await driver.findComponent(ON.text('立即开启'));
-    //     if (button2 !== null) {
-    //       console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-    //       await button2.click()
-    //       await Utils.msSleep(500)
-    //     } else {
-    //       expect(false).assertTrue();
-    //       done()
-    //     }
-    //     let notificationRequest: notificationManager.NotificationRequest = {
-    //       id: 2,
-    //       notificationFlags: {
-    //         soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
-    //         vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
-    //         bannerEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
-    //         lockScreenEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
-    //       } as notificationManager.NotificationFlags,
-    //       notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
-    //       content: {
-    //         notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-    //         normal: {
-    //           title: "SERVICE_INFORMATION",
-    //           text: "SUB_Notification_Ans_Reduce_alerts_static_1500",
-    //         }
-    //       }
-    //     };
-    //     try {
-    //       await notificationManager.publish(notificationRequest).then(async () => {
-    //         console.info(TEST_SUITE_NAME + TAG + " publish success");
-    //         await Utils.msSleep(500)
-    //         await notificationManager.getActiveNotifications()
-    //           .then((data: Array<notificationManager.NotificationRequest>) => {
-    //             console.info(TEST_SUITE_NAME + TAG +
-    //               ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-    //             expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-    //             expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
-    //             expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-    //             expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
-    //           })
-    //           .catch((err: BusinessError):void => {
-    //             console.error(TEST_SUITE_NAME + TAG +
-    //               `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-    //             expect(false).assertTrue();
-    //             done()
-    //           });
-    //       }).catch((err: BusinessError):void => {
-    //         console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-    //         expect(false).assertTrue();
-    //         done()
-    //       });
-    //     } catch (err) {
-    //       console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-    //       expect(false).assertTrue();
-    //       done()
-    //     }
-    //     await Utils.msSleep(500)
-    //     await driver.assertComponentExist(ON.text('立即关闭'));
-    //     let button3 = await driver.findComponent(ON.text('立即关闭'));
-    //     if (button3 !== null) {
-    //       console.info(TEST_SUITE_NAME + TAG + `button3 is ${JSON.stringify(button3)}`);
-    //       await button3.click()
-    //       await Utils.msSleep(500)
-    //       done()
-    //     } else {
-    //       expect(false).assertTrue();
-    //       done()
-    //     }
-    //   })
-
-    /**
      * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1600
      * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1600
      * @tc.desc   Reduce Notification alerts
@@ -1230,7 +1131,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('SUB_Notification_Ans_Reduce_alerts_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1800'
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
