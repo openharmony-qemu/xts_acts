@@ -49,6 +49,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Int.toByte(2));
       expect(buffer.at(2)).assertEqual(Int.toByte(3));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0200
@@ -66,6 +67,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(3));
       expect(buffer.at(3)).assertEqual(Int.toByte(4));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0300
@@ -83,6 +85,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(3));
       expect(buffer.at(3)).assertEqual(Int.toByte(-1));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0400
@@ -97,6 +100,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(0));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0500
@@ -113,6 +117,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Int.toByte(-128));
       expect(buffer.at(2)).assertEqual(Int.toByte(-10));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0600
@@ -126,6 +131,7 @@ export default function arrayBufferFromFourTest(): void {
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromFour0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0700
@@ -141,6 +147,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(0)).assertEqual(Int.toByte(1));
       expect(buffer.at(9)).assertEqual(Int.toByte(10));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0800
@@ -157,6 +164,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Double.toByte(Double.NaN));
       expect(buffer.at(2)).assertEqual(Double.toByte(3.0));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0900
@@ -173,6 +181,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Double.toByte(Double.POSITIVE_INFINITY));
       expect(buffer.at(2)).assertEqual(Double.toByte(Double.NEGATIVE_INFINITY));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1000
@@ -189,6 +198,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Double.toByte(255.0));
       expect(buffer.at(2)).assertEqual(Double.toByte(256.0));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1100
@@ -205,6 +215,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Double.toByte(-256.0));
       expect(buffer.at(2)).assertEqual(Double.toByte(-1000.0));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1200
@@ -219,6 +230,7 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(127));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1300
@@ -233,68 +245,65 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(-128));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1400
-     * @tc.desc Verify buffer.byteLength equals 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFour0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: double[] = [1.0, 2.0, 3.0];
-      const buffer = ArrayBuffer.from(arr);
-      expect(buffer.byteLength).assertEqual(3);
-    });
-    /**
-     * @tc.name testArrayBufferFromFour0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1500
      * @tc.desc Verify buffer.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [42.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(1);
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1600
-     * @tc.desc Verify buffer.byteLength equals 0
+     * @tc.name testArrayBufferFromFour0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1500
+     * @tc.desc Verify buffer.at(0) on empty double[] buffer throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(0);
+      try {
+        buffer.at(0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1700
+     * @tc.name testArrayBufferFromFour0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1600
      * @tc.desc Verify buffer1 === buffer2 is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [1.0, 2.0];
       const buffer1 = ArrayBuffer.from(arr);
       const buffer2 = ArrayBuffer.from(arr);
       expect(buffer1 === buffer2).assertFalse();
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1800
+     * @tc.name testArrayBufferFromFour0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1700
      * @tc.desc Verify buffer.at returns expected bytes at 4 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [1.0, 50.0, 100.0, 127.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(1));
@@ -302,6 +311,23 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(100));
       expect(buffer.at(3)).assertEqual(Int.toByte(127));
     });
+
+    /**
+     * @tc.name testArrayBufferFromFour0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1800
+     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromFour0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: double[] = [1.9, 99.5, 127.999];
+      const buffer = ArrayBuffer.from(arr);
+      expect(buffer.at(0)).assertEqual(Int.toByte(1));
+      expect(buffer.at(1)).assertEqual(Int.toByte(99));
+      expect(buffer.at(2)).assertEqual(Int.toByte(127));
+    });
+
     /**
      * @tc.name testArrayBufferFromFour0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1900
@@ -311,12 +337,13 @@ export default function arrayBufferFromFourTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: double[] = [1.9, 99.5, 127.999];
+      const arr: double[] = [-1.9, -50.5, -128.0];
       const buffer = ArrayBuffer.from(arr);
-      expect(buffer.at(0)).assertEqual(Int.toByte(1));
-      expect(buffer.at(1)).assertEqual(Int.toByte(99));
-      expect(buffer.at(2)).assertEqual(Int.toByte(127));
+      expect(buffer.at(0)).assertEqual(Int.toByte(-1));
+      expect(buffer.at(1)).assertEqual(Int.toByte(-50));
+      expect(buffer.at(2)).assertEqual(Int.toByte(-128));
     });
+
     /**
      * @tc.name testArrayBufferFromFour0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2000
@@ -326,49 +353,36 @@ export default function arrayBufferFromFourTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFour0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: double[] = [-1.9, -50.5, -128.0];
-      const buffer = ArrayBuffer.from(arr);
-      expect(buffer.at(0)).assertEqual(Int.toByte(-1));
-      expect(buffer.at(1)).assertEqual(Int.toByte(-50));
-      expect(buffer.at(2)).assertEqual(Int.toByte(-128));
-    });
-    /**
-     * @tc.name testArrayBufferFromFour0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2100
-     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromFour0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [0.0, 0.0, 0.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(0));
       expect(buffer.at(1)).assertEqual(Int.toByte(0));
       expect(buffer.at(2)).assertEqual(Int.toByte(0));
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2200
+     * @tc.name testArrayBufferFromFour0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2100
      * @tc.desc Verify buffer.at(0) returns Int.toByte(-128)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [-128.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(-128));
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2300
+     * @tc.name testArrayBufferFromFour0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2200
      * @tc.desc Verify buffer.at returns expected bytes at 4 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [10.5, 20.9, 30.1, 40.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(10));
@@ -376,15 +390,16 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(30));
       expect(buffer.at(3)).assertEqual(Int.toByte(40));
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2400
+     * @tc.name testArrayBufferFromFour0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2300
      * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [10.0, 20.0, 30.0];
       const buffer = ArrayBuffer.from(arr);
       arr[0] = 99.0;
@@ -392,30 +407,32 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer.at(1)).assertEqual(Int.toByte(20));
       expect(buffer.at(2)).assertEqual(Int.toByte(30));
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2500
+     * @tc.name testArrayBufferFromFour0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2400
      * @tc.desc Verify arr[0] equals 10.0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [10.0, 20.0];
       const buffer = ArrayBuffer.from(arr);
       buffer.set(0, Int.toByte(99));
       expect(arr[0]).assertEqual(10.0);
       expect(arr[1]).assertEqual(20.0);
     });
+
     /**
-     * @tc.name testArrayBufferFromFour0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2600
+     * @tc.name testArrayBufferFromFour0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_2500
      * @tc.desc Verify buffer.at returns expected bytes at 2 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromFour0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromFour0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: double[] = [1.0, 2.0, 3.0];
       const buffer1 = ArrayBuffer.from(arr);
       const buffer2 = ArrayBuffer.from(arr);
@@ -423,5 +440,6 @@ export default function arrayBufferFromFourTest(): void {
       expect(buffer2.at(0)).assertEqual(Int.toByte(1));
       expect(buffer1.at(0)).assertEqual(Int.toByte(99));
     });
+
   });
 }

@@ -195,14 +195,15 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1400
-     * @tc.desc Verify byteLength equals 0 for zero-length buffer
+     * @tc.desc Verify resizable zero-length buffer has byteLength 0 and resizable true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferByteLengthField0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(0);
+      const buffer = new ArrayBuffer(0, 8);
       expect(buffer.byteLength).assertEqual(0);
+      expect(buffer.resizable).assertTrue();
     });
     /**
      * @tc.name testArrayBufferByteLengthField0015

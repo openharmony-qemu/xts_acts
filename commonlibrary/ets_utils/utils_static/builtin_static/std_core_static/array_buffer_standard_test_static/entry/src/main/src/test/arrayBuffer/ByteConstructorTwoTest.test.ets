@@ -57,14 +57,14 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0200
-     * @tc.desc Verify b.toByte() equals 0
+     * @tc.desc Verify Byte(byte) with value 1 returns toByte() equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b = new Byte();
-      expect(b.toByte()).assertEqual(0);
+      const b = new Byte(Int.toByte(1));
+      expect(b.toByte()).assertEqual(1);
     });
     /**
      * @tc.name testByteConstructorTwo0003

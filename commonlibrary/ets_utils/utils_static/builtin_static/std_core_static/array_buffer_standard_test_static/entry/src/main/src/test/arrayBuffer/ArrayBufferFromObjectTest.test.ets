@@ -203,7 +203,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1300
-     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(badNum), 0, 4) throws CastError
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(badNum), 0, 4) throws Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1124,7 +1124,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7200
-     * @tc.desc Verify Utils.fromObjectWithBuffer(src, -1, 8) throws IndexOutOfBoundsError
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1132,7 +1132,7 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
-        Utils.fromObjectWithBuffer(src, -1, 8);
+        Utils.fromObjectWithBuffer(src, 0, -1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');

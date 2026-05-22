@@ -46,6 +46,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(3);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0200
@@ -61,6 +62,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(result.at(0)).assertEqual(10);
       expect(result.at(4)).assertEqual(50);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0300
@@ -74,6 +76,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0400
@@ -87,6 +90,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0500
@@ -107,6 +111,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view[255]).assertEqual(255);
       expect(view[1023]).assertEqual(255);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0600
@@ -128,6 +133,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view[3]).assertEqual(3);
       expect(view[7]).assertEqual(7);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0700
@@ -145,6 +151,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view[1]).assertEqual(0);
       expect(view[2]).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0800
@@ -162,6 +169,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view[1]).assertEqual(255);
       expect(view[2]).assertEqual(255);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0900
@@ -178,6 +186,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1000
@@ -194,6 +203,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1100
@@ -211,6 +221,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1200
@@ -227,6 +238,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1300
@@ -244,6 +256,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1400
@@ -260,6 +273,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1500
@@ -277,6 +291,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1600
@@ -293,6 +308,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1700
@@ -310,6 +326,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1800
@@ -327,6 +344,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_1900
@@ -341,6 +359,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(result.byteLength).assertEqual(u8.length);
       expect(result.byteLength).assertEqual(5);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2000
@@ -356,6 +375,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(result1 === result2).assertFalse();
       expect(result1.byteLength).assertEqual(result2.byteLength);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2100
@@ -369,6 +389,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result.at(0)).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2200
@@ -382,6 +403,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(typeof result.byteLength === 'int').assertTrue();
     });
+
     /**
      * @tc.name testArrayBufferFromThree0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2300
@@ -396,6 +418,7 @@ export default function arrayBufferFromThreeTest(): void {
       const view = new Uint8Array(result);
       expect(view[0]).assertEqual(42);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2400
@@ -412,6 +435,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(view[i]).assertEqual(u8[i]);
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2500
@@ -427,6 +451,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view.at(0)).assertEqual(100);
       expect(view.at(-1)).assertEqual(150);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2600
@@ -443,6 +468,7 @@ export default function arrayBufferFromThreeTest(): void {
       expect(view[1]).assertEqual(128);
       expect(view[2]).assertEqual(255);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2700
@@ -462,6 +488,7 @@ export default function arrayBufferFromThreeTest(): void {
         expect(view[i]).assertEqual(i);
       }
     });
+
     /**
      * @tc.name testArrayBufferFromThree0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2800
@@ -479,6 +506,7 @@ export default function arrayBufferFromThreeTest(): void {
       const viewAfter = new Uint8Array(result);
       expect(viewAfter[0]).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2900
@@ -494,6 +522,7 @@ export default function arrayBufferFromThreeTest(): void {
       view[0] = 99;
       expect(u8[0]).assertEqual(10);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3000
@@ -507,6 +536,7 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result === u8.buffer).assertFalse();
     });
+
     /**
      * @tc.name testArrayBufferFromThree0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3100
@@ -528,6 +558,7 @@ export default function arrayBufferFromThreeTest(): void {
       const view = new Uint8Array(result);
       expect(view[0]).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3200
@@ -547,10 +578,11 @@ export default function arrayBufferFromThreeTest(): void {
       const u8OnSource = new Uint8Array(result1);
       expect(u8OnSource.byteLength).assertEqual(3);
     });
+
     /**
      * @tc.name testArrayBufferFromThree0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3300
-     * @tc.desc Verify copied.byteLength equals 3
+     * @tc.desc Verify ArrayBuffer.from(Uint8Array) yields byteLength 3 and Uint8Array view length 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -563,33 +595,19 @@ export default function arrayBufferFromThreeTest(): void {
       const result = ArrayBuffer.from(u8);
       expect(result instanceof ArrayBuffer).assertTrue();
       expect(result.byteLength).assertEqual(3);
-    });
-    /**
-     * @tc.name testArrayBufferFromThree0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3400
-     * @tc.desc Verify copied.byteLength equals 3
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromThree0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = new ArrayBuffer(3);
-      const u8 = new Uint8Array(buf);
-      const copied = buf.slice(0, buf.byteLength);
-      expect(copied.byteLength).assertEqual(3);
-      const result = ArrayBuffer.from(u8);
       const view = new Uint8Array(result);
       expect(view.length).assertEqual(3);
     });
+
     /**
-     * @tc.name testArrayBufferFromThree0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3500
+     * @tc.name testArrayBufferFromThree0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3400
      * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(i16 as Object)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromThree0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromThree0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const i16 = new Int16Array([1, 2, 3]);
       try {
         ArrayBuffer.from(Utils.castToUint8Array(i16 as Object));
@@ -598,15 +616,16 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromThree0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3600
+     * @tc.name testArrayBufferFromThree0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3500
      * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(u16 as Object)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromThree0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromThree0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u16 = new Uint16Array([1, 2, 3]);
       try {
         ArrayBuffer.from(Utils.castToUint8Array(u16 as Object));
@@ -615,15 +634,16 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromThree0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3700
+     * @tc.name testArrayBufferFromThree0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3600
      * @tc.desc Verify ArrayBuffer.from(Utils.castToUint8Array(f64 as Object)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromThree0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromThree0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const f64 = new Float64Array([1.0, 2.0]);
       try {
         ArrayBuffer.from(Utils.castToUint8Array(f64 as Object));
@@ -632,5 +652,6 @@ export default function arrayBufferFromThreeTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
   });
 }

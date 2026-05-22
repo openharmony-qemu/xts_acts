@@ -44,6 +44,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0200
@@ -57,6 +58,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0300
@@ -70,6 +72,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Uint8Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0400
@@ -83,6 +86,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int32Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0500
@@ -96,6 +100,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Float64Array(ab)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0600
@@ -109,6 +114,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 4, 8)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0700
@@ -122,6 +128,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(ab, 4, 8)
       expect(view.buffer).assertEqual(ab)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0800
@@ -135,6 +142,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 4, 8)
       expect(view.byteLength).assertEqual(8)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0900
@@ -148,6 +156,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 4)
       expect(view.byteLength).assertEqual(12)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1000
@@ -160,6 +169,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int32Array(4)
       expect(view.byteLength).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1100
@@ -172,6 +182,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(10)
       expect(view.byteLength).assertEqual(10)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1200
@@ -184,6 +195,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Float64Array(3)
       expect(view.byteLength).assertEqual(24)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1300
@@ -197,6 +209,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1400
@@ -210,6 +223,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.byteOffset).assertEqual(0)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1500
@@ -223,6 +237,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1600
@@ -235,6 +250,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(8)
       expect(view.byteOffset).assertEqual(0)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1700
@@ -248,6 +264,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int32Array(ab, 8)
       expect(view.byteOffset).assertEqual(8)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1800
@@ -261,6 +278,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.buffer === ab).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_1900
@@ -275,6 +293,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view2 = new DataView(ab)
       expect(view1.buffer === view2.buffer).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2000
@@ -287,6 +306,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(4)
       expect(view.buffer.byteLength).assertEqual(4)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2100
@@ -300,6 +320,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 8, 16)
       expect(view.buffer.byteLength).assertEqual(32)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2200
@@ -314,6 +335,7 @@ export default function arrayBufferViewPropertyTest(): void {
       expect(view.buffer.byteLength).assertEqual(0)
       expect(view.buffer === ab).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2300
@@ -328,6 +350,7 @@ export default function arrayBufferViewPropertyTest(): void {
       expect(view.buffer.byteLength).assertEqual(1024)
       expect(view.buffer === ab).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2400
@@ -341,6 +364,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 0, 16)
       expect(view.byteLength).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2500
@@ -354,6 +378,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 8, 16)
       expect(view.byteLength).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2600
@@ -367,6 +392,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let byteLen: int = view.byteLength
       expect(byteLen).assertEqual(8)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2700
@@ -380,6 +406,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 0, 0)
       expect(view.byteLength).assertEqual(0)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2800
@@ -393,6 +420,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.byteLength).assertEqual(0)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_2900
@@ -405,6 +433,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(0)
       expect(view.byteLength).assertEqual(0)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3000
@@ -418,6 +447,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.byteLength).assertEqual(view.buffer.byteLength)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3100
@@ -431,6 +461,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 8, 16)
       expect(view.byteOffset + view.byteLength <= view.buffer.byteLength).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3200
@@ -444,6 +475,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int8Array(ab)
       expect(view.byteLength).assertEqual(4096)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3300
@@ -457,6 +489,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Uint8Array(ab, 4, 8)
       expect(view.byteOffset).assertEqual(4)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3400
@@ -471,6 +504,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let offset: int = view.byteOffset
       expect(offset).assertEqual(8)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3500
@@ -485,6 +519,7 @@ export default function arrayBufferViewPropertyTest(): void {
       expect(view.byteOffset >= 0).assertTrue()
       expect(Number.isInteger(view.byteOffset)).assertTrue()
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3600
@@ -498,6 +533,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab, 16, 0)
       expect(view.byteOffset).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3700
@@ -511,6 +547,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Int32Array(ab, 12, 2)
       expect(view.byteOffset).assertEqual(12)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3800
@@ -524,6 +561,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new Float64Array(ab, 16, 3)
       expect(view.byteOffset).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_3900
@@ -537,6 +575,7 @@ export default function arrayBufferViewPropertyTest(): void {
       let view = new DataView(ab)
       expect(view.byteOffset + view.byteLength).assertEqual(view.buffer.byteLength)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4000
@@ -551,6 +590,7 @@ export default function arrayBufferViewPropertyTest(): void {
       expect(view.byteOffset + view.byteLength).assertEqual(12)
       expect(view.buffer.byteLength).assertEqual(32)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4100
@@ -569,6 +609,7 @@ export default function arrayBufferViewPropertyTest(): void {
       expect(view1.byteLength).assertEqual(8)
       expect(view2.byteLength).assertEqual(16)
     });
+
 /**
      * @tc.name testArrayBufferViewProperty0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4200
@@ -621,64 +662,12 @@ export default function arrayBufferViewPropertyTest(): void {
 /**
      * @tc.name testArrayBufferViewProperty0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4500
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferViewProperty0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new DataView(new ArrayBuffer(4))
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
-    });
-
-/**
-     * @tc.name testArrayBufferViewProperty0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4600
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferViewProperty0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new Int8Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
-    });
-
-/**
-     * @tc.name testArrayBufferViewProperty0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4700
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferViewProperty0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new Uint32Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
-    });
-
-/**
-     * @tc.name testArrayBufferViewProperty0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4800
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferViewProperty0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let view = new Float64Array(4)
-      expect(ArrayBuffer.isView(view as Object)).assertTrue()
-    });
-
-/**
-     * @tc.name testArrayBufferViewProperty0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_4900
      * @tc.desc Verify API call throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferViewProperty0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferViewProperty0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let ab = new ArrayBuffer(8)
         let view: ArrayBufferView = new DataView(ab, 16)
@@ -687,5 +676,6 @@ export default function arrayBufferViewPropertyTest(): void {
         expect(e.name).assertEqual('RangeError');
       }
     });
+
   });
 }
