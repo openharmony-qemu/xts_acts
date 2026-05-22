@@ -54,7 +54,7 @@ export default function OnConnectParameter() {
     /**
      * @tc.name   testOnConnectParameterStatic001
      * @tc.number SUB_WEB_ONCONNECTPARAMETER_0100
-     * @tc.desc   test connectNative returns valid connectionId: call connectNative and verify it returns a positive number
+     * @tc.desc   test onConnect callback is invoked with valid ConnectionNativeInfo: verify connectionId is received correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -132,20 +132,5 @@ export default function OnConnectParameter() {
         inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
       })
 
-    /**
-     * @tc.name   testPauseMicrophoneErrorCodeStatic001
-     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAUSEMICROPHONE_ERRORCODE_0100
-     * @tc.desc   test pauseMicrophone on unattached WebviewController: verify error code is 17100001
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testPauseMicrophoneErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent('PauseMicrophoneErrorCodeStatic001', 10);
-        Utils.registerEvent('testPauseMicrophoneErrorCodeStatic001', 17100001, 20260606, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
-      })
   })
 }

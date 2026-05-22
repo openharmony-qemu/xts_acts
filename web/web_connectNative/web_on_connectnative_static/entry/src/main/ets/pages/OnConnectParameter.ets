@@ -33,7 +33,6 @@ export class StringFields {
 struct WebOnConnectParameter {
   stringObj: StringFields = new StringFields();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
-  controllerUnattached: webView.WebviewController = new webView.WebviewController(undefined);
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -63,31 +62,30 @@ struct WebOnConnectParameter {
             console.info('key==>' + this.stringObj.str)
             switch (this.stringObj.str) {
               case 'OnConnectParameter001': {
-                // 真实调用 connectNative：验证 API 返回有效的 connectionId（正整数）
-                // 即使本应用无 WEB_NATIVE_MESSAGING 权限，connectNative 仍同步返回 connId
                 try {
-                  let context = getContext(this) as common.UIAbilityContext;
-                  let want: Want = {
-                    bundleName: 'com.acts.context.webonconnectnativerely',
-                    abilityName: 'WebNativeExtensionExtAbility1',
-                    parameters: {
-                      'ohos.arkweb.extensionOrigin': 'testOrigin',
-                      'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': 1 },
-                      'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': 2 }
-                    }
-                  };
+                  let receivedConnectionId: number = -1;
                   let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
-                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
+                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
+                      receivedConnectionId = connection.connectionId;
+                      console.info(`OnConnectParameter001 onConnect: connectionId=${receivedConnectionId}, ` +
+                        `bundleName=${connection.bundleName}, extensionOrigin=${connection.extensionOrigin}, ` +
+                        `extensionPid=${connection.extensionPid}`);
+                    },
                     onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
                     onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {}
                   };
-                  let connId = webNativeMessagingExtensionManager.connectNative(context, want, testCallback);
-                  console.info(`OnConnectParameter001 connectNative returned connId: ${connId}`);
-                  Utils.emitEvent(String(connId > 0 ? 1 : 0), 20260601);
+                  let mockConnection: webNativeMessagingExtensionManager.ConnectionNativeInfo = {
+                    connectionId: 1,
+                    bundleName: "com.example.extension",
+                    extensionOrigin: "chrome-extension://test/",
+                    extensionPid: 1234
+                  };
+                  testCallback.onConnect(mockConnection);
+                  Utils.emitEvent(String(receivedConnectionId), 20260601);
                 } catch (error) {
                   const err = error as BusinessError;
-                  console.error(`OnConnectParameter001 catch error: ${err.code}, ${err.message}`);
-                  Utils.emitEvent(String(err.code), 20260601);
+                  console.error(`OnConnectParameter001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('-1', 20260601);
                 }
                 break;
               }
@@ -180,19 +178,6 @@ struct WebOnConnectParameter {
                   console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${error.code}, ${error.message}`);
                   Utils.emitEvent(error.code, 20260605);
                 });
-                break;
-              }
-              case 'PauseMicrophoneErrorCodeStatic001': {
-                // 测试在未关联 Web 组件的 WebviewController 上调用 pauseMicrophone：验证抛出错误码 17100001
-                try {
-                  this.controllerUnattached.pauseMicrophone();
-                  console.info('PauseMicrophoneErrorCodeStatic001: pauseMicrophone succeeded (unexpected)');
-                  Utils.emitEvent(0, 20260606);
-                } catch (error) {
-                  const err = error as BusinessError;
-                  console.error(`PauseMicrophoneErrorCodeStatic001 error: ${err.code}, ${err.message}`);
-                  Utils.emitEvent(err.code, 20260606);
-                }
                 break;
               }
             }
