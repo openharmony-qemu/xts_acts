@@ -38,6 +38,5 @@ struct Index2 {
       Button('next page') 
     }
     .width('100%')
-
   }
 }
