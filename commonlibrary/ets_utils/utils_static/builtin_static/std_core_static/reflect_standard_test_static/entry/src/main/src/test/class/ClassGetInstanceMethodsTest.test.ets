@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -127,6 +128,7 @@ class ManyMethodsClass013 {
       public method8(): void {}
       public method9(): void {}
       public method10(): void {}
+      // ... 更多方法
   }
 
 class OverloadClass014 {
@@ -148,7 +150,7 @@ class PublicClass015 {
   }
 
 class DefaultPublicClass016 {
-      defaultMethod(): void {}
+      defaultMethod(): void {} // 默认public
   }
 
 class MixedClass017 {
@@ -314,7 +316,7 @@ abstract class AbstractClass036 {
   }
 
 class NativeTestClass037 {
-      public $_set(index: int, val: string): void {}
+      public $_set(index: int, val: string): void {} // 模拟native方法
   }
 
 abstract class AbstractClass038 {
@@ -473,23 +475,29 @@ class BaseClass064 {
   }
 
 class CompleteClass065 {
+      // 实例字段
       public publicField: string = 'test';
       private privateField: int = 0;
       
+      // 静态字�?
       public static publicStaticField: boolean = true;
-      private static privateStaticField: number = 0;
+      private static privateStaticField: int = 0;
       
+      // 实例方法
       public publicInstanceMethod(): void {}
       private privateInstanceMethod(): void {}
       protected protectedInstanceMethod(): void {}
       
+      // 静态方�?
       public static publicStaticMethod(): void {}
       private static privateStaticMethod(): void {}
       
+      // getter/setter
       private _property: string = '';
       public get property(): string { return this._property; }
       public set property(value: string) { this._property = value; }
       
+      // 构造函�?
       public constructor() {}
       public constructor(param: string) {}
   }
@@ -519,6 +527,7 @@ class ParentClass066 {
       }
   }
 
+
 export default function ClassGetInstanceMethodsTest(): void {
   describe('ClassGetInstanceMethodsTest', () => {
     beforeAll(() => {
@@ -529,1123 +538,6 @@ export default function ClassGetInstanceMethodsTest(): void {
     afterEach(() => {
     });
     afterAll(() => {
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0100
-     * @tc.name testClassGetInstanceMethods001
-     * @tc.desc Verify ClassGetInstanceMethods case 001: getInstanceMethods() with no arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0200
-     * @tc.name testClassGetInstanceMethods002
-     * @tc.desc Verify ClassGetInstanceMethods case 002: return public instance methods count
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0300
-     * @tc.name testClassGetInstanceMethods003
-     * @tc.desc Verify ClassGetInstanceMethods case 003: via Class.from()get object call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass003>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0400
-     * @tc.name testClassGetInstanceMethods004
-     * @tc.desc Verify ClassGetInstanceMethods case 004: via instance get Classobject call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new TestClass004();
-        let cls = Class.of(obj);
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0500
-     * @tc.name testClassGetInstanceMethods005
-     * @tc.desc Verify ClassGetInstanceMethods case 005: return FixedArray<reflect.InstanceMethod>type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass005>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0600
-     * @tc.name testClassGetInstanceMethods006
-     * @tc.desc Verify ClassGetInstanceMethods case 006: return array publicinstance method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass006>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(3);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
-        }
-        expect(strArrayContains(methodNames, "method1")).assertTrue();
-        expect(strArrayContains(methodNames, "method2")).assertTrue();
-        expect(strArrayContains(methodNames, "method3")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0700
-     * @tc.name testClassGetInstanceMethods007
-     * @tc.desc Verify ClassGetInstanceMethods case 007: call return array instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
-        let methods1 = cls.getInstanceMethods();
-        let methods2 = cls.getInstanceMethods();
-        expect(methods1 === methods2).assertFalse();
-        expect(methods1.length).assertEqual(methods2.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0800
-     * @tc.name testClassGetInstanceMethods008
-     * @tc.desc Verify ClassGetInstanceMethods case 008: publicinstance method when return empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<EmptyClass008>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0900
-     * @tc.name testClassGetInstanceMethods009
-     * @tc.desc Verify ClassGetInstanceMethods case 009: privatemethod when not in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<PrivateOnlyClass009>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1000
-     * @tc.name testClassGetInstanceMethods010
-     * @tc.desc Verify ClassGetInstanceMethods case 010: staticmethod when not in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticOnlyClass010>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1100
-     * @tc.name testClassGetInstanceMethods011
-     * @tc.desc Verify ClassGetInstanceMethods case 011: return array InstanceMethodtype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass011>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertLarger(0);
-        let method = findInstanceMethodByName(methods, "testMethod");
-        expect(method !== undefined).assertTrue();
-        expect(method!.getName()).assertEqual("testMethod");
-        expect(Utils.classNameMatches(method!.getOwner().getName(), "MyClass011")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1200
-     * @tc.name testClassGetInstanceMethods012
-     * @tc.desc Verify ClassGetInstanceMethods case 012: return InstanceMethodobject
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass012>();
-        let methods = cls.getInstanceMethods();
-        let method = findInstanceMethodByName(methods, "testMethod");
-        expect(method !== undefined).assertTrue();
-        
-        expect(method!.getName()).assertEqual("testMethod");
-        
-        expect(Utils.reflectScalarTypeNameMatches(method!.getReturnType().getName(), "boolean")).assertTrue();
-        
-        let paramTypes = method!.getParameterTypes();
-        expect(paramTypes.length).assertEqual(2);
-        expect(paramTypes[0].getName()).assertEqual("i32");
-        expect(paramTypes[1].getName()).assertEqual("std.core.String");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1300
-     * @tc.name testClassGetInstanceMethods013
-     * @tc.desc Verify ClassGetInstanceMethods case 013: method when return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ManyMethodsClass013>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1400
-     * @tc.name testClassGetInstanceMethods014
-     * @tc.desc Verify ClassGetInstanceMethods case 014: method when return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OverloadClass014>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(3);
-        
-        for (let i = 0; i < methods.length; i++) {
-            expect(methods[i].getName()).assertEqual("test");
-            expect(methods[i].getParametersNum()).assertLessOrEqual(2);
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1500
-     * @tc.name testClassGetInstanceMethods015
-     * @tc.desc Verify ClassGetInstanceMethods case 015: return array publicinstance method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<PublicClass015>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1600
-     * @tc.name testClassGetInstanceMethods016
-     * @tc.desc Verify ClassGetInstanceMethods case 016: modifier method is public
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<DefaultPublicClass016>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let method016 = findInstanceMethodByName(methods, "defaultMethod");
-        expect(method016 !== undefined).assertTrue();
-        expect(method016!.isPublic()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1700
-     * @tc.name testClassGetInstanceMethods017
-     * @tc.desc Verify ClassGetInstanceMethods case 017: privatemethod not in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass017>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let method017 = findInstanceMethodByName(methods, "publicMethod");
-        expect(method017 !== undefined).assertTrue();
-        expect(method017!.getName()).assertEqual("publicMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1800
-     * @tc.name testClassGetInstanceMethods018
-     * @tc.desc Verify ClassGetInstanceMethods case 018: method private when return empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AllPrivateClass018>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_1900
-     * @tc.name testClassGetInstanceMethods019
-     * @tc.desc Verify ClassGetInstanceMethods case 019: protectedmethod should in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ProtectedClass019>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2000
-     * @tc.name testClassGetInstanceMethods020
-     * @tc.desc Verify ClassGetInstanceMethods case 020: staticmethod not in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticClass020>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let method020 = findInstanceMethodByName(methods, "instanceMethod");
-        expect(method020 !== undefined).assertTrue();
-        expect(method020!.getName()).assertEqual("instanceMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2100
-     * @tc.name testClassGetInstanceMethods021
-     * @tc.desc Verify ClassGetInstanceMethods case 021: static method when return empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OnlyStaticClass021>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2200
-     * @tc.name testClassGetInstanceMethods022
-     * @tc.desc Verify ClassGetInstanceMethods case 022: return array from interface inheritance publicinstance method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass022>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
-        }
-        expect(strArrayContains(methodNames, "interfaceMethod")).assertTrue();
-        expect(strArrayContains(methodNames, "classMethod")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2300
-     * @tc.name testClassGetInstanceMethods023
-     * @tc.desc Verify ClassGetInstanceMethods case 023: multiple interface when interface method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MultiInterfaceClass023>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2400
-     * @tc.name testClassGetInstanceMethods024
-     * @tc.desc Verify ClassGetInstanceMethods case 024: interface method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ImplClass024>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let method024 = findInstanceMethodByName(methods, "defaultMethod");
-        expect(method024 !== undefined).assertTrue();
-        expect(method024!.getName()).assertEqual("defaultMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2500
-     * @tc.name testClassGetInstanceMethods025
-     * @tc.desc Verify ClassGetInstanceMethods case 025: not from inheritance publicinstance method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ChildClass025>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let method025 = findInstanceMethodByName(methods, "childMethod");
-        expect(method025 !== undefined).assertTrue();
-        expect(method025!.getName()).assertEqual("childMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2600
-     * @tc.name testClassGetInstanceMethods026
-     * @tc.desc Verify ClassGetInstanceMethods case 026: inheritance when return method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ChildClass026>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        
-        let parentMethods = cls.getSuper()!.getInstanceMethods();
-        expect(parentMethods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2700
-     * @tc.name testClassGetInstanceMethods027
-     * @tc.desc Verify ClassGetInstanceMethods case 027: method in return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let childCls = Class.from<ChildClass027>();
-        let methods = childCls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        
-        let method027 = findInstanceMethodByName(methods, "overriddenMethod");
-        expect(method027 !== undefined).assertTrue();
-        expect(Utils.classNameMatches(method027!.getOwner().getName(), "ChildClass027")).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2800
-     * @tc.name testClassGetInstanceMethods028
-     * @tc.desc Verify ClassGetInstanceMethods case 028: when inheritance interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass028>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
-        }
-        expect(strArrayContains(methodNames, "parentMethod")).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_2900
-     * @tc.name testClassGetInstanceMethods029
-     * @tc.desc Verify ClassGetInstanceMethods case 029: gettermethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GetterClass029>();
-        let methods = cls.getInstanceMethods();
-        
-        let getterFound = false;
-        for (let i = 0; i < methods.length; i++) {
-            if (methods[i].getName() === "%%get-name") {
-                expect(methods[i].isGetter()).assertTrue();
-                getterFound = true;
-                break;
-            }
-        }
-        expect(getterFound).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3000
-     * @tc.name testClassGetInstanceMethods030
-     * @tc.desc Verify ClassGetInstanceMethods case 030: settermethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<SetterClass030>();
-        let methods = cls.getInstanceMethods();
-        
-        let setterFound = false;
-        for (let i = 0; i < methods.length; i++) {
-            if (methods[i].getName() === "%%set-value") {
-                expect(methods[i].isSetter()).assertTrue();
-                setterFound = true;
-                break;
-            }
-        }
-        expect(setterFound).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3100
-     * @tc.name testClassGetInstanceMethods031
-     * @tc.desc Verify ClassGetInstanceMethods case 031: getter property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ReadOnlyClass031>();
-        let methods = cls.getInstanceMethods();
-        
-        let hasGetter = false;
-        let hasSetter = false;
-        for (let i = 0; i < methods.length; i++) {
-            let name = methods[i].getName();
-            if (name === "%%get-readonly") {
-                hasGetter = true;
-            }
-            if (name === "%%set-readonly") {
-                hasSetter = true;
-            }
-        }
-        expect(hasGetter).assertTrue();
-        expect(hasSetter).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3200
-     * @tc.name testClassGetInstanceMethods032
-     * @tc.desc Verify ClassGetInstanceMethods case 032: constructor not in instance method array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<WithConstructor032>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3300
-     * @tc.name testClassGetInstanceMethods033
-     * @tc.desc Verify ClassGetInstanceMethods case 033: asyncmethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AsyncClass033>();
-        let methods = cls.getInstanceMethods();
-        let asyncMethod: reflect.InstanceMethod | undefined = undefined;
-        for (let i = 0; i < methods.length; i++) {
-            if (methods[i].getName() === "asyncMethod") {
-                asyncMethod = methods[i];
-                break;
-            }
-        }
-        expect(asyncMethod !== undefined).assertTrue();
-        expect(asyncMethod!.isAsync()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3400
-     * @tc.name testClassGetInstanceMethods034
-     * @tc.desc Verify ClassGetInstanceMethods case 034: generic method in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GenericMethodClass034>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let genericFound = false;
-        for (let i = 0; i < methods.length; i++) {
-            if (methods[i].getName() === "genericMethod") {
-                genericFound = true;
-                break;
-            }
-        }
-        expect(genericFound).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3500
-     * @tc.name testClassGetInstanceMethods035
-     * @tc.desc Verify ClassGetInstanceMethods case 035: finalmethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FinalMethodClass035>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let finalMethod = findInstanceMethodMatching(methods, (m: reflect.InstanceMethod): boolean => m.isFinal());
-        expect(finalMethod !== undefined).assertTrue();
-        expect(finalMethod!.isFinal()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3600
-     * @tc.name testClassGetInstanceMethods036
-     * @tc.desc Verify ClassGetInstanceMethods case 036: abstractmethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AbstractClass036>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let abstractMethod = findInstanceMethodMatching(methods, (m: reflect.InstanceMethod): boolean => m.isAbstract());
-        expect(abstractMethod !== undefined).assertTrue();
-        expect(abstractMethod!.isAbstract()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3700
-     * @tc.name testClassGetInstanceMethods037
-     * @tc.desc Verify ClassGetInstanceMethods case 037: nativemethod in return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let cls = Class.from<NativeTestClass037>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        
-        let arrCls = Class.from<Array<int>>();
-        let arrMethods = arrCls.getInstanceMethods();
-        let hasNative = false;
-        for (let i = 0; i < arrMethods.length; i++) {
-            if (arrMethods[i].isNative()) {
-                hasNative = true;
-                break;
-            }
-        }
-        expect(hasNative).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3800
-     * @tc.name testClassGetInstanceMethods038
-     * @tc.desc Verify ClassGetInstanceMethods case 038: abstract class publicinstance method return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AbstractClass038>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
-        }
-        expect(strArrayContains(methodNames, "privateMethod")).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_3900
-     * @tc.name testClassGetInstanceMethods039
-     * @tc.desc Verify ClassGetInstanceMethods case 039: final instance method return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FinalClass039>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4000
-     * @tc.name testClassGetInstanceMethods040
-     * @tc.desc Verify ClassGetInstanceMethods case 040: interface Classobject call getInstanceMethods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let interfaceCls = Class.from<TestInterface040>();
-        let methods = interfaceCls.getInstanceMethods();
-        expect(interfaceCls.isInterface()).assertTrue();
-        expect(methods.length).assertEqual(1);
-        let method040 = findInstanceMethodByName(methods, "interfaceMethod");
-        expect(method040 !== undefined).assertTrue();
-        expect(method040!.getName()).assertEqual("interfaceMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4100
-     * @tc.name testClassGetInstanceMethods041
-     * @tc.desc Verify ClassGetInstanceMethods case 041: generic instance method return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GenericClass041<int>>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4200
-     * @tc.name testClassGetInstanceMethods042
-     * @tc.desc Verify ClassGetInstanceMethods case 042: different type parameters generic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let intCls = Class.from<GenericContainer042<int>>();
-        let strCls = Class.from<GenericContainer042<string>>();
-        
-        let intMethods = intCls.getInstanceMethods();
-        let strMethods = strCls.getInstanceMethods();
-        
-        expect(intMethods.length).assertEqual(strMethods.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4300
-     * @tc.name testClassGetInstanceMethods043
-     * @tc.desc Verify ClassGetInstanceMethods case 043: method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<EmptyClass043>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4400
-     * @tc.name testClassGetInstanceMethods044
-     * @tc.desc Verify ClassGetInstanceMethods case 044: in call getInstanceMethods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<LazyClass044>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4500
-     * @tc.name testClassGetInstanceMethods045
-     * @tc.desc Verify ClassGetInstanceMethods case 045: call return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass045>();
-        
-        let methods1 = cls.getInstanceMethods();
-        let methods2 = cls.getInstanceMethods();
-        let methods3 = cls.getInstanceMethods();
-        
-        expect(methods1.length).assertEqual(methods2.length);
-        expect(methods2.length).assertEqual(methods3.length);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4600
-     * @tc.name testClassGetInstanceMethods046
-     * @tc.desc Verify ClassGetInstanceMethods case 046: after
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let cls = Class.from<OriginalClass046>();
-        let methods1 = cls.getInstanceMethods();
-        expect(methods1.length).assertEqual(1);
-        
-        let methods2 = cls.getInstanceMethods();
-        expect(methods2.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4700
-     * @tc.name testClassGetInstanceMethods047
-     * @tc.desc Verify ClassGetInstanceMethods case 047: return method object getOwner()return
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OwnerClass047>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        for (let i = 0; i < methods.length; i++) {
-            expect(Utils.classNameMatches(methods[i].getOwner().getName(), "OwnerClass047")).assertTrue();
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4800
-     * @tc.name testClassGetInstanceMethods048
-     * @tc.desc Verify ClassGetInstanceMethods case 048: return method public
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass048>();
-        let methods = cls.getInstanceMethods();
-                expect(methods.length).assertEqual(1);
-        for (let i = 0; i < methods.length; i++) {
-            expect(methods[i].isPublic() || methods[i].isProtected()).assertTrue();
-            expect(methods[i].isPrivate()).assertFalse();
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_4900
-     * @tc.name testClassGetInstanceMethods049
-     * @tc.desc Verify ClassGetInstanceMethods case 049: return method instance method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass049>();
-        let methods = cls.getInstanceMethods();
-        
-        expect(methods.length).assertEqual(1);
-        let method049 = findInstanceMethodByName(methods, "instanceMethod");
-        expect(method049 !== undefined).assertTrue();
-        expect(method049!.getName()).assertEqual("instanceMethod");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5000
-     * @tc.name testClassGetInstanceMethods050
-     * @tc.desc Verify ClassGetInstanceMethods case 050: getInstanceMethods and getStaticMethodsreturn different method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass050>();
-        
-        let instanceMethods = cls.getInstanceMethods();
-        let staticMethods = cls.getStaticMethods();
-        
-        expect(instanceMethods.length).assertEqual(2);
-        expect(staticMethods.length).assertEqual(2);
-        
-        let instanceNames = new Array<string>();
-        for (let i = 0; i < instanceMethods.length; i++) {
-            instanceNames.push(instanceMethods[i].getName());
-        }
-        
-        let staticNames = new Array<string>();
-        for (let i = 0; i < staticMethods.length; i++) {
-            staticNames.push(staticMethods[i].getName());
-        }
-        
-        for (let i = 0; i < instanceNames.length; i++) {
-            expect(strArrayContains(staticNames, instanceNames[i])).assertFalse();
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5100
-     * @tc.name testClassGetInstanceMethods051
-     * @tc.desc Verify ClassGetInstanceMethods case 051: getInstanceMethodsreturn and getInstanceMethod
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass051>();
-        
-        let allMethods = cls.getInstanceMethods();
-        
-        let method1 = cls.getInstanceMethod("method1", []);
-        let method2 = cls.getInstanceMethod("method2", []);
-        
-        expect(allMethods.length).assertEqual(2);
-        expect(method1 !== null).assertTrue();
-        expect(method2 !== null).assertTrue();
-        
-        let found1 = false;
-        let found2 = false;
-        for (let i = 0; i < allMethods.length; i++) {
-            if (allMethods[i].equals(method1!)) {
-                found1 = true;
-            }
-            if (allMethods[i].equals(method2!)) {
-                found2 = true;
-            }
-        }
-        expect(found1).assertTrue();
-        expect(found2).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5200
-     * @tc.name testClassGetInstanceMethods052
-     * @tc.desc Verify ClassGetInstanceMethods case 052: getInstanceMethods and getInstanceFieldsreturn different type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedClass052>();
-        
-        let methods = cls.getInstanceMethods();
-        let fields = cls.getInstanceFields();
-        
-                expect(methods.length).assertEqual(2);
-        expect(fields.length).assertEqual(2);
-        
-        for (let i = 0; i < methods.length; i++) {
-            expect(methods[i] instanceof reflect.InstanceMethod).assertTrue();
-        }
-        for (let i = 0; i < fields.length; i++) {
-            expect(fields[i] instanceof reflect.InstanceField).assertTrue();
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5300
-     * @tc.name testClassGetInstanceMethods053
-     * @tc.desc Verify ClassGetInstanceMethods case 053: get method after via invokecall
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<InvokeTestClass053>();
-        let methods = cls.getInstanceMethods();
-        
-        expect(methods.length).assertEqual(1);
-        
-        let obj = new InvokeTestClass053();
-        let greetMethod = findInstanceMethodByName(methods, "greet");
-        expect(greetMethod !== undefined).assertTrue();
-        let result = greetMethod!.invoke(obj, ["World"]);
-        expect((result as string)).assertEqual("Hello, World");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5400
-     * @tc.name testClassGetInstanceMethods054
-     * @tc.desc Verify ClassGetInstanceMethods case 054: method array get method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TraverseClass054>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertEqual(3);
-        for (let i = 0; i < methods.length; i++) {
-            let method = methods[i];
-            let name = method.getName();
-            expect(name !== null).assertTrue();
-            
-            let paramCount = method.getParametersNum();
-            expect(Number.isInteger(paramCount)).assertTrue();
-            
-            let returnType = method.getReturnType();
-            expect(returnType !== null).assertTrue();
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5500
-     * @tc.name testClassGetInstanceMethods055
-     * @tc.desc Verify ClassGetInstanceMethods case 055: method property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FilterClass055>();
-        let methods = cls.getInstanceMethods();
-        let asyncMethod: reflect.InstanceMethod | undefined = undefined;
-        let finalMethod: reflect.InstanceMethod | undefined = undefined;
-        for (let i = 0; i < methods.length; i++) {
-            if (methods[i].isAsync()) {
-                asyncMethod = methods[i];
-            }
-            if (methods[i].isFinal()) {
-                finalMethod = methods[i];
-            }
-        }
-        expect(asyncMethod !== undefined).assertTrue();
-        expect(finalMethod !== undefined).assertTrue();
-        expect(asyncMethod!.getName()).assertEqual("asyncMethod");
-        expect(finalMethod!.getName()).assertEqual("finalMethod");
-        expect(asyncMethod!.isAsync()).assertTrue();
-        expect(finalMethod!.isFinal()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5600
-     * @tc.name testClassGetInstanceMethods056
-     * @tc.desc Verify ClassGetInstanceMethods case 056: method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<SerializableClass056>();
-        let methods = cls.getInstanceMethods();
-        
-        let method = findInstanceMethodByName(methods, "testMethod");
-        expect(method !== undefined).assertTrue();
-        let methodInfo: MethodInfoSnapshot056 = {
-            name: method!.getName(),
-            owner: method!.getOwner().getName(),
-            returnType: method!.getReturnType().getName(),
-            paramCount: method!.getParametersNum(),
-            isPublic: method!.isPublic(),
-            isPrivate: method!.isPrivate(),
-            isAsync: method!.isAsync(),
-            isFinal: method!.isFinal()
-        };
-        
-        expect(methodInfo.name).assertEqual("testMethod");
-        expect(Utils.classNameMatches(methodInfo.owner, "SerializableClass056")).assertTrue();
-        expect(methodInfo.paramCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5700
-     * @tc.name testClassGetInstanceMethods057
-     * @tc.desc Verify ClassGetInstanceMethods case 057: method when performance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<LargeClass057>();
-        let startTime = Date.now();
-        let methods = cls.getInstanceMethods();
-        let endTime = Date.now();
-        
-        expect(methods.length).assertEqual(6);
-        console.info(`getInstanceMethods LargeClass057: ${endTime - startTime}ms`);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5800
-     * @tc.name testClassGetInstanceMethods058
-     * @tc.desc Verify ClassGetInstanceMethods case 058: call method performance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass058>();
-        
-        let startTime = Date.now();
-        let methods = cls.getInstanceMethods();
-        for (let i = 0; i < 1000; i++) {
-            methods = cls.getInstanceMethods();
-        }
-        let endTime = Date.now();
-        expect(methods.length).assertEqual(1);
-        console.info(`getInstanceMethods 1000 calls: ${endTime - startTime}ms`);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_5900
-     * @tc.name testClassGetInstanceMethods059
-     * @tc.desc Verify ClassGetInstanceMethods case 059: in Classobject call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let notAClass = "test";
-        expect(typeof notAClass).assertEqual('string');
-        expect(Class.from<TestClass003>().getInstanceMethods().length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6000
-     * @tc.name testClassGetInstanceMethods060
-     * @tc.desc Verify ClassGetInstanceMethods case 060: not in type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetInstanceMethods060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(Class.from<TestClass003>().getInstanceMethods().length).assertEqual(1);
     });
 
     /**
@@ -1660,7 +552,8 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<CompatClass061>();
         let methods = cls.getInstanceMethods();
         
-                expect(methods.length).assertEqual(2);
+        // 验证所有版本都返回相同的方�?
+                expect(methods.length).assertEqual(2); // ����ʱ������public����
     });
 
     /**
@@ -1672,17 +565,19 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetInstanceMethods062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 假设有另一个模块的�?
 
         let cls = Class.from<ExternalClass>();
         let methods = cls.getInstanceMethods();
         
+        // 应该能正确获取外部类的public实例方法
         expect(methods.length).assertLargerOrEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6300
      * @tc.name testClassGetInstanceMethods063
-     * @tc.desc Verify ClassGetInstanceMethods case 063: specified behavior
+     * @tc.desc Verify ClassGetInstanceMethods case 063: getInstanceMethods on class with one method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1691,6 +586,9 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<ChildClass063>();
         let methods = cls.getInstanceMethods();
         
+        // 应该包含method1, method2, childMethod�?个）
+        // 不包含parentMethod（父类方法）
+        // 不包含privateMethod（私有方法）
         expect(methods.length).assertEqual(3);
         
         let methodNames = new Array<string>();
@@ -1717,7 +615,9 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<GenericClass064<int>>();
         let methods = cls.getInstanceMethods();
         
-                expect(methods.length).assertEqual(2);
+        // 应该包含genericMethod和ownMethod
+        // 不包含baseMethod（父类方法）
+                expect(methods.length).assertEqual(2); // ����ʱ������public����
     });
 
     /**
@@ -1732,13 +632,24 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<CompleteClass065>();
         let methods = cls.getInstanceMethods();
         
-        expect(methods.length).assertEqual(3);
+        // 应该包含�?
+        // - publicInstanceMethod
+        // - protectedInstanceMethod
+        // - %%get-property
+        // - %%set-property
+        // 不包含：
+        // - privateInstanceMethod（私有）
+        // - publicStaticMethod（静态）
+        // - privateStaticMethod（静态且私有�?
+        // - 构造函�?
+        
+        expect(methods.length).assertEqual(3); // 2个方�?+ 1个getter + 1个setter
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6600
      * @tc.name testClassGetInstanceMethods066
-     * @tc.desc Verify ClassGetInstanceMethods case 066: specified behavior
+     * @tc.desc Verify ClassGetInstanceMethods case 066: getInstanceMethods includes inherited methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1747,6 +658,8 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<MyClass066>();
         let methods = cls.getInstanceMethods();
         
+        // 应该包含：test(2个重�?, sayHi
+        // 不包含：privateMethod（私有）, sayHello（父类方法）
         expect(methods.length).assertEqual(3);
         
         let methodNames = new Array<string>();
@@ -1754,18 +667,21 @@ export default function ClassGetInstanceMethodsTest(): void {
             methodNames.push(methods[i].getName());
         }
         
+        // 验证包含test方法（可能有多个重载�?
         let testCount = 0;
         for (let i = 0; i < methodNames.length; i++) {
             if (methodNames[i] === "test") {
                 testCount++;
             }
         }
-        expect(testCount).assertEqual(2);
+        expect(testCount).assertEqual(2); // 2个test重载
         
+        // 验证包含sayHi
         expect(strArrayContains(methodNames, "sayHi")).assertTrue();
         
+        // 验证父类方法
         methods = cls.getSuper()!.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
+        expect(methods.length).assertEqual(1); // sayHello
         let parentMethod = findInstanceMethodByName(methods, "sayHello");
         expect(parentMethod !== undefined).assertTrue();
         expect(parentMethod!.getName()).assertEqual("sayHello");
