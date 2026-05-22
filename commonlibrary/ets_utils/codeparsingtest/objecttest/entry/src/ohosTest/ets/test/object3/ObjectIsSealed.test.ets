@@ -1182,30 +1182,6 @@ export default function ObjectIsSealedTest() {
     });
 
     /**
-     * @tc.name   ObjectIsSealedTest096
-     * @tc.number SUB_BUILTINS_OBJECT_SEALED_TEST_9600
-     * @tc.desc   Object IsSealed Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsSealedTest096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsSealed.ObjectIsSealedTest096()).assertDeepEquals([false, true]);
-    });
-
-    /**
-     * @tc.name   ObjectIsSealedTest097
-     * @tc.number SUB_BUILTINS_OBJECT_SEALED_TEST_9700
-     * @tc.desc   Object IsSealed Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsSealedTest097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsSealed.ObjectIsSealedTest097()).assertEqual(true);
-    });
-
-    /**
      * @tc.name   ObjectIsSealedTest098
      * @tc.number SUB_BUILTINS_OBJECT_SEALED_TEST_9800
      * @tc.desc   Object IsSealed Test

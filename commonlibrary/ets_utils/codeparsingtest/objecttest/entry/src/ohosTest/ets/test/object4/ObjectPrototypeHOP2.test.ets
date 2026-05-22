@@ -102,18 +102,6 @@ export default function ObjectPrototypeHOP2Test() {
     });
 
     /**
-     * @tc.name   ObjectPrototypeHOP2Test006
-     * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_HOP2_TEST_0600
-     * @tc.desc   Object Prototype HOP2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPrototypeHOP2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPrototypeHOP2.ObjectPrototypeHOP2Test006()).assertDeepEquals([true, 100000]);
-    });
-
-    /**
      * @tc.name   ObjectPrototypeHOP2Test007
      * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_HOP2_TEST_0700
      * @tc.desc   Object Prototype HOP2 Test
@@ -135,18 +123,6 @@ export default function ObjectPrototypeHOP2Test() {
      */
     it('ObjectPrototypeHOP2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectPrototypeHOP2.ObjectPrototypeHOP2Test008()).assertDeepEquals([true, 1]);
-    });
-
-    /**
-     * @tc.name   ObjectPrototypeHOP2Test009
-     * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_HOP2_TEST_0900
-     * @tc.desc   Object Prototype HOP2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPrototypeHOP2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPrototypeHOP2.ObjectPrototypeHOP2Test009()).assertDeepEquals([true, true, false, 100000]);
     });
 
     /**

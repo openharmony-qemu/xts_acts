@@ -123,15 +123,6 @@ export function ObjectConstructorTest013() {
     return [a, b, c];
 }
 
-export function ObjectConstructorTest014() {
-    const largeStr = "a".repeat(100000);
-    const largeStrObj = Object(largeStr);
-
-    let a = largeStrObj.length;
-    let b = largeStrObj.valueOf() === largeStr;
-    return [a, b];
-}
-
 export function ObjectConstructorTest015() {
     const trueObj = Object(true);
     const falseObj = Object(false);
@@ -635,19 +626,6 @@ export function ObjectConstructorTest059() {
     let a = Number.isNaN(returned.a);
     let b = returned.b;
     let c = returned.c;
-    return [a, b, c];
-}
-
-export function ObjectConstructorTest060() {
-    const largeObj = Object.fromEntries(
-        [...Array(10000).keys()].map(i => [`key${i}`, i])
-    );
-
-    const returned = Object(largeObj);
-
-    let a = returned === largeObj;
-    let b = Object.keys(returned).length;
-    let c = returned.key9999;
     return [a, b, c];
 }
 

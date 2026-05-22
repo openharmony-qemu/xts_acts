@@ -257,15 +257,6 @@ export function ObjectDefineProperties3Test022() {
     return [Object.keys(obj).length, obj.prop999];
 }
 
-export function ObjectDefineProperties3Test023() {
-    const obj = {};
-    const longName = 'a'.repeat(10000);
-    Object.defineProperties(obj, {
-        [longName]: { value: 1, enumerable: true }
-    });
-    return [obj[longName], Object.keys(obj)[0].length];
-}
-
 export function ObjectDefineProperties3Test024() {
     const obj = {};
     Object.defineProperties(obj, {
@@ -274,27 +265,6 @@ export function ObjectDefineProperties3Test024() {
         'emoji 🎉': { value: 3, enumerable: true }
     });
     return [obj['!@#$%^&*()'], obj['中文属性'], obj['emoji 🎉']];
-}
-
-export function ObjectDefineProperties3Test025() {
-    const obj = {};
-    const largeObj = {};
-    for (let i = 0; i < 10000; i++) {
-        largeObj['key' + i] = i;
-    }
-    Object.defineProperties(obj, {
-        large: { value: largeObj, enumerable: true }
-    });
-    return obj.large.key9999;
-}
-
-export function ObjectDefineProperties3Test026() {
-    const obj = {};
-    const largeArr = new Array(10000).fill(0).map((_, i) => i);
-    Object.defineProperties(obj, {
-        largeArray: { value: largeArr, enumerable: true }
-    });
-    return [obj.largeArray[9999], obj.largeArray.length];
 }
 
 export function ObjectDefineProperties3Test027() {

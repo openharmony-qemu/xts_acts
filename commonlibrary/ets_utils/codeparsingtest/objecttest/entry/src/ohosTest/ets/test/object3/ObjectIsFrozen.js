@@ -134,16 +134,6 @@ export function ObjectIsFrozenTest019() {
     return [beforePrevent, afterPrevent];
 }
 
-export function ObjectIsFrozenTest020() {
-    const largeObj = Object.fromEntries(
-        [...Array(10000).keys()].map(i => [`key${i}`, i])
-    );
-    const beforeFreeze = Object.isFrozen(largeObj);
-    Object.freeze(largeObj);
-    const afterFreeze = Object.isFrozen(largeObj);
-    return [beforeFreeze, afterFreeze];
-}
-
 export function ObjectIsFrozenTest021() {
     const arr = [1, 2, 3, "a", true];
     const beforeFreeze = Object.isFrozen(arr);

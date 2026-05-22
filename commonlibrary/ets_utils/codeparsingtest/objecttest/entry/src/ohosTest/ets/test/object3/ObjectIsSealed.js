@@ -782,25 +782,6 @@ export function ObjectIsSealedTest095() {
     return [first, second];
 }
 
-export function ObjectIsSealedTest096() {
-    const largeObj = Object.fromEntries(
-        [...Array(10000).keys()].map(i => [`key${i}`, i])
-    );
-    const first = Object.isSealed(largeObj);
-    Object.seal(largeObj);
-    const second = Object.isSealed(largeObj);
-    return [first, second];
-}
-
-export function ObjectIsSealedTest097() {
-    const hugeObj = {};
-    for (let i = 0; i < 100000; i++) {
-        hugeObj['prop' + i] = i;
-    }
-    Object.seal(hugeObj);
-    return Object.isSealed(hugeObj);
-}
-
 export function ObjectIsSealedTest098() {
     const obj = { 0: 'zero', 1: 'one', 2: 'two' };
     const first = Object.isSealed(obj);

@@ -1,12 +1,5 @@
 'use strict'
 
-export function ObjectPreventExtensionsTest001() {
-    const obj = Object.fromEntries([...Array(10000).keys()].map(i => [i, i]));
-    const result = Object.preventExtensions(obj);
-    let a = Object.isExtensible(result);
-    return a;
-}
-
 export function ObjectPreventExtensionsTest002() {
     const result = Object.preventExtensions(1);
     let a = result;
@@ -745,14 +738,6 @@ export function ObjectPreventExtensionsTest079() {
         // 捕获严格模式错误
     }
     let a2 = obj['new'];
-    return [a1, a2];
-}
-
-export function ObjectPreventExtensionsTest080() {
-    const obj = Object.fromEntries([...Array(10000).keys()].map(i => [i, i]));
-    const result = Object.preventExtensions(obj);
-    let a1 = Object.isExtensible(result);
-    let a2 = Object.keys(result).length;
     return [a1, a2];
 }
 

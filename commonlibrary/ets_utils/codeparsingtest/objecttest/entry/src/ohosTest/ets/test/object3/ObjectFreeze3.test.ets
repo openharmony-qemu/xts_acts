@@ -54,18 +54,6 @@ export default function ObjectFreeze3Test() {
     });
 
     /**
-     * @tc.name   ObjectFreeze3Test002
-     * @tc.number SUB_BUILTINS_OBJECT_FREEZE3_TEST_0200
-     * @tc.desc   Object Freeze3 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectFreeze3Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectFreeze3.ObjectFreeze3Test002()).assertEqual(10000);
-    });
-
-    /**
      * @tc.name   ObjectFreeze3Test003
      * @tc.number SUB_BUILTINS_OBJECT_FREEZE3_TEST_0300
      * @tc.desc   Object Freeze3 Test

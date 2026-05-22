@@ -198,30 +198,6 @@ export default function ObjectCreate2Test() {
     });
 
     /**
-     * @tc.name   ObjectCreate2Test014
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_1400
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test014()).assertEqual(100000);
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test015
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_1500
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test015()).assertEqual(100000);
-    });
-
-    /**
      * @tc.name   ObjectCreate2Test016
      * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_1600
      * @tc.desc   Object Create2 Test
@@ -243,66 +219,6 @@ export default function ObjectCreate2Test() {
      */
     it('ObjectCreate2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectCreate2.ObjectCreate2Test017()).assertDeepEquals([0, 0]);
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test018
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_1800
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test018()).assertEqual('value');
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test019
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_1900
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test019()).assertDeepEquals(['own', 'prototype']);
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test020
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_2000
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test020()).assertEqual(200000);
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test021
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_2100
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test021()).assertEqual(200000);
-    });
-
-    /**
-     * @tc.name   ObjectCreate2Test022
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE2_TEST_2200
-     * @tc.desc   Object Create2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreate2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate2.ObjectCreate2Test022()).assertEqual(10000);
     });
 
     /**

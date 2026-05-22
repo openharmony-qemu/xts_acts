@@ -99,26 +99,6 @@ export function ObjectIsFrozen2Test009() {
     return res;
 }
 
-export function ObjectIsFrozen2Test010() {
-    const longKey = "a".repeat(10000);
-    const obj = { [longKey]: 1 };
-    const beforeFreeze = Object.isFrozen(obj);
-    Object.freeze(obj);
-    const afterFreeze = Object.isFrozen(obj);
-    return [beforeFreeze, afterFreeze];
-}
-
-export function ObjectIsFrozen2Test011() {
-    const largeObj = {};
-    for (let i = 0; i < 100000; i++) {
-        largeObj[`prop${i}`] = i;
-    }
-    const beforeFreeze = Object.isFrozen(largeObj);
-    Object.freeze(largeObj);
-    const afterFreeze = Object.isFrozen(largeObj);
-    return [beforeFreeze, afterFreeze];
-}
-
 export function ObjectIsFrozen2Test012() {
     const emptyObj = {};
     const beforePrevent = Object.isFrozen(emptyObj);
@@ -261,37 +241,6 @@ export function ObjectIsFrozen2Test027() {
     Object.freeze(obj);
     const res = Object.isFrozen(obj);
     return res;
-}
-
-export function ObjectIsFrozen2Test028() {
-    const largeObj = {};
-    for (let i = 0; i < 10000; i++) {
-        largeObj[`prop${i}`] = i;
-    }
-
-    const start = Date.now();
-    Object.freeze(largeObj);
-    const end = Date.now();
-    const freezeTime = end - start;
-    const isFrozen = Object.isFrozen(largeObj);
-
-    return isFrozen;
-}
-
-export function ObjectIsFrozen2Test029() {
-    const largeObj = {};
-    for (let i = 0; i < 10000; i++) {
-        largeObj[`prop${i}`] = i;
-    }
-
-    Object.freeze(largeObj);
-
-    const start = Date.now();
-    const result = Object.isFrozen(largeObj);
-    const end = Date.now();
-    const checkTime = end - start;
-
-    return result;
 }
 
 export function ObjectIsFrozen2Test030() {

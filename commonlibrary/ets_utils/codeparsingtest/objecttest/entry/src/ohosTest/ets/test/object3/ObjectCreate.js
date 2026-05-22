@@ -711,17 +711,6 @@ export function ObjectCreateTest065() {
     return [keyLength, protoEqual];
 }
 
-export function ObjectCreateTest066() {
-    const proto = Object.fromEntries(
-        [...Array(10000).keys()].map(i => [`prop${i}`, i])
-    );
-    const obj = Object.create(proto);
-    const prop9999Val = obj.prop9999;
-    const keyLength = Object.keys(obj).length;
-
-    return [prop9999Val, keyLength];
-}
-
 export function ObjectCreateTest067() {
     const proto = {
         level1: {

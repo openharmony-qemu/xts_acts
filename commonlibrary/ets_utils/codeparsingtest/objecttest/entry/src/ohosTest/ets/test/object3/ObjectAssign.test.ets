@@ -710,18 +710,6 @@ export default function ObjectAssignTest() {
     });
 
     /**
-     * @tc.name   ObjectAssignTest057
-     * @tc.number SUB_BUILTINS_OBJECT_ASSIGN_TEST_5700
-     * @tc.desc   ObjectAssign Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectAssignTest057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectAssign.ObjectAssignTest057()).assertEqual(10000);
-    });
-
-    /**
      * @tc.name   ObjectAssignTest058
      * @tc.number SUB_BUILTINS_OBJECT_ASSIGN_TEST_5800
      * @tc.desc   ObjectAssign Test

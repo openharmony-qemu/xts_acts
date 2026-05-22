@@ -153,13 +153,6 @@ export function ObjectPrototypeHOPTest020() {
     return [a, b, c];
 }
 
-export function ObjectPrototypeHOPTest021() {
-    const longKey = "a".repeat(10000);
-    const obj = { [longKey]: "value" };
-    let a = obj.hasOwnProperty(longKey);
-    return a;
-}
-
 export function ObjectPrototypeHOPTest022() {
     const obj = { a: 1, b: 2 };
     let a = obj.hasOwnProperty("a");

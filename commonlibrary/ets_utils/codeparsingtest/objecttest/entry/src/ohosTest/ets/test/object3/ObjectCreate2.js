@@ -135,31 +135,6 @@ export function ObjectCreate2Test013() {
     return [res1, res2];
 }
 
-export function ObjectCreate2Test014() {
-    const proto = { method() { return 'test'; } };
-    const start = Date.now();
-    const objects = [];
-    for (let i = 0; i < 100000; i++) {
-        objects.push(Object.create(proto));
-    }
-    const end = Date.now();
-    const duration = end - start;
-
-    return objects.length;
-}
-
-export function ObjectCreate2Test015() {
-    const start = Date.now();
-    const objects = [];
-    for (let i = 0; i < 100000; i++) {
-        objects.push(Object.create(null));
-    }
-    const end = Date.now();
-    const duration = end - start;
-
-    return objects.length;
-}
-
 export function ObjectCreate2Test016() {
     const simpleProto = { a: 1 };
     const complexProto = {
@@ -184,104 +159,6 @@ export function ObjectCreate2Test017() {
     const res2 = Object.keys(nullProtoObj).length;
 
     return [res1, res2];
-}
-
-export function ObjectCreate2Test018() {
-    let proto = { prop: 'value' };
-    for (let i = 0; i < 10; i++) {
-        proto = Object.create(proto);
-    }
-    const obj = Object.create(proto);
-    const start = Date.now();
-    for (let i = 0; i < 1000000; i++) {
-        obj.prop;
-    }
-    const end = Date.now();
-    const duration = end - start;
-
-    return obj.prop;
-}
-
-export function ObjectCreate2Test019() {
-    const proto = { prop: 'prototype' };
-    const obj = Object.create(proto);
-    obj.ownProp = 'own';
-
-    const start1 = Date.now();
-    for (let i = 0; i < 1000000; i++) {
-        obj.ownProp;
-    }
-    const end1 = Date.now();
-
-    const start2 = Date.now();
-    for (let i = 0; i < 1000000; i++) {
-        obj.prop;
-    }
-    const end2 = Date.now();
-
-    return [obj.ownProp, obj.prop];
-}
-
-export function ObjectCreate2Test020() {
-    function Constructor() {
-        this.prop = 'value';
-    }
-
-    const start1 = Date.now();
-
-    const instances1 = [];
-    for (let i = 0; i < 100000; i++) {
-        instances1.push(new Constructor());
-    }
-    const end1 = Date.now();
-
-    const proto = { prop: 'value' };
-    const start2 = Date.now();
-
-    const instances2 = [];
-    for (let i = 0; i < 100000; i++) {
-        instances2.push(Object.create(proto));
-    }
-    const end2 = Date.now();
-
-    return instances1.length + instances2.length;
-}
-
-export function ObjectCreate2Test021() {
-    const start1 = Date.now();
-    const list1 = [];
-    for (let i = 0; i < 100000; i++) {
-        const obj = {};
-        list1.push(obj);
-    }
-    const end1 = Date.now();
-
-    const start2 = Date.now();
-    const list2 = [];
-    for (let i = 0; i < 100000; i++) {
-        const obj = Object.create(Object.prototype);
-        list2.push(obj);
-    }
-    const end2 = Date.now();
-
-    return list1.length + list2.length;
-}
-
-export function ObjectCreate2Test022() {
-    function createObjects() {
-        const objects = [];
-        for (let i = 0; i < 10000; i++) {
-            objects.push(Object.create({ prop: 'value' }));
-        }
-        return objects;
-    }
-
-    let objs = createObjects();
-
-    const count = objs.length;
-    objs = null;
-
-    return count;
 }
 
 export function ObjectCreate2Test023() {

@@ -378,20 +378,6 @@ export function ObjectAssign2Test027() {
     return [a, b];
 }
 
-export function ObjectAssign2Test028() {
-    const huge = Object.fromEntries(
-        [...Array(100000).keys()].map(i => [`k${i}`, i])
-    );
-    const target = {};
-    try {
-        const result = Object.assign(target, huge);
-        let a = Object.keys(result).length;
-        return a;
-    } catch(e) {
-        return e.name;
-    }
-}
-
 export function ObjectAssign2Test029() {
     const obj = { a: 1, b: 2 };
     const result = Object.assign(obj, obj);
@@ -975,17 +961,6 @@ export function ObjectAssign2Test082() {
     return a;
 }
 
-export function ObjectAssign2Test083() {
-    const hugeSource = {};
-    for (let i = 0; i < 100000; i++) {
-        hugeSource[`prop${i}`] = i;
-    }
-    const target = {};
-    const result = Object.assign(target, hugeSource);
-    let a = Object.keys(result).length;
-    return a;
-}
-
 export function ObjectAssign2Test084() {
     let deepSource = { value: 1 };
     for (let i = 0; i < 1000; i++) {
@@ -995,17 +970,6 @@ export function ObjectAssign2Test084() {
     const result = Object.assign(target, deepSource);
     let a = typeof result.nested;
     return a;
-}
-
-export function ObjectAssign2Test085() {
-    const longKey = 'a'.repeat(10000);
-    const source = { [longKey]: 'value' };
-    const target = {};
-    const result = Object.assign(target, source);
-
-    let a = result[longKey];
-    let b = longKey in result;
-    return [a, b];
 }
 
 export function ObjectAssign2Test086() {

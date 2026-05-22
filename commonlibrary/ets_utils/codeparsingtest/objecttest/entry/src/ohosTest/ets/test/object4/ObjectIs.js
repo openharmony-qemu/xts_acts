@@ -415,14 +415,6 @@ export function ObjectIsTest057() {
     return [a, b, c, d, e];
 }
 
-export function ObjectIsTest058() {
-    const longStr = "a".repeat(10000);
-    let a = Object.is(longStr, longStr);
-    let b = Object.is("a".repeat(100), "a".repeat(100));
-    let c = Object.is("a".repeat(100), "a".repeat(101));
-    return [a, b, c];
-}
-
 export function ObjectIsTest059() {
     const name = "world";
     let a = Object.is(`hello ${name}`, `hello world`);

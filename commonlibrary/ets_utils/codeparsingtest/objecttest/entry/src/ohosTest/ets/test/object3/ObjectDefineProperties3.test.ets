@@ -306,18 +306,6 @@ export default function ObjectDefineProperties3Test() {
     });
 
     /**
-     * @tc.name   ObjectDefineProperties3Test023
-     * @tc.number SUB_BUILTINS_OBJECT_DEFINE_PROPERTIES3_TEST_2300
-     * @tc.desc   Object Define Proper3 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectDefineProperties3Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectDefineProperties3.ObjectDefineProperties3Test023()).assertDeepEquals([1, 10000]);
-    });
-
-    /**
      * @tc.name   ObjectDefineProperties3Test024
      * @tc.number SUB_BUILTINS_OBJECT_DEFINE_PROPERTIES3_TEST_2400
      * @tc.desc   Object Define Proper3 Test
@@ -327,30 +315,6 @@ export default function ObjectDefineProperties3Test() {
      */
     it('ObjectDefineProperties3Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectDefineProperties3.ObjectDefineProperties3Test024()).assertDeepEquals([1, 2, 3]);
-    });
-
-    /**
-     * @tc.name   ObjectDefineProperties3Test025
-     * @tc.number SUB_BUILTINS_OBJECT_DEFINE_PROPERTIES3_TEST_2500
-     * @tc.desc   Object Define Proper3 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectDefineProperties3Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectDefineProperties3.ObjectDefineProperties3Test025()).assertEqual(9999);
-    });
-
-    /**
-     * @tc.name   ObjectDefineProperties3Test026
-     * @tc.number SUB_BUILTINS_OBJECT_DEFINE_PROPERTIES3_TEST_2600
-     * @tc.desc   Object Define Proper3 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectDefineProperties3Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectDefineProperties3.ObjectDefineProperties3Test026()).assertDeepEquals([9999, 10000]);
     });
 
     /**

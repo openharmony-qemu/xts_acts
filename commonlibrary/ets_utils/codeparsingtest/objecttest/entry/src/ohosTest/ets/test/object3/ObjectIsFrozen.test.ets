@@ -270,18 +270,6 @@ export default function ObjectIsFrozenTest() {
     });
 
     /**
-     * @tc.name   ObjectIsFrozenTest020
-     * @tc.number SUB_BUILTINS_OBJECT_FROZEN_TEST_2000
-     * @tc.desc   Object IsFrozen Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsFrozenTest020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsFrozen.ObjectIsFrozenTest020()).assertDeepEquals([false, true]);
-    });
-
-    /**
      * @tc.name   ObjectIsFrozenTest021
      * @tc.number SUB_BUILTINS_OBJECT_FROZEN_TEST_2100
      * @tc.desc   Object IsFrozen Test

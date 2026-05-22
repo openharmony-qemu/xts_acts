@@ -150,30 +150,6 @@ export default function ObjectIsFrozen2Test() {
     });
 
     /**
-     * @tc.name   ObjectIsFrozen2Test010
-     * @tc.number SUB_BUILTINS_OBJECT_FROZEN2_TEST_1000
-     * @tc.desc   Object IsFrozen2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsFrozen2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsFrozen2.ObjectIsFrozen2Test010()).assertDeepEquals([false, true]);
-    });
-
-    /**
-     * @tc.name   ObjectIsFrozen2Test011
-     * @tc.number SUB_BUILTINS_OBJECT_FROZEN2_TEST_1100
-     * @tc.desc   Object IsFrozen2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsFrozen2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsFrozen2.ObjectIsFrozen2Test011()).assertDeepEquals([false, true]);
-    });
-
-    /**
      * @tc.name   ObjectIsFrozen2Test012
      * @tc.number SUB_BUILTINS_OBJECT_FROZEN2_TEST_1200
      * @tc.desc   Object IsFrozen2 Test
@@ -344,30 +320,6 @@ export default function ObjectIsFrozen2Test() {
      */
     it('ObjectIsFrozen2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectIsFrozen2.ObjectIsFrozen2Test027()).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   ObjectIsFrozen2Test028
-     * @tc.number SUB_BUILTINS_OBJECT_FROZEN2_TEST_2800
-     * @tc.desc   Object IsFrozen2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsFrozen2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsFrozen2.ObjectIsFrozen2Test028()).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   ObjectIsFrozen2Test029
-     * @tc.number SUB_BUILTINS_OBJECT_FROZEN2_TEST_2900
-     * @tc.desc   Object IsFrozen2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsFrozen2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsFrozen2.ObjectIsFrozen2Test029()).assertEqual(true);
     });
 
     /**

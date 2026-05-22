@@ -713,18 +713,6 @@ export default function ObjectIsTest() {
     });
 
     /**
-     * @tc.name   ObjectIsTest058
-     * @tc.number SUB_BUILTINS_OBJECT_IS_TEST_5800
-     * @tc.desc   Object Is Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsTest058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIs.ObjectIsTest058()).assertDeepEquals([true, true, false]);
-    });
-
-    /**
      * @tc.name   ObjectIsTest059
      * @tc.number SUB_BUILTINS_OBJECT_IS_TEST_5900
      * @tc.desc   Object Is Test

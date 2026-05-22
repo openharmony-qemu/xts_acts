@@ -541,17 +541,6 @@ export function ObjectAssignTest056() {
     return a;
 }
 
-export function ObjectAssignTest057() {
-    const target = {};
-    const source = Object.fromEntries(
-        [...Array(10000).keys()].map(i => [`key${i}`, i])
-    );
-    const result = Object.assign(target, source);
-
-    let a = Object.keys(result).length;
-    return a;
-}
-
 export function ObjectAssignTest058() {
     const target = { existing: 1 };
     const source = { single: 'value' };

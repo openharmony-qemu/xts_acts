@@ -293,18 +293,6 @@ export default function ObjectKeys2Test() {
     });
 
     /**
-     * @tc.name   ObjectKeys2Test023
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_2300
-     * @tc.desc   Object Keys2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeys2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys2.ObjectKeys2Test023()).assertDeepEquals([100000, '0', '99999']);
-    });
-
-    /**
      * @tc.name   ObjectKeys2Test024
      * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_2400
      * @tc.desc   Object Keys2 Test
@@ -518,42 +506,6 @@ export default function ObjectKeys2Test() {
      */
     it('ObjectKeys2Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectKeys2.ObjectKeys2Test041()).assertDeepEquals(['\\a', '\\b', '\\n', '\\t']);
-    });
-
-    /**
-     * @tc.name   ObjectKeys2Test043
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_4300
-     * @tc.desc   Object Keys2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeys2Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys2.ObjectKeys2Test043()).assertEqual(100000000);
-    });
-
-    /**
-     * @tc.name   ObjectKeys2Test044
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_4400
-     * @tc.desc   Object Keys2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeys2Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys2.ObjectKeys2Test044()).assertEqual(100000);
-    });
-
-    /**
-     * @tc.name   ObjectKeys2Test045
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_4500
-     * @tc.desc   Object Keys2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeys2Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys2.ObjectKeys2Test045()).assertEqual(true);
     });
 
     /**

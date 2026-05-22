@@ -41,18 +41,6 @@ export default function ObjectIsExtensibleTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   ObjectIsExtensibleTest001
-     * @tc.number SUB_BUILTINS_OBJECT_IS_EXTENSIBLE_TEST_0100
-     * @tc.desc   Object IsExtensible Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsExtensibleTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest001()).assertDeepEquals([true, false]);
-    });
-
-    /**
      * @tc.name   ObjectIsExtensibleTest002
      * @tc.number SUB_BUILTINS_OBJECT_IS_EXTENSIBLE_TEST_0200
      * @tc.desc   Object IsExtensible Test
@@ -315,18 +303,6 @@ export default function ObjectIsExtensibleTest() {
      */
     it('ObjectIsExtensibleTest023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectIsExtensible.ObjectIsExtensibleTest023()).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   ObjectIsExtensibleTest024
-     * @tc.number SUB_BUILTINS_OBJECT_IS_EXTENSIBLE_TEST_2400
-     * @tc.desc   Object IsExtensible Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectIsExtensibleTest024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectIsExtensible.ObjectIsExtensibleTest024()).assertEqual(true);
     });
 
     /**

@@ -197,15 +197,6 @@ export function ObjectKeys2Test022() {
     return log1;
 }
 
-export function ObjectKeys2Test023() {
-    const longStr = 'a'.repeat(100000);
-    const keys = Object.keys(longStr);
-    let log1 = keys.length;
-    let log2 = keys[0];
-    let log3 = keys[keys.length - 1];
-    return [log1, log2, log3];
-}
-
 export function ObjectKeys2Test024() {
     const str = 'Hello World';
     const subStr = str.substring(0, 5);
@@ -333,43 +324,6 @@ export function ObjectKeys2Test041() {
     const obj = { '\\a': 'bell', '\\b': 'backspace', '\\n': 'newline', '\\t': 'tab' };
     let log1 = Object.keys(obj);
     return log1;
-}
-
-export function ObjectKeys2Test042() {
-    const obj = {};
-    for (let i = 0; i < 1000000; i++) {
-        obj[`key${i}`] = i;
-    }
-    const keys = Object.keys(obj);
-    let log1 = keys.length;
-    return log1;
-}
-
-export function ObjectKeys2Test043() {
-    const obj = {};
-    const longKey = 'a'.repeat(100000000);
-    obj[longKey] = 'value';
-    let log1 = Object.keys(obj)[0].length;
-    return log1;
-}
-
-export function ObjectKeys2Test044() {
-    let obj = {};
-    for (let i = 0; i < 100000; i++) {
-        obj[`key${i}`] = i;
-    }
-    const keys = Object.keys(obj);
-    obj = null;
-    let log1 = keys.length;
-    return log1;
-}
-
-export function ObjectKeys2Test045() {
-    const obj = { a: 1, b: 2, c: 3 };
-    for (let i = 0; i < 10000; i++) {
-        const keys = Object.keys(obj);
-    }
-    return true; // 无打印值，返回占位标识
 }
 
 export function ObjectKeys2Test046() {

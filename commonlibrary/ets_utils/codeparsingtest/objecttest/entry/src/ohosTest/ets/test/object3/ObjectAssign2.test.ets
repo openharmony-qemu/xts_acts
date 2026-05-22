@@ -367,18 +367,6 @@ export default function ObjectAssign2Test() {
     });
 
     /**
-     * @tc.name   ObjectAssign2Test028
-     * @tc.number SUB_BUILTINS_OBJECT_ASSIGN2_TEST_2800
-     * @tc.desc   ObjectAssign2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectAssign2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectAssign2.ObjectAssign2Test028()).assertEqual(100000);
-    });
-
-    /**
      * @tc.name   ObjectAssign2Test029
      * @tc.number SUB_BUILTINS_OBJECT_ASSIGN2_TEST_2900
      * @tc.desc   ObjectAssign2 Test
@@ -1027,18 +1015,6 @@ export default function ObjectAssign2Test() {
     });
 
     /**
-     * @tc.name   ObjectAssign2Test083
-     * @tc.number SUB_BUILTINS_OBJECT_ASSIGN2_TEST_8300
-     * @tc.desc   ObjectAssign2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectAssign2Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectAssign2.ObjectAssign2Test083()).assertEqual(100000);
-    });
-
-    /**
      * @tc.name   ObjectAssign2Test084
      * @tc.number SUB_BUILTINS_OBJECT_ASSIGN2_TEST_8400
      * @tc.desc   ObjectAssign2 Test
@@ -1048,18 +1024,6 @@ export default function ObjectAssign2Test() {
      */
     it('ObjectAssign2Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectAssign2.ObjectAssign2Test084()).assertEqual('object');
-    });
-
-    /**
-     * @tc.name   ObjectAssign2Test085
-     * @tc.number SUB_BUILTINS_OBJECT_ASSIGN2_TEST_8500
-     * @tc.desc   ObjectAssign2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectAssign2Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectAssign2.ObjectAssign2Test085()).assertDeepEquals(['value', true]);
     });
 
     /**

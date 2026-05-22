@@ -70,16 +70,6 @@ export function ObjectConstructor2Test009() {
     return [a, b];
 }
 
-export function ObjectConstructor2Test010() {
-    const hugeStr = "a".repeat(10000000);
-    let hugeStrObj = Object(hugeStr);
-    let a = hugeStrObj.length;
-    let b = hugeStrObj.valueOf() === hugeStr;
-
-    hugeStrObj = null;
-    return [a, b];
-}
-
 export function ObjectConstructor2Test011() {
     const illegalUnicode = Object("\udc04");
     const surrogatePair = Object("\ud83d\udc46");

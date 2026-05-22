@@ -1,23 +1,5 @@
 'use strict'
 
-export function ObjectKeysTest001() {
-    const empty = {};
-    let a1 = Object.isExtensible(empty);
-    let a = Object.isExtensible(empty);
-
-    const single = {a: 1};
-    let b1 = Object.isExtensible(single);
-    let b = Object.isExtensible(single);
-
-    const large = {};
-    for (let i = 0; i < 100000; i++) {
-        large['prop' + i] = i;
-    }
-    let c1 = Object.isExtensible(large);
-    let c = Object.isExtensible(large);
-    return [a1, b1, c1, a, b, c];
-}
-
 export function ObjectKeysTest002() {
     function checkExtensibility(obj) {
         return Object.isExtensible(obj);
@@ -538,13 +520,6 @@ export function ObjectKeysTest061() {
     return a;
 }
 
-export function ObjectKeysTest062() {
-    const longKey = 'a'.repeat(10000);
-    const obj = { [longKey]: 1 };
-    let a = Object.keys(obj)[0].length;
-    return a;
-}
-
 export function ObjectKeysTest063() {
     const date = new Date();
     date.customProp = 'test';
@@ -696,12 +671,6 @@ export function ObjectKeysTest085() {
         errorType = e instanceof TypeError;
     }
     return errorType;
-}
-
-export function ObjectKeysTest086() {
-    const obj = Object.fromEntries([...Array(10000).keys()].map(i => [i, i]));
-    let a = Object.keys(obj).length;
-    return a;
 }
 
 export function ObjectKeysTest087() {

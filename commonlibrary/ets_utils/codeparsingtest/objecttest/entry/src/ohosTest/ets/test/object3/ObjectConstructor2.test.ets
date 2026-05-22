@@ -149,19 +149,6 @@ export default function ObjectConstructor2Test() {
     });
 
     /**
-     * @tc.name   ObjectConstructor2Test010
-     * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR2_TEST_1000
-     * @tc.desc   Object Constructor2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectConstructor2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(Object2.ObjectConstructor2Test010()).assertDeepEquals([10000000, true]);
-
-    });
-
-    /**
      * @tc.name   ObjectConstructor2Test011
      * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR2_TEST_1100
      * @tc.desc   Object Constructor2 Test

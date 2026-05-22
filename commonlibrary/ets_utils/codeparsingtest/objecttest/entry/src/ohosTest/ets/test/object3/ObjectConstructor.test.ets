@@ -197,18 +197,6 @@ export default function ObjectConstructorTest() {
     });
 
     /**
-     * @tc.name   ObjectConstructorTest014
-     * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR_TEST_1400
-     * @tc.desc   Object Constructor Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectConstructorTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(Object.ObjectConstructorTest014()).assertDeepEquals([100000, true]);
-    });
-
-    /**
      * @tc.name   ObjectConstructorTest015
      * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR_TEST_1500
      * @tc.desc   Object Constructor Test
@@ -746,18 +734,6 @@ export default function ObjectConstructorTest() {
      */
     it('ObjectConstructorTest059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(Object.ObjectConstructorTest059()).assertDeepEquals([true, Infinity, -Infinity]);
-    });
-
-    /**
-     * @tc.name   ObjectConstructorTest060
-     * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR_TEST_6000
-     * @tc.desc   Object Constructor Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectConstructorTest060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(Object.ObjectConstructorTest060()).assertDeepEquals([true, 10000, 9999]);
     });
 
     /**

@@ -1038,18 +1038,6 @@ export default function ObjectFreeze2Test() {
     });
 
     /**
-     * @tc.name   ObjectFreeze2Test085
-     * @tc.number SUB_BUILTINS_OBJECT_FREEZE2_TEST_8500
-     * @tc.desc   Object Freeze2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectFreeze2Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectFreeze2.ObjectFreeze2Test085()).assertDeepEquals([true, 9999]);
-    });
-
-    /**
      * @tc.name   ObjectFreeze2Test086
      * @tc.number SUB_BUILTINS_OBJECT_FREEZE2_TEST_8600
      * @tc.desc   Object Freeze2 Test

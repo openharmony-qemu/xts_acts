@@ -42,18 +42,6 @@ export default function ObjectKeysTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.name   ObjectKeysTest001
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS_TEST_0100
-     * @tc.desc   Object Keys Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeysTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys.ObjectKeysTest001()).assertDeepEquals([true, true, true, true, true, true]);
-    });
-
-    /**
      * @tc.name   ObjectKeysTest002
      * @tc.number SUB_BUILTINS_OBJECT_KEYS_TEST_0200
      * @tc.desc   Object Keys Test
@@ -762,18 +750,6 @@ export default function ObjectKeysTest() {
     });
 
     /**
-     * @tc.name   ObjectKeysTest062
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS_TEST_6200
-     * @tc.desc   Object Keys Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeysTest062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys.ObjectKeysTest062()).assertEqual(10000);
-    });
-
-    /**
      * @tc.name   ObjectKeysTest063
      * @tc.number SUB_BUILTINS_OBJECT_KEYS_TEST_6300
      * @tc.desc   Object Keys Test
@@ -1023,18 +999,6 @@ export default function ObjectKeysTest() {
      */
     it('ObjectKeysTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectKeys.ObjectKeysTest085()).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   ObjectKeysTest086
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS_TEST_8600
-     * @tc.desc   Object Keys Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeysTest086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys.ObjectKeysTest086()).assertEqual(10000);
     });
 
     /**

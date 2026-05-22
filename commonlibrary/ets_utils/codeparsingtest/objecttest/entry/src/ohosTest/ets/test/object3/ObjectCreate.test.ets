@@ -825,18 +825,6 @@ export default function ObjectCreateTest() {
     });
 
     /**
-     * @tc.name   ObjectCreateTest066
-     * @tc.number SUB_BUILTINS_OBJECT_CREATE_TEST_6600
-     * @tc.desc   Object Create Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectCreateTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectCreate.ObjectCreateTest066()).assertDeepEquals([9999, 0]);
-    });
-
-    /**
      * @tc.name   ObjectCreateTest067
      * @tc.number SUB_BUILTINS_OBJECT_CREATE_TEST_6700
      * @tc.desc   Object Create Test

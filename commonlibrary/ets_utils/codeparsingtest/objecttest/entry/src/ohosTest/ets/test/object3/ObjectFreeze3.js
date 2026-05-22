@@ -13,16 +13,6 @@ export function ObjectFreeze3Test001() {
     return obj[sym];
 }
 
-export function ObjectFreeze3Test002() {
-    const largeObj = {};
-    for (let i = 0; i < 10000; i++) {
-        largeObj['key' + i] = 'value' + i;
-    }
-    Object.freeze(largeObj);
-
-    return Object.keys(largeObj).length;
-}
-
 export function ObjectFreeze3Test003() {
     function createFrozenObj() {
         const obj = { data: 'test' };

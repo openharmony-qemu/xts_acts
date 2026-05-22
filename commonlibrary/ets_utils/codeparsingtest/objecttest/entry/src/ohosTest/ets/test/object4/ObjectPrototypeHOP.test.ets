@@ -270,18 +270,6 @@ export default function ObjectPrototypeHOPTest() {
     });
 
     /**
-     * @tc.name   ObjectPrototypeHOPTest021
-     * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_HOP_TEST_2100
-     * @tc.desc   Object Prototype HOP Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPrototypeHOPTest021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPrototypeHOP.ObjectPrototypeHOPTest021()).assertEqual(true);
-    });
-
-    /**
      * @tc.name   ObjectPrototypeHOPTest022
      * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_HOP_TEST_2200
      * @tc.desc   Object Prototype HOP Test

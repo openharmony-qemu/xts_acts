@@ -1,15 +1,5 @@
 'use strict'
 
-export function ObjectIsExtensibleTest001() {
-    const largeObj = {};
-    for (let i = 0; i < 10000; i++) {
-        largeObj[`key${i}`] = i;
-    }
-    let a = Object.is(largeObj, largeObj);
-    let b = Object.is(largeObj, { ...largeObj });
-    return [a, b];
-}
-
 export function ObjectIsExtensibleTest002() {
     let deep = {};
     let current = deep;
@@ -197,12 +187,6 @@ export function ObjectIsExtensibleTest022() {
 export function ObjectIsExtensibleTest023() {
     const obj = {a: 1, b: function() {}};
     let res = Object.isExtensible(obj);
-    return res;
-}
-
-export function ObjectIsExtensibleTest024() {
-    const largeObj = Object.fromEntries([...Array(10000).keys()].map(i => [i, i]));
-    let res = Object.isExtensible(largeObj);
     return res;
 }
 

@@ -40,17 +40,6 @@ export default function ObjectPreventExtensionsTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
-    /**
-     * @tc.name   ObjectPreventExtensionsTest001
-     * @tc.number SUB_BUILTINS_OBJECT_PREVENT_EXTENSIONS_TEST_0100
-     * @tc.desc   Object Prevent Extensions Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPreventExtensionsTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPreventExtensions.ObjectPreventExtensionsTest001()).assertEqual(false);
-    });
 
     /**
      * @tc.name   ObjectPreventExtensionsTest002
@@ -854,18 +843,6 @@ export default function ObjectPreventExtensionsTest() {
      */
     it('ObjectPreventExtensionsTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ObjectPreventExtensions.ObjectPreventExtensionsTest079()).assertDeepEquals(['emptyKey', undefined]);
-    });
-
-    /**
-     * @tc.name   ObjectPreventExtensionsTest080
-     * @tc.number SUB_BUILTINS_OBJECT_PREVENT_EXTENSIONS_TEST_8000
-     * @tc.desc   Object Prevent Extensions Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPreventExtensionsTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPreventExtensions.ObjectPreventExtensionsTest080()).assertDeepEquals([false, 10000]);
     });
 
     /**

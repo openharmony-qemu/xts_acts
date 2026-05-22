@@ -49,14 +49,7 @@ export function ObjectPrototypeHOP2Test005() {
     return a;
 }
 
-export function ObjectPrototypeHOP2Test006() {
-    const veryLongKey = "x".repeat(100000);
-    const obj = {};
-    obj[veryLongKey] = "very long value";
-    let a = obj.hasOwnProperty(veryLongKey);
-    let b = veryLongKey.length;
-    return [a, b];
-}
+
 
 export function ObjectPrototypeHOP2Test007() {
     const obj = {};
@@ -70,18 +63,6 @@ export function ObjectPrototypeHOP2Test008() {
     let a = obj.hasOwnProperty("single");
     let b = Object.keys(obj).length;
     return [a, b];
-}
-
-export function ObjectPrototypeHOP2Test009() {
-    const largeObj = {};
-    for (let i = 0; i < 100000; i++) {
-        largeObj[`prop${i}`] = i;
-    }
-    let a = largeObj.hasOwnProperty("prop0");
-    let b = largeObj.hasOwnProperty("prop99999");
-    let c = largeObj.hasOwnProperty("prop100000");
-    let d = Object.keys(largeObj).length;
-    return [a, b, c, d];
 }
 
 export function ObjectPrototypeHOP2Test010() {

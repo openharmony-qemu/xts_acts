@@ -892,15 +892,6 @@ export function ObjectFreeze2Test084() {
     ];
 }
 
-export function ObjectFreeze2Test085() {
-    const largeObj = Object.fromEntries([...Array(10000).keys()].map(i => [i, i]));
-    Object.freeze(largeObj);
-    return [
-        Object.isFrozen(largeObj),
-        largeObj[9999]
-    ];
-}
-
 export function ObjectFreeze2Test086() {
     const deepObj = {
         level1: {
