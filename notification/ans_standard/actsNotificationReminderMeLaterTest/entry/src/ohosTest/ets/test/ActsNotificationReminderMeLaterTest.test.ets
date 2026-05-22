@@ -66,15 +66,15 @@ export default function actsNotificationReminderMeLaterTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_ReminderMe_Later_016
-     * @tc.number Sub_Notification_Ans_ReminderMe_Later_016
+     * @tc.name   SUB_Notification_Ans_ReminderMe_Later_0100
+     * @tc.number SUB_Notification_Ans_ReminderMe_Later_0100
      * @tc.desc   test 三方应用调用接口，报错202
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_ReminderMe_Later_016', Level.LEVEL2, async (done : Function) => {
-      let TAG = "Sub_Notification_Ans_ReminderMe_Later_016"
+    it('SUB_Notification_Ans_ReminderMe_Later_0100', Level.LEVEL2, async (done : Function) => {
+      let TAG = "SUB_Notification_Ans_ReminderMe_Later_0100"
       let notificationRequest: notificationManager.NotificationRequest = {
         id: 1,
         content: {
