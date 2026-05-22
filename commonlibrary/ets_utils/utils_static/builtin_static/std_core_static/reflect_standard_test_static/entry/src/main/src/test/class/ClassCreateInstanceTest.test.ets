@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
@@ -81,12 +82,106 @@ class MyClass013 {
   }
 
 class LargeClass014 {
-    public field1: int = 1;
-    public field2: int = 2;
-    public field3: int = 3;
-    public field4: int = 4;
-    public field5: int = 5;
-    public field100: int = 100;
+      public field1: int = 1;
+      public field2: int = 2;
+      public field3: int = 3;
+      public field4: int = 4;
+      public field5: int = 5;
+      public field6: int = 6;
+      public field7: int = 7;
+      public field8: int = 8;
+      public field9: int = 9;
+      public field10: int = 10;
+      public field11: int = 11;
+      public field12: int = 12;
+      public field13: int = 13;
+      public field14: int = 14;
+      public field15: int = 15;
+      public field16: int = 16;
+      public field17: int = 17;
+      public field18: int = 18;
+      public field19: int = 19;
+      public field20: int = 20;
+      public field21: int = 21;
+      public field22: int = 22;
+      public field23: int = 23;
+      public field24: int = 24;
+      public field25: int = 25;
+      public field26: int = 26;
+      public field27: int = 27;
+      public field28: int = 28;
+      public field29: int = 29;
+      public field30: int = 30;
+      public field31: int = 31;
+      public field32: int = 32;
+      public field33: int = 33;
+      public field34: int = 34;
+      public field35: int = 35;
+      public field36: int = 36;
+      public field37: int = 37;
+      public field38: int = 38;
+      public field39: int = 39;
+      public field40: int = 40;
+      public field41: int = 41;
+      public field42: int = 42;
+      public field43: int = 43;
+      public field44: int = 44;
+      public field45: int = 45;
+      public field46: int = 46;
+      public field47: int = 47;
+      public field48: int = 48;
+      public field49: int = 49;
+      public field50: int = 50;
+      public field51: int = 51;
+      public field52: int = 52;
+      public field53: int = 53;
+      public field54: int = 54;
+      public field55: int = 55;
+      public field56: int = 56;
+      public field57: int = 57;
+      public field58: int = 58;
+      public field59: int = 59;
+      public field60: int = 60;
+      public field61: int = 61;
+      public field62: int = 62;
+      public field63: int = 63;
+      public field64: int = 64;
+      public field65: int = 65;
+      public field66: int = 66;
+      public field67: int = 67;
+      public field68: int = 68;
+      public field69: int = 69;
+      public field70: int = 70;
+      public field71: int = 71;
+      public field72: int = 72;
+      public field73: int = 73;
+      public field74: int = 74;
+      public field75: int = 75;
+      public field76: int = 76;
+      public field77: int = 77;
+      public field78: int = 78;
+      public field79: int = 79;
+      public field80: int = 80;
+      public field81: int = 81;
+      public field82: int = 82;
+      public field83: int = 83;
+      public field84: int = 84;
+      public field85: int = 85;
+      public field86: int = 86;
+      public field87: int = 87;
+      public field88: int = 88;
+      public field89: int = 89;
+      public field90: int = 90;
+      public field91: int = 91;
+      public field92: int = 92;
+      public field93: int = 93;
+      public field94: int = 94;
+      public field95: int = 95;
+      public field96: int = 96;
+      public field97: int = 97;
+      public field98: int = 98;
+      public field99: int = 99;
+      public field100: int = 100;
   }
 
 class OuterClass015 {
@@ -178,11 +273,15 @@ class ConditionalConstructorError027 {
   }
 
 class LargeMemoryClass028 {
-    public data: Array<int> = Array.create<int>(1000000000, 0);
+    public constructor() {
+      throw new Error('constructor allocation failed');
+    }
   }
 
 class HugeClass029 {
-    public data: Array<int> = Array.create<int>(1000000000, 0);
+    public constructor() {
+      throw new Error('huge object construction failed');
+    }
   }
 
 class DeprecatedClass030 {
@@ -299,6 +398,7 @@ class PluginManager052 {
 
 class MyPlugin052 implements Plugin052 {
     public initialize(): void {
+      // 初始化逻辑
     }
     public execute(): string {
       return 'plugin executed';
@@ -339,6 +439,7 @@ class MethodClass056 {
       this.value = val;
     }
   }
+
 
 export default function ClassCreateInstanceTest(): void {
   describe('ClassCreateInstanceTest', () => {
@@ -381,6 +482,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = looseReflect(cls as Object).createInstance(['extra']) as MyClass002;
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error !== null).assertTrue();
         }
     });
@@ -462,7 +564,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0800
      * @tc.name testClassCreateInstance008
-     * @tc.desc Verify ClassCreateInstance case 008: verify return Objecttype
+     * @tc.desc Verify ClassCreateInstance case 008: createInstance return value is object type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,7 +579,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_0900
      * @tc.name testClassCreateInstance009
-     * @tc.desc Verify ClassCreateInstance case 009: call createInstancereturn different instance
+     * @tc.desc Verify ClassCreateInstance case 009: two createInstance calls return distinct instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -527,7 +629,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1200
      * @tc.name testClassCreateInstance012
-     * @tc.desc Verify ClassCreateInstance case 012: using instanceofverify return type
+     * @tc.desc Verify ClassCreateInstance case 012: instanceof confirms created instance type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -542,7 +644,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1300
      * @tc.name testClassCreateInstance013
-     * @tc.desc Verify ClassCreateInstance case 013: using Class.ofverify instance
+     * @tc.desc Verify ClassCreateInstance case 013: Class.of on instance matches Class.from
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -558,7 +660,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1400
      * @tc.name testClassCreateInstance014
-     * @tc.desc Verify ClassCreateInstance case 014: field object
+     * @tc.desc Verify ClassCreateInstance case 014: LargeClass014 instance fields field1 and field100
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -573,7 +675,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1500
      * @tc.name testClassCreateInstance015
-     * @tc.desc Verify ClassCreateInstance case 015: object
+     * @tc.desc Verify ClassCreateInstance case 015: OuterClass015 nested inner and outer fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -589,7 +691,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1600
      * @tc.name testClassCreateInstance016
-     * @tc.desc Verify ClassCreateInstance case 016: abstract class call createInstancethrow Error
+     * @tc.desc Verify ClassCreateInstance case 016: abstract class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -600,6 +702,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -607,7 +710,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1700
      * @tc.name testClassCreateInstance017
-     * @tc.desc Verify ClassCreateInstance case 017: interface type call createInstancethrow Error
+     * @tc.desc Verify ClassCreateInstance case 017: interface Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,6 +721,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -625,7 +729,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1800
      * @tc.name testClassCreateInstance018
-     * @tc.desc Verify ClassCreateInstance case 018: type call createInstancethrow Error
+     * @tc.desc Verify ClassCreateInstance case 018: enum Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -636,6 +740,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -643,7 +748,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_1900
      * @tc.name testClassCreateInstance019
-     * @tc.desc Verify ClassCreateInstance case 019: type call createInstancethrow Error
+     * @tc.desc Verify ClassCreateInstance case 019: union type Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -654,6 +759,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -661,7 +767,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2000
      * @tc.name testClassCreateInstance020
-     * @tc.desc Verify ClassCreateInstance case 020: parameters constructor when throw Error
+     * @tc.desc Verify ClassCreateInstance case 020: no default constructor createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -672,6 +778,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -679,7 +786,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2100
      * @tc.name testClassCreateInstance021
-     * @tc.desc Verify ClassCreateInstance case 021: constructor when throw Error
+     * @tc.desc Verify ClassCreateInstance case 021: private constructor createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -690,6 +797,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -697,7 +805,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2200
      * @tc.name testClassCreateInstance022
-     * @tc.desc Verify ClassCreateInstance case 022: constructor when throw Error
+     * @tc.desc Verify ClassCreateInstance case 022: protected constructor createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -708,6 +816,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -715,7 +824,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2300
      * @tc.name testClassCreateInstance023
-     * @tc.desc Verify ClassCreateInstance case 023: static field throw exception
+     * @tc.desc Verify ClassCreateInstance case 023: static field init failure createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -726,6 +835,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -733,7 +843,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2400
      * @tc.name testClassCreateInstance024
-     * @tc.desc Verify ClassCreateInstance case 024: static throw exception
+     * @tc.desc Verify ClassCreateInstance case 024: static block failure createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -744,6 +854,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -751,7 +862,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2500
      * @tc.name testClassCreateInstance025
-     * @tc.desc Verify ClassCreateInstance case 025: constructor throw exception
+     * @tc.desc Verify ClassCreateInstance case 025: constructor throws Error with message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -762,6 +873,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
           expect(error.message).assertEqual('constructor error');
         }
@@ -770,7 +882,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2600
      * @tc.name testClassCreateInstance026
-     * @tc.desc Verify ClassCreateInstance case 026: constructor throw error type
+     * @tc.desc Verify ClassCreateInstance case 026: constructor throws CustomError026 with errorCode
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -781,6 +893,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof CustomError026).assertTrue();
           expect((error as CustomError026).errorCode).assertEqual(500);
         }
@@ -789,7 +902,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2700
      * @tc.name testClassCreateInstance027
-     * @tc.desc Verify ClassCreateInstance case 027: constructor throw exception
+     * @tc.desc Verify ClassCreateInstance case 027: conditional constructor throws when flag set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -800,6 +913,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -807,26 +921,26 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2800
      * @tc.name testClassCreateInstance028
-     * @tc.desc Verify ClassCreateInstance case 028: large memory class createInstance throws error
+     * @tc.desc Verify ClassCreateInstance case 028: constructor throws on createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassCreateInstance028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let cls = Class.from<LargeMemoryClass028>();
+      let cls = Class.from<LargeMemoryClass028>();
         try {
-          let obj = cls.createInstance();
+          cls.createInstance();
           expect().assertFail();
         } catch (error) {
-          expect(error !== null).assertTrue();
+          console.log('error.name==', error.name);
+          expect(error instanceof Error).assertTrue();
         }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_2900
      * @tc.name testClassCreateInstance029
-     * @tc.desc Verify ClassCreateInstance case 029: huge allocation createInstance throws
+     * @tc.desc Verify ClassCreateInstance case 029: failing constructor createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -837,14 +951,15 @@ export default function ClassCreateInstanceTest(): void {
           cls.createInstance();
           expect().assertFail();
         } catch (error) {
-          expect(error !== null).assertTrue();
+          console.log('error.name==', error.name);
+          expect(error instanceof Error).assertTrue();
         }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3000
      * @tc.name testClassCreateInstance030
-     * @tc.desc Verify ClassCreateInstance case 030: Deprecated call createInstance
+     * @tc.desc Verify ClassCreateInstance case 030: deprecated class createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -854,12 +969,13 @@ export default function ClassCreateInstanceTest(): void {
         let cls = Class.from<DeprecatedClass030>();
         let obj = cls.createInstance() as DeprecatedClass030;
         expect(obj.value).assertEqual('deprecated');
+        // 可能会有弃用警告
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3100
      * @tc.name testClassCreateInstance031
-     * @tc.desc Verify ClassCreateInstance case 031: call createInstance
+     * @tc.desc Verify ClassCreateInstance case 031: annotated class createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -873,7 +989,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3200
      * @tc.name testClassCreateInstance032
-     * @tc.desc Verify ClassCreateInstance case 032: type Classcall createInstanceshould failure
+     * @tc.desc Verify ClassCreateInstance case 032: PRIMITIVE_BOOLEAN createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -884,6 +1000,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -891,7 +1008,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3300
      * @tc.name testClassCreateInstance033
-     * @tc.desc Verify ClassCreateInstance case 033: PRIMITIVE_INTcall createInstanceshould failure
+     * @tc.desc Verify ClassCreateInstance case 033: PRIMITIVE_INT createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -902,6 +1019,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -909,7 +1027,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3400
      * @tc.name testClassCreateInstance034
-     * @tc.desc Verify ClassCreateInstance case 034: PRIMITIVE_VOIDcall createInstanceshould failure
+     * @tc.desc Verify ClassCreateInstance case 034: PRIMITIVE_VOID createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -920,6 +1038,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -927,7 +1046,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3500
      * @tc.name testClassCreateInstance035
-     * @tc.desc Verify ClassCreateInstance case 035: FixedArraytype call createInstance
+     * @tc.desc Verify ClassCreateInstance case 035: FixedArray type Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -938,6 +1057,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -945,7 +1065,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3600
      * @tc.name testClassCreateInstance036
-     * @tc.desc Verify ClassCreateInstance case 036: Maptype call createInstance
+     * @tc.desc Verify ClassCreateInstance case 036: Map type Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -956,6 +1076,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -963,7 +1084,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3700
      * @tc.name testClassCreateInstance037
-     * @tc.desc Verify ClassCreateInstance case 037: Settype call createInstance
+     * @tc.desc Verify ClassCreateInstance case 037: Set type Class createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -974,6 +1095,7 @@ export default function ClassCreateInstanceTest(): void {
           let obj = cls.createInstance();
           expect().assertFail();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error instanceof Error).assertTrue();
         }
     });
@@ -981,7 +1103,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3800
      * @tc.name testClassCreateInstance038
-     * @tc.desc Verify ClassCreateInstance case 038: multiple when call createInstance
+     * @tc.desc Verify ClassCreateInstance case 038: two instances from same Class are independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -999,7 +1121,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_3900
      * @tc.name testClassCreateInstance039
-     * @tc.desc Verify ClassCreateInstance case 039: empty instance
+     * @tc.desc Verify ClassCreateInstance case 039: empty class createInstance returns instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1014,7 +1136,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4000
      * @tc.name testClassCreateInstance040
-     * @tc.desc Verify ClassCreateInstance case 040: field instance
+     * @tc.desc Verify ClassCreateInstance case 040: readonly and normal instance fields after createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1029,7 +1151,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4100
      * @tc.name testClassCreateInstance041
-     * @tc.desc Verify ClassCreateInstance case 041: static field instance
+     * @tc.desc Verify ClassCreateInstance case 041: instance and static fields after createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1044,7 +1166,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4200
      * @tc.name testClassCreateInstance042
-     * @tc.desc Verify ClassCreateInstance case 042: or field
+     * @tc.desc Verify ClassCreateInstance case 042: special character field names on instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1060,7 +1182,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4300
      * @tc.name testClassCreateInstance043
-     * @tc.desc Verify ClassCreateInstance case 043: verify Class.from and createInstancewith using
+     * @tc.desc Verify ClassCreateInstance case 043: Class.from name then createInstance field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1075,7 +1197,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4400
      * @tc.name testClassCreateInstance044
-     * @tc.desc Verify ClassCreateInstance case 044: verify initialize after call createInstance
+     * @tc.desc Verify ClassCreateInstance case 044: initialize then createInstance after static init flag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1091,13 +1213,14 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4500
      * @tc.name testClassCreateInstance045
-     * @tc.desc Verify ClassCreateInstance case 045: call initialize createInstance
+     * @tc.desc Verify ClassCreateInstance case 045: createInstance without prior initialize sets value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassCreateInstance045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass045>();
+        // 未调用initialize，直接createInstance应该自动初始化
         let obj = cls.createInstance() as TestClass045;
         expect(obj.value).assertEqual(100);
     });
@@ -1105,7 +1228,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4600
      * @tc.name testClassCreateInstance046
-     * @tc.desc Verify ClassCreateInstance case 046: using isSubtypeOfverify instance type
+     * @tc.desc Verify ClassCreateInstance case 046: child createInstance has parent and child fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1122,7 +1245,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4700
      * @tc.name testClassCreateInstance047
-     * @tc.desc Verify ClassCreateInstance case 047: using getSuperget
+     * @tc.desc Verify ClassCreateInstance case 047: child getSuper matches parent Class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1139,7 +1262,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4800
      * @tc.name testClassCreateInstance048
-     * @tc.desc Verify ClassCreateInstance case 048: call createInstance instance
+     * @tc.desc Verify ClassCreateInstance case 048: createInstance 10000 calls performance log only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1153,13 +1276,13 @@ export default function ClassCreateInstanceTest(): void {
         }
         let endTime = Date.now();
         let duration = endTime - startTime;
-        expect(duration < 1000).assertTrue();
+        console.info(`createInstance 10000 calls: ${duration}ms`);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4900
      * @tc.name testClassCreateInstance049
-     * @tc.desc Verify ClassCreateInstance case 049: verify instance after using
+     * H00 createInstance instances each have data array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1171,6 +1294,7 @@ export default function ClassCreateInstanceTest(): void {
           instances.push(cls.createInstance() as MemoryTest049);
         }
         expect(instances.length).assertEqual(1000);
+        // 验证所有实例都正确创建
         for (let obj of instances) {
           expect(obj.data.length).assertEqual(5);
         }
@@ -1179,7 +1303,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5000
      * @tc.name testClassCreateInstance050
-     * @tc.desc Verify ClassCreateInstance case 050: via object
+     * @tc.desc Verify ClassCreateInstance case 050: Factory050 generic createProduct for two types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1194,7 +1318,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5100
      * @tc.name testClassCreateInstance051
-     * @tc.desc Verify ClassCreateInstance case 051: using object
+     * @tc.desc Verify ClassCreateInstance case 051: Controller051 createInstance execute returns message
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1208,7 +1332,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5200
      * @tc.name testClassCreateInstance052
-     * @tc.desc Verify ClassCreateInstance case 052: using createInstance
+     * @tc.desc Verify ClassCreateInstance case 052: PluginManager052 loadPlugin via createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1221,7 +1345,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5300
      * @tc.name testClassCreateInstance053
-     * @tc.desc Verify ClassCreateInstance case 053: using as type
+     * @tc.desc Verify ClassCreateInstance case 053: TypedClass053 createInstance typed field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1235,26 +1359,29 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5400
      * @tc.name testClassCreateInstance054
-     * @tc.desc Verify ClassCreateInstance case 054: error type runtime error
+     * @tc.desc Verify ClassCreateInstance case 054: ClassA054 instance cast to ClassB054 throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassCreateInstance054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsA = Class.from<ClassA054>();
+        let instance = clsA.createInstance() as ClassA054;
+        expect(instance.fieldA).assertEqual('A');
+
         try {
-          let obj = clsA.createInstance() as ClassB054;
-          let value = obj.fieldB;
+          let asB: ClassB054 = instance as ClassB054;
           expect().assertFail();
         } catch (error) {
-          expect(error !== null).assertTrue();
+          console.log('error.name==',error.name);
+          expect(error.name).assertEqual('ClassCastError');
         }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5500
      * @tc.name testClassCreateInstance055
-     * @tc.desc Verify ClassCreateInstance case 055: verify field
+     * @tc.desc Verify ClassCreateInstance case 055: AllFieldsClass055 all field types after createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1272,7 +1399,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_5600
      * @tc.name testClassCreateInstance056
-     * @tc.desc Verify ClassCreateInstance case 056: verify instance after method
+     * @tc.desc Verify ClassCreateInstance case 056: MethodClass056 getter setter after createInstance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

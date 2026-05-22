@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
@@ -66,6 +67,7 @@ class MyClass014 {
 
 class MyClass015 {
       public static test(a: int, b: string, c: boolean): void {
+          // 方法实现
       }
   }
 
@@ -388,6 +390,103 @@ class CommandHandler060 {
 class LargeClass061 {
       public static method001(): int { return 1; }
       public static method002(): int { return 2; }
+      public static method003(): int { return 3; }
+      public static method004(): int { return 4; }
+      public static method005(): int { return 5; }
+      public static method006(): int { return 6; }
+      public static method007(): int { return 7; }
+      public static method008(): int { return 8; }
+      public static method009(): int { return 9; }
+      public static method010(): int { return 10; }
+      public static method011(): int { return 11; }
+      public static method012(): int { return 12; }
+      public static method013(): int { return 13; }
+      public static method014(): int { return 14; }
+      public static method015(): int { return 15; }
+      public static method016(): int { return 16; }
+      public static method017(): int { return 17; }
+      public static method018(): int { return 18; }
+      public static method019(): int { return 19; }
+      public static method020(): int { return 20; }
+      public static method021(): int { return 21; }
+      public static method022(): int { return 22; }
+      public static method023(): int { return 23; }
+      public static method024(): int { return 24; }
+      public static method025(): int { return 25; }
+      public static method026(): int { return 26; }
+      public static method027(): int { return 27; }
+      public static method028(): int { return 28; }
+      public static method029(): int { return 29; }
+      public static method030(): int { return 30; }
+      public static method031(): int { return 31; }
+      public static method032(): int { return 32; }
+      public static method033(): int { return 33; }
+      public static method034(): int { return 34; }
+      public static method035(): int { return 35; }
+      public static method036(): int { return 36; }
+      public static method037(): int { return 37; }
+      public static method038(): int { return 38; }
+      public static method039(): int { return 39; }
+      public static method040(): int { return 40; }
+      public static method041(): int { return 41; }
+      public static method042(): int { return 42; }
+      public static method043(): int { return 43; }
+      public static method044(): int { return 44; }
+      public static method045(): int { return 45; }
+      public static method046(): int { return 46; }
+      public static method047(): int { return 47; }
+      public static method048(): int { return 48; }
+      public static method049(): int { return 49; }
+      public static method050(): int { return 50; }
+      public static method051(): int { return 51; }
+      public static method052(): int { return 52; }
+      public static method053(): int { return 53; }
+      public static method054(): int { return 54; }
+      public static method055(): int { return 55; }
+      public static method056(): int { return 56; }
+      public static method057(): int { return 57; }
+      public static method058(): int { return 58; }
+      public static method059(): int { return 59; }
+      public static method060(): int { return 60; }
+      public static method061(): int { return 61; }
+      public static method062(): int { return 62; }
+      public static method063(): int { return 63; }
+      public static method064(): int { return 64; }
+      public static method065(): int { return 65; }
+      public static method066(): int { return 66; }
+      public static method067(): int { return 67; }
+      public static method068(): int { return 68; }
+      public static method069(): int { return 69; }
+      public static method070(): int { return 70; }
+      public static method071(): int { return 71; }
+      public static method072(): int { return 72; }
+      public static method073(): int { return 73; }
+      public static method074(): int { return 74; }
+      public static method075(): int { return 75; }
+      public static method076(): int { return 76; }
+      public static method077(): int { return 77; }
+      public static method078(): int { return 78; }
+      public static method079(): int { return 79; }
+      public static method080(): int { return 80; }
+      public static method081(): int { return 81; }
+      public static method082(): int { return 82; }
+      public static method083(): int { return 83; }
+      public static method084(): int { return 84; }
+      public static method085(): int { return 85; }
+      public static method086(): int { return 86; }
+      public static method087(): int { return 87; }
+      public static method088(): int { return 88; }
+      public static method089(): int { return 89; }
+      public static method090(): int { return 90; }
+      public static method091(): int { return 91; }
+      public static method092(): int { return 92; }
+      public static method093(): int { return 93; }
+      public static method094(): int { return 94; }
+      public static method095(): int { return 95; }
+      public static method096(): int { return 96; }
+      public static method097(): int { return 97; }
+      public static method098(): int { return 98; }
+      public static method099(): int { return 99; }
       public static method100(): int { return 100; }
   }
 
@@ -422,6 +521,7 @@ class MyClass065 {
 class SystemClass {
       public static nativeMethod(): void {}
   }
+
 
 export default function ClassGetStaticMethodTest(): void {
   describe('ClassGetStaticMethodTest', () => {
@@ -474,8 +574,8 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
         try {
-          let method = looseReflect(cls as Object).getStaticMethod('test', [Class.from<string>()] as Object, Class.from<number>() as Object);
-          expect(method !== null).assertTrue();
+          looseReflect(cls as Object).getStaticMethod('test', [Class.from<string>()] as Object, Class.from<number>() as Object);
+          expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
         }
@@ -598,13 +698,14 @@ export default function ClassGetStaticMethodTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHOD_1200
      * @tc.name testClassGetStaticMethod012
-     * @tc.desc Verify ClassGetStaticMethod case 012: stringtype
+     * @tc.desc Verify ClassGetStaticMethod case 012: string type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
+        // 应该在编译时报错，但测试运行时行为
         try {
           looseReflect(cls as Object).getStaticMethod(123 as Object);
           expect().assertFail();
@@ -798,7 +899,7 @@ export default function ClassGetStaticMethodTest(): void {
       let cls = Class.from<MyClass024>();
         try {
             let method = cls.getStaticMethod('test');
-            expect().assertFail();
+            expect().assertFail(); // 应该抛出Error
         } catch (error) {
             expect(error !== null).assertTrue();
         }
@@ -963,6 +1064,7 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 假设有一个包含native方法的类
         let cls = Class.from<SystemClass>();
         let method = cls.getStaticMethod('nativeMethod');
         expect(method !== null).assertTrue();
@@ -1075,6 +1177,7 @@ export default function ClassGetStaticMethodTest(): void {
         }
         expect(method !== undefined).assertTrue();
 
+        // 验证返回对象的所有方法
         expect(method!.getName() !== null).assertTrue();
         expect(method!.getOwner() !== null).assertTrue();
         expect(method!.getReturnType() !== null).assertTrue();
@@ -1118,9 +1221,11 @@ export default function ClassGetStaticMethodTest(): void {
       let cls = Class.from<MyClass043>();
         let method = cls.getStaticMethod('test', [Class.from<string>()]);
         
+        // 正确调用
         let result1 = method!.invoke(['hello']);
         expect(result1 as string).assertEqual('hello');
         
+        // 类型不匹配应该抛出TypeError
         try {
             method!.invoke([123]);
             expect().assertFail();
@@ -1180,6 +1285,7 @@ export default function ClassGetStaticMethodTest(): void {
      */
     it('testClassGetStaticMethod046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass046>();
+        // 类未显式初始化，但首次使用时会自动初始化
         let method = cls.getStaticMethod('test');
         expect(method !== null).assertTrue();
     });
@@ -1195,7 +1301,7 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass047>();
         let method = cls.getStaticMethod('fieldName');
-        expect(method).assertUndefined();
+        expect(method).assertUndefined(); // 应该使用getStaticField而不是getStaticMethod
     });
 
     /**
@@ -1363,7 +1469,7 @@ export default function ClassGetStaticMethodTest(): void {
         let method2 = cls.getStaticMethod('test', []);
         
         expect(method1!.equals(method2!)).assertTrue();
-        expect(method1 === method2).assertFalse();
+        expect(method1 === method2).assertFalse(); // 不同对象但相等
     });
 
     /**
@@ -1394,6 +1500,7 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 动态调用
         let cls = Class.from<StringUtils058>();
         let methodName = 'toUpperCase';
         let method = cls.getStaticMethod(methodName, [Class.from<string>()]);
@@ -1410,6 +1517,7 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 动态发现并调用插件方法
         let pluginCls = Class.from<MyPlugin059>();
         let initMethod = pluginCls.getStaticMethod('initialize');
         let execMethod = pluginCls.getStaticMethod('execute', [Class.from<Object>()]);
@@ -1451,16 +1559,16 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LargeClass061>();
         let startTime = Date.now();
-        
+        let found: int = 0;
         for (let i = 1; i <= 100; i++) {
             let methodName = `method${i.toString().padStart(3, '0')}`;
-            let method = cls.getStaticMethod(methodName);
-            expect(method !== null).assertTrue();
+            if (cls.getStaticMethod(methodName) !== null) {
+                found++;
+            }
         }
-        
+        expect(found).assertEqual(100);
         let endTime = Date.now();
-        let duration = endTime - startTime;
-        console.info(`getStaticMethod 100 lookups: ${duration}ms`);
+        console.info(`getStaticMethod LargeClass061: ${endTime - startTime}ms`);
     });
 
     /**
@@ -1518,6 +1626,7 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Calculator064>();
         
+        // 链式调用：获取方法并执行
         let addMethod: reflect.StaticMethod | undefined;
         let mulMethod: reflect.StaticMethod | undefined;
         let methods = asStaticMethodArray(cls.getStaticMethods());
@@ -1549,10 +1658,12 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass065>();
         
+        // 获取字段
         let field = cls.getStaticField('dataField');
         expect(field !== null).assertTrue();
         expect(field!.getValue(cls) as int).assertEqual(100);
         
+        // 获取方法（虽然同名但不同）
         let method = cls.getStaticMethod('data');
         expect(method !== null).assertTrue();
         expect(method!.invoke() as string).assertEqual('method');

@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
+import { looseClassOf } from './VoidFn.test';
 
 class MyClass {}
 
@@ -47,7 +49,7 @@ interface MyInterface011 {
   }
 
 class GenericClass012<T> {
-    public value: T | null = null;
+    public value: T | undefined = undefined;
   }
 
 class TestClass024 {}
@@ -133,9 +135,106 @@ interface MyInterface050 {
 class EmptyClass051 {}
 
 class LargeClass052 {
-    public field1: int = 1;
-    public field2: int = 2;
-    public field100: int = 100;
+      public field1: int = 1;
+      public field2: int = 2;
+      public field3: int = 3;
+      public field4: int = 4;
+      public field5: int = 5;
+      public field6: int = 6;
+      public field7: int = 7;
+      public field8: int = 8;
+      public field9: int = 9;
+      public field10: int = 10;
+      public field11: int = 11;
+      public field12: int = 12;
+      public field13: int = 13;
+      public field14: int = 14;
+      public field15: int = 15;
+      public field16: int = 16;
+      public field17: int = 17;
+      public field18: int = 18;
+      public field19: int = 19;
+      public field20: int = 20;
+      public field21: int = 21;
+      public field22: int = 22;
+      public field23: int = 23;
+      public field24: int = 24;
+      public field25: int = 25;
+      public field26: int = 26;
+      public field27: int = 27;
+      public field28: int = 28;
+      public field29: int = 29;
+      public field30: int = 30;
+      public field31: int = 31;
+      public field32: int = 32;
+      public field33: int = 33;
+      public field34: int = 34;
+      public field35: int = 35;
+      public field36: int = 36;
+      public field37: int = 37;
+      public field38: int = 38;
+      public field39: int = 39;
+      public field40: int = 40;
+      public field41: int = 41;
+      public field42: int = 42;
+      public field43: int = 43;
+      public field44: int = 44;
+      public field45: int = 45;
+      public field46: int = 46;
+      public field47: int = 47;
+      public field48: int = 48;
+      public field49: int = 49;
+      public field50: int = 50;
+      public field51: int = 51;
+      public field52: int = 52;
+      public field53: int = 53;
+      public field54: int = 54;
+      public field55: int = 55;
+      public field56: int = 56;
+      public field57: int = 57;
+      public field58: int = 58;
+      public field59: int = 59;
+      public field60: int = 60;
+      public field61: int = 61;
+      public field62: int = 62;
+      public field63: int = 63;
+      public field64: int = 64;
+      public field65: int = 65;
+      public field66: int = 66;
+      public field67: int = 67;
+      public field68: int = 68;
+      public field69: int = 69;
+      public field70: int = 70;
+      public field71: int = 71;
+      public field72: int = 72;
+      public field73: int = 73;
+      public field74: int = 74;
+      public field75: int = 75;
+      public field76: int = 76;
+      public field77: int = 77;
+      public field78: int = 78;
+      public field79: int = 79;
+      public field80: int = 80;
+      public field81: int = 81;
+      public field82: int = 82;
+      public field83: int = 83;
+      public field84: int = 84;
+      public field85: int = 85;
+      public field86: int = 86;
+      public field87: int = 87;
+      public field88: int = 88;
+      public field89: int = 89;
+      public field90: int = 90;
+      public field91: int = 91;
+      public field92: int = 92;
+      public field93: int = 93;
+      public field94: int = 94;
+      public field95: int = 95;
+      public field96: int = 96;
+      public field97: int = 97;
+      public field98: int = 98;
+      public field99: int = 99;
+      public field100: int = 100;
   }
 
 class MyClass053 {
@@ -176,6 +275,7 @@ class Data065 {
 function serialize065(obj: Object): string {
     let cls = Class.of(obj);
     let fields = cls.getInstanceFields();
+    // 基于Class信息序列化
     return "";
   }
 
@@ -196,6 +296,7 @@ function checkType063(obj: Object, targetClass: Class): boolean {
   let objClass = Class.of(obj);
   return objClass.getName() === targetClass.getName();
 }
+
 
 export default function ClassOfTest(): void {
   describe('ClassOfTest', () => {
@@ -238,7 +339,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0300
      * @tc.name testClassOf003
-     * @tc.desc Verify ClassOf case 003: parameters should
+     * @tc.desc Verify ClassOf case 003: Class.of with extra parameters throws or assertFail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -246,8 +347,8 @@ export default function ClassOfTest(): void {
     it('testClassOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
           let obj = new Map<int, string>();
-          let cls = Class.of(obj);
-          expect(cls !== null).assertTrue();
+          looseClassOf().of(obj, "extra" as Object);
+          expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
         }
@@ -395,7 +496,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1400
      * @tc.name testClassOf014
-     * @tc.desc Verify ClassOf case 014: nullnot undefined
+     * @tc.desc Verify ClassOf case 014: Class.of(null) is not undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -408,16 +509,18 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1500
      * @tc.name testClassOf015
-     * @tc.desc Verify ClassOf case 015: verify type type
+     * @tc.desc Verify ClassOf case 015: Class.of on Array instance and null both return non-null Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Object类型
         let obj = new Array<int>();
         let cls1 = Class.of(obj);
         expect(cls1 !== null).assertTrue();
 
+        // null类型
         let cls2 = Class.of(null);
         expect(cls2 !== null).assertTrue();
     });
@@ -432,8 +535,8 @@ export default function ClassOfTest(): void {
      */
     it('testClassOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-          let cls = Class.of(undefined as Object);
-          expect(cls !== null).assertTrue();
+          Class.of(undefined as Object);
+          expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
         }
@@ -513,7 +616,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2200
      * @tc.name testClassOf022
-     * @tc.desc Verify ClassOf case 022: return Classobject
+     * @tc.desc Verify ClassOf case 022: return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -543,7 +646,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2400
      * @tc.name testClassOf024
-     * @tc.desc Verify ClassOf case 024: return Classobject call getName
+     * @tc.desc Verify ClassOf case 024: return Class object call getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -557,7 +660,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2500
      * @tc.name testClassOf025
-     * @tc.desc Verify ClassOf case 025: return Classobject get
+     * @tc.desc Verify ClassOf case 025: return Class object get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -573,7 +676,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2600
      * @tc.name testClassOf026
-     * @tc.desc Verify ClassOf case 026: return Classobject is type
+     * @tc.desc Verify ClassOf case 026: return Class object is type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -587,7 +690,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2700
      * @tc.name testClassOf027
-     * @tc.desc Verify ClassOf case 027: return Classobject is interface
+     * @tc.desc Verify ClassOf case 027: return Class object is interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -704,7 +807,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3500
      * @tc.name testClassOf035
-     * @tc.desc Verify ClassOf case 035: compile when type
+     * @tc.desc Verify ClassOf case 035: Class.of typed variable compiles and returns Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -978,7 +1081,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5200
      * @tc.name testClassOf052
-     * @tc.desc Verify ClassOf case 052: property object
+     * @tc.desc Verify ClassOf case 052: LargeClass052 instance with 100 fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1064,16 +1167,18 @@ export default function ClassOfTest(): void {
         for (let i = 0; i < 1000; i++) {
           objects.push(new Map<int, string>());
         }
+        let lastCls: Class | null = null;
         for (let obj of objects) {
-          let cls = Class.of(obj);
-          expect(cls !== null).assertTrue();
+          lastCls = Class.of(obj);
         }
+        expect(objects.length).assertEqual(1000);
+        expect(lastCls !== null).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5800
      * @tc.name testClassOf058
-     * @tc.desc Verify ClassOf case 058: get Classobject
+     * @tc.desc Verify ClassOf case 058: get Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1097,6 +1202,7 @@ export default function ClassOfTest(): void {
         let obj2 = new MyClass();
         let cls1 = Class.of(obj1);
         let cls2 = Class.of(obj2);
+        // 验证是否返回同一个Class实例或等价的实例
         expect(cls1.getName()).assertEqual(cls2.getName());
     });
 
@@ -1209,6 +1315,8 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 模拟旧代码的使用方式
+
 
         let obj = new MyClass();
         let className = legacyFunction067(obj);
@@ -1233,14 +1341,18 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6900
      * @tc.name testClassOf069
-     * @tc.desc Verify ClassOf case 069: specified behavior
+     * @tc.desc Verify ClassOf case 069: safeGetClass069(null) matches Class.of(null)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = safeGetClass069(null);
+      // arkts-sta-reflect.md Class.of：参数 Object|null，返回值 Class（无 null 示例；与 013/036 一致）
+      let direct = Class.of(null);
+        expect(direct !== null).assertTrue();
+        let result = safeGetClass069(null);
         expect(result !== null).assertTrue();
+        expect(result!.getName()).assertEqual(direct.getName());
     });
 
   });

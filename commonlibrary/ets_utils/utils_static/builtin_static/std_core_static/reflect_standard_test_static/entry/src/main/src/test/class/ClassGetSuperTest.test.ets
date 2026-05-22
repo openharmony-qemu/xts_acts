@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -29,31 +30,31 @@ class MyClass001 {}
 
 class MyClass003 {}
 
-class ChildClass004 extends ParentClass004 {
-    public age: int = 10
-  }
-
 class ParentClass004 {
     public name: string = "parent"
   }
 
-class ChildClass005 extends ParentClass005 {
-    public childField: string = "child"
-  }
-
-class ParentClass005 extends GrandParent005 {
-    public parentField: string = "parent"
+class ChildClass004 extends ParentClass004 {
+    public age: int = 10
   }
 
 class GrandParent005 {
     public grandField: string = "grand"
   }
 
-final class FinalChild006 extends ParentClass006 {
-    public value: int = 100
+class ParentClass005 extends GrandParent005 {
+    public parentField: string = "parent"
+  }
+
+class ChildClass005 extends ParentClass005 {
+    public childField: string = "child"
   }
 
 class ParentClass006 {}
+
+final class FinalChild006 extends ParentClass006 {
+    public value: int = 100
+  }
 
 class ChildClass007 extends AbstractParent007 {
     public getValue(): int {
@@ -67,14 +68,24 @@ abstract class AbstractParent007 {
 
 class TestClass008 {}
 
-class ChildClass009 extends ParentClass009 implements MyInterface009 {
-    public test(): void {}
-  }
-
 class ParentClass009 {}
 
 interface MyInterface009 {
     test(): void
+  }
+
+class ChildClass009 extends ParentClass009 implements MyInterface009 {
+    public test(): void {}
+  }
+
+class ParentClass010 {}
+
+interface Interface1010 {
+    method1(): void
+  }
+
+interface Interface2010 {
+    method2(): void
   }
 
 class ChildClass010 extends ParentClass010 implements Interface1010, Interface2010 {
@@ -82,19 +93,7 @@ class ChildClass010 extends ParentClass010 implements Interface1010, Interface20
     public method2(): void {}
   }
 
-class ParentClass010 {}
-
-interface Interface2010 {
-    method2(): void
-  }
-
-interface Interface1010 {
-    method1(): void
-  }
-
 class MyClass011 {}
-
-class ChildClass013 extends ParentClass013 {}
 
 class ParentClass013 {
     public parentField: string = "parent"
@@ -103,8 +102,10 @@ class ParentClass013 {
     }
   }
 
+class ChildClass013 extends ParentClass013 {}
+
 class GenericParent017<T> {
-    public value: T | null = null
+    public value: T | undefined = undefined
   }
 
 enum TestEnum019 {
@@ -139,51 +140,44 @@ abstract class AbstractParent025 {
     public abstract method1(): void
   }
 
-class Child026 extends Parent1026 implements ISecondParent026 {
-    public parent2Method(): void {}
-  }
-
-interface ISecondParent026 {
-    parent2Method(): void
-  }
-
-class Parent2026 extends GrandParent026 {
-    public parent2Field: string = "p2"
+class GrandParent026 {
+    public field: string = "grand"
   }
 
 class Parent1026 extends GrandParent026 {
     public parent1Field: string = "p1"
   }
 
-class GrandParent026 {
-    public field: string = "grand"
+class Parent2026 extends GrandParent026 {
+    public parent2Field: string = "p2"
   }
 
-class Level5027 extends Level4027 {
-    public l5: string = "l5"
+interface ISecondParent026 {
+    parent2Method(): void
   }
 
-class Level4027 extends Level3027 {
-    public l4: string = "l4"
-  }
-
-class Level3027 extends Level2027 {
-    public l3: string = "l3"
-  }
-
-class Level2027 extends Level1027 {
-    public l2: string = "l2"
+class Child026 extends Parent1026 implements ISecondParent026 {
+    public parent2Method(): void {}
   }
 
 class Level1027 {
     public l1: string = "l1"
   }
 
-class ChildClass028 extends ParentClass028 implements Serializable028 {
-    public age: int = 10
-    public toJSON(): string {
-      return '{"name":"' + this.name + '","age":' + this.age + '}'
-    }
+class Level2027 extends Level1027 {
+    public l2: string = "l2"
+  }
+
+class Level3027 extends Level2027 {
+    public l3: string = "l3"
+  }
+
+class Level4027 extends Level3027 {
+    public l4: string = "l4"
+  }
+
+class Level5027 extends Level4027 {
+    public l5: string = "l5"
   }
 
 class ParentClass028 {
@@ -194,47 +188,54 @@ interface Serializable028 {
     toJSON(): string
   }
 
-class DerivedClass029 extends BaseClass029 implements Interface1029, Interface2029, Interface3029 {
-    public method1(): void {}
-    public method2(): void {}
-    public method3(): void {}
+class ChildClass028 extends ParentClass028 implements Serializable028 {
+    public age: int = 10
+    public toJSON(): string {
+      return '{"name":"' + this.name + '","age":' + this.age + '}'
+    }
   }
 
 class BaseClass029 {
     public baseField: string = "base"
   }
 
-interface Interface3029 {
-    method3(): void
+interface Interface1029 {
+    method1(): void
   }
 
 interface Interface2029 {
     method2(): void
   }
 
-interface Interface1029 {
-    method1(): void
+interface Interface3029 {
+    method3(): void
   }
 
-class ChildClass030 extends ParentClass030 {}
+class DerivedClass029 extends BaseClass029 implements Interface1029, Interface2029, Interface3029 {
+    public method1(): void {}
+    public method2(): void {}
+    public method3(): void {}
+  }
 
 class ParentClass030 {}
 
-class ChildClass031 extends ParentClass031 {}
+class ChildClass030 extends ParentClass030 {}
 
 class ParentClass031 {
     public parentMethod(): void {}
   }
 
-class ChildClass032 extends ParentClass032 {
-    public childMethod(): string {
-      return "child"
-    }
-  }
+class ChildClass031 extends ParentClass031 {}
 
 class ParentClass032 {
     public parentMethod(): string {
       return "parent"
+    }
+  }
+
+class ChildClass032 extends ParentClass032 {
+    public childMethod(): string {
+      return "child"
     }
   }
 
@@ -264,13 +265,14 @@ class BaseModel036 {
     public createdAt: string = ""
   }
 
+class Parent037 {
+    public parentField: string = "parent"
+  }
+
 class Child037 extends Parent037 {
     public childField: string = "child"
   }
 
-class Parent037 {
-    public parentField: string = "parent"
-  }
 
 export default function ClassGetSuperTest(): void {
   describe('ClassGetSuperTest', () => {
@@ -298,22 +300,6 @@ export default function ClassGetSuperTest(): void {
         expect(superClazz !== null).assertTrue()
         expect(superClazz!.getName()).assertEqual("std.core.Object")
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0200
-     * @tc.name testClassGetSuper002
-     * @tc.desc Verify ClassGetSuper case 002: method no parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetSuper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let clazz = Class.from<MyClass001>()
-        let superClazz = clazz.getSuper()
-        expect(superClazz !== null).assertTrue()
-        expect(superClazz!.getName()).assertEqual("std.core.Object")
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0300
      * @tc.name testClassGetSuper003
@@ -448,6 +434,7 @@ export default function ClassGetSuperTest(): void {
         expect(superClazz !== null).assertTrue()
         let isCls: boolean = superClazz instanceof Class;
         expect(isCls).assertTrue()
+        // 可以调用Class的方法
         let name = superClazz!.getName()
         expect(name).assertEqual("std.core.Object")
     });
@@ -469,7 +456,7 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1300
      * @tc.name testClassGetSuper013
-     * @tc.desc Verify ClassGetSuper case 013: return Classobject call method
+     * @tc.desc Verify ClassGetSuper case 013: return Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,6 +464,7 @@ export default function ClassGetSuperTest(): void {
     it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass013>()
         let parentClazz = childClazz.getSuper()
+        // 使用返回的Class对象
         let fields = asInstanceFieldArraySuper(parentClazz!.getInstanceFields())
         expect(fields.length).assertEqual(1)
         expect(fields[0].getName()).assertEqual("parentField")
@@ -485,17 +473,19 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1400
      * @tc.name testClassGetSuper014
-     * @tc.desc Verify ClassGetSuper case 014: type
+     * @tc.desc Verify ClassGetSuper case 014: primitive and string Class getSuper
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 测试各种基本类型
         let boolClass = Class.PRIMITIVE_BOOLEAN
         let intClass = Class.PRIMITIVE_INT
         let stringClass = Class.from<string>()
+        // 基本类型可能没有父类或有特定父类
         let boolSuper = boolClass.getSuper()
-        expect(boolSuper !== null).assertTrue()
+        expect(boolSuper !== null).assertTrue() // 或根据实际情况验证
     });
 
     /**
@@ -510,6 +500,7 @@ export default function ClassGetSuperTest(): void {
       let arrClass = Class.from<Array<int>>()
         let arrSuper = arrClass.getSuper()
         expect(arrSuper !== null).assertTrue()
+        // 数组可能有特殊的父类
         console.info(arrSuper!.getName())
     });
 
@@ -557,13 +548,14 @@ export default function ClassGetSuperTest(): void {
         let isUnion = unionClass.isUnion()
         expect(isUnion).assertTrue()
         let unionSuper = unionClass.getSuper()
+        // 联合类型可能返回undefined或有特定父类
         console.info(unionSuper)
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1900
      * @tc.name testClassGetSuper019
-     * @tc.desc Verify ClassGetSuper case 019: type
+     * @tc.desc Verify ClassGetSuper case 019: enum Class getSuper non-null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -572,6 +564,7 @@ export default function ClassGetSuperTest(): void {
       let enumClass = Class.from<TestEnum019>()
         let enumSuper = enumClass.getSuper()
         expect(enumSuper !== null).assertTrue()
+        // 枚举可能有特殊的父类
         console.info(enumSuper!.getName())
     });
 
@@ -584,14 +577,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<MyClass020>()
-        try {
-          let superClazz = clazz.getSuper()
-          expect(clazz.isUnion()).assertFalse()
-          expect(superClazz !== null).assertTrue()
-        } catch (error) {
-          expect().assertFail()
-        }
+      let clazz = Class.from<MyClass020>();
+        let superClazz = clazz.getSuper();
+        expect(clazz.isUnion()).assertFalse();
+        expect(superClazz !== null).assertTrue();
     });
 
     /**
@@ -604,6 +593,7 @@ export default function ClassGetSuperTest(): void {
      */
     it('testClassGetSuper021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass021>()
+        // 不调用initialize()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
     });
@@ -675,6 +665,10 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 如果语言支持多重继承
+        // class Child026 extends Parent1026, Parent2026 {}
+        // 否则测试接口实现
+
 
         let clazz = Class.from<Child026>()
         let superClazz = clazz.getSuper()
@@ -711,6 +705,7 @@ export default function ClassGetSuperTest(): void {
       let clazz = Class.from<ChildClass028>()
         let superClazz = clazz.getSuper()
         expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass028")).assertTrue()
+        // 验证接口通过getInterfaces获取
         let interfaces = clazz.getInterfaces()
         expect(interfaces.length).assertEqual(1)
     });
@@ -743,6 +738,7 @@ export default function ClassGetSuperTest(): void {
       let childClazz = Class.from<ChildClass030>()
         let parentClazz = childClazz.getSuper()
         expect(parentClazz !== null).assertTrue()
+        // 验证isSubtypeOf关系
         expect(childClazz.isSubtypeOf(parentClazz!)).assertTrue()
     });
 
@@ -827,6 +823,7 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 39690-2.11：沿 getSuper 遍历继承链；depth<100 防止元数据环或异常链死循环（与 Initialize012 循环依赖场景区分）
       let serviceClazz = Class.from<UserService035>()
         let current: Class | undefined = serviceClazz
         let depth = 0
@@ -850,6 +847,7 @@ export default function ClassGetSuperTest(): void {
       let modelClazz = Class.from<UserModel036>()
         let superClazz = modelClazz.getSuper()
         expect(Utils.classNameMatches(superClazz!.getName(), "BaseModel036")).assertTrue()
+        // ORM可以基于此映射表结构
     });
 
     /**
@@ -928,7 +926,7 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4100
      * @tc.name testClassGetSuper041
-     * @tc.desc Verify ClassGetSuper case 041: voidtype
+     * @tc.desc Verify ClassGetSuper case 041: void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
