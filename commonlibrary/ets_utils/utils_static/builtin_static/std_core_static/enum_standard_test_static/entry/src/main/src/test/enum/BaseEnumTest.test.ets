@@ -1,4 +1,4 @@
-﻿'use static'
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,78 +18,84 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import Utils from './../Util.test';
 
 class ColorEnum158 extends BaseEnum<string> {
-    constructor(value: string, name: string) {
-      super(value, name);
-    }
+  constructor(value: string, name: string) {
+    super(value, name);
   }
+}
 
 class StatusEnum159 extends BaseEnum<int> {
-    constructor(value: int, name: string) {
-      super(value, name);
-    }
-    public override toString(): string {
-      return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]"
-    }
+  constructor(value: int, name: string) {
+    super(value, name);
   }
+
+  public override toString(): string {
+    return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]"
+  }
+}
 
 class MyEnum160 extends BaseEnum<int> {
-    constructor(value: int, name: string) {
-      super(value, name);
-    }
-    public getDescription(): string {
-      return this.getName() + "=" + this.valueOf().toString()
-    }
+  constructor(value: int, name: string) {
+    super(value, name);
   }
+
+  public getDescription(): string {
+    return this.getName() + "=" + this.valueOf().toString()
+  }
+}
 
 class BaseColor161 extends BaseEnum<string> {
-    constructor(value: string, name: string) {
-      super(value, name);
-    }
+  constructor(value: string, name: string) {
+    super(value, name);
   }
+}
 
 class ExtendedColor161 extends BaseColor161 {
-    constructor(value: string, name: string) {
-      super(value, name);
-    }
-    public override toString(): string {
-      return "Color:" + this.getName()
-    }
+  constructor(value: string, name: string) {
+    super(value, name);
   }
+
+  public override toString(): string {
+    return "Color:" + this.getName()
+  }
+}
 
 class Direction165 extends BaseEnum<string> {
-    public static readonly NORTH: Direction165 = new Direction165("N", "NORTH")
-    public static readonly SOUTH: Direction165 = new Direction165("S", "SOUTH")
-    public static readonly EAST: Direction165 = new Direction165("E", "EAST")
-    public static readonly WEST: Direction165 = new Direction165("W", "WEST")
-    constructor(value: string, name: string) {
-      super(value, name);
-    }
+  public static readonly NORTH: Direction165 = new Direction165("N", "NORTH")
+  public static readonly SOUTH: Direction165 = new Direction165("S", "SOUTH")
+  public static readonly EAST: Direction165 = new Direction165("E", "EAST")
+  public static readonly WEST: Direction165 = new Direction165("W", "WEST")
+
+  constructor(value: string, name: string) {
+    super(value, name);
   }
+}
 
 class HttpStatus166 extends BaseEnum<int> {
-    public static readonly OK: HttpStatus166 = new HttpStatus166(200, "OK")
-    public static readonly NOT_FOUND: HttpStatus166 = new HttpStatus166(404, "NOT_FOUND")
-    public static readonly SERVER_ERROR: HttpStatus166 = new HttpStatus166(500, "INTERNAL_SERVER_ERROR")
-    constructor(value: int, name: string) {
-      super(value, name);
-    }
+  public static readonly OK: HttpStatus166 = new HttpStatus166(200, "OK")
+  public static readonly NOT_FOUND: HttpStatus166 = new HttpStatus166(404, "NOT_FOUND")
+  public static readonly SERVER_ERROR: HttpStatus166 = new HttpStatus166(500, "INTERNAL_SERVER_ERROR")
+
+  constructor(value: int, name: string) {
+    super(value, name);
   }
+}
 
 class ErrorCode167 extends BaseEnum<long> {
-    public static readonly NONE: ErrorCode167 = new ErrorCode167(Int.toLong(0), "NONE")
-    public static readonly NETWORK: ErrorCode167 = new ErrorCode167(Int.toLong(1001), "NETWORK_ERROR")
-    public static readonly TIMEOUT: ErrorCode167 = new ErrorCode167(Int.toLong(1002), "TIMEOUT_ERROR")
-    constructor(value: long, name: string) {
-      super(value, name);
-    }
+  public static readonly NONE: ErrorCode167 = new ErrorCode167(Int.toLong(0), "NONE")
+  public static readonly NETWORK: ErrorCode167 = new ErrorCode167(Int.toLong(1001), "NETWORK_ERROR")
+  public static readonly TIMEOUT: ErrorCode167 = new ErrorCode167(Int.toLong(1002), "TIMEOUT_ERROR")
+
+  constructor(value: long, name: string) {
+    super(value, name);
   }
+}
 
 export default function BaseEnumTest(): void {
   describe('BaseEnumTest', (): void => {
-beforeEach(async (): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
-    
+
 
     /**
      * @tc.name testBaseEnum001
@@ -1956,7 +1962,7 @@ beforeEach(async (): Promise<void> => {
     it('testBaseEnum152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enums: BaseEnum<int>[] = []
       for (let i = 0; i < 10000; i++) {
-      enums.push(new BaseEnum<int>(i, "ENUM_" + i.toString()))
+        enums.push(new BaseEnum<int>(i, "ENUM_" + i.toString()))
       }
       expect(enums[0].valueOf()).assertEqual(0)
       expect(enums[9999].valueOf()).assertEqual(9999)
