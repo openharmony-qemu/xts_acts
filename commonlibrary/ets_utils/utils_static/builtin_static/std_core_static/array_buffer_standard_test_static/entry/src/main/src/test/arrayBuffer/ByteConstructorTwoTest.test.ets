@@ -41,6 +41,7 @@ export default function byteConstructorTwoTest(): void {
       await Utils.msSleep(30);
     });
 
+
     /**
      * @tc.name testByteConstructorTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0100
@@ -53,7 +54,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(64));
       expect(b.toByte()).assertEqual(64);
     });
-
     /**
      * @tc.name testByteConstructorTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0200
@@ -66,7 +66,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte();
       expect(b.toByte()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0300
@@ -79,7 +78,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(0));
       expect(b.toByte()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0400
@@ -92,7 +90,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(1));
       expect(b.toByte()).assertEqual(1);
     });
-
     /**
      * @tc.name testByteConstructorTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0500
@@ -105,7 +102,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(-1));
       expect(b.toByte()).assertEqual(-1);
     });
-
     /**
      * @tc.name testByteConstructorTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0600
@@ -118,7 +114,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(-64));
       expect(b.toByte()).assertEqual(-64);
     });
-
     /**
      * @tc.name testByteConstructorTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0700
@@ -131,7 +126,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(127));
       expect(b.toByte()).assertEqual(127);
     });
-
     /**
      * @tc.name testByteConstructorTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0800
@@ -144,7 +138,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(-128));
       expect(b.toByte()).assertEqual(-128);
     });
-
     /**
      * @tc.name testByteConstructorTwo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_0900
@@ -157,7 +150,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(126));
       expect(b.toByte()).assertEqual(126);
     });
-
     /**
      * @tc.name testByteConstructorTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1000
@@ -170,7 +162,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(-127));
       expect(b.toByte()).assertEqual(-127);
     });
-
     /**
      * @tc.name testByteConstructorTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1100
@@ -184,7 +175,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(arg);
       expect(b.toByte()).assertEqual(arg);
     });
-
     /**
      * @tc.name testByteConstructorTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1200
@@ -198,7 +188,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(arg);
       expect(b.toByte()).assertEqual(arg);
     });
-
     /**
      * @tc.name testByteConstructorTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1300
@@ -212,7 +201,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(arg);
       expect(b.toByte()).assertEqual(arg);
     });
-
     /**
      * @tc.name testByteConstructorTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1400
@@ -230,7 +218,6 @@ export default function byteConstructorTwoTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
-
     /**
      * @tc.name testByteConstructorTwo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1500
@@ -248,7 +235,6 @@ export default function byteConstructorTwoTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
-
     /**
      * @tc.name testByteConstructorTwo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1600
@@ -266,7 +252,6 @@ export default function byteConstructorTwoTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
-
     /**
      * @tc.name testByteConstructorTwo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1700
@@ -284,7 +269,6 @@ export default function byteConstructorTwoTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
-
     /**
      * @tc.name testByteConstructorTwo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1800
@@ -302,7 +286,6 @@ export default function byteConstructorTwoTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
-
     /**
      * @tc.name testByteConstructorTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_1900
@@ -316,7 +299,6 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(arg);
       expect(b.toByte()).assertEqual(arg);
     });
-
     /**
      * @tc.name testByteConstructorTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2000
@@ -330,7 +312,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(null as Object));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2100
@@ -345,7 +326,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(v as byte);
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2200
@@ -360,7 +340,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(s as Object));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2300
@@ -374,7 +353,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(true as Object));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2400
@@ -388,7 +366,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(false as Object));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2500
@@ -402,7 +379,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(Utils.plainObject()));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2600
@@ -418,7 +394,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(arr as Object));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2700
@@ -432,7 +407,6 @@ export default function byteConstructorTwoTest(): void {
         new Byte(Utils.castToByte(Utils.voidFnAsObject()));
       });
     });
-
     /**
      * @tc.name testByteConstructorTwo0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2800
@@ -447,7 +421,6 @@ export default function byteConstructorTwoTest(): void {
       expect(b1.toByte()).assertEqual(10);
       expect(b2.toByte()).assertEqual(20);
     });
-
     /**
      * @tc.name testByteConstructorTwo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2900
@@ -462,7 +435,6 @@ export default function byteConstructorTwoTest(): void {
       expect(text.length >= 1).assertTrue();
       expect(b.toByte()).assertEqual(64);
     });
-
     /**
      * @tc.name testByteConstructorTwo0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3000
@@ -475,56 +447,40 @@ export default function byteConstructorTwoTest(): void {
       const b = new Byte(Int.toByte(64));
       expect(b.toInt()).assertEqual(64);
     });
-
     /**
      * @tc.name testByteConstructorTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3100
-     * @tc.desc Verify b instanceof Byte is true
+     * @tc.desc Verify Class.of(b).getName().indexOf('Byte') >= 0 is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
-      expect(b instanceof Byte).assertEqual(true);
+      expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
     });
-
     /**
      * @tc.name testByteConstructorTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3200
-     * @tc.desc Verify Class.of(b).getName().indexOf('Byte') >= 0 is true
+     * @tc.desc Verify kind === 'object' || kind === 'byte' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
-      expect(Class.of(b).getName().indexOf('Byte') >= 0).assertTrue();
-    });
-
-    /**
-     * @tc.name testByteConstructorTwo0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3300
-     * @tc.desc Verify kind === 'object' || kind === 'byte' is true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testByteConstructorTwo0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const b = new Byte(Int.toByte(64));
       const kind: string = typeof b;
       expect(kind === 'object' || kind === 'byte').assertTrue();
     });
-
     /**
-     * @tc.name testByteConstructorTwo0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3400
+     * @tc.name testByteConstructorTwo0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3300
      * @tc.desc Verify typeof val === 'byte' is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorTwo0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorTwo0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
       const val: byte = b.toByte();
       expect(typeof val === 'byte').assertTrue();
