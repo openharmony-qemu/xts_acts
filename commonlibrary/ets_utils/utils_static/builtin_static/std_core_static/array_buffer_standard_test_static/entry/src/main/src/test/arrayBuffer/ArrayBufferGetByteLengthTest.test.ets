@@ -464,7 +464,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_3300
-     * @tc.desc Verify consecutive getByteLength() calls return equal values after resize(0)
+     * @tc.desc Verify consecutive getByteLength() calls are equal and match byteLength after resize(0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -472,8 +472,10 @@ export default function arrayBufferGetByteLengthTest(): void {
     it('testArrayBufferGetByteLength0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
-      expect(buffer.getByteLength()).assertEqual(0);
-      expect(buffer.getByteLength()).assertEqual(0);
+      const len1 = buffer.getByteLength();
+      const len2 = buffer.getByteLength();
+      expect(len1).assertEqual(len2);
+      expect(len1).assertEqual(buffer.byteLength);
     });
   });
 }

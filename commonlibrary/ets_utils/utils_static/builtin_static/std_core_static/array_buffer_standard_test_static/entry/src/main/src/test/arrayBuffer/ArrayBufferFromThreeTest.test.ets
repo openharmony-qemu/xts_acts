@@ -357,7 +357,6 @@ export default function arrayBufferFromThreeTest(): void {
       const u8 = new Uint8Array([1, 2, 3, 4, 5]);
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(u8.length);
-      expect(result.byteLength).assertEqual(5);
     });
 
     /**
