@@ -21,7 +21,7 @@ export default function BigIntPositiveTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0100
      * @tc.name testBigIntPositiveSignCases0100
-     * @tc.desc Verify positive() for positive, negative, and zero
+     * @tc.desc Verify positive() is true for non-negative values including zero per API spec
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -37,7 +37,7 @@ export default function BigIntPositiveTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0200
      * @tc.name testBigIntPositiveComplementNegative0200
-     * @tc.desc Verify positive and negative are complementary
+     * @tc.desc Verify positive() and negative() are mutually exclusive sign checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -50,6 +50,23 @@ export default function BigIntOperatorLessThanTest(): void {
         expect(new BigInt('9007199254740990').operatorLessThan(new BigInt(maxSafe))).assertTrue();
       });
     /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0500
+     * @tc.name testBigIntOperatorLessThanZero0500
+     * @tc.desc Verify operatorLessThan zero and sign boundary cases
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanZero0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-1).operatorLessThan(new BigInt(0))).assertTrue();
+        expect(new BigInt(0).operatorLessThan(new BigInt(1))).assertTrue();
+        expect(new BigInt(-100).operatorLessThan(new BigInt(0))).assertTrue();
+        expect(new BigInt(0).operatorLessThan(new BigInt(-1))).assertFalse();
+        expect(new BigInt(0).operatorLessThan(new BigInt(0))).assertFalse();
+        expect(new BigInt(1).operatorLessThan(new BigInt(0))).assertFalse();
+      });
+    /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0300
      * @tc.name testBigIntOperatorLessThanReturnType0300
      * @tc.desc Verify operatorLessThan returns boolean

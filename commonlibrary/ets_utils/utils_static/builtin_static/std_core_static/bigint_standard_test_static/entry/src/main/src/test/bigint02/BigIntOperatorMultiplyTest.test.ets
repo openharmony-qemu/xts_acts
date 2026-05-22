@@ -98,5 +98,22 @@ export default function BigIntOperatorMultiplyTest(): void {
           a.operatorMultiply(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0600
+     * @tc.name testBigIntOperatorMultiplyBoundary0600
+     * @tc.desc Verify operatorMultiply at long boundary and beyond safe integer range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorMultiplyBoundary0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt('9223372036854775807').operatorMultiply(new BigInt(2)).toString())
+          .assertEqual('18446744073709551614');
+        expect(new BigInt('-9223372036854775807').operatorMultiply(new BigInt('-9223372036854775807')).toString())
+          .assertEqual('85070591730234615847396907784232501249');
+        expect(new BigInt(-1).operatorMultiply(new BigInt('999999999999999999999999999999')).toString())
+          .assertEqual('-999999999999999999999999999999');
+      });
   });
 }

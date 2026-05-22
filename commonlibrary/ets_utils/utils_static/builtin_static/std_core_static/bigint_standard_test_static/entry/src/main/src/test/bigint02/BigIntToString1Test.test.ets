@@ -43,7 +43,7 @@ export default function BigIntToString1Test(): void {
      */
     it('testBigIntToString1Large0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('999999999999999999999999999999').toString())
+        expect(BigInt('999999999999999999999999999999').toString())
           .assertEqual('999999999999999999999999999999');
       });
   });

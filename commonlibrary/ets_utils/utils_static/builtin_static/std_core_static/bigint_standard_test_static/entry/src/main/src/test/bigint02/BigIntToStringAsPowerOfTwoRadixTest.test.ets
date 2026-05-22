@@ -33,21 +33,30 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0200
-     * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalid0200
-     * @tc.desc Verify invalid radix throws on current runtime
+     * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidZero0200
+     * @tc.desc Verify zero radix throws on current runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToStringAsPowerOfTwoRadixInvalid0200',
+    it('testBigIntToStringAsPowerOfTwoRadixInvalidZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = new BigInt(255);
-        expect(v.toStringAsPowerOfTwoRadix(3).length > 0).assertTrue();
         expect((): void => {
-          v.toStringAsPowerOfTwoRadix(0);
+          new BigInt(255).toStringAsPowerOfTwoRadix(0);
         }).assertThrowError('Error');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0300
+     * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidNegative0300
+     * @tc.desc Verify negative power-of-two radix throws on current runtime
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToStringAsPowerOfTwoRadixInvalidNegative0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          v.toStringAsPowerOfTwoRadix(-2);
+          new BigInt(255).toStringAsPowerOfTwoRadix(-2);
         }).assertThrowError('Error');
       });
   });

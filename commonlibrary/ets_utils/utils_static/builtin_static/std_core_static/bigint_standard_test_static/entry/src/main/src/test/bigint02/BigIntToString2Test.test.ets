@@ -62,5 +62,34 @@ export default function BigIntToString2Test(): void {
           new BigInt(10).toString(37);
         }).assertThrowError('RangeError');
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_2_0400
+     * @tc.name testBigIntToString2Zero0400
+     * @tc.desc Verify toString radix for zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString2Zero0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0).toString()).assertEqual('0');
+        expect(new BigInt(0).toString(2)).assertEqual('0');
+        expect(new BigInt(0).toString(16)).assertEqual('0');
+        expect(new BigInt(0).toString(36)).assertEqual('0');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_2_0500
+     * @tc.name testBigIntToString2Large0500
+     * @tc.desc Verify toString radix for very large values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString2Large0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt('18446744073709551616').toString(16)).assertEqual('10000000000000000');
+        expect(new BigInt('999999999999999999999999999999').toString(10))
+          .assertEqual('999999999999999999999999999999');
+      });
   });
 }

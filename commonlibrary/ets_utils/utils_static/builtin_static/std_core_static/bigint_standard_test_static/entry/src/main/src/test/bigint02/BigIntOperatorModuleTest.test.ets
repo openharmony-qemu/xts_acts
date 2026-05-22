@@ -45,6 +45,35 @@ export default function BigIntOperatorModuleTest(): void {
         expect(new BigInt(42).operatorModule(new BigInt(10)).toString()).assertEqual('2');
       });
     /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0300
+     * @tc.name testBigIntOperatorModuleZeroDividend0300
+     * @tc.desc Verify operatorModule when dividend is zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleZeroDividend0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0).operatorModule(new BigInt(5)).toString()).assertEqual('0');
+        expect(new BigInt(0).operatorModule(new BigInt(-7)).toString()).assertEqual('0');
+        expect(new BigInt(0).operatorModule(new BigInt(1)).toString()).assertEqual('0');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0700
+     * @tc.name testBigIntOperatorModuleNegative0700
+     * @tc.desc Verify operatorModule with negative dividend and divisor combinations
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleNegative0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-12).operatorModule(new BigInt(-5)).toString()).assertEqual('-2');
+        expect(new BigInt(12).operatorModule(new BigInt(-5)).toString()).assertEqual('2');
+        expect(new BigInt(-12).operatorModule(new BigInt(5)).toString()).assertEqual('-2');
+        expect(new BigInt(-20).operatorModule(new BigInt(-5)).toString()).assertEqual('0');
+      });
+    /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0400
      * @tc.name testBigIntOperatorModuleReturnType0400
      * @tc.desc Verify operatorModule returns BigInt

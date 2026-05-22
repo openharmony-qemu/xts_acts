@@ -45,6 +45,7 @@ export default function BigIntPowTest(): void {
      */
     it('testBigIntPowSpecial0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0).pow(new BigInt(0)).toString()).assertEqual('1');
         expect(new BigInt(0).pow(new BigInt(5)).toString()).assertEqual('0');
         expect(new BigInt(1).pow(new BigInt(100)).toString()).assertEqual('1');
         expect(new BigInt(-1).pow(new BigInt(4)).toString()).assertEqual('1');
@@ -61,7 +62,9 @@ export default function BigIntPowTest(): void {
     it('testBigIntPowLarge0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(2).pow(new BigInt(64)).toString()).assertEqual('18446744073709551616');
+        expect(new BigInt(2).pow(new BigInt(128)).toString()).assertEqual('340282366920938463463374607431768211456');
         expect(new BigInt(999999999).pow(new BigInt(2)).toString()).assertEqual('999999998000000001');
+        expect(new BigInt(10).pow(new BigInt(20)).toString()).assertEqual('100000000000000000000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_POW_0400

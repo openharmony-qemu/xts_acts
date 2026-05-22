@@ -33,5 +33,50 @@ export default function BigIntToLocaleString2Test(): void {
         const zh = new BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact', compactDisplay: 'short' });
         expect(zh.length > 0).assertTrue();
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0200
+     * @tc.name testBigIntToLocaleString2Zero0200
+     * @tc.desc Verify toLocaleString with locale for zero
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2Zero0200',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0).toLocaleString('en-US')).assertEqual('0');
+        expect(new BigInt(0).toLocaleString('de-DE')).assertEqual('0');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0300
+     * @tc.name testBigIntToLocaleString2Negative0300
+     * @tc.desc Verify toLocaleString with locale for negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2Negative0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const en = new BigInt(-1000000).toLocaleString('en-US');
+        expect(en.length > 0).assertTrue();
+        expect(en.indexOf('-') >= 0).assertTrue();
+        const de = new BigInt(-42).toLocaleString('de-DE');
+        expect(de.length > 0).assertTrue();
+        expect(de.indexOf('-') >= 0).assertTrue();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0400
+     * @tc.name testBigIntToLocaleString2Locales0400
+     * @tc.desc Verify toLocaleString with different locale parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2Locales0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const enUs = new BigInt(1234567).toLocaleString('en-US');
+        const frFr = new BigInt(1234567).toLocaleString('fr-FR');
+        expect(enUs.length > 0).assertTrue();
+        expect(frFr.length > 0).assertTrue();
+      });
   });
 }

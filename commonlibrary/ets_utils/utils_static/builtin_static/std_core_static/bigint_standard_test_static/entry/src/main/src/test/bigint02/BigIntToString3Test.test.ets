@@ -47,5 +47,34 @@ export default function BigIntToString3Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(255).toString()).assertEqual('255');
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0300
+     * @tc.name testBigIntToString3Zero0300
+     * @tc.desc Verify toString for zero with and without radix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3Zero0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(0).toString()).assertEqual('0');
+        expect(new BigInt(0).toString(16)).assertEqual('0');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0400
+     * @tc.name testBigIntToString3Large0400
+     * @tc.desc Verify toString with radix on very large values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3Large0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const radix16: double = 16.0;
+        expect(new BigInt('18446744073709551616').toString(Double.toInt(radix16)))
+          .assertEqual('10000000000000000');
+        expect(new BigInt('999999999999999999999999999999').toString())
+          .assertEqual('999999999999999999999999999999');
+      });
   });
 }
