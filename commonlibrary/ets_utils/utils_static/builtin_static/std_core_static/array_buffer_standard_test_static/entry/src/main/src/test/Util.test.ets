@@ -155,19 +155,12 @@ export default class Utils {
   static numberAsArrayBuffer(n: number): ArrayBuffer {
     return Utils.castToArrayBuffer(n as Object);
   }
-
+  
   static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: Int, length?: Int): ArrayBuffer {
     if (length !== undefined) {
       return ArrayBuffer.from(src, byteOffset, length);
     }
     const tail: Int = src.byteLength - byteOffset;
-    try {
-      const r = ArrayBuffer.from(src, byteOffset);
-      if (r.byteLength === tail) {
-        return r;
-      }
-    } catch (e) {
-    }
     return ArrayBuffer.from(src, byteOffset, tail);
   }
 }

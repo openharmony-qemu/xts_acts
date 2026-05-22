@@ -1144,7 +1144,6 @@ export default function arrayBufferFromSevenTest(): void {
      */
     it('testArrayBufferFromSeven0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(4);
-      expect(source.byteLength - 10 < 0).assertTrue();
       try {
         Utils.fromArrayBufferWithOffset(source, 10);
         expect().assertFail();
