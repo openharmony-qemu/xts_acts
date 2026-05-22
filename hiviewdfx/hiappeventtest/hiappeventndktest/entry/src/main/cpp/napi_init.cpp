@@ -24,6 +24,8 @@
 #define SUCCESS 0
 #define PARAM_0 0
 #define PARAM_1 1
+#define PARAM_2 100
+#define PARAM_3 256
 
 #undef LOG_DOMAIN
 #define LOG_DOMAIN 0xD003200
@@ -2269,7 +2271,7 @@ static napi_value TestHiAppEventReportFrameworkMemAnomaly9(napi_env env, napi_ca
 static napi_value TestHiAppEventReportFrameworkMemAnomaly10(napi_env env, napi_callback_info info) {
     OH_LOG_INFO(LOG_APP, "testTag start");
     char longDesc[1001] = {0};
-    memset(longDesc, 'a', 1000);
+    memset(longDesc, 'a', PARAM_2);
     int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, "3.0.0", longDesc);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
     napi_value result;
@@ -2287,7 +2289,7 @@ static napi_value TestHiAppEventReportFrameworkMemAnomaly11(napi_env env, napi_c
 static napi_value TestHiAppEventReportFrameworkMemAnomaly12(napi_env env, napi_callback_info info) {
     OH_LOG_INFO(LOG_APP, "testTag start");
     char longVersion[257] = {0};
-    memset(longVersion, 'a', 256);
+    memset(longVersion, 'a', PARAM_3);
     int code = OH_HiAppEvent_ReportFrameworkMemAnomaly(OH_FLUTTER_DART, longVersion, "test memory leak");
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
     if (code == HIAPPEVENT_REPORT_FREQUENCY_EXCEEDED){
