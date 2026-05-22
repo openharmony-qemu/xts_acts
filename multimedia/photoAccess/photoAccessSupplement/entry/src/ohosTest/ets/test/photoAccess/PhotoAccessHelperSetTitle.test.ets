@@ -1628,7 +1628,7 @@ export default function PhotoSetTitleTestSupp() {
     /**
      * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
      * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_009
-     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为""
+     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为"";
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
@@ -1654,7 +1654,7 @@ export default function PhotoSetTitleTestSupp() {
     /**
      * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010
      * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0010
-     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为null
+     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为null;
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
@@ -1680,7 +1680,7 @@ export default function PhotoSetTitleTestSupp() {
     /**
      * @tc.number   SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011
      * @tc.name     SUB_SHOW_SINGLE_ASSET_CREATION_DIALOG_EX_TEST_0011
-     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为undefined
+     * @tc.desc     showSingleAssetCreationDialogEx-第一个参数为undefined;
      * @tc.size     MEDIUM
      * @tc.type     Function
      * @tc.level    Level 0
