@@ -1559,7 +1559,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9910
      * @tc.desc Single-element array with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1582,7 +1582,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0200
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9911
      * @tc.desc Large array: replace head, middle, and tail
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1598,7 +1598,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0201
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9912
      * @tc.desc Two-dimensional array: replace an inner array with with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1613,7 +1613,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0202
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9913
      * @tc.desc Array containing undefined elements and with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1627,7 +1627,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0203
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9914
      * @tc.desc Array containing null elements and with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1641,7 +1641,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0204
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9915
      * @tc.desc Array where all elements are the same and with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1656,7 +1656,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0205
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9916
      * @tc.desc Object.freeze array unchanged; with() returns a new array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1671,7 +1671,7 @@ const result: number[] = Array.prototype.with.call(
 
     /**
      * @tc.name testArrayWithTest0206
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9917
      * @tc.desc with() on a Proxy-wrapped array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1690,7 +1690,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0207
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9918
      * @tc.desc Read with at() positive index after with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1705,7 +1705,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0208
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_10900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9919
      * @tc.desc Read with at() negative index after with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1720,7 +1720,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0209
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9920
      * @tc.desc toReversed() after with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1736,7 +1736,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0210
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9921
      * @tc.desc toSorted() after with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1752,7 +1752,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0211
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9922
      * @tc.desc toSpliced() after with()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1768,7 +1768,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0212
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9923
      * @tc.desc Compare with() versus copyWithin(); with() does not mutate the original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1785,7 +1785,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0213
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9924
      * @tc.desc Compare with() versus splice(); with() does not mutate the original
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1802,7 +1802,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0214
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9925
      * @tc.desc Compare with() versus fill(); with() replaces only one index
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1819,7 +1819,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0215
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9926
      * @tc.desc Call with() after toReversed, toSorted, and similar methods that return new arrays
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1834,7 +1834,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0216
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9927
      * @tc.desc Empty array with() throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1862,7 +1862,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0217
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9928
      * @tc.desc Single-element array: indices 0 and negative one are valid
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1890,7 +1890,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0218
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_11900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9929
      * @tc.desc Index negative one replaces the last element correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1905,7 +1905,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0219
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9930
      * @tc.desc Negative length index normalizes to replacing the first element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1919,7 +1919,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0220
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9931
      * @tc.desc Very large positive index throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1947,7 +1947,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0221
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9932
      * @tc.desc Very small negative index throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1975,7 +1975,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0222
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9933
      * @tc.desc with() via the prototype chain
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1990,7 +1990,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0223
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9934
      * @tc.desc Array.prototype.with writable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2003,7 +2003,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0224
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9935
      * @tc.desc Array.prototype.with enumerable is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2016,7 +2016,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0225
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9936
      * @tc.desc Array.prototype.with configurable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -2029,7 +2029,7 @@ const arr: number[] = [1, 2, 3];
 
     /**
      * @tc.name testArrayWithTest0226
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_12700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9937
      * @tc.desc Custom Symbol.species does not change with() return type; result is a normal Array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST

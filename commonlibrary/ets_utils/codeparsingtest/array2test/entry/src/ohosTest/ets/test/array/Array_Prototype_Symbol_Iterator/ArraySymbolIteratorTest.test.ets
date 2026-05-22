@@ -1218,7 +1218,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9910
      * @tc.desc Verify Infinity length object iteration behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1230,7 +1230,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0200
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9911
      * @tc.desc Verify string-numeric length conversion for array-like iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1242,7 +1242,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0201
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9912
      * @tc.desc Verify generator replaces instance Symbol.iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1254,7 +1254,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0202
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9913
      * @tc.desc Verify custom generator returns a fixed extra sequence
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1266,7 +1266,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0203
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9914
      * @tc.desc Verify custom empty generator yields no values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1278,7 +1278,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0204
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9915
      * @tc.desc Verify for-of uses custom Symbol.iterator behavior
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1290,7 +1290,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0205
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9916
      * @tc.desc Verify deleting instance Symbol.iterator falls back to prototype
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1302,7 +1302,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0206
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9917
      * @tc.desc Verify Object.create(null) object cannot be iterated as array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1314,7 +1314,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0207
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9918
      * @tc.desc Verify invalid iterator protocol throws on for-of
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1326,7 +1326,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0208
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_10900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9919
      * @tc.desc Verify plain function returning iterator object works
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1338,7 +1338,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0209
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9920
      * @tc.desc Verify keys, entries, values, and Symbol.iterator return distinct iterators
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1350,7 +1350,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0210
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9921
      * @tc.desc Verify values and Symbol.iterator produce identical sequences
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1362,7 +1362,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0211
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9922
      * @tc.desc Verify interleaved next calls on separate iterators
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1374,7 +1374,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0212
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9923
      * @tc.desc Verify arrays inherit Array.prototype[Symbol.iterator]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1386,7 +1386,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0213
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9924
      * @tc.desc Verify subclass inherits default Symbol.iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1398,7 +1398,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0214
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9925
      * @tc.desc Verify subclass can override Symbol.iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1410,7 +1410,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0215
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9926
      * @tc.desc Verify spread uses [Symbol.iterator] for arrays
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1422,7 +1422,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0216
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9927
      * @tc.desc Verify spread with manually advanced iterator rest
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1434,7 +1434,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0217
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9928
      * @tc.desc Verify spread concatenates arrays
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1446,7 +1446,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0218
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_11900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9929
      * @tc.desc Verify spread in function arguments
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1458,7 +1458,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0219
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9930
      * @tc.desc Verify spread inside array literal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1470,7 +1470,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0220
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9931
      * @tc.desc Verify destructuring uses Symbol.iterator implicitly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1482,7 +1482,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0221
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9932
      * @tc.desc Verify destructuring with rest element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1494,7 +1494,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0222
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9933
      * @tc.desc Verify destructuring with holes skipped
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1506,7 +1506,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0223
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9934
      * @tc.desc Verify destructuring default values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1518,7 +1518,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0224
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9935
      * @tc.desc Verify nested destructuring
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1530,7 +1530,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0225
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9936
      * @tc.desc Verify destructuring exhausted iterator yields undefined binding
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1542,7 +1542,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0226
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9937
      * @tc.desc Verify Array.from copies iterable to a new array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1554,7 +1554,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0227
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9938
      * @tc.desc Verify Array.from with map function
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1566,7 +1566,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0228
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_12900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9939
      * @tc.desc Verify Array.from on partially consumed iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1578,7 +1578,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0229
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9940
      * @tc.desc Verify Set constructor consumes array iterable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1590,7 +1590,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0230
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13100
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9941
      * @tc.desc Verify Map constructor consumes entries iterable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1602,7 +1602,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0231
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13200
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9942
      * @tc.desc Verify WeakSet from array of objects
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1614,7 +1614,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0232
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13300
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9943
      * @tc.desc Verify WeakMap from array of entries
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1626,7 +1626,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0233
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13400
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9944
      * @tc.desc Verify Promise.all consumes an array of promises
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1644,7 +1644,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0234
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13500
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9945
      * @tc.desc Verify Promise.race consumes an array of promises
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1661,7 +1661,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0235
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13600
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9946
      * @tc.desc Verify Promise.allSettled consumes an array of promises
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1685,7 +1685,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0236
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13700
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9947
      * @tc.desc Verify Promise.any consumes an array of promises
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1702,7 +1702,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0237
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13800
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9948
      * @tc.desc Verify yield* delegates to array iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1714,7 +1714,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0238
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_13900
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9949
      * @tc.desc Verify yield* delegates to manual iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1726,7 +1726,7 @@ export default function ArraySymbolIteratorTestSupplement() {
 
     /**
      * @tc.name testArraySymbolIteratorTest0239
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_14000
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_ITERATOR_SUPPLEMENT_TEST_9950
      * @tc.desc Verify yield* delegates to nested arrays
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
