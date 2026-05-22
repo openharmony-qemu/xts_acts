@@ -13,36 +13,26 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
-import * as ArraySymbolSpeciesJs from './array_symbol_species_test';
+import * as ArraySymbolSpeciesJs from './ArraySymbolSpeciesTest';
 
-export default function ArraySymbolSpeciesTest() {
-  describe('ArraySymbolSpeciesTest', () => {
+export default function ArraySymbolSpeciesTestSupplement() {
+  describe('ArraySymbolSpeciesTestSupplement', () => {
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
 
     /**
      * @tc.name testArraySymbolSpeciesTest0100
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0100
-     * @tc.desc 验证直接访问 Array[Symbol.species] 返回 Array 构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0100
+     * @tc.desc Verify Array[Symbol.species] returns the Array constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -53,8 +43,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0101
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0200
-     * @tc.desc 使用 Symbol.species 符号访问属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0200
+     * @tc.desc Access property via Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -65,8 +55,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0102
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0300
-     * @tc.desc 验证 Symbol.species 属性不可枚举
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0300
+     * @tc.desc Verify Symbol.species is non-enumerable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -77,8 +67,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0103
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0400
-     * @tc.desc 验证 Symbol.species 属性可配置
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0400
+     * @tc.desc Verify Symbol.species is configurable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,8 +79,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0104
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0500
-     * @tc.desc 验证 Symbol.species 是 getter 访问器属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0500
+     * @tc.desc Verify Symbol.species is a getter accessor property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -101,8 +91,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0105
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0600
-     * @tc.desc 验证返回值是函数类型
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0600
+     * @tc.desc Verify the getter return value is a function
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -113,8 +103,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0106
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0700
-     * @tc.desc 验证返回值与 Array 构造函数相同
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0700
+     * @tc.desc Verify the return value is the same as the Array constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -125,8 +115,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0107
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0800
-     * @tc.desc 验证多次访问返回同一个构造函数引用
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0800
+     * @tc.desc Verify repeated access returns the same constructor reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -137,8 +127,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0108
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_0900
-     * @tc.desc 使用 Symbol.species 返回的构造函数创建数组
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_0900
+     * @tc.desc Create an array using the constructor from Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -149,8 +139,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0109
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1000
-     * @tc.desc 验证子类默认继承 Symbol.species 返回自身构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1000
+     * @tc.desc Verify subclass default Symbol.species returns the subclass constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -161,8 +151,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0110
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1100
-     * @tc.desc 通过子类实例访问 constructor[Symbol.species]
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1100
+     * @tc.desc Access constructor[Symbol.species] via subclass instance
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -173,8 +163,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0111
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1200
-     * @tc.desc 验证二层继承的 species 行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1200
+     * @tc.desc Verify Symbol.species behavior with two-level inheritance
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -185,8 +175,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0112
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1300
-     * @tc.desc 验证三层继承的 species 行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1300
+     * @tc.desc Verify Symbol.species behavior with three-level inheritance
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -197,8 +187,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0113
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1400
-     * @tc.desc 验证子类 filter 方法返回实例类型
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1400
+     * @tc.desc Verify subclass filter returns instance of subclass type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -209,8 +199,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0114
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1500
-     * @tc.desc 验证子类 map 方法返回实例类型
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1500
+     * @tc.desc Verify subclass map returns instance of subclass type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -221,8 +211,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0115
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1600
-     * @tc.desc 验证子类 concat 方法返回实例类型
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1600
+     * @tc.desc Verify subclass concat returns instance of subclass type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -233,8 +223,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0116
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1700
-     * @tc.desc 子类覆盖 Symbol.species 返回 Array 构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1700
+     * @tc.desc Subclass overrides Symbol.species to return Array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -245,8 +235,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0117
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1800
-     * @tc.desc 验证覆盖后 filter 返回 Array 实例而非 MyArray
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1800
+     * @tc.desc Verify filter returns Array instance after overriding Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -257,8 +247,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0118
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_1900
-     * @tc.desc 子类覆盖 species 返回另一个自定义类
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_1900
+     * @tc.desc Subclass overrides species to return another custom class
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -269,8 +259,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0119
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2000
-     * @tc.desc 验证覆盖后 map 返回 CustomArray 实例
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2000
+     * @tc.desc Verify map returns CustomArray instance after override
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -281,8 +271,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0120
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2100
-     * @tc.desc 子类覆盖 species 返回 null
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2100
+     * @tc.desc Subclass overrides species to return null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -293,8 +283,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0121
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2200
-     * @tc.desc 子类覆盖 species 返回 undefined
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2200
+     * @tc.desc Subclass overrides species to return undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -305,8 +295,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0122
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2300
-     * @tc.desc 验证 map 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2300
+     * @tc.desc Verify map uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -317,8 +307,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0123
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2400
-     * @tc.desc 验证 map 对空数组的处理
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2400
+     * @tc.desc Verify map on empty array with Symbol.species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -329,8 +319,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0124
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2500
-     * @tc.desc 验证 filter 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2500
+     * @tc.desc Verify filter uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -341,8 +331,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0125
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2600
-     * @tc.desc 验证 filter 无匹配项时返回空数组
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2600
+     * @tc.desc Verify filter with no matches returns empty array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -353,8 +343,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0126
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2700
-     * @tc.desc 验证 concat 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2700
+     * @tc.desc Verify concat uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -365,8 +355,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0127
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2800
-     * @tc.desc 验证 concat 不传参数时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2800
+     * @tc.desc Verify concat with no arguments
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -377,8 +367,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0128
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_2900
-     * @tc.desc 验证 slice 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_2900
+     * @tc.desc Verify slice uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -389,8 +379,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0129
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3000
-     * @tc.desc 验证 slice 使用负索引的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3000
+     * @tc.desc Verify slice with negative indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -401,8 +391,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0130
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3100
-     * @tc.desc 验证 flat 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3100
+     * @tc.desc Verify flat uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -413,8 +403,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0131
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3200
-     * @tc.desc 验证 flatMap 方法使用 Symbol.species 构造返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3200
+     * @tc.desc Verify flatMap uses Symbol.species for the result constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -425,8 +415,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0132
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3300
-     * @tc.desc 验证 splice 方法使用 Symbol.species 构造返回删除的元素数组
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3300
+     * @tc.desc Verify splice uses Symbol.species for the array of deleted elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -437,8 +427,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0133
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3400
-     * @tc.desc 验证 species 可以返回非 Array 的构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3400
+     * @tc.desc Verify species may return a non-Array constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -449,8 +439,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0134
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3500
-     * @tc.desc 验证返回普通对象构造函数后的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3500
+     * @tc.desc Verify behavior when species returns an Object constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -461,8 +451,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0135
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3600
-     * @tc.desc species 返回 Set 构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3600
+     * @tc.desc Species returns Set constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -473,8 +463,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0136
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3700
-     * @tc.desc species 返回 Map 构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3700
+     * @tc.desc Species returns Map constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -485,8 +475,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0137
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3800
-     * @tc.desc 验证 species 返回 Proxy 包装的构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3800
+     * @tc.desc Verify species returns a Proxy-wrapped constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -497,8 +487,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0138
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_3900
-     * @tc.desc species 返回使用 bind 绑定的构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_3900
+     * @tc.desc Species returns a bound constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -509,8 +499,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0139
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4000
-     * @tc.desc 验证空数组调用 map 方法时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4000
+     * @tc.desc Verify map on empty array respects species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -521,8 +511,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0140
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4100
-     * @tc.desc 验证空数组调用 filter 方法时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4100
+     * @tc.desc Verify filter on empty array respects species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -533,8 +523,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0141
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4200
-     * @tc.desc 验证大数组 map 操作时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4200
+     * @tc.desc Verify map on large array respects species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -545,8 +535,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0142
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4300
-     * @tc.desc 验证稀疏数组 map 操作时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4300
+     * @tc.desc Verify map on sparse array respects species
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -557,8 +547,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0143
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4400
-     * @tc.desc 验证数组包含 undefined 时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4400
+     * @tc.desc Verify species behavior when array contains undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -569,8 +559,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0144
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4500
-     * @tc.desc 验证数组包含 null 时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4500
+     * @tc.desc Verify species behavior when array contains null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -581,8 +571,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0145
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4600
-     * @tc.desc 验证数组包含 NaN 时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4600
+     * @tc.desc Verify species behavior when array contains NaN
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -593,8 +583,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0146
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4700
-     * @tc.desc 验证 species getter 可以返回动态变化的构造函数
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4700
+     * @tc.desc Verify species getter may return a changing constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -605,8 +595,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0147
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4800
-     * @tc.desc 验证数组包含自身引用时 species 的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4800
+     * @tc.desc Verify species behavior when array contains self-reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -617,8 +607,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0148
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_4900
-     * @tc.desc 验证 species getter 抛出异常时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_4900
+     * @tc.desc Verify behavior when species getter throws
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -629,8 +619,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0149
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5000
-     * @tc.desc 验证 species getter 抛出 TypeError
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5000
+     * @tc.desc Verify species getter throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -641,8 +631,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0150
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5100
-     * @tc.desc species 返回字符串时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5100
+     * @tc.desc Behavior when species returns a string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -653,8 +643,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0151
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5200
-     * @tc.desc species 返回数字时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5200
+     * @tc.desc Behavior when species returns a number
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -665,8 +655,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0152
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5300
-     * @tc.desc species 返回普通对象时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5300
+     * @tc.desc Behavior when species returns a plain object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -677,8 +667,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0153
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5400
-     * @tc.desc species 返回 Symbol 时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5400
+     * @tc.desc Behavior when species returns a Symbol
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -689,8 +679,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0154
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5500
-     * @tc.desc 验证删除 Array[Symbol.species] 后的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5500
+     * @tc.desc Verify behavior after deleting Array[Symbol.species]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -701,8 +691,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0155
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5600
-     * @tc.desc 验证删除子类 Symbol.species 后回退到父类
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5600
+     * @tc.desc Verify deleting subclass Symbol.species falls back to parent
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -713,8 +703,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0156
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5700
-     * @tc.desc 验证将 species 设为只读后的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5700
+     * @tc.desc Verify behavior when species is made non-writable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -725,8 +715,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0157
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5800
-     * @tc.desc 验证 species 返回的构造函数在实例化时抛出错误
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5800
+     * @tc.desc Verify constructor returned by species throws on instantiation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -737,8 +727,8 @@ export default function ArraySymbolSpeciesTest() {
 
     /**
      * @tc.name testArraySymbolSpeciesTest0158
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_TEST_5900
-     * @tc.desc 验证 constructor 被设为 null 时的行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_SPECIES_SUPPLEMENT_TEST_5900
+     * @tc.desc Verify behavior when constructor is set to null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
