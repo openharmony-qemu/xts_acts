@@ -13,35 +13,25 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
-import * as ArraySymbolUnscopablesJs from './array_symbol_unscopables_test';
+import * as ArraySymbolUnscopablesJs from './ArraySymbolUnscopablesTest';
 
-export default function ArraySymbolUnscopables2Test() {
-  describe('ArraySymbolUnscopables2Test', () => {
+export default function ArraySymbolUnscopables2TestSupplement() {
+  describe('ArraySymbolUnscopables2TestSupplement', () => {
     beforeAll(() => {
-      // Presets an action, which is performed only once before all test cases of the test suite start.
-      // This API supports only one parameter: preset action function.
     })
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(20);
-      // Presets an action, which is performed before each unit test case starts.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: preset action function.
     })
     afterEach(() => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
     })
     afterAll(() => {
-      // Presets a clear action, which is performed after all test cases of the test suite end.
-      // This API supports only one parameter: clear action function.
     })
     /**
      * @tc.name testArraySymbolUnscopablesTest0193
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9400
-     * @tc.desc toSorted方法在with语句中不应被绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9400
+     * @tc.desc The toSorted method must not bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -52,8 +42,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0194
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9500
-     * @tc.desc unscopables不影响通过对象显式调用toSorted方法
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9500
+     * @tc.desc Unscopables does not affect explicit toSorted calls on the object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -64,8 +54,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0195
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9600
-     * @tc.desc toSpliced方法在with语句中不应被绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9600
+     * @tc.desc The toSpliced method must not bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -76,8 +66,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0196
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9700
-     * @tc.desc unscopables不影响通过对象显式调用toSpliced方法
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9700
+     * @tc.desc Unscopables does not affect explicit toSpliced calls on the object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -88,8 +78,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0197
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9800
-     * @tc.desc values方法在with语句中不应被绑定，这是unscopables设计的关键场景
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9800
+     * @tc.desc The values method must not bind in with; this is a key scenario for unscopables design
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,8 +90,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0198
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_9900
-     * @tc.desc unscopables不影响通过对象显式调用values方法
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_9900
+     * @tc.desc Unscopables does not affect explicit values calls on the object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -112,8 +102,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0199
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10000
-     * @tc.desc 验证unscopables对象的原型严格为null
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10000
+     * @tc.desc Verify the unscopables object's prototype is strictly null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -124,8 +114,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0200
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10100
-     * @tc.desc null原型对象不是Object的实例
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10100
+     * @tc.desc An object with a null prototype is not an instance of Object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -136,8 +126,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0201
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10200
-     * @tc.desc null原型对象不能调用Object.prototype上的方法
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10200
+     * @tc.desc An object with a null prototype cannot call methods on Object.prototype
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -148,8 +138,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0202
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10300
-     * @tc.desc 验证unscopables对象不继承Object.prototype.toString
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10300
+     * @tc.desc Verify the unscopables object does not inherit Object.prototype.toString
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -160,8 +150,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0203
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10400
-     * @tc.desc 验证unscopables对象不继承Object.prototype.hasOwnProperty
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10400
+     * @tc.desc Verify the unscopables object does not inherit Object.prototype.hasOwnProperty
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -172,8 +162,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0204
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10500
-     * @tc.desc 验证unscopables对象不继承Object.prototype.constructor
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10500
+     * @tc.desc Verify the unscopables object does not inherit Object.prototype.constructor
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -184,8 +174,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0205
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10600
-     * @tc.desc 验证unscopables对象不继承Object.prototype.isPrototypeOf
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10600
+     * @tc.desc Verify the unscopables object does not inherit Object.prototype.isPrototypeOf
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -196,8 +186,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0206
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10700
-     * @tc.desc 由于原型为null，toString不在unscopables中，with语句中可正常调用toString
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10700
+     * @tc.desc Because the prototype is null, toString is not in unscopables; toString works normally in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -208,8 +198,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0207
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10800
-     * @tc.desc valueOf不在unscopables中，with语句中可正常调用valueOf
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10800
+     * @tc.desc valueOf is not in unscopables; valueOf can be called normally in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -220,8 +210,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0208
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_10900
-     * @tc.desc 如果unscopables使用普通对象（原型非null），toString会被错误排除
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_10900
+     * @tc.desc Nested with statements on arrays each follow unscopables rules
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,8 +222,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0209
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11000
-     * @tc.desc 将keys设为false后，keys在with中应绑定到Array.prototype.keys
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11000
+     * @tc.desc Setting keys to false lets keys bind to Array.prototype.keys in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -244,8 +234,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0210
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11100
-     * @tc.desc 将includes设为false后，includes在with中应绑定到Array.prototype.includes
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11100
+     * @tc.desc Setting includes to false lets includes bind to Array.prototype.includes in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -256,8 +246,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0211
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11200
-     * @tc.desc 将keys设为非true的truthy值（如1、"yes"），仍应被排除
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11200
+     * @tc.desc Non-true truthy keys (e.g. 1, "yes") should still be excluded
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -268,8 +258,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0212
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11300
-     * @tc.desc 将find设为0（falsy），find在with中应绑定到Array.prototype.find
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11300
+     * @tc.desc Setting find to 0 (falsy) lets find bind to Array.prototype.find in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -280,8 +270,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0213
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11400
-     * @tc.desc 将push添加到unscopables并设为true，push在with中不再可用
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11400
+     * @tc.desc Adding push to unscopables as true makes push unavailable in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -292,8 +282,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0214
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11500
-     * @tc.desc 在unscopables中添加一个自定义属性名
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11500
+     * @tc.desc After deleting values from unscopables, values in with should bind to Array.prototype.values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -304,8 +294,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0215
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11600
-     * @tc.desc 删除unscopables中的keys属性后，keys在with中应绑定到Array.prototype.keys
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11600
+     * @tc.desc A sealed array still follows unscopables rules inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -316,8 +306,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0216
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11700
-     * @tc.desc 删除unscopables中的values属性后，values在with中应绑定到Array.prototype.values
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11700
+     * @tc.desc When a parameter shares a name with an unscopable property, with should use the parameter value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -328,8 +318,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0217
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11800
-     * @tc.desc 用自定义的null原型对象替换unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11800
+     * @tc.desc Replacing unscopables with a custom null-prototype object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -340,8 +330,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0218
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_11900
-     * @tc.desc 用空的null原型对象替换unscopables，所有方法在with中应可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_11900
+     * @tc.desc Replacing unscopables with an empty null-prototype object lets all methods bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -352,8 +342,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0219
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12000
-     * @tc.desc 将unscopables设为undefined，所有属性在with中应可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12000
+     * @tc.desc Setting unscopables to undefined lets all properties bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -364,8 +354,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0220
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12100
-     * @tc.desc 在运行时修改unscopables对象的属性，后续with语句应反映修改
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12100
+     * @tc.desc In strict mode, the unscopables object reference stays the same
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -376,8 +366,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0221
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12200
-     * @tc.desc 普通数组实例通过原型链访问Array.prototype[Symbol.unscopables]
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12200
+     * @tc.desc Ordinary array instances reach Array.prototype[Symbol.unscopables] through the prototype chain
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -388,8 +378,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0222
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12300
-     * @tc.desc 数组实例在with语句中遵循unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12300
+     * @tc.desc Array instances follow unscopables rules inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -400,8 +390,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0223
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12400
-     * @tc.desc 空数组和非空数组共享同一个unscopables对象
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12400
+     * @tc.desc Empty and non-empty arrays share the same unscopables object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -412,8 +402,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0224
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12500
-     * @tc.desc 自定义Array子类应继承unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12500
+     * @tc.desc A custom Array subclass should inherit unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -424,8 +414,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0225
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12600
-     * @tc.desc Array子类实例在with中应遵循相同的unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12600
+     * @tc.desc Instances of an Array subclass should follow the same unscopables rules inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -436,8 +426,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0226
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12700
-     * @tc.desc Array子类可以在原型上定义自己的Symbol.unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12700
+     * @tc.desc A subclass of Array may define its own Symbol.unscopables on the prototype
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -448,8 +438,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0227
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12800
-     * @tc.desc Object.create(Array.prototype)创建的对象应继承unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12800
+     * @tc.desc Objects created with Object.create(Array.prototype) should inherit unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -460,8 +450,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0228
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_12900
-     * @tc.desc Object.create(Array.prototype)的对象在with中遵循unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_12900
+     * @tc.desc Objects created with Object.create(Array.prototype) follow unscopables inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -472,8 +462,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0229
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13000
-     * @tc.desc 在Array.prototype[Symbol.unscopables]上添加属性影响所有实例的with行为
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13000
+     * @tc.desc After deleting keys from unscopables, keys in with should bind to Array.prototype.keys
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -484,8 +474,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0230
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13100
-     * @tc.desc 严格模式下with语句是语法错误，与unscopables无关
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13100
+     * @tc.desc with is a syntax error in strict mode; unrelated to unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -496,8 +486,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0231
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13200
-     * @tc.desc 在函数内声明严格模式，with语句不可用
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13200
+     * @tc.desc Assigning to Array.prototype[Symbol.unscopables] in strict mode should throw TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -508,8 +498,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0232
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13300
-     * @tc.desc 非严格模式下unscopables机制正常生效
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13300
+     * @tc.desc Unscopables behaves normally in non-strict mode
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -520,8 +510,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0233
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13400
-     * @tc.desc 非严格模式下非unscopable方法在with中正常绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13400
+     * @tc.desc Non-unscopable methods bind normally in non-strict mode with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -532,8 +522,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0234
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13500
-     * @tc.desc 严格模式下可以正常访问Array.prototype[Symbol.unscopables]
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13500
+     * @tc.desc Array.prototype[Symbol.unscopables] is accessible in strict mode
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -544,8 +534,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0235
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13600
-     * @tc.desc 严格模式下可以修改unscopables对象的属性值（unscopables对象本身不是冻结的）
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13600
+     * @tc.desc In strict mode, property values on the unscopables object may be changed (the object is not frozen)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -556,8 +546,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0236
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13700
-     * @tc.desc 在严格模式下，unscopables对象仍然指向同一引用
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13700
+     * @tc.desc Excluded methods may still be invoked explicitly via Array.prototype inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -568,8 +558,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0237
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13800
-     * @tc.desc 空数组的unscopables对象与有元素的数组相同
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13800
+     * @tc.desc An empty array's unscopables object matches that of a non-empty array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -580,8 +570,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0238
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_13900
-     * @tc.desc 空数组在with语句中仍然遵循unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_13900
+     * @tc.desc Empty arrays still follow unscopables rules inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -592,8 +582,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0239
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14000
-     * @tc.desc 冻结数组不影响unscopables的访问
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14000
+     * @tc.desc Freezing an array does not affect access to unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -604,8 +594,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0240
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14100
-     * @tc.desc 冻结数组在with语句中仍遵循unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14100
+     * @tc.desc A frozen array still follows unscopables rules inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -616,8 +606,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0241
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14200
-     * @tc.desc 密封数组不影响unscopables的访问
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14200
+     * @tc.desc If unscopables is an ordinary object (non-null prototype), toString is incorrectly excluded
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -628,8 +618,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0242
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14300
-     * @tc.desc 密封数组在with语句中仍遵循unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14300
+     * @tc.desc A string is not an array and does not inherit Array's unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -640,8 +630,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0243
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14400
-     * @tc.desc Proxy代理的数组可以通过get trap控制Symbol.unscopables的返回值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14400
+     * @tc.desc A Proxy-wrapped array may control the return value of Symbol.unscopables via a get trap
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -652,8 +642,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0244
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14500
-     * @tc.desc Proxy返回null作为unscopables，所有属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14500
+     * @tc.desc When a Proxy returns null for unscopables, all properties bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -664,8 +654,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0245
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14600
-     * @tc.desc Proxy返回undefined作为unscopables，所有属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14600
+     * @tc.desc When a Proxy returns undefined for unscopables, all properties bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -676,8 +666,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0246
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14700
-     * @tc.desc 普通对象（非数组）没有默认的Symbol.unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14700
+     * @tc.desc Ordinary (non-array) objects have no default Symbol.unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -688,8 +678,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0247
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14800
-     * @tc.desc Arguments对象没有Symbol.unscopables属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14800
+     * @tc.desc The Arguments object has no Symbol.unscopables property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -700,8 +690,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0248
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_14900
-     * @tc.desc TypedArray有自己的Symbol.unscopables，与Array的不同
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_14900
+     * @tc.desc TypedArray has its own Symbol.unscopables, distinct from Array's
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -712,8 +702,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0249
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15000
-     * @tc.desc 字符串不是数组，不继承Array的unscopables
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15000
+     * @tc.desc Combining an outer with on an array and an inner with on a plain object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -724,8 +714,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0250
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15100
-     * @tc.desc with语句通过Symbol.unscopables键查找排除列表
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15100
+     * @tc.desc with uses the Symbol.unscopables key to obtain the exclusion list
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -736,8 +726,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0251
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15200
-     * @tc.desc 对象没有Symbol.unscopables时，with绑定所有属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15200
+     * @tc.desc When an object has no Symbol.unscopables, with binds all properties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -748,8 +738,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0252
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15300
-     * @tc.desc 对象的Symbol.unscopables为undefined时，所有属性都绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15300
+     * @tc.desc When an object's Symbol.unscopables is undefined, all properties bind
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -760,8 +750,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0253
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15400
-     * @tc.desc unscopables中属性值为true时该属性在with中被排除
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15400
+     * @tc.desc In unscopables, true excludes the property in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -772,8 +762,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0254
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15500
-     * @tc.desc unscopables中属性值为false时该属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15500
+     * @tc.desc In unscopables, false lets the property bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -784,8 +774,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0255
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15600
-     * @tc.desc unscopables中属性值为undefined（falsy）时该属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15600
+     * @tc.desc In unscopables, undefined (falsy) lets the property bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -796,8 +786,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0256
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15700
-     * @tc.desc unscopables中属性值为0（falsy）时该属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15700
+     * @tc.desc In unscopables, 0 (falsy) lets the property bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -808,8 +798,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0257
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15800
-     * @tc.desc unscopables中属性值为''（falsy）时该属性在with中可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15800
+     * @tc.desc In unscopables, an empty string (falsy) lets the property bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -820,8 +810,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0258
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_15900
-     * @tc.desc unscopables中属性值为非空对象（truthy）时属性被排除
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_15900
+     * @tc.desc In unscopables, a non-empty object (truthy) excludes the property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -832,8 +822,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0259
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16000
-     * @tc.desc with语句在unscopables对象中查找属性时会遍历原型链
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16000
+     * @tc.desc with traverses the prototype chain when looking up properties on the unscopables object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -844,8 +834,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0260
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16100
-     * @tc.desc unscopables的null原型确保不会从Object.prototype继承属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16100
+     * @tc.desc A null prototype on unscopables ensures properties are not inherited from Object.prototype
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -856,8 +846,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0261
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16200
-     * @tc.desc 使用普通对象（非null原型）会导致Object.prototype上的方法也被排除
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16200
+     * @tc.desc Using an ordinary object (non-null prototype) also excludes methods from Object.prototype
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -868,8 +858,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0262
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16300
-     * @tc.desc NaN是falsy值，属性应可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16300
+     * @tc.desc NaN is falsy; the property should bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -880,8 +870,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0263
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16400
-     * @tc.desc null是falsy值，属性应可绑定
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16400
+     * @tc.desc null is falsy; the property should bind in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -892,8 +882,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0264
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16500
-     * @tc.desc 被列入unscopables的方法通过arr.method()方式调用不受任何影响
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16500
+     * @tc.desc Methods listed in unscopables are unaffected when called as arr.method()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -904,8 +894,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0265
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16600
-     * @tc.desc 通过call/apply调用unscopable方法不受影响
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16600
+     * @tc.desc Calling an unscopable method via call or apply is unaffected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -916,8 +906,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0266
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16700
-     * @tc.desc 通过bind调用unscopable方法不受影响
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16700
+     * @tc.desc Calling an unscopable method via bind is unaffected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -928,8 +918,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0267
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16800
-     * @tc.desc 在with语句内部仍可通过Array.prototype显式调用被排除的方法
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16800
+     * @tc.desc Inside with, values should resolve to an outer binding, not Array.prototype.values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -940,8 +930,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0268
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_16900
-     * @tc.desc length属性不在unscopables列表中，在with中可直接访问
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_16900
+     * @tc.desc length is not in the unscopables list; it is directly accessible in with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -952,8 +942,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0269
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17000
-     * @tc.desc 在with中可以修改数组的length属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17000
+     * @tc.desc Adding a property on Array.prototype[Symbol.unscopables] affects with behavior for all instances
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -964,8 +954,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0270
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17100
-     * @tc.desc Symbol.iterator不是unscopables排除的属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17100
+     * @tc.desc Symbol.iterator is not excluded by unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -976,8 +966,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0271
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17200
-     * @tc.desc for...of循环不受unscopables影响
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17200
+     * @tc.desc for...of is not affected by unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -988,8 +978,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0272
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17300
-     * @tc.desc ES2015引入的find, findIndex, fill, keys, values, entries等方法都在unscopables中
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17300
+     * @tc.desc Methods introduced in ES2015 (find, findIndex, fill, keys, values, entries) are listed in unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1000,8 +990,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0273
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17400
-     * @tc.desc ES2016引入的includes方法在unscopables中
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17400
+     * @tc.desc The includes method introduced in ES2016 is in unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1012,8 +1002,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0274
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17500
-     * @tc.desc ES2019引入的flat和flatMap方法在unscopables中
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17500
+     * @tc.desc The flat and flatMap methods introduced in ES2019 are in unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1024,8 +1014,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0275
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17600
-     * @tc.desc ES2023引入的不可变方法在unscopables中
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17600
+     * @tc.desc Immutable methods introduced in ES2023 are in unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1036,8 +1026,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0276
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17700
-     * @tc.desc ES5及之前已有的方法不在unscopables中
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17700
+     * @tc.desc Methods already present in ES5 and earlier are not in unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1048,8 +1038,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0277
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17800
-     * @tc.desc 模拟ES5代码中在with里使用keys变量的场景
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17800
+     * @tc.desc Simulate ES5-style code using a keys variable inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1060,8 +1050,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0278
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_17900
-     * @tc.desc 模拟ES5代码中在with里使用values变量的场景
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_17900
+     * @tc.desc Simulate ES5-style code using a values variable inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1072,8 +1062,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0279
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18000
-     * @tc.desc 模拟ES5代码中在with里使用includes变量的场景
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18000
+     * @tc.desc Simulate ES5-style code using an includes variable inside with
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1084,8 +1074,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0280
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18100
-     * @tc.desc 当外部变量名与unscopable属性同名时，with中应使用外部变量
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18100
+     * @tc.desc When an outer variable shares a name with an unscopable property, with should use the outer variable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1096,8 +1086,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0281
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18200
-     * @tc.desc 当unscopable属性名在外部不存在时，with中应抛出ReferenceError
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18200
+     * @tc.desc When an unscopable name is missing externally, with should throw ReferenceError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1108,8 +1098,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0282
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18300
-     * @tc.desc 函数参数名与unscopable属性同名时，with中应使用参数值
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18300
+     * @tc.desc Sealing an array does not affect access to unscopables
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1120,8 +1110,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0283
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18400
-     * @tc.desc 闭包中的变量与unscopable属性同名时，with中应使用闭包变量
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18400
+     * @tc.desc When a closure variable shares a name with an unscopable property, with should use the closure variable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1132,8 +1122,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0284
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18500
-     * @tc.desc 外层和内层with都使用数组时，各自遵循unscopables规则
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18500
+     * @tc.desc with is not available when strict mode is declared inside the function
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1144,8 +1134,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0285
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18600
-     * @tc.desc 外层数组with和内层普通对象with的组合
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18600
+     * @tc.desc Runtime changes to the unscopables object should be reflected by subsequent with statements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1156,8 +1146,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0286
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18700
-     * @tc.desc 内层with的scopable属性覆盖外层的同名属性
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18700
+     * @tc.desc An inner with's scopable property shadows an outer with's same-named property
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1168,8 +1158,8 @@ export default function ArraySymbolUnscopables2Test() {
 
     /**
      * @tc.name testArraySymbolUnscopablesTest0287
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_TEST_18800
-     * @tc.desc 内层with中unscopable属性回退到外层with的scopable属性或外部变量
+     * @tc.number SUB_COMMONLIBRARY_ARRAY_SYMBOL_UNSCOPABLES_SUPPLEMENT_TEST_18800
+     * @tc.desc An inner with falls back to an outer with's scopable property or an outer binding for unscopable names
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
