@@ -82,17 +82,17 @@ export default function ActsNotificationAnsReduceAlertsTest() {
     })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_003
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_003
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0100
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0100
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let testAbilityContext: common.UIAbilityContext= AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_003'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0100'
         await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
         }).catch((err: BusinessError):void => {
@@ -133,7 +133,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_003",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0100",
             }
           }
         };
@@ -171,16 +171,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_005
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_005
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0200
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0200
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG:string = 'Sub_Notification_Ans_Reduce_alerts_static_005'
+        let TAG:string = 'SUB_Notification_Ans_Reduce_alerts_static_0200'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationSlotType: notificationManager.SlotType.SOCIAL_COMMUNICATION,
@@ -188,7 +188,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_005",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0200",
             }
           }
         };
@@ -222,16 +222,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_007
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_007
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0300
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0300
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_007'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0300'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -283,16 +283,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_008
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_008
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0400
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0400
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_008'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0400'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -307,7 +307,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_008",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0400",
             }
           }
         };
@@ -345,16 +345,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_009
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_009
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0500
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0500
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_009'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0500'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -369,7 +369,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_009",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0500",
             }
           }
         };
@@ -407,16 +407,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_013
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_013
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0600
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0600
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG:string = 'Sub_Notification_Ans_Reduce_alerts_static_013'
+        let TAG:string = 'SUB_Notification_Ans_Reduce_alerts_static_0600'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
@@ -424,7 +424,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_013",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0600",
             }
           }
         };
@@ -458,16 +458,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_015
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_015
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0700
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0700
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_015'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0700'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -481,7 +481,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_015",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0700",
             }
           }
         };
@@ -519,16 +519,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_016
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_016
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0800
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0800
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_016'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0800'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -543,7 +543,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_016",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0800",
             }
           }
         };
@@ -581,16 +581,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_017
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_017
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_0900
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_0900
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_017'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_0900'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -605,7 +605,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_017",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_0900",
             }
           }
         };
@@ -643,16 +643,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_021
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_021
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1000
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1000
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_021'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1000'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -661,7 +661,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "CUSTOMER_SERVICE",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_021",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1000",
             }
           }
         };
@@ -699,16 +699,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_024
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_024
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1100
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1100
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_024'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1100'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -723,7 +723,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "CUSTOMER_SERVICE",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_024",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1100",
             }
           }
         };
@@ -761,16 +761,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_030
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_030
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1200
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1200
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_030'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1200'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -785,7 +785,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "UNKNOWN_TYPE",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_030",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1200",
             }
           }
         };
@@ -823,16 +823,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_033
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_033
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1300
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1300
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_033'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1300'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -847,7 +847,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "CONTENT_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_033",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1300",
             }
           }
         };
@@ -885,16 +885,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_036
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_036
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1400
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1400
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_036'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1400'
 
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
@@ -909,7 +909,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "OTHER_TYPES",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_036",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1400",
             }
           }
         };
@@ -947,115 +947,115 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_049
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_049
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1500
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1500
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_049'
-        let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-        abilityDelegator.executeShellCommand("aa start -b com.huawei.hmos.settings -a com.huawei.hmos.settings.MainAbility")
-        let driver = Driver.create();
-        await Utils.msSleep(1000);
-        let scrollBar: Component = await driver.findComponent(ON.type('Row')) as Component
-        console.info(TEST_SUITE_NAME + TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom();
-        await driver.assertComponentExist(ON.text('情景模式'));
-        let button = await driver.findComponent(ON.text('情景模式'));
-        if (button !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
-          await button.click()
-          await Utils.msSleep(500)
-        } else {
-          expect(false).assertTrue();
-          done()
-        }
-        await driver.assertComponentExist(ON.text('立即开启'));
-        let button2 = await driver.findComponent(ON.text('立即开启'));
-        if (button2 !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
-          await button2.click()
-          await Utils.msSleep(500)
-        } else {
-          expect(false).assertTrue();
-          done()
-        }
-        let notificationRequest: notificationManager.NotificationRequest = {
-          id: 2,
-          notificationFlags: {
-            soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
-            vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
-            bannerEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
-            lockScreenEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
-          } as notificationManager.NotificationFlags,
-          notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
-          content: {
-            notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-            normal: {
-              title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_049",
-            }
-          }
-        };
-        try {
-          await notificationManager.publish(notificationRequest).then(async () => {
-            console.info(TEST_SUITE_NAME + TAG + " publish success");
-            await Utils.msSleep(500)
-            await notificationManager.getActiveNotifications()
-              .then((data: Array<notificationManager.NotificationRequest>) => {
-                console.info(TEST_SUITE_NAME + TAG +
-                  ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
-                expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
-                expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
-                expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
-                expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
-              })
-              .catch((err: BusinessError):void => {
-                console.error(TEST_SUITE_NAME + TAG +
-                  `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
-                expect(false).assertTrue();
-                done()
-              });
-          }).catch((err: BusinessError):void => {
-            console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-            expect(false).assertTrue();
-            done()
-          });
-        } catch (err) {
-          console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
-          expect(false).assertTrue();
-          done()
-        }
-        await Utils.msSleep(500)
-        await driver.assertComponentExist(ON.text('立即关闭'));
-        let button3 = await driver.findComponent(ON.text('立即关闭'));
-        if (button3 !== null) {
-          console.info(TEST_SUITE_NAME + TAG + `button3 is ${JSON.stringify(button3)}`);
-          await button3.click()
-          await Utils.msSleep(500)
-          done()
-        } else {
-          expect(false).assertTrue();
-          done()
-        }
-      })
+    // it('SUB_Notification_Ans_Reduce_alerts_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    //   async (done: () => void): Promise<void> => {
+    //     let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1500'
+    //     let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+    //     abilityDelegator.executeShellCommand("aa start -b com.huawei.hmos.settings -a com.huawei.hmos.settings.MainAbility")
+    //     let driver = Driver.create();
+    //     await Utils.msSleep(1000);
+    //     let scrollBar: Component = await driver.findComponent(ON.type('Row')) as Component
+    //     console.info(TEST_SUITE_NAME + TAG + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+    //     expect(scrollBar != null).assertTrue()
+    //     await scrollBar.scrollToBottom();
+    //     await driver.assertComponentExist(ON.text('情景模式'));
+    //     let button = await driver.findComponent(ON.text('情景模式'));
+    //     if (button !== null) {
+    //       console.info(TEST_SUITE_NAME + TAG + `button is ${JSON.stringify(button)}`);
+    //       await button.click()
+    //       await Utils.msSleep(500)
+    //     } else {
+    //       expect(false).assertTrue();
+    //       done()
+    //     }
+    //     await driver.assertComponentExist(ON.text('立即开启'));
+    //     let button2 = await driver.findComponent(ON.text('立即开启'));
+    //     if (button2 !== null) {
+    //       console.info(TEST_SUITE_NAME + TAG + `button2 is ${JSON.stringify(button2)}`);
+    //       await button2.click()
+    //       await Utils.msSleep(500)
+    //     } else {
+    //       expect(false).assertTrue();
+    //       done()
+    //     }
+    //     let notificationRequest: notificationManager.NotificationRequest = {
+    //       id: 2,
+    //       notificationFlags: {
+    //         soundEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
+    //         vibrationEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
+    //         bannerEnabled: notificationManager.NotificationFlagStatus.TYPE_NONE,
+    //         lockScreenEnabled: notificationManager.NotificationFlagStatus.TYPE_OPEN,
+    //       } as notificationManager.NotificationFlags,
+    //       notificationSlotType: notificationManager.SlotType.SERVICE_INFORMATION,
+    //       content: {
+    //         notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+    //         normal: {
+    //           title: "SERVICE_INFORMATION",
+    //           text: "SUB_Notification_Ans_Reduce_alerts_static_1500",
+    //         }
+    //       }
+    //     };
+    //     try {
+    //       await notificationManager.publish(notificationRequest).then(async () => {
+    //         console.info(TEST_SUITE_NAME + TAG + " publish success");
+    //         await Utils.msSleep(500)
+    //         await notificationManager.getActiveNotifications()
+    //           .then((data: Array<notificationManager.NotificationRequest>) => {
+    //             console.info(TEST_SUITE_NAME + TAG +
+    //               ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
+    //             expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(2)
+    //             expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(2)
+    //             expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(2)
+    //             expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
+    //           })
+    //           .catch((err: BusinessError):void => {
+    //             console.error(TEST_SUITE_NAME + TAG +
+    //               `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
+    //             expect(false).assertTrue();
+    //             done()
+    //           });
+    //       }).catch((err: BusinessError):void => {
+    //         console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+    //         expect(false).assertTrue();
+    //         done()
+    //       });
+    //     } catch (err) {
+    //       console.error(TEST_SUITE_NAME + TAG + `publish fail: ${JSON.stringify(err)}`);
+    //       expect(false).assertTrue();
+    //       done()
+    //     }
+    //     await Utils.msSleep(500)
+    //     await driver.assertComponentExist(ON.text('立即关闭'));
+    //     let button3 = await driver.findComponent(ON.text('立即关闭'));
+    //     if (button3 !== null) {
+    //       console.info(TEST_SUITE_NAME + TAG + `button3 is ${JSON.stringify(button3)}`);
+    //       await button3.click()
+    //       await Utils.msSleep(500)
+    //       done()
+    //     } else {
+    //       expect(false).assertTrue();
+    //       done()
+    //     }
+    //   })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_051
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_051
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1600
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1600
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_051'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1600'
         let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
         abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsnotificationansreducealertstest.static")
         await Utils.msSleep(1500)
@@ -1099,7 +1099,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_051",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1600",
             }
           }
         };
@@ -1136,16 +1136,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_052
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_052
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1700
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1700
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_052'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1700'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1159,7 +1159,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_052",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1700",
             }
           }
         };
@@ -1223,16 +1223,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_010
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_010
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1800
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1800
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_010'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1800'
         testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
         await notificationManager.openNotificationSettings(testAbilityContext).then(() => {
           console.info(TEST_SUITE_NAME + TAG + `openNotificationSettings succeeded`);
@@ -1310,7 +1310,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_010",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1800",
             }
           }
         };
@@ -1347,16 +1347,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_011
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_011
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_1900
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_1900
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_011'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_1900'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1370,7 +1370,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_011",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_1900",
             }
           }
         };
@@ -1407,16 +1407,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_012
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_012
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_2000
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_2000
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_012'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_2000'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1430,7 +1430,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SOCIAL_COMMUNICATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_012",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_2000",
             }
           }
         };
@@ -1467,16 +1467,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_018
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_018
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_2100
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_2100
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_018'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_2100'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1490,7 +1490,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_018",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_2100",
             }
           }
         };
@@ -1527,16 +1527,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_019
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_019
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_2200
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_2200
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_019'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_2200'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1550,7 +1550,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_019",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_2200",
             }
           }
         };
@@ -1587,16 +1587,16 @@ export default function ActsNotificationAnsReduceAlertsTest() {
       })
 
     /**
-     * @tc.name   Sub_Notification_Ans_Reduce_alerts_static_020
-     * @tc.number Sub_Notification_Ans_Reduce_alerts_static_020
+     * @tc.name   SUB_Notification_Ans_Reduce_alerts_static_2300
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_static_2300
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_Reduce_alerts_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_Reduce_alerts_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let TAG: string = 'Sub_Notification_Ans_Reduce_alerts_static_020'
+        let TAG: string = 'SUB_Notification_Ans_Reduce_alerts_static_2300'
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 2,
           notificationFlags: {
@@ -1610,7 +1610,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
             normal: {
               title: "SERVICE_INFORMATION",
-              text: "Sub_Notification_Ans_Reduce_alerts_static_020",
+              text: "SUB_Notification_Ans_Reduce_alerts_static_2300",
             }
           }
         };
