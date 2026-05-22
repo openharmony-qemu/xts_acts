@@ -89,17 +89,17 @@ export default function actsNotificationReminderMeLaterTest():void{
 
 
     /**
-     * @tc.name   Sub_Notification_Ans_ReminderMe_Later_Static_013
-     * @tc.number Sub_Notification_Ans_ReminderMe_Later_Static_013
+     * @tc.name   SUB_Notification_Ans_ReminderMe_Later_Static_0100
+     * @tc.number SUB_Notification_Ans_ReminderMe_Later_Static_0100
      * @tc.desc   test function publishAsBundle
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('Sub_Notification_Ans_ReminderMe_Later_Static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    it('SUB_Notification_Ans_ReminderMe_Later_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
-        let Tag: string = 'Sub_Notification_Ans_ReminderMe_Later_Static_013'
-        console.info(Tag +`Sub_Notification_Ans_ReminderMe_Later_Static_013 START`);
+        let Tag: string = 'SUB_Notification_Ans_ReminderMe_Later_Static_0100'
+        console.info(Tag +`SUB_Notification_Ans_ReminderMe_Later_Static_0100 START`);
         let notificationRequest: notificationManager.NotificationRequest = {
           id: 1,
           hashCode: "hashCode",
@@ -142,7 +142,7 @@ export default function actsNotificationReminderMeLaterTest():void{
           console.info(Tag+` test case end`);
           done();
         }
-        console.info(Tag +`Sub_Notification_Ans_ReminderMe_Later_Static_013 END`);
+        console.info(Tag +`SUB_Notification_Ans_ReminderMe_Later_Static_0100 END`);
       })
 
   })
