@@ -18,6 +18,9 @@
 #include <multimedia/player_framework/native_avcodec_audiocodec.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
 #include <multimedia/player_framework/native_averrors.h>
+#include <multimedia/player_framework/native_avscreen_capture.h>
+#include <multimedia/player_framework/native_avscreen_capture_base.h>
+#include <multimedia/player_framework/native_avscreen_capture_errors.h>
 #include <queue>
 #include <string>
 #include <thread>
