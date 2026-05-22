@@ -45,6 +45,8 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { camera } from '@kit.CameraKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+const MULTI_CONFIG_DIAG_TAG = '[CAMERA_MULTI_CONFIG_DIAG]';
+
 function formatCaptureError(error: ESObject): string {
   let err = error as BusinessError;
   return `code is ${err.code}, message is ${err.message}, error is ${JSON.stringify(error)}`;
@@ -208,7 +210,7 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
      * @tc.level     : Level 0
      */
     it('SUB_CAMERA_CPATUREDYNAMICPHOTO_TESTMULTICONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_CAMERA_CPATUREDYNAMICPHOTO_TESTMULTICONFIG_0200'
+      let testNum = `${MULTI_CONFIG_DIAG_TAG} SUB_CAMERA_CPATUREDYNAMICPHOTO_TESTMULTICONFIG_0200`
       try {
         //预制条件
         let capturePhotoNum = 1;

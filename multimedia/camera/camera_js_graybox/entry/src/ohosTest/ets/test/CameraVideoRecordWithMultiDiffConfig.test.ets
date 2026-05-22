@@ -66,6 +66,8 @@ import {
 import { media } from '@kit.MediaKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
+const MULTI_CONFIG_DIAG_TAG = '[CAMERA_MULTI_CONFIG_DIAG]';
+
 function formatVideoError(error: ESObject): string {
   let err = error as BusinessError;
   return `code is ${err.code}, message is ${err.message}, error is ${JSON.stringify(error)}`;
@@ -255,7 +257,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
      * @tc.level     : Level 0
      */
     it('SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200'
+      let testNum = `${MULTI_CONFIG_DIAG_TAG} SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200`
       try {
         //预制条件
         console.info(`${testNum} step getPermission begin`)
@@ -365,16 +367,16 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 // 更新视频旋转角度
                 console.info(`${testNum} step getVideoRotation begin`)
                 let rotation = await getVideoRotation(videoOutput)
-                console.info(`videoRotation: ${rotation}`)
+                console.info(`${testNum} videoRotation is ${rotation}`)
                 avRecoder.updateRotation(rotation)
                 let videoStabilizationModes = getSupportedVideoStabilizationMode(session);
                 // 遍历防抖模式
                 for (let vsMode of videoStabilizationModes) {
                   if (videoStabilizationModes.length > 0 && vsMode != camera.VideoStabilizationMode.OFF) {
-                    console.info("set vsMode: " + vsMode)
+                    console.info(`${testNum} set vsMode is ${vsMode}`)
                     setVideoStabilizationMode(session, vsMode)
                     let activeMode = getActiveVideoStabilizationMode(session)
-                    console.info("get vsMode: " + activeMode)
+                    console.info(`${testNum} get vsMode is ${activeMode}`)
                   }
                 }
                 console.info(`${testNum} step startSession begin`)
@@ -394,7 +396,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 console.info(`${testNum} step startAvRecoder end`)
                 if (zoomRatioRange != undefined) {
                   for (let zoomRatio of zoomRatioRange!) {
-                    console.info('Profile is zoomRatio is ' + zoomRatio)
+                    console.info(`${testNum} Profile is zoomRatio is ${zoomRatio}`)
                     setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
                     await sleep(2000);
                   }
@@ -425,7 +427,7 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 }
 
                 await expectEqualPhotoCount(befortCount, 1);
-                console.info(`视频文件：${asset!.displayName}`)
+                console.info(`${testNum} 视频文件：${asset!.displayName}`)
                 await sleep(4000);
 
                 //恢复过程
