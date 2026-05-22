@@ -708,7 +708,7 @@ export default function graphicImagePixelMap5() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.NV21, size: { height: 4, width: 6 }
         }
-        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
         let pixelMap = image.createPixelMapSync(color, opts);
         try {
           pixelMap.createCroppedAndScaledPixelMapSync(region, 10, 10);
@@ -843,7 +843,7 @@ export default function graphicImagePixelMap5() {
         let opts: image.InitializationOptions = {
           editable: true, pixelFormat: image.PixelMapFormat.NV21, size: { height: 4, width: 6 }
         }
-        let region: image.Region = { x: 0, y: 0, size: { height: 1, width: 1 } };
+        let region: image.Region = { x: 0, y: 0, size: { height: 2, width: 2 } };
         let pixelMap = image.createPixelMapSync(color, opts);
 
         await pixelMap.createCroppedAndScaledPixelMap(region, 10, 10).then(()=>{
