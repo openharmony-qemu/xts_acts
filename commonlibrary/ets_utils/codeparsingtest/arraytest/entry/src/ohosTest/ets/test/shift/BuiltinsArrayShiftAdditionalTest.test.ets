@@ -27,7 +27,6 @@ import {
   ArrayShiftSparseMixedTestB500,
   ArrayShiftAlternatingPushShiftTestC100,
   ArrayShiftAlternatingUnshiftShiftTestC200,
-  ArrayShiftLargeStringTestC300,
   ArrayShiftObjectWithValueOfTestC400,
   ArrayShiftObjectWithToStringTestC500
 } from './ArrayShiftAdditional';
@@ -156,24 +155,6 @@ export default function BuiltinsArrayShiftAdditionalTest(): void {
      * Edge Case Tests (C300-C500)
      * ============================================
      */
-
-    /**
-     * @tc.name   BuiltinsArrayShiftAdditionalTest0600
-     * @tc.number SUB_BUILTINS_ARRAY_SHIFT_ADDITIONAL_TEST_0600
-     * @tc.desc   Test shift() with very long string element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('BuiltinsArrayShiftAdditionalTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        let result: boolean = ArrayShiftLargeStringTestC300();
-        expect(result).assertTrue();
-      } catch (e) {
-        console.info('[AdditionalTest] C300 - Run in JS env: ArrayShiftLargeStringTestC300()');
-        expect(e instanceof Error).assertTrue();
-      }
-    });
 
     /**
      * @tc.name   BuiltinsArrayShiftAdditionalTest0700

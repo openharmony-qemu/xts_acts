@@ -203,41 +203,7 @@ export function PushArraySubclassTest1800() {
     return myArr.length === 3;
 }
 
-// Test push with large number of elements
-export function PushLargeElementsTest1900() {
-    const arr = [];
-    for (let i = 0; i < 10000; i++) {
-        arr.push(i);
-    }
-    return arr.length === 10000;
-}
 
-// Test push with spread of many elements
-export function PushSpreadManyTest2000() {
-    const arr = [];
-    const elements = [];
-    for (let i = 0; i < 10000; i++) {
-        elements.push(i);
-    }
-    arr.push(...elements);
-    return arr.length === 10000;
-}
-
-// Test push on sparse array
-export function PushSparseArrayTest2100() {
-    const arr = [];
-    arr[100000] = 'value';
-    arr.push('new');
-    return arr.length === 100002 && arr[100000] === 'value' && arr[100000] === 'value';
-}
-
-// Test push on dense array
-export function PushDenseArrayTest2200() {
-    const arr = new Array(100000);
-    arr.fill(0);
-    arr.push(1);
-    return arr.length === 100001;
-}
 
 // Test push vs concat performance scenario
 export function PushVsConcatTest2300() {

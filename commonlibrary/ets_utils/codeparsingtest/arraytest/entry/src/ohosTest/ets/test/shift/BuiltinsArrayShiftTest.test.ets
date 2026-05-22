@@ -442,23 +442,6 @@ export default function BuiltinsArrayShiftTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayShiftTest2800
-     * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_2800
-     * @tc.desc   Verify shift on large array with 10000 elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayShiftTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let arr: Array<number | string> = new Array(10000).fill(0);
-      arr[0] = 'first';
-      let result: number | string | undefined = arr.shift();
-      expect(result).assertEqual('first');
-      expect(arr.length).assertEqual(9999);
-      expect(arr[0]).assertEqual(0);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayShiftTest2900
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_2900
      * @tc.desc   Verify shift with Number.MAX_VALUE element

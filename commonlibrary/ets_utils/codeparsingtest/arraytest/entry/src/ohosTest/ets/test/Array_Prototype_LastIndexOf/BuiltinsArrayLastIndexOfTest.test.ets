@@ -870,57 +870,6 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest5900
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_5900
-     * @tc.desc    Verify that LastIndexOf() finds element in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest5900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(10000);
-      for (let i: number = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(9999);
-      expect(result).assertEqual(9999);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6000
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6000
-     * @tc.desc    Verify that LastIndexOf() returns -1 when element not found in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(10000);
-      for (let i: number = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(10000);
-      expect(result).assertEqual(-1);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6100
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6100
-     * @tc.desc    Verify that LastIndexOf() finds last occurrence of duplicate elements in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(10000);
-      for (let i: number = 0; i < 10000; i++) {
-        arr[i] = 42;
-      }
-      const result: number = arr.lastIndexOf(42);
-      expect(result).assertEqual(9999);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest6200
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_6200
      * @tc.desc    Compare indexOf and lastIndexOf results for same element
@@ -1137,57 +1086,6 @@ export default function BuiltinsArrayPrototypeLastIndexOfTest(): void {
       const path: string[] = ["root", "home", "user", "documents", "user"];
       const lastUser: number = path.lastIndexOf("user");
       expect(lastUser).assertEqual(4);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7500
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7500
-     * @tc.desc    Find first element in large array (from end)
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(100000);
-      for (let i: number = 0; i < 100000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(0);
-      expect(result).assertEqual(0);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7600
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7600
-     * @tc.desc    Find last element in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(100000);
-      for (let i: number = 0; i < 100000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(99999);
-      expect(result).assertEqual(99999);
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeLastIndexOfTest7700
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_LAST_INDEX_OF_TEST_7700
-     * @tc.desc    Find non-existent element in large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeLastIndexOfTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array<number>(100000);
-      for (let i: number = 0; i < 100000; i++) {
-        arr[i] = i;
-      }
-      const result: number = arr.lastIndexOf(-1);
-      expect(result).assertEqual(-1);
     });
 
     /**

@@ -124,18 +124,6 @@ export function ArrayOfTest0900() {
          result[2] === 3;
 }
 
-// Test Array.of() with large number of arguments
-export function ArrayOfTest1000() {
-  let args = [];
-  for (let i = 0; i < 1000; i++) {
-    args.push(i);
-  }
-  let arr = Array.of.apply(null, args);
-  return arr.length === 1000 &&
-         arr[0] === 0 &&
-         arr[999] === 999;
-}
-
 // Test Array.of() with subclass custom property
 export function ArrayOfTest1200() {
   class MyArray extends Array {

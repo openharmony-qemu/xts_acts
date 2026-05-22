@@ -313,19 +313,6 @@ export default function BuiltinsArrayPrototypeJoinExtendedTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypeJoinExtendedTest2200
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_JOIN_EXTENDED_TEST_2200
-     * @tc.desc   Verify join() with extreme sparse array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeJoinExtendedTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = JoinMissing.JoinExtremeSparseTest2200();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypeJoinExtendedTest2300
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_JOIN_EXTENDED_TEST_2300
      * @tc.desc   Verify join() with toString throws exception

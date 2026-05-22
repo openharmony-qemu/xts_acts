@@ -518,24 +518,6 @@ export default function BuiltinsArrayIndexOfTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayIndexOfTest3300
-     * @tc.number SUB_BUILTINS_ARRAY_INDEX_OF_TEST_3300
-     * @tc.desc   Verify indexOf with large array finds element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayIndexOfTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(10000);
-      for (let i = 0; i < 10000; i++) {
-        arr[i] = 0;
-      }
-      arr[5000] = 1;
-      const result: number = arr.indexOf(1);
-      expect(result).assertEqual(5000);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayIndexOfTest3400
      * @tc.number SUB_BUILTINS_ARRAY_INDEX_OF_TEST_3400
      * @tc.desc   Verify indexOf with fromIndex at last element

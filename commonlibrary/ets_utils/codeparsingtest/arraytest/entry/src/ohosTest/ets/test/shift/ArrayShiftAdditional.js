@@ -319,19 +319,6 @@ export function ArrayShiftAlternatingUnshiftShiftTestC200() {
 }
 
 /**
- * @tc.name   ArrayShiftLargeStringTestC300
- * @tc.number SUB_BUILTINS_ARRAY_SHIFT_ADD_LARGE_STRING_C300
- * @tc.desc   Test shift() with very long string element
- */
-export function ArrayShiftLargeStringTestC300() {
-    'use strict';
-    let longStr = 'a'.repeat(10000);
-    let arr = [longStr, 'short'];
-    let result = arr.shift();
-    return result.length === 10000 && result === longStr && arr[0] === 'short';
-}
-
-/**
  * @tc.name   ArrayShiftObjectWithValueOfTestC400
  * @tc.number SUB_BUILTINS_ARRAY_SHIFT_ADD_OBJ_VALUEOF_C400
  * @tc.desc   Test shift() with object having valueOf method

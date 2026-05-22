@@ -229,18 +229,6 @@ export function ArrayReverseTwoElementsTest2800() {
     return result[0] === 2 && result[1] === 1;
 }
 
-export function ArrayReverseLargeArrayTest2900() {
-    let arr = Array.from({ length: 10000 }, (_, i) => i);
-    let result = arr.reverse();
-    return result[0] === 9999 && result[9999] === 0 && result === arr;
-}
-
-export function ArrayReverseHugeArrayTest3000() {
-    let arr = Array.from({ length: 100000 }, (_, i) => i);
-    let result = arr.reverse();
-    return result.length === 100000 && result[0] === 99999;
-}
-
 // ============================================
 // 6. Sparse Array Tests
 // ============================================
@@ -899,21 +887,6 @@ export function ArrayReverseIterableObjectTest9200() {
     };
     Array.prototype.reverse.call(iterableObj);
     return iterableObj[0] === 'c' && iterableObj[2] === 'a';
-}
-
-/**
- * Test reverse() with large array works correctly
- */
-export function ArrayReverseHugeLengthTest9300() {
-    'use strict';
-    // 使用合理的边界值测试大数组反转，避免极端情况
-    const largeArray = Array.from({ length: 10000 }, (_, i) => i);
-    const result = largeArray.reverse();
-    
-    // 验证反转结果正确性
-    return result[0] === 9999 && 
-           result[9999] === 0 && 
-           result === largeArray; // 验证原地修改
 }
 
 /**

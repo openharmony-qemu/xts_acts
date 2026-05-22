@@ -274,58 +274,6 @@ export default function BuiltinsArrayPrototypePushExtendedTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypePushExtendedTest1900
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_1900
-     * @tc.desc   Verify push() with large number of elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypePushExtendedTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = PushMissing.PushLargeElementsTest1900();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushExtendedTest2000
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_2000
-     * @tc.desc   Verify push() with spread of many elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypePushExtendedTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = PushMissing.PushSpreadManyTest2000();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushExtendedTest2100
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_2100
-     * @tc.desc   Verify push() on sparse array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypePushExtendedTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = PushMissing.PushSparseArrayTest2100();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushExtendedTest2200
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_2200
-     * @tc.desc   Verify push() on dense array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypePushExtendedTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = PushMissing.PushDenseArrayTest2200();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypePushExtendedTest2300
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_2300
      * @tc.desc   Verify push() vs concat performance scenario

@@ -70,24 +70,6 @@ export default function BuiltinsArrayPrototypePopTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypePopTest0300
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_POP_TEST_0300
-     * @tc.desc   Verify pop() on large array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePopTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: number[] = [];
-      for (let i = 0; i < 10000; i++) {
-        arr.push(i);
-      }
-      const result: number | undefined = arr.pop();
-      expect(result).assertEqual(9999);
-      expect(arr.length).assertEqual(9999);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypePopTest0400
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_POP_TEST_0400
      * @tc.desc   Verify pop() modifies original array

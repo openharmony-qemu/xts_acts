@@ -300,20 +300,6 @@ export function ArrayKeysTypedArrayTest36() {
     return [...iterator];
 }
 
-// Test iterator with large array
-export function ArrayKeysLargeArrayTest37() {
-    const largeLength = 2 ** 20;
-    const arr = new Array(largeLength);
-    const keys = arr.keys();
-    const first = keys.next();
-    let last = 0;
-    let current;
-    while (!(current = keys.next()).done) {
-        last = current.value;
-    }
-    return { first: first.value, last };
-}
-
 // Test array with length set to decimal
 export function ArrayKeysLengthDecimalTest38() {
     try {

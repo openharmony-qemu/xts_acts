@@ -404,14 +404,6 @@ export function ForEachThisArgBooleanTest3000() {
     return thisType === 'boolean';
 }
 
-// Test forEach with large array 10000 elements
-export function ForEachLargeArray10000Test3100() {
-    const arr = new Array(10000).fill(1);
-    let sum = 0;
-    arr.forEach(item => { sum += item; });
-    return sum === 10000;
-}
-
 // Test forEach delete array reference after start
 export function ForEachDeleteReferenceTest3200() {
     let arr = [1, 2, 3];

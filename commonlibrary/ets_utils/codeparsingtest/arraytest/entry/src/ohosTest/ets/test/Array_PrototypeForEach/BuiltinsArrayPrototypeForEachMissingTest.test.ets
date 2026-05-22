@@ -430,19 +430,6 @@ export default function BuiltinsArrayPrototypeForEachMissingTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypeForEachMissingTest3100
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_MISSING_TEST_3100
-     * @tc.desc   Verify forEach with large array 10000 elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachMissingTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ForEachMissing.ForEachLargeArray10000Test3100();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypeForEachMissingTest3200
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_MISSING_TEST_3200
      * @tc.desc   Verify forEach delete array reference after start

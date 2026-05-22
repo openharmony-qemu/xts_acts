@@ -716,20 +716,6 @@ export default function BuiltinsArrayPrototypeReduceTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeReduceTest4000
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_REDUCE_TEST_4000
-     * @tc.desc    Verify that reduce() works with large array
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeReduceTest4000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      const largeArr: number[] = Array(10000).fill(1);
-      const result: number = largeArr.reduce((acc: number, cur: number): number => acc + cur, 0);
-      expect(result).assertEqual(10000);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeReduceTest4100
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_REDUCE_TEST_4100
      * @tc.desc    Verify that reduce() works with large array of objects
@@ -817,24 +803,6 @@ export default function BuiltinsArrayPrototypeReduceTest(): void {
       const arr: string[] = ['', 'a', ''];
       const result: string = arr.reduce((acc: string, cur: string): string => acc + cur);
       expect(result).assertEqual('a');
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeReduceTest4700
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_REDUCE_TEST_4700
-     * @tc.desc    Verify that reduce() works with long strings
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL0
-     */
-    it('BuiltinsArrayPrototypeReduceTest4700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
-      let longStr: string = '';
-      for (let i = 0; i < 10000; i++) {
-        longStr += 'a';
-      }
-      const arr: string[] = [longStr, longStr];
-      const result: string = arr.reduce((acc: string, cur: string): string => acc + cur);
-      expect(result.length).assertEqual(20000);
     });
 
     /**

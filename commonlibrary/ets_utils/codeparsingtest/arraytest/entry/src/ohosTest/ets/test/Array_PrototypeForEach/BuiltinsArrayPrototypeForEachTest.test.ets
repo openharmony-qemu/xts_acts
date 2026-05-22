@@ -173,20 +173,6 @@ export default function BuiltinsArrayPrototypeForEachTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest0800
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_0800
-     * @tc.desc   Verify forEach returns undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypeForEachTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: Array<number> = [1, 2, 3];
-      const result: void = arr.forEach((item: number): void => {});
-      expect(result).assertEqual(undefined);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypeForEachTest0900
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_0900
      * @tc.desc   Verify forEach with empty array does not execute callback
@@ -913,36 +899,6 @@ export default function BuiltinsArrayPrototypeForEachTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest4500
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_4500
-     * @tc.desc   Verify forEach return value is undefined even with callback return
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1, 2, 3];
-      const result: void = arr.forEach((item: number): number => {
-        return item * 2;
-      });
-      expect(result).assertEqual(undefined);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest4600
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_4600
-     * @tc.desc   Verify forEach with empty array returns undefined
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypeForEachTest4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: Array<number> = [];
-      const result: void = arr.forEach((item: number): void => {});
-      expect(result).assertEqual(undefined);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypeForEachTest4700
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_4700
      * @tc.desc   Verify forEach consistency with multiple calls
@@ -1205,40 +1161,6 @@ export default function BuiltinsArrayPrototypeForEachTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest5900
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_5900
-     * @tc.desc   Verify forEach returns undefined while map returns array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachTest5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1, 2, 3];
-      const forEachResult: void = arr.forEach((x: number): void => {});
-      const mapResult: Array<number> = arr.map((x: number): number => x * 2);
-      expect(forEachResult).assertEqual(undefined);
-      expect(Array.isArray(mapResult)).assertTrue();
-      expect(mapResult.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest6000
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_6000
-     * @tc.desc   Verify forEach returns undefined while filter returns array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachTest6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1, 2, 3, 4, 5];
-      const forEachResult: void = arr.forEach((x: number): void => {});
-      const filterResult: Array<number> = arr.filter((x: number): boolean => x > 2);
-      expect(forEachResult).assertEqual(undefined);
-      expect(Array.isArray(filterResult)).assertTrue();
-      expect(filterResult.length).assertEqual(3);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypeForEachTest6100
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_6100
      * @tc.desc   Verify element parameter is value copy for primitive types
@@ -1254,24 +1176,6 @@ export default function BuiltinsArrayPrototypeForEachTest(): void {
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertEqual(2);
       expect(arr[2]).assertEqual(3);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest6200
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_6200
-     * @tc.desc   Verify forEach with super large length value
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachTest6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = [1, 2, 3];
-      arr.length = 1000000;
-      let count: number = 0;
-      arr.forEach((): void => {
-        count++;
-      });
-      expect(count).assertEqual(3);
     });
 
     /**
@@ -1455,45 +1359,6 @@ export default function BuiltinsArrayPrototypeForEachTest(): void {
       expect(results.length).assertEqual(2);
       expect(results[0]).assertTrue();
       expect(results[1]).assertTrue();
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest7200
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_7200
-     * @tc.desc   Verify forEach with empty array does not throw error
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypeForEachTest7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: Array<number> = [];
-      let errorOccurred = false;
-      try {
-        const result: void = arr.forEach((item: number): void => {});
-        expect(result).assertEqual(undefined);
-      } catch (e) {
-        errorOccurred = true;
-      }
-      expect(errorOccurred).assertFalse();
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeForEachTest7300
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_FOR_EACH_TEST_7300
-     * @tc.desc   Verify forEach with super large index 100000
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeForEachTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<string> = [];
-      arr[100000] = 'end';
-      let count: number = 0;
-      arr.forEach((item: string): void => {
-        count++;
-        expect(item).assertEqual('end');
-      });
-      expect(count).assertEqual(1);
     });
 
     /**

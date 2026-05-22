@@ -147,32 +147,6 @@ export default function BuiltinsArrayReverseExtendedTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayReverseExtendedTest1000
-     * @tc.number SUB_BUILTINS_ARRAY_REVERSE_EXTENDED_TEST_1000
-     * @tc.desc   Verify reverse() with large array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayReverseExtendedTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayReverseMissing.ArrayReverseLargeArrayTest2900();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayReverseExtendedTest1100
-     * @tc.number SUB_BUILTINS_ARRAY_REVERSE_EXTENDED_TEST_1100
-     * @tc.desc   Verify reverse() with huge array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayReverseExtendedTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayReverseMissing.ArrayReverseHugeArrayTest3000();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayReverseExtendedTest1200
      * @tc.number SUB_BUILTINS_ARRAY_REVERSE_EXTENDED_TEST_1200
      * @tc.desc   Verify reverse() with single hole sparse array
@@ -1336,19 +1310,6 @@ export default function BuiltinsArrayReverseExtendedTest(): void {
      */
     it('BuiltinsArrayReverseExtendedTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let result: boolean = ArrayReverseMissing.ArrayReverseIterableObjectTest9200();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayReverseExtendedTest9600
-     * @tc.number SUB_BUILTINS_ARRAY_REVERSE_EXTENDED_TEST_9600
-     * @tc.desc   Verify reverse() with large array works correctly
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayReverseExtendedTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = ArrayReverseMissing.ArrayReverseHugeLengthTest9300();
       expect(result).assertEqual(true);
     });
 

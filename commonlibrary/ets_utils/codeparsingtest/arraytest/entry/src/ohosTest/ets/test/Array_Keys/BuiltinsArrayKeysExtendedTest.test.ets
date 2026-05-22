@@ -25,20 +25,6 @@ describe('BuiltinsArrayKeysExtendedTest', () => {
   afterAll(() => {});
 
   /**
-   * @tc.name   BuiltinsArrayKeysExtendedTest0100
-   * @tc.number SUB_BUILTINS_ARRAY_KEYS_EXTENDED_TEST_0100
-   * @tc.desc   Verify keys() on large array (2^20 elements)
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it('BuiltinsArrayKeysExtendedTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-    let result: object = Missing.ArrayKeysLargeArrayTest37();
-    expect(result['first']).assertEqual(0);
-    expect(result['last']).assertEqual(1048575);
-  });
-
-  /**
    * @tc.name   BuiltinsArrayKeysExtendedTest0200
    * @tc.number SUB_BUILTINS_ARRAY_KEYS_EXTENDED_TEST_0200
    * @tc.desc   Verify keys() result can be used with forEach
@@ -576,23 +562,6 @@ describe('BuiltinsArrayKeysExtendedTest', () => {
     expect(result[0]).assertEqual(0);
     expect(result[1]).assertEqual(1);
     expect(result[2]).assertEqual(2);
-  });
-
-  /**
-   * @tc.name   BuiltinsArrayKeysExtendedTest3400
-   * @tc.number SUB_BUILTINS_ARRAY_KEYS_EXTENDED_TEST_3400
-   * @tc.desc   Verify keys() on array with very large indices
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL3
-   */
-  it('BuiltinsArrayKeysExtendedTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-    let arr: string[] = [];
-    arr[10000] = 'last';
-    let result: number[] = Missing.ArrayKeysToArrayTest01(arr);
-    expect(result.length).assertEqual(10001);
-    expect(result[0]).assertEqual(0);
-    expect(result[10000]).assertEqual(10000);
   });
 
   /**

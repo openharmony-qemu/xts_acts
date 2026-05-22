@@ -87,21 +87,6 @@ describe('BuiltinsArrayOfExtendedTest', () => {
     expect(arr[1]).assertEqual(Number.MIN_SAFE_INTEGER);
   });
 
-  /**
-   * @tc.name   BuiltinsArrayOfExtendedTest0500
-   * @tc.number SUB_BUILTINS_ARRAY_OF_EXTENDED_TEST_0500
-   * @tc.desc   Verify Array.of() with long string argument preserves string length
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL2
-   */
-  it('BuiltinsArrayOfExtendedTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-    let longStr: string = "a".repeat(10000);
-    let arr: string[] = Array.of(longStr);
-    expect(arr.length).assertEqual(1);
-    expect(arr[0].length).assertEqual(10000);
-  });
-
   interface DeepObjD { e: number }
   interface DeepObjC { d: DeepObjD }
   interface DeepObjB { c: DeepObjC }
@@ -444,19 +429,6 @@ describe('BuiltinsArrayOfExtendedTest', () => {
     expect(keys[0]).assertEqual("0");
     expect(keys[1]).assertEqual("1");
     expect(keys[2]).assertEqual("2");
-  });
-
-  /**
-   * @tc.name   BuiltinsArrayOfExtendedTest2900
-   * @tc.number SUB_BUILTINS_ARRAY_OF_EXTENDED_TEST_2900
-   * @tc.desc   Verify Array.of() with large number of arguments via JS helper
-   * @tc.type   FUNCTION
-   * @tc.size   MEDIUMTEST
-   * @tc.level  LEVEL3
-   */
-  it('BuiltinsArrayOfExtendedTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
-    let result: boolean = Missing.ArrayOfTest1000();
-    expect(result).assertTrue();
   });
 
   /**

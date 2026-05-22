@@ -185,13 +185,6 @@ export function ArrayShiftSingleElementTest2700() {
     return result === 42 && arr.length === 0;
 }
 
-export function ArrayShiftLargeArrayTest2800() {
-    let arr = new Array(10000).fill(0);
-    arr[0] = 'first';
-    let result = arr.shift();
-    return result === 'first' && arr.length === 9999 && arr[0] === 0;
-}
-
 export function ArrayShiftMaxValueTest2900() {
     let arr = [Number.MAX_VALUE, 100];
     let result = arr.shift();

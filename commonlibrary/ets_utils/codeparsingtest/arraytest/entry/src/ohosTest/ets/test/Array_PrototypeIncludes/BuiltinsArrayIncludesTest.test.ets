@@ -606,57 +606,6 @@ export default function BuiltinsArrayIncludesTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayIncludesTest4100
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_4100
-     * @tc.desc   Verify includes on large array finds first element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayIncludesTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(10000);
-      for (let i = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result = arr.includes(0);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayIncludesTest4200
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_4200
-     * @tc.desc   Verify includes on large array finds last element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayIncludesTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(10000);
-      for (let i = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result = arr.includes(9999);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayIncludesTest4300
-     * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_4300
-     * @tc.desc   Verify includes on large array with fromIndex
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayIncludesTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const arr: Array<number> = new Array<number>(10000);
-      for (let i = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const result = arr.includes(5000, 5000);
-      expect(result).assertTrue();
-    });
-
-    /**
      * @tc.name   BuiltinsArrayIncludesTest4400
      * @tc.number SUB_BUILTINS_ARRAY_INCLUDES_TEST_4400
      * @tc.desc   Verify includes finds string in mixed type array

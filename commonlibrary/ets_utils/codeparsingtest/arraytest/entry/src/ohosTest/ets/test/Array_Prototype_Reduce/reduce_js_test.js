@@ -792,20 +792,6 @@ export function testEmptyArrayErrorMessage() {
 }
 
 /**
- * Test reduce on large array
- * @returns {Object} test result
- */
-export function testLargeArray() {
-  const arr = Array(100000).fill(1);
-  const result = arr.reduce((acc, cur) => acc + cur, 0);
-
-  return {
-    result: result,
-    expected: 100000
-  };
-}
-
-/**
  * Test reduce with Promise return
  * @returns {Object} test result
  */

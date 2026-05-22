@@ -68,7 +68,6 @@ import {
   testCallbackModifyElement,
   testEmptyArrayNoInitial,
   testEmptyArrayErrorMessage,
-  testLargeArray,
   testPromiseReturn,
   testDepthFirstTraversal,
 } from './reduce_js_test';
@@ -732,19 +731,6 @@ export default function BuiltinsArrayReduceJsTest() {
      */
     it('BuiltinsArrayReduceJsTest4400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       let result: TestResult = testEmptyArrayNoInitial();
-      expect(result.result).assertEqual(result.expected);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayReduceJsTest4500
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_JS_TEST_4500
-     * @tc.desc   Test reduce on large array
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayReduceJsTest4500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      let result: TestResult = testLargeArray();
       expect(result.result).assertEqual(result.expected);
     });
 

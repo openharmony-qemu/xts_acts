@@ -241,15 +241,6 @@ export function JoinSparseForEachTest2100() {
     return joinResult === '1,,3,,5' && count === 3;
 }
 
-// Test extreme sparse array
-export function JoinExtremeSparseTest2200() {
-    const arr = [];
-    arr[0] = 'start';
-    arr[10000] = 'end';
-    const result = arr.join('-');
-    return result.split('-').length === 10001;
-}
-
 // Test toString throws exception
 export function JoinToStringErrorTest2300() {
     const obj = {

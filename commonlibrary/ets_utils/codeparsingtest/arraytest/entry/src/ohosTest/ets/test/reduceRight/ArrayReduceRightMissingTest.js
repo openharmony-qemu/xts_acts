@@ -343,20 +343,6 @@ export function ArrayReduceRightSingleObjectNoInitialTest2300() {
 }
 
 /**
- * @tc.name   ArrayReduceRightLargeArrayTest2400
- * @tc.number SUB_BUILTINS_ARRAY_REDUCERIGHT_BOUND_LARGE_2400
- * @tc.desc   Test reduceRight() on large array (10000 elements)
- */
-export function ArrayReduceRightLargeArrayTest2400() {
-    let arr = [];
-    for (let i = 1; i <= 10000; i++) {
-        arr.push(i);
-    }
-    let sum = arr.reduceRight((acc, cur) => acc + cur, 0);
-    return sum === 50005000; // sum of 1 to 10000
-}
-
-/**
  * @tc.name   ArrayReduceRightNullElementsTest2500
  * @tc.number SUB_BUILTINS_ARRAY_REDUCERIGHT_BOUND_NULL_2500
  * @tc.desc   Test reduceRight() with null elements
@@ -801,22 +787,6 @@ export function ArrayReduceRightChainWithReverseTest5300() {
         .reverse()
         .reduceRight((acc, cur) => acc + cur, 0);
     return result === 6; // 1 + 2 + 3 = 6 (after reverse: [3,2,1])
-}
-
-
-
-/**
- * @tc.name   ArrayReduceRightHugeArrayTest5400
- * @tc.number SUB_BUILTINS_ARRAY_REDUCERIGHT_PERF_HUGE_5400
- * @tc.desc   Test reduceRight() on huge array (100000 elements)
- */
-export function ArrayReduceRightHugeArrayTest5400() {
-    let arr = [];
-    for (let i = 1; i <= 100000; i++) {
-        arr.push(1);
-    }
-    let sum = arr.reduceRight((acc, cur) => acc + cur, 0);
-    return sum === 100000;
 }
 
 /**

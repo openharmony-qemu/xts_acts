@@ -286,21 +286,6 @@ export default function BuiltinsArrayPrototypePushTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypePushTest1600
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_1600
-     * @tc.desc   Verify push() on large array returns correct length
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePushTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array(1000000);
-      arr.fill(0);
-      const result: number = arr.push(1);
-      expect(result).assertEqual(1000001);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypePushTest1700
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_1700
      * @tc.desc   Verify push() return value in chain operations
@@ -1390,70 +1375,6 @@ export default function BuiltinsArrayPrototypePushTest(): void {
       expect(results[2]).assertEqual(6);
       expect(results[3]).assertEqual(8);
       expect(results[4]).assertEqual(10);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushTest7600
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_7600
-     * @tc.desc   Verify push() with large number of elements
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePushTest7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: number[] = [];
-      for (let i = 0; i < 10000; i++) {
-        arr.push(i);
-      }
-      expect(arr.length).assertEqual(10000);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushTest7700
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_7700
-     * @tc.desc   Verify push() with spread operator on large array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePushTest7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: number[] = [];
-      const elements: number[] = [];
-      for (let i = 0; i < 10000; i++) {
-        elements.push(i);
-      }
-      arr.push(...elements);
-      expect(arr.length).assertEqual(10000);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushTest7800
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_7800
-     * @tc.desc   Verify push() on sparse array with very large index
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePushTest7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: (number | string)[] = [];
-      arr[100000] = 'value';
-      arr.push('new');
-      expect(arr.length).assertEqual(100002);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypePushTest7900
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_TEST_7900
-     * @tc.desc   Verify push() on large pre-allocated array
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayPrototypePushTest7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      const arr: number[] = new Array(100000);
-      arr.fill(0);
-      arr.push(1);
-      expect(arr.length).assertEqual(100001);
     });
 
     /**

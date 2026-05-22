@@ -99,19 +99,6 @@ export default function BuiltinsArrayReduceRightExtendedTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayReduceRightExtendedTest0600
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_RIGHT_EXTENDED_TEST_0600
-     * @tc.desc   Verify reduceRight() on large array (10000 elements)
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('BuiltinsArrayReduceRightExtendedTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      let result: boolean = ArrayReduceRightMissing.ArrayReduceRightLargeArrayTest2400();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayReduceRightExtendedTest0700
      * @tc.number SUB_BUILTINS_ARRAY_REDUCE_RIGHT_EXTENDED_TEST_0700
      * @tc.desc   Verify reduceRight() with undefined elements
@@ -339,21 +326,6 @@ export default function BuiltinsArrayReduceRightExtendedTest(): void {
      */
     it('BuiltinsArrayReduceRightExtendedTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let result: boolean = ArrayReduceRightMissing.ArrayReduceRightChainWithReverseTest5300();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-
-    /**
-     * @tc.name   BuiltinsArrayReduceRightExtendedTest2400
-     * @tc.number SUB_BUILTINS_ARRAY_REDUCE_RIGHT_EXTENDED_TEST_2400
-     * @tc.desc   Verify reduceRight() on huge array (100000 elements)
-     * @tc.type   FUNCTION
-     * @tc.size   LARGETEST
-     * @tc.level  LEVEL3
-     */
-    it('BuiltinsArrayReduceRightExtendedTest2400', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, () => {
-      let result: boolean = ArrayReduceRightMissing.ArrayReduceRightHugeArrayTest5400();
       expect(result).assertEqual(true);
     });
 

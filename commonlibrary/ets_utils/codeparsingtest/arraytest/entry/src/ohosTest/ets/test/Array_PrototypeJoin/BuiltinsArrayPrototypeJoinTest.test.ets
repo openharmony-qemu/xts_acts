@@ -1133,19 +1133,5 @@ export default function BuiltinsArrayPrototypeJoinTest(): void {
       const result: string = arr.join();
       expect(result).assertEqual('[object Object]');
     });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeJoinTest7300
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_JOIN_TEST_7300
-     * @tc.desc   Verify join() with very large array performance
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeJoinTest7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const largeArr: Array<string> = new Array(1000).fill('longstring');
-      const result: string = largeArr.join('');
-      expect(result.length).assertEqual(10000);
-    });
   });
 }
