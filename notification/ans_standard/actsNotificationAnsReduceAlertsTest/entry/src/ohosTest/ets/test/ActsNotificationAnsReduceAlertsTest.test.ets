@@ -135,7 +135,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
 
     /**
      * @tc.name   SUB_Notification_Ans_Reduce_alerts_0200
-     * @tc.number SUB_Notification_Ans_Reduce_alerts_2200
+     * @tc.number SUB_Notification_Ans_Reduce_alerts_0200
      * @tc.desc   Reduce Notification alerts
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -177,7 +177,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
           normal: {
             title: "SOCIAL_COMMUNICATION",
-            text: "SUB_Notification_Ans_Reduce_alerts_22000",
+            text: "SUB_Notification_Ans_Reduce_alerts_0200",
           }
         }
       };
