@@ -57,7 +57,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0020
-     * @tc.desc Verify result.byteLength equals 5
+     * @tc.desc Verify 2-arg omit length via Utils: byteLength 5 and bytes from offset 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -74,7 +74,12 @@ export default function arrayBufferFromSevenTest(): void {
       view[6] = 7;
       view[7] = 8;
       const result = Utils.fromArrayBufferWithOffset(source, 3);
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(source.byteLength - 3);
+      for (let i: int = 0; i < 5; i++) {
+        expect(resultView[i]).assertEqual(view[i + 3]);
+      }
     });
 
     /**
@@ -714,6 +719,9 @@ export default function arrayBufferFromSevenTest(): void {
       expect(Class.of(result) === Class.of(ref)).assertTrue();
       const r2 = Utils.fromArrayBufferWithOffset(source, 2);
       expect(r2 instanceof ArrayBuffer).assertTrue();
+      expect(r2.byteLength).assertEqual(source.byteLength - 2);
+      expect(r2.at(0)).assertEqual(source.at(2));
+      expect(r2.at(r2.byteLength - 1)).assertEqual(source.at(source.byteLength - 1));
     });
 
     /**
@@ -743,7 +751,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0400
-     * @tc.desc Verify resultView[i] equals view[i + 3]
+     * @tc.desc Verify 2-arg omit length: resultView[i] equals view[i + 3] for all tail bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -755,6 +763,8 @@ export default function arrayBufferFromSevenTest(): void {
         view[i] = i * 10;
       }
       const result = Utils.fromArrayBufferWithOffset(source, 3);
+      expect(result.byteLength).assertEqual(5);
+      expect(result.byteLength).assertEqual(source.byteLength - 3);
       const resultView = new Int8Array(result);
       for (let i: int = 0; i < result.byteLength; i++) {
         expect(resultView[i]).assertEqual(view[i + 3]);
@@ -855,7 +865,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0450
-     * @tc.desc Verify result.byteLength equals 3
+     * @tc.desc Verify 2-arg omit length from offset 7: byteLength 3 and tail bytes 107–109
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -869,9 +879,13 @@ export default function arrayBufferFromSevenTest(): void {
       const result = Utils.fromArrayBufferWithOffset(source, 7);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
+      expect(result.byteLength).assertEqual(source.byteLength - 7);
       expect(resultView[0]).assertEqual(107);
       expect(resultView[1]).assertEqual(108);
       expect(resultView[2]).assertEqual(109);
+      for (let i: int = 0; i < 3; i++) {
+        expect(resultView[i]).assertEqual(view[i + 7]);
+      }
     });
 
     /**
@@ -902,7 +916,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0470
-     * @tc.desc Verify result.byteLength equals source.byteLength
+     * @tc.desc Verify 2-arg omit length at offset 0 copies full buffer with matching bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -914,7 +928,12 @@ export default function arrayBufferFromSevenTest(): void {
         view[i] = i;
       }
       const result = Utils.fromArrayBufferWithOffset(source, 0);
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(source.byteLength);
+      expect(result.byteLength).assertEqual(source.byteLength - 0);
+      for (let i: int = 0; i < 8; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
 
     /**
@@ -1118,13 +1137,14 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0600
-     * @tc.desc Verify Utils.fromArrayBufferWithOffset(source, 10) throws IndexOutOfBoundsError
+     * @tc.desc Verify Utils.fromArrayBufferWithOffset(source, 10) propagates IndexOutOfBoundsError (tail length negative)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(4);
+      expect(source.byteLength - 10 < 0).assertTrue();
       try {
         Utils.fromArrayBufferWithOffset(source, 10);
         expect().assertFail();
