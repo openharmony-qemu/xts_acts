@@ -349,7 +349,7 @@ export default function HilogTsTest() {
 
     /**
      * @tc.name   testHilogTsApiStatic18
-     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1800
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_1800
      * @tc.desc   hilog begin interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -372,7 +372,7 @@ export default function HilogTsTest() {
 
     /**
      * @tc.name   testHilogTsApiStatic19
-     * @tc.number DFX_DFT_Hiview_Libhilog_Hilog_Static_1900
+     * @tc.number SUB_DFX_DFT_Hiview_Libhilog_Hilog_Static_1900
      * @tc.desc   hilog begin interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
