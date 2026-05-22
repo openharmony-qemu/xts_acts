@@ -150,6 +150,8 @@ export default function arrayBufferFromSevenTest(): void {
       view[1023] = 99;
       const result = ArrayBuffer.from(source);
       expect(result.byteLength).assertEqual(1024);
+      expect(result.at(0)).assertEqual(Int.toByte(42));
+      expect(result.at(1023)).assertEqual(Int.toByte(99));
     });
     /**
      * @tc.name testArrayBufferFromSeven0007
@@ -263,7 +265,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1300
-     * @tc.desc Verify ArrayBuffer.from(source, Double.NEGATIVE_INFINITY, 4) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, Double.toInt(Double.NEGATIVE_INFINITY), 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -271,7 +273,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, Double.NEGATIVE_INFINITY, 4);
+        ArrayBuffer.from(source, Double.toInt(Double.NEGATIVE_INFINITY), 4);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -389,6 +391,7 @@ export default function arrayBufferFromSevenTest(): void {
       view[0] = 42;
       const result = ArrayBuffer.from(source, 0, 1);
       expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(Int.toByte(42));
     });
     /**
      * @tc.name testArrayBufferFromSeven0021
@@ -406,6 +409,8 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 1, 5);
       expect(result.byteLength).assertEqual(5);
+      expect(result.at(0)).assertEqual(source.at(1));
+      expect(result.at(4)).assertEqual(source.at(5));
     });
     /**
      * @tc.name testArrayBufferFromSeven0022
@@ -521,7 +526,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2900
-     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.NEGATIVE_INFINITY) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.toInt(Double.NEGATIVE_INFINITY)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -529,7 +534,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, 0, Double.NEGATIVE_INFINITY);
+        ArrayBuffer.from(source, 0, Double.toInt(Double.NEGATIVE_INFINITY));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -606,7 +611,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3400
-     * @tc.desc Verify view[0] equals 10 after resize
+     * @tc.desc Verify modifying result copy view does not affect source view
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

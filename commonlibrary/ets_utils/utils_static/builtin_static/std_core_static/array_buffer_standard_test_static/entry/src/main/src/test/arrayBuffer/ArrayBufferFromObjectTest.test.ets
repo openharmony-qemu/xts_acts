@@ -490,7 +490,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3100
-     * @tc.desc Verify result.byteLength equals 5
+     * @tc.desc Verify utf-8 alias encoding preserves hello bytes at indices 0 and 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -498,11 +498,13 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'utf-8', 5);
       expect(result.byteLength).assertEqual(5);
+      expect(result.at(0)).assertEqual(Int.toByte(104));
+      expect(result.at(4)).assertEqual(Int.toByte(111));
     });
     /**
      * @tc.name testArrayBufferFromObject0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3200
-     * @tc.desc Verify result.byteLength equals 5
+     * @tc.desc Verify ascii encoding preserves all 5 hello bytes via at()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -510,6 +512,11 @@ export default function arrayBufferFromObjectTest(): void {
     it('testArrayBufferFromObject0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'ascii', 5);
       expect(result.byteLength).assertEqual(5);
+      expect(result.at(0)).assertEqual(Int.toByte(104));
+      expect(result.at(1)).assertEqual(Int.toByte(101));
+      expect(result.at(2)).assertEqual(Int.toByte(108));
+      expect(result.at(3)).assertEqual(Int.toByte(108));
+      expect(result.at(4)).assertEqual(Int.toByte(111));
     });
     /**
      * @tc.name testArrayBufferFromObject0033
@@ -850,15 +857,15 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5500
-     * @tc.desc Verify Class.of(result) === Class.of(ref) is true
+     * @tc.desc Verify ArrayBuffer.stringify round-trip returns 'hello'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
-      const ref = new ArrayBuffer(0);
-      expect(Class.of(result) === Class.of(ref)).assertTrue();
+      const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
+      expect(str).assertEqual('hello');
     });
     /**
      * @tc.name testArrayBufferFromObject0056

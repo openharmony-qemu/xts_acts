@@ -323,7 +323,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2200
-     * @tc.desc Verify result1 === result2 && result1 === false is true
+     * @tc.desc Verify result1 === result2 && result1 === false is true && result2 === false is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -333,7 +333,9 @@ export default function arrayBufferDetachedFieldTest(): void {
       buffer.resize(0);
       const result1 = buffer.detached;
       const result2 = buffer.detached;
-      expect(buffer.detached).assertFalse();
+      expect(result1 === result2).assertTrue();
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
     /**
      * @tc.name testArrayBufferDetachedField0023

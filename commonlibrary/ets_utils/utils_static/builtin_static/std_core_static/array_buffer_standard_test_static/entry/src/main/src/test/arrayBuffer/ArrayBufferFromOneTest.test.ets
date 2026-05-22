@@ -307,6 +307,8 @@ export default function arrayBufferFromOneTest(): void {
         [Int.toByte(1), Int.toByte(2), Int.toByte(3), Int.toByte(4), Int.toByte(5)];
       const result = ArrayBuffer.from(arr);
       expect(result.byteLength).assertEqual(5);
+      expect(result.at(0)).assertEqual(Int.toByte(1));
+      expect(result.at(4)).assertEqual(Int.toByte(5));
     });
     /**
      * @tc.name testArrayBufferFromOne0019
@@ -320,6 +322,7 @@ export default function arrayBufferFromOneTest(): void {
       const arr: ValueArray<byte> = [Int.toByte(99)];
       const result = ArrayBuffer.from(arr);
       expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(Int.toByte(99));
     });
     /**
      * @tc.name testArrayBufferFromOne0020
@@ -359,7 +362,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2200
-     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
+     * @tc.desc Verify buffer.at returns boundary positive and zero bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -374,7 +377,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_2300
-     * @tc.desc Verify buffer.at returns expected bytes at 3 indices
+     * @tc.desc Verify buffer.at returns negative byte values at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

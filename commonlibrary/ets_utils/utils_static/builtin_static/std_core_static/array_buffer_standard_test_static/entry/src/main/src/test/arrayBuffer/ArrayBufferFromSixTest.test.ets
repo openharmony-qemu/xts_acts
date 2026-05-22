@@ -199,6 +199,7 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 0, 1);
       expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(source.at(0));
     });
     /**
      * @tc.name testArrayBufferFromSix0013
@@ -212,6 +213,9 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 1, 3);
       expect(result.byteLength).assertEqual(3);
+      expect(result.at(0)).assertEqual(source.at(1));
+      expect(result.at(1)).assertEqual(source.at(2));
+      expect(result.at(2)).assertEqual(source.at(3));
     });
     /**
      * @tc.name testArrayBufferFromSix0014
@@ -285,6 +289,8 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 0, Double.toInt(2.5));
       expect(result.byteLength).assertEqual(2);
+      expect(result.at(0)).assertEqual(source.at(0));
+      expect(result.at(1)).assertEqual(source.at(1));
     });
     /**
      * @tc.name testArrayBufferFromSix0019
@@ -298,6 +304,10 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdefghij', 'utf8');
       const result = ArrayBuffer.from(source, 3, 4);
       expect(result.byteLength).assertEqual(4);
+      expect(result.at(0)).assertEqual(source.at(3));
+      expect(result.at(1)).assertEqual(source.at(4));
+      expect(result.at(2)).assertEqual(source.at(5));
+      expect(result.at(3)).assertEqual(source.at(6));
     });
     /**
      * @tc.name testArrayBufferFromSix0020
@@ -346,15 +356,16 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2300
-     * @tc.desc Verify byteLength typeof is int
+     * @tc.desc Verify ArrayBuffer.stringify returns 'bc'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = ArrayBuffer.from('abcd', 'utf8');
+      const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 1, 2);
-      expect(typeof result.byteLength === 'int').assertTrue();
+      const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
+      expect(str).assertEqual('bc');
     });
     /**
      * @tc.name testArrayBufferFromSix0024
@@ -374,16 +385,15 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2500
-     * @tc.desc Verify ArrayBuffer.stringify returns 'bc'
+     * @tc.desc Verify byteLength typeof is int
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSix0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const source = ArrayBuffer.from('abcdef', 'utf8');
+      const source = ArrayBuffer.from('abcd', 'utf8');
       const result = ArrayBuffer.from(source, 1, 2);
-      const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
-      expect(str).assertEqual('bc');
+      expect(typeof result.byteLength === 'int').assertTrue();
     });
     /**
      * @tc.name testArrayBufferFromSix0026
