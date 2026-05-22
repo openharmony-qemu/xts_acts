@@ -109,13 +109,13 @@ export default function BigIntConstructorDoubleTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0700
-     * @tc.name testBigIntConstructorDoubleExtremeNonInteger0700
-     * @tc.desc Verify integral Number.MAX_VALUE constructs BigInt; Number.MIN_VALUE throws RangeError
+     * @tc.name testBigIntConstructorDoubleMaxValue0700
+     * @tc.desc Verify integral Number.MAX_VALUE constructs expected BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorDoubleExtremeNonInteger0700',
+    it('testBigIntConstructorDoubleMaxValue0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const maxStr =
           '179769313486231570814527423731704356798070567525844996598917476803157260780' +
@@ -125,6 +125,18 @@ export default function BigIntConstructorDoubleTest(): void {
           '124858368';
         expect(BigInt(Number.MAX_VALUE).toString()).assertEqual(maxStr);
         expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + maxStr);
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0800
+     * @tc.name testBigIntConstructorDoubleMinValue0800
+     * @tc.desc Verify BigInt constructed from Number.MIN_VALUE throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleMinValue0800',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           BigInt(Number.MIN_VALUE);
         }).assertThrowError('RangeError');

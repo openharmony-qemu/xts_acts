@@ -67,18 +67,18 @@ export default function BigIntNegateTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0400
-     * @tc.name testBigIntNegateEquivalentMultiply0400
-     * @tc.desc Verify negate matches operatorMultiply by negative one
+     * @tc.name testBigIntNegateSafeIntegerMagnitude0400
+     * @tc.desc Verify negate near MAX_SAFE_INTEGER with literal expected strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateEquivalentMultiply0400',
+    it('testBigIntNegateSafeIntegerMagnitude0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const value = BigInt(8);
-        const neg = value.negate();
-        const mul = value.operatorMultiply(BigInt(-1));
-        expect(neg.toString()).assertEqual(mul.toString());
+        const maxSafe = '9007199254740991';
+        expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
+        expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
+        expect(BigInt(0).negate().toString()).assertEqual('0');
       });
 
     /**
@@ -108,13 +108,7 @@ export default function BigIntNegateTest(): void {
      */
     it('testBigIntNegateNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          expect(BigInt(8).negate().toString()).assertEqual('-8');
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt(8).negate().toString()).assertEqual('-8');
       });
   });
 }

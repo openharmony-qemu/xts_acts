@@ -119,13 +119,7 @@ export default function BigIntFromULongTest(): void {
      */
     it('testBigIntFromULongNormalPathNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          BigInt.fromULong(1);
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt.fromULong(1).toString()).assertEqual('1');
       });
 
     /**

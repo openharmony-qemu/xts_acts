@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToLocaleStringOptionsIfaceTest(): void {
-  describe('BigInt.toLocaleString with options (mindmap)', () => {
+  describe('BigInt.toLocaleString with options (mindmap toLocaleString_options_iface)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0100
      * @tc.name testBigIntToLocaleStringWithOptions0100
@@ -30,8 +30,63 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const val = BigInt(1234567);
         const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
-        const s = val.toLocaleString('en-US', opts);
-        expect(s.length > 0).assertTrue();
+        expect(val.toLocaleString('en-US', opts)).assertEqual('1,234,567');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0200
+     * @tc.name testBigIntToLocaleStringCompactShort0200
+     * @tc.desc Verify BigIntToLocaleStringOptions with compact notation and short compactDisplay
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleStringCompactShort0200',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const val = BigInt(1000000);
+        const opts: BigIntToLocaleStringOptions = { notation: 'compact', compactDisplay: 'short' };
+        expect(val.toLocaleString('zh-CN', opts)).assertEqual('100万');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0300
+     * @tc.name testBigIntToLocaleStringCompactLong0300
+     * @tc.desc Verify BigIntToLocaleStringOptions with compact notation and long compactDisplay
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleStringCompactLong0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const val = BigInt(1000000);
+        const opts: BigIntToLocaleStringOptions = { notation: 'compact', compactDisplay: 'long' };
+        expect(val.toLocaleString('en-US', opts)).assertEqual('1 million');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0400
+     * @tc.name testBigIntToLocaleStringNegativeStandard0400
+     * @tc.desc Verify BigIntToLocaleStringOptions standard notation for negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleStringNegativeStandard0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const val = BigInt(-1234567);
+        const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
+        expect(val.toLocaleString('en-US', opts)).assertEqual('-1,234,567');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0500
+     * @tc.name testBigIntToLocaleStringZeroOptions0500
+     * @tc.desc Verify BigIntToLocaleStringOptions with zero value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleStringZeroOptions0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const val = BigInt(0);
+        const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
+        expect(val.toLocaleString('en-US', opts)).assertEqual('0');
       });
   });
 }

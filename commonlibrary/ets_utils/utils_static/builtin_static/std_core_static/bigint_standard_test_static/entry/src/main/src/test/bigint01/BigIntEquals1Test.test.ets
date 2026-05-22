@@ -17,11 +17,11 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntEquals1Test(): void {
-  describe('BigInt.equals BigInt (mindmap equals_1)', () => {
+  describe('BigInt.equals(to: BigInt) overload (mindmap equals_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0100
      * @tc.name testBigIntEqualsBigIntTrue0100
-     * @tc.desc Verify equals returns true for equal BigInt operands
+     * @tc.desc Verify equals(to: BigInt) returns true for equal BigInt operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -40,7 +40,7 @@ export default function BigIntEquals1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0200
      * @tc.name testBigIntEqualsBigIntFalse0200
-     * @tc.desc Verify equals returns false for unequal BigInt operands
+     * @tc.desc Verify equals(to: BigInt) returns false for unequal BigInt operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -56,7 +56,7 @@ export default function BigIntEquals1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0300
      * @tc.name testBigIntEqualsBigIntBoundary0300
-     * @tc.desc Verify equals on large and small BigInt boundary values
+     * @tc.desc Verify equals(to: BigInt) on large and small BigInt boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -74,7 +74,7 @@ export default function BigIntEquals1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0400
      * @tc.name testBigIntEqualsBigIntReturnType0400
-     * @tc.desc Verify equals return type is boolean not number or string
+     * @tc.desc Verify equals(to: BigInt) return type is boolean not number or string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -91,7 +91,7 @@ export default function BigIntEquals1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0500
      * @tc.name testBigIntEqualsBigIntInvalidArgThrows0500
-     * @tc.desc Verify equals rejects non-BigInt operands at runtime
+     * @tc.desc Verify equals(to: BigInt) throws ClassCastError when runtime value is not BigInt; cast selects this overload only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -99,6 +99,7 @@ export default function BigIntEquals1Test(): void {
     it('testBigIntEqualsBigIntInvalidArgThrows0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a = BigInt(42);
+        // Non-BigInt via equals(other: Any) returns false; see BigIntEquals2Test.
         expect((): void => {
           a.equals(null as Object as BigInt);
         }).assertThrowError('ClassCastError');
@@ -122,20 +123,14 @@ export default function BigIntEquals1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0600
      * @tc.name testBigIntEqualsBigIntNormalNoThrow0600
-     * @tc.desc Verify valid equals calls do not throw
+     * @tc.desc Verify valid equals(to: BigInt) calls do not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntEqualsBigIntNormalNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          expect(BigInt(42).equals(BigInt(42))).assertTrue();
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt(42).equals(BigInt(42))).assertTrue();
       });
   });
 }

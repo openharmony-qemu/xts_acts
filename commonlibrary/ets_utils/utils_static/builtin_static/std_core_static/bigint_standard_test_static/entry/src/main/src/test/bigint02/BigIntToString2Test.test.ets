@@ -28,10 +28,12 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Radix0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(255).toString(2)).assertEqual('11111111');
-        expect(BigInt(255).toString(8)).assertEqual('377');
-        expect(BigInt(255).toString(16)).assertEqual('ff');
-        expect(BigInt(36).toString(36)).assertEqual('10');
+        const sample255 = 255; // 0xFF: byte-aligned value for multi-radix checks
+        const radixMax = 36; // max legal toString radix per API
+        expect(BigInt(sample255).toString(2)).assertEqual('11111111');
+        expect(BigInt(sample255).toString(8)).assertEqual('377');
+        expect(BigInt(sample255).toString(16)).assertEqual('ff');
+        expect(BigInt(radixMax).toString(radixMax)).assertEqual('10');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0200
@@ -43,7 +45,8 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Negative0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(-255).toString(16)).assertEqual('-ff');
+        const sample255 = 255;
+        expect(BigInt(-sample255).toString(16)).assertEqual('-ff');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0300
@@ -55,11 +58,13 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2InvalidRadix0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const radixBelowMin = 1; // legal radix range is 2..36
+        const radixAboveMax = 37;
         expect((): void => {
-          BigInt(10).toString(1);
+          BigInt(10).toString(radixBelowMin);
         }).assertThrowError('RangeError');
         expect((): void => {
-          BigInt(10).toString(37);
+          BigInt(10).toString(radixAboveMax);
         }).assertThrowError('RangeError');
       });
     /**
@@ -87,6 +92,7 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Large0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        // 2^64 in decimal; hex is 1 followed by sixteen zeros
         expect(BigInt('18446744073709551616').toString(16)).assertEqual('10000000000000000');
         expect(BigInt('999999999999999999999999999999').toString(10))
           .assertEqual('999999999999999999999999999999');

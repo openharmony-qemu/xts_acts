@@ -17,11 +17,11 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntEquals2Test(): void {
-  describe('BigInt.equals Any (mindmap equals_2)', () => {
+  describe('BigInt.equals(other: Any) overload (mindmap equals_2)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0100
      * @tc.name testBigIntEqualsAnyBigIntTrue0100
-     * @tc.desc Verify equals returns true for equal BigInt operands
+     * @tc.desc Verify equals(other: Any) returns true when other is BigInt and values are equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -40,7 +40,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0200
      * @tc.name testBigIntEqualsAnyBigIntFalse0200
-     * @tc.desc Verify equals returns false for unequal BigInt operands
+     * @tc.desc Verify equals(other: Any) returns false when other is BigInt but values differ
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -57,7 +57,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0300
      * @tc.name testBigIntEqualsAnyNonBigIntFalse0300
-     * @tc.desc Verify equals returns false for non-BigInt Any operands without throwing
+     * @tc.desc Verify equals(other: Any) returns false for non-BigInt operands without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -85,7 +85,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0400
      * @tc.name testBigIntEqualsAnyReturnType0400
-     * @tc.desc Verify equals return value is strict boolean, not number or string
+     * @tc.desc Verify equals(other: Any) return value is strict boolean, not number or string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -102,7 +102,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0500
      * @tc.name testBigIntEqualsAnyLargeBoundary0500
-     * @tc.desc Verify equals on very large BigInt magnitudes
+     * @tc.desc Verify equals(other: Any) on very large BigInt magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -117,25 +117,19 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0600
      * @tc.name testBigIntEqualsAnySequentialNoThrow0600
-     * @tc.desc Verify repeated equals calls with mixed operand types do not throw
+     * @tc.desc Verify equals(other: Any) with BigInt and non-BigInt operands does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnySequentialNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          const a = BigInt(42);
-          expect(a.equals(BigInt(42))).assertTrue();
-          expect(a.equals(42)).assertFalse();
-          expect(a.equals('42')).assertFalse();
-          expect(a.equals(null)).assertFalse();
-          expect(a.equals(undefined)).assertFalse();
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        const a = BigInt(42);
+        expect(a.equals(BigInt(42))).assertTrue();
+        expect(a.equals(42)).assertFalse();
+        expect(a.equals('42')).assertFalse();
+        expect(a.equals(null)).assertFalse();
+        expect(a.equals(undefined)).assertFalse();
       });
   });
 }

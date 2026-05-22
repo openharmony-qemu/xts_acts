@@ -59,5 +59,36 @@ export default function BigIntValueOfTest(): void {
         const v = BigInt(99);
         expect(v.valueOf().equals(v.valueOf())).assertTrue();
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0400
+     * @tc.name testBigIntValueOfMaxSafeInteger0400
+     * @tc.desc Verify valueOf at Number.MAX_SAFE_INTEGER boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntValueOfMaxSafeInteger0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const maxSafe = '9007199254740991';
+        expect(BigInt(maxSafe).valueOf().toString()).assertEqual(maxSafe);
+        expect(BigInt('9007199254740992').valueOf().toString()).assertEqual('9007199254740992');
+        expect(BigInt(`-${maxSafe}`).valueOf().toString()).assertEqual('-9007199254740991');
+        expect(BigInt(maxSafe).valueOf().equals(BigInt(maxSafe))).assertTrue();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_VALUEOF_0500
+     * @tc.name testBigIntValueOfLargeMagnitude0500
+     * @tc.desc Verify valueOf on very large magnitudes and int64 boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntValueOfLargeMagnitude0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const huge = '999999999999999999999999999999';
+        expect(BigInt(huge).valueOf().toString()).assertEqual(huge);
+        expect(BigInt(huge).valueOf().equals(BigInt(huge))).assertTrue();
+        expect(BigInt('-9223372036854775808').valueOf().toString()).assertEqual('-9223372036854775808');
+      });
   });
 }

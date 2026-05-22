@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanEqualTest(): void {
-  describe('BigInt.operatorGreaterThanEqual (operatorGreaterThanEqual)', () => {
+  describe('BigInt.operatorGreaterThanEqual (mindmap operatorGreaterThanEqual)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0100
      * @tc.name testBigIntOperatorGreaterThanEqualBasic0100
@@ -44,7 +44,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
      */
     it('testBigIntOperatorGreaterThanEqualBoundary0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const maxSafe = '9007199254740991';
+        const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
         expect(BigInt(maxSafe).operatorGreaterThanEqual(BigInt(maxSafe))).assertTrue();
         expect(BigInt('9007199254740990').operatorGreaterThanEqual(BigInt(maxSafe))).assertFalse();
         expect(BigInt(maxSafe).operatorGreaterThanEqual(BigInt('9007199254740990'))).assertTrue();
@@ -52,14 +52,14 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(BigInt('9223372036854775807').operatorGreaterThanEqual(BigInt('9223372036854775807'))).assertTrue();
       });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0250
-     * @tc.name testBigIntOperatorGreaterThanEqualZeroSign0250
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0300
+     * @tc.name testBigIntOperatorGreaterThanEqualZeroSign0300
      * @tc.desc Verify operatorGreaterThanEqual zero and sign boundary cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorGreaterThanEqualZeroSign0250',
+    it('testBigIntOperatorGreaterThanEqualZeroSign0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(-1).operatorGreaterThanEqual(BigInt(0))).assertFalse();
         expect(BigInt(0).operatorGreaterThanEqual(BigInt(1))).assertFalse();
@@ -67,42 +67,42 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(BigInt(1).operatorGreaterThanEqual(BigInt(0))).assertTrue();
       });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0275
-     * @tc.name testBigIntOperatorGreaterThanEqualLarge0275
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0400
+     * @tc.name testBigIntOperatorGreaterThanEqualLarge0400
      * @tc.desc Verify operatorGreaterThanEqual on magnitudes beyond Number.MAX_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorGreaterThanEqualLarge0275',
+    it('testBigIntOperatorGreaterThanEqualLarge0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const base = BigInt('999999999999999999999999999990');
-        const next = base.operatorAdd(BigInt(1));
+        const next = BigInt('999999999999999999999999999991');
         expect(base.operatorGreaterThanEqual(next)).assertFalse();
         expect(next.operatorGreaterThanEqual(base)).assertTrue();
         expect(next.operatorGreaterThanEqual(next)).assertTrue();
       });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0300
-     * @tc.name testBigIntOperatorGreaterThanEqualReturnType0300
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0500
+     * @tc.name testBigIntOperatorGreaterThanEqualReturnType0500
      * @tc.desc Verify operatorGreaterThanEqual returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorGreaterThanEqualReturnType0300',
+    it('testBigIntOperatorGreaterThanEqualReturnType0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorGreaterThanEqual(BigInt(2)) === 'boolean').assertTrue();
       });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0400
-     * @tc.name testBigIntOperatorGreaterThanEqualInvalidArg0400
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0600
+     * @tc.name testBigIntOperatorGreaterThanEqualInvalidArg0600
      * @tc.desc Verify operatorGreaterThanEqual rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorGreaterThanEqualInvalidArg0400',
+    it('testBigIntOperatorGreaterThanEqualInvalidArg0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a = BigInt(10);
         expect((): void => {

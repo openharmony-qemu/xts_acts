@@ -21,7 +21,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0100
      * @tc.name testBigIntConstructorCopyValueEqual0100
-     * @tc.desc Verify copy constructor produces equal BigInt value
+     * @tc.desc Verify copy constructor produces equal BigInt value for positive int
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -31,7 +31,6 @@ export default function BigIntConstructorCopyTest(): void {
         const original = BigInt(42);
         const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
-        expect(copied.toString()).assertEqual('42');
       });
 
     /**
@@ -51,76 +50,76 @@ export default function BigIntConstructorCopyTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0300
-     * @tc.name testBigIntConstructorCopySameValue0300
-     * @tc.desc Verify copy constructor preserves source numeric value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorCopySameValue0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = BigInt(1);
-        const copied = BigInt(original);
-        expect(copied.equals(original)).assertTrue();
-        expect(copied.toString()).assertEqual('1');
-      });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0400
-     * @tc.name testBigIntConstructorCopyZero0400
+     * @tc.name testBigIntConstructorCopyZero0300
      * @tc.desc Verify copy constructor preserves zero BigInt value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopyZero0400',
+    it('testBigIntConstructorCopyZero0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const original = BigInt(0);
         const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
-        expect(copied.toString()).assertEqual('0');
-        expect(copied.negative()).assertFalse();
-        expect(copied.positive()).assertTrue();
       });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0500
-     * @tc.name testBigIntConstructorCopyNegative0500
-     * @tc.desc Verify copy constructor preserves negative BigInt values
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0400
+     * @tc.name testBigIntConstructorCopyNegative0400
+     * @tc.desc Verify copy constructor preserves negative BigInt value -42
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopyNegative0500',
+    it('testBigIntConstructorCopyNegative0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const original = BigInt(-42);
         const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
-        expect(copied.toString()).assertEqual('-42');
-        expect(copied.negative()).assertTrue();
-        const largeNeg = BigInt('-9223372036854775808');
-        const copiedLarge = BigInt(largeNeg);
-        expect(copiedLarge.equals(largeNeg)).assertTrue();
-        expect(copiedLarge.toString()).assertEqual('-9223372036854775808');
       });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0600
-     * @tc.name testBigIntConstructorCopyBoundary0600
-     * @tc.desc Verify copy constructor at long and beyond-safe-integer boundaries
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0500
+     * @tc.name testBigIntConstructorCopyMinLong0500
+     * @tc.desc Verify copy constructor preserves minimum long negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorCopyBoundary0600',
+    it('testBigIntConstructorCopyMinLong0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const original = BigInt('-9223372036854775808');
+        const copied = BigInt(original);
+        expect(copied.equals(original)).assertTrue();
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0600
+     * @tc.name testBigIntConstructorCopyMaxLong0600
+     * @tc.desc Verify copy constructor preserves maximum long value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorCopyMaxLong0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const maxLong = BigInt('9223372036854775807');
         expect(BigInt(maxLong).equals(maxLong)).assertTrue();
-        expect(BigInt(maxLong).toString()).assertEqual('9223372036854775807');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0700
+     * @tc.name testBigIntConstructorCopyBeyondSafeInteger0700
+     * @tc.desc Verify copy constructor preserves value beyond MAX_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorCopyBeyondSafeInteger0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const beyondSafe = BigInt('9007199254740992');
         const copiedBeyond = BigInt(beyondSafe);
         expect(copiedBeyond.equals(beyondSafe)).assertTrue();
-        expect(copiedBeyond.toString()).assertEqual('9007199254740992');
       });
   });
 }

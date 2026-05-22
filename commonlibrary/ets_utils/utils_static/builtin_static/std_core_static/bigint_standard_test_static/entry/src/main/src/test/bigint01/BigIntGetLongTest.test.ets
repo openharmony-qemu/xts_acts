@@ -88,21 +88,21 @@ export default function BigIntGetLongTest(): void {
      */
     it('testBigIntGetLongOverflowWrap0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
-        expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807);
-        expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
+        expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808); // LONG_MAX + 1
+        expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807); // LONG_MIN - 1
+        expect(BigInt('18446744073709551616').getLong()).assertEqual(0); // 2^64 wraps to 0
         expect(BigInt('-18446744073709551617').getLong()).assertEqual(-1);
       });
 
     /**
-     * @tc.number SUB_BIGINT_STD_GETLONG_0550
-     * @tc.name testBigIntGetLongApiSemantics0550
+     * @tc.number SUB_BIGINT_STD_GETLONG_0600
+     * @tc.name testBigIntGetLongApiSemantics0600
      * @tc.desc Document getLong as non-throwing signed long narrow; out-of-range values wrap mod 2^64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongApiSemantics0550',
+    it('testBigIntGetLongApiSemantics0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const within = BigInt(9223372036854775807);
         expect(within.getLong()).assertEqual(9223372036854775807);
@@ -113,14 +113,14 @@ export default function BigIntGetLongTest(): void {
       });
 
     /**
-     * @tc.number SUB_BIGINT_STD_GETLONG_0600
-     * @tc.name testBigIntGetLongConsistent0600
+     * @tc.number SUB_BIGINT_STD_GETLONG_0700
+     * @tc.name testBigIntGetLongConsistent0700
      * @tc.desc Verify repeated getLong calls return the same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongConsistent0600',
+    it('testBigIntGetLongConsistent0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const v = BigInt(8);
         const first = v.getLong();
@@ -129,14 +129,14 @@ export default function BigIntGetLongTest(): void {
       });
 
     /**
-     * @tc.number SUB_BIGINT_STD_GETLONG_0700
-     * @tc.name testBigIntGetLongNoThrow0700
+     * @tc.number SUB_BIGINT_STD_GETLONG_0800
+     * @tc.name testBigIntGetLongNoThrow0800
      * @tc.desc Verify getLong on out-of-range values does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongNoThrow0700',
+    it('testBigIntGetLongNoThrow0800',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
         expect(BigInt('18446744073709551616').getLong()).assertEqual(0);

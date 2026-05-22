@@ -112,15 +112,9 @@ export default function BigIntGetULongTest(): void {
      */
     it('testBigIntGetULongNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          expect(BigInt(8).getULong()).assertEqual(8);
-          ulongRoundTrip(BigInt('-99999999999999999999999'));
-          ulongRoundTrip(BigInt('99999999999999999999999'));
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt(8).getULong()).assertEqual(8);
+        expect(ulongRoundTrip(BigInt('-99999999999999999999999'))).assertEqual('18246367653188861953');
+        expect(ulongRoundTrip(BigInt('99999999999999999999999'))).assertEqual('200376420520689663');
       });
   });
 }

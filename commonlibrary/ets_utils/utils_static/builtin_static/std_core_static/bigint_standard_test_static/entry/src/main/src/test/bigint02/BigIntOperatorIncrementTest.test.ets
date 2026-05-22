@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorIncrementTest(): void {
-  describe('BigInt.operatorIncrement (operatorIncrement)', () => {
+  describe('BigInt.operatorIncrement (mindmap operatorIncrement)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0100
      * @tc.name testBigIntOperatorIncrementBasic0100
@@ -66,6 +66,37 @@ export default function BigIntOperatorIncrementTest(): void {
     it('testBigIntOperatorIncrementReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0400
+     * @tc.name testBigIntOperatorIncrementLarge0400
+     * @tc.desc Verify operatorIncrement on magnitudes beyond safe integer and long range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementLarge0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('999999999999999999999999999999').operatorIncrement().toString())
+          .assertEqual('1000000000000000000000000000000');
+        expect(BigInt('-999999999999999999999999999999').operatorIncrement().toString())
+          .assertEqual('-999999999999999999999999999998');
+        expect(BigInt('9223372036854775807').operatorIncrement().toString())
+          .assertEqual('9223372036854775808');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0500
+     * @tc.name testBigIntOperatorIncrementMaxSafeInteger0500
+     * @tc.desc Verify operatorIncrement at Number.MAX_SAFE_INTEGER boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementMaxSafeInteger0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const maxSafe = '9007199254740991';
+        expect(BigInt(maxSafe).operatorIncrement().toString()).assertEqual('9007199254740992');
+        expect(BigInt(`-${maxSafe}`).operatorIncrement().toString()).assertEqual('-9007199254740990');
       });
   });
 }

@@ -111,14 +111,9 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          BigInt(5).operatorBitwiseNot();
-          BigInt('9999999999999999999999999').operatorBitwiseNot();
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt(5).operatorBitwiseNot().toString()).assertEqual('-6');
+        expect(BigInt('9999999999999999999999999').operatorBitwiseNot().toString())
+          .assertEqual('-10000000000000000000000000');
       });
   });
 }

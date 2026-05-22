@@ -20,56 +20,119 @@ export default function BigIntToLocaleString2Test(): void {
   describe('BigInt.toLocaleString(locales, options) (mindmap toLocaleString_2)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0100
-     * @tc.name testBigIntToLocaleString2Locale0100
+     * @tc.name testBigIntToLocaleString2EnUsGrouping0100
      * @tc.desc Verify toLocaleString with en-US locale produces expected grouping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleString2Locale0100',
+    it('testBigIntToLocaleString2EnUsGrouping0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(1000000).toLocaleString('en-US')).assertEqual('1,000,000');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0200
+     * @tc.name testBigIntToLocaleString2ZhCnCompact0200
+     * @tc.desc Verify toLocaleString with zh-CN compact notation options
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2ZhCnCompact0200',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact', compactDisplay: 'short' }))
           .assertEqual('100万');
       });
-    /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0200
-     * @tc.name testBigIntToLocaleString2Zero0200
-     * @tc.desc Verify toLocaleString with locale for zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntToLocaleString2Zero0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(0).toLocaleString('en-US')).assertEqual('0');
-        expect(BigInt(0).toLocaleString('de-DE')).assertEqual('0');
-      });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0300
-     * @tc.name testBigIntToLocaleString2Negative0300
-     * @tc.desc Verify toLocaleString with locale for negative values
+     * @tc.name testBigIntToLocaleString2ZeroEnUs0300
+     * @tc.desc Verify toLocaleString with en-US locale for zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleString2Negative0300',
+    it('testBigIntToLocaleString2ZeroEnUs0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(-1000000).toLocaleString('en-US')).assertEqual('-1,000,000');
-        expect(BigInt(-42).toLocaleString('de-DE')).assertEqual('-42');
-        expect(BigInt(-1000000).toLocaleString('de-DE')).assertEqual('-1.000.000');
+        expect(BigInt(0).toLocaleString('en-US')).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0400
-     * @tc.name testBigIntToLocaleString2Locales0400
-     * @tc.desc Verify toLocaleString with different locale parameters
+     * @tc.name testBigIntToLocaleString2ZeroDeDe0400
+     * @tc.desc Verify toLocaleString with de-DE locale for zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleString2Locales0400',
+    it('testBigIntToLocaleString2ZeroDeDe0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(0).toLocaleString('de-DE')).assertEqual('0');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0500
+     * @tc.name testBigIntToLocaleString2NegativeEnUs0500
+     * @tc.desc Verify toLocaleString with en-US locale for negative million-scale value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2NegativeEnUs0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(-1000000).toLocaleString('en-US')).assertEqual('-1,000,000');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0600
+     * @tc.name testBigIntToLocaleString2NegativeSmallDeDe0600
+     * @tc.desc Verify toLocaleString with de-DE locale for small negative value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2NegativeSmallDeDe0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(-42).toLocaleString('de-DE')).assertEqual('-42');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0700
+     * @tc.name testBigIntToLocaleString2NegativeMillionDeDe0700
+     * @tc.desc Verify toLocaleString with de-DE locale for negative million-scale value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2NegativeMillionDeDe0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(-1000000).toLocaleString('de-DE')).assertEqual('-1.000.000');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0800
+     * @tc.name testBigIntToLocaleString2EnUsLarge0800
+     * @tc.desc Verify toLocaleString with en-US locale for seven-digit value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2EnUsLarge0800',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(1234567).toLocaleString('en-US')).assertEqual('1,234,567');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0900
+     * @tc.name testBigIntToLocaleString2FrFrLarge0900
+     * @tc.desc Verify toLocaleString with fr-FR locale for seven-digit value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2FrFrLarge0900',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(1234567).toLocaleString('fr-FR')).assertEqual('1\u202f234\u202f567');
       });
   });

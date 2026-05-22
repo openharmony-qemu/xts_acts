@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
-  describe('BigInt.toStringAsPowerOfTwoRadix (toStringAsPowerOfTwoRadix)', () => {
+  describe('BigInt.toStringAsPowerOfTwoRadix (mindmap toStringAsPowerOfTwoRadix)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0100
      * @tc.name testBigIntToStringAsPowerOfTwoRadix0100
@@ -28,8 +28,11 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
      */
     it('testBigIntToStringAsPowerOfTwoRadix0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(255).toStringAsPowerOfTwoRadix(16)).assertEqual('ff');
-        expect(BigInt(8).toStringAsPowerOfTwoRadix(2)).assertEqual('1000');
+        const sample255 = 255; // 0xFF
+        const radixHex = 16; // power-of-two radix
+        const radixBin = 2;
+        expect(BigInt(sample255).toStringAsPowerOfTwoRadix(radixHex)).assertEqual('ff');
+        expect(BigInt(8).toStringAsPowerOfTwoRadix(radixBin)).assertEqual('1000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0200

@@ -63,5 +63,35 @@ export default function BigIntPositiveTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).positive() === 'boolean').assertTrue();
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_POSITIVE_0400
+     * @tc.name testBigIntPositiveBoundary0400
+     * @tc.desc Verify positive() at int64 and MAX_SAFE_INTEGER boundary magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntPositiveBoundary0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('9223372036854775807').positive()).assertTrue();
+        expect(BigInt('-9223372036854775808').positive()).assertFalse();
+        const maxSafe = '9007199254740991';
+        expect(BigInt(maxSafe).positive()).assertTrue();
+        expect(BigInt(`-${maxSafe}`).positive()).assertFalse();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_POSITIVE_0500
+     * @tc.name testBigIntPositiveLargeMagnitude0500
+     * @tc.desc Verify positive() on very large positive and negative magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntPositiveLargeMagnitude0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('999999999999999999999999999999').positive()).assertTrue();
+        expect(BigInt('-999999999999999999999999999999').positive()).assertFalse();
+        expect(BigInt(0).positive()).assertTrue();
+      });
   });
 }

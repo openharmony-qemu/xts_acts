@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanTest(): void {
-  describe('BigInt.operatorGreaterThan (operatorGreaterThan)', () => {
+  describe('BigInt.operatorGreaterThan (mindmap operatorGreaterThan)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0100
      * @tc.name testBigIntOperatorGreaterThanBasic0100
