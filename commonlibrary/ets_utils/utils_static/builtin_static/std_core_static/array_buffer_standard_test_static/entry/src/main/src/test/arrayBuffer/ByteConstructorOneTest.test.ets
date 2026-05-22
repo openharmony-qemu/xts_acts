@@ -30,6 +30,7 @@ export default function byteConstructorOneTest(): void {
       await Utils.msSleep(30);
     });
 
+
     /**
      * @tc.name testByteConstructorOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0100
@@ -42,7 +43,6 @@ export default function byteConstructorOneTest(): void {
       let b: Byte = new Byte();
       expect(b.toByte()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0200
@@ -57,7 +57,6 @@ export default function byteConstructorOneTest(): void {
       expect(b1.toByte()).assertEqual(0);
       expect(b2.toByte()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0300
@@ -71,7 +70,6 @@ export default function byteConstructorOneTest(): void {
       expect(b.toByte()).assertEqual(0);
       expect(b.toByte()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0400
@@ -84,7 +82,6 @@ export default function byteConstructorOneTest(): void {
       let b: Byte = new Byte();
       expect(b instanceof Byte).assertTrue();
     });
-
     /**
      * @tc.name testByteConstructorOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0500
@@ -97,7 +94,6 @@ export default function byteConstructorOneTest(): void {
       let b: Byte = new Byte();
       expect(b !== null).assertTrue();
     });
-
     /**
      * @tc.name testByteConstructorOne0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0600
@@ -110,122 +106,114 @@ export default function byteConstructorOneTest(): void {
       let b: Byte = new Byte();
       expect(b !== undefined).assertTrue();
     });
-
     /**
      * @tc.name testByteConstructorOne0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0700
-     * @tc.desc Verify b.toByte() equals 0
+     * @tc.desc Verify b.toInt() equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toByte()).assertEqual(0);
+      expect(b.toInt()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0800
-     * @tc.desc Verify b.toInt() equals 0
+     * @tc.desc Verify b.toShort() equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toInt()).assertEqual(0);
+      expect(b.toShort()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0900
-     * @tc.desc Verify b.toShort() equals 0
+     * @tc.desc Verify b.toLong() equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toShort()).assertEqual(0);
+      expect(b.toLong()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1000
-     * @tc.desc Verify b.toLong() equals 0
+     * @tc.desc Verify b.toFloat() equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toLong()).assertEqual(0);
+      expect(b.toFloat()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1100
-     * @tc.desc Verify b.toFloat() equals 0
+     * @tc.desc Verify b.toDouble() equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toFloat()).assertEqual(0);
+      expect(b.toDouble()).assertEqual(0);
     });
-
     /**
      * @tc.name testByteConstructorOne0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1200
-     * @tc.desc Verify b.toDouble() equals 0
+     * @tc.desc Verify b.toString() equals "0"
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
-      expect(b.toDouble()).assertEqual(0);
+      expect(b.toString()).assertEqual("0");
     });
-
     /**
      * @tc.name testByteConstructorOne0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1300
-     * @tc.desc Verify b.toString() equals "0"
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testByteConstructorOne0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: Byte = new Byte();
-      expect(b.toString()).assertEqual("0");
-    });
-
-    /**
-     * @tc.name testByteConstructorOne0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1400
      * @tc.desc Verify Byte.MIN_VALUE equals -128
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Byte.MIN_VALUE).assertEqual(-128);
     });
-
     /**
-     * @tc.name testByteConstructorOne0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1500
+     * @tc.name testByteConstructorOne0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1400
      * @tc.desc Verify Byte.MAX_VALUE equals 127
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testByteConstructorOne0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testByteConstructorOne0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Byte.MAX_VALUE).assertEqual(127);
     });
-
+    /**
+     * @tc.name testByteConstructorOne0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1500
+     * @tc.desc Verify b.toByte() equals 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testByteConstructorOne0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      for (let i: int = 0; i < 1000; i++) {
+        let b: Byte = new Byte();
+        expect(b.toByte()).assertEqual(0);
+      }
+    });
     /**
      * @tc.name testByteConstructorOne0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1600
@@ -235,21 +223,6 @@ export default function byteConstructorOneTest(): void {
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      for (let i: int = 0; i < 1000; i++) {
-        let b: Byte = new Byte();
-        expect(b.toByte()).assertEqual(0);
-      }
-    });
-
-    /**
-     * @tc.name testByteConstructorOne0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_1700
-     * @tc.desc Verify b.toByte() equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testByteConstructorOne0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b: Byte = new Byte();
       expect(b.toByte()).assertEqual(0);
       expect(b.toInt()).assertEqual(0);
