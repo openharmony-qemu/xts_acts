@@ -32,7 +32,6 @@ import promptAction from '@ohos.promptAction';
 @Entry
 @Component
 struct ActionMenuOptionsSystemMaterial {
-
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Row({ space: 5 } as RowOptions) {
@@ -43,11 +42,11 @@ struct ActionMenuOptionsSystemMaterial {
             this.getUIContext().getPromptAction().showActionMenu({
               title: 'ActionMenu Undefined',
               buttons: [
-                { text: 'Button1', color: '#000000' }as promptAction.Button,
-                { text: 'Button2', color: '#000000' }as promptAction.Button
-              ]as promptAction.PromptActionDoubleButtons,
+                { text: 'Button1', color: '#000000' } as promptAction.Button,
+                { text: 'Button2', color: '#000000' } as promptAction.Button
+              ] as promptAction.PromptActionDoubleButtons,
               systemMaterial: undefined
-            }as promptAction.ActionMenuOptions);
+            } as promptAction.ActionMenuOptions);
           })
 
         // 未开源暂用undefined
@@ -59,11 +58,11 @@ struct ActionMenuOptionsSystemMaterial {
             this.getUIContext().getPromptAction().showActionMenu({
               title: 'ActionMenu HDS THICK',
               buttons: [
-                { text: 'Button1', color: '#000000' }as promptAction.Button,
-                { text: 'Button2', color: '#000000' }as promptAction.Button
-              ]as promptAction.PromptActionDoubleButtons,
+                { text: 'Button1', color: '#000000' } as promptAction.Button,
+                { text: 'Button2', color: '#000000' } as promptAction.Button
+              ] as promptAction.PromptActionDoubleButtons,
               systemMaterial: material
-            }as promptAction.ActionMenuOptions);
+            } as promptAction.ActionMenuOptions);
           })
       }
 
@@ -75,11 +74,13 @@ struct ActionMenuOptionsSystemMaterial {
             this.getUIContext().getPromptAction().showActionMenu({
               title: 'ActionMenu SEMI_TRANSPARENT',
               buttons: [
-                { text: 'Button1', color: '#000000' }as promptAction.Button,
-                { text: 'Button2', color: '#000000' }as promptAction.Button
-              ]as promptAction.PromptActionDoubleButtons,
-              systemMaterial: new uiMaterial.Material({ type: uiMaterial.MaterialType.SEMI_TRANSPARENT }) as SystemUiMaterial
-            }as promptAction.ActionMenuOptions);
+                { text: 'Button1', color: '#000000' } as promptAction.Button,
+                { text: 'Button2', color: '#000000' } as promptAction.Button
+              ] as promptAction.PromptActionDoubleButtons,
+              systemMaterial: new uiMaterial.Material({
+                type: uiMaterial.MaterialType.SEMI_TRANSPARENT
+              }) as SystemUiMaterial
+            } as promptAction.ActionMenuOptions);
           })
 
         Button('Immersive THICK')
@@ -89,11 +90,11 @@ struct ActionMenuOptionsSystemMaterial {
             this.getUIContext().getPromptAction().showActionMenu({
               title: 'ActionMenu Immersive THICK',
               buttons: [
-                { text: 'Button1', color: '#000000' }as promptAction.Button,
-                { text: 'Button2', color: '#000000' }as promptAction.Button
-              ]as promptAction.PromptActionDoubleButtons,
+                { text: 'Button1', color: '#000000' } as promptAction.Button,
+                { text: 'Button2', color: '#000000' } as promptAction.Button
+              ] as promptAction.PromptActionDoubleButtons,
               systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THICK })
-            }as promptAction.ActionMenuOptions);
+            } as promptAction.ActionMenuOptions);
           })
       }
 
@@ -109,7 +110,7 @@ struct ActionMenuOptionsSystemMaterial {
                 { text: 'Button2', color: '#000000' } as promptAction.Button
               ] as promptAction.PromptActionDoubleButtons,
               systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.ULTRA_THIN })
-            }as promptAction.ActionMenuOptions);
+            } as promptAction.ActionMenuOptions);
           })
 
         Button('NONE')
@@ -123,7 +124,7 @@ struct ActionMenuOptionsSystemMaterial {
                 { text: 'Button2', color: '#000000' } as promptAction.Button
               ] as promptAction.PromptActionDoubleButtons,
               systemMaterial: new uiMaterial.Material({ type: uiMaterial.MaterialType.NONE })
-            }as promptAction.ActionMenuOptions);
+            } as promptAction.ActionMenuOptions);
           })
       }
     }
