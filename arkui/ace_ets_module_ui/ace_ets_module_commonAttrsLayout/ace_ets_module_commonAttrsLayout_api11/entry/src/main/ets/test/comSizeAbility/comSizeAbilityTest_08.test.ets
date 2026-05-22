@@ -78,7 +78,7 @@ export default function comSizeAbilityTest_08() {
       let Scale = modePosition.scale
       let Rotate = modePosition.rotate
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Navigation_Size'));
+      let button = await driver.findComponent(ON.id('comSizeAbilityTest_08_Navigation_Size_01'));
       let rect = await button.getBounds();
       console.info("[comSizeAbilityTestJsunit_23] component rect is: " + JSON.stringify(rect))
       console.info("[comSizeAbilityTestJsunit_23] component Size is: " + JSON.stringify(Size))

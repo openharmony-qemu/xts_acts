@@ -124,7 +124,7 @@ export default function comSizeAbilityTest_02() {
       let Scale = modePosition.scale
       let Rotate = modePosition.rotate
       let driver = Driver.create();
-      let button = await driver.findComponent(ON.id('Checkbox_Size'));
+      let button = await driver.findComponent(ON.id('comSizeAbilityTest_02_Checkbox_Size'));
       let rect = await button.getBounds();
       console.info("[comSizeAbilityTestJsunit_06] component rect is: " + JSON.stringify(rect))
       console.info("[comSizeAbilityTestJsunit_06] component Size is: " + JSON.stringify(Size))

@@ -76,7 +76,7 @@ export default function girdContainerJsunit() {
 it('testGirdContainer01_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testGirdContainer01] START');
       await Utils.sleep(1000);
-      let strJson: string = inspector.getInspectorByKey('gridContainer');
+      let strJson: string = inspector.getInspectorByKey('gridContainer_gridContainer');
       console.info("[testGirdContainer01] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
 
       expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('GridCol');
