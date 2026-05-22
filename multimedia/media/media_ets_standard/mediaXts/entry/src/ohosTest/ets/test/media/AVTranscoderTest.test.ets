@@ -733,7 +733,6 @@ export default function AVTranscoderTest() {
       });
       await prepareAVTranscoder(done, testName);
       await startAVTranscoder(done, testName);
-      await startAVTranscoder(done, testName);
       await listenComplete(done);
       done();
     })
