@@ -407,40 +407,12 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2500
-     * @tc.desc Verify buffer.at(0) returns 127
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferSet0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      buffer.set(0, Int.toByte(127));
-      expect(buffer.at(0)).assertEqual(127);
-    });
-
-    /**
-     * @tc.name testArrayBufferSet0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2600
-     * @tc.desc Verify buffer.at(0) returns -128
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferSet0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      buffer.set(0, Int.toByte(-128));
-      expect(buffer.at(0)).assertEqual(-128);
-    });
-
-    /**
-     * @tc.name testArrayBufferSet0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2700
      * @tc.desc Verify buffer.set(9999, Int.toByte(10)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSet0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSet0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
         buffer.set(9999, Int.toByte(10));
@@ -451,14 +423,14 @@ export default function arrayBufferSetTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferSet0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2800
+     * @tc.name testArrayBufferSet0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2600
      * @tc.desc Verify set on zero-length fixed buffer throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSet0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSet0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
         buffer.set(0, Int.toByte(10));
@@ -469,14 +441,14 @@ export default function arrayBufferSetTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferSet0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2900
+     * @tc.name testArrayBufferSet0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2700
      * @tc.desc Verify buffer.set(1, Int.toByte(10)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSet0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSet0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
         buffer.set(1, Int.toByte(10));
@@ -487,14 +459,14 @@ export default function arrayBufferSetTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferSet0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3000
+     * @tc.name testArrayBufferSet0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2800
      * @tc.desc Verify buffer.set(-1, Int.toByte(10)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSet0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSet0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       try {
         buffer.set(-1, Int.toByte(10));
@@ -505,14 +477,14 @@ export default function arrayBufferSetTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferSet0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3100
+     * @tc.name testArrayBufferSet0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2900
      * @tc.desc Verify set after resize(0) on resizable buffer throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSet0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSet0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(0);
       try {

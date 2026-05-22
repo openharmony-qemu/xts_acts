@@ -322,15 +322,19 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_1900
-     * @tc.desc Verify buffer.byteLength equals 6
+     * @tc.desc Verify grow to 6 preserves bytes at 0 and 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferResize0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(2, 8);
+      buffer.set(0, Int.toByte(42));
+      buffer.set(1, Int.toByte(43));
       buffer.resize(6);
       expect(buffer.byteLength).assertEqual(6);
+      expect(buffer.at(0)).assertEqual(42);
+      expect(buffer.at(1)).assertEqual(43);
     });
 
     /**

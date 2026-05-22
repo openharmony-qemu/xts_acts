@@ -46,29 +46,30 @@ export default function byteConstructorOneTest(): void {
     /**
      * @tc.name testByteConstructorOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0200
-     * @tc.desc Verify b.toByte() equals 0
+     * @tc.desc Verify two Byte instances both toByte() equal 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b: Byte = new Byte();
-      expect(b.toByte()).assertEqual(0);
+      let b1: Byte = new Byte();
+      let b2: Byte = new Byte();
+      expect(b1.toByte()).assertEqual(0);
+      expect(b2.toByte()).assertEqual(0);
     });
 
     /**
      * @tc.name testByteConstructorOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_ONE_0300
-     * @tc.desc Verify b1.toByte() equals 0
+     * @tc.desc Verify same Byte instance toByte() reads 0 twice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorOne0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let b1: Byte = new Byte();
-      let b2: Byte = new Byte();
-      expect(b1.toByte()).assertEqual(0);
-      expect(b2.toByte()).assertEqual(0);
+      let b: Byte = new Byte();
+      expect(b.toByte()).assertEqual(0);
+      expect(b.toByte()).assertEqual(0);
     });
 
     /**

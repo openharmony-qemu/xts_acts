@@ -522,7 +522,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3700
-     * @tc.desc Verify buffer.byteLength equals 0
+     * @tc.desc Verify zero-length buffer byteLength 0, detached false, resizable false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -530,6 +530,8 @@ export default function arrayBufferPropertyTest(): void {
     it('testArrayBufferProperty0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(0)
       expect(buffer.byteLength).assertEqual(0)
+      expect(buffer.detached).assertFalse()
+      expect(buffer.resizable).assertFalse()
     });
 
     /**
