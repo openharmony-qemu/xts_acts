@@ -2995,7 +2995,7 @@ export default function GraphicImagePixelMapAPI2602() {
 
     /**
      * @tc.name   graphicImagePixelMapAPI2602_8900
-     * @tc.number SUB_GRAPHIC_image_createPixelMapFromPixels_8900
+     * @tc.number SUB_GRAPHIC_image_createPixelMapFromPixels_Y8_8900
      * @tc.desc   createPixelMapFromPixels Y8 format success test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
