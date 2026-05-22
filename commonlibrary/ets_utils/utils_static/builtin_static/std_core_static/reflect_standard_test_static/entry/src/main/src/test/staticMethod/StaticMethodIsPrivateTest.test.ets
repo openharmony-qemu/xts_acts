@@ -18,11 +18,11 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import Utils from './../Util.test';
 
 class MyClass001 {
-private static test(): void {}
+  private static test(): void {}
 }
 
 class MyClass002 {
-private static test(): void {}
+  private static test(): void {}
 }
 
 class MyClass003 {
@@ -30,23 +30,23 @@ class MyClass003 {
 }
 
 class MyClass004 {
-protected static protectedMethod(): void {}
+  protected static protectedMethod(): void {}
 }
 
 class MyClass005 {
-private static async privateAsyncMethod(): Promise<void> { return; }
+  private static async privateAsyncMethod(): Promise<void> { return; }
 }
 
 class MyClass006 {
-private static privateFinalMethod(): void {}
+  private static privateFinalMethod(): void {}
 }
 
 abstract class AbstractClass007 {
-private static privateMethod(): void {}
+  private static privateMethod(): void {}
 }
 
 final class FinalClass008 {
-private static privateMethod(): void {}
+  private static privateMethod(): void {}
 }
 
 class MyClass009 {
@@ -78,19 +78,19 @@ class MyClass014 {
 }
 
 class MyClass015 {
-private static privateFinalMethod(): void {}
+  private static privateFinalMethod(): void {}
 }
 
 class MyClass016 {
-private static async privateAsyncMethod(): Promise<void> { return; }
+  private static async privateAsyncMethod(): Promise<void> { return; }
 }
 
 class MyClass017 {
-private static deprecatedMethod(): void {}
+  private static deprecatedMethod(): void {}
 }
 
 class MyClass018 {
-private static async fetchData(): Promise<string> { return 'data'; }
+  private static async fetchData(): Promise<string> { return 'data'; }
 }
 
 class MyClass019 {
@@ -99,23 +99,23 @@ class MyClass019 {
 }
 
 abstract class AbstractClass020 {
-private static abstractPrivate(): void {}
+  private static abstractPrivate(): void {}
 }
 
 final class FinalClass020 {
-private static finalPrivate(): void {}
+  private static finalPrivate(): void {}
 }
 
 class NormalClass020 {
-private static normalPrivate(): void {}
+  private static normalPrivate(): void {}
 }
 
 class MyClass021 {
-private static factoryMethod(): MyClass021 { return new MyClass021(); }
+  private static factoryMethod(): MyClass021 { return new MyClass021(); }
 }
 
 class MyClass022 {
-private static utilityMethod(): void {}
+  private static utilityMethod(): void {}
 }
 
 class MyClass023 {
