@@ -302,7 +302,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2000
-     * @tc.desc Verify Byte constructor with Utils.castToByte(null as Object throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(null as Object) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -329,7 +329,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2200
-     * @tc.desc Verify Byte constructor with Utils.castToByte(s as Object throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(s as Object) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -343,7 +343,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2300
-     * @tc.desc Verify Byte constructor with Utils.castToByte(true as Object throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(true as Object) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -356,7 +356,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2400
-     * @tc.desc Verify Byte constructor with Utils.castToByte(false as Object throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(false as Object) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -382,7 +382,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2600
-     * @tc.desc Verify Byte constructor with Utils.castToByte(arr as Object throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(arr as Object) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -397,7 +397,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2700
-     * @tc.desc Verify Byte constructor with Utils.castToByte(Utils.voidFnAsObject() throws ClassCastError
+     * @tc.desc Verify Byte constructor with Utils.castToByte(Utils.voidFnAsObject()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

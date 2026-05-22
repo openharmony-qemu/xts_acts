@@ -236,7 +236,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0130
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf-8", 0, encoded.byteLength) returns "ABC"
+     * @tc.desc Verify utf-8 hyphen alias decodes to ABC (canonical label is utf8; case variants rejected)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1227,7 +1227,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0750
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "unknown-encoding", 0, encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify unknown-encoding label throws IllegalArgumentError (only utf8 and utf-8 alias)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1245,7 +1245,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0076
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0760
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "UTF8", 0, encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify uppercase UTF8 label throws IllegalArgumentError (only exact utf8 accepted)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1263,7 +1263,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0077
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0770
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, " utf8 ", 0, encoded.byteLength) throws IllegalArgumentError
+     * @tc.desc Verify padded " utf8 " label throws IllegalArgumentError (no trim; exact utf8 only)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

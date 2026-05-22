@@ -278,7 +278,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1900
-     * @tc.desc Verify detached is false and detached is false
+     * @tc.desc Verify detached stays false across multiple resize operations
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

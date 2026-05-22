@@ -439,7 +439,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2500
-     * @tc.desc Verify buffer.at returns expected bytes at 2 indices
+     * @tc.desc Verify Uint8Array view.at(0) and view.at(-1) return expected bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -582,7 +582,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3300
-     * @tc.desc Verify ArrayBuffer.from(Uint8Array) yields byteLength 3 and Uint8Array view length 3
+     * @tc.desc Verify copied.byteLength, result.byteLength, and view.length all equal 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

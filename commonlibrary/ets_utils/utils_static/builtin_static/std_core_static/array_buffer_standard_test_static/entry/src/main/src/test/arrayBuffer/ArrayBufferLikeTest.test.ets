@@ -117,7 +117,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0700
-     * @tc.desc Verify bytesLength return type is int or number and len equals 4
+     * @tc.desc Verify byteLength typeof is int and len equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -333,7 +333,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_2200
-     * @tc.desc Verify return value is ArrayBuffer instance and buffer.byteLength equals 0
+     * @tc.desc Verify Double.NaN length coerces to 0 and buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
