@@ -364,7 +364,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2100
-     * @tc.desc Verify buffer.at(0) returns 10
+     * @tc.desc Verify slice copy is isolated: mutating copied buffer does not change source bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

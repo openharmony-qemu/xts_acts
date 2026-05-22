@@ -45,6 +45,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(4)
       expect(buffer.byteLength).assertEqual(4)
     });
+
     /**
      * @tc.name testArrayBufferProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0200
@@ -57,6 +58,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(2, 8)
       expect(buffer.byteLength).assertEqual(2)
     });
+
     /**
      * @tc.name testArrayBufferProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0300
@@ -69,6 +71,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(0)
       expect(buffer.byteLength).assertEqual(0)
     });
+
     /**
      * @tc.name testArrayBufferProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0400
@@ -81,6 +84,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(0, 16)
       expect(buffer.byteLength).assertEqual(0)
     });
+
     /**
      * @tc.name testArrayBufferProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0500
@@ -93,6 +97,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(8)
       expect(buffer.byteLength).assertEqual(8)
     });
+
     /**
      * @tc.name testArrayBufferProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0600
@@ -106,6 +111,7 @@ export default function arrayBufferPropertyTest(): void {
       buffer.resize(6)
       expect(buffer.byteLength).assertEqual(6)
     });
+
     /**
      * @tc.name testArrayBufferProperty0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0700
@@ -119,6 +125,7 @@ export default function arrayBufferPropertyTest(): void {
       buffer.resize(0)
       expect(buffer.byteLength).assertEqual(0)
     });
+
     /**
      * @tc.name testArrayBufferProperty0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0800
@@ -132,10 +139,11 @@ export default function arrayBufferPropertyTest(): void {
       buffer.resize(8)
       expect(buffer.byteLength).assertEqual(8)
     });
+
     /**
      * @tc.name testArrayBufferProperty0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0900
-     * @tc.desc Verify encoded.byteLength equals 3
+     * @tc.desc Verify ArrayBuffer.from UTF-8 abc has byteLength 3 and bytes 65/66/67
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -143,11 +151,15 @@ export default function arrayBufferPropertyTest(): void {
     it('testArrayBufferProperty0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let encoded = ArrayBuffer.from("ABC", "utf8")
       expect(encoded.byteLength).assertEqual(3)
+      expect(encoded.at(0)).assertEqual(Int.toByte(65))
+      expect(encoded.at(1)).assertEqual(Int.toByte(66))
+      expect(encoded.at(2)).assertEqual(Int.toByte(67))
     });
+
     /**
      * @tc.name testArrayBufferProperty0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1000
-     * @tc.desc Verify copied.byteLength equals 4
+     * @tc.desc Verify ArrayBuffer.from Uint8Array copies byteLength 4 and all four bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -155,9 +167,18 @@ export default function arrayBufferPropertyTest(): void {
     it('testArrayBufferProperty0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ab = new ArrayBuffer(4)
       let u8 = new Uint8Array(ab)
+      u8[0] = 1
+      u8[1] = 2
+      u8[2] = 3
+      u8[3] = 4
       let copied = ArrayBuffer.from(u8)
       expect(copied.byteLength).assertEqual(4)
+      expect(copied.at(0)).assertEqual(Int.toByte(1))
+      expect(copied.at(1)).assertEqual(Int.toByte(2))
+      expect(copied.at(2)).assertEqual(Int.toByte(3))
+      expect(copied.at(3)).assertEqual(Int.toByte(4))
     });
+
     /**
      * @tc.name testArrayBufferProperty0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1100
@@ -171,6 +192,7 @@ export default function arrayBufferPropertyTest(): void {
       let sliced = buffer.slice(2, 6)
       expect(sliced.byteLength).assertEqual(4)
     });
+
     /**
      * @tc.name testArrayBufferProperty0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1200
@@ -183,6 +205,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(1024)
       expect(buffer.byteLength).assertEqual(1024)
     });
+
     /**
      * @tc.name testArrayBufferProperty0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1300
@@ -195,6 +218,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(8)
       expect(buffer.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1400
@@ -207,6 +231,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(2, 8)
       expect(buffer.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1500
@@ -219,6 +244,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(0)
       expect(buffer.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1600
@@ -233,6 +259,7 @@ export default function arrayBufferPropertyTest(): void {
       expect(buffer.detached).assertFalse()
       expect(copied.byteLength).assertEqual(8)
     });
+
     /**
      * @tc.name testArrayBufferProperty0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1700
@@ -247,6 +274,7 @@ export default function arrayBufferPropertyTest(): void {
       expect(copied.detached).assertFalse()
       expect(copied.byteLength).assertEqual(8)
     });
+
     /**
      * @tc.name testArrayBufferProperty0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1800
@@ -260,6 +288,7 @@ export default function arrayBufferPropertyTest(): void {
       buffer.resize(6)
       expect(buffer.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_1900
@@ -273,6 +302,7 @@ export default function arrayBufferPropertyTest(): void {
       let sliced = buffer.slice(0, 4)
       expect(buffer.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2000
@@ -286,10 +316,11 @@ export default function arrayBufferPropertyTest(): void {
       let sliced = buffer.slice(0, 4)
       expect(sliced.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2100
-     * @tc.desc Verify resizable is false
+     * @tc.desc Verify fixed-size ArrayBuffer(4) has resizable false (merged duplicate of former 0026 with same assertion intent)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -298,6 +329,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(4)
       expect(buffer.resizable).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2200
@@ -310,6 +342,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(2, 8)
       expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2300
@@ -322,6 +355,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(4, 4)
       expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2400
@@ -334,6 +368,7 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(0, 8)
       expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2500
@@ -346,18 +381,20 @@ export default function arrayBufferPropertyTest(): void {
       let buffer = new ArrayBuffer(0)
       expect(buffer.resizable).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2600
-     * @tc.desc Verify resizable is false
+     * @tc.desc Verify resizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4)
-      expect(buffer.resizable).assertFalse()
+      let buffer = new ArrayBuffer(2 , 8)
+      expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2700
@@ -367,22 +404,25 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(2 , 8)
+      let buffer = new ArrayBuffer(2, 8)
+      buffer.resize(6)
       expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2800
-     * @tc.desc Verify resizable is true
+     * @tc.desc Verify resizable is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
-      buffer.resize(6)
-      expect(buffer.resizable).assertTrue()
+      let sliced = buffer.slice(0, 2)
+      expect(sliced.resizable).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_2900
@@ -392,122 +432,117 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(2, 8)
-      let sliced = buffer.slice(0, 2)
-      expect(sliced.resizable).assertFalse()
-    });
-    /**
-     * @tc.name testArrayBufferProperty0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3000
-     * @tc.desc Verify resizable is false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let encoded = ArrayBuffer.from("ABC", "utf8")
       expect(encoded.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3100
+     * @tc.name testArrayBufferProperty0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3000
      * @tc.desc Verify buffer.byteLength equals 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(16)
       expect(buffer.byteLength).assertEqual(16)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3200
+     * @tc.name testArrayBufferProperty0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3100
      * @tc.desc Verify len1 equals len2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       let len1 = buffer.byteLength
       let len2 = buffer.byteLength
       expect(len1).assertEqual(len2)
       expect(len1).assertEqual(8)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3300
+     * @tc.name testArrayBufferProperty0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3200
      * @tc.desc Verify getByteLength() returns buffer.byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(5)
       expect(buffer.getByteLength()).assertEqual(buffer.byteLength)
       expect(buffer.byteLength).assertEqual(5)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3400
+     * @tc.name testArrayBufferProperty0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3300
      * @tc.desc Verify len equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       let len: int = buffer.byteLength
       expect(len).assertEqual(8)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3500
+     * @tc.name testArrayBufferProperty0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3400
      * @tc.desc Verify zero-length buffer byteLength 0, detached false, resizable false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(0)
       expect(buffer.byteLength).assertEqual(0)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3600
+     * @tc.name testArrayBufferProperty0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3500
      * @tc.desc Verify buffer.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(1)
       expect(buffer.byteLength).assertEqual(1)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3700
+     * @tc.name testArrayBufferProperty0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3600
      * @tc.desc Verify buffer.byteLength equals 4096
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4096)
       expect(buffer.byteLength).assertEqual(4096)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3800
+     * @tc.name testArrayBufferProperty0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3700
      * @tc.desc Verify resizable buffer byteLength 4, then 10 after resize(10), then 16 after resize(16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       expect(buffer.byteLength).assertEqual(4)
       buffer.resize(10)
@@ -515,15 +550,16 @@ export default function arrayBufferPropertyTest(): void {
       buffer.resize(16)
       expect(buffer.byteLength).assertEqual(16)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3900
+     * @tc.name testArrayBufferProperty0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3800
      * @tc.desc Verify detached remains false on buffer and derived buffers
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       expect(buffer.detached).assertFalse()
       let sliced = buffer.slice(0, 4)
@@ -531,114 +567,136 @@ export default function arrayBufferPropertyTest(): void {
       const copied = ArrayBuffer.from(buffer, 0, 4)
       expect(copied.detached).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4000
+     * @tc.name testArrayBufferProperty0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3900
      * @tc.desc Verify d1 equals d2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       let d1 = buffer.detached
       let d2 = buffer.detached
       expect(d1).assertEqual(d2)
       expect(d1).assertFalse()
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4000
+     * @tc.desc Verify isDetached is false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(8)
+      let isDetached: boolean = buffer.detached
+      expect(isDetached).assertFalse()
+    });
+
     /**
      * @tc.name testArrayBufferProperty0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4100
-     * @tc.desc Verify isDetached is false
+     * @tc.desc Verify original and full-range slice detached are false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
-      let isDetached: boolean = buffer.detached
-      expect(isDetached).assertFalse()
+      let copied = buffer.slice(0, buffer.byteLength)
+      expect(buffer.detached).assertFalse()
+      expect(copied.detached).assertFalse()
     });
+
     /**
      * @tc.name testArrayBufferProperty0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4200
-     * @tc.desc Verify original and full-range slice detached are false
+     * @tc.desc Verify original and partial slice(0,4) detached are false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
-      let copied = buffer.slice(0, buffer.byteLength)
-      expect(buffer.detached).assertFalse()
-      expect(copied.detached).assertFalse()
-    });
-    /**
-     * @tc.name testArrayBufferProperty0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4300
-     * @tc.desc Verify original and partial slice(0,4) detached are false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8)
       let sliced = buffer.slice(0, 4)
       expect(buffer.detached).assertFalse()
       expect(sliced.detached).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4400
+     * @tc.name testArrayBufferProperty0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4300
      * @tc.desc Verify buffer.resizable equals false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       expect(buffer.resizable).assertEqual(false)
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4400
+     * @tc.desc Verify buffer.resizable equals true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(2, 8)
+      expect(buffer.resizable).assertEqual(true)
+    });
+
     /**
      * @tc.name testArrayBufferProperty0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4500
-     * @tc.desc Verify buffer.resizable equals true
+     * @tc.desc Verify resizable is true and stable before resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
-      expect(buffer.resizable).assertEqual(true)
+      let r1 = buffer.resizable
+      let r2 = buffer.resizable
+      expect(r1).assertEqual(r2)
+      expect(r1).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4600
-     * @tc.desc Verify resizable is true and stable before resize
+     * @tc.desc Verify isResizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
-      let r1 = buffer.resizable
-      let r2 = buffer.resizable
-      expect(r1).assertEqual(r2)
-      expect(r1).assertTrue()
+      let isResizable: boolean = buffer.resizable
+      expect(isResizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4700
-     * @tc.desc Verify isResizable is true
+     * @tc.desc Verify resizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(2, 8)
-      let isResizable: boolean = buffer.resizable
-      expect(isResizable).assertTrue()
+      let buffer = new ArrayBuffer(0, 16)
+      expect(buffer.resizable).assertTrue()
     });
+
     /**
      * @tc.name testArrayBufferProperty0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4800
@@ -648,169 +706,168 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(0, 16)
-      expect(buffer.resizable).assertTrue()
-    });
-    /**
-     * @tc.name testArrayBufferProperty0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4900
-     * @tc.desc Verify resizable is true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8, 8)
       expect(buffer.resizable).assertTrue()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5000
+     * @tc.name testArrayBufferProperty0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4900
      * @tc.desc Verify resizable is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       let sliced = buffer.slice(0, 4)
       expect(sliced.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5100
+     * @tc.name testArrayBufferProperty0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5000
      * @tc.desc Verify buffer.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       expect(buffer.resizable).assertFalse()
       expect(buffer.byteLength).assertEqual(8)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5200
+     * @tc.name testArrayBufferProperty0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5100
      * @tc.desc Verify resizable is true and buffer.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
       expect(buffer.resizable).assertTrue()
       buffer.resize(6)
       expect(buffer.byteLength).assertEqual(6)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5300
+     * @tc.name testArrayBufferProperty0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5200
      * @tc.desc Verify buffer.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       expect(buffer.detached).assertFalse()
       expect(buffer.byteLength).assertEqual(8)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5400
+     * @tc.name testArrayBufferProperty0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5300
      * @tc.desc Verify buffer.resizable and copied.resizable are both false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       let copied = buffer.slice(0, 4)
       expect(buffer.resizable).assertFalse()
       expect(copied.resizable).assertFalse()
       expect(buffer.detached).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5500
+     * @tc.name testArrayBufferProperty0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5400
      * @tc.desc Verify detached is false and resizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
       buffer.resize(0)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertTrue()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5600
+     * @tc.name testArrayBufferProperty0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5500
      * @tc.desc Verify buffer.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       expect(buffer.byteLength).assertEqual(8)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5700
+     * @tc.name testArrayBufferProperty0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5600
      * @tc.desc Verify resizable is true and buffer.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       expect(buffer.byteLength).assertEqual(4)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertTrue()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5800
+     * @tc.name testArrayBufferProperty0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5700
      * @tc.desc Verify buffer.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 8)
       expect(buffer.byteLength).assertEqual(4)
       buffer.resize(6)
       expect(buffer.byteLength).assertEqual(6)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5900
+     * @tc.name testArrayBufferProperty0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5800
      * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8, 16)
       expect(buffer.detached).assertFalse()
       buffer.resize(0)
       expect(buffer.detached).assertFalse()
       expect(buffer.byteLength).assertEqual(0)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6000
+     * @tc.name testArrayBufferProperty0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5900
      * @tc.desc Verify resizable stays true and byteLength equals 6 after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
       let r1 = buffer.resizable
       buffer.resize(6)
@@ -819,6 +876,22 @@ export default function arrayBufferPropertyTest(): void {
       expect(r1).assertTrue()
       expect(buffer.byteLength).assertEqual(6)
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6000
+     * @tc.desc Verify buffer.byteLength equals 0
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let buffer = new ArrayBuffer(8, 16)
+      buffer.resize(0)
+      expect(buffer.byteLength).assertEqual(0)
+      expect(buffer.detached).assertFalse()
+    });
+
     /**
      * @tc.name testArrayBufferProperty0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6100
@@ -828,105 +901,97 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8, 16)
-      buffer.resize(0)
-      expect(buffer.byteLength).assertEqual(0)
-      expect(buffer.detached).assertFalse()
-    });
-    /**
-     * @tc.name testArrayBufferProperty0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6200
-     * @tc.desc Verify buffer.byteLength equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       buffer.resize(0)
       expect(buffer.byteLength).assertEqual(0)
       expect(buffer.detached).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6300
+     * @tc.name testArrayBufferProperty0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6200
      * @tc.desc Verify copied.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       let copied = buffer.slice(2, 6)
       expect(buffer.detached).assertFalse()
       expect(copied.detached).assertFalse()
       expect(copied.byteLength).assertEqual(4)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6400
+     * @tc.name testArrayBufferProperty0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6300
      * @tc.desc Verify buffer.resizable and copied.resizable are both false after slice
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       let copied = buffer.slice(0, 4)
       expect(buffer.resizable).assertFalse()
       expect(copied.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6500
+     * @tc.name testArrayBufferProperty0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6400
      * @tc.desc Verify buffer.resizable is true and copied.resizable is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
       let copied = buffer.slice(0, 2)
       expect(buffer.resizable).assertTrue()
       expect(copied.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6600
+     * @tc.name testArrayBufferProperty0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6500
      * @tc.desc Verify copied.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       let copied = buffer.slice(0, 8)
       expect(copied.byteLength).assertEqual(8)
       expect(copied.detached).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6700
+     * @tc.name testArrayBufferProperty0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6600
      * @tc.desc Verify copied.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       let copied = buffer.slice(0, 4)
       expect(copied.resizable).assertFalse()
       expect(copied.byteLength).assertEqual(4)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6800
+     * @tc.name testArrayBufferProperty0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6700
      * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       try {
         buffer.at(8)
@@ -936,30 +1001,32 @@ export default function arrayBufferPropertyTest(): void {
       }
       expect(buffer.byteLength).assertEqual(8)
     });
+
     /**
-     * @tc.name testArrayBufferProperty0069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6900
+     * @tc.name testArrayBufferProperty0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6800
      * @tc.desc Verify resizable is true and buffer.byteLength equals 12
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4, 16)
       buffer.resize(12)
       expect(buffer.byteLength).assertEqual(12)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertTrue()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0070
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7000
+     * @tc.name testArrayBufferProperty0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6900
      * @tc.desc Verify API call throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       try {
         buffer.resize(8)
@@ -967,16 +1034,19 @@ export default function arrayBufferPropertyTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('TypeError')
       }
+      expect(buffer.byteLength).assertEqual(4)
+      expect(buffer.resizable).assertFalse()
     });
+
     /**
-     * @tc.name testArrayBufferProperty0071
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7100
+     * @tc.name testArrayBufferProperty0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7000
      * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
       buffer.set(0, Int.toByte(65))
       try {
@@ -988,24 +1058,46 @@ export default function arrayBufferPropertyTest(): void {
       expect(buffer.byteLength).assertEqual(8)
       expect(buffer.at(0)).assertEqual(Int.toByte(65))
     });
+
     /**
-     * @tc.name testArrayBufferProperty0072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7200
-     * @tc.desc Verify API call throws IndexOutOfBoundsError
+     * @tc.name testArrayBufferProperty0071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7100
+     * @tc.desc Verify set(8,...) throws IndexOutOfBoundsError and does not mutate index 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferProperty0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferProperty0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
+      buffer.set(0, Int.toByte(65))
       try {
-        buffer.set(8, Int.toByte(65))
+        buffer.set(8, Int.toByte(99))
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError')
       }
       expect(buffer.byteLength).assertEqual(8)
+      expect(buffer.at(0)).assertEqual(Int.toByte(65))
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7200
+     * @tc.desc Verify API call throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let badLen: int = -1
+      try {
+        let buffer = new ArrayBuffer(badLen)
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError')
+      }
+    });
+
     /**
      * @tc.name testArrayBufferProperty0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7300
@@ -1015,14 +1107,15 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let badLen: int = -1
+      let badMax: int = -1
       try {
-        let buffer = new ArrayBuffer(badLen)
+        let buffer = new ArrayBuffer(4, badMax)
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError')
       }
     });
+
     /**
      * @tc.name testArrayBufferProperty0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7400
@@ -1032,14 +1125,14 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let badMax: int = -1
       try {
-        let buffer = new ArrayBuffer(4, badMax)
+        let buffer = new ArrayBuffer(8, 4)
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('RangeError')
       }
     });
+
     /**
      * @tc.name testArrayBufferProperty0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7500
@@ -1049,22 +1142,6 @@ export default function arrayBufferPropertyTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let buffer = new ArrayBuffer(8, 4)
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError')
-      }
-    });
-    /**
-     * @tc.name testArrayBufferProperty0076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7600
-     * @tc.desc Verify API call throws RangeError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(2, 8)
       try {
         buffer.resize(16)
@@ -1072,6 +1149,7 @@ export default function arrayBufferPropertyTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError')
       }
+      expect(buffer.byteLength).assertEqual(2)
     });
   });
 }

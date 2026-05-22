@@ -476,5 +476,47 @@ export default function arrayBufferIsViewTest(): void {
       expect(ArrayBuffer.isView(buffer)).assertFalse();
     });
 
+    /**
+     * @tc.name testArrayBufferIsView0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3400
+     * @tc.desc Verify ArrayBuffer.isView returns true for Uint8ClampedArray on ArrayBuffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      const arr = new Uint8ClampedArray(buffer);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3500
+     * @tc.desc Verify ArrayBuffer.isView returns true for BigInt64Array on ArrayBuffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(16);
+      const arr = new BigInt64Array(buffer);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3600
+     * @tc.desc Verify ArrayBuffer.isView returns true for BigUint64Array on ArrayBuffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(16);
+      const arr = new BigUint64Array(buffer);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
+    });
+
   });
 }

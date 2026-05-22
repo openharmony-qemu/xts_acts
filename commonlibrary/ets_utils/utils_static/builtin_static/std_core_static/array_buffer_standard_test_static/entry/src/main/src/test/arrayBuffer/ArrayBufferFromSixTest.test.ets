@@ -358,6 +358,8 @@ export default function arrayBufferFromSixTest(): void {
       const result = ArrayBuffer.from(source, 0, 2);
       expect(result instanceof ArrayBuffer).assertTrue();
       expect(result.byteLength).assertEqual(2);
+      const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
+      expect(str).assertEqual('ab');
     });
     /**
      * @tc.name testArrayBufferFromSix0023

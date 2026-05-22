@@ -517,7 +517,7 @@ export default function arrayBufferBytesLengthTest(): void {
     it('testArrayBufferBytesLength0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.bytesLength('ABC', 'UTF8')
-        expect().assertFail()
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError')
       }
@@ -534,7 +534,7 @@ export default function arrayBufferBytesLengthTest(): void {
     it('testArrayBufferBytesLength0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.bytesLength('ABC', 'Utf8')
-        expect().assertFail()
+        expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IllegalArgumentError')
       }

@@ -248,6 +248,8 @@ export default function arrayBufferFromSevenTest(): void {
       const result = ArrayBuffer.from(source, Double.toInt(1.5), 3);
       expect(result.byteLength).assertEqual(3);
       expect(result.at(0)).assertEqual(source.at(1));
+      expect(result.at(1)).assertEqual(source.at(2));
+      expect(result.at(2)).assertEqual(source.at(3));
     });
     /**
      * @tc.name testArrayBufferFromSeven0011
@@ -472,6 +474,10 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 8; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0024
@@ -662,6 +668,9 @@ export default function arrayBufferFromSevenTest(): void {
       const resultView = new Int8Array(result);
       resultView[0] = 99;
       expect(view[0]).assertEqual(10);
+      expect(view[1]).assertEqual(20);
+      expect(view[2]).assertEqual(30);
+      expect(view[3]).assertEqual(40);
     });
     /**
      * @tc.name testArrayBufferFromSeven0035

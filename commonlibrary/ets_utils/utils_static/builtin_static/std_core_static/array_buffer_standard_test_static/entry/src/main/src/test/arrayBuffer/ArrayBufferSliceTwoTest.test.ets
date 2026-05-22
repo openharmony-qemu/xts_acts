@@ -538,7 +538,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2500
-     * @tc.desc Verify result.byteLength equals 2
+     * @tc.desc Verify slice byteLength 2 and modifying slice does not alter source buffer byte at same offset
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

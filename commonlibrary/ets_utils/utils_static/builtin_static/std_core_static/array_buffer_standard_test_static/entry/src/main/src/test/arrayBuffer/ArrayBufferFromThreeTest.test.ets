@@ -556,6 +556,9 @@ export default function arrayBufferFromThreeTest(): void {
       otherView[0] = 100;
       const view = new Uint8Array(result);
       expect(view[0]).assertEqual(1);
+      expect(view[1]).assertEqual(2);
+      expect(view[2]).assertEqual(3);
+      expect(view[3]).assertEqual(4);
     });
 
     /**

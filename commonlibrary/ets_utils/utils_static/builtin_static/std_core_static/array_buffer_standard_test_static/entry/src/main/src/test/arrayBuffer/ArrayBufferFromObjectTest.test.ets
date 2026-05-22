@@ -47,6 +47,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
       expect(result.byteLength).assertEqual(5);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0200
@@ -60,6 +61,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
       expect(result.byteLength).assertEqual(16);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0300
@@ -72,6 +74,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('hello world', 'utf8', 11);
       expect(result.byteLength).assertEqual(11);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0400
@@ -84,6 +87,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('', 'utf8', 0);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0500
@@ -96,6 +100,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('你好', 'utf8', 6);
       expect(result.byteLength).assertEqual(6);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0600
@@ -108,6 +113,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('abc\t\n\r', 'utf8', 6);
       expect(result.byteLength).assertEqual(6);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0700
@@ -121,6 +127,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject(longStr, 'utf8', 10000);
       expect(result.byteLength).assertEqual(10000);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0800
@@ -134,6 +141,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0900
@@ -147,6 +155,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 1024);
       expect(result.byteLength).assertEqual(1024);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1000
@@ -166,6 +175,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.at(0)).assertEqual(Int.toByte(1));
       expect(result.at(2)).assertEqual(Int.toByte(3));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1100
@@ -183,6 +193,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1200
@@ -200,6 +211,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1300
@@ -217,6 +229,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1400
@@ -234,6 +247,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1500
@@ -250,6 +264,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1600
@@ -266,6 +281,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1700
@@ -282,6 +298,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1800
@@ -298,6 +315,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1900
@@ -318,6 +336,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2000
@@ -334,6 +353,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2100
@@ -350,6 +370,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2200
@@ -367,6 +388,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2300
@@ -383,6 +405,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.byteLength).assertEqual(16);
       expect(result.at(0)).assertEqual(Int.toByte(99));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2400
@@ -393,9 +416,16 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
+      const w = new Uint8Array(src);
+      for (let i: int = 0; i < 16; i++) {
+        w[i] = i;
+      }
       const result = Utils.fromObjectWithBuffer(src, 4, 12);
       expect(result.byteLength).assertEqual(12);
+      expect(result.at(0)).assertEqual(src.at(4));
+      expect(result.at(11)).assertEqual(src.at(15));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2500
@@ -406,9 +436,13 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
+      const w = new Uint8Array(src);
+      w[15] = 77;
       const result = Utils.fromObjectWithBuffer(src, 15, 1);
       expect(result.byteLength).assertEqual(1);
+      expect(result.at(0)).assertEqual(src.at(15));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2600
@@ -422,6 +456,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 16, 0);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2700
@@ -439,6 +474,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2800
@@ -456,6 +492,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_2900
@@ -473,6 +510,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3000
@@ -487,6 +525,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.at(0)).assertEqual(Int.toByte(104));
       expect(result.at(4)).assertEqual(Int.toByte(111));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3100
@@ -501,6 +540,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.at(0)).assertEqual(Int.toByte(104));
       expect(result.at(4)).assertEqual(Int.toByte(111));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3200
@@ -518,6 +558,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.at(3)).assertEqual(Int.toByte(108));
       expect(result.at(4)).assertEqual(Int.toByte(111));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3300
@@ -534,6 +575,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3400
@@ -550,6 +592,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3500
@@ -566,6 +609,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3600
@@ -582,6 +626,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3700
@@ -598,6 +643,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3800
@@ -614,6 +660,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_3900
@@ -624,9 +671,16 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
+      const view = new Int8Array(src);
+      for (let i: int = 0; i < 16; i++) {
+        view[i] = i;
+      }
       const result = Utils.fromObjectWithBuffer(src, Double.toInt(2.5), 8);
       expect(result.byteLength).assertEqual(8);
+      expect(result.at(0)).assertEqual(src.at(2));
+      expect(result.at(7)).assertEqual(src.at(9));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4000
@@ -646,6 +700,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result.at(0)).assertEqual(src.at(0));
       expect(result.at(7)).assertEqual(src.at(7));
     });
+
     /**
      * @tc.name testArrayBufferFromObject0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4100
@@ -659,6 +714,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 1);
       expect(result.byteLength).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4200
@@ -672,10 +728,11 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4300
-     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws IndexOutOfBoundsError
+     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws IndexOutOfBoundsError (negative length; merged duplicate of former 0072)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -689,6 +746,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4400
@@ -706,6 +764,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4500
@@ -723,6 +782,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4600
@@ -736,6 +796,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 8, 8);
       expect(result.byteLength).assertEqual(8);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4700
@@ -753,6 +814,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4800
@@ -770,6 +832,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4900
@@ -787,6 +850,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5000
@@ -804,6 +868,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5100
@@ -821,6 +886,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5200
@@ -834,6 +900,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(3.14));
       expect(result.byteLength).assertEqual(3);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5300
@@ -847,6 +914,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(Double.NaN));
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5400
@@ -860,6 +928,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 4, 8);
       expect(result.byteLength).assertEqual(8);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5500
@@ -873,6 +942,7 @@ export default function arrayBufferFromObjectTest(): void {
       const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
       expect(str).assertEqual('hello');
     });
+
     /**
      * @tc.name testArrayBufferFromObject0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5600
@@ -886,6 +956,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
       expect(result !== src).assertTrue();
     });
+
     /**
      * @tc.name testArrayBufferFromObject0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5700
@@ -901,10 +972,11 @@ export default function arrayBufferFromObjectTest(): void {
       expect(view[1]).assertEqual(98);
       expect(view[2]).assertEqual(99);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5800
-     * @tc.desc Verify view.length equals 3
+     * @tc.desc Verify UTF-8 view for 你 has length 3 and bytes 0xE4/0xBD/0xA0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -913,7 +985,11 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('你', 'utf8', 3);
       const view = new Uint8Array(result);
       expect(view.length).assertEqual(3);
+      expect(view[0]).assertEqual(228);
+      expect(view[1]).assertEqual(189);
+      expect(view[2]).assertEqual(160);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5900
@@ -936,6 +1012,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(resView[2]).assertEqual(30);
       expect(resView[3]).assertEqual(40);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6000
@@ -962,6 +1039,7 @@ export default function arrayBufferFromObjectTest(): void {
       expect(resView[2]).assertEqual(5);
       expect(resView[3]).assertEqual(6);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6100
@@ -979,6 +1057,7 @@ export default function arrayBufferFromObjectTest(): void {
       resView[0] = 200;
       expect(srcView[0]).assertEqual(100);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6200
@@ -992,6 +1071,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
       expect(result.byteLength).assertEqual(16);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6300
@@ -1005,6 +1085,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 0, 8);
       expect(result.byteLength).assertEqual(8);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6400
@@ -1018,6 +1099,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 7, 1);
       expect(result.byteLength).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6500
@@ -1031,6 +1113,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = Utils.fromObjectWithBuffer(src, 8, 0);
       expect(result.byteLength).assertEqual(0);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6600
@@ -1043,6 +1126,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject('A', 'utf8', 1);
       expect(result.byteLength).assertEqual(1);
     });
+
     /**
      * @tc.name testArrayBufferFromObject0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6700
@@ -1060,6 +1144,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6800
@@ -1078,6 +1163,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('Error');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6900
@@ -1095,6 +1181,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7000
@@ -1111,6 +1198,7 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7100
@@ -1127,32 +1215,16 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferFromObject0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7200
-     * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws IndexOutOfBoundsError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromObject0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const src = new ArrayBuffer(16);
-        Utils.fromObjectWithBuffer(src, 0, -1);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IndexOutOfBoundsError');
-      }
-    });
-    /**
-     * @tc.name testArrayBufferFromObject0073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7300
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 100, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(8);
         Utils.fromObjectWithBuffer(src, 100, 4);
@@ -1161,15 +1233,16 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromObject0074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7400
+     * @tc.name testArrayBufferFromObject0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7300
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -5) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, -5);
@@ -1178,15 +1251,16 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromObject0075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7500
+     * @tc.name testArrayBufferFromObject0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7400
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, 8) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(8);
         Utils.fromObjectWithBuffer(src, 4, 8);
@@ -1195,15 +1269,16 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromObject0076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7600
+     * @tc.name testArrayBufferFromObject0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7500
      * @tc.desc Verify ArrayBuffer.fromObject('hi', 'utf8', 100) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.fromObject('hi', 'utf8', 100);
         expect().assertFail();
@@ -1211,15 +1286,16 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferFromObject0077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7700
+     * @tc.name testArrayBufferFromObject0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7600
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, -2147483648, 8) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, -2147483648, 8);

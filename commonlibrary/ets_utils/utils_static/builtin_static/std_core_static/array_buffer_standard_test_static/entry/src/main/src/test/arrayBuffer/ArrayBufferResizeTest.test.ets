@@ -176,6 +176,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -194,6 +196,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -212,6 +216,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -230,6 +236,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -248,6 +256,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -280,6 +290,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -298,6 +310,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -317,6 +331,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -347,8 +363,16 @@ export default function arrayBufferResizeTest(): void {
      */
     it('testArrayBufferResize0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(6, 10);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
+      buffer.set(4, Int.toByte(50));
+      buffer.set(5, Int.toByte(60));
       buffer.resize(2);
       expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
+      expect(buffer.at(1)).assertEqual(Int.toByte(20));
     });
 
     /**
@@ -778,6 +802,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -796,6 +822,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
 
     /**
@@ -814,6 +842,8 @@ export default function arrayBufferResizeTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('RangeError');
       }
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
     });
   });
 }

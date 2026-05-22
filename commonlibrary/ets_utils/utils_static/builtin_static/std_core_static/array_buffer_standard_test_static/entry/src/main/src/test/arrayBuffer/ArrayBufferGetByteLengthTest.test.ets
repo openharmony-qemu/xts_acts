@@ -284,7 +284,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2000
-     * @tc.desc Verify getByteLength() returns 10 after resize(10)
+     * @tc.desc Verify getByteLength() is 10 and equals byteLength after resize(10)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -294,11 +294,12 @@ export default function arrayBufferGetByteLengthTest(): void {
       buffer.resize(10);
       let result = buffer.getByteLength();
       expect(result).assertEqual(10);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2100
-     * @tc.desc Verify getByteLength() returns 2 after resize(2)
+     * @tc.desc Verify getByteLength() is 2 and equals byteLength after resize(2)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -308,6 +309,7 @@ export default function arrayBufferGetByteLengthTest(): void {
       buffer.resize(2);
       let result = buffer.getByteLength();
       expect(result).assertEqual(2);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0022
@@ -322,11 +324,12 @@ export default function arrayBufferGetByteLengthTest(): void {
       buffer.resize(0);
       let result = buffer.getByteLength();
       expect(result).assertEqual(0);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2300
-     * @tc.desc Verify getByteLength() returns 16 after resize(16)
+     * @tc.desc Verify getByteLength() is 16 and equals byteLength after resize(16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -336,11 +339,12 @@ export default function arrayBufferGetByteLengthTest(): void {
       buffer.resize(16);
       let result = buffer.getByteLength();
       expect(result).assertEqual(16);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_2400
-     * @tc.desc Verify getByteLength() returns 8, 12, and 4 after resize(8), resize(12), and resize(4)
+     * @tc.desc Verify getByteLength() matches byteLength after resize(8), resize(12), and resize(4)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -349,10 +353,13 @@ export default function arrayBufferGetByteLengthTest(): void {
       const buffer = new ArrayBuffer(4, 16);
       buffer.resize(8);
       expect(buffer.getByteLength()).assertEqual(8);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
       buffer.resize(12);
       expect(buffer.getByteLength()).assertEqual(12);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
       buffer.resize(4);
       expect(buffer.getByteLength()).assertEqual(4);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0025
