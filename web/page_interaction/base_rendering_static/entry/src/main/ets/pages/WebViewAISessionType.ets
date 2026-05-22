@@ -29,6 +29,8 @@ struct WebViewAISessionType {
   @State str: string = '';
   @State callbackResult: string = '';
   @State hasAiSessions: boolean = false;
+  @State webSrc: string = 'https://www.baidu.com';
+  @State needTriggerTranslatorAction: boolean = false;
 
   promptSession: AISessionEvent = {
     aiSessionType: AISessionType.PROMPT,
@@ -43,6 +45,22 @@ struct WebViewAISessionType {
     },
     onDestroyAISession: (id: string): void => {
       this.callbackResult = 'onDestroyAISession';
+    }
+  };
+  translatorSession: AISessionEvent = {
+    aiSessionType: AISessionType.TRANSLATOR,
+    onCreateAISession: (id: string, params: string, result: OnAISessionCallback): boolean => {
+      result(AISessionResultType.SUCCESS, 'translator create');
+      return true;
+    },
+    onExecuteAIAction: (id: string, params: string, result: OnAISessionCallback): void => {
+      this.callbackResult = 'translator onExecuteAIAction';
+      Utils.emitEvent(true, 2026060125)
+      result(AISessionResultType.RUNNING, 'translator running');
+      result(AISessionResultType.SUCCESS, 'translator success');
+    },
+    onDestroyAISession: (id: string): void => {
+      this.callbackResult = 'translator onDestroyAISession';
     }
   };
 
@@ -65,6 +83,16 @@ struct WebViewAISessionType {
       if (data && data['ACTION'] != null) {
         this.str = String(data['ACTION']);
       }
+    }
+  }
+
+  private triggerTranslatorAction(): void {
+    try {
+      this.controller.runJavaScript('document.getElementById("translateBtn")?.click()');
+    } catch (error) {
+      error = error as BusinessError;
+      console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+      Utils.emitEvent(false, 2026060125)
     }
   }
 
@@ -136,7 +164,9 @@ struct WebViewAISessionType {
                 break;
               }
               case 'testAiSessionTypeStatic25': {
-                Utils.emitEvent(AISessionType.TRANSLATOR, 2026060125)
+                this.hasAiSessions = true;
+                this.needTriggerTranslatorAction = true;
+                this.webSrc = 'resource://rawfile/translator.html';
                 break;
               }
               default:
@@ -144,9 +174,15 @@ struct WebViewAISessionType {
             }
           })
       }
-      Web({ src: 'https://www.baidu.com', controller: this.controller })
-        .aiSessionOptions(this.hasAiSessions ? [this.promptSession] : undefined)
+      Web({ src: this.webSrc, controller: this.controller })
+        .aiSessionOptions(this.hasAiSessions ? [this.promptSession, this.translatorSession] : undefined)
         .javaScriptAccess(true)
+        .onPageEnd(() => {
+          if (this.needTriggerTranslatorAction) {
+            this.needTriggerTranslatorAction = false;
+            this.triggerTranslatorAction();
+          }
+        })
     }.width('100%').height('100%')
   }
 }

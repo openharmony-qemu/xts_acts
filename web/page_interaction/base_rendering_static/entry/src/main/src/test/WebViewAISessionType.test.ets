@@ -276,9 +276,9 @@ export default function webViewAISessionTypeJsunit() {
     it('testAiSessionTypeStatic25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       Utils.emitEvent("testAiSessionTypeStatic25", 10)
       await Utils.msSleep(2000)
-      Utils.registerEvent("testAiSessionTypeStatic25", 1, 2026060125, done);
+      Utils.registerEvent("testAiSessionTypeStatic25", true, 2026060125, done);
       inspector.sendEventByKey('WebViewAISessionTypeButton', 10, '');
-      await Utils.msSleep(2000);
+      await Utils.msSleep(6000);
       done();
     })
   })
