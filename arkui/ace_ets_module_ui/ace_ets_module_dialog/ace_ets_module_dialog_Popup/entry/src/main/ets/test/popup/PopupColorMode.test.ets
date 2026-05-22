@@ -67,7 +67,7 @@ export default function PopupColorMode() {
      * @tc.size   MEDIUMTEST 
      * @tc.level  LEVEL2 
     */
-    it('PopupColorMode_0100', Level.LEVEL2,, async (done: Function) => {
+    it('PopupColorMode_0100', Level.LEVEL2, async (done: Function) => {
       console.info('PopupColorMode_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
