@@ -20,6 +20,7 @@ import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
 import PopupCommonTest from './PopupTest/PopupCommon.test';
 import PopupOptionsTest from './PopupTest/PopupOptions.test';
 import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
+import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test'
 
 export default function testsuite() {
   popupTest();
@@ -28,4 +29,5 @@ export default function testsuite() {
   PopupCommonTest();
   PopupOptionsTest();
   TipsOptionsTest();
+  ImmersiveOptionsApplyShadowTest();
 }
