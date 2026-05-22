@@ -669,8 +669,6 @@ export default function arrayBufferFromSevenTest(): void {
       const source = new ArrayBuffer(8);
       const result = ArrayBuffer.from(source, 1, 3);
       const ref = new ArrayBuffer(0);
-      expect(result !== null).assertTrue();
-      expect(result !== undefined).assertTrue();
       expect(result instanceof ArrayBuffer).assertTrue();
       expect(typeof result.byteLength).assertEqual('int');
       expect(Class.of(result) === Class.of(ref)).assertTrue();
