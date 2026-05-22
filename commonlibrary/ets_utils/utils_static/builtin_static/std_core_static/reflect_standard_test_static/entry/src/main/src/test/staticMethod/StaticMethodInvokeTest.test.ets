@@ -202,7 +202,6 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.1: 无参 invoke() 正常执行，运行时可能抛 TypeError
       try {
         method!.invoke();
         expect(true).assertTrue();
@@ -224,7 +223,6 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls.getStaticMethod('test', [Class.from<string>()]);
       expect(method != undefined).assertTrue();
       let result: string = method!.invoke(['World']) as string;
-      // 脑图 1.2: MyClass002.test(msg) 返回 'Hello ' + msg
       expect(result).assertEqual('Hello World');
     });
 
@@ -304,7 +302,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke(['string instead of int']);
         expect().assertFail();
       } catch (error) {
-        // 脑图 1.2: 参数数量不匹配时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -325,7 +322,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        // 脑图 1.2: 多余参数时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -346,7 +342,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1, 2]);
         expect().assertFail();
       } catch (error) {
-        // 脑图 1.2: 多余参数时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -438,7 +433,6 @@ export default function StaticMethodInvokeTest(): void {
       let cls012 = Class.from<MyClass012>();
       let method = cls012.getStaticMethod('asyncMethod');
       expect(method != undefined).assertTrue();
-      // 脑图 5.1: async 方法 invoke 返回 Promise，应 resolve 为 'async result'
       let promise: Promise<string> = method!.invoke() as Promise<string>;
       let result: string = await promise;
       expect(result).assertEqual('async result');
@@ -590,7 +584,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke(['string']);
         expect().assertFail();
       } catch (error) {
-        // 脑图 1.2: 参数类型不匹配时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -611,7 +604,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke([1]);
         expect().assertFail();
       } catch (error) {
-        // 脑图 1.2: 参数数量不匹配时抛 TypeError
         expect(error.name).assertEqual('TypeError');
       }
     });
@@ -632,7 +624,6 @@ export default function StaticMethodInvokeTest(): void {
         method!.invoke();
         expect().assertFail();
       } catch (error) {
-        // 脑图: MyClass022.throwError() 内部 throw new Error()
         expect(error.name).assertEqual('Error');
       }
     });
@@ -664,7 +655,6 @@ export default function StaticMethodInvokeTest(): void {
       let cls024 = Class.from<MyClass024>();
       let method = cls024.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
-      // 脑图 5.1: async fetchData() 返回 Promise 应 resolve 为 'data'
       let promise: Promise<string> = method!.invoke() as Promise<string>;
       let result: string = await promise;
       expect(result).assertEqual('data');
@@ -682,7 +672,6 @@ export default function StaticMethodInvokeTest(): void {
       let cls025 = Class.from<MyClass025>();
       let method = cls025.getStaticMethod('fetchWithParam');
       expect(method != undefined).assertTrue();
-      // 脑图 5.1: async fetchWithParam(url) 返回 Promise 应 resolve 为 'data from ' + url
       let promise: Promise<string> = method!.invoke(['http://example.com']) as Promise<string>;
       let result: string = await promise;
       expect(result).assertEqual('data from http://example.com');
@@ -700,7 +689,6 @@ export default function StaticMethodInvokeTest(): void {
       let cls026 = Class.from<MyClass026>();
       let method = cls026.getStaticMethod('asyncError');
       expect(method != undefined).assertTrue();
-      // 脑图 5.1: asyncError() 内部 throw new Error('async error')，Promise 应 reject
       let promise: Promise<string> = method!.invoke() as Promise<string>;
       try {
         await promise;

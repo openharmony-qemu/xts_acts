@@ -158,7 +158,6 @@ export default function StaticMethodGetParametersNumTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let num: int = method!.getParametersNum();
-      // 脑图 2.1: MyClass001.test(a: int, b: string) 有 2 个参数
       expect(num).assertEqual(2);
     });
 
@@ -400,7 +399,6 @@ export default function StaticMethodGetParametersNumTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let num: int = method!.getParametersNum();
-        // 脑图: MyClass016.test(a: int) 有 1 个参数
         expect(num).assertEqual(1);
       } catch (error) {
         expect().assertFail();

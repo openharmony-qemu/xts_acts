@@ -394,7 +394,6 @@ export default function StaticMethodIsPrivateTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isPrivate: boolean = method!.isPrivate();
-        // 脑图: public 方法的 isPrivate() 预期返回 false
         expect(isPrivate).assertFalse();
       } catch (error) {
         expect().assertFail();

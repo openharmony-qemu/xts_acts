@@ -359,7 +359,6 @@ export default function StaticMethodEqualsTest(): void {
         let result = m1!.equals(m3!);
         expect(result).assertTrue();
       } else {
-        // 脑图: 传递性测试前提条件不满足时应标记失败
         expect().assertFail();
       }
     });

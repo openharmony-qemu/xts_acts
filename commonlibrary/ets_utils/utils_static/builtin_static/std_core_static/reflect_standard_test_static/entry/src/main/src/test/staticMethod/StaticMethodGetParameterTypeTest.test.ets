@@ -212,7 +212,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(-1) 预期返回 undefined，运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(-1);
         expect(paramType === undefined).assertTrue();
@@ -233,7 +232,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(10) 预期返回 undefined（索引超出范围），运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(10);
         expect(paramType === undefined).assertTrue();
@@ -254,7 +252,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 1.2: getParameterType(2147483647) 预期返回 undefined，运行时可能抛 TypeError
       try {
         let paramType = method!.getParameterType(2147483647);
         expect(paramType === undefined).assertTrue();
@@ -311,8 +308,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
-      // 脑图 2.2: getParameterType(0) 对无参方法预期返回 undefined
-      // 运行时实际: 抛出 TypeError (Bad parameter index)，与脑图预期不一致
       try {
         method!.getParameterType(0);
         expect().assertFail();
@@ -333,8 +328,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      // 脑图 2.2: getParameterType(100) 索引超出范围预期返回 undefined
-      // 运行时实际: 抛出 TypeError (Bad parameter index)，与脑图预期不一致
       try {
         method!.getParameterType(100);
         expect().assertFail();

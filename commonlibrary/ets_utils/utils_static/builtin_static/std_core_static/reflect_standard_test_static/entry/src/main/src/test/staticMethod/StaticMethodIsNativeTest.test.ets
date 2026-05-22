@@ -137,7 +137,6 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
-      // 脑图 2.1: 用户定义的非 native 方法预期返回 false
       expect(isNative).assertFalse();
     });
 
@@ -320,7 +319,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isNative: boolean = method!.isNative();
-        // 脑图: 用户定义方法预期返回 false
         expect(isNative).assertFalse();
       } catch (error) {
         expect().assertFail();
@@ -477,7 +475,6 @@ export default function StaticMethodIsNativeTest(): void {
       let arrayMethods = arrayCls.getStaticMethods();
       for (let i: int = 0; i < arrayMethods.length; i++) {
         let isNative: boolean = arrayMethods[i].isNative();
-        // 脑图 7.2: 内置类方法是否为 native 记录即可，不强制断言具体值
         expect(typeof isNative).assertEqual('boolean');
       }
     });

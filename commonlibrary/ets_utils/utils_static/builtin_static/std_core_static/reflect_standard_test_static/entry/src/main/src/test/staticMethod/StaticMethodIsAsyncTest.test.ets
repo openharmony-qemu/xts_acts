@@ -165,7 +165,6 @@ export default function StaticMethodIsAsyncTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isAsync: boolean = method!.isAsync();
-      // 脑图 2.1: MyClass001.test() 为 async 方法，预期返回 true
       expect(isAsync).assertTrue();
     });
 
@@ -363,7 +362,6 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isAsync: boolean = method!.isAsync();
-        // 脑图 2.1: MyClass013.test() 为 async 方法，预期返回 true
         expect(isAsync).assertTrue();
       } catch (error) {
         expect().assertFail();

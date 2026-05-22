@@ -202,7 +202,6 @@ export default function StaticMethodIsGetterTest(): void {
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
-      // 脑图 2.1: getter 方法预期返回 true
       expect(isGetter).assertTrue();
     });
 
@@ -476,7 +475,6 @@ export default function StaticMethodIsGetterTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isGetter: boolean = method!.isGetter();
-        // 脑图: getter 方法预期返回 true
         expect(isGetter).assertTrue();
       } catch (error) {
         expect().assertFail();

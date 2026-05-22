@@ -419,7 +419,6 @@ export default function StaticMethodIsProtectedTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isProtected: boolean = method!.isProtected();
-        // 脑图: public 方法的 isProtected() 预期返回 false
         expect(isProtected).assertFalse();
       } catch (error) {
         expect().assertFail();

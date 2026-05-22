@@ -159,7 +159,6 @@ export default function StaticMethodIsPublicTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
-      // 脑图 2.1: public 修饰的方法预期返回 true
       expect(isPublic).assertTrue();
     });
 
@@ -384,7 +383,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isPublic: boolean = method!.isPublic();
-        // 脑图: public 方法预期返回 true
         expect(isPublic).assertTrue();
       } catch (error) {
         expect().assertFail();

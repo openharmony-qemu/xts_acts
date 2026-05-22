@@ -209,7 +209,6 @@ export default function StaticMethodIsSetterTest(): void {
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
-      // 脑图 2.1: setter 方法预期返回 true
       expect(isSetter).assertTrue();
     });
 
@@ -485,7 +484,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       try {
         let isSetter: boolean = method!.isSetter();
-        // 脑图: setter 方法预期返回 true
         expect(isSetter).assertTrue();
       } catch (error) {
         expect().assertFail();
