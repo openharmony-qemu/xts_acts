@@ -229,6 +229,9 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 2, source.byteLength - 2);
       expect(result.byteLength).assertEqual(4);
+      for (let i: int = 0; i < 4; i++) {
+        expect(result.at(i)).assertEqual(source.at(i + 2));
+      }
     });
     /**
      * @tc.name testArrayBufferFromSix0015
@@ -242,6 +245,9 @@ export default function arrayBufferFromSixTest(): void {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
+      for (let i: int = 0; i < source.byteLength; i++) {
+        expect(result.at(i)).assertEqual(source.at(i));
+      }
     });
     /**
      * @tc.name testArrayBufferFromSix0016

@@ -203,7 +203,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1300
-     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(badNum), 0, 4) throws Error
+     * @tc.desc Verify ArrayBuffer.fromObject(Utils.boxAsObject(badNum), 0, 4) throws CastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

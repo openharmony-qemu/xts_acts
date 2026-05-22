@@ -153,6 +153,9 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [1.0, Double.NaN, 3.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
+      expect(buffer.at(0)).assertEqual(Double.toByte(1.0));
+      expect(buffer.at(1)).assertEqual(Double.toByte(Double.NaN));
+      expect(buffer.at(2)).assertEqual(Double.toByte(3.0));
     });
     /**
      * @tc.name testArrayBufferFromFour0009
@@ -166,6 +169,9 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [1.0, Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
+      expect(buffer.at(0)).assertEqual(Double.toByte(1.0));
+      expect(buffer.at(1)).assertEqual(Double.toByte(Double.POSITIVE_INFINITY));
+      expect(buffer.at(2)).assertEqual(Double.toByte(Double.NEGATIVE_INFINITY));
     });
     /**
      * @tc.name testArrayBufferFromFour0010
@@ -179,6 +185,9 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [128.0, 255.0, 256.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
+      expect(buffer.at(0)).assertEqual(Double.toByte(128.0));
+      expect(buffer.at(1)).assertEqual(Double.toByte(255.0));
+      expect(buffer.at(2)).assertEqual(Double.toByte(256.0));
     });
     /**
      * @tc.name testArrayBufferFromFour0011
@@ -192,6 +201,9 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [-129.0, -256.0, -1000.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
+      expect(buffer.at(0)).assertEqual(Double.toByte(-129.0));
+      expect(buffer.at(1)).assertEqual(Double.toByte(-256.0));
+      expect(buffer.at(2)).assertEqual(Double.toByte(-1000.0));
     });
     /**
      * @tc.name testArrayBufferFromFour0012

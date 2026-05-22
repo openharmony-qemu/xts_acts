@@ -31,11 +31,13 @@ export default function arrayBufferDetachedFieldTest(): void {
       await Utils.msSleep(30);
     });
 
+    // STA 静态 ArrayBuffer 的 detached 字段在当前实现中恒为 false；尚无 detach/transfer API
+    // 可观测 detached===true，故本套件仅覆盖 false 只读路径及对 detached 赋值的 ClassCastError。
 
     /**
      * @tc.name testArrayBufferDetachedField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0100
-     * @tc.desc Verify result is false
+     * @tc.desc Verify detached is false (STA: no detach API; true branch not observable)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

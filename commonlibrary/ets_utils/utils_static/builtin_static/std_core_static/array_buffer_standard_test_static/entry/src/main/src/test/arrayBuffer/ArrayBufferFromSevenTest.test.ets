@@ -55,6 +55,10 @@ export default function arrayBufferFromSevenTest(): void {
       view[7] = 8;
       const result = ArrayBuffer.from(source);
       expect(result.byteLength).assertEqual(8);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 8; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0002
@@ -104,6 +108,10 @@ export default function arrayBufferFromSevenTest(): void {
       view[7] = 8;
       const result = ArrayBuffer.from(source, 2, 4);
       expect(result.byteLength).assertEqual(4);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 4; i++) {
+        expect(resultView[i]).assertEqual(view[i + 2]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0004
@@ -121,6 +129,10 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 0, 16);
       expect(result.byteLength).assertEqual(16);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 16; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0005
@@ -172,6 +184,10 @@ export default function arrayBufferFromSevenTest(): void {
       view[5] = 6;
       const result = ArrayBuffer.from(source, 0, 3);
       expect(result.byteLength).assertEqual(3);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 3; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0008
@@ -191,6 +207,10 @@ export default function arrayBufferFromSevenTest(): void {
       view[5] = 6;
       const result = ArrayBuffer.from(source, 2, 3);
       expect(result.byteLength).assertEqual(3);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 3; i++) {
+        expect(resultView[i]).assertEqual(view[i + 2]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0009
@@ -207,6 +227,10 @@ export default function arrayBufferFromSevenTest(): void {
       view[1] = 20;
       const result = ArrayBuffer.from(source, 0.0, 2);
       expect(result.byteLength).assertEqual(2);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 2; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0010
@@ -428,6 +452,10 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 3, source.byteLength - 3);
       expect(result.byteLength).assertEqual(5);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 5; i++) {
+        expect(resultView[i]).assertEqual(view[i + 3]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0023
@@ -462,6 +490,10 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 0, Double.toInt(2.7));
       expect(result.byteLength).assertEqual(2);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 2; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0025
@@ -492,6 +524,10 @@ export default function arrayBufferFromSevenTest(): void {
       }
       const result = ArrayBuffer.from(source, 0, 3.0);
       expect(result.byteLength).assertEqual(3);
+      const resultView = new Int8Array(result);
+      for (let i: int = 0; i < 3; i++) {
+        expect(resultView[i]).assertEqual(view[i]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0027
@@ -711,10 +747,16 @@ export default function arrayBufferFromSevenTest(): void {
       for (let i: int = 0; i < 8; i++) {
         view[i] = i;
       }
+      const r1 = ArrayBuffer.from(source, 2, source.byteLength - 2);
       const r2 = Utils.fromArrayBufferWithOffset(source, 2);
-      expect(r2.byteLength).assertEqual(source.byteLength - 2);
-      expect(r2.at(0)).assertEqual(source.at(2));
-      expect(r2.at(r2.byteLength - 1)).assertEqual(source.at(source.byteLength - 1));
+      expect(r1.byteLength).assertEqual(r2.byteLength);
+      expect(r1.byteLength).assertEqual(source.byteLength - 2);
+      const r1View = new Int8Array(r1);
+      const r2View = new Int8Array(r2);
+      for (let i: int = 0; i < r1.byteLength; i++) {
+        expect(r1View[i]).assertEqual(r2View[i]);
+        expect(r1View[i]).assertEqual(view[i + 2]);
+      }
     });
     /**
      * @tc.name testArrayBufferFromSeven0040

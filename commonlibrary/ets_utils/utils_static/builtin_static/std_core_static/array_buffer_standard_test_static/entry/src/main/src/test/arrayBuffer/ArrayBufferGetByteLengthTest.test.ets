@@ -152,7 +152,7 @@ export default function arrayBufferGetByteLengthTest(): void {
       const sliced = buffer.slice(4, 10);
       let result = sliced.getByteLength();
       expect(result).assertEqual(6);
-      expect(sliced.byteLength).assertEqual(6)
+      expect(sliced.byteLength).assertEqual(6);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0010
@@ -255,7 +255,7 @@ export default function arrayBufferGetByteLengthTest(): void {
       const buffer = new ArrayBuffer(16);
       const sliced = buffer.slice(2, 8);
       expect(sliced.getByteLength()).assertEqual(sliced.byteLength);
-      expect(sliced.byteLength).assertEqual(6)
+      expect(sliced.byteLength).assertEqual(6);
     });
     /**
      * @tc.name testArrayBufferGetByteLength0018
