@@ -17,7 +17,8 @@ import fs from '@ohos.file.fs';
 import util from '@ohos.util';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
-import { BusinessError,commonEventManager } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
+import { JSON } from '@kit.ArkTS';
 const TAG: string = 'testTag';
 
 
@@ -49,7 +50,22 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
       let option:StartOptions = {
         windowFocused,
       }
-      if (stringData.startsWith("startAbility")) {
+      if (stringData.startsWith("startAbilityForResult")) {
+        try {
+          let want: Want = {
+            bundleName: "com.acts.context.webonconnectnativerelypermission",
+            abilityName: "EntryAbility",
+            parameters: { "callType": "forResult" }
+          };
+          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult start connectId:${connectId}`);
+          const result = await this.context.startAbilityForResult(want);
+          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult result: ${JSON.stringify(result)}`);
+          publishEvent("webNativeMessaging2_startAbilityForResult_permission", 0);
+        } catch (error) {
+          hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
+          publishEvent("webNativeMessaging2_startAbilityForResult_permission", error.code ?? 0);
+        }
+      } else if (stringData.startsWith("startAbility")) {
         try {
           let want: Want = {
             bundleName: "com.acts.context.webonconnectnativerely",
@@ -60,9 +76,9 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
         } catch (error) {
           hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbility connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
         }
-      }  else if(stringData.startsWith("terminateSelf")) {
+      } else if(stringData.startsWith("terminateSelf")) {
         this.context.terminateSelf();
-      }else {
+      } else {
         hilog.error(0x0000, TAG, `WebExtensionAbility1 readPipe connectId:${connectId}, command unknown :${stringData}`);
       }
     } catch (error) {

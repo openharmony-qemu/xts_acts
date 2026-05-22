@@ -23,6 +23,11 @@
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
+    "requestPermissions": [
+      {
+        "name": "ohos.permission.WEB_NATIVE_MESSAGING"
+      }
+    ],
     "abilities": [
       {
         "name": "EntryAbility",
