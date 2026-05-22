@@ -599,7 +599,11 @@ export default function arrayBufferPropertyTest(): void {
      */
     it('testArrayBufferProperty0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8)
-      expect(buffer.detached).assertEqual(false)
+      expect(buffer.detached).assertFalse()
+      let sliced = buffer.slice(0, 4)
+      expect(sliced.detached).assertFalse()
+      const copied = ArrayBuffer.from(buffer, 0, 4)
+      expect(copied.detached).assertFalse()
     });
 
     /**

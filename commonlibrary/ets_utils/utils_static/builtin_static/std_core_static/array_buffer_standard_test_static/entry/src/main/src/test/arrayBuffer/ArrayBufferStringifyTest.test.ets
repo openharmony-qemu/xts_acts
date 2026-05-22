@@ -563,7 +563,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0330
-     * @tc.desc Verify ArrayBuffer.stringify returns "ABC"
+     * @tc.desc Verify Double.toInt(NaN) as start coerces to 0 and stringify returns "ABC" (STA NaN→0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

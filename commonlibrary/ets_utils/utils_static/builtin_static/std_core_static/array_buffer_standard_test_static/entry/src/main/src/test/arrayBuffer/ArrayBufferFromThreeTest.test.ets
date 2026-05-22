@@ -92,7 +92,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0500
-     * @tc.desc Verify result.byteLength equals 1024
+     * @tc.desc Verify 1024-byte copy preserves byteLength and sampled bytes (i % 256)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -104,6 +104,10 @@ export default function arrayBufferFromThreeTest(): void {
       }
       const result = ArrayBuffer.from(u8);
       expect(result.byteLength).assertEqual(1024);
+      const view = new Uint8Array(result);
+      expect(view[0]).assertEqual(0);
+      expect(view[255]).assertEqual(255);
+      expect(view[1023]).assertEqual(255);
     });
 
     /**

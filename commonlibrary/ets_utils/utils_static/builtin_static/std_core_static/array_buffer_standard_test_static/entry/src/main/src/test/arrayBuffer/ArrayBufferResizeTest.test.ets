@@ -119,7 +119,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0700
-     * @tc.desc Verify buffer.byteLength equals 6
+     * @tc.desc Verify byteLength is 6 after grow to max then 2 after shrink
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -128,6 +128,8 @@ export default function arrayBufferResizeTest(): void {
       const buffer = new ArrayBuffer(2, 6);
       buffer.resize(6);
       expect(buffer.byteLength).assertEqual(6);
+      buffer.resize(2);
+      expect(buffer.byteLength).assertEqual(2);
     });
 
     /**
