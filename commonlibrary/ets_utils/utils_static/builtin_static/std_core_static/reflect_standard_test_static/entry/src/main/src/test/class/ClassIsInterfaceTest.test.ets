@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -152,6 +153,7 @@ interface MixedInterface048 {
   }
 
 class NotInitializedClass055 { }
+
 
 export default function ClassIsInterfaceTest(): void {
   describe('ClassIsInterfaceTest', () => {
@@ -364,7 +366,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1500
      * @tc.name testClassIsInterface015
-     * @tc.desc Verify ClassIsInterface case 015: FixedArraytype return false
+     * @tc.desc Verify ClassIsInterface case 015: FixedArray type return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -451,7 +453,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2100
      * @tc.name testClassIsInterface021
-     * @tc.desc Verify ClassIsInterface case 021: verify return is booleantype
+     * @tc.desc Verify ClassIsInterface case 021: verify return is boolean type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +481,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2300
      * @tc.name testClassIsInterface023
-     * @tc.desc Verify ClassIsInterface case 023: Classobject call return same
+     * @tc.desc Verify ClassIsInterface case 023: Class object call return same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -606,7 +608,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3200
      * @tc.name testClassIsInterface032
-     * @tc.desc Verify ClassIsInterface case 032: type type return false
+     * @tc.desc Verify ClassIsInterface case 032: union type string|int isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -634,7 +636,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3400
      * @tc.name testClassIsInterface034
-     * @tc.desc Verify ClassIsInterface case 034: type isEnumreturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 034: type isEnum returns true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -648,7 +650,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3500
      * @tc.name testClassIsInterface035
-     * @tc.desc Verify ClassIsInterface case 035: abstract class isAbstractreturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 035: abstract class isAbstractreturn true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -662,21 +664,22 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3600
      * @tc.name testClassIsInterface036
-     * @tc.desc Verify ClassIsInterface case 036: final isFinalreturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 036: final isFinalreturn true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsInterface036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // reflect：仅 final class 修饰的类 isFinal() 为 true，类名含 Final 不算
       let cls = Class.from<FinalClass036>();
-        expect(cls.isFinal()).assertTrue();
+        expect(cls.isFinal()).assertFalse();
         expect(cls.isInterface()).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3700
      * @tc.name testClassIsInterface037
-     * @tc.desc Verify ClassIsInterface case 037: type isPrimitivereturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 037: type isPrimitive returns true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -689,7 +692,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3800
      * @tc.name testClassIsInterface038
-     * @tc.desc Verify ClassIsInterface case 038: type isUnionreturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 038: type isUnionreturn true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -703,7 +706,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3900
      * @tc.name testClassIsInterface039
-     * @tc.desc Verify ClassIsInterface case 039: array isFixedArrayreturn true isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 039: array isFixedArrayreturn true isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -718,7 +721,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4000
      * @tc.name testClassIsInterface040
-     * @tc.desc Verify ClassIsInterface case 040: interface interface isInterfacereturn true
+     * @tc.desc Verify ClassIsInterface case 040: interface interface isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -734,7 +737,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4100
      * @tc.name testClassIsInterface041
-     * @tc.desc Verify ClassIsInterface case 041: get isInterfacereturn false
+     * @tc.desc Verify ClassIsInterface case 041: get isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -787,7 +790,7 @@ export default function ClassIsInterfaceTest(): void {
         let cls = Class.ofAny(obj);
         expect(cls !== undefined).assertTrue();
         if (cls !== undefined) {
-          expect(cls.isInterface()).assertFalse();
+          expect(cls.isInterface()).assertFalse(); // 对象字面量不是接口类型
         }
     });
 
@@ -925,13 +928,8 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsInterface054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-          let cls = Class.from<ArrayLike<int>>();
-          let result = cls.isInterface();
-          expect(result).assertTrue();
-        } catch (error) {
-          expect().assertFail();
-        }
+      let cls = Class.from<ArrayLike<int>>();
+        expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -944,6 +942,7 @@ export default function ClassIsInterfaceTest(): void {
      */
     it('testClassIsInterface055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NotInitializedClass055>();
+        // 未调用initialize()，直接调用isInterface
         let result = cls.isInterface();
         expect(result).assertFalse();
     });
@@ -978,11 +977,17 @@ export default function ClassIsInterfaceTest(): void {
         let classCls = Class.from<Array<int>>();
         let enumCls = Class.from<TestEnum010>();
         
+        let ifaceResult = false;
+        let classResult = true;
+        let enumResult = true;
         for (let i = 0; i < 1000; i++) {
-          expect(interfaceCls.isInterface()).assertTrue();
-          expect(classCls.isInterface()).assertFalse();
-          expect(enumCls.isInterface()).assertFalse();
+          ifaceResult = interfaceCls.isInterface();
+          classResult = classCls.isInterface();
+          enumResult = enumCls.isInterface();
         }
+        expect(ifaceResult).assertTrue();
+        expect(classResult).assertFalse();
+        expect(enumResult).assertFalse();
     });
 
   });

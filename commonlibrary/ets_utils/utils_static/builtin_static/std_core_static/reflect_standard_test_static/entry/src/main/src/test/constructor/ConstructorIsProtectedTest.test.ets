@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -102,6 +103,7 @@ class MyClass021 {
 class MyClass022 {
     public constructor() {}
   }
+
 
 export default function ConstructorIsProtectedTest(): void {
   describe('ConstructorIsProtectedTest', () => {
@@ -415,7 +417,7 @@ export default function ConstructorIsProtectedTest(): void {
           if (ctorRef.isPublic()) count++;
           if (ctorRef.isPrivate()) count++;
           if (ctorRef.isProtected()) count++;
-          expect(count).assertEqual(1);
+          expect(count).assertEqual(1); // 每个构造函数只能有一个访问级别
         }
     });
 

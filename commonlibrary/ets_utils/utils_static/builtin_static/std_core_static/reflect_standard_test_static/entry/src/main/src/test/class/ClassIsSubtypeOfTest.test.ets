@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -105,9 +106,10 @@ class ChildClass010 extends ParentClass010 {}
 
 class MyClass011 {}
 
-class ClassB012 {}
-
+// 39690-2.11：空类，用于 isSubtypeOf 对称性用例（非静态循环依赖；循环 clinit 见 ClassInitializeTest InitCycle*012）
 class ClassA012 {}
+
+class ClassB012 {}
 
 class GrandParent013 {}
 
@@ -337,7 +339,7 @@ function isSerializable070(cls: Class): boolean {
 class Data070 implements Serializable070 {
     public value: int = 0;
     public serialize(): string { return this.value.toString(); }
-    public deserialize(data: string): void { this.value = Number.parseInt(data, 10).toInt(); }
+    public deserialize(data: string): void { this.value = parseInt(data, 10).toInt(); }
   }
 
 interface Serializable070 {
@@ -352,6 +354,7 @@ function safeCast067<T>(obj: Object, targetClass: Class): T | null {
   }
   return null;
 }
+
 
 export default function ClassIsSubtypeOfTest(): void {
   describe('ClassIsSubtypeOfTest', () => {
@@ -413,7 +416,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0400
      * @tc.name testClassIsSubtypeOf004
-     * @tc.desc Verify ClassIsSubtypeOf case 004: Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 004: Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -439,6 +442,7 @@ export default function ClassIsSubtypeOfTest(): void {
           let result = cls.isSubtypeOf(null as Class);
           expect(result).assertFalse();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error.name).assertEqual('ClassCastError');
         }
     });
@@ -457,6 +461,7 @@ export default function ClassIsSubtypeOfTest(): void {
           let result = cls.isSubtypeOf(undefined as Class);
           expect(result).assertFalse();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error.name).assertEqual('ClassCastError');
         }
     });
@@ -471,6 +476,10 @@ export default function ClassIsSubtypeOfTest(): void {
      */
     it('testClassIsSubtypeOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
+        // 编译时应该报错
+        // let result1 = cls.isSubtypeOf({} as Class);
+        // let result2 = cls.isSubtypeOf("string" as Class);
+        // let result3 = cls.isSubtypeOf(123 as Class);
         expect(cls.isSubtypeOf(cls)).assertTrue();
     });
 
@@ -492,7 +501,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0900
      * @tc.name testClassIsSubtypeOf009
-     * @tc.desc Verify ClassIsSubtypeOf case 009: Classobject call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 009: Class object call isSubtypeOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -507,7 +516,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1000
      * @tc.name testClassIsSubtypeOf010
-     * @tc.desc Verify ClassIsSubtypeOf case 010: Classobject call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 010: Class object call isSubtypeOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -522,7 +531,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1100
      * @tc.name testClassIsSubtypeOf011
-     * @tc.desc Verify ClassIsSubtypeOf case 011: Classobject call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 011: Class object call isSubtypeOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -553,7 +562,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1300
      * @tc.name testClassIsSubtypeOf013
-     * @tc.desc Verify ClassIsSubtypeOf case 013: specified behavior
+     * @tc.desc Verify ClassIsSubtypeOf case 013: child isSubtypeOf grandparent returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -568,7 +577,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1400
      * @tc.name testClassIsSubtypeOf014
-     * @tc.desc Verify ClassIsSubtypeOf case 014: specified behavior
+     * @tc.desc Verify ClassIsSubtypeOf case 014: child isSubtypeOf parent returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -583,7 +592,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1500
      * @tc.name testClassIsSubtypeOf015
-     * @tc.desc Verify ClassIsSubtypeOf case 015: specified behavior
+     * @tc.desc Verify ClassIsSubtypeOf case 015: parent isSubtypeOf child returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -674,7 +683,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2100
      * @tc.name testClassIsSubtypeOf021
-     * @tc.desc Verify ClassIsSubtypeOf case 021: numbertype Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 021: number type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -691,7 +700,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2200
      * @tc.name testClassIsSubtypeOf022
-     * @tc.desc Verify ClassIsSubtypeOf case 022: booleantype Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 022: boolean type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -708,7 +717,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2300
      * @tc.name testClassIsSubtypeOf023
-     * @tc.desc Verify ClassIsSubtypeOf case 023: stringtype Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 023: string type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -722,7 +731,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2400
      * @tc.name testClassIsSubtypeOf024
-     * @tc.desc Verify ClassIsSubtypeOf case 024: type type
+     * @tc.desc Verify ClassIsSubtypeOf case 024: primitive Classes mutually not subtypes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -817,7 +826,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_2900
      * @tc.name testClassIsSubtypeOf029
-     * @tc.desc Verify ClassIsSubtypeOf case 029: type type
+     * @tc.desc Verify ClassIsSubtypeOf case 029: int not subtype of int|string union
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -832,7 +841,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_3000
      * @tc.name testClassIsSubtypeOf030
-     * @tc.desc Verify ClassIsSubtypeOf case 030: multiple type type
+     * @tc.desc Verify ClassIsSubtypeOf case 030: union not subtype of single member type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -943,6 +952,7 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsSubtypeOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 试图定义class GrandChild extends Child037 {}会编译失败
         let childClazz = Class.from<Child037>();
         let parentClazz = Class.from<Parent037>();
         let result = childClazz.isSubtypeOf(parentClazz);
@@ -982,7 +992,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4000
      * @tc.name testClassIsSubtypeOf040
-     * @tc.desc Verify ClassIsSubtypeOf case 040: type Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 040: type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1011,6 +1021,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let iface = Class.from<MyInterface041>();
         expect(iface.isInterface()).assertTrue();
         
+
 
         let childIface = Class.from<ChildInterface041>();
         let parentIface = Class.from<ParentInterface041>();
@@ -1113,7 +1124,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_4900
      * @tc.name testClassIsSubtypeOf049
-     * @tc.desc Verify ClassIsSubtypeOf case 049: verify return booleantype
+     * @tc.desc Verify ClassIsSubtypeOf case 049: verify return boolean type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1147,7 +1158,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsSubtypeOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+// 此测试仅用于验证未捕获异常的行为，跳过执行
+        // 以下代码应该编译失败
+        // class A extends B {}
+        // class B extends A {}
         
+        // 如果运行时存在循环继承，isSubtypeOf应该能正确处理
       expect(Class.from<Subtype052_L7>().isSubtypeOf(Class.from<Subtype052_Root>())).assertTrue();
         expect(Class.from<Subtype052_Root>().isSubtypeOf(Class.from<Subtype052_L7>())).assertFalse();
     });
@@ -1284,7 +1300,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6000
      * @tc.name testClassIsSubtypeOf060
-     * @tc.desc Verify ClassIsSubtypeOf case 060: isInterfacereturn true type type
+     * @tc.desc Verify ClassIsSubtypeOf case 060: child interface isSubtypeOf parent interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1293,6 +1309,7 @@ export default function ClassIsSubtypeOfTest(): void {
       let iface = Class.from<MyInterface060>();
         expect(iface.isInterface()).assertTrue();
         
+
 
         let childIface = Class.from<ChildInterface060>();
         let parentIface = Class.from<ParentInterface060>();
@@ -1304,7 +1321,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6100
      * @tc.name testClassIsSubtypeOf061
-     * @tc.desc Verify ClassIsSubtypeOf case 061: isPrimitivereturn true type type
+     * @tc.desc Verify ClassIsSubtypeOf case 061: PRIMITIVE_INT not subtype of PRIMITIVE_NUMBER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1331,6 +1348,7 @@ export default function ClassIsSubtypeOfTest(): void {
           let result = cls.isSubtypeOf(null as Class);
           expect(result).assertFalse();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error.name).assertEqual('ClassCastError');
         }
     });
@@ -1349,6 +1367,7 @@ export default function ClassIsSubtypeOfTest(): void {
           let result = cls.isSubtypeOf(undefined as Class);
           expect(result).assertFalse();
         } catch (error) {
+          console.log('error.name==', error.name);
           expect(error.name).assertEqual('ClassCastError');
         }
     });
@@ -1356,7 +1375,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_6400
      * @tc.name testClassIsSubtypeOf064
-     * @tc.desc Verify ClassIsSubtypeOf case 064: Classobject
+     * @tc.desc Verify ClassIsSubtypeOf case 064: Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

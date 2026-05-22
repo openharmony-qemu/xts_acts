@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -90,6 +91,7 @@ class MyClass018 {
 class MyClass019 {
     public constructor() {}
   }
+
 
 export default function ConstructorIsNativeTest(): void {
   describe('ConstructorIsNativeTest', () => {
@@ -347,7 +349,7 @@ export default function ConstructorIsNativeTest(): void {
       let constructors = Class.from<MyClass017>().getConstructors();
         for (let i = 0; i < constructors.length; i++) {
           let isNative = constructors[i].isNative();
-          expect(isNative).assertFalse();
+          expect(isNative).assertFalse(); // 用户定义的构造函数都应该是false
         }
     });
 
@@ -379,6 +381,7 @@ export default function ConstructorIsNativeTest(): void {
       let userConstructor = Class.from<MyClass019>().getConstructors()[0];
         expect(userConstructor.isNative()).assertFalse();
 
+        // 内置类（如Array）的构造函数
         let arrayConstructors = Class.from<Array<int>>().getConstructors();
         for (let i = 0; i < arrayConstructors.length; i++) {
           let name = arrayConstructors[i].getName();

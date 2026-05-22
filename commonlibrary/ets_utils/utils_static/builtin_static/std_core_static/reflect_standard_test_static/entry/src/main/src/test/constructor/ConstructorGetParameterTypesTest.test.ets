@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import {
   afterAll,
   afterEach,
@@ -71,7 +72,7 @@ class MyClass009 {
 class MyClass013 {
   public constructor(
     b: byte, s: short, i: int, l: long,
-    f: float, d: double, n: number, bool: boolean, ch: char
+    f: float, d: double, n: number, bool: boolean, ch: char // n: number 保留用于反射参数类型名 "number" 互操作测试
   ) {
   }
 }
@@ -126,6 +127,7 @@ class MyClass021 {
   public constructor(a: int, b: string, c: boolean) {
   }
 }
+
 
 export default function ConstructorGetParameterTypesTest(): void {
   describe('ConstructorGetParameterTypesTest', () => {
@@ -302,7 +304,7 @@ export default function ConstructorGetParameterTypesTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPES_1100
      * @tc.name testConstructorGetParameterTypes011
-     * @tc.desc Verify ConstructorGetParameterTypes case 011: verify return array Classobject using
+     * @tc.desc Verify ConstructorGetParameterTypes case 011: verify return array Class object using
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -328,6 +330,7 @@ export default function ConstructorGetParameterTypesTest(): void {
     it('testConstructorGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
+      // FixedArray是固定长度数组，无法修改
       expect(paramTypes.length).assertEqual(2);
     });
 

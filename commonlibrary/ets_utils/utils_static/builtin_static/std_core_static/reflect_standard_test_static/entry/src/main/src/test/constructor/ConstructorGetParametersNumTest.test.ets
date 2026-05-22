@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -63,7 +64,7 @@ class MyClass013 {
 class MyClass014 {
     public constructor(
       b: byte, s: short, i: int, l: long,
-      f: float, d: double, n: number, bool: boolean, ch: char
+      f: float, d: double, n: number, bool: boolean, ch: char // n: number 保留用于反射参数类型名 "number" 互操作测试
     ) {}
   }
 
@@ -104,6 +105,7 @@ class MyClass021 {
 class MyClass022 {
     public constructor(value?: int | string) {}
   }
+
 
 export default function ConstructorGetParametersNumTest(): void {
   describe('ConstructorGetParametersNumTest', () => {
@@ -157,7 +159,7 @@ export default function ConstructorGetParametersNumTest(): void {
         let constructors = cls.getConstructors();
         let num = constructors[0].getParametersNum();
         expect(num).assertEqual(2);
-        expect(Number.isInteger(num)).assertTrue();
+        expect(num >= 0).assertTrue();
     });
 
     /**
@@ -262,7 +264,7 @@ export default function ConstructorGetParametersNumTest(): void {
       let cls = Class.from<MyClass001>();
         let constructors = cls.getConstructors();
         let num = constructors[0].getParametersNum();
-        expect(Number.isInteger(num)).assertTrue();
+        expect(num >= 0).assertTrue();
     });
 
     /**

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseConstructor } from '../class/VoidFn.test';
@@ -109,7 +110,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0200
      * @tc.name testConstructorGetParameterType002
-     * @tc.desc Verify ConstructorGetParameterType case 002: specified behavior
+     * @tc.desc Verify ConstructorGetParameterType case 002: getParameterType(0) returns String Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -149,7 +150,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0500
      * @tc.name testConstructorGetParameterType005
-     * @tc.desc Verify ConstructorGetParameterType case 005: specified behavior
+     * @tc.desc Verify ConstructorGetParameterType case 005: getParameterType(-1) throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,7 +184,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0700
      * @tc.name testConstructorGetParameterType007
-     * @tc.desc Verify ConstructorGetParameterType case 007: inttype
+     * @tc.desc Verify ConstructorGetParameterType case 007: int type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -234,7 +235,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1000
      * @tc.name testConstructorGetParameterType010
-     * @tc.desc Verify ConstructorGetParameterType case 010: specified behavior
+     * @tc.desc Verify ConstructorGetParameterType case 010: non-integer index getParameterType throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -242,21 +243,18 @@ export default function ConstructorGetParameterTypeTest(): void {
     it('testConstructorGetParameterType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let threw = false;
         try {
-          let pt = looseConstructor(ctorMyClass001() as Object).getParameterType(1.5 as Object);
-          expect(pt !== null).assertTrue();
+          looseConstructor(ctorMyClass001() as Object).getParameterType(1.5 as Object);
         } catch (error) {
           threw = true;
           expect(error !== null).assertTrue();
         }
-        if (!threw) {
-          expect().assertFail();
-        }
+        expect(threw).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1100
      * @tc.name testConstructorGetParameterType011
-     * @tc.desc Verify ConstructorGetParameterType case 011: return should parameters Classobject
+     * @tc.desc Verify ConstructorGetParameterType case 011: return should parameters Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -273,7 +271,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1200
      * @tc.name testConstructorGetParameterType012
-     * @tc.desc Verify ConstructorGetParameterType case 012: return different type parameters Classobject
+     * @tc.desc Verify ConstructorGetParameterType case 012: return different type parameters Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -353,7 +351,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1700
      * @tc.name testConstructorGetParameterType017
-     * @tc.desc Verify ConstructorGetParameterType case 017: verify return Classobject using method
+     * @tc.desc Verify ConstructorGetParameterType case 017: verify return Class object using method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

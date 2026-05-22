@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -100,6 +101,7 @@ class MyClass020 {
 class MyClass021 {
     public constructor() {}
   }
+
 
 export default function ConstructorIsPrivateTest(): void {
   describe('ConstructorIsPrivateTest', () => {

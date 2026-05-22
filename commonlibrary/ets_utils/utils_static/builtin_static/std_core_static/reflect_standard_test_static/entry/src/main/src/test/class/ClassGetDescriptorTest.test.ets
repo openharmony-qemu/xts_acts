@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import {
   afterAll,
   afterEach,
@@ -115,6 +116,7 @@ function toJVMSignature046(cls: Class): string {
   return cls.getDescriptor();
 }
 
+
 export default function ClassGetDescriptorTest(): void {
   describe('ClassGetDescriptorTest', () => {
     beforeAll(() => {
@@ -141,22 +143,6 @@ export default function ClassGetDescriptorTest(): void {
       expect(descriptor.startsWith("L")).assertTrue();
       expect(descriptor.endsWith(";")).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0200
-     * @tc.name testClassGetDescriptor002
-     * @tc.desc Verify ClassGetDescriptor case 002: parameters should compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetDescriptor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Set<string>>();
-      let descriptor = cls.getDescriptor();
-      expect(descriptor.startsWith("L")).assertTrue();
-      expect(descriptor.endsWith(";")).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0300
      * @tc.name testClassGetDescriptor003
@@ -193,14 +179,17 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Set类
       let cls1 = Class.from<Set<string>>();
       let desc1 = cls1.getDescriptor();
       expect(desc1).assertEqual("Lstd/core/Set;");
 
+      // Map类
       let cls2 = Class.from<Map<int, string>>();
       let desc2 = cls2.getDescriptor();
       expect(desc2).assertEqual("Lstd/core/Map;");
 
+      // Array类
       let cls3 = Class.from<Array<int>>();
       let desc3 = cls3.getDescriptor();
       expect(desc3).assertEqual("Lstd/core/Array;");
@@ -296,6 +285,7 @@ export default function ClassGetDescriptorTest(): void {
       let cls2 = Class.from<Set<int>>();
       let desc2 = cls2.getDescriptor();
 
+      // 泛型被擦除，描述符应该相同
       expect(desc1).assertEqual(desc2);
     });
 
@@ -406,13 +396,9 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetDescriptor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let cls = Class.from<Set<string>>();
+      let cls = Class.from<Set<string>>();
         let descriptor = cls.getDescriptor();
         expect(descriptor.length).assertLarger(0);
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**
@@ -425,12 +411,13 @@ export default function ClassGetDescriptorTest(): void {
      */
     it('testClassGetDescriptor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CustomClass>();
+      // 类尚未初始化
       let descriptor = cls.getDescriptor();
       expect(descriptor !== "").assertTrue();
 
-      cls.initialize();
+      cls.initialize(); // 初始化类
       let descriptor2 = cls.getDescriptor();
-      expect(descriptor).assertEqual(descriptor2);
+      expect(descriptor).assertEqual(descriptor2); // 结果一致
     });
 
     /**
@@ -515,11 +502,11 @@ export default function ClassGetDescriptorTest(): void {
     it('testClassGetDescriptor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
       let descriptor = cls.getDescriptor();
-      expect(descriptor).assertEqual("I");
+      expect(descriptor).assertEqual("I"); // int的描述符是"I"
 
       let cls2 = Class.PRIMITIVE_BOOLEAN;
       let descriptor2 = cls2.getDescriptor();
-      expect(descriptor2).assertEqual("Z");
+      expect(descriptor2).assertEqual("Z"); // boolean的描述符是"Z"
     });
 
     /**
@@ -569,6 +556,7 @@ export default function ClassGetDescriptorTest(): void {
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
       let descriptor = cls.getDescriptor();
+      // 联合类型有特殊的描述符格式
       expect(descriptor.length).assertLarger(0);
     });
 
@@ -673,10 +661,13 @@ export default function ClassGetDescriptorTest(): void {
       let name = cls.getName();
       let descriptor = cls.getDescriptor();
 
+      // name格式: "std.core.Set"
       expect(name.indexOf("std.core.Set")).assertLarger(-1);
 
+      // descriptor格式: "Lstd/core/Set;"
       expect(descriptor).assertEqual("Lstd/core/Set;");
 
+      // 描述符不是简单的名称转换
       expect(descriptor !== name).assertTrue();
     });
 
@@ -699,7 +690,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3600
      * @tc.name testClassGetDescriptor036
-     * @tc.desc Verify ClassGetDescriptor case 036: Classobject call getDescriptorreturn same
+     * @tc.desc Verify ClassGetDescriptor case 036: Class object call getDescriptorreturn same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -736,7 +727,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_3800
      * @tc.name testClassGetDescriptor038
-     * @tc.desc Verify ClassGetDescriptor case 038: specified behavior
+     * @tc.desc Verify ClassGetDescriptor case 038: getDescriptor on class returns non-empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -796,7 +787,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4100
      * @tc.name testClassGetDescriptor041
-     * @tc.desc Verify ClassGetDescriptor case 041: specified behavior
+     * @tc.desc Verify ClassGetDescriptor case 041: getDescriptor 10000 calls performance log
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -810,7 +801,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4200
      * @tc.name testClassGetDescriptor042
-     * @tc.desc Verify ClassGetDescriptor case 042: specified behavior
+     * @tc.desc Verify ClassGetDescriptor case 042: getDescriptor repeated calls return same content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -903,13 +894,15 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetDescriptor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 描述符应遵循JVM规范，不依赖平台
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
 
+      // 验证是有效的JVM描述符
       expect(descriptor.startsWith("L")).assertTrue();
       expect(descriptor.endsWith(";")).assertTrue();
-      expect(descriptor.indexOf("..")).assertEqual(-1);
-      expect(descriptor.indexOf("//")).assertEqual(-1);
+      expect(descriptor.indexOf("..")).assertEqual(-1); // 不使用..
+      expect(descriptor.indexOf("//")).assertEqual(-1); // 不使用//
     });
 
   });

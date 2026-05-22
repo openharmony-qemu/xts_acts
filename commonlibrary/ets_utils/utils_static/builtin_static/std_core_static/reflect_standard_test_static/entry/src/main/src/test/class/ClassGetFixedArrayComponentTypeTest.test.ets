@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -102,6 +103,7 @@ function getComponentTypeName055<T>(arr: FixedArray<T>): string {
   }
   return n;
 }
+
 
 export default function ClassGetFixedArrayComponentTypeTest(): void {
   describe('ClassGetFixedArrayComponentTypeTest', () => {
@@ -669,7 +671,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_3800
      * @tc.name testClassGetFixedArrayComponentType038
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 038: array return Classobject
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 038: array return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -729,7 +731,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4100
      * @tc.name testClassGetFixedArrayComponentType041
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 041: return Classobject call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 041: return Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -753,7 +755,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4200
      * @tc.name testClassGetFixedArrayComponentType042
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 042: using return Classobject
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 042: using return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -837,7 +839,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_4700
      * @tc.name testClassGetFixedArrayComponentType047
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 047: Classobject call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 047: Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -889,7 +891,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5000
      * @tc.name testClassGetFixedArrayComponentType050
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 050: Classobject call getFixedArrayComponentType()
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 050: Class object call getFixedArrayComponentType()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -960,7 +962,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETFIXEDARRAYCOMPONENTTYPE_5400
      * @tc.name testClassGetFixedArrayComponentType054
-     * @tc.desc Verify ClassGetFixedArrayComponentType case 054: Classobject call method
+     * @tc.desc Verify ClassGetFixedArrayComponentType case 054: Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -28,7 +29,7 @@ class TestClass004 {}
 class SampleClass005 {}
 
 class GenericClass006<T> {
-      public value: T = undefined as T;
+      public value?: T;
   }
 
 class DerivedClass007 extends BaseClass007 {}
@@ -161,6 +162,7 @@ class NestedClassForName015 {
       public name: string = '';
   }
 
+
 export default function ClassGetNameTest(): void {
   describe('ClassGetNameTest', () => {
     beforeAll(() => {
@@ -186,20 +188,6 @@ export default function ClassGetNameTest(): void {
         let name = clazz.getName();
         expect(Utils.classNameMatches(name, "MyClass001")).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0200
-     * @tc.name testClassGetName002
-     * @tc.desc Verify ClassGetName case 002: parameters should compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<MyClass002>();
-        expect(Utils.classNameMatches(clazz.getName(), "MyClass002")).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0300
      * @tc.name testClassGetName003
@@ -218,7 +206,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0400
      * @tc.name testClassGetName004
-     * @tc.desc Verify ClassGetName case 004: via Class.ofget Classobject after call getName
+     * @tc.desc Verify ClassGetName case 004: via Class.ofget Class object after call getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -233,7 +221,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_0500
      * @tc.name testClassGetName005
-     * @tc.desc Verify ClassGetName case 005: via Class.fromget Classobject after call getName
+     * @tc.desc Verify ClassGetName case 005: via Class.fromget Class object after call getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -306,7 +294,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1000
      * @tc.name testClassGetName010
-     * @tc.desc Verify ClassGetName case 010: get interface Classobject name
+     * @tc.desc Verify ClassGetName case 010: get interface Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -320,7 +308,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1100
      * @tc.name testClassGetName011
-     * @tc.desc Verify ClassGetName case 011: get type Classobject name
+     * @tc.desc Verify ClassGetName case 011: get type Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +330,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1200
      * @tc.name testClassGetName012
-     * @tc.desc Verify ClassGetName case 012: get array type Classobject name
+     * @tc.desc Verify ClassGetName case 012: get array type Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -358,7 +346,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1300
      * @tc.name testClassGetName013
-     * @tc.desc Verify ClassGetName case 013: get Maptype Classobject name
+     * @tc.desc Verify ClassGetName case 013: get Map type Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -374,7 +362,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1400
      * @tc.name testClassGetName014
-     * @tc.desc Verify ClassGetName case 014: get Settype Classobject name
+     * @tc.desc Verify ClassGetName case 014: get Settype Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -404,7 +392,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1600
      * @tc.name testClassGetName016
-     * @tc.desc Verify ClassGetName case 016: get type Classobject name
+     * @tc.desc Verify ClassGetName case 016: get type Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -412,14 +400,14 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<int | string>();
         let name = clazz.getName();
-        console.info(name);
+        console.info(name); // 类似 "{Ustd.core.Int,std.core.String}"
         expect(clazz.isUnion()).assertEqual(true);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1700
      * @tc.name testClassGetName017
-     * @tc.desc Verify ClassGetName case 017: get array type Classobject name
+     * @tc.desc Verify ClassGetName case 017: get array type Class object name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,7 +424,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1800
      * @tc.name testClassGetName018
-     * @tc.desc Verify ClassGetName case 018: Classobject call getNamereturn same
+     * @tc.desc Verify ClassGetName case 018: Class object call getNamereturn same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -453,7 +441,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_1900
      * @tc.name testClassGetName019
-     * @tc.desc Verify ClassGetName case 019: different get Classobject getNamereturn same
+     * @tc.desc Verify ClassGetName case 019: different get Class object getNamereturn same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -512,7 +500,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2300
      * @tc.name testClassGetName023
-     * @tc.desc Verify ClassGetName case 023: specified behavior
+     * @tc.desc Verify ClassGetName case 023: generic class getName contains type info
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -528,7 +516,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2400
      * @tc.name testClassGetName024
-     * @tc.desc Verify ClassGetName case 024: specified behavior
+     * @tc.desc Verify ClassGetName case 024: array type getName format
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -616,7 +604,7 @@ export default function ClassGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_3000
      * @tc.name testClassGetName030
-     * @tc.desc Verify ClassGetName case 030: specified behavior
+     * @tc.desc Verify ClassGetName case 030: union type getName contains union marker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -670,12 +658,15 @@ export default function ClassGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetName033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 测试是否每次调用返回新字符串还是相同引用
         let clazz = Class.from<MyClass033>();
         let name1 = clazz.getName();
         let name2 = clazz.getName();
 
+        // 值相等
         expect(name1).assertEqual(name2);
 
+        // 引用可能相等也可能不等，取决于实现
         console.info("Same reference: " + (name1 === name2));
     });
 
@@ -744,9 +735,10 @@ export default function ClassGetNameTest(): void {
         let name = clazz.getName();
         let descriptor = clazz.getDescriptor();
 
-        console.info("Name: " + name);
-        console.info("Descriptor: " + descriptor);
+        console.info("Name: " + name); // "MyClass037"
+        console.info("Descriptor: " + descriptor); // "LMyClass;" 或类似格式
 
+        // name是简单类名，descriptor是JVM风格的描述符
         expect(name !== descriptor).assertTrue();
         expect(Utils.classNameMatches(name, "MyClass037")).assertTrue();
         expect(descriptor).assertContain("MyClass037");

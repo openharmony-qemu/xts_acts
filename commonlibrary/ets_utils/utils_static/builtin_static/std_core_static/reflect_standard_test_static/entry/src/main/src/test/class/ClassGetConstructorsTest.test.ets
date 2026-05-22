@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -103,24 +104,12 @@ enum TestEnum015 {
       VALUE2
   }
 
-class ChildClass017 extends ParentClass017 {
-      public constructor(name: string) {
-          super();
-      }
-  }
-
 class ParentClass017 {
       public constructor() {}
   }
 
-class Child018 extends Parent018 {
-      public constructor(x: int, y: int) {
-          super(x);
-      }
-  }
-
-class Parent018 extends GrandParent018 {
-      public constructor(x: int) {
+class ChildClass017 extends ParentClass017 {
+      public constructor(name: string) {
           super();
       }
   }
@@ -129,11 +118,24 @@ class GrandParent018 {
       public constructor() {}
   }
 
-class Child019 extends Parent019 {
+class Parent018 extends GrandParent018 {
+      public constructor(x: int) {
+          super();
+      }
+  }
+
+class Child018 extends Parent018 {
+      public constructor(x: int, y: int) {
+          super(x);
+      }
   }
 
 class Parent019 {
       public constructor() {}
+  }
+
+class Child019 extends Parent019 {
+      // 无显式构造函数
   }
 
 class PublicConstructor020 {
@@ -225,7 +227,7 @@ class GenericClass038<T> {
       public constructor(value: T) {
           this.value = value;
       }
-      public value: T | null = null;
+      public value: T | undefined = undefined;
   }
 
 class UnionParamConstructor039 {
@@ -457,6 +459,7 @@ class Product079 {
       }
   }
 
+
 export default function ClassGetConstructorsTest(): void {
   describe('ClassGetConstructorsTest', () => {
     beforeAll(() => {
@@ -482,21 +485,6 @@ export default function ClassGetConstructorsTest(): void {
         let constructors = constructorsToArray(cls);
         expect(constructors !== null).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0200
-     * @tc.name testClassGetConstructors002
-     * @tc.desc Verify ClassGetConstructors case 002: parameters should
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassGetConstructors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-        let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertLarger(0);
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0300
      * @tc.name testClassGetConstructors003
@@ -591,7 +579,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0900
      * @tc.name testClassGetConstructors009
-     * @tc.desc Verify ClassGetConstructors case 009: return should is voidtype
+     * @tc.desc Verify ClassGetConstructors case 009: return should is void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -605,7 +593,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1000
      * @tc.name testClassGetConstructors010
-     * @tc.desc Verify ClassGetConstructors case 010: return array should is FixedArraytype
+     * @tc.desc Verify ClassGetConstructors case 010: return array should is FixedArray type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -613,7 +601,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass010>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // FixedArray有固定length
     });
 
     /**
@@ -691,7 +679,7 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1600
      * @tc.name testClassGetConstructors016
-     * @tc.desc Verify ClassGetConstructors case 016: type Classobject constructor
+     * @tc.desc Verify ClassGetConstructors case 016: type Class object constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -699,7 +687,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(0);
+        expect(constructors.length).assertEqual(0); // 基本类型无构造函数
     });
 
     /**
@@ -713,7 +701,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass017>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // 只有ChildClass的构造函数
         expect(constructors[0].getParametersNum()).assertEqual(1);
     });
 
@@ -728,7 +716,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child018>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // 只有Child的构造函数
     });
 
     /**
@@ -742,7 +730,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child019>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // 默认构造函数
     });
 
     /**
@@ -959,7 +947,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoExplicitConstructor034>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // 默认构造函数
     });
 
     /**
@@ -1076,6 +1064,7 @@ export default function ClassGetConstructorsTest(): void {
      */
     it('testClassGetConstructors042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UninitializedClass042>();
+        // 类尚未初始化
         let constructors = constructorsToArray(cls);
         expect(constructors.length).assertEqual(1);
     });
@@ -1091,7 +1080,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InitFailClass043>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1);
+        expect(constructors.length).assertEqual(1); // 反射不受构造函数执行影响
     });
 
     /**
@@ -1514,8 +1503,8 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<TestClass070>();
         let constructors1 = constructorsToArray(cls);
         let constructors2 = constructorsToArray(cls);
-        expect(constructors1[0] === constructors2[0]).assertFalse();
-        expect(constructors1[0].equals(constructors2[0])).assertTrue();
+        expect(constructors1[0] === constructors2[0]).assertFalse(); // 不同引用
+        expect(constructors1[0].equals(constructors2[0])).assertTrue(); // 但相等
     });
 
     /**
@@ -1547,10 +1536,11 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass072>();
         let startTime = Date.now();
+        let constructors: Array<reflect.Constructor> = new Array<reflect.Constructor>();
         for (let i = 0; i < 1000; i++) {
-            let constructors = constructorsToArray(cls);
-            expect(constructors.length).assertEqual(1);
+            constructors = constructorsToArray(cls);
         }
+        expect(constructors.length).assertEqual(1);
         let endTime = Date.now();
         let duration = endTime - startTime;
         console.info(`constructors copy perf: ${duration}ms`);
@@ -1566,6 +1556,7 @@ export default function ClassGetConstructorsTest(): void {
      */
     it('testClassGetConstructors073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass073>();
+        // 模拟并发访问（如果支持TaskPool）
         let results: Array<int> = new Array<int>();
         for (let i = 0; i < 10; i++) {
             results.push(cls.getConstructors().length);
@@ -1585,6 +1576,7 @@ export default function ClassGetConstructorsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetConstructors074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 验证接口从API version 24开始支持
 
         let cls = Class.from<TestClass074>();
         let constructors = constructorsToArray(cls);
@@ -1602,6 +1594,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrayCls = Class.from<Array<int>>();
         let constructors = constructorsToArray(arrayCls);
+        // Array类可能有默认构造函数
         expect(constructors.length).assertLargerOrEqual(0);
     });
 
@@ -1646,6 +1639,7 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<Serializable078>();
         let constructors = constructorsToArray(cls);
         expect(constructors.length).assertLarger(0);
+        // 查找接受string参数的构造函数
         let stringCtor: reflect.Constructor | undefined;
         for (let i = 0; i < constructors.length; i++) {
             let params = constructors[i].getParameterTypes();

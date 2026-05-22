@@ -466,8 +466,106 @@ export class MyClass083 {
   }
 
 export class LargeClass084 {
+      // 100 instance methods
       public method001(): void {}
       public method002(): void {}
+      public method003(): void {}
+      public method004(): void {}
+      public method005(): void {}
+      public method006(): void {}
+      public method007(): void {}
+      public method008(): void {}
+      public method009(): void {}
+      public method010(): void {}
+      public method011(): void {}
+      public method012(): void {}
+      public method013(): void {}
+      public method014(): void {}
+      public method015(): void {}
+      public method016(): void {}
+      public method017(): void {}
+      public method018(): void {}
+      public method019(): void {}
+      public method020(): void {}
+      public method021(): void {}
+      public method022(): void {}
+      public method023(): void {}
+      public method024(): void {}
+      public method025(): void {}
+      public method026(): void {}
+      public method027(): void {}
+      public method028(): void {}
+      public method029(): void {}
+      public method030(): void {}
+      public method031(): void {}
+      public method032(): void {}
+      public method033(): void {}
+      public method034(): void {}
+      public method035(): void {}
+      public method036(): void {}
+      public method037(): void {}
+      public method038(): void {}
+      public method039(): void {}
+      public method040(): void {}
+      public method041(): void {}
+      public method042(): void {}
+      public method043(): void {}
+      public method044(): void {}
+      public method045(): void {}
+      public method046(): void {}
+      public method047(): void {}
+      public method048(): void {}
+      public method049(): void {}
+      public method050(): void {}
+      public method051(): void {}
+      public method052(): void {}
+      public method053(): void {}
+      public method054(): void {}
+      public method055(): void {}
+      public method056(): void {}
+      public method057(): void {}
+      public method058(): void {}
+      public method059(): void {}
+      public method060(): void {}
+      public method061(): void {}
+      public method062(): void {}
+      public method063(): void {}
+      public method064(): void {}
+      public method065(): void {}
+      public method066(): void {}
+      public method067(): void {}
+      public method068(): void {}
+      public method069(): void {}
+      public method070(): void {}
+      public method071(): void {}
+      public method072(): void {}
+      public method073(): void {}
+      public method074(): void {}
+      public method075(): void {}
+      public method076(): void {}
+      public method077(): void {}
+      public method078(): void {}
+      public method079(): void {}
+      public method080(): void {}
+      public method081(): void {}
+      public method082(): void {}
+      public method083(): void {}
+      public method084(): void {}
+      public method085(): void {}
+      public method086(): void {}
+      public method087(): void {}
+      public method088(): void {}
+      public method089(): void {}
+      public method090(): void {}
+      public method091(): void {}
+      public method092(): void {}
+      public method093(): void {}
+      public method094(): void {}
+      public method095(): void {}
+      public method096(): void {}
+      public method097(): void {}
+      public method098(): void {}
+      public method099(): void {}
       public method100(): void {}
   }
 
@@ -488,6 +586,7 @@ export class MyClass086 {
 export class MyClass087 {
       public method1(): void {}
       public method2(): void {}
+      // ... 更多方法
   }
 
 export function dynamicCall088(obj: Object, methodName: string, a: int, b: int): int {
@@ -611,20 +710,26 @@ export class MinimalClass100 {
   }
 
 export class ComplexClass101 {
+      // 字段
       public publicField: int = 0;
       private privateField: string = '';
       protected protectedField: boolean = true;
 
+      // 静态字段
       public static staticField: double = 0.0;
 
+      // 构造函数
       public constructor() {}
       public constructor(value: int) { this.publicField = value; }
 
+      // 实例方法
       public instanceMethod(): void {}
       private privateInstanceMethod(): void {}
 
+      // 静态方法
       public static staticMethod(): void {}
 
+      // Getter/Setter
       public get property(): string { return this.privateField; }
       public set property(value: string) { this.privateField = value; }
   }
@@ -648,4 +753,5 @@ export class GrandChild102 extends Child102 {
 export function asInstanceMethodArray(methods: FixedArray<reflect.InstanceMethod>): Array<reflect.InstanceMethod> {
   return Utils.fixedArrayToArray(methods);
 }
+
 

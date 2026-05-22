@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 function asCtorList(cls: Class): Array<reflect.Constructor> {
@@ -105,6 +106,7 @@ class ClassA027 {
 class MyClass028 {
     public constructor(value?: int | string) {}
   }
+
 
 export default function ConstructorEqualsTest(): void {
   describe('ConstructorEqualsTest', () => {

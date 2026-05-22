@@ -14,10 +14,23 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
 import { MyClass001, MyClass002, MyClass003, MyClass004, MyClass005, MyClass006, MyClass007, MyClass008, MyClass009, MyClass010, MyClass011, MyClass012, MyClass013, MyClass014, MyClass015, MyClass016, MyClass017, MyClass018, MyClass019, MyClass020, MyClass021, MyClass022, MyClass023, MyClass024, MyClass025, MyClass026, MyClass027, MyClass028, MyClass029, MyClass030, MyClass031, MyClass032, MyClass033, MyClass034, MyClass035, MyClass036, MyClass037, MyClass038, MyClass039, MyInterface039, MyClass040, ParentClass040, MyClass041, Interface2041, Interface1041, MyClass042, MyClass043, MyClass044, MyClass045, MyClass046, MyClass047, MyClass048, MyClass049, MyClass050, MyClass051, MyClass052, MyClass053, MyClass054, MyClass055, MyClass056, MyClass057, MyClass058, MyClass059, MyClass060, MyClass061, MyClass062, MyClass063, ParentClass063, MyClass064, MyClass065, MyClass066, MyClass067, EmptyClass068, MyClass069, MyInterface069, AbstractClass070, GenericClass071, MyClass072, MyClass073, MyClass074, MyClass075, MyClass076, MyClass077, MyClass078, MyClass079, MyClass080, MyClass081, MyClass082, MyClass083, LargeClass084, MyClass085, findMethod086, MyClass086, MyClass087, dynamicCall088, Calculator088, hasMethod089, MyClass089, TestClass090, ReflectionUtils090, APIClass25091, APIClass24091, MyClass093, Builder094, MyClass095, MyClass096, MyClass097, AbstractClass098, MyClass099, MinimalClass100, ComplexClass101, GrandChild102, Child102, Parent102, GrandParent102, asInstanceMethodArray } from './ClassGetInstanceMethodFixtures.test';
+
+function expectAbsentInstanceMethod(cls: Class, name: string): void {
+  let method: reflect.InstanceMethod | undefined | null = undefined;
+  try {
+    method = cls.getInstanceMethod(name);
+  } catch (error) {
+    expect(error !== null).assertTrue();
+    return;
+  }
+  expect(method === undefined || method === null).assertTrue();
+}
+
 export default function ClassGetInstanceMethodTest001(): void {
   describe('ClassGetInstanceMethodTest', () => {
     beforeAll(() => {
@@ -522,13 +535,14 @@ export default function ClassGetInstanceMethodTest001(): void {
     it('testClassGetInstanceMethod030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass030>();
         let method = cls.getInstanceMethod('test', undefined);
+        // undefined应该等同于省略signature参数
         expect(method !== null).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0310
      * @tc.name testClassGetInstanceMethod031
-     * @tc.desc Verify ClassGetInstanceMethod case 031: signaturearray Classobject
+     * @tc.desc Verify ClassGetInstanceMethod case 031: signaturearray Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -571,6 +585,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass033>();
+        // 参数顺序错误：先int后string
         let method = cls.getInstanceMethod('test', [Class.from<int>(), Class.from<string>()]);
         expect(method).assertEqual(undefined);
     });
@@ -585,6 +600,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
+        // 提供了2个参数类型，但实际方法只有1个参数
         let method = cls.getInstanceMethod('test', [Class.from<string>(), Class.from<int>()]);
         expect(method).assertEqual(undefined);
     });
@@ -599,6 +615,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
+        // 不提供signature，方法唯一，不会抛出错误
         let method = cls.getInstanceMethod('singleMethod');
         expect(method !== null).assertTrue();
     });
@@ -636,7 +653,7 @@ export default function ClassGetInstanceMethodTest001(): void {
       let cls = Class.from<MyClass037>();
         try {
             let method = cls.getInstanceMethod('test');
-            expect().assertFail();
+            expect().assertFail(); // 应该抛出Error
         } catch (error) {
             expect(error !== null).assertTrue();
             expect(error instanceof Error).assertEqual(true);
@@ -685,8 +702,8 @@ export default function ClassGetInstanceMethodTest001(): void {
       let cls = Class.from<MyClass040>();
         let parentMethod = cls.getInstanceMethod('parentMethod');
         let childMethod = cls.getInstanceMethod('childMethod');
-        expect(parentMethod).assertEqual(undefined);
-        expect(childMethod !== null).assertTrue();
+        expect(parentMethod).assertEqual(undefined); // 不应找到父类方法
+        expect(childMethod !== null).assertTrue(); // 可以找到当前类方法
     });
 
     /**
@@ -996,7 +1013,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass060>();
-        let method = cls.getInstanceMethod('myMethd');
+        let method = cls.getInstanceMethod('myMethd'); // 拼写错误
         expect(method).assertEqual(undefined);
     });
 
@@ -1010,10 +1027,10 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass061>();
-        let method = cls.getInstanceMethod('mymethod');
+        let method = cls.getInstanceMethod('mymethod'); // 全小写
         expect(method).assertEqual(undefined);
 
-        let method2 = cls.getInstanceMethod('MYMETHOD');
+        let method2 = cls.getInstanceMethod('MYMETHOD'); // 全大写
         expect(method2).assertEqual(undefined);
     });
 
@@ -1027,6 +1044,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass062>();
+        // 使用错误的签名查找
         let method = cls.getInstanceMethod('test', [Class.from<int>()]);
         expect(method).assertEqual(undefined);
     });
@@ -1085,6 +1103,7 @@ export default function ClassGetInstanceMethodTest001(): void {
       let cls = Class.from<MyClass066>();
         let method = cls.getInstanceMethod('test');
         expect(method !== null).assertTrue();
+        // 验证返回的对象具有InstanceMethod的所有特征
         expect(typeof method!.getName).assertEqual('function');
         expect(typeof method!.getOwner).assertEqual('function');
     });
@@ -1101,8 +1120,8 @@ export default function ClassGetInstanceMethodTest001(): void {
       let cls = Class.from<MyClass067>();
         let method = cls.getInstanceMethod('nonExistent');
         expect(method).assertEqual(undefined);
-        expect(method === null).assertEqual(false);
-        expect(method === undefined).assertEqual(true);
+        expect(method === null).assertEqual(false); // 不是null
+        expect(method === undefined).assertEqual(true); // 是undefined
     });
 
     /**
@@ -1231,37 +1250,10 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass075>();
-        try {
-            let method = cls.getInstanceMethod(null as string);
-            let ok: boolean = method === undefined || method === null;
-            expect(ok).assertTrue();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
-
-        try {
-            let method = cls.getInstanceMethod(undefined as string);
-            let ok: boolean = method === undefined || method === null;
-            expect(ok).assertTrue();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
-
-        try {
-            let method = cls.getInstanceMethod('123');
-            let ok: boolean = method === undefined || method === null;
-            expect(ok).assertTrue();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
-
-        try {
-            let method = cls.getInstanceMethod('true');
-            let ok: boolean = method === undefined || method === null;
-            expect(ok).assertTrue();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
+        // spec/expressions.md：null 作 string 传入会在运行时 ClassCastError，改测合法 string 但不存在的方法名
+        expectAbsentInstanceMethod(cls, '123');
+        expectAbsentInstanceMethod(cls, 'true');
+        expectAbsentInstanceMethod(cls, '');
     });
 
     /**
@@ -1274,6 +1266,7 @@ export default function ClassGetInstanceMethodTest001(): void {
      */
     it('testClassGetInstanceMethod076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass076>();
+        // 测试各种非法类型
         try {
             let method = looseReflect(cls as Object).getInstanceMethod('test', 'invalid' as Object);
             expect().assertFail();
@@ -1285,7 +1278,7 @@ export default function ClassGetInstanceMethodTest001(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHOD_0770
      * @tc.name testClassGetInstanceMethod077
-     * @tc.desc Verify ClassGetInstanceMethod case 077: signaturearray Classobject when error
+     * @tc.desc Verify ClassGetInstanceMethod case 077: signaturearray Class object when error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1334,7 +1327,7 @@ export default function ClassGetInstanceMethodTest001(): void {
             expect().assertFail();
         } catch (error) {
             expect(error !== null).assertTrue();
-            expect(error.stack !== null).assertTrue();
+            expect(error.stack !== null).assertTrue(); // Error对象应该有stack属性
         }
     });
 

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -143,7 +144,9 @@ class MyClass020 {
   }
 
 class MyClass021 {
-    public data: Array<int> = Array.create<int>(1000000000, 0);
+    public constructor() {
+      throw new Error('construction failed');
+    }
   }
 
 class MyClass022 {
@@ -227,6 +230,7 @@ class MyClass029 {
       this.value = value;
     }
   }
+
 
 export default function ConstructorCreateInstanceTest(): void {
   describe('ConstructorCreateInstanceTest', () => {
@@ -341,7 +345,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass007>())[0];
         try {
-          ctor.createInstance([1]);
+          ctor.createInstance([1]); // 参数不足
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -359,7 +363,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass008>())[0];
         try {
-          ctor.createInstance([1, 2]);
+          ctor.createInstance([1, 2]); // 参数过多
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -538,7 +542,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass020>())[0];
         try {
-          ctor.createInstance([1]);
+          ctor.createInstance([1]); // 缺少参数
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -548,7 +552,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2100
      * @tc.name testConstructorCreateInstance021
-     * @tc.desc Verify ConstructorCreateInstance case 021: huge-allocation ctor throws on createInstance
+     * @tc.desc Verify ConstructorCreateInstance case 021: failing constructor createInstance throws Error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -559,7 +563,7 @@ export default function ConstructorCreateInstanceTest(): void {
           ctor.createInstance();
           expect().assertFail();
         } catch (error) {
-          expect(error !== null).assertTrue();
+          expect(error instanceof Error).assertTrue();
         }
     });
 
@@ -702,6 +706,7 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorCreateInstance029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 方式1：通过Constructor.createInstance()
         let ctor = asConstructorList(Class.from<MyClass029>())[0];
         let instance1 = ctor.createInstance([42]) as MyClass029;
 

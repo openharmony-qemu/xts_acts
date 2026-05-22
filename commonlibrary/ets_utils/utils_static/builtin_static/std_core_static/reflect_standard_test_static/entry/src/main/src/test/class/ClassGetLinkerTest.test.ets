@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -26,7 +27,7 @@ class MyClass003 {
   }
 
 class GenericClass004<T> {
-    public value: T | null = null
+    public value: T | undefined = undefined
   }
 
 interface MyInterface005 {
@@ -171,6 +172,7 @@ class MyClass040 {}
 
 class MyClass041 {}
 
+
 export default function ClassGetLinkerTest(): void {
   describe('ClassGetLinkerTest', () => {
     beforeAll(() => {
@@ -207,6 +209,8 @@ export default function ClassGetLinkerTest(): void {
      */
     it('testClassGetLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass002>()
+        // 以下代码应该在编译期报错
+        // let linker = cls.getLinker("invalid_param")
         expect(cls.getLinker() !== null).assertTrue()
     });
 
@@ -242,7 +246,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_0500
      * @tc.name testClassGetLinker005
-     * @tc.desc Verify ClassGetLinker case 005: from interface Classobject get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 005: from interface Class object get RuntimeLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -311,6 +315,7 @@ export default function ClassGetLinkerTest(): void {
 
         expect(parentLinker !== null).assertTrue()
         expect(childLinker !== null).assertTrue()
+        // 验证父子类的RuntimeLinker关系
     });
 
     /**
@@ -372,7 +377,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1300
      * @tc.name testClassGetLinker013
-     * @tc.desc Verify ClassGetLinker case 013: from FixedArraytype get RuntimeLinker
+     * @tc.desc Verify ClassGetLinker case 013: from FixedArray type get RuntimeLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -387,7 +392,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1400
      * @tc.name testClassGetLinker014
-     * @tc.desc Verify ClassGetLinker case 014: from Class.from()get Classobject call getLinker
+     * @tc.desc Verify ClassGetLinker case 014: from Class.from()get Class object call getLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -401,7 +406,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1500
      * @tc.name testClassGetLinker015
-     * @tc.desc Verify ClassGetLinker case 015: from Class.of()get Classobject call getLinker
+     * @tc.desc Verify ClassGetLinker case 015: from Class.of()get Class object call getLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +421,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1600
      * @tc.name testClassGetLinker016
-     * @tc.desc Verify ClassGetLinker case 016: from Class.ofAny()get Classobject call getLinker
+     * @tc.desc Verify ClassGetLinker case 016: from Class.ofAny()get Class object call getLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -431,7 +436,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_1700
      * @tc.name testClassGetLinker017
-     * @tc.desc Verify ClassGetLinker case 017: from Class.current()get Classobject call getLinker
+     * @tc.desc Verify ClassGetLinker case 017: from Class.current()get Class object call getLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,13 +473,14 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass019>()
         let linker = cls.getLinker()
+        // 验证linker具有RuntimeLinker的接口特征
         expect(typeof linker).assertEqual("object")
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2000
      * @tc.name testClassGetLinker020
-     * @tc.desc Verify ClassGetLinker case 020: Classobject call getLinkerreturn same instance
+     * @tc.desc Verify ClassGetLinker case 020: Class object call getLinkerreturn same instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -552,6 +558,7 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 假设自定义类在某个模块中
 
         let cls = Class.from<MyClass024>()
         let linker = cls.getLinker()
@@ -602,6 +609,11 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 外部模块类示例见注释；此处用本模块类占位验证 getLinker
+        // import { ExternalClass } from 'module'
+        // let cls = Class.from<ExternalClass>()
+        // let linker = cls.getLinker()
+        // expect(linker !== null).assertTrue()
         let cls = Class.from<MyClass001>()
         expect(cls.getLinker() !== null).assertTrue()
     });
@@ -632,6 +644,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<UninitializedClass029>()
         let linker = cls.getLinker()
         expect(linker !== null).assertTrue()
+        // 此时类可能未初始化，但getLinker应该正常工作
     });
 
     /**
@@ -687,10 +700,11 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass033>()
         
+        let linker: RuntimeLinker | null = null;
         for (let i = 0; i < 1000; i++) {
-          let linker = cls.getLinker()
-          expect(linker !== null).assertTrue()
+          linker = cls.getLinker();
         }
+        expect(linker !== null).assertTrue();
     });
 
     /**
@@ -702,6 +716,7 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 创建多个类并获取它们的RuntimeLinker
         for (let i = 0; i < 100; i++) {
 
           let cls = Class.from<DynamicClass034>()
@@ -736,6 +751,7 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass036>()
         let linker = cls.getLinker()
         let descriptor = cls.getDescriptor()
+        // 使用RuntimeLinker验证描述符
         expect(linker !== null).assertTrue()
         expect(descriptor !== null).assertTrue()
     });
@@ -799,6 +815,7 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 确保在API 24+上运行
 
         let cls = Class.from<MyClass040>()
         let linker = cls.getLinker()
@@ -808,7 +825,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_4100
      * @tc.name testClassGetLinker041
-     * @tc.desc Verify ClassGetLinker case 041: specified behavior
+     * @tc.desc Verify ClassGetLinker case 041: getLinker on Class returns non-null RuntimeLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -816,7 +833,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass041>()
         let linker = clazz.getLinker()
-        console.info(linker !== undefined)
+        console.info(linker !== undefined) // true
         let cls = linker!.loadClass('std.core.Map')
         console.info(cls!.getName())
         

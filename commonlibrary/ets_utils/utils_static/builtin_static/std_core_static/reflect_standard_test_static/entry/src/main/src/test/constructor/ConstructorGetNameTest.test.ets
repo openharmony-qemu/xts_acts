@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -99,6 +100,7 @@ class MyClass022 {
     public constructor(x?: int | string | boolean) {}
   }
 
+
 export default function ConstructorGetNameTest(): void {
   describe('ConstructorGetNameTest', () => {
     beforeAll(() => {
@@ -114,7 +116,7 @@ export default function ConstructorGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETNAME_0100
      * @tc.name testConstructorGetName001
-     * @tc.desc Verify ConstructorGetName case 001: getName()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorGetName case 001: getName method no parameters verify empty parameters call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -293,7 +295,7 @@ export default function ConstructorGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETNAME_1400
      * @tc.name testConstructorGetName014
-     * @tc.desc Verify ConstructorGetName case 014: getName()method not throw exception
+     * @tc.desc Verify ConstructorGetName case 014: getName method not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

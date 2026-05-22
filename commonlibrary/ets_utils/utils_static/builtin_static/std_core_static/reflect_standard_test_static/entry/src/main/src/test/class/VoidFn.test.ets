@@ -30,3 +30,21 @@ export interface LooseConstructor {
 export function looseConstructor(obj: Object): LooseConstructor {
   return obj as LooseConstructor;
 }
+
+export interface LooseClassStatic {
+  of(a?: Object, b?: Object): Object;
+}
+
+class LooseClassStaticAdapter implements LooseClassStatic {
+  of(a?: Object, b?: Object): Object {
+    if (b !== undefined) {
+      // reflect API：Class.of(obj: Object | null) 仅 1 个参数（arkts-sta-reflect.md）
+      throw new Error('Class.of expects 1 argument');
+    }
+    return Class.of(a!);
+  }
+}
+
+export function looseClassOf(): LooseClassStatic {
+  return new LooseClassStaticAdapter();
+}

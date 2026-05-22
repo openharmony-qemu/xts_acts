@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -98,6 +99,7 @@ class MyClass021 {
     public constructor(x: int, y: string) {}
   }
 
+
 export default function ConstructorGetReturnTypeTest(): void {
   describe('ConstructorGetReturnTypeTest', () => {
     beforeAll(() => {
@@ -141,7 +143,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0300
      * @tc.name testConstructorGetReturnType003
-     * @tc.desc Verify ConstructorGetReturnType case 003: constructor return voidtype
+     * @tc.desc Verify ConstructorGetReturnType case 003: constructor return void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -226,7 +228,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_0900
      * @tc.name testConstructorGetReturnType009
-     * @tc.desc Verify ConstructorGetReturnType case 009: verify voidtype
+     * @tc.desc Verify ConstructorGetReturnType case 009: verify void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +243,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETRETURNTYPE_1000
      * @tc.name testConstructorGetReturnType010
-     * @tc.desc Verify ConstructorGetReturnType case 010: verify return Classobject using method
+     * @tc.desc Verify ConstructorGetReturnType case 010: verify return Class object using method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -413,6 +415,7 @@ export default function ConstructorGetReturnTypeTest(): void {
     it('testConstructorGetReturnType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass021>().getConstructors()[0];
 
+        // 构造函数的特征
         expect(ctorRef.getName()).assertEqual("constructor");
         expect(ctorRef.getReturnType().getName()).assertEqual("void");
         expect(ctorRef.getParametersNum()).assertEqual(2);

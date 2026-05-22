@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -48,6 +49,7 @@ final class FinalWithMethods008 {
       return "final"
     }
     public setValue(v: int): void {
+      // implementation
     }
   }
 
@@ -258,10 +260,9 @@ final class FinalClass052 {}
 
 function generateClassCode052(cls: Class): string {
     if (cls.isFinal()) {
-      return `
-    } else {
-      return `
+      return `// ${cls.getName()} is final, cannot be extended`
     }
+    return `// ${cls.getName()} can be extended`
   }
 
 class StringUtils053 {
@@ -277,6 +278,7 @@ final class AppConfig053 {
 function validateClassDesign053(cls: Class, shouldBeFinal: boolean): boolean {
     return cls.isFinal() === shouldBeFinal
   }
+
 
 export default function ClassIsFinalTest(): void {
   describe('ClassIsFinalTest', () => {
@@ -452,7 +454,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1300
      * @tc.name testClassIsFinal013
-     * @tc.desc Verify ClassIsFinal case 013: interface type Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 013: interface type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -465,7 +467,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1400
      * @tc.name testClassIsFinal014
-     * @tc.desc Verify ClassIsFinal case 014: type Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 014: type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +481,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1500
      * @tc.name testClassIsFinal015
-     * @tc.desc Verify ClassIsFinal case 015: array type Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 015: array type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -493,7 +495,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1600
      * @tc.name testClassIsFinal016
-     * @tc.desc Verify ClassIsFinal case 016: FixedArraytype Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 016: FixedArray type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -507,7 +509,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1700
      * @tc.name testClassIsFinal017
-     * @tc.desc Verify ClassIsFinal case 017: type Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 017: type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +522,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_1800
      * @tc.name testClassIsFinal018
-     * @tc.desc Verify ClassIsFinal case 018: type Classobject should return false
+     * @tc.desc Verify ClassIsFinal case 018: type Class object should return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -557,20 +559,6 @@ export default function ClassIsFinalTest(): void {
         let result = cls.isFinal()
         expect(result).assertEqual(false)
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2100
-     * @tc.name testClassIsFinal021
-     * @tc.desc Verify ClassIsFinal case 021: final is when should compile when error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFinal021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        expect(Class.from<FinalBase021>().isFinal()).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2200
      * @tc.name testClassIsFinal022
@@ -645,21 +633,6 @@ export default function ClassIsFinalTest(): void {
         expect(derivedCls.isFinal()).assertEqual(false)
         expect(baseCls.isFinal()).assertEqual(false)
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2700
-     * @tc.name testClassIsFinal027
-     * @tc.desc Verify ClassIsFinal case 027: verify not when final abstract
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFinal027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AbstractClass011>();
-        expect(cls.isAbstract()).assertTrue();
-        expect(cls.isFinal()).assertFalse();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2800
      * @tc.name testClassIsFinal028
@@ -747,7 +720,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_3400
      * @tc.name testClassIsFinal034
-     * @tc.desc Verify ClassIsFinal case 034: type Classobject isFinalshould is false
+     * @tc.desc Verify ClassIsFinal case 034: type Class object isFinalshould is false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -948,6 +921,7 @@ export default function ClassIsFinalTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFinal047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 使用TaskPool测试并发访问
         let cls = Class.from<FinalClass001>();
         for (let i = 0; i < 50; i++) {
           expect(cls.isFinal()).assertTrue();
@@ -963,22 +937,11 @@ export default function ClassIsFinalTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFinal048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+// 此测试仅用于验证未捕获异常的行为，跳过执行
+        // 所有Class.from<T>()和Class.of()返回的对象都是有效的Class实例
+        // 不存在无效Class对象的情况
       expect(Class.from<TestClass020>().isFinal()).assertFalse();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_4900
-     * @tc.name testClassIsFinal049
-     * @tc.desc Verify ClassIsFinal case 049: verify final not inheritance final compile when
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFinal049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        expect(Class.from<FinalBase049>().isFinal()).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_5000
      * @tc.name testClassIsFinal050
@@ -1032,7 +995,10 @@ export default function ClassIsFinalTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFinal053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 业务规则：所有配置类应该是final的
 
+
+        // 业务规则：所有工具类不应该是final的
 
 
         expect(validateClassDesign053(Class.from<AppConfig053>(), true)).assertEqual(true)

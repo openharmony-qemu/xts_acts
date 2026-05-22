@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
@@ -35,14 +36,14 @@ class TestClass003 {
 
 class MixedTypes005 {
       public str: string = '';
-      public num: number = 0;
+      public num: int = 0;
       public bool: boolean = false;
       public arr: Array<int> = [];
       public obj: Object = {};
   }
 
 class EmptyClass006 {
-      private field: string = '';
+      private field: string = ''; // 鍙湁private瀛楁
   }
 
 class PrivateOnly007 {
@@ -197,6 +198,7 @@ class ReadonlyTest018 {
       public mutableField: string = 'mutable';
   }
 
+
 export default function ClassGetInstanceFieldsTest(): void {
   describe('ClassGetInstanceFieldsTest', () => {
     beforeAll(() => {
@@ -221,7 +223,7 @@ export default function ClassGetInstanceFieldsTest(): void {
 
         let cls = Class.from<MyClass001>();
         let fields = asInstanceFieldArray(cls.getInstanceFields());
-        expect(fields.length).assertEqual(1);
+        expect(fields.length).assertEqual(1); // 鍙湁public瀛楁
     });
 
     /**
@@ -234,6 +236,7 @@ export default function ClassGetInstanceFieldsTest(): void {
      */
     it('testClassGetInstanceFields002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
+        // 閿欒鐢ㄦ硶锛氫紶閫掑弬鏁?
         try {
             let fields = looseReflect(cls as Object).getInstanceFields('invalid');
             expect().assertFail();
@@ -317,7 +320,7 @@ export default function ClassGetInstanceFieldsTest(): void {
     it('testClassGetInstanceFields007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateOnly007>();
         let fields = asInstanceFieldArray(cls.getInstanceFields());
-        expect(fields.length).assertEqual(0);
+        expect(fields.length).assertEqual(0); // private鍜宲rotected閮戒笉鍙
     });
 
     /**
@@ -331,10 +334,11 @@ export default function ClassGetInstanceFieldsTest(): void {
     it('testClassGetInstanceFields008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass008>();
         let fields = asInstanceFieldArray(cls.getInstanceFields());
-        expect(fields.length).assertEqual(1);
+        expect(fields.length).assertEqual(1); // 鍙湁name
         
+        // 閫氳繃鐖剁被Class瀵硅薄鑾峰彇鐖剁被瀛楁
         let parentFields = asInstanceFieldArray(cls.getSuper()!.getInstanceFields());
-        expect(parentFields.length).assertEqual(1);
+        expect(parentFields.length).assertEqual(1); // 鍙湁age
     });
 
     /**
@@ -348,13 +352,13 @@ export default function ClassGetInstanceFieldsTest(): void {
     it('testClassGetInstanceFields009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child009>();
         let childFields = asInstanceFieldArray(childCls.getInstanceFields());
-        expect(childFields.length).assertEqual(1);
+        expect(childFields.length).assertEqual(1); // 鍙湁c
         
         let parentFields = asInstanceFieldArray(childCls.getSuper()!.getInstanceFields());
-        expect(parentFields.length).assertEqual(1);
+        expect(parentFields.length).assertEqual(1); // 鍙湁b
         
         let grandParentFields = asInstanceFieldArray(childCls.getSuper()!.getSuper()!.getInstanceFields());
-        expect(grandParentFields.length).assertEqual(1);
+        expect(grandParentFields.length).assertEqual(1); // 鍙湁a
     });
 
     /**
@@ -502,6 +506,7 @@ export default function ClassGetInstanceFieldsTest(): void {
       let cls = Class.from<AccessTest017>();
         let fields = asInstanceFieldArray(cls.getInstanceFields());
         
+        // 鍙湁public瀛楁鍙
         expect(fields.length).assertEqual(1);
         expect(fields[0].getName()).assertEqual('publicField');
     });
@@ -544,6 +549,7 @@ export default function ClassGetInstanceFieldsTest(): void {
         let fields2 = asInstanceFieldArray(cls.getInstanceFields());
         
         expect(fields1.length).assertEqual(fields2.length);
+        // 楠岃瘉瀛楁鍐呭鐩稿悓
         for (let i = 0; i < fields1.length; i++) {
             expect(fields1[i].getName()).assertEqual(fields2[i].getName());
         }

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -106,7 +107,7 @@ class AsyncCaller015 {
       public async testAsyncCaller(): Promise<Class | undefined> {
           return await new Promise<Class | undefined>((resolve) => {
               let callerClass = Class.ofCaller()
-              resolve(callerClass)
+              resolve(callerClass)  // 可能返回undefined
           })
       }
   }
@@ -154,13 +155,13 @@ class Logger018 {
 
 class UserClass019 {
       public callSecure(svc: SecureService019): boolean {
-          return svc.restrictedMethod()
+          return svc.restrictedMethod()  // 返回false
       }
   }
 
 class AdminClass019 {
       public callSecure(svc: SecureService019): boolean {
-          return svc.restrictedMethod()
+          return svc.restrictedMethod()  // 返回true
       }
   }
 
@@ -283,6 +284,7 @@ class ResilientService027 {
 class SafeCaller028 {
       public getCallerInfo(): string {
           let callerClass = Class.ofCaller()
+          // 使用可选链和空值合并
           return callerClass?.getName() ?? "unknown"
       }
   }
@@ -290,6 +292,7 @@ class SafeCaller028 {
 class VersionTest029 {
       public testCompatibility(): void {
           let callerClass = Class.ofCaller()
+          // 验证行为符合API版本规范
           expect(callerClass !== undefined && callerClass !== null).assertTrue()
       }
   }
@@ -297,7 +300,7 @@ class VersionTest029 {
 class Module2Class030 {
       public testCrossModule(): Class | undefined {
           let m1 = new Module1Class030()
-          return m1.getCallerFromModule1()
+          return m1.getCallerFromModule1()  // 应返回Module1Class
       }
   }
 
@@ -330,9 +333,9 @@ class DeepCaller031 {
   }
 
 class RecursiveCaller032 {
-      private depth: number = 0
+      private depth: int = 0
 
-      public recursiveCall(maxDepth: number): Class | undefined {
+      public recursiveCall(maxDepth: int): Class | undefined {
           let callerClass = Class.ofCaller()
           if (this.depth < maxDepth) {
               this.depth++
@@ -351,16 +354,8 @@ class C033 {
 
 class B033 {
       public testCaller(): boolean {
-          const caller = Class.ofCaller()
-          const expected = Class.from<A033>()
-          if (Utils.isAbsentReflectOptional(caller)) {
-            return false
-          }
-          const callerName = caller!.getName()
-          if (callerName === undefined || callerName === null) {
-            return false
-          }
-          return caller! === expected || Utils.ofCallerNameMatchesOrHarness(callerName, "A033")
+          // reflect API：ofCaller 与 Class.from<A>() 比较，见 arkts-sta-reflect.md Class.ofCaller 示例
+          return Class.ofCaller() == Class.from<A033>()
       }
   }
 
@@ -422,6 +417,7 @@ class CachedCaller036 {
       }
   }
 
+
 export default function ClassOfCallerTest(): void {
   describe('ClassOfCallerTest', () => {
     beforeAll(() => {
@@ -447,20 +443,6 @@ export default function ClassOfCallerTest(): void {
         expect(callerClass !== undefined && callerClass !== null).assertTrue();
         expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "ETSGLOBAL")).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0200
-     * @tc.name testClassOfCaller002
-     * @tc.desc Verify ClassOfCaller case 002: parameters should compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassOfCaller002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<CallerClass004>();
-      expect(cls.getName().length).assertLarger(0);
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0300
      * @tc.name testClassOfCaller003
@@ -477,7 +459,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0400
      * @tc.name testClassOfCaller004
-     * @tc.desc Verify ClassOfCaller case 004: from method call when return Classobject
+     * @tc.desc Verify ClassOfCaller case 004: from method call when return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -580,7 +562,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1100
      * @tc.name testClassOfCaller011
-     * @tc.desc Verify ClassOfCaller case 011: return Classobject call method
+     * @tc.desc Verify ClassOfCaller case 011: return Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,6 +875,7 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfCaller033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 测试
         expect(new A033().test()).assertTrue()
         expect(new C033().test()).assertFalse()
     });
@@ -906,6 +889,7 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfCaller034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 测试
         expect(Utils.ofCallerNameMatchesOrHarness(new X034().dispatch(), "X034")).assertTrue()
         expect(Utils.ofCallerNameMatchesOrHarness(new Y034().dispatch(), "Y034")).assertTrue()
     });

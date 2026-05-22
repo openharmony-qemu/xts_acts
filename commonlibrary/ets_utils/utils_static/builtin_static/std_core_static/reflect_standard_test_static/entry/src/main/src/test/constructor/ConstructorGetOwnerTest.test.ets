@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -100,6 +101,7 @@ class MyClass019 extends ParentClass {
     public static staticMethod(): void {}
   }
 
+
 export default function ConstructorGetOwnerTest(): void {
   describe('ConstructorGetOwnerTest', () => {
     beforeAll(() => {
@@ -142,7 +144,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0300
      * @tc.name testConstructorGetOwner003
-     * @tc.desc Verify ConstructorGetOwner case 003: call return constructor Classobject
+     * @tc.desc Verify ConstructorGetOwner case 003: call return constructor Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -158,7 +160,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0400
      * @tc.name testConstructorGetOwner004
-     * @tc.desc Verify ConstructorGetOwner case 004: verify different constructor return Classobject
+     * @tc.desc Verify ConstructorGetOwner case 004: verify different constructor return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,7 +233,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_0900
      * @tc.name testConstructorGetOwner009
-     * @tc.desc Verify ConstructorGetOwner case 009: verify return Classobject using
+     * @tc.desc Verify ConstructorGetOwner case 009: verify return Class object using
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -278,7 +280,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1200
      * @tc.name testConstructorGetOwner012
-     * @tc.desc Verify ConstructorGetOwner case 012: multiple constructor return same Classobject
+     * @tc.desc Verify ConstructorGetOwner case 012: multiple constructor return same Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -355,7 +357,7 @@ export default function ConstructorGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETOWNER_1700
      * @tc.name testConstructorGetOwner017
-     * @tc.desc Verify ConstructorGetOwner case 017: verify constructor getOwner()return same Classobject
+     * @tc.desc Verify ConstructorGetOwner case 017: verify constructor getOwner()return same Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

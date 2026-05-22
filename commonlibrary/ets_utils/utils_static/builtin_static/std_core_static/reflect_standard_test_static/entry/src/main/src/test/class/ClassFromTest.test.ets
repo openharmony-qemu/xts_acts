@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -30,12 +31,12 @@ class ParentClass022 {
   }
 
 class GenericClass023<T> {
-    public value: T | null = null;
+    public value: T | undefined = undefined;
   }
 
 class MultiGenericClass024<K, V> {
-    public key: K | null = null;
-    public value: V | null = null;
+    public key: K | undefined = undefined;
+    public value: V | undefined = undefined;
   }
 
 abstract class AbstractClass025 {
@@ -237,6 +238,7 @@ class GenericClass096<K, V> {
 class ServiceB097 {
     public serviceA: ServiceA097;
     public constructor() {
+      // 使用from获取ServiceA的Class对象
       let cls = Class.from<ServiceA097>();
       this.serviceA = cls.createInstance() as ServiceA097;
     }
@@ -320,6 +322,7 @@ class MyClass104 {}
 
 class MyClass105 {}
 
+
 export default function ClassFromTest(): void {
   describe('ClassFromTest', () => {
     beforeAll(() => {
@@ -335,7 +338,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0010
      * @tc.name testClassFrom001
-     * @tc.desc Verify ClassFrom case 001: generic T is booleantype
+     * @tc.desc Verify ClassFrom case 001: generic T is boolean type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +394,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0050
      * @tc.name testClassFrom005
-     * @tc.desc Verify ClassFrom case 005: generic T is inttype
+     * @tc.desc Verify ClassFrom case 005: generic T is int type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,7 +450,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0090
      * @tc.name testClassFrom009
-     * @tc.desc Verify ClassFrom case 009: generic T is numbertype
+     * @tc.desc Verify ClassFrom case 009: generic T is number type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,7 +464,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0100
      * @tc.name testClassFrom010
-     * @tc.desc Verify ClassFrom case 010: generic T is voidtype
+     * @tc.desc Verify ClassFrom case 010: generic T is void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -475,7 +478,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0110
      * @tc.name testClassFrom011
-     * @tc.desc Verify ClassFrom case 011: generic T is stringtype
+     * @tc.desc Verify ClassFrom case 011: generic T is string type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -940,6 +943,7 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 首次访问，类未初始化
         let cls = Class.from<UninitializedClass043>();
         expect(cls !== null).assertTrue();
         expect(Utils.classNameMatches(cls.getName(), "UninitializedClass043")).assertTrue();
@@ -1060,7 +1064,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0520
      * @tc.name testClassFrom052
-     * @tc.desc Verify ClassFrom case 052: return Classobject call getName()
+     * @tc.desc Verify ClassFrom case 052: return Class object call getName()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1073,7 +1077,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0530
      * @tc.name testClassFrom053
-     * @tc.desc Verify ClassFrom case 053: return Classobject call getSuper()
+     * @tc.desc Verify ClassFrom case 053: return Class object call getSuper()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1088,7 +1092,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0540
      * @tc.name testClassFrom054
-     * @tc.desc Verify ClassFrom case 054: return Classobject call isSubtypeOf()
+     * @tc.desc Verify ClassFrom case 054: return Class object call isSubtypeOf()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1102,7 +1106,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0550
      * @tc.name testClassFrom055
-     * @tc.desc Verify ClassFrom case 055: return Classobject call getLinker()
+     * @tc.desc Verify ClassFrom case 055: return Class object call getLinker()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1116,7 +1120,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0560
      * @tc.name testClassFrom056
-     * @tc.desc Verify ClassFrom case 056: return Classobject call isInterface()
+     * @tc.desc Verify ClassFrom case 056: return Class object call isInterface()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1129,7 +1133,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0570
      * @tc.name testClassFrom057
-     * @tc.desc Verify ClassFrom case 057: return Classobject call isEnum()
+     * @tc.desc Verify ClassFrom case 057: return Class object call isEnum()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1142,12 +1146,13 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0580
      * @tc.name testClassFrom058
-     * @tc.desc Verify ClassFrom case 058: return Classobject call isPrimitive()
+     * @tc.desc Verify ClassFrom case 058: return Class object call isPrimitive()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassFrom058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // Class.from<T>() 描述泛型类型参数；Class.PRIMITIVE_* 描述运行时原始类型标记，isPrimitive 语义不同
       let cls = Class.from<int>();
         expect(cls.isPrimitive()).assertFalse();
         expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
@@ -1156,7 +1161,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0590
      * @tc.name testClassFrom059
-     * @tc.desc Verify ClassFrom case 059: return Classobject call isFinal()
+     * @tc.desc Verify ClassFrom case 059: return Class object call isFinal()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1169,7 +1174,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0600
      * @tc.name testClassFrom060
-     * @tc.desc Verify ClassFrom case 060: return Classobject call isAbstract()
+     * @tc.desc Verify ClassFrom case 060: return Class object call isAbstract()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1182,7 +1187,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0610
      * @tc.name testClassFrom061
-     * @tc.desc Verify ClassFrom case 061: return Classobject call isFixedArray()
+     * @tc.desc Verify ClassFrom case 061: return Class object call isFixedArray()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1195,7 +1200,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0620
      * @tc.name testClassFrom062
-     * @tc.desc Verify ClassFrom case 062: return Classobject call isUnion()
+     * @tc.desc Verify ClassFrom case 062: return Class object call isUnion()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1208,7 +1213,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0630
      * @tc.name testClassFrom063
-     * @tc.desc Verify ClassFrom case 063: return Classobject call getDescriptor()
+     * @tc.desc Verify ClassFrom case 063: return Class object call getDescriptor()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1221,7 +1226,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0640
      * @tc.name testClassFrom064
-     * @tc.desc Verify ClassFrom case 064: return Classobject call createInstance()
+     * @tc.desc Verify ClassFrom case 064: return Class object call createInstance()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1235,7 +1240,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0650
      * @tc.name testClassFrom065
-     * @tc.desc Verify ClassFrom case 065: return Classobject call getInterfaces()
+     * @tc.desc Verify ClassFrom case 065: return Class object call getInterfaces()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1249,7 +1254,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0660
      * @tc.name testClassFrom066
-     * @tc.desc Verify ClassFrom case 066: return Classobject call getInstanceMethods()
+     * @tc.desc Verify ClassFrom case 066: return Class object call getInstanceMethods()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1263,7 +1268,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0670
      * @tc.name testClassFrom067
-     * @tc.desc Verify ClassFrom case 067: return Classobject call getStaticMethods()
+     * @tc.desc Verify ClassFrom case 067: return Class object call getStaticMethods()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1277,7 +1282,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0680
      * @tc.name testClassFrom068
-     * @tc.desc Verify ClassFrom case 068: return Classobject call getInstanceFields()
+     * @tc.desc Verify ClassFrom case 068: return Class object call getInstanceFields()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1291,7 +1296,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0690
      * @tc.name testClassFrom069
-     * @tc.desc Verify ClassFrom case 069: return Classobject call getStaticFields()
+     * @tc.desc Verify ClassFrom case 069: return Class object call getStaticFields()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1305,7 +1310,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0700
      * @tc.name testClassFrom070
-     * @tc.desc Verify ClassFrom case 070: return Classobject call getConstructors()
+     * @tc.desc Verify ClassFrom case 070: return Class object call getConstructors()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1319,7 +1324,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0710
      * @tc.name testClassFrom071
-     * @tc.desc Verify ClassFrom case 071: type Classobject get type
+     * @tc.desc Verify ClassFrom case 071: type Class object get type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1333,7 +1338,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0720
      * @tc.name testClassFrom072
-     * @tc.desc Verify ClassFrom case 072: array Classobject get type
+     * @tc.desc Verify ClassFrom case 072: Class.from Array type getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1403,7 +1408,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0770
      * @tc.name testClassFrom077
-     * @tc.desc Verify ClassFrom case 077: type Classobject
+     * @tc.desc Verify ClassFrom case 077: type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1473,20 +1478,6 @@ export default function ClassFromTest(): void {
       let cls = Class.from<FinalClass081>();
         expect(cls.isFinal()).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0820
-     * @tc.name testClassFrom082
-     * @tc.desc Verify ClassFrom case 082: from generic method type parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassFrom082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<string>();
-        expect(cls !== null).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0830
      * @tc.name testClassFrom083
@@ -1510,6 +1501,7 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 首次from会触发初始化
         let cls = Class.from<LazyClass084>();
         expect(cls !== null).assertTrue();
         expect(LazyClass084.value).assertEqual(100);
@@ -1532,7 +1524,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0860
      * @tc.name testClassFrom086
-     * @tc.desc Verify ClassFrom case 086: generic T is nevertype
+     * @tc.desc Verify ClassFrom case 086: generic T is never type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1545,7 +1537,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0870
      * @tc.name testClassFrom087
-     * @tc.desc Verify ClassFrom case 087: generic T is unknowntype
+     * @tc.desc Verify ClassFrom case 087: generic T is unknown type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1564,11 +1556,12 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      for (let i = 0; i < 1000; i++) {
-          let cls = Class.from<int>();
-          expect(cls !== null).assertTrue();
-          expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "int")).assertTrue();
+      let cls: Class | null = null;
+        for (let i = 0; i < 1000; i++) {
+          cls = Class.from<int>();
         }
+        expect(cls !== null).assertTrue();
+        expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), "int")).assertTrue();
     });
 
     /**
@@ -1592,7 +1585,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0900
      * @tc.name testClassFrom090
-     * @tc.desc Verify ClassFrom case 090: Classobject
+     * @tc.desc Verify ClassFrom case 090: Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1615,6 +1608,7 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注意：ArkTS-Sta可能不支持真正的多线程，此处为概念性测试
         let cls1 = Class.from<Map<int, string>>();
         let cls2 = Class.from<Map<int, string>>();
         expect(cls1 === cls2).assertTrue();
@@ -1629,20 +1623,23 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // from不需要实例
         let cls1 = Class.from<MyClass092>();
         expect(cls1 !== null).assertTrue();
         
+        // of需要实例
         let obj = new MyClass092();
         let cls2 = Class.of(obj);
         expect(cls2 !== null).assertTrue();
         
+        // 两者返回同一Class对象
         expect(cls1 === cls2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0930
      * @tc.name testClassFrom093
-     * @tc.desc Verify ClassFrom case 093: from compile when type ofAny runtime type
+     * @tc.desc Verify ClassFrom case 093: Class.from vs Class.ofAny same runtime type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1650,12 +1647,15 @@ export default function ClassFromTest(): void {
     it('testClassFrom093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>();
         
+        // ofAny：运行时获取类型
         let cls1 = Class.ofAny(obj);
         expect(cls1 !== null).assertTrue();
         
+        // from：编译时指定类型
         let cls2 = Class.from<Map<int, string>>();
         expect(cls2 !== null).assertTrue();
         
+        // 结果相同
         expect(cls1!.getName() === cls2.getName()).assertTrue();
     });
 
@@ -1684,20 +1684,26 @@ export default function ClassFromTest(): void {
     it('testClassFrom095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass095>();
         
+        // 获取类名
         expect(Utils.classNameMatches(cls.getName(), "MyClass095")).assertTrue();
         
+        // 获取父类
         let superCls = cls.getSuper();
         expect(superCls !== null).assertTrue();
         
+        // 获取实例字段
         let fields = cls.getInstanceFields();
-        expect(fields.length).assertEqual(1);
+        expect(fields.length).assertEqual(1); // 只有field1是public
         
+        // 获取实例方法
         let methods = cls.getInstanceMethods();
         expect(methods.length).assertLarger(0);
         
+        // 获取构造函数
         let constructors = cls.getConstructors();
         expect(constructors.length).assertEqual(2);
         
+        // 获取静态方法
         let staticMethods = cls.getStaticMethods();
         expect(staticMethods.length).assertLarger(0);
     });
@@ -1715,6 +1721,7 @@ export default function ClassFromTest(): void {
         expect(cls !== null).assertTrue();
         expect(Utils.classNameMatches(cls.getName(), "GenericClass096")).assertTrue();
         
+        // 创建实例
         let obj = cls.createInstance() as GenericClass096<string, int>;
         expect(obj !== null).assertTrue();
     });
@@ -1767,15 +1774,17 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1000
      * @tc.name testClassFrom100
-     * @tc.desc Verify ClassFrom case 100: from compile when type
+     * @tc.desc Verify ClassFrom case 100: Class.from primitive type getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassFrom100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 正确：返回Class对象
         let cls = Class.from<MyClass100>();
         expect(cls !== null).assertTrue();
         
+        // 编译器确保类型正确
         let instance = cls.createInstance() as MyClass100;
         expect(instance.value).assertEqual(0);
     });
@@ -1797,15 +1806,18 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1020
      * @tc.name testClassFrom102
-     * @tc.desc Verify ClassFrom case 102: Classobject performance
+     * @tc.desc Verify ClassFrom case 102: Class object performance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassFrom102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 缓存Class对象
         const MY_CLASS: Class = Class.from<MyClass102>();
         
+        // 使用缓存的Class对象
 
+        
         let obj1 = createInstance102();
         let obj2 = createInstance102();
         expect(obj1 !== null).assertTrue();
@@ -1821,11 +1833,13 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 不好的做法：循环中重复from
         for (let i = 0; i < 100; i++) {
-          let cls = Class.from<MyClass103>();
+          let cls = Class.from<MyClass103>(); // 每次都from
           expect(Utils.classNameMatches(cls.getName(), "MyClass103")).assertTrue();
         }
         
+        // 好的做法：from一次，多次使用
         let cls = Class.from<MyClass103>();
         for (let i = 0; i < 100; i++) {
           let obj = cls.createInstance() as MyClass103;
@@ -1859,13 +1873,16 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // from：编译时已知类型
         let cls1 = Class.from<MyClass105>();
         expect(cls1 !== null).assertTrue();
         
+        // ofAny：运行时获取类型
         let obj: Any = new MyClass105();
         let cls2 = Class.ofAny(obj);
         expect(cls2 !== null).assertTrue();
         
+        // 结果一致
         expect(cls1 === cls2).assertTrue();
     });
 

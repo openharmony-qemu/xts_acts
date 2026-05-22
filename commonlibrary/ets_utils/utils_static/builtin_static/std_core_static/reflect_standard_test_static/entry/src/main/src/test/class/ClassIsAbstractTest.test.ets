@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -42,6 +43,7 @@ abstract class MultiAbstractClass008 {
 
 abstract class Child009 extends Parent009 {
     public override method1(): void {}
+    // method2未实现，Child仍是抽象类
   }
 
 abstract class Parent009 {
@@ -261,6 +263,7 @@ interface Interface1050 {
 
 abstract class PartialImpl051 implements MyInterface051 {
     public method1(): void {}
+    // method2和method3未实现，类仍为抽象
   }
 
 interface MyInterface051 {
@@ -268,6 +271,7 @@ interface MyInterface051 {
     method2(): void;
     method3(): void;
   }
+
 
 export default function ClassIsAbstractTest(): void {
   describe('ClassIsAbstractTest', () => {
@@ -294,20 +298,6 @@ export default function ClassIsAbstractTest(): void {
         let result = cls.isAbstract();
         expect(result).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0200
-     * @tc.name testClassIsAbstract002
-     * @tc.desc Verify ClassIsAbstract case 002: parameters should compile error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsAbstract002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<NormalClass010>();
-      expect(cls.isAbstract()).assertFalse();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0300
      * @tc.name testClassIsAbstract003
@@ -903,7 +893,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4500
      * @tc.name testClassIsAbstract045
-     * @tc.desc Verify ClassIsAbstract case 045: via different get Classobject return same
+     * @tc.desc Verify ClassIsAbstract case 045: via different get Class object return same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

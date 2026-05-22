@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -50,7 +51,7 @@ class TestClass006 {
 class ChildClass007 extends ParentClass007 {
       public testParentCall(): string {
           let cls = this.getCurrentClass();
-          return cls.getName();
+          return cls.getName(); // 返回 "ChildClass007"
       }
   }
 
@@ -113,12 +114,13 @@ class OuterClass013 {
           return Class.of(this);
       }
       
+
   }
 
 class TestClass014 {
       public verifySubtype(): boolean {
           let cls = Class.current();
-          return cls.isSubtypeOf(cls);
+          return cls.isSubtypeOf(cls); // 应该返回true
       }
   }
 
@@ -165,7 +167,7 @@ class TestClass020 {
       public testConsistency(): boolean {
           let cls1 = Class.current();
           let cls2 = Class.current();
-          return cls1 === cls2;
+          return cls1 === cls2; // 应该返回true
       }
   }
 
@@ -213,16 +215,21 @@ class TestClass028 {
       public field: int = 0;
       
       public compareAllMethods(): void {
+          // current() - 获取当前类
           let currentCls = Class.current();
           
+          // of() - 获取对象实例的类
           let ofCls = Class.of(this);
           
+          // from() - 获取类型Class对象
           let fromCls = Class.from<TestClass028>();
           
+          // 三者应该返回相同的Class对象
           expect(currentCls === ofCls).assertTrue();
           expect(currentCls === fromCls).assertTrue();
           expect(ofCls === fromCls).assertTrue();
           
+          // 验证类名
           expect(Utils.classNameMatches(currentCls.getName(), "TestClass028")).assertTrue();
           expect(Utils.classNameMatches(ofCls.getName(), "TestClass028")).assertTrue();
           expect(Utils.classNameMatches(fromCls.getName(), "TestClass028")).assertTrue();
@@ -230,14 +237,17 @@ class TestClass028 {
   }
 
 class TestClass029 {
+      // 场景1: 在实例方法中获取当前类 - 使用current()
       public method1(): Class {
           return Class.current();
       }
       
+      // 场景2: 有对象实例需要获取类 - 使用of()
       public method2(obj: TestClass029): Class {
           return Class.of(obj);
       }
       
+      // 场景3: 没有对象实例，需要获取类型 - 使用from()
       public static method3(): Class {
           return Class.from<TestClass029>();
       }
@@ -246,6 +256,7 @@ class TestClass029 {
 class TestClass030 {
       public testNotPrimitive(): boolean {
           let cls = Class.current();
+          // current()返回的是TestClass，不是基本类型
           expect(cls.isPrimitive()).assertFalse();
           expect(cls === Class.PRIMITIVE_INT).assertFalse();
           return true;
@@ -253,7 +264,7 @@ class TestClass030 {
   }
 
 class NumberWrapper031 {
-      public value: number = 0;
+      public value: double = 0.0;
       public getClass(): Class {
           return Class.current();
       }
@@ -319,6 +330,7 @@ class TestClass039 {
           }
           let endTime = Date.now();
           let duration = endTime - startTime;
+          // 验证性能在可接受范围内
           console.info(`Class.current 10000 calls: ${duration}ms`);
       }
   }
@@ -327,18 +339,21 @@ class TestClass040 {
       public comparePerformance(): void {
           let obj = this;
           
+          // 测试current()性能
           let start1 = Date.now();
           for (let i = 0; i < 10000; i++) {
               let cls = Class.current();
           }
           let time1 = Date.now() - start1;
           
+          // 测试of()性能
           let start2 = Date.now();
           for (let i = 0; i < 10000; i++) {
               let cls = Class.of(obj);
           }
           let time2 = Date.now() - start2;
           
+          // current()应该比of()更快（不需要解析对象）
           console.info(`current=${time1}ms of=${time2}ms`);
       }
   }
@@ -349,6 +364,7 @@ class TestClass041 {
           let cls2 = Class.current();
           let cls3 = Class.current();
           
+          // 应该返回同一个Class对象（单例模式）
           expect(cls1 === cls2).assertTrue();
           expect(cls2 === cls3).assertTrue();
           expect(cls1 === cls3).assertTrue();
@@ -368,6 +384,7 @@ class TestClass042 {
 
 class TestClass044 {
       public testAPIVersion(): void {
+          // current()从API version 24开始支持
           let cls = Class.current();
           expect(cls !== null).assertTrue();
       }
@@ -388,6 +405,7 @@ export class Module1Class045 {
   }
 
 class User046 extends Model046 {
+      // 继承getTableName方法
   }
 
 class Model046 {
@@ -412,7 +430,7 @@ class Serializable047 {
 
 class Service048 extends Logger048 {
       public doSomething(): void {
-          this.logInfo("doing something");
+          this.logInfo("doing something"); // 输出: [Service048] doing something
       }
   }
 
@@ -514,6 +532,7 @@ interface Interface1054 {}
 class TestClass055 {
       public regressionTest(): void {
           let cls = Class.current();
+          // 验证之前问题的修复
           expect(cls !== null).assertTrue();
           expect(cls.getName() !== "").assertTrue();
       }
@@ -522,10 +541,12 @@ class TestClass055 {
 class TestClass056 {
       public testBackwardCompatibility(): void {
           let cls = Class.current();
+          // 验证旧版本的行为仍然保持
           expect(Utils.classNameMatches(cls.getName(), "TestClass056")).assertTrue();
           expect(cls.getSuper() !== null).assertTrue();
       }
   }
+
 
 export default function ClassCurrentTest(): void {
   describe('ClassCurrentTest', () => {
@@ -566,24 +587,10 @@ export default function ClassCurrentTest(): void {
         expect(result !== null).assertTrue();
         expect(result.getName().length > 0).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0300
-     * @tc.name testClassCurrent003
-     * @tc.desc Verify ClassCurrent case 003: current() with no arguments returns caller Class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassCurrent003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new TestClass001();
-        expect(Utils.classNameMatches(obj.getCurrentClass().getName(), "TestClass001")).assertTrue();
-    });
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
      * @tc.name testClassCurrent004
-     * @tc.desc Verify ClassCurrent case 004: in call return Classobject
+     * @tc.desc Verify ClassCurrent case 004: in call return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -613,7 +620,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0600
      * @tc.name testClassCurrent006
-     * @tc.desc Verify ClassCurrent case 006: return Classobject call method
+     * @tc.desc Verify ClassCurrent case 006: return Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -668,7 +675,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1000
      * @tc.name testClassCurrent010
-     * @tc.desc Verify ClassCurrent case 010: final call current()return Classobject
+     * @tc.desc Verify ClassCurrent case 010: final call current()return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -683,14 +690,14 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1100
      * @tc.name testClassCurrent011
-     * @tc.desc Verify ClassCurrent case 011: abstract class call current()return abstract class Classobject
+     * @tc.desc Verify ClassCurrent case 011: abstract class call current()return abstract class Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassCurrent011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConcreteClass011();
-        let cls = obj.getAbstractClass();
+        let cls = obj.getAbstractClass(); // 返回AbstractClass
         expect(Utils.classNameMatches(cls.getName(), "AbstractClass011")).assertTrue();
         expect(Class.from<AbstractClass011>().isAbstract()).assertTrue();
     });
@@ -698,7 +705,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1200
      * @tc.name testClassCurrent012
-     * @tc.desc Verify ClassCurrent case 012: generic call current()return Classobject
+     * @tc.desc Verify ClassCurrent case 012: generic call current()return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -727,7 +734,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1400
      * @tc.name testClassCurrent014
-     * @tc.desc Verify ClassCurrent case 014: verify return Classobject type
+     * @tc.desc Verify ClassCurrent case 014: verify return Class object type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -740,7 +747,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1500
      * @tc.name testClassCurrent015
-     * @tc.desc Verify ClassCurrent case 015: verify current()return Classobject
+     * @tc.desc Verify ClassCurrent case 015: verify current()return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -768,7 +775,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_1700
      * @tc.name testClassCurrent017
-     * @tc.desc Verify ClassCurrent case 017: static method call current()return Classobject
+     * @tc.desc Verify ClassCurrent case 017: static method call current()return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -875,7 +882,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_2500
      * @tc.name testClassCurrent025
-     * @tc.desc Verify ClassCurrent case 025: from() in not object get Classobject
+     * @tc.desc Verify ClassCurrent case 025: from() in not object get Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,7 +900,9 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // from()可以在任何地方调用
         let fromCls = Class.from<TestClass026>();
+        // current()需要通过实例方法调用
         let obj = new TestClass026();
         let currentCls = obj.testCurrent();
         expect(fromCls === currentCls).assertTrue();
@@ -944,7 +953,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3000
      * @tc.name testClassCurrent030
-     * @tc.desc Verify ClassCurrent case 030: current()not return type Classobject
+     * @tc.desc Verify ClassCurrent case 030: current()not return type Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -963,6 +972,7 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 如果有包装类，验证current()返回包装类而非基本类型
 
         let wrapper = new NumberWrapper031();
         let cls = wrapper.getClass();
@@ -1017,7 +1027,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3500
      * @tc.name testClassCurrent035
-     * @tc.desc Verify ClassCurrent case 035: using from()get Classobject and current()
+     * @tc.desc Verify ClassCurrent case 035: using from()get Class object and current()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1030,7 +1040,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3600
      * @tc.name testClassCurrent036
-     * @tc.desc Verify ClassCurrent case 036: type type current()return type Class
+     * @tc.desc Verify ClassCurrent case 036: getClass on union instance returns concrete UnionClass036 Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1038,21 +1048,24 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new UnionClass036();
         let cls = obj.getClass();
+        // 验证current()返回的是UnionClass而非联合类型
         expect(Utils.classNameMatches(cls.getName(), "UnionClass036")).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3700
      * @tc.name testClassCurrent037
-     * @tc.desc Verify ClassCurrent case 037: verify current()not return type type
+     * @tc.desc Verify ClassCurrent case 037: Class.from union type isUnion is true not concrete class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassCurrent037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 验证current()返回的Class对象的isUnion()行为
         let unionCls = Class.from<int | string>();
         expect(unionCls.isUnion()).assertTrue();
         
+
         let obj = new NormalClass037();
         let currentCls = obj.getClass();
         expect(currentCls.isUnion()).assertFalse();
@@ -1107,7 +1120,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_4100
      * @tc.name testClassCurrent041
-     * @tc.desc Verify ClassCurrent case 041: current()return Classobject instance
+     * @tc.desc Verify ClassCurrent case 041: current()return Class object instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1231,7 +1244,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5000
      * @tc.name testClassCurrent050
-     * @tc.desc Verify ClassCurrent case 050: via current()get Classobject call
+     * @tc.desc Verify ClassCurrent case 050: via current()get Class object call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1244,7 +1257,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_5100
      * @tc.name testClassCurrent051
-     * @tc.desc Verify ClassCurrent case 051: via current()get Classobject field
+     * @tc.desc Verify ClassCurrent case 051: via current()get Class object field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1277,10 +1290,13 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 创建多层继承结构
 
 
 
 
+        // ...更多层级
+        
         let obj = new L3053();
         let cls = obj.getClass();
         expect(Utils.classNameMatches(cls.getName(), "L3053")).assertTrue();

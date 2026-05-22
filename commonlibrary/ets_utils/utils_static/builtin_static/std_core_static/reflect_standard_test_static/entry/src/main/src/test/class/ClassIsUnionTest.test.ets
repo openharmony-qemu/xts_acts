@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -36,6 +37,7 @@ interface MyInterface028 {
     method(): void;
   }
 
+
 function getValue044(): int | string {
     return 42;
   }
@@ -43,6 +45,7 @@ function getValue044(): int | string {
 class MyClass045 {
     public value: int | string = 0
   }
+
 
 export default function ClassIsUnionTest(): void {
   describe('ClassIsUnionTest', () => {
@@ -73,7 +76,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_0200
      * @tc.name testClassIsUnion002
-     * @tc.desc Verify ClassIsUnion case 002: using Class.from<T>()get Classobject call isUnion()
+     * @tc.desc Verify ClassIsUnion case 002: using Class.from<T>()get Class object call isUnion()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -86,12 +89,14 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_0300
      * @tc.name testClassIsUnion003
-     * @tc.desc Verify ClassIsUnion case 003: using Class.of(obj)get Classobject call isUnion()
+     * @tc.desc Verify ClassIsUnion case 003: using Class.of(obj)get Class object call isUnion()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsUnion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注：of方法用于实际对象，无法直接用于联合类型
+        // 此测试点验证of获取的Class对象调用isUnion()
         let obj: int | string = 42;
         let cls = Class.ofAny(obj);
         expect(cls !== undefined).assertTrue();
@@ -140,7 +145,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_0700
      * @tc.name testClassIsUnion007
-     * @tc.desc Verify ClassIsUnion case 007: type type return false
+     * @tc.desc Verify ClassIsUnion case 007: int Class isUnion returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -192,7 +197,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_1100
      * @tc.name testClassIsUnion011
-     * @tc.desc Verify ClassIsUnion case 011: Maptype return false
+     * @tc.desc Verify ClassIsUnion case 011: Map Class isUnion returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -218,12 +223,13 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_1300
      * @tc.name testClassIsUnion013
-     * @tc.desc Verify ClassIsUnion case 013: same type type
+     * @tc.desc Verify ClassIsUnion case 013: int|int simplifies to int isUnion false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsUnion013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注：int | int 在类型系统中会被简化为 int
         let cls = Class.from<int>();
         expect(cls.isUnion()).assertFalse();
     });
@@ -308,26 +314,23 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsUnion019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-          let cls = Class.from<int | string>();
-          let result = cls.isUnion();
-          expect(result).assertTrue();
-        } catch (error) {
-          expect().assertFail();
-        }
+      let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_2000
      * @tc.name testClassIsUnion020
-     * @tc.desc Verify ClassIsUnion case 020: Classobject call isUnion()
+     * @tc.desc Verify ClassIsUnion case 020: Class object call isUnion()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsUnion020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注：Class.from不会返回未初始化的对象
+        // 此测试验证from方法确保对象已初始化
         let cls = Class.from<int | string>();
-        cls.initialize();
+        cls.initialize(); // 确保初始化
         expect(cls.isUnion()).assertTrue();
     });
 
@@ -453,6 +456,7 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsUnion029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 类型系统会将 (A | B) | C 简化为 A | B | C
         let cls = Class.from<int | string | boolean>();
         expect(cls.isUnion()).assertTrue();
     });
@@ -473,7 +477,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3100
      * @tc.name testClassIsUnion031
-     * @tc.desc Verify ClassIsUnion case 031: verify isUnion()return true when getUnionConstituentTypes()return array
+     * @tc.desc Verify ClassIsUnion case 031: verify isUnion returns true when getUnionConstituentTypes()return array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -492,7 +496,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3200
      * @tc.name testClassIsUnion032
-     * @tc.desc Verify ClassIsUnion case 032: verify isUnion()return false when getUnionConstituentTypes()return undefined
+     * @tc.desc Verify ClassIsUnion case 032: verify isUnion returns false when getUnionConstituentTypes()return undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -517,6 +521,7 @@ export default function ClassIsUnionTest(): void {
       let cls = Class.from<int | string>();
         if (cls.isUnion()) {
           let name = cls.getName();
+          // 联合类型名称格式：{Utype1,type2,...}
           expect(name.indexOf("{U") === 0).assertTrue();
           expect(name.indexOf("}") >= 0).assertTrue();
         }
@@ -597,7 +602,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3900
      * @tc.name testClassIsUnion039
-     * @tc.desc Verify ClassIsUnion case 039: type
+     * @tc.desc Verify ClassIsUnion case 039: eight-type union isUnion with eight constituents
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -614,7 +619,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4000
      * @tc.name testClassIsUnion040
-     * @tc.desc Verify ClassIsUnion case 040: type type
+     * @tc.desc Verify ClassIsUnion case 040: int|string union isUnion with two constituents
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -650,6 +655,7 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsUnion042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 注：never与任何类型联合都是该类型本身
         let cls = Class.from<int | never>();
         expect(cls.isUnion()).assertFalse();
     });
@@ -690,6 +696,7 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsUnion045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 获取属性类型的Class对象
         let cls = Class.from<int | string>();
         expect(cls.isUnion()).assertTrue();
     });
@@ -697,7 +704,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4600
      * @tc.name testClassIsUnion046
-     * @tc.desc Verify ClassIsUnion case 046: Classobject call isUnion()return same
+     * @tc.desc Verify ClassIsUnion case 046: Class object call isUnion returns same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -714,7 +721,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4700
      * @tc.name testClassIsUnion047
-     * @tc.desc Verify ClassIsUnion case 047: multiple different Classobject when call isUnion()
+     * @tc.desc Verify ClassIsUnion case 047: multiple different Class object when call isUnion()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -747,7 +754,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4900
      * @tc.name testClassIsUnion049
-     * @tc.desc Verify ClassIsUnion case 049: type
+     * @tc.desc Verify ClassIsUnion case 049: string|boolean union isUnion true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -760,7 +767,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5000
      * @tc.name testClassIsUnion050
-     * @tc.desc Verify ClassIsUnion case 050: type and type type
+     * @tc.desc Verify ClassIsUnion case 050: int and string Classes subtype of int|string union
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -770,6 +777,7 @@ export default function ClassIsUnionTest(): void {
         let intCls = Class.from<int>();
         let stringCls = Class.from<string>();
 
+        // int和string都是int|string的子类型
         expect(intCls.isSubtypeOf(unionCls)).assertTrue();
         expect(stringCls.isSubtypeOf(unionCls)).assertTrue();
     });
@@ -777,7 +785,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5100
      * @tc.name testClassIsUnion051
-     * @tc.desc Verify ClassIsUnion case 051: type type
+     * @tc.desc Verify ClassIsUnion case 051: narrower union isSubtypeOf wider union
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -786,6 +794,7 @@ export default function ClassIsUnionTest(): void {
       let cls1 = Class.from<int | string>();
         let cls2 = Class.from<int | string | boolean>();
 
+        // 更窄的联合类型是更宽联合类型的子类型
         expect(cls1.isSubtypeOf(cls2)).assertTrue();
     });
 
@@ -798,22 +807,11 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsUnion052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let testCases: Array<Class> = [
-          Class.from<int | string>(),
-          Class.from<boolean | double>(),
-          Class.from<Array<int> | Map<string, int>>(),
-          Class.from<int>(),
-          Class.from<MyClass001>()
-        ];
-
-        for (let cls of testCases) {
-          try {
-            let result = cls.isUnion();
-            console.info(`isUnion() returned: ${result}`);
-          } catch (error) {
-            expect().assertFail();
-          }
-        }
+      expect(Class.from<int | string>().isUnion()).assertTrue();
+        expect(Class.from<boolean | double>().isUnion()).assertTrue();
+        expect(Class.from<Array<int> | Map<string, int>>().isUnion()).assertTrue();
+        expect(Class.from<int>().isUnion()).assertFalse();
+        expect(Class.from<MyClass001>().isUnion()).assertFalse();
     });
 
   });
