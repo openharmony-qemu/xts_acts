@@ -11,10 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import("//build/config/ohos/config.gni")
+import("//build/ohos.gni")
+import("//foundation/arkui/napi/napi.gni")
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsFdsan_ndk_main") {
+ohos_app_assist_suite("ActsThirdPartyFdsan_main") {
   testonly = true
+  js_build_mode = "debug"
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsThirdPartyFdsanMainTest"
   subsystem_name = "thirdparty"
@@ -22,11 +26,12 @@ ohos_app_assist_suite("ActsFdsan_ndk_main") {
 }
 
 ohos_js_app_suite("ActsThirdPartyFdsanTest") {
+  js_build_mode = "debug"
   test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsThirdPartyFdsanTest"
   subsystem_name = "thirdparty"
   part_name = "musl"
-  deps = [ ":ActsFdsan_ndk_main" ]
+  deps = [ ":ActsThirdPartyFdsan_main" ]
 }
