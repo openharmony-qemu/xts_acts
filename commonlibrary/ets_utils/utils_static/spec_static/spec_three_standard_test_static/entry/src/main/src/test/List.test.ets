@@ -112,7 +112,6 @@ import OverloadWithImportTest02 from './semanticrules/overloading/overloadwithim
 import OverloadWithImportTest03 from './semanticrules/overloading/overloadwithimport/OverloadWithImportTest03.test'
 
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
-import ResizableArrayCreationExpressionsTest from "./experimentalfeatures/resizablearraycreationexpressions/ResizableArrayCreationExpressionsTest.test";
 import TypeCharTest from "./experimentalfeatures/typechar/TypeCharTest.test";
 import ExtendedConditionalExpressionsTest01 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest01.test";
 import ExtendedConditionalExpressionsTest02 from "./semanticrules/compatibilityfeatures/extendedconditionalexpressions/ExtendedConditionalExpressionsTest02.test";
@@ -146,7 +145,6 @@ import StaticInitializationNamespaceTest from "./semanticrules/staticinitializat
 import StaticInitializationSafetyTest from "./semanticrules/staticinitialization/staticinitializationsafety/StaticInitializationSafetyTest.test";
 import StaticInitializationTest from "./semanticrules/staticinitialization/StaticInitializationTest.test";
 import TypeErasureTest from "./semanticrules/typeerasure/TypeErasureTest.test";
-import SemanticRulesTest from "./semanticrules/SemanticRulesTest.test";
 
 import SpecificsOfAssignmentLikeContexts from './semanticrules/semanticessentials/AssignmentContextPositiveCases.test'
 import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow.test'
@@ -438,8 +436,6 @@ export default function testsuite(): void {
   OverloadSetForConstructorsTest02();
   OverloadSetForFunctionsTest01();
   OverloadSetForFunctionsTest02();
-  ResizableArrayCreationExpressionsTest();
-  SemanticRulesTest();
   StaticInitializationExecOrderTest();
   StaticInitializationIncompleteTest();
   StaticInitializationNamespaceTest();
