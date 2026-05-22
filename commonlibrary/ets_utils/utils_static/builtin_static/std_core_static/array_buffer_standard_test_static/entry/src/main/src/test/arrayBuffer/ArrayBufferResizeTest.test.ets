@@ -586,7 +586,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_3400
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify after resize(2 to 6) newly exposed view indices 2-5 are zero (grow zero-fill, not resize(0) path)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -697,7 +697,7 @@ export default function arrayBufferResizeTest(): void {
     /**
      * @tc.name testArrayBufferResize0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_4000
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify resize(0) then resize(4) preserves prior backing-store bytes per STA section 2.5.4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -707,7 +707,9 @@ export default function arrayBufferResizeTest(): void {
       const view = new Int8Array(buffer);
       view.set([10, 20, 30, 40]);
       buffer.resize(0);
+      expect(buffer.byteLength).assertEqual(0);
       buffer.resize(4);
+      expect(buffer.byteLength).assertEqual(4);
       const viewAfter = new Int8Array(buffer);
       expect(viewAfter[0]).assertEqual(Int.toByte(10));
       expect(viewAfter[1]).assertEqual(Int.toByte(20));

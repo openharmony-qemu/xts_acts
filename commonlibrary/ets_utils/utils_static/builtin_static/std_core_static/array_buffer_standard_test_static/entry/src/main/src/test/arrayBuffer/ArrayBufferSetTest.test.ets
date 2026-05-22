@@ -125,19 +125,21 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_0700
-     * @tc.desc Verify buffer.set(4, Int.toByte(10)) throws IndexOutOfBoundsError
+     * @tc.desc Verify buffer.set(4,...) throws IndexOutOfBoundsError and does not mutate index 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferSet0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
+      buffer.set(0, Int.toByte(65));
       try {
         buffer.set(4, Int.toByte(10));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
+      expect(buffer.at(0)).assertEqual(Int.toByte(65));
     });
 
     /**
