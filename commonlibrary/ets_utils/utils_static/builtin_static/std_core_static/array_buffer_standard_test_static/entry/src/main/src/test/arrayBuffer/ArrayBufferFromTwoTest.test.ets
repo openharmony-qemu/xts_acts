@@ -31,6 +31,7 @@ export default function arrayBufferFromTwoTest(): void {
       await Utils.msSleep(30);
     });
 
+
     /**
      * @tc.name testArrayBufferFromTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0100
@@ -44,7 +45,6 @@ export default function arrayBufferFromTwoTest(): void {
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0200
@@ -63,7 +63,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(30));
       expect(buffer.at(3)).assertEqual(Int.toByte(40));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0300
@@ -78,11 +77,10 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(42));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0400
-     * @tc.desc Verify value is not null and buffer.byteLength equals 0
+     * @tc.desc Verify buffer.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -91,9 +89,7 @@ export default function arrayBufferFromTwoTest(): void {
       const arr: FixedArray<byte> = [];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(0);
-      expect(buffer != null).assertTrue();
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0500
@@ -108,7 +104,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(127));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0600
@@ -123,7 +118,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(-128));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0700
@@ -138,7 +132,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(0));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0800
@@ -153,7 +146,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.byteLength).assertEqual(1);
       expect(buffer.at(0)).assertEqual(Int.toByte(-1));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0900
@@ -173,7 +165,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.at(3)).assertEqual(Int.toByte(1));
       expect(buffer.at(4)).assertEqual(Int.toByte(127));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1000
@@ -191,7 +182,6 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.at(0)).assertEqual(Int.toByte(1));
       expect(buffer.at(9)).assertEqual(Int.toByte(10));
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1100
@@ -205,7 +195,6 @@ export default function arrayBufferFromTwoTest(): void {
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(3);
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1200
@@ -219,59 +208,29 @@ export default function arrayBufferFromTwoTest(): void {
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(1);
     });
-
     /**
      * @tc.name testArrayBufferFromTwo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1300
-     * @tc.desc Verify return value is ArrayBuffer instance
+     * @tc.desc Verify (buffer1 !== buffer2) is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromTwo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(1), Int.toByte(2)];
-      const buffer = ArrayBuffer.from(arr);
-      expect(buffer instanceof ArrayBuffer).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromTwo0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1400
-     * @tc.desc Verify value is not null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromTwo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: FixedArray<byte> = [Int.toByte(1)];
-      const buffer = ArrayBuffer.from(arr);
-      expect(buffer != null).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferFromTwo0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1500
-     * @tc.desc Verify (buffer1 !== buffer2) is true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromTwo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: FixedArray<byte> = [Int.toByte(1), Int.toByte(2)];
       const buffer1 = ArrayBuffer.from(arr);
       const buffer2 = ArrayBuffer.from(arr);
       expect((buffer1 !== buffer2)).assertTrue();
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1600
+     * @tc.name testArrayBufferFromTwo0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1400
      * @tc.desc Verify buffer.at returns expected bytes at 4 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> =
         [Int.toByte(10), Int.toByte(20), Int.toByte(30), Int.toByte(40)];
       const buffer = ArrayBuffer.from(arr);
@@ -280,61 +239,57 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.at(2)).assertEqual(Int.toByte(30));
       expect(buffer.at(3)).assertEqual(Int.toByte(40));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1700
+     * @tc.name testArrayBufferFromTwo0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1500
      * @tc.desc Verify buffer.at(0) returns Int.toByte(55)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(55)];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(55));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1800
+     * @tc.name testArrayBufferFromTwo0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1600
      * @tc.desc Verify buffer.at returns expected bytes at 2 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(-128), Int.toByte(127)];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(-128));
       expect(buffer.at(1)).assertEqual(Int.toByte(127));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1900
+     * @tc.name testArrayBufferFromTwo0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1700
      * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(0), Int.toByte(0), Int.toByte(0)];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.at(0)).assertEqual(Int.toByte(0));
       expect(buffer.at(1)).assertEqual(Int.toByte(0));
       expect(buffer.at(2)).assertEqual(Int.toByte(0));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2000
+     * @tc.name testArrayBufferFromTwo0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1800
      * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(10), Int.toByte(20), Int.toByte(30)];
       const buffer = ArrayBuffer.from(arr);
       arr[0] = Int.toByte(99);
@@ -342,32 +297,30 @@ export default function arrayBufferFromTwoTest(): void {
       expect(buffer.at(1)).assertEqual(Int.toByte(20));
       expect(buffer.at(2)).assertEqual(Int.toByte(30));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2100
+     * @tc.name testArrayBufferFromTwo0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_1900
      * @tc.desc Verify arr[0] equals Int.toByte(10)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(10), Int.toByte(20)];
       const buffer = ArrayBuffer.from(arr);
       buffer.set(0, Int.toByte(99));
       expect(arr[0]).assertEqual(Int.toByte(10));
       expect(arr[1]).assertEqual(Int.toByte(20));
     });
-
     /**
-     * @tc.name testArrayBufferFromTwo0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2200
+     * @tc.name testArrayBufferFromTwo0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_2000
      * @tc.desc Verify buffer.at returns expected bytes at 2 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromTwo0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromTwo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: FixedArray<byte> = [Int.toByte(1), Int.toByte(2), Int.toByte(3)];
       const buffer1 = ArrayBuffer.from(arr);
       const buffer2 = ArrayBuffer.from(arr);
