@@ -80,10 +80,10 @@ export default function BigintTypeAliasTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
         expect((): void => {
-          const bad: bigint = new BigInt('abc');
+          new BigInt('abc');
         }).assertThrow(invalidMsg);
         expect((): void => {
-          const bad: bigint = new BigInt(3.14 as double);
+          new BigInt(3.14 as double);
         }).assertThrowError('RangeError');
       });
   });

@@ -20,13 +20,13 @@ export default function BigIntOperatorIncrementTest(): void {
   describe('BigInt.operatorIncrement (operatorIncrement)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0100
-     * @tc.name testBigIntOperatorIncrementTestBasic0100
-     * @tc.desc Verify operatorIncrement
+     * @tc.name testBigIntOperatorIncrementBasic0100
+     * @tc.desc Verify operatorIncrement basic cases including zero and negative values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementTestBasic0100',
+    it('testBigIntOperatorIncrementBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const v1 = new BigInt(41);
         expect(v1.operatorIncrement().toString()).assertEqual('42');
@@ -34,16 +34,20 @@ export default function BigIntOperatorIncrementTest(): void {
         expect(v2.operatorIncrement().toString()).assertEqual('1');
         const v3 = new BigInt(-2);
         expect(v3.operatorIncrement().toString()).assertEqual('-1');
+        expect(new BigInt('9223372036854775806').operatorIncrement().toString())
+          .assertEqual('9223372036854775807');
+        expect(new BigInt('-9223372036854775808').operatorIncrement().toString())
+          .assertEqual('-9223372036854775807');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0200
-     * @tc.name testBigIntOperatorIncrementTestImmutable0200
+     * @tc.name testBigIntOperatorIncrementImmutable0200
      * @tc.desc Verify operatorIncrement does not mutate receiver
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementTestImmutable0200',
+    it('testBigIntOperatorIncrementImmutable0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const v = new BigInt(5);
         const orig = v.toString();
@@ -52,13 +56,13 @@ export default function BigIntOperatorIncrementTest(): void {
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0300
-     * @tc.name testBigIntOperatorIncrementTestReturnType0300
+     * @tc.name testBigIntOperatorIncrementReturnType0300
      * @tc.desc Verify operatorIncrement returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementTestReturnType0300',
+    it('testBigIntOperatorIncrementReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(1).operatorIncrement() instanceof BigInt).assertTrue();
       });

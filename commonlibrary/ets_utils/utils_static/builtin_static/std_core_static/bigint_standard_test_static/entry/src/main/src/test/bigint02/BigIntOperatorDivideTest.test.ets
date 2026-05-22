@@ -36,7 +36,7 @@ export default function BigIntOperatorDivideTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0200
      * @tc.name testBigIntOperatorDivideZero0200
-     * @tc.desc Verify operatorDivide zero cases
+     * @tc.desc Verify operatorDivide zero dividend cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -44,6 +44,24 @@ export default function BigIntOperatorDivideTest(): void {
     it('testBigIntOperatorDivideZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(0).operatorDivide(new BigInt(5)).toString()).assertEqual('0');
+        expect(new BigInt(0).operatorDivide(new BigInt(-7)).toString()).assertEqual('0');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0300
+     * @tc.name testBigIntOperatorDivideNegativeTruncate0300
+     * @tc.desc Verify operatorDivide truncates toward zero for negative operands
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideNegativeTruncate0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-7).operatorDivide(new BigInt(3)).toString()).assertEqual('-2');
+        expect(new BigInt(7).operatorDivide(new BigInt(-3)).toString()).assertEqual('-2');
+        expect(new BigInt(-7).operatorDivide(new BigInt(-3)).toString()).assertEqual('2');
+        expect(new BigInt(-1).operatorDivide(new BigInt(2)).toString()).assertEqual('0');
+        expect(new BigInt('100000000000000000001').operatorDivide(new BigInt('100000000000000000000')).toString())
+          .assertEqual('1');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0400
@@ -88,7 +106,7 @@ export default function BigIntOperatorDivideTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0600
      * @tc.name testBigIntOperatorDivideDivByZero0600
-     * @tc.desc Verify operatorDivide throws on zero divisor
+     * @tc.desc Verify operatorDivide throws on zero divisor including 0/0 and negative/0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -98,26 +116,13 @@ export default function BigIntOperatorDivideTest(): void {
         expect((): void => {
           new BigInt(10).operatorDivide(new BigInt(0));
         }).assertThrowError('Error');
+        expect((): void => {
+          new BigInt(0).operatorDivide(new BigInt(0));
+        }).assertThrowError('Error');
+        expect((): void => {
+          new BigInt(-42).operatorDivide(new BigInt(0));
+        }).assertThrowError('Error');
       });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0300
-     * @tc.name testBigIntOperatorDivideNegativeTruncate0300
-     * @tc.desc Verify operatorDivide truncates toward zero for negative operands
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorDivideNegativeTruncate0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-7).operatorDivide(new BigInt(3)).toString()).assertEqual('-2');
-        expect(new BigInt(7).operatorDivide(new BigInt(-3)).toString()).assertEqual('-2');
-        expect(new BigInt(-7).operatorDivide(new BigInt(-3)).toString()).assertEqual('2');
-        expect(new BigInt(-1).operatorDivide(new BigInt(2)).toString()).assertEqual('0');
-        expect(new BigInt('100000000000000000001').operatorDivide(new BigInt('100000000000000000000')).toString())
-          .assertEqual('1');
-      });
-
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0700
      * @tc.name testBigIntOperatorDivideLarge0700

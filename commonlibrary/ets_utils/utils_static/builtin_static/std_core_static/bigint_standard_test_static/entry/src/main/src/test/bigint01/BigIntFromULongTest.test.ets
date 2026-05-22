@@ -139,10 +139,10 @@ export default function BigIntFromULongTest(): void {
     it('testBigIntFromULongInvalidArgThrows0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          BigInt.fromULong(null as long);
+          BigInt.fromULong(null as Object as long);
         }).assertThrowError('ClassCastError');
         expect((): void => {
-          BigInt.fromULong(undefined as long);
+          BigInt.fromULong(undefined as Object as long);
         }).assertThrowError('ClassCastError');
       });
   });

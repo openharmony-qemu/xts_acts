@@ -21,7 +21,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0100
      * @tc.name testBigIntOperatorLessThanEqualBasic0100
-     * @tc.desc Verify operatorLessThanEqual
+     * @tc.desc Verify operatorLessThanEqual basic ordering
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -37,7 +37,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0200
      * @tc.name testBigIntOperatorLessThanEqualBoundary0200
-     * @tc.desc Verify operatorLessThanEqual boundary
+     * @tc.desc Verify operatorLessThanEqual at MAX_SAFE_INTEGER and long boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -46,28 +46,63 @@ export default function BigIntOperatorLessThanEqualTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const maxSafe = '9007199254740991';
         expect(new BigInt(maxSafe).operatorLessThanEqual(new BigInt(maxSafe))).assertTrue();
+        expect(new BigInt('9007199254740990').operatorLessThanEqual(new BigInt(maxSafe))).assertTrue();
+        expect(new BigInt(maxSafe).operatorLessThanEqual(new BigInt('9007199254740990'))).assertFalse();
+        expect(new BigInt('-9223372036854775808').operatorLessThanEqual(new BigInt('-9223372036854775807'))).assertTrue();
+        expect(new BigInt('9223372036854775807').operatorLessThanEqual(new BigInt('9223372036854775807'))).assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0300
-     * @tc.name testBigIntOperatorLessThanEqualReturnType0300
+     * @tc.name testBigIntOperatorLessThanEqualZeroSign0300
+     * @tc.desc Verify operatorLessThanEqual zero and sign boundary cases
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanEqualZeroSign0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-1).operatorLessThanEqual(new BigInt(0))).assertTrue();
+        expect(new BigInt(0).operatorLessThanEqual(new BigInt(1))).assertTrue();
+        expect(new BigInt(0).operatorLessThanEqual(new BigInt(-1))).assertFalse();
+        expect(new BigInt(1).operatorLessThanEqual(new BigInt(0))).assertFalse();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0400
+     * @tc.name testBigIntOperatorLessThanEqualLarge0400
+     * @tc.desc Verify operatorLessThanEqual on magnitudes beyond Number.MAX_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanEqualLarge0400',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const base = new BigInt('999999999999999999999999999990');
+        const next = base.operatorAdd(new BigInt(1));
+        expect(base.operatorLessThanEqual(next)).assertTrue();
+        expect(next.operatorLessThanEqual(base)).assertFalse();
+        expect(next.operatorLessThanEqual(next)).assertTrue();
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0500
+     * @tc.name testBigIntOperatorLessThanEqualReturnType0500
      * @tc.desc Verify operatorLessThanEqual returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLessThanEqualReturnType0300',
+    it('testBigIntOperatorLessThanEqualReturnType0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof new BigInt(1).operatorLessThanEqual(new BigInt(2)) === 'boolean').assertTrue();
       });
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0400
-     * @tc.name testBigIntOperatorLessThanEqualInvalidArg0400
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0600
+     * @tc.name testBigIntOperatorLessThanEqualInvalidArg0600
      * @tc.desc Verify operatorLessThanEqual rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLessThanEqualInvalidArg0400',
+    it('testBigIntOperatorLessThanEqualInvalidArg0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a = new BigInt(10);
         expect((): void => {

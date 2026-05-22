@@ -78,8 +78,8 @@ export default function BigIntEquals2Test(): void {
         expect(a.equals(list42)).assertFalse();
         expect(new BigInt(0).equals(0)).assertFalse();
         expect(new BigInt(0).equals('')).assertFalse();
-        expect(new BigInt(42).equals(NaN)).assertFalse();
-        expect(new BigInt(42).equals(Infinity)).assertFalse();
+        expect(new BigInt(42).equals(Number.NaN)).assertFalse();
+        expect(new BigInt(42).equals(Number.POSITIVE_INFINITY)).assertFalse();
       });
 
     /**
