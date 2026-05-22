@@ -254,7 +254,7 @@ type CounterProvider = (this: ReceiverTarget) => void
 
 class Holder3 implements ReceiverTarget {
   foo(lf: CounterProvider) { lf(this) }
-  boo(lf: CounterProvider) { this.lf() }
+  boo(lf: CounterProvider) { lf(this) }
 }
 
 type CounterProvider1 = (this: ReceiverTarget1) => void
@@ -262,7 +262,7 @@ type CounterProvider1 = (this: ReceiverTarget1) => void
 class ReceiverTarget1 {
   counter: int = 0
   foo(lf: CounterProvider1) { lf(this) }
-  boo(lf: CounterProvider1) { this.lf() }
+  boo(lf: CounterProvider1) { lf(this) }
 }
 
 type CounterProvider2 = (this: ReceiverTarget2) => void
@@ -273,7 +273,7 @@ class ReceiverTarget2 {
     this.counter++
   }
   foo(lf: CounterProvider2) { lf(this) }
-  boo(lf: CounterProvider2) { this.lf() }
+  boo(lf: CounterProvider2) { lf(this) }
 }
 
 class A12 {

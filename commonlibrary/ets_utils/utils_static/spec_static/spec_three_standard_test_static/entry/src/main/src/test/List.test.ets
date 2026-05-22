@@ -58,6 +58,7 @@ import FinalMethodsTest from "./experimentalfeatures/classesexperimental/finalme
 import DefaultInterfaceMethodDeclarationsTest from "./experimentalfeatures/defaultinterfacemethoddeclarations/DefaultInterfaceMethodDeclarationsTest.test";
 import LambdaExpressionsWithReceiverTest from "./experimentalfeatures/addingfunctionalitytoexistingtypes/lambdaexpressionswithreceiver/LambdaExpressionsWithReceiverTest.test";
 import FunctionTypesWithReceiverTest from  "./experimentalfeatures/addingfunctionalitytoexistingtypes/functiontypeswithreceiver/FunctionTypesWithReceiverTest.test";
+import FunctionsWithReceiverTest from "./experimentalfeatures/addingfunctionalitytoexistingtypes/functionswithreceiver/FunctionsWithReceiverTest.test";
 import AccessorsWithReceiverTest from  "./experimentalfeatures/addingfunctionalitytoexistingtypes/accessorswithreceiver/AccessorsWithReceiverTest.test";
 import TrailingLambdasTest from "./experimentalfeatures/trailinglambdas/TrailingLambdasTest.test";
 import DestructuringAssignmentTest from './experimentalfeatures/patternmatching/destructuringassignment/DestructuringAssignmentTest.test';
@@ -337,6 +338,7 @@ export default function testsuite(): void {
   CallableTypesWithInstantiateMethodTest();
   FinalMethodsTest()
   DefaultInterfaceMethodDeclarationsTest()
+  FunctionsWithReceiverTest()
   AccessorsWithReceiverTest()
   FunctionTypesWithReceiverTest()
   EnumerationDoubleValuesTest();
