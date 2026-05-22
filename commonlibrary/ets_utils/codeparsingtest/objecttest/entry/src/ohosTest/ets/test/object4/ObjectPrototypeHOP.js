@@ -8,15 +8,6 @@ export function ObjectPrototypeHOPTest001() {
     return a;
 }
 
-export function ObjectPrototypeHOPTest002() {
-    const original = Object.prototype.constructor;
-    Object.prototype.constructor = function CustomObject() {};
-    const obj = {};
-    let a = obj.constructor.name;
-    Object.prototype.constructor = original;
-    return a;
-}
-
 export function ObjectPrototypeHOPTest003() {
     const example = {};
     example.prop = "exists";

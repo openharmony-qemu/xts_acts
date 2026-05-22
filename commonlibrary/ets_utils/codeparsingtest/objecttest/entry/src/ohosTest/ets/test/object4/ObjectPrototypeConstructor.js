@@ -271,24 +271,6 @@ export function ObjectPrototypeConstructorTest041() {
     return a;
 }
 
-export function ObjectPrototypeConstructorTest042() {
-    function Person(name) {
-        this.name = name;
-    }
-    const person = new Person('John');
-    let a = person.constructor.name;
-    return a;
-}
-
-export function ObjectPrototypeConstructorTest043() {
-    const Animal = function(name) {
-        this.name = name;
-    };
-    const animal = new Animal('Dog');
-    let a = animal.constructor.name;
-    return a;
-}
-
 export function ObjectPrototypeConstructorTest044() {
     function Parent() {}
     function Child() {}

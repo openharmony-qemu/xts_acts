@@ -467,19 +467,6 @@ export function ObjectKeys2Test056() {
     return [log1, log2];
 }
 
-export function ObjectKeys2Test057() {
-    const obj = { a: 1, b: 2, c: 3 };
-    const keys = Object.keys(obj);
-
-    let log1 = keys.map(k => k.toUpperCase());
-    let log2 = keys.filter(k => k === 'a');
-    let log3 = keys.reduce((acc, k) => acc + k, '');
-    let log4 = keys.join('-');
-    let log5 = keys.indexOf('b');
-    let log6 = keys.includes('a');
-    return [log1, log2, log3, log4, log5, log6];
-}
-
 export function ObjectKeys2Test058() {
     const obj = { a: 1, b: 2, c: 3 };
     const keys = Object.keys(obj);

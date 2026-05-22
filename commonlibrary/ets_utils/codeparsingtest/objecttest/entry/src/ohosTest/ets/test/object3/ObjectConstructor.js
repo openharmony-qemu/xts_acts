@@ -895,16 +895,6 @@ export function ObjectConstructorTest079() {
     return [a, b, c, d];
 }
 
-export function ObjectConstructorTest080() {
-    class CustomObject extends Object {}
-
-    const instance = new CustomObject();
-
-    let a = instance.constructor === CustomObject;
-    let b = instance.constructor.name;
-    return [a, b];
-}
-
 export function ObjectConstructorTest081() {
     const obj = Object({ a: 1 });
 

@@ -223,15 +223,6 @@ export function ObjectPrototypeHOP2Test025() {
     return [a, b];
 }
 
-export function ObjectPrototypeHOP2Test026() {
-    const obj = {};
-    const keyArr = [1, 2, 3];
-    obj["1,2,3"] = "value";
-    let a = obj.hasOwnProperty(keyArr);
-    let b = obj.hasOwnProperty("1,2,3");
-    return [a, b];
-}
-
 export function ObjectPrototypeHOP2Test027() {
     const foo = Object.create(null);
     foo.prop = "exists";

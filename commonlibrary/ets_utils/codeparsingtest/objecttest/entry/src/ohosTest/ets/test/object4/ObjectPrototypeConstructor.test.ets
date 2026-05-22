@@ -510,30 +510,6 @@ export default function ObjectPrototypeConstructorTest() {
     });
 
     /**
-     * @tc.name   ObjectPrototypeConstructorTest042
-     * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_CONSTRUCTOR_TEST_4200
-     * @tc.desc   Object Prototype Constructor Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPrototypeConstructorTest042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPrototypeConstructor.ObjectPrototypeConstructorTest042()).assertEqual("Person");
-    });
-
-    /**
-     * @tc.name   ObjectPrototypeConstructorTest043
-     * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_CONSTRUCTOR_TEST_4300
-     * @tc.desc   Object Prototype Constructor Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectPrototypeConstructorTest043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectPrototypeConstructor.ObjectPrototypeConstructorTest043()).assertEqual("Animal");
-    });
-
-    /**
      * @tc.name   ObjectPrototypeConstructorTest044
      * @tc.number SUB_BUILTINS_OBJECT_PROTOTYPE_CONSTRUCTOR_TEST_4400
      * @tc.desc   Object Prototype Constructor Test

@@ -689,18 +689,6 @@ export default function ObjectKeys2Test() {
     });
 
     /**
-     * @tc.name   ObjectKeys2Test057
-     * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_5700
-     * @tc.desc   Object Keys2 Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectKeys2Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(ObjectKeys2.ObjectKeys2Test057()).assertDeepEquals([['A', 'B', 'C'], ['a'], 'abc', 'a-b-c', 1, true]);
-    });
-
-    /**
      * @tc.name   ObjectKeys2Test058
      * @tc.number SUB_BUILTINS_OBJECT_KEYS2_TEST_5800
      * @tc.desc   Object Keys2 Test

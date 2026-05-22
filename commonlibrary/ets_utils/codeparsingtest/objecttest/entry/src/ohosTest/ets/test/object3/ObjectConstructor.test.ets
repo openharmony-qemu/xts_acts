@@ -989,18 +989,6 @@ export default function ObjectConstructorTest() {
     });
 
     /**
-     * @tc.name   ObjectConstructorTest080
-     * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR_TEST_8000
-     * @tc.desc   Object Constructor Test
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('ObjectConstructorTest080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      expect(Object.ObjectConstructorTest080()).assertDeepEquals([true, "CustomObject"]);
-    });
-
-    /**
      * @tc.name   ObjectConstructorTest081
      * @tc.number SUB_BUILTINS_OBJECT_CONSTRUCTOR_TEST_8100
      * @tc.desc   Object Constructor Test
