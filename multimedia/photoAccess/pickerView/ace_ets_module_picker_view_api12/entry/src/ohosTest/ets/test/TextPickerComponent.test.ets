@@ -40,7 +40,8 @@ import {
   BadgeType,
   PreselectedInfo,
   VideoPlayerState,
-  ClickResult
+  ClickResult,
+  CompletedResult
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo,
   AlbumPickerController } from '@ohos.file.AlbumPickerComponent';
@@ -84,9 +85,16 @@ interface DialogCreationExTestCase {
 async function driveFn() {
   let dr = Driver.create();
   await CommonFunc.sleep(100);
-  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
-  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 3000);
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1500)
+    .catch(() => undefined);
+
+  if (power1 === undefined) {
+    power1 = await dr?.waitForComponent(ON.text('Allow', MatchPattern.EQUALS), 1500)
+      .catch(() => undefined);
+  }
   await power1?.click();
+
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 3000);
   await power2?.click();
   await CommonFunc.sleep(1000);
 }
@@ -5061,12 +5069,28 @@ export default function TextPicker() {
     
       let callback = (event: events_emitter.EventData) => {
         let result: PhotoPickerResult = event?.data?.msg;
-        console.info('SUB_PHOTO_PICKER_TEST_0500 CompletedResult =:' + JSON.stringify(result));
+        console.info('SUB_PHOTO_PICKER_TEST_0500 result =:' + JSON.stringify(result));
+    
         expect(result).not().assertUndefined();
-        expect(result.photoUris).not().assertUndefined();
-        expect(result.contextRecoveryInfo).not().assertUndefined();
-        expect(result.movingPhotoBadgeStates).not().assertUndefined();
-      }
+    
+        expect(result.completedResult).not().assertUndefined();
+        let completedResult: CompletedResult | undefined = result.completedResult;
+        console.info('SUB_PHOTO_PICKER_TEST_0500 completedResult =:' + JSON.stringify(completedResult));
+    
+        expect(completedResult?.photoUris).not().assertUndefined();
+        expect(completedResult?.photoUris.length).assertLarger(0);
+        expect(completedResult?.photoUris[0]).not().assertUndefined();
+    
+        expect(completedResult?.contextRecoveryInfo).not().assertUndefined();
+        expect(completedResult?.contextRecoveryInfo.albumUri).not().assertUndefined();
+        expect(completedResult?.contextRecoveryInfo.displayName).not().assertUndefined();
+        expect(completedResult?.contextRecoveryInfo.time).not().assertUndefined();
+        expect(completedResult?.contextRecoveryInfo.fileSize).not().assertUndefined();
+    
+        expect(completedResult?.movingPhotoBadgeStates).not().assertUndefined();
+        expect(completedResult?.movingPhotoBadgeStates.length).assertLarger(0);
+        expect(completedResult?.movingPhotoBadgeStates[0]).not().assertUndefined();
+      }    
       let event: events_emitter.InnerEvent = {
         eventId: code,
         priority: events_emitter.EventPriority.LOW
