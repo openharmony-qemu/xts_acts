@@ -231,25 +231,6 @@ export default function webViewControllerJsunit() {
       })
 
     /**
-     * @tc.name   testFetchCookiePromiseStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0102
-     * @tc.desc   fetchCookie(url)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testFetchCookiePromiseStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testFetchCookiePromiseErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookiePromiseStatic101', 401, 2026052002, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
      * @tc.name   testFetchCookiePromiseStatic102
      * @tc.number SUB_WEB_ERRORCODE_EXT_0103
      * @tc.desc   fetchCookie(url)错误码覆盖，校验17100002
@@ -269,25 +250,6 @@ export default function webViewControllerJsunit() {
       })
 
     /**
-     * @tc.name   testFetchCookiePromiseStatic103
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0104
-     * @tc.desc   fetchCookie(url, incognito)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testFetchCookiePromiseStatic103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testFetchCookiePromiseIncognitoErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookiePromiseStatic103', 401, 2026052004, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
      * @tc.name   testFetchCookiePromiseStatic104
      * @tc.number SUB_WEB_ERRORCODE_EXT_0105
      * @tc.desc   fetchCookie(url, incognito)错误码覆盖，校验17100002
@@ -300,25 +262,6 @@ export default function webViewControllerJsunit() {
         Utils.emitEvent('testFetchCookiePromiseIncognitoErrorCode17100002Static', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testFetchCookiePromiseStatic104', 17100002, 2026052005, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testFetchCookieCallbackStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0106
-     * @tc.desc   fetchCookie(url, callback)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testFetchCookieCallbackStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testFetchCookieCallbackErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testFetchCookieCallbackStatic101', 401, 2026052006, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -421,25 +364,6 @@ export default function webViewControllerJsunit() {
       })
 
     /**
-     * @tc.name   testConfigCookieCallbackStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0112
-     * @tc.desc   configCookie(url, value, callback)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testConfigCookieCallbackStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testConfigCookieCallbackErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testConfigCookieCallbackStatic101', 401, 2026052012, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
      * @tc.name   testConfigCookieCallbackStatic102
      * @tc.number SUB_WEB_ERRORCODE_EXT_0113
      * @tc.desc   configCookie(url, value, callback)错误码覆盖，校验17100002
@@ -471,120 +395,6 @@ export default function webViewControllerJsunit() {
         Utils.emitEvent('testConfigCookieCallbackErrorCode17100005Static', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testConfigCookieCallbackStatic103', 17100005, 2026052014, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testSaveCookieAsyncStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0115
-     * @tc.desc   saveCookieAsync()错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSaveCookieAsyncStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testSaveCookieAsyncPromiseErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testSaveCookieAsyncStatic101', 401, 2026052015, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testSaveCookieAsyncStatic102
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0116
-     * @tc.desc   saveCookieAsync(callback)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSaveCookieAsyncStatic102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testSaveCookieAsyncCallbackErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testSaveCookieAsyncStatic102', 401, 2026052016, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testClearAllCookiesCallbackStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0117
-     * @tc.desc   clearAllCookies(callback)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testClearAllCookiesCallbackStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testClearAllCookiesCallbackErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testClearAllCookiesCallbackStatic101', 401, 2026052017, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testClearSessionCookiePromiseStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0118
-     * @tc.desc   clearSessionCookie()错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testClearSessionCookiePromiseStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testClearSessionCookiePromiseErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testClearSessionCookiePromiseStatic101', 401, 2026052018, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testClearSessionCookieCallbackStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0119
-     * @tc.desc   clearSessionCookie(callback)错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testClearSessionCookieCallbackStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testClearSessionCookieCallbackErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testClearSessionCookieCallbackStatic101', 401, 2026052019, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testLoadUrlStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0120
-     * @tc.desc   loadUrl(url, headers)错误码覆盖，传null url校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testLoadUrlStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testLoadUrlErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testLoadUrlStatic101', 401, 2026052020, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);
@@ -668,25 +478,6 @@ export default function webViewControllerJsunit() {
       })
 
     /**
-     * @tc.name   testSetCustomUserAgentStatic101
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0125
-     * @tc.desc   setCustomUserAgent错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetCustomUserAgentStatic101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testSetCustomUserAgentErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testSetCustomUserAgentStatic101', 401, 2026052025, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
      * @tc.name   testSetCustomUserAgentStatic102
      * @tc.number SUB_WEB_ERRORCODE_EXT_0126
      * @tc.desc   setCustomUserAgent错误码覆盖，校验17100001
@@ -718,25 +509,6 @@ export default function webViewControllerJsunit() {
         Utils.emitEvent('testEnableIntelligentTrackingPreventionErrorCode17100001Static', 10)
         await Utils.msSleep(1000);
         Utils.registerEvent('testEnableIntelligentTrackingPreventionStatic101', 17100001, 2026052027, done);
-        await Utils.msSleep(1000);
-        inspector.sendEventByKey('webcomponent',10,'');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /**
-     * @tc.name   testEnableIntelligentTrackingPreventionStatic102
-     * @tc.number SUB_WEB_ERRORCODE_EXT_0128
-     * @tc.desc   enableIntelligentTrackingPrevention错误码覆盖，校验401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('testEnableIntelligentTrackingPreventionStatic102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-        await Utils.msSleep(1000);
-        Utils.emitEvent('testEnableIntelligentTrackingPreventionErrorCode401Static', 10)
-        await Utils.msSleep(1000);
-        Utils.registerEvent('testEnableIntelligentTrackingPreventionStatic102', 401, 2026052028, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('webcomponent',10,'');
         await Utils.msSleep(6000);

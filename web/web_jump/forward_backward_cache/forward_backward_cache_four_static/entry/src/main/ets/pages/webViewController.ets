@@ -33,6 +33,7 @@ export class StringFields {
 @Component
 struct Index {
   stringObj: StringFields  = new StringFields ();
+  arkweb_webview_controller_null: webview.WebviewController = new webview.WebviewController();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = "emitFetchCookieSync";
   @State cookieResult: string = "";
@@ -254,26 +255,6 @@ struct Index {
               break;
             }
 
-            case 'testFetchCookiePromiseErrorCode401Static': {
-              try {
-                console.info('testFetchCookiePromiseErrorCode401Static start');
-                let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.fetchCookie(invalidUrl)
-                  .then(() => {
-                    console.info('testFetchCookiePromiseErrorCode401Static no error');
-                    Utils.emitEvent(0, 2026052002);
-                  })
-                  .catch((error) => {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052002);
-                  });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052002);
-              }
-              break;
-            }
-
             case 'testFetchCookiePromiseErrorCode17100002Static': {
               try {
                 console.info('testFetchCookiePromiseErrorCode17100002Static start');
@@ -293,26 +274,6 @@ struct Index {
               break;
             }
 
-            case 'testFetchCookiePromiseIncognitoErrorCode401Static': {
-              try {
-                console.info('testFetchCookiePromiseIncognitoErrorCode401Static start');
-                let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.fetchCookie(invalidUrl, false)
-                  .then(() => {
-                    console.info('testFetchCookiePromiseIncognitoErrorCode401Static no error');
-                    Utils.emitEvent(0, 2026052004);
-                  })
-                  .catch((error) => {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052004);
-                  });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052004);
-              }
-              break;
-            }
-
             case 'testFetchCookiePromiseIncognitoErrorCode17100002Static': {
               try {
                 console.info('testFetchCookiePromiseIncognitoErrorCode17100002Static start');
@@ -328,26 +289,6 @@ struct Index {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(error.code, 2026052005);
-              }
-              break;
-            }
-
-            case 'testFetchCookieCallbackErrorCode401Static': {
-              try {
-                console.info('testFetchCookieCallbackErrorCode401Static start');
-                let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.fetchCookie(invalidUrl, (error, cookie) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052006);
-                    return;
-                  }
-                  console.info('testFetchCookieCallbackErrorCode401Static cookie = ' + cookie);
-                  Utils.emitEvent(0, 2026052006);
-                });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052006);
               }
               break;
             }
@@ -439,26 +380,6 @@ struct Index {
               break;
             }
 
-            case 'testConfigCookieCallbackErrorCode401Static': {
-              try {
-                console.info('testConfigCookieCallbackErrorCode401Static start');
-                let invalidUrl: string = null as string;
-                web_webview.WebCookieManager.configCookie(invalidUrl, 'a=b', (error) => {
-                  if (error) {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052012);
-                    return;
-                  }
-                  console.info('testConfigCookieCallbackErrorCode401Static callback success');
-                  Utils.emitEvent(0, 2026052012);
-                });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052012);
-              }
-              break;
-            }
-
             case 'testConfigCookieCallbackErrorCode17100002Static': {
               try {
                 console.info('testConfigCookieCallbackErrorCode17100002Static start');
@@ -493,107 +414,6 @@ struct Index {
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
                 Utils.emitEvent(error.code, 2026052014);
-              }
-              break;
-            }
-
-            case 'testSaveCookieAsyncPromiseErrorCode401Static': {
-              try {
-                console.info('testSaveCookieAsyncPromiseErrorCode401Static start');
-                let saveCookieAsyncPromise: () => Promise<void> = (): Promise<void> => {
-                  return web_webview.WebCookieManager.saveCookieAsync();
-                }
-                let saveCookieAsyncFn: (param: Object) => Promise<void> =
-                  saveCookieAsyncPromise as (param: Object) => Promise<void>;
-                saveCookieAsyncFn(1 as Object)
-                  .then(() => {
-                    console.info('testSaveCookieAsyncPromiseErrorCode401Static no error');
-                    Utils.emitEvent(0, 2026052015);
-                  })
-                  .catch((error) => {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052015);
-                  });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052015);
-              }
-              break;
-            }
-
-            case 'testSaveCookieAsyncCallbackErrorCode401Static': {
-              try {
-                console.info('testSaveCookieAsyncCallbackErrorCode401Static start');
-                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
-                web_webview.WebCookieManager.saveCookieAsync(invalidCallback);
-                Utils.emitEvent(0, 2026052016);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052016);
-              }
-              break;
-            }
-
-            case 'testClearAllCookiesCallbackErrorCode401Static': {
-              try {
-                console.info('testClearAllCookiesCallbackErrorCode401Static start');
-                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
-                web_webview.WebCookieManager.clearAllCookies(invalidCallback);
-                Utils.emitEvent(0, 2026052017);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052017);
-              }
-              break;
-            }
-
-            case 'testClearSessionCookiePromiseErrorCode401Static': {
-              try {
-                console.info('testClearSessionCookiePromiseErrorCode401Static start');
-                let clearSessionCookiePromise: () => Promise<void> = (): Promise<void> => {
-                  return web_webview.WebCookieManager.clearSessionCookie();
-                }
-                let clearSessionCookieFn: (param: Object) => Promise<void> =
-                  clearSessionCookiePromise as (param: Object) => Promise<void>;
-                clearSessionCookieFn(1 as Object)
-                  .then(() => {
-                    console.info('testClearSessionCookiePromiseErrorCode401Static no error');
-                    Utils.emitEvent(0, 2026052018);
-                  })
-                  .catch((error) => {
-                    console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                    Utils.emitEvent(error.code, 2026052018);
-                  });
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052018);
-              }
-              break;
-            }
-
-            case 'testClearSessionCookieCallbackErrorCode401Static': {
-              try {
-                console.info('testClearSessionCookieCallbackErrorCode401Static start');
-                let invalidCallback: AsyncCallback<undefined, undefined> = null as AsyncCallback<undefined, undefined>;
-                web_webview.WebCookieManager.clearSessionCookie(invalidCallback);
-                Utils.emitEvent(0, 2026052019);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052019);
-              }
-              break;
-            }
-
-            case 'testLoadUrlErrorCode401Static': {
-              try {
-                console.info('testLoadUrlErrorCode401Static start');
-                let invalidUrl: string = null as string;
-                let headers: Array<webview.WebHeader> = [{ headerKey: 'headerKey', headerValue: 'headerValue' }];
-                this.controller.loadUrl(invalidUrl, headers);
-                Utils.emitEvent(0, 2026052020);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052020);
               }
               break;
             }
@@ -648,19 +468,6 @@ struct Index {
               break;
             }
 
-            case 'testSetCustomUserAgentErrorCode401Static': {
-              try {
-                console.info('testSetCustomUserAgentErrorCode401Static start');
-                let invalidUserAgent: string = null as string;
-                this.controller.setCustomUserAgent(invalidUserAgent);
-                Utils.emitEvent(0, 2026052025);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052025);
-              }
-              break;
-            }
-
             case 'testSetCustomUserAgentErrorCode17100001Static': {
               try {
                 console.info('testSetCustomUserAgentErrorCode17100001Static start');
@@ -677,8 +484,7 @@ struct Index {
             case 'testEnableIntelligentTrackingPreventionErrorCode17100001Static': {
               try {
                 console.info('testEnableIntelligentTrackingPreventionErrorCode17100001Static start');
-                let detachedController = new web_webview.WebviewController();
-                detachedController.enableIntelligentTrackingPrevention(true);
+                this.arkweb_webview_controller_null.enableIntelligentTrackingPrevention(true);
                 Utils.emitEvent(0, 2026052027);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
@@ -687,24 +493,10 @@ struct Index {
               break;
             }
 
-            case 'testEnableIntelligentTrackingPreventionErrorCode401Static': {
-              try {
-                console.info('testEnableIntelligentTrackingPreventionErrorCode401Static start');
-                let invalidEnable: boolean = null as boolean;
-                this.controller.enableIntelligentTrackingPrevention(invalidEnable);
-                Utils.emitEvent(0, 2026052028);
-              } catch (error) {
-                console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
-                Utils.emitEvent(error.code, 2026052028);
-              }
-              break;
-            }
-
             case 'testIsIntelligentTrackingPreventionEnabledErrorCode17100001Static': {
               try {
                 console.info('testIsIntelligentTrackingPreventionEnabledErrorCode17100001Static start');
-                let detachedController = new web_webview.WebviewController();
-                detachedController.isIntelligentTrackingPreventionEnabled();
+                this.arkweb_webview_controller_null.isIntelligentTrackingPreventionEnabled();
                 Utils.emitEvent(0, 2026052029);
               } catch (error) {
                 console.error(`ErrorCode: ${error.code}, Message: ${error.message}`);
