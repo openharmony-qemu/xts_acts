@@ -182,7 +182,7 @@ export default function StaticMethodInvokeTest(): void {
   describe('StaticMethodInvokeTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): void => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -434,7 +434,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
+    it('testStaticMethodInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let cls012 = Class.from<MyClass012>();
       let method = cls012.getStaticMethod('asyncMethod');
       expect(method != undefined).assertTrue();
@@ -660,7 +660,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
+    it('testStaticMethodInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let cls024 = Class.from<MyClass024>();
       let method = cls024.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -678,7 +678,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
+    it('testStaticMethodInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let cls025 = Class.from<MyClass025>();
       let method = cls025.getStaticMethod('fetchWithParam');
       expect(method != undefined).assertTrue();
@@ -696,7 +696,7 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): void => {
+    it('testStaticMethodInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (): Promise<void> => {
       let cls026 = Class.from<MyClass026>();
       let method = cls026.getStaticMethod('asyncError');
       expect(method != undefined).assertTrue();

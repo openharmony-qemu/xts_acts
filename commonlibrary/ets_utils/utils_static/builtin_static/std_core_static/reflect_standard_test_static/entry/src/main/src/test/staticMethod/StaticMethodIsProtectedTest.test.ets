@@ -163,7 +163,7 @@ export default function StaticMethodIsProtectedTest(): void {
   describe('StaticMethodIsProtectedTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

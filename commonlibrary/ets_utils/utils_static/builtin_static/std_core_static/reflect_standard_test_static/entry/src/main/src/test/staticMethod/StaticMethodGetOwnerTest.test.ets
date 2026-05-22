@@ -123,7 +123,7 @@ export default function StaticMethodGetOwnerTest(): void {
   describe('StaticMethodGetOwnerTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

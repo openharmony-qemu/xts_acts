@@ -94,7 +94,7 @@ export default function StaticMethodGetNameTest(): void {
   describe('StaticMethodGetNameTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

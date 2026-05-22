@@ -131,7 +131,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
   describe('StaticMethodGetReturnTypeTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

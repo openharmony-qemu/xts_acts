@@ -124,7 +124,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
   describe('StaticMethodGetParameterTypesTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

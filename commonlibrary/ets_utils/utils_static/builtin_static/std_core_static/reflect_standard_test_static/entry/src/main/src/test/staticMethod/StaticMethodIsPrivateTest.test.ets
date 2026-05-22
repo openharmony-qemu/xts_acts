@@ -148,7 +148,7 @@ export default function StaticMethodIsPrivateTest(): void {
   describe('StaticMethodIsPrivateTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

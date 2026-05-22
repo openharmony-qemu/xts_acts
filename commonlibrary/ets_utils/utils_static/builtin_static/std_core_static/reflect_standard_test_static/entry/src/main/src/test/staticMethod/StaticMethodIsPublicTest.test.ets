@@ -138,7 +138,7 @@ export default function StaticMethodIsPublicTest(): void {
   describe('StaticMethodIsPublicTest', (): void => {
     beforeAll(() => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach(() => {

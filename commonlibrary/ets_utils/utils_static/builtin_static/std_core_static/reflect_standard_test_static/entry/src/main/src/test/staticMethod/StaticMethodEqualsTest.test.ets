@@ -103,7 +103,7 @@ export default function StaticMethodEqualsTest(): void {
   describe('StaticMethodEqualsTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): void => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {

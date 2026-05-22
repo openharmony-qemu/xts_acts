@@ -188,7 +188,7 @@ export default function StaticMethodIsSetterTest(): void {
   describe('StaticMethodIsSetterTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): void => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
