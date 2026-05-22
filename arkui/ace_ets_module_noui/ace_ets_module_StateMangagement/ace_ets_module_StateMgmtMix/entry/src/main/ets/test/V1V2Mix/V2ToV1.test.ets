@@ -168,7 +168,7 @@ export default function V2ToV1() {
      */
     it('v2Tov1_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0700] START');
-      let Json = getInspectorByKey('func_value2');
+      let Json = getInspectorByKey('V2ToV1_func_value2');
       let Obj: ESObject = JSON.parse(Json);
       await CommonFunc.sleep(1000);
       console.log('[v2Tov1_0700] Obj ' + JSON.stringify(Obj.$attrs.content));

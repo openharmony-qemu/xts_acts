@@ -66,7 +66,7 @@ export default function LinkArray1() {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
+      let button = await driver.findComponent(ON.id('LinkArray1_state5'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LinkArray1');
@@ -89,7 +89,7 @@ export default function LinkArray1() {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state6'));
+      let button = await driver.findComponent(ON.id('LinkArray1_state6'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LinkArray1');
@@ -112,7 +112,7 @@ export default function LinkArray1() {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state7'));
+      let button = await driver.findComponent(ON.id('LinkArray1_state7'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LinkArray1');
@@ -135,7 +135,7 @@ export default function LinkArray1() {
       console.info('LinkArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state8'));
+      let button = await driver.findComponent(ON.id('LinkArray1_state8'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LinkArray1');
@@ -158,7 +158,7 @@ export default function LinkArray1() {
       console.info('StateArray_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state9'));
+      let button = await driver.findComponent(ON.id('LinkArray1_state9'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('LinkArray1New');

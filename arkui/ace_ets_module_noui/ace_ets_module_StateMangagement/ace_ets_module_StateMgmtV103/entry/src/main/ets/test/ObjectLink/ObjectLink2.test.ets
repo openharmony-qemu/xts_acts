@@ -127,7 +127,7 @@ export default function ObjectLink2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ObjectLink2_0300] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLink2_0300] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('ObjectLink2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[ObjectLink2_0300] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[ObjectLink2_0300] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));
@@ -155,7 +155,7 @@ export default function ObjectLink2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ObjectLink2_0400] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLink2_0400] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('ObjectLink2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[ObjectLink2_0400] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[ObjectLink2_0400] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));
@@ -235,7 +235,7 @@ export default function ObjectLink2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ObjectLink2_0700] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLink2_0700] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('ObjectLink2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[ObjectLink2_0700] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[ObjectLink2_0700] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));
@@ -265,7 +265,7 @@ export default function ObjectLink2() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[ObjectLink2_0800] component obj is: " + JSON.stringify(obj));
       console.info("[ObjectLink2_0800] title: " + JSON.stringify(obj.$attrs.fontSize));
-      let compareBtnStrJson = getInspectorByKey('compareBtn');
+      let compareBtnStrJson = getInspectorByKey('ObjectLink2_compareBtn');
       let compareBtnObj: ESObject = JSON.parse(compareBtnStrJson);
       console.info("[ObjectLink2_0800] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[ObjectLink2_0800] title: " + JSON.stringify(compareBtnObj.$attrs.fontSize));

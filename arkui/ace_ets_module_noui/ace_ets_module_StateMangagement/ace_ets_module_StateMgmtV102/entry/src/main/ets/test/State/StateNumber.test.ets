@@ -66,7 +66,7 @@ export default function StateNumber() {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('StateNumber_state1'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('StateNumber');
@@ -89,7 +89,7 @@ export default function StateNumber() {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('StateNumber_state2'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('StateNumber');
@@ -112,7 +112,7 @@ export default function StateNumber() {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state3'));
+      let button = await driver.findComponent(ON.id('StateNumber_state3'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('StateNumber');
@@ -135,7 +135,7 @@ export default function StateNumber() {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state4'));
+      let button = await driver.findComponent(ON.id('StateNumber_state4'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('StateNumber');
@@ -158,7 +158,7 @@ export default function StateNumber() {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
+      let button = await driver.findComponent(ON.id('StateNumber_state5'));
       await button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('StateNumber');

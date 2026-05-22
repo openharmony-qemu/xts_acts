@@ -39,30 +39,30 @@ struct StorageLink2 {
           this.has1 = AppStorage.has('Prop1')
         })
       Button(`has2: ${this.has2}`).width("100%").height('5%')
-        .key("button_son2")
+        .key("StorageLink2_button_son2")
         .onClick(() => {
           this.has2 = AppStorage.has('Prop178')
         })
 
       Button(`has3: ${this.has3}`).width("100%").height('5%')
-        .key("button_son3")
+        .key("StorageLink2_button_son3")
         .onClick(() => {
           this.has3 = AppStorage.set('Prop1',47)
         })
       Text("has3: "+this.has3 ).key('text').height('5%')
       Button(`has4: ${this.has4}`).width("100%").height('5%')
-        .key("button_son4")
+        .key("StorageLink2_button_son4")
         .onClick(() => {
           this.has4 = storage_1.set('PropA',50)
         })
 
       Button(`son1: ${this.son1}`).width("100%").height('5%')
-        .key("button_son5")
+        .key("StorageLink2_button_son5")
         .onClick(() => {
           AppStorage.setOrCreate('Prop1',48)
         })
       Button(`son2: ${this.son2}`).width("100%").height('5%')
-        .key("button_son6")
+        .key("StorageLink2_button_son6")
         .onClick(() => {
           AppStorage.setOrCreate('Prop2',49)
         })

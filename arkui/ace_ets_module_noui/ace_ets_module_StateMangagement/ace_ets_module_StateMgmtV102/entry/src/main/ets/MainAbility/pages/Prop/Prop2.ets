@@ -86,7 +86,7 @@ struct ParentComponent1 {
       Scroll() {
         Row() {
           Column() {
-            Button('compare').key('compareBtn')
+            Button('compare').key('Prop2_compareBtn')
             Row(){
               Column(){
                 Text('Prop-->undefined').height('5%')

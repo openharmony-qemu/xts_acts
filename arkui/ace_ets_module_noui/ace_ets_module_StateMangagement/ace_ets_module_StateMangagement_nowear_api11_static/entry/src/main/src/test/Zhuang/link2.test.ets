@@ -149,7 +149,7 @@ export default function link2() {
       let obj= JSON.parseJsonElement(strJson);
       console.info("[link2_0300] component obj is: " + JSON.stringify(obj));
       console.info("[link2_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
-      let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
+      let compareBtnStrJson = inspector.getInspectorByKey('link2_compareBtn');
       let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[link2_0300] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[link2_0300] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
@@ -176,7 +176,7 @@ export default function link2() {
       let obj= JSON.parseJsonElement(strJson);
       console.info("[link2_0400] component obj is: " + JSON.stringify(obj));
       console.info("[link2_0400] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
-      let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
+      let compareBtnStrJson = inspector.getInspectorByKey('link2_compareBtn');
       let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[link2_0400] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[link2_0400] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
@@ -259,7 +259,7 @@ export default function link2() {
       let obj= JSON.parseJsonElement(strJson);
       console.info("[link2_0700] component obj is: " + JSON.stringify(obj));
       console.info("[link2_0700] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
-      let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
+      let compareBtnStrJson = inspector.getInspectorByKey('link2_compareBtn');
       let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[link2_0700] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[link2_0700] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
@@ -288,7 +288,7 @@ export default function link2() {
       let obj= JSON.parseJsonElement(strJson);
       console.info("[link2_0800] component obj is: " + JSON.stringify(obj));
       console.info("[link2_0800] title: " + JSON.stringify(obj.getElement('$attrs').getString('fontSize')));
-      let compareBtnStrJson = inspector.getInspectorByKey('compareBtn');
+      let compareBtnStrJson = inspector.getInspectorByKey('link2_compareBtn');
       let compareBtnObj= JSON.parseJsonElement(compareBtnStrJson);
       console.info("[link2_0800] component compareBtnObj is: " + JSON.stringify(compareBtnObj));
       console.info("[link2_0800] title: " + JSON.stringify(compareBtnObj.getElement('$attrs').getString('fontSize')));
