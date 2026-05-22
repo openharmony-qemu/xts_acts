@@ -172,8 +172,10 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<StaticMethodEqualsCrossAClass003>().getStaticMethod('test');
-      let m2 = Class.from<StaticMethodEqualsCrossBClass003>().getStaticMethod('test');
+      let clsA = Class.from<StaticMethodEqualsCrossAClass003>();
+      let clsB = Class.from<StaticMethodEqualsCrossBClass003>();
+      let m1 = clsA.getStaticMethod('test');
+      let m2 = clsB.getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.equals(m2!)).assertFalse();
@@ -430,8 +432,9 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<StaticMethodEqualsAbstractTargetClass008>().getStaticMethod('test');
-      let m2 = Class.from<StaticMethodEqualsAbstractTargetClass008>().getStaticMethod('test');
+      let clsAbs = Class.from<StaticMethodEqualsAbstractTargetClass008>();
+      let m1 = clsAbs.getStaticMethod('test');
+      let m2 = clsAbs.getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.equals(m2!)).assertTrue();
@@ -446,8 +449,9 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<StaticMethodEqualsFinalTargetClass009>().getStaticMethod('test');
-      let m2 = Class.from<StaticMethodEqualsFinalTargetClass009>().getStaticMethod('test');
+      let clsFin = Class.from<StaticMethodEqualsFinalTargetClass009>();
+      let m1 = clsFin.getStaticMethod('test');
+      let m2 = clsFin.getStaticMethod('test');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.equals(m2!)).assertTrue();
@@ -527,8 +531,10 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methodsA = Class.from<StaticMethodEqualsSetClassA013>().getStaticMethods();
-      let methodsB = Class.from<StaticMethodEqualsSetClassB013>().getStaticMethods();
+      let clsA = Class.from<StaticMethodEqualsSetClassA013>();
+      let clsB = Class.from<StaticMethodEqualsSetClassB013>();
+      let methodsA = clsA.getStaticMethods();
+      let methodsB = clsB.getStaticMethods();
       let hit: int = 0;
       for (let i: int = 0; i < methodsA.length; i++) {
         for (let j: int = 0; j < methodsB.length; j++) {

@@ -437,8 +437,10 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<AbstractClass017>().getStaticMethod('abstractMethod');
-      let m2 = Class.from<FinalClass017>().getStaticMethod('finalMethod');
+      let clsAbs = Class.from<AbstractClass017>();
+      let clsFin = Class.from<FinalClass017>();
+      let m1 = clsAbs.getStaticMethod('abstractMethod');
+      let m2 = clsFin.getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.getReturnType().getName()).assertEqual('std.core.String');

@@ -292,8 +292,10 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methodA = Class.from<ClassA012>().getStaticMethod('methodA');
-      let methodB = Class.from<ClassB012>().getStaticMethod('methodB');
+      let clsA = Class.from<ClassA012>();
+      let clsB = Class.from<ClassB012>();
+      let methodA = clsA.getStaticMethod('methodA');
+      let methodB = clsB.getStaticMethod('methodB');
       expect(methodA != undefined).assertTrue();
       expect(methodB != undefined).assertTrue();
       expect(methodA!.getName()).assertEqual('methodA');
@@ -309,8 +311,10 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let parentMethod = Class.from<ParentClass013>().getStaticMethod('parentMethod');
-      let childMethod = Class.from<ChildClass013>().getStaticMethod('childMethod');
+      let parentCls = Class.from<ParentClass013>();
+      let childCls = Class.from<ChildClass013>();
+      let parentMethod = parentCls.getStaticMethod('parentMethod');
+      let childMethod = childCls.getStaticMethod('childMethod');
       expect(parentMethod != undefined).assertTrue();
       expect(childMethod != undefined).assertTrue();
       expect(parentMethod!.getName()).assertEqual('parentMethod');
