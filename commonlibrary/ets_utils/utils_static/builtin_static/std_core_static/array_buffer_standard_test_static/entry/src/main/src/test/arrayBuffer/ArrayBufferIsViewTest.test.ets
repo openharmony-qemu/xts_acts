@@ -350,16 +350,15 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2500
-     * @tc.desc Verify kind === 'boolean' is true
+     * @tc.desc Verify typeof isView(ArrayBuffer) is boolean when input is not a view
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      const view = new DataView(buffer);
-      let kind: string = typeof ArrayBuffer.isView(view);
-      expect(kind === 'boolean').assertTrue();
+      expect(ArrayBuffer.isView(buffer)).assertFalse();
+      expect(typeof ArrayBuffer.isView(buffer) === 'boolean').assertTrue();
     });
 
     /**

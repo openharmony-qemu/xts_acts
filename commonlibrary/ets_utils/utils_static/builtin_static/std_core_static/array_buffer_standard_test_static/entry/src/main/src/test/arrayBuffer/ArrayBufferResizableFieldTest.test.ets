@@ -132,7 +132,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0900
-     * @tc.desc Verify resizable is false and resizable is true
+     * @tc.desc Verify sliced.resizable is false and src.resizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -186,7 +186,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1300
-     * @tc.desc Verify resizable is false and resizable is false
+     * @tc.desc Verify fixed buffers b1, b2, and b3 resizable are all false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -232,7 +232,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1600
-     * @tc.desc Verify resizable is false and resizable is true
+     * @tc.desc Verify fixed.resizable is false and res.resizable is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
