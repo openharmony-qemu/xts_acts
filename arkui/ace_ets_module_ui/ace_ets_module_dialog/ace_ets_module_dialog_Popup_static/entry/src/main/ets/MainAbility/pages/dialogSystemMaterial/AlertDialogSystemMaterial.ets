@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,15 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiMaterial } from '@kit.ArkUI';
+import {
+  uiMaterial,
+  Entry,
+  Component,
+  Column,
+  Row,
+  Button,
+  DialogAlignment,
+  FlexAlign,
+  AlertDialogParamWithConfirm,
+  SystemUiMaterial
+} from '@kit.ArkUI';
 
 @Entry
 @Component
 struct AlertDialogSystemMaterial {
 
   build() {
-    Column({ space: 5 }) {
-      Row({ space: 5 }) {
+    Column() {
+      Row() {
         Button('undefined')
           .id('undefined')
           .height('8%')
@@ -37,7 +49,7 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog Undefined button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm);
           })
 
         Button('hdsMaterial THICK')
@@ -45,7 +57,7 @@ struct AlertDialogSystemMaterial {
           .height('8%')
           .onClick(() => {
             let material: SystemUiMaterial | undefined = undefined;
-            
+
             this.getUIContext().showAlertDialog({
               title: 'AlertDialog HDS THICK',
               message: 'systemMaterial hdsMaterial.Material THICK test',
@@ -58,11 +70,11 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog HDS THICK button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm);
           })
       }
 
-      Row({ space: 5 }) {
+      Row() {
         Button('SEMI_TRANSPARENT')
           .id('semi_transparent')
           .height('8%')
@@ -79,7 +91,7 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog SEMI_TRANSPARENT button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm);
           })
 
         Button('Immersive THICK')
@@ -98,11 +110,11 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog Immersive THICK button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm) ;
           })
       }
 
-      Row({ space: 5 }) {
+      Row() {
         Button('Immersive ULTRA_THIN')
           .id('immersive_ultra_thin')
           .height('8%')
@@ -119,7 +131,7 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog Immersive ULTRA_THIN button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm);
           })
 
         Button('NONE')
@@ -138,7 +150,7 @@ struct AlertDialogSystemMaterial {
                   console.info('AlertDialog NONE button clicked');
                 }
               }
-            });
+            }as AlertDialogParamWithConfirm);
           })
       }
     }

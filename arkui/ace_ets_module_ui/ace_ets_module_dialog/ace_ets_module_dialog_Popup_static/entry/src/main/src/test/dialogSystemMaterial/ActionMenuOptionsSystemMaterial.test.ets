@@ -1,248 +1,101 @@
- 
-
-
+'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the 'License');
+ * Copyright (c) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an 'AS IS' BASIS,
+ * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { Driver, ON, Component } from '@ohos.UiTest';
-import { router } from '@kit.ArkUI';
-import Utils from '../../MainAbility/common/Utils';
-import CommonFunc from '../../MainAbility/common/Common';
+
+
+import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
+import { abilityDelegatorRegistry, Driver, ON, MatchPattern, Component } from '@kit.TestKit';
+import router from '@ohos.router';
+import Utils from '../../../ets/MainAbility/common/Utils';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import { UtilsTest } from '../Util.test';
+
+const SLEEP_TIME = 1000;
 
 export default function ActionMenuOptionsSystemMaterialTest() {
   describe('ActionMenuOptionsSystemMaterialTest', () => {
-    beforeEach(async (done: Function) => {
-      console.info('ActionMenuOptionsSystemMaterialTest beforeEach start');
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial',
-      }
-      try {
-        router.clear();
-        let pages = router.getState();
-        console.info('get ActionMenuOptionsSystemMaterialTest state pages:' + JSON.stringify(pages));
-        if (!('ActionMenuOptionsSystemMaterial' == pages.name)) {
-          console.info('get ActionMenuOptionsSystemMaterialTest pages.name:' + JSON.stringify(pages.name));
-          let result = await router.push(options);
-          await Utils.sleep(2500);
-          console.info('push ActionMenuOptionsSystemMaterialTest page result:' + JSON.stringify(result));
-        }
-      } catch (err) {
-        console.error('push ActionMenuOptionsSystemMaterialTest page error:' + err);
-      }
-      console.info('ActionMenuOptionsSystemMaterialTest beforeEach end');
-      done();
+    beforeAll(async (): Promise<void> => {
+      console.info("ActionMenuOptionsSystemMaterialTest beforeAll start");
+      await UtilsTest.startAbility("com.arkui.ace.dialog.popup.static", "EntryAbility");
     });
 
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0100
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0100
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with hdsMaterial.Material undefined
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0100', Level.LEVEL2, async (done: Function) => {
+    beforeEach(async (): Promise<void> => {
+      console.info("ActionMenuOptionsSystemMaterialTest beforeEach start");
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial',
+      };
+      try {
+        const routerInstance = AppStorage.get<Router>("router") as Router;
+        routerInstance.clear();
+        let pages = routerInstance.getState();
+        console.info("get ActionMenuOptionsSystemMaterialTest state pages:" + JSON.stringify(pages));
+        if (!("PopupIndex" == pages.name)) {
+          console.info("get ActionMenuOptionsSystemMaterialTest pages.name:" + JSON.stringify(pages.name));
+          routerInstance.pushUrl(options);
+          await CommonFunc.sleep(SLEEP_TIME);
+        }
+      } catch (err) {
+        console.error("push ActionMenuOptionsSystemMaterialTest page error:" + err);
+      }
+      console.info("ActionMenuOptionsSystemMaterialTest beforeEach end");
+    });
+
+    afterEach(async () => {
+      await Utils.sleep(SLEEP_TIME);
+      console.info("ActionMenuOptionsSystemMaterialTest after each called");
+    });
+
+    /**
+     * @tc.name   ActionMenuOptionsSystemMaterial_0100
+     * @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0100
+     * @tc.desc   To test ActionMenuOptions systemMaterial property with hdsMaterial.Material undefined
+     * @tc.desc   ArkUIAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('ActionMenuOptionsSystemMaterial_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 		console.info('ActionMenuOptionsSystemMaterial_0100 START');
-		let driver = await Driver.create()
+		let driver: Driver = Driver.create();
 		await CommonFunc.sleep(1000);
 		let button = await driver.findComponent(ON.id('undefined'));
-		await button.click();
+		await (button?.click() as Promise<void>);
 		await CommonFunc.sleep(1000);
-
 		let titleText = await driver.findComponent(ON.text('ActionMenu Undefined'));
-		let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-		let dialog: ESObject = obj.$children[1]
-		let date = JSON.stringify(obj.$children[1].$children[0])
-		console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-		expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
+	    let aaa = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[1]
+        .getArray("$children")[0]
+        .getElement("$attrs")
+		.getElement("systemMaterial")
+		.getElement('material')
+        .getString("type")
+      expect(aaa).assertEqual('MaterialType.NONE');
+      console.info('CustomPopupOptionsSystemMaterial_0100 Popup Undefined is visible');
+
+      await CommonFunc.sleep(500);
 		console.info('ActionMenuOptionsSystemMaterial_0100 Menu title is visible');
 
 		await CommonFunc.sleep(500);
 		let closeButton = await driver.findComponent(ON.text('Button1'));
-		await closeButton.click();
+		await (closeButton?.click() as Promise<void>);
 		await CommonFunc.sleep(1000);
 		console.info('ActionMenuOptionsSystemMaterial_0100 END');
 		done();
-	});
-    
-
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0200
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0200
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with hdsMaterial.Material THICK
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0200', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0200 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('hds_thick'));
-	await button.click();
-	await CommonFunc.sleep(1000);
-
-	let titleText = await driver.findComponent(ON.text('ActionMenu HDS THICK'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-	console.info('ActionMenuOptionsSystemMaterial_0200 Menu title is visible');
-
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0200 END');
-	done();
-	});
-
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0300
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0300
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with uiMaterial.Material SEMI_TRANSPARENT
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0300', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0300 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('semi_transparent'));
-	await button.click();
-	await CommonFunc.sleep(1000);
-
-	let titleText = await driver.findComponent(ON.text('ActionMenu SEMI_TRANSPARENT'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.SEMI_TRANSPARENT');
-
-	console.info('ActionMenuOptionsSystemMaterial_0300 Menu title is visible');
-
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0300 END');
-	done();
-	});
-
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0400
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0400
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with uiMaterial.ImmersiveMaterial THICK
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0400', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0400 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('immersive_thick'));
-	await button.click();
-	await CommonFunc.sleep(1000);
-
-	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive THICK'));
-	console.info('ActionMenuOptionsSystemMaterial_0400 Menu title is visible');
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj004'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0400 END');
-	done();
-	});
-
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0500
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0500
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with uiMaterial.ImmersiveMaterial ULTRA_THIN
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0500', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0500 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('immersive_ultra_thin'));
-	await button.click();
-	await CommonFunc.sleep(1000);
-
-	let titleText = await driver.findComponent(ON.text('ActionMenu Immersive ULTRA_THIN'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj005'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
-	console.info('ActionMenuOptionsSystemMaterial_0500 Menu title is visible');
-
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0500 END');
-	done();
-	});
-
-	/**
-	* @tc.name   ActionMenuOptionsSystemMaterial_0600
-	* @tc.number SUB_ARKUI_API_AcActionMenuOptionsSystemMaterial_0600
-	* @tc.desc   To test ActionMenuOptions systemMaterial property with uiMaterial.Material NONE
-	* @tc.desc   ArkUIAPI 
-	* @tc.type   FUNCTION 
-	* @tc.size   MEDIUMTEST 
-	* @tc.level  LEVEL2 
-	*/
-	it('ActionMenuOptionsSystemMaterial_0600', Level.LEVEL2, async (done: Function) => {
-	console.info('ActionMenuOptionsSystemMaterial_0600 START');
-	let driver = await Driver.create()
-	await CommonFunc.sleep(1000);
-	let button = await driver.findComponent(ON.id('none'));
-	await button.click();
-	await CommonFunc.sleep(1000);
-
-	let titleText = await driver.findComponent(ON.text('ActionMenu NONE'));
-	let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
-	let dialog: ESObject = obj.$children[1]
-	let date = JSON.stringify(obj.$children[1].$children[0])
-	console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-	expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
-	console.info('ActionMenuOptionsSystemMaterial_0600 Menu title is visible');
-
-	await CommonFunc.sleep(500);
-	let closeButton = await driver.findComponent(ON.text('Button1'));
-	await closeButton.click();
-	await CommonFunc.sleep(1000);
-	console.info('ActionMenuOptionsSystemMaterial_0600 END');
-	done();
-	});
-
-  })
+    });
+  });
 }

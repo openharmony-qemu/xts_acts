@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,15 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { uiMaterial } from '@kit.ArkUI';
+import {
+  uiMaterial,
+  Entry,
+  Component,
+  Column,
+  Row,
+  Button,
+  DialogAlignment,
+  FlexAlign,
+  ColumnOptions,
+  RowOptions,
+  SystemUiMaterial
+} from '@kit.ArkUI';
 
 @Entry
 @Component
 struct ActionSheetOptionsSystemMaterial {
 
   build() {
-    Column({ space: 5 }) {
-      Row({ space: 5 }) {
+    Column({ space: 5 } as ColumnOptions) {
+      Row({ space: 5 } as RowOptions) {
         Button('undefined')
           .id('undefined')
           .height('8%')
@@ -59,7 +72,7 @@ struct ActionSheetOptionsSystemMaterial {
           .height('8%')
           .onClick(() => {
             let material: SystemUiMaterial | undefined = undefined;
-            
+
             this.getUIContext().showActionSheet({
               title: 'ActionSheet HDS THICK',
               message: 'systemMaterial hdsMaterial.Material THICK test',
@@ -90,7 +103,7 @@ struct ActionSheetOptionsSystemMaterial {
           })
       }
 
-      Row({ space: 5 }) {
+      Row({ space: 5 } as RowOptions) {
         Button('SEMI_TRANSPARENT')
           .id('semi_transparent')
           .height('8%')
@@ -158,7 +171,7 @@ struct ActionSheetOptionsSystemMaterial {
           })
       }
 
-      Row({ space: 5 }) {
+      Row({ space: 5 } as RowOptions) {
         Button('Immersive ULTRA_THIN')
           .id('immersive_ultra_thin')
           .height('8%')
