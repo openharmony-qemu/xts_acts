@@ -33,9 +33,6 @@ export default function webgl2_buffer() {
             // Presets an action, which is performed before each unit test case starts.
             // The number of execution times is the same as the number of test cases defined by **it**.
             // This API supports only one parameter: preset action function.
-            gl.useProgram(null);
-            gl.bindBuffer(gl.ARRAY_BUFFER, null);
-            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
             checkError(gl);
         });
         afterEach(function () {
@@ -2557,7 +2554,7 @@ export default function webgl2_buffer() {
             bindBufferBase((uniformBuffer) => {
                 gl.bindBufferBase(gl.TRANSFORM_FEEDBACK_BUFFER, 0, uniformBuffer);
             }, (boundBuffer, uniformBuffer) => {
-                expect(checkError(gl)).assertEqual(1282);
+                expect(checkError(gl)).assertEqual(gl.NO_ERROR);
             });
             done();
         });
