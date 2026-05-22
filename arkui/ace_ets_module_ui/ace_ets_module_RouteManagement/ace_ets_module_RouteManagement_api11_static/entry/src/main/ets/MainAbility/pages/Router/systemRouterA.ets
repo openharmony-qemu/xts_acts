@@ -27,7 +27,7 @@ struct SystemRouterA {
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
       Button('Push')
-        .key('pushButtonA')
+        .key('systemRouterA_pushButtonA')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)

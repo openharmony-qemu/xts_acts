@@ -118,7 +118,7 @@ struct Index {
                   this.handler.exitFullScreen();
                 })
 
-            Web({ src: 'www.baidu.com', controller: this.controller }).key('web2')
+            Web({ src: 'www.baidu.com', controller: this.controller }).key('webapi9_web2')
             .webStandardFont('HarmonyOS-Sans-Condensed')
             .webSeriFont('HarmonyOS-Sans-Condensed')
             .webSanSeriFont('HarmonyOS-Sans-Condensed')

@@ -57,7 +57,7 @@ export default function UIContextComponentSnapshot() {
       let button = await driver.findComponent(ON.id('gPromise'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strcontent = getInspectorByKey('ERRORcODE');
+      let strcontent = getInspectorByKey('UIContextComponentSnapshot_ERRORcODE');
       let obj: ESObject = JSON.parse(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_0100 component obj is: ' + obj);
@@ -81,7 +81,7 @@ export default function UIContextComponentSnapshot() {
       let button = await driver.findComponent(ON.id('gPromise1'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strcontent = getInspectorByKey('ERRORcODE1');
+      let strcontent = getInspectorByKey('UIContextComponentSnapshot_ERRORcODE1');
       let obj: ESObject = JSON.parse(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_0200 component obj is: ' + obj);
@@ -105,7 +105,7 @@ export default function UIContextComponentSnapshot() {
       let button = await driver.findComponent(ON.id('gPromise2'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strcontent = getInspectorByKey('ERRORcODE2');
+      let strcontent = getInspectorByKey('UIContextComponentSnapshot_ERRORcODE2');
       let obj: ESObject = JSON.parse(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_0300 component obj is: ' + obj);
@@ -129,7 +129,7 @@ export default function UIContextComponentSnapshot() {
       let button = await driver.findComponent(ON.id('gPromise3'));
       await button.click();
       await CommonFunc.sleep(1000);
-      let strcontent = getInspectorByKey('ERRORcODE3');
+      let strcontent = getInspectorByKey('UIContextComponentSnapshot_ERRORcODE3');
       let obj: ESObject = JSON.parse(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_0400 component obj is: ' + obj);

@@ -74,7 +74,7 @@ it('UIContextComponentSnapshot_static_0100', Level.LEVEL0, async (done: () => vo
       let button = await driver.findComponent(ON.id('gPromise'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('ERRORcODE');
+      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_static_0100 component obj is: ' + obj);
@@ -98,7 +98,7 @@ it('UIContextComponentSnapshot_static_0200', Level.LEVEL0, async (done: () => vo
       let button = await driver.findComponent(ON.id('gPromise1'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('ERRORcODE1');
+      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE1');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_static_0200 component obj is: ' + obj);
@@ -122,7 +122,7 @@ it('UIContextComponentSnapshot_static_0300', Level.LEVEL0, async (done: () => vo
       let button = await driver.findComponent(ON.id('gPromise2'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('ERRORcODE2');
+      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE2');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_static_0300 component obj is: ' + obj);
@@ -146,7 +146,7 @@ it('UIContextComponentSnapshot_static_0400', Level.LEVEL0, async (done: () => vo
       let button = await driver.findComponent(ON.id('gPromise3'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let strcontent = inspector.getInspectorByKey('ERRORcODE3');
+      let strcontent = inspector.getInspectorByKey('UIContextComponentSnapshot_ERRORcODE3');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
       console.info('UIContextComponentSnapshot_static_0400 component obj is: ' + obj);

@@ -106,7 +106,7 @@ export default function OhosRouterJsunit() {
         console.info("[ohosRouterTest002] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest002] click push button result is: "
-        + JSON.stringify(sendEventByKey('pushButtonA', 10, "")));
+        + JSON.stringify(sendEventByKey('ohosRouterA_pushButtonA_01', 10, "")));
       await CommonFunc.sleep(1000);
       router.back();
       await CommonFunc.sleep(1000);

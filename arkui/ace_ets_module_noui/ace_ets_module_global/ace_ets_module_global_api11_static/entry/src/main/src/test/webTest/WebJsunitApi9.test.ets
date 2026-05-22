@@ -186,7 +186,7 @@ it('testweb_static_05', Level.LEVEL0, async () => {
 it('testweb_static_06', Level.LEVEL0, async () => {
             console.info("testmultiWindow_static_016 START")
             await Utils.sleep(2000)
-            let strJson = inspector.getInspectorByKey("web2")
+            let strJson = inspector.getInspectorByKey("webapi9_web2")
             console.info("[multiwindow] component strJson:" + strJson)
             let obj = JSON.parseJsonElement(strJson)
             expect(obj.getElement('$type')).assertEqual("web")

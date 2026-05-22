@@ -44,7 +44,7 @@ struct PageOne {
       .height(72)
       NavDestination() {
         Flex({ direction: FlexDirection.Row }) {
-          Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('showFlag_id')
+          Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('getUIObserverTest_showFlag_id_01')
         }
       }.hideTitleBar(false).backgroundColor('#0c182431')
     }
@@ -132,7 +132,7 @@ struct NavRouterExample {
               .height(72)
               NavDestination() {
                 Flex({ direction: FlexDirection.Row }) {
-                  Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('showFlag_id')
+                  Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('getUIObserverTest_showFlag_id_02')
                 }
               }.hideTitleBar(false).backgroundColor('#0c182431')
             }

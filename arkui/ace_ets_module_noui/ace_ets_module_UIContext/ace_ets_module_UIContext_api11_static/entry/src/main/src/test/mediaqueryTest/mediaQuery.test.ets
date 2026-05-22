@@ -80,7 +80,7 @@ export default function mediaQueryOffJsunit() {
 it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       // console.info("[testmediaQueryOff0001] component width strJson11:" + JSON.stringify(obj));
@@ -101,7 +101,7 @@ it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -121,7 +121,7 @@ it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -141,7 +141,7 @@ it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -161,7 +161,7 @@ it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -181,7 +181,7 @@ it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0006 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -200,7 +200,7 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0007 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -220,7 +220,7 @@ it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0009 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -240,7 +240,7 @@ it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
 it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0010 START');
       await UtilsTest.msSleep(2000);
-      let strJson = inspector.getInspectorByKey('offText');
+      let strJson = inspector.getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff_static_0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -269,7 +269,7 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
           console.info("onRequestPopupData_0012 get event state result is: " + JSON.stringify(eventData));
           expect((eventData.data as ESObject).getProperty('STATUS')).assertEqual(true);
         }
-        console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
+        console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('mediaQuery_offText_01', 10, "")));
         emitter.on(innerEventOne, callback1);
       } catch (err) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
