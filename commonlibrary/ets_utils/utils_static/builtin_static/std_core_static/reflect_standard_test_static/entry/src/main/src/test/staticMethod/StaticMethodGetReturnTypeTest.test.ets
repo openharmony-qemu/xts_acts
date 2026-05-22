@@ -171,9 +171,12 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m3 != undefined).assertTrue();
-      expect(m1!.getReturnType().getName()).assertEqual('std.core.String');
-      expect(m2!.getReturnType().getName()).assertEqual('i32');
-      expect(m3!.getReturnType().getName()).assertEqual('u1');
+      let rt1 = m1!.getReturnType();
+      let rt2 = m2!.getReturnType();
+      let rt3 = m3!.getReturnType();
+      expect(rt1.getName()).assertEqual('std.core.String');
+      expect(rt2.getName()).assertEqual('i32');
+      expect(rt3.getName()).assertEqual('u1');
     });
 
     /**
@@ -188,7 +191,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noReturn');
       expect(method != undefined).assertTrue();
-      expect(method!.getReturnType().getName()).assertEqual('void');
+      let rt = method!.getReturnType();
+      expect(rt.getName()).assertEqual('void');
     });
 
     /**
@@ -205,8 +209,10 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m2 = cls.getStaticMethod('returnMap');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
-      expect(m1!.getReturnType().getName().includes('MyClass004')).assertTrue();
-      expect(m2!.getReturnType().getName()).assertEqual('std.core.Map');
+      let rt1 = m1!.getReturnType();
+      let rt2 = m2!.getReturnType();
+      expect(rt1.getName().includes('MyClass004')).assertTrue();
+      expect(rt2.getName()).assertEqual('std.core.Map');
     });
 
     /**
@@ -223,8 +229,10 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m2 = cls.getStaticMethod('returnFixedArray');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
-      expect(m1!.getReturnType().getName()).assertEqual('std.core.Array');
-      expect(m2!.getReturnType().getName()).assertEqual('std.core.String[]');
+      let rt1 = m1!.getReturnType();
+      let rt2 = m2!.getReturnType();
+      expect(rt1.getName()).assertEqual('std.core.Array');
+      expect(rt2.getName()).assertEqual('std.core.String[]');
     });
 
     /**
@@ -341,15 +349,33 @@ export default function StaticMethodGetReturnTypeTest(): void {
      */
     it('testStaticMethodGetReturnType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
-      expect(cls.getStaticMethod('rByte')!.getReturnType().getName()).assertEqual('i8');
-      expect(cls.getStaticMethod('rShort')!.getReturnType().getName()).assertEqual('i16');
-      expect(cls.getStaticMethod('rInt')!.getReturnType().getName()).assertEqual('i32');
-      expect(cls.getStaticMethod('rLong')!.getReturnType().getName()).assertEqual('i64');
-      expect(cls.getStaticMethod('rFloat')!.getReturnType().getName()).assertEqual('f32');
-      expect(cls.getStaticMethod('rDouble')!.getReturnType().getName()).assertEqual('f64');
-      expect(cls.getStaticMethod('rNumber')!.getReturnType().getName()).assertEqual('f64');
-      expect(cls.getStaticMethod('rBoolean')!.getReturnType().getName()).assertEqual('u1');
-      expect(cls.getStaticMethod('rChar')!.getReturnType().getName()).assertEqual('u16');
+      let mByte = cls.getStaticMethod('rByte');
+      let mShort = cls.getStaticMethod('rShort');
+      let mInt = cls.getStaticMethod('rInt');
+      let mLong = cls.getStaticMethod('rLong');
+      let mFloat = cls.getStaticMethod('rFloat');
+      let mDouble = cls.getStaticMethod('rDouble');
+      let mNumber = cls.getStaticMethod('rNumber');
+      let mBoolean = cls.getStaticMethod('rBoolean');
+      let mChar = cls.getStaticMethod('rChar');
+      let rtByte = mByte!.getReturnType();
+      let rtShort = mShort!.getReturnType();
+      let rtInt = mInt!.getReturnType();
+      let rtLong = mLong!.getReturnType();
+      let rtFloat = mFloat!.getReturnType();
+      let rtDouble = mDouble!.getReturnType();
+      let rtNumber = mNumber!.getReturnType();
+      let rtBoolean = mBoolean!.getReturnType();
+      let rtChar = mChar!.getReturnType();
+      expect(rtByte.getName()).assertEqual('i8');
+      expect(rtShort.getName()).assertEqual('i16');
+      expect(rtInt.getName()).assertEqual('i32');
+      expect(rtLong.getName()).assertEqual('i64');
+      expect(rtFloat.getName()).assertEqual('f32');
+      expect(rtDouble.getName()).assertEqual('f64');
+      expect(rtNumber.getName()).assertEqual('f64');
+      expect(rtBoolean.getName()).assertEqual('u1');
+      expect(rtChar.getName()).assertEqual('u16');
     });
 
     /**
@@ -364,7 +390,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('chain');
       expect(method != undefined).assertTrue();
-      expect(method!.getReturnType().getName().includes('MyClass013')).assertTrue();
+      let rt = method!.getReturnType();
+      expect(rt.getName().includes('MyClass013')).assertTrue();
     });
 
     /**
@@ -403,9 +430,12 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m3 != undefined).assertTrue();
-      expect(m1!.getReturnType().getName()).assertEqual('std.core.String');
-      expect(m2!.getReturnType().getName().includes('Promise')).assertTrue();
-      expect(m3!.getReturnType().getName()).assertEqual('i32');
+      let rt1 = m1!.getReturnType();
+      let rt2 = m2!.getReturnType();
+      let rt3 = m3!.getReturnType();
+      expect(rt1.getName()).assertEqual('std.core.String');
+      expect(rt2.getName().includes('Promise')).assertTrue();
+      expect(rt3.getName()).assertEqual('i32');
     });
 
     /**
@@ -443,8 +473,10 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m2 = clsFin.getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
-      expect(m1!.getReturnType().getName()).assertEqual('std.core.String');
-      expect(m2!.getReturnType().getName()).assertEqual('i32');
+      let rt1 = m1!.getReturnType();
+      let rt2 = m2!.getReturnType();
+      expect(rt1.getName()).assertEqual('std.core.String');
+      expect(rt2.getName()).assertEqual('i32');
     });
 
     /**
@@ -461,8 +493,10 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let setter = cls.getStaticMethod('%%set-name');
       expect(getter != undefined).assertTrue();
       expect(setter != undefined).assertTrue();
-      expect(getter!.getReturnType().getName()).assertEqual('std.core.String');
-      expect(setter!.getReturnType().getName()).assertEqual('void');
+      let rtGetter = getter!.getReturnType();
+      let rtSetter = setter!.getReturnType();
+      expect(rtGetter.getName()).assertEqual('std.core.String');
+      expect(rtSetter.getName()).assertEqual('void');
     });
 
     /**
@@ -482,10 +516,12 @@ export default function StaticMethodGetReturnTypeTest(): void {
       returnTypes.set('m3', 'u1');
       returnTypes.set('m4', 'void');
       for (let i: int = 0; i < methods.length; i++) {
-        let name: string = methods[i].getName();
-        let expected = returnTypes.get(name);
+        let method = methods[i];
+        let methodName: string = method.getName();
+        let expected = returnTypes.get(methodName);
         if (expected !== undefined) {
-          expect(methods[i].getReturnType().getName()).assertEqual(expected);
+          let rt = method.getReturnType();
+          expect(rt.getName()).assertEqual(expected);
         }
       }
     });

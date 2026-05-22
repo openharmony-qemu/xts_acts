@@ -418,7 +418,8 @@ export default function StaticMethodEqualsTest(): void {
       let cls = Class.from<StaticMethodEqualsSyncAsyncClass007>();
       let syncMethod = cls.getStaticMethod('syncMethod');
       let asyncMethod = cls.getStaticMethod('asyncMethod');
-      expect(syncMethod != undefined && asyncMethod != undefined).assertTrue();
+      let bothDefined = syncMethod != undefined && asyncMethod != undefined;
+      expect(bothDefined).assertTrue();
       let result = syncMethod!.equals(asyncMethod!);
       expect(result).assertFalse();
     });
@@ -470,7 +471,8 @@ export default function StaticMethodEqualsTest(): void {
       let getter1 = cls.getStaticMethod('%%get-userName');
       let getter2 = cls.getStaticMethod('%%get-userName');
       let setter = cls.getStaticMethod('%%set-userName');
-      expect(getter1 != undefined && getter2 != undefined && setter != undefined).assertTrue();
+      let allDefined = getter1 != undefined && getter2 != undefined && setter != undefined;
+      expect(allDefined).assertTrue();
       expect(getter1!.equals(getter2!)).assertTrue();
       expect(getter1!.equals(setter!)).assertFalse();
     });

@@ -256,9 +256,12 @@ export default function StaticMethodIsAsyncTest(): void {
      */
     it('testStaticMethodIsAsync007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
-      expect(cls.getStaticMethod('returnString')!.isAsync()).assertTrue();
-      expect(cls.getStaticMethod('returnInt')!.isAsync()).assertTrue();
-      expect(cls.getStaticMethod('returnVoid')!.isAsync()).assertTrue();
+      let mStr = cls.getStaticMethod('returnString');
+      let mInt = cls.getStaticMethod('returnInt');
+      let mVoid = cls.getStaticMethod('returnVoid');
+      expect(mStr!.isAsync()).assertTrue();
+      expect(mInt!.isAsync()).assertTrue();
+      expect(mVoid!.isAsync()).assertTrue();
     });
 
     /**
@@ -275,7 +278,8 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(method != undefined).assertTrue();
       let isAsync: boolean = method!.isAsync();
       expect(typeof isAsync).assertEqual('boolean');
-      expect(isAsync === true || isAsync === false).assertTrue();
+      let isBoolean: boolean = isAsync === true || isAsync === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**
@@ -291,7 +295,8 @@ export default function StaticMethodIsAsyncTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isAsync: boolean = method!.isAsync();
-      expect(isAsync === true || isAsync === false).assertTrue();
+      let isBoolean: boolean = isAsync === true || isAsync === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**
@@ -309,7 +314,8 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(asyncMethod != undefined).assertTrue();
       expect(syncMethod != undefined).assertTrue();
       expect(asyncMethod!.isAsync()).assertTrue();
-      expect(asyncMethod!.getReturnType().getName().includes('Promise')).assertTrue();
+      let rt = asyncMethod!.getReturnType();
+      expect(rt.getName().includes('Promise')).assertTrue();
       expect(syncMethod!.isAsync()).assertFalse();
     });
 
@@ -422,7 +428,8 @@ export default function StaticMethodIsAsyncTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
       expect(method!.isAsync()).assertTrue();
-      expect(method!.getReturnType().getName().includes('Promise')).assertTrue();
+      let rt = method!.getReturnType();
+      expect(rt.getName().includes('Promise')).assertTrue();
     });
 
     /**
@@ -554,8 +561,10 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(asyncMethod != undefined).assertTrue();
       expect(syncMethod!.isAsync()).assertFalse();
       expect(asyncMethod!.isAsync()).assertTrue();
-      expect(syncMethod!.getReturnType().getName()).assertEqual('std.core.String');
-      expect(asyncMethod!.getReturnType().getName().includes('Promise')).assertTrue();
+      let syncRt = syncMethod!.getReturnType();
+      let asyncRt = asyncMethod!.getReturnType();
+      expect(syncRt.getName()).assertEqual('std.core.String');
+      expect(asyncRt.getName().includes('Promise')).assertTrue();
     });
 
     /**

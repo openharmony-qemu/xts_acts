@@ -146,10 +146,18 @@ export default function StaticMethodGetNameTest(): void {
      */
     it('testStaticMethodGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
-      expect(cls.getStaticMethod('method1')!.getName()).assertEqual('method1');
-      expect(cls.getStaticMethod('method2')!.getName()).assertEqual('method2');
-      expect(cls.getStaticMethod('methodName')!.getName()).assertEqual('methodName');
-      expect(cls.getStaticMethod('_privateMethod')!.getName()).assertEqual('_privateMethod');
+      let m1 = cls.getStaticMethod('method1');
+      let m2 = cls.getStaticMethod('method2');
+      let mn = cls.getStaticMethod('methodName');
+      let mp = cls.getStaticMethod('_privateMethod');
+      let n1 = m1!.getName();
+      let n2 = m2!.getName();
+      let nn = mn!.getName();
+      let np = mp!.getName();
+      expect(n1).assertEqual('method1');
+      expect(n2).assertEqual('method2');
+      expect(nn).assertEqual('methodName');
+      expect(np).assertEqual('_privateMethod');
     });
 
     /**
@@ -263,9 +271,15 @@ export default function StaticMethodGetNameTest(): void {
      */
     it('testStaticMethodGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
-      expect(cls.getStaticMethod('publicMethod')!.getName()).assertEqual('publicMethod');
-      expect(cls.getStaticMethod('asyncMethod')!.getName()).assertEqual('asyncMethod');
-      expect(cls.getStaticMethod('finalMethod')!.getName()).assertEqual('finalMethod');
+      let mPublic = cls.getStaticMethod('publicMethod');
+      let mAsync = cls.getStaticMethod('asyncMethod');
+      let mFinal = cls.getStaticMethod('finalMethod');
+      let namePublic = mPublic!.getName();
+      let nameAsync = mAsync!.getName();
+      let nameFinal = mFinal!.getName();
+      expect(namePublic).assertEqual('publicMethod');
+      expect(nameAsync).assertEqual('asyncMethod');
+      expect(nameFinal).assertEqual('finalMethod');
     });
 
     /**

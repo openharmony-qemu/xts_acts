@@ -250,7 +250,8 @@ export default function StaticMethodIsNativeTest(): void {
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(typeof isNative).assertEqual('boolean');
-      expect(isNative === true || isNative === false).assertTrue();
+      let isBoolean: boolean = isNative === true || isNative === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**
@@ -266,7 +267,8 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
-      expect(isNative === true || isNative === false).assertTrue();
+      let isBoolean: boolean = isNative === true || isNative === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**

@@ -309,9 +309,12 @@ export default function StaticMethodIsGetterTest(): void {
      */
     it('testStaticMethodIsGetter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
-      expect(cls.getStaticMethod('%%get-strProp')!.isGetter()).assertTrue();
-      expect(cls.getStaticMethod('%%get-numProp')!.isGetter()).assertTrue();
-      expect(cls.getStaticMethod('%%get-boolProp')!.isGetter()).assertTrue();
+      let mStr = cls.getStaticMethod('%%get-strProp');
+      let mNum = cls.getStaticMethod('%%get-numProp');
+      let mBool = cls.getStaticMethod('%%get-boolProp');
+      expect(mStr!.isGetter()).assertTrue();
+      expect(mNum!.isGetter()).assertTrue();
+      expect(mBool!.isGetter()).assertTrue();
     });
 
     /**
@@ -343,7 +346,8 @@ export default function StaticMethodIsGetterTest(): void {
       expect(method != undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
       expect(typeof isGetter).assertEqual('boolean');
-      expect(isGetter === true || isGetter === false).assertTrue();
+      let isBoolean: boolean = isGetter === true || isGetter === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**
@@ -359,7 +363,8 @@ export default function StaticMethodIsGetterTest(): void {
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
-      expect(isGetter === true || isGetter === false).assertTrue();
+      let isBoolean: boolean = isGetter === true || isGetter === false;
+      expect(isBoolean).assertTrue();
     });
 
     /**
@@ -552,7 +557,8 @@ export default function StaticMethodIsGetterTest(): void {
       expect(method!.isGetter()).assertTrue();
       expect(method!.isSetter()).assertFalse();
       expect(method!.getParametersNum()).assertEqual(0);
-      expect(method!.getReturnType().getName()).assertEqual('std.core.String');
+      let rt = method!.getReturnType();
+      expect(rt.getName()).assertEqual('std.core.String');
     });
 
     /**

@@ -361,7 +361,9 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
-      expect(cls.getStaticMethod('returnInt')!.invoke() as int).assertEqual(42);
+      let method = cls.getStaticMethod('returnInt');
+      let result = method!.invoke() as int;
+      expect(result).assertEqual(42);
     });
 
     /**
@@ -374,7 +376,9 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
-      expect(cls.getStaticMethod('returnString')!.invoke() as string).assertEqual('test');
+      let method = cls.getStaticMethod('returnString');
+      let result = method!.invoke() as string;
+      expect(result).assertEqual('test');
     });
 
     /**
@@ -387,7 +391,9 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
-      expect(cls.getStaticMethod('returnBoolean')!.invoke() as boolean).assertTrue();
+      let method = cls.getStaticMethod('returnBoolean');
+      let result = method!.invoke() as boolean;
+      expect(result).assertTrue();
     });
 
     /**
@@ -480,7 +486,9 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
-      expect(cls.getStaticMethod('returnZero')!.invoke() as int).assertEqual(0);
+      let method = cls.getStaticMethod('returnZero');
+      let result = method!.invoke() as int;
+      expect(result).assertEqual(0);
     });
 
     /**
@@ -493,7 +501,9 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
-      expect(cls.getStaticMethod('returnFalse')!.invoke() as boolean).assertFalse();
+      let method = cls.getStaticMethod('returnFalse');
+      let result = method!.invoke() as boolean;
+      expect(result).assertFalse();
     });
 
     /**
@@ -540,8 +550,12 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
-      expect(cls.getStaticMethod('maxInt')!.invoke() as int).assertEqual(2147483647);
-      expect(cls.getStaticMethod('minInt')!.invoke() as int).assertEqual(-2147483648);
+      let mMax = cls.getStaticMethod('maxInt');
+      let mMin = cls.getStaticMethod('minInt');
+      let resultMax = mMax!.invoke() as int;
+      let resultMin = mMin!.invoke() as int;
+      expect(resultMax).assertEqual(2147483647);
+      expect(resultMin).assertEqual(-2147483648);
     });
 
     /**
