@@ -108,10 +108,12 @@ export default function FrameNodeProvideChildTest() {
       let button5 = await driver.findComponent(ON.id('getChildWithLazyExpandStatic'));
       await (button5?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
+      let strJson1 = inspector.getInspectorByKey('FrameNodeProvideChildTextStatic');
 
       let button6 = await driver.findComponent(ON.id('getChildWithLazyNotExpandStatic'));
       await (button6?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
+      let strJson2 = inspector.getInspectorByKey('FrameNodeProvideChildTextStatic');
       
       expect(ExpandMode.LAZY_EXPAND).assertEqual(2);
       expect(ExpandMode.LAZY_NOT_EXPAND).assertEqual(3);
@@ -119,6 +121,9 @@ export default function FrameNodeProvideChildTest() {
       expect(ChildrenCountMode.ALL_EXPAND).assertEqual(0);
       expect(ChildrenCountMode.ONLY_EXPANDED).assertEqual(1);
       expect(ChildrenCountMode.ALL_NOT_EXPAND).assertEqual(2);
+
+      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('N16');
+      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('N8');
 
       console.info('[FrameNodeProvideChildTest_0100] END');
       done();
