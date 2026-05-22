@@ -28,10 +28,10 @@ export default function BigIntToString1Test(): void {
      */
     it('testBigIntToString1Decimal0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).toString()).assertEqual('42');
-        expect(new BigInt(-42).toString()).assertEqual('-42');
-        expect(new BigInt(0).toString()).assertEqual('0');
-        expect(new BigInt(9007199254740993).toString()).assertEqual('9007199254740993');
+        expect(BigInt(42).toString()).assertEqual('42');
+        expect(BigInt(-42).toString()).assertEqual('-42');
+        expect(BigInt(0).toString()).assertEqual('0');
+        expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0200

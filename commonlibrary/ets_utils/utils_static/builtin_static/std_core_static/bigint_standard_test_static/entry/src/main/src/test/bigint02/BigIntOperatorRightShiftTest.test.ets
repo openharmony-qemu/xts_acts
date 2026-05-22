@@ -28,9 +28,9 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(256).operatorRightShift(new BigInt(8)).toString()).assertEqual('1');
-        expect(new BigInt(10).operatorRightShift(new BigInt(1)).toString()).assertEqual('5');
-        expect(new BigInt(-8).operatorRightShift(new BigInt(1)).toString()).assertEqual('-4');
+        expect(BigInt(256).operatorRightShift(BigInt(8)).toString()).assertEqual('1');
+        expect(BigInt(10).operatorRightShift(BigInt(1)).toString()).assertEqual('5');
+        expect(BigInt(-8).operatorRightShift(BigInt(1)).toString()).assertEqual('-4');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0200
@@ -42,8 +42,8 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftNegative0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-1).operatorRightShift(new BigInt(100)).toString()).assertEqual('-1');
-        expect(new BigInt('-9223372036854775808').operatorRightShift(new BigInt(1)).toString())
+        expect(BigInt(-1).operatorRightShift(BigInt(100)).toString()).assertEqual('-1');
+        expect(BigInt('-9223372036854775808').operatorRightShift(BigInt(1)).toString())
           .assertEqual('-4611686018427387904');
       });
     /**
@@ -56,7 +56,7 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftInvalid0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(256);
+        const a = BigInt(256);
         expect((): void => {
           a.operatorRightShift(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -83,9 +83,9 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftZero0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).operatorRightShift(new BigInt(0)).toString()).assertEqual('42');
-        expect(new BigInt(0).operatorRightShift(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(-8).operatorRightShift(new BigInt(0)).toString()).assertEqual('-8');
+        expect(BigInt(42).operatorRightShift(BigInt(0)).toString()).assertEqual('42');
+        expect(BigInt(0).operatorRightShift(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(-8).operatorRightShift(BigInt(0)).toString()).assertEqual('-8');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0500
@@ -97,14 +97,14 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftNegativeShift0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(10).operatorRightShift(new BigInt(-1)).toString()).assertEqual('20');
-        expect(new BigInt(256).operatorRightShift(new BigInt(-2)).toString()).assertEqual('1024');
-        const v = new BigInt(10);
-        expect(v.operatorRightShift(new BigInt(-1)).toString())
-          .assertEqual(v.operatorLeftShift(new BigInt(1)).toString());
-        const w = new BigInt(256);
-        expect(w.operatorRightShift(new BigInt(-2)).toString())
-          .assertEqual(w.operatorLeftShift(new BigInt(2)).toString());
+        expect(BigInt(10).operatorRightShift(BigInt(-1)).toString()).assertEqual('20');
+        expect(BigInt(256).operatorRightShift(BigInt(-2)).toString()).assertEqual('1024');
+        const v = BigInt(10);
+        expect(v.operatorRightShift(BigInt(-1)).toString())
+          .assertEqual(v.operatorLeftShift(BigInt(1)).toString());
+        const w = BigInt(256);
+        expect(w.operatorRightShift(BigInt(-2)).toString())
+          .assertEqual(w.operatorLeftShift(BigInt(2)).toString());
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0600
@@ -116,10 +116,10 @@ export default function BigIntOperatorRightShiftTest(): void {
      */
     it('testBigIntOperatorRightShiftHuge0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('18446744073709551616').operatorRightShift(new BigInt(64)).toString())
+        expect(BigInt('18446744073709551616').operatorRightShift(BigInt(64)).toString())
           .assertEqual('1');
-        expect(new BigInt(8).operatorRightShift(new BigInt(1000)).toString()).assertEqual('0');
-        expect(new BigInt(1).operatorRightShift(new BigInt(10000)).toString()).assertEqual('0');
+        expect(BigInt(8).operatorRightShift(BigInt(1000)).toString()).assertEqual('0');
+        expect(BigInt(1).operatorRightShift(BigInt(10000)).toString()).assertEqual('0');
       });
   });
 }

@@ -28,7 +28,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
      */
     it('testBigIntToLocaleStringWithOptions0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const val = new BigInt(1234567);
+        const val = BigInt(1234567);
         const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
         const s = val.toLocaleString('en-US', opts);
         expect(s.length > 0).assertTrue();

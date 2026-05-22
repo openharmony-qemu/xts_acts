@@ -28,9 +28,9 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(12).operatorModule(new BigInt(5)).toString()).assertEqual('2');
-        expect(new BigInt(20).operatorModule(new BigInt(-5)).toString()).assertEqual('0');
-        expect(new BigInt(-10).operatorModule(new BigInt(3)).toString()).assertEqual('-1');
+        expect(BigInt(12).operatorModule(BigInt(5)).toString()).assertEqual('2');
+        expect(BigInt(20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
+        expect(BigInt(-10).operatorModule(BigInt(3)).toString()).assertEqual('-1');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0200
@@ -42,9 +42,9 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleDivisorOne0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).operatorModule(new BigInt(1)).toString()).assertEqual('0');
-        expect(new BigInt(-42).operatorModule(new BigInt(-1)).toString()).assertEqual('0');
-        expect(new BigInt(7).operatorModule(new BigInt(-1)).toString()).assertEqual('0');
+        expect(BigInt(42).operatorModule(BigInt(1)).toString()).assertEqual('0');
+        expect(BigInt(-42).operatorModule(BigInt(-1)).toString()).assertEqual('0');
+        expect(BigInt(7).operatorModule(BigInt(-1)).toString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0300
@@ -56,9 +56,9 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleZeroDividend0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).operatorModule(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(0).operatorModule(new BigInt(-7)).toString()).assertEqual('0');
-        expect(new BigInt(0).operatorModule(new BigInt(1)).toString()).assertEqual('0');
+        expect(BigInt(0).operatorModule(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(0).operatorModule(BigInt(-7)).toString()).assertEqual('0');
+        expect(BigInt(0).operatorModule(BigInt(1)).toString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0400
@@ -70,7 +70,7 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const result = new BigInt(10).operatorModule(new BigInt(3));
+        const result = BigInt(10).operatorModule(BigInt(3));
         expect(result instanceof BigInt).assertTrue();
       });
     /**
@@ -83,7 +83,7 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleInvalidArg0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(10);
+        const a = BigInt(10);
         expect((): void => {
           a.operatorModule(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -103,7 +103,7 @@ export default function BigIntOperatorModuleTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0600
      * @tc.name testBigIntOperatorModuleDivByZero0600
-     * @tc.desc Verify operatorModule throws on zero divisor including 0%0 and negative%0
+     * @tc.desc Verify operatorModule throws Error on zero divisor (current runtime behavior)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -111,13 +111,13 @@ export default function BigIntOperatorModuleTest(): void {
     it('testBigIntOperatorModuleDivByZero0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(10).operatorModule(new BigInt(0));
+          BigInt(10).operatorModule(BigInt(0));
         }).assertThrowError('Error');
         expect((): void => {
-          new BigInt(0).operatorModule(new BigInt(0));
+          BigInt(0).operatorModule(BigInt(0));
         }).assertThrowError('Error');
         expect((): void => {
-          new BigInt(-42).operatorModule(new BigInt(0));
+          BigInt(-42).operatorModule(BigInt(0));
         }).assertThrowError('Error');
       });
     /**
@@ -130,10 +130,10 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleNegative0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-12).operatorModule(new BigInt(-5)).toString()).assertEqual('-2');
-        expect(new BigInt(12).operatorModule(new BigInt(-5)).toString()).assertEqual('2');
-        expect(new BigInt(-12).operatorModule(new BigInt(5)).toString()).assertEqual('-2');
-        expect(new BigInt(-20).operatorModule(new BigInt(-5)).toString()).assertEqual('0');
+        expect(BigInt(-12).operatorModule(BigInt(-5)).toString()).assertEqual('-2');
+        expect(BigInt(12).operatorModule(BigInt(-5)).toString()).assertEqual('2');
+        expect(BigInt(-12).operatorModule(BigInt(5)).toString()).assertEqual('-2');
+        expect(BigInt(-20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0800
@@ -145,9 +145,9 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleLarge0800',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('999999999999999999999999999999').operatorModule(new BigInt('100000000000000000000')).toString())
+        expect(BigInt('999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString())
           .assertEqual('99999999999999999999');
-        expect(new BigInt('-999999999999999999999999999999').operatorModule(new BigInt('100000000000000000000')).toString())
+        expect(BigInt('-999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString())
           .assertEqual('-99999999999999999999');
       });
     /**
@@ -160,12 +160,12 @@ export default function BigIntOperatorModuleTest(): void {
      */
     it('testBigIntOperatorModuleTruncateSemantics0900',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-7).operatorModule(new BigInt(3)).toString()).assertEqual('-1');
-        expect(new BigInt(7).operatorModule(new BigInt(-3)).toString()).assertEqual('1');
-        expect(new BigInt(-7).operatorModule(new BigInt(-3)).toString()).assertEqual('-1');
-        const q = new BigInt(-7).operatorDivide(new BigInt(3));
-        const r = new BigInt(-7).operatorModule(new BigInt(3));
-        expect(q.operatorMultiply(new BigInt(3)).operatorAdd(r).toString()).assertEqual('-7');
+        expect(BigInt(-7).operatorModule(BigInt(3)).toString()).assertEqual('-1');
+        expect(BigInt(7).operatorModule(BigInt(-3)).toString()).assertEqual('1');
+        expect(BigInt(-7).operatorModule(BigInt(-3)).toString()).assertEqual('-1');
+        const q = BigInt(-7).operatorDivide(BigInt(3));
+        const r = BigInt(-7).operatorModule(BigInt(3));
+        expect(q.operatorMultiply(BigInt(3)).operatorAdd(r).toString()).assertEqual('-7');
       });
   });
 }

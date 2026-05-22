@@ -28,10 +28,10 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Radix0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(255).toString(2)).assertEqual('11111111');
-        expect(new BigInt(255).toString(8)).assertEqual('377');
-        expect(new BigInt(255).toString(16)).assertEqual('ff');
-        expect(new BigInt(36).toString(36)).assertEqual('10');
+        expect(BigInt(255).toString(2)).assertEqual('11111111');
+        expect(BigInt(255).toString(8)).assertEqual('377');
+        expect(BigInt(255).toString(16)).assertEqual('ff');
+        expect(BigInt(36).toString(36)).assertEqual('10');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0200
@@ -43,7 +43,7 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Negative0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-255).toString(16)).assertEqual('-ff');
+        expect(BigInt(-255).toString(16)).assertEqual('-ff');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0300
@@ -56,10 +56,10 @@ export default function BigIntToString2Test(): void {
     it('testBigIntToString2InvalidRadix0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(10).toString(1);
+          BigInt(10).toString(1);
         }).assertThrowError('RangeError');
         expect((): void => {
-          new BigInt(10).toString(37);
+          BigInt(10).toString(37);
         }).assertThrowError('RangeError');
       });
     /**
@@ -72,10 +72,10 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Zero0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).toString()).assertEqual('0');
-        expect(new BigInt(0).toString(2)).assertEqual('0');
-        expect(new BigInt(0).toString(16)).assertEqual('0');
-        expect(new BigInt(0).toString(36)).assertEqual('0');
+        expect(BigInt(0).toString()).assertEqual('0');
+        expect(BigInt(0).toString(2)).assertEqual('0');
+        expect(BigInt(0).toString(16)).assertEqual('0');
+        expect(BigInt(0).toString(36)).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0500
@@ -87,8 +87,8 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2Large0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('18446744073709551616').toString(16)).assertEqual('10000000000000000');
-        expect(new BigInt('999999999999999999999999999999').toString(10))
+        expect(BigInt('18446744073709551616').toString(16)).assertEqual('10000000000000000');
+        expect(BigInt('999999999999999999999999999999').toString(10))
           .assertEqual('999999999999999999999999999999');
       });
   });

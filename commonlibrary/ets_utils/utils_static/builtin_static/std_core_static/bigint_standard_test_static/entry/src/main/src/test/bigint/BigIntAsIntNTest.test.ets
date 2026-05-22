@@ -17,11 +17,11 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 function biInt(n: int): BigInt {
-  return new BigInt(n);
+  return BigInt(n);
 }
 
 function biStr(s: string): BigInt {
-  return new BigInt(s);
+  return BigInt(s);
 }
 
 export default function BigIntAsIntNTest(): void {

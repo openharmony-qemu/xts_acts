@@ -28,9 +28,9 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(1).operatorLeftShift(new BigInt(8)).toString()).assertEqual('256');
-        expect(new BigInt(5).operatorLeftShift(new BigInt(1)).toString()).assertEqual('10');
-        expect(new BigInt(-1).operatorLeftShift(new BigInt(1)).toString()).assertEqual('-2');
+        expect(BigInt(1).operatorLeftShift(BigInt(8)).toString()).assertEqual('256');
+        expect(BigInt(5).operatorLeftShift(BigInt(1)).toString()).assertEqual('10');
+        expect(BigInt(-1).operatorLeftShift(BigInt(1)).toString()).assertEqual('-2');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0200
@@ -42,9 +42,9 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).operatorLeftShift(new BigInt(0)).toString()).assertEqual('42');
-        expect(new BigInt(0).operatorLeftShift(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(-8).operatorLeftShift(new BigInt(0)).toString()).assertEqual('-8');
+        expect(BigInt(42).operatorLeftShift(BigInt(0)).toString()).assertEqual('42');
+        expect(BigInt(0).operatorLeftShift(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(-8).operatorLeftShift(BigInt(0)).toString()).assertEqual('-8');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0300
@@ -56,11 +56,11 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftLarge0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(1).operatorLeftShift(new BigInt(64)).toString())
+        expect(BigInt(1).operatorLeftShift(BigInt(64)).toString())
           .assertEqual('18446744073709551616');
-        expect(new BigInt('9223372036854775807').operatorLeftShift(new BigInt(1)).toString())
+        expect(BigInt('9223372036854775807').operatorLeftShift(BigInt(1)).toString())
           .assertEqual('18446744073709551614');
-        expect(new BigInt(-1).operatorLeftShift(new BigInt(100)).toString())
+        expect(BigInt(-1).operatorLeftShift(BigInt(100)).toString())
           .assertEqual('-1267650600228229401496703205376');
       });
     /**
@@ -73,7 +73,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftReturn0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(1).operatorLeftShift(new BigInt(2)) instanceof BigInt).assertTrue();
+        expect(BigInt(1).operatorLeftShift(BigInt(2)) instanceof BigInt).assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0500
@@ -85,7 +85,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftInvalid0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(1);
+        const a = BigInt(1);
         expect((): void => {
           a.operatorLeftShift(null as BigInt);
         }).assertThrowError('ClassCastError');

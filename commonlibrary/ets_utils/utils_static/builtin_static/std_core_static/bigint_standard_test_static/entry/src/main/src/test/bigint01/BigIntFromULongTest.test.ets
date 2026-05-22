@@ -82,10 +82,10 @@ export default function BigIntFromULongTest(): void {
     it('testBigIntFromULongVsSignedValue0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const unsignedPos = BigInt.fromULong(100);
-        const signedPos = new BigInt(100);
+        const signedPos = BigInt(100);
         expect(unsignedPos.toString()).assertEqual(signedPos.toString());
         const unsignedNeg = BigInt.fromULong(-1);
-        const signedNeg = new BigInt(-1);
+        const signedNeg = BigInt(-1);
         expect(unsignedNeg.toString()).assertEqual('18446744073709551615');
         expect(signedNeg.toString()).assertEqual('-1');
         expect(unsignedNeg.equals(signedNeg)).assertFalse();
@@ -102,10 +102,10 @@ export default function BigIntFromULongTest(): void {
     it('testBigIntFromULongResultUsable0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a = BigInt.fromULong(5);
-        const sum = a.operatorAdd(new BigInt(3));
+        const sum = a.operatorAdd(BigInt(3));
         expect(sum.toString()).assertEqual('8');
         const hundred = BigInt.fromULong(100);
-        expect(hundred.equals(new BigInt(100))).assertTrue();
+        expect(hundred.equals(BigInt(100))).assertTrue();
         expect(BigInt.fromULong(123).toString()).assertEqual('123');
       });
 

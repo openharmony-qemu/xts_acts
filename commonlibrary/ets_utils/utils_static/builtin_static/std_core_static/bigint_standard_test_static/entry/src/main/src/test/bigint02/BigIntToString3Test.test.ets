@@ -17,23 +17,20 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToString3Test(): void {
-  describe('BigInt.toString(radix double) (mindmap toString_3)', () => {
+  describe('BigInt.toString(radix int) (mindmap toString_3)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0100
-     * @tc.name testBigIntToString3DoubleRadix0100
-     * @tc.desc Verify toString accepts double radix
+     * @tc.name testBigIntToString3IntRadix0100
+     * @tc.desc Verify toString with int radix 2, 8, and 16
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3DoubleRadix0100',
+    it('testBigIntToString3IntRadix0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const radix16: double = 16.0;
-        const radix2: double = 2.0;
-        const radix8: double = 8.0;
-        expect(new BigInt(255).toString(Double.toInt(radix16))).assertEqual('ff');
-        expect(new BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
-        expect(new BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
+        expect(BigInt(255).toString(16)).assertEqual('ff');
+        expect(BigInt(10).toString(2)).assertEqual('1010');
+        expect(BigInt(10).toString(8)).assertEqual('12');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0200
@@ -45,7 +42,7 @@ export default function BigIntToString3Test(): void {
      */
     it('testBigIntToString3Default0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(255).toString()).assertEqual('255');
+        expect(BigInt(255).toString()).assertEqual('255');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0300
@@ -57,8 +54,8 @@ export default function BigIntToString3Test(): void {
      */
     it('testBigIntToString3Zero0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).toString()).assertEqual('0');
-        expect(new BigInt(0).toString(16)).assertEqual('0');
+        expect(BigInt(0).toString()).assertEqual('0');
+        expect(BigInt(0).toString(16)).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0400
@@ -70,11 +67,12 @@ export default function BigIntToString3Test(): void {
      */
     it('testBigIntToString3Large0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const radix16: double = 16.0;
-        expect(new BigInt('18446744073709551616').toString(Double.toInt(radix16)))
+        expect(BigInt('18446744073709551616').toString(16))
           .assertEqual('10000000000000000');
-        expect(new BigInt('999999999999999999999999999999').toString())
+        expect(BigInt('999999999999999999999999999999').toString())
           .assertEqual('999999999999999999999999999999');
+        expect(BigInt('999999999999999999999999999999').toString(36))
+          .assertEqual('2oy99wnkl1c76diocq9r');
       });
   });
 }

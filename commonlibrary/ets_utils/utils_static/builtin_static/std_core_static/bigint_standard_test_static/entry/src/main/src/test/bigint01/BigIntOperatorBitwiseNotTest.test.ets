@@ -28,11 +28,11 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).operatorBitwiseNot().toString()).assertEqual('-1');
-        expect(new BigInt(-1).operatorBitwiseNot().toString()).assertEqual('0');
-        expect(new BigInt(1).operatorBitwiseNot().toString()).assertEqual('-2');
-        expect(new BigInt(-2).operatorBitwiseNot().toString()).assertEqual('1');
-        expect(new BigInt(5).operatorBitwiseNot().toString()).assertEqual('-6');
+        expect(BigInt(0).operatorBitwiseNot().toString()).assertEqual('-1');
+        expect(BigInt(-1).operatorBitwiseNot().toString()).assertEqual('0');
+        expect(BigInt(1).operatorBitwiseNot().toString()).assertEqual('-2');
+        expect(BigInt(-2).operatorBitwiseNot().toString()).assertEqual('1');
+        expect(BigInt(5).operatorBitwiseNot().toString()).assertEqual('-6');
       });
 
     /**
@@ -45,12 +45,12 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotFormula0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const x = new BigInt(100);
+        const x = BigInt(100);
         const notX = x.operatorBitwiseNot();
-        const minusXPlus1 = x.operatorAdd(new BigInt(1)).negate();
+        const minusXPlus1 = x.operatorAdd(BigInt(1)).negate();
         expect(notX.toString()).assertEqual(minusXPlus1.toString());
-        expect(new BigInt(999).operatorBitwiseNot().toString()).assertEqual('-1000');
-        expect(new BigInt(-100).operatorBitwiseNot().toString()).assertEqual('99');
+        expect(BigInt(999).operatorBitwiseNot().toString()).assertEqual('-1000');
+        expect(BigInt(-100).operatorBitwiseNot().toString()).assertEqual('99');
       });
 
     /**
@@ -63,9 +63,9 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotDouble0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('42');
-        expect(new BigInt(-42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('-42');
-        expect(new BigInt(0).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('0');
+        expect(BigInt(42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('42');
+        expect(BigInt(-42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('-42');
+        expect(BigInt(0).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('0');
       });
 
     /**
@@ -78,10 +78,11 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotLarge0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const big = '999999999999999999999';
-        const notBig = new BigInt(big).operatorBitwiseNot();
-        const expected = new BigInt(big).operatorAdd(new BigInt(1)).negate();
+        const big = '999999999999999999999999999999';
+        const notBig = BigInt(big).operatorBitwiseNot();
+        const expected = BigInt(big).operatorAdd(BigInt(1)).negate();
         expect(notBig.toString()).assertEqual(expected.toString());
+        expect(BigInt('18446744073709551616').operatorBitwiseNot().toString()).assertEqual('-18446744073709551617');
       });
 
     /**
@@ -94,7 +95,7 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      */
     it('testBigIntOperatorBitwiseNotReturnType0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const five = new BigInt(5);
+        const five = BigInt(5);
         const result = five.operatorBitwiseNot();
         expect(result instanceof BigInt).assertTrue();
         expect(result.equals(five)).assertFalse();
@@ -112,8 +113,8 @@ export default function BigIntOperatorBitwiseNotTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let ok = true;
         try {
-          new BigInt(5).operatorBitwiseNot();
-          new BigInt('9999999999999999999999999').operatorBitwiseNot();
+          BigInt(5).operatorBitwiseNot();
+          BigInt('9999999999999999999999999').operatorBitwiseNot();
         } catch (_e) {
           ok = false;
         }

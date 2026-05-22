@@ -28,11 +28,11 @@ export default function BigintTypeAliasTest(): void {
      */
     it('testBigintTypeAliasAssign0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const value: bigint = new BigInt(100);
+        const value: bigint = BigInt(100);
         expect(value.toString()).assertEqual('100');
-        let val: bigint = new BigInt(42);
+        let val: bigint = BigInt(42);
         expect(val.toString()).assertEqual('42');
-        val = new BigInt(200);
+        val = BigInt(200);
         expect(val.toString()).assertEqual('200');
       });
     /**
@@ -45,12 +45,12 @@ export default function BigintTypeAliasTest(): void {
      */
     it('testBigintTypeAliasOps0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a: bigint = new BigInt(10);
-        const b: bigint = new BigInt(20);
+        const a: bigint = BigInt(10);
+        const b: bigint = BigInt(20);
         const sum: bigint = a.operatorAdd(b);
         expect(sum.toString()).assertEqual('30');
         expect(a instanceof BigInt).assertTrue();
-        const asClass: BigInt = a;
+        const asClass: bigint = a;
         expect(asClass.equals(a)).assertTrue();
       });
     /**
@@ -63,9 +63,9 @@ export default function BigintTypeAliasTest(): void {
      */
     it('testBigintTypeAliasStatic0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const truncated: bigint = BigInt.asIntN(8, new BigInt(256));
+        const truncated: bigint = BigInt.asIntN(8, BigInt(256));
         expect(truncated.toString()).assertEqual('0');
-        const asUint: bigint = BigInt.asUintN(8, new BigInt(-1));
+        const asUint: bigint = BigInt.asUintN(8, BigInt(-1));
         expect(asUint.toString()).assertEqual('255');
       });
     /**
@@ -80,10 +80,10 @@ export default function BigintTypeAliasTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
         expect((): void => {
-          new BigInt('abc');
+          BigInt('abc');
         }).assertThrow(invalidMsg);
         expect((): void => {
-          new BigInt(3.14 as double);
+          BigInt(3.14 as double);
         }).assertThrowError('RangeError');
       });
   });

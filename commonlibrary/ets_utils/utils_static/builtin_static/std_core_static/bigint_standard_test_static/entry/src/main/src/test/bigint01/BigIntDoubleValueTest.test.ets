@@ -28,13 +28,13 @@ export default function BigIntDoubleValueTest(): void {
      */
     it('testBigIntDoubleValueSigns0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).doubleValue()).assertEqual(42.0);
-        expect(new BigInt(1).doubleValue()).assertEqual(1.0);
-        expect(new BigInt(100).doubleValue()).assertEqual(100.0);
-        expect(new BigInt(8).doubleValue()).assertEqual(8.0);
-        expect(new BigInt(-42).doubleValue()).assertEqual(-42.0);
-        expect(new BigInt(-1).doubleValue()).assertEqual(-1.0);
-        expect(new BigInt(0).doubleValue()).assertEqual(0.0);
+        expect(BigInt(42).doubleValue()).assertEqual(42.0);
+        expect(BigInt(1).doubleValue()).assertEqual(1.0);
+        expect(BigInt(100).doubleValue()).assertEqual(100.0);
+        expect(BigInt(8).doubleValue()).assertEqual(8.0);
+        expect(BigInt(-42).doubleValue()).assertEqual(-42.0);
+        expect(BigInt(-1).doubleValue()).assertEqual(-1.0);
+        expect(BigInt(0).doubleValue()).assertEqual(0.0);
       });
 
     /**
@@ -47,9 +47,9 @@ export default function BigIntDoubleValueTest(): void {
      */
     it('testBigIntDoubleValueSafeInteger0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(9007199254740991).doubleValue()).assertEqual(9007199254740991.0);
-        const a = new BigInt(9007199254740992).doubleValue();
-        const b = new BigInt(9007199254740993).doubleValue();
+        expect(BigInt('9007199254740991').doubleValue()).assertEqual(9007199254740991.0);
+        const a = BigInt('9007199254740992').doubleValue();
+        const b = BigInt('9007199254740993').doubleValue();
         expect(a).assertEqual(9007199254740992.0);
         expect(b).assertEqual(9007199254740993.0);
       });
@@ -64,10 +64,10 @@ export default function BigIntDoubleValueTest(): void {
      */
     it('testBigIntDoubleValueReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const r = new BigInt(42).doubleValue();
+        const r = BigInt(42).doubleValue();
         expect(typeof r === 'number').assertTrue();
         expect(r % 1).assertEqual(0);
-        const bn = new BigInt(-42);
+        const bn = BigInt(-42);
         const d1 = bn.doubleValue();
         const d2 = bn.doubleValue();
         expect(d1).assertEqual(d2);
@@ -83,7 +83,7 @@ export default function BigIntDoubleValueTest(): void {
      */
     it('testBigIntDoubleValueFromExpression0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const sum = new BigInt(10).operatorAdd(new BigInt(20));
+        const sum = BigInt(10).operatorAdd(BigInt(20));
         expect(sum.doubleValue()).assertEqual(30.0);
       });
 
@@ -97,13 +97,22 @@ export default function BigIntDoubleValueTest(): void {
      */
     it('testBigIntDoubleValueNoThrow0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          expect(new BigInt(999999).doubleValue()).assertEqual(999999.0);
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt(999999).doubleValue()).assertEqual(999999.0);
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_DOUBLEVALUE_0600
+     * @tc.name testBigIntDoubleValueCompareBoundary0600
+     * @tc.desc Verify doubleValue for double-constructible Number boundaries used in comparisons
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntDoubleValueCompareBoundary0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(9007199254740991.0).doubleValue()).assertEqual(9007199254740991.0);
+        expect(BigInt(9007199254740992.0).doubleValue()).assertEqual(9007199254740992.0);
+        expect(BigInt('9007199254740991').doubleValue()).assertEqual(9007199254740991.0);
       });
   });
 }

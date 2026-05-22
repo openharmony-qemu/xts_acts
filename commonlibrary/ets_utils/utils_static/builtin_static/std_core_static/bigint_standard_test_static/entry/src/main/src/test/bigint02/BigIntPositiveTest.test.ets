@@ -21,35 +21,35 @@ export default function BigIntPositiveTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0100
      * @tc.name testBigIntPositiveSignCases0100
-     * @tc.desc Verify positive() is true for non-negative values including zero per API spec
+     * @tc.desc Verify positive() is true for positive values and zero per API spec (non-negative)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntPositiveSignCases0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(123).positive()).assertTrue();
-        expect(new BigInt(-123).positive()).assertFalse();
-        expect(new BigInt(0).positive()).assertTrue();
-        expect(new BigInt(1).positive()).assertTrue();
-        expect(new BigInt(-1).positive()).assertFalse();
+        expect(BigInt(123).positive()).assertTrue();
+        expect(BigInt(-123).positive()).assertFalse();
+        expect(BigInt(0).positive()).assertTrue();
+        expect(BigInt(1).positive()).assertTrue();
+        expect(BigInt(-1).positive()).assertFalse();
       });
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0200
      * @tc.name testBigIntPositiveComplementNegative0200
-     * @tc.desc Verify positive() and negative() are mutually exclusive sign checks
+     * @tc.desc Verify positive() and negative() complement per API (zero is non-negative, not negative)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntPositiveComplementNegative0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).positive()).assertTrue();
-        expect(new BigInt(42).negative()).assertFalse();
-        expect(new BigInt(-42).positive()).assertFalse();
-        expect(new BigInt(-42).negative()).assertTrue();
-        expect(new BigInt(0).positive()).assertTrue();
-        expect(new BigInt(0).negative()).assertFalse();
+        expect(BigInt(42).positive()).assertTrue();
+        expect(BigInt(42).negative()).assertFalse();
+        expect(BigInt(-42).positive()).assertFalse();
+        expect(BigInt(-42).negative()).assertTrue();
+        expect(BigInt(0).positive()).assertTrue();
+        expect(BigInt(0).negative()).assertFalse();
       });
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0300
@@ -61,7 +61,7 @@ export default function BigIntPositiveTest(): void {
      */
     it('testBigIntPositiveReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(typeof new BigInt(1).positive() === 'boolean').assertTrue();
+        expect(typeof BigInt(1).positive() === 'boolean').assertTrue();
       });
   });
 }

@@ -28,13 +28,13 @@ export default function BigIntEquals1Test(): void {
      */
     it('testBigIntEqualsBigIntTrue0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).equals(new BigInt(42))).assertTrue();
-        expect(new BigInt(0).equals(new BigInt(0))).assertTrue();
-        expect(new BigInt(-42).equals(new BigInt(-42))).assertTrue();
-        expect(new BigInt('99999999999999999999').equals(new BigInt('99999999999999999999'))).assertTrue();
-        expect(new BigInt(42).equals(new BigInt('42'))).assertTrue();
-        expect(new BigInt(0).equals(new BigInt('0'))).assertTrue();
-        expect(new BigInt(42).equals(new BigInt(new BigInt(42)))).assertTrue();
+        expect(BigInt(42).equals(BigInt(42))).assertTrue();
+        expect(BigInt(0).equals(BigInt(0))).assertTrue();
+        expect(BigInt(-42).equals(BigInt(-42))).assertTrue();
+        expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
+        expect(BigInt(42).equals(BigInt('42'))).assertTrue();
+        expect(BigInt(0).equals(BigInt('0'))).assertTrue();
+        expect(BigInt(42).equals(BigInt(BigInt(42)))).assertTrue();
       });
 
     /**
@@ -47,10 +47,10 @@ export default function BigIntEquals1Test(): void {
      */
     it('testBigIntEqualsBigIntFalse0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).equals(new BigInt(99))).assertFalse();
-        expect(new BigInt(-42).equals(new BigInt(42))).assertFalse();
-        expect(new BigInt(1).equals(new BigInt(-1))).assertFalse();
-        expect(new BigInt('99999999999999999999').equals(new BigInt('88888888888888888888'))).assertFalse();
+        expect(BigInt(42).equals(BigInt(99))).assertFalse();
+        expect(BigInt(-42).equals(BigInt(42))).assertFalse();
+        expect(BigInt(1).equals(BigInt(-1))).assertFalse();
+        expect(BigInt('99999999999999999999').equals(BigInt('88888888888888888888'))).assertFalse();
       });
 
     /**
@@ -64,11 +64,11 @@ export default function BigIntEquals1Test(): void {
     it('testBigIntEqualsBigIntBoundary0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const huge = '999999999999999999999999999999';
-        expect(new BigInt(huge).equals(new BigInt(huge))).assertTrue();
-        expect(new BigInt(huge).equals(new BigInt('999999999999999999999999999998'))).assertFalse();
+        expect(BigInt(huge).equals(BigInt(huge))).assertTrue();
+        expect(BigInt(huge).equals(BigInt('999999999999999999999999999998'))).assertFalse();
         const neg = '-' + huge;
-        expect(new BigInt(neg).equals(new BigInt(neg))).assertTrue();
-        expect(new BigInt(neg).equals(new BigInt(huge))).assertFalse();
+        expect(BigInt(neg).equals(BigInt(neg))).assertTrue();
+        expect(BigInt(neg).equals(BigInt(huge))).assertFalse();
       });
 
     /**
@@ -81,8 +81,8 @@ export default function BigIntEquals1Test(): void {
      */
     it('testBigIntEqualsBigIntReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const t = new BigInt(42).equals(new BigInt(42));
-        const f = new BigInt(42).equals(new BigInt(99));
+        const t = BigInt(42).equals(BigInt(42));
+        const f = BigInt(42).equals(BigInt(99));
         expect(typeof t === 'boolean').assertTrue();
         expect(t).assertTrue();
         expect(f).assertFalse();
@@ -98,7 +98,7 @@ export default function BigIntEquals1Test(): void {
      */
     it('testBigIntEqualsBigIntInvalidArgThrows0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(42);
+        const a = BigInt(42);
         expect((): void => {
           a.equals(null as Object as BigInt);
         }).assertThrowError('ClassCastError');
@@ -131,7 +131,7 @@ export default function BigIntEquals1Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let ok = true;
         try {
-          expect(new BigInt(42).equals(new BigInt(42))).assertTrue();
+          expect(BigInt(42).equals(BigInt(42))).assertTrue();
         } catch (_e) {
           ok = false;
         }

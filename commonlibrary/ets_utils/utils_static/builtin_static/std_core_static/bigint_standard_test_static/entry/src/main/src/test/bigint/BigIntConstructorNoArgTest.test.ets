@@ -43,7 +43,7 @@ export default function BigIntConstructorNoArgTest(): void {
     it('testBigIntConstructorNoArgEqualsZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const noArg = new BigInt();
-        const withZero = new BigInt(0);
+        const withZero = BigInt(0);
         expect(noArg.equals(withZero)).assertTrue();
       });
 
@@ -105,7 +105,7 @@ export default function BigIntConstructorNoArgTest(): void {
     it('testBigIntConstructorNoArgAddOne0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const zero = new BigInt();
-        const one = new BigInt(1);
+        const one = BigInt(1);
         expect(zero.operatorAdd(one).toString()).assertEqual('1');
       });
 
@@ -120,7 +120,7 @@ export default function BigIntConstructorNoArgTest(): void {
     it('testBigIntConstructorNoArgCompareOne0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const zero = new BigInt();
-        const one = new BigInt(1);
+        const one = BigInt(1);
         expect(zero.operatorLessThan(one)).assertTrue();
         expect(zero.operatorGreaterThan(one)).assertFalse();
         expect(zero.equals(zero)).assertTrue();

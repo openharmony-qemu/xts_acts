@@ -30,8 +30,8 @@ export default function BigIntConstructorIntegralTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const hi: byte = 127;
         const lo: byte = -128;
-        expect(new BigInt(hi).toString()).assertEqual('127');
-        expect(new BigInt(lo).toString()).assertEqual('-128');
+        expect(BigInt(hi).toString()).assertEqual('127');
+        expect(BigInt(lo).toString()).assertEqual('-128');
       });
 
     /**
@@ -47,9 +47,9 @@ export default function BigIntConstructorIntegralTest(): void {
         const z: byte = 0;
         const one: byte = 1;
         const neg: byte = -1;
-        expect(new BigInt(z).toString()).assertEqual('0');
-        expect(new BigInt(one).toString()).assertEqual('1');
-        expect(new BigInt(neg).toString()).assertEqual('-1');
+        expect(BigInt(z).toString()).assertEqual('0');
+        expect(BigInt(one).toString()).assertEqual('1');
+        expect(BigInt(neg).toString()).assertEqual('-1');
       });
 
     /**
@@ -64,8 +64,8 @@ export default function BigIntConstructorIntegralTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const hi: short = 32767;
         const lo: short = -32768;
-        expect(new BigInt(hi).toString()).assertEqual('32767');
-        expect(new BigInt(lo).toString()).assertEqual('-32768');
+        expect(BigInt(hi).toString()).assertEqual('32767');
+        expect(BigInt(lo).toString()).assertEqual('-32768');
       });
 
     /**
@@ -78,11 +78,27 @@ export default function BigIntConstructorIntegralTest(): void {
      */
     it('testBigIntConstructorIntegralIntCommon0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).toString()).assertEqual('0');
-        expect(new BigInt(1).toString()).assertEqual('1');
-        expect(new BigInt(-1).toString()).assertEqual('-1');
-        expect(new BigInt(10000).toString()).assertEqual('10000');
-        expect(new BigInt(-10000).toString()).assertEqual('-10000');
+        expect(BigInt(0).toString()).assertEqual('0');
+        expect(BigInt(1).toString()).assertEqual('1');
+        expect(BigInt(-1).toString()).assertEqual('-1');
+        expect(BigInt(10000).toString()).assertEqual('10000');
+        expect(BigInt(-10000).toString()).assertEqual('-10000');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0450
+     * @tc.name testBigIntConstructorIntegralIntBoundary0450
+     * @tc.desc Verify int boundary values 2147483647 and -2147483648 construct expected BigInt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorIntegralIntBoundary0450',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const hi: int = 2147483647;
+        const lo: int = -2147483648;
+        expect(BigInt(hi).toString()).assertEqual('2147483647');
+        expect(BigInt(lo).toString()).assertEqual('-2147483648');
       });
 
     /**
@@ -97,8 +113,8 @@ export default function BigIntConstructorIntegralTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const hi: long = 9223372036854775807;
         const lo: long = -9223372036854775808;
-        expect(new BigInt(hi).toString()).assertEqual('9223372036854775807');
-        expect(new BigInt(lo).toString()).assertEqual('-9223372036854775808');
+        expect(BigInt(hi).toString()).assertEqual('9223372036854775807');
+        expect(BigInt(lo).toString()).assertEqual('-9223372036854775808');
       });
   });
 }

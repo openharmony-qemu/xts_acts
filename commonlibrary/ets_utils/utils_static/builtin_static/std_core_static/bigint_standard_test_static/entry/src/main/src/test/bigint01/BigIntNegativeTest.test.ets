@@ -28,13 +28,13 @@ export default function BigIntNegativeTest(): void {
      */
     it('testBigIntNegativeSignCases0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(123).negative()).assertFalse();
-        expect(new BigInt(-123).negative()).assertTrue();
-        expect(new BigInt(0).negative()).assertFalse();
-        expect(new BigInt(1).negative()).assertFalse();
-        expect(new BigInt(-1).negative()).assertTrue();
-        expect(new BigInt('456').negative()).assertFalse();
-        expect(new BigInt('-456').negative()).assertTrue();
+        expect(BigInt(123).negative()).assertFalse();
+        expect(BigInt(-123).negative()).assertTrue();
+        expect(BigInt(0).negative()).assertFalse();
+        expect(BigInt(1).negative()).assertFalse();
+        expect(BigInt(-1).negative()).assertTrue();
+        expect(BigInt('456').negative()).assertFalse();
+        expect(BigInt('-456').negative()).assertTrue();
       });
 
     /**
@@ -47,8 +47,8 @@ export default function BigIntNegativeTest(): void {
      */
     it('testBigIntNegativeBoundary0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(9223372036854775807).negative()).assertFalse();
-        expect(new BigInt(-9223372036854775808).negative()).assertTrue();
+        expect(BigInt(9223372036854775807).negative()).assertFalse();
+        expect(BigInt(-9223372036854775808).negative()).assertTrue();
       });
 
     /**
@@ -61,7 +61,7 @@ export default function BigIntNegativeTest(): void {
      */
     it('testBigIntNegativeReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const bn = new BigInt(-100);
+        const bn = BigInt(-100);
         const r1 = bn.negative();
         const r2 = bn.negative();
         const r3 = bn.negative();
@@ -71,23 +71,17 @@ export default function BigIntNegativeTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0400
-     * @tc.name testBigIntNegativeNoThrow0400
-     * @tc.desc Verify negative() does not throw for normal values
+     * @tc.name testBigIntNegativeLargeMagnitude0400
+     * @tc.desc Verify negative() on very large positive and negative magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegativeNoThrow0400',
+    it('testBigIntNegativeLargeMagnitude0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let ok = true;
-        try {
-          expect(new BigInt(-123).negative()).assertTrue();
-          expect(new BigInt(0).negative()).assertFalse();
-          expect(new BigInt(999).negative()).assertFalse();
-        } catch (_e) {
-          ok = false;
-        }
-        expect(ok).assertTrue();
+        expect(BigInt('999999999999999999999999999999').negative()).assertFalse();
+        expect(BigInt('-999999999999999999999999999999').negative()).assertTrue();
+        expect(BigInt(0).negative()).assertFalse();
       });
   });
 }

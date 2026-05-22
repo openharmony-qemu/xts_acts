@@ -21,17 +21,16 @@ export default function BigIntToLocaleString2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0100
      * @tc.name testBigIntToLocaleString2Locale0100
-     * @tc.desc Verify toLocaleString with locale
+     * @tc.desc Verify toLocaleString with en-US locale produces expected grouping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString2Locale0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const s = new BigInt(1000000).toLocaleString('en-US');
-        expect(s.length > 0).assertTrue();
-        const zh = new BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact', compactDisplay: 'short' });
-        expect(zh.length > 0).assertTrue();
+        expect(BigInt(1000000).toLocaleString('en-US')).assertEqual('1,000,000');
+        expect(BigInt(1000000).toLocaleString('zh-CN', { notation: 'compact', compactDisplay: 'short' }))
+          .assertEqual('100万');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0200
@@ -43,8 +42,8 @@ export default function BigIntToLocaleString2Test(): void {
      */
     it('testBigIntToLocaleString2Zero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).toLocaleString('en-US')).assertEqual('0');
-        expect(new BigInt(0).toLocaleString('de-DE')).assertEqual('0');
+        expect(BigInt(0).toLocaleString('en-US')).assertEqual('0');
+        expect(BigInt(0).toLocaleString('de-DE')).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0300
@@ -56,12 +55,9 @@ export default function BigIntToLocaleString2Test(): void {
      */
     it('testBigIntToLocaleString2Negative0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const en = new BigInt(-1000000).toLocaleString('en-US');
-        expect(en.length > 0).assertTrue();
-        expect(en.indexOf('-') >= 0).assertTrue();
-        const de = new BigInt(-42).toLocaleString('de-DE');
-        expect(de.length > 0).assertTrue();
-        expect(de.indexOf('-') >= 0).assertTrue();
+        expect(BigInt(-1000000).toLocaleString('en-US')).assertEqual('-1,000,000');
+        expect(BigInt(-42).toLocaleString('de-DE')).assertEqual('-42');
+        expect(BigInt(-1000000).toLocaleString('de-DE')).assertEqual('-1.000.000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0400
@@ -73,10 +69,8 @@ export default function BigIntToLocaleString2Test(): void {
      */
     it('testBigIntToLocaleString2Locales0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const enUs = new BigInt(1234567).toLocaleString('en-US');
-        const frFr = new BigInt(1234567).toLocaleString('fr-FR');
-        expect(enUs.length > 0).assertTrue();
-        expect(frFr.length > 0).assertTrue();
+        expect(BigInt(1234567).toLocaleString('en-US')).assertEqual('1,234,567');
+        expect(BigInt(1234567).toLocaleString('fr-FR')).assertEqual('1\u202f234\u202f567');
       });
   });
 }

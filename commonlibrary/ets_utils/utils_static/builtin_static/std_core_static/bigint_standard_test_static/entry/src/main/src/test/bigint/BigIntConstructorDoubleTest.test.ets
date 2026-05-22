@@ -28,9 +28,9 @@ export default function BigIntConstructorDoubleTest(): void {
      */
     it('testBigIntConstructorDoubleIntegerSmall0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0.0).toString()).assertEqual('0');
-        expect(new BigInt(1.0).toString()).assertEqual('1');
-        expect(new BigInt(-1.0).toString()).assertEqual('-1');
+        expect(BigInt(0.0).toString()).assertEqual('0');
+        expect(BigInt(1.0).toString()).assertEqual('1');
+        expect(BigInt(-1.0).toString()).assertEqual('-1');
       });
 
     /**
@@ -43,8 +43,8 @@ export default function BigIntConstructorDoubleTest(): void {
      */
     it('testBigIntConstructorDoubleIntegerLarge0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(100.0).toString()).assertEqual('100');
-        expect(new BigInt(-999999.0).toString()).assertEqual('-999999');
+        expect(BigInt(100.0).toString()).assertEqual('100');
+        expect(BigInt(-999999.0).toString()).assertEqual('-999999');
       });
 
     /**
@@ -57,8 +57,8 @@ export default function BigIntConstructorDoubleTest(): void {
      */
     it('testBigIntConstructorDoubleZeroSign0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(+0.0).toString()).assertEqual('0');
-        expect(new BigInt(-0.0).toString()).assertEqual('0');
+        expect(BigInt(+0.0).toString()).assertEqual('0');
+        expect(BigInt(-0.0).toString()).assertEqual('0');
       });
 
     /**
@@ -71,8 +71,8 @@ export default function BigIntConstructorDoubleTest(): void {
      */
     it('testBigIntConstructorDoubleSafeInteger0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
-        expect(new BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
+        expect(BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
+        expect(BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
       });
 
     /**
@@ -86,10 +86,10 @@ export default function BigIntConstructorDoubleTest(): void {
     it('testBigIntConstructorDoubleNonInteger0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(1.5);
+          BigInt(1.5);
         }).assertThrowError('RangeError');
         expect((): void => {
-          new BigInt(3.14);
+          BigInt(3.14);
         }).assertThrowError('RangeError');
       });
 
@@ -103,8 +103,8 @@ export default function BigIntConstructorDoubleTest(): void {
      */
     it('testBigIntConstructorDoubleBeyondSafeInteger0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(9007199254740992.0).toString()).assertEqual('9007199254740992');
-        expect(new BigInt(-9007199254740992.0).toString()).assertEqual('-9007199254740992');
+        expect(BigInt(9007199254740992.0).toString()).assertEqual('9007199254740992');
+        expect(BigInt(-9007199254740992.0).toString()).assertEqual('-9007199254740992');
       });
 
     /**
@@ -123,10 +123,10 @@ export default function BigIntConstructorDoubleTest(): void {
           '537516986049910576551282076245490090389328944075868508455133942304583236903' +
           '222948165808559332123348274797826204144723168738177180919299881250404026184' +
           '124858368';
-        expect(new BigInt(Number.MAX_VALUE).toString()).assertEqual(maxStr);
-        expect(new BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + maxStr);
+        expect(BigInt(Number.MAX_VALUE).toString()).assertEqual(maxStr);
+        expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + maxStr);
         expect((): void => {
-          new BigInt(Number.MIN_VALUE);
+          BigInt(Number.MIN_VALUE);
         }).assertThrowError('RangeError');
       });
 
@@ -141,7 +141,7 @@ export default function BigIntConstructorDoubleTest(): void {
     it('testBigIntConstructorDoubleNaN0900',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(Number.NaN);
+          BigInt(Number.NaN);
         }).assertThrowError('RangeError');
       });
 
@@ -156,7 +156,7 @@ export default function BigIntConstructorDoubleTest(): void {
     it('testBigIntConstructorDoubleInfinity1000',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(Number.POSITIVE_INFINITY);
+          BigInt(Number.POSITIVE_INFINITY);
         }).assertThrowError('RangeError');
       });
 
@@ -171,7 +171,7 @@ export default function BigIntConstructorDoubleTest(): void {
     it('testBigIntConstructorDoubleNegativeInfinity1100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(Number.NEGATIVE_INFINITY);
+          BigInt(Number.NEGATIVE_INFINITY);
         }).assertThrowError('RangeError');
       });
   });

@@ -28,8 +28,8 @@ export default function BigIntConstructorBooleanTest(): void {
      */
     it('testBigIntConstructorBooleanLiterals0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(true).toString()).assertEqual('1');
-        expect(new BigInt(false).toString()).assertEqual('0');
+        expect(BigInt(true).toString()).assertEqual('1');
+        expect(BigInt(false).toString()).assertEqual('0');
       });
 
     /**
@@ -44,8 +44,8 @@ export default function BigIntConstructorBooleanTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const t: boolean = true;
         const f: boolean = false;
-        expect(new BigInt(t).toString()).assertEqual('1');
-        expect(new BigInt(f).toString()).assertEqual('0');
+        expect(BigInt(t).toString()).assertEqual('1');
+        expect(BigInt(f).toString()).assertEqual('0');
       });
   });
 }

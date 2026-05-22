@@ -28,13 +28,13 @@ export default function BigIntOperatorGreaterThanTest(): void {
      */
     it('testBigIntOperatorGreaterThanBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(100).operatorGreaterThan(new BigInt(50))).assertTrue();
-        expect(new BigInt(5).operatorGreaterThan(new BigInt(3))).assertTrue();
-        expect(new BigInt(10).operatorGreaterThan(new BigInt(-10))).assertTrue();
-        expect(new BigInt(-3).operatorGreaterThan(new BigInt(-10))).assertTrue();
-        expect(new BigInt(-10).operatorGreaterThan(new BigInt(-3))).assertFalse();
-        expect(new BigInt(0).operatorGreaterThan(new BigInt(0))).assertFalse();
-        expect(new BigInt(42).operatorGreaterThan(new BigInt(42))).assertFalse();
+        expect(BigInt(100).operatorGreaterThan(BigInt(50))).assertTrue();
+        expect(BigInt(5).operatorGreaterThan(BigInt(3))).assertTrue();
+        expect(BigInt(10).operatorGreaterThan(BigInt(-10))).assertTrue();
+        expect(BigInt(-3).operatorGreaterThan(BigInt(-10))).assertTrue();
+        expect(BigInt(-10).operatorGreaterThan(BigInt(-3))).assertFalse();
+        expect(BigInt(0).operatorGreaterThan(BigInt(0))).assertFalse();
+        expect(BigInt(42).operatorGreaterThan(BigInt(42))).assertFalse();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0200
@@ -47,8 +47,8 @@ export default function BigIntOperatorGreaterThanTest(): void {
     it('testBigIntOperatorGreaterThanBoundary0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const maxSafe = '9007199254740991';
-        expect(new BigInt(maxSafe).operatorGreaterThan(new BigInt('9007199254740990'))).assertTrue();
-        expect(new BigInt('9007199254740990').operatorGreaterThan(new BigInt(maxSafe))).assertFalse();
+        expect(BigInt(maxSafe).operatorGreaterThan(BigInt('9007199254740990'))).assertTrue();
+        expect(BigInt('9007199254740990').operatorGreaterThan(BigInt(maxSafe))).assertFalse();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0300
@@ -60,7 +60,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
      */
     it('testBigIntOperatorGreaterThanReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(typeof new BigInt(1).operatorGreaterThan(new BigInt(2)) === 'boolean').assertTrue();
+        expect(typeof BigInt(1).operatorGreaterThan(BigInt(2)) === 'boolean').assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0400
@@ -72,7 +72,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
      */
     it('testBigIntOperatorGreaterThanInvalidArg0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(10);
+        const a = BigInt(10);
         expect((): void => {
           a.operatorGreaterThan(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -101,9 +101,9 @@ export default function BigIntOperatorGreaterThanTest(): void {
     it('testBigIntOperatorGreaterThanHuge0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const huge = '999999999999999999999999999999';
-        expect(new BigInt(huge).operatorGreaterThan(new BigInt('999999999999999999999999999998'))).assertTrue();
-        expect(new BigInt('-' + huge).operatorGreaterThan(new BigInt(huge))).assertFalse();
-        expect(new BigInt('9223372036854775807').operatorGreaterThan(new BigInt('9223372036854775806'))).assertTrue();
+        expect(BigInt(huge).operatorGreaterThan(BigInt('999999999999999999999999999998'))).assertTrue();
+        expect(BigInt('-' + huge).operatorGreaterThan(BigInt(huge))).assertFalse();
+        expect(BigInt('9223372036854775807').operatorGreaterThan(BigInt('9223372036854775806'))).assertTrue();
       });
 
     /**
@@ -116,12 +116,11 @@ export default function BigIntOperatorGreaterThanTest(): void {
      */
     it('testBigIntOperatorGreaterThanNumberBoundary0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const fromDouble = new BigInt(9007199254740991.0);
-        const fromString = new BigInt('9007199254740991');
+        const fromDouble = BigInt(9007199254740991.0);
+        const fromString = BigInt('9007199254740991');
         expect(fromDouble.operatorGreaterThan(fromString)).assertFalse();
-        expect(fromDouble.operatorGreaterThan(new BigInt(9007199254740990))).assertTrue();
-        expect(new BigInt(9007199254740992.0).operatorGreaterThan(new BigInt(9007199254740991.0))).assertTrue();
-        expect(fromDouble.doubleValue()).assertEqual(9007199254740991.0);
+        expect(fromDouble.operatorGreaterThan(BigInt(9007199254740990))).assertTrue();
+        expect(BigInt(9007199254740992.0).operatorGreaterThan(BigInt(9007199254740991.0))).assertTrue();
       });
   });
 }

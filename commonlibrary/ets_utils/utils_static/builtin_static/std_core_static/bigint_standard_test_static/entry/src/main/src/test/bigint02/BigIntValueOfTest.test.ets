@@ -28,11 +28,11 @@ export default function BigIntValueOfTest(): void {
      */
     it('testBigIntValueOfEquals0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = new BigInt(123);
+        const v = BigInt(123);
         expect(v.valueOf().equals(v)).assertTrue();
         expect(v.valueOf().toString()).assertEqual('123');
-        expect(new BigInt(-456).valueOf().toString()).assertEqual('-456');
-        expect(new BigInt(0).valueOf().toString()).assertEqual('0');
+        expect(BigInt(-456).valueOf().toString()).assertEqual('-456');
+        expect(BigInt(0).valueOf().toString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0200
@@ -44,7 +44,7 @@ export default function BigIntValueOfTest(): void {
      */
     it('testBigIntValueOfReturnType0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).valueOf() instanceof BigInt).assertTrue();
+        expect(BigInt(42).valueOf() instanceof BigInt).assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0300
@@ -56,7 +56,7 @@ export default function BigIntValueOfTest(): void {
      */
     it('testBigIntValueOfStable0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = new BigInt(99);
+        const v = BigInt(99);
         expect(v.valueOf().equals(v.valueOf())).assertTrue();
       });
   });

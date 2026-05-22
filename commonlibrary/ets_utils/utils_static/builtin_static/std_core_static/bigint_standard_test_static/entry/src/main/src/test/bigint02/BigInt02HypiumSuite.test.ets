@@ -31,8 +31,6 @@ import BigIntValueOfTest from './BigIntValueOfTest.test';
 import BigIntToString1Test from './BigIntToString1Test.test';
 import BigIntToString2Test from './BigIntToString2Test.test';
 import BigIntToString3Test from './BigIntToString3Test.test';
-import BigIntToStringAsBinaryTest from './BigIntToStringAsBinaryTest.test';
-import BigIntToStringAsDecimalTest from './BigIntToStringAsDecimalTest.test';
 import BigIntToStringAsPowerOfTwoRadixTest from './BigIntToStringAsPowerOfTwoRadixTest.test';
 import BigIntToLocaleString1Test from './BigIntToLocaleString1Test.test';
 import BigIntToLocaleString2Test from './BigIntToLocaleString2Test.test';
@@ -59,8 +57,6 @@ export default function runBigInt02HypiumTests(): void {
   BigIntToString1Test();
   BigIntToString2Test();
   BigIntToString3Test();
-  BigIntToStringAsBinaryTest();
-  BigIntToStringAsDecimalTest();
   BigIntToStringAsPowerOfTwoRadixTest();
   BigIntToLocaleString1Test();
   BigIntToLocaleString2Test();

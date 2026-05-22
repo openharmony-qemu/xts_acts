@@ -28,10 +28,10 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(3).operatorMultiply(new BigInt(5)).toString()).assertEqual('15');
-        expect(new BigInt(6).operatorMultiply(new BigInt(-2)).toString()).assertEqual('-12');
-        expect(new BigInt(-3).operatorMultiply(new BigInt(-4)).toString()).assertEqual('12');
-        expect(new BigInt(7).operatorMultiply(new BigInt(7)).toString()).assertEqual('49');
+        expect(BigInt(3).operatorMultiply(BigInt(5)).toString()).assertEqual('15');
+        expect(BigInt(6).operatorMultiply(BigInt(-2)).toString()).assertEqual('-12');
+        expect(BigInt(-3).operatorMultiply(BigInt(-4)).toString()).assertEqual('12');
+        expect(BigInt(7).operatorMultiply(BigInt(7)).toString()).assertEqual('49');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0200
@@ -43,8 +43,8 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(100).operatorMultiply(new BigInt(0)).toString()).assertEqual('0');
-        expect(new BigInt(99).operatorMultiply(new BigInt(1)).toString()).assertEqual('99');
+        expect(BigInt(100).operatorMultiply(BigInt(0)).toString()).assertEqual('0');
+        expect(BigInt(99).operatorMultiply(BigInt(1)).toString()).assertEqual('99');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0300
@@ -56,7 +56,7 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyLarge0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('999999999').operatorMultiply(new BigInt('999999999')).toString()).assertEqual('999999998000000001');
+        expect(BigInt('999999999').operatorMultiply(BigInt('999999999')).toString()).assertEqual('999999998000000001');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0400
@@ -68,7 +68,7 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const result = new BigInt(10).operatorMultiply(new BigInt(3));
+        const result = BigInt(10).operatorMultiply(BigInt(3));
         expect(result instanceof BigInt).assertTrue();
       });
     /**
@@ -81,7 +81,7 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyInvalidArg0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(10);
+        const a = BigInt(10);
         expect((): void => {
           a.operatorMultiply(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -108,11 +108,11 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyBoundary0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('9223372036854775807').operatorMultiply(new BigInt(2)).toString())
+        expect(BigInt('9223372036854775807').operatorMultiply(BigInt(2)).toString())
           .assertEqual('18446744073709551614');
-        expect(new BigInt('-9223372036854775807').operatorMultiply(new BigInt('-9223372036854775807')).toString())
+        expect(BigInt('-9223372036854775807').operatorMultiply(BigInt('-9223372036854775807')).toString())
           .assertEqual('85070591730234615847396907784232501249');
-        expect(new BigInt(-1).operatorMultiply(new BigInt('999999999999999999999999999999')).toString())
+        expect(BigInt(-1).operatorMultiply(BigInt('999999999999999999999999999999')).toString())
           .assertEqual('-999999999999999999999999999999');
       });
 
@@ -128,11 +128,11 @@ export default function BigIntOperatorMultiplyTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const a = '-999999999999999999999999999999';
         const b = '888888888888888888888888888888';
-        expect(new BigInt(a).operatorMultiply(new BigInt(b)).toString())
+        expect(BigInt(a).operatorMultiply(BigInt(b)).toString())
           .assertEqual('-888888888888888888888888888887111111111111111111111111111112');
-        expect(new BigInt(a).operatorMultiply(new BigInt(a)).toString())
+        expect(BigInt(a).operatorMultiply(BigInt(a)).toString())
           .assertEqual('999999999999999999999999999998000000000000000000000000000001');
-        expect(new BigInt('-9223372036854775808').operatorMultiply(new BigInt('-9223372036854775808')).toString())
+        expect(BigInt('-9223372036854775808').operatorMultiply(BigInt('-9223372036854775808')).toString())
           .assertEqual('85070591730234615865843651857942052864');
       });
   });

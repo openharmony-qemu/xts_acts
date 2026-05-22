@@ -28,10 +28,10 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(12).operatorDivide(new BigInt(5)).toString()).assertEqual('2');
-        expect(new BigInt(20).operatorDivide(new BigInt(-5)).toString()).assertEqual('-4');
-        expect(new BigInt(-10).operatorDivide(new BigInt(5)).toString()).assertEqual('-2');
-        expect(new BigInt(7).operatorDivide(new BigInt(7)).toString()).assertEqual('1');
+        expect(BigInt(12).operatorDivide(BigInt(5)).toString()).assertEqual('2');
+        expect(BigInt(20).operatorDivide(BigInt(-5)).toString()).assertEqual('-4');
+        expect(BigInt(-10).operatorDivide(BigInt(5)).toString()).assertEqual('-2');
+        expect(BigInt(7).operatorDivide(BigInt(7)).toString()).assertEqual('1');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0200
@@ -43,8 +43,8 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideZero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).operatorDivide(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(0).operatorDivide(new BigInt(-7)).toString()).assertEqual('0');
+        expect(BigInt(0).operatorDivide(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(0).operatorDivide(BigInt(-7)).toString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0300
@@ -56,11 +56,11 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideNegativeTruncate0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(-7).operatorDivide(new BigInt(3)).toString()).assertEqual('-2');
-        expect(new BigInt(7).operatorDivide(new BigInt(-3)).toString()).assertEqual('-2');
-        expect(new BigInt(-7).operatorDivide(new BigInt(-3)).toString()).assertEqual('2');
-        expect(new BigInt(-1).operatorDivide(new BigInt(2)).toString()).assertEqual('0');
-        expect(new BigInt('100000000000000000001').operatorDivide(new BigInt('100000000000000000000')).toString())
+        expect(BigInt(-7).operatorDivide(BigInt(3)).toString()).assertEqual('-2');
+        expect(BigInt(7).operatorDivide(BigInt(-3)).toString()).assertEqual('-2');
+        expect(BigInt(-7).operatorDivide(BigInt(-3)).toString()).assertEqual('2');
+        expect(BigInt(-1).operatorDivide(BigInt(2)).toString()).assertEqual('0');
+        expect(BigInt('100000000000000000001').operatorDivide(BigInt('100000000000000000000')).toString())
           .assertEqual('1');
       });
     /**
@@ -73,7 +73,7 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const result = new BigInt(10).operatorDivide(new BigInt(3));
+        const result = BigInt(10).operatorDivide(BigInt(3));
         expect(result instanceof BigInt).assertTrue();
       });
     /**
@@ -86,7 +86,7 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideInvalidArg0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(10);
+        const a = BigInt(10);
         expect((): void => {
           a.operatorDivide(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -114,13 +114,13 @@ export default function BigIntOperatorDivideTest(): void {
     it('testBigIntOperatorDivideDivByZero0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(10).operatorDivide(new BigInt(0));
+          BigInt(10).operatorDivide(BigInt(0));
         }).assertThrowError('Error');
         expect((): void => {
-          new BigInt(0).operatorDivide(new BigInt(0));
+          BigInt(0).operatorDivide(BigInt(0));
         }).assertThrowError('Error');
         expect((): void => {
-          new BigInt(-42).operatorDivide(new BigInt(0));
+          BigInt(-42).operatorDivide(BigInt(0));
         }).assertThrowError('Error');
       });
     /**
@@ -133,9 +133,9 @@ export default function BigIntOperatorDivideTest(): void {
      */
     it('testBigIntOperatorDivideLarge0700',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('999999999999999999999999999999').operatorDivide(new BigInt('999999999999999999999999999999')).toString())
+        expect(BigInt('999999999999999999999999999999').operatorDivide(BigInt('999999999999999999999999999999')).toString())
           .assertEqual('1');
-        expect(new BigInt('-999999999999999999999999999999').operatorDivide(new BigInt('3')).toString())
+        expect(BigInt('-999999999999999999999999999999').operatorDivide(BigInt('3')).toString())
           .assertEqual('-333333333333333333333333333333');
       });
   });

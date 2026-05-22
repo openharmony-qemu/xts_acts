@@ -21,15 +21,14 @@ export default function BigIntToLocaleString1Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0100
      * @tc.name testBigIntToLocaleString1Default0100
-     * @tc.desc Verify default toLocaleString returns non-empty string
+     * @tc.desc Verify default toLocaleString formats million-scale values with grouping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Default0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const s = new BigInt(1000000).toLocaleString();
-        expect(s.length > 0).assertTrue();
+        expect(BigInt(1000000).toLocaleString()).assertEqual('1,000,000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0200
@@ -41,21 +40,19 @@ export default function BigIntToLocaleString1Test(): void {
      */
     it('testBigIntToLocaleString1Zero0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).toLocaleString()).assertEqual('0');
+        expect(BigInt(0).toLocaleString()).assertEqual('0');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0300
      * @tc.name testBigIntToLocaleString1Negative0300
-     * @tc.desc Verify default toLocaleString for negative values
+     * @tc.desc Verify default toLocaleString for negative million-scale values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Negative0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const s = new BigInt(-1000000).toLocaleString();
-        expect(s.length > 0).assertTrue();
-        expect(s.indexOf('-') >= 0).assertTrue();
+        expect(BigInt(-1000000).toLocaleString()).assertEqual('-1,000,000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0400
@@ -67,8 +64,20 @@ export default function BigIntToLocaleString1Test(): void {
      */
     it('testBigIntToLocaleString1SmallPositive0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(42).toLocaleString()).assertEqual('42');
-        expect(new BigInt(1).toLocaleString()).assertEqual('1');
+        expect(BigInt(42).toLocaleString()).assertEqual('42');
+        expect(BigInt(1).toLocaleString()).assertEqual('1');
+      });
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0500
+     * @tc.name testBigIntToLocaleString1Large0500
+     * @tc.desc Verify default toLocaleString for values beyond safe integer range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString1Large0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('9223372036854775807').toLocaleString()).assertEqual('9,223,372,036,854,775,807');
       });
   });
 }

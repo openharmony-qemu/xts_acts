@@ -28,8 +28,8 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopyValueEqual0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = new BigInt(42);
-        const copied = new BigInt(original);
+        const original = BigInt(42);
+        const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
         expect(copied.toString()).assertEqual('42');
       });
@@ -44,8 +44,8 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopyLargeString0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = new BigInt('9007199254740993');
-        const copied = new BigInt(original);
+        const original = BigInt('9007199254740993');
+        const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
       });
 
@@ -59,8 +59,8 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopySameValue0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = new BigInt(1);
-        const copied = new BigInt(original);
+        const original = BigInt(1);
+        const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
         expect(copied.toString()).assertEqual('1');
       });
@@ -75,8 +75,8 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopyZero0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = new BigInt(0);
-        const copied = new BigInt(original);
+        const original = BigInt(0);
+        const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
         expect(copied.toString()).assertEqual('0');
         expect(copied.negative()).assertFalse();
@@ -93,13 +93,13 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopyNegative0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const original = new BigInt(-42);
-        const copied = new BigInt(original);
+        const original = BigInt(-42);
+        const copied = BigInt(original);
         expect(copied.equals(original)).assertTrue();
         expect(copied.toString()).assertEqual('-42');
         expect(copied.negative()).assertTrue();
-        const largeNeg = new BigInt('-9223372036854775808');
-        const copiedLarge = new BigInt(largeNeg);
+        const largeNeg = BigInt('-9223372036854775808');
+        const copiedLarge = BigInt(largeNeg);
         expect(copiedLarge.equals(largeNeg)).assertTrue();
         expect(copiedLarge.toString()).assertEqual('-9223372036854775808');
       });
@@ -114,11 +114,11 @@ export default function BigIntConstructorCopyTest(): void {
      */
     it('testBigIntConstructorCopyBoundary0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const maxLong = new BigInt('9223372036854775807');
-        expect(new BigInt(maxLong).equals(maxLong)).assertTrue();
-        expect(new BigInt(maxLong).toString()).assertEqual('9223372036854775807');
-        const beyondSafe = new BigInt('9007199254740992');
-        const copiedBeyond = new BigInt(beyondSafe);
+        const maxLong = BigInt('9223372036854775807');
+        expect(BigInt(maxLong).equals(maxLong)).assertTrue();
+        expect(BigInt(maxLong).toString()).assertEqual('9223372036854775807');
+        const beyondSafe = BigInt('9007199254740992');
+        const copiedBeyond = BigInt(beyondSafe);
         expect(copiedBeyond.equals(beyondSafe)).assertTrue();
         expect(copiedBeyond.toString()).assertEqual('9007199254740992');
       });

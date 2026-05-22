@@ -28,13 +28,13 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(12).operatorBitwiseAnd(new BigInt(5)).toString()).assertEqual('4');
-        expect(new BigInt(0).operatorBitwiseAnd(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(5).operatorBitwiseAnd(new BigInt(0)).toString()).assertEqual('0');
-        expect(new BigInt(-1).operatorBitwiseAnd(new BigInt(7)).toString()).assertEqual('7');
-        expect(new BigInt(7).operatorBitwiseAnd(new BigInt(-1)).toString()).assertEqual('7');
-        expect(new BigInt(-3).operatorBitwiseAnd(new BigInt(-5)).toString()).assertEqual('-7');
-        expect(new BigInt(15).operatorBitwiseAnd(new BigInt(-1)).toString()).assertEqual('15');
+        expect(BigInt(12).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('4');
+        expect(BigInt(0).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(5).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+        expect(BigInt(-1).operatorBitwiseAnd(BigInt(7)).toString()).assertEqual('7');
+        expect(BigInt(7).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('7');
+        expect(BigInt(-3).operatorBitwiseAnd(BigInt(-5)).toString()).assertEqual('-7');
+        expect(BigInt(15).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('15');
       });
 
     /**
@@ -47,11 +47,11 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndLaws0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(12345).operatorBitwiseAnd(new BigInt(0)).toString()).assertEqual('0');
-        expect(new BigInt(-12345).operatorBitwiseAnd(new BigInt(0)).toString()).assertEqual('0');
-        expect(new BigInt(42).operatorBitwiseAnd(new BigInt(-1)).toString()).assertEqual('42');
-        expect(new BigInt(-42).operatorBitwiseAnd(new BigInt(-1)).toString()).assertEqual('-42');
-        const val = new BigInt(99);
+        expect(BigInt(12345).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+        expect(BigInt(-12345).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+        expect(BigInt(42).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('42');
+        expect(BigInt(-42).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('-42');
+        const val = BigInt(99);
         expect(val.operatorBitwiseAnd(val).toString()).assertEqual('99');
       });
 
@@ -65,8 +65,8 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndCommutative0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt(12);
-        const b = new BigInt(10);
+        const a = BigInt(12);
+        const b = BigInt(10);
         expect(a.operatorBitwiseAnd(b).toString()).assertEqual(b.operatorBitwiseAnd(a).toString());
       });
 
@@ -80,8 +80,8 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndImmutability0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const left = new BigInt(12);
-        const right = new BigInt(5);
+        const left = BigInt(12);
+        const right = BigInt(5);
         const origL = left.toString();
         const origR = right.toString();
         left.operatorBitwiseAnd(right);
@@ -99,7 +99,7 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndInvalidArg0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const left = new BigInt(12);
+        const left = BigInt(12);
         expect((): void => {
           left.operatorBitwiseAnd(null as BigInt);
         }).assertThrowError('ClassCastError');
@@ -112,6 +112,24 @@ export default function BigIntOperatorBitwiseAndTest(): void {
         expect((): void => {
           left.operatorBitwiseAnd('5' as object as BigInt);
         }).assertThrowError('ClassCastError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0600
+     * @tc.name testBigIntOperatorBitwiseAndLarge0600
+     * @tc.desc Verify bitwise AND on magnitudes beyond Number.MAX_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseAndLarge0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const mask = BigInt('18446744073709551615');
+        const huge = BigInt('999999999999999999999999999999');
+        expect(huge.operatorBitwiseAnd(mask).toString()).assertEqual('5076944270305263615');
+        expect(huge.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+        expect(BigInt('-9223372036854775808').operatorBitwiseAnd(mask).toString())
+          .assertEqual('9223372036854775808');
       });
   });
 }

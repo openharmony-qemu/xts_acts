@@ -28,9 +28,9 @@ export default function BigIntConstructorStringTest(): void {
      */
     it('testBigIntConstructorStringDecimalPositive0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('0').toString()).assertEqual('0');
-        expect(new BigInt('42').toString()).assertEqual('42');
-        expect(new BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
+        expect(BigInt('0').toString()).assertEqual('0');
+        expect(BigInt('42').toString()).assertEqual('42');
+        expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
       });
 
     /**
@@ -43,8 +43,8 @@ export default function BigIntConstructorStringTest(): void {
      */
     it('testBigIntConstructorStringDecimalNegative0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('-1').toString()).assertEqual('-1');
-        expect(new BigInt('-256').toString()).assertEqual('-256');
+        expect(BigInt('-1').toString()).assertEqual('-1');
+        expect(BigInt('-256').toString()).assertEqual('-256');
       });
 
     /**
@@ -57,20 +57,20 @@ export default function BigIntConstructorStringTest(): void {
      */
     it('testBigIntConstructorStringLeadingZeros0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('007').toString()).assertEqual('7');
+        expect(BigInt('007').toString()).assertEqual('7');
       });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0400
      * @tc.name testBigIntConstructorStringEmptyString0400
-     * @tc.desc Verify empty decimal string constructs BigInt zero
+     * @tc.desc Verify empty string constructs BigInt zero (current runtime behavior)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringEmptyString0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('').toString()).assertEqual('0');
+        expect(BigInt('').toString()).assertEqual('0');
       });
 
     /**
@@ -85,8 +85,53 @@ export default function BigIntConstructorStringTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
         expect((): void => {
-          new BigInt('abc');
+          BigInt('abc');
         }).assertThrow(invalidMsg);
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0600
+     * @tc.name testBigIntConstructorStringPositiveSign0600
+     * @tc.desc Verify BigInt construction accepts leading plus sign in decimal strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringPositiveSign0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('+0').toString()).assertEqual('0');
+        expect(BigInt('+42').toString()).assertEqual('42');
+        expect(BigInt('+2147483647').toString()).assertEqual('2147483647');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0700
+     * @tc.name testBigIntConstructorStringWhitespace0700
+     * @tc.desc Verify whitespace-trimmed decimal strings construct BigInt (current runtime behavior)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringWhitespace0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt(' 42').toString()).assertEqual('42');
+        expect(BigInt('42 ').toString()).assertEqual('42');
+        expect(BigInt(' 42 ').toString()).assertEqual('42');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0800
+     * @tc.name testBigIntConstructorStringNonDecimalRadix0800
+     * @tc.desc Verify hex/binary/octal prefixed strings construct BigInt (current runtime behavior)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringNonDecimalRadix0800',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(BigInt('0xFF').toString()).assertEqual('255');
+        expect(BigInt('0b1010').toString()).assertEqual('10');
+        expect(BigInt('0o77').toString()).assertEqual('63');
       });
   });
 }

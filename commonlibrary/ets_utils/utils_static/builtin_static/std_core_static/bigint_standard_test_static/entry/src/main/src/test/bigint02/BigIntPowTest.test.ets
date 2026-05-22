@@ -28,12 +28,12 @@ export default function BigIntPowTest(): void {
      */
     it('testBigIntPowBasic0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(8).pow(new BigInt(2)).toString()).assertEqual('64');
-        expect(new BigInt(2).pow(new BigInt(10)).toString()).assertEqual('1024');
-        expect(new BigInt(8).pow(new BigInt(0)).toString()).assertEqual('1');
-        expect(new BigInt(8).pow(new BigInt(1)).toString()).assertEqual('8');
-        expect(new BigInt(-2).pow(new BigInt(3)).toString()).assertEqual('-8');
-        expect(new BigInt(-2).pow(new BigInt(4)).toString()).assertEqual('16');
+        expect(BigInt(8).pow(BigInt(2)).toString()).assertEqual('64');
+        expect(BigInt(2).pow(BigInt(10)).toString()).assertEqual('1024');
+        expect(BigInt(8).pow(BigInt(0)).toString()).assertEqual('1');
+        expect(BigInt(8).pow(BigInt(1)).toString()).assertEqual('8');
+        expect(BigInt(-2).pow(BigInt(3)).toString()).assertEqual('-8');
+        expect(BigInt(-2).pow(BigInt(4)).toString()).assertEqual('16');
       });
     /**
      * @tc.number SUB_BIGINT_STD_POW_0200
@@ -45,11 +45,11 @@ export default function BigIntPowTest(): void {
      */
     it('testBigIntPowSpecial0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(0).pow(new BigInt(0)).toString()).assertEqual('1');
-        expect(new BigInt(0).pow(new BigInt(5)).toString()).assertEqual('0');
-        expect(new BigInt(1).pow(new BigInt(100)).toString()).assertEqual('1');
-        expect(new BigInt(-1).pow(new BigInt(4)).toString()).assertEqual('1');
-        expect(new BigInt(-1).pow(new BigInt(3)).toString()).assertEqual('-1');
+        expect(BigInt(0).pow(BigInt(0)).toString()).assertEqual('1');
+        expect(BigInt(0).pow(BigInt(5)).toString()).assertEqual('0');
+        expect(BigInt(1).pow(BigInt(100)).toString()).assertEqual('1');
+        expect(BigInt(-1).pow(BigInt(4)).toString()).assertEqual('1');
+        expect(BigInt(-1).pow(BigInt(3)).toString()).assertEqual('-1');
       });
     /**
      * @tc.number SUB_BIGINT_STD_POW_0300
@@ -61,10 +61,10 @@ export default function BigIntPowTest(): void {
      */
     it('testBigIntPowLarge0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt(2).pow(new BigInt(64)).toString()).assertEqual('18446744073709551616');
-        expect(new BigInt(2).pow(new BigInt(128)).toString()).assertEqual('340282366920938463463374607431768211456');
-        expect(new BigInt(999999999).pow(new BigInt(2)).toString()).assertEqual('999999998000000001');
-        expect(new BigInt(10).pow(new BigInt(20)).toString()).assertEqual('100000000000000000000');
+        expect(BigInt(2).pow(BigInt(64)).toString()).assertEqual('18446744073709551616');
+        expect(BigInt(2).pow(BigInt(128)).toString()).assertEqual('340282366920938463463374607431768211456');
+        expect(BigInt(999999999).pow(BigInt(2)).toString()).assertEqual('999999998000000001');
+        expect(BigInt(10).pow(BigInt(20)).toString()).assertEqual('100000000000000000000');
       });
     /**
      * @tc.number SUB_BIGINT_STD_POW_0400
@@ -77,10 +77,10 @@ export default function BigIntPowTest(): void {
     it('testBigIntPowNegativeExponent0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
-          new BigInt(8).pow(new BigInt(-1));
+          BigInt(8).pow(BigInt(-1));
         }).assertThrowError('RangeError');
         expect((): void => {
-          new BigInt(2).pow(new BigInt(-100));
+          BigInt(2).pow(BigInt(-100));
         }).assertThrowError('RangeError');
       });
     /**
@@ -93,7 +93,7 @@ export default function BigIntPowTest(): void {
      */
     it('testBigIntPowInvalidArg0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = new BigInt(8);
+        const v = BigInt(8);
         expect((): void => {
           v.pow(null as BigInt);
         }).assertThrowError('ClassCastError');
