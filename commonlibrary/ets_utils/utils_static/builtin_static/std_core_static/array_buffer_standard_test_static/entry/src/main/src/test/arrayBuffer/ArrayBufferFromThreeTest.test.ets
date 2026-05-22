@@ -510,7 +510,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3100
-     * @tc.desc Verify view[0] equals 1 after resize
+     * @tc.desc Verify modifying source buffer view does not affect from() result
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

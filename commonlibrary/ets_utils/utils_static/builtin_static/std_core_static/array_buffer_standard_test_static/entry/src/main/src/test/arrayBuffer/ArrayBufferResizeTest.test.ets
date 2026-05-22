@@ -333,8 +333,8 @@ export default function arrayBufferResizeTest(): void {
       buffer.set(1, Int.toByte(43));
       buffer.resize(6);
       expect(buffer.byteLength).assertEqual(6);
-      expect(buffer.at(0)).assertEqual(42);
-      expect(buffer.at(1)).assertEqual(43);
+      expect(buffer.at(0)).assertEqual(Int.toByte(42));
+      expect(buffer.at(1)).assertEqual(Int.toByte(43));
     });
 
     /**

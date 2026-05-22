@@ -714,14 +714,14 @@ export default function arrayBufferBytesLengthTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferBytesLength0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_5100
+     * @tc.name testArrayBufferBytesLength0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_5000
      * @tc.desc Verify len equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferBytesLength0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferBytesLength0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let len = ArrayBuffer.bytesLength('41', 'hex')
       expect(len).assertEqual(1)
     });
