@@ -246,7 +246,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1200
-     * @tc.desc Verify ArrayBuffer.from(source, Double.POSITIVE_INFINITY, 4) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, Double.toInt(Double.POSITIVE_INFINITY), 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -254,7 +254,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, Double.POSITIVE_INFINITY, 4);
+        ArrayBuffer.from(source, Double.toInt(Double.POSITIVE_INFINITY), 4);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -504,7 +504,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2800
-     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.POSITIVE_INFINITY) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 0, Double.toInt(Double.POSITIVE_INFINITY)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -512,7 +512,7 @@ export default function arrayBufferFromSevenTest(): void {
     it('testArrayBufferFromSeven0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
-        ArrayBuffer.from(source, 0, Double.POSITIVE_INFINITY);
+        ArrayBuffer.from(source, 0, Double.toInt(Double.POSITIVE_INFINITY));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');

@@ -55,7 +55,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('hello', 'utf8');
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(5);
     });
     /**
@@ -122,7 +122,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
-      const result = ArrayBuffer.from(source, (source.byteLength as int) - 1, 1);
+      const result = ArrayBuffer.from(source, source.byteLength - 1, 1);
       const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
       expect(str).assertEqual('f');
     });
@@ -136,13 +136,13 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
-      const result = ArrayBuffer.from(source, (source.byteLength as int), 0);
+      const result = ArrayBuffer.from(source, source.byteLength, 0);
       expect(result.byteLength).assertEqual(0);
     });
     /**
      * @tc.name testArrayBufferFromSix0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0900
-     * @tc.desc Verify ArrayBuffer.from(source, (source.byteLength as int) + 1, 1) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, source.byteLength + 1, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -150,7 +150,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       try {
-        ArrayBuffer.from(source, (source.byteLength as int) + 1, 1);
+        ArrayBuffer.from(source, source.byteLength + 1, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -223,7 +223,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
-      const result = ArrayBuffer.from(source, 2, (source.byteLength as int) - 2);
+      const result = ArrayBuffer.from(source, 2, source.byteLength - 2);
       expect(result.byteLength).assertEqual(4);
     });
     /**
@@ -236,13 +236,13 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
     });
     /**
      * @tc.name testArrayBufferFromSix0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_1600
-     * @tc.desc Verify ArrayBuffer.from(source, 2, (source.byteLength as int)) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 2, source.byteLength) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,7 +250,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       try {
-        ArrayBuffer.from(source, 2, (source.byteLength as int));
+        ArrayBuffer.from(source, 2, source.byteLength);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -309,7 +309,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcd', 'utf8');
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       const sourceLen = source.byteLength;
       expect(result.byteLength).assertEqual(sourceLen);
       expect(result != source).assertTrue();
@@ -346,7 +346,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2300
-     * @tc.desc Verify byteLength typeof is number or int
+     * @tc.desc Verify byteLength typeof is int
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +395,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('hello world', 'utf8');
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       for (let i: int = 0; i < result.byteLength; i++) {
         expect(result.at(i)).assertEqual(source.at(i));
       }
@@ -424,7 +424,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('fullcopy', 'utf8');
-      const result = ArrayBuffer.from(source, 0, (source.byteLength as int));
+      const result = ArrayBuffer.from(source, 0, source.byteLength);
       expect(result.byteLength).assertEqual(source.byteLength);
       const str = ArrayBuffer.stringify(result, 'utf8', 0, result.byteLength);
       expect(str).assertEqual('fullcopy');
@@ -467,7 +467,7 @@ export default function arrayBufferFromSixTest(): void {
      */
     it('testArrayBufferFromSix0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcd', 'utf8');
-      const result = ArrayBuffer.from(source, (source.byteLength as int) - 1, 1);
+      const result = ArrayBuffer.from(source, source.byteLength - 1, 1);
       expect(result.byteLength).assertEqual(1);
       expect(result.at(0)).assertEqual(source.at(source.byteLength - 1));
     });
@@ -488,7 +488,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3300
-     * @tc.desc Verify ArrayBuffer.from(source, 3, (source.byteLength as int) - 2) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, 3, source.byteLength - 2) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -496,7 +496,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       try {
-        ArrayBuffer.from(source, 3, (source.byteLength as int) - 2);
+        ArrayBuffer.from(source, 3, source.byteLength - 2);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -522,7 +522,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3500
-     * @tc.desc Verify ArrayBuffer.from(source, (source.byteLength as int), 1) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, source.byteLength, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -530,7 +530,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       try {
-        ArrayBuffer.from(source, (source.byteLength as int), 1);
+        ArrayBuffer.from(source, source.byteLength, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
@@ -539,7 +539,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_3600
-     * @tc.desc Verify ArrayBuffer.from(source, (source.byteLength as int) + 10, 1) throws IndexOutOfBoundsError
+     * @tc.desc Verify ArrayBuffer.from(source, source.byteLength + 10, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -547,7 +547,7 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcdef', 'utf8');
       try {
-        ArrayBuffer.from(source, (source.byteLength as int) + 10, 1);
+        ArrayBuffer.from(source, source.byteLength + 10, 1);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('IndexOutOfBoundsError');

@@ -195,20 +195,19 @@ export default function arrayBufferByteLengthFieldTest(): void {
     /**
      * @tc.name testArrayBufferByteLengthField0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1400
-     * @tc.desc Verify result >= 0 is true
+     * @tc.desc Verify byteLength equals 0 for zero-length buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferByteLengthField0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
-      let result = buffer.byteLength;
-      expect(result >= 0).assertTrue();
+      expect(buffer.byteLength).assertEqual(0);
     });
     /**
      * @tc.name testArrayBufferByteLengthField0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1500
-     * @tc.desc Verify kind === 'int' is true
+     * @tc.desc Verify byteLength typeof is int and value equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -217,11 +216,12 @@ export default function arrayBufferByteLengthFieldTest(): void {
       const buffer = new ArrayBuffer(8);
       const kind: string = typeof buffer.byteLength;
       expect(kind === 'int').assertTrue();
+      expect(buffer.byteLength).assertEqual(8);
     });
     /**
      * @tc.name testArrayBufferByteLengthField0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_BYTE_LENGTH_1600
-     * @tc.desc Verify value is integer
+     * @tc.desc Verify byteLength is integer and equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -229,6 +229,7 @@ export default function arrayBufferByteLengthFieldTest(): void {
     it('testArrayBufferByteLengthField0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       expect(Number.isInteger(buffer.byteLength)).assertTrue();
+      expect(buffer.byteLength).assertEqual(8);
     });
     /**
      * @tc.name testArrayBufferByteLengthField0017
