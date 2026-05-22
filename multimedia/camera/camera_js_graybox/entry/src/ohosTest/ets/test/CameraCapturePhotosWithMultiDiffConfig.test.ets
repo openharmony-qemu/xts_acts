@@ -84,7 +84,7 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
         let cameraManager = await getCameraManager();
         let cameras = getSupportedCameras(cameraManager);
         if (cameras.length <= 0) {
-          console.info(`${testNum} cameras length is ${cameras.length}, cameraIndex is 0`)
+          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 0`)
           await helperInstance.release();
           expect(true).assertFail();
           done();
@@ -161,11 +161,11 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
               //恢复过程
               offCaptureReady(photoOutput);
               offPreviewOutputFrameStart(previewOutPut!);
-              stopSession(session);
-              releaseInPutStream(cameraInput);
-              releaseOutPutStream(previewOutPut)
-              releaseOutPutStream(photoOutput)
-              releaseSession(session)
+              await stopSession(session);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut)
+              await releaseOutPutStream(photoOutput)
+              await releaseSession(session)
               await sleep(4000);
             } catch (error) {
               if (previewOutPut != undefined) {
@@ -174,11 +174,11 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
               if (photoOutput != undefined) {
                 offCaptureReady(photoOutput);
               }
-              stopSession(session);
-              releaseInPutStream(cameraInput);
-              releaseOutPutStream(previewOutPut)
-              releaseOutPutStream(photoOutput)
-              releaseSession(session)
+              await stopSession(session);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut)
+              await releaseOutPutStream(photoOutput)
+              await releaseSession(session)
               console.error(`${testNum} error is ${error}`)
               expect().assertFail();
             }
@@ -212,7 +212,7 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
         let cameraManager = await getCameraManager();
         let cameras = getSupportedCameras(cameraManager);
         if (cameras.length <= 1) {
-          console.info(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1`)
+          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1`)
           await helperInstance.release();
           expect(true).assertFail();
           done();
@@ -289,11 +289,11 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
               //恢复过程
               offCaptureReady(photoOutput);
               offPreviewOutputFrameStart(previewOutPut!);
-              stopSession(session);
-              releaseInPutStream(cameraInput);
-              releaseOutPutStream(previewOutPut)
-              releaseOutPutStream(photoOutput)
-              releaseSession(session)
+              await stopSession(session);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut)
+              await releaseOutPutStream(photoOutput)
+              await releaseSession(session)
               await sleep(4000);
             } catch (error) {
               if (previewOutPut != undefined) {
@@ -302,11 +302,11 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
               if (photoOutput != undefined) {
                 offCaptureReady(photoOutput);
               }
-              stopSession(session);
-              releaseInPutStream(cameraInput);
-              releaseOutPutStream(previewOutPut)
-              releaseOutPutStream(photoOutput)
-              releaseSession(session)
+              await stopSession(session);
+              await releaseInPutStream(cameraInput);
+              await releaseOutPutStream(previewOutPut)
+              await releaseOutPutStream(photoOutput)
+              await releaseSession(session)
               console.error(`${testNum} error is ${error}`)
               expect().assertFail();
             }

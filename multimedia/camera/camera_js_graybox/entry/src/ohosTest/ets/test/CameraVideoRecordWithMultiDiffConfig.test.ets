@@ -78,9 +78,9 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
       console.info('beforeEach case');
     })
 
-    afterEach(() => {
+    afterEach(async () => {
       console.info('afterEach case');
-      sleep(1000);
+      await sleep(1000);
     })
 
     afterAll(() => {
@@ -104,8 +104,8 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
         let cameraManager = await getCameraManager();
         let cameras = getSupportedCameras(cameraManager);
         if (cameras.length <= 0) {
-          console.info(`${testNum} cameras length is ${cameras.length}, cameraIndex is 0`)
-          helper.release();
+          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 0`)
+          await helper.release();
           expect(true).assertFail();
           done();
           return;
@@ -206,23 +206,24 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
 
                 //恢复过程
                 offPreviewOutputFrameStart(previewOutPut!);
-                stopSession(session);
-                releaseInPutStream(cameraInput);
-                releaseOutPutStream(previewOutPut);
-                releaseOutPutStream(videoOutput);
-                releaseSession(session)
+                await stopSession(session);
+                await releaseInPutStream(cameraInput);
+                await releaseOutPutStream(previewOutPut);
+                await releaseOutPutStream(videoOutput);
+                await releaseSession(session)
                 await sleep(2000);
               } catch (error) {
+                console.error(`${testNum} error is ${JSON.stringify(error)}`)
                 //恢复过程
                 await releaseAvRecoder(avRecoder!);
                 if (previewOutPut != undefined) {
                   offPreviewOutputFrameStart(previewOutPut!);
                 }
-                stopSession(session);
-                releaseInPutStream(cameraInput);
-                releaseOutPutStream(previewOutPut)
-                releaseOutPutStream(videoOutput);
-                releaseSession(session)
+                await stopSession(session);
+                await releaseInPutStream(cameraInput);
+                await releaseOutPutStream(previewOutPut)
+                await releaseOutPutStream(videoOutput);
+                await releaseSession(session)
                 await sleep(2000);
                 continue
               }
@@ -230,11 +231,11 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
           }
         }
         await sleep(4000);
-        helper.release();
+        await helper.release();
         done();
 
       } catch (error) {
-        console.info('error is ' + JSON.stringify(error))
+        console.error('error is ' + JSON.stringify(error))
         expect().assertFail();
         done();
       }
@@ -257,8 +258,8 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
         let cameraManager = await getCameraManager();
         let cameras = getSupportedCameras(cameraManager);
         if (cameras.length <= 1) {
-          console.info(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1`)
-          helper.release();
+          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1`)
+          await helper.release();
           expect(true).assertFail();
           done();
           return;
@@ -359,23 +360,24 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
 
                 //恢复过程
                 offPreviewOutputFrameStart(previewOutPut!);
-                stopSession(session);
-                releaseInPutStream(cameraInput);
-                releaseOutPutStream(previewOutPut);
-                releaseOutPutStream(videoOutput);
-                releaseSession(session)
+                await stopSession(session);
+                await releaseInPutStream(cameraInput);
+                await releaseOutPutStream(previewOutPut);
+                await releaseOutPutStream(videoOutput);
+                await releaseSession(session)
                 await sleep(2000);
               } catch (error) {
+                console.error(`${testNum} error is ${JSON.stringify(error)}`)
                 //恢复过程
                 await releaseAvRecoder(avRecoder!);
                 if (previewOutPut != undefined) {
                   offPreviewOutputFrameStart(previewOutPut!);
                 }
-                stopSession(session);
-                releaseInPutStream(cameraInput);
-                releaseOutPutStream(previewOutPut)
-                releaseOutPutStream(videoOutput);
-                releaseSession(session)
+                await stopSession(session);
+                await releaseInPutStream(cameraInput);
+                await releaseOutPutStream(previewOutPut)
+                await releaseOutPutStream(videoOutput);
+                await releaseSession(session)
                 await sleep(2000);
                 continue
               }
@@ -383,11 +385,11 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
           }
         }
         await sleep(4000);
-        helper.release();
+        await helper.release();
         done();
 
       } catch (error) {
-        console.info('error is ' + JSON.stringify(error))
+        console.error('error is ' + JSON.stringify(error))
         expect().assertFail();
         done();
       }
