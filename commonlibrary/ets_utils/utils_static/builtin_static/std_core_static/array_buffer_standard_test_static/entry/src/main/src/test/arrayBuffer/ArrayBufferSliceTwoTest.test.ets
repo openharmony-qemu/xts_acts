@@ -931,6 +931,7 @@ export default function arrayBufferSliceTwoTest(): void {
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
       expect(resultView[0]).assertEqual(Int.toByte(10));
+      expect(resultView[7]).assertEqual(Int.toByte(80));
 
     });
     /**

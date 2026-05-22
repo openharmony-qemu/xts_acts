@@ -705,14 +705,14 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_4900
-     * @tc.desc Verify buf.byteLength equals 10000
+     * @tc.desc Verify buf.byteLength equals 102400
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buf = ArrayBuffer.from(Utils.buildLongString('A', 10000), 'utf8');
-      expect(buf.byteLength).assertEqual(10000);
+      const buf = ArrayBuffer.from(Utils.buildLongString('X', 102400), 'utf8');
+      expect(buf.byteLength).assertEqual(102400);
     });
 
     /**

@@ -32,6 +32,7 @@ export default function arrayBufferFromObjectTest(): void {
     });
 
 
+
     /**
      * @tc.name testArrayBufferFromObject0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0100
@@ -633,51 +634,38 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4100
-     * @tc.desc Verify result.byteLength equals 16
+     * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, 0, 16);
-      expect(result.byteLength).assertEqual(16);
+      const result = Utils.fromObjectWithBuffer(src, 0, 1);
+      expect(result.byteLength).assertEqual(1);
     });
     /**
      * @tc.name testArrayBufferFromObject0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4200
-     * @tc.desc Verify result.byteLength equals 1
+     * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, 0, 1);
-      expect(result.byteLength).assertEqual(1);
-    });
-    /**
-     * @tc.name testArrayBufferFromObject0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4300
-     * @tc.desc Verify result.byteLength equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromObject0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = new ArrayBuffer(16);
       const result = Utils.fromObjectWithBuffer(src, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
     /**
-     * @tc.name testArrayBufferFromObject0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4400
+     * @tc.name testArrayBufferFromObject0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4300
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, -1);
@@ -687,14 +675,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4500
+     * @tc.name testArrayBufferFromObject0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4400
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -100) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, -100);
@@ -704,14 +692,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4600
+     * @tc.name testArrayBufferFromObject0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4500
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 8, 20) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 8, 20);
@@ -721,27 +709,27 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4700
+     * @tc.name testArrayBufferFromObject0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4600
      * @tc.desc Verify result.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
       const result = Utils.fromObjectWithBuffer(src, 8, 8);
       expect(result.byteLength).assertEqual(8);
     });
     /**
-     * @tc.name testArrayBufferFromObject0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4800
+     * @tc.name testArrayBufferFromObject0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4700
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 2147483647) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, 2147483647);
@@ -751,14 +739,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4900
+     * @tc.name testArrayBufferFromObject0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4800
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Utils.nullAsInt()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, Utils.nullAsInt());
@@ -768,14 +756,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5000
+     * @tc.name testArrayBufferFromObject0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4900
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Utils.undefinedAsInt()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, Utils.undefinedAsInt());
@@ -785,14 +773,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5100
+     * @tc.name testArrayBufferFromObject0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5000
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Utils.stringAsInt('10')) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, Utils.stringAsInt('10'));
@@ -802,14 +790,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5200
+     * @tc.name testArrayBufferFromObject0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5100
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, Utils.booleanAsInt(true)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, Utils.booleanAsInt(true));
@@ -819,30 +807,42 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
+     * @tc.name testArrayBufferFromObject0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5200
+     * @tc.desc Verify result.byteLength equals 3
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromObject0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new ArrayBuffer(16);
+      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(3.14));
+      expect(result.byteLength).assertEqual(3);
+    });
+    /**
      * @tc.name testArrayBufferFromObject0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5300
-     * @tc.desc Verify result.byteLength equals 3
+     * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(3.14));
-      expect(result.byteLength).assertEqual(3);
+      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(Double.NaN));
+      expect(result.byteLength).assertEqual(0);
     });
     /**
      * @tc.name testArrayBufferFromObject0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5400
-     * @tc.desc Verify result.byteLength equals 0
+     * @tc.desc Verify value is not null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = new ArrayBuffer(16);
-      const result = Utils.fromObjectWithBuffer(src, 0, Double.toInt(Double.NaN));
-      expect(result.byteLength).assertEqual(0);
+      const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
+      expect(result !== null).assertTrue();
     });
     /**
      * @tc.name testArrayBufferFromObject0055
@@ -853,18 +853,6 @@ export default function arrayBufferFromObjectTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
-      expect(result !== null).assertTrue();
-    });
-    /**
-     * @tc.name testArrayBufferFromObject0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5600
-     * @tc.desc Verify value is not null
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromObject0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
       const view = new Uint8Array(src);
       view[0] = 72;
@@ -873,90 +861,90 @@ export default function arrayBufferFromObjectTest(): void {
       expect(result !== null).assertTrue();
     });
     /**
-     * @tc.name testArrayBufferFromObject0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5700
+     * @tc.name testArrayBufferFromObject0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5600
      * @tc.desc Verify result.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
       const result = Utils.fromObjectWithBuffer(src, 4, 8);
       expect(result.byteLength).assertEqual(8);
     });
     /**
-     * @tc.name testArrayBufferFromObject0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5800
+     * @tc.name testArrayBufferFromObject0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5700
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(0);
       const result = Utils.fromObjectWithBuffer(src, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
     /**
+     * @tc.name testArrayBufferFromObject0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5800
+     * @tc.desc Verify return value is ArrayBuffer instance
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromObject0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
+      expect(result instanceof ArrayBuffer).assertTrue();
+    });
+    /**
      * @tc.name testArrayBufferFromObject0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5900
-     * @tc.desc Verify return value is ArrayBuffer instance
+     * @tc.desc Verify typeof result equals 'object'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
-      expect(result instanceof ArrayBuffer).assertTrue();
+      expect(typeof result).assertEqual('object');
     });
     /**
      * @tc.name testArrayBufferFromObject0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6000
-     * @tc.desc Verify typeof result equals 'object'
+     * @tc.desc Verify Class.of(result) === Class.of(ref) is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
-      expect(typeof result).assertEqual('object');
-    });
-    /**
-     * @tc.name testArrayBufferFromObject0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6100
-     * @tc.desc Verify Class.of(result) === Class.of(ref) is true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromObject0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = ArrayBuffer.fromObject('hello', 'utf8', 5);
       const ref = new ArrayBuffer(0);
       expect(Class.of(result) === Class.of(ref)).assertTrue();
     });
     /**
-     * @tc.name testArrayBufferFromObject0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6200
+     * @tc.name testArrayBufferFromObject0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6100
      * @tc.desc Verify result !== src is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
       expect(result !== src).assertTrue();
     });
     /**
-     * @tc.name testArrayBufferFromObject0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6300
+     * @tc.name testArrayBufferFromObject0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6200
      * @tc.desc Verify Uint8Array view bytes match UTF-8 encoding of abc
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('abc', 'utf8', 3);
       const view = new Uint8Array(result);
       expect(view[0]).assertEqual(97);
@@ -964,27 +952,27 @@ export default function arrayBufferFromObjectTest(): void {
       expect(view[2]).assertEqual(99);
     });
     /**
-     * @tc.name testArrayBufferFromObject0064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6400
+     * @tc.name testArrayBufferFromObject0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6300
      * @tc.desc Verify view.length equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('你', 'utf8', 3);
       const view = new Uint8Array(result);
       expect(view.length).assertEqual(3);
     });
     /**
-     * @tc.name testArrayBufferFromObject0065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6500
+     * @tc.name testArrayBufferFromObject0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6400
      * @tc.desc Verify resView[0] equals 10
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(4);
       const srcView = new Uint8Array(src);
       srcView[0] = 10;
@@ -999,14 +987,14 @@ export default function arrayBufferFromObjectTest(): void {
       expect(resView[3]).assertEqual(40);
     });
     /**
-     * @tc.name testArrayBufferFromObject0066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6600
+     * @tc.name testArrayBufferFromObject0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6500
      * @tc.desc Verify resView[0] equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(8);
       const srcView = new Uint8Array(src);
       srcView[0] = 1;
@@ -1025,14 +1013,14 @@ export default function arrayBufferFromObjectTest(): void {
       expect(resView[3]).assertEqual(6);
     });
     /**
-     * @tc.name testArrayBufferFromObject0067
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6700
+     * @tc.name testArrayBufferFromObject0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6600
      * @tc.desc Verify srcView[0] equals 100
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(4);
       const srcView = new Uint8Array(src);
       srcView[0] = 100;
@@ -1042,91 +1030,91 @@ export default function arrayBufferFromObjectTest(): void {
       expect(srcView[0]).assertEqual(100);
     });
     /**
-     * @tc.name testArrayBufferFromObject0068
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6800
+     * @tc.name testArrayBufferFromObject0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6700
      * @tc.desc Verify result.byteLength equals 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(32);
       const result = Utils.fromObjectWithBuffer(src, 0, 16);
       expect(result.byteLength).assertEqual(16);
     });
     /**
-     * @tc.name testArrayBufferFromObject0069
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6900
+     * @tc.name testArrayBufferFromObject0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6800
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
       const result = Utils.fromObjectWithBuffer(src, 0, 0);
       expect(result.byteLength).assertEqual(0);
     });
     /**
+     * @tc.name testArrayBufferFromObject0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_6900
+     * @tc.desc Verify result.byteLength equals 8
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromObject0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new ArrayBuffer(8);
+      const result = Utils.fromObjectWithBuffer(src, 0, 8);
+      expect(result.byteLength).assertEqual(8);
+    });
+    /**
      * @tc.name testArrayBufferFromObject0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7000
-     * @tc.desc Verify result.byteLength equals 8
+     * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(8);
-      const result = Utils.fromObjectWithBuffer(src, 0, 8);
-      expect(result.byteLength).assertEqual(8);
+      const result = Utils.fromObjectWithBuffer(src, 7, 1);
+      expect(result.byteLength).assertEqual(1);
     });
     /**
      * @tc.name testArrayBufferFromObject0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7100
-     * @tc.desc Verify result.byteLength equals 1
+     * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(8);
-      const result = Utils.fromObjectWithBuffer(src, 7, 1);
-      expect(result.byteLength).assertEqual(1);
-    });
-    /**
-     * @tc.name testArrayBufferFromObject0072
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7200
-     * @tc.desc Verify result.byteLength equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromObject0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const src = new ArrayBuffer(8);
       const result = Utils.fromObjectWithBuffer(src, 8, 0);
       expect(result.byteLength).assertEqual(0);
     });
     /**
-     * @tc.name testArrayBufferFromObject0073
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7300
+     * @tc.name testArrayBufferFromObject0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7200
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = ArrayBuffer.fromObject('A', 'utf8', 1);
       expect(result.byteLength).assertEqual(1);
     });
     /**
-     * @tc.name testArrayBufferFromObject0074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7400
+     * @tc.name testArrayBufferFromObject0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7300
      * @tc.desc Verify ArrayBuffer.fromObject(Utils.arrayNumberAsObject(emptyArr), 0, 4) throws Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
       try {
         ArrayBuffer.fromObject(Utils.arrayNumberAsObject(emptyArr), 0, 4);
@@ -1136,14 +1124,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7500
+     * @tc.name testArrayBufferFromObject0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7400
      * @tc.desc Verify ArrayBuffer.fromObject(Utils.dataViewAsObject(dv), 0, 8) throws Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const buf = new ArrayBuffer(8);
         const dv = new DataView(buf);
@@ -1154,14 +1142,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7600
+     * @tc.name testArrayBufferFromObject0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7500
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, Utils.nullAsInt(), 16) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, Utils.nullAsInt(), 16);
@@ -1171,14 +1159,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7700
+     * @tc.name testArrayBufferFromObject0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7600
      * @tc.desc Verify ArrayBuffer.fromObject(Utils.nullAsObject(), (null as string), (null as int)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.fromObject(Utils.nullAsObject(), (null as string), (null as int));
         expect().assertFail();
@@ -1187,14 +1175,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0078
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7800
+     * @tc.name testArrayBufferFromObject0077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7700
      * @tc.desc Verify ArrayBuffer.fromObject(Utils.undefinedAsObject(), (undefined as string), (undefined as int)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.fromObject(Utils.undefinedAsObject(), (undefined as string), (undefined as int));
         expect().assertFail();
@@ -1203,14 +1191,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0079
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7900
+     * @tc.name testArrayBufferFromObject0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7800
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, -1, 8) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, -1, 8);
@@ -1220,14 +1208,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0080
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8000
+     * @tc.name testArrayBufferFromObject0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_7900
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 100, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(8);
         Utils.fromObjectWithBuffer(src, 100, 4);
@@ -1237,14 +1225,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0081
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8100
+     * @tc.name testArrayBufferFromObject0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8000
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, -5) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, -5);
@@ -1254,14 +1242,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0082
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8200
+     * @tc.name testArrayBufferFromObject0081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8100
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 4, 8) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(8);
         Utils.fromObjectWithBuffer(src, 4, 8);
@@ -1271,14 +1259,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0083
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8300
+     * @tc.name testArrayBufferFromObject0082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8200
      * @tc.desc Verify ArrayBuffer.fromObject('hi', 'utf8', 100) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.fromObject('hi', 'utf8', 100);
         expect().assertFail();
@@ -1287,14 +1275,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0084
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8400
+     * @tc.name testArrayBufferFromObject0083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8300
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, -2147483648, 8) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, -2147483648, 8);
@@ -1304,14 +1292,14 @@ export default function arrayBufferFromObjectTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromObject0085
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8500
+     * @tc.name testArrayBufferFromObject0084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_8400
      * @tc.desc Verify Utils.fromObjectWithBuffer(src, 0, 2147483647) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromObject0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromObject0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const src = new ArrayBuffer(16);
         Utils.fromObjectWithBuffer(src, 0, 2147483647);
