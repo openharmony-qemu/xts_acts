@@ -551,14 +551,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3400
+     * @tc.name testArrayBufferAt0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3100
      * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       try {
         buffer.at(100)
@@ -569,14 +569,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3500
+     * @tc.name testArrayBufferAt0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3200
      * @tc.desc Verify buffer.at returns expected bytes at 3 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(4)
       buffer.set(1, Int.toByte(100))
       expect(buffer.at(0)).assertEqual(Int.toByte(0))
@@ -585,14 +585,14 @@ export default function arrayBufferAtTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferAt0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3600
+     * @tc.name testArrayBufferAt0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_AT_3300
      * @tc.desc Verify API call throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferAt0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferAt0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(0)
       try {
         buffer.at(0)

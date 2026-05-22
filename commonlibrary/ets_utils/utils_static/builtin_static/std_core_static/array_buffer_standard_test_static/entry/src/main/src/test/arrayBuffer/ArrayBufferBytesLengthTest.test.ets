@@ -701,14 +701,14 @@ export default function arrayBufferBytesLengthTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferBytesLength0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_5000
+     * @tc.name testArrayBufferBytesLength0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_4900
      * @tc.desc Verify len equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferBytesLength0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferBytesLength0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let len = ArrayBuffer.bytesLength('😀😁', 'utf8')
       expect(len).assertEqual(8)
     });

@@ -39,8 +39,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -49,10 +49,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(2);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(6)
-      expect(resultView[0]).assertEqual(Int.toByte(3))
+      const result = buffer.slice(2);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(6);
+      expect(resultView[0]).assertEqual(Int.toByte(3));
 
     });
     /**
@@ -64,8 +64,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -74,10 +74,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(2, 6);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(3))
+      const result = buffer.slice(2, 6);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(3));
 
     });
     /**
@@ -89,15 +89,15 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
-      let result = buffer.slice(0);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(8)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(0);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(8);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -109,8 +109,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -119,10 +119,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(3);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(5)
-      expect(resultView[0]).assertEqual(Int.toByte(4))
+      const result = buffer.slice(3);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(5);
+      expect(resultView[0]).assertEqual(Int.toByte(4));
 
     });
     /**
@@ -134,16 +134,16 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
       int8[3] = 40;
-      let result = buffer.slice(Double.toInt(1.5));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(7)
-      expect(resultView[0]).assertEqual(Int.toByte(20))
+      const result = buffer.slice(Double.toInt(1.5));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(7);
+      expect(resultView[0]).assertEqual(Int.toByte(20));
 
     });
     /**
@@ -155,14 +155,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
-      let result = buffer.slice(Double.toInt(Double.NaN));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(8)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(Double.toInt(Double.NaN));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(8);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -174,9 +174,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY));
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY));
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -188,12 +188,12 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
-      let result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY));
-      expect(result.byteLength).assertEqual(8)
+      const result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY));
+      expect(result.byteLength).assertEqual(8);
 
     });
     /**
@@ -205,8 +205,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -215,10 +215,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(-3);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[0]).assertEqual(Int.toByte(6))
+      const result = buffer.slice(-3);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[0]).assertEqual(Int.toByte(6));
 
     });
     /**
@@ -230,16 +230,16 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(4);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
       int8[3] = 40;
-      let result = buffer.slice(-10);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(-10);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -251,9 +251,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(20);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(20);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -265,8 +265,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -275,10 +275,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(Double.toInt(-2.7));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(2)
-      expect(resultView[0]).assertEqual(Int.toByte(7))
+      const result = buffer.slice(Double.toInt(-2.7));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(2);
+      expect(resultView[0]).assertEqual(Int.toByte(7));
 
     });
     /**
@@ -290,17 +290,17 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
       int8[3] = 4;
       int8[4] = 5;
-      let result = buffer.slice(1, 4);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[0]).assertEqual(Int.toByte(2))
+      const result = buffer.slice(1, 4);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[0]).assertEqual(Int.toByte(2));
 
     });
     /**
@@ -312,17 +312,17 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
       int8[3] = 4;
       int8[4] = 5;
-      let result = buffer.slice(0, Double.toInt(3.9));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[2]).assertEqual(Int.toByte(3))
+      const result = buffer.slice(0, Double.toInt(3.9));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[2]).assertEqual(Int.toByte(3));
 
     });
     /**
@@ -334,9 +334,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, Double.toInt(Double.NaN));
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(0, Double.toInt(Double.NaN));
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -348,13 +348,13 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[3] = 4;
-      let result = buffer.slice(0, Double.toInt(Double.POSITIVE_INFINITY));
-      expect(result.byteLength).assertEqual(8)
+      const result = buffer.slice(0, Double.toInt(Double.POSITIVE_INFINITY));
+      expect(result.byteLength).assertEqual(8);
 
     });
     /**
@@ -366,9 +366,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, Double.toInt(Double.NEGATIVE_INFINITY));
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(0, Double.toInt(Double.NEGATIVE_INFINITY));
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -380,8 +380,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[3] = 4;
@@ -389,10 +389,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(1, -2);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(5)
-      expect(resultView[0]).assertEqual(Int.toByte(2))
+      const result = buffer.slice(1, -2);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(5);
+      expect(resultView[0]).assertEqual(Int.toByte(2));
 
     });
     /**
@@ -404,9 +404,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(5, 2);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(5, 2);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -418,9 +418,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(3, 3);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(3, 3);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -432,12 +432,12 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[7] = 8;
-      let result = buffer.slice(0, 100);
-      expect(result.byteLength).assertEqual(8)
+      const result = buffer.slice(0, 100);
+      expect(result.byteLength).assertEqual(8);
 
     });
     /**
@@ -449,9 +449,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, -20);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(0, -20);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -463,8 +463,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -473,10 +473,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(0, Double.toInt(-1.8));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(7)
-      expect(resultView[0]).assertEqual(Int.toByte(1))
+      const result = buffer.slice(0, Double.toInt(-1.8));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(7);
+      expect(resultView[0]).assertEqual(Int.toByte(1));
 
     });
     /**
@@ -488,8 +488,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
@@ -498,10 +498,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 60;
       int8[6] = 70;
       int8[7] = 80;
-      let result = buffer.slice(2, 6);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(30))
+      const result = buffer.slice(2, 6);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(30));
 
     });
     /**
@@ -513,14 +513,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(4);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
       int8[3] = 4;
-      let result = buffer.slice(1, 3);
-      let resultView = new Int8Array(result);
+      const result = buffer.slice(1, 3);
+      const resultView = new Int8Array(result);
       resultView[0] = 99;
       let origView = new Int8Array(buffer);
       expect(result.byteLength).assertEqual(2);
@@ -537,8 +537,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -552,7 +552,7 @@ export default function arrayBufferSliceTwoTest(): void {
       let view1 = new Int8Array(slice1);
       let view2 = new Int8Array(slice2);
       view1[0] = 100;
-      expect(slice1.byteLength).assertEqual(4)
+      expect(slice1.byteLength).assertEqual(4);
       expect(view2[0]).assertEqual(Int.toByte(5));
 
     });
@@ -565,8 +565,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(1, 4);
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(1, 4);
       expect(result instanceof ArrayBuffer).assertTrue();
 
     });
@@ -579,9 +579,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(16);
-      let result = buffer.slice(3, 10);
-      expect(result.byteLength).assertEqual(7)
+      const buffer = new ArrayBuffer(16);
+      const result = buffer.slice(3, 10);
+      expect(result.byteLength).assertEqual(7);
 
     });
     /**
@@ -593,8 +593,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0);
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(0);
       expect(result === buffer).assertFalse();
 
     });
@@ -607,8 +607,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(0, 4);
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(0, 4);
       let ref = new ArrayBuffer(0);
       expect(Class.of(result) === Class.of(ref)).assertTrue();
 
@@ -622,8 +622,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -632,10 +632,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(0, 8);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(8)
-      expect(resultView[0]).assertEqual(Int.toByte(1))
+      const result = buffer.slice(0, 8);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(8);
+      expect(resultView[0]).assertEqual(Int.toByte(1));
 
     });
     /**
@@ -647,15 +647,15 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[5] = 60;
       int8[6] = 70;
       int8[7] = 80;
-      let result = buffer.slice(5);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[0]).assertEqual(Int.toByte(60))
+      const result = buffer.slice(5);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[0]).assertEqual(Int.toByte(60));
 
     });
     /**
@@ -667,14 +667,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(6);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(6);
+      const int8 = new Int8Array(buffer);
       int8[0] = 11;
       int8[5] = 66;
-      let result = buffer.slice(0);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(6)
-      expect(resultView[0]).assertEqual(Int.toByte(11))
+      const result = buffer.slice(0);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(6);
+      expect(resultView[0]).assertEqual(Int.toByte(11));
 
     });
     /**
@@ -686,13 +686,13 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[3] = 42;
-      let result = buffer.slice(3, 4);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(1)
-      expect(resultView[0]).assertEqual(Int.toByte(42))
+      const result = buffer.slice(3, 4);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(1);
+      expect(resultView[0]).assertEqual(Int.toByte(42));
 
     });
     /**
@@ -704,9 +704,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(0);
-      let result = buffer.slice(0);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(0);
+      const result = buffer.slice(0);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -718,15 +718,15 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(1024);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(1024);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[512] = 127;
       int8[1023] = -1;
-      let result = buffer.slice(500, 513);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(13)
-      expect(resultView[0]).assertEqual(Int.toByte(0))
+      const result = buffer.slice(500, 513);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(13);
+      expect(resultView[0]).assertEqual(Int.toByte(0));
 
     });
     /**
@@ -738,17 +738,17 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
       int8[3] = 40;
       int8[4] = 50;
-      let result = buffer.slice(Double.toInt(2.9));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(6)
-      expect(resultView[0]).assertEqual(Int.toByte(30))
+      const result = buffer.slice(Double.toInt(2.9));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(6);
+      expect(resultView[0]).assertEqual(Int.toByte(30));
 
     });
     /**
@@ -760,17 +760,17 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
       int8[3] = 40;
       int8[4] = 50;
-      let result = buffer.slice(0, Double.toInt(4.1));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[3]).assertEqual(Int.toByte(40))
+      const result = buffer.slice(0, Double.toInt(4.1));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[3]).assertEqual(Int.toByte(40));
 
     });
     /**
@@ -782,18 +782,18 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
       int8[3] = 40;
       int8[4] = 50;
       int8[5] = 60;
-      let result = buffer.slice(Double.toInt(1.7), Double.toInt(5.3));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(20))
+      const result = buffer.slice(Double.toInt(1.7), Double.toInt(5.3));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(20));
 
     });
     /**
@@ -805,14 +805,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(4);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[3] = 40;
-      let result = buffer.slice(Double.toInt(0.0));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(Double.toInt(0.0));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -824,9 +824,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Number.MAX_SAFE_INTEGER));
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(Double.toInt(Number.MAX_SAFE_INTEGER));
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -838,13 +838,13 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
-      let result = buffer.slice(Double.toInt(-Number.MAX_SAFE_INTEGER));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(8)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(Double.toInt(-Number.MAX_SAFE_INTEGER));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(8);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -856,9 +856,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Double.NaN), Double.toInt(Double.NaN));
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(Double.toInt(Double.NaN), Double.toInt(Double.NaN));
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -870,15 +870,15 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
       int8[2] = 30;
-      let result = buffer.slice(Double.toInt(Double.NaN), 3);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(Double.toInt(Double.NaN), 3);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -890,9 +890,9 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY), 5);
-      expect(result.byteLength).assertEqual(0)
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(Double.toInt(Double.POSITIVE_INFINITY), 5);
+      expect(result.byteLength).assertEqual(0);
 
     });
     /**
@@ -904,14 +904,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[2] = 30;
       int8[7] = 80;
-      let result = buffer.slice(2, Double.toInt(Double.POSITIVE_INFINITY));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(6)
-      expect(resultView[0]).assertEqual(Int.toByte(30))
+      const result = buffer.slice(2, Double.toInt(Double.POSITIVE_INFINITY));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(6);
+      expect(resultView[0]).assertEqual(Int.toByte(30));
 
     });
     /**
@@ -923,14 +923,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[7] = 80;
-      let result = buffer.slice(Double.NEGATIVE_INFINITY, Double.toInt(Double.POSITIVE_INFINITY));
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(8)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY), Double.toInt(Double.POSITIVE_INFINITY));
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(8);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -942,8 +942,8 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[0] = 1;
       int8[1] = 2;
       int8[2] = 3;
@@ -952,10 +952,10 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[5] = 6;
       int8[6] = 7;
       int8[7] = 8;
-      let result = buffer.slice(-6, -2);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(4)
-      expect(resultView[0]).assertEqual(Int.toByte(3))
+      const result = buffer.slice(-6, -2);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(4);
+      expect(resultView[0]).assertEqual(Int.toByte(3));
 
     });
     /**
@@ -967,15 +967,15 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[2] = 30;
       int8[3] = 40;
       int8[4] = 50;
-      let result = buffer.slice(-6, 5);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(3)
-      expect(resultView[0]).assertEqual(Int.toByte(30))
+      const result = buffer.slice(-6, 5);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(3);
+      expect(resultView[0]).assertEqual(Int.toByte(30));
 
     });
     /**
@@ -987,14 +987,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(8);
+      const int8 = new Int8Array(buffer);
       int8[5] = 50;
       int8[6] = 60;
-      let result = buffer.slice(5, -1);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(2)
-      expect(resultView[0]).assertEqual(Int.toByte(50))
+      const result = buffer.slice(5, -1);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(2);
+      expect(resultView[0]).assertEqual(Int.toByte(50));
 
     });
     /**
@@ -1006,14 +1006,14 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4);
-      let int8 = new Int8Array(buffer);
+      const buffer = new ArrayBuffer(4);
+      const int8 = new Int8Array(buffer);
       int8[0] = 10;
       int8[1] = 20;
-      let result = buffer.slice(-100, 2);
-      let resultView = new Int8Array(result);
-      expect(result.byteLength).assertEqual(2)
-      expect(resultView[0]).assertEqual(Int.toByte(10))
+      const result = buffer.slice(-100, 2);
+      const resultView = new Int8Array(result);
+      expect(result.byteLength).assertEqual(2);
+      expect(resultView[0]).assertEqual(Int.toByte(10));
 
     });
     /**
@@ -1025,7 +1025,7 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8, 16);
+      const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
       let sliced = buffer.slice(0, 0);
       expect(sliced.byteLength).assertEqual(0);
@@ -1041,10 +1041,11 @@ export default function arrayBufferSliceTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferSliceTwo0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8);
-      let result = buffer.slice(9, 10);
+      const buffer = new ArrayBuffer(8);
+      const result = buffer.slice(9, 10);
       expect(result.byteLength).assertEqual(0);
       expect(result instanceof ArrayBuffer).assertTrue();
     });
   });
 }
+

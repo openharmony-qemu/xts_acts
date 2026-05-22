@@ -33,7 +33,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0100
      * @tc.desc Verify result.byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -56,7 +56,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0200
      * @tc.desc Verify 2-arg omit length via Utils: byteLength 5 and bytes from offset 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -84,7 +84,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0300
      * @tc.desc Verify result.byteLength equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -107,7 +107,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0400
      * @tc.desc Verify result.byteLength equals 16
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -125,7 +125,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0500
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -139,7 +139,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0600
      * @tc.desc Verify result.byteLength equals 1024
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -156,7 +156,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0700
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -172,7 +172,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0800
      * @tc.desc Verify result.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -193,7 +193,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0900
      * @tc.desc Verify result.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -213,7 +213,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1000
      * @tc.desc Verify result.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -230,7 +230,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0110
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1100
      * @tc.desc Verify result.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -249,21 +249,27 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0120
-     * @tc.desc Verify result.byteLength equals 4
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1200
+     * @tc.desc Verify NaN offset coerces to 0 (STA NaN→0) and copies first 4 bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromSeven0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
+      const view = new Int8Array(source);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
       const result = ArrayBuffer.from(source, Double.toInt(Double.NaN), 4);
       expect(result.byteLength).assertEqual(4);
+      expect(result.at(0)).assertEqual(source.at(0));
+      expect(result.at(3)).assertEqual(source.at(3));
     });
 
     /**
      * @tc.name testArrayBufferFromSeven0013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0130
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1300
      * @tc.desc Verify ArrayBuffer.from(source, Double.POSITIVE_INFINITY, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -281,7 +287,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0140
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1400
      * @tc.desc Verify ArrayBuffer.from(source, Double.NEGATIVE_INFINITY, 4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -299,7 +305,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0150
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1500
      * @tc.desc Verify ArrayBuffer.from(source, -1, 2) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -317,7 +323,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0160
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1600
      * @tc.desc Verify ArrayBuffer.from(source, -100, 2) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -335,7 +341,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0170
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1700
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -353,7 +359,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0180
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1800
      * @tc.desc Verify ArrayBuffer.from(source, source.byteLength + 1, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -371,7 +377,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0190
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_1900
      * @tc.desc Verify ArrayBuffer.from(source, Double.toInt(Number.MAX_SAFE_INTEGER), 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -389,7 +395,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0200
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2000
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -403,7 +409,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0210
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2100
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -419,7 +425,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0220
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2200
      * @tc.desc Verify result.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -437,7 +443,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0230
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2300
      * @tc.desc Verify result.byteLength equals 5
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -455,7 +461,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0240
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2400
      * @tc.desc Verify result.byteLength equals source.byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -473,7 +479,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0250
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2500
      * @tc.desc Verify result.byteLength equals 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -491,7 +497,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0260
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2600
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -505,7 +511,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0270
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2700
      * @tc.desc Verify result.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -523,8 +529,8 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0280
-     * @tc.desc Verify result.byteLength equals 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2800
+     * @tc.desc Verify NaN length coerces to 0 (STA NaN→0) and yields empty buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -537,7 +543,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0290
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_2900
      * @tc.desc Verify ArrayBuffer.from(source, 0, Double.POSITIVE_INFINITY) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -555,7 +561,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3000
      * @tc.desc Verify ArrayBuffer.from(source, 0, Double.NEGATIVE_INFINITY) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -573,7 +579,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0310
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3100
      * @tc.desc Verify ArrayBuffer.from(source, 0, -1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -591,7 +597,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0320
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3200
      * @tc.desc Verify ArrayBuffer.from(source, 0, -100) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -609,7 +615,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0330
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3300
      * @tc.desc Verify ArrayBuffer.from(source, 2, 10) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -627,7 +633,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0340
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3400
      * @tc.desc Verify ArrayBuffer.from(source, 0, Double.toInt(Number.MAX_SAFE_INTEGER)) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -645,7 +651,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0350
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3500
      * @tc.desc Verify view[0] equals 10 after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -666,7 +672,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0360
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3600
      * @tc.desc Verify result === source is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -680,7 +686,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0370
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3700
      * @tc.desc Verify r1.byteLength equals 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -702,7 +708,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0380
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3800
      * @tc.desc Verify typeof result.byteLength equals 'int'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -726,7 +732,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0390
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3900
      * @tc.desc Verify resultView[i] equals view[i]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -750,7 +756,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4000
      * @tc.desc Verify 2-arg omit length: resultView[i] equals view[i + 3] for all tail bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -773,7 +779,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0410
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4100
      * @tc.desc Verify resultView[i] equals view[i + 2]
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -794,7 +800,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0420
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4200
      * @tc.desc Verify buffer.at returns expected bytes at 4 indices
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -815,7 +821,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0430
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4300
      * @tc.desc Verify srcView[0] equals 11
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -838,7 +844,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0440
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4400
      * @tc.desc Verify allMatch is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -864,7 +870,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0450
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4500
      * @tc.desc Verify 2-arg omit length from offset 7: byteLength 3 and tail bytes 107–109
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -890,7 +896,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0460
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4600
      * @tc.desc Verify result.byteLength equals 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -915,7 +921,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0470
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4700
      * @tc.desc Verify 2-arg omit length at offset 0 copies full buffer with matching bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -938,7 +944,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0480
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4800
      * @tc.desc Verify return value is ArrayBuffer instance and result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -953,7 +959,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0490
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_4900
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -967,7 +973,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5000
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -984,7 +990,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0510
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5100
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1001,7 +1007,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0520
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5200
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1015,7 +1021,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0530
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5300
      * @tc.desc Verify result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1029,7 +1035,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0540
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5400
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1046,7 +1052,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0550
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5500
      * @tc.desc Verify ArrayBuffer.from(source, 3, 6) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1064,7 +1070,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0560
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5600
      * @tc.desc Verify ArrayBuffer.from(source, 0, 1000) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1082,7 +1088,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0570
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5700
      * @tc.desc Verify ArrayBuffer.from(source, source.byteLength, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1100,7 +1106,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0580
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5800
      * @tc.desc Verify ArrayBuffer.from(source, source.byteLength + 10, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1118,7 +1124,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0590
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5900
      * @tc.desc Verify ArrayBuffer.from(source, 0, 10) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1136,7 +1142,7 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_6000
      * @tc.desc Verify Utils.fromArrayBufferWithOffset(source, 10) propagates IndexOutOfBoundsError (tail length negative)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
@@ -1154,8 +1160,8 @@ export default function arrayBufferFromSevenTest(): void {
 
     /**
      * @tc.name testArrayBufferFromSeven0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0610
-     * @tc.desc Verify result.byteLength equals 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_6100
+     * @tc.desc Verify NaN offset and length both coerce to 0 (STA NaN→0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

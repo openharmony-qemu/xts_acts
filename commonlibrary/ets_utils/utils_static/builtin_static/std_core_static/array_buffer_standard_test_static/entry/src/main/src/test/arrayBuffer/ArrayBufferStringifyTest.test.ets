@@ -1610,7 +1610,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_1000
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, 100) throws IllegalArgumentError
+     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, 100) throws IllegalArgumentError (mindmap §3.3.4)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
