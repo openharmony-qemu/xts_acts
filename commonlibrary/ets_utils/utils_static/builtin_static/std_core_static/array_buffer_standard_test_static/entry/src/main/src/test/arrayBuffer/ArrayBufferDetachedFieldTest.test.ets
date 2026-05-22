@@ -173,7 +173,8 @@ export default function arrayBufferDetachedFieldTest(): void {
       const result1 = buffer.detached;
       const result2 = buffer.detached;
       const result3 = buffer.detached;
-      expect(result1 === result2 && result2 === result3 && result1 === false).assertTrue();
+      expect(result1 === result2 && result2 === result3).assertTrue();
+      expect(buffer.detached).assertFalse();
     });
 
     /**
@@ -244,8 +245,7 @@ export default function arrayBufferDetachedFieldTest(): void {
      */
     it('testArrayBufferDetachedField0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      const result = buffer.detached;
-      expect(result === false).assertTrue();
+      expect(buffer.detached).assertFalse();
     });
 
     /**
@@ -368,7 +368,8 @@ export default function arrayBufferDetachedFieldTest(): void {
       buffer.resize(0);
       const result1 = buffer.detached;
       const result2 = buffer.detached;
-      expect(result1 === result2 && result1 === false).assertTrue();
+      expect(result1 === result2).assertTrue();
+      expect(buffer.detached).assertFalse();
     });
 
     /**
@@ -428,8 +429,8 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
-      const result = buffer.detached;
-      expect(typeof result === 'boolean' && result === false).assertTrue();
+      expect(typeof buffer.detached === 'boolean').assertTrue();
+      expect(buffer.detached).assertFalse();
     });
   });
 }

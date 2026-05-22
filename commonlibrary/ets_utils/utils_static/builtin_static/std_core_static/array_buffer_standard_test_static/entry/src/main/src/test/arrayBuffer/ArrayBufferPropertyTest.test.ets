@@ -732,7 +732,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5200
-     * @tc.desc Verify r1 is true and r1 equals r2
+     * @tc.desc Verify resizable is true and stable before resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -961,17 +961,18 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_6800
-     * @tc.desc Verify len1 equals len2
+     * @tc.desc Verify byteLength stays consistent after resize on resizable buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferProperty0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8)
+      let buffer = new ArrayBuffer(8, 16)
+      buffer.resize(10)
       let len1 = buffer.byteLength
       let len2 = buffer.byteLength
       expect(len1).assertEqual(len2)
-      expect(len1).assertEqual(8)
+      expect(len1).assertEqual(10)
     });
 
     /**
@@ -1010,7 +1011,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_7100
-     * @tc.desc Verify r1 is true and r1 equals r2
+     * @tc.desc Verify resizable stays true and byteLength equals 6 after resize
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1022,6 +1023,7 @@ export default function arrayBufferPropertyTest(): void {
       let r2 = buffer.resizable
       expect(r1).assertEqual(r2)
       expect(r1).assertTrue()
+      expect(buffer.byteLength).assertEqual(6)
     });
 
     /**

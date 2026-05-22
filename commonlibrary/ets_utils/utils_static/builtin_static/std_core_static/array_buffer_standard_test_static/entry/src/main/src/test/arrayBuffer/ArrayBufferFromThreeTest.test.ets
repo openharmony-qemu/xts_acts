@@ -109,7 +109,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0600
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify from(Uint8Array subview) copies full underlying buffer with expected bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -131,7 +131,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0700
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify from standalone Uint8Array copies bytes 0,0,0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -149,7 +149,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0800
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify from standalone Uint8Array copies bytes 255,255,255
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -514,7 +514,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_3000
-     * @tc.desc Verify TypedArray view bytes match expected values after resize
+     * @tc.desc Verify from copy is isolated when source Uint8Array is mutated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

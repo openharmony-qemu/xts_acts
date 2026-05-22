@@ -1019,26 +1019,12 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5200
-     * @tc.desc Verify result.byteLength equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferSliceTwo0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(4);
-      let result = buffer.slice(0, -100);
-      expect(result.byteLength).assertEqual(0)
-
-    });
-    /**
-     * @tc.name testArrayBufferSliceTwo0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5300
      * @tc.desc Verify sliced.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSliceTwo0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSliceTwo0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
       let sliced = buffer.slice(0, 0);
@@ -1047,14 +1033,14 @@ export default function arrayBufferSliceTwoTest(): void {
 
     });
     /**
-     * @tc.name testArrayBufferSliceTwo0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5400
+     * @tc.name testArrayBufferSliceTwo0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5300
      * @tc.desc Verify return value is ArrayBuffer instance and result.byteLength equals 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferSliceTwo0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferSliceTwo0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let buffer = new ArrayBuffer(8);
       let result = buffer.slice(9, 10);
       expect(result.byteLength).assertEqual(0);

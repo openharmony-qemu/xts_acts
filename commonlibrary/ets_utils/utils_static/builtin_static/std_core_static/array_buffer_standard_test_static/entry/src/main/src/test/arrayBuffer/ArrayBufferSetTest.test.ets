@@ -453,7 +453,7 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_2800
-     * @tc.desc Verify buffer.set(0, Int.toByte(10)) throws IndexOutOfBoundsError
+     * @tc.desc Verify set on zero-length fixed buffer throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -507,7 +507,7 @@ export default function arrayBufferSetTest(): void {
     /**
      * @tc.name testArrayBufferSet0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SET_3100
-     * @tc.desc Verify buffer.set(0, Int.toByte(10)) throws IndexOutOfBoundsError
+     * @tc.desc Verify set after resize(0) on resizable buffer throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
