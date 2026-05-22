@@ -97,7 +97,8 @@ group("ans_standard") {
       "actsNotificationAnsDisableNotificationFeatureNoSystemTestStatic:ActsNotificationAnsDisableNotificationFeatureNoSystemStaticTest",
       "actsNotificationAnsNoDisplayedIconNoSystemTestStatic:ActsNotificationAnsNoDisplayedIconNoSystemStaticTest",
       "actsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothTestStatic:ActsNotificationAnsThreePartyWatchWithInAbilityNoBlueToothStaticTest",
-      "actsNotificationAnsNoDisplayedIconNoSystemTest:ActsNotificationAnsNoDisplayedIconNoSystemTest"
+      "actsNotificationAnsNoDisplayedIconNoSystemTest:ActsNotificationAnsNoDisplayedIconNoSystemTest",
+      "actsAnsNotificationDisableNotificationFeatureTest:ActsAnsNotificationDisableNotificationFeatureTest"
     ]
   }
 }
