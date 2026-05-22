@@ -19,7 +19,7 @@ import Utils from './../Util.test';
 
 export default function BaseEnumValueOfTest(): void {
   describe('BaseEnumValueOfTest', (): void => {
-beforeEach(async (): Promise<void> => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
     
@@ -271,7 +271,7 @@ beforeEach(async (): Promise<void> => {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(83, "INT_OCT");
+      let e: BaseEnum<int> = new BaseEnum<int>(83, "INT_DEC");
       let result: int = e.valueOf();
       expect(result).assertEqual(83);
     });
@@ -495,9 +495,9 @@ beforeEach(async (): Promise<void> => {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(9.0, "FLOAT_HEX");
+      let e: BaseEnum<float> = new BaseEnum<float>(9.0f, "FLOAT_NINE");
       let result: float = e.valueOf();
-      expect(result).assertEqual(9.0);
+      expect(result).assertEqual(9.0f);
     });
 
     /**
@@ -769,13 +769,13 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnumValueOf058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_5800
-     * @tc.desc Verify valueOf handles XSS script string safely
+     * @tc.desc Verify valueOf handles special HTML characters in value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<string> = new BaseEnum<string>("<script>alert(1)</script>", "XSS");
+      let e: BaseEnum<string> = new BaseEnum<string>("<script>alert(1)</script>", "HTML_CHARS");
       let result: string = e.valueOf();
       expect(result).assertEqual("<script>alert(1)</script>");
     });

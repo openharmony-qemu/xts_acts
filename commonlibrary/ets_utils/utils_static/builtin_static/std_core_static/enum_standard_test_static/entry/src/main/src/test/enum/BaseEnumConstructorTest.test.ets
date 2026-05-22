@@ -504,7 +504,7 @@ export default function BaseEnumConstructorTest(): void {
      */
     it('testBaseEnumConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(Float.NaN), "NAN_FLOAT");
-      expect(isNaN(Float.toDouble(e.valueOf()))).assertTrue();
+      expect(e.valueOf() !== e.valueOf()).assertTrue();
     });
 
     /**
@@ -1075,7 +1075,7 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor078
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0780
-     * @tc.desc Verify BaseEnum constructor with XSS string in name
+     * @tc.desc Verify BaseEnum constructor with special HTML characters in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

@@ -321,7 +321,7 @@ beforeEach(async (): Promise<void> => {
      * @tc.level LEVEL2
      */
     it('testBaseEnum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(83, "INT_OCT")
+      let e: BaseEnum<int> = new BaseEnum<int>(83, "INT_DEC")
       expect(e.valueOf()).assertEqual(83)
     });
 
@@ -1019,7 +1019,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum072
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0720
-     *  @tc.desc Verify constructor with XSS string as name parameter
+     * @tc.desc Verify constructor with special HTML characters as name parameter
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1219,7 +1219,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum098
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0980
-     *  @tc.desc Verify valueOf returns byte zero value
+     * @tc.desc Verify valueOf returns byte zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1245,7 +1245,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum100
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1000
-     *  @tc.desc Verify valueOf returns short boundary value
+     * @tc.desc Verify valueOf returns short boundary value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1271,7 +1271,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum102
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1020
-     *  @tc.desc Verify valueOf returns int maximum value
+     * @tc.desc Verify valueOf returns int maximum value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1284,7 +1284,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum103
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1030
-     *  @tc.desc Verify valueOf returns int minimum value
+     * @tc.desc Verify valueOf returns int minimum value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1297,7 +1297,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum104
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1040
-     *  @tc.desc Verify valueOf returns int zero value
+     * @tc.desc Verify valueOf returns int zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1310,7 +1310,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum105
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1050
-     *  @tc.desc Verify valueOf returns int negative value
+     * @tc.desc Verify valueOf returns int negative value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1336,7 +1336,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum107
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1070
-     *  @tc.desc Verify valueOf returns long boundary value
+     * @tc.desc Verify valueOf returns long boundary value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1362,7 +1362,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum109
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1090
-     *  @tc.desc Verify valueOf returns float NaN value
+     * @tc.desc Verify valueOf returns float NaN value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1376,7 +1376,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum110
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1100
-     *  @tc.desc Verify valueOf returns float positive infinity value
+     * @tc.desc Verify valueOf returns float positive infinity value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1389,7 +1389,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum111
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1110
-     *  @tc.desc Verify valueOf returns float zero value
+     * @tc.desc Verify valueOf returns float zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1415,7 +1415,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum113
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1130
-     *  @tc.desc Verify valueOf returns double NaN value
+     * @tc.desc Verify valueOf returns double NaN value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1429,7 +1429,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum114
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1140
-     *  @tc.desc Verify valueOf returns double positive infinity value
+     * @tc.desc Verify valueOf returns double positive infinity value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1442,7 +1442,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum115
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1150
-     *  @tc.desc Verify valueOf returns double zero value
+     * @tc.desc Verify valueOf returns double zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1494,7 +1494,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum119
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1190
-     *  @tc.desc Verify valueOf returns Unicode string value
+     * @tc.desc Verify valueOf returns Unicode string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1632,7 +1632,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum129
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1290
-     *  @tc.desc Verify multiple calls to getName return consistent value
+     * @tc.desc Verify multiple calls to getName return consistent value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1792,7 +1792,7 @@ beforeEach(async (): Promise<void> => {
     /**
      * @tc.name testBaseEnum140
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1400
-     *  @tc.desc Verify multiple calls to toString return consistent value
+     * @tc.desc Verify multiple calls to toString return consistent value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

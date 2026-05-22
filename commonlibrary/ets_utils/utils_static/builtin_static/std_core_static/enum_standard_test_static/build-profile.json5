@@ -1,11 +1,35 @@
 {
   "app": {
     "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:/Users/jiang/.ohos/config/openharmony/default_enum_standard_test_static_T6SWAGtdk_9NaTodpCj3VcfmUqzL-l1XguxNHJiwJ6c=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BE285E95ED14802DD0C12EE4B4906CEFD0D27B56477A4E70E29D1BCB3A398C7B84C273F910BB768",
+          "profile": "C:/Users/jiang/.ohos/config/openharmony/default_enum_standard_test_static_T6SWAGtdk_9NaTodpCj3VcfmUqzL-l1XguxNHJiwJ6c=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/jiang/.ohos/config/openharmony/default_enum_standard_test_static_T6SWAGtdk_9NaTodpCj3VcfmUqzL-l1XguxNHJiwJ6c=.p12",
+          "storePassword": "0000001BE5748F7D03BFD607B324E7002D668B92394AF63B06EFEDD2F46004D9D36BE454423B89DB35392A"
+        }
+      },
+      {
+        "name": "8Ro8SV66NFCfYl15YT5kkP7T3ow2AyhIf8xTQgVWzmc",
+        "material": {
+          "certpath": "C:/Users/jiang/.ohos/config/openharmony/auto_ohos_8Ro8SV66NFCfYl15YT5kkP7T3ow2AyhIf8xTQgVWzmc_enum_standard_test_static_enum.standard.test.static.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B8164C485FF022E7EF21D6014D9C7ECBF7778090A432D0172E19252B8425E39BFA434B64FC7C8FD",
+          "profile": "C:/Users/jiang/.ohos/config/openharmony/auto_ohos_8Ro8SV66NFCfYl15YT5kkP7T3ow2AyhIf8xTQgVWzmc_enum_standard_test_static_enum.standard.test.static.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:/Users/jiang/.ohos/config/openharmony/auto_ohos_8Ro8SV66NFCfYl15YT5kkP7T3ow2AyhIf8xTQgVWzmc_enum_standard_test_static_enum.standard.test.static.p12",
+          "storePassword": "0000001B59EEDC411E37928EE2AD10120C001B6153CF29E46F86FB0F947AE80CA882695F8465D8BFCC685C"
+        }
+      }
     ],
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
+        "signingConfig": "8Ro8SV66NFCfYl15YT5kkP7T3ow2AyhIf8xTQgVWzmc",
         "compatibleSdkVersion": "26",
         "compileSdkVersion": "26",
         "arkTSVersion": "1.2",
@@ -20,7 +44,7 @@
     ],
     "buildModeSet": [
       {
-        "name": "debug",
+        "name": "debug"
       },
       {
         "name": "release"
