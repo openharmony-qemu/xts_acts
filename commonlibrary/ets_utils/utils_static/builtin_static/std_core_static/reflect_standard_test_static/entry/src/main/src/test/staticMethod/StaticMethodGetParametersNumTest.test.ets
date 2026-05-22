@@ -348,7 +348,9 @@ export default function StaticMethodGetParametersNumTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParametersNum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let num: int = Class.from<MyClass013>().getStaticMethod('noParam')!.getParametersNum();
+      let cls013 = Class.from<MyClass013>();
+      let method013 = cls013.getStaticMethod('noParam');
+      let num: int = method013!.getParametersNum();
       expect(num).assertEqual(0);
     });
 
@@ -451,8 +453,10 @@ export default function StaticMethodGetParametersNumTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParametersNum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<AbstractClass019>().getStaticMethod('abstractMethod');
-      let m2 = Class.from<FinalClass019>().getStaticMethod('finalMethod');
+      let clsAbs = Class.from<AbstractClass019>();
+      let clsFin = Class.from<FinalClass019>();
+      let m1 = clsAbs.getStaticMethod('abstractMethod');
+      let m2 = clsFin.getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.getParametersNum()).assertEqual(2);

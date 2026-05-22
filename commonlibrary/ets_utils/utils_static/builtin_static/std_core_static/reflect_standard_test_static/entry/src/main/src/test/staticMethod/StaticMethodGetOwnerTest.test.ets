@@ -173,8 +173,10 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methodA = Class.from<ClassA003>().getStaticMethod('methodA');
-      let methodB = Class.from<ClassB003>().getStaticMethod('methodB');
+      let clsA = Class.from<ClassA003>();
+      let clsB = Class.from<ClassB003>();
+      let methodA = clsA.getStaticMethod('methodA');
+      let methodB = clsB.getStaticMethod('methodB');
       expect(methodA != undefined).assertTrue();
       expect(methodB != undefined).assertTrue();
       expect(methodA!.getOwner().getName().includes('ClassA003')).assertTrue();
@@ -190,8 +192,10 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let parentMethod = Class.from<ParentClass004>().getStaticMethod('parentMethod');
-      let childMethod = Class.from<ChildClass004>().getStaticMethod('childMethod');
+      let parentCls = Class.from<ParentClass004>();
+      let childCls = Class.from<ChildClass004>();
+      let parentMethod = parentCls.getStaticMethod('parentMethod');
+      let childMethod = childCls.getStaticMethod('childMethod');
       expect(parentMethod != undefined).assertTrue();
       expect(childMethod != undefined).assertTrue();
       expect(parentMethod!.getOwner().getName().includes('ParentClass004')).assertTrue();
@@ -343,9 +347,12 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<AbstractClass013>().getStaticMethod('abstractMethod');
-      let m2 = Class.from<FinalClass013>().getStaticMethod('finalMethod');
-      let m3 = Class.from<NormalClass013>().getStaticMethod('normalMethod');
+      let clsAbs = Class.from<AbstractClass013>();
+      let clsFin = Class.from<FinalClass013>();
+      let clsNor = Class.from<NormalClass013>();
+      let m1 = clsAbs.getStaticMethod('abstractMethod');
+      let m2 = clsFin.getStaticMethod('finalMethod');
+      let m3 = clsNor.getStaticMethod('normalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m3 != undefined).assertTrue();
