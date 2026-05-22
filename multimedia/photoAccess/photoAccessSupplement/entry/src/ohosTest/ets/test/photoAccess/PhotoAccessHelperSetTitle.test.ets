@@ -1642,7 +1642,7 @@ export default function PhotoSetTitleTestSupp() {
           photoType: photoAccessHelper.PhotoType.IMAGE
         }
         let isImageFullyDisplayed: boolean = true
-        PhAccessHelper.showSingleAssetCreationDialogEx("", creationSetting, isImageFullyDisplayed);
+        await PhAccessHelper.showSingleAssetCreationDialogEx("", creationSetting, isImageFullyDisplayed);
         expect().assertFail();
         done();
       } catch (error) {
@@ -1668,7 +1668,7 @@ export default function PhotoSetTitleTestSupp() {
           photoType: photoAccessHelper.PhotoType.IMAGE
         }
         let isImageFullyDisplayed: boolean = true
-        PhAccessHelper.showSingleAssetCreationDialogEx(null, creationSetting, isImageFullyDisplayed);
+        await PhAccessHelper.showSingleAssetCreationDialogEx(null, creationSetting, isImageFullyDisplayed);
         expect().assertFail();
         done();
       } catch (error) {
@@ -1694,7 +1694,7 @@ export default function PhotoSetTitleTestSupp() {
           photoType: photoAccessHelper.PhotoType.IMAGE
         }
         let isImageFullyDisplayed: boolean = true
-        PhAccessHelper.showSingleAssetCreationDialogEx(undefined, creationSetting, isImageFullyDisplayed);
+        await PhAccessHelper.showSingleAssetCreationDialogEx(undefined, creationSetting, isImageFullyDisplayed);
         expect().assertFail();
         done();
       } catch (error) {
