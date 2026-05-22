@@ -59,14 +59,15 @@ export default function PopupColorMode() {
     });
 
     /**
-     * @tc.number SUB_ACE_PopupColorMode_0100
-     * @tc.name PopupColorMode_0100
-     * @tc.desc To test colorMode: AnchoredColorMode.FOLLOW_SYSTEM
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.name   PopupColorMode_0100
+     * @tc.number SUB_ARKUI_API_PopupColorMode_0100
+     * @tc.desc   To test AnchoredColorMode.FOLLOW_SYSTEM
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
     */
-    it('PopupColorMode_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('PopupColorMode_0100', Level.LEVEL2,, async (done: Function) => {
       console.info('PopupColorMode_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -82,14 +83,15 @@ export default function PopupColorMode() {
     });
 
     /**
-     * @tc.number SUB_ACE_PopupColorMode_0200
-     * @tc.name PopupColorMode_0200
-     * @tc.desc To test colorMode: AnchoredColorMode.FOLLOW_TARGET
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.name   PopupColorMode_0200
+     * @tc.number SUB_ARKUI_API_PopupColorMode_0200
+     * @tc.desc   To test AnchoredColorMode.FOLLOW_TARGET
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
     */
-    it('PopupColorMode_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('PopupColorMode_0200', Level.LEVEL2, async (done: Function) => {
       console.info('PopupColorMode_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -105,14 +107,15 @@ export default function PopupColorMode() {
     });
 
     /**
-     * @tc.number SUB_ACE_PopupColorMode_0300
-     * @tc.name PopupColorMode_0300
-     * @tc.desc To test colorMode: null, should use default value
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.name   PopupColorMode_0300
+     * @tc.number SUB_ARKUI_API_PopupColorMode_0300
+     * @tc.desc   To test null should use default value
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
     */
-    it('PopupColorMode_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('PopupColorMode_0300', Level.LEVEL2, async (done: Function) => {
       console.info('PopupColorMode_0300 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -128,14 +131,15 @@ export default function PopupColorMode() {
     });
 
     /**
-     * @tc.number SUB_ACE_PopupColorMode_0400
-     * @tc.name PopupColorMode_0400
-     * @tc.desc To test colorMode: undefined, should use default value
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.name   PopupColorMode_0400
+     * @tc.number SUB_ARKUI_API_PopupColorMode_0400
+     * @tc.desc   To test undefined should use default value
+     * @tc.desc   ArkUIAPI 
+     * @tc.type   FUNCTION 
+     * @tc.size   MEDIUMTEST 
+     * @tc.level  LEVEL2 
     */
-    it('PopupColorMode_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('PopupColorMode_0400', Level.LEVEL2, async (done: Function) => {
       console.info('PopupColorMode_0400 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -151,3 +155,4 @@ export default function PopupColorMode() {
     });
   })
 }
+
