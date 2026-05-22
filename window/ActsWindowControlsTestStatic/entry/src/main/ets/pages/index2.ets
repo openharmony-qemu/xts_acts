@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2022 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,23 +15,29 @@
  */
 import router from '@ohos.router';
 
-import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
-import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import {
+  Entry,
+  Text,
+  TextAttribute,
+  Column,
+  Component,
+  Button,
+  ClickEvent
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import hilog from '@ohos.hilog'
 
 @Entry
 @Component
 struct Index2 {
-  
- @State message: string = '这是子窗'
-   build() {
-           Column() {
-             Text(this.message)
-             Button('next page') {
-               Text('next page')
-             }
-           }
-             .width('100%')
+  @State message: string = '这是子窗'
 
-   }
- }
+  build() {
+    Column() {
+      Text(this.message)
+      Button('next page') 
+    }
+    .width('100%')
+
+  }
+}
