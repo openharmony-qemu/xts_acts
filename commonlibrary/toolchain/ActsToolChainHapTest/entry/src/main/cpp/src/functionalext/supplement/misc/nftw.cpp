@@ -151,7 +151,7 @@ void nftw_build_testfile(const char *path)
         t_error("%s error in snprintf! \n", __func__);
     }
     // Create Hidden Files
-    fd = open(file, O_WRONLY | O_CREAT, 0644);
+    fd = open(file, O_WRONLY | O_CREAT, FILE_MODE_0644);
     if (fd == -1) {
         t_error("%s error in open hidden_file.txt! \n", __func__);
         return;

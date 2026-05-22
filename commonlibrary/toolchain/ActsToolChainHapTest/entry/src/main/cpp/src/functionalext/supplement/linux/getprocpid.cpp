@@ -31,7 +31,7 @@
 #include "functionalext.h"
 
 
-const int STACK_SIZE = 1024 * 1024 *4;
+const int STACK_SIZE = 1024 * 1024 * 4;
 
 /**
  * @tc.name      : getprocpid_0100
@@ -40,8 +40,8 @@ const int STACK_SIZE = 1024 * 1024 *4;
  */
 void Getprocpid0100(void)
 {
-    typedef int (*getprocpid_func)();
-    getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
+    typedef int (*GetprocpidFunc)();
+    GetprocpidFunc getprocpid = (GetprocpidFunc)dlsym(RTLD_DEFAULT, "getprocpid");
     if (!getprocpid) {
         return;
     }
@@ -60,8 +60,8 @@ void Getprocpid0100(void)
  */
 void Getprocpid0200(void)
 {
-    typedef int (*getprocpid_func)();
-    getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
+    typedef int (*GetprocpidFunc)();
+    GetprocpidFunc getprocpid = (GetprocpidFunc)dlsym(RTLD_DEFAULT, "getprocpid");
     if (!getprocpid) {
         return;
     }
@@ -86,11 +86,11 @@ void Getprocpid0200(void)
 
 static int ChildFunc(void *arg)
 {
-    typedef int (*getprocpid_func)();
-    getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
+    typedef int (*GetprocpidFunc)();
+    GetprocpidFunc getprocpid = (GetprocpidFunc)dlsym(RTLD_DEFAULT, "getprocpid");
     pid_t parent = *(pid_t *)arg;
-    pid_t current_pid = getpid();
-    if (current_pid != 1) {
+    pid_t currentPid = getpid();
+    if (currentPid != 1) {
         return ESRCH;
     }
 
@@ -108,8 +108,8 @@ static int ChildFunc(void *arg)
  */
 void Getprocpid0300(void)
 {
-    typedef int (*getprocpid_func)();
-    getprocpid_func getprocpid = (getprocpid_func)dlsym(RTLD_DEFAULT, "getprocpid");
+    typedef int (*GetprocpidFunc)();
+    GetprocpidFunc getprocpid = (GetprocpidFunc)dlsym(RTLD_DEFAULT, "getprocpid");
     if (!getprocpid) {
         return;
     }
@@ -137,8 +137,8 @@ void Getprocpid0300(void)
 
 static void *PthreadFunc(void *arg)
 {
-    typedef int (*getproctid_func)();
-    getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
+    typedef int (*GetproctidFunc)();
+    GetproctidFunc getproctid = (GetproctidFunc)dlsym(RTLD_DEFAULT, "getproctid");
     pid_t parent = *(pid_t *)arg;
     pid_t pid1 = getproctid();
     if (parent == pid1) {
@@ -158,8 +158,8 @@ static void *PthreadFunc(void *arg)
  */
 void Getproctid0100(void)
 {
-    typedef int (*getproctid_func)();
-    getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
+    typedef int (*GetproctidFunc)();
+    GetproctidFunc getproctid = (GetproctidFunc)dlsym(RTLD_DEFAULT, "getproctid");
     if (!getproctid) {
         return;
     }
@@ -185,8 +185,8 @@ void Getproctid0100(void)
  */
 void Getproctid0200(void)
 {
-    typedef int (*getproctid_func)();
-    getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
+    typedef int (*GetproctidFunc)();
+    GetproctidFunc getproctid = (GetproctidFunc)dlsym(RTLD_DEFAULT, "getproctid");
     if (!getproctid) {
         return;
     }
@@ -212,11 +212,11 @@ void Getproctid0200(void)
 
 static int ChildFuncTid(void *arg)
 {
-    typedef int (*getproctid_func)();
-    getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
+    typedef int (*GetproctidFunc)();
+    GetproctidFunc getproctid = (GetproctidFunc)dlsym(RTLD_DEFAULT, "getproctid");
     pid_t parent = *(pid_t *)arg;
-    pid_t current_pid = getpid();
-    if (current_pid != 1) {
+    pid_t currentPid = getpid();
+    if (currentPid != 1) {
         return ESRCH;
     }
 
@@ -234,8 +234,8 @@ static int ChildFuncTid(void *arg)
  */
 void Getproctid0300(void)
 {
-    typedef int (*getproctid_func)();
-    getproctid_func getproctid = (getproctid_func)dlsym(RTLD_DEFAULT, "getproctid");
+    typedef int (*GetproctidFunc)();
+    GetproctidFunc getproctid = (GetproctidFunc)dlsym(RTLD_DEFAULT, "getproctid");
     if (!getproctid) {
         return;
     }

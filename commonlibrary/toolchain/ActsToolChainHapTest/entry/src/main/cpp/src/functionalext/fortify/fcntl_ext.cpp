@@ -220,11 +220,11 @@ static void Openat0030(void)
  * @tc.desc     : test openat only O_RDWR
  * @tc.level    : Level 1
  */
-static void openat_0040(void)
+static void Openat0040(void)
 {
     errno = 0;
     int fd = openat(AT_FDCWD, SANDBOX_PATH, O_RDWR);
-    EXPECT_NE(openat_0040, fd, -1);
+    EXPECT_NE(Openat0040, fd, -1);
     close(fd);
     return;
 }
@@ -429,7 +429,7 @@ static int FcntlExtTestImpl(int argc, char *argv[])
     Open0010();
     Open0040();
     Openat0010();
-    openat_0040();
+    Openat0040();
 #if defined(_LARGEFILE64_SOURCE) || defined(_GNU_SOURCE)
     Open640010();
     Open640040();

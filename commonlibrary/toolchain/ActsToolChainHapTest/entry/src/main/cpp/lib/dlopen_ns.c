@@ -187,7 +187,8 @@ void DlopenSeperated(char * dllPathNs)
 
     // current ns can't load the so by absolute path if it has inaccessible dependent so.
     char absolutePath2[512];
-    snprintf(absolutePath2, sizeof(absolutePath2), "%s/%s", dllPathNs, SO_HAS_DEPENDENCES);
+    snprintf(absolutePath2, sizeof(absolutePath2), "%s/%s", dllPathNs,
+             SO_HAS_DEPENDENCES);
     handle = dlopen_ns(&dlns1, absolutePath2, RTLD_NOW);
     if (handle) {
         t_error("%s can't load %s by absolute path because but it has inaccessible " \

@@ -12,7 +12,7 @@
 #define TOTAL 515
 
 #define TEST(r, f, x, m) ( \
-    errno=0, ((r) = (f)) == (x) || \
+    errno = 0, ((r) = (f)) == (x) || \
     (t_error("%s failed (" m ")\n", #f, r, x, strerror(errno)), 0))
 
 #define TEST_S(s, x, m) ( \
@@ -112,7 +112,7 @@ static int FscanfTestImpl(void)
 
     TEST(i, !!(f=WriteTemp("      42")), 1, "failed to make temp file");
     if (f) {
-        x=y=-1;
+        x = y = -1;
         TEST(i, fscanf(f, " %n%*d%n", &x, &y), 0, "%d != %d");
         TEST(i, x, 6, "%d != %d");
         TEST(i, y, 8, "%d != %d");
@@ -123,7 +123,7 @@ static int FscanfTestImpl(void)
 
     TEST(i, !!(f=WriteTemp("[abc123]....x")), 1, "failed to make temp file");
     if (f) {
-        x=y=-1;
+        x = y = -1;
         TEST(i, fscanf(f, "%10[^]]%n%10[].]%n", a, &x, b, &y), 2, "%d != %d");
         TEST_S(a, "[abc123", "wrong result for %[^]]");
         TEST_S(b, "]....", "wrong result for %[].]");
@@ -138,8 +138,8 @@ static int FscanfTestImpl(void)
     /* Comment it because musl parse "0x1p" to "0x1" now rather than treat it as abnormal format.
     TEST(i, !!(f=writetemp("0x1p 12")), 1, "failed to make temp file");
     if (f) {
-        x=y=-1;
-        u=-1;
+        x = y = -1;
+        u = -1;
         TEST(i, fscanf(f, "%lf%n %d", &u, &x, &y), 0, "%d != %d");
         TEST(u, u, -1.0, "%g != %g");
         TEST(i, x, -1, "%d != %d");
@@ -163,8 +163,8 @@ static int FscanfTestImpl(void)
 
     TEST(i, !!(f=WriteTemp("0x.1p4    012")), 1, "failed to make temp file");
     if (f) {
-        x=y=-1;
-        u=-1;
+        x = y = -1;
+        u = -1;
         TEST(i, fscanf(f, "%lf%n %i", &u, &x, &y), 2, "%d != %d");
         TEST(u, u, 1.0, "%g != %g");
         TEST(i, x, 6, "%d != %d");
@@ -176,7 +176,7 @@ static int FscanfTestImpl(void)
 
     TEST(i, !!(f=WriteTemp("0xx")), 1, "failed to make temp file");
     if (f) {
-        x=y=-1;
+        x = y = -1;
         TEST(i, fscanf(f, "%x%n", &x, &y), 0, "%d != %d");
         TEST(i, x, -1, "%d != %d");
         TEST(i, y, -1, "%d != %d");

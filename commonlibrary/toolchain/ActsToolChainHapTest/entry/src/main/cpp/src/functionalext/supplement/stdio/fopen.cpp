@@ -97,7 +97,7 @@ void Fopen0100(void)
  * @tc.desc       : Verify fopen("r") and fclose and fopen failed
  * @tc.level      : level 2.
  */
-void fopen_0200(void)
+void Fopen0200(void)
 {
     const char *filepath = TEST_FILE_DIR "tempory_test1.txt";
     FILE *fptr = fopen(filepath, "r");
@@ -344,7 +344,7 @@ void Fopen0900(void)
 static int FopenTestImpl(void)
 {
     Fopen0100();
-    fopen_0200();
+    Fopen0200();
     Fopen0300();
     Fopen0400();
     Fopen0500();

@@ -34,7 +34,7 @@ static const char *LIB_NAME_A = "/data/storage/el1/bundle/libs/arm/libldso_rando
 typedef void (*TEST_FUNC)(void);
 
 typedef void* (*DlopenExtFunc)(const char*, int, void*);
-static DlopenExtFunc g_dlopen_ext = NULL;
+static DlopenExtFunc g_dlopenExt = NULL;
 static bool g_dlopenExtAvailable = false;
 
 int g_test = BASE_NUM;
@@ -173,7 +173,7 @@ static void DlopenExtRandomization0100(void)
         return;
     }
     DlExtinfo extinfo = {0};
-    void *handle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
+    void *handle = g_dlopenExt(LIB_NAME_A, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (handle) {
         int closeRet = dlclose(handle);
@@ -193,7 +193,7 @@ static void DlopenExtRandomization0200(void)
         return;
     }
     DlExtinfo extinfo = {0};
-    void *handle = g_dlopen_ext(NULL, RTLD_NOW, &extinfo);
+    void *handle = g_dlopenExt(NULL, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (!handle) {
         return;
@@ -228,7 +228,7 @@ static void DlopenExtRandomization0300(void)
         return;
     }
     DlExtinfo extinfo = {0};
-    void *handle = g_dlopen_ext("test_invaild.so", RTLD_NOW, &extinfo);
+    void *handle = g_dlopenExt("test_invaild.so", RTLD_NOW, &extinfo);
     EXPECT_PTREQ(__FUNCTION__, handle, 0);
     if (handle) {
         dlclose(handle);
@@ -246,7 +246,7 @@ static void DlopenExtRandomization0400(void)
         return;
     }
     DlExtinfo extinfo = {0};
-    void *oriHandle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
+    void *oriHandle = g_dlopenExt(LIB_NAME, RTLD_NOW, &extinfo);
     void *handle = 0;
     EXPECT_PTRNE(__FUNCTION__, oriHandle, 0);
     if (!oriHandle) {
@@ -254,7 +254,7 @@ static void DlopenExtRandomization0400(void)
     }
     int i = TEST_COUNTS;
     while (i--) {
-        handle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
+        handle = g_dlopenExt(LIB_NAME, RTLD_NOW, &extinfo);
         EXPECT_PTREQ(__FUNCTION__, oriHandle, handle);
     }
     i = TEST_COUNTS + 1;
@@ -278,7 +278,7 @@ static void DlopenExtRandomization0600(void)
     int *i;
     TEST_FUNC test;
     DlExtinfo extinfo = {0};
-    handle = g_dlopen_ext(LIB_NAME, RTLD_NOW, &extinfo);
+    handle = g_dlopenExt(LIB_NAME, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (!handle) {
         return;
@@ -315,7 +315,7 @@ static void DlopenExtRandomization0800(void)
     DlExtinfo extinfo = {
         .flag = DL_EXT_RESERVED_ADDRESS_RECURSIVE,
     };
-    void *handle = g_dlopen_ext(NULL, RTLD_NOW, &extinfo);
+    void *handle = g_dlopenExt(NULL, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, handle, 0);
     if (!handle) {
         return;
@@ -366,7 +366,7 @@ static void DlopenExtRandomization0900(void)
     };
     pid_t pid = fork();
     if (pid == 0) {
-        childHandle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
+        childHandle = g_dlopenExt(LIB_NAME_A, RTLD_NOW, &extinfo);
         EXPECT_PTRNE(__FUNCTION__, childHandle, 0);
         if (!childHandle) {
             exit(-1);
@@ -376,7 +376,7 @@ static void DlopenExtRandomization0900(void)
         dlclose(childHandle);
         exit(0);
     }
-    parentHandle = g_dlopen_ext(LIB_NAME_A, RTLD_NOW, &extinfo);
+    parentHandle = g_dlopenExt(LIB_NAME_A, RTLD_NOW, &extinfo);
     EXPECT_PTRNE(__FUNCTION__, parentHandle, 0);
     if (!parentHandle) {
         return;
@@ -554,16 +554,16 @@ TEST_FUNC g_testCases[] = {
 static int LdsoRandomizationTestTestImpl(int argc, char *argv[])
 {
     // Try to get dlopen_ext function via dlsym
-    g_dlopen_ext = (DlopenExtFunc)dlsym(RTLD_DEFAULT, "dlopen_ext");
-    if (g_dlopen_ext) {
+    g_dlopenExt = (DlopenExtFunc)dlsym(RTLD_DEFAULT, "dlopen_ext");
+    if (g_dlopenExt) {
         g_dlopenExtAvailable = true;
     } else {
         g_dlopenExtAvailable = false;
     }
     
     size_t caseCounts = sizeof(g_testCases) / sizeof(TEST_FUNC);
-    for (size_t case_num = 0; case_num < caseCounts; case_num++) {
-        g_testCases[case_num]();
+    for (size_t caseNum = 0; caseNum < caseCounts; caseNum++) {
+        g_testCases[caseNum]();
     }
     return g_tStatus;
 }

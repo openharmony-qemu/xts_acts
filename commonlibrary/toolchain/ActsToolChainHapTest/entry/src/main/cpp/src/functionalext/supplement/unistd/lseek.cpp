@@ -190,7 +190,7 @@ void Lseek0600(void)
     remove(filePath);
 }
 
-static TEST_FUN G_Fun_Array[] = {
+static TEST_FUN g_gFunArray[] = {
     Lseek640100,
     Lseek0100,
     Lseek0200,
@@ -202,9 +202,9 @@ static TEST_FUN G_Fun_Array[] = {
 
 static int LseekTestImpl(void)
 {
-    int num = sizeof(G_Fun_Array) / sizeof(TEST_FUN);
+    int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
-        G_Fun_Array[pos]();
+        g_gFunArray[pos]();
     }
 
     return g_tStatus;

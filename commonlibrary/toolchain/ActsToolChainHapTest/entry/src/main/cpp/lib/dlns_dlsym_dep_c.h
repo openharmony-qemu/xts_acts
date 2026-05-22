@@ -16,6 +16,6 @@
 #ifndef DLNS_DLSYM_DEP_C_H
 #define DLNS_DLSYM_DEP_C_H
 
-int test_c(void);
+int TestC(void);
 
 #endif

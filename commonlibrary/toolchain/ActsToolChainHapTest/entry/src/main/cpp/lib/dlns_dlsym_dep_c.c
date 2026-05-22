@@ -17,12 +17,12 @@
 
 #include "dlns_test.h"
 
-int test(void)
+int Test(void)
 {
     return TEST_RESULT_3;
 }
 
-int test_c(void)
+int TestC(void)
 {
     return TEST_RESULT_4;
 }

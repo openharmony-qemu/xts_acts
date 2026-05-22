@@ -16,8 +16,8 @@
 #include "dlns_dlsym_dep_b.h"
 #include "dlns_test.h"
 
-int test(void)
+int Test(void)
 {
-    test_b();
+    TestB();
     return TEST_RESULT_1;
 }

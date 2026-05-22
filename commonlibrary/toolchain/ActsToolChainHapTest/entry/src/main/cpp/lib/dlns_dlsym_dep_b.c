@@ -18,8 +18,8 @@
 #include "dlns_dlsym_dep_c.h"
 #include "dlns_test.h"
 
-int test_b(void)
+int TestB(void)
 {
-    test_c();
+    TestC();
     return TEST_RESULT_2;
 }
