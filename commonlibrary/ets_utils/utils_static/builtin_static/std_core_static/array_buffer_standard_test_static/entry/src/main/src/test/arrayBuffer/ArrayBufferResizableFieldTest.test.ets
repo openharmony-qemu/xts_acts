@@ -387,8 +387,10 @@ export default function arrayBufferResizableFieldTest(): void {
      */
     it('testArrayBufferResizableField0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fixed = new ArrayBuffer(4);
-      expect(fixed.resizable).assertFalse();
-      expect(fixed.resizable).assertFalse();
+      let r1 = fixed.resizable;
+      let r2 = fixed.resizable;
+      expect(r1).assertFalse();
+      expect(r1).assertEqual(r2);
     });
     /**
      * @tc.name testArrayBufferResizableField0027

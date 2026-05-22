@@ -165,7 +165,9 @@ export default function arrayBufferDetachedFieldTest(): void {
       const result1 = buffer.detached;
       const result2 = buffer.detached;
       const result3 = buffer.detached;
-      expect(buffer.detached).assertFalse();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertFalse();
     });
     /**
      * @tc.name testArrayBufferDetachedField0011

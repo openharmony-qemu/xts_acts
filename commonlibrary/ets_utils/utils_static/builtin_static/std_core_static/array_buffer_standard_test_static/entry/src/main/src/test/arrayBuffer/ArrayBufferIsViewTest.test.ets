@@ -160,7 +160,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1000
-     * @tc.desc Verify ArrayBuffer.isView returns false
+     * @tc.desc Verify isView returns false and typeof result is boolean for ArrayBuffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -168,6 +168,7 @@ export default function arrayBufferIsViewTest(): void {
     it('testArrayBufferIsView0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       expect(ArrayBuffer.isView(buffer)).assertFalse();
+      expect(typeof ArrayBuffer.isView(buffer) === 'boolean').assertTrue();
     });
 
     /**
@@ -350,81 +351,26 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2500
-     * @tc.desc Verify typeof isView(ArrayBuffer) is boolean when input is not a view
+     * @tc.desc Verify typeof ArrayBuffer.isView(view) equals 'boolean'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
-      expect(ArrayBuffer.isView(buffer)).assertFalse();
-      expect(typeof ArrayBuffer.isView(buffer) === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2600
-     * @tc.desc Verify typeof ArrayBuffer.isView(view) equals 'boolean'
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
       expect(typeof ArrayBuffer.isView(view) === 'boolean').assertTrue();
     });
 
     /**
-     * @tc.name testArrayBufferIsView0027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2700
-     * @tc.desc Verify isView returns false and typeof result is boolean for plain object
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = Utils.plainObject();
-      expect(ArrayBuffer.isView(obj)).assertFalse();
-      expect(typeof ArrayBuffer.isView(obj) === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2800
-     * @tc.desc Verify isView returns false and typeof result is boolean for string
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let s: string = 'hello';
-      expect(ArrayBuffer.isView(s)).assertFalse();
-      expect(typeof ArrayBuffer.isView(s) === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2900
-     * @tc.desc Verify isView returns false and typeof result is boolean for boolean true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ArrayBuffer.isView(true)).assertFalse();
-      expect(typeof ArrayBuffer.isView(true) === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3000
+     * @tc.name testArrayBufferIsView0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2600
      * @tc.desc Verify ArrayBuffer.isView(Utils.nullAsObject()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferIsView0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferIsView0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.isView(Utils.nullAsObject());
         expect().assertFail();
@@ -434,14 +380,14 @@ export default function arrayBufferIsViewTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferIsView0031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3100
+     * @tc.name testArrayBufferIsView0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2700
      * @tc.desc Verify ArrayBuffer.isView(Utils.undefinedAsObject()) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferIsView0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferIsView0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.isView(Utils.undefinedAsObject());
         expect().assertFail();
@@ -451,16 +397,70 @@ export default function arrayBufferIsViewTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferIsView0032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3200
+     * @tc.name testArrayBufferIsView0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2800
      * @tc.desc Verify ArrayBuffer.isView returns false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferIsView0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferIsView0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let n: number = -1;
       expect(ArrayBuffer.isView(n)).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2900
+     * @tc.desc Verify ArrayBuffer.isView returns false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = Double.POSITIVE_INFINITY;
+      expect(ArrayBuffer.isView(n)).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3000
+     * @tc.desc Verify ArrayBuffer.isView returns false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let n: number = Double.NEGATIVE_INFINITY;
+      expect(ArrayBuffer.isView(n)).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3100
+     * @tc.desc Verify ArrayBuffer.isView returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      const view = new DataView(buffer);
+      expect(ArrayBuffer.isView(view)).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferIsView0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3200
+     * @tc.desc Verify ArrayBuffer.isView returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(0);
+      const arr = new Int8Array(buffer);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
     });
 
     /**
@@ -472,62 +472,9 @@ export default function arrayBufferIsViewTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferIsView0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n: number = Double.POSITIVE_INFINITY;
-      expect(ArrayBuffer.isView(n)).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3400
-     * @tc.desc Verify ArrayBuffer.isView returns false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let n: number = Double.NEGATIVE_INFINITY;
-      expect(ArrayBuffer.isView(n)).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3500
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(0);
-      const view = new DataView(buffer);
-      expect(ArrayBuffer.isView(view)).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3600
-     * @tc.desc Verify ArrayBuffer.isView returns true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(0);
-      const arr = new Int8Array(buffer);
-      expect(ArrayBuffer.isView(arr)).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferIsView0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_3700
-     * @tc.desc Verify ArrayBuffer.isView returns false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferIsView0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(0);
       expect(ArrayBuffer.isView(buffer)).assertFalse();
     });
+
   });
 }

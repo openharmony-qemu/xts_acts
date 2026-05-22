@@ -502,7 +502,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_3800
-     * @tc.desc Verify buffer.byteLength equals 4
+     * @tc.desc Verify resizable buffer byteLength 4, then 10 after resize(10), then 16 after resize(16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -562,7 +562,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4200
-     * @tc.desc Verify detached is false and detached is false
+     * @tc.desc Verify original and full-range slice detached are false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -576,7 +576,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_4300
-     * @tc.desc Verify detached is false and detached is false
+     * @tc.desc Verify original and partial slice(0,4) detached are false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -772,22 +772,6 @@ export default function arrayBufferPropertyTest(): void {
       expect(buffer.byteLength).assertEqual(4)
       expect(buffer.detached).assertFalse()
       expect(buffer.resizable).assertTrue()
-    });
-    /**
-     * @tc.name testArrayBufferProperty0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_5800
-     * @tc.desc Verify byteLength stays consistent after resize on resizable buffer
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(8, 16)
-      buffer.resize(10)
-      let len1 = buffer.byteLength
-      let len2 = buffer.byteLength
-      expect(len1).assertEqual(len2)
-      expect(len1).assertEqual(10)
     });
     /**
      * @tc.name testArrayBufferProperty0059

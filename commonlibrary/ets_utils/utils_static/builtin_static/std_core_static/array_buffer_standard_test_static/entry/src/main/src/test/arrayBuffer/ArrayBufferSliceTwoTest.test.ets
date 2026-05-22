@@ -532,7 +532,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2600
-     * @tc.desc Verify view2[0] equals Int.toByte(5) after resize
+     * @tc.desc Verify two slices on same buffer are independent (view1 change does not affect view2[0])
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

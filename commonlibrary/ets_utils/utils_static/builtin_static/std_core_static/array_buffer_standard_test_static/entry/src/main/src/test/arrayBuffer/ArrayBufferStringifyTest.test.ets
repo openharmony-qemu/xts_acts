@@ -49,6 +49,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("ABC");
     });
+
     /**
      * @tc.name testArrayBufferStringify0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0020
@@ -62,6 +63,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("Hello");
     });
+
     /**
      * @tc.name testArrayBufferStringify0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0030
@@ -77,6 +79,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, 5);
       expect(result).assertEqual("Hello");
     });
+
     /**
      * @tc.name testArrayBufferStringify0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0040
@@ -90,6 +93,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, 0);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0050
@@ -104,6 +108,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(sliced, "utf8", 0, sliced.byteLength);
       expect(result).assertEqual("CDE");
     });
+
     /**
      * @tc.name testArrayBufferStringify0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0060
@@ -120,6 +125,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0070
@@ -136,6 +142,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0080
@@ -152,6 +159,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0090
@@ -169,6 +177,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0100
@@ -185,6 +194,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0110
@@ -203,6 +213,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0120
@@ -221,6 +232,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0130
@@ -234,6 +246,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf-8", 0, encoded.byteLength);
       expect(result).assertEqual("ABC");
     });
+
     /**
      * @tc.name testArrayBufferStringify0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0140
@@ -251,6 +264,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0150
@@ -268,6 +282,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0160
@@ -285,6 +300,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0170
@@ -302,6 +318,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0180
@@ -320,6 +337,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0190
@@ -337,6 +355,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0200
@@ -354,6 +373,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0210
@@ -367,6 +387,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("ABCDEF");
     });
+
     /**
      * @tc.name testArrayBufferStringify0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0220
@@ -380,6 +401,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 3, encoded.byteLength);
       expect(result).assertEqual("DEF");
     });
+
     /**
      * @tc.name testArrayBufferStringify0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0230
@@ -393,6 +415,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 3, 3);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0240
@@ -406,6 +429,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength, encoded.byteLength);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0250
@@ -423,6 +447,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0260
@@ -440,6 +465,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0270
@@ -457,6 +483,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0280
@@ -474,6 +501,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0290
@@ -491,6 +519,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0300
@@ -508,6 +537,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0310
@@ -521,6 +551,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(1.5)), encoded.byteLength);
       expect(result).assertEqual("BCDEF");
     });
+
     /**
      * @tc.name testArrayBufferStringify0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0320
@@ -534,6 +565,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NaN)), encoded.byteLength);
       expect(result).assertEqual("ABC");
     });
+
     /**
      * @tc.name testArrayBufferStringify0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0330
@@ -551,6 +583,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0340
@@ -564,6 +597,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 2, 2);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0350
@@ -577,6 +611,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, 0);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0360
@@ -594,6 +629,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0370
@@ -611,6 +647,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0380
@@ -628,6 +665,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0390
@@ -645,6 +683,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0400
@@ -662,6 +701,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0410
@@ -675,6 +715,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(2.7)));
       expect(result).assertEqual("AB");
     });
+
     /**
      * @tc.name testArrayBufferStringify0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0420
@@ -688,6 +729,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NaN)));
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0430
@@ -705,6 +747,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0440
@@ -722,6 +765,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0450
@@ -736,6 +780,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual(text);
     });
+
     /**
      * @tc.name testArrayBufferStringify0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0460
@@ -749,6 +794,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 3, 6);
       expect(result).assertEqual("DEF");
     });
+
     /**
      * @tc.name testArrayBufferStringify0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0470
@@ -762,6 +808,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 2, 5);
       expect(result).assertEqual("CDE");
     });
+
     /**
      * @tc.name testArrayBufferStringify0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0480
@@ -775,6 +822,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, 1);
       expect(result).assertEqual("A");
     });
+
     /**
      * @tc.name testArrayBufferStringify0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0490
@@ -788,6 +836,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("你好");
     });
+
     /**
      * @tc.name testArrayBufferStringify0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0500
@@ -801,6 +850,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("Hello你好");
     });
+
     /**
      * @tc.name testArrayBufferStringify0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0510
@@ -814,6 +864,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("A\nB\tC");
     });
+
     /**
      * @tc.name testArrayBufferStringify0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0520
@@ -827,6 +878,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result).assertEqual("A B C");
     });
+
     /**
      * @tc.name testArrayBufferStringify0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0530
@@ -840,6 +892,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, 0);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0540
@@ -854,6 +907,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0550
@@ -868,6 +922,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0560
@@ -882,6 +937,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, 0);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0570
@@ -896,6 +952,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0580
@@ -910,6 +967,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0590
@@ -924,6 +982,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0600
@@ -939,6 +998,7 @@ export default function arrayBufferStringifyTest(): void {
       let second = ArrayBuffer.stringify(encoded, "utf8", 3, encoded.byteLength);
       expect(first + second).assertEqual(original);
     });
+
     /**
      * @tc.name testArrayBufferStringify0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0610
@@ -953,6 +1013,7 @@ export default function arrayBufferStringifyTest(): void {
       let decoded = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(decoded.length).assertEqual(original.length);
     });
+
     /**
      * @tc.name testArrayBufferStringify0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0620
@@ -970,6 +1031,7 @@ export default function arrayBufferStringifyTest(): void {
       expect(b).assertEqual("B");
       expect(c).assertEqual("C");
     });
+
     /**
      * @tc.name testArrayBufferStringify0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0630
@@ -983,6 +1045,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength, encoded.byteLength);
       expect(result).assertEqual("");
     });
+
     /**
      * @tc.name testArrayBufferStringify0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0640
@@ -996,6 +1059,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, 1);
       expect(result).assertEqual("A");
     });
+
     /**
      * @tc.name testArrayBufferStringify0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0650
@@ -1009,6 +1073,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength - 1, encoded.byteLength);
       expect(result).assertEqual("F");
     });
+
     /**
      * @tc.name testArrayBufferStringify0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0660
@@ -1022,6 +1087,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, 1);
       expect(result).assertEqual("X");
     });
+
     /**
      * @tc.name testArrayBufferStringify0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0670
@@ -1036,6 +1102,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result.length).assertEqual(1024);
     });
+
     /**
      * @tc.name testArrayBufferStringify0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0680
@@ -1050,6 +1117,7 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, charLen);
       expect(result).assertEqual("你");
     });
+
     /**
      * @tc.name testArrayBufferStringify0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0690
@@ -1066,6 +1134,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0700
@@ -1082,6 +1151,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0710
@@ -1099,6 +1169,7 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0720
@@ -1116,49 +1187,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
      * @tc.name testArrayBufferStringify0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0730
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 100, 100) throws IllegalArgumentError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferStringify0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 100, 100);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IllegalArgumentError');
-      }
-    });
-    /**
-     * @tc.name testArrayBufferStringify0074
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0740
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, 100) throws IllegalArgumentError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferStringify0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 0, 100);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IllegalArgumentError');
-      }
-    });
-    /**
-     * @tc.name testArrayBufferStringify0075
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0750
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 100, 200) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", 100, 200);
@@ -1167,32 +1205,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0076
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0760
-     * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, 100) throws IllegalArgumentError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferStringify0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const encoded = ArrayBuffer.from("ABC", "utf8");
-        ArrayBuffer.stringify(encoded, "utf8", 0, 100);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('IllegalArgumentError');
-      }
-    });
-    /**
-     * @tc.name testArrayBufferStringify0077
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0770
+     * @tc.name testArrayBufferStringify0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0740
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength, 100) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", encoded.byteLength, 100);
@@ -1201,15 +1223,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0078
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0780
+     * @tc.name testArrayBufferStringify0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0750
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "unknown-encoding", 0, encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "unknown-encoding", 0, encoded.byteLength);
@@ -1218,15 +1241,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0079
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0790
+     * @tc.name testArrayBufferStringify0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0760
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "UTF8", 0, encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "UTF8", 0, encoded.byteLength);
@@ -1235,15 +1259,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0080
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
+     * @tc.name testArrayBufferStringify0077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0770
      * @tc.desc Verify ArrayBuffer.stringify(encoded, " utf8 ", 0, encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, " utf8 ", 0, encoded.byteLength);
@@ -1252,15 +1277,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0081
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0810
+     * @tc.name testArrayBufferStringify0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0780
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "xyz123", 0, encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "xyz123", 0, encoded.byteLength);
@@ -1269,15 +1295,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0082
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0820
+     * @tc.name testArrayBufferStringify0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0790
      * @tc.desc Verify ArrayBuffer.stringify(Utils.numberAsArrayBuffer(n), "utf8", 0, 3) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const n: number = 12345;
         ArrayBuffer.stringify(Utils.numberAsArrayBuffer(n), "utf8", 0, 3);
@@ -1286,15 +1313,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0083
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0830
+     * @tc.name testArrayBufferStringify0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
      * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer(Utils.booleanAsObject(true)), "utf8", 0, 3) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.stringify(Utils.castToArrayBuffer(Utils.booleanAsObject(true)), "utf8", 0, 3);
         expect().assertFail();
@@ -1302,15 +1330,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0084
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0840
+     * @tc.name testArrayBufferStringify0081
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0810
      * @tc.desc Verify ArrayBuffer.stringify(encoded, Utils.numberAsString(encNum), 0, encoded.byteLength) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         const encNum: number = 65;
@@ -1320,15 +1349,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0085
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0850
+     * @tc.name testArrayBufferStringify0082
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0820
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", Utils.booleanAsInt(true), encoded.byteLength) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", Utils.booleanAsInt(true), encoded.byteLength);
@@ -1337,15 +1367,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0086
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0860
+     * @tc.name testArrayBufferStringify0083
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0830
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, Utils.booleanAsInt(false)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", 0, Utils.booleanAsInt(false));
@@ -1354,15 +1385,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0087
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0870
+     * @tc.name testArrayBufferStringify0084
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0840
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", Utils.castToInt({} as Object), encoded.byteLength) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", Utils.castToInt({} as Object), encoded.byteLength);
@@ -1371,15 +1403,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0088
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0880
+     * @tc.name testArrayBufferStringify0085
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0850
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, Utils.castToInt({} as Object)) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", 0, Utils.castToInt({} as Object));
@@ -1388,15 +1421,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0089
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0890
+     * @tc.name testArrayBufferStringify0086
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0860
      * @tc.desc Verify ArrayBuffer.stringify(Utils.castToArrayBuffer("buffer" as Object), Utils.numberAsString(badEnc), Utils.stringAsInt("s... throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const badEnc: number = 123;
         ArrayBuffer.stringify(Utils.castToArrayBuffer("buffer" as Object), Utils.numberAsString(badEnc),
@@ -1406,15 +1440,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0090
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0900
+     * @tc.name testArrayBufferStringify0087
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0870
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", -3, -1) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", -3, -1);
@@ -1423,15 +1458,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0091
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0910
+     * @tc.name testArrayBufferStringify0088
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0880
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", -100, encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", -100, encoded.byteLength);
@@ -1440,15 +1476,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0092
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0920
+     * @tc.name testArrayBufferStringify0089
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0890
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, -100) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", 0, -100);
@@ -1457,15 +1494,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0093
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0930
+     * @tc.name testArrayBufferStringify0090
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0900
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NEGATIVE_INFINITY)), encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", (Double.toInt(Double.NEGATIVE_INFINITY)), encoded.byteLength);
@@ -1474,15 +1512,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0094
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0940
+     * @tc.name testArrayBufferStringify0091
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0910
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NEGATIVE_INFINITY))) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", 0, (Double.toInt(Double.NEGATIVE_INFINITY)));
@@ -1491,15 +1530,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0095
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0950
+     * @tc.name testArrayBufferStringify0092
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0920
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", Double.toInt(Number.MAX_SAFE_INTEGER), Double.toInt(Number.MAX_SAFE_INTEGER)) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", Double.toInt(Number.MAX_SAFE_INTEGER), Double.toInt(Number.MAX_SAFE_INTEGER));
@@ -1508,15 +1548,16 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0096
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0960
+     * @tc.name testArrayBufferStringify0093
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0930
      * @tc.desc Verify ArrayBuffer.stringify(encoded, "utf8", Double.toInt(Number.MIN_SAFE_INTEGER), encoded.byteLength) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const encoded = ArrayBuffer.from("ABC", "utf8");
         ArrayBuffer.stringify(encoded, "utf8", Double.toInt(Number.MIN_SAFE_INTEGER), encoded.byteLength);
@@ -1525,44 +1566,47 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
     /**
-     * @tc.name testArrayBufferStringify0097
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0970
+     * @tc.name testArrayBufferStringify0094
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0940
      * @tc.desc Verify ArrayBuffer.stringify returns ""
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, 0);
       expect(result).assertEqual("");
     });
+
     /**
-     * @tc.name testArrayBufferStringify0098
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0980
+     * @tc.name testArrayBufferStringify0095
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0950
      * @tc.desc Verify ArrayBuffer.stringify returns "ABC"
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       const view = new Uint8Array(buffer);
       view[0] = 65; view[1] = 66; view[2] = 67;
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, 3);
       expect(result).assertEqual("ABC");
     });
+
     /**
-     * @tc.name testArrayBufferStringify0099
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0990
+     * @tc.name testArrayBufferStringify0096
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0960
      * @tc.desc Verify ArrayBuffer.stringify returns "ABC"
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(6, 16);
       const view = new Uint8Array(buffer);
       view[0] = 65; view[1] = 66; view[2] = 67; view[3] = 68; view[4] = 69; view[5] = 70;
@@ -1570,5 +1614,6 @@ export default function arrayBufferStringifyTest(): void {
       let result = ArrayBuffer.stringify(buffer, "utf8", 0, buffer.byteLength);
       expect(result).assertEqual("ABC");
     });
+
   });
 }

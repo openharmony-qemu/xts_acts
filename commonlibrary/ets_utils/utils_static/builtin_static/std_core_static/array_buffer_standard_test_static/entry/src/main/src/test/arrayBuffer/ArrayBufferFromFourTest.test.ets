@@ -259,7 +259,6 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(0);
-      expect(buffer instanceof ArrayBuffer).assertTrue();
     });
     /**
      * @tc.name testArrayBufferFromFour0017

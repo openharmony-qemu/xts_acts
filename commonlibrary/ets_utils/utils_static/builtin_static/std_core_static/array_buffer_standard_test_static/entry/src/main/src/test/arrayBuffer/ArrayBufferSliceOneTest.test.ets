@@ -342,7 +342,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_2000
-     * @tc.desc Verify buffer.byteLength equals 4
+     * @tc.desc Verify slice(0,2) does not change original buffer length or bytes; copy length is 2
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
