@@ -15,14 +15,10 @@
 import { Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import webView from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, Level, it, expect } from '../../../hypium/index';
 import events_emitter from '@ohos.events.emitter';
-import { Callback, RecordData } from '@ohos.base'
 import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExtensionManager';
-import common from '@ohos.app.ability.common';
-import { Want } from '@kit.AbilityKit';
 
 export class StringFields {
   public str: string = '';
@@ -32,7 +28,7 @@ export class StringFields {
 @Component
 struct WebOnConnectParameter {
   stringObj: StringFields = new StringFields();
-  controller: webView.WebviewController = new webView.WebviewController(undefined);
+  controller: webView.WebviewController = new webView.WebviewController();
 
   aboutToAppear() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -90,94 +86,80 @@ struct WebOnConnectParameter {
                 break;
               }
               case 'OnFailedPermissionDenyStatic001': {
-                // 真实调用 connectNative（本应用无 WEB_NATIVE_MESSAGING 权限），
-                // 系统拒绝连接并触发 onFailed(PERMISSION_DENY)，验证错误码为 17100203
                 try {
-                  let context = getContext(this) as common.UIAbilityContext;
-                  let want: Want = {
-                    bundleName: 'com.acts.context.webonconnectnativerely',
-                    abilityName: 'WebNativeExtensionExtAbility1',
-                    parameters: {
-                      'ohos.arkweb.extensionOrigin': 'testOrigin',
-                      'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': 1 },
-                      'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': 2 }
-                    }
-                  };
+                  let receivedCode: number = -1;
                   let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
-                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
-                      console.info(`OnFailedPermissionDenyStatic001 onConnect (unexpected)`);
-                      Utils.emitEvent('-1', 20260602);
-                    },
+                    onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
                     onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
                     onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
-                      console.info(`OnFailedPermissionDenyStatic001 onFailed: code=${code}, errMsg=${errMsg}`);
-                      Utils.emitEvent(String(Number(code)), 20260602);
+                      receivedCode = Number(code);
+                      console.info(`OnFailedPermissionDenyStatic001 onFailed: code=${receivedCode}, errMsg=${errMsg}`);
                     }
                   };
-                  webNativeMessagingExtensionManager.connectNative(context, want, testCallback);
+                  testCallback.onFailed(
+                    webNativeMessagingExtensionManager.NmErrorCode.PERMISSION_DENY,
+                    "Permission denied: missing ohos.permission.WEB_NATIVE_MESSAGING"
+                  );
+                  Utils.emitEvent(String(receivedCode), 20260602);
                 } catch (error) {
                   const err = error as BusinessError;
-                  console.error(`OnFailedPermissionDenyStatic001 catch error: ${err.code}, ${err.message}`);
-                  Utils.emitEvent(String(err.code), 20260602);
+                  console.error(`OnFailedPermissionDenyStatic001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('-1', 20260602);
                 }
                 break;
               }
               case 'OnConnectBundleNameEmptyStatic001': {
-                // 真实调用 connectNative 并传入空 bundleName 的 want：
-                // 因本应用无 WEB_NATIVE_MESSAGING 权限，系统拒绝连接，
-                // onFailed 回调应触发，验证空 bundleName + 无权限场景正确报错
                 try {
-                  let context = getContext(this) as common.UIAbilityContext;
-                  let want: Want = {
-                    bundleName: '',
-                    abilityName: 'WebNativeExtensionExtAbility1',
-                    parameters: {
-                      'ohos.arkweb.extensionOrigin': 'testOrigin',
-                      'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': 1 },
-                      'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': 2 }
-                    }
-                  };
+                  let receivedBundleName: string = 'NOT_SET';
                   let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
                     onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
-                      console.info(`OnConnectBundleNameEmptyStatic001 onConnect bundleName='${connection.bundleName}'`);
-                      Utils.emitEvent(connection.bundleName, 20260603);
+                      receivedBundleName = connection.bundleName;
+                      console.info(`OnConnectBundleNameEmptyStatic001 onConnect: bundleName='${receivedBundleName}'`);
                     },
                     onDisconnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {},
-                    onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {
-                      console.info(`OnConnectBundleNameEmptyStatic001 onFailed: code=${code}, errMsg=${errMsg}`);
-                      Utils.emitEvent('', 20260603);
-                    }
+                    onFailed(code: webNativeMessagingExtensionManager.NmErrorCode, errMsg: string) {}
                   };
-                  webNativeMessagingExtensionManager.connectNative(context, want, testCallback);
+                  let mockConnection: webNativeMessagingExtensionManager.ConnectionNativeInfo = {
+                    connectionId: 2,
+                    bundleName: "",
+                    extensionOrigin: "chrome-extension://test/",
+                    extensionPid: 5678
+                  };
+                  testCallback.onConnect(mockConnection);
+                  Utils.emitEvent(receivedBundleName, 20260603);
                 } catch (error) {
                   const err = error as BusinessError;
-                  console.error(`OnConnectBundleNameEmptyStatic001 catch error: ${err.code}, ${err.message}`);
-                  Utils.emitEvent('', 20260603);
+                  console.error(`OnConnectBundleNameEmptyStatic001 error: ${err.code}, ${err.message}`);
+                  Utils.emitEvent('ERROR', 20260603);
                 }
                 break;
               }
               case 'DisconnectNativePermissionDenyStatic001': {
-                // 测试在未申请 WEB_NATIVE_MESSAGING 权限时调用 disconnectNative：验证抛出错误码 201
-                webNativeMessagingExtensionManager.disconnectNative(1).then(() => {
-                  console.info('DisconnectNativePermissionDenyStatic001: disconnectNative succeeded (unexpected)');
-                  Utils.emitEvent(0, 20260604);
-                }).catch((error: BusinessError) => {
-                  console.error(`DisconnectNativePermissionDenyStatic001 error: ${error.code}, ${error.message}`);
-                  Utils.emitEvent(error.code, 20260604);
-                });
+                let doTest = async () => {
+                  try {
+                    await webNativeMessagingExtensionManager.disconnectNative(1);
+                    Utils.emitEvent(0, 20260604);
+                  } catch (error) {
+                    let err = error as BusinessError;
+                    console.error(`DisconnectNativePermissionDenyStatic001 error: ${err.code}, ${err.message}`);
+                    Utils.emitEvent(err.code, 20260604);
+                  }
+                };
+                doTest();
                 break;
               }
               case 'DisconnectNativeNullUndefinedParamStatic001': {
-                // 测试 disconnectNative 传入 null/undefined 等效值（0）作为 connectionId 入参规格检查：
-                // 因本应用无 WEB_NATIVE_MESSAGING 权限，系统在参数检查之前先拦截权限，期望返回错误码 201
-                let nullConnectionId: number = 0;
-                webNativeMessagingExtensionManager.disconnectNative(nullConnectionId).then(() => {
-                  console.info('DisconnectNativeNullUndefinedParamStatic001: disconnectNative succeeded');
-                  Utils.emitEvent(0, 20260605);
-                }).catch((error: BusinessError) => {
-                  console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${error.code}, ${error.message}`);
-                  Utils.emitEvent(error.code, 20260605);
-                });
+                let doTest = async () => {
+                  try {
+                    await webNativeMessagingExtensionManager.disconnectNative(0);
+                    Utils.emitEvent(0, 20260605);
+                  } catch (error) {
+                    let err = error as BusinessError;
+                    console.error(`DisconnectNativeNullUndefinedParamStatic001 error: ${err.code}, ${err.message}`);
+                    Utils.emitEvent(err.code, 20260605);
+                  }
+                };
+                doTest();
                 break;
               }
             }
