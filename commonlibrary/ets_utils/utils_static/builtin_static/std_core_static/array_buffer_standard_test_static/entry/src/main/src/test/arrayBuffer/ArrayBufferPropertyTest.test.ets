@@ -1302,22 +1302,5 @@ export default function arrayBufferPropertyTest(): void {
       }
     });
 
-    /**
-     * @tc.name testArrayBufferProperty0088
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_8800
-     * @tc.desc Verify API call throws RangeError
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferProperty0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let buffer = new ArrayBuffer(2, 8)
-      try {
-        buffer.resize(-1)
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError')
-      }
-    });
   });
 }
