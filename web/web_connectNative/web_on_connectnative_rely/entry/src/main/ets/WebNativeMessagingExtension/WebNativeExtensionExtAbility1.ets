@@ -17,8 +17,7 @@ import fs from '@ohos.file.fs';
 import util from '@ohos.util';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import WebNativeMessagingExtensionAbility, { ConnectionInfo } from '@ohos.web.WebNativeMessagingExtensionAbility';
-import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
-import { JSON } from '@kit.ArkTS';
+import { BusinessError,commonEventManager } from '@kit.BasicServicesKit';
 const TAG: string = 'testTag';
 
 
@@ -28,15 +27,6 @@ function publishEvent(eventName: string, code: number) {
     parameters: {
       'result': code
     }
-  }
-  commonEventManager.publish(eventName, commonEventData, (result) => {
-    hilog.info(0x0000, 'testTag', `${eventName} publish result:${JSON.stringify(result)}`);
-  });
-}
-
-function publishEventWithData(eventName: string, params: Record<string, number>) {
-  let commonEventData: commonEventManager.CommonEventPublishData = {
-    parameters: params
   }
   commonEventManager.publish(eventName, commonEventData, (result) => {
     hilog.info(0x0000, 'testTag', `${eventName} publish result:${JSON.stringify(result)}`);
@@ -59,72 +49,7 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
       let option:StartOptions = {
         windowFocused,
       }
-      if (stringData.startsWith("startAbilityForResultWithOptions")) {
-        try {
-          let want: Want = {
-            bundleName: "com.acts.context.webonconnectnativerely",
-            abilityName: "EntryAbility",
-            parameters: { "callType": "forResult" }
-          };
-          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResultWithOptions start connectId:${connectId}`);
-          const result = await this.context.startAbilityForResult(want, option);
-          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResultWithOptions result: ${JSON.stringify(result)}`);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_withOptions", {
-            'result': 200,
-            'resultCode': result.resultCode,
-            'hasWant': result.want ? 1 : 0
-          });
-        } catch (error) {
-          hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbilityForResultWithOptions connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_withOptions", {
-            'result': error.code ?? 0,
-            'resultCode': -1,
-            'hasWant': 0
-          });
-        }
-      } else if (stringData.startsWith("startAbilityForResultError")) {
-        try {
-          let invalidWant: Want = {
-            bundleName: "com.invalid.nonexistent.bundle",
-            abilityName: "NonExistentAbility"
-          };
-          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResultError start connectId:${connectId}`);
-          await this.context.startAbilityForResult(invalidWant);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_error", {
-            'result': 0,
-            'errorCode': 0
-          });
-        } catch (error) {
-          hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbilityForResultError connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_error", {
-            'result': 200,
-            'errorCode': error.code ?? 0
-          });
-        }
-      } else if (stringData.startsWith("startAbilityForResult")) {
-        try {
-          let want: Want = {
-            bundleName: "com.acts.context.webonconnectnativerely",
-            abilityName: "EntryAbility",
-            parameters: { "callType": "forResult" }
-          };
-          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult start connectId:${connectId}`);
-          const result = await this.context.startAbilityForResult(want);
-          hilog.info(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult result: ${JSON.stringify(result)}`);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_success", {
-            'result': 200,
-            'resultCode': result.resultCode,
-            'hasWant': result.want ? 1 : 0
-          });
-        } catch (error) {
-          hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbilityForResult connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
-          publishEventWithData("webNativeMessaging1_startAbilityForResult_success", {
-            'result': error.code ?? 0,
-            'resultCode': -1,
-            'hasWant': 0
-          });
-        }
-      } else if (stringData.startsWith("startAbility")) {
+      if (stringData.startsWith("startAbility")) {
         try {
           let want: Want = {
             bundleName: "com.acts.context.webonconnectnativerely",
@@ -135,9 +60,9 @@ export default class WebExtensionAbility1 extends WebNativeMessagingExtensionAbi
         } catch (error) {
           hilog.error(0x0000, TAG, `WebExtensionAbility1 startAbility connectId:${connectId}, errorCode: ${error.code}, message: ${error.message}`);
         }
-      } else if(stringData.startsWith("terminateSelf")) {
+      }  else if(stringData.startsWith("terminateSelf")) {
         this.context.terminateSelf();
-      } else {
+      }else {
         hilog.error(0x0000, TAG, `WebExtensionAbility1 readPipe connectId:${connectId}, command unknown :${stringData}`);
       }
     } catch (error) {

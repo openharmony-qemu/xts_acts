@@ -23,35 +23,15 @@ import webNativeMessagingExtensionManager from '@ohos.web.webNativeMessagingExte
 import fs from '@ohos.file.fs';
 
 let context: common.UIAbilityContext;
-
 let sub: commonEventManager.CommonEventSubscriber;
-
 let pipeRead: testNapi.PipeResult = { readFd: -1, writeFd: -1 };
 let pipeWrite: testNapi.PipeResult = { readFd: -1, writeFd: -1 };
-
 let connId: number = 0;
-
-const CAPABILITY_NOT_SUPPORTED_ERROR = 801;
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
-    setTimeout(() => {
-      resolve('ok');
-    }, time);
+    setTimeout(() => resolve('ok'), time);
   });
-}
-
-async function SendCommand(command: string, fd: number) {
-  try {
-    let writeLen = await fs.write(fd, command);
-    if (writeLen <= 0) {
-      hilog.error(0x0000, 'testTag', `SendCommand writeLen <= 0`);
-      return;
-    }
-    hilog.info(0x0000, 'testTag', `SendCommand command ${command} ok`);
-  } catch (error) {
-    hilog.error(0x0000, 'testTag', `SendCommand failed, errorCode: ${error.code}, message: ${error.message}`);
-  }
 }
 
 function closePipe(pipe: testNapi.PipeResult) {
@@ -69,7 +49,7 @@ export default function startAbilityForResultPermissionTest() {
   describe('ActsStartAbilityForResultPermissionTest', () => {
     beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>('abilityContext') as common.UIAbilityContext;
-      hilog.info(0x0000, 'testTag', 'ActsStartAbilityForResultPermissionTest beforeAll start');
+      hilog.info(0x0000, 'testTag', 'ActsStartAbilityForResultPermissionTest beforeAll');
     });
 
     afterEach(async () => {
@@ -81,9 +61,9 @@ export default function startAbilityForResultPermissionTest() {
       }
       if (connId != 0) {
         webNativeMessagingExtensionManager.disconnectNative(connId).then(() => {
-          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id : ${connId} succeed`);
+          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id: ${connId} succeed`);
         }).catch((err: BusinessError) => {
-          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id : ${connId} error: ${JSON.stringify(err)}`);
+          hilog.info(0x0000, 'testTag', `afterEach disconnectNative id: ${connId} error: ${JSON.stringify(err)}`);
         });
         connId = 0;
       }
@@ -92,7 +72,9 @@ export default function startAbilityForResultPermissionTest() {
     /**
      * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300
      * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300
-     * @tc.desc   Test startAbilityForResult without WEB_NATIVE_MESSAGING permission returns error code 201
+     * @tc.desc   Test startAbilityForResult without ohos.permission.WEB_NATIVE_MESSAGING:
+     *            The extension ability (permission_rely, lacks WEB_NATIVE_MESSAGING) calls
+     *            this.context.startAbilityForResult in onConnectNative, should get error 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -100,7 +82,7 @@ export default function startAbilityForResultPermissionTest() {
     it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300', Level.LEVEL0,
       async (done: Function) => {
         await sleep(3000);
-        const tcNumber = `SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300`;
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0300';
         hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
 
         try {
@@ -121,7 +103,7 @@ export default function startAbilityForResultPermissionTest() {
           hilog.info(0x0000, 'testTag', `${tcNumber} createSubscriber succeed`);
           commonEventManager.subscribe(sub, (err, commonEventData) => {
             hilog.info(0x0000, 'testTag',
-              `${tcNumber} subscribe callback commonEventData: ${JSON.stringify(commonEventData)}`);
+              `${tcNumber} subscribe callback: ${JSON.stringify(commonEventData)}`);
             expect(commonEventData.parameters?.result).assertEqual(201);
             done();
           });
@@ -131,7 +113,7 @@ export default function startAbilityForResultPermissionTest() {
           bundleName: 'com.acts.context.webonconnectnativerelypermission',
           abilityName: 'WebNativeExtensionExtAbility1',
           parameters: {
-            'ohos.arkweb.extensionOrigin': 'testOrigin',
+            'ohos.arkweb.extensionOrigin': 'startAbilityForResult_permission',
             'ohos.arkweb.messageReadPipe': { 'type': 'FD', 'value': pipeWrite.readFd },
             'ohos.arkweb.messageWritePipe': { 'type': 'FD', 'value': pipeRead.writeFd }
           }
@@ -141,7 +123,6 @@ export default function startAbilityForResultPermissionTest() {
           onConnect(connection) {
             hilog.info(0x0000, 'testTag',
               `${tcNumber} onConnect connectionId: ${JSON.stringify(connection.connectionId)}`);
-            SendCommand('startAbilityForResult', pipeWrite.writeFd);
           },
           onDisconnect(connection) {
             hilog.info(0x0000, 'testTag',
@@ -149,14 +130,6 @@ export default function startAbilityForResultPermissionTest() {
           },
           onFailed(code, errMsg) {
             hilog.info(0x0000, 'testTag', `${tcNumber} onFailed code: ${code} errMsg: ${errMsg}`);
-            if (String(code) === '801') {
-              let flag = true;
-              hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-              expect(flag).assertEqual(true);
-              flag = false;
-              done();
-              return;
-            }
             expect(Number(code)).assertEqual(17100203);
             done();
           }
@@ -168,14 +141,6 @@ export default function startAbilityForResultPermissionTest() {
         } catch (err) {
           hilog.info(0x0000, 'testTag', `${tcNumber} connect failed: ${JSON.stringify(err)}`);
           connId = 0;
-          if (err.code === CAPABILITY_NOT_SUPPORTED_ERROR) {
-            let flag2 = true;
-            hilog.info(0x0000, 'testTag', `${tcNumber} Skipped - capability not supported (error 801)`);
-            expect(flag2).assertEqual(true);
-            flag2 = false;
-            done();
-            return;
-          }
           expect(Number(err.code)).assertEqual(801);
           done();
         }
