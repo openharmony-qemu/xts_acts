@@ -17,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-
 class MyClass001 {
   public static test(a: int, b: string): void {}
 }
@@ -148,7 +147,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
+      let paramType = method!.getParameterType(0);
       expect(paramType != null).assertTrue();
     });
 
@@ -164,8 +163,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
-      expect(paramType!= null).assertTrue();
+      let paramType = method!.getParameterType(0);
+      expect(paramType != null).assertTrue();
       expect(paramType!.getName()).assertEqual('i32');
     });
 
@@ -181,7 +180,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
+      let paramType = method!.getParameterType(0);
       expect(paramType!.getName()).assertEqual('i32');
     });
 
@@ -197,7 +196,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass004>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(1);
+      let paramType = method!.getParameterType(1);
       expect(paramType!.getName()).assertEqual('std.core.String');
     });
 
@@ -276,8 +275,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
-      expect(paramType!= null).assertTrue();
+      let paramType = method!.getParameterType(0);
+      expect(paramType != null).assertTrue();
       expect(paramType!.getName()).assertEqual('i32');
       expect(paramType!.isPrimitive()).assertTrue();
     });
@@ -374,10 +373,10 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
+      let paramType = method!.getParameterType(0);
       if (paramType !== undefined) {
         expect(typeof paramType).assertEqual('object');
-        expect(paramType.getName!= null).assertTrue();
+        expect(paramType.getName != null).assertTrue();
       }
     });
 
@@ -393,11 +392,11 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramType =method!.getParameterType(0);
-      expect(paramType!.getName()!= null).assertTrue();
-      expect(paramType!.isPrimitive()!= null).assertTrue();
-      expect(paramType!.isInterface()!= null).assertTrue();
-      expect(paramType!.isFinal()!= null).assertTrue();
+      let paramType = method!.getParameterType(0);
+      expect(paramType!.getName() != null).assertTrue();
+      expect(paramType!.isPrimitive() != null).assertTrue();
+      expect(paramType!.isInterface() != null).assertTrue();
+      expect(paramType!.isFinal() != null).assertTrue();
     });
 
     /**
@@ -409,7 +408,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let method = Class.from<MyClass015>().getStaticMethod('test');
+      let cls015 = Class.from<MyClass015>();
+      let method = cls015.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
     });
@@ -423,7 +423,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let method = Class.from<MyClass016>().getStaticMethod('test');
+      let cls016 = Class.from<MyClass016>();
+      let method = cls016.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(2)!.getName()).assertEqual('u1');
     });
@@ -437,7 +438,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let method = Class.from<MyClass017>().getStaticMethod('singleParam');
+      let cls017 = Class.from<MyClass017>();
+      let method = cls017.getStaticMethod('singleParam');
       expect(method != undefined).assertTrue();
       expect(method!.getParameterType(0)!.getName()).assertEqual('i32');
     });
@@ -455,7 +457,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       try {
-        let paramType =method!.getParameterType(0);
+        let paramType = method!.getParameterType(0);
         expect(paramType != null).assertTrue();
       } catch (error) {
         expect().assertFail();
@@ -508,8 +510,10 @@ export default function StaticMethodGetParameterTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<AbstractClass021>().getStaticMethod('abstractMethod');
-      let m2 = Class.from<FinalClass021>().getStaticMethod('finalMethod');
+      let clsAbs = Class.from<AbstractClass021>();
+      let clsFin = Class.from<FinalClass021>();
+      let m1 = clsAbs.getStaticMethod('abstractMethod');
+      let m2 = clsFin.getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m1!.getParameterType(0)!.getName()).assertEqual('std.core.String');
@@ -528,7 +532,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass022>();
       let setter = cls.getStaticMethod('%%set-name');
       expect(setter != undefined).assertTrue();
-      let paramType =setter!.getParameterType(0);
+      let paramType = setter!.getParameterType(0);
       expect(paramType!.getName()).assertEqual('std.core.String');
     });
 
@@ -546,9 +550,9 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method != undefined).assertTrue();
       let paramNum: int = method!.getParametersNum();
       for (let i: int = 0; i < paramNum; i++) {
-        let paramType =method!.getParameterType(i);
-        expect(paramType!= null).assertTrue();
-        expect(paramType!.getName()!= null).assertTrue();
+        let paramType = method!.getParameterType(i);
+        expect(paramType != null).assertTrue();
+        expect(paramType!.getName() != null).assertTrue();
       }
     });
 
@@ -566,7 +570,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       for (let i: int = 0; i < paramTypes.length; i++) {
-        let paramType =method!.getParameterType(i);
+        let paramType = method!.getParameterType(i);
         expect(paramType!.getName()).assertEqual(paramTypes[i].getName());
       }
     });

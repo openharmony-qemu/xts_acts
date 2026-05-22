@@ -234,8 +234,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
-      // types.md:1327 — 可选参数实际类型为 T|undefined (union)
-      // 运行时: isUnion() 返回 false，与规范 T|undefined 是 union 不一致
+      // spec/types.md:1327: optional parameter type is T|undefined (nullish union).
+      // Known divergence: at runtime isUnion() returns false for this union type.
       expect(paramTypes[1].getName().includes('String')).assertTrue();
     });
 
@@ -459,8 +459,10 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let m1 = Class.from<AbstractClass018>().getStaticMethod('abstractMethod');
-      let m2 = Class.from<FinalClass018>().getStaticMethod('finalMethod');
+      let clsAbs = Class.from<AbstractClass018>();
+      let clsFin = Class.from<FinalClass018>();
+      let m1 = clsAbs.getStaticMethod('abstractMethod');
+      let m2 = clsFin.getStaticMethod('finalMethod');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       let p1: FixedArray<Class> = m1!.getParameterTypes();

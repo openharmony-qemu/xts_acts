@@ -289,8 +289,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m2 = cls.getStaticMethod('returnUndefinable');
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
-      // types.md:1725 — T|undefined 是 nullish union 类型
-      // 运行时: int|undefined 的 isUnion() 返回 false，与规范不一致
+      // spec/types.md:1725: T|undefined is a nullish union type, isUnion() should return true.
+      // Known divergence: at runtime isUnion() returns false for int|undefined.
       expect(m1!.getReturnType().isUnion()).assertTrue();
       expect(m2!.getReturnType().isUnion()).assertFalse();
     });

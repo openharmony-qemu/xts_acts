@@ -167,8 +167,10 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let methods = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+let m = cls.getStaticMethod('test');
+      expect(m === undefined).assertTrue();
     });
 
     /**
@@ -182,8 +184,10 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let methods = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+let m = cls.getStaticMethod('test');
+      expect(m === undefined).assertTrue();
     });
 
     /**
@@ -213,8 +217,10 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let methods = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+let m = cls.getStaticMethod('protectedMethod');
+      expect(m === undefined).assertTrue();
     });
 
     /**
@@ -226,9 +232,12 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass005>().getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      let cls5 = Class.from<MyClass005>();
+      let methods = cls5.getStaticMethods();
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+      let privateM = cls5.getStaticMethod('privateAsyncMethod');
+      expect(privateM === undefined).assertTrue();
     });
 
     /**
@@ -240,9 +249,12 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass006>().getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      let cls6 = Class.from<MyClass006>();
+      let methods = cls6.getStaticMethods();
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+      let privateM = cls6.getStaticMethod('privateFinalMethod');
+      expect(privateM === undefined).assertTrue();
     });
 
     /**
@@ -254,9 +266,12 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<AbstractClass007>().getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      let cls7 = Class.from<AbstractClass007>();
+      let methods = cls7.getStaticMethods();
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+      let privateM = cls7.getStaticMethod('privateMethod');
+      expect(privateM === undefined).assertTrue();
     });
 
     /**
@@ -268,9 +283,12 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<FinalClass008>().getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
+      let cls8 = Class.from<FinalClass008>();
+      let methods = cls8.getStaticMethods();
+      // getStaticMethods() only returns public methods at runtime
       expect(methods.length).assertEqual(0);
+      let privateM = cls8.getStaticMethod('privateMethod');
+      expect(privateM === undefined).assertTrue();
     });
 
     /**
@@ -366,7 +384,8 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 不抛异常
-      let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
+      let cls003 = Class.from<MyClass003>();
+      let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       try {
         let isPrivate: boolean = method!.isPrivate();
@@ -386,7 +405,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass015>().getStaticMethods();
+      let cls15 = Class.from<MyClass015>();
+      let methods = cls15.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -400,7 +420,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass016>().getStaticMethods();
+      let cls16 = Class.from<MyClass016>();
+      let methods = cls16.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -414,7 +435,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass017>().getStaticMethods();
+      let cls17 = Class.from<MyClass017>();
+      let methods = cls17.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -428,7 +450,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass018>().getStaticMethods();
+      let cls18 = Class.from<MyClass018>();
+      let methods = cls18.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -463,9 +486,12 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 运行时实际: getStaticMethods() 只返回 public 方法
-      let m1Methods = Class.from<AbstractClass020>().getStaticMethods();
-      let m2Methods = Class.from<FinalClass020>().getStaticMethods();
-      let m3Methods = Class.from<NormalClass020>().getStaticMethods();
+      let clsAbs20 = Class.from<AbstractClass020>();
+      let clsFin20 = Class.from<FinalClass020>();
+      let clsNor20 = Class.from<NormalClass020>();
+      let m1Methods = clsAbs20.getStaticMethods();
+      let m2Methods = clsFin20.getStaticMethods();
+      let m3Methods = clsNor20.getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
       expect(m3Methods.length).assertEqual(0);
@@ -480,7 +506,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass021>().getStaticMethods();
+      let cls021 = Class.from<MyClass021>();
+      let methods = cls021.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -494,7 +521,8 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass022>().getStaticMethods();
+      let cls022 = Class.from<MyClass022>();
+      let methods = cls022.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(0);
     });
@@ -531,7 +559,8 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate 与其他属性检查的组合
-      let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
+      let cls003 = Class.from<MyClass003>();
+      let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isPrivate()).assertFalse();
       expect(method!.isPublic()).assertTrue();

@@ -241,7 +241,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass005>().getStaticMethods();
+      let cls005 = Class.from<MyClass005>();
+      let methods = cls005.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
@@ -255,7 +256,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass006>().getStaticMethods();
+      let cls006 = Class.from<MyClass006>();
+      let methods = cls006.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
     });
@@ -269,7 +271,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<AbstractClass007>().getStaticMethods();
+      let cls007 = Class.from<AbstractClass007>();
+      let methods = cls007.getStaticMethods();
       // 运行时: getStaticMethods() 不返回抽象类的 protected 方法
       expect(methods.length).assertEqual(0);
     });
@@ -283,7 +286,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<FinalClass008>().getStaticMethods();
+      let cls008 = Class.from<FinalClass008>();
+      let methods = cls008.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 final 类的 protected 方法
       expect(methods.length).assertEqual(0);
     });
@@ -381,8 +385,10 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 运行时: getStaticMethods() 不返回 protected 方法，继承关系同理
-      let parentMethods = Class.from<ParentClass014>().getStaticMethods();
-      let childMethods = Class.from<ChildClass014>().getStaticMethods();
+      let parentCls = Class.from<ParentClass014>();
+      let childCls = Class.from<ChildClass014>();
+      let parentMethods = parentCls.getStaticMethods();
+      let childMethods = childCls.getStaticMethods();
       expect(parentMethods.length).assertEqual(0);
       expect(childMethods.length).assertEqual(0);
     });
@@ -397,7 +403,8 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected() 不抛异常
-      let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
+      let cls003 = Class.from<MyClass003>();
+      let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       try {
         let isProtected: boolean = method!.isProtected();
@@ -417,7 +424,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass016>().getStaticMethods();
+      let cls016 = Class.from<MyClass016>();
+      let methods = cls016.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected final 方法
       expect(methods.length).assertEqual(0);
     });
@@ -431,7 +439,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass017>().getStaticMethods();
+      let cls017 = Class.from<MyClass017>();
+      let methods = cls017.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
@@ -445,7 +454,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass018>().getStaticMethods();
+      let cls018 = Class.from<MyClass018>();
+      let methods = cls018.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected 方法
       expect(methods.length).assertEqual(0);
     });
@@ -459,7 +469,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let methods = Class.from<MyClass019>().getStaticMethods();
+      let cls019 = Class.from<MyClass019>();
+      let methods = cls019.getStaticMethods();
       // 运行时: getStaticMethods() 不返回 protected async 方法
       expect(methods.length).assertEqual(0);
     });
@@ -494,9 +505,12 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 运行时: getStaticMethods() 不返回 protected 方法
-      let m1Methods = Class.from<AbstractClass021>().getStaticMethods();
-      let m2Methods = Class.from<FinalClass021>().getStaticMethods();
-      let m3Methods = Class.from<NormalClass021>().getStaticMethods();
+      let clsAbs = Class.from<AbstractClass021>();
+      let clsFin = Class.from<FinalClass021>();
+      let clsNor = Class.from<NormalClass021>();
+      let m1Methods = clsAbs.getStaticMethods();
+      let m2Methods = clsFin.getStaticMethods();
+      let m3Methods = clsNor.getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
       expect(m3Methods.length).assertEqual(0);
@@ -512,8 +526,10 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 运行时: getStaticMethods() 不返回 protected 方法
-      let m1Methods = Class.from<MyClass022>().getStaticMethods();
-      let m2Methods = Class.from<MyClass023>().getStaticMethods();
+      let cls022 = Class.from<MyClass022>();
+      let cls023 = Class.from<MyClass023>();
+      let m1Methods = cls022.getStaticMethods();
+      let m2Methods = cls023.getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
     });
@@ -550,7 +566,8 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected 与其他属性检查的组合
-      let method = Class.from<MyClass003>().getStaticMethod('publicMethod');
+      let cls003 = Class.from<MyClass003>();
+      let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isProtected()).assertFalse();
       expect(method!.isPublic()).assertTrue();

@@ -17,7 +17,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-
 // All test classes extracted here with numbered suffixes
 
 class StaticMethodEqualsSingleTestClass001 {
@@ -51,7 +50,7 @@ class StaticMethodEqualsDifferentReturnClass006 {
   public static testReturnString(): string {
     return '';
   }
-  public static testReturnInt(): number {
+  public static testReturnInt(): int {
     return 0;
   }
 }
