@@ -920,7 +920,7 @@ int NULL_CHECK_032()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
     ASSERT_EQ(ret, false);
 
     return AV_ERR_OK;
@@ -961,7 +961,7 @@ int NULL_CHECK_034()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, nullptr, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, nullptr, rectData.size());
     OH_AVFormat_Destroy(format);
 
     ASSERT_EQ(ret, false);
@@ -982,7 +982,7 @@ int NULL_CHECK_035()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, 0);
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, 0);
     OH_AVFormat_Destroy(format);
 
     ASSERT_EQ(ret, false);
@@ -1003,13 +1003,13 @@ int NULL_CHECK_036()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
     ASSERT_EQ(ret, true);
 
     int32_t *rectBuffer = nullptr;
     size_t bufferSize;
     
-    ret = OH_AVFormat_GetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, &rectBuffer, &bufferSize);
+    ret = OH_AVFormat_GetIntBuffer(nullptr, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, &rectBuffer, &bufferSize);
     OH_AVFormat_Destroy(format);
     ASSERT_EQ(ret, false);
     return AV_ERR_OK;
@@ -1029,7 +1029,7 @@ int NULL_CHECK_037()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
     ASSERT_EQ(ret, true);
 
     int32_t *rectBuffer = nullptr;
@@ -1055,13 +1055,13 @@ int NULL_CHECK_038()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
     ASSERT_EQ(ret, true);
 
     int32_t *rectBuffer = nullptr;
     size_t bufferSize;
     
-    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, nullptr, &bufferSize);
+    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, nullptr, &bufferSize);
     OH_AVFormat_Destroy(format);
     ASSERT_EQ(ret, false);
     return AV_ERR_OK;
@@ -1081,13 +1081,13 @@ int NULL_CHECK_039()
     std::vector<int32_t> rectData = { 0, 0, 5, 5 };
     int32_t* rectDepth = rectData.data();
 
-    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, rectDepth, rectData.size());
+    bool ret = OH_AVFormat_SetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
     ASSERT_EQ(ret, true);
 
     int32_t *rectBuffer = nullptr;
     size_t bufferSize;
     
-    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_WINDOW_RECT, &rectBuffer, nullptr);
+    ret = OH_AVFormat_GetIntBuffer(format, OH_MD_KEY_SCREEN_CAPTURE_CONTENT_RECT, &rectBuffer, nullptr);
     OH_AVFormat_Destroy(format);
     ASSERT_EQ(ret, false);
     return AV_ERR_OK;
