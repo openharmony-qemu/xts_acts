@@ -57,7 +57,7 @@ export default function animateToTest() {
       let button: Component = await driver.findComponent(ON.id('animateToTestBt'));
       await button.click()
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('animateToTest');
+      let strJson = getInspectorByKey('animateToTest_animateToTest');
       await CommonFunc.sleep(200);
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[animateToTest_001] component obj is: " + JSON.stringify(obj));

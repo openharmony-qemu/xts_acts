@@ -35,7 +35,7 @@ struct Index11 {
                 this.enableStateAnimationIndex = 0;
               })
 
-            Button('true').key('true')
+            Button('true').key('segmentButtonEnableStateAnimation_true')
               .onClick(() => {
                 this.enableStateAnimationIndex = 1;
               })

@@ -58,11 +58,11 @@ export default function TabSegmentButtonV2Animation() {
     it('TabSegmentButtonV2Animation_001', Level.LEVEL0, async (done: Function) => {
       console.log("[TabSegmentButtonV2Animation_001] START");
       const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('true'));
+      const button = await driver.findComponent(ON.id('TabSegmentButtonV2Animation_true'));
       await button.click();
       await driver.delayMs(1000);
 
-      let textJ = getInspectorByKey('text');
+      let textJ = getInspectorByKey('TabSegmentButtonV2Animation_text');
       let text: ESObject = JSON.parse(textJ);
 
       expect(text.$attrs.content).assertEqual('true');

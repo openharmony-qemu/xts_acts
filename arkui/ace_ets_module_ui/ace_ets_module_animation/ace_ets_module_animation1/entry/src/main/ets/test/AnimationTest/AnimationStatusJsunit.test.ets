@@ -105,7 +105,7 @@ export default function  animationStatusJsunit() {
       } catch (err) {
         console.info("animationStatus03 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animationStatus03 click result is: " + JSON.stringify(sendEventByKey('button2',10,"")));
+      console.info("animationStatus03 click result is: " + JSON.stringify(sendEventByKey('animationStatus_button2',10,"")));
       await CommonFunc.sleep(1000);
       console.info('animationStatus03 END');
     });
@@ -135,7 +135,7 @@ export default function  animationStatusJsunit() {
       } catch (err) {
         console.info("animationStatus04 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animationStatus04 click result is: " + JSON.stringify(sendEventByKey('button3',10,"")));
+      console.info("animationStatus04 click result is: " + JSON.stringify(sendEventByKey('animationStatus_button3',10,"")));
       await CommonFunc.sleep(1000);
       console.info('animationStatus04 END');
     });

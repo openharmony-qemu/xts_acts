@@ -21,7 +21,7 @@ struct AlphabetIndexerAttributeNullUndefined {
     Column({space: 5}) {
       Row() {
         AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-          .key('alphabet_1')
+          .key('AlphabetIndexerAttributeNullUndefined_alphabet_1')
           .autoCollapse(false)
           .selectedColor(0xFFFFFF)
           .popupColor(0xFFFAF0)

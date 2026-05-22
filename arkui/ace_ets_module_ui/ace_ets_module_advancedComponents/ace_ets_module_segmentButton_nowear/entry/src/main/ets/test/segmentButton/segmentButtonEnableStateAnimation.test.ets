@@ -58,7 +58,7 @@ export default function segmentButtonEnableStateAnimation() {
     it('segmentButtonEnableStateAnimation_001', Level.LEVEL0, async (done: Function) => {
       console.log("[segmentButtonEnableStateAnimationt_001] START");
       const driver = Driver.create();
-      const button = await driver.findComponent(ON.id('true'));
+      const button = await driver.findComponent(ON.id('segmentButtonEnableStateAnimation_true'));
       await button.click();
       await driver.delayMs(1000);
 

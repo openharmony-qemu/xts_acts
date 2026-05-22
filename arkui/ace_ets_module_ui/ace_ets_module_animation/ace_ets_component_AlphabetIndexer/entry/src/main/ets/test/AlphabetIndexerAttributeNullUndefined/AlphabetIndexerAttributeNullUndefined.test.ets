@@ -57,7 +57,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       let objdefault: ESObject = JSON.parse(strJsondefault);
       console.info(`${testName} default popupBackground: ` + objdefault.$attrs.popupBackground);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info(`${testName} 1 popupBackground: ` + obj1.$attrs.popupBackground);
 
@@ -87,7 +87,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       let objdefault: ESObject = JSON.parse(strJsondefault);
       console.info('[AlphabetIndexer_0200] default popupSelectedColor: ' + objdefault.$attrs.popupSelectedColor);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0200] 1 popupSelectedColor: ' + obj1.$attrs.popupSelectedColor);
 
@@ -117,7 +117,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       let objdefault: ESObject = JSON.parse(strJsondefault);
       console.info('[AlphabetIndexer_0300] default popupFont: ' + objdefault.$attrs.popupFont);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0300] 1 popupFont: ' + JSON.stringify(obj1.$attrs.popupFont));
 
@@ -147,7 +147,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0400] default popupItemBackgroundColor: '
         + objdefault.$attrs.popupItemBackgroundColor);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0400] 1 popupItemBackgroundColor: ' + obj1.$attrs.popupItemBackgroundColor);
 
@@ -178,7 +178,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0500] default selectedFont: '
         + objdefault.$attrs.selectedFont);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0500] 1 selectedFont: ' + JSON.stringify(obj1.$attrs.selectedFont));
 
@@ -208,7 +208,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0600] default popupItemFont: '
         + objdefault.$attrs.popupItemFont);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0600] 1 popupItemFont: ' + obj1.$attrs.popupItemFont);
 
@@ -239,7 +239,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0700] default font: '
         + objdefault.$attrs.font);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0700] 1 font: ' + JSON.stringify(obj1.$attrs.font));
 
@@ -269,7 +269,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0800] default selected: '
         + objdefault.$attrs.selected);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0800] 1 selected: ' + obj1.$attrs.selected);
 
@@ -300,7 +300,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_0900] default popupPosition: '
         + objdefault.$attrs.popupPosition);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_0900] 1 popupPosition: ' + JSON.stringify(obj1.$attrs.popupPosition));
 
@@ -331,7 +331,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_1000] default popupItemBorderRadius: '
         + objdefault.$attrs.popupItemBorderRadius);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_1000] 1 popupItemBorderRadius: ' + obj1.$attrs.popupItemBorderRadius);
 
@@ -362,7 +362,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_1100] default itemBorderRadius: '
         + objdefault.$attrs.itemBorderRadius);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_1100] 1 itemBorderRadius: ' + obj1.$attrs.itemBorderRadius);
 
@@ -393,7 +393,7 @@ export default function AlphabetIndexerAttributeNullUndefined() {
       console.info('[AlphabetIndexer_1200] default popupBackgroundBlurStyle: '
         + objdefault.$attrs.popupBackgroundBlurStyle);
 
-      let strJson1 = getInspectorByKey('alphabet_1');
+      let strJson1 = getInspectorByKey('AlphabetIndexerAttributeNullUndefined_alphabet_1');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info('[AlphabetIndexer_1200] 1 popupBackgroundBlurStyle: ' + obj1.$attrs.popupBackgroundBlurStyle);
 

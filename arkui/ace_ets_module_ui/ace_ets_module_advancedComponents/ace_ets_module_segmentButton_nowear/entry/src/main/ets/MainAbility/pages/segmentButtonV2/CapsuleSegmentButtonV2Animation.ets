@@ -66,7 +66,7 @@ struct CapsuleSegmentButtonV2Example {
                 this.enableStateAnimationIndex = 0;
               })
 
-            Button('true').key('true')
+            Button('true').key('CapsuleSegmentButtonV2Animation_true')
               .onClick(() => {
                 this.enableStateAnimationIndex = 1;
               })
@@ -76,7 +76,7 @@ struct CapsuleSegmentButtonV2Example {
                 this.enableStateAnimationIndex = 2;
               })
 
-        Text('' + this.enableStateAnimation[this.enableStateAnimationIndex]).fontSize(18).fontWeight(FontWeight.Bold).key('text')
+        Text('' + this.enableStateAnimation[this.enableStateAnimationIndex]).fontSize(18).fontWeight(FontWeight.Bold).key('CapsuleSegmentButtonV2Animation_text')
         CapsuleSegmentButtonV2({
           items: this.textItems,
           selectedIndex: this.textSelectedIndex!!,
@@ -89,7 +89,7 @@ struct CapsuleSegmentButtonV2Example {
           buttonBackgroundBlurStyleOptions: undefined,
           buttonPadding: this.buttonPadding,
           enableStateAnimation: this.enableStateAnimation[this.enableStateAnimationIndex]
-        }).key('TabSegmentButtonV2_01')
+        }).key('CapsuleSegmentButtonV2Animation_TabSegmentButtonV2_01')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

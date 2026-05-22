@@ -81,7 +81,7 @@ struct TabSegmentButtonV2Example {
           itemSelectedFontWeight: this.itemSelectedFontWeight,
           itemBorderRadius: this.itemBorderRadius,
           itemSelectedBackgroundColor: this.itemSelectedBackgroundColor
-        }).key('TabSegmentButtonV2_01')
+        }).key('TabSegmentButtonV2Example_TabSegmentButtonV2_01')
 
         TabSegmentButtonV2({
           items: this.hybridItems,
@@ -89,7 +89,7 @@ struct TabSegmentButtonV2Example {
           itemSymbolFontSize: this.itemSymbolFontSize,
           itemSymbolFontColor: this.itemSymbolFontColor,
           itemSelectedSymbolFontColor: this.itemSelectedSymbolFontColor
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2Example_TabSegmentButtonV2_02_01')
 
         TabSegmentButtonV2({
           items: this.imageItems,
@@ -101,7 +101,7 @@ struct TabSegmentButtonV2Example {
           },
           itemIconFillColor: this.itemIconFillColor,
           itemSelectedIconFillColor: this.itemSelectedIconFillColor,
-        }).key('TabSegmentButtonV2_02')
+        }).key('TabSegmentButtonV2Example_TabSegmentButtonV2_02_02')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

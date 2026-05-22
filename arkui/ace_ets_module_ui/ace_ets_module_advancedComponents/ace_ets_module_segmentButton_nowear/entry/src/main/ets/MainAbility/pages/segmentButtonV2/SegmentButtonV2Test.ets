@@ -70,13 +70,13 @@ struct CapsuleSegmentButtonV2Example {
           buttonBackgroundBlurStyle: this.buttonBackgroundBlurStyle,
           buttonBackgroundBlurStyleOptions: undefined,
           buttonPadding: this.buttonPadding,
-        }).key('TabSegmentButtonV2_01')
+        }).key('SegmentButtonV2Test_TabSegmentButtonV2_01')
 
         CapsuleSegmentButtonV2({
           items: this.hybridItems,
           selectedIndex: this.hybridSelectedIndex!!,
           itemSymbolFontSize: this.itemSymbolFontSize,
-        }).key('TabSegmentButtonV2_02')
+        }).key('SegmentButtonV2Test_TabSegmentButtonV2_02_01')
 
         CapsuleSegmentButtonV2({
           items: this.imageItems,
@@ -93,7 +93,7 @@ struct CapsuleSegmentButtonV2Example {
           buttonBackgroundBlurStyleOptions: undefined,
           buttonPadding: this.buttonPadding,
 
-        }).key('TabSegmentButtonV2_02')
+        }).key('SegmentButtonV2Test_TabSegmentButtonV2_02_02')
       }
       .constraintSize({ minHeight: '100%' })
       .justifyContent(FlexAlign.Start)

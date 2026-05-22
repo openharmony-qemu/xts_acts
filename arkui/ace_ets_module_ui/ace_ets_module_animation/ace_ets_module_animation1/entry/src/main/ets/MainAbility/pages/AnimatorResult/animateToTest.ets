@@ -27,7 +27,7 @@ struct AnimateToImmediatelyExample {
 
   build() {
     Column() {
-      Text(this.text).key('animateToTest')
+      Text(this.text).key('animateToTest_animateToTest')
       Column()
         .width(this.widthSize)
         .height(this.heightSize)

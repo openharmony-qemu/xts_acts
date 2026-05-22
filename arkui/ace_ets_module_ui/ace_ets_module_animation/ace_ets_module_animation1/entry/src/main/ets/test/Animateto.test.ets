@@ -74,7 +74,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0100 click result is: " + JSON.stringify(sendEventByKey('button1', 10, "")));
+      console.info("animateToJunits_0100 click result is: " + JSON.stringify(sendEventByKey('animateto_button1', 10, "")));
     });
 
     /**
@@ -102,7 +102,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0200 click result is: " + JSON.stringify(sendEventByKey('button2', 10, "")));
+      console.info("animateToJunits_0200 click result is: " + JSON.stringify(sendEventByKey('animateto_button2', 10, "")));
     });
 
     /**
@@ -134,7 +134,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0300 click result is: " + JSON.stringify(sendEventByKey('button3', 10, "")));
+      console.info("animateToJunits_0300 click result is: " + JSON.stringify(sendEventByKey('animateto_button3', 10, "")));
     });
 
     /**
@@ -162,7 +162,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0400 click result is: " + JSON.stringify(sendEventByKey('button4', 10, "")));
+      console.info("animateToJunits_0400 click result is: " + JSON.stringify(sendEventByKey('animateto_button4', 10, "")));
     });
 
     /**
@@ -190,7 +190,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0500 click result is: " + JSON.stringify(sendEventByKey('button5', 10, "")));
+      console.info("animateToJunits_0500 click result is: " + JSON.stringify(sendEventByKey('animateto_button5', 10, "")));
     });
 
     /**
@@ -226,7 +226,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0600 click result is: " + JSON.stringify(sendEventByKey('button11', 10, "")));
+      console.info("animateToJunits_0600 click result is: " + JSON.stringify(sendEventByKey('animateto_button11', 10, "")));
     });
 
     /**
@@ -262,7 +262,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0700 click result is: " + JSON.stringify(sendEventByKey('button12', 10, "")));
+      console.info("animateToJunits_0700 click result is: " + JSON.stringify(sendEventByKey('animateto_button12', 10, "")));
     });
 
     /**
@@ -298,7 +298,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0800 click result is: " + JSON.stringify(sendEventByKey('button13', 10, "")));
+      console.info("animateToJunits_0800 click result is: " + JSON.stringify(sendEventByKey('animateto_button13', 10, "")));
     });
 
     /**
@@ -334,7 +334,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_0900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_0900 click result is: " + JSON.stringify(sendEventByKey('button14', 10, "")));
+      console.info("animateToJunits_0900 click result is: " + JSON.stringify(sendEventByKey('animateto_button14', 10, "")));
     });
 
     /**
@@ -370,7 +370,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1000 click result is: " + JSON.stringify(sendEventByKey('button15', 10, "")));
+      console.info("animateToJunits_1000 click result is: " + JSON.stringify(sendEventByKey('animateto_button15', 10, "")));
     });
 
     /**
@@ -406,7 +406,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1100 click result is: " + JSON.stringify(sendEventByKey('button6', 10, "")));
+      console.info("animateToJunits_1100 click result is: " + JSON.stringify(sendEventByKey('animateto_button6', 10, "")));
     });
 
     /**
@@ -442,7 +442,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1200 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1200 click result is: " + JSON.stringify(sendEventByKey('button7', 10, "")));
+      console.info("animateToJunits_1200 click result is: " + JSON.stringify(sendEventByKey('animateto_button7', 10, "")));
     });
 
     /**
@@ -478,7 +478,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1300 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1300 click result is: " + JSON.stringify(sendEventByKey('button8', 10, "")));
+      console.info("animateToJunits_1300 click result is: " + JSON.stringify(sendEventByKey('animateto_button8', 10, "")));
     });
 
     /**
@@ -514,7 +514,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1400 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1400 click result is: " + JSON.stringify(sendEventByKey('button9', 10, "")));
+      console.info("animateToJunits_1400 click result is: " + JSON.stringify(sendEventByKey('animateto_button9', 10, "")));
     });
 
     /**
@@ -550,7 +550,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1500 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1500 click result is: " + JSON.stringify(sendEventByKey('button10', 10, "")));
+      console.info("animateToJunits_1500 click result is: " + JSON.stringify(sendEventByKey('animateto_button10', 10, "")));
     });
 
     /**
@@ -586,7 +586,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1600 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1600 click result is: " + JSON.stringify(sendEventByKey('button111', 10, "")));
+      console.info("animateToJunits_1600 click result is: " + JSON.stringify(sendEventByKey('animateto_button111', 10, "")));
     });
 
     /**
@@ -622,7 +622,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1700 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1700 click result is: " + JSON.stringify(sendEventByKey('button121', 10, "")));
+      console.info("animateToJunits_1700 click result is: " + JSON.stringify(sendEventByKey('animateto_button121', 10, "")));
     });
 
     /**
@@ -658,7 +658,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1800 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1800 click result is: " + JSON.stringify(sendEventByKey('button131', 10, "")));
+      console.info("animateToJunits_1800 click result is: " + JSON.stringify(sendEventByKey('animateto_button131', 10, "")));
     });
 
     /**
@@ -694,7 +694,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_1900 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_1900 click result is: " + JSON.stringify(sendEventByKey('button141', 10, "")));
+      console.info("animateToJunits_1900 click result is: " + JSON.stringify(sendEventByKey('animateto_button141', 10, "")));
     });
 
     /**
@@ -730,7 +730,7 @@ export default function animateToJunits() {
       } catch (err) {
         console.info("animateToJunits_2000 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("animateToJunits_2000 click result is: " + JSON.stringify(sendEventByKey('button151', 10, "")));
+      console.info("animateToJunits_2000 click result is: " + JSON.stringify(sendEventByKey('animateto_button151', 10, "")));
     });
 
     /**
