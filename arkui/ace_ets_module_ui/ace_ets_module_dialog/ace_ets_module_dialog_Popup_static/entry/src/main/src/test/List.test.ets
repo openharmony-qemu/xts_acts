@@ -20,7 +20,13 @@ import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
 import PopupCommonTest from './PopupTest/PopupCommon.test';
 import PopupOptionsTest from './PopupTest/PopupOptions.test';
 import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
-import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test'
+import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test';
+import ActionMenuOptionsSystemMaterialTest from './dialogSystemMaterial/ActionMenuOptionsSystemMaterial.test';
+import ActionSheetOptionsSystemMaterialTest from './dialogSystemMaterial/ActionSheetOptionsSystemMaterial.test';
+import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSystemMaterial.test';
+import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
+import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
+import ShowToastOptionsTest from './dialogSystemMaterial/ShowToastOptions.test';
 
 export default function testsuite() {
   popupTest();
@@ -30,4 +36,10 @@ export default function testsuite() {
   PopupOptionsTest();
   TipsOptionsTest();
   ImmersiveOptionsApplyShadowTest();
+  ActionMenuOptionsSystemMaterialTest();
+  ActionSheetOptionsSystemMaterialTest();
+  AlertDialogSystemMaterialTest();
+  BaseDialogOptionsSystemMaterialTest();
+  ShowDialogOptionsSystemMaterialTest();
+  ShowToastOptionsTest();
 }
