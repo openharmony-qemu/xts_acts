@@ -67,7 +67,7 @@ export default function BigIntFromULongTest(): void {
     it('testBigIntFromULongReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const result = BigInt.fromULong(1);
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
         expect(result.toString()).assertEqual('1');
       });
 

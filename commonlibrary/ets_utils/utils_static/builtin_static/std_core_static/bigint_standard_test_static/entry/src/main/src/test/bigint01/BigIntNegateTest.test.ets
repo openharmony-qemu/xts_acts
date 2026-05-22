@@ -93,7 +93,7 @@ export default function BigIntNegateTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const value = BigInt(8);
         const result = value.negate();
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
         expect(value.toString()).assertEqual('8');
         expect(result !== value).assertTrue();
       });

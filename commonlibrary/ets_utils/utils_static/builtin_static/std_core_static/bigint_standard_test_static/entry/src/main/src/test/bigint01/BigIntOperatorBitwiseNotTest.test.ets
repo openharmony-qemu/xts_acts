@@ -97,7 +97,7 @@ export default function BigIntOperatorBitwiseNotTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const five = BigInt(5);
         const result = five.operatorBitwiseNot();
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
         expect(result.equals(five)).assertFalse();
       });
 

@@ -44,7 +44,7 @@ export default function BigIntValueOfTest(): void {
      */
     it('testBigIntValueOfReturnType0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).valueOf() instanceof BigInt).assertTrue();
+        expect(typeof BigInt(42).valueOf() === 'bigint').assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0300

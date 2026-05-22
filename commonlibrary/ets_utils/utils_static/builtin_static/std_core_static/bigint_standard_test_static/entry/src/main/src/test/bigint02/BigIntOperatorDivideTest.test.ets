@@ -74,7 +74,7 @@ export default function BigIntOperatorDivideTest(): void {
     it('testBigIntOperatorDivideReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const result = BigInt(10).operatorDivide(BigInt(3));
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0500

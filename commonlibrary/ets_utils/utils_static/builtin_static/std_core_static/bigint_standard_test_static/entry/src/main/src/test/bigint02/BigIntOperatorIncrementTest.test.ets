@@ -65,7 +65,7 @@ export default function BigIntOperatorIncrementTest(): void {
      */
     it('testBigIntOperatorIncrementReturnType0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(1).operatorIncrement() instanceof BigInt).assertTrue();
+        expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
       });
   });
 }

@@ -49,7 +49,7 @@ export default function BigintTypeAliasTest(): void {
         const b: bigint = BigInt(20);
         const sum: bigint = a.operatorAdd(b);
         expect(sum.toString()).assertEqual('30');
-        expect(a instanceof BigInt).assertTrue();
+        expect(typeof a === 'bigint').assertTrue();
         const asClass: bigint = a;
         expect(asClass.equals(a)).assertTrue();
       });

@@ -73,7 +73,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
      */
     it('testBigIntOperatorLeftShiftReturn0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(1).operatorLeftShift(BigInt(2)) instanceof BigInt).assertTrue();
+        expect(typeof BigInt(1).operatorLeftShift(BigInt(2)) === 'bigint').assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0500

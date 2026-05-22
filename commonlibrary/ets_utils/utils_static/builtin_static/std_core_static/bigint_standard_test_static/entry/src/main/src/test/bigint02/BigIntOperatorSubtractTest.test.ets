@@ -69,7 +69,7 @@ export default function BigIntOperatorSubtractTest(): void {
     it('testBigIntOperatorSubtractReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const result = BigInt(10).operatorSubtract(BigInt(3));
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0500

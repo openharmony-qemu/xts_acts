@@ -58,7 +58,7 @@ export default function BigIntConstructorNoArgTest(): void {
     it('testBigIntConstructorNoArgInstance0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const zero = new BigInt();
-        expect(zero instanceof BigInt).assertTrue();
+        expect(typeof zero === 'bigint').assertTrue();
       });
 
     /**

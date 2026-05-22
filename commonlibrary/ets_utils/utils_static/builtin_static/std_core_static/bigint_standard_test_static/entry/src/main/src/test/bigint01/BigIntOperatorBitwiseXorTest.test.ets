@@ -77,7 +77,7 @@ export default function BigIntOperatorBitwiseXorTest(): void {
     it('testBigIntOperatorBitwiseXorReturnType0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         const result = BigInt(5).operatorBitwiseXor(BigInt(3));
-        expect(result instanceof BigInt).assertTrue();
+        expect(typeof result === 'bigint').assertTrue();
         expect(BigInt(1).operatorBitwiseXor(BigInt(2)).operatorBitwiseXor(BigInt(4)).toString())
           .assertEqual('7');
       });
