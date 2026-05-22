@@ -950,7 +950,7 @@ export default function ActsCommonEventManagerSupportTest() {
     /**
      * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600
      * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4600
-     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.desc   bluetooth scan mode change common event
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
