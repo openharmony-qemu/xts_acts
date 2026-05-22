@@ -53,7 +53,7 @@ export default function OnConnectParameter() {
 
     /**
      * @tc.name   testOnConnectParameterStatic001
-     * @tc.number SUB_WEB_ONCONNECTPARAMETER_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_OnConnect_Parameter_0100
      * @tc.desc   test onConnect callback is invoked with valid ConnectionNativeInfo: verify connectionId is received correctly
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -69,7 +69,7 @@ export default function OnConnectParameter() {
 
     /**
      * @tc.name   testOnFailedPermissionDenyStatic001
-     * @tc.number SUB_WEB_ONFAILED_PERMISSIONDENY_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_OnFailed_PermissionDeny_0100
      * @tc.desc   test connectNative without WEB_NATIVE_MESSAGING permission triggers onFailed with PERMISSION_DENY 17100203
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -85,7 +85,7 @@ export default function OnConnectParameter() {
 
     /**
      * @tc.name   testOnConnectBundleNameEmptyStatic001
-     * @tc.number SUB_WEB_ONCONNECT_BUNDLENAMEMPTY_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_OnConnect_BundleNameEmpty_0100
      * @tc.desc   test connectNative with empty bundleName in want: verify onFailed is triggered due to invalid want or permission
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -101,7 +101,7 @@ export default function OnConnectParameter() {
 
     /**
      * @tc.name   testDisconnectNativePermissionDenyStatic001
-     * @tc.number SUB_WEB_DISCONNECTNATIVE_PERMISSIONDENY_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0100
      * @tc.desc   test disconnectNative without WEB_NATIVE_MESSAGING permission: verify error code is 201
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -117,7 +117,7 @@ export default function OnConnectParameter() {
 
     /**
      * @tc.name   testDisconnectNativeNullUndefinedParamStatic001
-     * @tc.number SUB_WEB_DISCONNECTNATIVE_NULLUNDEFINED_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_NullUndefined_0100
      * @tc.desc   test disconnectNative with null/undefined-equivalent connectionId (0): since the app has no
      *            WEB_NATIVE_MESSAGING permission, the system rejects with error code 201 before parameter check
      * @tc.type   FUNCTION
