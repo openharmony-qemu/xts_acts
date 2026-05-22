@@ -1073,10 +1073,9 @@ export function ArraySymbolIteratorJs_0208() {
     const self = this;
     return {
       next() {
-        if (idx < self.length) {
-          return { value: self[idx++] * 10, done: false };
-        }
-        return { value: undefined, done: true };
+        return idx < self.length
+          ? { value: self[idx++] * 10, done: false }
+          : { value: undefined, done: true };
       },
       [Symbol.iterator]() {
         return this;
