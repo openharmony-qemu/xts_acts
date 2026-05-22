@@ -1,4 +1,4 @@
-'use static'
+﻿'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,13 +19,13 @@ import Utils from './../Util.test';
 
 class ColorEnum158 extends BaseEnum<string> {
     constructor(value: string, name: string) {
-      super(value, name)
+      super(value, name);
     }
   }
 
 class StatusEnum159 extends BaseEnum<int> {
     constructor(value: int, name: string) {
-      super(value, name)
+      super(value, name);
     }
     public override toString(): string {
       return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]"
@@ -34,7 +34,7 @@ class StatusEnum159 extends BaseEnum<int> {
 
 class MyEnum160 extends BaseEnum<int> {
     constructor(value: int, name: string) {
-      super(value, name)
+      super(value, name);
     }
     public getDescription(): string {
       return this.getName() + "=" + this.valueOf().toString()
@@ -43,13 +43,13 @@ class MyEnum160 extends BaseEnum<int> {
 
 class BaseColor161 extends BaseEnum<string> {
     constructor(value: string, name: string) {
-      super(value, name)
+      super(value, name);
     }
   }
 
 class ExtendedColor161 extends BaseColor161 {
     constructor(value: string, name: string) {
-      super(value, name)
+      super(value, name);
     }
     public override toString(): string {
       return "Color:" + this.getName()
@@ -62,7 +62,7 @@ class Direction165 extends BaseEnum<string> {
     public static readonly EAST: Direction165 = new Direction165("E", "EAST")
     public static readonly WEST: Direction165 = new Direction165("W", "WEST")
     constructor(value: string, name: string) {
-      super(value, name)
+      super(value, name);
     }
   }
 
@@ -71,7 +71,7 @@ class HttpStatus166 extends BaseEnum<int> {
     public static readonly NOT_FOUND: HttpStatus166 = new HttpStatus166(404, "NOT_FOUND")
     public static readonly SERVER_ERROR: HttpStatus166 = new HttpStatus166(500, "INTERNAL_SERVER_ERROR")
     constructor(value: int, name: string) {
-      super(value, name)
+      super(value, name);
     }
   }
 
@@ -80,21 +80,16 @@ class ErrorCode167 extends BaseEnum<long> {
     public static readonly NETWORK: ErrorCode167 = new ErrorCode167(Int.toLong(1001), "NETWORK_ERROR")
     public static readonly TIMEOUT: ErrorCode167 = new ErrorCode167(Int.toLong(1002), "TIMEOUT_ERROR")
     constructor(value: long, name: string) {
-      super(value, name)
+      super(value, name);
     }
   }
 
 export default function BaseEnumTest(): void {
   describe('BaseEnumTest', (): void => {
-    beforeAll((): void => {
-    });
-    beforeEach(async (): Promise<void> => {
+beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
-    });
+    
 
     /**
      * @tc.name testBaseEnum001
@@ -177,7 +172,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0070
-     * @tc.desc Verify BaseEnum constructor throws for out-of-range byte value 128
+     * @tc.desc Verify Int.toByte overflow wrapping behavior for byte value 128
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -190,7 +185,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0080
-     * @tc.desc Verify BaseEnum constructor throws for out-of-range byte value -129
+     * @tc.desc Verify Int.toByte underflow wrapping behavior for byte value -129
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -320,7 +315,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0180
-     * @tc.desc Verify BaseEnum constructor with octal int value
+     * @tc.desc Verify BaseEnum constructor with int value 83
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -333,7 +328,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0190
-     * @tc.desc Verify BaseEnum constructor with binary int value
+     * @tc.desc Verify BaseEnum constructor with int value 10
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -775,7 +770,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum053
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0530
-     * @tc.desc Verify BaseEnum constructor with very long name
+     * @tc.desc Verify BaseEnum constructor with very long string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -815,7 +810,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum056
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0560
-     * @tc.desc Verify BaseEnum constructor with name containing spaces
+     * @tc.desc Verify BaseEnum constructor with string value containing spaces
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -828,7 +823,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum057
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0570
-     * @tc.desc Verify BaseEnum constructor with 包含特殊字符的string
+     * @tc.desc Verify BaseEnum constructor with string containing special characters
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -841,7 +836,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0580
-     * @tc.desc Verify BaseEnum constructor with name containing spaces
+     * @tc.desc Verify BaseEnum constructor with string value containing spaces
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -867,7 +862,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum060
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0600
-     * @tc.desc Verify BaseEnum constructor with 多语言string
+     * @tc.desc Verify BaseEnum constructor with multilingual string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -932,7 +927,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum065
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0650
-     * @tc.desc Verify 使用空字符串作为name参数
+     * @tc.desc Verify constructor with empty string as name parameter
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -945,7 +940,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum066
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0660
-     * @tc.desc Verify 使用单字符作为name参数
+     * @tc.desc Verify constructor with single character as name parameter
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -958,7 +953,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum067
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0670
-     * @tc.desc Verify 使用超长字符串作为name参数
+     * @tc.desc Verify constructor with very long string as name parameter
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1024,7 +1019,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum072
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0720
-     * @tc.desc Verify name参数为XSS字符串
+     *  @tc.desc Verify constructor with XSS string as name parameter
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1198,7 +1193,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum096
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0960
-     * @tc.desc Verify valueOf返回byte边界值127
+     * @tc.desc Verify valueOf returns byte boundary value 127
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1211,7 +1206,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum097
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0970
-     * @tc.desc Verify valueOf返回byte边界值-128
+     * @tc.desc Verify valueOf returns byte boundary value -128
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1224,7 +1219,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum098
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0980
-     * @tc.desc Verify valueOf返回byte零值
+     *  @tc.desc Verify valueOf returns byte zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1250,7 +1245,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum100
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1000
-     * @tc.desc Verify valueOf返回short边界值
+     *  @tc.desc Verify valueOf returns short boundary value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1276,7 +1271,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum102
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1020
-     * @tc.desc Verify valueOf返回int最大值
+     *  @tc.desc Verify valueOf returns int maximum value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1289,7 +1284,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum103
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1030
-     * @tc.desc Verify valueOf返回int最小值
+     *  @tc.desc Verify valueOf returns int minimum value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1302,7 +1297,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum104
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1040
-     * @tc.desc Verify valueOf返回int零值
+     *  @tc.desc Verify valueOf returns int zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1315,7 +1310,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum105
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1050
-     * @tc.desc Verify valueOf返回int负值
+     *  @tc.desc Verify valueOf returns int negative value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1341,7 +1336,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum107
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1070
-     * @tc.desc Verify valueOf返回long边界值
+     *  @tc.desc Verify valueOf returns long boundary value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1367,7 +1362,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum109
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1090
-     * @tc.desc Verify valueOf返回float NaN值
+     *  @tc.desc Verify valueOf returns float NaN value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1381,7 +1376,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum110
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1100
-     * @tc.desc Verify valueOf返回float正无穷
+     *  @tc.desc Verify valueOf returns float positive infinity value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1394,7 +1389,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum111
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1110
-     * @tc.desc Verify valueOf返回float零值
+     *  @tc.desc Verify valueOf returns float zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1420,7 +1415,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum113
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1130
-     * @tc.desc Verify valueOf返回double NaN值
+     *  @tc.desc Verify valueOf returns double NaN value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1434,7 +1429,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum114
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1140
-     * @tc.desc Verify valueOf返回double正无穷
+     *  @tc.desc Verify valueOf returns double positive infinity value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1447,7 +1442,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum115
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1150
-     * @tc.desc Verify valueOf返回double零值
+     *  @tc.desc Verify valueOf returns double zero value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1473,7 +1468,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum117
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1170
-     * @tc.desc Verify valueOf返回空字符串
+     * @tc.desc Verify valueOf returns empty string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1486,7 +1481,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum118
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1180
-     * @tc.desc Verify valueOf返回包含特殊字符的字符串
+     * @tc.desc Verify valueOf returns string with special characters
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1499,7 +1494,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum119
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1190
-     * @tc.desc Verify valueOf返回Unicode字符串
+     *  @tc.desc Verify valueOf returns Unicode string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1596,7 +1591,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum126
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1260
-     * @tc.desc Verify getName returns 值类型为string
+     * @tc.desc Verify getName returns value of type string
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1610,7 +1605,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum127
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1270
-     * @tc.desc Verify getName returns 值不是null
+     * @tc.desc Verify getName return value is not null
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1623,7 +1618,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum128
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1280
-     * @tc.desc Verify getName returns 值不是undefined
+     * @tc.desc Verify getName return value is not undefined
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1637,7 +1632,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum129
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1290
-     * @tc.desc Verify 多次调用getName返回值一致
+     *  @tc.desc Verify multiple calls to getName return consistent value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1783,7 +1778,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum139
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1390
-     * @tc.desc Verify toString returns 值类型为string
+     * @tc.desc Verify toString returns value of type string
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1797,7 +1792,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum140
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1400
-     * @tc.desc Verify 多次调用toString返回值一致
+     *  @tc.desc Verify multiple calls to toString return consistent value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1812,7 +1807,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum141
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1410
-     * @tc.desc Verify different instances have independent values
+     * @tc.desc Verify different instances have independent names via getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1829,7 +1824,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum142
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1420
-     * @tc.desc Verify different instances have independent values
+     * @tc.desc Verify different instances have independent names via getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1874,7 +1869,6 @@ export default function BaseEnumTest(): void {
         let e: BaseEnum<int> = new BaseEnum<int>(null as int, "NULL_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error === null).assertFalse();
         expect(error instanceof Error).assertTrue();
       }
     });
@@ -1892,7 +1886,6 @@ export default function BaseEnumTest(): void {
         let e: BaseEnum<int> = new BaseEnum<int>(1, null as string);
         expect().assertFail();
       } catch (error) {
-        expect(error === null).assertFalse();
         expect(error instanceof Error).assertTrue();
       }
     });
@@ -1900,7 +1893,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum146
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1460
-     * @tc.desc Verify try-catch catches constructor type mismatch exception
+     * @tc.desc Verify constructor with negative int value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1913,7 +1906,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum147
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1470
-     * @tc.desc Verify try-catch catches valueOf call exception
+     * @tc.desc Verify valueOf returns correct value for int zero
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

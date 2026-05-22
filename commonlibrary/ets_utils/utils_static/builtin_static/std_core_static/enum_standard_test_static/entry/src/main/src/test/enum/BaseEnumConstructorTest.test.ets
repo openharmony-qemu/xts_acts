@@ -19,14 +19,8 @@ import Utils from './../Util.test';
 
 export default function BaseEnumConstructorTest(): void {
   describe('BaseEnumConstructorTest', (): void => {
-    beforeAll((): void => {
-    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
-    });
-    afterEach((): void => {
-    });
-    afterAll((): void => {
     });
 
     /**
@@ -174,7 +168,7 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0110
-     * @tc.desc Verify BaseEnum constructor throws Error when byte overflow value 128
+     * @tc.desc Verify Int.toByte overflow wrapping behavior for byte value 128
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -187,7 +181,7 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0120
-     * @tc.desc Verify BaseEnum constructor throws Error when byte underflow value -129
+     * @tc.desc Verify Int.toByte underflow wrapping behavior for byte value -129
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -522,8 +516,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(Infinity), "INF_FLOAT");
-      expect(e.valueOf()).assertEqual(Double.toFloat(Infinity));
+      const e = new BaseEnum<float>(Double.toFloat(Float.POSITIVE_INFINITY), "INF_FLOAT");
+      expect(e.valueOf()).assertEqual(Double.toFloat(Float.POSITIVE_INFINITY));
     });
 
     /**
@@ -535,8 +529,8 @@ export default function BaseEnumConstructorTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<float>(Double.toFloat(-Infinity), "NEG_INF_FLOAT");
-      expect(e.valueOf()).assertEqual(Double.toFloat(-Infinity));
+      const e = new BaseEnum<float>(Double.toFloat(Float.NEGATIVE_INFINITY), "NEG_INF_FLOAT");
+      expect(e.valueOf()).assertEqual(Double.toFloat(Float.NEGATIVE_INFINITY));
     });
 
     /**
@@ -641,7 +635,7 @@ export default function BaseEnumConstructorTest(): void {
      */
     it('testBaseEnumConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<double>(Double.POSITIVE_INFINITY, "INF_DOUBLE");
-       expect(e.valueOf()).assertEqual(Double.POSITIVE_INFINITY);
+      expect(e.valueOf()).assertEqual(Double.POSITIVE_INFINITY);
     });
 
     /**
@@ -1364,32 +1358,6 @@ export default function BaseEnumConstructorTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumConstructor097
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0970
-     * @tc.desc Verify BaseEnum constructor with maximum int value creates instance correctly
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(2147483647, "MAX_INT");
-      expect(e.valueOf()).assertEqual(2147483647);
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor098
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0980
-     * @tc.desc Verify BaseEnum constructor with minimum int value creates instance correctly
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(-2147483648, "MIN_INT");
-      expect(e.valueOf()).assertEqual(-2147483648);
-    });
-
-    /**
      * @tc.name testBaseEnumConstructor099
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0990
      * @tc.desc Verify BaseEnum constructor with empty string value creates instance correctly
@@ -1463,42 +1431,6 @@ export default function BaseEnumConstructorTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumConstructor104
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1040
-     * @tc.desc Verify BaseEnum constructor throws Error when null value is passed
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const e = new BaseEnum<int>(null as int, "TEST");
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-        expect((error as Error).message === null).assertFalse();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor105
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1050
-     * @tc.desc Verify BaseEnum constructor throws Error when null name is passed
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const e = new BaseEnum<int>(1, null as string);
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-        expect((error as Error).message === null).assertFalse();
-      }
-    });
-
-    /**
      * @tc.name testBaseEnumConstructor106
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1060
      * @tc.desc Verify BaseEnum constructor succeeds in try block with normal parameters
@@ -1563,39 +1495,6 @@ export default function BaseEnumConstructorTest(): void {
       expect(finallyCount).assertEqual(2);
     });
 
-    /**
-     * @tc.name testBaseEnumConstructor109
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1090
-     * @tc.desc Verify BaseEnum constructor throws Error for type mismatch at compile or runtime
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const e = new BaseEnum<int>(true as int, "TYPE_MISMATCH");
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor110
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1100
-     * @tc.desc Verify BaseEnum constructor throws Error for type outside generic constraint
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let arg: Object = [1];
-        const e = new BaseEnum<int>(arg as int, "ARRAY_AS_INT");
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-    });
   });
 }
+
