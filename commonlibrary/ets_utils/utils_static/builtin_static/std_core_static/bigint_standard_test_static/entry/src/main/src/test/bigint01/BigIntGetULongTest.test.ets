@@ -21,7 +21,7 @@ function ulongRoundTrip(bi: BigInt): string {
 }
 
 export default function BigIntGetULongTest(): void {
-  describe('BigInt.getULong（导图 getULong）', () => {
+  describe('BigInt.getULong (mindmap getULong)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0100
      * @tc.name testBigIntGetULongPositive0100

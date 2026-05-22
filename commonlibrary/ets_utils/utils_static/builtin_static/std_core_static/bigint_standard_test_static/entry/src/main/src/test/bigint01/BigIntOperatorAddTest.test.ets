@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorAddTest(): void {
-  describe('BigInt.operatorAdd（导图 operatorAdd）', () => {
+  describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0100
      * @tc.name testBigIntOperatorAddBasic0100

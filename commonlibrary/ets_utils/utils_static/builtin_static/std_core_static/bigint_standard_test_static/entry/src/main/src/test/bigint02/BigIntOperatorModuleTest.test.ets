@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorModuleTest(): void {
-  describe('BigInt.operatorModule（导图 operatorModule）', () => {
+  describe('BigInt.operatorModule (mindmap operatorModule)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0100
      * @tc.name testBigIntOperatorModuleBasic0100
@@ -126,6 +126,40 @@ export default function BigIntOperatorModuleTest(): void {
         expect((): void => {
           new BigInt(10).operatorModule(new BigInt(0));
         }).assertThrowError('Error');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0800
+     * @tc.name testBigIntOperatorModuleLarge0800
+     * @tc.desc Verify operatorModule with very large dividend and divisor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleLarge0800',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt('999999999999999999999999999999').operatorModule(new BigInt('100000000000000000000')).toString())
+          .assertEqual('99999999999999999999');
+        expect(new BigInt('-999999999999999999999999999999').operatorModule(new BigInt('100000000000000000000')).toString())
+          .assertEqual('-99999999999999999999');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0900
+     * @tc.name testBigIntOperatorModuleTruncateSemantics0900
+     * @tc.desc Verify operatorModule uses truncate division (remainder sign follows dividend)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleTruncateSemantics0900',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-7).operatorModule(new BigInt(3)).toString()).assertEqual('-1');
+        expect(new BigInt(7).operatorModule(new BigInt(-3)).toString()).assertEqual('1');
+        expect(new BigInt(-7).operatorModule(new BigInt(-3)).toString()).assertEqual('-1');
+        const q = new BigInt(-7).operatorDivide(new BigInt(3));
+        const r = new BigInt(-7).operatorModule(new BigInt(3));
+        expect(q.operatorMultiply(new BigInt(3)).operatorAdd(r).toString()).assertEqual('-7');
       });
   });
 }

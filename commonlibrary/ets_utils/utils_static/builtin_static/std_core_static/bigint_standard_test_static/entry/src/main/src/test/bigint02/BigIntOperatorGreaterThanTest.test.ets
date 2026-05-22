@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanTest(): void {
-  describe('BigInt.operatorGreaterThan（导图）', () => {
+  describe('BigInt.operatorGreaterThan (operatorGreaterThan)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0100
      * @tc.name testBigIntOperatorGreaterThanBasic0100
@@ -88,6 +88,40 @@ export default function BigIntOperatorGreaterThanTest(): void {
         expect((): void => {
           a.operatorGreaterThan(true as object as BigInt);
         }).assertThrowError('ClassCastError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0500
+     * @tc.name testBigIntOperatorGreaterThanHuge0500
+     * @tc.desc Verify operatorGreaterThan on magnitudes beyond Number.MAX_SAFE_INTEGER
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorGreaterThanHuge0500',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const huge = '999999999999999999999999999999';
+        expect(new BigInt(huge).operatorGreaterThan(new BigInt('999999999999999999999999999998'))).assertTrue();
+        expect(new BigInt('-' + huge).operatorGreaterThan(new BigInt(huge))).assertFalse();
+        expect(new BigInt('9223372036854775807').operatorGreaterThan(new BigInt('9223372036854775806'))).assertTrue();
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0600
+     * @tc.name testBigIntOperatorGreaterThanNumberBoundary0600
+     * @tc.desc Verify operatorGreaterThan aligns with double-constructible Number boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorGreaterThanNumberBoundary0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const fromDouble = new BigInt(9007199254740991.0);
+        const fromString = new BigInt('9007199254740991');
+        expect(fromDouble.operatorGreaterThan(fromString)).assertFalse();
+        expect(fromDouble.operatorGreaterThan(new BigInt(9007199254740990))).assertTrue();
+        expect(new BigInt(9007199254740992.0).operatorGreaterThan(new BigInt(9007199254740991.0))).assertTrue();
+        expect(fromDouble.doubleValue()).assertEqual(9007199254740991.0);
       });
   });
 }

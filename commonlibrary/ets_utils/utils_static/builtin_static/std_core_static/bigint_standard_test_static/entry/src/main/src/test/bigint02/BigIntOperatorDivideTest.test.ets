@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorDivideTest(): void {
-  describe('BigInt.operatorDivide（导图 operatorDivide）', () => {
+  describe('BigInt.operatorDivide (mindmap operatorDivide)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0100
      * @tc.name testBigIntOperatorDivideBasic0100
@@ -98,6 +98,40 @@ export default function BigIntOperatorDivideTest(): void {
         expect((): void => {
           new BigInt(10).operatorDivide(new BigInt(0));
         }).assertThrowError('Error');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0300
+     * @tc.name testBigIntOperatorDivideNegativeTruncate0300
+     * @tc.desc Verify operatorDivide truncates toward zero for negative operands
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideNegativeTruncate0300',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(-7).operatorDivide(new BigInt(3)).toString()).assertEqual('-2');
+        expect(new BigInt(7).operatorDivide(new BigInt(-3)).toString()).assertEqual('-2');
+        expect(new BigInt(-7).operatorDivide(new BigInt(-3)).toString()).assertEqual('2');
+        expect(new BigInt(-1).operatorDivide(new BigInt(2)).toString()).assertEqual('0');
+        expect(new BigInt('100000000000000000001').operatorDivide(new BigInt('100000000000000000000')).toString())
+          .assertEqual('1');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0700
+     * @tc.name testBigIntOperatorDivideLarge0700
+     * @tc.desc Verify operatorDivide with very large BigInt operands
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideLarge0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt('999999999999999999999999999999').operatorDivide(new BigInt('999999999999999999999999999999')).toString())
+          .assertEqual('1');
+        expect(new BigInt('-999999999999999999999999999999').operatorDivide(new BigInt('3')).toString())
+          .assertEqual('-333333333333333333333333333333');
       });
   });
 }

@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorStringTest(): void {
-  describe('BigInt string 构造（导图 constructor_7）', () => {
+  describe('BigInt string constructor (mindmap constructor_7)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0100
      * @tc.name testBigIntConstructorStringDecimalPositive0100

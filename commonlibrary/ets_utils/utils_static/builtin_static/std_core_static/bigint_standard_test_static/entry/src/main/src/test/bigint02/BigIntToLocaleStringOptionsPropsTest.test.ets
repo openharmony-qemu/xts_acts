@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToLocaleStringOptionsPropsTest(): void {
-  describe('BigIntToLocaleStringOptions 属性（导图）', () => {
+  describe('BigIntToLocaleStringOptions properties (mindmap)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0100
      * @tc.name testBigIntToLocaleStringOptionsProps0100

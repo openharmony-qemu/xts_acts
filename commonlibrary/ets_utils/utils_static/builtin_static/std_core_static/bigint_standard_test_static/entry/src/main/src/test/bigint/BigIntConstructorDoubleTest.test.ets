@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorDoubleTest(): void {
-  describe('BigInt double 构造（导图 constructor_6）', () => {
+  describe('BigInt double constructor (mindmap constructor_6)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0100
      * @tc.name testBigIntConstructorDoubleIntegerSmall0100
@@ -95,20 +95,81 @@ export default function BigIntConstructorDoubleTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0600
-     * @tc.name testBigIntConstructorDoubleNaNInfinity0600
-     * @tc.desc Verify NaN and Infinity doubles throw RangeError when constructing BigInt
+     * @tc.name testBigIntConstructorDoubleBeyondSafeInteger0600
+     * @tc.desc Verify integer doubles beyond MAX_SAFE_INTEGER construct expected BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorDoubleNaNInfinity0600',
+    it('testBigIntConstructorDoubleBeyondSafeInteger0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(9007199254740992.0).toString()).assertEqual('9007199254740992');
+        expect(new BigInt(-9007199254740992.0).toString()).assertEqual('-9007199254740992');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0700
+     * @tc.name testBigIntConstructorDoubleExtremeNonInteger0700
+     * @tc.desc Verify integral Number.MAX_VALUE constructs BigInt; Number.MIN_VALUE throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleExtremeNonInteger0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const maxStr =
+          '179769313486231570814527423731704356798070567525844996598917476803157260780' +
+          '028538760589558632766878171540458953514382464234321326889464182768467546703' +
+          '537516986049910576551282076245490090389328944075868508455133942304583236903' +
+          '222948165808559332123348274797826204144723168738177180919299881250404026184' +
+          '124858368';
+        expect(new BigInt(Number.MAX_VALUE).toString()).assertEqual(maxStr);
+        expect(new BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + maxStr);
+        expect((): void => {
+          new BigInt(Number.MIN_VALUE);
+        }).assertThrowError('RangeError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_0900
+     * @tc.name testBigIntConstructorDoubleNaN0900
+     * @tc.desc Verify BigInt constructed from NaN double throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleNaN0900',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           new BigInt(Number.NaN);
         }).assertThrowError('RangeError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_1000
+     * @tc.name testBigIntConstructorDoubleInfinity1000
+     * @tc.desc Verify BigInt constructed from positive Infinity throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleInfinity1000',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           new BigInt(Number.POSITIVE_INFINITY);
         }).assertThrowError('RangeError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_1100
+     * @tc.name testBigIntConstructorDoubleNegativeInfinity1100
+     * @tc.desc Verify BigInt constructed from negative Infinity throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleNegativeInfinity1100',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect((): void => {
           new BigInt(Number.NEGATIVE_INFINITY);
         }).assertThrowError('RangeError');

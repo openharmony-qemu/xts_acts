@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLeftShiftTest(): void {
-  describe('BigInt.operatorLeftShift（导图 operatorLeftShift）', () => {
+  describe('BigInt.operatorLeftShift (mindmap operatorLeftShift)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0100
      * @tc.name testBigIntOperatorLeftShiftBasic0100

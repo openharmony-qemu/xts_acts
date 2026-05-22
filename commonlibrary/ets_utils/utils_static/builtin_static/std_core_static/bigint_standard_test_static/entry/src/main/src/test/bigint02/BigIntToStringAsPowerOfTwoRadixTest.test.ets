@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
-  describe('BigInt.toStringAsPowerOfTwoRadix（导图）', () => {
+  describe('BigInt.toStringAsPowerOfTwoRadix (toStringAsPowerOfTwoRadix)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0100
      * @tc.name testBigIntToStringAsPowerOfTwoRadix0100

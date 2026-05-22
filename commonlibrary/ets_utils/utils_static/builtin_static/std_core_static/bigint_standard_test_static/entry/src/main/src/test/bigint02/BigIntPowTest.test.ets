@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntPowTest(): void {
-  describe('BigInt.pow（导图 pow）', () => {
+  describe('BigInt.pow (mindmap pow)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_POW_0100
      * @tc.name testBigIntPowBasic0100

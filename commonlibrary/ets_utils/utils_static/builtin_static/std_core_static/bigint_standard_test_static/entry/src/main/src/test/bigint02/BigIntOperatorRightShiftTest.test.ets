@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorRightShiftTest(): void {
-  describe('BigInt.operatorRightShift（导图 operatorRightShift）', () => {
+  describe('BigInt.operatorRightShift (mindmap operatorRightShift)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0100
      * @tc.name testBigIntOperatorRightShiftBasic0100
@@ -61,19 +61,19 @@ export default function BigIntOperatorRightShiftTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0500
      * @tc.name testBigIntOperatorRightShiftNegativeShift0500
-     * @tc.desc Verify operatorRightShift throws for negative shift amount
+     * @tc.desc Verify operatorRightShift with negative shift amount (left-shift semantics)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorRightShiftNegativeShift0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          new BigInt(10).operatorRightShift(new BigInt(-1));
-        }).assertThrowError('RangeError');
-        expect((): void => {
-          new BigInt(256).operatorRightShift(new BigInt(-100));
-        }).assertThrowError('RangeError');
+        const v = new BigInt(10);
+        expect(v.operatorRightShift(new BigInt(-1)).toString())
+          .assertEqual(v.operatorLeftShift(new BigInt(1)).toString());
+        const w = new BigInt(256);
+        expect(w.operatorRightShift(new BigInt(-2)).toString())
+          .assertEqual(w.operatorLeftShift(new BigInt(2)).toString());
       });
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0600

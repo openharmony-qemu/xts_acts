@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToStringAsDecimalTest(): void {
-  describe('BigInt.toStringAsDecimal（导图）', () => {
+  describe('BigInt.toStringAsDecimal (toStringAsDecimal)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_DECIMAL_0100
      * @tc.name testBigIntToStringAsDecimal0100

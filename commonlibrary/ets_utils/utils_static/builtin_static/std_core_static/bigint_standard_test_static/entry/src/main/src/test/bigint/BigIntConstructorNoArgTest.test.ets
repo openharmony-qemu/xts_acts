@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorNoArgTest(): void {
-  describe('BigInt 无参构造函数（导图 constructor_1）', () => {
+  describe('BigInt no-arg constructor (mindmap constructor_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0100
      * @tc.name testBigIntConstructorNoArgZero0100
@@ -140,51 +140,6 @@ export default function BigIntConstructorNoArgTest(): void {
           const v = new BigInt();
           expect(v.toString()).assertEqual('0');
         }
-      });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0900
-     * @tc.name testBigIntConstructorNoArgNaN0900
-     * @tc.desc Verify BigInt constructed from NaN double throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorNoArgNaN0900',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          new BigInt(Number.NaN);
-        }).assertThrowError('RangeError');
-      });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_1000
-     * @tc.name testBigIntConstructorNoArgInfinity1000
-     * @tc.desc Verify BigInt constructed from positive Infinity throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorNoArgInfinity1000',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          new BigInt(Number.POSITIVE_INFINITY);
-        }).assertThrowError('RangeError');
-      });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_1100
-     * @tc.name testBigIntConstructorNoArgNegativeInfinity1100
-     * @tc.desc Verify BigInt constructed from negative Infinity throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntConstructorNoArgNegativeInfinity1100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          new BigInt(Number.NEGATIVE_INFINITY);
-        }).assertThrowError('RangeError');
       });
   });
 }

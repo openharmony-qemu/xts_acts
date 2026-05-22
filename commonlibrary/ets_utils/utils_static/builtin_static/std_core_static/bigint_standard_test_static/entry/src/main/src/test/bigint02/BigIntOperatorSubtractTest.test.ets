@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorSubtractTest(): void {
-  describe('BigInt.operatorSubtract（导图 operatorSubtract）', () => {
+  describe('BigInt.operatorSubtract (mindmap operatorSubtract)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0100
      * @tc.name testBigIntOperatorSubtractBasic0100
@@ -97,6 +97,41 @@ export default function BigIntOperatorSubtractTest(): void {
         expect((): void => {
           a.operatorSubtract(true as object as BigInt);
         }).assertThrowError('ClassCastError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0600
+     * @tc.name testBigIntOperatorSubtractSelfZero0600
+     * @tc.desc Verify x.operatorSubtract(x) yields zero for varied magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorSubtractSelfZero0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const zero = new BigInt(0);
+        expect(new BigInt(42).operatorSubtract(new BigInt(42)).equals(zero)).assertTrue();
+        expect(new BigInt(-99).operatorSubtract(new BigInt(-99)).toString()).assertEqual('0');
+        const huge = new BigInt('999999999999999999999999999999');
+        expect(huge.operatorSubtract(huge).toString()).assertEqual('0');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0700
+     * @tc.name testBigIntOperatorSubtractBorrow0700
+     * @tc.desc Verify operatorSubtract borrow across digit boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorSubtractBorrow0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt(1000).operatorSubtract(new BigInt(1)).toString()).assertEqual('999');
+        expect(new BigInt('100000000000000000000').operatorSubtract(new BigInt(1)).toString())
+          .assertEqual('99999999999999999999');
+        expect(new BigInt(0).operatorSubtract(new BigInt(1)).toString()).assertEqual('-1');
+        expect(new BigInt('9223372036854775808').operatorSubtract(new BigInt('9223372036854775807')).toString())
+          .assertEqual('1');
       });
   });
 }

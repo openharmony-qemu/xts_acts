@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntNegativeTest(): void {
-  describe('BigInt.negative（导图 negative）', () => {
+  describe('BigInt.negative (mindmap negative)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0100
      * @tc.name testBigIntNegativeSignCases0100

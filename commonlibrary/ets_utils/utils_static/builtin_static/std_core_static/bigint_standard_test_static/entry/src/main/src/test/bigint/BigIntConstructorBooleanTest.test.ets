@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorBooleanTest(): void {
-  describe('BigInt boolean 构造（导图 constructor_8）', () => {
+  describe('BigInt boolean constructor (mindmap constructor_8)', (): void => {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0100
      * @tc.name testBigIntConstructorBooleanLiterals0100

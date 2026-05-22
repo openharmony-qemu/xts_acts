@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorBitwiseNotTest(): void {
-  describe('BigInt.operatorBitwiseNot（导图 operatorBitwiseNot）', () => {
+  describe('BigInt.operatorBitwiseNot (mindmap operatorBitwiseNot)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0100
      * @tc.name testBigIntOperatorBitwiseNotBasic0100

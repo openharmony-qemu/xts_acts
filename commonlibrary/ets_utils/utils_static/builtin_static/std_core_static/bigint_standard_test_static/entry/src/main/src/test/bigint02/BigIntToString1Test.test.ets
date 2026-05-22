@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToString1Test(): void {
-  describe('BigInt.toString 无参（导图 toString_1）', () => {
+  describe('BigInt.toString no-arg (mindmap toString_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0100
      * @tc.name testBigIntToString1Decimal0100

@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToLocaleString1Test(): void {
-  describe('BigInt.toLocaleString 无参（导图 toLocaleString_1）', () => {
+  describe('BigInt.toLocaleString no-arg (mindmap toLocaleString_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0100
      * @tc.name testBigIntToLocaleString1Default0100

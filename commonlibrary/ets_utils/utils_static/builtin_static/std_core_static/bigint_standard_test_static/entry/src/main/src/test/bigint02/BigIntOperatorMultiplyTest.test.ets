@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorMultiplyTest(): void {
-  describe('BigInt.operatorMultiply（导图 operatorMultiply）', () => {
+  describe('BigInt.operatorMultiply (mindmap operatorMultiply)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0100
      * @tc.name testBigIntOperatorMultiplyBasic0100
@@ -114,6 +114,26 @@ export default function BigIntOperatorMultiplyTest(): void {
           .assertEqual('85070591730234615847396907784232501249');
         expect(new BigInt(-1).operatorMultiply(new BigInt('999999999999999999999999999999')).toString())
           .assertEqual('-999999999999999999999999999999');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0700
+     * @tc.name testBigIntOperatorMultiplyLargeNegative0700
+     * @tc.desc Verify operatorMultiply with large negative operands and product magnitude
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorMultiplyLargeNegative0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const a = '-999999999999999999999999999999';
+        const b = '888888888888888888888888888888';
+        expect(new BigInt(a).operatorMultiply(new BigInt(b)).toString())
+          .assertEqual('-888888888888888888888888888887111111111111111111111111111112');
+        expect(new BigInt(a).operatorMultiply(new BigInt(a)).toString())
+          .assertEqual('999999999999999999999999999998000000000000000000000000000001');
+        expect(new BigInt('-9223372036854775808').operatorMultiply(new BigInt('-9223372036854775808')).toString())
+          .assertEqual('85070591730234615865843651857942052864');
       });
   });
 }

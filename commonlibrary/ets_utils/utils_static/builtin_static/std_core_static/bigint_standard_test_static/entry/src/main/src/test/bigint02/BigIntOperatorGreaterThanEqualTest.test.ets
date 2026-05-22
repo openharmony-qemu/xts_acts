@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorGreaterThanEqualTest(): void {
-  describe('BigInt.operatorGreaterThanEqual（导图）', () => {
+  describe('BigInt.operatorGreaterThanEqual (operatorGreaterThanEqual)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0100
      * @tc.name testBigIntOperatorGreaterThanEqualBasic0100

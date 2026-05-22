@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorDecrementTest(): void {
-  describe('BigInt.operatorDecrement（导图）', () => {
+  describe('BigInt.operatorDecrement (operatorDecrement)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0100
      * @tc.name testBigIntOperatorDecrementTestBasic0100

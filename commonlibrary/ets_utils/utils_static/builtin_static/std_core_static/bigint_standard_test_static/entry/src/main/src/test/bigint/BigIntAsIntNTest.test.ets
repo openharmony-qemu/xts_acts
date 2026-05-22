@@ -25,7 +25,7 @@ function biStr(s: string): BigInt {
 }
 
 export default function BigIntAsIntNTest(): void {
-  describe('BigInt.asIntN（导图 asIntN）', (): void => {
+  describe('BigInt.asIntN (mindmap asIntN)', (): void => {
     /**
      * @tc.number SUB_BIGINT_STD_ASINTN_0100
      * @tc.name testBigIntAsIntN8Bit0100

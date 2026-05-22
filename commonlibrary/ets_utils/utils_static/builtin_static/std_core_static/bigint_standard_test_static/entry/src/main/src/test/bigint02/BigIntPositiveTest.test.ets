@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntPositiveTest(): void {
-  describe('BigInt.positive（导图 positive）', () => {
+  describe('BigInt.positive (mindmap positive)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0100
      * @tc.name testBigIntPositiveSignCases0100

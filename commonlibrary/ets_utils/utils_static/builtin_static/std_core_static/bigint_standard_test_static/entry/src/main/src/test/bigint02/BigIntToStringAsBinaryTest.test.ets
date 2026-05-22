@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToStringAsBinaryTest(): void {
-  describe('BigInt.toStringAsBinary（导图）', () => {
+  describe('BigInt.toStringAsBinary (toStringAsBinary)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_BINARY_0100
      * @tc.name testBigIntToStringAsBinary0100
@@ -29,6 +29,7 @@ export default function BigIntToStringAsBinaryTest(): void {
     it('testBigIntToStringAsBinary0100',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(new BigInt(255).toStringAsBinary()).assertEqual('11111111');
+        console.log('new BigInt(-8).toStringAsBinary()', new BigInt(-8).toStringAsBinary());
         expect(new BigInt(-8).toStringAsBinary()).assertEqual('1000');
       });
   });

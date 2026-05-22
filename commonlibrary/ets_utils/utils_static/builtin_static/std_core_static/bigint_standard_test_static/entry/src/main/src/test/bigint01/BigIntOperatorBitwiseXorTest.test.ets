@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorBitwiseXorTest(): void {
-  describe('BigInt.operatorBitwiseXor（导图 operatorBitwiseXor）', () => {
+  describe('BigInt.operatorBitwiseXor (mindmap operatorBitwiseXor)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_XOR_0100
      * @tc.name testBigIntOperatorBitwiseXorBasic0100

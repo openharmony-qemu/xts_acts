@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigintTypeAliasTest(): void {
-  describe('bigint 类型别名（导图 bigint）', () => {
+  describe('bigint type alias (mindmap bigint)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0100
      * @tc.name testBigintTypeAliasAssign0100

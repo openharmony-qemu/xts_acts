@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntValueOfTest(): void {
-  describe('BigInt.valueOf（导图 valueOf）', () => {
+  describe('BigInt.valueOf (mindmap valueOf)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0100
      * @tc.name testBigIntValueOfEquals0100

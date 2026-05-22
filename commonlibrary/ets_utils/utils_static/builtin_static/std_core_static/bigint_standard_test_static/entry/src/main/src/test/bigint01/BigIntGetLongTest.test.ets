@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntGetLongTest(): void {
-  describe('BigInt.getLong（导图 getLong）', () => {
+  describe('BigInt.getLong (mindmap getLong)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0100
      * @tc.name testBigIntGetLongPositive0100

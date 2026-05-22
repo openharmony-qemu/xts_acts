@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntDoubleValueTest(): void {
-  describe('BigInt.doubleValue（导图 doubleValue）', () => {
+  describe('BigInt.doubleValue (mindmap doubleValue)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_DOUBLEVALUE_0100
      * @tc.name testBigIntDoubleValueSigns0100

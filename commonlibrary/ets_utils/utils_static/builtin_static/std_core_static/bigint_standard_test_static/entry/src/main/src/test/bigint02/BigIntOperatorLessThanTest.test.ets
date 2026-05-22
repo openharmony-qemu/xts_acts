@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLessThanTest(): void {
-  describe('BigInt.operatorLessThan（导图）', () => {
+  describe('BigInt.operatorLessThan (operatorLessThan)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0100
      * @tc.name testBigIntOperatorLessThanBasic0100
@@ -104,6 +104,40 @@ export default function BigIntOperatorLessThanTest(): void {
         expect((): void => {
           a.operatorLessThan(true as object as BigInt);
         }).assertThrowError('ClassCastError');
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0600
+     * @tc.name testBigIntOperatorLessThanLongBoundary0600
+     * @tc.desc Verify operatorLessThan at long min and max boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanLongBoundary0600',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(new BigInt('-9223372036854775808').operatorLessThan(new BigInt('-9223372036854775807'))).assertTrue();
+        expect(new BigInt('9223372036854775806').operatorLessThan(new BigInt('9223372036854775807'))).assertTrue();
+        expect(new BigInt('9223372036854775807').operatorLessThan(new BigInt('9223372036854775807'))).assertFalse();
+      });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0700
+     * @tc.name testBigIntOperatorLessThanConsecutive0700
+     * @tc.desc Verify operatorLessThan for consecutive increments on large values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanConsecutive0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const base = new BigInt('999999999999999999999999999990');
+        const next = base.operatorAdd(new BigInt(1));
+        const next2 = next.operatorAdd(new BigInt(1));
+        expect(base.operatorLessThan(next)).assertTrue();
+        expect(next.operatorLessThan(next2)).assertTrue();
+        expect(base.operatorLessThan(next2)).assertTrue();
+        expect(next2.operatorLessThan(base)).assertFalse();
       });
   });
 }

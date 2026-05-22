@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntNegateTest(): void {
-  describe('BigInt.negate（导图 negate）', () => {
+  describe('BigInt.negate (mindmap negate)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0100
      * @tc.name testBigIntNegateSigns0100

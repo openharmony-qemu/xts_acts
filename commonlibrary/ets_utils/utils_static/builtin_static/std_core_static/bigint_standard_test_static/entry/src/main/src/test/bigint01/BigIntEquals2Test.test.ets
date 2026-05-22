@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntEquals2Test(): void {
-  describe('BigInt.equals Any（导图 equals_2）', () => {
+  describe('BigInt.equals Any (mindmap equals_2)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0100
      * @tc.name testBigIntEqualsAnyBigIntTrue0100

@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntConstructorIntegralTest(): void {
-  describe('BigInt 整型构造（导图 constructor_2~5）', () => {
+  describe('BigInt integral constructor (mindmap constructor_2~5)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0100
      * @tc.name testBigIntConstructorIntegralByteBoundary0100
@@ -87,15 +87,18 @@ export default function BigIntConstructorIntegralTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0500
-     * @tc.name testBigIntConstructorIntegralLargeDecimalString0500
-     * @tc.desc Verify large integers can be constructed from decimal strings
+     * @tc.name testBigIntConstructorIntegralLongBoundary0500
+     * @tc.desc Verify long boundary values construct expected BigInt values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegralLargeDecimalString0500',
+    it('testBigIntConstructorIntegralLongBoundary0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(new BigInt('9223372036854775807').toString()).assertEqual('9223372036854775807');
+        const hi: long = 9223372036854775807;
+        const lo: long = -9223372036854775808;
+        expect(new BigInt(hi).toString()).assertEqual('9223372036854775807');
+        expect(new BigInt(lo).toString()).assertEqual('-9223372036854775808');
       });
   });
 }
