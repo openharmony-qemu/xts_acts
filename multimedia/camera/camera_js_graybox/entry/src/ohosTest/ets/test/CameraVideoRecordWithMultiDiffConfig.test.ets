@@ -64,14 +64,7 @@ import {
   setFocusMode, getSuppotredFrameRateRange,
 } from './CameraCommonAPI'
 import { media } from '@kit.MediaKit';
-import { BusinessError } from '@kit.BasicServicesKit';
 
-const MULTI_CONFIG_DIAG_TAG = '[CAMERA_MULTI_CONFIG_DIAG]';
-
-function formatVideoError(error: ESObject): string {
-  let err = error as BusinessError;
-  return `code is ${err.code}, message is ${err.message}, error is ${JSON.stringify(error)}`;
-}
 
 export default function CameraVideoRecordWithMultiDiffConfig() {
   describe('CameraVideoRecordWithMultiDiffConfig', () => {
@@ -257,55 +250,38 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
      * @tc.level     : Level 0
      */
     it('SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = `${MULTI_CONFIG_DIAG_TAG} SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200`
       try {
+        let testNum = 'SUB_CAMERA_HDRVIDEORECORDER__MULTICONFIG_0200'
         //预制条件
-        console.info(`${testNum} step getPermission begin`)
         await getPermission();
-        console.info(`${testNum} step getPermission end`)
-        console.info(`${testNum} step getHelper begin`)
         let helper = await getHelper();
-        console.info(`${testNum} step getHelper end`)
-        console.info(`${testNum} step getCameraManager begin`)
         let cameraManager = await getCameraManager();
-        console.info(`${testNum} step getCameraManager end`)
         let cameras = getSupportedCameras(cameraManager);
-        console.info(`${testNum} supported cameras length is ${cameras.length}`)
-        for (let cameraIndex = 0; cameraIndex < cameras.length; cameraIndex++) {
-          console.info(`${testNum} cameras[${cameraIndex}] position is ${cameras[cameraIndex].cameraPosition}, type is ${cameras[cameraIndex].connectionType}`)
-        }
-        if (cameras.length <= 1) {
-          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1`)
+        if (cameras.length <= 0) {
+          console.error(`${testNum} cameras length is ${cameras.length}, cameraIndex is 0`)
           await helper.release();
           expect(true).assertFail();
           done();
           return;
         }
+        if (cameras.length <= 1) {
+          console.info(`${testNum} cameras length is ${cameras.length}, cameraIndex is 1, no second camera`)
+          await helper.release();
+          done();
+          return;
+        }
         let camreId = cameras[1];
-        console.info(`${testNum} selected cameras[1] position is ${camreId.cameraPosition}, type is ${camreId.connectionType}`)
-        console.info(`${testNum} step getCameraOutputCapability begin`)
         let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_VIDEO);
-        console.info(`${testNum} videoProfiles length is ${cameraOutputCapability?.videoProfiles?.length}, previewProfiles length is ${cameraOutputCapability?.previewProfiles?.length}`)
-        let matchedProfileNum = 0;
-        let skippedProfileNum = 0;
-        let frameRateCaseNum = 0;
         for (let videoProfile of cameraOutputCapability?.videoProfiles!) {
           for (let previewProfile of cameraOutputCapability?.previewProfiles!) {
             if (previewProfile.size.height != videoProfile.size.height
               || previewProfile.size.width != videoProfile.size.width
               || previewProfile.format != videoProfile.format) {
-              skippedProfileNum++;
               continue;
             }
-            matchedProfileNum++;
-            console.info(`${testNum} matched profile index is ${matchedProfileNum}, skipped profile count is ${skippedProfileNum}`)
             let frameRateRange = getSuppotredFrameRateRange(videoProfile);
-            console.info(`${testNum} frameRateRange length is ${frameRateRange.length}, frameRateRange is ${JSON.stringify(frameRateRange)}`)
             for (let frameRate of frameRateRange) {
-              frameRateCaseNum++;
-              console.info(`${testNum} frameRate case index is ${frameRateCaseNum}, frameRate is ${JSON.stringify(frameRate)}`)
               const befortCount = await getAllPhotoAssetsCount();
-              console.info(`${testNum} before asset count is ${befortCount}`)
               let videoOutput: camera.VideoOutput | undefined = undefined
               let cameraInput: camera.CameraInput | undefined = undefined
               let previewOutPut: camera.PreviewOutput | undefined = undefined
@@ -322,102 +298,60 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 let videoName =
                   await generateNameForAsset(camera.SceneMode.NORMAL_VIDEO, camreId, videoProfile, previewProfile)
                 let videoUri: string = `file://${getContext().filesDir}/${videoName}.mp4`; // 本地沙箱路径。
-                console.info(`${testNum} step createVideoFile begin, videoUri is ${videoUri}`)
                 let file: fs.File = await createVideoFile(videoUri)
-                console.info(`${testNum} step createVideoFile end`)
-                console.info(`${testNum} step createAvRecorder begin`)
                 avRecoder = await createAvRecorder();
-                console.info(`${testNum} step createAvRecorder end`)
-                console.info(`${testNum} step setAvRecorderConfig begin`)
                 await setAvRecorderConfig(avRecoder, file, videoProfile, frameRate);
-                console.info(`${testNum} step setAvRecorderConfig end`)
                 // 创建VideoOutput对象。
-                console.info(`${testNum} step getVideoOutput begin`)
                 videoOutput = await getVideoOutput(cameraManager, avRecoder, videoProfile);
-                console.info(`${testNum} step getVideoOutput end`)
-                console.info(`${testNum} step createSession begin`)
                 session = createAndConfigSession(cameraManager, camera.SceneMode.NORMAL_VIDEO);
-                console.info(`${testNum} step createSession end`)
-                console.info(`${testNum} step createCameraInput begin`)
                 cameraInput = createCameraInput(cameraManager, camreId);
-                console.info(`${testNum} step createCameraInput end`)
-                console.info(`${testNum} step createVideoPreviewOutput begin`)
                 previewOutPut = createVideoPreviewOutputFromProFile(cameraManager, previewProfile);
-                console.info(`${testNum} step createVideoPreviewOutput end`)
-                console.info(`${testNum} step openCamera begin`)
                 await openCamera(cameraInput);
-                console.info(`${testNum} step openCamera end`)
-                console.info(`${testNum} step addInput begin`)
                 await addInputIntoSession(session, cameraInput);
-                console.info(`${testNum} step addInput end`)
-                console.info(`${testNum} step addPreviewOutput begin`)
                 await addOutputIntoSession(session, previewOutPut);
-                console.info(`${testNum} step addPreviewOutput end`)
-                console.info(`${testNum} step addVideoOutput begin`)
                 await addOutputIntoSession(session, videoOutput);
-                console.info(`${testNum} step addVideoOutput end`)
 
                 // 设置色彩空间
                 setVideoColorSpace(session, videoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010 ||
                   videoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCBCR_P010)
 
-                console.info(`${testNum} step commitSessionConfig begin`)
                 await commitSessionConfig(session);
-                console.info(`${testNum} step commitSessionConfig end`)
                 // 更新视频旋转角度
-                console.info(`${testNum} step getVideoRotation begin`)
                 let rotation = await getVideoRotation(videoOutput)
-                console.info(`${testNum} videoRotation is ${rotation}`)
+                console.info(`videoRotation: ${rotation}`)
                 avRecoder.updateRotation(rotation)
                 let videoStabilizationModes = getSupportedVideoStabilizationMode(session);
                 // 遍历防抖模式
                 for (let vsMode of videoStabilizationModes) {
                   if (videoStabilizationModes.length > 0 && vsMode != camera.VideoStabilizationMode.OFF) {
-                    console.info(`${testNum} set vsMode is ${vsMode}`)
+                    console.info("set vsMode: " + vsMode)
                     setVideoStabilizationMode(session, vsMode)
                     let activeMode = getActiveVideoStabilizationMode(session)
-                    console.info(`${testNum} get vsMode is ${activeMode}`)
+                    console.info("get vsMode: " + activeMode)
                   }
                 }
-                console.info(`${testNum} step startSession begin`)
                 await startSession(session);
-                console.info(`${testNum} step startSession end`)
-                console.info(`${testNum} step startVideoOutput begin`)
                 startVideoOutput(videoOutput);
-                console.info(`${testNum} step startVideoOutput end`)
                 setFocusMode(session);
-                console.info(`${testNum} step onPreviewOutputFrameStart begin`)
                 await onPreviewOutputFrameStart(previewOutPut!);
-                console.info(`${testNum} step onPreviewOutputFrameStart end`)
                 let zoomRatioRange = getSuppotredZoomRatioRange(session);
-                console.info(`${testNum} zoomRatioRange length is ${zoomRatioRange?.length}`)
-                console.info(`${testNum} step startAvRecoder begin`)
                 await startAvRecoder(avRecoder);
-                console.info(`${testNum} step startAvRecoder end`)
                 if (zoomRatioRange != undefined) {
                   for (let zoomRatio of zoomRatioRange!) {
-                    console.info(`${testNum} Profile is zoomRatio is ${zoomRatio}`)
+                    console.info('Profile is zoomRatio is ' + zoomRatio)
                     setZoomRatioRange(session, zoomRatioRange!, zoomRatio);
                     await sleep(2000);
                   }
                 } else {
                   await sleep(3000);
                 }
-                console.info(`${testNum} step stopVideoOutput begin`)
                 stopVideoOutput(videoOutput);
-                console.info(`${testNum} step stopVideoOutput end`)
-                console.info(`${testNum} step stopAvRecoder begin`)
                 await stopAvRecoder(avRecoder, file);
-                console.info(`${testNum} step stopAvRecoder end`)
-                console.info(`${testNum} step releaseAvRecoder begin`)
                 await releaseAvRecoder(avRecoder);
-                console.info(`${testNum} step releaseAvRecoder end`)
 
                 //测试过程
                 // 检查录制的资产
-                console.info(`${testNum} step saveAsset begin`)
                 let asset = await saveAsset(helper, videoUri, getContext())
-                console.info(`${testNum} step saveAsset end, displayName is ${asset!.displayName}`)
                 await sleep(5000)
                 if (videoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCBCR_P010 ||
                   videoProfile.format == camera.CameraFormat.CAMERA_FORMAT_YCRCB_P010) {
@@ -427,21 +361,19 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
                 }
 
                 await expectEqualPhotoCount(befortCount, 1);
-                console.info(`${testNum} 视频文件：${asset!.displayName}`)
+                console.info(`视频文件：${asset!.displayName}`)
                 await sleep(4000);
 
                 //恢复过程
-                console.info(`${testNum} step release resource begin`)
                 offPreviewOutputFrameStart(previewOutPut!);
                 await stopSession(session);
                 await releaseInPutStream(cameraInput);
                 await releaseOutPutStream(previewOutPut);
                 await releaseOutPutStream(videoOutput);
                 await releaseSession(session)
-                console.info(`${testNum} step release resource end`)
                 await sleep(2000);
               } catch (error) {
-                console.error(`${testNum} inner error is ${formatVideoError(error)}`)
+                console.error(`${testNum} error is ${JSON.stringify(error)}`)
                 //恢复过程
                 await releaseAvRecoder(avRecoder!);
                 if (previewOutPut != undefined) {
@@ -458,14 +390,12 @@ export default function CameraVideoRecordWithMultiDiffConfig() {
             }
           }
         }
-        console.info(`${testNum} matched profile count is ${matchedProfileNum}, skipped profile count is ${skippedProfileNum}, frameRate case count is ${frameRateCaseNum}`)
         await sleep(4000);
         await helper.release();
-        console.info(`${testNum} helper release end`)
         done();
 
       } catch (error) {
-        console.error(`${testNum} outer error is ${formatVideoError(error)}`)
+        console.error('error is ' + JSON.stringify(error))
         expect().assertFail();
         done();
       }
