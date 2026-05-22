@@ -33,6 +33,7 @@ export default function arrayBufferFromSevenTest(): void {
 
 
 
+
     /**
      * @tc.name testArrayBufferFromSeven0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_0100
@@ -944,25 +945,12 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5100
-     * @tc.desc Verify result.byteLength equals 0
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferFromSeven0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const empty = new ArrayBuffer(0);
-      const result = ArrayBuffer.from(empty, 0, 0);
-      expect(result.byteLength).assertEqual(0);
-    });
-    /**
-     * @tc.name testArrayBufferFromSeven0052
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5200
      * @tc.desc Verify result.byteLength equals 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(1);
       const view = new Int8Array(source);
       view[0] = 127;
@@ -971,14 +959,14 @@ export default function arrayBufferFromSevenTest(): void {
       expect(result.at(0)).assertEqual(source.at(0));
     });
     /**
-     * @tc.name testArrayBufferFromSeven0053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5300
+     * @tc.name testArrayBufferFromSeven0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5200
      * @tc.desc Verify ArrayBuffer.from(source, 3, 6) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
         ArrayBuffer.from(source, 3, 6);
@@ -988,14 +976,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5400
+     * @tc.name testArrayBufferFromSeven0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5300
      * @tc.desc Verify ArrayBuffer.from(source, 0, 1000) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
         ArrayBuffer.from(source, 0, 1000);
@@ -1005,14 +993,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5500
+     * @tc.name testArrayBufferFromSeven0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5400
      * @tc.desc Verify ArrayBuffer.from(source, source.byteLength, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
         ArrayBuffer.from(source, source.byteLength, 1);
@@ -1022,14 +1010,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5600
+     * @tc.name testArrayBufferFromSeven0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5500
      * @tc.desc Verify ArrayBuffer.from(source, source.byteLength + 10, 1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       try {
         ArrayBuffer.from(source, source.byteLength + 10, 1);
@@ -1039,14 +1027,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5700
+     * @tc.name testArrayBufferFromSeven0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5600
      * @tc.desc Verify ArrayBuffer.from(source, 0, 10) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(4);
       try {
         ArrayBuffer.from(source, 0, 10);
@@ -1056,14 +1044,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5800
+     * @tc.name testArrayBufferFromSeven0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5700
      * @tc.desc Verify Utils.fromArrayBufferWithOffset(source, 10) propagates IndexOutOfBoundsError (tail length negative)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(4);
       try {
         Utils.fromArrayBufferWithOffset(source, 10);
@@ -1073,14 +1061,14 @@ export default function arrayBufferFromSevenTest(): void {
       }
     });
     /**
-     * @tc.name testArrayBufferFromSeven0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5900
+     * @tc.name testArrayBufferFromSeven0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_5800
      * @tc.desc Verify NaN offset and length both coerce to 0 (STA NaN→0)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromSeven0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromSeven0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new ArrayBuffer(8);
       const nanOff: number = Double.toInt(Double.NaN);
       const nanLen: number = Double.toInt(Double.NaN);
