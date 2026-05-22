@@ -59,7 +59,7 @@ struct WebOnConnectParameter {
             switch (this.stringObj.str) {
               case 'OnConnectParameter001': {
                 try {
-                  let receivedConnectionId: number = -1;
+                  let receivedConnectionId: int = -1;
                   let testCallback: webNativeMessagingExtensionManager.WebExtensionConnectionCallback = {
                     onConnect(connection: webNativeMessagingExtensionManager.ConnectionNativeInfo) {
                       receivedConnectionId = connection.connectionId;
