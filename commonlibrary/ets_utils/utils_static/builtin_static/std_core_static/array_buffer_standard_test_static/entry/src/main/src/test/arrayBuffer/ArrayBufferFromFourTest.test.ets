@@ -249,7 +249,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_1400
-     * @tc.desc Verify buffer.byteLength equals 1
+     * @tc.desc Verify buffer.byteLength equals 1 and buffer.at(0) equals 42
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -258,6 +258,7 @@ export default function arrayBufferFromFourTest(): void {
       const arr: double[] = [42.0];
       const buffer = ArrayBuffer.from(arr);
       expect(buffer.byteLength).assertEqual(1);
+      expect(buffer.at(0)).assertEqual(Int.toByte(42));
     });
 
     /**

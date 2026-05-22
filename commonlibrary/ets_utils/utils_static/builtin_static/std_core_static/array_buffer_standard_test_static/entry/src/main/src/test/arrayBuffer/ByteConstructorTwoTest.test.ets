@@ -424,7 +424,7 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_2900
-     * @tc.desc Verify string length is at least 1 and b.toByte() equals 64
+     * @tc.desc Verify toString() returns "64" and b.toByte() equals 64
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -432,7 +432,7 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
       const text = b.toString();
-      expect(text.length >= 1).assertTrue();
+      expect(text).assertEqual("64");
       expect(b.toByte()).assertEqual(64);
     });
     /**

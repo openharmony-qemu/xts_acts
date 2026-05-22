@@ -53,9 +53,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(2);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(6);
-      expect(resultView[0]).assertEqual(Int.toByte(3));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0200
@@ -78,9 +79,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(2, 6);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(3));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0300
@@ -98,9 +100,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0400
@@ -123,9 +126,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(3);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(5);
-      expect(resultView[0]).assertEqual(Int.toByte(4));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[3 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0500
@@ -144,7 +148,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(1.5));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(7);
-      expect(resultView[0]).assertEqual(Int.toByte(20));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[1 + i]);
+      }
 
     });
     /**
@@ -163,7 +169,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(Double.NaN));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -194,7 +202,11 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[0] = 10;
       int8[1] = 20;
       const result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY));
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -219,9 +231,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(-3);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[0]).assertEqual(Int.toByte(6));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[5 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1000
@@ -240,9 +253,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(-10);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1100
@@ -279,7 +293,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(-2.7));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(2);
-      expect(resultView[0]).assertEqual(Int.toByte(7));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[6 + i]);
+      }
 
     });
     /**
@@ -301,9 +317,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(1, 4);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[0]).assertEqual(Int.toByte(2));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[1 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1400
@@ -323,7 +340,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0, Double.toInt(3.9));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[2]).assertEqual(Int.toByte(3));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -355,7 +374,11 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[1] = 2;
       int8[3] = 4;
       const result = buffer.slice(0, Double.toInt(Double.POSITIVE_INFINITY));
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -393,9 +416,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(1, -2);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(5);
-      expect(resultView[0]).assertEqual(Int.toByte(2));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[1 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_1900
@@ -438,7 +462,11 @@ export default function arrayBufferSliceTwoTest(): void {
       int8[0] = 1;
       int8[7] = 8;
       const result = buffer.slice(0, 100);
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -477,9 +505,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0, Double.toInt(-1.8));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(7);
-      expect(resultView[0]).assertEqual(Int.toByte(1));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2400
@@ -502,9 +531,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(2, 6);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(30));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_2500
@@ -567,8 +597,15 @@ export default function arrayBufferSliceTwoTest(): void {
      */
     it('testArrayBufferSliceTwo0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(16);
+      const int8 = new Int8Array(buffer);
+      int8[3] = 30;
+      int8[9] = 90;
       const result = buffer.slice(3, 10);
+      const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(7);
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[3 + i]);
+      }
 
     });
     /**
@@ -622,9 +659,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0, 8);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
-      expect(resultView[0]).assertEqual(Int.toByte(1));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3100
@@ -642,9 +680,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(5);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[0]).assertEqual(Int.toByte(60));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[5 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3200
@@ -661,9 +700,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(6);
-      expect(resultView[0]).assertEqual(Int.toByte(11));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3300
@@ -713,9 +753,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(500, 513);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(13);
-      expect(resultView[0]).assertEqual(Int.toByte(0));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[500 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_3600
@@ -735,7 +776,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(2.9));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(6);
-      expect(resultView[0]).assertEqual(Int.toByte(30));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
 
     });
     /**
@@ -757,7 +800,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(0, Double.toInt(4.1));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[3]).assertEqual(Int.toByte(40));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -780,7 +825,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(1.7), Double.toInt(5.3));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(20));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[1 + i]);
+      }
 
     });
     /**
@@ -799,7 +846,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(0.0));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -831,9 +880,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(-Number.MAX_SAFE_INTEGER));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4200
@@ -865,7 +915,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(Double.NaN), 3);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -898,9 +950,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(2, Double.toInt(Double.POSITIVE_INFINITY));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(6);
-      expect(resultView[0]).assertEqual(Int.toByte(30));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4600
@@ -917,8 +970,9 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(Double.toInt(Double.NEGATIVE_INFINITY), Double.toInt(Double.POSITIVE_INFINITY));
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(8);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
-      expect(resultView[7]).assertEqual(Int.toByte(80));
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
 
     });
     /**
@@ -943,9 +997,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(-6, -2);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(4);
-      expect(resultView[0]).assertEqual(Int.toByte(3));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4800
@@ -963,9 +1018,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(-6, 5);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(3);
-      expect(resultView[0]).assertEqual(Int.toByte(30));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[2 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_4900
@@ -982,9 +1038,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(5, -1);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(2);
-      expect(resultView[0]).assertEqual(Int.toByte(50));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[5 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5000
@@ -1001,9 +1058,10 @@ export default function arrayBufferSliceTwoTest(): void {
       const result = buffer.slice(-100, 2);
       const resultView = new Int8Array(result);
       expect(result.byteLength).assertEqual(2);
-      expect(resultView[0]).assertEqual(Int.toByte(10));
-
-    });
+      for (let i: int = 0; i < result.byteLength; i++) {
+        expect(resultView[i]).assertEqual(int8[0 + i]);
+      }
+});
     /**
      * @tc.name testArrayBufferSliceTwo0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_5100

@@ -1091,7 +1091,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0670
-     * @tc.desc Verify result.length equals 1024
+     * @tc.desc Verify stringify decodes full 1024-byte UTF-8 payload to original long string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1101,6 +1101,7 @@ export default function arrayBufferStringifyTest(): void {
       const encoded = ArrayBuffer.from(longStr, "utf8");
       let result = ArrayBuffer.stringify(encoded, "utf8", 0, encoded.byteLength);
       expect(result.length).assertEqual(1024);
+      expect(result).assertEqual(longStr);
     });
 
     /**
@@ -1113,8 +1114,7 @@ export default function arrayBufferStringifyTest(): void {
      */
     it('testArrayBufferStringify0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const encoded = ArrayBuffer.from("你好", "utf8");
-      let charLen = encoded.byteLength / 2;
-      let result = ArrayBuffer.stringify(encoded, "utf8", 0, charLen);
+      let result = ArrayBuffer.stringify(encoded, "utf8", 0, 3);
       expect(result).assertEqual("你");
     });
 

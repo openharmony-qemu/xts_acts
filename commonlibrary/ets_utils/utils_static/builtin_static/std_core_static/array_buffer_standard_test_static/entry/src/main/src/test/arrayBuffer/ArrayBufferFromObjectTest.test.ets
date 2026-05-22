@@ -630,15 +630,21 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_4000
-     * @tc.desc Verify result.byteLength equals 8
+     * @tc.desc Verify NaN offset coerces to 0 (STA NaN→0) and copies first 8 bytes from src
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromObject0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const src = new ArrayBuffer(16);
+      const view = new Int8Array(src);
+      for (let i: int = 0; i < 8; i++) {
+        view[i] = i;
+      }
       const result = Utils.fromObjectWithBuffer(src, Double.toInt(Double.NaN), 8);
       expect(result.byteLength).assertEqual(8);
+      expect(result.at(0)).assertEqual(src.at(0));
+      expect(result.at(7)).assertEqual(src.at(7));
     });
     /**
      * @tc.name testArrayBufferFromObject0041
@@ -831,7 +837,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_5300
-     * @tc.desc Verify result.byteLength equals 0
+     * @tc.desc Verify NaN length coerces to 0 (STA NaN→0) and yields empty buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
