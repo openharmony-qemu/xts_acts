@@ -518,6 +518,7 @@ export default function wifiSta() {
         expect(value17).assertEqual(7);
       }catch(err) {
         console.error(`[wifi_js]get wifimanager enumvalue ,code is ${err.code},message is ${err.message}`);
+        expect().assertFail();
       }
       done();
     })
@@ -567,7 +568,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with The user does not respond.
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0002';
@@ -610,7 +611,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - withUserAction is false
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0003';
@@ -650,7 +651,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with 找不到对应网络 2501000
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0004';
@@ -707,7 +708,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - withUserAction is false, userActionTimeout is 1, addNetworkToSystem is false
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0005';
@@ -750,7 +751,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - withUserAction is true, userActionTimeout is 30, addNetworkToSystem is true
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0006';
@@ -803,7 +804,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - networkId is negative
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0007';
@@ -834,7 +835,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - networkId is negative
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_ConnectToCandidateConfig_Settings_0008';
@@ -865,7 +866,7 @@ export default function wifiSta() {
      * @tc.desc Test connectToCandidateConfig with ConnectSettings - networkId is negative
      * @tc.size MEDIUMTEST
      * @tc.type Function
-     * @tc.level Level0
+     * @tc.level LEVEL0
      */
     it('SUB_Communication_WiFi_wifiManager_isWlanSupported_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       let caseName = 'LOG_SUB_Communication_WiFi_wifiManager_isWlanSupported_0001';
