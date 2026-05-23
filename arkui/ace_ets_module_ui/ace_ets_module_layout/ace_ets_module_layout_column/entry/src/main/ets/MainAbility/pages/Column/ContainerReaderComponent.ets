@@ -15,8 +15,6 @@
 
 import { BreakpointOptions, ContainerReader, ContainerReaderAttribute } from '@kit.ArkUI';
 
-export declare const ContainerReaderInstance: ContainerReaderAttribute
-
 @Entry
 @Component
 struct ContainerReaderComponent {
