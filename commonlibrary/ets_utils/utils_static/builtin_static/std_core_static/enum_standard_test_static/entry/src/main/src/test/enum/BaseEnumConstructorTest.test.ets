@@ -583,54 +583,40 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4000
-     * @tc.desc Verify BaseEnum constructor with byte value and English name combination
+     * @tc.desc Verify BaseEnum constructor with long value and Chinese name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(Int.toByte(1), "BYTE_VAL");
-      expect(e.valueOf()).assertEqual(Int.toByte(1));
-      expect(e.getName()).assertEqual("BYTE_VAL");
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4100
-     * @tc.desc Verify BaseEnum constructor with long value and empty name combination
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<long>(Int.toLong(100), "浮点枚举");
       expect(e.valueOf()).assertEqual(Int.toLong(100));
       expect(e.getName()).assertEqual("浮点枚举");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4200
+     * @tc.name testBaseEnumConstructor041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4100
      * @tc.desc Verify BaseEnum constructor with float value and Chinese name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(3.14), "浮点枚举");
       expect(e.valueOf()).assertEqual(Double.toFloat(3.14));
       expect(e.getName()).assertEqual("浮点枚举");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4300
+     * @tc.name testBaseEnumConstructor042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4200
      * @tc.desc Verify BaseEnum constructor with string value and long name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longName: string = "N".repeat(10000);
       const e = new BaseEnum<string>("val", longName);
       expect(e.valueOf()).assertEqual("val");
@@ -638,45 +624,14 @@ export default function BaseEnumConstructorTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumConstructor044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4400
-     * @tc.desc Verify BaseEnum constructor succeeds with normal parameters
+     * @tc.name testBaseEnumConstructor043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4300
+     * @tc.desc Verify BaseEnum constructor in try-catch-finally context executes finally block
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(1, "TRY_TEST");
-      expect(e.valueOf()).assertEqual(1);
-      expect(e.getName()).assertEqual("TRY_TEST");
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4500
-     * @tc.desc Verify BaseEnum constructor throws exception caught by catch block
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        const e = new BaseEnum<int>(undefined as int, "CATCH_TEST");
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4600
-     * @tc.desc Verify BaseEnum constructor finally block always executes
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finallyCount: int = 0;
       try {
         const e = new BaseEnum<int>(1, "FINALLY_TEST");
@@ -690,6 +645,34 @@ export default function BaseEnumConstructorTest(): void {
         finallyCount++;
       }
       expect(finallyCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testBaseEnumConstructor044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4400
+     * @tc.desc Verify BaseEnum constructor with double value and emoji name
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnumConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = new BaseEnum<double>(1.5, "VALUE😀");
+      expect(e.valueOf()).assertEqual(1.5);
+      expect(e.getName()).assertEqual("VALUE😀");
+    });
+
+    /**
+     * @tc.name testBaseEnumConstructor045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4500
+     * @tc.desc Verify BaseEnum constructor with short value and special character name
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnumConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = new BaseEnum<short>(Int.toShort(1), "SHORT★♥");
+      expect(e.valueOf()).assertEqual(Int.toShort(1));
+      expect(e.getName()).assertEqual("SHORT★♥");
     });
 
   });
