@@ -3255,13 +3255,14 @@ export default function actsWifiManagerFunctionsTest() {
     it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076";
       hilog.info(domain, tag, `${caseName} test start`);
+      let netWorkId: int;
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
           "ssid": "test_user_action",
           "preSharedKey": "12345678",
           "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
         };
-        let netWorkId: int = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        netWorkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
         hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + netWorkId);
         expect(typeof netWorkId === 'int').assertTrue();
         expect(netWorkId >= 0).assertTrue();
