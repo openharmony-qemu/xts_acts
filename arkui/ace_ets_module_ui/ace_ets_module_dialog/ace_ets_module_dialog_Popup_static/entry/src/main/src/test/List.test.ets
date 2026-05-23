@@ -20,6 +20,11 @@ import CustomPopupOptionsTest from './PopupTest/CustomPopupOptions.test';
 import PopupCommonTest from './PopupTest/PopupCommon.test';
 import PopupOptionsTest from './PopupTest/PopupOptions.test';
 import TipsOptionsTest from './TipsOptionsTest/TipsOptions.test';
+import ImmersiveStyleTest from './uimaterial/ImmersiveStyleTest.test';
+import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMaterialColor.test';
+import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
+import ImmersiveOptionsApplyShadowTest from './uimaterial/ImmersiveOptionsApplyShadow.test';
+import UIMaterialTest from './uimaterial/UIMaterial.test';
 
 export default function testsuite() {
   popupTest();
@@ -28,4 +33,8 @@ export default function testsuite() {
   PopupCommonTest();
   PopupOptionsTest();
   TipsOptionsTest();
+  ImmersiveStyleTest();
+  ImmersiveOptionsMaterialColorTest();
+  ImmersiveOptionsColorInvertTest();
+  ImmersiveOptionsApplyShadowTest();
 }
