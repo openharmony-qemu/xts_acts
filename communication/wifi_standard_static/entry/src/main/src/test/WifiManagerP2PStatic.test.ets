@@ -1538,13 +1538,13 @@ export default function actsWifiManagerP2PTest() {
 
     /**
      * @tc.number SUB_Communication_WifiManager_p2pConnect_0038
-     * @tc.name SUB_Communication_WifiManager_p2pConnect_0089
+     * @tc.name SUB_Communication_WifiManager_p2pConnect_0038
      * @tc.desc Test p2pConnect with deviceAddress为空，预期401
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_p2pConnect_0089", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it("SUB_Communication_WifiManager_p2pConnect_0038", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName = "LOG_SUB_Communication_WifiManager_p2pConnect_0038";
       hilog.info(domain, tag, `${caseName} test start`);
       let config: wifiManager.WifiP2PConfig = {
