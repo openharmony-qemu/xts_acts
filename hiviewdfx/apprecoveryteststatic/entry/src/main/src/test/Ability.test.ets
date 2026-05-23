@@ -58,7 +58,6 @@ export default function abilityTest() {
                 let State2 = appRecovery.saveAppState();
                 console.info("====> DFX_DFR_AppRecovery_Interface_Static_0100  + " + State2);
                 expect(State2 == true).assertTrue();
-
                 appRecovery.enableAppRecovery(appRecovery.RestartFlag.ALWAYS_RESTART,
                     appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR,
                     appRecovery.SaveModeFlag.SAVE_WITH_FILE);
