@@ -122,29 +122,12 @@ export default function StaticMethodGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0200
      * @tc.name testStaticMethodGetName002
-     * @tc.desc Verify standard return value — returns method name string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
-      let name: string = method!.getName();
-      expect(name).assertEqual('test');
-      expect(typeof name).assertEqual('string');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0300
-     * @tc.name testStaticMethodGetName003
      * @tc.desc Verify getName() returns correct names for multiple different static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let m1 = cls.getStaticMethod('method1');
       let m2 = cls.getStaticMethod('method2');
@@ -161,14 +144,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0400
-     * @tc.name testStaticMethodGetName004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0300
+     * @tc.name testStaticMethodGetName003
      * @tc.desc Verify getName() returns special method names for getter and setter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -179,14 +162,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0500
-     * @tc.name testStaticMethodGetName005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0400
+     * @tc.name testStaticMethodGetName004
      * @tc.desc Verify getName() return type is string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -195,14 +178,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0600
-     * @tc.name testStaticMethodGetName006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0500
+     * @tc.name testStaticMethodGetName005
      * @tc.desc Verify getName() returns non-empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -211,14 +194,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0700
-     * @tc.name testStaticMethodGetName007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0600
+     * @tc.name testStaticMethodGetName006
      * @tc.desc Verify getName() for single-character method name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('a');
       expect(method != undefined).assertTrue();
@@ -227,14 +210,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0800
-     * @tc.name testStaticMethodGetName008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0700
+     * @tc.name testStaticMethodGetName007
      * @tc.desc Verify getName() for very long method name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('veryLongMethodNameWithManyCharacters');
       expect(method != undefined).assertTrue();
@@ -242,14 +225,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0900
-     * @tc.name testStaticMethodGetName009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0800
+     * @tc.name testStaticMethodGetName008
      * @tc.desc Verify getName() does not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -262,14 +245,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1000
-     * @tc.name testStaticMethodGetName010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_0900
+     * @tc.name testStaticMethodGetName009
      * @tc.desc Verify getName() for methods with different modifiers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let mPublic = cls.getStaticMethod('publicMethod');
       let mAsync = cls.getStaticMethod('asyncMethod');
@@ -283,14 +266,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1100
-     * @tc.name testStaticMethodGetName011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1000
+     * @tc.name testStaticMethodGetName010
      * @tc.desc Verify getName() for async static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -298,14 +281,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1200
-     * @tc.name testStaticMethodGetName012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1100
+     * @tc.name testStaticMethodGetName011
      * @tc.desc Verify getName() for static methods from different classes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsA = Class.from<ClassA012>();
       let clsB = Class.from<ClassB012>();
       let methodA = clsA.getStaticMethod('methodA');
@@ -317,14 +300,14 @@ export default function StaticMethodGetNameTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1300
-     * @tc.name testStaticMethodGetName013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_NAME_1200
+     * @tc.name testStaticMethodGetName012
      * @tc.desc Verify getName() in inheritance scenario with parent and child class methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCls = Class.from<ParentClass013>();
       let childCls = Class.from<ChildClass013>();
       let parentMethod = parentCls.getStaticMethod('parentMethod');

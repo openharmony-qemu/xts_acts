@@ -159,7 +159,7 @@ export default function StaticMethodIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0100
      * @tc.name testStaticMethodIsPrivate001
-     * @tc.desc Verify isPrivate() call with no parameters
+     * @tc.desc Verify private static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -176,29 +176,12 @@ export default function StaticMethodIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0200
      * @tc.name testStaticMethodIsPrivate002
-     * @tc.desc Verify isPrivate() returns true for private static method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let methods = cls.getStaticMethods();
-      // Private methods are not accessible via reflection at runtime
-      expect(methods.length).assertEqual(0);
-      let m = cls.getStaticMethod('test');
-      expect(m === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0300
-     * @tc.name testStaticMethodIsPrivate003
      * @tc.desc Verify isPrivate() returns false for public static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
@@ -207,14 +190,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0400
-     * @tc.name testStaticMethodIsPrivate004
-     * @tc.desc Verify isPrivate() returns false for protected static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0300
+     * @tc.name testStaticMethodIsPrivate003
+     * @tc.desc Verify protected static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let methods = cls.getStaticMethods();
       // Protected methods are not accessible via reflection; isPrivate() cannot be called directly
@@ -224,14 +207,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0500
-     * @tc.name testStaticMethodIsPrivate005
-     * @tc.desc Verify isPrivate() for private async static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0400
+     * @tc.name testStaticMethodIsPrivate004
+     * @tc.desc Verify private async static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls5 = Class.from<MyClass005>();
       let methods = cls5.getStaticMethods();
       // Private async methods are not accessible via reflection at runtime
@@ -241,14 +224,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0600
-     * @tc.name testStaticMethodIsPrivate006
-     * @tc.desc Verify isPrivate() for private final static method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0500
+     * @tc.name testStaticMethodIsPrivate005
+     * @tc.desc Verify private final static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls6 = Class.from<MyClass006>();
       let methods = cls6.getStaticMethods();
       // Private final methods are not accessible via reflection at runtime
@@ -258,14 +241,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0700
-     * @tc.name testStaticMethodIsPrivate007
-     * @tc.desc Verify isPrivate() for abstract class private method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0600
+     * @tc.name testStaticMethodIsPrivate006
+     * @tc.desc Verify private method in abstract class is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls7 = Class.from<AbstractClass007>();
       let methods = cls7.getStaticMethods();
       // Private methods in abstract class are not accessible via reflection at runtime
@@ -275,14 +258,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0800
-     * @tc.name testStaticMethodIsPrivate008
-     * @tc.desc Verify isPrivate() for final class private method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0700
+     * @tc.name testStaticMethodIsPrivate007
+     * @tc.desc Verify private method in final class is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls8 = Class.from<FinalClass008>();
       let methods = cls8.getStaticMethods();
       // Private methods in final class are not accessible via reflection at runtime
@@ -292,14 +275,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0900
-     * @tc.name testStaticMethodIsPrivate009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0800
+     * @tc.name testStaticMethodIsPrivate008
      * @tc.desc Verify isPrivate() return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 返回 boolean 类型
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
@@ -311,31 +294,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1000
-     * @tc.name testStaticMethodIsPrivate010
-     * @tc.desc Verify isPrivate() returns only true or false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
-      let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
-      let isPrivate: boolean = method!.isPrivate();
-      let isBoolean: boolean = isPrivate === true || isPrivate === false;
-      expect(isBoolean).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1100
-     * @tc.name testStaticMethodIsPrivate011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_0900
+     * @tc.name testStaticMethodIsPrivate009
      * @tc.desc Verify mutual exclusivity between isPrivate, isPublic, and isProtected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
@@ -348,14 +314,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1200
-     * @tc.name testStaticMethodIsPrivate012
-     * @tc.desc Verify isPrivate() for multiple private methods in same class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1000
+     * @tc.name testStaticMethodIsPrivate010
+     * @tc.desc Verify multiple private methods in same class are not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let methods = cls.getStaticMethods();
       // Multiple private methods are not accessible via reflection; isPrivate() cannot be called directly
@@ -363,14 +329,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1300
-     * @tc.name testStaticMethodIsPrivate013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1100
+     * @tc.name testStaticMethodIsPrivate011
      * @tc.desc Verify isPrivate() for method with default access level
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('defaultMethod');
       expect(method != undefined).assertTrue();
@@ -380,14 +346,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1400
-     * @tc.name testStaticMethodIsPrivate014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1200
+     * @tc.name testStaticMethodIsPrivate012
      * @tc.desc Verify isPrivate() does not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 不抛异常
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
@@ -401,48 +367,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1500
-     * @tc.name testStaticMethodIsPrivate015
-     * @tc.desc Verify isPrivate() for private+final modifier combination
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1300
+     * @tc.name testStaticMethodIsPrivate013
+     * @tc.desc Verify deprecated private static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls15 = Class.from<MyClass015>();
-      let methods = cls15.getStaticMethods();
-      // Private final methods are not accessible via reflection; isPrivate() cannot be called directly
-      expect(methods.length).assertEqual(0);
-      let m = cls15.getStaticMethod('privateFinalMethod');
-      expect(m === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1600
-     * @tc.name testStaticMethodIsPrivate016
-     * @tc.desc Verify isPrivate() for private+async modifier combination
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls16 = Class.from<MyClass016>();
-      let methods = cls16.getStaticMethods();
-      // Private async methods are not accessible via reflection; isPrivate() cannot be called directly
-      expect(methods.length).assertEqual(0);
-      let m = cls16.getStaticMethod('privateAsyncMethod');
-      expect(m === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1700
-     * @tc.name testStaticMethodIsPrivate017
-     * @tc.desc Verify isPrivate() for Deprecated private method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls17 = Class.from<MyClass017>();
       let methods = cls17.getStaticMethods();
       // Deprecated private methods are not accessible via reflection; isPrivate() cannot be called directly
@@ -452,31 +384,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1800
-     * @tc.name testStaticMethodIsPrivate018
-     * @tc.desc Verify isPrivate() for async private method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls18 = Class.from<MyClass018>();
-      let methods = cls18.getStaticMethods();
-      // Private async methods are not accessible via reflection; isPrivate() cannot be called directly
-      expect(methods.length).assertEqual(0);
-      let m = cls18.getStaticMethod('fetchData');
-      expect(m === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1900
-     * @tc.name testStaticMethodIsPrivate019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1400
+     * @tc.name testStaticMethodIsPrivate014
      * @tc.desc Verify isPrivate() comparison between async public and async private methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass019>();
       let m1 = cls.getStaticMethod('publicAsync');
       expect(m1 != undefined).assertTrue();
@@ -489,14 +404,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2000
-     * @tc.name testStaticMethodIsPrivate020
-     * @tc.desc Verify isPrivate() for normal, abstract, and final class private methods
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1500
+     * @tc.name testStaticMethodIsPrivate015
+     * @tc.desc Verify private methods in normal, abstract, and final classes are not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 运行时实际: getStaticMethods() 只返回 public 方法
       let clsAbs20 = Class.from<AbstractClass020>();
       let clsFin20 = Class.from<FinalClass020>();
@@ -511,14 +426,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2100
-     * @tc.name testStaticMethodIsPrivate021
-     * @tc.desc Verify isPrivate() for private factory method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1600
+     * @tc.name testStaticMethodIsPrivate016
+     * @tc.desc Verify private factory static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls021 = Class.from<MyClass021>();
       let methods = cls021.getStaticMethods();
       // Private factory methods are not accessible via reflection; isPrivate() cannot be called directly
@@ -528,14 +443,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2200
-     * @tc.name testStaticMethodIsPrivate022
-     * @tc.desc Verify isPrivate() for private utility method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1700
+     * @tc.name testStaticMethodIsPrivate017
+     * @tc.desc Verify private utility static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls022 = Class.from<MyClass022>();
       let methods = cls022.getStaticMethods();
       // Private utility methods are not accessible via reflection; isPrivate() cannot be called directly
@@ -545,14 +460,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2300
-     * @tc.name testStaticMethodIsPrivate023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1800
+     * @tc.name testStaticMethodIsPrivate018
      * @tc.desc Verify isPrivate() counts private methods in a class with mixed access levels
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
@@ -567,14 +482,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2400
-     * @tc.name testStaticMethodIsPrivate024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_1900
+     * @tc.name testStaticMethodIsPrivate019
      * @tc.desc Verify isPrivate() combined with other method property checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate 与其他属性检查的组合
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
@@ -585,14 +500,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2500
-     * @tc.name testStaticMethodIsPrivate025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2000
+     * @tc.name testStaticMethodIsPrivate020
      * @tc.desc Verify filtering private methods from all static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
@@ -607,14 +522,14 @@ export default function StaticMethodIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2600
-     * @tc.name testStaticMethodIsPrivate026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PRIVATE_2100
+     * @tc.name testStaticMethodIsPrivate021
      * @tc.desc Verify access level statistics across all methods in a class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPrivate026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass026>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法

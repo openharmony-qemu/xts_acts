@@ -182,7 +182,7 @@ export default function StaticMethodIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_0300
      * @tc.name testStaticMethodIsPublic003
-     * @tc.desc Verify isPublic() returns false for private static method
+     * @tc.desc Verify private static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -196,7 +196,7 @@ export default function StaticMethodIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_0400
      * @tc.name testStaticMethodIsPublic004
-     * @tc.desc Verify isPublic() returns false for protected static method
+     * @tc.desc Verify protected static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,7 +258,7 @@ export default function StaticMethodIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_0800
      * @tc.name testStaticMethodIsPublic008
-     * @tc.desc Verify isPublic() returns false for private async method
+     * @tc.desc Verify private async static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -290,29 +290,12 @@ export default function StaticMethodIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1000
      * @tc.name testStaticMethodIsPublic010
-     * @tc.desc Verify isPublic() returns only true or false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsPublic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
-      let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
-      let isPublic: boolean = method!.isPublic();
-      let isBoolean: boolean = isPublic === true || isPublic === false;
-      expect(isBoolean).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1100
-     * @tc.name testStaticMethodIsPublic011
      * @tc.desc Verify mutual exclusivity between isPublic, isPrivate, and isProtected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
@@ -322,14 +305,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1200
-     * @tc.name testStaticMethodIsPublic012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1100
+     * @tc.name testStaticMethodIsPublic011
      * @tc.desc Verify isPublic() for abstract class public method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls012 = Class.from<AbstractClass012>();
       let method = cls012.getStaticMethod('abstractMethod');
       expect(method != undefined).assertTrue();
@@ -337,14 +320,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1300
-     * @tc.name testStaticMethodIsPublic013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1200
+     * @tc.name testStaticMethodIsPublic012
      * @tc.desc Verify isPublic() for final class public method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls013 = Class.from<FinalClass013>();
       let method = cls013.getStaticMethod('finalMethod');
       expect(method != undefined).assertTrue();
@@ -352,14 +335,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1400
-     * @tc.name testStaticMethodIsPublic014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1300
+     * @tc.name testStaticMethodIsPublic013
      * @tc.desc Verify isPublic() for getter and setter methods which are usually public
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -370,14 +353,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1500
-     * @tc.name testStaticMethodIsPublic015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1400
+     * @tc.name testStaticMethodIsPublic014
      * @tc.desc Verify isPublic() does not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -390,14 +373,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1600
-     * @tc.name testStaticMethodIsPublic016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1500
+     * @tc.name testStaticMethodIsPublic015
      * @tc.desc Verify isPublic() for public+final modifier combination
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls016 = Class.from<MyClass016>();
       let method = cls016.getStaticMethod('publicFinalMethod');
       expect(method != undefined).assertTrue();
@@ -405,14 +388,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1700
-     * @tc.name testStaticMethodIsPublic017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1600
+     * @tc.name testStaticMethodIsPublic016
      * @tc.desc Verify isPublic() for public+async modifier combination
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls017 = Class.from<MyClass017>();
       let method = cls017.getStaticMethod('publicAsyncMethod');
       expect(method != undefined).assertTrue();
@@ -421,14 +404,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1800
-     * @tc.name testStaticMethodIsPublic018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1700
+     * @tc.name testStaticMethodIsPublic017
      * @tc.desc Verify isPublic() for Deprecated public method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls018 = Class.from<MyClass018>();
       let method = cls018.getStaticMethod('deprecatedMethod');
       expect(method != undefined).assertTrue();
@@ -436,14 +419,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1900
-     * @tc.name testStaticMethodIsPublic019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1800
+     * @tc.name testStaticMethodIsPublic018
      * @tc.desc Verify isPublic() for async public method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls019 = Class.from<MyClass019>();
       let method = cls019.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -452,28 +435,28 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2000
-     * @tc.name testStaticMethodIsPublic020
-     * @tc.desc Verify isPublic() returns false for async private method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_1900
+     * @tc.name testStaticMethodIsPublic019
+     * @tc.desc Verify async private static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls020 = Class.from<MyClass020>();
       let methods = cls020.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2100
-     * @tc.name testStaticMethodIsPublic021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2000
+     * @tc.name testStaticMethodIsPublic020
      * @tc.desc Verify isPublic() for normal, abstract, and final class public methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass021>();
       let clsFin = Class.from<FinalClass021>();
       let clsNor = Class.from<NormalClass021>();
@@ -489,14 +472,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2200
-     * @tc.name testStaticMethodIsPublic022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2100
+     * @tc.name testStaticMethodIsPublic021
      * @tc.desc Verify isPublic() for factory method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls022 = Class.from<MyClass022>();
       let method = cls022.getStaticMethod('factoryMethod');
       expect(method != undefined).assertTrue();
@@ -504,14 +487,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2300
-     * @tc.name testStaticMethodIsPublic023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2200
+     * @tc.name testStaticMethodIsPublic022
      * @tc.desc Verify isPublic() counts public methods in a class with mixed access levels
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let publicCount: int = 0;
@@ -524,14 +507,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2400
-     * @tc.name testStaticMethodIsPublic024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2300
+     * @tc.name testStaticMethodIsPublic023
      * @tc.desc Verify isPublic() combined with other method property checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls024 = Class.from<MyClass024>();
       let method = cls024.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -543,14 +526,14 @@ export default function StaticMethodIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2500
-     * @tc.name testStaticMethodIsPublic025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_PUBLIC_2400
+     * @tc.name testStaticMethodIsPublic024
      * @tc.desc Verify filtering public methods from all static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsPublic025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsPublic024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let publicMethods: Array<reflect.StaticMethod> = [];

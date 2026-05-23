@@ -220,7 +220,7 @@ export default function StaticMethodIsAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0500
      * @tc.name testStaticMethodIsAsync005
-     * @tc.desc Verify isAsync() for private async static method
+     * @tc.desc Verify private async static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -234,7 +234,7 @@ export default function StaticMethodIsAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0600
      * @tc.name testStaticMethodIsAsync006
-     * @tc.desc Verify isAsync() for protected async static method
+     * @tc.desc Verify protected async static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -284,29 +284,12 @@ export default function StaticMethodIsAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_0900
      * @tc.name testStaticMethodIsAsync009
-     * @tc.desc Verify isAsync() returns only true or false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsAsync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
-      let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
-      let isAsync: boolean = method!.isAsync();
-      let isBoolean: boolean = isAsync === true || isAsync === false;
-      expect(isBoolean).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1000
-     * @tc.name testStaticMethodIsAsync010
      * @tc.desc Verify async method return type contains Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let asyncMethod = cls.getStaticMethod('asyncMethod');
       let syncMethod = cls.getStaticMethod('syncMethod');
@@ -319,14 +302,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1100
-     * @tc.name testStaticMethodIsAsync011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1000
+     * @tc.name testStaticMethodIsAsync010
      * @tc.desc Verify isAsync() for abstract class async static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls011 = Class.from<AbstractClass011>();
       let method = cls011.getStaticMethod('abstractAsync');
       expect(method != undefined).assertTrue();
@@ -334,14 +317,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1200
-     * @tc.name testStaticMethodIsAsync012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1100
+     * @tc.name testStaticMethodIsAsync011
      * @tc.desc Verify isAsync() for final class async static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls012 = Class.from<FinalClass012>();
       let method = cls012.getStaticMethod('finalAsync');
       expect(method != undefined).assertTrue();
@@ -349,14 +332,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1300
-     * @tc.name testStaticMethodIsAsync013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1200
+     * @tc.name testStaticMethodIsAsync012
      * @tc.desc Verify isAsync() does not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -369,14 +352,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1400
-     * @tc.name testStaticMethodIsAsync014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1300
+     * @tc.name testStaticMethodIsAsync013
      * @tc.desc Verify isAsync() with async+public modifier combination
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls014 = Class.from<MyClass014>();
       let method = cls014.getStaticMethod('publicAsyncMethod');
       expect(method != undefined).assertTrue();
@@ -385,28 +368,28 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1500
-     * @tc.name testStaticMethodIsAsync015
-     * @tc.desc Verify isAsync() with async+private modifier combination
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1400
+     * @tc.name testStaticMethodIsAsync014
+     * @tc.desc Verify async private static method is not accessible via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls015 = Class.from<MyClass015>();
       let method = cls015.getStaticMethod('privateAsyncMethod');
       expect(method === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1600
-     * @tc.name testStaticMethodIsAsync016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1500
+     * @tc.name testStaticMethodIsAsync015
      * @tc.desc Verify isAsync() for Deprecated async method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls016 = Class.from<MyClass016>();
       let method = cls016.getStaticMethod('deprecatedAsyncMethod');
       expect(method != undefined).assertTrue();
@@ -414,14 +397,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1700
-     * @tc.name testStaticMethodIsAsync017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1600
+     * @tc.name testStaticMethodIsAsync016
      * @tc.desc Verify isAsync() async method characteristics
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass017>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -431,14 +414,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1800
-     * @tc.name testStaticMethodIsAsync018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1700
+     * @tc.name testStaticMethodIsAsync017
      * @tc.desc Verify isAsync() for async method with parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls018 = Class.from<MyClass018>();
       let method = cls018.getStaticMethod('fetchWithParam');
       expect(method != undefined).assertTrue();
@@ -447,14 +430,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1900
-     * @tc.name testStaticMethodIsAsync019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1800
+     * @tc.name testStaticMethodIsAsync018
      * @tc.desc Verify isAsync() for normal, abstract, and final class async methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass019>();
       let clsFin = Class.from<FinalClass019>();
       let clsNor = Class.from<NormalClass019>();
@@ -470,14 +453,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2000
-     * @tc.name testStaticMethodIsAsync020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_1900
+     * @tc.name testStaticMethodIsAsync019
      * @tc.desc Verify isAsync() for async factory method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls020 = Class.from<MyClass020>();
       let method = cls020.getStaticMethod('createAsync');
       expect(method != undefined).assertTrue();
@@ -485,14 +468,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2100
-     * @tc.name testStaticMethodIsAsync021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2000
+     * @tc.name testStaticMethodIsAsync020
      * @tc.desc Verify isAsync() counts async methods in a class correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass021>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let asyncCount: int = 0;
@@ -505,14 +488,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2200
-     * @tc.name testStaticMethodIsAsync022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2100
+     * @tc.name testStaticMethodIsAsync021
      * @tc.desc Verify isAsync() combined with other method property checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls022 = Class.from<MyClass022>();
       let method = cls022.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -524,14 +507,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2300
-     * @tc.name testStaticMethodIsAsync023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2200
+     * @tc.name testStaticMethodIsAsync022
      * @tc.desc Verify filtering async methods from all static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let asyncMethods: Array<reflect.StaticMethod> = [];
@@ -544,14 +527,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2400
-     * @tc.name testStaticMethodIsAsync024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2300
+     * @tc.name testStaticMethodIsAsync023
      * @tc.desc Verify isAsync() comparison between sync and async methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass024>();
       let syncMethod = cls.getStaticMethod('syncVersion');
       let asyncMethod = cls.getStaticMethod('asyncVersion');
@@ -566,14 +549,14 @@ export default function StaticMethodIsAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2500
-     * @tc.name testStaticMethodIsAsync025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_ASYNC_2400
+     * @tc.name testStaticMethodIsAsync024
      * @tc.desc Verify isAsync() returns false for method returning Promise without async keyword
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsAsync025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsAsync024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass025>();
       let method = cls.getStaticMethod('returnsPromise');
       expect(method != undefined).assertTrue();
