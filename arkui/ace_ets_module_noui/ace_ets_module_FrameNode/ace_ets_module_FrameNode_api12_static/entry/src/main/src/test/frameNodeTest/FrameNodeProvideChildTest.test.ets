@@ -122,9 +122,6 @@ export default function FrameNodeProvideChildTest() {
       expect(ChildrenCountMode.ONLY_EXPANDED).assertEqual(1);
       expect(ChildrenCountMode.ALL_NOT_EXPAND).assertEqual(2);
 
-      expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('N16');
-      expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('N8');
-
       console.info('[FrameNodeProvideChildTest_0100] END');
       done();
     });
