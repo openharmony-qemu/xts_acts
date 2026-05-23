@@ -1535,5 +1535,74 @@ export default function actsWifiManagerP2PTest() {
       }
       done();
     });
+
+    /**
+     * @tc.number SUB_Communication_WifiManager_p2pConnect_0038
+     * @tc.name SUB_Communication_WifiManager_p2pConnect_0038
+     * @tc.desc Test p2pConnect with deviceAddress为空，预期401
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_p2pConnect_0038", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_p2pConnect_0038";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let config: wifiManager.WifiP2PConfig = {
+        deviceAddress: "",
+        netId: -1,
+        passphrase: "TestDevice",
+        groupName: "TestDevice",
+        goBand: wifiManager.GroupOwnerBand.GO_BAND_AUTO
+      };
+      try {
+        wifiManager.p2pConnect(config);
+        hilog.info(domain, tag, `${caseName} p2pConnect success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_createGroup_0039
+     * @tc.name SUB_Communication_WifiManager_createGroup_0039
+     * @tc.desc Test createGroup with deviceAddress为空，预期401
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_createGroup_0039", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_createGroup_0039";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let config: wifiManager.WifiP2PConfig = {
+        deviceAddress: "11:22:33",
+        netId: -1,
+        passphrase: "TestDevice",
+        groupName: "TestDevice",
+        goBand: wifiManager.GroupOwnerBand.GO_BAND_AUTO
+      };
+      try {
+        wifiManager.createGroup(config);
+        hilog.info(domain, tag, `${caseName} createGroup success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
   })
 }
