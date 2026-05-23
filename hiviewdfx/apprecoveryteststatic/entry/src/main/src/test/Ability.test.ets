@@ -442,14 +442,14 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1900
-         * @tc.number DFX_DFR_AppRecovery_Interface_Static_1900
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_1900
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_1900
          * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR + SAVE_WITH_FILE 枚举值覆盖测试;
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("DFX_DFR_AppRecovery_Interface_Static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_1900 start---------------------");
         try{
             appRecovery.enableAppRecovery(
@@ -464,14 +464,14 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_2000
-         * @tc.number DFX_DFR_AppRecovery_Interface_Static_2000
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2000
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2000
          * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_BACKGROUND + SAVE_WITH_FILE 枚举值覆盖测试
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("DFX_DFR_AppRecovery_Interface_Static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2000 start---------------------");
         try{
             appRecovery.enableAppRecovery(
@@ -486,14 +486,14 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_2100
-         * @tc.number DFX_DFR_AppRecovery_Interface_Static_2100
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2100
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2100
          * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR 枚举值覆盖测试
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("DFX_DFR_AppRecovery_Interface_Static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2100 start---------------------");
         try{
             appRecovery.enableAppRecovery(
@@ -507,14 +507,14 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.name   DFX_DFR_AppRecovery_Interface_Static_2200
-         * @tc.number DFX_DFR_AppRecovery_Interface_Static_2200
+         * @tc.name   SUB_DFX_DFR_AppRecovery_Interface_Static_2200
+         * @tc.number SUB_DFX_DFR_AppRecovery_Interface_Static_2200
          * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_BACKGROUND 枚举值覆盖测试
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it("DFX_DFR_AppRecovery_Interface_Static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        it("SUB_DFX_DFR_AppRecovery_Interface_Static_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         console.info("-------------------------DFX_DFR_AppRecovery_Interface_Static_2200 start---------------------");
         try{
             appRecovery.enableAppRecovery(
