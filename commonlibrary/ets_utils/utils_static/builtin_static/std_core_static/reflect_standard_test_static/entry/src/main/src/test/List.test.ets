@@ -1,4 +1,5 @@
-﻿/*
+﻿'use static'
+/*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,16 +14,16 @@
  * limitations under the License.
  */
 
-import StaticFieldEqualsTest from "./StaticField/StaticFieldEqualsTest.test";
-import StaticFieldGetNameTest from "./StaticField/StaticFieldGetNameTest.test";
-import StaticFieldGetOwnerTest from "./StaticField/StaticFieldGetOwnerTest.test";
-import StaticFieldGetTypeTest from "./StaticField/StaticFieldGetTypeTest.test";
-import StaticFieldGetValueTest from "./StaticField/StaticFieldGetValueTest.test";
-import StaticFieldIsPrivateTest from "./StaticField/StaticFieldIsPrivateTest.test";
-import StaticFieldIsProtectedTest from "./StaticField/StaticFieldIsProtectedTest.test";
-import StaticFieldIsPublicTest from "./StaticField/StaticFieldIsPublicTest.test";
-import StaticFieldIsReadonlyTest from "./StaticField/StaticFieldIsReadonlyTest.test";
-import StaticFieldSetValueTest from "./StaticField/StaticFieldSetValueTest.test";
+import {StaticFieldEqualsTest} from "./StaticField/StaticFieldEqualsTest.test";
+import {StaticFieldGetNameTest} from "./StaticField/StaticFieldGetNameTest.test";
+import {StaticFieldGetOwnerTest} from "./StaticField/StaticFieldGetOwnerTest.test";
+import {StaticFieldGetTypeTest} from "./StaticField/StaticFieldGetTypeTest.test";
+import {StaticFieldGetValueTest} from "./StaticField/StaticFieldGetValueTest.test";
+import {StaticFieldIsPrivateTest} from "./StaticField/StaticFieldIsPrivateTest.test";
+import {StaticFieldIsProtectedTest} from "./StaticField/StaticFieldIsProtectedTest.test";
+import {StaticFieldIsPublicTest} from "./StaticField/StaticFieldIsPublicTest.test";
+import {StaticFieldIsReadonlyTest} from "./StaticField/StaticFieldIsReadonlyTest.test";
+import {StaticFieldSetValueTest} from "./StaticField/StaticFieldSetValueTest.test";
 
 export default function testsuite(): void {
   StaticFieldEqualsTest();

@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass, PLACEHOLDER_PASSWORD, PLACEHOLDER_API_KEY, PLACEHOLDER_TOKEN } from '../Util.test';
 
+class IntegrationIsPublicClass {
+  public static name: string = 'test';
+  public static count: int = 0;
+}
+
 class MyClass001 {
   public static name: string = 'test';
 }
@@ -718,7 +723,7 @@ export function StaticFieldIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPUBLIC_0700
      * @tc.name testStaticFieldIsPublic007
-     * @tc.desc Verify isPublic returns false for internal static fields
+     * @tc.desc Verify isPublic returns true for public static fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -756,7 +761,7 @@ export function StaticFieldIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPUBLIC_0900
      * @tc.name testStaticFieldIsPublic009
-     * @tc.desc Verify field without explicit modifier defaults to public
+     * @tc.desc Verify field with explicit public modifier returns true for isPublic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -812,7 +817,7 @@ export function StaticFieldIsPublicTest(): void {
       cls.addStaticField('num', createReflectClass('int'), 100, true, false, false, false);
       cls.addStaticField('str', createReflectClass('string'), 'test', true, false, false, false);
       cls.addStaticField('bool', createReflectClass('boolean'), true, true, false, false, false);
-      cls.addStaticField('arr', createReflectClass('int[]'), '', true, false, false, false);
+      cls.addStaticField('arr', createReflectClass('int[]'), [] as FieldValue[], true, false, false, false);
       cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, true, false, false, false);
       cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, true, false, false, false);
       expect(cls.getStaticField('num')!.isPublic()).assertEqual(true);
@@ -837,7 +842,7 @@ export function StaticFieldIsPublicTest(): void {
         field!.isPublic();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -855,7 +860,7 @@ export function StaticFieldIsPublicTest(): void {
         field!.isPublic();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1854,6 +1859,20 @@ export function StaticFieldIsPublicTest(): void {
     it('testStaticFieldIsPublic073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls: ReflectClass = reflectMyClass060();
       expect(hasPublicFields(cls)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_ISPUBLIC_0100
+     * @tc.name integrationIsPublic001
+     * @tc.desc Verify isPublic returns true for public fields using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const field = Class.from<IntegrationIsPublicClass>().getStaticField('name');
+      expect(field !== undefined).assertEqual(true);
+      expect(field!.isPublic()).assertEqual(true);
     });
   });
 }

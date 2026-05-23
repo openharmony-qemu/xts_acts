@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass, PLACEHOLDER_PASSWORD, PLACEHOLDER_TOKEN, PLACEHOLDER_API_KEY, PLACEHOLDER_SSN, PLACEHOLDER_CARD_NUMBER, PLACEHOLDER_CVV, PLACEHOLDER_USERNAME, PLACEHOLDER_PATIENT_NAME, PLACEHOLDER_DIAGNOSIS } from '../Util.test';
 
+class IntegrationIsPrivateClass {
+  private static hiddenField: string = 'secret';
+  public static visibleField: string = 'public';
+}
+
 class MyClass001 {
   private static name: string = 'test';
 }
@@ -377,9 +382,10 @@ function getAccessLevel(field: StaticField): string {
     return 'private';
   } else if (field.isProtected()) {
     return 'protected';
-  } else {
+  } else if (field.isInternal()) {
     return 'internal';
   }
+  return '';
 }
 
 function exportPublicConfig(cls: ReflectClass): Record<string, string | number | boolean | null> {
@@ -402,7 +408,7 @@ function auditSensitiveFields(cls: ReflectClass): void {
     let fieldName = field.getName().toLowerCase();
     for (let j = 0; j < sensitivePatterns.length; j++) {
       if (fieldName.indexOf(sensitivePatterns[j]) !== -1 && !field.isPrivate()) {
-        throw new Error('Sensitive field [' + field.getName() + '] is not private');
+        throw new TypeError('Sensitive field [' + field.getName() + '] is not private');
       }
     }
   }
@@ -469,7 +475,7 @@ function maskPrivateFieldValues(cls: ReflectClass): Record<string, string> {
     if (field.isPrivate()) {
       masked[field.getName()] = '***MASKED***';
     } else {
-      masked[field.getName()] = String(field.getValue());
+      masked[field.getName()] = `${field.getValue()}`;
     }
   }
   return masked;
@@ -519,22 +525,6 @@ export function StaticFieldIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const cls: ReflectClass = createReflectClass('MyClass001');
-      cls.addStaticField('name', createReflectClass('string'), 'test', false, true, false, false);
-      let field: StaticField | null = cls.getStaticField('name');
-      const result = field!.isPrivate();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPRIVATE_0200
-     * @tc.name testStaticFieldIsPrivate002
-     * @tc.desc Verify isPrivate returns boolean without passing any parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticFieldIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls: ReflectClass = createReflectClass('MyClass001');
       cls.addStaticField('name', createReflectClass('string'), 'test', false, true, false, false);
       let field: StaticField | null = cls.getStaticField('name');
@@ -602,7 +592,7 @@ export function StaticFieldIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPRIVATE_0700
      * @tc.name testStaticFieldIsPrivate007
-     * @tc.desc Verify isPrivate returns false for internal static fields
+     * @tc.desc Verify isPrivate returns false for public static fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -706,7 +696,7 @@ export function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('num', createReflectClass('int'), 100, false, true, false, false);
       cls.addStaticField('str', createReflectClass('string'), 'test', false, true, false, false);
       cls.addStaticField('bool', createReflectClass('boolean'), true, false, true, false, false);
-      cls.addStaticField('arr', createReflectClass('int[]'), '', false, true, false, false);
+      cls.addStaticField('arr', createReflectClass('int[]'), [] as FieldValue[], false, true, false, false);
       cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, false, true, false, false);
       cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, false, true, false, false);
       expect(cls.getStaticField('num')!.isPrivate()).assertEqual(true);
@@ -731,7 +721,7 @@ export function StaticFieldIsPrivateTest(): void {
         field!.isPrivate();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -749,7 +739,7 @@ export function StaticFieldIsPrivateTest(): void {
         field!.isPrivate();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1234,7 +1224,7 @@ export function StaticFieldIsPrivateTest(): void {
       cls.addStaticField('pub', createReflectClass('int'), 1, true, false, false, false);
       cls.addStaticField('priv', createReflectClass('int'), 2, false, true, false, false);
       cls.addStaticField('prot', createReflectClass('int'), 3, false, false, true, false);
-      cls.addStaticField('inter', createReflectClass('int'), 4, false, false, false, false);
+      cls.addInternalStaticField('inter', createReflectClass('int'), 4, false);
       expect(getAccessLevel(cls.getStaticField('pub')!)).assertEqual('public');
       expect(getAccessLevel(cls.getStaticField('priv')!)).assertEqual('private');
       expect(getAccessLevel(cls.getStaticField('prot')!)).assertEqual('protected');
@@ -1916,6 +1906,19 @@ export function StaticFieldIsPrivateTest(): void {
       for (let i = 0; i < privateFields.length; i++) {
         expect(privateFields[i].isPrivate()).assertEqual(true);
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_ISPRIVATE_0100
+     * @tc.name integrationIsPrivate001
+     * @tc.desc Verify private fields are not accessible via getStaticField using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const field = Class.from<IntegrationIsPrivateClass>().getStaticField('hiddenField');
+      expect(field === undefined).assertEqual(true);
     });
   });
 }

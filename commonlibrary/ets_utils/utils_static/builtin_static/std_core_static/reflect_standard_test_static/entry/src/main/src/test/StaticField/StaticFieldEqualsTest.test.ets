@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
+class IntegrationEqualsClass {
+  public static name: string = 'test';
+  public static count: int = 100;
+}
+
 function reflectMyClass001(): ReflectClass {
   const cls = createReflectClass('MyClass001');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
@@ -937,12 +942,21 @@ function fieldsEquals(fields1: StaticField[], fields2: StaticField[]): boolean {
 
 function groupFieldsByType(fields: StaticField[]): Map<string, StaticField[]> {
   const groups: Map<string, StaticField[]> = new Map<string, StaticField[]>();
+  const groupTypes: ReflectClass[] = [];
   for (let i = 0; i < fields.length; i++) {
-    const typeName: string = fields[i].getType().getName();
-    if (!groups.has(typeName)) {
-      groups.set(typeName, []);
+    const currentType = fields[i].getType();
+    let found = false;
+    for (let j = 0; j < groupTypes.length; j++) {
+      if (currentType.equals(groupTypes[j])) {
+        groups.get(groupTypes[j].getName())!.push(fields[i]);
+        found = true;
+        break;
+      }
     }
-    groups.get(typeName)!.push(fields[i]);
+    if (!found) {
+      groupTypes.push(currentType);
+      groups.set(currentType.getName(), [fields[i]]);
+    }
   }
   return groups;
 }
@@ -996,8 +1010,6 @@ function compareConfigFields(oldClass: ReflectClass, newClass: ReflectClass): vo
       const newField: StaticField = newFields[j];
       if (oldField.getName() === newField.getName()) {
         found = true;
-        const oldValue: FieldValue | undefined = oldField.getValue();
-        const newValue: FieldValue | undefined = newField.getValue();
         break;
       }
     }
@@ -1391,6 +1403,8 @@ export function StaticFieldEqualsTest(): void {
           let isEqual = fields[i].equals(fields[j]);
           if (i === j) {
             expect(isEqual).assertEqual(true);
+          } else {
+            expect(isEqual).assertEqual(false);
           }
         }
       }
@@ -1422,8 +1436,8 @@ export function StaticFieldEqualsTest(): void {
     it('testStaticFieldEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let field: StaticField | null = null;
       let otherField: StaticField | null = null;
-      expect(field).assertEqual(null);
-      expect(otherField).assertEqual(null);
+      const result = field?.equals(otherField);
+      expect(result).assertEqual(undefined);
     });
 
     /**
@@ -1595,7 +1609,7 @@ export function StaticFieldEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_EQUALS_3000
      * @tc.name testStaticFieldEquals030
-     * @tc.desc Verify consistency between hash code and equals
+     * @tc.desc Verify two references to the same static field are equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1659,7 +1673,8 @@ export function StaticFieldEqualsTest(): void {
       }
       let time2 = Date.now() - start2;
 
-      expect(time2 >= 0).assertEqual(true);
+      expect(field1! === field2!).assertEqual(true);
+      expect(field1!.equals(field2!)).assertEqual(true);
     });
 
     /**
@@ -1693,6 +1708,7 @@ export function StaticFieldEqualsTest(): void {
     it('testStaticFieldEquals034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = reflectMyClass034();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
+      expect(fields.length > 0).assertEqual(true);
       let targetField = cls.getStaticField("data");
 
       expect(containsField(fields, targetField!)).assertEqual(true);
@@ -1711,6 +1727,8 @@ export function StaticFieldEqualsTest(): void {
       const cls2 = reflectOtherClass035();
       let fields1: StaticField[] = cls1.getDeclaredStaticFields();
       let fields2: StaticField[] = cls2.getDeclaredStaticFields();
+      expect(fields1.length > 0).assertEqual(true);
+      expect(fields2.length > 0).assertEqual(true);
 
       let intersection = intersectFields(fields1, fields2);
       expect(intersection.length).assertEqual(1);
@@ -1745,8 +1763,11 @@ export function StaticFieldEqualsTest(): void {
       let oldCls = reflectOldConfig037();
       let newCls = reflectNewConfig037();
 
+      let oldFields: StaticField[] = oldCls.getDeclaredStaticFields();
+      let newFields: StaticField[] = newCls.getDeclaredStaticFields();
+      expect(oldFields.length > 0).assertEqual(true);
+      expect(newFields.length > 0).assertEqual(true);
       compareConfigFields(oldCls, newCls);
-      expect(oldCls.getDeclaredStaticFields().length > 0).assertEqual(true);
     });
 
     /**
@@ -2237,6 +2258,10 @@ export function StaticFieldEqualsTest(): void {
     it('testStaticFieldEquals071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls1 = reflectMyClass047();
       const cls2 = reflectMyClass048();
+      let fields1: StaticField[] = cls1.getDeclaredStaticFields();
+      let fields2: StaticField[] = cls2.getDeclaredStaticFields();
+      expect(fields1.length > 0).assertEqual(true);
+      expect(fields2.length > 0).assertEqual(true);
       const result: Record<string, string> = compareFieldCollections(cls1, cls2);
       expect(result['VERSION']).assertEqual('only_in_first');
       expect(result['API_URL']).assertEqual('only_in_second');
@@ -2255,6 +2280,26 @@ export function StaticFieldEqualsTest(): void {
       let field1 = cls.getStaticField('data');
       let field2 = cls.getStaticField('data');
       expect(symmetricEquals(field1!, field2!)).assertEqual(true);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_EQUALS_0100    
+     * @tc.name integrationEquals001
+     * @tc.desc Verify equals returns true for same field and false for different fields using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('integrationEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const cls = Class.from<IntegrationEqualsClass>();
+      const field1 = cls.getStaticField('name');
+      const field2 = cls.getStaticField('name');
+      const field3 = cls.getStaticField('count');
+      expect(field1 !== undefined).assertEqual(true);
+      expect(field2 !== undefined).assertEqual(true);
+      expect(field3 !== undefined).assertEqual(true);
+      expect(field1!.equals(field2!)).assertEqual(true);
+      expect(field1!.equals(field3!)).assertEqual(false);
     });
   });
 }

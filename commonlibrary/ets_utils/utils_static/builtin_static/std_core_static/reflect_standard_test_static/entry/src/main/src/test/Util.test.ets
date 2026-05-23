@@ -15,6 +15,66 @@
 
 type FieldValue = string | number | boolean | undefined | null | FieldValue[] | Record<string, FieldValue> | ReflectClass;
 
+const FIELD_VALUE_EQUALS_MAX_DEPTH: number = 20;
+
+function fieldValueEquals(a: FieldValue, b: FieldValue, depth: number = 0): boolean {
+  if (depth > FIELD_VALUE_EQUALS_MAX_DEPTH) {
+    console.warn(`fieldValueEquals: max depth ${FIELD_VALUE_EQUALS_MAX_DEPTH} exceeded, treating as not equal`);
+    return false;
+  }
+  if (typeof a === 'number' && typeof b === 'number' && a !== a && b !== b) {
+    return true;
+  }
+  if (a === b) {
+    return true;
+  }
+  if (a === null || b === null || a === undefined || b === undefined) {
+    return false;
+  }
+  if (typeof a !== typeof b) {
+    return false;
+  }
+  if (Array.isArray(a) && Array.isArray(b)) {
+    let arrA: FieldValue[] = a as FieldValue[];
+    let arrB: FieldValue[] = b as FieldValue[];
+    if (arrA.length !== arrB.length) {
+      return false;
+    }
+    for (let i = 0; i < arrA.length; i++) {
+      let valA: FieldValue = arrA[i] as FieldValue;
+      let valB: FieldValue = arrB[i] as FieldValue;
+      if (!fieldValueEquals(valA, valB, depth + 1)) {
+        return false;
+      }
+    }
+    return true;
+  }
+  if (typeof a === 'object' && typeof b === 'object') {
+    if (a instanceof ReflectClass && b instanceof ReflectClass) {
+      return a.equals(b);
+    }
+    let keysA: string[] = Object.keys(a as Record<string, FieldValue>);
+    let keysB: string[] = Object.keys(b as Record<string, FieldValue>);
+    if (keysA.length !== keysB.length) {
+      return false;
+    }
+    for (let key of keysA) {
+      if (keysB.findIndex((k: string) => k === key) === -1) {
+        return false;
+      }
+      if (!fieldValueEquals(
+        (a as Record<string, FieldValue>)[key],
+        (b as Record<string, FieldValue>)[key],
+        depth + 1
+      )) {
+        return false;
+      }
+    }
+    return true;
+  }
+  return false;
+}
+
 interface StaticField {
   getName(): string;
 
@@ -32,6 +92,8 @@ interface StaticField {
 
   isProtected(): boolean;
 
+  isInternal(): boolean;
+
   isReadonly(): boolean;
 
   setValue(value: FieldValue): void;
@@ -46,6 +108,7 @@ class StaticFieldImpl implements StaticField {
   private isPrivateFlag: boolean;
   private isProtectedFlag: boolean;
   private isReadonlyFlag: boolean;
+  private isInternalFlag: boolean;
 
   constructor(
     name: string,
@@ -65,6 +128,7 @@ class StaticFieldImpl implements StaticField {
     this.isPrivateFlag = isPrivate;
     this.isProtectedFlag = isProtected;
     this.isReadonlyFlag = isReadonly;
+    this.isInternalFlag = !isPublic && !isPrivate && !isProtected;
   }
 
   getName(): string {
@@ -93,16 +157,21 @@ class StaticFieldImpl implements StaticField {
     let thisVal = this.value;
     let otherVal = otherField.getValue();
     if (typeof thisVal === 'number' && typeof otherVal === 'number') {
-      if (thisVal !== thisVal && otherVal !== otherVal) {
+      let thisIsNaN: boolean = thisVal !== thisVal;
+      let otherIsNaN: boolean = otherVal !== otherVal;
+      if (thisIsNaN && otherIsNaN) {
         return this.name === otherField.getName() &&
-          this.owner.equals(otherOwner) &&
-          this.type.equals(otherType);
+        this.owner.equals(otherOwner) &&
+        this.type.equals(otherType);
+      }
+      if (thisIsNaN !== otherIsNaN) {
+        return false;
       }
     }
     return this.name === otherField.getName() &&
     this.owner.equals(otherOwner) &&
     this.type.equals(otherType) &&
-    thisVal === otherVal;
+    fieldValueEquals(thisVal, otherVal);
   }
 
   isPublic(): boolean {
@@ -117,13 +186,17 @@ class StaticFieldImpl implements StaticField {
     return this.isProtectedFlag;
   }
 
+  isInternal(): boolean {
+    return this.isInternalFlag;
+  }
+
   isReadonly(): boolean {
     return this.isReadonlyFlag;
   }
 
   setValue(value: FieldValue): void {
     if (this.isReadonlyFlag) {
-      throw new Error('Cannot set value on readonly field');
+      throw new TypeError('Cannot set value on readonly field');
     }
     this.value = value;
   }
@@ -158,9 +231,24 @@ class ReflectClass {
     isReadonly: boolean
   ): void {
     if ((isPublic && isPrivate) || (isPublic && isProtected) || (isPrivate && isProtected)) {
-      throw new Error(`StaticField '${name}': only one access modifier can be true.`);
+      throw new TypeError(`StaticField '${name}': only one access modifier can be true.`);
     }
+    if (!isPublic && !isPrivate && !isProtected) {
+      throw new TypeError(`StaticField '${name}': at least one access modifier must be true. ` +
+        `For internal fields, use addInternalStaticField instead.`);
+    }
+
     let field = new StaticFieldImpl(name, this, type, value, isPublic, isPrivate, isProtected, isReadonly);
+    this.staticFields.set(name, field);
+  }
+
+  addInternalStaticField(
+    name: string,
+    type: ReflectClass,
+    value: FieldValue,
+    isReadonly: boolean
+  ): void {
+    let field = new StaticFieldImpl(name, this, type, value, false, false, false, isReadonly);
     this.staticFields.set(name, field);
   }
 
@@ -173,8 +261,12 @@ class ReflectClass {
     isReadonly: boolean
   ): void {
     if ((isPublic && isPrivate) || (isPublic && isProtected) || (isPrivate && isProtected)) {
-      throw new Error(`InstanceField '${name}': only one access modifier can be true.`);
+      throw new TypeError(`InstanceField '${name}': only one access modifier can be true.`);
     }
+    if (!isPublic && !isPrivate && !isProtected) {
+      throw new TypeError(`InstanceField '${name}': at least one access modifier must be true.`);
+    }
+
     let field = new StaticFieldImpl(name, this, type, undefined, isPublic, isPrivate, isProtected, isReadonly);
     this.instanceFields.set(name, field);
   }
@@ -224,16 +316,6 @@ export { FieldValue, StaticField, StaticFieldImpl, ReflectClass, createReflectCl
   PLACEHOLDER_DIAGNOSIS };
 
 export default class Utils {
-  static mindMapItSuffix(seq: int): string {
-    if (seq < 10) {
-      return `00${seq}`;
-    }
-    if (seq < 100) {
-      return `0${seq}`;
-    }
-    return `${seq}`;
-  }
-
   static async msSleep(count: int): Promise<int> {
     return new Promise<int>((resolve: (value: int | PromiseLike<int>) => void, reject: (value: Error) => void) => {
       setTimeout(() => {

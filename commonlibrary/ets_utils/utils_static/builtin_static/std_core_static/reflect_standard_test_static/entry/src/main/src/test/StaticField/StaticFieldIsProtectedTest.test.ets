@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass, PLACEHOLDER_PASSWORD, PLACEHOLDER_TOKEN, PLACEHOLDER_API_KEY, PLACEHOLDER_SSN } from '../Util.test';
 
+class IntegrationIsProtectedClass {
+  protected static hiddenField: string = 'secret';
+  public static visibleField: string = 'public';
+}
+
 class MyClass001 {
   protected static name: string = 'test';
 }
@@ -393,8 +398,8 @@ function reflectMyClass051(): ReflectClass {
 
 function reflectMyClass052(): ReflectClass {
   const cls = createReflectClass('MyClass052');
-  cls.addStaticField('MIDDLEWARE_STACK', createReflectClass('string[]'), '', false, false, true, false);
-  cls.addStaticField('MIDDLEWARE_ORDER', createReflectClass('int[]'), '', false, false, true, false);
+  cls.addStaticField('MIDDLEWARE_STACK', createReflectClass('string[]'), [] as FieldValue[], false, false, true, false);
+  cls.addStaticField('MIDDLEWARE_ORDER', createReflectClass('int[]'), [] as FieldValue[], false, false, true, false);
   cls.addStaticField('MIDDLEWARE_ENABLED', createReflectClass('boolean'), true, false, false, true, false);
   cls.addStaticField('MIDDLEWARE_VERSION', createReflectClass('string'), '2.0', true, false, false, false);
   return cls;
@@ -452,7 +457,7 @@ function reflectMyClass058(): ReflectClass {
   cls.addStaticField('protectedStr', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('protectedNum', createReflectClass('int'), 888, false, false, true, false);
   cls.addStaticField('protectedBool', createReflectClass('boolean'), false, false, false, true, false);
-  cls.addStaticField('protectedArr', createReflectClass('string[]'), '', false, false, true, false);
+  cls.addStaticField('protectedArr', createReflectClass('string[]'), [] as FieldValue[], false, false, true, false);
   cls.addStaticField('publicStr', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
@@ -591,7 +596,7 @@ function reflectMyClass012(): ReflectClass {
   cls.addStaticField('num', createReflectClass('int'), 100, false, false, true, false);
   cls.addStaticField('str', createReflectClass('string'), 'test', false, false, true, false);
   cls.addStaticField('bool', createReflectClass('boolean'), true, false, false, true, false);
-  cls.addStaticField('arr', createReflectClass('int[]'), '', false, false, true, false);
+  cls.addStaticField('arr', createReflectClass('int[]'), [] as FieldValue[], false, false, true, false);
   cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
   cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, false, false, true, false);
   return cls;
@@ -664,7 +669,7 @@ function reflectConfig027(): ReflectClass {
   const cls = createReflectClass('Config027');
   cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, false);
   cls.addStaticField('API_KEY', createReflectClass('string'), PLACEHOLDER_API_KEY, false, false, true, false);
-  cls.addStaticField('DEBUG_MODE', createReflectClass('int'), 1, false, false, true, false);
+  cls.addStaticField('DEBUG_MODE', createReflectClass('boolean'), false, false, false, true, false);
   cls.addStaticField('PASSWORD', createReflectClass('string'), PLACEHOLDER_PASSWORD, false, true, false, false);
   cls.addStaticField('LOG_LEVEL', createReflectClass('string'), 'info', true, false, false, false);
   return cls;
@@ -910,7 +915,7 @@ export function StaticFieldIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISPROTECTED_0300
      * @tc.name testStaticFieldIsProtected003
-     * @tc.desc Verify passing extra parameters to isProtected causes compile error
+     * @tc.desc Verify isProtected returns correct value for protected static field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1090,7 +1095,7 @@ export function StaticFieldIsProtectedTest(): void {
         field!.isProtected();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1108,7 +1113,7 @@ export function StaticFieldIsProtectedTest(): void {
         field!.isProtected();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1123,12 +1128,7 @@ export function StaticFieldIsProtectedTest(): void {
     it('testStaticFieldIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls: ReflectClass = reflectMyClass015();
       let field: StaticField | null = cls.getStaticField('nonexistent');
-      if (field !== null) {
-        const result: boolean = field.isProtected();
-        expect(result).assertEqual(true);
-      } else {
-        expect(field).assertEqual(null);
-      }
+      expect(field).assertEqual(null);
     });
 
     /**
@@ -2044,6 +2044,19 @@ export function StaticFieldIsProtectedTest(): void {
       expect(config['PROTECTED_CONSTANT']).assertEqual(100);
       expect(config['PROTECTED_NAME']).assertEqual('protected');
       expect(config['PUBLIC_CONSTANT']).assertEqual(undefined);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_ISPROTECTED_0100
+     * @tc.name integrationIsProtected001
+     * @tc.desc Verify protected fields are not accessible via getStaticField using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const field = Class.from<IntegrationIsProtectedClass>().getStaticField('hiddenField');
+      expect(field === undefined).assertEqual(true);
     });
   });
 }

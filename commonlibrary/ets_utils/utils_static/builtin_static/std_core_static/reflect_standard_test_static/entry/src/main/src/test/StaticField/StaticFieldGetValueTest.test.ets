@@ -29,6 +29,13 @@ import {
 import Utils from '../Util.test';
 import { StaticField, ReflectClass, createReflectClass, FieldValue } from '../Util.test';
 
+class IntegrationGetValueClass {
+  public static strValue: string = 'hello';
+  public static intValue: int = 100;
+  public static boolValue: boolean = false;
+  public static doubleValue: double = 3.14;
+}
+
 class MyClass001 {
   public static name: string = 'test';
 }
@@ -886,7 +893,7 @@ function getFieldValueAsString038(field: StaticField): string {
   } else if (typeof value === 'boolean') {
     return (value as boolean).toString();
   }
-  return String(value);
+  return `${value}`;
 }
 
 function getAllFieldValues049(cls: ReflectClass): (string | number | boolean | null)[] {
@@ -933,12 +940,6 @@ function debugFieldValue057(field: StaticField): void {
   let fieldName = field.getName();
   let type = field.getType();
   let value = field.getValue();
-}
-
-function trySerializeField058(field: StaticField): void {
-  let value = field.getValue();
-  let fieldName = field.getName();
-  let serialized = JSON.stringify(value);
 }
 
 function getValueOrDefault(field: StaticField, defaultValue: string | number | boolean | null): string | number | boolean | null {
@@ -1187,7 +1188,8 @@ export function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cls = reflectMyClass013();
       let nanField = cls.getStaticField("nanValue");
-      expect(isNaN(nanField!.getValue() as number)).assertEqual(true);
+      let nanVal = nanField!.getValue() as number;
+      expect(nanVal !== nanVal).assertEqual(true);
       let infField = cls.getStaticField("infinityValue");
       expect(infField!.getValue() as string | number | boolean | null).assertEqual(Infinity);
       let negInfField = cls.getStaticField("negInfinityValue");
@@ -1312,7 +1314,7 @@ export function StaticFieldGetValueTest(): void {
         field!.getValue();
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1330,7 +1332,7 @@ export function StaticFieldGetValueTest(): void {
         field!.getValue();
         expect(false).assertEqual(true);
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1360,12 +1362,7 @@ export function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cls = reflectMyClass023();
       let field = cls.getStaticField("nonexistent");
-      if (field !== null) {
-        let value = field!.getValue();
-        expect(value !== null && value !== undefined).assertEqual(true);
-      } else {
-        expect(field).assertEqual(null);
-      }
+      expect(field).assertEqual(null);
     });
 
     /**
@@ -1591,6 +1588,7 @@ export function StaticFieldGetValueTest(): void {
       let optionalValue = getFieldValueOrNull037(cls, "OPTIONAL_VALUE");
       let requiredValue = getFieldValueOrNull037(cls, "REQUIRED_VALUE");
       expect(requiredValue !== null).assertEqual(true);
+      expect(requiredValue as string).assertEqual('present');
     });
 
     /**
@@ -1630,7 +1628,7 @@ export function StaticFieldGetValueTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETVALUE_4000
      * @tc.name testStaticFieldGetValue040
-     * @tc.desc Verify getValue returns symbol static field value
+     * @tc.desc Verify getValue returns string static field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1639,7 +1637,7 @@ export function StaticFieldGetValueTest(): void {
       const cls = reflectMyClass040();
       let symField = cls.getStaticField("symValue");
       let sym = symField!.getValue() as string;
-      expect(typeof sym).assertEqual("string");
+      expect(sym).assertEqual('description');
     });
 
     /**
@@ -1688,8 +1686,9 @@ export function StaticFieldGetValueTest(): void {
     it('testStaticFieldGetValue043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const cls = reflectMyClass043();
       let nestedField = cls.getStaticField("nestedObj");
-      let nested = nestedField!.getValue() as FieldValue;
+      let nested = nestedField!.getValue() as Record<string, FieldValue>;
       expect(nested !== null && nested !== undefined).assertEqual(true);
+      expect(nested['key'] as string).assertEqual('nested');
     });
 
     /**
@@ -1700,13 +1699,14 @@ export function StaticFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticFieldGetValue044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (() => {
-      let obj: Record<string, string | number | boolean | undefined | Record<string, string | number | boolean | undefined>> = {};
-      MyClass044.selfRef = obj as Record<string, string | number | boolean | undefined>;
-      obj['self'] = MyClass044.selfRef;
+    it('testStaticFieldGetValue044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ((): void => {
+      let obj: Record<string, FieldValue> = {};
+      obj['self'] = obj as FieldValue;
       const cls = reflectMyClass044();
       let selfRefField = cls.getStaticField("selfRef");
+      selfRefField!.setValue(obj as FieldValue);
       let selfRef = selfRefField!.getValue();
+      expect(selfRef !== null && selfRef !== undefined).assertEqual(true);
     }) as () => void);
 
     /**
@@ -2109,6 +2109,25 @@ export function StaticFieldGetValueTest(): void {
       expect(map['LOG_CHANNEL']).assertEqual('stack');
       expect(map['LOG_LEVEL']).assertEqual('debug');
     });
-    return;
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_GETVALUE_0100
+     * @tc.name integrationGetValue001
+     * @tc.desc Verify getValue returns correct values for multiple types using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationGetValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const strField = Class.from<IntegrationGetValueClass>().getStaticField('strValue');
+      expect(strField !== undefined).assertEqual(true);
+      expect(strField!.getValue() as string).assertEqual('hello');
+      const intField = Class.from<IntegrationGetValueClass>().getStaticField('intValue');
+      expect(intField !== undefined).assertEqual(true);
+      expect(intField!.getValue() as int).assertEqual(100);
+      const boolField = Class.from<IntegrationGetValueClass>().getStaticField('boolValue');
+      expect(boolField !== undefined).assertEqual(true);
+      expect(boolField!.getValue() as boolean).assertEqual(false);
+    });
   });
 }

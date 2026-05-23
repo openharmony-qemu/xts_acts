@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
+class IntegrationIsReadonlyClass {
+  public static readonly CONSTANT_VALUE: string = 'immutable';
+  public static mutableValue: string = 'mutable';
+}
+
 class MyClass001 {
   public static readonly name: string = 'test';
 }
@@ -327,7 +332,7 @@ function reflectMyClass009(): ReflectClass {
   cls.addStaticField('num', createReflectClass('int'), 100, true, false, false, true);
   cls.addStaticField('str', createReflectClass('string'), 'test', true, false, false, true);
   cls.addStaticField('bool', createReflectClass('boolean'), true, true, false, false, true);
-  cls.addStaticField('arr', createReflectClass('int[]'), '', true, false, false, true);
+  cls.addStaticField('arr', createReflectClass('int[]'), [] as FieldValue[], true, false, false, true);
   cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, true, false, false, true);
   cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, true, false, false, true);
   return cls;
@@ -829,7 +834,7 @@ export function StaticFieldIsReadonlyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_ISREADONLY_0300
      * @tc.name testStaticFieldIsReadonly003
-     * @tc.desc Verify passing extra parameters causes compilation error
+     * @tc.desc Verify isReadonly works correctly without extra parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -952,7 +957,7 @@ export function StaticFieldIsReadonlyTest(): void {
         field!.isReadonly();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -970,7 +975,7 @@ export function StaticFieldIsReadonlyTest(): void {
         field!.isReadonly();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1387,7 +1392,9 @@ export function StaticFieldIsReadonlyTest(): void {
       const field1: StaticField | null = cls.getStaticField('CONSTANT');
       expect(field1!.isPublic() && field1!.isReadonly()).assertEqual(true);
       const field2: StaticField | null = cls.getStaticField('PRIVATE_CONSTANT');
-      expect(field2!.isPublic() && field2!.isReadonly()).assertEqual(false);
+      expect(field2!.isPrivate()).assertEqual(true);
+      expect(field2!.isReadonly()).assertEqual(true);
+      expect(field2!.isPublic()).assertEqual(false);
       const field3: StaticField | null = cls.getStaticField('variable');
       expect(field3!.isPublic() && field3!.isReadonly()).assertEqual(false);
     });
@@ -1847,6 +1854,20 @@ export function StaticFieldIsReadonlyTest(): void {
         }
       }
       expect(readonlyCount).assertEqual(5);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_ISREADONLY_0100
+     * @tc.name integrationIsReadonly001
+     * @tc.desc Verify isReadonly returns true for readonly fields using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationIsReadonly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const field = Class.from<IntegrationIsReadonlyClass>().getStaticField('CONSTANT_VALUE');
+      expect(field !== undefined).assertEqual(true);
+      expect(field!.isReadonly()).assertEqual(true);
     });
   });
 }

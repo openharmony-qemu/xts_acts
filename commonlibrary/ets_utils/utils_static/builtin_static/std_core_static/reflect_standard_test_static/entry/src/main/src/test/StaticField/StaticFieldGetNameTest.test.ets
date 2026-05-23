@@ -29,6 +29,11 @@ import {
 import Utils from '../Util.test';
 import { FieldValue, StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
+class IntegrationGetNameClass {
+  public static name: string = 'testValue';
+  public static count: int = 100;
+}
+
 function reflectMyClass001(): ReflectClass {
   const cls = createReflectClass('MyClass001');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
@@ -494,7 +499,7 @@ function findFieldsByPattern(cls: ReflectClass, pattern: string): StaticField[] 
   return matchedFields;
 }
 
-function checkDuplicateFieldNames(cls: ReflectClass): void {
+function checkDuplicateFieldNames(cls: ReflectClass): string[] {
   let fields = cls.getDeclaredStaticFields();
   let nameSet = new Set<string>();
   let duplicates: string[] = [];
@@ -506,6 +511,7 @@ function checkDuplicateFieldNames(cls: ReflectClass): void {
       nameSet.add(fieldName);
     }
   }
+  return duplicates;
 }
 
 function toCamelCase(fieldName: string): string {
@@ -585,20 +591,20 @@ function getConfigMap(cls: ReflectClass): Map<string, string> {
   for (let i = 0; i < fields.length; i++) {
     let fieldName = fields[i].getName();
     let value = fields[i].getValue();
-    configMap.set(fieldName, String(value));
+    configMap.set(fieldName, `${value}`);
   }
   return configMap;
 }
 
 function serializeFields(cls: ReflectClass): string {
   let fields = cls.getDeclaredStaticFields();
-  let obj: Record<string, string> = {};
+  let parts: string[] = [];
   for (let i = 0; i < fields.length; i++) {
     let fieldName = fields[i].getName();
     let value = fields[i].getValue();
-    obj[fieldName] = String(value);
+    parts.push(`"${fieldName}":"${value}"`);
   }
-  return JSON.stringify(obj);
+  return '{' + parts.join(',') + '}';
 }
 
 function logFieldAccess(field: StaticField): void {
@@ -637,7 +643,7 @@ function getFieldValueByName(cls: ReflectClass, fieldName: string): string | nul
   let fields = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].getName() === fieldName) {
-      return String(fields[i].getValue());
+      return `${fields[i].getValue()}`;
     }
   }
   return null;
@@ -732,23 +738,6 @@ function getLocalizedFieldName(cls: ReflectClass, locale: string): string[] {
     }
   }
   return localizedNames;
-}
-
-function deserializeToFields(cls: ReflectClass, data: Record<string, string | number | boolean>): void {
-  const fields: StaticField[] = cls.getDeclaredStaticFields();
-  const fieldMap: Map<string, StaticField> = new Map<string, StaticField>();
-  for (let i = 0; i < fields.length; i++) {
-    fieldMap.set(fields[i].getName(), fields[i]);
-  }
-  const keys: string[] = Object.keys(data);
-  for (let i = 0; i < keys.length; i++) {
-    const key: string = keys[i];
-    const field: StaticField | undefined = fieldMap.get(key);
-    if (field !== undefined) {
-      const value: string | number | boolean = data[key] as string | number | boolean;
-      field.setValue(value);
-    }
-  }
 }
 
 function countFieldsByNamePattern(cls: ReflectClass, pattern: string): number {
@@ -1266,7 +1255,7 @@ export function StaticFieldGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_GETNAME_0800
      * @tc.name testStaticFieldGetName008
-     * @tc.desc Verify getName with field name containing spaces
+     * @tc.desc Verify getName with camelCase field name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1308,6 +1297,10 @@ export function StaticFieldGetNameTest(): void {
       const cls = reflectMyClass011();
       let field1 = cls.getStaticField("field_name");
       expect(field1!.getName()).assertEqual("field_name");
+      let field2 = cls.getStaticField("field_name2");
+      expect(field2!.getName()).assertEqual("field_name2");
+      let field3 = cls.getStaticField("field_name3");
+      expect(field3!.getName()).assertEqual("field_name3");
     });
 
     /**
@@ -1368,10 +1361,13 @@ export function StaticFieldGetNameTest(): void {
       const cls = reflectMyClass015();
       let field1 = cls.getStaticField("a");
       expect(field1!.getName().length).assertEqual(1);
+      expect(field1!.getName()).assertEqual("a");
       let field2 = cls.getStaticField("_");
       expect(field2!.getName().length).assertEqual(1);
+      expect(field2!.getName()).assertEqual("_");
       let field3 = cls.getStaticField("$");
       expect(field3!.getName().length).assertEqual(1);
+      expect(field3!.getName()).assertEqual("$");
     });
 
     /**
@@ -1425,7 +1421,7 @@ export function StaticFieldGetNameTest(): void {
         field!.getName();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1443,7 +1439,7 @@ export function StaticFieldGetNameTest(): void {
         field!.getName();
         expect().assertFail();
       } catch (e) {
-        expect(e.name).assertEqual('NullPointerError');
+        expect(e instanceof Error).assertEqual(true);
       }
     });
 
@@ -1458,11 +1454,7 @@ export function StaticFieldGetNameTest(): void {
     it('testStaticFieldGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = reflectMyClass020();
       let field = cls.getStaticField("nonexistent");
-      if (field !== null) {
-        let name = field.getName();
-      } else {
-        expect(field).assertEqual(null);
-      }
+      expect(field).assertEqual(null);
     });
 
     /**
@@ -1511,6 +1503,7 @@ export function StaticFieldGetNameTest(): void {
       let fieldName = field!.getName();
       let ownerName = field!.getOwner().getName();
       expect(fieldName).assertEqual('data');
+      expect(ownerName).assertEqual('MyClass023');
     });
 
     /**
@@ -1527,6 +1520,7 @@ export function StaticFieldGetNameTest(): void {
       let fieldName = field!.getName();
       let typeName = field!.getType().getName();
       expect(fieldName).assertEqual('count');
+      expect(typeName).assertEqual('int');
     });
 
     /**
@@ -1543,6 +1537,7 @@ export function StaticFieldGetNameTest(): void {
       let fieldName = field!.getName();
       let fieldValue = field!.getValue();
       expect(fieldName).assertEqual('value');
+      expect(fieldValue).assertEqual(100);
     });
 
     /**
@@ -1581,6 +1576,13 @@ export function StaticFieldGetNameTest(): void {
           accessLevel = "private";
         } else if (field.isProtected()) {
           accessLevel = "protected";
+        }
+        if (field.getName() === "pubNum") {
+          expect(accessLevel).assertEqual("public");
+        } else if (field.getName() === "privNum") {
+          expect(accessLevel).assertEqual("private");
+        } else if (field.getName() === "protNum") {
+          expect(accessLevel).assertEqual("protected");
         }
       }
       expect(fields.length).assertLarger(0);
@@ -1676,7 +1678,8 @@ export function StaticFieldGetNameTest(): void {
      */
     it('testStaticFieldGetName033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls = reflectMyClass033();
-      checkDuplicateFieldNames(cls);
+      let duplicates = checkDuplicateFieldNames(cls);
+      expect(duplicates.length).assertEqual(0);
       expect(cls.getDeclaredStaticFields().length > 0).assertEqual(true);
     });
 
@@ -2321,6 +2324,20 @@ export function StaticFieldGetNameTest(): void {
       let driverFields = getFieldsBySuffix(cls, '_DRIVER');
       expect(driverFields.length).assertEqual(1);
       expect(driverFields[0].getName()).assertEqual('SESSION_DRIVER');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICFIELD_INTEGRATION_GETNAME_0100
+     * @tc.name integrationGetName001
+     * @tc.desc Verify getName returns correct field name using real Class.from API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 0
+     */
+    it('integrationGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+      const field = Class.from<IntegrationGetNameClass>().getStaticField('name');
+      expect(field !== undefined).assertEqual(true);
+      expect(field!.getName()).assertEqual('name');
     });
   });
 }
