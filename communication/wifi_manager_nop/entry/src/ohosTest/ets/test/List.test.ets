@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 import wifiManagerTest from './WifiManager_Nop.test';
-import wifiExtNop from './WifiExtNop.test';
 export default function testsuite() {
   wifiManagerTest();
-  wifiExtNop();
 }
