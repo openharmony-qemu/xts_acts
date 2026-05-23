@@ -579,7 +579,6 @@ export default function actsWifiManagerFunctionsTest() {
           hilog.info(domain, tag, `${caseName} getScanInfoList infoElems [0] wifiInfoElem eid:` + JSON.stringify(wifiInfoElem.eid) + `, type: ` + typeof wifiInfoElem.eid);
           expect(typeof wifiInfoElem.eid).assertEqual('int');
           hilog.info(domain, tag, `${caseName} getScanInfoList infoElems [0] wifiInfoElem content:` + JSON.stringify(wifiInfoElem.content) + `, type: ` + typeof wifiInfoElem.content);
-          // expect(typeof wifiInfoElem.eid).assertEqual('int');
           hilog.info(domain, tag, `${caseName} getScanInfoList timestamp:` + infos[0].timestamp + `, type: ` + typeof infos[0].timestamp);
           expect(typeof infos[0].timestamp === `long`).assertTrue();
           hilog.info(domain, tag, `${caseName} getScanInfoList supportedWifiCategory:` + infos[0].supportedWifiCategory + `, type: ` + typeof infos[0].supportedWifiCategory);
