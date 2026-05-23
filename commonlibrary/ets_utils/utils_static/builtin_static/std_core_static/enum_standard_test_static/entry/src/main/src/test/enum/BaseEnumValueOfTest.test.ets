@@ -469,9 +469,9 @@ export default function BaseEnumValueOfTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<float> = new BaseEnum<float>(9.0, "FLOAT_NINE");
+      let e: BaseEnum<float> = new BaseEnum<float>(9.0f, "FLOAT_NINE");
       let result: float = e.valueOf();
-      expect(result).assertEqual(9.0);
+      expect(result).assertEqual(9.0f);
     });
 
     /**
@@ -1086,15 +1086,15 @@ export default function BaseEnumValueOfTest(): void {
     /**
      * @tc.name testBaseEnumValueOf075
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_VALUEOF_7500
-     * @tc.desc Verify valueOf returns correct value for int zero in normal usage
+     * @tc.desc Verify valueOf returns correct negative value for int type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumValueOf075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let e: BaseEnum<int> = new BaseEnum<int>(0, "ZERO");
+      let e: BaseEnum<int> = new BaseEnum<int>(-100, "INT_NEG");
       let result: int = e.valueOf();
-      expect(result).assertEqual(0);
+      expect(result).assertEqual(-100);
     });
 
     /**

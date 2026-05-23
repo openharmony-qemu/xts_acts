@@ -89,33 +89,35 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0500
-     * @tc.desc Verify BaseEnum constructor with byte normal value 100
+     * @tc.desc Verify BaseEnum constructor with byte value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<byte>(Int.toByte(100), "VALUE_100");
-      expect(e.valueOf()).assertEqual(Int.toByte(100));
+      const e = new BaseEnum<byte>(100 as byte, "VALUE_100");
+      expect(e.valueOf()).assertEqual(100 as byte);
+      expect(e.getName()).assertEqual("VALUE_100");
     });
 
     /**
      * @tc.name testBaseEnumConstructor006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0600
-     * @tc.desc Verify BaseEnum constructor with short normal value 10000
+     * @tc.desc Verify BaseEnum constructor with short value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<short>(Int.toShort(10000), "VALUE_10000");
-      expect(e.valueOf()).assertEqual(Int.toShort(10000));
+      const e = new BaseEnum<short>(10000 as short, "VALUE_10000");
+      expect(e.valueOf()).assertEqual(10000 as short);
+      expect(e.getName()).assertEqual("VALUE_10000");
     });
 
     /**
      * @tc.name testBaseEnumConstructor007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0700
-     * @tc.desc Verify BaseEnum constructor with int normal value 100
+     * @tc.desc Verify BaseEnum constructor with int value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -123,12 +125,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(100, "VALUE_100");
       expect(e.valueOf()).assertEqual(100);
+      expect(e.getName()).assertEqual("VALUE_100");
     });
 
     /**
      * @tc.name testBaseEnumConstructor008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0800
-     * @tc.desc Verify BaseEnum constructor with long normal value 1000
+     * @tc.desc  Verify BaseEnum constructor with long value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -136,12 +139,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<long>(Int.toLong(1000), "VALUE_1000");
       expect(e.valueOf()).assertEqual(Int.toLong(1000));
+      expect(e.getName()).assertEqual("VALUE_1000");
     });
 
     /**
      * @tc.name testBaseEnumConstructor009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_0900
-     * @tc.desc Verify BaseEnum constructor with long normal value -1
+     * @tc.desc Verify BaseEnum constructor with long negative value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -149,12 +153,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<long>(Int.toLong(-1), "VALUE_NEG_1");
       expect(e.valueOf()).assertEqual(Int.toLong(-1));
+      expect(e.getName()).assertEqual("VALUE_NEG_1");
     });
 
     /**
      * @tc.name testBaseEnumConstructor010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1000
-     * @tc.desc Verify BaseEnum constructor with float normal value 3.14
+     * @tc.desc  Verify BaseEnum constructor with float value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -162,12 +167,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(3.14), "PI");
       expect(e.valueOf()).assertEqual(Double.toFloat(3.14));
+      expect(e.getName()).assertEqual("PI");
     });
 
     /**
      * @tc.name testBaseEnumConstructor011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1100
-     * @tc.desc Verify BaseEnum constructor with float normal value -0.5
+     * @tc.desc Verify BaseEnum constructor with float negative value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -175,12 +181,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(-0.5), "NEG_HALF");
       expect(e.valueOf()).assertEqual(Double.toFloat(-0.5));
+      expect(e.getName()).assertEqual("NEG_HALF");
     });
 
     /**
      * @tc.name testBaseEnumConstructor012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1200
-     * @tc.desc Verify BaseEnum constructor with float minimum value -3.4e38
+     * @tc.desc Verify BaseEnum constructor with float minimum value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -188,12 +195,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(-3.4e38), "MIN_FLOAT");
       expect(e.valueOf()).assertEqual(Double.toFloat(-3.4e38));
+      expect(e.getName()).assertEqual("MIN_FLOAT");
     });
 
     /**
      * @tc.name testBaseEnumConstructor013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1300
-     * @tc.desc Verify BaseEnum constructor with double normal value 3.141592653589793
+     * @tc.desc Verify BaseEnum constructor with double value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -201,12 +209,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<double>(3.141592653589793, "PI");
       expect(e.valueOf()).assertEqual(3.141592653589793);
+      expect(e.getName()).assertEqual("PI");
     });
 
     /**
      * @tc.name testBaseEnumConstructor014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1400
-     * @tc.desc Verify BaseEnum constructor with double normal value -0.001
+     * @tc.desc Verify BaseEnum constructor with double negative value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -214,12 +223,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<double>(-0.001, "NEG_SMALL");
       expect(e.valueOf()).assertEqual(-0.001);
+      expect(e.getName()).assertEqual("NEG_SMALL");
     });
 
     /**
      * @tc.name testBaseEnumConstructor015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1500
-     * @tc.desc Verify BaseEnum constructor with double maximum value 1.7e308
+     * @tc.desc  Verify BaseEnum constructor with double maximum value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -227,12 +237,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<double>(1.7e308, "MAX_DOUBLE");
       expect(e.valueOf()).assertEqual(1.7e308);
+      expect(e.getName()).assertEqual("MAX_DOUBLE");
     });
 
     /**
      * @tc.name testBaseEnumConstructor016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1600
-     * @tc.desc Verify BaseEnum constructor with double minimum value -1.7e308
+     * @tc.desc Verify BaseEnum constructor with double minimum value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -240,12 +251,13 @@ export default function BaseEnumConstructorTest(): void {
     it('testBaseEnumConstructor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<double>(-1.7e308, "MIN_DOUBLE");
       expect(e.valueOf()).assertEqual(-1.7e308);
+      expect(e.getName()).assertEqual("MIN_DOUBLE");
     });
 
     /**
      * @tc.name testBaseEnumConstructor017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1700
-     * @tc.desc Verify BaseEnum constructor with string normal value "ACTIVE"
+     * @tc.desc Verify BaseEnum constructor with string value and name returns correct valueOf and getName
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class ColorEnum158 extends BaseEnum<string> {
@@ -544,7 +544,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_2900
-     * @tc.desc Verify BaseEnum API interfaces from API version 20+
+     * @tc.desc Verify BaseEnum constructor with valueOf, getName, and toString all work correctly
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
