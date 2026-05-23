@@ -4022,7 +4022,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0100
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0100
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4093,7 +4093,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0200
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0200
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0200
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4164,7 +4164,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0300
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0300
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0300
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4235,7 +4235,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0400
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0400
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0400
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4306,7 +4306,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0500
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0500
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0500
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4377,7 +4377,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0600
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0600
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0600
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4448,7 +4448,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0700
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0700
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0700
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4519,7 +4519,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0800
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0800
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0800
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4590,7 +4590,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_0900
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_0900
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_0900
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4661,7 +4661,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1000
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1000
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1000
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4732,7 +4732,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1100
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1100
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4803,7 +4803,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1200
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1200
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1200
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4874,7 +4874,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1300
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1300
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1300
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -4945,7 +4945,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1400
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1400
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1400
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5016,7 +5016,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1500
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1500
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1500
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5087,7 +5087,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IME_updatePanelRectSync_1600
-     * @tc.number Sub_InputMethod_IME_updatePanelRectSync_1600
+     * @tc.number SUB_INPUTMETHOD_IME_UPDATEPANELRECTSYNC_1600
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5158,7 +5158,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0300
-     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0300
+     * @tc.number SUB_INPUTMETHOD_IME_CONSUMEKEYEVENTS_0300
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5234,7 +5234,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0100
-     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0100
+     * @tc.number SUB_INPUTMETHOD_IME_CONSUMEKEYEVENTS_0100
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -5310,7 +5310,7 @@ export default function InputMethodEditBoxAbility() {
 
     /**
      * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0200
-     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0200
+     * @tc.number SUB_INPUTMETHOD_IME_CONSUMEKEYEVENTS_0200
      * @tc.desc   Function test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
