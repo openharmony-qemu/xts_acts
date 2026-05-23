@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -249,137 +257,162 @@ export default function ArrayFill2Test(): void {
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1300
-     * @tc.name testArrayFill013
+     * @tc.name testArrayFill2013
      * @tc.desc Verify documented scenario 7.1 int类型确保
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.1 int类型确保
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      const index: int = 1;
+      arr.fill(0, index, index + 2);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1400
-     * @tc.name testArrayFill014
+     * @tc.name testArrayFill2014
      * @tc.desc Verify documented scenario 7.2 与length结合
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.2 与length结合
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      const len: int = arr.length;
+      arr.fill(0, 0, len - 1);
+      expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(0);
+      expect(arr[3]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1500
-     * @tc.name testArrayFill015
+     * @tc.name testArrayFill2015
      * @tc.desc Verify documented scenario 8.1 int最小值和最大值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.1 int最小值和最大值
+    it('testArrayFill2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+      const start: int = 0;
+      const maxEnd: int = 2147483647;
+      arr.fill(0, start, maxEnd);
+      expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(0);
+      const negativeStart: int = -2;
+      arr.fill(1, negativeStart, 3);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(1);
+      expect(arr[2]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1600
-     * @tc.name testArrayFill016
+     * @tc.name testArrayFill2016
      * @tc.desc Verify documented scenario 8.2 零值
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.2 零值
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4);
+      arr.fill(0, 0, 2);
+      expect(arr[0]).assertEqual(0);
+      expect(arr[1]).assertEqual(0);
+      arr.fill(1, 0, 0);
+      expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1700
-     * @tc.name testArrayFill017
+     * @tc.name testArrayFill2017
      * @tc.desc Verify documented scenario 9.1 多次fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 9.1 多次fill
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
+      arr.fill(0, 0, 2).fill(1, 2, 4).fill(2, 4, 6);
+      expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(1);
+      expect(arr[3]).assertEqual(1);
+      expect(arr[4]).assertEqual(2);
+      expect(arr[5]).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1800
-     * @tc.name testArrayFill018
+     * @tc.name testArrayFill2018
      * @tc.desc Verify documented scenario 10.1 保持泛型类型
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 10.1 保持泛型类型
+    it('testArrayFill2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
-      expect(arr[1]).assertEqual(0);
+      arr.fill(0, 0, 2);
+      const result: number = arr[0];
+      expect(typeof result).assertEqual('number');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1900
-     * @tc.name testArrayFill019
+     * @tc.name testArrayFill2019
      * @tc.desc Verify documented scenario 11.1 ReadonlyArray不支持
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 11.1 ReadonlyArray不支持
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
-      expect(arr[1]).assertEqual(0);
+    it('testArrayFill2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: ReadonlyArray<number> = [1, 2, 3];
+      // arr.fill(0, 0, 1); // compile-time error: ReadonlyArray does not support fill
+      expect(arr.length).assertEqual(3);
+      expect(arr[0]).assertEqual(1);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2000
-     * @tc.name testArrayFill020
+     * @tc.name testArrayFill2020
      * @tc.desc Verify documented scenario 12.1 使用int常量
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.1 使用int常量
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const START: int = 1;
+      const END: int = 3;
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      arr.fill(0, START, END);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2100
-     * @tc.name testArrayFill021
+     * @tc.name testArrayFill2021
      * @tc.desc Verify documented scenario 12.2 循环中的fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.2 循环中的fill
-      const arr = new Array<number>(1, 2, 3);
-      arr.fill(0, 1 as int, 2 as int);
+    it('testArrayFill2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
+      for (let i: int = 0; i < 2; i++) {
+        arr.fill(i * 10, i * 2, i * 2 + 2);
+      }
+      expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(0);
+      expect(arr[2]).assertEqual(10);
+      expect(arr[3]).assertEqual(10);
     });
 
     /**
@@ -501,7 +534,7 @@ export default function ArrayFill2Test(): void {
     it('testArrayFill2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [];
       for (let i = 0; i < 32; i++) {
-        arr.push(i);
+        arr.pushOne(i);
       }
       arr.fill(-1, 8 as int, 24 as int);
       expect(arr.length).assertEqual(32);
@@ -523,7 +556,7 @@ export default function ArrayFill2Test(): void {
       const shared: Array<number> = [];
       const arr: Array<Array<number>> = [[1], [2], [3], [4]];
       arr.fill(shared, 1 as int, 4 as int);
-      shared.push(42);
+      shared.pushOne(42);
       expect(arr[0][0]).assertEqual(1);
       expect(arr[1] === shared).assertTrue();
       expect(arr[2][0]).assertEqual(42);

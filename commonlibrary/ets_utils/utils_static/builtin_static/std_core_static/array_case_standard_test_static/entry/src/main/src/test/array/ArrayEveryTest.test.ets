@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -132,7 +140,7 @@ export default function ArrayEveryTest(): void {
      */
     it('testArrayEvery006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      arr.push(2);
+      arr.pushOne(2);
       const result = arr.every((v: int): boolean => v % 2 == 0);
       expect(result).assertTrue();
     });
@@ -473,7 +481,7 @@ export default function ArrayEveryTest(): void {
     it('testArrayEvery028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       for (let i = 0; i < 128; i++) {
-        arr.push(i);
+        arr.pushOne(i);
       }
       const result = arr.every((v: int): boolean => v >= 0);
       expect(result).assertTrue();
@@ -490,7 +498,7 @@ export default function ArrayEveryTest(): void {
     it('testArrayEvery029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       for (let i = 0; i < 64; i++) {
-        arr.push(i);
+        arr.pushOne(i);
       }
       arr[63] = -1;
       const result = arr.every((v: int): boolean => v >= 0);

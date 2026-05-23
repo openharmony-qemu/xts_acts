@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -127,6 +135,7 @@ export default function ArrayEntriesTest(): void {
       const arr = new Array<int>();
       const result = arr.entries().next();
       expect(result.done).assertTrue();
+      expect(result.value).assertUndefined();
     });
 
     /**
@@ -139,7 +148,7 @@ export default function ArrayEntriesTest(): void {
      */
     it('testArrayEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      arr.push(42);
+      arr.pushOne(42);
       const iterator = arr.entries();
       const first = iterator.next().value as [int, int] | undefined;
       const end = iterator.next();
@@ -443,7 +452,7 @@ export default function ArrayEntriesTest(): void {
      */
     it('testArrayEntries018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      arr.push(5);
+      arr.pushOne(5);
       const iterator = arr.entries();
       const first = iterator.next();
       const end1 = iterator.next();
@@ -668,7 +677,7 @@ export default function ArrayEntriesTest(): void {
       for (const pair of arr.entries()) {
         const entry = pair as [int, int];
         if (entry[0] % 2 == 0 && entry[1] >= 20) {
-          filtered.push(entry[0] + ':' + entry[1]);
+          filtered.pushOne(entry[0] + ':' + entry[1]);
         }
       }
       expect(filtered.length).assertEqual(2);
@@ -843,11 +852,11 @@ export default function ArrayEntriesTest(): void {
      */
     it('testArrayEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const intArray = new Array<int>();
-      intArray.push(1);
+      intArray.pushOne(1);
       const stringArray = new Array<string>();
-      stringArray.push('one');
+      stringArray.pushOne('one');
       const booleanArray = new Array<boolean>();
-      booleanArray.push(false);
+      booleanArray.pushOne(false);
       const intEntry = intArray.entries().next().value as [int, int] | undefined;
       const stringEntry = stringArray.entries().next().value as [int, string] | undefined;
       const booleanEntry = booleanArray.entries().next().value as [int, boolean] | undefined;
@@ -874,7 +883,7 @@ export default function ArrayEntriesTest(): void {
       const mapped = new Array<string>();
       for (const pair of arr.entries()) {
         const entry = pair as [int, string];
-        mapped.push(entry[0] + '-' + entry[1].toUpperCase());
+        mapped.pushOne(entry[0] + '-' + entry[1].toUpperCase());
       }
       expect(mapped.length).assertEqual(3);
       expect(mapped[0]).assertEqual('0-A');
@@ -895,7 +904,7 @@ export default function ArrayEntriesTest(): void {
       for (const pair of arr.entries()) {
         const entry = pair as [int, int];
         if (entry[1] % 2 == 0 && entry[0] >= 2) {
-          selected.push(entry[1]);
+          selected.pushOne(entry[1]);
         }
       }
       expect(selected.length).assertEqual(2);
@@ -932,7 +941,7 @@ export default function ArrayEntriesTest(): void {
     it('testArrayEntries040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       for (let i = 0; i < 128; i++) {
-        arr.push(i * 2);
+        arr.pushOne(i * 2);
       }
       let count = 0;
       let lastValue = -1;
@@ -1040,7 +1049,7 @@ export default function ArrayEntriesTest(): void {
       const pairs = new Array<string>();
       for (const pair of arr.entries()) {
         const entry = pair as [int, string];
-        pairs.push('[' + entry[0] + ',' + entry[1] + ']');
+        pairs.pushOne('[' + entry[0] + ',' + entry[1] + ']');
       }
       expect(pairs.length).assertEqual(3);
       expect(pairs[0]).assertEqual('[0,sun]');
@@ -1081,8 +1090,8 @@ export default function ArrayEntriesTest(): void {
       const valueToIndex = new Array<string>();
       for (const pair of arr.entries()) {
         const entry = pair as [int, string];
-        indexToValue.push(entry[0] + '->' + entry[1]);
-        valueToIndex.push(entry[1] + '->' + entry[0]);
+        indexToValue.pushOne(entry[0] + '->' + entry[1]);
+        valueToIndex.pushOne(entry[1] + '->' + entry[0]);
       }
       expect(indexToValue[1]).assertEqual('1->south');
       expect(valueToIndex[2]).assertEqual('east->2');

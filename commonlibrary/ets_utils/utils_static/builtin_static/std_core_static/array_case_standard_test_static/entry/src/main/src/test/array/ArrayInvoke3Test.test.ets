@@ -86,13 +86,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0100
-     * @tc.name testArrayInvoke001
+     * @tc.name testArrayInvoke3001
      * @tc.desc Verify varargs overload supports zero and multiple item inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       expect(arr1.length).assertEqual(0);
 
@@ -105,13 +105,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0200
-     * @tc.name testArrayInvoke002
+     * @tc.name testArrayInvoke3002
      * @tc.desc Verify varargs overload accepts element values of multiple basic types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(1, 2, 3, 4, 5);
       expect(numArr.length).assertEqual(5);
 
@@ -124,13 +124,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0300
-     * @tc.name testArrayInvoke003
+     * @tc.name testArrayInvoke3003
      * @tc.desc Verify varargs overload preserves zero values in the created array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0, 1, 0);
       expect(arr[0]).assertEqual(0);
       expect(arr[2]).assertEqual(0);
@@ -138,13 +138,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0400
-     * @tc.name testArrayInvoke004
+     * @tc.name testArrayInvoke3004
      * @tc.desc Verify varargs overload preserves empty string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('', 'a', '');
       expect(arr[0]).assertEqual('');
       expect(arr[2]).assertEqual('');
@@ -152,13 +152,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0500
-     * @tc.name testArrayInvoke005
+     * @tc.name testArrayInvoke3005
      * @tc.desc Verify varargs overload preserves false boolean values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(false, true, false);
       expect(arr[0]).assertFalse();
       expect(arr[2]).assertFalse();
@@ -166,13 +166,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0600
-     * @tc.name testArrayInvoke006
+     * @tc.name testArrayInvoke3006
      * @tc.desc Verify varargs overload preserves negative number values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(-100, -200, -300);
       expect(arr[0]).assertEqual(-100);
       expect(arr[2]).assertEqual(-300);
@@ -180,13 +180,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0700
-     * @tc.name testArrayInvoke007
+     * @tc.name testArrayInvoke3007
      * @tc.desc Verify varargs overload preserves max and min number values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxValue = Number.MAX_SAFE_INTEGER.toInt();
       const minValue = Number.MIN_SAFE_INTEGER.toInt();
       const arr = new Array<int>(maxValue, minValue);
@@ -196,13 +196,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0800
-     * @tc.name testArrayInvoke008
+     * @tc.name testArrayInvoke3008
      * @tc.desc Verify varargs overload preserves null values in union arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | null>(1, null, 3);
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertNull();
@@ -211,13 +211,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_0900
-     * @tc.name testArrayInvoke009
+     * @tc.name testArrayInvoke3009
      * @tc.desc Verify varargs overload preserves undefined values in union arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(1, undefined, 3);
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertUndefined();
@@ -226,13 +226,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1000
-     * @tc.name testArrayInvoke010
+     * @tc.name testArrayInvoke3010
      * @tc.desc Verify varargs overload preserves NaN values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, NaN, 3);
       expect(arr[0]).assertEqual(1);
       expect(Number.isNaN(arr[1])).assertTrue();
@@ -241,13 +241,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1100
-     * @tc.name testArrayInvoke011
+     * @tc.name testArrayInvoke3011
      * @tc.desc Verify varargs overload preserves infinity values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, Infinity, -Infinity);
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertEqual(Infinity);
@@ -256,13 +256,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1200
-     * @tc.name testArrayInvoke012
+     * @tc.name testArrayInvoke3012
      * @tc.desc Verify varargs overload accepts custom object values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item012>(
         new Item012(1),
         new Item012(2),
@@ -274,13 +274,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1300
-     * @tc.name testArrayInvoke013
+     * @tc.name testArrayInvoke3013
      * @tc.desc Verify varargs overload accepts interface values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point013>(
         { x: 1, y: 2 },
         { x: 3, y: 4 },
@@ -292,13 +292,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1400
-     * @tc.name testArrayInvoke014
+     * @tc.name testArrayInvoke3014
      * @tc.desc Verify varargs overload accepts nested array values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int[]>([1, 2], [3, 4], [5, 6]);
       expect(arr[0][0]).assertEqual(1);
       expect(arr[1][1]).assertEqual(4);
@@ -307,13 +307,13 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1500
-     * @tc.name testArrayInvoke015
+     * @tc.name testArrayInvoke3015
      * @tc.desc Verify varargs overload preserves script-like string inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('<script>alert(1)</script>', 'safe');
       expect(arr[0]).assertEqual('<script>alert(1)</script>');
       expect(arr[1]).assertEqual('safe');
@@ -321,41 +321,41 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1600
-     * @tc.name testArrayInvoke016
+     * @tc.name testArrayInvoke3016
      * @tc.desc Verify varargs overload preserves Unicode string values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('你好', '世界', '🌍');
-      expect(arr[0]).assertEqual('你好');
-      expect(arr[1]).assertEqual('世界');
-      expect(arr[2]).assertEqual('🌍');
+    it('testArrayInvoke3016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('浣犲ソ', '涓栫晫', '馃實');
+      expect(arr[0]).assertEqual('浣犲ソ');
+      expect(arr[1]).assertEqual('涓栫晫');
+      expect(arr[2]).assertEqual('馃實');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1700
-     * @tc.name testArrayInvoke017
+     * @tc.name testArrayInvoke3017
      * @tc.desc Verify varargs overload preserves zero-width space values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('visible', '\u200B', 'visible');
       expect(arr[1]).assertEqual('\u200B');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1800
-     * @tc.name testArrayInvoke018
+     * @tc.name testArrayInvoke3018
      * @tc.desc Verify varargs overload preserves extra long strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longStr = 'a'.repeat(10000);
       const arr = new Array<string>(longStr);
       expect(arr[0].length).assertEqual(10000);
@@ -363,41 +363,27 @@ export default function ArrayInvoke3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_1900
-     * @tc.name testArrayInvoke019
+     * @tc.name testArrayInvoke3019
      * @tc.desc Verify varargs overload supports construction without passing parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       expect(arr.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2000
-     * @tc.name testArrayInvoke020
-     * @tc.desc Verify omitting parameters is the runtime-safe way to represent an empty item list
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayInvoke020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>();
-      expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2100
-     * @tc.name testArrayInvoke021
+     * @tc.name testArrayInvoke3020
      * @tc.desc Verify varargs overload returns an array containing all passed items
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
-      expect(arr.length).assertEqual(3);
       expect(arr.length).assertEqual(3);
       expect(arr[0]).assertEqual(10);
       expect(arr[1]).assertEqual(20);
@@ -405,14 +391,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2200
-     * @tc.name testArrayInvoke022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2100
+     * @tc.name testArrayInvoke3021
      * @tc.desc Verify argument count determines the returned array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('one');
       expect(arr1.length).assertEqual(1);
 
@@ -424,14 +410,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2300
-     * @tc.name testArrayInvoke023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2200
+     * @tc.name testArrayInvoke3022
      * @tc.desc Verify generic array construction returns proper array instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(1, 2, 3);
       const strArr = new Array<string>('a', 'b', 'c');
       const boolArr = new Array<boolean>(true, false);
@@ -442,14 +428,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2400
-     * @tc.name testArrayInvoke024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2300
+     * @tc.name testArrayInvoke3023
      * @tc.desc Verify single-parameter construction follows runtime overload behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const strArr = new Array<string>('single');
       expect(strArr.length).assertEqual(1);
       expect(strArr[0]).assertEqual('single');
@@ -460,14 +446,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2500
-     * @tc.name testArrayInvoke025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2400
+     * @tc.name testArrayInvoke3024
      * @tc.desc Verify varargs overload accepts mixed values under a union type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | string>(1, 'two', 3, 'four');
       expect(arr.length).assertEqual(4);
       expect(arr[0]).assertEqual(1);
@@ -477,14 +463,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2600
-     * @tc.name testArrayInvoke026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2500
+     * @tc.name testArrayInvoke3025
      * @tc.desc Verify varargs overload supports arrays whose elements are all the same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5, 5, 5, 5, 5);
       expect(arr.length).assertEqual(5);
       for (let i = 0; i < arr.length; i++) {
@@ -493,14 +479,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2700
-     * @tc.name testArrayInvoke027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2600
+     * @tc.name testArrayInvoke3026
      * @tc.desc Verify varargs overload can initialize arrays from many values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
         11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -512,14 +498,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2800
-     * @tc.name testArrayInvoke028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2700
+     * @tc.name testArrayInvoke3027
      * @tc.desc Verify varargs overload creates number arrays with the expected values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3, 4, 5);
       expect(arr.length).assertEqual(5);
       for (let i = 0; i < arr.length; i++) {
@@ -528,14 +514,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2900
-     * @tc.name testArrayInvoke029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2800
+     * @tc.name testArrayInvoke3028
      * @tc.desc Verify varargs overload creates string arrays with the expected values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('hello', 'world', '!');
       expect(arr[0]).assertEqual('hello');
       expect(arr[1]).assertEqual('world');
@@ -543,14 +529,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3000
-     * @tc.name testArrayInvoke030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_2900
+     * @tc.name testArrayInvoke3029
      * @tc.desc Verify varargs overload creates boolean arrays with the expected values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false, true, false);
       expect(arr[0]).assertTrue();
       expect(arr[1]).assertFalse();
@@ -559,14 +545,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3100
-     * @tc.name testArrayInvoke031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3000
+     * @tc.name testArrayInvoke3030
      * @tc.desc Verify varargs overload creates arrays of custom class instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item031>(
         new Item031(1, 'one'),
         new Item031(2, 'two'),
@@ -579,14 +565,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3200
-     * @tc.name testArrayInvoke032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3100
+     * @tc.name testArrayInvoke3031
      * @tc.desc Verify varargs overload creates arrays of interface values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point032>(
         { x: 1, y: 2 },
         { x: 3, y: 4 },
@@ -599,14 +585,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3300
-     * @tc.name testArrayInvoke033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3200
+     * @tc.name testArrayInvoke3032
      * @tc.desc Verify varargs overload creates arrays under a union element type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | string>(1, 'two', 3, 'four', 5);
       expect(arr[0]).assertEqual(1);
       expect(arr[1]).assertEqual('two');
@@ -616,14 +602,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3400
-     * @tc.name testArrayInvoke034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3300
+     * @tc.name testArrayInvoke3033
      * @tc.desc Verify varargs overload creates arrays of arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<int>>(
         new Array<int>(1, 2),
         new Array<int>(3, 4),
@@ -637,14 +623,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3500
-     * @tc.name testArrayInvoke035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3400
+     * @tc.name testArrayInvoke3034
      * @tc.desc Verify varargs overload creates three-dimensional arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<Array<int>>>(
         new Array<Array<int>>(
           new Array<int>(1, 2),
@@ -661,14 +647,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3600
-     * @tc.name testArrayInvoke036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3500
+     * @tc.name testArrayInvoke3035
      * @tc.desc Verify varargs overload handles argument counts from zero to many
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr0 = new Array<int>();
       expect(arr0.length).assertEqual(0);
 
@@ -683,14 +669,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3700
-     * @tc.name testArrayInvoke037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3600
+     * @tc.name testArrayInvoke3036
      * @tc.desc Verify spread syntax can reuse existing array items as constructor inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<int>(1, 2, 3);
       const arr = new Array<int>(source[0], source[1], source[2], 4, 5);
       expect(arr.length).assertEqual(5);
@@ -699,14 +685,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3800
-     * @tc.name testArrayInvoke038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3700
+     * @tc.name testArrayInvoke3037
      * @tc.desc Verify spread syntax can be mixed with directly passed items
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const part1 = new Array<int>(1, 2);
       const arr = new Array<int>(part1[0], part1[1], 3, 4, 5);
       expect(arr.length).assertEqual(5);
@@ -716,14 +702,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3900
-     * @tc.name testArrayInvoke039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3800
+     * @tc.name testArrayInvoke3038
      * @tc.desc Verify varargs overload suits initialization with known element values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const weekDays = new Array<string>(
         'Monday',
         'Tuesday',
@@ -740,14 +726,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4000
-     * @tc.name testArrayInvoke040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_3900
+     * @tc.name testArrayInvoke3039
      * @tc.desc Verify varargs overload can quickly build test data sets
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const testData = new Array<int>(
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10
       );
@@ -760,14 +746,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4100
-     * @tc.name testArrayInvoke041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4000
+     * @tc.name testArrayInvoke3040
      * @tc.desc Verify varargs overload can create configuration item arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const configs = new Array<Config041>(
         { name: 'config1', value: 100 },
         { name: 'config2', value: 200 },
@@ -779,14 +765,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4200
-     * @tc.name testArrayInvoke042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4100
+     * @tc.name testArrayInvoke3041
      * @tc.desc Verify constructor arguments select the expected Array overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr0 = new Array<string>();
       expect(arr0.length).assertEqual(0);
 
@@ -800,14 +786,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4300
-     * @tc.name testArrayInvoke043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4200
+     * @tc.name testArrayInvoke3042
      * @tc.desc Verify explicit generic types influence single-parameter array behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const strArr = new Array<string>('hello');
       expect(strArr.length).assertEqual(1);
       expect(strArr[0]).assertEqual('hello');
@@ -818,14 +804,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4400
-     * @tc.name testArrayInvoke044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4300
+     * @tc.name testArrayInvoke3043
      * @tc.desc Verify compile-time type checks reject mismatched varargs element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(1, 2, 3);
       const strArr = new Array<string>('a', 'b', 'c');
 
@@ -837,14 +823,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4500
-     * @tc.name testArrayInvoke045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4400
+     * @tc.name testArrayInvoke3044
      * @tc.desc Verify all varargs items must conform to the declared generic type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(1, 2, 3, 4, 5);
 
       const itemArr = new Array<Item045>(
@@ -857,14 +843,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4600
-     * @tc.name testArrayInvoke046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4500
+     * @tc.name testArrayInvoke3045
      * @tc.desc Verify a single number argument follows the length overload while other types stay as items
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<int>(5);
       expect(numArr.length).assertEqual(1);
       expect(numArr[0]).assertEqual(5);
@@ -878,27 +864,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4700
-     * @tc.name testArrayInvoke047
-     * @tc.desc Verify omitting all arguments is equivalent to default construction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayInvoke047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>();
-      expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4800
-     * @tc.name testArrayInvoke048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4600
+     * @tc.name testArrayInvoke3046
      * @tc.desc Verify varargs overload can accept many explicit initial values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
         11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
@@ -917,14 +890,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4900
-     * @tc.name testArrayInvoke049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4700
+     * @tc.name testArrayInvoke3047
      * @tc.desc Verify varargs overload supports constructing arrays of complex objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<ComplexItem049>(
         new ComplexItem049(1),
         new ComplexItem049(2),
@@ -938,28 +911,28 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5000
-     * @tc.name testArrayInvoke050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4800
+     * @tc.name testArrayInvoke3048
      * @tc.desc Verify the native varargs overload creates usable array instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('x', 'y', 'z');
       expect(arr.length).assertEqual(3);
       expect(arr[1]).assertEqual('y');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5100
-     * @tc.name testArrayInvoke051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_4900
+     * @tc.name testArrayInvoke3049
      * @tc.desc Verify varargs-style construction is functionally equivalent for item initialization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('a', 'b', 'c');
 
       expect(arr1.length).assertEqual(3);
@@ -968,14 +941,14 @@ export default function ArrayInvoke3Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5200
-     * @tc.name testArrayInvoke052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_INVOKE_THREE_5000
+     * @tc.name testArrayInvoke3050
      * @tc.desc Verify arrays created by the varargs overload support immediate chained operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayInvoke052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayInvoke3050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3, 4, 5);
 
       const filtered = arr.filter((v: int): boolean => v > 2);

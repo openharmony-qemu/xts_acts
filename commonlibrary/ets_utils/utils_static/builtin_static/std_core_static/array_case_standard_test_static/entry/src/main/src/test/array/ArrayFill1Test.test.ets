@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe,
-  expect, it, Level, Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -647,19 +655,18 @@ export default function ArrayFill1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_3700
      * @tc.name testArrayFill1037
-     * @tc.desc Verify fill handles larger arrays within acceptable runtime
+     * @tc.desc Verify fill updates every position in a genuinely large array created with Array.create
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFill1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10000);
+      const arr = Array.create<number>(10000, 1);
       arr.fill(1);
-      const startTime = Date.now();
       arr.fill(0);
-      const endTime = Date.now();
-      expect(endTime >= startTime).assertTrue();
+      expect(arr.length).assertEqual(10000);
       expect(arr[0]).assertEqual(0);
+      expect(arr[5000]).assertEqual(0);
       expect(arr[arr.length - 1]).assertEqual(0);
     });
 
@@ -1027,7 +1034,7 @@ export default function ArrayFill1Test(): void {
         const shared: Array<number> = [];
         const arr: Array<Array<number>> = [[1], [2], [3], [4]];
         arr.fill(shared, 1, 4);
-        shared.push(42);
+        shared.pushOne(42);
         console.log(TAG + ' lengths=' + arr[1].length + ',' + arr[2].length + ',' + arr[3].length);
         expect(arr[0][0]).assertEqual(1);
         expect(arr[1] === shared).assertTrue();
@@ -1105,7 +1112,7 @@ export default function ArrayFill1Test(): void {
       try {
         const arr: Array<number> = [];
         for (let i = 0; i < 32; i++) {
-          arr.push(i);
+          arr.pushOne(i);
         }
         arr.fill(-1, 8, 24);
         console.log(TAG + ' boundary=' + arr[7] + ',' + arr[8] + ',' + arr[23] + ',' + arr[24]);
