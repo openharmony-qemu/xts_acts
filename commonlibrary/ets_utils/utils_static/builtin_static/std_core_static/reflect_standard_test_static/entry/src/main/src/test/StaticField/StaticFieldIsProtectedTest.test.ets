@@ -27,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
+import { FieldValue, StaticField, ReflectClass, createReflectClass, PLACEHOLDER_PASSWORD, PLACEHOLDER_TOKEN, PLACEHOLDER_API_KEY, PLACEHOLDER_SSN } from '../Util.test';
 
 class MyClass001 {
   protected static name: string = 'test';
@@ -41,12 +41,12 @@ class MyClass004 {
 
 class MyClass005 {
   public static name: string = 'test';
-  public static count: number = 0;
+  public static count: int = 0;
 }
 
 class MyClass006 {
   private static secret: string = 'hidden';
-  private static value: number = 100;
+  private static value: int = 100;
 }
 
 class MyClass007 {
@@ -54,18 +54,18 @@ class MyClass007 {
 }
 
 class MyClass009 {
-  protected static prot: number = 1;
-  public static pub: number = 2;
-  private static priv: number = 3;
+  protected static prot: int = 1;
+  public static pub: int = 2;
+  private static priv: int = 3;
 }
 
 class MyClass012 {
-  protected static num: number = 100;
+  protected static num: int = 100;
   protected static str: string = 'test';
   protected static bool: boolean = true;
-  protected static arr: number[] = [1, 2, 3];
+  protected static arr: int[] = [1, 2, 3];
   protected static obj: Record<string, string> = { 'key': 'value' };
-  protected static charField: string = 'A';
+  protected static charField: char = c'A';
 }
 
 class MyClass015 {
@@ -73,11 +73,11 @@ class MyClass015 {
 }
 
 class MyClass016 {
-  protected static readonly value: number = 100;
+  protected static readonly value: int = 100;
 }
 
 class MyClass017 {
-  protected static count: number = 0;
+  protected static count: int = 0;
 }
 
 class MyClass018 {
@@ -108,14 +108,14 @@ class MyClass023 {
 }
 
 class MyClass024 {
-  protected static counter: number = 0;
+  protected static counter: int = 0;
 }
 
 class Config027 {
   public static APP_NAME: string = 'MyApp';
-  protected static API_KEY: string = 'secret_key';
+  protected static API_KEY: string = PLACEHOLDER_API_KEY;
   protected static DEBUG_MODE: boolean = false;
-  private static PASSWORD: string = 'password123';
+  private static PASSWORD: string = PLACEHOLDER_PASSWORD;
   public static LOG_LEVEL: string = 'info';
 }
 
@@ -175,21 +175,21 @@ class MyClass034 {
 }
 
 class MyClass035 {
-  public static pub: number = 1;
-  private static priv: number = 2;
-  protected static prot: number = 3;
+  public static pub: int = 1;
+  private static priv: int = 2;
+  protected static prot: int = 3;
 }
 
 class MyClass036 {
-  protected static value: number = 100;
+  protected static value: int = 100;
 }
 
 class MyClass037 {
-  protected static field1: number = 1;
-  public static field2: number = 2;
-  protected static field3: number = 3;
-  public static field4: number = 4;
-  protected static field5: number = 5;
+  protected static field1: int = 1;
+  public static field2: int = 2;
+  protected static field3: int = 3;
+  public static field4: int = 4;
+  protected static field5: int = 5;
 }
 
 class MyClass038 {
@@ -198,38 +198,38 @@ class MyClass038 {
 }
 
 class MyClass039 {
-  public static a: number = 1;
-  protected static b: number = 2;
-  public static c: number = 3;
-  protected static d: number = 4;
+  public static a: int = 1;
+  protected static b: int = 2;
+  public static c: int = 3;
+  protected static d: int = 4;
 }
 
 class MyClass040 {
-  public static a: number = 1;
-  protected static b: number = 2;
-  private static c: number = 3;
-  protected static d: number = 4;
+  public static a: int = 1;
+  protected static b: int = 2;
+  private static c: int = 3;
+  protected static d: int = 4;
 }
 
 class MyClass041 {
-  public static pub: number = 1;
-  protected static prot: number = 2;
-  private static priv: number = 3;
-  public static inter: number = 4;
+  public static pub: int = 1;
+  protected static prot: int = 2;
+  private static priv: int = 3;
+  public static inter: int = 4;
 }
 
 class MyClass042 {
   public static apiKey: string = 'public_key';
-  protected static secretKey: string = 'secret_key';
+  protected static secretKey: string = PLACEHOLDER_API_KEY;
   protected static internalId: string = 'internal-123';
 }
 
 class MyClass043 {
   public static displayName: string = 'User';
   public static email: string = 'user@example.com';
-  protected static password: string = 'secret';
-  protected static authToken: string = 'token';
-  protected static ssn: string = '123-45-6789';
+  protected static password: string = PLACEHOLDER_PASSWORD;
+  protected static authToken: string = PLACEHOLDER_TOKEN;
+  protected static ssn: string = PLACEHOLDER_SSN;
 }
 
 class MyClass044 {
@@ -266,7 +266,7 @@ class AppConfig047 {
   public static VERSION: string = '1.0.0';
   protected static configPath: string = '/etc/myapp/config.json';
   protected static logLevel: string = 'INFO';
-  private static secretKey: string = 'secret';
+  private static secretKey: string = PLACEHOLDER_API_KEY;
 }
 
 class DevConfig047 extends AppConfig047 {
@@ -300,13 +300,13 @@ class AnalyticsPlugin049 extends PluginBase049 {
 abstract class Vehicle050 {
   public static brand: string = 'Generic';
   protected static engineType: string = 'gasoline';
-  protected static fuelCapacity: number = 50;
+  protected static fuelCapacity: int = 50;
   private static serialNumberPrefix: string = 'VH-';
 }
 
 class ElectricCar050 extends Vehicle050 {
   protected static engineType: string = 'electric';
-  protected static fuelCapacity: number = 100;
+  protected static fuelCapacity: int = 100;
 }
 
 class MyClass051 {
@@ -318,7 +318,7 @@ class MyClass051 {
 
 class MyClass052 {
   protected static MIDDLEWARE_STACK: string[] = ['auth', 'logging', 'cors'];
-  protected static MIDDLEWARE_ORDER: number[] = [1, 2, 3];
+  protected static MIDDLEWARE_ORDER: int[] = [1, 2, 3];
   protected static MIDDLEWARE_ENABLED: boolean = true;
   public static MIDDLEWARE_VERSION: string = '2.0';
 }
@@ -347,9 +347,9 @@ class MyClass055 {
 }
 
 class MyClass056 {
-  protected static readonly PROTECTED_CONSTANT: number = 100;
+  protected static readonly PROTECTED_CONSTANT: int = 100;
   protected static readonly PROTECTED_NAME: string = 'protected';
-  public static readonly PUBLIC_CONSTANT: number = 200;
+  public static readonly PUBLIC_CONSTANT: int = 200;
 }
 
 class MyClass057 {
@@ -362,7 +362,7 @@ class MyClass057 {
 
 class MyClass058 {
   protected static protectedStr: string = 'protected';
-  protected static protectedNum: number = 888;
+  protected static protectedNum: int = 888;
   protected static protectedBool: boolean = false;
   protected static protectedArr: string[] = ['x', 'y'];
   public static publicStr: string = 'public';
@@ -377,13 +377,13 @@ class MyClass059 {
 }
 
 function reflectMyClass001(): ReflectClass {
-  let cls = createReflectClass('MyClass001');
+  const cls = createReflectClass('MyClass001');
   cls.addStaticField('name', createReflectClass('string'), 'test', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass051(): ReflectClass {
-  let cls = createReflectClass('MyClass051');
+  const cls = createReflectClass('MyClass051');
   cls.addStaticField('TEMPLATE_PATH', createReflectClass('string'), '/templates', false, false, true, false);
   cls.addStaticField('TEMPLATE_EXTENSION', createReflectClass('string'), '.html', false, false, true, false);
   cls.addStaticField('TEMPLATE_CACHE_ENABLED', createReflectClass('boolean'), true, false, false, true, false);
@@ -392,25 +392,25 @@ function reflectMyClass051(): ReflectClass {
 }
 
 function reflectMyClass052(): ReflectClass {
-  let cls = createReflectClass('MyClass052');
-  cls.addStaticField('MIDDLEWARE_STACK', createReflectClass('array'), '', false, false, true, false);
-  cls.addStaticField('MIDDLEWARE_ORDER', createReflectClass('array'), '', false, false, true, false);
+  const cls = createReflectClass('MyClass052');
+  cls.addStaticField('MIDDLEWARE_STACK', createReflectClass('string[]'), '', false, false, true, false);
+  cls.addStaticField('MIDDLEWARE_ORDER', createReflectClass('int[]'), '', false, false, true, false);
   cls.addStaticField('MIDDLEWARE_ENABLED', createReflectClass('boolean'), true, false, false, true, false);
   cls.addStaticField('MIDDLEWARE_VERSION', createReflectClass('string'), '2.0', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass053(): ReflectClass {
-  let cls = createReflectClass('MyClass053');
-  cls.addStaticField('VALIDATION_RULES', createReflectClass('object'), '{}', false, false, true, false);
-  cls.addStaticField('VALIDATION_MESSAGES', createReflectClass('object'), '{}', false, false, true, false);
+  const cls = createReflectClass('MyClass053');
+  cls.addStaticField('VALIDATION_RULES', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
+  cls.addStaticField('VALIDATION_MESSAGES', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
   cls.addStaticField('VALIDATION_STRICT', createReflectClass('boolean'), true, false, false, true, false);
   cls.addStaticField('VALIDATION_ENABLED', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass054(): ReflectClass {
-  let cls = createReflectClass('MyClass054');
+  const cls = createReflectClass('MyClass054');
   cls.addStaticField('EVENT_CLICK', createReflectClass('string'), 'click', false, false, true, false);
   cls.addStaticField('EVENT_CHANGE', createReflectClass('string'), 'change', false, false, true, false);
   cls.addStaticField('EVENT_SUBMIT', createReflectClass('string'), 'submit', false, false, true, false);
@@ -420,7 +420,7 @@ function reflectMyClass054(): ReflectClass {
 }
 
 function reflectMyClass055(): ReflectClass {
-  let cls = createReflectClass('MyClass055');
+  const cls = createReflectClass('MyClass055');
   cls.addStaticField('ROUTE_HOME', createReflectClass('string'), '/home', false, false, true, false);
   cls.addStaticField('ROUTE_ABOUT', createReflectClass('string'), '/about', false, false, true, false);
   cls.addStaticField('ROUTE_CONTACT', createReflectClass('string'), '/contact', false, false, true, false);
@@ -430,7 +430,7 @@ function reflectMyClass055(): ReflectClass {
 }
 
 function reflectMyClass056(): ReflectClass {
-  let cls = createReflectClass('MyClass056');
+  const cls = createReflectClass('MyClass056');
   cls.addStaticField('PROTECTED_CONSTANT', createReflectClass('int'), 100, false, false, true, true);
   cls.addStaticField('PROTECTED_NAME', createReflectClass('string'), 'protected', false, false, true, true);
   cls.addStaticField('PUBLIC_CONSTANT', createReflectClass('int'), 200, true, false, false, true);
@@ -438,7 +438,7 @@ function reflectMyClass056(): ReflectClass {
 }
 
 function reflectMyClass057(): ReflectClass {
-  let cls = createReflectClass('MyClass057');
+  const cls = createReflectClass('MyClass057');
   cls.addStaticField('fieldA', createReflectClass('string'), 'a', false, false, true, false);
   cls.addStaticField('fieldB', createReflectClass('string'), 'b', false, false, true, false);
   cls.addStaticField('fieldC', createReflectClass('string'), 'c', false, false, true, false);
@@ -448,17 +448,17 @@ function reflectMyClass057(): ReflectClass {
 }
 
 function reflectMyClass058(): ReflectClass {
-  let cls = createReflectClass('MyClass058');
+  const cls = createReflectClass('MyClass058');
   cls.addStaticField('protectedStr', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('protectedNum', createReflectClass('int'), 888, false, false, true, false);
   cls.addStaticField('protectedBool', createReflectClass('boolean'), false, false, false, true, false);
-  cls.addStaticField('protectedArr', createReflectClass('array'), '', false, false, true, false);
+  cls.addStaticField('protectedArr', createReflectClass('string[]'), '', false, false, true, false);
   cls.addStaticField('publicStr', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass059(): ReflectClass {
-  let cls = createReflectClass('MyClass059');
+  const cls = createReflectClass('MyClass059');
   cls.addStaticField('NAMESPACE_DEFAULT', createReflectClass('string'), 'default', false, false, true, false);
   cls.addStaticField('NAMESPACE_ADMIN', createReflectClass('string'), 'admin', false, false, true, false);
   cls.addStaticField('NAMESPACE_API', createReflectClass('string'), 'api', false, false, true, false);
@@ -490,7 +490,7 @@ function getNonProtectedFieldNames(cls: ReflectClass): string[] {
 }
 
 function countProtectedFields(cls: ReflectClass): number {
-  let count: number = 0;
+  let count: int = 0;
   let fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isProtected()) {
@@ -511,7 +511,7 @@ function hasProtectedFields(cls: ReflectClass): boolean {
 }
 
 function filterProtectedFields(fields: StaticField[]): StaticField[] {
-  let result: StaticField[] = [];
+  const result: StaticField[] = [];
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isProtected()) {
       result.push(fields[i]);
@@ -551,35 +551,35 @@ function buildProtectedFieldConfig(cls: ReflectClass): Record<string, string | n
 }
 
 function reflectMyClass004(): ReflectClass {
-  let cls = createReflectClass('MyClass004');
+  const cls = createReflectClass('MyClass004');
   cls.addStaticField('config', createReflectClass('string'), 'settings', false, false, true, false);
-  cls.addStaticField('buffer', createReflectClass('array'), '', false, false, true, false);
+  cls.addStaticField('buffer', createReflectClass('string[]'), '', false, false, true, false);
   cls.addStaticField('metadata', createReflectClass('string'), '', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass005(): ReflectClass {
-  let cls = createReflectClass('MyClass005');
+  const cls = createReflectClass('MyClass005');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass006(): ReflectClass {
-  let cls = createReflectClass('MyClass006');
+  const cls = createReflectClass('MyClass006');
   cls.addStaticField('secret', createReflectClass('string'), 'hidden', false, true, false, false);
   cls.addStaticField('value', createReflectClass('int'), 100, false, true, false, false);
   return cls;
 }
 
 function reflectMyClass007(): ReflectClass {
-  let cls = createReflectClass('MyClass007');
+  const cls = createReflectClass('MyClass007');
   cls.addStaticField('internalField', createReflectClass('string'), 'internal', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass009(): ReflectClass {
-  let cls = createReflectClass('MyClass009');
+  const cls = createReflectClass('MyClass009');
   cls.addStaticField('prot', createReflectClass('int'), 1, false, false, true, false);
   cls.addStaticField('pub', createReflectClass('int'), 2, true, false, false, false);
   cls.addStaticField('priv', createReflectClass('int'), 3, false, true, false, false);
@@ -587,91 +587,91 @@ function reflectMyClass009(): ReflectClass {
 }
 
 function reflectMyClass012(): ReflectClass {
-  let cls = createReflectClass('MyClass012');
+  const cls = createReflectClass('MyClass012');
   cls.addStaticField('num', createReflectClass('int'), 100, false, false, true, false);
   cls.addStaticField('str', createReflectClass('string'), 'test', false, false, true, false);
   cls.addStaticField('bool', createReflectClass('boolean'), true, false, false, true, false);
-  cls.addStaticField('arr', createReflectClass('array'), '', false, false, true, false);
-  cls.addStaticField('obj', createReflectClass('object'), '{}', false, false, true, false);
-  cls.addStaticField('charField', createReflectClass('string'), 'A', false, false, true, false);
+  cls.addStaticField('arr', createReflectClass('int[]'), '', false, false, true, false);
+  cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
+  cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, false, false, true, false);
   return cls;
 }
 
 function reflectMyClass015(): ReflectClass {
-  let cls = createReflectClass('MyClass015');
+  const cls = createReflectClass('MyClass015');
   cls.addStaticField('name', createReflectClass('string'), 'test', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass016(): ReflectClass {
-  let cls = createReflectClass('MyClass016');
+  const cls = createReflectClass('MyClass016');
   cls.addStaticField('value', createReflectClass('int'), 100, false, false, true, true);
   return cls;
 }
 
 function reflectMyClass017(): ReflectClass {
-  let cls = createReflectClass('MyClass017');
+  const cls = createReflectClass('MyClass017');
   cls.addStaticField('count', createReflectClass('int'), 0, false, false, true, false);
   return cls;
 }
 
 function reflectMyClass018(): ReflectClass {
-  let cls = createReflectClass('MyClass018');
+  const cls = createReflectClass('MyClass018');
   cls.addStaticField('prot', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('pub', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass019(): ReflectClass {
-  let cls = createReflectClass('MyClass019');
+  const cls = createReflectClass('MyClass019');
   cls.addStaticField('prot', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('priv', createReflectClass('string'), 'private', false, true, false, false);
   return cls;
 }
 
 function reflectMyClass020(): ReflectClass {
-  let cls = createReflectClass('MyClass020');
+  const cls = createReflectClass('MyClass020');
   cls.addStaticField('protReadonly', createReflectClass('string'), 'value', false, false, true, true);
   cls.addStaticField('pubReadonly', createReflectClass('string'), 'value', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass021(): ReflectClass {
-  let cls = createReflectClass('MyClass021');
+  const cls = createReflectClass('MyClass021');
   cls.addStaticField('config', createReflectClass('string'), 'settings', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass022(): ReflectClass {
-  let cls = createReflectClass('MyClass022');
+  const cls = createReflectClass('MyClass022');
   cls.addStaticField('config', createReflectClass('string'), 'settings', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass023(): ReflectClass {
-  let cls = createReflectClass('MyClass023');
+  const cls = createReflectClass('MyClass023');
   cls.addStaticField('setting', createReflectClass('string'), 'value', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass024(): ReflectClass {
-  let cls = createReflectClass('MyClass024');
+  const cls = createReflectClass('MyClass024');
   cls.addStaticField('counter', createReflectClass('int'), 0, false, false, true, false);
   return cls;
 }
 
 function reflectConfig027(): ReflectClass {
-  let cls = createReflectClass('Config027');
+  const cls = createReflectClass('Config027');
   cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, false);
-  cls.addStaticField('API_KEY', createReflectClass('string'), 'secret_key', false, false, true, false);
+  cls.addStaticField('API_KEY', createReflectClass('string'), PLACEHOLDER_API_KEY, false, false, true, false);
   cls.addStaticField('DEBUG_MODE', createReflectClass('int'), 1, false, false, true, false);
-  cls.addStaticField('PASSWORD', createReflectClass('string'), 'password123', false, true, false, false);
+  cls.addStaticField('PASSWORD', createReflectClass('string'), PLACEHOLDER_PASSWORD, false, true, false, false);
   cls.addStaticField('LOG_LEVEL', createReflectClass('string'), 'info', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass028(): ReflectClass {
-  let cls = createReflectClass('MyClass028');
+  const cls = createReflectClass('MyClass028');
   cls.addStaticField('publicField', createReflectClass('string'), 'public', true, false, false, false);
   cls.addStaticField('protectedField', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('privateField', createReflectClass('string'), 'private', false, true, false, false);
@@ -679,7 +679,7 @@ function reflectMyClass028(): ReflectClass {
 }
 
 function reflectParent029(): ReflectClass {
-  let cls = createReflectClass('Parent029');
+  const cls = createReflectClass('Parent029');
   cls.addStaticField('parentPublic', createReflectClass('string'), 'parent public', true, false, false, false);
   cls.addStaticField('parentProtected', createReflectClass('string'), 'parent protected', false, false, true, false);
   cls.addStaticField('parentPrivate', createReflectClass('string'), 'parent private', false, true, false, false);
@@ -687,50 +687,50 @@ function reflectParent029(): ReflectClass {
 }
 
 function reflectChild029(): ReflectClass {
-  let cls = createReflectClass('Child029');
+  const cls = createReflectClass('Child029');
   cls.addStaticField('childPublic', createReflectClass('string'), 'child public', true, false, false, false);
   cls.addStaticField('childProtected', createReflectClass('string'), 'child protected', false, false, true, false);
   return cls;
 }
 
 function reflectBaseComponent030(): ReflectClass {
-  let cls = createReflectClass('BaseComponent030');
-  cls.addStaticField('defaultConfig', createReflectClass('object'), '{}', false, false, true, false);
+  const cls = createReflectClass('BaseComponent030');
+  cls.addStaticField('defaultConfig', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
   cls.addStaticField('version', createReflectClass('string'), '1.0.0', false, false, true, false);
   return cls;
 }
 
 function reflectImpl031(): ReflectClass {
-  let cls = createReflectClass('Impl031');
+  const cls = createReflectClass('Impl031');
   cls.addStaticField('constant', createReflectClass('string'), 'implemented', true, false, false, false);
   cls.addStaticField('internalConstant', createReflectClass('string'), 'internal', false, false, true, false);
   return cls;
 }
 
 function reflectGenericClass032(): ReflectClass {
-  let cls = createReflectClass('GenericClass032');
+  const cls = createReflectClass('GenericClass032');
   cls.addStaticField('defaultValue', createReflectClass('string'), '', true, false, false, false);
-  cls.addStaticField('cache', createReflectClass('array'), '', false, false, true, false);
+  cls.addStaticField('cache', createReflectClass('string[]'), '', false, false, true, false);
   cls.addStaticField('metadata', createReflectClass('string'), '', false, true, false, false);
   return cls;
 }
 
 function reflectMyClass033(): ReflectClass {
-  let cls = createReflectClass('MyClass033');
+  const cls = createReflectClass('MyClass033');
   cls.addStaticField('handler', createReflectClass('function'), '', false, false, true, false);
   cls.addStaticField('callback', createReflectClass('function'), '', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass034(): ReflectClass {
-  let cls = createReflectClass('MyClass034');
+  const cls = createReflectClass('MyClass034');
   cls.addStaticField('inner', createReflectClass('string'), 'InnerClass034', false, false, true, false);
   cls.addStaticField('outer', createReflectClass('string'), 'Object', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass035(): ReflectClass {
-  let cls = createReflectClass('MyClass035');
+  const cls = createReflectClass('MyClass035');
   cls.addStaticField('pub', createReflectClass('int'), 1, true, false, false, false);
   cls.addStaticField('priv', createReflectClass('int'), 2, false, true, false, false);
   cls.addStaticField('prot', createReflectClass('int'), 3, false, false, true, false);
@@ -738,13 +738,13 @@ function reflectMyClass035(): ReflectClass {
 }
 
 function reflectMyClass036(): ReflectClass {
-  let cls = createReflectClass('MyClass036');
+  const cls = createReflectClass('MyClass036');
   cls.addStaticField('value', createReflectClass('int'), 100, false, false, true, false);
   return cls;
 }
 
 function reflectMyClass037(): ReflectClass {
-  let cls = createReflectClass('MyClass037');
+  const cls = createReflectClass('MyClass037');
   cls.addStaticField('field1', createReflectClass('int'), 1, false, false, true, false);
   cls.addStaticField('field2', createReflectClass('int'), 2, true, false, false, false);
   cls.addStaticField('field3', createReflectClass('int'), 3, false, false, true, false);
@@ -754,13 +754,13 @@ function reflectMyClass037(): ReflectClass {
 }
 
 function reflectMyClass038(): ReflectClass {
-  let cls = createReflectClass('MyClass038');
+  const cls = createReflectClass('MyClass038');
   cls.addStaticField('staticProtected', createReflectClass('string'), 'static', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass039(): ReflectClass {
-  let cls = createReflectClass('MyClass039');
+  const cls = createReflectClass('MyClass039');
   cls.addStaticField('a', createReflectClass('int'), 1, true, false, false, false);
   cls.addStaticField('b', createReflectClass('int'), 2, false, false, true, false);
   cls.addStaticField('c', createReflectClass('int'), 3, true, false, false, false);
@@ -769,7 +769,7 @@ function reflectMyClass039(): ReflectClass {
 }
 
 function reflectMyClass040(): ReflectClass {
-  let cls = createReflectClass('MyClass040');
+  const cls = createReflectClass('MyClass040');
   cls.addStaticField('a', createReflectClass('int'), 1, true, false, false, false);
   cls.addStaticField('b', createReflectClass('int'), 2, false, false, true, false);
   cls.addStaticField('c', createReflectClass('int'), 3, false, true, false, false);
@@ -778,7 +778,7 @@ function reflectMyClass040(): ReflectClass {
 }
 
 function reflectMyClass041(): ReflectClass {
-  let cls = createReflectClass('MyClass041');
+  const cls = createReflectClass('MyClass041');
   cls.addStaticField('pub', createReflectClass('int'), 1, true, false, false, false);
   cls.addStaticField('prot', createReflectClass('int'), 2, false, false, true, false);
   cls.addStaticField('priv', createReflectClass('int'), 3, false, true, false, false);
@@ -787,60 +787,60 @@ function reflectMyClass041(): ReflectClass {
 }
 
 function reflectMyClass042(): ReflectClass {
-  let cls = createReflectClass('MyClass042');
+  const cls = createReflectClass('MyClass042');
   cls.addStaticField('apiKey', createReflectClass('string'), 'public_key', true, false, false, false);
-  cls.addStaticField('secretKey', createReflectClass('string'), 'secret_key', false, false, true, false);
+  cls.addStaticField('secretKey', createReflectClass('string'), PLACEHOLDER_API_KEY, false, false, true, false);
   cls.addStaticField('internalId', createReflectClass('string'), 'internal-123', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass043(): ReflectClass {
-  let cls = createReflectClass('MyClass043');
+  const cls = createReflectClass('MyClass043');
   cls.addStaticField('displayName', createReflectClass('string'), 'User', true, false, false, false);
   cls.addStaticField('email', createReflectClass('string'), 'user@example.com', true, false, false, false);
-  cls.addStaticField('password', createReflectClass('string'), 'secret', false, false, true, false);
-  cls.addStaticField('authToken', createReflectClass('string'), 'token', false, false, true, false);
-  cls.addStaticField('ssn', createReflectClass('string'), '123-45-6789', false, false, true, false);
+  cls.addStaticField('password', createReflectClass('string'), PLACEHOLDER_PASSWORD, false, false, true, false);
+  cls.addStaticField('authToken', createReflectClass('string'), PLACEHOLDER_TOKEN, false, false, true, false);
+  cls.addStaticField('ssn', createReflectClass('string'), PLACEHOLDER_SSN, false, false, true, false);
   return cls;
 }
 
 function reflectMyClass044(): ReflectClass {
-  let cls = createReflectClass('MyClass044');
+  const cls = createReflectClass('MyClass044');
   cls.addStaticField('protectedData', createReflectClass('string'), 'sensitive', false, false, true, false);
   cls.addStaticField('publicData', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
 
 function reflectBaseComponent045(): ReflectClass {
-  let cls = createReflectClass('BaseComponent045');
+  const cls = createReflectClass('BaseComponent045');
   cls.addStaticField('componentName', createReflectClass('string'), 'BaseComponent', true, false, false, false);
-  cls.addStaticField('hooks', createReflectClass('array'), '', false, false, true, false);
-  cls.addStaticField('defaultProps', createReflectClass('object'), '{}', false, false, true, false);
+  cls.addStaticField('hooks', createReflectClass('string[]'), '', false, false, true, false);
+  cls.addStaticField('defaultProps', createReflectClass('Object'), {} as Record<string, FieldValue>, false, false, true, false);
   cls.addStaticField('internalState', createReflectClass('string'), 'initializing', false, true, false, false);
   return cls;
 }
 
 function reflectFrameworkPlugin046(): ReflectClass {
-  let cls = createReflectClass('FrameworkPlugin046');
+  const cls = createReflectClass('FrameworkPlugin046');
   cls.addStaticField('pluginName', createReflectClass('string'), 'BasePlugin', true, false, false, false);
-  cls.addStaticField('hookPoints', createReflectClass('array'), '', false, false, true, false);
-  cls.addStaticField('dependencies', createReflectClass('array'), '', false, false, true, false);
-  cls.addStaticField('registry', createReflectClass('object'), '', false, true, false, false);
+  cls.addStaticField('hookPoints', createReflectClass('string[]'), '', false, false, true, false);
+  cls.addStaticField('dependencies', createReflectClass('string[]'), '', false, false, true, false);
+  cls.addStaticField('registry', createReflectClass('Object'), {} as Record<string, FieldValue>, false, true, false, false);
   return cls;
 }
 
 function reflectAppConfig047(): ReflectClass {
-  let cls = createReflectClass('AppConfig047');
+  const cls = createReflectClass('AppConfig047');
   cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, false);
   cls.addStaticField('VERSION', createReflectClass('string'), '1.0.0', true, false, false, false);
   cls.addStaticField('configPath', createReflectClass('string'), '/etc/myapp/config.json', false, false, true, false);
   cls.addStaticField('logLevel', createReflectClass('string'), 'INFO', false, false, true, false);
-  cls.addStaticField('secretKey', createReflectClass('string'), 'secret', false, true, false, false);
+  cls.addStaticField('secretKey', createReflectClass('string'), PLACEHOLDER_API_KEY, false, true, false, false);
   return cls;
 }
 
 function reflectMyClass048(): ReflectClass {
-  let cls = createReflectClass('MyClass048');
+  const cls = createReflectClass('MyClass048');
   cls.addStaticField('publicValue', createReflectClass('string'), 'public', true, false, false, false);
   cls.addStaticField('protectedValue', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('privateValue', createReflectClass('string'), 'private', false, true, false, false);
@@ -848,16 +848,16 @@ function reflectMyClass048(): ReflectClass {
 }
 
 function reflectAnalyticsPlugin049(): ReflectClass {
-  let cls = createReflectClass('AnalyticsPlugin049');
+  const cls = createReflectClass('AnalyticsPlugin049');
   cls.addStaticField('pluginType', createReflectClass('string'), 'analytics', true, false, false, false);
-  cls.addStaticField('integrationPoints', createReflectClass('array'), '', false, false, true, false);
+  cls.addStaticField('integrationPoints', createReflectClass('string[]'), '', false, false, true, false);
   cls.addStaticField('requiredVersion', createReflectClass('string'), '1.0.0', false, false, true, false);
   cls.addStaticField('initialized', createReflectClass('boolean'), false, false, false, true, false);
   return cls;
 }
 
 function reflectVehicle050(): ReflectClass {
-  let cls = createReflectClass('Vehicle050');
+  const cls = createReflectClass('Vehicle050');
   cls.addStaticField('brand', createReflectClass('string'), 'Generic', true, false, false, false);
   cls.addStaticField('engineType', createReflectClass('string'), 'gasoline', false, false, true, false);
   cls.addStaticField('fuelCapacity', createReflectClass('int'), 50, false, false, true, false);
@@ -865,7 +865,7 @@ function reflectVehicle050(): ReflectClass {
   return cls;
 }
 
-export default function StaticFieldIsProtectedTest(): void {
+export function StaticFieldIsProtectedTest(): void {
   describe('StaticFieldIsProtectedTest', (): void => {
     beforeAll((): void => {
     });
@@ -886,9 +886,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass001();
+      const cls: ReflectClass = reflectMyClass001();
       let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(result).assertEqual(true);
     });
 
@@ -901,9 +901,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass001();
+      const cls: ReflectClass = reflectMyClass001();
       let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(result).assertEqual(true);
     });
 
@@ -916,9 +916,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass001();
+      const cls: ReflectClass = reflectMyClass001();
       let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(result).assertEqual(true);
     });
 
@@ -931,7 +931,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
+      const cls: ReflectClass = reflectMyClass004();
       let field1: StaticField | null = cls.getStaticField('config');
       expect(field1!.isProtected()).assertEqual(true);
       let field2: StaticField | null = cls.getStaticField('buffer');
@@ -949,7 +949,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass005();
+      const cls: ReflectClass = reflectMyClass005();
       let field1: StaticField | null = cls.getStaticField('name');
       expect(field1!.isProtected()).assertEqual(false);
       let field2: StaticField | null = cls.getStaticField('count');
@@ -965,7 +965,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass006();
+      const cls: ReflectClass = reflectMyClass006();
       let field1: StaticField | null = cls.getStaticField('secret');
       expect(field1!.isProtected()).assertEqual(false);
       let field2: StaticField | null = cls.getStaticField('value');
@@ -981,7 +981,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass007();
+      const cls: ReflectClass = reflectMyClass007();
       let field: StaticField | null = cls.getStaticField('internalField');
       expect(field!.isProtected()).assertEqual(false);
     });
@@ -995,14 +995,14 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
+      const cls: ReflectClass = reflectMyClass004();
       let field: StaticField | null = cls.getStaticField('config');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(typeof result).assertEqual('boolean');
       expect(result).assertEqual(true);
-      let cls2: ReflectClass = reflectMyClass005();
+      const cls2: ReflectClass = reflectMyClass005();
       let field2: StaticField | null = cls2.getStaticField('name');
-      let result2: boolean = field2!.isProtected();
+      const result2: boolean = field2!.isProtected();
       expect(typeof result2).assertEqual('boolean');
       expect(result2).assertEqual(false);
     });
@@ -1016,7 +1016,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass009();
+      const cls: ReflectClass = reflectMyClass009();
       let field1: StaticField | null = cls.getStaticField('prot');
       expect(field1!.isProtected()).assertEqual(true);
       expect(field1!.isPublic()).assertEqual(false);
@@ -1038,9 +1038,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
+      const cls: ReflectClass = reflectMyClass004();
       let field: StaticField | null = cls.getStaticField('config');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(typeof result).assertEqual('boolean');
     });
 
@@ -1053,7 +1053,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass009();
+      const cls: ReflectClass = reflectMyClass009();
       let field: StaticField | null = cls.getStaticField('prot');
       expect(field!.isProtected()).assertEqual(true);
     });
@@ -1067,7 +1067,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass012();
+      const cls: ReflectClass = reflectMyClass012();
       expect(cls.getStaticField('num')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('str')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('bool')!.isProtected()).assertEqual(true);
@@ -1121,10 +1121,10 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass015();
+      const cls: ReflectClass = reflectMyClass015();
       let field: StaticField | null = cls.getStaticField('nonexistent');
       if (field !== null) {
-        let result: boolean = field.isProtected();
+        const result: boolean = field.isProtected();
         expect(result).assertEqual(true);
       } else {
         expect(field).assertEqual(null);
@@ -1140,7 +1140,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass016();
+      const cls: ReflectClass = reflectMyClass016();
       let field: StaticField | null = cls.getStaticField('value');
       expect(field!.isProtected()).assertEqual(true);
       expect(field!.isReadonly()).assertEqual(true);
@@ -1155,7 +1155,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass017();
+      const cls: ReflectClass = reflectMyClass017();
       let field: StaticField | null = cls.getStaticField('count');
       expect(field!.isProtected()).assertEqual(true);
     });
@@ -1169,7 +1169,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass018();
+      const cls: ReflectClass = reflectMyClass018();
       let field1: StaticField | null = cls.getStaticField('prot');
       expect(field1!.isProtected()).assertEqual(true);
       expect(field1!.isPublic()).assertEqual(false);
@@ -1187,7 +1187,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass019();
+      const cls: ReflectClass = reflectMyClass019();
       let field1: StaticField | null = cls.getStaticField('prot');
       expect(field1!.isProtected()).assertEqual(true);
       expect(field1!.isPrivate()).assertEqual(false);
@@ -1205,7 +1205,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass020();
+      const cls: ReflectClass = reflectMyClass020();
       let field1: StaticField | null = cls.getStaticField('protReadonly');
       expect(field1!.isProtected() && field1!.isReadonly()).assertEqual(true);
       let field2: StaticField | null = cls.getStaticField('pubReadonly');
@@ -1221,7 +1221,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass021();
+      const cls: ReflectClass = reflectMyClass021();
       let field: StaticField | null = cls.getStaticField('config');
       expect(field!.isProtected()).assertEqual(true);
     });
@@ -1235,7 +1235,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass022();
+      const cls: ReflectClass = reflectMyClass022();
       let field: StaticField | null = cls.getStaticField('config');
       expect(field!.isProtected()).assertEqual(true);
     });
@@ -1249,7 +1249,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass023();
+      const cls: ReflectClass = reflectMyClass023();
       let field: StaticField | null = cls.getStaticField('setting');
       if (field!.isProtected()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
@@ -1267,7 +1267,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass024();
+      const cls: ReflectClass = reflectMyClass024();
       let field: StaticField | null = cls.getStaticField('counter');
       if (field!.isProtected()) {
         field!.setValue(100);
@@ -1285,9 +1285,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
+      const cls: ReflectClass = reflectMyClass004();
       let field: StaticField | null = cls.getStaticField('config');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(result).assertEqual(true);
     });
 
@@ -1300,9 +1300,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
+      const cls: ReflectClass = reflectMyClass004();
       let field: StaticField | null = cls.getStaticField('config');
-      let result: boolean = field!.isProtected();
+      const result: boolean = field!.isProtected();
       expect(result instanceof Promise).assertEqual(false);
     });
 
@@ -1315,10 +1315,10 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectConfig027();
-      let protectedCount: number = 0;
-      let publicCount: number = 0;
-      let privateCount: number = 0;
+      const cls: ReflectClass = reflectConfig027();
+      let protectedCount: int = 0;
+      let publicCount: int = 0;
+      let privateCount: int = 0;
       let fieldNames: string[] = ['APP_NAME', 'API_KEY', 'DEBUG_MODE', 'PASSWORD', 'LOG_LEVEL'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
@@ -1342,7 +1342,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass028();
+      const cls: ReflectClass = reflectMyClass028();
       let fieldNames: string[] = ['publicField', 'protectedField', 'privateField'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
@@ -1411,7 +1411,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectImpl031();
+      const cls: ReflectClass = reflectImpl031();
       let field1: StaticField | null = cls.getStaticField('constant');
       expect(field1!.isProtected()).assertEqual(false);
       let field2: StaticField | null = cls.getStaticField('internalConstant');
@@ -1427,7 +1427,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectGenericClass032();
+      const cls: ReflectClass = reflectGenericClass032();
       let field1: StaticField | null = cls.getStaticField('defaultValue');
       expect(field1!.isProtected()).assertEqual(false);
       let field2: StaticField | null = cls.getStaticField('cache');
@@ -1446,7 +1446,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass033();
+      const cls: ReflectClass = reflectMyClass033();
       expect(cls.getStaticField('handler')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('callback')!.isProtected()).assertEqual(false);
     });
@@ -1460,7 +1460,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass034();
+      const cls: ReflectClass = reflectMyClass034();
       expect(cls.getStaticField('inner')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('outer')!.isProtected()).assertEqual(false);
     });
@@ -1474,14 +1474,14 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass035();
+      const cls: ReflectClass = reflectMyClass035();
       let fieldNames: string[] = ['pub', 'priv', 'prot'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null) {
-          let publicCount: number = (field.isPublic() ? 1 : 0);
-          let privateCount: number = (field.isPrivate() ? 1 : 0);
-          let protectedCount: number = (field.isProtected() ? 1 : 0);
+          let publicCount: int = (field.isPublic() ? 1 : 0);
+          let privateCount: int = (field.isPrivate() ? 1 : 0);
+          let protectedCount: int = (field.isProtected() ? 1 : 0);
           expect(publicCount + privateCount + protectedCount).assertEqual(1);
         }
       }
@@ -1496,11 +1496,11 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass036();
+      const cls: ReflectClass = reflectMyClass036();
       let field: StaticField | null = cls.getStaticField('value');
-      let result1: boolean = field!.isProtected();
-      let result2: boolean = field!.isProtected();
-      let result3: boolean = field!.isProtected();
+      const result1: boolean = field!.isProtected();
+      const result2: boolean = field!.isProtected();
+      const result3: boolean = field!.isProtected();
       expect(result1).assertEqual(result2);
       expect(result2).assertEqual(result3);
       expect(result1).assertEqual(true);
@@ -1515,9 +1515,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass037();
+      const cls: ReflectClass = reflectMyClass037();
       let fieldNames: string[] = ['field1', 'field2', 'field3', 'field4', 'field5'];
-      let protectedCount: number = 0;
+      let protectedCount: int = 0;
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null && field.isProtected()) {
@@ -1536,7 +1536,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass038();
+      const cls: ReflectClass = reflectMyClass038();
       let staticField: StaticField | null = cls.getStaticField('staticProtected');
       expect(staticField!.isProtected()).assertEqual(true);
     });
@@ -1550,7 +1550,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass039();
+      const cls: ReflectClass = reflectMyClass039();
       let fieldNames: string[] = ['a', 'b', 'c', 'd'];
       let protectedFields: StaticField[] = [];
       for (let i = 0; i < fieldNames.length; i++) {
@@ -1571,7 +1571,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass040();
+      const cls: ReflectClass = reflectMyClass040();
       let fieldNames: string[] = ['a', 'b', 'c', 'd'];
       let nonProtectedFields: StaticField[] = [];
       for (let i = 0; i < fieldNames.length; i++) {
@@ -1592,7 +1592,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass041();
+      const cls: ReflectClass = reflectMyClass041();
       let fieldNames: string[] = ['pub', 'prot', 'priv', 'inter'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
@@ -1624,7 +1624,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass042();
+      const cls: ReflectClass = reflectMyClass042();
       let fieldNames: string[] = ['apiKey', 'secretKey', 'internalId'];
       for (let i = 0; i < fieldNames.length; i++) {
         let field: StaticField | null = cls.getStaticField(fieldNames[i]);
@@ -1642,7 +1642,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass043();
+      const cls: ReflectClass = reflectMyClass043();
       let displayField: StaticField | null = cls.getStaticField('displayName');
       expect(displayField!.isProtected()).assertEqual(false);
       let emailField: StaticField | null = cls.getStaticField('email');
@@ -1664,7 +1664,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass044();
+      const cls: ReflectClass = reflectMyClass044();
       let protectedField: StaticField | null = cls.getStaticField('protectedData');
       expect(protectedField!.isProtected()).assertEqual(true);
       let value: string | number | boolean | null = protectedField!.getValue() as string | number | boolean | null;
@@ -1736,7 +1736,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass048();
+      const cls: ReflectClass = reflectMyClass048();
       let field: StaticField | null = cls.getStaticField('protectedValue');
       if (field !== null && field.isProtected()) {
         let value: string | number | boolean | null = field.getValue() as string | number | boolean | null;
@@ -1788,7 +1788,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass051();
+      const cls: ReflectClass = reflectMyClass051();
       expect(cls.getStaticField('TEMPLATE_PATH')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('TEMPLATE_EXTENSION')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('TEMPLATE_CACHE_ENABLED')!.isProtected()).assertEqual(true);
@@ -1804,7 +1804,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass052();
+      const cls: ReflectClass = reflectMyClass052();
       expect(cls.getStaticField('MIDDLEWARE_STACK')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('MIDDLEWARE_ORDER')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('MIDDLEWARE_ENABLED')!.isProtected()).assertEqual(true);
@@ -1820,7 +1820,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass053();
+      const cls: ReflectClass = reflectMyClass053();
       expect(cls.getStaticField('VALIDATION_RULES')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('VALIDATION_MESSAGES')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('VALIDATION_STRICT')!.isProtected()).assertEqual(true);
@@ -1836,7 +1836,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass054();
+      const cls: ReflectClass = reflectMyClass054();
       expect(cls.getStaticField('EVENT_CLICK')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('EVENT_CHANGE')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('EVENT_SUBMIT')!.isProtected()).assertEqual(true);
@@ -1853,7 +1853,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass055();
+      const cls: ReflectClass = reflectMyClass055();
       expect(cls.getStaticField('ROUTE_HOME')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('ROUTE_ABOUT')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('ROUTE_CONTACT')!.isProtected()).assertEqual(true);
@@ -1870,7 +1870,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass056();
+      const cls: ReflectClass = reflectMyClass056();
       expect(cls.getStaticField('PROTECTED_CONSTANT')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('PROTECTED_NAME')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('PUBLIC_CONSTANT')!.isProtected()).assertEqual(false);
@@ -1885,7 +1885,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass057();
+      const cls: ReflectClass = reflectMyClass057();
       expect(cls.getStaticField('fieldA')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('fieldB')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('fieldC')!.isProtected()).assertEqual(true);
@@ -1902,7 +1902,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass058();
+      const cls: ReflectClass = reflectMyClass058();
       expect(cls.getStaticField('protectedStr')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('protectedNum')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('protectedBool')!.isProtected()).assertEqual(true);
@@ -1919,7 +1919,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass059();
+      const cls: ReflectClass = reflectMyClass059();
       expect(cls.getStaticField('NAMESPACE_DEFAULT')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('NAMESPACE_ADMIN')!.isProtected()).assertEqual(true);
       expect(cls.getStaticField('NAMESPACE_API')!.isProtected()).assertEqual(true);
@@ -1936,7 +1936,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass051();
+      const cls: ReflectClass = reflectMyClass051();
       let names: string[] = getProtectedFieldNames(cls);
       expect(names.length).assertEqual(3);
     });
@@ -1950,7 +1950,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass059();
+      const cls: ReflectClass = reflectMyClass059();
       let names: string[] = getNonProtectedFieldNames(cls);
       expect(names.length).assertEqual(1);
     });
@@ -1964,7 +1964,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass054();
+      const cls: ReflectClass = reflectMyClass054();
       let count: number = countProtectedFields(cls);
       expect(count).assertEqual(4);
     });
@@ -1978,9 +1978,9 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1: ReflectClass = reflectMyClass055();
+      const cls1: ReflectClass = reflectMyClass055();
       expect(hasProtectedFields(cls1)).assertEqual(true);
-      let cls2: ReflectClass = createReflectClass('EmptyClass');
+      const cls2: ReflectClass = createReflectClass('EmptyClass');
       expect(hasProtectedFields(cls2)).assertEqual(false);
     });
 
@@ -1993,7 +1993,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass058();
+      const cls: ReflectClass = reflectMyClass058();
       let allFields: StaticField[] = cls.getDeclaredStaticFields();
       let protectedFields: StaticField[] = filterProtectedFields(allFields);
       expect(protectedFields.length).assertEqual(4);
@@ -2011,7 +2011,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass051();
+      const cls: ReflectClass = reflectMyClass051();
       let inheritable: StaticField[] = getInheritableFields(cls);
       expect(inheritable.length).assertEqual(4);
     });
@@ -2025,7 +2025,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass051();
+      const cls: ReflectClass = reflectMyClass051();
       let field: StaticField | null = cls.getStaticField('TEMPLATE_PATH');
       expect(validateProtectedFieldNaming(field!)).assertEqual(true);
     });
@@ -2039,7 +2039,7 @@ export default function StaticFieldIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsProtected067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass056();
+      const cls: ReflectClass = reflectMyClass056();
       let config: Record<string, string | number | boolean | null> = buildProtectedFieldConfig(cls);
       expect(config['PROTECTED_CONSTANT']).assertEqual(100);
       expect(config['PROTECTED_NAME']).assertEqual('protected');

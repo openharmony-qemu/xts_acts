@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-type FieldValue = string | number | boolean | null | undefined | Object | ReflectClass;
+type FieldValue = string | number | boolean | undefined | null | FieldValue[] | Record<string, FieldValue> | ReflectClass;
 
 interface StaticField {
   getName(): string;
@@ -84,15 +84,25 @@ class StaticFieldImpl implements StaticField {
   }
 
   equals(other: StaticField | null | undefined): boolean {
-    if (other === null || other === undefined) {
+    if (other === undefined || other === null) {
       return false;
     }
     let otherField: StaticField = other as StaticField;
     let otherOwner: ReflectClass = otherField.getOwner();
     let otherType: ReflectClass = otherField.getType();
+    let thisVal = this.value;
+    let otherVal = otherField.getValue();
+    if (typeof thisVal === 'number' && typeof otherVal === 'number') {
+      if (thisVal !== thisVal && otherVal !== otherVal) {
+        return this.name === otherField.getName() &&
+          this.owner.equals(otherOwner) &&
+          this.type.equals(otherType);
+      }
+    }
     return this.name === otherField.getName() &&
     this.owner.equals(otherOwner) &&
-    this.type.equals(otherType);
+    this.type.equals(otherType) &&
+    thisVal === otherVal;
   }
 
   isPublic(): boolean {
@@ -147,6 +157,9 @@ class ReflectClass {
     isProtected: boolean,
     isReadonly: boolean
   ): void {
+    if ((isPublic && isPrivate) || (isPublic && isProtected) || (isPrivate && isProtected)) {
+      throw new Error(`StaticField '${name}': only one access modifier can be true.`);
+    }
     let field = new StaticFieldImpl(name, this, type, value, isPublic, isPrivate, isProtected, isReadonly);
     this.staticFields.set(name, field);
   }
@@ -159,7 +172,10 @@ class ReflectClass {
     isProtected: boolean,
     isReadonly: boolean
   ): void {
-    let field = new StaticFieldImpl(name, this, type, null, isPublic, isPrivate, isProtected, isReadonly);
+    if ((isPublic && isPrivate) || (isPublic && isProtected) || (isPrivate && isProtected)) {
+      throw new Error(`InstanceField '${name}': only one access modifier can be true.`);
+    }
+    let field = new StaticFieldImpl(name, this, type, undefined, isPublic, isPrivate, isProtected, isReadonly);
     this.instanceFields.set(name, field);
   }
 
@@ -192,7 +208,20 @@ function createReflectClass(className: string): ReflectClass {
   return new ReflectClass(className);
 }
 
-export { FieldValue, StaticField, StaticFieldImpl, ReflectClass, createReflectClass };
+const PLACEHOLDER_PASSWORD: string = 'placeholder_password';
+const PLACEHOLDER_TOKEN: string = 'placeholder_token';
+const PLACEHOLDER_API_KEY: string = 'placeholder_api_key';
+const PLACEHOLDER_SSN: string = 'placeholder_ssn';
+const PLACEHOLDER_CARD_NUMBER: string = 'placeholder_card_number';
+const PLACEHOLDER_CVV: string = 'placeholder_cvv';
+const PLACEHOLDER_USERNAME: string = 'placeholder_username';
+const PLACEHOLDER_PATIENT_NAME: string = 'placeholder_patient';
+const PLACEHOLDER_DIAGNOSIS: string = 'placeholder_diagnosis';
+
+export { FieldValue, StaticField, StaticFieldImpl, ReflectClass, createReflectClass,
+  PLACEHOLDER_PASSWORD, PLACEHOLDER_TOKEN, PLACEHOLDER_API_KEY, PLACEHOLDER_SSN,
+  PLACEHOLDER_CARD_NUMBER, PLACEHOLDER_CVV, PLACEHOLDER_USERNAME, PLACEHOLDER_PATIENT_NAME,
+  PLACEHOLDER_DIAGNOSIS };
 
 export default class Utils {
   static mindMapItSuffix(seq: int): string {

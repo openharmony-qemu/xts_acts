@@ -27,7 +27,7 @@ import {
   TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
-import { StaticField, ReflectClass, createReflectClass } from '../Util.test';
+import { FieldValue, StaticField, ReflectClass, createReflectClass } from '../Util.test';
 
 class MyClass001 {
   public static readonly name: string = 'test';
@@ -39,18 +39,18 @@ class MyClass002 {
 
 class MyClass004 {
   public static readonly name: string = 'test';
-  private static readonly id: number = 100;
+  private static readonly id: int = 100;
   protected static readonly flag: boolean = true;
 }
 
 class MyClass005 {
-  public static count: number = 0;
+  public static count: int = 0;
   private static value: string = 'test';
   protected static data: string[] = [];
 }
 
 class MyClass006 {
-  public static readonly constant: number = 3.14;
+  public static readonly constant: double = 3.14;
 }
 
 class MyClass007 {
@@ -62,12 +62,12 @@ class MyClass008 {
 }
 
 class MyClass009 {
-  public static readonly num: number = 100;
+  public static readonly num: int = 100;
   public static readonly str: string = 'test';
   public static readonly bool: boolean = true;
-  public static readonly arr: number[] = [1, 2, 3];
+  public static readonly arr: int[] = [1, 2, 3];
   public static readonly obj: Record<string, string> = { 'key': 'value' };
-  public static readonly charField: string = 'A';
+  public static readonly charField: char = c'A';
 }
 
 class MyClass012 {
@@ -75,31 +75,31 @@ class MyClass012 {
 }
 
 class MyClass013 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass014 {
-  private static readonly value: number = 100;
+  private static readonly value: int = 100;
 }
 
 class MyClass015 {
-  protected static readonly value: number = 100;
+  protected static readonly value: int = 100;
 }
 
 class MyClass016 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass017 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass018 {
-  private static readonly value: number = 100;
+  private static readonly value: int = 100;
 }
 
 class MyClass019 {
-  protected static readonly value: number = 100;
+  protected static readonly value: int = 100;
 }
 
 class MyClass020 {
@@ -111,15 +111,15 @@ class MyClass021 {
 }
 
 class MyClass022 {
-  public static readonly constant: number = 3.14;
+  public static readonly constant: double = 3.14;
 }
 
 class MyClass023 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass024 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class Config025 {
@@ -130,8 +130,8 @@ class Config025 {
 }
 
 class MyClass026 {
-  public static readonly constant: number = 100;
-  public static variable: number = 200;
+  public static readonly constant: int = 100;
+  public static variable: int = 200;
 }
 
 class Parent027 {
@@ -160,7 +160,7 @@ class Impl028 implements MyInterface028 {
 
 class GenericClass029 {
   public static readonly defaultValue: string = '';
-  public static count: number = 0;
+  public static count: int = 0;
 }
 
 class MyClass030 {
@@ -179,22 +179,22 @@ class MyClass031 {
 }
 
 class MyClass032 {
-  public static readonly value: number = 0;
+  public static readonly value: int = 0;
 }
 
 class CorrectClass033 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass034 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass035 {
-  public static readonly field1: number = 1;
-  public static field2: number = 2;
-  public static readonly field3: number = 3;
-  public static field4: number = 4;
+  public static readonly field1: int = 1;
+  public static field2: int = 2;
+  public static readonly field3: int = 3;
+  public static field4: int = 4;
 }
 
 class MyClass036 {
@@ -203,38 +203,38 @@ class MyClass036 {
 }
 
 class MyClass037 {
-  public static readonly CONSTANT: number = 100;
-  private static readonly PRIVATE_CONSTANT: number = 200;
-  public static variable: number = 300;
+  public static readonly CONSTANT: int = 100;
+  private static readonly PRIVATE_CONSTANT: int = 200;
+  public static variable: int = 300;
 }
 
 class MyClass038 {
-  public static readonly a: number = 1;
-  public static b: number = 2;
-  public static readonly c: number = 3;
-  public static d: number = 4;
+  public static readonly a: int = 1;
+  public static b: int = 2;
+  public static readonly c: int = 3;
+  public static d: int = 4;
 }
 
 class MyClass039 {
-  public static readonly MAX_SIZE: number = 1024;
-  public static readonly MIN_SIZE: number = 1;
-  public static currentSize: number = 512;
+  public static readonly MAX_SIZE: int = 1024;
+  public static readonly MIN_SIZE: int = 1;
+  public static currentSize: int = 512;
   public static readonly DEFAULT_NAME: string = 'default';
   public static tempValue: string = 'temp';
 }
 
 class MyClass040 {
-  public static readonly PI: number = 3.141592653589793;
-  public static readonly E: number = 2.718281828459045;
-  public static readonly GOLDEN_RATIO: number = 1.618033988749895;
-  public static precision: number = 0.0001;
+  public static readonly PI: double = 3.141592653589793;
+  public static readonly E: double = 2.718281828459045;
+  public static readonly GOLDEN_RATIO: double = 1.618033988749895;
+  public static precision: double = 0.0001;
 }
 
 class MyClass041 {
-  public static readonly HTTP_OK: number = 200;
-  public static readonly HTTP_NOT_FOUND: number = 404;
-  public static readonly HTTP_SERVER_ERROR: number = 500;
-  public static currentStatus: number = 200;
+  public static readonly HTTP_OK: int = 200;
+  public static readonly HTTP_NOT_FOUND: int = 404;
+  public static readonly HTTP_SERVER_ERROR: int = 500;
+  public static currentStatus: int = 200;
 }
 
 class MyClass042 {
@@ -262,34 +262,34 @@ class MyClass045 {
 }
 
 class MyClass046 {
-  public static readonly NULL_VALUE: null = null;
-  public static readonly UNDEFINED_VALUE: undefined = undefined;
-  public static dynamicValue: string | null = null;
+  public static readonly NULL_VALUE: string | undefined = undefined;
+  public static readonly UNDEFINED_VALUE: string | undefined = undefined;
+  public static dynamicValue: string | undefined = undefined;
 }
 
 class MyClass047 {
-  public static readonly VERSION_MAJOR: number = 1;
-  public static readonly VERSION_MINOR: number = 0;
-  public static readonly VERSION_PATCH: number = 0;
-  public static buildNumber: number = 1;
+  public static readonly VERSION_MAJOR: int = 1;
+  public static readonly VERSION_MINOR: int = 0;
+  public static readonly VERSION_PATCH: int = 0;
+  public static buildNumber: int = 1;
   public static readonly RELEASE_DATE: string = '2026-01-01';
   public static lastModified: string = '2026-01-01';
 }
 
 function reflectMyClass001(): ReflectClass {
-  let cls = createReflectClass('MyClass001');
+  const cls = createReflectClass('MyClass001');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass002(): ReflectClass {
-  let cls = createReflectClass('MyClass002');
+  const cls = createReflectClass('MyClass002');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass004(): ReflectClass {
-  let cls = createReflectClass('MyClass004');
+  const cls = createReflectClass('MyClass004');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   cls.addStaticField('id', createReflectClass('int'), 100, false, true, false, true);
   cls.addStaticField('flag', createReflectClass('boolean'), true, false, false, true, true);
@@ -297,122 +297,122 @@ function reflectMyClass004(): ReflectClass {
 }
 
 function reflectMyClass005(): ReflectClass {
-  let cls = createReflectClass('MyClass005');
+  const cls = createReflectClass('MyClass005');
   cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
   cls.addStaticField('value', createReflectClass('string'), 'test', false, true, false, false);
-  cls.addStaticField('data', createReflectClass('array'), '', false, false, true, false);
+  cls.addStaticField('data', createReflectClass('string[]'), '', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass006(): ReflectClass {
-  let cls = createReflectClass('MyClass006');
-  cls.addStaticField('constant', createReflectClass('float'), 3.14, true, false, false, true);
+  const cls = createReflectClass('MyClass006');
+  cls.addStaticField('constant', createReflectClass('double'), 3.14, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass007(): ReflectClass {
-  let cls = createReflectClass('MyClass007');
+  const cls = createReflectClass('MyClass007');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass008(): ReflectClass {
-  let cls = createReflectClass('MyClass008');
+  const cls = createReflectClass('MyClass008');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass009(): ReflectClass {
-  let cls = createReflectClass('MyClass009');
+  const cls = createReflectClass('MyClass009');
   cls.addStaticField('num', createReflectClass('int'), 100, true, false, false, true);
   cls.addStaticField('str', createReflectClass('string'), 'test', true, false, false, true);
   cls.addStaticField('bool', createReflectClass('boolean'), true, true, false, false, true);
-  cls.addStaticField('arr', createReflectClass('array'), '', true, false, false, true);
-  cls.addStaticField('obj', createReflectClass('object'), '{}', true, false, false, true);
-  cls.addStaticField('charField', createReflectClass('string'), 'A', true, false, false, true);
+  cls.addStaticField('arr', createReflectClass('int[]'), '', true, false, false, true);
+  cls.addStaticField('obj', createReflectClass('Object'), {} as Record<string, FieldValue>, true, false, false, true);
+  cls.addStaticField('charField', createReflectClass('char'), c'A' as FieldValue, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass012(): ReflectClass {
-  let cls = createReflectClass('MyClass012');
+  const cls = createReflectClass('MyClass012');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass013(): ReflectClass {
-  let cls = createReflectClass('MyClass013');
+  const cls = createReflectClass('MyClass013');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass014(): ReflectClass {
-  let cls = createReflectClass('MyClass014');
+  const cls = createReflectClass('MyClass014');
   cls.addStaticField('value', createReflectClass('int'), 100, false, true, false, true);
   return cls;
 }
 
 function reflectMyClass015(): ReflectClass {
-  let cls = createReflectClass('MyClass015');
+  const cls = createReflectClass('MyClass015');
   cls.addStaticField('value', createReflectClass('int'), 100, false, false, true, true);
   return cls;
 }
 
 function reflectMyClass016(): ReflectClass {
-  let cls = createReflectClass('MyClass016');
+  const cls = createReflectClass('MyClass016');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass017(): ReflectClass {
-  let cls = createReflectClass('MyClass017');
+  const cls = createReflectClass('MyClass017');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass018(): ReflectClass {
-  let cls = createReflectClass('MyClass018');
+  const cls = createReflectClass('MyClass018');
   cls.addStaticField('value', createReflectClass('int'), 100, false, true, false, true);
   return cls;
 }
 
 function reflectMyClass019(): ReflectClass {
-  let cls = createReflectClass('MyClass019');
+  const cls = createReflectClass('MyClass019');
   cls.addStaticField('value', createReflectClass('int'), 100, false, false, true, true);
   return cls;
 }
 
 function reflectMyClass020(): ReflectClass {
-  let cls = createReflectClass('MyClass020');
+  const cls = createReflectClass('MyClass020');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass021(): ReflectClass {
-  let cls = createReflectClass('MyClass021');
+  const cls = createReflectClass('MyClass021');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass022(): ReflectClass {
-  let cls = createReflectClass('MyClass022');
-  cls.addStaticField('constant', createReflectClass('float'), 3.14, true, false, false, true);
+  const cls = createReflectClass('MyClass022');
+  cls.addStaticField('constant', createReflectClass('double'), 3.14, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass023(): ReflectClass {
-  let cls = createReflectClass('MyClass023');
+  const cls = createReflectClass('MyClass023');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass024(): ReflectClass {
-  let cls = createReflectClass('MyClass024');
+  const cls = createReflectClass('MyClass024');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectConfig025(): ReflectClass {
-  let cls = createReflectClass('Config025');
+  const cls = createReflectClass('Config025');
   cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, true);
   cls.addStaticField('VERSION', createReflectClass('string'), '1.0.0', true, false, false, true);
   cls.addStaticField('debugMode', createReflectClass('boolean'), false, true, false, false, false);
@@ -421,71 +421,71 @@ function reflectConfig025(): ReflectClass {
 }
 
 function reflectMyClass026(): ReflectClass {
-  let cls = createReflectClass('MyClass026');
+  const cls = createReflectClass('MyClass026');
   cls.addStaticField('constant', createReflectClass('int'), 100, true, false, false, true);
   cls.addStaticField('variable', createReflectClass('int'), 200, true, false, false, false);
   return cls;
 }
 
 function reflectParent027(): ReflectClass {
-  let cls = createReflectClass('Parent027');
+  const cls = createReflectClass('Parent027');
   cls.addStaticField('parentField', createReflectClass('string'), 'parent', true, false, false, true);
   return cls;
 }
 
 function reflectChild027(): ReflectClass {
-  let cls = createReflectClass('Child027');
+  const cls = createReflectClass('Child027');
   cls.addStaticField('childField', createReflectClass('string'), 'child', true, false, false, true);
   return cls;
 }
 
 function reflectImpl028(): ReflectClass {
-  let cls = createReflectClass('Impl028');
+  const cls = createReflectClass('Impl028');
   cls.addStaticField('constant', createReflectClass('string'), 'implemented', true, false, false, true);
   return cls;
 }
 
 function reflectGenericClass029(): ReflectClass {
-  let cls = createReflectClass('GenericClass029');
+  const cls = createReflectClass('GenericClass029');
   cls.addStaticField('defaultValue', createReflectClass('string'), '', true, false, false, true);
   cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass030(): ReflectClass {
-  let cls = createReflectClass('MyClass030');
+  const cls = createReflectClass('MyClass030');
   cls.addStaticField('handler', createReflectClass('function'), '', true, false, false, true);
   cls.addStaticField('callback', createReflectClass('function'), '', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass031(): ReflectClass {
-  let cls = createReflectClass('MyClass031');
+  const cls = createReflectClass('MyClass031');
   cls.addStaticField('inner', createReflectClass('string'), 'InnerClass031', true, false, false, true);
   cls.addStaticField('outer', createReflectClass('string'), 'Object', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass032(): ReflectClass {
-  let cls = createReflectClass('MyClass032');
+  const cls = createReflectClass('MyClass032');
   cls.addStaticField('value', createReflectClass('int'), 0, true, false, false, true);
   return cls;
 }
 
 function reflectCorrectClass033(): ReflectClass {
-  let cls = createReflectClass('CorrectClass033');
+  const cls = createReflectClass('CorrectClass033');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass034(): ReflectClass {
-  let cls = createReflectClass('MyClass034');
+  const cls = createReflectClass('MyClass034');
   cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass035(): ReflectClass {
-  let cls = createReflectClass('MyClass035');
+  const cls = createReflectClass('MyClass035');
   cls.addStaticField('field1', createReflectClass('int'), 1, true, false, false, true);
   cls.addStaticField('field2', createReflectClass('int'), 2, true, false, false, false);
   cls.addStaticField('field3', createReflectClass('int'), 3, true, false, false, true);
@@ -494,13 +494,13 @@ function reflectMyClass035(): ReflectClass {
 }
 
 function reflectMyClass036(): ReflectClass {
-  let cls = createReflectClass('MyClass036');
+  const cls = createReflectClass('MyClass036');
   cls.addStaticField('staticReadonly', createReflectClass('string'), 'static', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass037(): ReflectClass {
-  let cls = createReflectClass('MyClass037');
+  const cls = createReflectClass('MyClass037');
   cls.addStaticField('CONSTANT', createReflectClass('int'), 100, true, false, false, true);
   cls.addStaticField('PRIVATE_CONSTANT', createReflectClass('int'), 200, false, true, false, true);
   cls.addStaticField('variable', createReflectClass('int'), 300, true, false, false, false);
@@ -508,7 +508,7 @@ function reflectMyClass037(): ReflectClass {
 }
 
 function reflectMyClass038(): ReflectClass {
-  let cls = createReflectClass('MyClass038');
+  const cls = createReflectClass('MyClass038');
   cls.addStaticField('a', createReflectClass('int'), 1, true, false, false, true);
   cls.addStaticField('b', createReflectClass('int'), 2, true, false, false, false);
   cls.addStaticField('c', createReflectClass('int'), 3, true, false, false, true);
@@ -517,7 +517,7 @@ function reflectMyClass038(): ReflectClass {
 }
 
 function reflectMyClass039(): ReflectClass {
-  let cls = createReflectClass('MyClass039');
+  const cls = createReflectClass('MyClass039');
   cls.addStaticField('MAX_SIZE', createReflectClass('int'), 1024, true, false, false, true);
   cls.addStaticField('MIN_SIZE', createReflectClass('int'), 1, true, false, false, true);
   cls.addStaticField('currentSize', createReflectClass('int'), 512, true, false, false, false);
@@ -527,16 +527,16 @@ function reflectMyClass039(): ReflectClass {
 }
 
 function reflectMyClass040(): ReflectClass {
-  let cls = createReflectClass('MyClass040');
-  cls.addStaticField('PI', createReflectClass('float'), 3.141592653589793, true, false, false, true);
-  cls.addStaticField('E', createReflectClass('float'), 2.718281828459045, true, false, false, true);
-  cls.addStaticField('GOLDEN_RATIO', createReflectClass('float'), 1.618033988749895, true, false, false, true);
-  cls.addStaticField('precision', createReflectClass('float'), 0.0001, true, false, false, false);
+  const cls = createReflectClass('MyClass040');
+  cls.addStaticField('PI', createReflectClass('double'), 3.141592653589793, true, false, false, true);
+  cls.addStaticField('E', createReflectClass('double'), 2.718281828459045, true, false, false, true);
+  cls.addStaticField('GOLDEN_RATIO', createReflectClass('double'), 1.618033988749895, true, false, false, true);
+  cls.addStaticField('precision', createReflectClass('double'), 0.0001, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass041(): ReflectClass {
-  let cls = createReflectClass('MyClass041');
+  const cls = createReflectClass('MyClass041');
   cls.addStaticField('HTTP_OK', createReflectClass('int'), 200, true, false, false, true);
   cls.addStaticField('HTTP_NOT_FOUND', createReflectClass('int'), 404, true, false, false, true);
   cls.addStaticField('HTTP_SERVER_ERROR', createReflectClass('int'), 500, true, false, false, true);
@@ -545,7 +545,7 @@ function reflectMyClass041(): ReflectClass {
 }
 
 function reflectMyClass042(): ReflectClass {
-  let cls = createReflectClass('MyClass042');
+  const cls = createReflectClass('MyClass042');
   cls.addStaticField('EMPTY_STRING', createReflectClass('string'), '', true, false, false, true);
   cls.addStaticField('DEFAULT_LOCALE', createReflectClass('string'), 'en-US', true, false, false, true);
   cls.addStaticField('APP_NAMESPACE', createReflectClass('string'), 'com.example.app', true, false, false, true);
@@ -554,7 +554,7 @@ function reflectMyClass042(): ReflectClass {
 }
 
 function reflectMyClass043(): ReflectClass {
-  let cls = createReflectClass('MyClass043');
+  const cls = createReflectClass('MyClass043');
   cls.addStaticField('TRUE_VALUE', createReflectClass('boolean'), true, true, false, false, true);
   cls.addStaticField('FALSE_VALUE', createReflectClass('boolean'), false, true, false, false, true);
   cls.addStaticField('toggleFlag', createReflectClass('boolean'), false, true, false, false, false);
@@ -562,30 +562,30 @@ function reflectMyClass043(): ReflectClass {
 }
 
 function reflectMyClass044(): ReflectClass {
-  let cls = createReflectClass('MyClass044');
-  cls.addStaticField('EMPTY_ARRAY', createReflectClass('array'), '', true, false, false, true);
-  cls.addStaticField('DEFAULT_TAGS', createReflectClass('array'), '', true, false, false, true);
-  cls.addStaticField('activeTags', createReflectClass('array'), '', true, false, false, false);
+  const cls = createReflectClass('MyClass044');
+  cls.addStaticField('EMPTY_ARRAY', createReflectClass('string[]'), '', true, false, false, true);
+  cls.addStaticField('DEFAULT_TAGS', createReflectClass('string[]'), '', true, false, false, true);
+  cls.addStaticField('activeTags', createReflectClass('string[]'), '', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass045(): ReflectClass {
-  let cls = createReflectClass('MyClass045');
-  cls.addStaticField('DEFAULT_CONFIG', createReflectClass('object'), '{}', true, false, false, true);
-  cls.addStaticField('runtimeConfig', createReflectClass('object'), '{}', true, false, false, false);
+  const cls = createReflectClass('MyClass045');
+  cls.addStaticField('DEFAULT_CONFIG', createReflectClass('Object'), {} as Record<string, FieldValue>, true, false, false, true);
+  cls.addStaticField('runtimeConfig', createReflectClass('Object'), {} as Record<string, FieldValue>, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass046(): ReflectClass {
-  let cls = createReflectClass('MyClass046');
-  cls.addStaticField('NULL_VALUE', createReflectClass('null'), null, true, false, false, true);
-  cls.addStaticField('UNDEFINED_VALUE', createReflectClass('undefined'), undefined, true, false, false, true);
-  cls.addStaticField('dynamicValue', createReflectClass('string'), null, true, false, false, false);
+  const cls = createReflectClass('MyClass046');
+  cls.addStaticField('NULL_VALUE', createReflectClass('string | undefined'), undefined, true, false, false, true);
+  cls.addStaticField('UNDEFINED_VALUE', createReflectClass('string | undefined'), undefined, true, false, false, true);
+  cls.addStaticField('dynamicValue', createReflectClass('string | undefined'), undefined, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass047(): ReflectClass {
-  let cls = createReflectClass('MyClass047');
+  const cls = createReflectClass('MyClass047');
   cls.addStaticField('VERSION_MAJOR', createReflectClass('int'), 1, true, false, false, true);
   cls.addStaticField('VERSION_MINOR', createReflectClass('int'), 0, true, false, false, true);
   cls.addStaticField('VERSION_PATCH', createReflectClass('int'), 0, true, false, false, true);
@@ -601,8 +601,8 @@ class MyClass048 {
 }
 
 class MyClass049 {
-  public static readonly CONSTANT: number = 100;
-  private static readonly SECRET: number = 200;
+  public static readonly CONSTANT: int = 100;
+  private static readonly SECRET: int = 200;
 }
 
 class MyClass050 {
@@ -610,72 +610,72 @@ class MyClass050 {
 }
 
 class MyClass051 {
-  public static readonly id: number = 1;
+  public static readonly id: int = 1;
   public static name: string = 'test';
   public static readonly active: boolean = true;
-  public static count: number = 0;
-  public static readonly rate: number = 0.5;
+  public static count: int = 0;
+  public static readonly rate: double = 0.5;
 }
 
 class MyClass052 {
-  public static readonly a: number = 10;
+  public static readonly a: int = 10;
   public static readonly b: string = 'fixed';
   public static readonly c: boolean = false;
 }
 
 class MyClass053 {
-  public static x: number = 0;
+  public static x: int = 0;
   public static y: string = '';
   public static z: boolean = true;
 }
 
 class MyClass054 {
-  public static readonly defaultNum: number = 0;
+  public static readonly defaultNum: int = 0;
   public static readonly defaultStr: string = '';
   public static readonly defaultBool: boolean = false;
 }
 
 class MyClass055 {
   public static readonly HOST: string = 'localhost';
-  public static readonly PORT: number = 8080;
+  public static readonly PORT: int = 8080;
   public static readonly SSL_ENABLED: boolean = true;
-  public static readonly MAX_CONNECTIONS: number = 100;
-  public static activeConnections: number = 0;
-  public static readonly TIMEOUT_MS: number = 5000;
+  public static readonly MAX_CONNECTIONS: int = 100;
+  public static activeConnections: int = 0;
+  public static readonly TIMEOUT_MS: int = 5000;
 }
 
 function reflectMyClass048(): ReflectClass {
-  let cls = createReflectClass('MyClass048');
+  const cls = createReflectClass('MyClass048');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, true);
   cls.addStaticField('mutableName', createReflectClass('string'), 'mutable', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass049(): ReflectClass {
-  let cls = createReflectClass('MyClass049');
+  const cls = createReflectClass('MyClass049');
   cls.addStaticField('CONSTANT', createReflectClass('int'), 100, true, false, false, true);
   cls.addStaticField('SECRET', createReflectClass('int'), 200, false, true, false, true);
   return cls;
 }
 
 function reflectMyClass050(): ReflectClass {
-  let cls = createReflectClass('MyClass050');
+  const cls = createReflectClass('MyClass050');
   cls.addStaticField('configFlag', createReflectClass('boolean'), true, false, false, true, true);
   return cls;
 }
 
 function reflectMyClass051(): ReflectClass {
-  let cls = createReflectClass('MyClass051');
+  const cls = createReflectClass('MyClass051');
   cls.addStaticField('id', createReflectClass('int'), 1, true, false, false, true);
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   cls.addStaticField('active', createReflectClass('boolean'), true, true, false, false, true);
   cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
-  cls.addStaticField('rate', createReflectClass('float'), 0.5, true, false, false, true);
+  cls.addStaticField('rate', createReflectClass('double'), 0.5, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass052(): ReflectClass {
-  let cls = createReflectClass('MyClass052');
+  const cls = createReflectClass('MyClass052');
   cls.addStaticField('a', createReflectClass('int'), 10, true, false, false, true);
   cls.addStaticField('b', createReflectClass('string'), 'fixed', true, false, false, true);
   cls.addStaticField('c', createReflectClass('boolean'), false, true, false, false, true);
@@ -683,7 +683,7 @@ function reflectMyClass052(): ReflectClass {
 }
 
 function reflectMyClass053(): ReflectClass {
-  let cls = createReflectClass('MyClass053');
+  const cls = createReflectClass('MyClass053');
   cls.addStaticField('x', createReflectClass('int'), 0, true, false, false, false);
   cls.addStaticField('y', createReflectClass('string'), '', true, false, false, false);
   cls.addStaticField('z', createReflectClass('boolean'), true, true, false, false, false);
@@ -691,7 +691,7 @@ function reflectMyClass053(): ReflectClass {
 }
 
 function reflectMyClass054(): ReflectClass {
-  let cls = createReflectClass('MyClass054');
+  const cls = createReflectClass('MyClass054');
   cls.addStaticField('defaultNum', createReflectClass('int'), 0, true, false, false, true);
   cls.addStaticField('defaultStr', createReflectClass('string'), '', true, false, false, true);
   cls.addStaticField('defaultBool', createReflectClass('boolean'), false, true, false, false, true);
@@ -699,7 +699,7 @@ function reflectMyClass054(): ReflectClass {
 }
 
 function reflectMyClass055(): ReflectClass {
-  let cls = createReflectClass('MyClass055');
+  const cls = createReflectClass('MyClass055');
   cls.addStaticField('HOST', createReflectClass('string'), 'localhost', true, false, false, true);
   cls.addStaticField('PORT', createReflectClass('int'), 8080, true, false, false, true);
   cls.addStaticField('SSL_ENABLED', createReflectClass('boolean'), true, true, false, false, true);
@@ -714,7 +714,7 @@ function isConstantField(field: StaticField): boolean {
 }
 
 function getMutableFields(cls: ReflectClass): StaticField[] {
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   let mutable: StaticField[] = [];
   for (let i = 0; i < fields.length; i++) {
     if (!fields[i].isReadonly()) {
@@ -725,7 +725,7 @@ function getMutableFields(cls: ReflectClass): StaticField[] {
 }
 
 function getReadonlyFields(cls: ReflectClass): StaticField[] {
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   let readonly: StaticField[] = [];
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isReadonly()) {
@@ -736,8 +736,8 @@ function getReadonlyFields(cls: ReflectClass): StaticField[] {
 }
 
 function countReadonlyFields(cls: ReflectClass): number {
-  let count: number = 0;
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  let count: int = 0;
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isReadonly()) {
       count++;
@@ -747,7 +747,7 @@ function countReadonlyFields(cls: ReflectClass): number {
 }
 
 function hasReadonlyFields(cls: ReflectClass): boolean {
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isReadonly()) {
       return true;
@@ -758,33 +758,33 @@ function hasReadonlyFields(cls: ReflectClass): boolean {
 
 function getFieldReadonlyStatus(cls: ReflectClass): Map<string, boolean> {
   let status: Map<string, boolean> = new Map<string, boolean>();
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     status.set(fields[i].getName(), fields[i].isReadonly());
   }
   return status;
 }
 
-function validateMutableField(field: StaticField, newValue: string | number | boolean | null): boolean {
+function validateMutableField(field: StaticField, newValue: string | double | boolean | null): boolean {
   if (field.isReadonly()) {
     return false;
   }
-  field.setValue(newValue);
+  field.setValue(newValue as FieldValue);
   return true;
 }
 
 function cloneReadonlyConfig(cls: ReflectClass): Record<string, string | number | boolean | null> {
   let config: Record<string, string | number | boolean | null> = {};
-  let fields: StaticField[] = cls.getDeclaredStaticFields();
+  const fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].isReadonly()) {
-      config[fields[i].getName()] = fields[i].getValue() as string | number | boolean | null;
+      config[fields[i].getName()] = fields[i].getValue() as string | double | boolean | null;
     }
   }
   return config;
 }
 
-export default function StaticFieldIsReadonlyTest(): void {
+export function StaticFieldIsReadonlyTest(): void {
   describe('StaticFieldIsReadonlyTest', (): void => {
     beforeAll((): void => {
     });
@@ -805,9 +805,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass001();
-      let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass001();
+      const field: StaticField | null = cls.getStaticField('name');
+      const result: boolean = field!.isReadonly();
       expect(result).assertEqual(true);
     });
 
@@ -820,9 +820,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass002();
-      let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass002();
+      const field: StaticField | null = cls.getStaticField('name');
+      const result: boolean = field!.isReadonly();
       expect(result).assertEqual(true);
     });
 
@@ -835,9 +835,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass001();
-      let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass001();
+      const field: StaticField | null = cls.getStaticField('name');
+      const result: boolean = field!.isReadonly();
       expect(result).assertEqual(true);
     });
 
@@ -850,12 +850,12 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass004();
-      let field1: StaticField | null = cls.getStaticField('name');
+      const cls: ReflectClass = reflectMyClass004();
+      const field1: StaticField | null = cls.getStaticField('name');
       expect(field1!.isReadonly()).assertEqual(true);
-      let field2: StaticField | null = cls.getStaticField('id');
+      const field2: StaticField | null = cls.getStaticField('id');
       expect(field2!.isReadonly()).assertEqual(true);
-      let field3: StaticField | null = cls.getStaticField('flag');
+      const field3: StaticField | null = cls.getStaticField('flag');
       expect(field3!.isReadonly()).assertEqual(true);
     });
 
@@ -868,12 +868,12 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass005();
-      let field1: StaticField | null = cls.getStaticField('count');
+      const cls: ReflectClass = reflectMyClass005();
+      const field1: StaticField | null = cls.getStaticField('count');
       expect(field1!.isReadonly()).assertEqual(false);
-      let field2: StaticField | null = cls.getStaticField('value');
+      const field2: StaticField | null = cls.getStaticField('value');
       expect(field2!.isReadonly()).assertEqual(false);
-      let field3: StaticField | null = cls.getStaticField('data');
+      const field3: StaticField | null = cls.getStaticField('data');
       expect(field3!.isReadonly()).assertEqual(false);
     });
 
@@ -886,8 +886,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass006();
-      let field: StaticField | null = cls.getStaticField('constant');
+      const cls: ReflectClass = reflectMyClass006();
+      const field: StaticField | null = cls.getStaticField('constant');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -900,10 +900,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass007();
-      let field: StaticField | null = cls.getStaticField('name');
-      let result: boolean = field!.isReadonly();
-      expect(typeof result).assertEqual('boolean');
+      const cls: ReflectClass = reflectMyClass007();
+      const field: StaticField | null = cls.getStaticField('name');
+      const result: boolean = field!.isReadonly();
+      expect(result === true || result === false).assertEqual(true);
     });
 
     /**
@@ -915,8 +915,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass008();
-      let field: StaticField | null = cls.getStaticField('name');
+      const cls: ReflectClass = reflectMyClass008();
+      const field: StaticField | null = cls.getStaticField('name');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -929,7 +929,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass009();
+      const cls: ReflectClass = reflectMyClass009();
       expect(cls.getStaticField('num')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('str')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('bool')!.isReadonly()).assertEqual(true);
@@ -947,7 +947,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let field: StaticField | null = null;
+      const field: StaticField | null = null;
       try {
         field!.isReadonly();
         expect().assertFail();
@@ -965,7 +965,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let field: StaticField | undefined;
+      const field: StaticField | undefined = undefined;
       try {
         field!.isReadonly();
         expect().assertFail();
@@ -983,10 +983,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass012();
-      let field: StaticField | null = cls.getStaticField('nonexistent');
+      const cls: ReflectClass = reflectMyClass012();
+      const field: StaticField | null = cls.getStaticField('nonexistent');
       if (field !== null) {
-        let result: boolean = field.isReadonly();
+        const result: boolean = field.isReadonly();
         expect(result).assertEqual(true);
       } else {
         expect(field).assertEqual(null);
@@ -1002,8 +1002,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass013();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass013();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isPublic()).assertEqual(true);
       expect(field!.isReadonly()).assertEqual(true);
     });
@@ -1017,8 +1017,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass014();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass014();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isPrivate()).assertEqual(true);
       expect(field!.isReadonly()).assertEqual(true);
     });
@@ -1032,8 +1032,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass015();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass015();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isProtected()).assertEqual(true);
       expect(field!.isReadonly()).assertEqual(true);
     });
@@ -1047,8 +1047,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass016();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass016();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1061,8 +1061,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass017();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass017();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1075,8 +1075,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass018();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass018();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1089,8 +1089,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass019();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass019();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1103,8 +1103,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass020();
-      let field: StaticField | null = cls.getStaticField('name');
+      const cls: ReflectClass = reflectMyClass020();
+      const field: StaticField | null = cls.getStaticField('name');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1117,8 +1117,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass021();
-      let field: StaticField | null = cls.getStaticField('name');
+      const cls: ReflectClass = reflectMyClass021();
+      const field: StaticField | null = cls.getStaticField('name');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1131,8 +1131,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass022();
-      let field: StaticField | null = cls.getStaticField('constant');
+      const cls: ReflectClass = reflectMyClass022();
+      const field: StaticField | null = cls.getStaticField('constant');
       if (field!.isReadonly()) {
         let value: string | number | boolean | null = field!.getValue() as string | number | boolean | null;
         expect(value !== null && value !== undefined).assertEqual(true);
@@ -1149,9 +1149,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass023();
-      let field: StaticField | null = cls.getStaticField('value');
-      let result: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass023();
+      const field: StaticField | null = cls.getStaticField('value');
+      const result: boolean = field!.isReadonly();
       expect(result).assertEqual(true);
     });
 
@@ -1164,9 +1164,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass024();
-      let field: StaticField | null = cls.getStaticField('value');
-      let result: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass024();
+      const field: StaticField | null = cls.getStaticField('value');
+      const result: boolean = field!.isReadonly();
       expect(result instanceof Promise).assertEqual(false);
     });
 
@@ -1179,12 +1179,12 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectConfig025();
-      let fieldNames: string[] = ['APP_NAME', 'VERSION', 'debugMode', 'logLevel'];
+      const cls: ReflectClass = reflectConfig025();
+      const fieldNames: string[] = ['APP_NAME', 'VERSION', 'debugMode', 'logLevel'];
       for (let i = 0; i < fieldNames.length; i++) {
-        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        const field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null) {
-          let fieldName: string = field.getName();
+          const fieldName: string = field.getName();
           let isReadonly: boolean = field.isReadonly();
         }
       }
@@ -1201,10 +1201,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass026();
-      let fieldNames: string[] = ['constant', 'variable'];
+      const cls: ReflectClass = reflectMyClass026();
+      const fieldNames: string[] = ['constant', 'variable'];
       for (let i = 0; i < fieldNames.length; i++) {
-        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        const field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null) {
           if (!field.isReadonly()) {
             field.setValue(300);
@@ -1243,8 +1243,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectImpl028();
-      let field: StaticField | null = cls.getStaticField('constant');
+      const cls: ReflectClass = reflectImpl028();
+      const field: StaticField | null = cls.getStaticField('constant');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1257,10 +1257,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectGenericClass029();
-      let field1: StaticField | null = cls.getStaticField('defaultValue');
+      const cls: ReflectClass = reflectGenericClass029();
+      const field1: StaticField | null = cls.getStaticField('defaultValue');
       expect(field1!.isReadonly()).assertEqual(true);
-      let field2: StaticField | null = cls.getStaticField('count');
+      const field2: StaticField | null = cls.getStaticField('count');
       expect(field2!.isReadonly()).assertEqual(false);
     });
 
@@ -1273,7 +1273,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass030();
+      const cls: ReflectClass = reflectMyClass030();
       expect(cls.getStaticField('handler')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('callback')!.isReadonly()).assertEqual(false);
     });
@@ -1287,7 +1287,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass031();
+      const cls: ReflectClass = reflectMyClass031();
       expect(cls.getStaticField('inner')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('outer')!.isReadonly()).assertEqual(false);
     });
@@ -1301,8 +1301,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass032();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectMyClass032();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1315,8 +1315,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectCorrectClass033();
-      let field: StaticField | null = cls.getStaticField('value');
+      const cls: ReflectClass = reflectCorrectClass033();
+      const field: StaticField | null = cls.getStaticField('value');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1329,11 +1329,11 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass034();
-      let field: StaticField | null = cls.getStaticField('value');
-      let result1: boolean = field!.isReadonly();
-      let result2: boolean = field!.isReadonly();
-      let result3: boolean = field!.isReadonly();
+      const cls: ReflectClass = reflectMyClass034();
+      const field: StaticField | null = cls.getStaticField('value');
+      const result1: boolean = field!.isReadonly();
+      const result2: boolean = field!.isReadonly();
+      const result3: boolean = field!.isReadonly();
       expect(result1).assertEqual(result2);
       expect(result2).assertEqual(result3);
       expect(result1).assertEqual(true);
@@ -1348,11 +1348,11 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass035();
-      let fieldNames: string[] = ['field1', 'field2', 'field3', 'field4'];
-      let readonlyCount: number = 0;
+      const cls: ReflectClass = reflectMyClass035();
+      const fieldNames: string[] = ['field1', 'field2', 'field3', 'field4'];
+      let readonlyCount: int = 0;
       for (let i = 0; i < fieldNames.length; i++) {
-        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        const field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null && field.isReadonly()) {
           readonlyCount++;
         }
@@ -1369,7 +1369,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass036();
+      const cls: ReflectClass = reflectMyClass036();
       let staticField: StaticField | null = cls.getStaticField('staticReadonly');
       expect(staticField!.isReadonly()).assertEqual(true);
     });
@@ -1383,12 +1383,12 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass037();
-      let field1: StaticField | null = cls.getStaticField('CONSTANT');
+      const cls: ReflectClass = reflectMyClass037();
+      const field1: StaticField | null = cls.getStaticField('CONSTANT');
       expect(field1!.isPublic() && field1!.isReadonly()).assertEqual(true);
-      let field2: StaticField | null = cls.getStaticField('PRIVATE_CONSTANT');
+      const field2: StaticField | null = cls.getStaticField('PRIVATE_CONSTANT');
       expect(field2!.isPublic() && field2!.isReadonly()).assertEqual(false);
-      let field3: StaticField | null = cls.getStaticField('variable');
+      const field3: StaticField | null = cls.getStaticField('variable');
       expect(field3!.isPublic() && field3!.isReadonly()).assertEqual(false);
     });
 
@@ -1401,11 +1401,11 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass038();
-      let fieldNames: string[] = ['a', 'b', 'c', 'd'];
+      const cls: ReflectClass = reflectMyClass038();
+      const fieldNames: string[] = ['a', 'b', 'c', 'd'];
       let readonlyFields: StaticField[] = [];
       for (let i = 0; i < fieldNames.length; i++) {
-        let field: StaticField | null = cls.getStaticField(fieldNames[i]);
+        const field: StaticField | null = cls.getStaticField(fieldNames[i]);
         if (field !== null && field.isReadonly()) {
           readonlyFields.push(field);
         }
@@ -1422,7 +1422,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass039();
+      const cls: ReflectClass = reflectMyClass039();
       expect(cls.getStaticField('MAX_SIZE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('MIN_SIZE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('currentSize')!.isReadonly()).assertEqual(false);
@@ -1439,7 +1439,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass040();
+      const cls: ReflectClass = reflectMyClass040();
       expect(cls.getStaticField('PI')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('E')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('GOLDEN_RATIO')!.isReadonly()).assertEqual(true);
@@ -1455,7 +1455,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass041();
+      const cls: ReflectClass = reflectMyClass041();
       expect(cls.getStaticField('HTTP_OK')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('HTTP_NOT_FOUND')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('HTTP_SERVER_ERROR')!.isReadonly()).assertEqual(true);
@@ -1471,7 +1471,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass042();
+      const cls: ReflectClass = reflectMyClass042();
       expect(cls.getStaticField('EMPTY_STRING')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('DEFAULT_LOCALE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('APP_NAMESPACE')!.isReadonly()).assertEqual(true);
@@ -1487,7 +1487,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass043();
+      const cls: ReflectClass = reflectMyClass043();
       expect(cls.getStaticField('TRUE_VALUE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('FALSE_VALUE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('toggleFlag')!.isReadonly()).assertEqual(false);
@@ -1502,7 +1502,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass044();
+      const cls: ReflectClass = reflectMyClass044();
       expect(cls.getStaticField('EMPTY_ARRAY')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('DEFAULT_TAGS')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('activeTags')!.isReadonly()).assertEqual(false);
@@ -1517,7 +1517,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass045();
+      const cls: ReflectClass = reflectMyClass045();
       expect(cls.getStaticField('DEFAULT_CONFIG')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('runtimeConfig')!.isReadonly()).assertEqual(false);
     });
@@ -1531,7 +1531,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass046();
+      const cls: ReflectClass = reflectMyClass046();
       expect(cls.getStaticField('NULL_VALUE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('UNDEFINED_VALUE')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('dynamicValue')!.isReadonly()).assertEqual(false);
@@ -1546,7 +1546,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass047();
+      const cls: ReflectClass = reflectMyClass047();
       expect(cls.getStaticField('VERSION_MAJOR')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('VERSION_MINOR')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('VERSION_PATCH')!.isReadonly()).assertEqual(true);
@@ -1564,7 +1564,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass039();
+      const cls: ReflectClass = reflectMyClass039();
       let maxSizeField: StaticField | null = cls.getStaticField('MAX_SIZE');
       expect(isConstantField(maxSizeField!)).assertEqual(true);
       let currentSizeField: StaticField | null = cls.getStaticField('currentSize');
@@ -1580,7 +1580,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass039();
+      const cls: ReflectClass = reflectMyClass039();
       let mutableFields: StaticField[] = getMutableFields(cls);
       expect(mutableFields.length).assertEqual(2);
       for (let i = 0; i < mutableFields.length; i++) {
@@ -1597,7 +1597,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass047();
+      const cls: ReflectClass = reflectMyClass047();
       let readonlyFields: StaticField[] = getReadonlyFields(cls);
       expect(readonlyFields.length).assertEqual(4);
       for (let i = 0; i < readonlyFields.length; i++) {
@@ -1614,8 +1614,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass040();
-      let count: number = countReadonlyFields(cls);
+      const cls: ReflectClass = reflectMyClass040();
+      let count = countReadonlyFields(cls);
       expect(count).assertEqual(3);
     });
 
@@ -1628,9 +1628,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1: ReflectClass = reflectMyClass039();
+      const cls1: ReflectClass = reflectMyClass039();
       expect(hasReadonlyFields(cls1)).assertEqual(true);
-      let cls2: ReflectClass = reflectMyClass005();
+      const cls2: ReflectClass = reflectMyClass005();
       expect(hasReadonlyFields(cls2)).assertEqual(false);
     });
 
@@ -1643,7 +1643,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass041();
+      const cls: ReflectClass = reflectMyClass041();
       let status: Map<string, boolean> = getFieldReadonlyStatus(cls);
       expect(status.get('HTTP_OK')).assertEqual(true);
       expect(status.get('HTTP_NOT_FOUND')).assertEqual(true);
@@ -1660,7 +1660,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass039();
+      const cls: ReflectClass = reflectMyClass039();
       let mutableField: StaticField | null = cls.getStaticField('currentSize');
       expect(validateMutableField(mutableField!, 1024)).assertEqual(true);
       let readonlyField: StaticField | null = cls.getStaticField('MAX_SIZE');
@@ -1676,7 +1676,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass042();
+      const cls: ReflectClass = reflectMyClass042();
       let config: Record<string, string | number | boolean | null> = cloneReadonlyConfig(cls);
       expect(config['EMPTY_STRING']).assertEqual('');
       expect(config['DEFAULT_LOCALE']).assertEqual('en-US');
@@ -1693,7 +1693,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass048();
+      const cls: ReflectClass = reflectMyClass048();
       let readonlyField: StaticField | null = cls.getStaticField('name');
       expect(readonlyField!.isReadonly()).assertEqual(true);
       let mutableField: StaticField | null = cls.getStaticField('mutableName');
@@ -1709,7 +1709,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass049();
+      const cls: ReflectClass = reflectMyClass049();
       let publicField: StaticField | null = cls.getStaticField('CONSTANT');
       expect(publicField!.isReadonly()).assertEqual(true);
       let privateField: StaticField | null = cls.getStaticField('SECRET');
@@ -1725,8 +1725,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass050();
-      let field: StaticField | null = cls.getStaticField('configFlag');
+      const cls: ReflectClass = reflectMyClass050();
+      const field: StaticField | null = cls.getStaticField('configFlag');
       expect(field!.isReadonly()).assertEqual(true);
     });
 
@@ -1739,7 +1739,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass051();
+      const cls: ReflectClass = reflectMyClass051();
       expect(cls.getStaticField('id')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('name')!.isReadonly()).assertEqual(false);
       expect(cls.getStaticField('active')!.isReadonly()).assertEqual(true);
@@ -1756,8 +1756,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass052();
-      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      const cls: ReflectClass = reflectMyClass052();
+      const fields: StaticField[] = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         expect(fields[i].isReadonly()).assertEqual(true);
       }
@@ -1772,8 +1772,8 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass053();
-      let fields: StaticField[] = cls.getDeclaredStaticFields();
+      const cls: ReflectClass = reflectMyClass053();
+      const fields: StaticField[] = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         expect(fields[i].isReadonly()).assertEqual(false);
       }
@@ -1788,7 +1788,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass054();
+      const cls: ReflectClass = reflectMyClass054();
       expect(cls.getStaticField('defaultNum')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('defaultStr')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('defaultBool')!.isReadonly()).assertEqual(true);
@@ -1803,7 +1803,7 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass055();
+      const cls: ReflectClass = reflectMyClass055();
       expect(cls.getStaticField('HOST')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('PORT')!.isReadonly()).assertEqual(true);
       expect(cls.getStaticField('SSL_ENABLED')!.isReadonly()).assertEqual(true);
@@ -1821,10 +1821,10 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1: ReflectClass = reflectMyClass048();
-      let cls2: ReflectClass = reflectMyClass048();
-      let field1: StaticField | null = cls1.getStaticField('name');
-      let field2: StaticField | null = cls2.getStaticField('name');
+      const cls1: ReflectClass = reflectMyClass048();
+      const cls2: ReflectClass = reflectMyClass048();
+      const field1: StaticField | null = cls1.getStaticField('name');
+      const field2: StaticField | null = cls2.getStaticField('name');
       expect(field1!.isReadonly()).assertEqual(field2!.isReadonly());
       expect(field1!.isReadonly()).assertEqual(true);
     });
@@ -1838,9 +1838,9 @@ export default function StaticFieldIsReadonlyTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldIsReadonly065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: ReflectClass = reflectMyClass055();
-      let fields: StaticField[] = cls.getDeclaredStaticFields();
-      let readonlyCount: number = 0;
+      const cls: ReflectClass = reflectMyClass055();
+      const fields: StaticField[] = cls.getDeclaredStaticFields();
+      let readonlyCount: int = 0;
       for (let i = 0; i < fields.length; i++) {
         if (fields[i].isReadonly()) {
           readonlyCount++;

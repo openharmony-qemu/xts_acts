@@ -97,9 +97,9 @@ class MyClass014 {
 
 class MyClass015 {
   public static strField: string = 'string';
-  public static numField: number = 100;
+  public static numField: int = 100;
   public static boolField: boolean = true;
-  public static arrField: number[] = [1, 2, 3];
+  public static arrField: int[] = [1, 2, 3];
   public static objField: Record<string, string> = { 'key': 'value' };
 }
 
@@ -108,7 +108,7 @@ class MyClass021 {
 }
 
 class MyClass022 {
-  public static readonly value: number = 100;
+  public static readonly value: int = 100;
 }
 
 class MyClass023 {
@@ -122,11 +122,11 @@ class MyClass024 {
 }
 
 class MyClass025 {
-  public static count: number = 0;
+  public static count: int = 0;
 }
 
 class MyClass026 {
-  public static value: number = 100;
+  public static value: int = 100;
 }
 
 class MyClass027 {
@@ -134,9 +134,9 @@ class MyClass027 {
 }
 
 class MyClass028 {
-  public static pubNum: number = 1;
-  private static privNum: number = 2;
-  protected static protNum: number = 3;
+  public static pubNum: int = 1;
+  private static privNum: int = 2;
+  protected static protNum: int = 3;
 }
 
 class MyClass029 {
@@ -146,7 +146,7 @@ class MyClass029 {
 
 class MyClass032 {
   public static name: string = 'test';
-  public static age: number = 25;
+  public static age: int = 25;
   public static active: boolean = true;
 }
 
@@ -184,20 +184,20 @@ namespace MyNamespace036 {
   }
 }
 
-class Object037 {
+class ObjectCls037 {
   public static data: string = 'object';
 }
 
-class String037 {
+class StringCls037 {
   public static value: string = 'string';
 }
 
-class Array037 {
+class ArrayCls037 {
   public static items: string[] = [];
 }
 
 class GenericContainer038 {
-  public static defaultValue: Record<string, string> | null = null;
+  public static defaultValue: Record<string, string> | undefined = undefined;
   public static items: string[] = [];
 }
 
@@ -228,11 +228,11 @@ class InterfaceImpl040 implements MyInterface040 {
 }
 
 class MyClass041 {
-  public static value: number = 100;
+  public static value: int = 100;
 }
 
 class MyClass042 {
-  public static field1: number = 1;
+  public static field1: int = 1;
   public static field2: string = '2';
   public static field3: boolean = true;
 }
@@ -274,7 +274,7 @@ class MyClass050 {
 }
 
 class Config051 {
-  public static TIMEOUT: number = 30000;
+  public static TIMEOUT: int = 30000;
   private static API_KEY: string = 'secret';
 }
 
@@ -292,7 +292,7 @@ class ConfigV1054 {
 
 class ConfigV2054 extends ConfigV1054 {
   public static API_ENDPOINT: string = 'https://v2.api.com';
-  public static TIMEOUT: number = 5000;
+  public static TIMEOUT: int = 5000;
 }
 
 class MixedClass055 {
@@ -311,7 +311,7 @@ class MixedClass055 {
 
 class ServiceConfig058 {
   public static SERVICE_NAME: string = 'UserService';
-  public static SERVICE_PORT: number = 8080;
+  public static SERVICE_PORT: int = 8080;
   public static SERVICE_HOST: string = '0.0.0.0';
 }
 
@@ -325,57 +325,57 @@ class DatabaseConfig059 {
 class CacheConfig060 {
   public static CACHE_DRIVER: string = 'redis';
   public static CACHE_PREFIX: string = 'cache:';
-  public static CACHE_TTL: number = 3600;
+  public static CACHE_TTL: int = 3600;
   public static CACHE_SERIALIZE: boolean = true;
 }
 
 class QueueConfig061 {
   public static QUEUE_DRIVER: string = 'rabbitmq';
-  public static QUEUE_RETRY: number = 3;
-  public static QUEUE_TIMEOUT: number = 30000;
-  public static QUEUE_DELAY: number = 1000;
+  public static QUEUE_RETRY: int = 3;
+  public static QUEUE_TIMEOUT: int = 30000;
+  public static QUEUE_DELAY: int = 1000;
 }
 
 class MailConfig062 {
   public static MAIL_DRIVER: string = 'smtp';
   public static MAIL_HOST: string = 'smtp.example.com';
-  public static MAIL_PORT: number = 587;
+  public static MAIL_PORT: int = 587;
   public static MAIL_ENCRYPTION: string = 'tls';
 }
 
 class StorageConfig063 {
   public static STORAGE_DISK: string = 'local';
   public static STORAGE_PATH: string = '/storage/app';
-  public static STORAGE_MAX_SIZE: number = 104857600;
+  public static STORAGE_MAX_SIZE: int = 104857600;
 }
 
 class SessionConfig064 {
   public static SESSION_DRIVER: string = 'file';
-  public static SESSION_LIFETIME: number = 120;
+  public static SESSION_LIFETIME: int = 120;
   public static SESSION_ENCRYPT: boolean = true;
 }
 
 class SecurityConfig065 {
   public static SECURITY_CIPHER: string = 'AES-256-CBC';
   public static SECURITY_HASH: string = 'sha256';
-  public static SECURITY_SALT_LENGTH: number = 32;
+  public static SECURITY_SALT_LENGTH: int = 32;
 }
 
 class NotificationConfig066 {
   public static NOTIFY_CHANNELS: string = 'mail,sms,push';
-  public static NOTIFY_RETRY: number = 5;
+  public static NOTIFY_RETRY: int = 5;
   public static NOTIFY_QUEUE: string = 'notifications';
 }
 
 class MonitoringConfig067 {
-  public static MONITOR_INTERVAL: number = 60;
-  public static MONITOR_RETENTION: number = 30;
-  public static MONITOR_ALERT_THRESHOLD: number = 90;
+  public static MONITOR_INTERVAL: int = 60;
+  public static MONITOR_RETENTION: int = 30;
+  public static MONITOR_ALERT_THRESHOLD: int = 90;
 }
 
 class BackupConfig068 {
   public static BACKUP_SCHEDULE: string = '0 2 * * *';
-  public static BACKUP_RETENTION: number = 7;
+  public static BACKUP_RETENTION: int = 7;
   public static BACKUP_COMPRESSION: boolean = true;
 }
 
@@ -387,8 +387,8 @@ class FeatureFlags069 {
 
 class RateLimitConfig070 {
   public static RATE_LIMIT_ENABLED: boolean = true;
-  public static RATE_LIMIT_MAX: number = 1000;
-  public static RATE_LIMIT_WINDOW: number = 3600;
+  public static RATE_LIMIT_MAX: int = 1000;
+  public static RATE_LIMIT_WINDOW: int = 3600;
 }
 
 class FrameworkBase057 {
@@ -408,25 +408,25 @@ class UserComponent057 {
 
 // Reflection utility functions
 function reflectMyClass001(): ReflectClass {
-  let cls = createReflectClass('MyClass001');
+  const cls = createReflectClass('MyClass001');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass004(): ReflectClass {
-  let cls = createReflectClass('MyClass004');
+  const cls = createReflectClass('MyClass004');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass005(): ReflectClass {
-  let cls = createReflectClass('MyClass005');
+  const cls = createReflectClass('MyClass005');
   cls.addStaticField('data', createReflectClass('string'), 'value', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass006(): ReflectClass {
-  let cls = createReflectClass('MyClass006');
+  const cls = createReflectClass('MyClass006');
   cls.addStaticField('field1', createReflectClass('string'), 'test1', true, false, false, false);
   cls.addStaticField('field2', createReflectClass('string'), 'test2', true, false, false, false);
   cls.addStaticField('field3', createReflectClass('string'), 'test3', true, false, false, false);
@@ -434,26 +434,26 @@ function reflectMyClass006(): ReflectClass {
 }
 
 function reflectChildClass007(): ReflectClass {
-  let cls = createReflectClass('ChildClass007');
+  const cls = createReflectClass('ChildClass007');
   cls.addStaticField('childField', createReflectClass('string'), 'child', true, false, false, false);
   return cls;
 }
 
 function reflectParentClass008(): ReflectClass {
-  let cls = createReflectClass('ParentClass008');
+  const cls = createReflectClass('ParentClass008');
   cls.addStaticField('parentField', createReflectClass('string'), 'parent', true, false, false, false);
   return cls;
 }
 
 function reflectChildClass008(): ReflectClass {
-  let cls = createReflectClass('ChildClass008');
+  const cls = createReflectClass('ChildClass008');
   cls.addStaticField('childField', createReflectClass('string'), 'child', true, false, false, false);
   cls.addStaticField('parentField', createReflectClass('string'), 'parent', true, false, false, false);
   return cls;
 }
 
 function reflectChild009(): ReflectClass {
-  let cls = createReflectClass('Child009');
+  const cls = createReflectClass('Child009');
   cls.addStaticField('childField', createReflectClass('string'), 'child', true, false, false, false);
   cls.addStaticField('parentField', createReflectClass('string'), 'parent', true, false, false, false);
   cls.addStaticField('grandField', createReflectClass('string'), 'grand', true, false, false, false);
@@ -461,59 +461,59 @@ function reflectChild009(): ReflectClass {
 }
 
 function reflectMyClass010(): ReflectClass {
-  let cls = createReflectClass('MyClass010');
+  const cls = createReflectClass('MyClass010');
   cls.addStaticField('pubField', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass011(): ReflectClass {
-  let cls = createReflectClass('MyClass011');
+  const cls = createReflectClass('MyClass011');
   cls.addStaticField('privField', createReflectClass('string'), 'private', false, true, false, false);
   return cls;
 }
 
 function reflectMyClass012(): ReflectClass {
-  let cls = createReflectClass('MyClass012');
+  const cls = createReflectClass('MyClass012');
   cls.addStaticField('protField', createReflectClass('string'), 'protected', false, false, true, false);
   return cls;
 }
 
 function reflectMyClass013(): ReflectClass {
-  let cls = createReflectClass('MyClass013');
+  const cls = createReflectClass('MyClass013');
   cls.addStaticField('interField', createReflectClass('string'), 'internal', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass014(): ReflectClass {
-  let cls = createReflectClass('MyClass014');
+  const cls = createReflectClass('MyClass014');
   cls.addStaticField('readonlyField', createReflectClass('string'), 'readonly', true, false, false, true);
   return cls;
 }
 
 function reflectMyClass015(): ReflectClass {
-  let cls = createReflectClass('MyClass015');
+  const cls = createReflectClass('MyClass015');
   cls.addStaticField('strField', createReflectClass('string'), 'string', true, false, false, false);
-  cls.addStaticField('numField', createReflectClass('number'), 100, true, false, false, false);
+  cls.addStaticField('numField', createReflectClass('int'), 100, true, false, false, false);
   cls.addStaticField('boolField', createReflectClass('boolean'), true, true, false, false, false);
-  cls.addStaticField('arrField', createReflectClass('number[]'), null, true, false, false, false);
-  cls.addStaticField('objField', createReflectClass('object'), null, true, false, false, false);
+  cls.addStaticField('arrField', createReflectClass('int[]'), undefined, true, false, false, false);
+  cls.addStaticField('objField', createReflectClass('Object'), undefined, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass021(): ReflectClass {
-  let cls = createReflectClass('MyClass021');
+  const cls = createReflectClass('MyClass021');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass022(): ReflectClass {
-  let cls = createReflectClass('MyClass022');
-  cls.addStaticField('value', createReflectClass('number'), 100, true, false, false, true);
+  const cls = createReflectClass('MyClass022');
+  cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, true);
   return cls;
 }
 
 function reflectMyClass023(): ReflectClass {
-  let cls = createReflectClass('MyClass023');
+  const cls = createReflectClass('MyClass023');
   cls.addStaticField('privValue', createReflectClass('string'), 'private', false, true, false, false);
   cls.addStaticField('protValue', createReflectClass('string'), 'protected', false, false, true, false);
   cls.addStaticField('pubValue', createReflectClass('string'), 'public', true, false, false, false);
@@ -521,66 +521,66 @@ function reflectMyClass023(): ReflectClass {
 }
 
 function reflectMyClass024(): ReflectClass {
-  let cls = createReflectClass('MyClass024');
+  const cls = createReflectClass('MyClass024');
   cls.addStaticField('data', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass025(): ReflectClass {
-  let cls = createReflectClass('MyClass025');
-  cls.addStaticField('count', createReflectClass('number'), 0, true, false, false, false);
+  const cls = createReflectClass('MyClass025');
+  cls.addStaticField('count', createReflectClass('int'), 0, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass026(): ReflectClass {
-  let cls = createReflectClass('MyClass026');
-  cls.addStaticField('value', createReflectClass('number'), 100, true, false, false, false);
+  const cls = createReflectClass('MyClass026');
+  cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass027(): ReflectClass {
-  let cls = createReflectClass('MyClass027');
+  const cls = createReflectClass('MyClass027');
   cls.addStaticField('pubField', createReflectClass('string'), 'public', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass028(): ReflectClass {
-  let cls = createReflectClass('MyClass028');
-  cls.addStaticField('pubNum', createReflectClass('number'), 1, true, false, false, false);
-  cls.addStaticField('privNum', createReflectClass('number'), 2, false, true, false, false);
-  cls.addStaticField('protNum', createReflectClass('number'), 3, false, false, true, false);
+  const cls = createReflectClass('MyClass028');
+  cls.addStaticField('pubNum', createReflectClass('int'), 1, true, false, false, false);
+  cls.addStaticField('privNum', createReflectClass('int'), 2, false, true, false, false);
+  cls.addStaticField('protNum', createReflectClass('int'), 3, false, false, true, false);
   return cls;
 }
 
 function reflectMyClass029(): ReflectClass {
-  let cls = createReflectClass('MyClass029');
+  const cls = createReflectClass('MyClass029');
   cls.addStaticField('field1', createReflectClass('string'), 'test1', true, false, false, false);
   cls.addStaticField('field2', createReflectClass('string'), 'test2', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass032(): ReflectClass {
-  let cls = createReflectClass('MyClass032');
+  const cls = createReflectClass('MyClass032');
   cls.addStaticField('name', createReflectClass('string'), 'test', true, false, false, false);
-  cls.addStaticField('age', createReflectClass('number'), 25, true, false, false, false);
+  cls.addStaticField('age', createReflectClass('int'), 25, true, false, false, false);
   cls.addStaticField('active', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectClassA033(): ReflectClass {
-  let cls = createReflectClass('ClassA033');
+  const cls = createReflectClass('ClassA033');
   cls.addStaticField('data', createReflectClass('string'), 'A', true, false, false, false);
   return cls;
 }
 
 function reflectClassB033(): ReflectClass {
-  let cls = createReflectClass('ClassB033');
+  const cls = createReflectClass('ClassB033');
   cls.addStaticField('data', createReflectClass('string'), 'B', true, false, false, false);
   return cls;
 }
 
 function reflectDerived034(): ReflectClass {
-  let cls = createReflectClass('Derived034');
+  const cls = createReflectClass('Derived034');
   cls.addStaticField('derivedField', createReflectClass('string'), 'derived', true, false, false, false);
   cls.addStaticField('middleField', createReflectClass('string'), 'middle', true, false, false, false);
   cls.addStaticField('baseField', createReflectClass('string'), 'base', true, false, false, false);
@@ -588,190 +588,190 @@ function reflectDerived034(): ReflectClass {
 }
 
 function reflectChild035(): ReflectClass {
-  let cls = createReflectClass('Child035');
+  const cls = createReflectClass('Child035');
   cls.addStaticField('ownField', createReflectClass('string'), 'child', true, false, false, false);
   cls.addStaticField('inheritedField', createReflectClass('string'), 'parent', true, false, false, false);
   return cls;
 }
 
 function reflectNamespacedClass036(): ReflectClass {
-  let cls = createReflectClass('NamespacedClass');
+  const cls = createReflectClass('NamespacedClass');
   cls.addStaticField('namespacedField', createReflectClass('string'), 'namespace', true, false, false, false);
   return cls;
 }
 
-function reflectObject037(): ReflectClass {
-  let cls = createReflectClass('Object037');
+function reflectObjectCls037(): ReflectClass {
+  const cls = createReflectClass('ObjectCls037');
   cls.addStaticField('data', createReflectClass('string'), 'object', true, false, false, false);
   return cls;
 }
 
-function reflectString037(): ReflectClass {
-  let cls = createReflectClass('String037');
+function reflectStringCls037(): ReflectClass {
+  const cls = createReflectClass('StringCls037');
   cls.addStaticField('value', createReflectClass('string'), 'string', true, false, false, false);
   return cls;
 }
 
-function reflectArray037(): ReflectClass {
-  let cls = createReflectClass('Array037');
-  cls.addStaticField('items', createReflectClass('object[]'), null, true, false, false, false);
+function reflectArrayCls037(): ReflectClass {
+  const cls = createReflectClass('ArrayCls037');
+  cls.addStaticField('items', createReflectClass('object[]'), undefined, true, false, false, false);
   return cls;
 }
 
 function reflectStringContainer038(): ReflectClass {
-  let cls = createReflectClass('StringContainer038');
-  cls.addStaticField('defaultValue', createReflectClass('object'), null, true, false, false, false);
+  const cls = createReflectClass('StringContainer038');
+  cls.addStaticField('defaultValue', createReflectClass('Object'), undefined, true, false, false, false);
   return cls;
 }
 
 function reflectNumberContainer038(): ReflectClass {
-  let cls = createReflectClass('NumberContainer038');
-  cls.addStaticField('defaultValue', createReflectClass('object'), null, true, false, false, false);
+  const cls = createReflectClass('NumberContainer038');
+  cls.addStaticField('defaultValue', createReflectClass('Object'), undefined, true, false, false, false);
   return cls;
 }
 
 function reflectAbstractBase039(): ReflectClass {
-  let cls = createReflectClass('AbstractBase039');
+  const cls = createReflectClass('AbstractBase039');
   cls.addStaticField('abstractField', createReflectClass('string'), 'abstract', true, false, false, false);
   cls.addStaticField('concreteField', createReflectClass('string'), 'concrete', true, false, false, false);
   return cls;
 }
 
 function reflectConcreteImpl039(): ReflectClass {
-  let cls = createReflectClass('ConcreteImpl039');
+  const cls = createReflectClass('ConcreteImpl039');
   cls.addStaticField('implField', createReflectClass('string'), 'implementation', true, false, false, false);
   return cls;
 }
 
 function reflectInterfaceImpl040(): ReflectClass {
-  let cls = createReflectClass('InterfaceImpl040');
+  const cls = createReflectClass('InterfaceImpl040');
   cls.addStaticField('interfaceField', createReflectClass('string'), 'implemented', true, false, false, false);
   cls.addStaticField('classField', createReflectClass('string'), 'class', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass041(): ReflectClass {
-  let cls = createReflectClass('MyClass041');
-  cls.addStaticField('value', createReflectClass('number'), 100, true, false, false, false);
+  const cls = createReflectClass('MyClass041');
+  cls.addStaticField('value', createReflectClass('int'), 100, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass042(): ReflectClass {
-  let cls = createReflectClass('MyClass042');
-  cls.addStaticField('field1', createReflectClass('number'), 1, true, false, false, false);
+  const cls = createReflectClass('MyClass042');
+  cls.addStaticField('field1', createReflectClass('int'), 1, true, false, false, false);
   cls.addStaticField('field2', createReflectClass('string'), '2', true, false, false, false);
   cls.addStaticField('field3', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectMyClass043(): ReflectClass {
-  let cls = createReflectClass('MyClass043');
+  const cls = createReflectClass('MyClass043');
   cls.addStaticField('staticValue', createReflectClass('string'), 'static', true, false, false, false);
   cls.addInstanceField('instanceValue', createReflectClass('string'), true, false, false, false);
   return cls;
 }
 
 function reflectMyClass044(): ReflectClass {
-  let cls = createReflectClass('MyClass044');
+  const cls = createReflectClass('MyClass044');
   cls.addStaticField('data', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass045(): ReflectClass {
-  let cls = createReflectClass('MyClass045');
+  const cls = createReflectClass('MyClass045');
   cls.addStaticField('data', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectClassA046(): ReflectClass {
-  let cls = createReflectClass('ClassA046');
+  const cls = createReflectClass('ClassA046');
   cls.addStaticField('field1', createReflectClass('string'), 'A1', true, false, false, false);
   cls.addStaticField('field2', createReflectClass('string'), 'A2', true, false, false, false);
   return cls;
 }
 
 function reflectClassB046(): ReflectClass {
-  let cls = createReflectClass('ClassB046');
+  const cls = createReflectClass('ClassB046');
   cls.addStaticField('field3', createReflectClass('string'), 'B1', true, false, false, false);
   cls.addStaticField('field4', createReflectClass('string'), 'B2', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass047(): ReflectClass {
-  let cls = createReflectClass('MyClass047');
+  const cls = createReflectClass('MyClass047');
   cls.addStaticField('data', createReflectClass('string'), 'test', true, false, false, false);
   return cls;
 }
 
 function reflectConfig048(): ReflectClass {
-  let cls = createReflectClass('Config048');
+  const cls = createReflectClass('Config048');
   cls.addStaticField('APP_NAME', createReflectClass('string'), 'MyApp', true, false, false, false);
   cls.addStaticField('VERSION', createReflectClass('string'), '1.0.0', true, false, false, false);
   return cls;
 }
 
 function reflectMyClass050(): ReflectClass {
-  let cls = createReflectClass('MyClass050');
+  const cls = createReflectClass('MyClass050');
   cls.addStaticField('importantData', createReflectClass('string'), 'critical', true, false, false, false);
   return cls;
 }
 
 function reflectConfig051(): ReflectClass {
-  let cls = createReflectClass('Config051');
-  cls.addStaticField('TIMEOUT', createReflectClass('number'), 30000, true, false, false, false);
+  const cls = createReflectClass('Config051');
+  cls.addStaticField('TIMEOUT', createReflectClass('int'), 30000, true, false, false, false);
   cls.addStaticField('API_KEY', createReflectClass('string'), 'secret', false, true, false, false);
   return cls;
 }
 
 function reflectMyClass052(): ReflectClass {
-  let cls = createReflectClass('MyClass052');
+  const cls = createReflectClass('MyClass052');
   cls.addStaticField('debugField', createReflectClass('string'), 'debug me', true, false, false, false);
   return cls;
 }
 
 function reflectDynamicClass053(): ReflectClass {
-  let cls = createReflectClass('DynamicClass053');
+  const cls = createReflectClass('DynamicClass053');
   cls.addStaticField('data', createReflectClass('string'), 'dynamic', true, false, false, false);
   return cls;
 }
 
 function reflectConfigV1054(): ReflectClass {
-  let cls = createReflectClass('ConfigV1054');
+  const cls = createReflectClass('ConfigV1054');
   cls.addStaticField('API_ENDPOINT', createReflectClass('string'), 'https://v1.api.com', true, false, false, false);
   return cls;
 }
 
 function reflectConfigV2054(): ReflectClass {
-  let cls = createReflectClass('ConfigV2054');
+  const cls = createReflectClass('ConfigV2054');
   cls.addStaticField('API_ENDPOINT', createReflectClass('string'), 'https://v2.api.com', true, false, false, false);
-  cls.addStaticField('TIMEOUT', createReflectClass('number'), 5000, true, false, false, false);
+  cls.addStaticField('TIMEOUT', createReflectClass('int'), 5000, true, false, false, false);
   return cls;
 }
 
 function reflectMixedClass055(): ReflectClass {
-  let cls = createReflectClass('MixedClass055');
+  const cls = createReflectClass('MixedClass055');
   cls.addStaticField('staticField', createReflectClass('string'), 'static', true, false, false, false);
   cls.addInstanceField('instanceField', createReflectClass('string'), true, false, false, false);
   return cls;
 }
 
 function reflectUserComponent057(): ReflectClass {
-  let cls = createReflectClass('UserComponent057');
+  const cls = createReflectClass('UserComponent057');
   cls.addStaticField('componentId', createReflectClass('string'), 'user-comp', true, false, false, false);
   cls.addStaticField('version', createReflectClass('string'), '1.0.0', true, false, false, false);
   return cls;
 }
 
 function reflectServiceConfig058(): ReflectClass {
-  let cls = createReflectClass('ServiceConfig058');
+  const cls = createReflectClass('ServiceConfig058');
   cls.addStaticField('SERVICE_NAME', createReflectClass('string'), 'UserService', true, false, false, false);
-  cls.addStaticField('SERVICE_PORT', createReflectClass('number'), 8080, true, false, false, false);
+  cls.addStaticField('SERVICE_PORT', createReflectClass('int'), 8080, true, false, false, false);
   cls.addStaticField('SERVICE_HOST', createReflectClass('string'), '0.0.0.0', true, false, false, false);
   return cls;
 }
 
 function reflectDatabaseConfig059(): ReflectClass {
-  let cls = createReflectClass('DatabaseConfig059');
+  const cls = createReflectClass('DatabaseConfig059');
   cls.addStaticField('DB_DRIVER', createReflectClass('string'), 'mysql', true, false, false, false);
   cls.addStaticField('DB_CHARSET', createReflectClass('string'), 'utf8mb4', true, false, false, false);
   cls.addStaticField('DB_COLLATION', createReflectClass('string'), 'utf8mb4_unicode_ci', true, false, false, false);
@@ -780,82 +780,82 @@ function reflectDatabaseConfig059(): ReflectClass {
 }
 
 function reflectCacheConfig060(): ReflectClass {
-  let cls = createReflectClass('CacheConfig060');
+  const cls = createReflectClass('CacheConfig060');
   cls.addStaticField('CACHE_DRIVER', createReflectClass('string'), 'redis', true, false, false, false);
   cls.addStaticField('CACHE_PREFIX', createReflectClass('string'), 'cache:', true, false, false, false);
-  cls.addStaticField('CACHE_TTL', createReflectClass('number'), 3600, true, false, false, false);
+  cls.addStaticField('CACHE_TTL', createReflectClass('int'), 3600, true, false, false, false);
   cls.addStaticField('CACHE_SERIALIZE', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectQueueConfig061(): ReflectClass {
-  let cls = createReflectClass('QueueConfig061');
+  const cls = createReflectClass('QueueConfig061');
   cls.addStaticField('QUEUE_DRIVER', createReflectClass('string'), 'rabbitmq', true, false, false, false);
-  cls.addStaticField('QUEUE_RETRY', createReflectClass('number'), 3, true, false, false, false);
-  cls.addStaticField('QUEUE_TIMEOUT', createReflectClass('number'), 30000, true, false, false, false);
-  cls.addStaticField('QUEUE_DELAY', createReflectClass('number'), 1000, true, false, false, false);
+  cls.addStaticField('QUEUE_RETRY', createReflectClass('int'), 3, true, false, false, false);
+  cls.addStaticField('QUEUE_TIMEOUT', createReflectClass('int'), 30000, true, false, false, false);
+  cls.addStaticField('QUEUE_DELAY', createReflectClass('int'), 1000, true, false, false, false);
   return cls;
 }
 
 function reflectMailConfig062(): ReflectClass {
-  let cls = createReflectClass('MailConfig062');
+  const cls = createReflectClass('MailConfig062');
   cls.addStaticField('MAIL_DRIVER', createReflectClass('string'), 'smtp', true, false, false, false);
   cls.addStaticField('MAIL_HOST', createReflectClass('string'), 'smtp.example.com', true, false, false, false);
-  cls.addStaticField('MAIL_PORT', createReflectClass('number'), 587, true, false, false, false);
+  cls.addStaticField('MAIL_PORT', createReflectClass('int'), 587, true, false, false, false);
   cls.addStaticField('MAIL_ENCRYPTION', createReflectClass('string'), 'tls', true, false, false, false);
   return cls;
 }
 
 function reflectStorageConfig063(): ReflectClass {
-  let cls = createReflectClass('StorageConfig063');
+  const cls = createReflectClass('StorageConfig063');
   cls.addStaticField('STORAGE_DISK', createReflectClass('string'), 'local', true, false, false, false);
   cls.addStaticField('STORAGE_PATH', createReflectClass('string'), '/storage/app', true, false, false, false);
-  cls.addStaticField('STORAGE_MAX_SIZE', createReflectClass('number'), 104857600, true, false, false, false);
+  cls.addStaticField('STORAGE_MAX_SIZE', createReflectClass('int'), 104857600, true, false, false, false);
   return cls;
 }
 
 function reflectSessionConfig064(): ReflectClass {
-  let cls = createReflectClass('SessionConfig064');
+  const cls = createReflectClass('SessionConfig064');
   cls.addStaticField('SESSION_DRIVER', createReflectClass('string'), 'file', true, false, false, false);
-  cls.addStaticField('SESSION_LIFETIME', createReflectClass('number'), 120, true, false, false, false);
+  cls.addStaticField('SESSION_LIFETIME', createReflectClass('int'), 120, true, false, false, false);
   cls.addStaticField('SESSION_ENCRYPT', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectSecurityConfig065(): ReflectClass {
-  let cls = createReflectClass('SecurityConfig065');
+  const cls = createReflectClass('SecurityConfig065');
   cls.addStaticField('SECURITY_CIPHER', createReflectClass('string'), 'AES-256-CBC', true, false, false, false);
   cls.addStaticField('SECURITY_HASH', createReflectClass('string'), 'sha256', true, false, false, false);
-  cls.addStaticField('SECURITY_SALT_LENGTH', createReflectClass('number'), 32, true, false, false, false);
+  cls.addStaticField('SECURITY_SALT_LENGTH', createReflectClass('int'), 32, true, false, false, false);
   return cls;
 }
 
 function reflectNotificationConfig066(): ReflectClass {
-  let cls = createReflectClass('NotificationConfig066');
+  const cls = createReflectClass('NotificationConfig066');
   cls.addStaticField('NOTIFY_CHANNELS', createReflectClass('string'), 'mail,sms,push', true, false, false, false);
-  cls.addStaticField('NOTIFY_RETRY', createReflectClass('number'), 5, true, false, false, false);
+  cls.addStaticField('NOTIFY_RETRY', createReflectClass('int'), 5, true, false, false, false);
   cls.addStaticField('NOTIFY_QUEUE', createReflectClass('string'), 'notifications', true, false, false, false);
   return cls;
 }
 
 function reflectMonitoringConfig067(): ReflectClass {
-  let cls = createReflectClass('MonitoringConfig067');
-  cls.addStaticField('MONITOR_INTERVAL', createReflectClass('number'), 60, true, false, false, false);
-  cls.addStaticField('MONITOR_RETENTION', createReflectClass('number'), 30, true, false, false, false);
-  cls.addStaticField('MONITOR_ALERT_THRESHOLD', createReflectClass('number'), 90, true, false, false, false);
+  const cls = createReflectClass('MonitoringConfig067');
+  cls.addStaticField('MONITOR_INTERVAL', createReflectClass('int'), 60, true, false, false, false);
+  cls.addStaticField('MONITOR_RETENTION', createReflectClass('int'), 30, true, false, false, false);
+  cls.addStaticField('MONITOR_ALERT_THRESHOLD', createReflectClass('int'), 90, true, false, false, false);
   return cls;
 }
 
 function reflectBackupConfig068(): ReflectClass {
-  let cls = createReflectClass('BackupConfig068');
+  const cls = createReflectClass('BackupConfig068');
   cls.addStaticField('BACKUP_SCHEDULE', createReflectClass('string'), '0 2 * * *', true, false, false, false);
-  cls.addStaticField('BACKUP_RETENTION', createReflectClass('number'), 7, true, false, false, false);
+  cls.addStaticField('BACKUP_RETENTION', createReflectClass('int'), 7, true, false, false, false);
   cls.addStaticField('BACKUP_COMPRESSION', createReflectClass('boolean'), true, true, false, false, false);
   return cls;
 }
 
 function reflectFeatureFlags069(): ReflectClass {
-  let cls = createReflectClass('FeatureFlags069');
+  const cls = createReflectClass('FeatureFlags069');
   cls.addStaticField('FLAG_NEW_UI', createReflectClass('boolean'), false, true, false, false, false);
   cls.addStaticField('FLAG_BETA', createReflectClass('boolean'), true, true, false, false, false);
   cls.addStaticField('FLAG_EXPERIMENTAL', createReflectClass('boolean'), false, true, false, false, false);
@@ -863,10 +863,10 @@ function reflectFeatureFlags069(): ReflectClass {
 }
 
 function reflectRateLimitConfig070(): ReflectClass {
-  let cls = createReflectClass('RateLimitConfig070');
+  const cls = createReflectClass('RateLimitConfig070');
   cls.addStaticField('RATE_LIMIT_ENABLED', createReflectClass('boolean'), true, true, false, false, false);
-  cls.addStaticField('RATE_LIMIT_MAX', createReflectClass('number'), 1000, true, false, false, false);
-  cls.addStaticField('RATE_LIMIT_WINDOW', createReflectClass('number'), 3600, true, false, false, false);
+  cls.addStaticField('RATE_LIMIT_MAX', createReflectClass('int'), 1000, true, false, false, false);
+  cls.addStaticField('RATE_LIMIT_WINDOW', createReflectClass('int'), 3600, true, false, false, false);
   return cls;
 }
 
@@ -914,7 +914,7 @@ function getFieldFullPath(field: StaticField): string {
 
 function serializeFieldWithOwner(field: StaticField): Record<string, string | null> {
   let owner = field.getOwner();
-  let result: Record<string, string | null> = {
+  const result: Record<string, string | null> = {
     'owner': owner.getName(),
     'name': field.getName(),
     'type': field.getType().getName(),
@@ -942,7 +942,7 @@ function debugField(field: StaticField): void {
 }
 
 function analyzeFieldByClassName(className: string, fieldName: string): void {
-  let cls = getClassByName(className);
+  const cls = getClassByName(className);
   if (cls !== null) {
     let field = cls.getStaticField(fieldName);
     if (field !== undefined) {
@@ -995,7 +995,7 @@ function getUniqueOwners(fields: StaticField[]): string[] {
 }
 
 function buildOwnerFieldMap(cls: ReflectClass): Record<string, string[]> {
-  let result: Record<string, string[]> = {};
+  const result: Record<string, string[]> = {};
   let fields: StaticField[] = cls.getDeclaredStaticFields();
   for (let i = 0; i < fields.length; i++) {
     let ownerName: string = fields[i].getOwner().getName();
@@ -1027,7 +1027,7 @@ function getFieldOwnerSummary(field: StaticField): string {
 }
 
 function findFieldsByOwner(fields: StaticField[], ownerName: string): StaticField[] {
-  let result: StaticField[] = [];
+  const result: StaticField[] = [];
   for (let i = 0; i < fields.length; i++) {
     if (fields[i].getOwner().getName() === ownerName) {
       result.push(fields[i]);
@@ -1036,7 +1036,7 @@ function findFieldsByOwner(fields: StaticField[], ownerName: string): StaticFiel
   return result;
 }
 
-export default function StaticFieldGetOwnerTest(): void {
+export function StaticFieldGetOwnerTest(): void {
   describe('StaticFieldGetOwnerTest', (): void => {
     beforeAll((): void => {
     });
@@ -1057,7 +1057,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass001();
+      const cls = reflectMyClass001();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass001");
@@ -1072,7 +1072,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass001();
+      const cls = reflectMyClass001();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass001");
@@ -1087,7 +1087,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner instanceof ReflectClass).assertEqual(true);
@@ -1102,7 +1102,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass005();
+      const cls = reflectMyClass005();
       let field = cls.getStaticField("data");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass005");
@@ -1117,7 +1117,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass006();
+      const cls = reflectMyClass006();
       let field1 = cls.getStaticField("field1");
       let owner1 = field1!.getOwner();
       let field2 = cls.getStaticField("field2");
@@ -1196,7 +1196,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass010();
+      const cls = reflectMyClass010();
       let field = cls.getStaticField("pubField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass010");
@@ -1211,7 +1211,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass011();
+      const cls = reflectMyClass011();
       let field = cls.getStaticField("privField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass011");
@@ -1226,7 +1226,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass012();
+      const cls = reflectMyClass012();
       let field = cls.getStaticField("protField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass012");
@@ -1241,7 +1241,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass013();
+      const cls = reflectMyClass013();
       let field = cls.getStaticField("interField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass013");
@@ -1256,7 +1256,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass014();
+      const cls = reflectMyClass014();
       let field = cls.getStaticField("readonlyField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass014");
@@ -1271,7 +1271,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass015();
+      const cls = reflectMyClass015();
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let owner = fields[i].getOwner();
@@ -1288,7 +1288,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner instanceof ReflectClass).assertEqual(true);
@@ -1303,7 +1303,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner !== null).assertEqual(true);
@@ -1319,7 +1319,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       let ownerName = owner.getName();
@@ -1372,10 +1372,10 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass021();
+      const cls = reflectMyClass021();
       let field = cls.getStaticField("nonexistent");
       if (field !== null) {
-        let owner = field.getOwner();
+        let owner = field!.getOwner();
       } else {
         expect(field).assertEqual(null);
       }
@@ -1390,7 +1390,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass022();
+      const cls = reflectMyClass022();
       let field = cls.getStaticField("value");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual("MyClass022");
@@ -1405,7 +1405,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass023();
+      const cls = reflectMyClass023();
       let privField = cls.getStaticField("privValue");
       expect(privField!.getOwner().getName()).assertEqual("MyClass023");
       let protField = cls.getStaticField("protValue");
@@ -1423,7 +1423,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass024();
+      const cls = reflectMyClass024();
       let field = cls.getStaticField("data");
       let fieldName = field!.getName();
       let ownerName = field!.getOwner().getName();
@@ -1440,7 +1440,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass025();
+      const cls = reflectMyClass025();
       let field = cls.getStaticField("count");
       let owner = field!.getOwner();
       let type = field!.getType();
@@ -1456,7 +1456,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass026();
+      const cls = reflectMyClass026();
       let field = cls.getStaticField("value");
       let owner = field!.getOwner();
       let value = field!.getValue();
@@ -1472,7 +1472,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass027();
+      const cls = reflectMyClass027();
       let field = cls.getStaticField("pubField");
       if (field!.isPublic()) {
         let owner = field!.getOwner();
@@ -1489,7 +1489,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass028();
+      const cls = reflectMyClass028();
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let field = fields[i];
@@ -1515,7 +1515,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass029();
+      const cls = reflectMyClass029();
       let field1 = cls.getStaticField("field1");
       let field2 = cls.getStaticField("field2");
       let owner1 = field1!.getOwner();
@@ -1532,7 +1532,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
       let owner = field!.getOwner();
       expect(owner instanceof ReflectClass).assertEqual(true);
@@ -1547,9 +1547,9 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass004();
+      const cls = reflectMyClass004();
       let field = cls.getStaticField("name");
-      let result = field!.getOwner();
+      const result = field!.getOwner();
       expect(result instanceof Promise).assertEqual(false);
     });
 
@@ -1562,7 +1562,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass032();
+      const cls = reflectMyClass032();
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let field = fields[i];
@@ -1581,10 +1581,10 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsA = reflectClassA033();
+      const clsA = reflectClassA033();
       let fieldA = clsA.getStaticField("data");
       let ownerA = fieldA!.getOwner();
-      let clsB = reflectClassB033();
+      const clsB = reflectClassB033();
       let fieldB = clsB.getStaticField("data");
       let ownerB = fieldB!.getOwner();
       expect(ownerA.equals(ownerB)).assertEqual(false);
@@ -1635,7 +1635,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectNamespacedClass036();
+      const cls = reflectNamespacedClass036();
       let field = cls.getStaticField("namespacedField");
       let owner = field!.getOwner();
       expect(owner.getName()).assertEqual('NamespacedClass');
@@ -1650,11 +1650,11 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let objCls = reflectObject037();
+      let objCls = reflectObjectCls037();
       checkOwner(objCls, "data");
-      let strCls = reflectString037();
+      let strCls = reflectStringCls037();
       checkOwner(strCls, "value");
-      let arrCls = reflectArray037();
+      let arrCls = reflectArrayCls037();
       checkOwner(arrCls, "items");
       expect(objCls.getStaticField("data") !== undefined).assertEqual(true);
     });
@@ -1706,12 +1706,12 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectInterfaceImpl040();
+      const cls = reflectInterfaceImpl040();
       let intField = cls.getStaticField("interfaceField");
       let intOwner = intField!.getOwner();
       expect(intOwner.getName()).assertEqual("InterfaceImpl040");
-      let clsField = cls.getStaticField("classField");
-      let clsOwner = clsField!.getOwner();
+      const clsField = cls.getStaticField("classField");
+      const clsOwner = clsField!.getOwner();
       expect(clsOwner.getName()).assertEqual("InterfaceImpl040");
     });
 
@@ -1724,7 +1724,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass041();
+      const cls = reflectMyClass041();
       let field = cls.getStaticField("value");
       let owner1 = field!.getOwner();
       let owner2 = field!.getOwner();
@@ -1743,7 +1743,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass042();
+      const cls = reflectMyClass042();
       let fields = cls.getDeclaredStaticFields();
       let ownerNames: string[] = [];
       for (let i = 0; i < fields.length; i++) {
@@ -1764,7 +1764,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass043();
+      const cls = reflectMyClass043();
       let staticField = cls.getStaticField("staticValue");
       let staticOwner = staticField!.getOwner();
       expect(staticOwner.getName()).assertEqual("MyClass043");
@@ -1783,7 +1783,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass044();
+      const cls = reflectMyClass044();
       let field = cls.getStaticField("data");
       expect(getFieldOwnerName(field!)).assertEqual("MyClass044");
     });
@@ -1797,7 +1797,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass045();
+      const cls = reflectMyClass045();
       let field = cls.getStaticField("data");
       expect(isFieldOwnedBy(field!, "MyClass045")).assertEqual(true);
       expect(isFieldOwnedBy(field!, "OtherClass")).assertEqual(false);
@@ -1812,9 +1812,9 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsA = reflectClassA046();
+      const clsA = reflectClassA046();
       let fieldsA = clsA.getDeclaredStaticFields();
-      let clsB = reflectClassB046();
+      const clsB = reflectClassB046();
       let fieldsB = clsB.getDeclaredStaticFields();
       let allFields = fieldsA.concat(fieldsB);
       let groups = groupFieldsByOwner(allFields);
@@ -1830,7 +1830,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass047();
+      const cls = reflectMyClass047();
       let field = cls.getStaticField("data");
       expect(getFieldFullPath(field!)).assertEqual("MyClass047.data");
     });
@@ -1844,7 +1844,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectConfig048();
+      const cls = reflectConfig048();
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         let serialized = serializeFieldWithOwner(fields[i]);
@@ -1880,7 +1880,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass050();
+      const cls = reflectMyClass050();
       let field = cls.getStaticField("importantData");
       logFieldAccess(field!);
       expect(field!.getName().length > 0).assertEqual(true);
@@ -1895,7 +1895,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectConfig051();
+      const cls = reflectConfig051();
       let fields = cls.getDeclaredStaticFields();
       expect(fields.length).assertLarger(0);
     });
@@ -1909,7 +1909,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMyClass052();
+      const cls = reflectMyClass052();
       let field = cls.getStaticField("debugField");
       debugField(field!);
       expect(field!.getName().length > 0).assertEqual(true);
@@ -1956,7 +1956,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMixedClass055();
+      const cls = reflectMixedClass055();
       let staticField = cls.getStaticField("staticField");
       let staticOwner = staticField!.getOwner();
       let instanceField = cls.getInstanceField("instanceField");
@@ -1994,7 +1994,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectUserComponent057();
+      const cls = reflectUserComponent057();
       let fields = cls.getDeclaredStaticFields();
       for (let i = 0; i < fields.length; i++) {
         FrameworkBase057.registerField(fields[i]);
@@ -2011,7 +2011,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectServiceConfig058();
+      const cls = reflectServiceConfig058();
       let field = cls.getStaticField('SERVICE_NAME');
       expect(field!.getOwner().getName()).assertEqual('ServiceConfig058');
     });
@@ -2025,7 +2025,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectDatabaseConfig059();
+      const cls = reflectDatabaseConfig059();
       let field = cls.getStaticField('DB_DRIVER');
       expect(field!.getOwner().getName()).assertEqual('DatabaseConfig059');
     });
@@ -2039,7 +2039,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectCacheConfig060();
+      const cls = reflectCacheConfig060();
       let field = cls.getStaticField('CACHE_DRIVER');
       expect(field!.getOwner().getName()).assertEqual('CacheConfig060');
     });
@@ -2053,7 +2053,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectQueueConfig061();
+      const cls = reflectQueueConfig061();
       let field = cls.getStaticField('QUEUE_DRIVER');
       expect(field!.getOwner().getName()).assertEqual('QueueConfig061');
     });
@@ -2067,7 +2067,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMailConfig062();
+      const cls = reflectMailConfig062();
       let field = cls.getStaticField('MAIL_DRIVER');
       expect(field!.getOwner().getName()).assertEqual('MailConfig062');
     });
@@ -2081,7 +2081,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectStorageConfig063();
+      const cls = reflectStorageConfig063();
       let field = cls.getStaticField('STORAGE_DISK');
       expect(field!.getOwner().getName()).assertEqual('StorageConfig063');
     });
@@ -2095,7 +2095,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectSessionConfig064();
+      const cls = reflectSessionConfig064();
       let field = cls.getStaticField('SESSION_DRIVER');
       expect(field!.getOwner().getName()).assertEqual('SessionConfig064');
     });
@@ -2109,7 +2109,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectSecurityConfig065();
+      const cls = reflectSecurityConfig065();
       let field = cls.getStaticField('SECURITY_CIPHER');
       expect(field!.getOwner().getName()).assertEqual('SecurityConfig065');
     });
@@ -2123,7 +2123,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectNotificationConfig066();
+      const cls = reflectNotificationConfig066();
       let field = cls.getStaticField('NOTIFY_CHANNELS');
       expect(field!.getOwner().getName()).assertEqual('NotificationConfig066');
     });
@@ -2137,7 +2137,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMonitoringConfig067();
+      const cls = reflectMonitoringConfig067();
       let field = cls.getStaticField('MONITOR_INTERVAL');
       expect(field!.getOwner().getName()).assertEqual('MonitoringConfig067');
     });
@@ -2151,7 +2151,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectBackupConfig068();
+      const cls = reflectBackupConfig068();
       let field = cls.getStaticField('BACKUP_SCHEDULE');
       expect(field!.getOwner().getName()).assertEqual('BackupConfig068');
     });
@@ -2165,7 +2165,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectFeatureFlags069();
+      const cls = reflectFeatureFlags069();
       let field = cls.getStaticField('FLAG_BETA');
       expect(field!.getOwner().getName()).assertEqual('FeatureFlags069');
     });
@@ -2179,7 +2179,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectRateLimitConfig070();
+      const cls = reflectRateLimitConfig070();
       let field = cls.getStaticField('RATE_LIMIT_MAX');
       expect(field!.getOwner().getName()).assertEqual('RateLimitConfig070');
     });
@@ -2193,7 +2193,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectServiceConfig058();
+      const cls = reflectServiceConfig058();
       let field: StaticField | null = cls.getStaticField('SERVICE_NAME');
       expect(getOwnerClassName(field!)).assertEqual('ServiceConfig058');
     });
@@ -2207,7 +2207,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectDatabaseConfig059();
+      const cls = reflectDatabaseConfig059();
       let field1: StaticField | null = cls.getStaticField('DB_DRIVER');
       let field2: StaticField | null = cls.getStaticField('DB_CHARSET');
       expect(compareFieldOwners(field1!, field2!)).assertEqual(true);
@@ -2222,7 +2222,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectCacheConfig060();
+      const cls = reflectCacheConfig060();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       let owners: string[] = listFieldOwners(fields);
       for (let i = 0; i < owners.length; i++) {
@@ -2239,7 +2239,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectQueueConfig061();
+      const cls = reflectQueueConfig061();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       let unique: string[] = getUniqueOwners(fields);
       expect(unique.length).assertEqual(1);
@@ -2254,7 +2254,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectMailConfig062();
+      const cls = reflectMailConfig062();
       let map: Record<string, string[]> = buildOwnerFieldMap(cls);
       expect(map['MailConfig062']!.length).assertEqual(4);
     });
@@ -2268,7 +2268,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectStorageConfig063();
+      const cls = reflectStorageConfig063();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       expect(validateOwnerConsistency(fields)).assertEqual(true);
     });
@@ -2282,7 +2282,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectSessionConfig064();
+      const cls = reflectSessionConfig064();
       let field: StaticField | null = cls.getStaticField('SESSION_DRIVER');
       let summary: string = getFieldOwnerSummary(field!);
       expect(summary.length).assertLarger(0);
@@ -2297,7 +2297,7 @@ export default function StaticFieldGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticFieldGetOwner078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = reflectSecurityConfig065();
+      const cls = reflectSecurityConfig065();
       let fields: StaticField[] = cls.getDeclaredStaticFields();
       let found: StaticField[] = findFieldsByOwner(fields, 'SecurityConfig065');
       expect(found.length).assertEqual(3);
