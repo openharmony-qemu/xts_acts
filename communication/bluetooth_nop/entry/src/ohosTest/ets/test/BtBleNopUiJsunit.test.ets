@@ -669,5 +669,29 @@ export default function btBleNopUiJsunit() {
       }
       done();
     })
+
+    /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_NOP_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_NOP_0100
+         * @tc.desc   Test startScan
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_COMMUNICATION_BLUETOOTH_GATTSERVER_REMOVEALLSERVICES_NOP_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
+            try {
+                gattServer.removeAllServices();
+                console.info("removeAllServices success")
+            } catch (err) {
+                console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
+                    expect(true).assertTrue();
+                } else {
+                    expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+                }
+            }
+            done();
+        })
   })
 }
