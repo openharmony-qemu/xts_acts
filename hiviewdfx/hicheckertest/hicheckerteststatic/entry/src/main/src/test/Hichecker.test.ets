@@ -267,15 +267,15 @@ export default function hicheckerTest() {
     })
 
         /**
-     * @tc.name   DFX_DFR_Hichecker_Interface_Static_2900
-     * @tc.number DFX_DFR_Hichecker_Interface_Static_2900
+     * @tc.name   SUB_DFX_DFR_Hichecker_Interface_Static_2900
+     * @tc.number SUB_DFX_DFR_Hichecker_Interface_Static_2900
      * @tc.desc   验证addCheckRule新增RULE_THREAD_CHECK_NETWORK_USAGE规则
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('DFX_DFR_Hichecker_Interface_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      hilog.info(domain, tag, 'DFX_DFR_Hichecker_Interface_Static_2900 start');
+    it('SUB_DFX_DFR_Hichecker_Interface_Static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      hilog.info(domain, tag, 'SUB_DFX_DFR_Hichecker_Interface_Static_2900 start');
       try {
         hichecker.addCheckRule(hichecker.RULE_THREAD_CHECK_NETWORK_USAGE);
         console.log('add rule success!');
