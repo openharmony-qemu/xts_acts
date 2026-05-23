@@ -30,6 +30,7 @@ import arcSwiperEvent from './ArcSwiperTest/arcSwiperEvent.test'
 import arcSwiperShow from './ArcSwiperTest/arcSwiperShow.test'
 import arcSwiperBoolean from './ArcSwiperTest/arcSwiperBoolean.test'
 import arcSwiperEffectMode from './ArcSwiperTest/arcSwiperEffectMode.test'
+import gridEnableEditMode from './Grid/gridEnableEditMode.test'
 
 export default function testsuite() {
   GridScrollBarWidthTest();
@@ -48,4 +49,5 @@ export default function testsuite() {
   arcSwiperContent();
   arcSwiperBoolean();
   arcSwiperEffectMode();
+  gridEnableEditMode();
 }

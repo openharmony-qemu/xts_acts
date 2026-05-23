@@ -16,6 +16,7 @@
     "MainAbility/pages/ArcSwiper/arcSwiperEvent",
     "MainAbility/pages/ArcSwiper/arcSwiperShow",
     "MainAbility/pages/ArcSwiper/arcSwiperBoolean",
-    "MainAbility/pages/ArcSwiper/arcSwiperEffectMode"
+    "MainAbility/pages/ArcSwiper/arcSwiperEffectMode",
+    "MainAbility/pages/Grid/gridEnableEditMode"
   ]
 }
