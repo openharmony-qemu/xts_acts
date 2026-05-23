@@ -444,7 +444,7 @@ export default function abilityTest() {
         /**
          * @tc.name   DFX_DFR_AppRecovery_Interface_Static_1900
          * @tc.number DFX_DFR_AppRecovery_Interface_Static_1900
-         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR + SAVE_WITH_FILE 枚举值覆盖测试
+         * @tc.desc   RESTART_WHEN_CPP_CRASH + SAVE_WHEN_ERROR + SAVE_WITH_FILE 枚举值覆盖测试;
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
