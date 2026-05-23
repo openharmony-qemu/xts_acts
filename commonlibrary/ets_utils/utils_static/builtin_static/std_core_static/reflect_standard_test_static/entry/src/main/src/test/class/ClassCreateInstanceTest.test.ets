@@ -1280,7 +1280,7 @@ export default function ClassCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CREATEINSTANCE_4900
      * @tc.name testClassCreateInstance049
-     * H00 createInstance instances each have data array
+     * @tc.desc Verify ClassCreateInstance case 049: create 1000 instances each with data array length 5
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
