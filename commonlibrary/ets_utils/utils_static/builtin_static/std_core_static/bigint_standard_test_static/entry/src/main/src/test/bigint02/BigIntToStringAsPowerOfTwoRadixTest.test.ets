@@ -44,7 +44,9 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
      */
     it('testBigIntToStringAsPowerOfTwoRadixInvalidNonPower0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(255).toStringAsPowerOfTwoRadix(3)).assertEqual('10101010');
+        const sample255 = 255; 
+        const radixNonPower = 3; 
+        expect(BigInt(sample255).toStringAsPowerOfTwoRadix(radixNonPower)).assertEqual('10101010');
       });
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0300

@@ -31,7 +31,6 @@ export default function BigIntToString1Test(): void {
         expect(BigInt(42).toString()).assertEqual('42');
         expect(BigInt(-42).toString()).assertEqual('-42');
         expect(BigInt(0).toString()).assertEqual('0');
-        // Number.MAX_SAFE_INTEGER + 1 (2^53); beyond IEEE-754 safe integer range
         expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
       });
     /**

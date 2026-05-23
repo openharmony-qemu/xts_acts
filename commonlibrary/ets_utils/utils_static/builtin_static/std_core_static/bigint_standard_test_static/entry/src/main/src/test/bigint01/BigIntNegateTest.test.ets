@@ -101,14 +101,18 @@ export default function BigIntNegateTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0600
      * @tc.name testBigIntNegateNoThrow0600
-     * @tc.desc Verify negate does not throw on normal values
+     * @tc.desc Verify negate does not throw on string, boolean, and copy-constructed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntNegateNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(8).negate().toString()).assertEqual('-8');
+        expect(BigInt('42').negate().toString()).assertEqual('-42');
+        expect(BigInt(true).negate().toString()).assertEqual('-1');
+        expect(BigInt(false).negate().toString()).assertEqual('0');
+        const value = BigInt(99);
+        expect(value.negate().toString()).assertEqual('-99');
       });
   });
 }
