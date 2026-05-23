@@ -683,7 +683,7 @@ export default function btBleNopUiJsunit() {
                 gattServer.removeAllServices();
                 console.info("removeAllServices success")
             } catch (err) {
-                console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message);
+                console.error("removeAllServices error, errCode:" + err.code + ",errMessage:" + err.message + typeof err.code);
                 if (err.code == 801) {
                     console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
                     expect(true).assertTrue();
