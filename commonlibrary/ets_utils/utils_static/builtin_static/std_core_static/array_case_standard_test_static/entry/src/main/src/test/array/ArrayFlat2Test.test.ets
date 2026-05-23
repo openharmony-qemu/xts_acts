@@ -15,19 +15,21 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-function createIntNestedObjects(): Array<Object> {
-  return new Array<Object>(
-    1 as Object,
-    new Array<Object>(
-      2 as Object,
-      new Array<Object>(3 as Object) as Object
-    ) as Object
-  );
+class FlatTwoItem020 {
+  value: int = 0;
 }
 
 export default function ArrayFlat2Test(): void {
@@ -54,12 +56,7 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const last = new Array<int>();
-      last.push(3);
-      const nested = new Array<Array<int>>(
-        new Array<int>(1, 2),
-        last
-      );
+      const nested: Array<int | Array<int>> = [1, [2, 3]];
       const depth: int = 1;
       const result: Array<int> = nested.flat<int>(depth);
       expect(result.length).assertEqual(3);
@@ -77,9 +74,9 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
+      const nested: Array<int | Array<int>> = [1, [2, 3]];
       const depth: int = 0;
-      const result: Array<Object> = nested.flat<Object>(depth);
+      const result: Array<int | Array<int>> = nested.flat<int | Array<int>>(depth);
       expect(result.length).assertEqual(2);
       expect(Array.isArray(result[1])).assertTrue();
     });
@@ -93,12 +90,12 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
+      const nested: Array<int | Array<int | Array<int>>> = [1, [2, [3]]];
       const depth: int = 1;
-      const result: Array<Object> = nested.flat<Object>(depth);
+      const result: Array<int | Array<int>> = nested.flat<int | Array<int>>(depth);
       expect(result.length).assertEqual(3);
-      expect(result[0] as int).assertEqual(1);
-      expect(result[1] as int).assertEqual(2);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
       expect(Array.isArray(result[2])).assertTrue();
     });
 
@@ -111,11 +108,11 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
+      const nested: Array<int | Array<int | Array<int>>> = [1, [2, [3]]];
       const depth: int = 2;
-      const result: Array<Object> = nested.flat<Object>(depth);
+      const result: Array<int> = nested.flat<int>(depth);
       expect(result.length).assertEqual(3);
-      expect(result[2] as int).assertEqual(3);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
@@ -127,9 +124,9 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
+      const nested: Array<int | Array<int>> = [1, [2, 3]];
       const depth: int = -1;
-      const result: Array<Object> = nested.flat<Object>(depth);
+      const result: Array<int | Array<int>> = nested.flat<int | Array<int>>(depth);
       expect(result.length).assertEqual(2);
       expect(Array.isArray(result[1])).assertTrue();
     });
@@ -143,11 +140,8 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const matrix = new Array<Array<number>>(
-        new Array<number>(1, 2, 3),
-        new Array<number>(4, 5, 6)
-      );
-      const result: Array<number> = matrix.flat<number>(2147483647 as int);
+      const matrix: Array<Array<int>> = [[1, 2, 3], [4, 5, 6]];
+      const result: Array<int> = matrix.flat<int>(2147483647);
       expect(result.length).assertEqual(6);
       expect(result[0]).assertEqual(1);
       expect(result[5]).assertEqual(6);
@@ -162,12 +156,9 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = new Array<Array<number>>(
-        new Array<number>(1, 2),
-        new Array<number>(3)
-      );
-      const result1: Array<number> = nested.flat<number>(1 as int);
-      const result2: Array<number> = nested.flat<number>();
+      const nested: Array<Array<int>> = [[1, 2], [3]];
+      const result1: Array<int> = nested.flat<int>(1);
+      const result2: Array<int> = nested.flat<int>();
       expect(result1.length).assertEqual(result2.length);
       expect(result1.toString()).assertEqual(result2.toString());
     });
@@ -181,9 +172,9 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
+      const nested: Array<int | Array<int | Array<int>>> = [1, [2, [3]]];
       const original = nested[1];
-      const result: Array<Object> = nested.flat<Object>(1 as int);
+      const result: Array<int | Array<int>> = nested.flat<int | Array<int>>(1);
       expect(result === nested).assertFalse();
       expect(nested[1] === original).assertTrue();
       expect(Array.isArray(nested[1])).assertTrue();
@@ -198,265 +189,273 @@ export default function ArrayFlat2Test(): void {
      * @tc.level Level 2
      */
     it('testArrayFlat2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nested = createIntNestedObjects();
-      const step1: Array<Object> = nested.flat<Object>(1 as int);
-      const step2: Array<Object> = step1.flat<Object>(1 as int);
+      const nested: Array<int | Array<int | Array<int>>> = [1, [2, [3]]];
+      const step1: Array<int | Array<int>> = nested.flat<int | Array<int>>(1);
+      const step2: Array<int> = step1.flat<int>(1);
       expect(step2.length).assertEqual(3);
-      expect(step2[2] as int).assertEqual(3);
+      expect(step2[2]).assertEqual(3);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1000
-     * @tc.name testArrayFlat010
-     * @tc.desc Verify documented scenario 返回Array<U>
+     * @tc.name testArrayFlat2010
+     * @tc.desc Verify int depth 1 fully flattens a nested int array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 返回Array<U>
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
+    it('testArrayFlat2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<int>> = [[1, 2], [3]];
+      const result: Array<int> = nested.flat<int>(1);
       expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1100
-     * @tc.name testArrayFlat011
-     * @tc.desc Verify documented scenario 泛型U推断
+     * @tc.name testArrayFlat2011
+     * @tc.desc Verify depth 0 keeps nested arrays intact
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 泛型U推断
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<Array<int>>> = [[[1, 2]], [[3, 4]]];
+      const result: Array<Array<Array<int>>> = nested.flat<Array<Array<int>>>(0);
+      expect(result.length).assertEqual(2);
+      expect(result[0][0][0]).assertEqual(1);
+      expect(result[1][0][1]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1200
-     * @tc.name testArrayFlat012
-     * @tc.desc Verify documented scenario 单层嵌套扁平化
+     * @tc.name testArrayFlat2012
+     * @tc.desc Verify depth 2 flattens two levels
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 单层嵌套扁平化
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
+    it('testArrayFlat2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<Array<int>>> = [[[1], [2]], [[3]]];
+      const result: Array<int> = nested.flat<int>(2);
       expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1300
-     * @tc.name testArrayFlat013
-     * @tc.desc Verify documented scenario 多层嵌套按深度扁平化
+     * @tc.name testArrayFlat2013
+     * @tc.desc Verify negative depth behaves like zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 多层嵌套按深度扁平化
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<Array<int>>> = [[[1, 2]], [[3, 4]]];
+      const result: Array<Array<Array<int>>> = nested.flat<Array<Array<int>>>(-1);
+      expect(result.length).assertEqual(2);
+      expect(result[0][0][0]).assertEqual(1);
+      expect(result[1][0][1]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1400
-     * @tc.name testArrayFlat014
-     * @tc.desc Verify documented scenario 空数组flat
+     * @tc.name testArrayFlat2014
+     * @tc.desc Verify a large depth fully flattens a matrix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 空数组flat
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const matrix: Array<Array<int>> = [[1, 2, 3], [4, 5, 6]];
+      const result: Array<int> = matrix.flat<int>(2147483647);
+      expect(result.length).assertEqual(6);
+      expect(result[0]).assertEqual(1);
+      expect(result[5]).assertEqual(6);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1500
-     * @tc.name testArrayFlat015
-     * @tc.desc Verify documented scenario 无嵌套flat
+     * @tc.name testArrayFlat2015
+     * @tc.desc Verify flat leaves the source array unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 无嵌套flat
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<int>> = [[1, 2], [3, 4]];
+      const originalSecond = nested[1];
+      const result: Array<int> = nested.flat<int>(1);
+      expect(result === nested).assertFalse();
+      expect(nested[1] === originalSecond).assertTrue();
+      expect(nested[1][0]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1600
-     * @tc.name testArrayFlat016
-     * @tc.desc Verify documented scenario flat不修改原数组
+     * @tc.name testArrayFlat2016
+     * @tc.desc Verify repeated flat calls progressively remove nesting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: flat不修改原数组
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<Array<int>>> = [[[1, 2]], [[3, 4]]];
+      const step1: Array<Array<int>> = nested.flat<Array<int>>(1);
+      const step2: Array<int> = step1.flat<int>(1);
+      expect(step1.length).assertEqual(2);
+      expect(step2.length).assertEqual(4);
+      expect(step2[3]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1700
-     * @tc.name testArrayFlat017
-     * @tc.desc Verify documented scenario 5.1 number数组嵌套
+     * @tc.name testArrayFlat2017
+     * @tc.desc Verify flat returns an empty array for empty input
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.1 number数组嵌套
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<int> = [];
+      const result: Array<int> = arr.flat<int>(1);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1800
-     * @tc.name testArrayFlat018
-     * @tc.desc Verify documented scenario 5.2 string数组嵌套
+     * @tc.name testArrayFlat2018
+     * @tc.desc Verify empty nested arrays are skipped
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.2 string数组嵌套
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<int>> = [[], [1, 2], [], [3, 4]];
+      const result: Array<int> = nested.flat<int>(1);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(1);
+      expect(result[3]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_1900
-     * @tc.name testArrayFlat019
-     * @tc.desc Verify documented scenario 6.1 depth=1默认
+     * @tc.name testArrayFlat2019
+     * @tc.desc Verify string arrays flatten correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.1 depth=1默认
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
+    it('testArrayFlat2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<string>> = [['a', 'b'], ['c']];
+      const result: Array<string> = nested.flat<string>(1);
       expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a');
+      expect(result[2]).assertEqual('c');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2000
-     * @tc.name testArrayFlat020
-     * @tc.desc Verify documented scenario 6.2 逐层扁平化
+     * @tc.name testArrayFlat2020
+     * @tc.desc Verify object arrays flatten correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.2 逐层扁平化
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const item1 = new FlatTwoItem020();
+      item1.value = 1;
+      const item2 = new FlatTwoItem020();
+      item2.value = 2;
+      const nested: Array<Array<FlatTwoItem020>> = [[item1], [item2]];
+      const result: Array<FlatTwoItem020> = nested.flat<FlatTwoItem020>(1);
+      expect(result.length).assertEqual(2);
+      expect(result[0].value).assertEqual(1);
+      expect(result[1].value).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2100
-     * @tc.name testArrayFlat021
-     * @tc.desc Verify documented scenario 7.1 flat后map
+     * @tc.name testArrayFlat2021
+     * @tc.desc Verify null and undefined values are preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.1 flat后map
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<int | null | undefined>> = [[1, null], [undefined, 2]];
+      const result: Array<int | null | undefined> = nested.flat<int | null | undefined>(1);
+      expect(result.length).assertEqual(4);
+      expect(result[1]).assertNull();
+      expect(result[2]).assertUndefined();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2200
-     * @tc.name testArrayFlat022
-     * @tc.desc Verify documented scenario 8.1 int vs number
+     * @tc.name testArrayFlat2022
+     * @tc.desc Verify NaN and Infinity values are preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.1 int vs number
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<number>> = [[1, NaN], [Infinity, 2]];
+      const result: Array<number> = nested.flat<number>(1);
+      expect(result.length).assertEqual(4);
+      expect(Number.isNaN(result[1])).assertTrue();
+      expect(result[2]).assertEqual(Infinity);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2300
-     * @tc.name testArrayFlat023
-     * @tc.desc Verify documented scenario 9.1 int边界值
+     * @tc.name testArrayFlat2023
+     * @tc.desc Verify flat can be compared with flatMap
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 9.1 int边界值
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int> = [1, 2, 3];
+      const mapped = source.map((value: int): Array<int> => [value, value * 2]);
+      const flatResult: Array<int> = mapped.flat<int>(1);
+      const flatMapResult: Array<int> = source.flatMap<int>((value: int): Array<int> => [value, value * 2]);
+      expect(flatResult.length).assertEqual(flatMapResult.length);
+      expect(flatResult.toString()).assertEqual(flatMapResult.toString());
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2400
-     * @tc.name testArrayFlat024
-     * @tc.desc Verify documented scenario 10.1 二维数组转一维
+     * @tc.name testArrayFlat2024
+     * @tc.desc Verify ReadonlyArray inputs can be flattened
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 10.1 二维数组转一维
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
+    it('testArrayFlat2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source: Array<int | Array<int>> = [1, [2, 3]];
+      const result: Array<int> = source.flat<int>(1);
       expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2500
-     * @tc.name testArrayFlat025
-     * @tc.desc Verify documented scenario 11.1 int类型约束
+     * @tc.name testArrayFlat2025
+     * @tc.desc Verify all array elements flatten into a single list
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFlat025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 11.1 int类型约束
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_TWO_2600
-     * @tc.name testArrayFlat026
-     * @tc.desc Verify documented scenario 12.1 int参数性能
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFlat026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.1 int参数性能
-      const nested = new Array<Object>(1 as Object, new Array<Object>(2 as Object, 3 as Object) as Object);
-      const result: Array<Object> = nested.flat<Object>(1 as int);
-      expect(result.length).assertEqual(3);
+    it('testArrayFlat2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const nested: Array<Array<int>> = [[1, 2], [3, 4], [5, 6]];
+      const result: Array<int> = nested.flat<int>(1);
+      expect(result.length).assertEqual(6);
+      expect(result[5]).assertEqual(6);
     });
 
   });

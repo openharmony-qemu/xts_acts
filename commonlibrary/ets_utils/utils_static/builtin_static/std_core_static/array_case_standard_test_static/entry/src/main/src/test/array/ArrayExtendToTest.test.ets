@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -57,10 +65,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 0);
-        expect(arr.length).assertEqual(5);
-        expect(arr[3]).assertEqual(0);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 0);
+      expect(arr.length).assertEqual(5);
+      expect(arr[3]).assertEqual(0);
     });
 
     /**
@@ -72,10 +80,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(10, 100);
-        expect(arr.length).assertEqual(10);
-        expect(arr[9]).assertEqual(100);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(10, 100);
+      expect(arr.length).assertEqual(10);
+      expect(arr[9]).assertEqual(100);
     });
 
     /**
@@ -87,11 +95,11 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2, 3);
-        const original = arr.toString();
-        arr.extendTo(arr.length, 100);
-        expect(arr.length).assertEqual(3);
-        expect(arr.toString()).assertEqual(original);
+      const arr = new Array<int>(1, 2, 3);
+      const original = arr.toString();
+      arr.extendTo(arr.length, 100);
+      expect(arr.length).assertEqual(3);
+      expect(arr.toString()).assertEqual(original);
     });
 
     /**
@@ -103,10 +111,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(3, 99);
-        expect(arr.length).assertEqual(3);
-        expect(arr[2]).assertEqual(99);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(3, 99);
+      expect(arr.length).assertEqual(3);
+      expect(arr[2]).assertEqual(99);
     });
 
     /**
@@ -118,10 +126,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(1000, 0);
-        expect(arr.length).assertEqual(1000);
-        expect(arr[999]).assertEqual(0);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(1000, 0);
+      expect(arr.length).assertEqual(1000);
+      expect(arr[999]).assertEqual(0);
     });
 
     /**
@@ -133,10 +141,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2, 3, 4, 5);
-        arr.extendTo(2, 0);
-        expect(arr.length).assertEqual(5);
-        expect(arr[4]).assertEqual(5);
+      const arr = new Array<int>(1, 2, 3, 4, 5);
+      arr.extendTo(2, 0);
+      expect(arr.length).assertEqual(5);
+      expect(arr[4]).assertEqual(5);
     });
 
     /**
@@ -148,11 +156,11 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        const targetLength: int = 10;
-        arr.extendTo(targetLength, 100);
-        expect(arr.length).assertEqual(10);
-        expect(arr[8]).assertEqual(100);
+      const arr = new Array<int>(1, 2);
+      const targetLength: int = 10;
+      arr.extendTo(targetLength, 100);
+      expect(arr.length).assertEqual(10);
+      expect(arr[8]).assertEqual(100);
     });
 
     /**
@@ -164,10 +172,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(0x0A, 100);
-        expect(arr.length).assertEqual(10);
-        expect(arr[9]).assertEqual(100);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(0x0A, 100);
+      expect(arr.length).assertEqual(10);
+      expect(arr[9]).assertEqual(100);
     });
 
     /**
@@ -179,10 +187,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 42);
-        expect(arr[2]).assertEqual(42);
-        expect(arr[4]).assertEqual(42);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 42);
+      expect(arr[2]).assertEqual(42);
+      expect(arr[4]).assertEqual(42);
     });
 
     /**
@@ -194,10 +202,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<string>('a', 'b');
-        arr.extendTo(4, 'default');
-        expect(arr[2]).assertEqual('default');
-        expect(arr[3]).assertEqual('default');
+      const arr = new Array<string>('a', 'b');
+      arr.extendTo(4, 'default');
+      expect(arr[2]).assertEqual('default');
+      expect(arr[3]).assertEqual('default');
     });
 
     /**
@@ -209,10 +217,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<boolean>(true);
-        arr.extendTo(3, false);
-        expect(arr[1]).assertFalse();
-        expect(arr[2]).assertFalse();
+      const arr = new Array<boolean>(true);
+      arr.extendTo(3, false);
+      expect(arr[1]).assertFalse();
+      expect(arr[2]).assertFalse();
     });
 
     /**
@@ -224,14 +232,14 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const nanArr = new Array<number>(1, 2);
-        nanArr.extendTo(5, NaN);
-        expect(Number.isNaN(nanArr[2])).assertTrue();
-        expect(Number.isNaN(nanArr[4])).assertTrue();
+      const nanArr = new Array<number>(1, 2);
+      nanArr.extendTo(5, NaN);
+      expect(Number.isNaN(nanArr[2])).assertTrue();
+      expect(Number.isNaN(nanArr[4])).assertTrue();
 
-        const infArr = new Array<number>(1, 2);
-        infArr.extendTo(5, Infinity);
-        expect(infArr[2]).assertEqual(Infinity);
+      const infArr = new Array<number>(1, 2);
+      infArr.extendTo(5, Infinity);
+      expect(infArr[2]).assertEqual(Infinity);
     });
 
     /**
@@ -243,15 +251,15 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const nullArr = new Array<int | null>(1, 2);
-        nullArr.extendTo(5, null);
-        expect(nullArr[2]).assertNull();
-        expect(nullArr[4]).assertNull();
+      const nullArr = new Array<int | null>(1, 2);
+      nullArr.extendTo(5, null);
+      expect(nullArr[2]).assertNull();
+      expect(nullArr[4]).assertNull();
 
-        const undefArr = new Array<int | undefined>(1, 2);
-        undefArr.extendTo(5, undefined);
-        expect(undefArr[2]).assertUndefined();
-        expect(undefArr[4]).assertUndefined();
+      const undefArr = new Array<int | undefined>(1, 2);
+      undefArr.extendTo(5, undefined);
+      expect(undefArr[2]).assertUndefined();
+      expect(undefArr[4]).assertUndefined();
     });
 
     /**
@@ -263,10 +271,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<ExtendItem014>(new ExtendItem014(1));
-        arr.extendTo(3, new ExtendItem014(99));
-        expect(arr[1].value).assertEqual(99);
-        expect(arr[2].value).assertEqual(99);
+      const arr = new Array<ExtendItem014>(new ExtendItem014(1));
+      arr.extendTo(3, new ExtendItem014(99));
+      expect(arr[1].value).assertEqual(99);
+      expect(arr[2].value).assertEqual(99);
     });
 
     /**
@@ -278,10 +286,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<ExtendPoint015>({ x: 1, y: 2 });
-        arr.extendTo(3, { x: 0, y: 0 });
-        expect(arr[1].x).assertEqual(0);
-        expect(arr[2].y).assertEqual(0);
+      const arr = new Array<ExtendPoint015>({ x: 1, y: 2 });
+      arr.extendTo(3, { x: 0, y: 0 });
+      expect(arr[1].x).assertEqual(0);
+      expect(arr[2].y).assertEqual(0);
     });
 
     /**
@@ -293,10 +301,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        const result = arr.extendTo(5, 0);
-        expect(result).assertUndefined();
-        expect(arr.length).assertEqual(5);
+      const arr = new Array<int>(1, 2);
+      const result = arr.extendTo(5, 0);
+      expect(result).assertUndefined();
+      expect(arr.length).assertEqual(5);
     });
 
     /**
@@ -308,12 +316,12 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2, 3);
-        arr.extendTo(6, 99);
-        expect(arr[0]).assertEqual(1);
-        expect(arr[1]).assertEqual(2);
-        expect(arr[2]).assertEqual(3);
-        expect(arr.length).assertEqual(6);
+      const arr = new Array<int>(1, 2, 3);
+      arr.extendTo(6, 99);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(3);
+      expect(arr.length).assertEqual(6);
     });
 
     /**
@@ -325,11 +333,11 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 100);
-        expect(arr[2]).assertEqual(100);
-        expect(arr[3]).assertEqual(100);
-        expect(arr[4]).assertEqual(100);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 100);
+      expect(arr[2]).assertEqual(100);
+      expect(arr[3]).assertEqual(100);
+      expect(arr[4]).assertEqual(100);
     });
 
     /**
@@ -341,15 +349,15 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr: Array<int> = [1];
-        arr.extendTo(3, 10);
-        expect(arr[1]).assertEqual(10);
-        expect(arr[2]).assertEqual(10);
+      const arr: Array<int> = [1];
+      arr.extendTo(3, 10);
+      expect(arr[1]).assertEqual(10);
+      expect(arr[2]).assertEqual(10);
 
-        arr.extendTo(5, 20);
-        expect(arr[3]).assertEqual(20);
-        expect(arr[4]).assertEqual(20);
-        expect(arr[0]).assertEqual(1);
+      arr.extendTo(5, 20);
+      expect(arr[3]).assertEqual(20);
+      expect(arr[4]).assertEqual(20);
+      expect(arr[0]).assertEqual(1);
     });
 
     /**
@@ -361,14 +369,14 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 100);
-        arr[2] = 200;
-        arr[3] = 300;
-        arr[4] = 400;
-        expect(arr[2]).assertEqual(200);
-        expect(arr[3]).assertEqual(300);
-        expect(arr[4]).assertEqual(400);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 100);
+      arr[2] = 200;
+      arr[3] = 300;
+      arr[4] = 400;
+      expect(arr[2]).assertEqual(200);
+      expect(arr[3]).assertEqual(300);
+      expect(arr[4]).assertEqual(400);
     });
 
     /**
@@ -380,14 +388,14 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 0);
-        arr.pushOne(99);
-        expect(arr.length).assertEqual(6);
-        expect(arr[5]).assertEqual(99);
-        const val = arr.pop();
-        expect(val).assertEqual(99);
-        expect(arr.length).assertEqual(5);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 0);
+      arr.pushOne(99);
+      expect(arr.length).assertEqual(6);
+      expect(arr[5]).assertEqual(99);
+      const val = arr.pop();
+      expect(val).assertEqual(99);
+      expect(arr.length).assertEqual(5);
     });
 
     /**
@@ -399,10 +407,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int | string>(1, 'two');
-        arr.extendTo(5, 'default');
-        expect(arr[2]).assertEqual('default');
-        expect(arr[4]).assertEqual('default');
+      const arr = new Array<int | string>(1, 'two');
+      arr.extendTo(5, 'default');
+      expect(arr[2]).assertEqual('default');
+      expect(arr[4]).assertEqual('default');
     });
 
     /**
@@ -414,15 +422,15 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const innerArr = new Array<int>();
-        const arr = new Array<Array<int>>(
-          new Array<int>(1, 2),
-          new Array<int>(3, 4)
-        );
-        arr.extendTo(4, innerArr);
-        expect(arr.length).assertEqual(4);
-        expect(arr[2].length).assertEqual(0);
-        expect(arr[3].length).assertEqual(0);
+      const innerArr = new Array<int>();
+      const arr = new Array<Array<int>>(
+        new Array<int>(1, 2),
+        new Array<int>(3, 4)
+      );
+      arr.extendTo(4, innerArr);
+      expect(arr.length).assertEqual(4);
+      expect(arr[2].length).assertEqual(0);
+      expect(arr[3].length).assertEqual(0);
     });
 
     /**
@@ -434,12 +442,12 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>();
-        expect(arr.length).assertEqual(0);
-        arr.extendTo(5, 100);
-        expect(arr.length).assertEqual(5);
-        expect(arr[0]).assertEqual(100);
-        expect(arr[4]).assertEqual(100);
+      const arr = new Array<int>();
+      expect(arr.length).assertEqual(0);
+      arr.extendTo(5, 100);
+      expect(arr.length).assertEqual(5);
+      expect(arr[0]).assertEqual(100);
+      expect(arr[4]).assertEqual(100);
     });
 
     /**
@@ -451,10 +459,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(10000, 0);
-        expect(arr.length).assertEqual(10000);
-        expect(arr[9999]).assertEqual(0);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(10000, 0);
+      expect(arr.length).assertEqual(10000);
+      expect(arr[9999]).assertEqual(0);
     });
 
     /**
@@ -466,12 +474,12 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2, 3);
-        if (arr.length < 10) {
-          arr.extendTo(10, -1);
-        }
-        expect(arr.length).assertEqual(10);
-        expect(arr[9]).assertEqual(-1);
+      const arr = new Array<int>(1, 2, 3);
+      if (arr.length < 10) {
+        arr.extendTo(10, -1);
+      }
+      expect(arr.length).assertEqual(10);
+      expect(arr[9]).assertEqual(-1);
     });
 
     /**
@@ -483,14 +491,14 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2, 3);
-        arr.extendTo(10, 0);
-        arr[3] = 100;
-        arr[4] = 200;
-        arr[5] = 300;
-        expect(arr.length).assertEqual(10);
-        expect(arr[3]).assertEqual(100);
-        expect(arr[6]).assertEqual(0);
+      const arr = new Array<int>(1, 2, 3);
+      arr.extendTo(10, 0);
+      arr[3] = 100;
+      arr[4] = 200;
+      arr[5] = 300;
+      expect(arr.length).assertEqual(10);
+      expect(arr[3]).assertEqual(100);
+      expect(arr[6]).assertEqual(0);
     });
 
     /**
@@ -502,13 +510,13 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(10, 0);
-        expect(arr.length).assertEqual(10);
-        arr.shrinkTo(5);
-        expect(arr.length).assertEqual(5);
-        expect(arr[0]).assertEqual(1);
-        expect(arr[1]).assertEqual(2);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(10, 0);
+      expect(arr.length).assertEqual(10);
+      arr.shrinkTo(5);
+      expect(arr.length).assertEqual(5);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
     });
 
     /**
@@ -520,12 +528,12 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1);
-        for (let i = 0; i < 100; i++) {
-          arr.extendTo(arr.length + 1, i);
-        }
-        expect(arr.length).assertEqual(101);
-        expect(arr[100]).assertEqual(99);
+      const arr = new Array<int>(1);
+      for (let i = 0; i < 100; i++) {
+        arr.extendTo(arr.length + 1, i);
+      }
+      expect(arr.length).assertEqual(101);
+      expect(arr[100]).assertEqual(99);
     });
 
     /**
@@ -537,15 +545,15 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const item = new ExtendItem014(100);
-        const arr = new Array<ExtendItem014>(new ExtendItem014(1));
-        arr.extendTo(4, item);
-        expect(arr[1] == arr[2]).assertTrue();
-        expect(arr[2] == arr[3]).assertTrue();
-        item.value = 200;
-        expect(arr[1].value).assertEqual(200);
-        expect(arr[2].value).assertEqual(200);
-        expect(arr[3].value).assertEqual(200);
+      const item = new ExtendItem014(100);
+      const arr = new Array<ExtendItem014>(new ExtendItem014(1));
+      arr.extendTo(4, item);
+      expect(arr[1] == arr[2]).assertTrue();
+      expect(arr[2] == arr[3]).assertTrue();
+      item.value = 200;
+      expect(arr[1].value).assertEqual(200);
+      expect(arr[2].value).assertEqual(200);
+      expect(arr[3].value).assertEqual(200);
     });
 
     /**
@@ -557,10 +565,10 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 100);
-        const sum = arr[2] + arr[3] + arr[4];
-        expect(sum).assertEqual(300);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 100);
+      const sum = arr[2] + arr[3] + arr[4];
+      expect(sum).assertEqual(300);
     });
 
     /**
@@ -572,733 +580,621 @@ export default function ArrayExtendToTest(): void {
      * @tc.level Level 2
      */
     it('testArrayExtendTo032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 100);
-        arr.pushOne(200);
-        expect(arr.length).assertEqual(6);
-        expect(arr[5]).assertEqual(200);
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 100);
+      arr.pushOne(200);
+      expect(arr.length).assertEqual(6);
+      expect(arr[5]).assertEqual(200);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3300
      * @tc.name testArrayExtendTo033
-     * @tc.desc Verify the documented Number.MAX_VALUE length case is preserved as a boundary scenario
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayExtendTo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const candidateLength = Number.MAX_VALUE;
-        expect(candidateLength > 1000000).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3400
-     * @tc.name testArrayExtendTo034
      * @tc.desc Verify the documented negative length case is treated as an invalid extendTo scenario
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidLength = new Array<string>('extendTo', '-1');
-        expect(documentedInvalidLength.length).assertEqual(2);
+    it('testArrayExtendTo033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      try {
+        arr.extendTo(-1, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("RangeError");
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3500
-     * @tc.name testArrayExtendTo035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3400
+     * @tc.name testArrayExtendTo034
      * @tc.desc Verify the documented null length case remains a compile-time-invalid scenario
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidLength = new Array<string>('null as number', 'extendTo');
-        expect(documentedInvalidLength[0]).assertEqual('null as number');
+    it('testArrayExtendTo034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      try {
+        arr.extendTo(null as int, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3600
-     * @tc.name testArrayExtendTo036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3500
+     * @tc.name testArrayExtendTo035
      * @tc.desc Verify the documented undefined length case remains a compile-time-invalid scenario
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidLength = new Array<string>('undefined as number', 'extendTo');
-        expect(documentedInvalidLength[0]).assertEqual('undefined as number');
+    it('testArrayExtendTo035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      try {
+        arr.extendTo(undefined as int, 0);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3700
-     * @tc.name testArrayExtendTo037
-     * @tc.desc Verify the documented floating-point length case is retained as an invalid scenario note
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayExtendTo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidLength = new Array<number>(5.5, 0);
-        expect(documentedInvalidLength[0]).assertEqual(5.5);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3800
-     * @tc.name testArrayExtendTo038
-     * @tc.desc Verify the documented string-number length case remains excluded from direct execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayExtendTo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidLength = new Array<string>('10', 'extendTo');
-        expect(documentedInvalidLength[0]).assertEqual('10');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3900
-     * @tc.name testArrayExtendTo039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3600
+     * @tc.name testArrayExtendTo036
      * @tc.desc Verify zero can fill each newly extended numeric position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 0);
-        expect(arr[2]).assertEqual(0);
-        expect(arr[4]).assertEqual(0);
+    it('testArrayExtendTo036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 0);
+      expect(arr[2]).assertEqual(0);
+      expect(arr[4]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4000
-     * @tc.name testArrayExtendTo040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3700
+     * @tc.name testArrayExtendTo037
      * @tc.desc Verify empty strings can fill each newly extended string position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<string>('x');
-        arr.extendTo(3, '');
-        expect(arr[1]).assertEqual('');
-        expect(arr[2]).assertEqual('');
+    it('testArrayExtendTo037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('x');
+      arr.extendTo(3, '');
+      expect(arr[1]).assertEqual('');
+      expect(arr[2]).assertEqual('');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4100
-     * @tc.name testArrayExtendTo041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3800
+     * @tc.name testArrayExtendTo038
      * @tc.desc Verify false can fill each newly extended boolean position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<boolean>(true);
-        arr.extendTo(3, false);
-        expect(arr[1]).assertFalse();
-        expect(arr[2]).assertFalse();
+    it('testArrayExtendTo038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<boolean>(true);
+      arr.extendTo(3, false);
+      expect(arr[1]).assertFalse();
+      expect(arr[2]).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4200
-     * @tc.name testArrayExtendTo042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_3900
+     * @tc.name testArrayExtendTo039
      * @tc.desc Verify negative numeric fill values are copied into all new positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, -100);
-        expect(arr[2]).assertEqual(-100);
-        expect(arr[4]).assertEqual(-100);
+    it('testArrayExtendTo039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, -100);
+      expect(arr[2]).assertEqual(-100);
+      expect(arr[4]).assertEqual(-100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4300
-     * @tc.name testArrayExtendTo043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4000
+     * @tc.name testArrayExtendTo040
      * @tc.desc Verify null can fill each newly extended nullable position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int | null>(1, 2);
-        arr.extendTo(5, null);
-        expect(arr[2]).assertNull();
-        expect(arr[4]).assertNull();
+    it('testArrayExtendTo040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int | null>(1, 2);
+      arr.extendTo(5, null);
+      expect(arr[2]).assertNull();
+      expect(arr[4]).assertNull();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4400
-     * @tc.name testArrayExtendTo044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4100
+     * @tc.name testArrayExtendTo041
      * @tc.desc Verify undefined can fill each newly extended optional position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int | undefined>(1, 2);
-        arr.extendTo(5, undefined);
-        expect(arr[2]).assertUndefined();
-        expect(arr[4]).assertUndefined();
+    it('testArrayExtendTo041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int | undefined>(1, 2);
+      arr.extendTo(5, undefined);
+      expect(arr[2]).assertUndefined();
+      expect(arr[4]).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4500
-     * @tc.name testArrayExtendTo045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4200
+     * @tc.name testArrayExtendTo042
      * @tc.desc Verify NaN can fill each newly extended numeric position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(1, 2);
-        arr.extendTo(5, NaN);
-        expect(Number.isNaN(arr[2])).assertTrue();
-        expect(Number.isNaN(arr[4])).assertTrue();
+    it('testArrayExtendTo042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2);
+      arr.extendTo(5, NaN);
+      expect(Number.isNaN(arr[2])).assertTrue();
+      expect(Number.isNaN(arr[4])).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4600
-     * @tc.name testArrayExtendTo046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4300
+     * @tc.name testArrayExtendTo043
      * @tc.desc Verify Infinity can fill each newly extended numeric position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(1, 2);
-        arr.extendTo(5, Infinity);
-        expect(arr[2]).assertEqual(Infinity);
-        expect(arr[4]).assertEqual(Infinity);
+    it('testArrayExtendTo043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(1, 2);
+      arr.extendTo(5, Infinity);
+      expect(arr[2]).assertEqual(Infinity);
+      expect(arr[4]).assertEqual(Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4700
-     * @tc.name testArrayExtendTo047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4400
+     * @tc.name testArrayExtendTo044
      * @tc.desc Verify script-like strings can be copied into newly extended string positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const payload = '<script>alert(1)</script>';
-        const arr = new Array<string>('safe');
-        arr.extendTo(3, payload);
-        expect(arr[1]).assertEqual(payload);
+    it('testArrayExtendTo044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const payload = '<script>alert(1)</script>';
+      const arr = new Array<string>('safe');
+      arr.extendTo(3, payload);
+      expect(arr[1]).assertEqual(payload);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4800
-     * @tc.name testArrayExtendTo048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4500
+     * @tc.name testArrayExtendTo045
      * @tc.desc Verify Unicode strings can fill newly extended string positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<string>('a');
-        arr.extendTo(3, '\u4F60\u597D\u4E16\u754C');
-        expect(arr[1]).assertEqual('\u4F60\u597D\u4E16\u754C');
-        expect(arr[2]).assertEqual('\u4F60\u597D\u4E16\u754C');
+    it('testArrayExtendTo045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('a');
+      arr.extendTo(3, '\u4F60\u597D\u4E16\u754C');
+      expect(arr[1]).assertEqual('\u4F60\u597D\u4E16\u754C');
+      expect(arr[2]).assertEqual('\u4F60\u597D\u4E16\u754C');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4900
-     * @tc.name testArrayExtendTo049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4600
+     * @tc.name testArrayExtendTo046
      * @tc.desc Verify zero-width-space strings can fill newly extended string positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<string>('visible');
-        arr.extendTo(3, '\u200B');
-        expect(arr[1]).assertEqual('\u200B');
-        expect(arr[2]).assertEqual('\u200B');
+    it('testArrayExtendTo046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('visible');
+      arr.extendTo(3, '\u200B');
+      expect(arr[1]).assertEqual('\u200B');
+      expect(arr[2]).assertEqual('\u200B');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5000
-     * @tc.name testArrayExtendTo050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4700
+     * @tc.name testArrayExtendTo047
      * @tc.desc Verify repeated extendTo calls preserve earlier fill values between growth steps
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1);
-        arr.extendTo(3, 10);
-        arr.extendTo(5, 20);
-        expect(arr[1]).assertEqual(10);
-        expect(arr[2]).assertEqual(10);
-        expect(arr[3]).assertEqual(20);
-        expect(arr[4]).assertEqual(20);
+    it('testArrayExtendTo047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1);
+      arr.extendTo(3, 10);
+      arr.extendTo(5, 20);
+      expect(arr[1]).assertEqual(10);
+      expect(arr[2]).assertEqual(10);
+      expect(arr[3]).assertEqual(20);
+      expect(arr[4]).assertEqual(20);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5100
-     * @tc.name testArrayExtendTo051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4800
+     * @tc.name testArrayExtendTo048
      * @tc.desc Verify number arrays can be extended with number default values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(5, 42);
-        expect(arr[4]).assertEqual(42);
+    it('testArrayExtendTo048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(5, 42);
+      expect(arr[4]).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5200
-     * @tc.name testArrayExtendTo052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_4900
+     * @tc.name testArrayExtendTo049
      * @tc.desc Verify string arrays can be extended with string default values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<string>('a', 'b');
-        arr.extendTo(4, 'default');
-        expect(arr[3]).assertEqual('default');
+    it('testArrayExtendTo049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('a', 'b');
+      arr.extendTo(4, 'default');
+      expect(arr[3]).assertEqual('default');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5300
-     * @tc.name testArrayExtendTo053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5000
+     * @tc.name testArrayExtendTo050
      * @tc.desc Verify boolean arrays can be extended with false default values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<boolean>(true);
-        arr.extendTo(3, false);
-        expect(arr[1]).assertFalse();
-        expect(arr[2]).assertFalse();
+    it('testArrayExtendTo050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<boolean>(true);
+      arr.extendTo(3, false);
+      expect(arr[1]).assertFalse();
+      expect(arr[2]).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5400
-     * @tc.name testArrayExtendTo054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5100
+     * @tc.name testArrayExtendTo051
      * @tc.desc Verify custom class arrays can be extended with object default values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<ExtendItem014>(new ExtendItem014(1));
-        arr.extendTo(3, new ExtendItem014(99));
-        expect(arr[1].value).assertEqual(99);
-        expect(arr[2].value).assertEqual(99);
+    it('testArrayExtendTo051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<ExtendItem014>(new ExtendItem014(1));
+      arr.extendTo(3, new ExtendItem014(99));
+      expect(arr[1].value).assertEqual(99);
+      expect(arr[2].value).assertEqual(99);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5500
-     * @tc.name testArrayExtendTo055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5200
+     * @tc.name testArrayExtendTo052
      * @tc.desc Verify interface arrays can be extended with object default values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<ExtendPoint015>({ x: 1, y: 1 });
-        arr.extendTo(3, { x: 0, y: 0 });
-        expect(arr[1].x).assertEqual(0);
-        expect(arr[2].y).assertEqual(0);
+    it('testArrayExtendTo052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<ExtendPoint015>({ x: 1, y: 1 });
+      arr.extendTo(3, { x: 0, y: 0 });
+      expect(arr[1].x).assertEqual(0);
+      expect(arr[2].y).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5600
-     * @tc.name testArrayExtendTo056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5300
+     * @tc.name testArrayExtendTo053
      * @tc.desc Verify extendTo can reserve minus-one markers for uninitialized positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(10, -1);
-        arr[3] = 100;
-        expect(arr[2]).assertEqual(-1);
-        expect(arr[4]).assertEqual(-1);
+    it('testArrayExtendTo053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(10, -1);
+      arr[3] = 100;
+      expect(arr[2]).assertEqual(-1);
+      expect(arr[4]).assertEqual(-1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5700
-     * @tc.name testArrayExtendTo057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5400
+     * @tc.name testArrayExtendTo054
      * @tc.desc Verify extendTo grows arrays while shrinkTo shortens arrays in the documented comparison
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr1 = new Array<int>(1, 2, 3);
-        arr1.extendTo(5, 100);
-        expect(arr1.length).assertEqual(5);
+    it('testArrayExtendTo054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<int>(1, 2, 3);
+      arr1.extendTo(5, 100);
+      expect(arr1.length).assertEqual(5);
 
-        const arr2 = new Array<int>(1, 2, 3, 4, 5);
-        arr2.shrinkTo(3);
-        expect(arr2.length).assertEqual(3);
+      const arr2 = new Array<int>(1, 2, 3, 4, 5);
+      arr2.shrinkTo(3);
+      expect(arr2.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5800
-     * @tc.name testArrayExtendTo058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5500
+     * @tc.name testArrayExtendTo055
      * @tc.desc Verify extendTo can handle the documented one-hundred-thousand element expansion
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<int>(1, 2);
-        arr.extendTo(100000, 0);
-        expect(arr.length).assertEqual(100000);
-        expect(arr[99999]).assertEqual(0);
+    it('testArrayExtendTo055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(100000, 0);
+      expect(arr.length).assertEqual(100000);
+      expect(arr[99999]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5900
-     * @tc.name testArrayExtendTo059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5600
+     * @tc.name testArrayExtendTo056
      * @tc.desc Verify documented type-mismatch examples remain excluded from runtime execution
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const documentedInvalidTypes = new Array<string>('string', 'boolean');
-        expect(documentedInvalidTypes.length).assertEqual(2);
+    it('testArrayExtendTo056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numArr = new Array<int>(1, 2);
+      numArr.extendTo(5, 100);
+      // numArr.extendTo(5, 'string'); // compile-time error
+      // numArr.extendTo(5, true); // compile-time error
+      expect(numArr[4]).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6000
-     * @tc.name testArrayExtendTo060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5700
+     * @tc.name testArrayExtendTo057
      * @tc.desc Verify multiple extendTo calls preserve the original prefix values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo060';
-        try {
-          const arr = new Array<int>(7, 8, 9);
-          arr.extendTo(5, 10);
-          arr.extendTo(8, 20);
-          console.log(TAG + ' values=' + arr.toString());
-          expect(arr[0]).assertEqual(7);
-          expect(arr[1]).assertEqual(8);
-          expect(arr[2]).assertEqual(9);
-          expect(arr[3]).assertEqual(10);
-          expect(arr[6]).assertEqual(20);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(7, 8, 9);
+      arr.extendTo(5, 10);
+      arr.extendTo(8, 20);
+      expect(arr[0]).assertEqual(7);
+      expect(arr[1]).assertEqual(8);
+      expect(arr[2]).assertEqual(9);
+      expect(arr[3]).assertEqual(10);
+      expect(arr[6]).assertEqual(20);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6100
-     * @tc.name testArrayExtendTo061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5800
+     * @tc.name testArrayExtendTo058
      * @tc.desc Verify the provided fill object does not replace existing elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo061';
-        try {
-          const head = new ExtendItem014(1);
-          const fill = new ExtendItem014(88);
-          const arr = new Array<ExtendItem014>(head);
-          arr.extendTo(4, fill);
-          fill.value = 99;
-          console.log(TAG + ' head=' + arr[0].value + ', fillTail=' + arr[1].value);
-          expect(arr[0].value).assertEqual(1);
-          expect(arr[1].value).assertEqual(99);
-          expect(arr[2].value).assertEqual(99);
-          expect(arr[3].value).assertEqual(99);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const head = new ExtendItem014(1);
+      const fill = new ExtendItem014(88);
+      const arr = new Array<ExtendItem014>(head);
+      arr.extendTo(4, fill);
+      fill.value = 99;
+      expect(arr[0].value).assertEqual(1);
+      expect(arr[1].value).assertEqual(99);
+      expect(arr[2].value).assertEqual(99);
+      expect(arr[3].value).assertEqual(99);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6200
-     * @tc.name testArrayExtendTo062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_5900
+     * @tc.name testArrayExtendTo059
      * @tc.desc Verify newly extended numeric positions participate in arithmetic immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo062';
-        try {
-          const arr: Array<int> = [5, 10];
-          arr.extendTo(6, 3);
-          let sum = 0;
-          for (let i = 0; i < arr.length; i++) {
-            sum += arr[i];
-          }
-          console.log(TAG + ' sum=' + sum + ', values=' + arr.toString());
-          expect(sum).assertEqual(27);
-          expect(arr[5]).assertEqual(3);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<int> = [5, 10];
+      arr.extendTo(6, 3);
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      expect(sum).assertEqual(27);
+      expect(arr[5]).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6300
-     * @tc.name testArrayExtendTo063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6000
+     * @tc.name testArrayExtendTo060
      * @tc.desc Verify newly extended string positions participate in join output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo063';
-        try {
-          const arr = new Array<string>('A', 'B');
-          arr.extendTo(5, 'X');
-          const joined = arr.join('|');
-          console.log(TAG + ' joined=' + joined);
-          expect(joined).assertEqual('A|B|X|X|X');
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<string>('A', 'B');
+      arr.extendTo(5, 'X');
+      const joined = arr.join('|');
+      expect(joined).assertEqual('A|B|X|X|X');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6400
-     * @tc.name testArrayExtendTo064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6100
+     * @tc.name testArrayExtendTo061
      * @tc.desc Verify extended boolean positions can be counted predictably
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo064';
-        try {
-          const arr = new Array<boolean>(true, false);
-          arr.extendTo(6, false);
-          let falseCount = 0;
-          for (const value of arr) {
-            if (!value) {
-              falseCount++;
-            }
-          }
-          console.log(TAG + ' falseCount=' + falseCount);
-          expect(falseCount).assertEqual(5);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
+    it('testArrayExtendTo061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<boolean>(true, false);
+      arr.extendTo(6, false);
+      let falseCount = 0;
+      for (const value of arr) {
+        if (!value) {
+          falseCount++;
         }
+      }
+      expect(falseCount).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6500
-     * @tc.name testArrayExtendTo065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6200
+     * @tc.name testArrayExtendTo062
      * @tc.desc Verify extended arrays can be validated with every after selective overwrites
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo065';
-        try {
-          const arr = new Array<int>(1, 2);
-          arr.extendTo(6, 0);
-          arr[2] = 3;
-          arr[3] = 4;
-          const result = arr.every((v: int): boolean => v >= 0);
-          console.log(TAG + ' result=' + result + ', values=' + arr.toString());
-          expect(result).assertTrue();
-          expect(arr[4]).assertEqual(0);
-          expect(arr[5]).assertEqual(0);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2);
+      arr.extendTo(6, 0);
+      arr[2] = 3;
+      arr[3] = 4;
+      const result = arr.every((v: int): boolean => v >= 0);
+      expect(result).assertTrue();
+      expect(arr[4]).assertEqual(0);
+      expect(arr[5]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6600
-     * @tc.name testArrayExtendTo066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6300
+     * @tc.name testArrayExtendTo063
      * @tc.desc Verify staged fills keep earlier values after a later extension
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo066';
-        try {
-          const arr = new Array<int | string>(1);
-          arr.extendTo(3, 'A');
-          arr.extendTo(5, 'B');
-          console.log(TAG + ' values=' + arr.toString());
-          expect(arr[1]).assertEqual('A');
-          expect(arr[2]).assertEqual('A');
-          expect(arr[3]).assertEqual('B');
-          expect(arr[4]).assertEqual('B');
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int | string>(1);
+      arr.extendTo(3, 'A');
+      arr.extendTo(5, 'B');
+      expect(arr[1]).assertEqual('A');
+      expect(arr[2]).assertEqual('A');
+      expect(arr[3]).assertEqual('B');
+      expect(arr[4]).assertEqual('B');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6700
-     * @tc.name testArrayExtendTo067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6400
+     * @tc.name testArrayExtendTo064
      * @tc.desc Verify a larger extension keeps the same fill value at middle and tail positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo067';
-        try {
-          const arr = new Array<int>(1, 2, 3);
-          arr.extendTo(256, -7);
-          console.log(TAG + ' length=' + arr.length + ', mid=' + arr[128] + ', tail=' + arr[255]);
-          expect(arr.length).assertEqual(256);
-          expect(arr[128]).assertEqual(-7);
-          expect(arr[255]).assertEqual(-7);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
+      arr.extendTo(256, -7);
+      expect(arr.length).assertEqual(256);
+      expect(arr[128]).assertEqual(-7);
+      expect(arr[255]).assertEqual(-7);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6800
-     * @tc.name testArrayExtendTo068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6500
+     * @tc.name testArrayExtendTo065
      * @tc.desc Verify empty object arrays can be extended from zero with interface values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo068';
-        try {
-          const arr = new Array<ExtendPoint015>();
-          arr.extendTo(2, { x: 7, y: 8 });
-          console.log(TAG + ' first=(' + arr[0].x + ',' + arr[0].y + ')');
-          expect(arr.length).assertEqual(2);
-          expect(arr[0].x).assertEqual(7);
-          expect(arr[1].y).assertEqual(8);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<ExtendPoint015>();
+      arr.extendTo(2, { x: 7, y: 8 });
+      expect(arr.length).assertEqual(2);
+      expect(arr[0].x).assertEqual(7);
+      expect(arr[1].y).assertEqual(8);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6900
-     * @tc.name testArrayExtendTo069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6600
+     * @tc.name testArrayExtendTo066
      * @tc.desc Verify arrays can be extended again after a shrink cycle
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo069';
-        try {
-          const arr = new Array<int>(1, 2, 3);
-          arr.extendTo(7, 5);
-          arr.shrinkTo(4);
-          arr.extendTo(6, 9);
-          console.log(TAG + ' values=' + arr.toString());
-          expect(arr.length).assertEqual(6);
-          expect(arr[3]).assertEqual(5);
-          expect(arr[4]).assertEqual(9);
-          expect(arr[5]).assertEqual(9);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
+      arr.extendTo(7, 5);
+      arr.shrinkTo(4);
+      arr.extendTo(6, 9);
+      expect(arr.length).assertEqual(6);
+      expect(arr[3]).assertEqual(5);
+      expect(arr[4]).assertEqual(9);
+      expect(arr[5]).assertEqual(9);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_7000
-     * @tc.name testArrayExtendTo070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6700
+     * @tc.name testArrayExtendTo067
      * @tc.desc Verify extending to the current length is a no-op even with object fill values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo070';
-        try {
-          const arr = new Array<ExtendItem014>(new ExtendItem014(3), new ExtendItem014(4));
-          const fill = new ExtendItem014(100);
-          arr.extendTo(2, fill);
-          console.log(TAG + ' length=' + arr.length + ', values=' + arr[0].value + ',' + arr[1].value);
-          expect(arr.length).assertEqual(2);
-          expect(arr[0].value).assertEqual(3);
-          expect(arr[1].value).assertEqual(4);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<ExtendItem014>(new ExtendItem014(3), new ExtendItem014(4));
+      const fill = new ExtendItem014(100);
+      arr.extendTo(2, fill);
+      expect(arr.length).assertEqual(2);
+      expect(arr[0].value).assertEqual(3);
+      expect(arr[1].value).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_7100
-     * @tc.name testArrayExtendTo071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6800
+     * @tc.name testArrayExtendTo068
      * @tc.desc Verify smaller target lengths do not alter object arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo071';
-        try {
-          const first = new ExtendItem014(11);
-          const second = new ExtendItem014(22);
-          const arr = new Array<ExtendItem014>(first, second);
-          arr.extendTo(1, new ExtendItem014(99));
-          console.log(TAG + ' first=' + arr[0].value + ', second=' + arr[1].value);
-          expect(arr.length).assertEqual(2);
-          expect(arr[0] == first).assertTrue();
-          expect(arr[1] == second).assertTrue();
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const first = new ExtendItem014(11);
+      const second = new ExtendItem014(22);
+      const arr = new Array<ExtendItem014>(first, second);
+      arr.extendTo(1, new ExtendItem014(99));
+      expect(arr.length).assertEqual(2);
+      expect(arr[0] == first).assertTrue();
+      expect(arr[1] == second).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_7200
-     * @tc.name testArrayExtendTo072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_EXTENDTO_6900
+     * @tc.name testArrayExtendTo069
      * @tc.desc Verify shared inner-array fill values reflect later mutations consistently
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayExtendTo072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'testArrayExtendTo072';
-        try {
-          const shared = new Array<int>();
-          const arr = new Array<Array<int>>(new Array<int>(1));
-          arr.extendTo(3, shared);
-          shared.push(42);
-          console.log(TAG + ' sharedLength=' + arr[1].length + ', tailValue=' + arr[2][0]);
-          expect(arr[1].length).assertEqual(1);
-          expect(arr[2].length).assertEqual(1);
-          expect(arr[1][0]).assertEqual(42);
-          expect(arr[2][0]).assertEqual(42);
-        } catch (err) {
-          console.error(`${TAG} failed, error: ${err.message}`);
-          expect(false).assertFail();
-        }
+    it('testArrayExtendTo069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shared = new Array<int>();
+      const arr = new Array<Array<int>>(new Array<int>(1));
+      arr.extendTo(3, shared);
+      shared.pushOne(42);
+      expect(arr[1].length).assertEqual(1);
+      expect(arr[2].length).assertEqual(1);
+      expect(arr[1][0]).assertEqual(42);
+      expect(arr[2][0]).assertEqual(42);
     });
   });
 }

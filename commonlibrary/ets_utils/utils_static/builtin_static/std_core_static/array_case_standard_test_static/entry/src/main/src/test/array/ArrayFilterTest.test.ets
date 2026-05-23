@@ -25,6 +25,20 @@ class FilterPerson008 {
   age: int = 0;
 }
 
+class FilterPerson026 {
+  name: string = '';
+  age: int = 0;
+}
+
+class FilterProduct044 {
+  name: string = '';
+  price: number = 0;
+}
+
+function filterIsString051(value: string | number): boolean {
+  return typeof value == 'string';
+}
+
 export default function ArrayFilterTest(): void {
   describe('ArrayFilterTest', (): void => {
     beforeAll((): void => {
@@ -68,11 +82,13 @@ export default function ArrayFilterTest(): void {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((value: number, index: int, array: Array<number>): boolean => {
         expect(typeof value).assertEqual('number');
-        expect(array.length).assertEqual(5);
-        return index >= 2;
+        expect(typeof index).assertEqual('int');
+        expect(Array.isArray(array)).assertTrue();
+        return value > 2;
       });
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
@@ -207,6 +223,7 @@ export default function ArrayFilterTest(): void {
       const result = arr.filter((v: number | undefined): boolean => v != undefined);
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
       expect(result[2]).assertEqual(5);
     });
 
@@ -262,691 +279,870 @@ export default function ArrayFilterTest(): void {
       expect(count).assertEqual(5);
       expect(result.length).assertEqual(2);
     });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1400
      * @tc.name testArrayFilter014
-     * @tc.desc Verify documented scenario 保持原顺序
+     * @tc.desc Verify filtered results preserve source order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 保持原顺序
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(5, 1, 4, 2, 3);
+      const result = arr.filter((v: number): boolean => v <= 3);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1500
      * @tc.name testArrayFilter015
-     * @tc.desc Verify documented scenario 保持索引关系
+     * @tc.desc Verify filtered results preserve relative index order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 保持索引关系
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<string>('a', 'b', 'c', 'd', 'e');
+      const result = arr.filter((v: string, i: int): boolean => i % 2 == 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a');
+      expect(result[1]).assertEqual('c');
+      expect(result[2]).assertEqual('e');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1600
      * @tc.name testArrayFilter016
-     * @tc.desc Verify documented scenario 空数组filter
+     * @tc.desc Verify filtering an empty array returns an empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 空数组filter
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>();
+      const result = arr.filter((v: number): boolean => true);
+      expect(result.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1700
      * @tc.name testArrayFilter017
-     * @tc.desc Verify documented scenario 3.2 单元素数组
+     * @tc.desc Verify filtering a single-element array handles both match and miss
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 3.2 单元素数组
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(5);
+      const result1 = arr.filter((v: number): boolean => v > 3);
+      expect(result1.length).assertEqual(1);
+      expect(result1[0]).assertEqual(5);
+
+      const result2 = arr.filter((v: number): boolean => v > 10);
+      expect(result2.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1800
      * @tc.name testArrayFilter018
-     * @tc.desc Verify documented scenario 3.3 大数组
+     * @tc.desc Verify filtering a large array keeps all matching elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 3.3 大数组
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>();
+      for (let i = 0; i < 10000; i++) {
+        arr.pushOne(i);
+      }
+      const result = arr.filter((v: number): boolean => v % 2 == 0);
+      expect(result.length).assertEqual(5000);
+      expect(result[0]).assertEqual(0);
+      expect(result[4999]).assertEqual(9998);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_1900
      * @tc.name testArrayFilter019
-     * @tc.desc Verify documented scenario filter不修改原数组
+     * @tc.desc Verify filter does not modify source length or first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: filter不修改原数组
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const originalLength = arr.length;
+      const originalFirst = arr[0];
+      const result = arr.filter((v: number): boolean => v > 2);
+      expect(arr.length).assertEqual(originalLength);
+      expect(arr[0]).assertEqual(originalFirst);
+      expect(result.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2000
      * @tc.name testArrayFilter020
-     * @tc.desc Verify documented scenario 原数组引用不变
+     * @tc.desc Verify filter returns a new array reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 原数组引用不变
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3);
+      const result = arr.filter((v: number): boolean => v > 1);
+      expect(result == arr).assertFalse();
+      expect(arr.length).assertEqual(3);
       expect(result.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2100
      * @tc.name testArrayFilter021
-     * @tc.desc Verify documented scenario predicate中修改原数组
+     * @tc.desc Verify source mutations inside the predicate are observable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: predicate中修改原数组
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const result = arr.filter((v: number, i: int, a: Array<number>): boolean => {
+        if (i == 0) {
+          a.pushOne(100);
+        }
+        return v > 2;
+      });
+      expect(arr.length).assertEqual(5);
+      expect(arr[4]).assertEqual(100);
+      expect(result.length >= 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2200
      * @tc.name testArrayFilter022
-     * @tc.desc Verify documented scenario 5.1 number类型
+     * @tc.desc Verify filter works with number arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.1 number类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => v % 2 == 0);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2300
      * @tc.name testArrayFilter023
-     * @tc.desc Verify documented scenario 5.2 string类型
+     * @tc.desc Verify filter works with string arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.2 string类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<string>('apple', 'banana', 'cherry', 'date');
+      const result = arr.filter((s: string): boolean => s.length > 5);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual('banana');
+      expect(result[1]).assertEqual('cherry');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2400
      * @tc.name testArrayFilter024
-     * @tc.desc Verify documented scenario 5.3 boolean类型
+     * @tc.desc Verify filter works with boolean arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.3 boolean类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<boolean>(true, false, true, true, false);
+      const result = arr.filter((v: boolean): boolean => v);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertTrue();
+      expect(result[1]).assertTrue();
+      expect(result[2]).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2500
      * @tc.name testArrayFilter025
-     * @tc.desc Verify documented scenario 5.4 char类型
+     * @tc.desc Verify filter works with char arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.4 char类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<char>(c'A', c'B', c'C', c'D', c'E');
+      const result = arr.filter((c: char): boolean => c >= c'C');
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(c'C');
+      expect(result[2]).assertEqual(c'E');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2600
      * @tc.name testArrayFilter026
-     * @tc.desc Verify documented scenario 5.5 对象类型
+     * @tc.desc Verify filter works with object arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.5 对象类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const p1 = new FilterPerson026();
+      p1.name = 'Alice';
+      p1.age = 25;
+      const p2 = new FilterPerson026();
+      p2.name = 'Bob';
+      p2.age = 17;
+      const arr = new Array<FilterPerson026>();
+      arr.push(p1, p2);
+      const adults = arr.filter((p: FilterPerson026): boolean => p.age >= 18);
+      expect(adults.length).assertEqual(1);
+      expect(adults[0].name).assertEqual('Alice');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2700
      * @tc.name testArrayFilter027
-     * @tc.desc Verify documented scenario 5.6 联合类型
+     * @tc.desc Verify filter works with union typed arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.6 联合类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<string | number>(1, 'two', 3, 'four', 5);
+      const numbers = arr.filter((v: string | number): boolean => typeof v == 'number');
+      expect(numbers.length).assertEqual(3);
+      expect(numbers[0]).assertEqual(1);
+      expect(numbers[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2800
      * @tc.name testArrayFilter028
-     * @tc.desc Verify documented scenario 6.1 null值
+     * @tc.desc Verify filter removes null values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.1 null值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number | null>(1, null, 3, null, 5);
+      const result = arr.filter((v: number | null): boolean => v != null);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_2900
      * @tc.name testArrayFilter029
-     * @tc.desc Verify documented scenario 6.2 undefined值
+     * @tc.desc Verify filter removes undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.2 undefined值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number | undefined>(1, undefined, 3, undefined, 5);
+      const result = arr.filter((v: number | undefined): boolean => v != undefined);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3000
      * @tc.name testArrayFilter030
-     * @tc.desc Verify documented scenario 6.3 NaN值
+     * @tc.desc Verify filter removes NaN values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.3 NaN值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, NaN, 3, 4, NaN);
+      const result = arr.filter((v: number): boolean => !Number.isNaN(v));
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3100
      * @tc.name testArrayFilter031
-     * @tc.desc Verify documented scenario 6.4 0值
+     * @tc.desc Verify filter removes zero values from numeric arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.4 0值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(0, 1, 0, 2, 0, 3);
+      const result = arr.filter((v: number): boolean => v != 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3200
      * @tc.name testArrayFilter032
-     * @tc.desc Verify documented scenario 6.5 空字符串
+     * @tc.desc Verify filter removes empty strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.5 空字符串
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<string>('a', '', 'b', '', 'c');
+      const result = arr.filter((v: string): boolean => v.length > 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('a');
+      expect(result[2]).assertEqual('c');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3300
      * @tc.name testArrayFilter033
-     * @tc.desc Verify documented scenario 7.1 使用索引过滤
+     * @tc.desc Verify filter can keep values by index rule
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.1 使用索引过滤
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const result = arr.filter((v: number, i: int): boolean => i % 2 == 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(10);
+      expect(result[1]).assertEqual(30);
+      expect(result[2]).assertEqual(50);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3400
      * @tc.name testArrayFilter034
-     * @tc.desc Verify documented scenario 7.2 使用索引范围
+     * @tc.desc Verify filter can keep values in an index range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.2 使用索引范围
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      const result = arr.filter((v: number, i: int): boolean => i >= 3 && i <= 6);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(4);
+      expect(result[3]).assertEqual(7);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3500
      * @tc.name testArrayFilter035
-     * @tc.desc Verify documented scenario 7.3 使用数组长度
+     * @tc.desc Verify filter can use the source array length in its predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.3 使用数组长度
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number, i: int, a: Array<number>): boolean => i < a.length - 2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[2]).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3600
      * @tc.name testArrayFilter036
-     * @tc.desc Verify documented scenario 8.1 filter与map
+     * @tc.desc Verify filter can be chained before map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.1 filter与map
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
+      const result = arr.filter((v: number): boolean => v % 2 == 0)
+        .map((v: number): number => v * 2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(4);
+      expect(result[1]).assertEqual(8);
+      expect(result[2]).assertEqual(12);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3700
      * @tc.name testArrayFilter037
-     * @tc.desc Verify documented scenario 8.2 map后filter
+     * @tc.desc Verify map results can be filtered afterward
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.2 map后filter
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.map((v: number): number => v * 2)
+        .filter((v: number): boolean => v > 5);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(6);
+      expect(result[2]).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3800
      * @tc.name testArrayFilter038
-     * @tc.desc Verify documented scenario 8.3 多个filter链式调用
+     * @tc.desc Verify multiple filter calls can be chained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 8.3 多个filter链式调用
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      const result = arr.filter((v: number): boolean => v % 2 == 0)
+        .filter((v: number): boolean => v > 5);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(6);
+      expect(result[1]).assertEqual(8);
+      expect(result[2]).assertEqual(10);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3900
      * @tc.name testArrayFilter039
-     * @tc.desc Verify documented scenario 9.1 filter vs find
+     * @tc.desc Verify filter differs from find by returning all matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 9.1 filter vs find
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const filtered = arr.filter((v: number): boolean => v > 2);
+      const found = arr.find((v: number): boolean => v > 2);
+      expect(filtered.length).assertEqual(3);
+      expect(found).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4000
      * @tc.name testArrayFilter040
-     * @tc.desc Verify documented scenario 9.2 filter vs some
+     * @tc.desc Verify filter differs from some by returning elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 9.2 filter vs some
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const filtered = arr.filter((v: number): boolean => v > 2);
+      const hasMatch = arr.some((v: number): boolean => v > 2);
+      expect(filtered.length).assertEqual(3);
+      expect(hasMatch).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4100
      * @tc.name testArrayFilter041
-     * @tc.desc Verify documented scenario 9.3 filter vs every
+     * @tc.desc Verify filter differs from every by not requiring all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 9.3 filter vs every
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const filtered = arr.filter((v: number): boolean => v > 2);
+      const allGreaterThanTwo = arr.every((v: number): boolean => v > 2);
+      expect(filtered.length).assertEqual(3);
+      expect(allGreaterThanTwo).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4200
      * @tc.name testArrayFilter042
-     * @tc.desc Verify documented scenario 10.1 时间复杂度
+     * @tc.desc Verify filter traverses a large array and returns matching values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 10.1 时间复杂度
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>();
+      for (let i = 0; i < 10000; i++) {
+        arr.pushOne(i);
+      }
+      const startTime = Date.now();
+      const result = arr.filter((v: number): boolean => v % 2 == 0);
+      const endTime = Date.now();
+      expect(result.length).assertEqual(5000);
+      expect(endTime >= startTime).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4300
      * @tc.name testArrayFilter043
-     * @tc.desc Verify documented scenario 10.2 短路优化
+     * @tc.desc Verify filter does not short circuit its traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 10.2 短路优化
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      let count = 0;
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => {
+        count++;
+        return v > 2;
+      });
+      expect(count).assertEqual(5);
+      expect(result.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4400
      * @tc.name testArrayFilter044
-     * @tc.desc Verify documented scenario 11.1 数据过滤
+     * @tc.desc Verify filter can keep matching data records
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 11.1 数据过滤
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const p1 = new FilterProduct044();
+      p1.name = 'Apple';
+      p1.price = 5;
+      const p2 = new FilterProduct044();
+      p2.name = 'Banana';
+      p2.price = 2;
+      const products = new Array<FilterProduct044>();
+      products.push(p1, p2);
+      const expensive = products.filter((p: FilterProduct044): boolean => p.price > 3);
+      expect(expensive.length).assertEqual(1);
+      expect(expensive[0].name).assertEqual('Apple');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4500
      * @tc.name testArrayFilter045
-     * @tc.desc Verify documented scenario 11.2 搜索结果
+     * @tc.desc Verify filter can narrow search results by suffix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 11.2 搜索结果
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const users = new Array<string>('alice@example.com', 'bob@test.com', 'charlie@example.com');
+      const exampleUsers = users.filter((email: string): boolean => email.endsWith('@example.com'));
+      expect(exampleUsers.length).assertEqual(2);
+      expect(exampleUsers[0]).assertEqual('alice@example.com');
+      expect(exampleUsers[1]).assertEqual('charlie@example.com');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4600
      * @tc.name testArrayFilter046
-     * @tc.desc Verify documented scenario 11.3 去除无效值
+     * @tc.desc Verify filter can remove null and undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 11.3 去除无效值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number | null | undefined>(1, null, 2, undefined, 3, null, 4);
+      const valid = arr.filter((v: number | null | undefined): boolean => v != null);
+      expect(valid.length).assertEqual(4);
+      expect(valid[0]).assertEqual(1);
+      expect(valid[3]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4700
      * @tc.name testArrayFilter047
-     * @tc.desc Verify documented scenario 12.1 简洁箭头函数
+     * @tc.desc Verify filter supports concise arrow functions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.1 简洁箭头函数
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => v > 3);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(4);
+      expect(result[1]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4800
      * @tc.name testArrayFilter048
-     * @tc.desc Verify documented scenario 12.2 块状箭头函数
+     * @tc.desc Verify filter supports block arrow functions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.2 块状箭头函数
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => {
+        const doubled = v * 2;
+        return doubled > 5;
+      });
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4900
      * @tc.name testArrayFilter049
-     * @tc.desc Verify documented scenario 12.3 传统函数
+     * @tc.desc Verify filter supports traditional function predicates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 12.3 传统函数
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => {
+        return v % 2 == 0;
+      });
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5000
      * @tc.name testArrayFilter050
-     * @tc.desc Verify documented scenario 13.1 类型守卫
+     * @tc.desc Verify filter can keep only numeric members from a union array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 13.1 类型守卫
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<string | number>(1, 'two', 3, 'four', 5);
+      const numbers = arr.filter((v: string | number): boolean => typeof v == 'number');
+      expect(numbers.length).assertEqual(3);
+      expect(numbers[0]).assertEqual(1);
+      expect(numbers[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5100
      * @tc.name testArrayFilter051
-     * @tc.desc Verify documented scenario 13.2 谓词类型
+     * @tc.desc Verify filter can use a helper predicate function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 13.2 谓词类型
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<string | number>(1, 'hello', 2, 'world');
+      const strings = arr.filter(filterIsString051);
+      expect(strings.length).assertEqual(2);
+      expect(strings[0]).assertEqual('hello');
+      expect(strings[1]).assertEqual('world');
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5200
      * @tc.name testArrayFilter052
-     * @tc.desc Verify documented scenario 14.1 number边界值
+     * @tc.desc Verify filter handles numeric boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 14.1 number边界值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(
+        Number.MAX_VALUE,
+        Number.MIN_VALUE,
+        Number.MAX_SAFE_INTEGER,
+        0,
+        -0
+      );
+      const result = arr.filter((v: number): boolean => v > Number.MIN_VALUE);
       expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(Number.MAX_VALUE);
+      expect(result[1]).assertEqual(Number.MAX_SAFE_INTEGER);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5300
      * @tc.name testArrayFilter053
-     * @tc.desc Verify documented scenario 14.2 string边界值
+     * @tc.desc Verify filter handles string boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 14.2 string边界值
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const longText = 'very long string value';
+      const arr = new Array<string>('', '\u0000', 'a', longText);
+      const result = arr.filter((s: string): boolean => s.length > 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual('\u0000');
+      expect(result[2]).assertEqual(longText);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5400
      * @tc.name testArrayFilter054
-     * @tc.desc Verify documented scenario 15.1 ReadonlyArray的filter
+     * @tc.desc Verify filter works with ReadonlyArray inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 15.1 ReadonlyArray的filter
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const source = [1, 2, 3, 4, 5];
+      const arr: ReadonlyArray<Int> = source;
+      const result = arr.filter((v: Int): boolean => v > 2);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5500
      * @tc.name testArrayFilter055
-     * @tc.desc Verify documented scenario 16.1 稀疏数组filter
+     * @tc.desc Verify filter skips holes and keeps sparse array values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 16.1 稀疏数组filter
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new SparseArray<number>();
+      arr[0] = 1;
+      arr[2] = 3;
+      arr[4] = 5;
+      const result = arr.filter((v: number): boolean => v > 0);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5600
      * @tc.name testArrayFilter056
-     * @tc.desc Verify documented scenario 17.1 predicate中的console
+     * @tc.desc Verify predicate side effects do not change filter results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 17.1 predicate中的console
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3, 4);
+      const logs = new Array<number>();
+      const result = arr.filter((v: number): boolean => {
+        logs.pushOne(v);
+        return v > 2;
+      });
       expect(result.length).assertEqual(2);
+      expect(logs.length).assertEqual(4);
+      expect(logs[0]).assertEqual(1);
+      expect(logs[3]).assertEqual(4);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5700
      * @tc.name testArrayFilter057
-     * @tc.desc Verify documented scenario 17.2 predicate中的计数器
+     * @tc.desc Verify filter can update an external counter in the predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 17.2 predicate中的计数器
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      let count = 0;
+      const result = arr.filter((v: number): boolean => {
+        count++;
+        return v > 3;
+      });
+      expect(count).assertEqual(5);
       expect(result.length).assertEqual(2);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5800
      * @tc.name testArrayFilter058
-     * @tc.desc Verify documented scenario 18.1 多条件组合
+     * @tc.desc Verify filter supports combined conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 18.1 多条件组合
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+      const result = arr.filter((v: number): boolean => v > 3 && v < 8);
+      expect(result.length).assertEqual(4);
+      expect(result[0]).assertEqual(4);
+      expect(result[3]).assertEqual(7);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5900
      * @tc.name testArrayFilter059
-     * @tc.desc Verify documented scenario 18.2 三元运算符
+     * @tc.desc Verify filter supports ternary expressions in the predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 18.2 三元运算符
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result = arr.filter((v: number): boolean => v % 2 == 0 ? true : v > 3);
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(2);
+      expect(result[1]).assertEqual(4);
+      expect(result[2]).assertEqual(5);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6000
      * @tc.name testArrayFilter060
-     * @tc.desc Verify documented scenario 19.1 filter vs for循环
+     * @tc.desc Verify filter matches an equivalent for loop result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 19.1 filter vs for循环
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      const result1 = arr.filter((v: number): boolean => v > 2);
+      const result2 = new Array<number>();
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 2) {
+          result2.pushOne(arr[i]);
+        }
+      }
+      expect(result1.length).assertEqual(result2.length);
+      expect(result1.toString()).assertEqual(result2.toString());
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6100
      * @tc.name testArrayFilter061
-     * @tc.desc Verify documented scenario 20.1 提前终止不可行
+     * @tc.desc Verify filter cannot stop early once traversal starts
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 20.1 提前终止不可行
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>(1, 2, 3, 4, 5);
+      let callCount = 0;
+      const result = arr.filter((v: number): boolean => {
+        callCount++;
+        return v > 2;
+      });
+      expect(callCount).assertEqual(5);
+      expect(result.length).assertEqual(3);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6200
      * @tc.name testArrayFilter062
-     * @tc.desc Verify documented scenario 20.2 大数据集处理
+     * @tc.desc Verify filter can handle large datasets
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayFilter062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 20.2 大数据集处理
-      const result = new Array<number>(1, 2, 3, 4).filter((v: number): boolean => v % 2 == 0);
-      expect(result.length).assertEqual(2);
+      const arr = new Array<number>();
+      for (let i = 0; i < 100000; i++) {
+        arr.pushOne(i);
+      }
+      const startTime = Date.now();
+      const result = arr.filter((v: number): boolean => v % 100 == 0);
+      const endTime = Date.now();
+      expect(result.length).assertEqual(1000);
+      expect(result[0]).assertEqual(0);
+      expect(result[999]).assertEqual(99900);
+      expect(endTime >= startTime).assertTrue();
     });
-
   });
 }
