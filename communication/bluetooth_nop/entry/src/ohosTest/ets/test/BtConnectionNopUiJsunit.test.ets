@@ -787,7 +787,7 @@ export default function btConnectionNopUiJsunit() {
                   connection.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data: void)=> {
                         if (err) {
                             console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
-                            reject(err.code);
+                            reject(err);
                         } else
                         {
                             console.info('[bluetooth_js]disconnectAllowedProfiles success');
