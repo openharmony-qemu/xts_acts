@@ -19,6 +19,7 @@ import Utils from './../Util.test';
 
 export default function BaseEnumGetNameTest(): void {
   describe('BaseEnumGetNameTest', (): void => {
+    // yield to coroutine scheduler for proper async test execution
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
@@ -298,7 +299,7 @@ export default function BaseEnumGetNameTest(): void {
     it('testBaseEnumGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "OK");
       let name: string = e.getName();
-      expect(typeof name === "string").assertTrue();
+      expect(name).assertEqual("OK");
     });
 
     /**
@@ -400,7 +401,7 @@ export default function BaseEnumGetNameTest(): void {
     /**
      * @tc.name testBaseEnumGetName027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2700
-     * @tc.desc Verify BaseEnum getName does not throw exception in normal case
+     * @tc.desc Verify BaseEnum getName returns correct name for normal case
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -414,7 +415,7 @@ export default function BaseEnumGetNameTest(): void {
     /**
      * @tc.name testBaseEnumGetName028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_GETNAME_2800
-     * @tc.desc Verify BaseEnum getName in try-catch-finally does not enter catch
+     * @tc.desc Verify BaseEnum getName returns correct value and is consistent
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

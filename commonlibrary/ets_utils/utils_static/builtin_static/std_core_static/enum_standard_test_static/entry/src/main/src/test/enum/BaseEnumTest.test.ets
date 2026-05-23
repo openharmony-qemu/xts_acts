@@ -92,6 +92,7 @@ class ErrorCode167 extends BaseEnum<long> {
 
 export default function BaseEnumTest(): void {
   describe('BaseEnumTest', (): void => {
+    // yield to coroutine scheduler for proper async test execution
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
@@ -269,7 +270,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0140
-     * @tc.desc Verify BaseEnum constructor throws for out-of-range short value 32768
+     * @tc.desc Verify Int.toShort overflow wrapping behavior for short value 32768
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -790,7 +791,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum054
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0540
-     * @tc.desc Verify BaseEnum constructor with single character name
+     * @tc.desc Verify BaseEnum constructor with single character value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -842,7 +843,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0580
-     * @tc.desc Verify BaseEnum constructor with string value containing spaces
+     * @tc.desc Verify BaseEnum constructor with zero-width space string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1012,7 +1013,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum071
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0710
-     * @tc.desc Verify constructor name parameter with spaces
+     * @tc.desc Verify constructor name parameter with zero-width space
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1618,7 +1619,7 @@ export default function BaseEnumTest(): void {
      */
     it('testBaseEnum116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(1, "TEST")
-      expect(typeof e.getName() === "string").assertTrue()
+      expect(e.getName()).assertEqual("TEST")
     });
 
     /**
@@ -1631,7 +1632,6 @@ export default function BaseEnumTest(): void {
      */
     it('testBaseEnum117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(1, "TEST")
-      expect(typeof e.getName() === "string").assertTrue()
       expect(e.getName() !== undefined).assertTrue()
     });
 
@@ -1664,14 +1664,13 @@ export default function BaseEnumTest(): void {
     it('testBaseEnum119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST")
       let str: string = e.toString()
-      expect(typeof str === "string").assertTrue()
       expect(str.length > 0).assertTrue()
     });
 
     /**
      * @tc.name testBaseEnum120
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1200
-     * @tc.desc Verify toString return value contains name information
+     * @tc.desc Verify toString return value contains value information
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -1679,7 +1678,7 @@ export default function BaseEnumTest(): void {
     it('testBaseEnum120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(42, "MY_ENUM")
       let str: string = e.toString()
-      expect(str.indexOf("MY_ENUM") >= 0 || str.indexOf("42") >= 0).assertTrue()
+      expect(str).assertEqual("42")
     });
 
     /**
@@ -1693,7 +1692,7 @@ export default function BaseEnumTest(): void {
     it('testBaseEnum121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<int> = new BaseEnum<int>(42, "TEST")
       let str: string = e.toString()
-      expect(str.indexOf("42") >= 0 || str.indexOf("TEST") >= 0).assertTrue()
+      expect(str).assertEqual("42")
     });
 
     /**
@@ -1707,7 +1706,6 @@ export default function BaseEnumTest(): void {
     it('testBaseEnum122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let e: BaseEnum<byte> = new BaseEnum<byte>(10 as byte, "BYTE_ENUM")
       let str: string = e.toString()
-      expect(typeof str === "string").assertTrue()
       expect(str.length > 0).assertTrue()
     });
 
@@ -1813,7 +1811,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum130
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_1300
-     * @tc.desc Verify different instances have independent names via getName
+     * @tc.desc Verify different instances have independent values via valueOf
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

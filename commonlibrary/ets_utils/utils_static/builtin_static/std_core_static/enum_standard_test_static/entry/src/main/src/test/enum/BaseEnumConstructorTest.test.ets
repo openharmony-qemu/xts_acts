@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function BaseEnumConstructorTest(): void {
   describe('BaseEnumConstructorTest', (): void => {
+    // yield to coroutine scheduler for proper async test execution
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
@@ -36,7 +37,7 @@ export default function BaseEnumConstructorTest(): void {
         const status = new BaseEnum<int>(undefined as int, "READY");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -53,7 +54,7 @@ export default function BaseEnumConstructorTest(): void {
         const status = new BaseEnum<int>(1, undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -335,335 +336,301 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2400
-     * @tc.desc Verify BaseEnum constructor throws Error when value is undefined
+     * @tc.desc Verify BaseEnum constructor throws Error when value is boolean (outside generic constraint)
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const e = new BaseEnum<int>(undefined as int, "UNDEF_VALUE");
+        const e = new BaseEnum<int>(true as int, "BOOL_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2500
-     * @tc.desc Verify BaseEnum constructor throws Error when value is boolean (outside generic constraint)
+     * @tc.desc Verify BaseEnum constructor throws Error when value is object (outside generic constraint)
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const e = new BaseEnum<int>(true as int, "BOOL_VALUE");
+        let invalidValue: Object = {};
+        const e = new BaseEnum<int>(invalidValue as int, "OBJ_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2600
-     * @tc.desc Verify BaseEnum constructor throws Error when value is object (outside generic constraint)
+     * @tc.desc Verify BaseEnum constructor throws Error when value is array (outside generic constraint)
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let invalidValue: Object = {};
-        const e = new BaseEnum<int>(invalidValue as int, "OBJ_VALUE");
+        let invalidValue: Object = [1, 2];
+        const e = new BaseEnum<int>(invalidValue as int, "ARRAY_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2700
-     * @tc.desc Verify BaseEnum constructor throws Error when value is array (outside generic constraint)
+     * @tc.desc Verify BaseEnum constructor throws Error when int generic receives string value
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let invalidValue: Object = [1, 2];
-        const e = new BaseEnum<int>(invalidValue as int, "ARRAY_VALUE");
+        let invalidValue: Object = "not_int";
+        const e = new BaseEnum<int>(invalidValue as int, "TYPE_MISMATCH");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2800
-     * @tc.desc Verify BaseEnum constructor throws Error when int generic receives string value
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let invalidValue: Object = "not_int";
-        const e = new BaseEnum<int>(invalidValue as int, "TYPE_MISMATCH");
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2900
      * @tc.desc Verify BaseEnum constructor with camelCase name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "myEnumName");
       expect(e.getName()).assertEqual("myEnumName");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3000
+     * @tc.name testBaseEnumConstructor029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2900
      * @tc.desc Verify BaseEnum constructor with uppercase underscored name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "ENUM_VALUE_1");
       expect(e.getName()).assertEqual("ENUM_VALUE_1");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3100
+     * @tc.name testBaseEnumConstructor030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3000
      * @tc.desc Verify BaseEnum constructor with single space name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, " ");
       expect(e.getName()).assertEqual(" ");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3200
+     * @tc.name testBaseEnumConstructor031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3100
      * @tc.desc Verify BaseEnum constructor with Chinese characters in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "就绪状态");
       expect(e.getName()).assertEqual("就绪状态");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3300
+     * @tc.name testBaseEnumConstructor032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3200
      * @tc.desc Verify BaseEnum constructor with digits in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "VALUE_123");
       expect(e.getName()).assertEqual("VALUE_123");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3400
+     * @tc.name testBaseEnumConstructor033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3300
      * @tc.desc Verify BaseEnum constructor with special symbols in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "VALUE@#$%");
       expect(e.getName()).assertEqual("VALUE@#$%");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3500
+     * @tc.name testBaseEnumConstructor034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3400
      * @tc.desc Verify BaseEnum constructor with Unicode characters in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "值_éè");
       expect(e.getName()).assertEqual("值_éè");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3600
+     * @tc.name testBaseEnumConstructor035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3500
      * @tc.desc Verify BaseEnum constructor with zero-width space in name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<int>(1, "NAME​");
       expect(e.getName()).assertEqual("NAME​");
     });
 
     /**
+     * @tc.name testBaseEnumConstructor036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3600
+     * @tc.desc Verify BaseEnum constructor throws Error when name is number type
+     * @tc.type Function
+     * @tc.size MediumTest
+     * @tc.level LEVEL2
+     */
+    it('testBaseEnumConstructor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        let invalidName: Object = 123;
+        const e = new BaseEnum<int>(1, invalidName as string);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
      * @tc.name testBaseEnumConstructor037
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3700
-     * @tc.desc Verify BaseEnum constructor throws Error when name is undefined
+     * @tc.desc Verify BaseEnum constructor throws Error when name is boolean type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const e = new BaseEnum<int>(1, undefined as string);
+        let invalidName: Object = true;
+        const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor038
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3800
-     * @tc.desc Verify BaseEnum constructor throws Error when name is number type
+     * @tc.desc Verify BaseEnum constructor throws Error when name is object type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let invalidName: Object = 123;
+        let invalidName: Object = {};
         const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor039
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_3900
-     * @tc.desc Verify BaseEnum constructor throws Error when name is boolean type
+     * @tc.desc Verify BaseEnum constructor throws Error when name is array type
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        let invalidName: Object = true;
+        let invalidName: Object = ["name"];
         const e = new BaseEnum<int>(1, invalidName as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
      * @tc.name testBaseEnumConstructor040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4000
-     * @tc.desc Verify BaseEnum constructor throws Error when name is object type
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let invalidName: Object = {};
-        const e = new BaseEnum<int>(1, invalidName as string);
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4100
-     * @tc.desc Verify BaseEnum constructor throws Error when name is array type
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let invalidName: Object = ["name"];
-        const e = new BaseEnum<int>(1, invalidName as string);
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4200
      * @tc.desc Verify BaseEnum constructor with byte value and English name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<byte>(Int.toByte(1), "BYTE_VAL");
       expect(e.valueOf()).assertEqual(Int.toByte(1));
       expect(e.getName()).assertEqual("BYTE_VAL");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4300
+     * @tc.name testBaseEnumConstructor041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4100
      * @tc.desc Verify BaseEnum constructor with long value and empty name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<long>(Int.toLong(100), "");
+    it('testBaseEnumConstructor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = new BaseEnum<long>(Int.toLong(100), "浮点枚举");
       expect(e.valueOf()).assertEqual(Int.toLong(100));
-      expect(e.getName()).assertEqual("");
+      expect(e.getName()).assertEqual("浮点枚举");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4400
+     * @tc.name testBaseEnumConstructor042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4200
      * @tc.desc Verify BaseEnum constructor with float value and Chinese name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const e = new BaseEnum<float>(Double.toFloat(3.14), "浮点枚举");
       expect(e.valueOf()).assertEqual(Double.toFloat(3.14));
       expect(e.getName()).assertEqual("浮点枚举");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4500
+     * @tc.name testBaseEnumConstructor043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4300
      * @tc.desc Verify BaseEnum constructor with string value and long name combination
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let longName: string = "N".repeat(10000);
       const e = new BaseEnum<string>("val", longName);
       expect(e.valueOf()).assertEqual("val");
@@ -671,81 +638,45 @@ export default function BaseEnumConstructorTest(): void {
     });
 
     /**
-     * @tc.name testBaseEnumConstructor046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4600
-     * @tc.desc Verify BaseEnum constructor creates instance successfully
+     * @tc.name testBaseEnumConstructor044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4400
+     * @tc.desc Verify BaseEnum constructor succeeds with normal parameters
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const status = new BaseEnum<int>(1, "READY");
-      expect(status instanceof BaseEnum).assertTrue();
+    it('testBaseEnumConstructor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const e = new BaseEnum<int>(1, "TRY_TEST");
+      expect(e.valueOf()).assertEqual(1);
+      expect(e.getName()).assertEqual("TRY_TEST");
     });
 
     /**
-     * @tc.name testBaseEnumConstructor047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4700
-     * @tc.desc Verify BaseEnum constructor returns BaseEnum type instance
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<int>(1, "TEST");
-      expect(e instanceof BaseEnum).assertTrue();
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4800
-     * @tc.desc Verify BaseEnum constructor succeeds in try block with normal parameters
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level LEVEL2
-     */
-    it('testBaseEnumConstructor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let created: boolean = false;
-      try {
-        const e = new BaseEnum<int>(1, "TRY_TEST");
-        created = true;
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        expect(created).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testBaseEnumConstructor049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4900
+     * @tc.name testBaseEnumConstructor045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4500
      * @tc.desc Verify BaseEnum constructor throws exception caught by catch block
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caught: boolean = false;
+    it('testBaseEnumConstructor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const e = new BaseEnum<int>(undefined as int, "CATCH_TEST");
         expect().assertFail();
       } catch (error) {
-        caught = true;
-        expect(error instanceof Error).assertTrue();
-      } finally {
-        expect(caught).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
     /**
-     * @tc.name testBaseEnumConstructor050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_5000
+     * @tc.name testBaseEnumConstructor046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_4600
      * @tc.desc Verify BaseEnum constructor finally block always executes
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
-    it('testBaseEnumConstructor050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBaseEnumConstructor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let finallyCount: int = 0;
       try {
         const e = new BaseEnum<int>(1, "FINALLY_TEST");
