@@ -27,7 +27,7 @@ struct Child_CA1 {
         .onClick(() => {
           this.Array1 = [10];
         })
-        .key('state5')
+        .key('ConsumeArray1_state5')
         .height('5%')
 
       Text("切换变量Date类型[1]-->new Date('2021-08-08')").height('5%')
@@ -35,7 +35,7 @@ struct Child_CA1 {
         .onClick(() => {
           this.Array1 = new Date('2021-08-08');
         })
-        .key('state6')
+        .key('ConsumeArray1_state6')
         .height('5%')
 
       Text("切换变量Array<String>类型[1]-->['20']").height('5%')
@@ -43,7 +43,7 @@ struct Child_CA1 {
         .onClick(() => {
           this.Array1 = ['20'];
         })
-        .key('state7')
+        .key('ConsumeArray1_state7')
         .height('5%')
 
       Text("切换变量Array<Object>类型[1]-->[{number: 30}]").height('5%')
@@ -51,7 +51,7 @@ struct Child_CA1 {
         .onClick(() => {
           this.Array1 = [{number: 30}];
         })
-        .key('state8')
+        .key('ConsumeArray1_state8')
         .height('5%')
 
 
@@ -60,7 +60,7 @@ struct Child_CA1 {
         .onClick(() => {
           this.Array1 = [$r('app.string.number')];
         })
-        .key('state9')
+        .key('ConsumeArray1_state9')
         .height('5%')
     }
   }
