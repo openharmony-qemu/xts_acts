@@ -391,23 +391,90 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0007 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(PowerModel))
-                    done();
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.SLEEPING))
                 }
                 expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0007 canIUse isAccessToken error: " + e);
+                expect().assertFail();
             }
-            console.info('SUB_Communication_WiFi_SysCaps_Test_0007 end');
-            let SLEEPING = wifiext.PowerModel.SLEEPING;
-            console.info("[wifi_test]SLEEPING : " + JSON.stringify(SLEEPING));
-            expect(true).assertEqual( SLEEPING == 0);
-            let GENERAL = wifiext.PowerModel.GENERAL;
-            console.info("[wifi_test]GENERAL : " + JSON.stringify(GENERAL));
-            expect(true).assertEqual( GENERAL == 1);
-            let THROUGH = wifiext.PowerModel.THROUGH_WALL;
-            console.info("[wifi_test]THROUGH : " + JSON.stringify(THROUGH));
-            expect(true).assertEqual( THROUGH == 2);
+            done();
+        })
+        /**
+         * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0008
+         * @tc.number SUB_Communication_WiFi_SysCaps_Test_0008
+         * @tc.desc   Test setPowerModel api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Communication_WiFi_SysCaps_Test_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0008 start');
+            let ret = false;
+            try {
+                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                console.info("SUB_Communication_WiFi_SysCaps_Test_0008 test.syscap.param.001 : " + isAccessToken);
+                if (isAccessToken) {
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.GENERAL))
+                }
+                expect(isAccessToken).assertFalse();
+            } catch (e) {
+                console.info("SUB_Communication_WiFi_SysCaps_Test_0008 canIUse isAccessToken error: " + e);
+                expect().assertFail();
+            }
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0008 end');
+            done();
+        });
+        /**
+         * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0009
+         * @tc.number SUB_Communication_WiFi_SysCaps_Test_0009
+         * @tc.desc   Test setPowerModel api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Communication_WiFi_SysCaps_Test_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0009 start');
+            let ret = false;
+            try {
+                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                console.info("SUB_Communication_WiFi_SysCaps_Test_0009 test.syscap.param.001 : " + isAccessToken);
+                if (isAccessToken) {
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.THROUGH_WALL))
+                }
+                expect(isAccessToken).assertFalse();
+            } catch (e) {
+                console.info("SUB_Communication_WiFi_SysCaps_Test_0009 canIUse isAccessToken error: " + e);
+                expect().assertFail();
+            }
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0009 end');
+            done();
+        });
+        /**
+         * @tc.name   SUB_Communication_WiFi_SysCaps_Test_0010
+         * @tc.number SUB_Communication_WiFi_SysCaps_Test_0010
+         * @tc.desc   Test setPowerModel api.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('SUB_Communication_WiFi_SysCaps_Test_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0010 start');
+            try {
+                let SLEEPING = wifiext.PowerModel.SLEEPING;
+                console.info("[wifi_test]SLEEPING : " + JSON.stringify(SLEEPING));
+                expect(true).assertEqual( SLEEPING == 0);
+                let GENERAL = wifiext.PowerModel.GENERAL;
+                console.info("[wifi_test]GENERAL : " + JSON.stringify(GENERAL));
+                expect(true).assertEqual( GENERAL == 1);
+                let THROUGH = wifiext.PowerModel.THROUGH_WALL;
+                console.info("[wifi_test]THROUGH : " + JSON.stringify(THROUGH));
+                expect(true).assertEqual( THROUGH == 2);
+            } catch (e) {
+                console.info("SUB_Communication_WiFi_SysCaps_Test_0010 PowerModel " + e);
+                expect().assertFail();
+            }
+            console.info('SUB_Communication_WiFi_SysCaps_Test_0010 end');
             done();
         })
         console.log("*************[wifi_test] start wifi js unit test end*************");
