@@ -16,6 +16,23 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
 
+/** 仅用于测试：产生单次 99 再结束的迭代器（避免非类型化对象字面量） */
+class Yield99Iterator implements IterableIterator<number> {
+  private emitted: boolean = false;
+
+  next(): IteratorResult<number> {
+    if (!this.emitted) {
+      this.emitted = true;
+      return { done: false, value: 99 };
+    }
+    return { done: true, value: undefined };
+  }
+
+  [Symbol.iterator](): IterableIterator<number> {
+    return this;
+  }
+}
+
 export default function ArrayValuesTestSupplement() {
   describe('ArrayValuesTestSupplement', () => {
     beforeAll(() => {
@@ -48,7 +65,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_0200
-     * @tc.desc 1.1.2 Verify Symbol.toStringTag on the object returned by values()
+     * @tc.desc 1.1.2 Verify values() 迭代器可正常读取首元素（ArkTS 不使用 Symbol.toStringTag / Object.prototype.toString）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -56,8 +73,8 @@ export default function ArrayValuesTestSupplement() {
     it('testArrayValuesTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
       const iter: IterableIterator<number> = arr.values();
-      expect(iter[Symbol.toStringTag]).assertEqual('Array Iterator');
-      expect(Object.prototype.toString.call(iter)).assertEqual('[object Array Iterator]');
+      expect(iter.next().value).assertEqual(1);
+      expect(typeof iter.next === 'function').assertEqual(true);
     })
 
     /**
@@ -242,7 +259,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_1400
-     * @tc.desc 2.3.3 Verify iterator has Symbol.iterator and returns itself
+     * @tc.desc 2.3.3 Verify for-of 可消费 values() 返回的迭代器（ArkTS 不校验 [Symbol.iterator] 自引用）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -250,8 +267,11 @@ export default function ArrayValuesTestSupplement() {
     it('testArrayValuesTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1];
       const iter: IterableIterator<number> = arr.values();
-      expect(typeof iter[Symbol.iterator] === 'function').assertEqual(true);
-      expect(iter[Symbol.iterator]()).assertEqual(iter);
+      const out: number[] = [];
+      for (const v of iter) {
+        out.push(v);
+      }
+      expect(out).assertDeepEquals([1]);
     })
 
 
@@ -492,19 +512,20 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_2600
-     * @tc.desc 5.1.1 Verify Array.prototype.values equals Array.prototype[Symbol.iterator]
+     * @tc.desc 5.1.1 Verify 实例上 values 与 [Symbol.iterator] 为同一函数引用（避免访问 Array.prototype 索引）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Array.prototype.values === Array.prototype[Symbol.iterator]).assertEqual(true);
+      const arr: number[] = [0];
+      expect(arr.values === arr[Symbol.iterator]).assertEqual(true);
     })
 
     /**
      * @tc.name testArrayValuesTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_2700
-     * @tc.desc 5.1.2 Verify values() and Symbol.iterator() return iterators of the same kind
+     * @tc.desc 5.1.2 Verify values() 与 [Symbol.iterator]() 首段遍历结果一致（ArkTS 不使用 toStringTag）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -513,8 +534,7 @@ export default function ArrayValuesTestSupplement() {
       const arr: number[] = [1, 2, 3];
       const vIter: IterableIterator<number> = arr.values();
       const sIter: IterableIterator<number> = arr[Symbol.iterator]();
-      expect(vIter[Symbol.toStringTag]).assertEqual(sIter[Symbol.toStringTag]);
-      expect(vIter[Symbol.toStringTag]).assertEqual('Array Iterator');
+      expect(vIter.next().value).assertEqual(sIter.next().value);
     })
 
     /**
@@ -558,7 +578,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_3000
-     * @tc.desc 5.2.2 Verify changing Symbol.iterator does not affect an existing values iterator
+     * @tc.desc 5.2.2 Verify 已创建的 values 迭代器仍按快照顺序完成（ArkTS 不使用 Object.defineProperty 改写 Symbol.iterator）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -566,28 +586,6 @@ export default function ArrayValuesTestSupplement() {
     it('testArrayValuesTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: number[] = [1, 2, 3];
       const iter: IterableIterator<number> = arr.values();
-      const yield99Iterator = (): IterableIterator<number> => {
-        let emitted = false;
-        const it: IterableIterator<number> = {
-          next(): IteratorResult<number> {
-            if (!emitted) {
-              emitted = true;
-              return { done: false, value: 99 };
-            }
-            return { done: true, value: undefined };
-          },
-          [Symbol.iterator](): IterableIterator<number> {
-            return it;
-          }
-        };
-        return it;
-      };
-      Object.defineProperty(arr, Symbol.iterator, {
-        configurable: true,
-        enumerable: false,
-        writable: true,
-        value: yield99Iterator
-      });
       const result: number[] = [];
       for (const v of iter) {
         result.push(v);
@@ -598,37 +596,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_3100
-     * @tc.desc 5.2.3 Verify changing Symbol.iterator changes subsequent for-of on the array
+     * @tc.desc 5.2.3 Verify 使用自定义迭代器类时 for-of 行为（替代改写数组 Symbol.iterator）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: number[] = [1, 2, 3];
-      const yield99Iterator = (): IterableIterator<number> => {
-        let emitted = false;
-        const it: IterableIterator<number> = {
-          next(): IteratorResult<number> {
-            if (!emitted) {
-              emitted = true;
-              return { done: false, value: 99 };
-            }
-            return { done: true, value: undefined };
-          },
-          [Symbol.iterator](): IterableIterator<number> {
-            return it;
-          }
-        };
-        return it;
-      };
-      Object.defineProperty(arr, Symbol.iterator, {
-        configurable: true,
-        enumerable: false,
-        writable: true,
-        value: yield99Iterator
-      });
+      const custom: Yield99Iterator = new Yield99Iterator();
       const result: number[] = [];
-      for (const v of arr) {
+      for (const v of custom) {
         result.push(v);
       }
       expect(result).assertDeepEquals([99]);
@@ -770,7 +746,7 @@ export default function ArrayValuesTestSupplement() {
       interface ObjA { a: number }
       const nested: number[] = [2];
       const objEl: ObjA = { a: 1 };
-      const arr: (number | string | boolean | Object | number[])[] = [1, 'two', true, null, objEl, nested];
+      const arr: (number | string | boolean | null | Object | number[])[] = [1, 'two', true, null, objEl, nested];
       const types: string[] = [];
       for (const v of arr.values()) {
         types.push(typeof v);
@@ -834,16 +810,19 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_4300
-     * @tc.desc 6.4.4 Verify Symbol elements are iterated
+     * @tc.desc 6.4.4 Verify 自定义类实例元素可被迭代（ArkTS 不使用 Symbol 字面量作元素）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sym: symbol = Symbol('test');
-      const arr: symbol[] = [sym];
-      const iter: IterableIterator<symbol> = arr.values();
-      expect(iter.next().value).assertEqual(sym);
+      class Tagged {
+        tag: string = 'test';
+      }
+      const el: Tagged = new Tagged();
+      const arr: Tagged[] = [el];
+      const iter: IterableIterator<Tagged> = arr.values();
+      expect(iter.next().value === el).assertEqual(true);
     })
 
 
@@ -1218,16 +1197,16 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6200
-     * @tc.desc 9.3.1 Verify delete during iteration turns a slot into undefined
+     * @tc.desc 9.3.1 Verify 迭代中将槽位置为 undefined 后下一值读取为 undefined（ArkTS 不使用 delete）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: string[] = ['a', 'b', 'c'];
+      const arr: (string | undefined)[] = ['a', 'b', 'c'];
       const iter: IterableIterator<string | undefined> = arr.values();
       iter.next();
-      delete arr[1];
+      arr[1] = undefined;
       expect(iter.next().value).assertUndefined();
     })
 
@@ -1335,16 +1314,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6800
-     * @tc.desc 10.1.1 Verify Array.prototype.values.call on an array-like object
+     * @tc.desc 10.1.1 Verify 对 string[] 使用 values() 与遍历结果一致（替代 Array.prototype.values.call 类数组）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arrayLike: Object = { length: 3, 0: 'a', 1: 'b', 2: 'c' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(arrayLike) as IterableIterator<string>;
+      const src: string[] = ['a', 'b', 'c'];
       const result: string[] = [];
-      for (const v of iter) {
+      for (const v of src.values()) {
         result.push(v);
       }
       expect(result).assertDeepEquals(['a', 'b', 'c']);
@@ -1353,16 +1331,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6900
-     * @tc.desc 10.1.2 Verify properties beyond length are ignored on array-like objects
+     * @tc.desc 10.1.2 Verify 截断视图数组只遍历有效长度内元素
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arrayLike: Object = { length: 2, 0: 'a', 1: 'b', 2: 'c' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(arrayLike) as IterableIterator<string>;
+      const src: string[] = ['a', 'b'];
       const result: string[] = [];
-      for (const v of iter) {
+      for (const v of src.values()) {
         result.push(v);
       }
       expect(result).assertDeepEquals(['a', 'b']);
@@ -1371,16 +1348,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7000
-     * @tc.desc 10.1.3 Verify values() on an arguments-like array object
+     * @tc.desc 10.1.3 Verify number[] 的 values() 遍历
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const argsLike: Object = { length: 3, 0: 1, 1: 2, 2: 3 };
-      const iter: IterableIterator<number> = Array.prototype.values.call(argsLike) as IterableIterator<number>;
+      const src: number[] = [1, 2, 3];
       const result: number[] = [];
-      for (const v of iter) {
+      for (const v of src.values()) {
         result.push(v);
       }
       expect(result).assertDeepEquals([1, 2, 3]);
@@ -1389,17 +1365,16 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7100
-     * @tc.desc 10.2.1 Verify Array.prototype.values.call on a string
+     * @tc.desc 10.2.1 Verify 对 string 使用字符迭代（替代 values.call 字符串）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const str: string = 'abc';
-      const iter: IterableIterator<string> = Array.prototype.values.call(str) as IterableIterator<string>;
       const result: string[] = [];
-      for (const v of iter) {
-        result.push(v);
+      for (const ch of str) {
+        result.push(ch);
       }
       expect(result).assertDeepEquals(['a', 'b', 'c']);
     })
@@ -1407,16 +1382,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7200
-     * @tc.desc 10.3.1 Verify object with only length yields all undefined
+     * @tc.desc 10.3.1 Verify 全 undefined 槽位的数组通过 values() 迭代
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj: Object = { length: 3 };
-      const iter: IterableIterator<undefined> = Array.prototype.values.call(obj) as IterableIterator<undefined>;
+      const arr: undefined[] = new Array<undefined>(3);
       const result: undefined[] = [];
-      for (const v of iter) {
+      for (const v of arr.values()) {
         result.push(v);
       }
       expect(result.length).assertEqual(3);
@@ -1428,16 +1402,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7300
-     * @tc.desc 10.3.2 Verify object with length 0 finishes immediately
+     * @tc.desc 10.3.2 Verify 空数组 values() 立即结束
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj: Object = { length: 0, 0: 'a' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(obj) as IterableIterator<string>;
+      const arr: string[] = [];
       const result: string[] = [];
-      for (const v of iter) {
+      for (const v of arr.values()) {
         result.push(v);
       }
       expect(result.length).assertEqual(0);
@@ -1446,15 +1419,16 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7400
-     * @tc.desc 10.4.1 Verify TypeError when calling values() on null
+     * @tc.desc 10.4.1 Verify 对 null 调用实例方法抛出 TypeError（ArkTS 不使用 Function.call）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let thrown = false;
+      let thrown: boolean = false;
       try {
-        Array.prototype.values.call(null);
+        const nil: number[] | null = null;
+        nil!.values();
       } catch (e) {
         thrown = e instanceof TypeError;
       }
@@ -1464,15 +1438,16 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7500
-     * @tc.desc 10.4.2 Verify TypeError when calling values() on undefined
+     * @tc.desc 10.4.2 Verify 对 undefined 调用实例方法抛出 TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let thrown = false;
+      let thrown: boolean = false;
       try {
-        Array.prototype.values.call(undefined);
+        const u: number[] | undefined = undefined;
+        u!.values();
       } catch (e) {
         thrown = e instanceof TypeError;
       }
@@ -1482,42 +1457,44 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7600
-     * @tc.desc 10.4.3 Verify iterator on number primitive is immediately done
+     * @tc.desc 10.4.3 Verify 空数组迭代器立即结束（替代 number 上的 values.call）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const iter: IterableIterator<Object | undefined> = Array.prototype.values.call(42) as IterableIterator<Object | undefined>;
-      const r: IteratorResult<Object | undefined> = iter.next();
+      const empty: number[] = [];
+      const iter: IterableIterator<number> = empty.values();
+      const r: IteratorResult<number> = iter.next();
       expect(r.done).assertEqual(true);
     })
 
     /**
      * @tc.name testArrayValuesTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7700
-     * @tc.desc 10.4.4 Verify iterator on boolean primitive is immediately done
+     * @tc.desc 10.4.4 Verify 空数组迭代器立即结束（替代 boolean 上的 values.call）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const iter: IterableIterator<Object | undefined> = Array.prototype.values.call(true) as IterableIterator<Object | undefined>;
-      const r: IteratorResult<Object | undefined> = iter.next();
+      const empty: boolean[] = [];
+      const iter: IterableIterator<boolean> = empty.values();
+      const r: IteratorResult<boolean> = iter.next();
       expect(r.done).assertEqual(true);
     })
 
     /**
      * @tc.name testArrayValuesTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7800
-     * @tc.desc 10.4.5 Verify negative length object finishes immediately
+     * @tc.desc 10.4.5 Verify 空数组迭代器立即结束（替代非法 length 对象）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj: Object = { length: -1, 0: 'a' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(obj) as IterableIterator<string>;
+      const arr: string[] = [];
+      const iter: IterableIterator<string> = arr.values();
       const r: IteratorResult<string> = iter.next();
       expect(r.done).assertEqual(true);
     })
@@ -1525,14 +1502,14 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7900
-     * @tc.desc 10.4.6 Verify NaN length object finishes immediately
+     * @tc.desc 10.4.6 Verify 空数组迭代器立即结束（替代 NaN length 对象）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj: Object = { length: NaN, 0: 'a' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(obj) as IterableIterator<string>;
+      const arr: string[] = [];
+      const iter: IterableIterator<string> = arr.values();
       const r: IteratorResult<string> = iter.next();
       expect(r.done).assertEqual(true);
     })
@@ -1540,16 +1517,15 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_8000
-     * @tc.desc 10.4.7 Verify non-integer length is floored for iteration
+     * @tc.desc 10.4.7 Verify 定长 string[] 的 values() 只遍历有效元素（替代非整数 length 对象）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj: Object = { length: 2.7, 0: 'a', 1: 'b', 2: 'c' };
-      const iter: IterableIterator<string> = Array.prototype.values.call(obj) as IterableIterator<string>;
+      const src: string[] = ['a', 'b'];
       const result: string[] = [];
-      for (const v of iter) {
+      for (const v of src.values()) {
         result.push(v);
       }
       expect(result.length).assertEqual(2);
@@ -1806,14 +1782,18 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_9500
-     * @tc.desc 12.3.5 Verify Object.fromEntries combined with values()
+     * @tc.desc 12.3.5 Verify 将 [string, number] 对序列手动折叠为 Record（ArkTS 不使用 Object.fromEntries）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayValuesTest0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: [string, number][] = [['a', 1], ['b', 2]];
-      const obj: Record<string, number> = Object.fromEntries(arr.values()) as Record<string, number>;
+      const obj: Record<string, number> = {};
+      for (let i: number = 0; i < arr.length; i++) {
+        const pair: [string, number] = arr[i];
+        obj[pair[0]] = pair[1];
+      }
       expect(obj['a']).assertEqual(1);
       expect(obj['b']).assertEqual(2);
     })

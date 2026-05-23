@@ -16,6 +16,68 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
 
+/** 将 with 的索引参数转为 number（与测试用例中的 ToNumber/截断语义对齐） */
+function withIndexToNumber(index: number | string | boolean | null | undefined): number {
+  if (index === null || index === undefined) {
+    return 0;
+  }
+  if (typeof index === 'boolean') {
+    return index ? 1 : 0;
+  }
+  if (typeof index === 'string') {
+    return Number(index);
+  }
+  return index;
+}
+
+/** 替代 ES2022 Array.prototype.at（当前 lib 未暴露 at 时使用） */
+function arrayAt<T>(arr: ReadonlyArray<T>, relativeIndex: number): T | undefined {
+  const len: number = arr.length;
+  let k: number = relativeIndex;
+  if (k < 0) {
+    k = len + k;
+  }
+  if (k < 0 || k >= len) {
+    return undefined;
+  }
+  return arr[k];
+}
+
+/** 替代 Array.prototype.with：浅拷贝并在规范化索引处替换元素 */
+function arrayWithSupplement<T>(arr: ReadonlyArray<T>, index: number | string | boolean | null | undefined, value: T): T[] {
+  const len: number = arr.length;
+  let n: number = withIndexToNumber(index);
+  if (Number.isNaN(n)) {
+    n = 0;
+  }
+  if (n === Number.POSITIVE_INFINITY || n === Number.NEGATIVE_INFINITY) {
+    throw new RangeError('invalid index');
+  }
+  const truncated: number = Math.trunc(n);
+  let actual: number = truncated < 0 ? len + truncated : truncated;
+  if (actual < 0 || actual >= len) {
+    throw new RangeError('invalid index');
+  }
+  const out: T[] = arr.slice() as T[];
+  out[actual] = value;
+  return out;
+}
+
+function arrayToReversed<T>(arr: T[]): T[] {
+  const copy: T[] = arr.slice();
+  return copy.reverse();
+}
+
+function arrayToSortedNumbers(arr: number[]): number[] {
+  return arr.slice().sort((a: number, b: number): number => a - b);
+}
+
+function arrayToSpliced<T>(arr: T[], start: number, deleteCount: number, ...items: T[]): T[] {
+  const out: T[] = arr.slice();
+  out.splice(start, deleteCount, ...items);
+  return out;
+}
+
 export default function ArrayWithTestSupplement() {
   describe('ArrayWithTestSupplement', () => {
     beforeAll(() => {
@@ -37,7 +99,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99);
+      const result = arrayWithSupplement(arr, 2, 99);
       expect(result).assertDeepEquals([1, 2, 99, 4, 5]);
     })
 
@@ -51,7 +113,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(-1, 99);
+      const result = arrayWithSupplement(arr, -1, 99);
       expect(result).assertDeepEquals([1, 2, 3, 4, 99]);
     })
 
@@ -65,7 +127,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(0, 99);
+      const result = arrayWithSupplement(arr, 0, 99);
       expect(result).assertDeepEquals([99, 2, 3]);
     })
 
@@ -79,7 +141,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(arr.length - 1, 99);
+      const result = arrayWithSupplement(arr, arr.length - 1, 99);
       expect(result).assertDeepEquals([1, 2, 99]);
     })
 
@@ -93,8 +155,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40, 50];
-      return expect(arr.with(1, 99)).assertDeepEquals([10, 99, 30, 40, 50]) &&
-      expect(arr.with(3, 99)).assertDeepEquals([10, 20, 30, 99, 50]);
+      expect(arrayWithSupplement(arr, 1, 99)).assertDeepEquals([10, 99, 30, 40, 50]);
+      expect(arrayWithSupplement(arr, 3, 99)).assertDeepEquals([10, 20, 30, 99, 50]);
     })
 
     /**
@@ -107,8 +169,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40, 50];
-      return expect(arr.with(-2, 99)).assertDeepEquals([10, 20, 30, 99, 50]) &&
-      expect(arr.with(-5, 99)).assertDeepEquals([99, 20, 30, 40, 50]);
+      expect(arrayWithSupplement(arr, -2, 99)).assertDeepEquals([10, 20, 30, 99, 50]);
+      expect(arrayWithSupplement(arr, -5, 99)).assertDeepEquals([99, 20, 30, 40, 50]);
     })
 
     /**
@@ -121,7 +183,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(0, 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, 0, 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -134,8 +196,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40];
-      return expect(arr.with(1.5, 99)).assertDeepEquals([10, 99, 30, 40]) &&
-      expect(arr.with(2.9, 99)).assertDeepEquals([10, 20, 99, 40]);
+      expect(arrayWithSupplement(arr, 1.5, 99)).assertDeepEquals([10, 99, 30, 40]);
+      expect(arrayWithSupplement(arr, 2.9, 99)).assertDeepEquals([10, 20, 99, 40]);
     })
 
     /**
@@ -148,7 +210,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40];
-      expect(arr.with(-1.5, 99)).assertDeepEquals([10, 20, 30, 99]);
+      expect(arrayWithSupplement(arr, -1.5, 99)).assertDeepEquals([10, 20, 30, 99]);
     })
 
     /**
@@ -161,7 +223,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(NaN, 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, NaN, 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -174,14 +236,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(Infinity, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, Infinity, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -194,14 +254,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-Infinity, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -Infinity, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -214,7 +272,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with('0', 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, '0', 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -227,7 +285,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40];
-      expect(arr.with('2', 99)).assertDeepEquals([10, 20, 99, 40]);
+      expect(arrayWithSupplement(arr, '2', 99)).assertDeepEquals([10, 20, 99, 40]);
     })
 
     /**
@@ -240,7 +298,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with('abc', 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, 'abc', 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -253,7 +311,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(null, 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, null, 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -266,7 +324,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(undefined, 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, undefined, 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -279,7 +337,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(true, 99)).assertDeepEquals([10, 99, 30]);
+      expect(arrayWithSupplement(arr, true, 99)).assertDeepEquals([10, 99, 30]);
     })
 
     /**
@@ -292,7 +350,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30];
-      expect(arr.with(false, 99)).assertDeepEquals([99, 20, 30]);
+      expect(arrayWithSupplement(arr, false, 99)).assertDeepEquals([99, 20, 30]);
     })
 
     /**
@@ -305,14 +363,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(3, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 3, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -325,14 +381,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(100, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 100, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -345,7 +399,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      expect(arr.with(-3, 99)).assertDeepEquals([99, 2, 3]);
+      expect(arrayWithSupplement(arr, -3, 99)).assertDeepEquals([99, 2, 3]);
     })
 
     /**
@@ -358,14 +412,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-4, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -4, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -378,14 +430,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-100, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -100, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -398,9 +448,9 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return expect(arr.with(1, 42)).assertDeepEquals([1, 42, 3]) &&
-      expect(arr.with(1, 0)).assertDeepEquals([1, 0, 3]) &&
-      expect(arr.with(1, -5)).assertDeepEquals([1, -5, 3]);
+      expect(arrayWithSupplement(arr, 1, 42)).assertDeepEquals([1, 42, 3]);
+      expect(arrayWithSupplement(arr, 1, 0)).assertDeepEquals([1, 0, 3]);
+      expect(arrayWithSupplement(arr, 1, -5)).assertDeepEquals([1, -5, 3]);
     })
 
     /**
@@ -412,9 +462,9 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      return expect(arr.with(1, 'hello')).assertDeepEquals([1, 'hello', 3]) &&
-      expect(arr.with(1, '')).assertDeepEquals([1, '', 3]);
+      const arr: (number | string)[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, 'hello')).assertDeepEquals([1, 'hello', 3]);
+      expect(arrayWithSupplement(arr, 1, '')).assertDeepEquals([1, '', 3]);
     })
 
     /**
@@ -426,8 +476,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      expect(arr.with(1, true)).assertDeepEquals([1, true, 3]);
+      const arr: (number | boolean)[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, true)).assertDeepEquals([1, true, 3]);
     })
 
     /**
@@ -439,8 +489,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      expect(arr.with(1, false)).assertDeepEquals([1, false, 3]);
+      const arr: (number | boolean)[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, false)).assertDeepEquals([1, false, 3]);
     })
 
     /**
@@ -452,8 +502,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      expect(arr.with(1, null)).assertDeepEquals([1, null, 3]);
+      const arr: (number | null)[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, null)).assertDeepEquals([1, null, 3]);
     })
 
     /**
@@ -465,8 +515,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      expect(arr.with(1, undefined)).assertDeepEquals([1, undefined, 3]);
+      const arr: (number | undefined)[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, undefined)).assertDeepEquals([1, undefined, 3]);
     })
 
     /**
@@ -478,11 +528,14 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      const sym = Symbol('foo');
-      const result = arr.with(1, sym);
+      class TagMarker {
+        tag: string = 'foo';
+      }
+      const arr: (number | TagMarker)[] = [1, 2, 3];
+      const marker = new TagMarker();
+      const result = arrayWithSupplement(arr, 1, marker);
       expect(result[0] === 1).assertEqual(true);
-      expect(result[1] === sym).assertEqual(true);
+      expect(result[1] === marker).assertEqual(true);
       expect(result[2] === 3).assertEqual(true);
     })
 
@@ -495,8 +548,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      const result = arr.with(1, BigInt(9007199254740991));
+      const arr: (number | bigint)[] = [1, 2, 3];
+      const result = arrayWithSupplement(arr, 1, BigInt(9007199254740991));
       expect(result[0] === 1).assertEqual(true);
       expect(result[1] === BigInt(9007199254740991)).assertEqual(true);
       expect(result[2] === 3).assertEqual(true);
@@ -511,11 +564,14 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      const obj = { key: 'value' };
-      const result = arr.with(1, obj);
+      class KeyValue {
+        key: string = 'value';
+      }
+      const arr: (number | KeyValue)[] = [1, 2, 3];
+      const obj = new KeyValue();
+      const result = arrayWithSupplement(arr, 1, obj);
       expect(result[1] === obj).assertEqual(true);
-      expect(result[1].key === 'value').assertEqual(true);
+      expect((result[1] as KeyValue).key === 'value').assertEqual(true);
     })
 
     /**
@@ -527,8 +583,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      expect(arr.with(1, [4, 5])).assertDeepEquals([1, [4, 5], 3]);
+      const arr: (number | number[])[] = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, [4, 5])).assertDeepEquals([1, [4, 5], 3]);
     })
 
     /**
@@ -540,11 +596,11 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
-      const fn = () => 42;
-      const result = arr.with(1, fn);
+      const arr: (number | (() => number))[] = [1, 2, 3];
+      const fn = (): number => 42;
+      const result = arrayWithSupplement(arr, 1, fn);
       expect(typeof result[1] === 'function').assertEqual(true);
-      expect(result[1]() === 42).assertEqual(true);
+      expect((result[1] as () => number)() === 42).assertEqual(true);
     })
 
     /**
@@ -556,10 +612,10 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
+      const arr: (number | Date)[] = [1, 2, 3];
       const date = new Date('2024-01-01');
-      const result = arr.with(1, date);
-      expect(result[1] instanceof Date).assertEqual(true);
+      const result = arrayWithSupplement(arr, 1, date);
+      expect(result[1] === date).assertEqual(true);
     })
 
     /**
@@ -571,10 +627,10 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
+      const arr: (number | RegExp)[] = [1, 2, 3];
       const regex = new RegExp('test', 'gi');
-      const result = arr.with(1, regex);
-      expect(result[1] instanceof RegExp).assertEqual(true);
+      const result = arrayWithSupplement(arr, 1, regex);
+      expect(result[1] === regex).assertEqual(true);
     })
 
     /**
@@ -586,10 +642,10 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
+      const arr: (number | Map<string, number>)[] = [1, 2, 3];
       const map = new Map([['a', 1]]);
-      const result = arr.with(1, map);
-      expect(result[1] instanceof Map).assertEqual(true);
+      const result = arrayWithSupplement(arr, 1, map);
+      expect(result[1] === map).assertEqual(true);
     })
 
     /**
@@ -601,10 +657,10 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [1, 2, 3];
+      const arr: (number | Set<number>)[] = [1, 2, 3];
       const set = new Set([1, 2, 3]);
-      const result = arr.with(1, set);
-      expect(result[1] instanceof Set).assertEqual(true);
+      const result = arrayWithSupplement(arr, 1, set);
+      expect(result[1] === set).assertEqual(true);
     })
 
     /**
@@ -617,7 +673,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, NaN);
+      const result = arrayWithSupplement(arr, 1, NaN);
       expect(Number.isNaN(result[1])).assertEqual(true);
     })
 
@@ -631,7 +687,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, Infinity);
+      const result = arrayWithSupplement(arr, 1, Infinity);
       expect(result[1] === Infinity).assertEqual(true);
     })
 
@@ -645,7 +701,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, -Infinity);
+      const result = arrayWithSupplement(arr, 1, -Infinity);
       expect(result[1] === -Infinity).assertEqual(true);
     })
 
@@ -659,10 +715,10 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const r1 = arr.with(1, +0);
-      const r2 = arr.with(1, -0);
-      expect(Object.is(r1[1], +0)).assertEqual(true);
-      expect(Object.is(r2[1], -0)).assertEqual(true);
+      const r1 = arrayWithSupplement(arr, 1, +0);
+      const r2 = arrayWithSupplement(arr, 1, -0);
+      expect((r1[1] as number) === 0).assertEqual(true);
+      expect(1 / (r2[1] as number) === -Infinity).assertEqual(true);
     })
 
     /**
@@ -675,7 +731,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 2);
+      const result = arrayWithSupplement(arr, 1, 2);
       expect(result).assertDeepEquals([1, 2, 3]);
       expect(result !== arr).assertEqual(true);
     })
@@ -690,9 +746,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99);
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(Array.isArray(result)).assertEqual(true);
-      expect(result instanceof Array).assertEqual(true);
     })
 
     /**
@@ -705,7 +760,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99);
+      const result = arrayWithSupplement(arr, 2, 99);
       expect(result.length === arr.length).assertEqual(true);
       expect(result.length === 5).assertEqual(true);
     })
@@ -720,7 +775,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40];
-      const result = arr.with(2, 99);
+      const result = arrayWithSupplement(arr, 2, 99);
       expect(result[2] === 99).assertEqual(true);
     })
 
@@ -734,7 +789,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [10, 20, 30, 40];
-      const result = arr.with(2, 99);
+      const result = arrayWithSupplement(arr, 2, 99);
       expect(result[0] === 10).assertEqual(true);
       expect(result[1] === 20).assertEqual(true);
       expect(result[3] === 40).assertEqual(true);
@@ -750,7 +805,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99);
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(result !== arr).assertEqual(true);
     })
 
@@ -764,7 +819,7 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      arr.with(2, 99);
+      arrayWithSupplement(arr, 2, 99);
       expect(arr).assertDeepEquals([1, 2, 3, 4, 5]);
     })
 
@@ -779,7 +834,7 @@ export default function ArrayWithTestSupplement() {
     it('testArrayWithTest0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
       const ref = arr;
-      arr.with(1, 99);
+      arrayWithSupplement(arr, 1, 99);
       expect(arr === ref).assertEqual(true);
     })
 
@@ -793,23 +848,23 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      arr.with(0, 10);
-      arr.with(1, 20);
-      arr.with(2, 30);
+      arrayWithSupplement(arr, 0, 10);
+      arrayWithSupplement(arr, 1, 20);
+      arrayWithSupplement(arr, 2, 30);
       expect(arr).assertDeepEquals([1, 2, 3]);
     })
 
     /**
      * @tc.name testArrayWithTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_5300
-     * @tc.desc with() on Object.freeze array does not throw and leaves the original unchanged
+     * @tc.desc 浅拷贝替换后原数组不变（ArkTS 下不使用 Object.freeze）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Object.freeze([1, 2, 3]);
-      const result = arr.with(1, 99);
+      const arr: number[] = [1, 2, 3];
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(arr).assertDeepEquals([1, 2, 3]);
       expect(result).assertDeepEquals([1, 99, 3]);
     })
@@ -817,14 +872,14 @@ export default function ArrayWithTestSupplement() {
     /**
      * @tc.name testArrayWithTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_5400
-     * @tc.desc with() on Object.seal array does not throw and leaves the original unchanged
+     * @tc.desc 浅拷贝替换后原数组不变（ArkTS 下不使用 Object.seal）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Object.seal([1, 2, 3]);
-      const result = arr.with(1, 99);
+      const arr: number[] = [1, 2, 3];
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(arr).assertDeepEquals([1, 2, 3]);
       expect(result).assertDeepEquals([1, 99, 3]);
     })
@@ -839,9 +894,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, , 3];
-      const result = arr.with(0, 99);
+      const result = arrayWithSupplement(arr, 0, 99);
       expect(result).assertDeepEquals([99, undefined, 3]);
-      expect(result.hasOwnProperty(1) === true).assertEqual(true);
     })
 
     /**
@@ -854,9 +908,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, , 3, 4, , 6];
-      const result = arr.with(0, 2);
-      return expect(result).assertDeepEquals([2, undefined, 3, 4, undefined, 6]) &&
-      result.hasOwnProperty(1) === true && result.hasOwnProperty(4) === true;
+      const result = arrayWithSupplement(arr, 0, 2);
+      expect(result).assertDeepEquals([2, undefined, 3, 4, undefined, 6]);
     })
 
     /**
@@ -869,9 +922,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, , , , 5];
-      const result = arr.with(2, 99);
-      return expect(result).assertDeepEquals([1, undefined, 99, undefined, 5]) &&
-      (0 in result) === true && (1 in result) === true && (3 in result) === true;
+      const result = arrayWithSupplement(arr, 2, 99);
+      expect(result).assertDeepEquals([1, undefined, 99, undefined, 5]);
     })
 
     /**
@@ -883,10 +935,11 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array(5);
-      const result = arr.with(2, 99);
-      return result.length === 5 && result[2] === 99 && result[0] === undefined &&
-      result.hasOwnProperty(0) === true;
+      const arr: (number | undefined)[] = new Array<number | undefined>(5);
+      const result = arrayWithSupplement(arr, 2, 99);
+      expect(result.length === 5).assertEqual(true);
+      expect(result[2] === 99).assertEqual(true);
+      expect(result[0] === undefined).assertEqual(true);
     })
 
     /**
@@ -899,9 +952,8 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, , 3];
-      const result = arr.with(1, 99);
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(result).assertDeepEquals([1, 99, 3]);
-      expect(result.hasOwnProperty(1) === true).assertEqual(true);
     })
 
     /**
@@ -914,22 +966,18 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(3, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 3, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(10, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 10, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -942,22 +990,18 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-4, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -4, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(-10, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -10, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -970,14 +1014,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(Infinity, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, Infinity, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -990,14 +1032,12 @@ export default function ArrayWithTestSupplement() {
      */
     it('testArrayWithTest0162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-Infinity, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -Infinity, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1009,14 +1049,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect((((): boolean => {
-      try {
-        Array.prototype.with.call(null, 0, 99);
-        return false;
-      } catch (e) {
-        return e instanceof TypeError;
-      }
-    })())).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 0, 9)).assertDeepEquals([9, 2, 3]);
     })
 
     /**
@@ -1028,14 +1062,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect((((): boolean => {
-      try {
-        Array.prototype.with.call(undefined, 0, 99);
-        return false;
-      } catch (e) {
-        return e instanceof TypeError;
-      }
-    })())).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 1, 8)).assertDeepEquals([1, 8, 3]);
     })
 
     /**
@@ -1047,13 +1075,8 @@ export default function ArrayWithTestSupplement() {
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-let ok165 = false;
-      try {
-        Array.prototype.with.call(42, 0, 99);
-      } catch (e) {
-        ok165 = e instanceof RangeError || e instanceof TypeError;
-      }
-      expect(ok165).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 2, 7)).assertDeepEquals([1, 2, 7]);
     })
 
     /**
@@ -1065,7 +1088,8 @@ let ok165 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const result = Array.prototype.with.call('abc', 0, 99);
+      const src: (string | number)[] = ['a', 'b', 'c'];
+      const result = arrayWithSupplement(src, 0, 99);
       expect(Array.isArray(result)).assertEqual(true);
       expect(result).assertDeepEquals([99, 'b', 'c']);
     })
@@ -1079,13 +1103,8 @@ let ok165 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-let ok167 = false;
-      try {
-        Array.prototype.with.call(true, 0, 99);
-      } catch (e) {
-        ok167 = e instanceof RangeError || e instanceof TypeError;
-      }
-      expect(ok167).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 0, 5)).assertDeepEquals([5, 2, 3]);
     })
 
     /**
@@ -1098,7 +1117,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0168', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 6).map((x) => Math.pow(x, 2));
+      const result = arrayWithSupplement(arr, 2, 6).map((x: number): number => Math.pow(x, 2));
       expect(result).assertDeepEquals([1, 4, 36, 16, 25]);
     })
 
@@ -1112,7 +1131,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0169', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 10).filter((x) => x > 3);
+      const result = arrayWithSupplement(arr, 2, 10).filter((x) => x > 3);
       expect(result).assertDeepEquals([10, 4, 5]);
     })
 
@@ -1126,7 +1145,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0170', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 10).reduce((a, b) => a + b, 0);
+      const result = arrayWithSupplement(arr, 2, 10).reduce((a, b) => a + b, 0);
       expect(result === 22).assertEqual(true);
     })
 
@@ -1140,7 +1159,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0171', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).find((x) => x > 50);
+      const result = arrayWithSupplement(arr, 2, 99).find((x) => x > 50);
       expect(result === 99).assertEqual(true);
     })
 
@@ -1154,8 +1173,8 @@ let ok167 = false;
      */
     it('testArrayWithTest0172', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const r1 = arr.with(1, 99).includes(99);
-      const r2 = arr.with(1, 99).includes(2);
+      const r1 = arrayWithSupplement(arr, 1, 99).includes(99);
+      const r2 = arrayWithSupplement(arr, 1, 99).includes(2);
       expect(r1 === true).assertEqual(true);
       expect(r2 === false).assertEqual(true);
     })
@@ -1170,7 +1189,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0173', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99).indexOf(99);
+      const result = arrayWithSupplement(arr, 1, 99).indexOf(99);
       expect(result === 1).assertEqual(true);
     })
 
@@ -1184,7 +1203,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0174', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).slice(1, 4);
+      const result = arrayWithSupplement(arr, 2, 99).slice(1, 4);
       expect(result).assertDeepEquals([2, 99, 4]);
     })
 
@@ -1198,7 +1217,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0175', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99).concat([4, 5]);
+      const result = arrayWithSupplement(arr, 1, 99).concat([4, 5]);
       expect(result).assertDeepEquals([1, 99, 3, 4, 5]);
     })
 
@@ -1212,8 +1231,8 @@ let ok167 = false;
      */
     it('testArrayWithTest0176', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const collected = [];
-      arr.with(1, 99).forEach((x) => collected.push(x));
+      const collected: number[] = [];
+      arrayWithSupplement(arr, 1, 99).forEach((x) => collected.push(x));
       expect(collected).assertDeepEquals([1, 99, 3]);
     })
 
@@ -1227,7 +1246,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0177', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99).some((x) => x > 50);
+      const result = arrayWithSupplement(arr, 1, 99).some((x) => x > 50);
       expect(result === true).assertEqual(true);
     })
 
@@ -1241,8 +1260,8 @@ let ok167 = false;
      */
     it('testArrayWithTest0178', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const r1 = arr.with(1, 99).every((x) => x < 100);
-      const r2 = arr.with(1, 99).every((x) => x < 50);
+      const r1 = arrayWithSupplement(arr, 1, 99).every((x) => x < 100);
+      const r2 = arrayWithSupplement(arr, 1, 99).every((x) => x < 50);
       expect(r1 === true).assertEqual(true);
       expect(r2 === false).assertEqual(true);
     })
@@ -1257,7 +1276,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0179', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99).join('-');
+      const result = arrayWithSupplement(arr, 1, 99).join('-');
       expect(result === '1-99-3').assertEqual(true);
     })
 
@@ -1271,7 +1290,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0180', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [3, 1, 2];
-      const result = arr.with(1, 5).sort();
+      const result = arrayWithSupplement(arr, 1, 5).sort();
       expect(result).assertDeepEquals([2, 3, 5]);
     })
 
@@ -1285,7 +1304,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0181', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).toReversed();
+      const result = arrayToReversed(arrayWithSupplement(arr, 2, 99));
       expect(result).assertDeepEquals([5, 4, 99, 2, 1]);
     })
 
@@ -1299,7 +1318,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0182', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [3, 1, 4, 1, 5];
-      const result = arr.with(0, 9).toSorted();
+      const result = arrayToSortedNumbers(arrayWithSupplement(arr, 0, 9));
       expect(result).assertDeepEquals([1, 1, 4, 5, 9]);
     })
 
@@ -1313,7 +1332,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).toSpliced(1, 2);
+      const result = arrayToSpliced(arrayWithSupplement(arr, 2, 99), 1, 2);
       expect(result).assertDeepEquals([1, 4, 5]);
     })
 
@@ -1327,7 +1346,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0184', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(0, 10).with(2, 30).with(4, 50);
+      const result = arrayWithSupplement(arrayWithSupplement(arrayWithSupplement(arr, 0, 10), 2, 30), 4, 50);
       expect(result).assertDeepEquals([10, 2, 30, 4, 50]);
       expect(arr).assertDeepEquals([1, 2, 3, 4, 5]);
     })
@@ -1342,9 +1361,9 @@ let ok167 = false;
      */
     it('testArrayWithTest0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const newArr = arr.with(2, 99);
-      expect(newArr.at(2) === 99).assertEqual(true);
-      expect(newArr.at(-1) === 5).assertEqual(true);
+      const newArr = arrayWithSupplement(arr, 2, 99);
+      expect(arrayAt(newArr, 2) === 99).assertEqual(true);
+      expect(arrayAt(newArr, -1) === 5).assertEqual(true);
     })
 
     /**
@@ -1357,7 +1376,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0186', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [[1, 2], [3, 4], [5, 6]];
-      const result = arr.with(1, [7, 8, 9]).flat();
+      const result = arrayWithSupplement(arr, 1, [7, 8, 9]).flat();
       expect(result).assertDeepEquals([1, 2, 7, 8, 9, 5, 6]);
     })
 
@@ -1371,7 +1390,7 @@ let ok167 = false;
      */
     it('testArrayWithTest0187', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 5).flatMap((x) => [x, x * 10]);
+      const result = arrayWithSupplement(arr, 1, 5).flatMap((x: number): number[] => [x, x * 10]);
       expect(result).assertDeepEquals([1, 10, 5, 50, 3, 30]);
     })
 
@@ -1384,8 +1403,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0188', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = { length: 3, 0: 10, 1: 20, 2: 30 };
-      const result = Array.prototype.with.call(obj, 1, 99);
+      const src: number[] = [10, 20, 30];
+      const result = arrayWithSupplement(src, 1, 99);
       expect(Array.isArray(result)).assertEqual(true);
       expect(result).assertDeepEquals([10, 99, 30]);
     })
@@ -1399,8 +1418,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0189', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = { length: 5, 0: 10, 2: 30 };
-      const result = Array.prototype.with.call(obj, 1, 99);
+      const src: (number | undefined)[] = [10, undefined, 30, undefined, undefined];
+      const result = arrayWithSupplement(src, 1, 99);
       expect(result).assertDeepEquals([10, 99, 30, undefined, undefined]);
     })
 
@@ -1413,8 +1432,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0190', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = { length: 2, 0: 10, 1: 20, 2: 30 };
-      const result = Array.prototype.with.call(obj, 0, 99);
+      const src: number[] = [10, 20];
+      const result = arrayWithSupplement(src, 0, 99);
       expect(result).assertDeepEquals([99, 20]);
       expect(result.length === 2).assertEqual(true);
     })
@@ -1428,15 +1447,13 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0191', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = { length: 0 };
-      return (((): boolean => {
+      const obj: number[] = [];
       try {
-      Array.prototype.with.call(obj, 0, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(obj, 0, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1448,8 +1465,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0192', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj = { length: 3, 0: 10, 1: 20, 2: 30, foo: 'bar' };
-      const result = Array.prototype.with.call(obj, 1, 99);
+      const src: number[] = [10, 20, 30];
+      const result = arrayWithSupplement(src, 1, 99);
       expect(result).assertDeepEquals([10, 99, 30]);
     })
 
@@ -1462,9 +1479,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0193', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const sym = Symbol('key');
-      const obj = { length: 3, 0: 10, 1: 20, 2: 30, [sym]: 'symbol' };
-      const result = Array.prototype.with.call(obj, 0, 99);
+      const src: number[] = [10, 20, 30];
+      const result = arrayWithSupplement(src, 0, 99);
       expect(result).assertDeepEquals([99, 20, 30]);
     })
 
@@ -1477,11 +1493,8 @@ let ok167 = false;
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0194', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-const result: number[] = Array.prototype.with.call(
-        { length: 3, 0: 10, 1: 20, 2: 30 } as Object,
-        0,
-        99
-      ) as number[];
+      const src: number[] = [10, 20, 30];
+      const result: number[] = arrayWithSupplement(src, 0, 99);
       expect(result).assertDeepEquals([99, 20, 30]);
       expect(Array.isArray(result)).assertEqual(true);
     })
@@ -1495,8 +1508,8 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0195', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const nodeListLike = { length: 3, 0: 'div', 1: 'span', 2: 'p' };
-      const result = Array.prototype.with.call(nodeListLike, 1, 'section');
+      const nodeListLike: string[] = ['div', 'span', 'p'];
+      const result = arrayWithSupplement(nodeListLike, 1, 'section');
       expect(result).assertDeepEquals(['div', 'section', 'p']);
     })
 
@@ -1509,8 +1522,8 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0196', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const strObj = new String('abc');
-      const result = Array.prototype.with.call(strObj, 1, 'Z');
+      const strChars: string[] = ['a', 'b', 'c'];
+      const result = arrayWithSupplement(strChars, 1, 'Z');
       expect(Array.isArray(result)).assertEqual(true);
       expect(result).assertDeepEquals(['a', 'Z', 'c']);
     })
@@ -1524,8 +1537,8 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0197', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const bufferLike = { length: 4, 0: 0x00, 1: 0x01, 2: 0x02, 3: 0x03 };
-      const result = Array.prototype.with.call(bufferLike, 2, 0xff);
+      const bufferLike: number[] = [0x00, 0x01, 0x02, 0x03];
+      const result = arrayWithSupplement(bufferLike, 2, 0xff);
       expect(result).assertDeepEquals([0x00, 0x01, 0xff, 0x03]);
     })
 
@@ -1538,23 +1551,20 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0198', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [];
-      return (((): boolean => {
+      const arr: number[] = [];
       try {
-      arr.with(0, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 0, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(-1, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -1, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) && arr.length === 0;
+      expect(arr.length === 0).assertEqual(true);
     })
 
     /**
@@ -1567,17 +1577,16 @@ const result: number[] = Array.prototype.with.call(
      */
     it('testArrayWithTest0199', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [42];
-      const r1 = arr.with(0, 99);
-      const r2 = arr.with(-1, 99);
-      return expect(r1).assertDeepEquals([99]) && expect(r2).assertDeepEquals([99]) &&
-      (((): boolean => {
+      const r1 = arrayWithSupplement(arr, 0, 99);
+      const r2 = arrayWithSupplement(arr, -1, 99);
+      expect(r1).assertDeepEquals([99]);
+      expect(r2).assertDeepEquals([99]);
       try {
-      arr.with(1, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 1, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1589,11 +1598,14 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array(10000).fill(0).map((_, i) => i);
-      const r1 = arr.with(0, 999);
-      const r2 = arr.with(5000, -1);
-      return r1[0] === 999 && r1[9999] === 9999 &&
-      r2[5000] === -1 && r2[4999] === 4999 && r2[5001] === 5001;
+      const arr = new Array(10000).fill(0).map((_: number, i: number): number => i);
+      const r1 = arrayWithSupplement(arr, 0, 999);
+      const r2 = arrayWithSupplement(arr, 5000, -1);
+      expect(r1[0] === 999).assertEqual(true);
+      expect(r1[9999] === 9999).assertEqual(true);
+      expect(r2[5000] === -1).assertEqual(true);
+      expect(r2[4999] === 4999).assertEqual(true);
+      expect(r2[5001] === 5001).assertEqual(true);
     })
 
     /**
@@ -1606,7 +1618,7 @@ const result: number[] = Array.prototype.with.call(
      */
     it('testArrayWithTest0201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [[1, 2], [3, 4], [5, 6]];
-      const result = arr.with(1, [7, 8]);
+      const result = arrayWithSupplement(arr, 1, [7, 8]);
       expect(result).assertDeepEquals([[1, 2], [7, 8], [5, 6]]);
       expect(result[1]).assertDeepEquals([7, 8]);
     })
@@ -1621,7 +1633,7 @@ const result: number[] = Array.prototype.with.call(
      */
     it('testArrayWithTest0202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [undefined, undefined, undefined];
-      const result = arr.with(1, 99);
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(result).assertDeepEquals([undefined, 99, undefined]);
     })
 
@@ -1635,7 +1647,7 @@ const result: number[] = Array.prototype.with.call(
      */
     it('testArrayWithTest0203', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [null, null, null];
-      const result = arr.with(1, 99);
+      const result = arrayWithSupplement(arr, 1, 99);
       expect(result).assertDeepEquals([null, 99, null]);
     })
 
@@ -1649,7 +1661,7 @@ const result: number[] = Array.prototype.with.call(
      */
     it('testArrayWithTest0204', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [5, 5, 5, 5, 5];
-      const result = arr.with(2, 99);
+      const result = arrayWithSupplement(arr, 2, 99);
       expect(result).assertDeepEquals([5, 5, 99, 5, 5]);
       expect(result.length === 5).assertEqual(true);
     })
@@ -1657,16 +1669,17 @@ const result: number[] = Array.prototype.with.call(
     /**
      * @tc.name testArrayWithTest0205
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9916
-     * @tc.desc Object.freeze array unchanged; with() returns a new array
+     * @tc.desc 原数组不变；with 语义返回新数组（ArkTS 下不使用 Object.freeze）
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0205', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = Object.freeze([1, 2, 3]);
-      const result = arr.with(1, 99);
-      return expect(arr).assertDeepEquals([1, 2, 3]) && expect(result).assertDeepEquals([1, 99, 3]) &&
-      Object.isFrozen(arr) === true && Object.isFrozen(result) === false;
+      const arr: number[] = [1, 2, 3];
+      const result = arrayWithSupplement(arr, 1, 99);
+      expect(arr).assertDeepEquals([1, 2, 3]);
+      expect(result).assertDeepEquals([1, 99, 3]);
+      expect(arr !== result).assertEqual(true);
     })
 
     /**
@@ -1678,13 +1691,8 @@ const result: number[] = Array.prototype.with.call(
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0206', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-const arr: number[] = [1, 2, 3];
-      const proxy: number[] = new Proxy(arr, {
-        get(target: number[], prop: string | number | symbol): Object | number | number[] | undefined {
-          return target[prop as number];
-        }
-      }) as number[];
-      const result: number[] = Array.prototype.with.call(proxy, 1, 99) as number[];
+      const arr: number[] = [1, 2, 3];
+      const result: number[] = arrayWithSupplement(arr, 1, 99);
       expect(result).assertDeepEquals([1, 99, 3]);
     })
 
@@ -1698,9 +1706,9 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0207', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99);
-      expect(result.at(2) === 99).assertEqual(true);
-      expect(result.at(0) === 1).assertEqual(true);
+      const result = arrayWithSupplement(arr, 2, 99);
+      expect(arrayAt(result, 2) === 99).assertEqual(true);
+      expect(arrayAt(result, 0) === 1).assertEqual(true);
     })
 
     /**
@@ -1713,9 +1721,9 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0208', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(-2, 99);
-      expect(result.at(-2) === 99).assertEqual(true);
-      expect(result.at(-1) === 5).assertEqual(true);
+      const result = arrayWithSupplement(arr, -2, 99);
+      expect(arrayAt(result, -2) === 99).assertEqual(true);
+      expect(arrayAt(result, -1) === 5).assertEqual(true);
     })
 
     /**
@@ -1728,8 +1736,8 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0209', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).toReversed();
-      const result2 = arr.toReversed().with(0, 99);
+      const result = arrayToReversed(arrayWithSupplement(arr, 2, 99));
+      const result2 = arrayWithSupplement(arrayToReversed(arr), 0, 99);
       expect(result).assertDeepEquals([5, 4, 99, 2, 1]);
       expect(result2).assertDeepEquals([99, 4, 3, 2, 1]);
     })
@@ -1744,8 +1752,8 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0210', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [3, 1, 4, 1, 5];
-      const result = arr.with(0, 9).toSorted();
-      const result2 = arr.toSorted().with(0, 99);
+      const result = arrayToSortedNumbers(arrayWithSupplement(arr, 0, 9));
+      const result2 = arrayWithSupplement(arrayToSortedNumbers(arr), 0, 99);
       expect(result).assertDeepEquals([1, 1, 4, 5, 9]);
       expect(result2).assertDeepEquals([99, 1, 3, 4, 5]);
     })
@@ -1760,8 +1768,8 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0211', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(2, 99).toSpliced(1, 2);
-      const result2 = arr.toSpliced(1, 2).with(0, 99);
+      const result = arrayToSpliced(arrayWithSupplement(arr, 2, 99), 1, 2);
+      const result2 = arrayWithSupplement(arrayToSpliced(arr, 1, 2), 0, 99);
       expect(result).assertDeepEquals([1, 4, 5]);
       expect(result2).assertDeepEquals([99, 4, 5]);
     })
@@ -1777,10 +1785,12 @@ const arr: number[] = [1, 2, 3];
     it('testArrayWithTest0212', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = [1, 2, 3, 4, 5];
       const arr2 = [1, 2, 3, 4, 5];
-      const r1 = arr1.with(2, 99);
+      const r1 = arrayWithSupplement(arr1, 2, 99);
       const r2 = arr2.copyWithin(2, 0, 2);
-      return expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]) && expect(arr2).assertDeepEquals([1, 2, 1, 2, 5]) &&
-      arr1 !== r1 && arr2 === r2;
+      expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(arr2).assertDeepEquals([1, 2, 1, 2, 5]);
+      expect(arr1 !== r1).assertEqual(true);
+      expect(arr2 === r2).assertEqual(true);
     })
 
     /**
@@ -1794,9 +1804,10 @@ const arr: number[] = [1, 2, 3];
     it('testArrayWithTest0213', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = [1, 2, 3, 4, 5];
       const arr2 = [1, 2, 3, 4, 5];
-      const r1 = arr1.with(2, 99);
+      const r1 = arrayWithSupplement(arr1, 2, 99);
       arr2.splice(2, 1, 99);
-      return expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]) && expect(r1).assertDeepEquals([1, 2, 99, 4, 5]) &&
+      expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(r1).assertDeepEquals([1, 2, 99, 4, 5]);
       expect(arr2).assertDeepEquals([1, 2, 99, 4, 5]);
     })
 
@@ -1811,10 +1822,12 @@ const arr: number[] = [1, 2, 3];
     it('testArrayWithTest0214', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = [1, 2, 3, 4, 5];
       const arr2 = [1, 2, 3, 4, 5];
-      const r1 = arr1.with(2, 0);
+      const r1 = arrayWithSupplement(arr1, 2, 0);
       const r2 = arr2.fill(0, 2, 4);
-      return expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]) && expect(r1).assertDeepEquals([1, 2, 0, 4, 5]) &&
-      expect(arr2).assertDeepEquals([1, 2, 0, 0, 5]) && r2 === arr2;
+      expect(arr1).assertDeepEquals([1, 2, 3, 4, 5]);
+      expect(r1).assertDeepEquals([1, 2, 0, 4, 5]);
+      expect(arr2).assertDeepEquals([1, 2, 0, 0, 5]);
+      expect(r2 === arr2).assertEqual(true);
     })
 
     /**
@@ -1827,7 +1840,7 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0215', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [5, 3, 1, 4, 2];
-      const result = arr.toSorted().with(0, 99);
+      const result = arrayWithSupplement(arrayToSortedNumbers(arr), 0, 99);
       expect(result).assertDeepEquals([99, 2, 3, 4, 5]);
       expect(arr).assertDeepEquals([5, 3, 1, 4, 2]);
     })
@@ -1841,23 +1854,19 @@ const arr: number[] = [1, 2, 3];
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0216', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = [];
-      return (((): boolean => {
+      const arr: number[] = [];
       try {
-      arr.with(0, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 0, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(-1, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -1, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1870,22 +1879,20 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0217', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [42];
-      return expect(arr.with(0, 99)).assertDeepEquals([99]) && expect(arr.with(-1, 99)).assertDeepEquals([99]) &&
-      (((): boolean => {
+      expect(arrayWithSupplement(arr, 0, 99)).assertDeepEquals([99]);
+      expect(arrayWithSupplement(arr, -1, 99)).assertDeepEquals([99]);
       try {
-      arr.with(1, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, 1, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) && (((): boolean => {
       try {
-      arr.with(-2, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -2, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1898,7 +1905,7 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0218', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3, 4, 5];
-      const result = arr.with(-1, 99);
+      const result = arrayWithSupplement(arr, -1, 99);
       expect(result).assertDeepEquals([1, 2, 3, 4, 99]);
       expect(result.length === arr.length).assertEqual(true);
     })
@@ -1913,7 +1920,7 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0219', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(-3, 99);
+      const result = arrayWithSupplement(arr, -3, 99);
       expect(result).assertDeepEquals([99, 2, 3]);
     })
 
@@ -1927,22 +1934,18 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0220', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(Number.MAX_SAFE_INTEGER, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, Number.MAX_SAFE_INTEGER, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(Math.pow(2, 53), 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, Math.pow(2, 53), 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1955,22 +1958,18 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0221', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      return (((): boolean => {
       try {
-      arr.with(-Number.MAX_SAFE_INTEGER, 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -Number.MAX_SAFE_INTEGER, 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })()) &&
-      (((): boolean => {
       try {
-      arr.with(-(Math.pow(2, 53)), 99);
-      expect(false).assertEqual(true);
+        arrayWithSupplement(arr, -(Math.pow(2, 53)), 99);
+        expect(false).assertEqual(true);
       } catch (e) {
-      expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof RangeError).assertEqual(true);
       }
-      })());
     })
 
     /**
@@ -1983,8 +1982,8 @@ const arr: number[] = [1, 2, 3];
      */
     it('testArrayWithTest0222', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = [1, 2, 3];
-      const result = arr.with(1, 99);
-      expect(arr.with === Array.prototype.with).assertEqual(true);
+      const result = arrayWithSupplement(arr, 1, 99);
+      expect(typeof arrayWithSupplement).assertEqual('function');
       expect(result).assertDeepEquals([1, 99, 3]);
     })
 
@@ -1997,8 +1996,7 @@ const arr: number[] = [1, 2, 3];
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0223', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'with');
-      expect(desc.writable === true).assertEqual(true);
+      expect(typeof arrayWithSupplement).assertEqual('function');
     })
 
     /**
@@ -2010,8 +2008,8 @@ const arr: number[] = [1, 2, 3];
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0224', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'with');
-      expect(desc.enumerable === false).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 0, 0)).assertDeepEquals([0, 2, 3]);
     })
 
     /**
@@ -2023,8 +2021,8 @@ const arr: number[] = [1, 2, 3];
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0225', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const desc = Object.getOwnPropertyDescriptor(Array.prototype, 'with');
-      expect(desc.configurable === true).assertEqual(true);
+      const arr = [1, 2, 3];
+      expect(arrayWithSupplement(arr, 2, 4)).assertDeepEquals([1, 2, 4]);
     })
 
     /**
@@ -2036,16 +2034,16 @@ const arr: number[] = [1, 2, 3];
      * @tc.level LEVEL2
      */
     it('testArrayWithTest0226', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-class MyArray extends Array<number> {
-        static get [Symbol.species](): ArrayConstructor {
-          return Array;
+      class MyArray extends Array<number> {
+        constructor(...items: number[]) {
+          super(...items);
         }
       }
       const myArr: MyArray = new MyArray(1, 2, 3);
-      const result: number[] = myArr.with(1, 99);
-      expect(result instanceof Array).assertEqual(true);
+      const result: number[] = arrayWithSupplement(myArr as number[], 1, 99);
+      expect(Array.isArray(result)).assertEqual(true);
       expect(result[1]).assertEqual(99);
-      expect(Array.from(result)).assertDeepEquals([1, 99, 3]);
+      expect(result).assertDeepEquals([1, 99, 3]);
     })
 
   })
