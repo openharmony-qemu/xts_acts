@@ -779,7 +779,7 @@ export default function setEventParamTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHiAppEventSetPam22', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testHiAppEventSetPam22', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testHiAppEventSetPam22 start');
       hiAppEvent.configure({disable: true});
       try {
@@ -811,7 +811,7 @@ export default function setEventParamTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testHiAppEventSetPam23', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testHiAppEventSetPam23', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'testHiAppEventSetPam23 start');
       let holder = hiAppEvent.addWatcher({
         name: "watcher1",
@@ -831,8 +831,8 @@ export default function setEventParamTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHiAppEventSetPam24', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      console.info('testHiAppEventSetPam22 start');
+    it('testHiAppEventSetPam24', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('testHiAppEventSetPam24 start');
       let eventParams: Record<string, hiAppEvent.ParamType> = {
         "test_param": true,
       };
@@ -841,7 +841,7 @@ export default function setEventParamTest() {
         console.log('testHiAppEventSetPam24 Event parameters set successfully.');
       }).catch((err: Error) => {
         const bErr = err as BusinessError;
-        console.error('testHiAppEventSetPam24 Error:', bErr.message, 'testHiAppEventSetPam22 Code:', bErr.code);
+        console.error('testHiAppEventSetPam24 Error:', bErr.message, 'testHiAppEventSetPam24 Code:', bErr.code);
         expect(bErr.code == 401).assertTrue()
         done();
       });
@@ -855,7 +855,7 @@ export default function setEventParamTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testHiAppEventSetPam25', Level.LEVEL3, async (done: () => void): Promise<void> => {
+    it('testHiAppEventSetPam25', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testHiAppEventSetPam22 start');
       let eventParams: Record<string, hiAppEvent.ParamType> = {
         "test_param": true,
