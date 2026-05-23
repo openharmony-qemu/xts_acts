@@ -17,7 +17,6 @@ function publishEvent(eventName: string, code: number) {
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    publishEvent("webNativeMessaging1_startAbility_200", 200);
     try {
       this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     } catch (err) {
@@ -25,10 +24,22 @@ export default class EntryAbility extends UIAbility {
     }
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
 
-    // 超时后退出防止下次不会触发
-    setTimeout(() => {
-      this.context.terminateSelf()
-    }, 3000)
+    if (want.parameters?.callType === 'forResult') {
+      hilog.info(DOMAIN, 'testTag', 'EntryAbility started for startAbilityForResult, calling terminateSelfWithResult');
+      this.context.terminateSelfWithResult({
+        resultCode: 0,
+        want: {
+          bundleName: 'com.acts.context.webonconnectnativerely',
+          abilityName: 'EntryAbility'
+        }
+      });
+    } else {
+      publishEvent("webNativeMessaging1_startAbility_200", 200);
+      // 超时后退出防止下次不会触发
+      setTimeout(() => {
+        this.context.terminateSelf();
+      }, 3000);
+    }
   }
 
   onDestroy(): void {
