@@ -784,7 +784,7 @@ export default function btConnectionNopUiJsunit() {
         try {
             let connectAP = () => {
                 return new Promise<void>((resolve,reject) => {
-                    bluetooth.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data: void)=> {
+                  connection.disconnectAllowedProfiles('00:11:22:33:44:55', (err, data: void)=> {
                         if (err) {
                             console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
                             reject(err.code);
