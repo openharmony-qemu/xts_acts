@@ -40,6 +40,7 @@ export class KeyboardController {
   private InputClient: inputMethodEngine.InputClient;
   private display_info = display.getDefaultDisplaySync();
   private extraConfig: InputMethodExtraConfig;
+  private consumeKeyEvents: boolean = true;
 
   constructor(context) {
     this.storage = new LocalStorage();
@@ -313,6 +314,18 @@ export class KeyboardController {
         case 143:
           console.info(TAG + '====>Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0400 event:' + data.event);
           that.Sub_InputMethod_IME_PanelsetSystemPanelButtonColorPromise_0400();
+          break;
+        case 144:
+          console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0300 event:' + data.event);
+          that.Sub_InputMethod_IMF_consumeKeyEvents_0300();
+          break;
+        case 145:
+          console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0100 event:' + data.event);
+          that.Sub_InputMethod_IMF_consumeKeyEvents_0100();
+          break;
+        case 146:
+          console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0200 event:' + data.event);
+          that.Sub_InputMethod_IMF_consumeKeyEvents_0200();
           break;
       }
     };
@@ -1380,6 +1393,93 @@ export class KeyboardController {
     } catch (err) {
       console.info(TAG + `====>Sub_InputMethod_extraConfig_0400 cathch err.code: ${err.code},err.message: ${err.message} `);
       commoneventmanager.publish('Sub_InputMethod_extraConfig_0400', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_0300 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputMethodEngine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)} consumeKeyEvents = ${attr.consumeKeyEvents}`); 
+      this.consumeKeyEvents = attr.consumeKeyEvents;
+      inputMethodEngine.getKeyboardDelegate().off('editorAttributeChanged');
+    });
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0300 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode == false) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          }
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0300 success ');
+        commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0300', commonEventPublishData, this.publishCallback);
+      }, 500)
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_0300 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_0100 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputMethodEngine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)} consumeKeyEvents = ${attr.consumeKeyEvents}`); 
+      this.consumeKeyEvents = attr.consumeKeyEvents;
+      inputMethodEngine.getKeyboardDelegate().off('editorAttributeChanged');
+    });
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0100 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode == true) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          }
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0100 success ');
+        commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0100', commonEventPublishData, this.publishCallback);
+      }, 500)
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_0100 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_IMF_consumeKeyEvents_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_IMF_consumeKeyEvents_0200 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    inputMethodEngine.getKeyboardDelegate().on('editorAttributeChanged', (attr:inputMethodEngine.EditorAttribute) => {
+      console.info(TAG + `====>on_EditorAttribute_callback = ${JSON.stringify(attr)} consumeKeyEvents = ${attr.consumeKeyEvents}`); 
+      this.consumeKeyEvents = attr.consumeKeyEvents;
+      inputMethodEngine.getKeyboardDelegate().off('editorAttributeChanged');
+    });
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.consumeKeyEvents;
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0200 consumeKeyEvents :' + JSON.stringify(mode));
+        if (mode == false) {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          }
+        };
+        console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0200 success ');
+        commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0200', commonEventPublishData, this.publishCallback);
+      }, 500)
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_IMF_consumeKeyEvents_0200 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0200', commonEventPublishData, this.publishCallback);
     }
   }
 

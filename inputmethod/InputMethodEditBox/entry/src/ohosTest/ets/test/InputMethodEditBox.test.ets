@@ -4020,5 +4020,233 @@ export default function InputMethodEditBoxAbility() {
       })
     });
 
+    /**
+     * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0300
+     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_consumeKeyEvents_0300', Level.LEVEL3, async (done: Function) => {
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        const ATTRIBUTE: inputMethod.TextConfig = {
+          inputAttribute: {
+            textInputType: 0, enterKeyType: 0
+          }
+        }
+        await inputMethod.getController().detach();
+        await inputMethod.getController().attach(false, ATTRIBUTE);
+        if (err) {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IMF_consumeKeyEvents_0300']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0300 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 144
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0100
+     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_consumeKeyEvents_0100', Level.LEVEL3, async (done: Function) => {
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        const ATTRIBUTE: inputMethod.TextConfig = {
+          inputAttribute: {
+            textInputType: 0, enterKeyType: 0, consumeKeyEvents: true
+          }
+        }
+        await inputMethod.getController().detach();
+        await inputMethod.getController().attach(false, ATTRIBUTE);
+        if (err) {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IMF_consumeKeyEvents_0100']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0100 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 145
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
+    /**
+     * @tc.name   Sub_InputMethod_IMF_consumeKeyEvents_0200
+     * @tc.number Sub_InputMethod_IMF_consumeKeyEvents_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_InputMethod_IMF_consumeKeyEvents_0200', Level.LEVEL3, async (done: Function) => {
+      let unSubscriberCallback = (err: BusinessError) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 unSubscriberCallback start');
+        if (err) {
+          console.error('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 unSubscriberCallback failed: ' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 unSubscriberCallback finsh');
+        }
+      }
+
+      let subscriberCallback = (err: BusinessError, data: commonEventManager.CommonEventData) => {
+        console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 subscriberCallback data: ' + JSON.stringify(data));
+        commonEventManager.unsubscribe(subscriber, unSubscriberCallback);
+        let t = setTimeout(() => {
+          try {
+            expect(data.data).assertEqual('SUCCESS');
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 end<====');
+            clearTimeout(t);
+            done();
+          } catch (err) {
+            console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 end<====' + JSON.stringify(err));
+            clearTimeout(t)
+            done();
+          }
+        }, 500)
+      }
+
+      let publishCallback = async (err: BusinessError) => {
+        const ATTRIBUTE: inputMethod.TextConfig = {
+          inputAttribute: {
+            textInputType: 0, enterKeyType: 0, consumeKeyEvents: false
+          }
+        }
+        await inputMethod.getController().detach();
+        await inputMethod.getController().attach(false, ATTRIBUTE);
+        if (err) {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 end<====' + JSON.stringify(err));
+        } else {
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 success ====');
+        }
+      }
+
+      let commonEventSubscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ['Sub_InputMethod_IMF_consumeKeyEvents_0200']
+      }
+      let subscriber: ESObject;
+      commonEventManager.createSubscriber(commonEventSubscribeInfo).then((data) => {
+        try{
+          subscriber = data;
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 subscribe data: ' + JSON.stringify(data));
+          commonEventManager.subscribe(subscriber, subscriberCallback);
+          console.info('====>Sub_InputMethod_IMF_consumeKeyEvents_0200 subscribe finish====');
+        }catch(err){
+          console.info(`====>Subscribe failed, code:${err.code}, message is ${err.message}`)
+        }
+
+        let commonEventPublishData: commonEventManager.CommonEventPublishData = {
+          code: 146
+        }
+        let t = setTimeout(async () => {
+          clearTimeout(t);
+          commonEventManager.publish('InputMethodEditBoxTest', commonEventPublishData, publishCallback);
+        }, 500)
+      }).catch((err: BusinessError) => {
+        console.info(`====>createSubscriber failed, code:${err.code}, message is ${err.message}`)
+      })
+    });
+
   });
 };
