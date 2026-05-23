@@ -15,6 +15,8 @@
 
 import { BreakpointOptions, ContainerReader, ContainerReaderAttribute } from '@kit.ArkUI';
 
+export declare const ContainerReaderInstance: ContainerReaderAttribute
+
 @Entry
 @Component
 struct ContainerReaderComponent {
@@ -23,6 +25,7 @@ struct ContainerReaderComponent {
   @State heightBp: HeightBreakpoint|undefined|null = HeightBreakpoint.HEIGHT_SM;
   @State breakpointOptions:BreakpointOptions|null|undefined = { width: [100, 200, 400, 500], height: [0.8, 1.2] }
   @State breakpointOptions1:BreakpointOptions|null|undefined = { width: undefined, height: undefined }
+  @State containerReaderAttribute:ContainerReaderAttribute|undefined = undefined
   build() {
     Column({space:3}) {
       Row(){
