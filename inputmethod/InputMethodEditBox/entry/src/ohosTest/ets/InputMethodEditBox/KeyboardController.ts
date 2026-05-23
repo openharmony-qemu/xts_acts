@@ -1478,7 +1478,7 @@ export class KeyboardController {
         if (mode === false) {
           commonEventPublishData = {
             data: 'SUCCESS'
-          }
+          };
         };
         console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0300 success ');
         commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0300', commonEventPublishData, this.publishCallback);
@@ -1507,7 +1507,7 @@ export class KeyboardController {
         if (mode === true) {
           commonEventPublishData = {
             data: 'SUCCESS'
-          }
+          };
         };
         console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0100 success ');
         commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0100', commonEventPublishData, this.publishCallback);
@@ -1536,7 +1536,7 @@ export class KeyboardController {
         if (mode === false) {
           commonEventPublishData = {
             data: 'SUCCESS'
-          }
+          };
         };
         console.info(TAG + '====>Sub_InputMethod_IMF_consumeKeyEvents_0200 success ');
         commoneventmanager.publish('Sub_InputMethod_IMF_consumeKeyEvents_0200', commonEventPublishData, this.publishCallback);
