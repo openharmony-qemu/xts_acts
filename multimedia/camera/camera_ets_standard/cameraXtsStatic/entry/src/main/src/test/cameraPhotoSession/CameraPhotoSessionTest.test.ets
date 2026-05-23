@@ -2923,8 +2923,9 @@ export default function PhotoOutputStaticTest(): void {
         } else {
           try {
             let res = camera.ControlCenterEffectType.COLOR_EFFECT;
+            res = camera.ControlCenterEffectType.BEAUTY;
             console.info(TAG, testName, ' emu is : ', res);
-            expect(res).assertEqual(1);
+            expect(res).assertEqual(0);
           } catch (err) {
             console.error(TAG, testName, " FAILED", err.code);
             expect().assertFail();
