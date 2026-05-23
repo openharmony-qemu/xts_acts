@@ -65,6 +65,18 @@ export default class Utils {
     return out;
   }
 
+  static findStaticMethodByName(
+    methods: FixedArray<reflect.StaticMethod>,
+    name: string
+  ): reflect.StaticMethod | undefined {
+    for (let i = 0; i < methods.length; i++) {
+      if (methods[i].getName() === name) {
+        return methods[i];
+      }
+    }
+    return undefined;
+  }
+
   /** Reflection lookups may return undefined; some APIs use null (spec/types.md: void ≡ undefined). */
   static isAbsentOptional<T>(v: T | undefined | null): boolean {
     return v === undefined || v === null;

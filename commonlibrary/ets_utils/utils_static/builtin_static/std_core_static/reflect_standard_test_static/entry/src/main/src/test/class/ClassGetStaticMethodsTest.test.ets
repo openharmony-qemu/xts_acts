@@ -491,7 +491,7 @@ class A041 {
 
 
 export default function ClassGetStaticMethodsTest(): void {
-  describe('ClassGetStaticMethodsTest', () => {
+  describe('ClassGetStaticMethodsTest', (): void => {
     beforeAll(() => {
     });
     beforeEach(async () => {
