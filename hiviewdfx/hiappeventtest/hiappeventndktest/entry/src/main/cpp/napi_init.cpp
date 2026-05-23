@@ -2198,13 +2198,13 @@ static napi_value OhHiappEventSetEventCreateWatcher(napi_env env, napi_callback_
     }
 
     case 5: {
-        returnValue = OH_HiAppEvent_CreateWatcher("true");
+        returnValue = OH_HiAppEvent_CreateWatcher("theonlyone");
         OH_HiAppEvent_DestroyWatcher(returnValue);
         break;
     }
 
     case 6: {
-        returnValue = OH_HiAppEvent_CreateWatcher("false");
+        returnValue = OH_HiAppEvent_CreateWatcher("younottheonly");
         OH_HiAppEvent_DestroyWatcher(returnValue);
         break;
     }
