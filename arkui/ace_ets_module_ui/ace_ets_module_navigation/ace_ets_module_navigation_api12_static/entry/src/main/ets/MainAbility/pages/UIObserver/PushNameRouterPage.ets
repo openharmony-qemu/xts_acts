@@ -36,19 +36,19 @@ interface Param {
   data2: Data2
 }
 
-initModule('./PushNameRouterPage')
+initModule('./GetStateByIndexPage')
 
-@Entry({routeName:'PushNameRouterPage'})
+@Entry({routeName:'pushNameRouter'})
 @Component
 struct PushNameRouterPage1 {
    routePage:() => void = () => {
      console.log('+++++++++++++++++++++++++++1');
     const uiContext = this.getUIContext();
     if (uiContext && uiContext.getRouter()) {
-      initModule('./PushNameRouterPage')
+      initModule('./GetStateByIndexPage')
       console.log('+++++++++++++++++++++++++++2');
       uiContext.getRouter().pushNamedRoute({
-        name: 'PushNameRouterPage',
+        name: 'pushNameRouter',
         params: {
           data1: 'message',
           data2: {
