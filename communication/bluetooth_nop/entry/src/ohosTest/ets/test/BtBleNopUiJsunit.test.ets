@@ -688,7 +688,7 @@ export default function btBleNopUiJsunit() {
                     console.info('[bluetooth_js]removeAllServices is not support or removeAllServices as it is out of hardware');
                     expect(true).assertTrue();
                 } else {
-                    expect(error.code).assertEqual(PERMISSION_DENIED_CODE);
+                    expect(err.code).assertEqual(PERMISSION_DENIED_CODE);
                 }
             }
             done();
