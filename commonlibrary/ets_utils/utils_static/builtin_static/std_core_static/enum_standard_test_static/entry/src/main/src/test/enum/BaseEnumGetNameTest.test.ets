@@ -365,7 +365,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (null as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -382,7 +382,7 @@ export default function BaseEnumGetNameTest(): void {
         let name: string = (undefined as BaseEnum<int>).getName();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
   });

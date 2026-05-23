@@ -900,7 +900,7 @@ export default function BaseEnumToStringTest(): void {
         let str: string = (null as BaseEnum<int>).toString();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -917,7 +917,7 @@ export default function BaseEnumToStringTest(): void {
         let str: string = (undefined as BaseEnum<int>).toString();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

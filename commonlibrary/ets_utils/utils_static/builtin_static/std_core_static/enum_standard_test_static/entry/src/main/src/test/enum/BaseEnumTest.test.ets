@@ -252,7 +252,7 @@ export default function BaseEnumTest(): void {
         let e: BaseEnum<int> = new BaseEnum<int>(null as int, "NULL_VALUE");
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -269,7 +269,7 @@ export default function BaseEnumTest(): void {
         let e: BaseEnum<int> = new BaseEnum<int>(1, null as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -405,7 +405,6 @@ export default function BaseEnumTest(): void {
      * @tc.level LEVEL2
      */
     it('testBaseEnum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
 
       let ec: ExtendedColor161 = new ExtendedColor161("#FF0000", "RED")
       expect(ec.valueOf()).assertEqual("#FF0000")

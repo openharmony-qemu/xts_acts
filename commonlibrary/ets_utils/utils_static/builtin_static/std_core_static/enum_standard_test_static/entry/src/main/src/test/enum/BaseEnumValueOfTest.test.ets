@@ -1121,7 +1121,7 @@ export default function BaseEnumValueOfTest(): void {
         let val: int = (null as BaseEnum<int>).valueOf();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1138,7 +1138,7 @@ export default function BaseEnumValueOfTest(): void {
         let val: int = (undefined as BaseEnum<int>).valueOf();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
