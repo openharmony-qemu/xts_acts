@@ -257,7 +257,7 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_1700
-     * @tc.desc Verify BaseEnum constructor with string value and name returns correct valueOf and getName
+     * @tc.desc Verify BaseEnum constructor with string normal value "ACTIVE"
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
@@ -335,14 +335,15 @@ export default function BaseEnumConstructorTest(): void {
     /**
      * @tc.name testBaseEnumConstructor023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_CONSTRUCTOR_2300
-     * @tc.desc Verify BaseEnum constructor with string generic type parameter (boundary type)
+     * @tc.desc Verify BaseEnum constructor with empty string as value and name
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2
      */
     it('testBaseEnumConstructor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const e = new BaseEnum<string>("value", "STRING_ENUM");
-      expect(e.valueOf()).assertEqual("value");
+      const e = new BaseEnum<string>("", "");
+      expect(e.valueOf()).assertEqual("");
+      expect(e.getName()).assertEqual("");
     });
 
     /**

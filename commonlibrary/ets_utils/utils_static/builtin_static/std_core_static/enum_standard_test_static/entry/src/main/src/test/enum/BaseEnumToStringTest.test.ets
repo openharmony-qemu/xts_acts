@@ -14,14 +14,17 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class Status073 extends BaseEnum<int> {
   constructor(value: int, name: string) {
     super(value, name);
   }
-  public override toString(): string { return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]" }
+
+  public override toString(): string {
+    return "Status[" + this.getName() + "=" + this.valueOf().toString() + "]"
+  }
 }
 
 export default function BaseEnumToStringTest(): void {
@@ -868,7 +871,8 @@ export default function BaseEnumToStringTest(): void {
       const eShort = new BaseEnum<short>(1000 as short, "THOUSAND");
       expect(eShort.toString()).assertEqual("1000");
 
-      const eInt = new BaseEnum<int>(100000, "LARGE");      expect(eInt.toString()).assertEqual("100000");
+      const eInt = new BaseEnum<int>(100000, "LARGE");
+      expect(eInt.toString()).assertEqual("100000");
 
       const eLong = new BaseEnum<long>(Int.toLong(9999), "BIG");
       expect(eLong.toString()).assertEqual("9999");

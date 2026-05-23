@@ -190,7 +190,7 @@ export default function BaseEnumTest(): void {
     /**
      * @tc.name testBaseEnum007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASEENUM_0700
-     * @tc.desc Verify different instances have independent names via getName
+     * @tc.desc Verify different instances have independent values via valueOf
      * @tc.type Function
      * @tc.size MediumTest
      * @tc.level LEVEL2

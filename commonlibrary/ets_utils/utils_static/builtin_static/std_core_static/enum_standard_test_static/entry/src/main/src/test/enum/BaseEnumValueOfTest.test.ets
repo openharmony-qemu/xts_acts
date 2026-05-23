@@ -14,7 +14,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function BaseEnumValueOfTest(): void {
@@ -23,7 +34,7 @@ export default function BaseEnumValueOfTest(): void {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(1);
     });
-    
+
 
     /**
      * @tc.name testBaseEnumValueOf001
