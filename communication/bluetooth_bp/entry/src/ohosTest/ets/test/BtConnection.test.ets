@@ -4545,7 +4545,7 @@ describe('btConnectionTest', () => {
                     bluetooth.disconnectAllowedProfiles('', (err, data: void)=> {
                         if (err) {
                             console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
-                            reject(err.code);
+                            reject(err);
                         } else
                         {
                             console.info('[bluetooth_js]disconnectAllowedProfiles success');
@@ -4584,7 +4584,7 @@ describe('btConnectionTest', () => {
                     bluetooth.disconnectAllowedProfiles(null, (err, data: void)=> {
                         if (err) {
                             console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
-                            reject(err.code);
+                            reject(err);
                         } else
                         {
                             console.info('[bluetooth_js]disconnectAllowedProfiles success');
@@ -4623,7 +4623,7 @@ describe('btConnectionTest', () => {
                     bluetooth.disconnectAllowedProfiles(undefined, (err, data: void)=> {
                         if (err) {
                             console.info('disconnectAllowedProfiles failed' + JSON.stringify(err));
-                            reject(err.code);
+                            reject(err);
                         } else
                         {
                             console.info('[bluetooth_js]disconnectAllowedProfiles success');
