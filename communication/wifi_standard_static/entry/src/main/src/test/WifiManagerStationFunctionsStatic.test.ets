@@ -3246,15 +3246,15 @@ export default function actsWifiManagerFunctionsTest() {
     });
 
     /**
-     * @tc.number SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0079
-     * @tc.name SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0079
+     * @tc.number SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076
+     * @tc.name SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076
      * @tc.desc Test connectToCandidateConfigWithUserAction with normal call (application interface)
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0079", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0079";
+    it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076";
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
@@ -3287,15 +3287,15 @@ export default function actsWifiManagerFunctionsTest() {
       done();
     });
     /**
-     * @tc.number SUB_Communication_WifiManager_StartScan_0080
-     * @tc.name SUB_Communication_WifiManager_StartScan_0080
+     * @tc.number SUB_Communication_WifiManager_StartScan_0077
+     * @tc.name SUB_Communication_WifiManager_StartScan_0077
      * @tc.desc Test startScan return void
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_StartScan_Void_0080", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName = "LOG_SUB_Communication_WifiManager_StartScan_0080";
+    it("SUB_Communication_WifiManager_StartScan_0077", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_StartScan_0077";
       hilog.info(domain, tag, `${caseName} test start`);
       try {
         wifiManager.startScan();
@@ -3314,15 +3314,15 @@ export default function actsWifiManagerFunctionsTest() {
     });
 
     /**
-     * @tc.number SUB_Communication_WifiManager_addCandidateConfig_0082
-     * @tc.name SUB_Communication_WifiManager_addCandidateConfig_0082
+     * @tc.number SUB_Communication_WifiManager_addCandidateConfig_0078
+     * @tc.name SUB_Communication_WifiManager_addCandidateConfig_0078
      * @tc.desc Test addCandidateConfig with 预期401
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_addCandidateConfig_0082", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName = "LOG_SUB_Communication_WifiManager_addCandidateConfig_0082";
+    it("SUB_Communication_WifiManager_addCandidateConfig_0078", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_addCandidateConfig_0078";
       hilog.info(domain, tag, `${caseName} test start`);
       let config: wifiManager.WifiDeviceConfig = {
         ssid: "CANDIDATE_SSID",
@@ -3347,15 +3347,15 @@ export default function actsWifiManagerFunctionsTest() {
       done();
     });
     /**
-     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0083
-     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0083
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
      * @tc.desc Test addCandidateConfig with 预期401
      * @tc.level Level 0
      * @tc.type Function
      * @tc.size MEDIUMTEST
      */
-    it("SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0083", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0083";
+    it("SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079";
       hilog.info(domain, tag, `${caseName} test start`);
       let networkId: int = -1;
       try {
