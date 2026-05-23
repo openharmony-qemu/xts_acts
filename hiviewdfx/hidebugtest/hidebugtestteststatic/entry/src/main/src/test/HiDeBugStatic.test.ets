@@ -23,14 +23,14 @@ import fileIo from '@ohos.file.fs';
 export default function HidebugStaticTest() {
     describe("HidebugStaticTest", (): void => {
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0100
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0100
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0100
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0100
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "abcd_ADAS_1231",
@@ -38,31 +38,31 @@ export default function HidebugStaticTest() {
                   durationMs: 1000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0100: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0100: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0100 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0100 error1 code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0100 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0100 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0100 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0100 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0200
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0200
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0200
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0200
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "abcd_ADAS_12312133331",
@@ -70,31 +70,31 @@ export default function HidebugStaticTest() {
                   durationMs: 1000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0200: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0200: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0200 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0200 error1 code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0200 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0200 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0200 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0200 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0300
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0300
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0300
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0300
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "abcd_ADAS_123121333中",
@@ -102,31 +102,31 @@ export default function HidebugStaticTest() {
                   durationMs: 1000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0300: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0300: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0300 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0300 error1 code: ${err.code}, message: ${err.message}`)
                   expect(false).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0300 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0300 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0300 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0300 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0400
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0400
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0400
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0400
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "test_trace",
@@ -134,31 +134,31 @@ export default function HidebugStaticTest() {
                   durationMs: 1000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0400: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0400: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0400 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0400 error1 code: ${err.code}, message: ${err.message}`)
                   expect(err.code == 11400120 || err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0400 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0400 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0400 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0400 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0500
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0500
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0500
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0500
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "test_trace",
@@ -166,31 +166,31 @@ export default function HidebugStaticTest() {
                   durationMs: 1000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0500: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0500: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0500 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0500 error1 code: ${err.code}, message: ${err.message}`)
                   expect(err.code == 11400120 || err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0500 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0500 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0500 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0500 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0600
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0600
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0600
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0600
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "test_trace",
@@ -198,31 +198,31 @@ export default function HidebugStaticTest() {
                   durationMs: 0,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0600: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0600: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0600 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0600 error1 code: ${err.code}, message: ${err.message}`)
                   expect(err.code == 11400120 || err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0600 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0600 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0600 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0600 Test end*************');
         })
 
         /**
-         * @tc.name   DFX_DFR_Hidebug_Interface_Static_0700
-         * @tc.number DFX_DFR_Hidebug_Interface_Static_0700
+         * @tc.name   SUB_DFX_DFR_Hidebug_Interface_0700
+         * @tc.number SUB_DFX_DFR_Hidebug_Interface_0700
          * @tc.desc   requestTrace
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL2
          */
-        it('DFX_DFR_Hidebug_Interface_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        it('SUB_DFX_DFR_Hidebug_Interface_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             try {
                 hidebug.requestTrace({
                   identifier: "test_trace",
@@ -230,20 +230,20 @@ export default function HidebugStaticTest() {
                   durationMs: 15000,
                   reserved: 0,
                 }).then((tracePath: string) => {
-                  hilog.info(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0700: ${tracePath}`)
+                  hilog.info(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0700: ${tracePath}`)
                   expect(tracePath.length > 0).assertTrue();
                   done();
                 }).catch((err) => {
-                  hilog.error(0x0000, 'hidebug', `DFX_DFR_Hidebug_Interface_Static_0700 error1 code: ${err.code}, message: ${err.message}`)
+                  hilog.error(0x0000, 'hidebug', `SUB_DFX_DFR_Hidebug_Interface_0700 error1 code: ${err.code}, message: ${err.message}`)
                   expect(err.code == 11400120 || err.code == 11400302).assertTrue();
                   done();
                 })
             } catch (err) {
-                console.error(`DFX_DFR_Hidebug_Interface_Static_0700 > err code: ${err.code}, err msg: ${err.message}`)
+                console.error(`SUB_DFX_DFR_Hidebug_Interface_0700 > err code: ${err.code}, err msg: ${err.message}`)
                 expect(false).assertTrue();
                 done();
             };
-            console.log('************* DFX_DFR_Hidebug_Interface_Static_0700 Test end*************');
+            console.log('************* SUB_DFX_DFR_Hidebug_Interface_0700 Test end*************');
         })
     })
 }
