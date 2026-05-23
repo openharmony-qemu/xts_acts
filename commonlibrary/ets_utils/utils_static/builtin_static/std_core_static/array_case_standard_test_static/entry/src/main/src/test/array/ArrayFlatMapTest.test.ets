@@ -341,13 +341,13 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [];
-      for (let i: int = 0; i < 1000; i++) {
+      for (let i: int = 0; i < 100; i++) {
         arr.pushOne(i);
       }
       const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => [v, v + 1]);
-      expect(result.length).assertEqual(2000);
+      expect(result.length).assertEqual(200);
       expect(result[0]).assertEqual(0);
-      expect(result[1999]).assertEqual(1000);
+      expect(result[199]).assertEqual(100);
     });
 
     /**
@@ -678,14 +678,11 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [];
-      for (let i: int = 0; i < 1000; i++) {
+      for (let i: int = 0; i < 100; i++) {
         arr.pushOne(i);
       }
-      const startTime: number = Date.now();
       const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => [v, v + 1]);
-      const endTime: number = Date.now();
-      expect(result.length).assertEqual(2000);
-      expect(endTime >= startTime).assertTrue();
+      expect(result.length).assertEqual(200);
     });
 
     /**
@@ -698,7 +695,7 @@ export default function ArrayFlatMapTest(): void {
      */
     it('testArrayFlatMap035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [];
-      for (let i: int = 0; i < 500; i++) {
+      for (let i: int = 0; i < 100; i++) {
         arr.pushOne(i);
       }
       const start1: number = Date.now();

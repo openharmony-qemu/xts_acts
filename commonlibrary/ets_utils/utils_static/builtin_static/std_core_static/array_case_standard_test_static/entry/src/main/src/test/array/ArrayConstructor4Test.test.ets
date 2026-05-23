@@ -164,9 +164,12 @@ export default function ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor4006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // The null-safe overload would eagerly initialize every element and is not practical at Int.MAX_VALUE on device.
-      const skippedLength = 2147483647;
-      expect(skippedLength > 1000000).assertTrue();
+      try {
+        const arr = new Array<number>(2147483647, (index) => index);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('OutOfMemoryError');
+      }
     });
 
     /**
@@ -389,7 +392,12 @@ export default function ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor4021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect('null-callback'.includes('callback')).assertTrue();
+      try {
+        const arr = new Array<number>(5, null as (index: int) => number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
     });
 
     /**
@@ -401,7 +409,12 @@ export default function ArrayConstructor4Test(): void {
      * @tc.level Level 2
      */
     it('testArrayConstructor4022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect('undefined-callback'.includes('undefined')).assertTrue();
+      try {
+        const arr = new Array<number>(5, undefined as (index: int) => number);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual("ClassCastError");
+      }
     });
 
     /**

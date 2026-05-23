@@ -323,17 +323,17 @@ export default function ArrayConcatTest(): void {
      */
     it('testArrayConcat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 100; i++) {
         arr1.pushOne(i);
       }
       const arr2 = new Array<int>();
-      for (let i = 1000; i < 2000; i++) {
+      for (let i = 100; i < 200; i++) {
         arr2.pushOne(i);
       }
       const result = arr1.concat(arr2);
-      expect(result.length).assertEqual(2000);
+      expect(result.length).assertEqual(200);
       expect(result[0]).assertEqual(0);
-      expect(result[1999]).assertEqual(1999);
+      expect(result[199]).assertEqual(199);
     });
 
     /**

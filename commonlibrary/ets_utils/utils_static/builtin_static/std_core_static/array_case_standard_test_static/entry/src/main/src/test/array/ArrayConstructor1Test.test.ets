@@ -199,25 +199,12 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1100
      * @tc.name testArrayConstructor1011
-     * @tc.desc Verify passing a string number is a compile-time invalid constructor input in ArkTS
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // This test documents an invalid ArkTS call shape and is intentionally not executed.
-      expect('string'.length).assertEqual(6);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1200
-     * @tc.name testArrayConstructor1012
      * @tc.desc Verify a single numeric constructor call still returns a new Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(5);
@@ -225,14 +212,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1300
-     * @tc.name testArrayConstructor1013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1200
+     * @tc.name testArrayConstructor1012
      * @tc.desc Verify array constructor supports different generic element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<number>(1, 2, 3);
       const strArr = new Array<string>('apple', 'banana', 'cherry');
       const boolArr = new Array<boolean>(true, false, true);
@@ -242,27 +229,27 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1400
-     * @tc.name testArrayConstructor1014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1300
+     * @tc.name testArrayConstructor1013
      * @tc.desc Verify the returned value is an Array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10);
       expect(arr instanceof Array).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1500
-     * @tc.name testArrayConstructor1015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1400
+     * @tc.name testArrayConstructor1014
      * @tc.desc Verify array constructor preserves the declared generic type for assigned elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       arr[0] = 10;
       const val: int = arr[0];
@@ -270,28 +257,28 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1600
-     * @tc.name testArrayConstructor1016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1500
+     * @tc.name testArrayConstructor1015
      * @tc.desc Verify the constructed element can be read directly from the single-item array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(5);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1700
-     * @tc.name testArrayConstructor1017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1600
+     * @tc.name testArrayConstructor1016
      * @tc.desc Verify the constructed element can be overwritten after single-item construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(3);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(3);
@@ -300,14 +287,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1800
-     * @tc.name testArrayConstructor1018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1700
+     * @tc.name testArrayConstructor1017
      * @tc.desc Verify the first element can be reassigned after single-item construction
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(3);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(3);
@@ -316,14 +303,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1900
-     * @tc.name testArrayConstructor1019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1800
+     * @tc.name testArrayConstructor1018
      * @tc.desc Verify loop-based reassignment only processes the single constructed element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(100);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(100);
@@ -334,14 +321,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2000
-     * @tc.name testArrayConstructor1020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_1900
+     * @tc.name testArrayConstructor1019
      * @tc.desc Verify a single numeric argument still creates an Array<int> instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(5);
@@ -353,41 +340,41 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2100
-     * @tc.name testArrayConstructor1021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2000
+     * @tc.name testArrayConstructor1020
      * @tc.desc Verify array constructor creates Array<number> instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       expect(arr.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2200
-     * @tc.name testArrayConstructor1022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2100
+     * @tc.name testArrayConstructor1021
      * @tc.desc Verify array constructor creates Array<boolean> instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false);
       expect(arr[0]).assertTrue();
       expect(arr[1]).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2300
-     * @tc.name testArrayConstructor1023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2200
+     * @tc.name testArrayConstructor1022
      * @tc.desc Verify array constructor creates arrays of custom class instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item026>(new Item026(1), new Item026(2), new Item026(3));
       expect(arr.length).assertEqual(3);
       expect(arr[0].value).assertEqual(1);
@@ -396,14 +383,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2400
-     * @tc.name testArrayConstructor1024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2300
+     * @tc.name testArrayConstructor1023
      * @tc.desc Verify array constructor creates arrays of interface-based objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point027>({ x: 1, y: 2 }, { x: 3, y: 4 });
       expect(arr.length).assertEqual(2);
       expect(arr[0].x).assertEqual(1);
@@ -413,14 +400,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2500
-     * @tc.name testArrayConstructor1025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2400
+     * @tc.name testArrayConstructor1024
      * @tc.desc Verify array constructor creates arrays with union element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | string>(1, 'two', 3);
       expect(arr.length).assertEqual(3);
       expect(arr[0] == 1).assertTrue();
@@ -429,14 +416,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2600
-     * @tc.name testArrayConstructor1026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2500
+     * @tc.name testArrayConstructor1025
      * @tc.desc Verify array constructor creates nested arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<int>>(new Array<int>(1, 2), new Array<int>(3, 4), new Array<int>(5, 6));
       expect(arr.length).assertEqual(3);
       expect(arr[0][0]).assertEqual(1);
@@ -445,14 +432,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2700
-     * @tc.name testArrayConstructor1027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2600
+     * @tc.name testArrayConstructor1026
      * @tc.desc Verify a large numeric argument is preserved before later reassignment
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10000);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10000);
@@ -463,28 +450,28 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2800
-     * @tc.name testArrayConstructor1028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2700
+     * @tc.name testArrayConstructor1027
      * @tc.desc Verify an extreme numeric argument is preserved as the only array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10000000);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(10000000);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2900
-     * @tc.name testArrayConstructor1029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2800
+     * @tc.name testArrayConstructor1028
      * @tc.desc Verify multiple single-item arrays created from numeric arguments stay independent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(3);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(3);
@@ -508,28 +495,28 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3000
-     * @tc.name testArrayConstructor1030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_2900
+     * @tc.name testArrayConstructor1029
      * @tc.desc Verify zero still constructs a readable single-item array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3100
-     * @tc.name testArrayConstructor1031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3000
+     * @tc.name testArrayConstructor1030
      * @tc.desc Verify single-element arrays can store and read one initialized value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1);
       expect(arr.length).assertEqual(1);
       arr[0] = 42;
@@ -537,14 +524,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3200
-     * @tc.name testArrayConstructor1032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3100
+     * @tc.name testArrayConstructor1031
      * @tc.desc Verify a numeric constructor result can be reassigned during later processing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(100);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(100);
@@ -556,14 +543,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3300
-     * @tc.name testArrayConstructor1033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3200
+     * @tc.name testArrayConstructor1032
      * @tc.desc Verify batch-style processing works on the single constructed element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const size = 1000;
       const arr = new Array<int>(size);
       expect(arr.length).assertEqual(1);
@@ -581,28 +568,28 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3400
-     * @tc.name testArrayConstructor1034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3300
+     * @tc.name testArrayConstructor1033
      * @tc.desc Verify another negative numeric argument is preserved as the only array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(-10);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(-10);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3500
-     * @tc.name testArrayConstructor1035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3400
+     * @tc.name testArrayConstructor1034
      * @tc.desc Verify the single constructed element can be reassigned and read after loop-based initialization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(5);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = 0;
@@ -611,14 +598,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3600
-     * @tc.name testArrayConstructor1036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3500
+     * @tc.name testArrayConstructor1035
      * @tc.desc Verify the single-numeric constructor differs from the no-argument constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(5);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(5);
@@ -628,14 +615,14 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3700
-     * @tc.name testArrayConstructor1037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3600
+     * @tc.name testArrayConstructor1036
      * @tc.desc Verify the single-numeric constructor differs from the multi-argument overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(5);
       expect(arr1.length).assertEqual(1);
       expect(arr1[0]).assertEqual(5);
@@ -648,56 +635,56 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3800
-     * @tc.name testArrayConstructor1038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3700
+     * @tc.name testArrayConstructor1037
      * @tc.desc Verify NaN is preserved as the only element in a single-number constructor call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(NaN);
       expect(arr.length).assertEqual(1);
       expect(arr[0] != arr[0]).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3900
-     * @tc.name testArrayConstructor1039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3800
+     * @tc.name testArrayConstructor1038
      * @tc.desc Verify Infinity is preserved as the only element in a single-number constructor call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(Infinity);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4000
-     * @tc.name testArrayConstructor1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_3900
+     * @tc.name testArrayConstructor1039
      * @tc.desc Verify negative Infinity is preserved as the only element in a single-number constructor call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-Infinity);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(-Infinity);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4100
-     * @tc.name testArrayConstructor1041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4000
+     * @tc.name testArrayConstructor1040
      * @tc.desc Verify negative zero remains distinguishable from positive zero in the single-number constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(-0);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(0);
@@ -705,15 +692,30 @@ export default function ArrayConstructor1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4200
-     * @tc.name testArrayConstructor1042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4100
+     * @tc.name testArrayConstructor1041
      * @tc.desc Verify Number.MAX_SAFE_INTEGER is preserved as the only element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.MAX_SAFE_INTEGER;
+      const arr = new Array<number>(value);
+      expect(arr.length).assertEqual(1);
+      expect(arr[0]).assertEqual(value);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4200
+     * @tc.name testArrayConstructor1042
+     * @tc.desc Verify Number.MIN_SAFE_INTEGER is preserved as the only element
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testArrayConstructor1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const value = Number.MIN_SAFE_INTEGER;
       const arr = new Array<number>(value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
@@ -722,13 +724,13 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4300
      * @tc.name testArrayConstructor1043
-     * @tc.desc Verify Number.MIN_SAFE_INTEGER is preserved as the only element
+     * @tc.desc Verify Number.MIN_VALUE is preserved as the only element in the single-number constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayConstructor1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = Number.MIN_SAFE_INTEGER;
+      const value = Number.MIN_VALUE;
       const arr = new Array<number>(value);
       expect(arr.length).assertEqual(1);
       expect(arr[0]).assertEqual(value);
@@ -737,27 +739,12 @@ export default function ArrayConstructor1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4400
      * @tc.name testArrayConstructor1044
-     * @tc.desc Verify Number.MIN_VALUE is preserved as the only element in the single-number constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const value = Number.MIN_VALUE;
-      const arr = new Array<number>(value);
-      expect(arr.length).assertEqual(1);
-      expect(arr[0]).assertEqual(value);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_ONE_4500
-     * @tc.name testArrayConstructor1045
      * @tc.desc Verify Number.EPSILON is preserved as the only element in the single-number constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const value = Number.EPSILON;
       const arr = new Array<number>(value);
       expect(arr.length).assertEqual(1);

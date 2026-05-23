@@ -199,7 +199,6 @@ export default function ArrayFindLastTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLast010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.1 find vs findLast
       const result = new Array<number>(10, 20, 30, 20).findLast((v: number): boolean => v == 20);
       expect(result).assertEqual(20);
     });

@@ -673,41 +673,26 @@ export default function ArrayFill1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_3800
      * @tc.name testArrayFill1038
-     * @tc.desc Verify readonly arrays document fill as a compile-time invalid call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFill1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: ReadonlyArray<number> = [1, 2, 3];
-      // arr.fill(0); // Documented compile-time-invalid example.
-      expect(arr.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_3900
-     * @tc.name testArrayFill1039
      * @tc.desc Verify value type must match the array element type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.fill(100);
-      // arr.fill("string"); // Documented compile-time-invalid example.
       expect(arr[0]).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4000
-     * @tc.name testArrayFill1040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_3900
+     * @tc.name testArrayFill1039
      * @tc.desc Verify fill works with union typed arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | number>(1, 2, 3);
       arr.fill('x');
       expect(arr[0]).assertEqual('x');
@@ -716,14 +701,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4100
-     * @tc.name testArrayFill1041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4000
+     * @tc.name testArrayFill1040
      * @tc.desc Verify multiple chained fill calls update separate ranges
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6);
       arr.fill(0, 0, 2).fill(1, 2, 4).fill(2, 4, 6);
       expect(arr[0]).assertEqual(0);
@@ -735,14 +720,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4200
-     * @tc.name testArrayFill1042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4100
+     * @tc.name testArrayFill1041
      * @tc.desc Verify other array methods can follow fill in chained scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const result = arr.fill(0).map((v: number): number => v + 1);
       expect(result[0]).assertEqual(1);
@@ -752,14 +737,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4300
-     * @tc.name testArrayFill1043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4200
+     * @tc.name testArrayFill1042
      * @tc.desc Verify omitting start behaves like using zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.fill(0);
       expect(arr[0]).assertEqual(0);
@@ -768,14 +753,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4400
-     * @tc.name testArrayFill1044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4300
+     * @tc.name testArrayFill1043
      * @tc.desc Verify omitting end behaves like using the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.fill(0, 1);
       expect(arr[0]).assertEqual(1);
@@ -784,14 +769,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4500
-     * @tc.name testArrayFill1045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4400
+     * @tc.name testArrayFill1044
      * @tc.desc Verify later fill calls can override earlier values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.fill(0, 0, 4);
       arr.fill(1, 1, 3);
@@ -802,14 +787,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4600
-     * @tc.name testArrayFill1046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4500
+     * @tc.name testArrayFill1045
      * @tc.desc Verify overlapping fill ranges keep the latest covered values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       arr.fill(0, 2, 5);
       arr.fill(1, 4, 5);
@@ -819,14 +804,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4700
-     * @tc.name testArrayFill1047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4600
+     * @tc.name testArrayFill1046
      * @tc.desc Verify floating-point indexes can be normalized before fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const start = (1.5).toInt();
       const end = (3.5).toInt();
@@ -837,14 +822,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4800
-     * @tc.name testArrayFill1048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4700
+     * @tc.name testArrayFill1047
      * @tc.desc Verify scientific notation indexes can be normalized before fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const start = (1e0).toInt();
       const end = (2e0).toInt();
@@ -855,14 +840,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4900
-     * @tc.name testArrayFill1049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4800
+     * @tc.name testArrayFill1048
      * @tc.desc Verify object fill stores the same reference in every position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj = new Item049();
       obj.value = 100;
 
@@ -875,14 +860,14 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5000
-     * @tc.name testArrayFill1050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_4900
+     * @tc.name testArrayFill1049
      * @tc.desc Verify fill returns the same array reference for shallow copy behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill1049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Array<number>(1, 2, 3);
       const copy = original.fill(0);
 
@@ -892,316 +877,233 @@ export default function ArrayFill1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5100
-     * @tc.name testArrayFill1051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5000
+     * @tc.name testArrayFill1050
      * @tc.desc Verify combined negative start and end indexes resolve to the expected middle range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1051';
-      try {
-        const arr: Array<number> = [1, 2, 3, 4, 5, 6];
-        arr.fill(9, -4, -1);
-        console.log(TAG + ' values=' + arr.toString());
-        expect(arr[0]).assertEqual(1);
-        expect(arr[1]).assertEqual(2);
-        expect(arr[2]).assertEqual(9);
-        expect(arr[3]).assertEqual(9);
-        expect(arr[4]).assertEqual(9);
-        expect(arr[5]).assertEqual(6);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [1, 2, 3, 4, 5, 6];
+      arr.fill(9, -4, -1);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertEqual(9);
+      expect(arr[3]).assertEqual(9);
+      expect(arr[4]).assertEqual(9);
+      expect(arr[5]).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5200
-     * @tc.name testArrayFill1052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5100
+     * @tc.name testArrayFill1051
      * @tc.desc Verify fill becomes a no-op when start is greater than or equal to the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1052';
-      try {
-        const arr: Array<number> = [4, 5, 6];
-        arr.fill(7, 10);
-        console.log(TAG + ' noOpValues=' + arr.toString());
-        expect(arr[0]).assertEqual(4);
-        expect(arr[1]).assertEqual(5);
-        expect(arr[2]).assertEqual(6);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [4, 5, 6];
+      arr.fill(7, 10);
+      expect(arr[0]).assertEqual(4);
+      expect(arr[1]).assertEqual(5);
+      expect(arr[2]).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5300
-     * @tc.name testArrayFill1053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5200
+     * @tc.name testArrayFill1052
      * @tc.desc Verify fill becomes a no-op when end is clamped to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1053';
-      try {
-        const arr: Array<number> = [4, 5, 6];
-        arr.fill(7, 0, -10);
-        console.log(TAG + ' clampedValues=' + arr.toString());
-        expect(arr[0]).assertEqual(4);
-        expect(arr[1]).assertEqual(5);
-        expect(arr[2]).assertEqual(6);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [4, 5, 6];
+      arr.fill(7, 0, -10);
+      expect(arr[0]).assertEqual(4);
+      expect(arr[1]).assertEqual(5);
+      expect(arr[2]).assertEqual(6);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5400
-     * @tc.name testArrayFill1054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5300
+     * @tc.name testArrayFill1053
      * @tc.desc Verify chained string fills keep the latest value on overlapping positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1054';
-      try {
-        const arr: Array<string> = ['a', 'b', 'c', 'd', 'e'];
-        arr.fill('X', 1, 5);
-        arr.fill('Y', 2, 4);
-        const joined = arr.join('|');
-        console.log(TAG + ' joined=' + joined);
-        expect(joined).assertEqual('a|X|Y|Y|X');
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<string> = ['a', 'b', 'c', 'd', 'e'];
+      arr.fill('X', 1, 5);
+      arr.fill('Y', 2, 4);
+      const joined = arr.join('|');
+      expect(joined).assertEqual('a|X|Y|Y|X');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5500
-     * @tc.name testArrayFill1055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5400
+     * @tc.name testArrayFill1054
      * @tc.desc Verify partial object fill preserves untouched references outside the target range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1055';
-      try {
-        const head = new Item049();
-        head.value = 1;
-        const middle = new Item049();
-        middle.value = 2;
-        const tail = new Item049();
-        tail.value = 3;
-        const fill = new Item049();
-        fill.value = 88;
-        const arr: Array<Item049> = [head, middle, tail];
-        arr.fill(fill, 1, 3);
-        fill.value = 99;
-        console.log(TAG + ' values=' + arr[0].value + ',' + arr[1].value + ',' + arr[2].value);
-        expect(arr[0] === head).assertTrue();
-        expect(arr[1] === fill).assertTrue();
-        expect(arr[2] === fill).assertTrue();
-        expect(arr[0].value).assertEqual(1);
-        expect(arr[1].value).assertEqual(99);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const head = new Item049();
+      head.value = 1;
+      const middle = new Item049();
+      middle.value = 2;
+      const tail = new Item049();
+      tail.value = 3;
+      const fill = new Item049();
+      fill.value = 88;
+      const arr: Array<Item049> = [head, middle, tail];
+      arr.fill(fill, 1, 3);
+      fill.value = 99;
+      expect(arr[0] === head).assertTrue();
+      expect(arr[1] === fill).assertTrue();
+      expect(arr[2] === fill).assertTrue();
+      expect(arr[0].value).assertEqual(1);
+      expect(arr[1].value).assertEqual(99);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5600
-     * @tc.name testArrayFill1056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5500
+     * @tc.name testArrayFill1055
      * @tc.desc Verify nested array fill stores a shared reference across all covered positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1056';
-      try {
-        const shared: Array<number> = [];
-        const arr: Array<Array<number>> = [[1], [2], [3], [4]];
-        arr.fill(shared, 1, 4);
-        shared.pushOne(42);
-        console.log(TAG + ' lengths=' + arr[1].length + ',' + arr[2].length + ',' + arr[3].length);
-        expect(arr[0][0]).assertEqual(1);
-        expect(arr[1] === shared).assertTrue();
-        expect(arr[2][0]).assertEqual(42);
-        expect(arr[3][0]).assertEqual(42);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const shared: Array<number> = [];
+      const arr: Array<Array<number>> = [[1], [2], [3], [4]];
+      arr.fill(shared, 1, 4);
+      shared.pushOne(42);
+      expect(arr[0][0]).assertEqual(1);
+      expect(arr[1] === shared).assertTrue();
+      expect(arr[2][0]).assertEqual(42);
+      expect(arr[3][0]).assertEqual(42);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5700
-     * @tc.name testArrayFill1057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5600
+     * @tc.name testArrayFill1056
      * @tc.desc Verify undefined fill affects only the requested tail range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1057';
-      try {
-        const arr: Array<number | undefined> = [1, 2, 3, 4];
-        arr.fill(undefined, 2);
-        console.log(TAG + ' tail=' + arr[2] + ',' + arr[3]);
-        expect(arr[0]).assertEqual(1);
-        expect(arr[1]).assertEqual(2);
-        expect(arr[2]).assertUndefined();
-        expect(arr[3]).assertUndefined();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number | undefined> = [1, 2, 3, 4];
+      arr.fill(undefined, 2);
+      expect(arr[0]).assertEqual(1);
+      expect(arr[1]).assertEqual(2);
+      expect(arr[2]).assertUndefined();
+      expect(arr[3]).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5800
-     * @tc.name testArrayFill1058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5700
+     * @tc.name testArrayFill1057
      * @tc.desc Verify boolean tail fill changes the aggregated true count predictably
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1058';
-      try {
-        const arr: Array<boolean> = [true, true, false, true, false];
-        arr.fill(false, 1, 4);
-        let trueCount = 0;
-        for (const item of arr) {
-          if (item) {
-            trueCount++;
-          }
+    it('testArrayFill1057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<boolean> = [true, true, false, true, false];
+      arr.fill(false, 1, 4);
+      let trueCount = 0;
+      for (const item of arr) {
+        if (item) {
+          trueCount++;
         }
-        console.log(TAG + ' trueCount=' + trueCount + ', values=' + arr.toString());
-        expect(trueCount).assertEqual(1);
-        expect(arr[0]).assertTrue();
-        expect(arr[4]).assertFalse();
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
       }
+      expect(trueCount).assertEqual(1);
+      expect(arr[0]).assertTrue();
+      expect(arr[4]).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5900
-     * @tc.name testArrayFill1059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5800
+     * @tc.name testArrayFill1058
      * @tc.desc Verify large-range fill updates only the requested interior section
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1059';
-      try {
-        const arr: Array<number> = [];
-        for (let i = 0; i < 32; i++) {
-          arr.pushOne(i);
-        }
-        arr.fill(-1, 8, 24);
-        console.log(TAG + ' boundary=' + arr[7] + ',' + arr[8] + ',' + arr[23] + ',' + arr[24]);
-        expect(arr.length).assertEqual(32);
-        expect(arr[7]).assertEqual(7);
-        expect(arr[8]).assertEqual(-1);
-        expect(arr[23]).assertEqual(-1);
-        expect(arr[24]).assertEqual(24);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+    it('testArrayFill1058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [];
+      for (let i = 0; i < 32; i++) {
+        arr.pushOne(i);
       }
+      arr.fill(-1, 8, 24);
+      expect(arr.length).assertEqual(32);
+      expect(arr[7]).assertEqual(7);
+      expect(arr[8]).assertEqual(-1);
+      expect(arr[23]).assertEqual(-1);
+      expect(arr[24]).assertEqual(24);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_6000
-     * @tc.name testArrayFill1060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_5900
+     * @tc.name testArrayFill1059
      * @tc.desc Verify fill and every can be combined to validate normalized content
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1060';
-      try {
-        const arr: Array<number> = [5, 4, 3, 2, 1];
-        arr.fill(6, 1, 4);
-        const result = arr.every((item: number): boolean => item > 0);
-        console.log(TAG + ' result=' + result + ', values=' + arr.toString());
-        expect(result).assertTrue();
-        expect(arr[0]).assertEqual(5);
-        expect(arr[1]).assertEqual(6);
-        expect(arr[3]).assertEqual(6);
-        expect(arr[4]).assertEqual(1);
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<number> = [5, 4, 3, 2, 1];
+      arr.fill(6, 1, 4);
+      const result = arr.every((item: number): boolean => item > 0);
+      expect(result).assertTrue();
+      expect(arr[0]).assertEqual(5);
+      expect(arr[1]).assertEqual(6);
+      expect(arr[3]).assertEqual(6);
+      expect(arr[4]).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_6100
-     * @tc.name testArrayFill1061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_6000
+     * @tc.name testArrayFill1060
      * @tc.desc Verify the returned array reference can participate in later updates immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1061';
-      try {
-        const arr: Array<string> = ['left', 'mid', 'right'];
-        const result = arr.fill('core', 1, 3);
-        result[0] = 'start';
-        console.log(TAG + ' arr=' + arr.join('|') + ', result=' + result.join('|'));
-        expect(result === arr).assertTrue();
-        expect(arr[0]).assertEqual('start');
-        expect(arr[1]).assertEqual('core');
-        expect(arr[2]).assertEqual('core');
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<string> = ['left', 'mid', 'right'];
+      const result = arr.fill('core', 1, 3);
+      result[0] = 'start';
+      expect(result === arr).assertTrue();
+      expect(arr[0]).assertEqual('start');
+      expect(arr[1]).assertEqual('core');
+      expect(arr[2]).assertEqual('core');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_6200
-     * @tc.name testArrayFill1062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_ONE_6100
+     * @tc.name testArrayFill1061
      * @tc.desc Verify empty-string fill on a subrange is visible in joined output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill1062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const TAG = 'testArrayFill1062';
-      try {
-        const arr: Array<string> = ['A', 'B', 'C', 'D'];
-        arr.fill('', 1, 3);
-        const joined = arr.join('#');
-        console.log(TAG + ' joined=' + joined);
-        expect(joined).assertEqual('A###D');
-        expect(arr[0]).assertEqual('A');
-        expect(arr[1]).assertEqual('');
-        expect(arr[2]).assertEqual('');
-        expect(arr[3]).assertEqual('D');
-      } catch (err) {
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
-      }
+    it('testArrayFill1061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr: Array<string> = ['A', 'B', 'C', 'D'];
+      arr.fill('', 1, 3);
+      const joined = arr.join('#');
+      expect(joined).assertEqual('A###D');
+      expect(arr[0]).assertEqual('A');
+      expect(arr[1]).assertEqual('');
+      expect(arr[2]).assertEqual('');
+      expect(arr[3]).assertEqual('D');
     });
   });
 }
+

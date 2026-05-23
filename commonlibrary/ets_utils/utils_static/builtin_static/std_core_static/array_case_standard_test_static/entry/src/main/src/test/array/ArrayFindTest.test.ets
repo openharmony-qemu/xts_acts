@@ -15,14 +15,27 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class FindItem006 {
   id: int = 0;
   name: string = '';
+}
+
+class Item {
+  id: number = 0;
+  name: string = "";
 }
 
 export default function ArrayFindTest(): void {
@@ -157,73 +170,69 @@ export default function ArrayFindTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_0800
      * @tc.name testArrayFind008
-     * @tc.desc Verify find differs from filter by returning one element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFind008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(2, 4, 6, 8);
-      const found = arr.find((v: number): boolean => v > 3);
-      const filtered = arr.filter((v: number): boolean => v > 3);
-      expect(found).assertEqual(4);
-      expect(filtered.length).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_0900
-     * @tc.name testArrayFind009
      * @tc.desc Verify find can match an indexOf based lookup result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFind009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(10, 20, 30);
-      const result1 = arr.find((v: number): boolean => v > 15);
-      const result2 = arr[arr.indexOf(20)];
-      expect(result1).assertEqual(result2);
+    it('testArrayFind008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const result = arr.find(v => v > 25 && v < 35);
+      expect(result).assertEqual(30);
     });
+
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_1000
-     * @tc.name testArrayFind010
-     * @tc.desc Verify documented scenario 5.2 查找对象属性
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_0900
+     * @tc.name testArrayFind009
+     * @tc.desc Verify find can match an object by property value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFind010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.2 查找对象属性
-      const result = new Array<number>(10, 20, 30).find((v: number): boolean => v > 15);
-      expect(result).assertEqual(20);
+    it('testArrayFind009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<Item>();
+      const item = new Item();
+      item.id = 100;
+      item.name = 'test';
+      arr.push(item);
+
+      const found = arr.find((value: Item): boolean => value.id == 100);
+      expect(found != undefined).assertTrue();
+      if (found != undefined) {
+        expect(found.name).assertEqual('test');
+        expect(found === item).assertTrue();
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_1100
-     * @tc.name testArrayFind011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_1000
+     * @tc.name testArrayFind010
      * @tc.desc Verify documented scenario 6.1 find vs filter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFind011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.1 find vs filter
-      const result = new Array<number>(10, 20, 30).find((v: number): boolean => v > 15);
-      expect(result).assertEqual(20);
+    it('testArrayFind010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(2, 4, 6, 8);
+      const found = arr.find(v => v > 3);
+      const filtered = arr.filter(v => v > 3);
+      expect(found).assertEqual(4);
+      expect(filtered.length).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_1200
-     * @tc.name testArrayFind012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_1100
+     * @tc.name testArrayFind011
      * @tc.desc Verify documented scenario 6.2 find vs indexOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFind012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.2 find vs indexOf
-      const result = new Array<number>(10, 20, 30).find((v: number): boolean => v > 15);
-      expect(result).assertEqual(20);
+    it('testArrayFind011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<number>(10, 20, 30);
+      const result1 = arr.find(v => v > 15);
+      const result2 = arr[arr.indexOf(20)];
+      expect(result1).assertEqual(result2);
     });
 
   });

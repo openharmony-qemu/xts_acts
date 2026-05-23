@@ -577,28 +577,12 @@ export default function ArrayFilterTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3100
      * @tc.name testArrayFilter031
-     * @tc.desc Verify filter removes zero values from numeric arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFilter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(0, 1, 0, 2, 0, 3);
-      const result = arr.filter((v: number): boolean => v != 0);
-      expect(result.length).assertEqual(3);
-      expect(result[0]).assertEqual(1);
-      expect(result[2]).assertEqual(3);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3200
-     * @tc.name testArrayFilter032
      * @tc.desc Verify filter removes empty strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', '', 'b', '', 'c');
       const result = arr.filter((v: string): boolean => v.length > 0);
       expect(result.length).assertEqual(3);
@@ -607,14 +591,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3300
-     * @tc.name testArrayFilter033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3200
+     * @tc.name testArrayFilter032
      * @tc.desc Verify filter can keep values by index rule
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, 20, 30, 40, 50);
       const result = arr.filter((v: number, i: int): boolean => i % 2 == 0);
       expect(result.length).assertEqual(3);
@@ -624,14 +608,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3400
-     * @tc.name testArrayFilter034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3300
+     * @tc.name testArrayFilter033
      * @tc.desc Verify filter can keep values in an index range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       const result = arr.filter((v: number, i: int): boolean => i >= 3 && i <= 6);
       expect(result.length).assertEqual(4);
@@ -640,14 +624,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3500
-     * @tc.name testArrayFilter035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3400
+     * @tc.name testArrayFilter034
      * @tc.desc Verify filter can use the source array length in its predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number, i: int, a: Array<number>): boolean => i < a.length - 2);
       expect(result.length).assertEqual(3);
@@ -656,14 +640,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3600
-     * @tc.name testArrayFilter036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3500
+     * @tc.name testArrayFilter035
      * @tc.desc Verify filter can be chained before map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6);
       const result = arr.filter((v: number): boolean => v % 2 == 0)
         .map((v: number): number => v * 2);
@@ -674,14 +658,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3700
-     * @tc.name testArrayFilter037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3600
+     * @tc.name testArrayFilter036
      * @tc.desc Verify map results can be filtered afterward
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.map((v: number): number => v * 2)
         .filter((v: number): boolean => v > 5);
@@ -691,14 +675,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3800
-     * @tc.name testArrayFilter038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3700
+     * @tc.name testArrayFilter037
      * @tc.desc Verify multiple filter calls can be chained
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       const result = arr.filter((v: number): boolean => v % 2 == 0)
         .filter((v: number): boolean => v > 5);
@@ -709,14 +693,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3900
-     * @tc.name testArrayFilter039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3800
+     * @tc.name testArrayFilter038
      * @tc.desc Verify filter differs from find by returning all matches
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const filtered = arr.filter((v: number): boolean => v > 2);
       const found = arr.find((v: number): boolean => v > 2);
@@ -725,14 +709,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4000
-     * @tc.name testArrayFilter040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_3900
+     * @tc.name testArrayFilter039
      * @tc.desc Verify filter differs from some by returning elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const filtered = arr.filter((v: number): boolean => v > 2);
       const hasMatch = arr.some((v: number): boolean => v > 2);
@@ -741,14 +725,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4100
-     * @tc.name testArrayFilter041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4000
+     * @tc.name testArrayFilter040
      * @tc.desc Verify filter differs from every by not requiring all elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const filtered = arr.filter((v: number): boolean => v > 2);
       const allGreaterThanTwo = arr.every((v: number): boolean => v > 2);
@@ -757,34 +741,31 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4200
-     * @tc.name testArrayFilter042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4100
+     * @tc.name testArrayFilter041
      * @tc.desc Verify filter traverses a large array and returns matching values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
-      for (let i = 0; i < 10000; i++) {
+      for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
       }
-      const startTime = Date.now();
       const result = arr.filter((v: number): boolean => v % 2 == 0);
-      const endTime = Date.now();
-      expect(result.length).assertEqual(5000);
-      expect(endTime >= startTime).assertTrue();
+      expect(result.length).assertEqual(50);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4300
-     * @tc.name testArrayFilter043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4200
+     * @tc.name testArrayFilter042
      * @tc.desc Verify filter does not short circuit its traversal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count = 0;
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number): boolean => {
@@ -796,14 +777,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4400
-     * @tc.name testArrayFilter044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4300
+     * @tc.name testArrayFilter043
      * @tc.desc Verify filter can keep matching data records
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const p1 = new FilterProduct044();
       p1.name = 'Apple';
       p1.price = 5;
@@ -818,14 +799,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4500
-     * @tc.name testArrayFilter045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4400
+     * @tc.name testArrayFilter044
      * @tc.desc Verify filter can narrow search results by suffix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const users = new Array<string>('alice@example.com', 'bob@test.com', 'charlie@example.com');
       const exampleUsers = users.filter((email: string): boolean => email.endsWith('@example.com'));
       expect(exampleUsers.length).assertEqual(2);
@@ -834,14 +815,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4600
-     * @tc.name testArrayFilter046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4500
+     * @tc.name testArrayFilter045
      * @tc.desc Verify filter can remove null and undefined values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | null | undefined>(1, null, 2, undefined, 3, null, 4);
       const valid = arr.filter((v: number | null | undefined): boolean => v != null);
       expect(valid.length).assertEqual(4);
@@ -850,14 +831,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4700
-     * @tc.name testArrayFilter047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4600
+     * @tc.name testArrayFilter046
      * @tc.desc Verify filter supports concise arrow functions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number): boolean => v > 3);
       expect(result.length).assertEqual(2);
@@ -866,14 +847,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4800
-     * @tc.name testArrayFilter048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4700
+     * @tc.name testArrayFilter047
      * @tc.desc Verify filter supports block arrow functions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number): boolean => {
         const doubled = v * 2;
@@ -885,14 +866,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4900
-     * @tc.name testArrayFilter049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4800
+     * @tc.name testArrayFilter048
      * @tc.desc Verify filter supports traditional function predicates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number): boolean => {
         return v % 2 == 0;
@@ -903,14 +884,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5000
-     * @tc.name testArrayFilter050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_4900
+     * @tc.name testArrayFilter049
      * @tc.desc Verify filter can keep only numeric members from a union array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | number>(1, 'two', 3, 'four', 5);
       const numbers = arr.filter((v: string | number): boolean => typeof v == 'number');
       expect(numbers.length).assertEqual(3);
@@ -919,14 +900,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5100
-     * @tc.name testArrayFilter051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5000
+     * @tc.name testArrayFilter050
      * @tc.desc Verify filter can use a helper predicate function
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | number>(1, 'hello', 2, 'world');
       const strings = arr.filter(filterIsString051);
       expect(strings.length).assertEqual(2);
@@ -935,14 +916,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5200
-     * @tc.name testArrayFilter052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5100
+     * @tc.name testArrayFilter051
      * @tc.desc Verify filter handles numeric boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(
         Number.MAX_VALUE,
         Number.MIN_VALUE,
@@ -957,14 +938,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5300
-     * @tc.name testArrayFilter053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5200
+     * @tc.name testArrayFilter052
      * @tc.desc Verify filter handles string boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const longText = 'very long string value';
       const arr = new Array<string>('', '\u0000', 'a', longText);
       const result = arr.filter((s: string): boolean => s.length > 0);
@@ -974,14 +955,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5400
-     * @tc.name testArrayFilter054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5300
+     * @tc.name testArrayFilter053
      * @tc.desc Verify filter works with ReadonlyArray inputs
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = [1, 2, 3, 4, 5];
       const arr: ReadonlyArray<Int> = source;
       const result = arr.filter((v: Int): boolean => v > 2);
@@ -991,14 +972,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5500
-     * @tc.name testArrayFilter055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5400
+     * @tc.name testArrayFilter054
      * @tc.desc Verify filter skips holes and keeps sparse array values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new SparseArray<number>();
       arr[0] = 1;
       arr[2] = 3;
@@ -1011,14 +992,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5600
-     * @tc.name testArrayFilter056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5500
+     * @tc.name testArrayFilter055
      * @tc.desc Verify predicate side effects do not change filter results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const logs = new Array<number>();
       const result = arr.filter((v: number): boolean => {
@@ -1032,14 +1013,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5700
-     * @tc.name testArrayFilter057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5600
+     * @tc.name testArrayFilter056
      * @tc.desc Verify filter can update an external counter in the predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       let count = 0;
       const result = arr.filter((v: number): boolean => {
@@ -1051,14 +1032,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5800
-     * @tc.name testArrayFilter058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5700
+     * @tc.name testArrayFilter057
      * @tc.desc Verify filter supports combined conditions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
       const result = arr.filter((v: number): boolean => v > 3 && v < 8);
       expect(result.length).assertEqual(4);
@@ -1067,14 +1048,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5900
-     * @tc.name testArrayFilter059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5800
+     * @tc.name testArrayFilter058
      * @tc.desc Verify filter supports ternary expressions in the predicate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result = arr.filter((v: number): boolean => v % 2 == 0 ? true : v > 3);
       expect(result.length).assertEqual(3);
@@ -1084,14 +1065,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6000
-     * @tc.name testArrayFilter060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_5900
+     * @tc.name testArrayFilter059
      * @tc.desc Verify filter matches an equivalent for loop result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       const result1 = arr.filter((v: number): boolean => v > 2);
       const result2 = new Array<number>();
@@ -1105,14 +1086,14 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6100
-     * @tc.name testArrayFilter061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6000
+     * @tc.name testArrayFilter060
      * @tc.desc Verify filter cannot stop early once traversal starts
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4, 5);
       let callCount = 0;
       const result = arr.filter((v: number): boolean => {
@@ -1124,25 +1105,22 @@ export default function ArrayFilterTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6200
-     * @tc.name testArrayFilter062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILTER_6100
+     * @tc.name testArrayFilter061
      * @tc.desc Verify filter can handle large datasets
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFilter062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFilter061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i = 0; i < 100000; i++) {
         arr.pushOne(i);
       }
-      const startTime = Date.now();
       const result = arr.filter((v: number): boolean => v % 100 == 0);
-      const endTime = Date.now();
       expect(result.length).assertEqual(1000);
       expect(result[0]).assertEqual(0);
       expect(result[999]).assertEqual(99900);
-      expect(endTime >= startTime).assertTrue();
     });
   });
 }

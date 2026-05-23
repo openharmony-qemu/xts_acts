@@ -834,28 +834,12 @@ export default function ArrayCreateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5100
      * @tc.name testArrayCreate051
-     * @tc.desc Verify missing required parameters are rejected by ArkTS type checking
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayCreate051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // const arr1 = Array.create<int>(100); // compile-time error: missing initialValue
-      // const arr2 = Array.create<int>(); // compile-time error: missing arrayLength and initialValue
-      const arr3 = Array.create<int>(5, 100);
-      expect(arr3.length).assertEqual(5);
-      expect(arr3[0]).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5200
-     * @tc.name testArrayCreate052
      * @tc.desc Verify Array create differs from single-numeric construction before both paths are normalized by manual fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCreate052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCreate051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 42);
       const arr2 = new Array<int>(10);
       expect(arr2.length).assertEqual(1);
@@ -867,14 +851,14 @@ export default function ArrayCreateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5300
-     * @tc.name testArrayCreate053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5200
+     * @tc.name testArrayCreate052
      * @tc.desc Verify Array create differs from single-numeric construction before fill normalizes the first element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCreate053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCreate052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = Array.create<int>(10, 100);
       const arr2 = new Array<int>(10);
       expect(arr2.length).assertEqual(1);
@@ -884,14 +868,14 @@ export default function ArrayCreateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5400
-     * @tc.name testArrayCreate054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5300
+     * @tc.name testArrayCreate053
      * @tc.desc Verify Array create supports immediate chained operations on initialized arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCreate054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCreate053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.create<int>(10, 5);
       const doubled = arr.map((x: int): int => x * 2);
       expect(doubled[0]).assertEqual(10);
@@ -899,14 +883,14 @@ export default function ArrayCreateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5500
-     * @tc.name testArrayCreate055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CREATE_5400
+     * @tc.name testArrayCreate054
      * @tc.desc Verify elements in an Array create result can be modified independently after creation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCreate055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCreate054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = Array.create<int>(5, 100);
       arr[0] = 200;
       arr[2] = 300;

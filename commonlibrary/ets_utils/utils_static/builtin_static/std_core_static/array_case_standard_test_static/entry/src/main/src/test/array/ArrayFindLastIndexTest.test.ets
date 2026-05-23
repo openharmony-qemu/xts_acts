@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -166,9 +174,11 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.2 与findIndex对比
-      const result = new Array<number>(10, 20, 30, 20).findLastIndex((v: number): boolean => v == 20);
-      expect(result).assertEqual(3);
+      const arr = new Array<number>(10, 20, 30, 20, 10);
+      const first = arr.findIndex(v => v === 20);
+      const last = arr.findLastIndex(v => v === 20);
+      expect(first).assertEqual(1);
+      expect(last).assertEqual(3);
     });
 
   });

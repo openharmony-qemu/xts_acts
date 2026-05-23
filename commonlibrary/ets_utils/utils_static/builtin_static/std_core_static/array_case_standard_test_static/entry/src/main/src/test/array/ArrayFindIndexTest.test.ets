@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level,
-  Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -167,9 +175,9 @@ export default function ArrayFindIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindIndex009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3);
-      const result: int = arr.findIndex((v: number): boolean => v == 2);
-      expect(result).assertEqual(1);
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const result = arr.findIndex(v => v > 25 && v < 35);
+      expect(result).assertEqual(2);
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_INDEX_1000
@@ -180,9 +188,9 @@ export default function ArrayFindIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindIndex010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 5.2 检查元素存在
-      const result = new Array<number>(10, 20, 30).findIndex((v: number): boolean => v == 20);
-      expect(result).assertEqual(1);
+      const arr = new Array<number>(10, 20, 30);
+      const exists = arr.findIndex(v => v > 25) !== -1;
+      expect(exists).assertTrue();
     });
 
     /**
@@ -194,9 +202,10 @@ export default function ArrayFindIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindIndex011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 6.1 findIndex vs indexOf
-      const result = new Array<number>(10, 20, 30).findIndex((v: number): boolean => v == 20);
-      expect(result).assertEqual(1);
+      const arr = new Array<number>(10, 20, 30);
+      const result1 = arr.findIndex(v => v > 15);
+      const result2 = arr.indexOf(20);
+      expect(result1).assertEqual(result2);
     });
 
     /**
@@ -208,8 +217,8 @@ export default function ArrayFindIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindIndex012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Documented scenario: 7.1 int类型
-      const result = new Array<number>(10, 20, 30).findIndex((v: number): boolean => v == 20);
+      const arr = new Array<number>(1, 2, 3);
+      const result: int = arr.findIndex(v => v === 2);
       expect(result).assertEqual(1);
     });
 
