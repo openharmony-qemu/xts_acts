@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe,
-  expect, it, Level, Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -73,7 +81,6 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const lastIndex = -1;
-      const translatedIndex = arr.length - 1;
       const result = arr.at(lastIndex);
 
       expect(result).assertEqual(50);
@@ -98,35 +105,26 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0400
      * @tc.name testArrayAt004
-     * @tc.desc Verify index greater than or equal to length returns undefined
+     * @tc.desc Verify index greater than or equal to length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
+      const arr = new Array<int>(10, 10, 10);
       const invalidIndex = 10;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0500
      * @tc.name testArrayAt005
-     * @tc.desc Verify negative index beyond array length returns undefined
+     * @tc.desc Verify negative index beyond array length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -134,21 +132,12 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidNegativeIndex = -10;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidNegativeIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -188,7 +177,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0800
      * @tc.name testArrayAt008
-     * @tc.desc Verify Infinity index returns undefined
+     * @tc.desc Verify a very large positive index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -196,27 +185,18 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const largeIndex = 2147483647;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(largeIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0900
      * @tc.name testArrayAt009
-     * @tc.desc Verify negative Infinity index returns undefined
+     * @tc.desc Verify a very large negative index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -224,21 +204,12 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const largeNegativeIndex = -2147483648;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(largeNegativeIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -260,7 +231,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1100
      * @tc.name testArrayAt011
-     * @tc.desc Verify invalid index returns undefined
+     * @tc.desc Verify invalid index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -268,21 +239,12 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidIndex = 100;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -342,7 +304,6 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const negativeIndex = -1;
-      const translatedIndex = arr.length - 1;
       const result = arr.at(negativeIndex);
 
       expect(result).assertEqual(30);
@@ -391,7 +352,6 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const firstNegativeIndex = -arr.length;
-      const translatedIndex = 0;
       const result = arr.at(firstNegativeIndex);
 
       expect(result).assertEqual(10);
@@ -400,7 +360,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1800
      * @tc.name testArrayAt018
-     * @tc.desc Verify index equal to length returns undefined
+     * @tc.desc Verify index equal to length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -408,27 +368,18 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const boundaryIndex = arr.length;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(boundaryIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1900
      * @tc.name testArrayAt019
-     * @tc.desc Verify index smaller than negative length returns undefined
+     * @tc.desc Verify index smaller than negative length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -436,82 +387,50 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidNegativeIndex = -arr.length - 1;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidNegativeIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2000
      * @tc.name testArrayAt020
-     * @tc.desc Verify empty array returns undefined for all tested indexes
+     * @tc.desc Verify empty array throws RangeError for all tested indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArrayAt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      let caughtZero = false;
-      let errorTypeZero = '';
-      let errorDetailZero = '';
-      let caughtNegativeOne = false;
-      let errorTypeNegativeOne = '';
-      let errorDetailNegativeOne = '';
-      let caughtOne = false;
-      let errorTypeOne = '';
-      let errorDetailOne = '';
-
       try {
         arr.at(0);
+        expect().assertFail();
       } catch (e) {
-        caughtZero = true;
-        errorTypeZero = Class.of(e as Object).getName();
-        errorDetailZero = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
 
       try {
         arr.at(-1);
+        expect().assertFail();
       } catch (e) {
-        caughtNegativeOne = true;
-        errorTypeNegativeOne = Class.of(e as Object).getName();
-        errorDetailNegativeOne = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
 
       try {
         arr.at(1);
+        expect().assertFail();
       } catch (e) {
-        caughtOne = true;
-        errorTypeOne = Class.of(e as Object).getName();
-        errorDetailOne = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caughtZero).assertTrue();
-      expect(JSON.stringify(errorTypeZero).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailZero).length > 2).assertTrue();
-      expect(caughtNegativeOne).assertTrue();
-      expect(JSON.stringify(errorTypeNegativeOne).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailNegativeOne).length > 2).assertTrue();
-      expect(caughtOne).assertTrue();
-      expect(JSON.stringify(errorTypeOne).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailOne).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2100
      * @tc.name testArrayAt021
-     * @tc.desc Verify single-element array supports front and negative access
+     * @tc.desc Verify single-element array supports front and negative access and throws RangeError on overflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -521,37 +440,22 @@ export default function ArrayAt1Test(): void {
       arr[0] = 100;
       const firstValue = arr.at(0);
       const lastValue = arr.at(-1);
-      let caughtPositiveOverflow = false;
-      let errorTypePositiveOverflow = '';
-      let errorDetailPositiveOverflow = '';
-      let caughtNegativeOverflow = false;
-      let errorTypeNegativeOverflow = '';
-      let errorDetailNegativeOverflow = '';
       expect(firstValue).assertEqual(100);
       expect(lastValue).assertEqual(100);
 
       try {
         arr.at(1);
+        expect().assertFail();
       } catch (e) {
-        caughtPositiveOverflow = true;
-        errorTypePositiveOverflow = Class.of(e as Object).getName();
-        errorDetailPositiveOverflow = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
 
       try {
         arr.at(-2);
+        expect().assertFail();
       } catch (e) {
-        caughtNegativeOverflow = true;
-        errorTypeNegativeOverflow = Class.of(e as Object).getName();
-        errorDetailNegativeOverflow = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caughtPositiveOverflow).assertTrue();
-      expect(JSON.stringify(errorTypePositiveOverflow).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailPositiveOverflow).length > 2).assertTrue();
-      expect(caughtNegativeOverflow).assertTrue();
-      expect(JSON.stringify(errorTypeNegativeOverflow).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailNegativeOverflow).length > 2).assertTrue();
     });
 
     /**
@@ -814,7 +718,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3600
      * @tc.name testArrayAt036
-     * @tc.desc Verify repeated positive at access remains stable in a large array
+     * @tc.desc Verify repeated positive at access reads every element in order from a large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -824,18 +728,17 @@ export default function ArrayAt1Test(): void {
       for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
       }
-      const startTime = Date.now();
+      let sum = 0;
       for (let i = 0; i < 100; i++) {
-        arr.at(i);
+        sum += arr.at(i);
       }
-      const endTime = Date.now();
-      expect(endTime >= startTime).assertTrue();
+      expect(sum).assertEqual(4950);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3700
      * @tc.name testArrayAt037
-     * @tc.desc Verify repeated negative at access remains stable in a large array
+     * @tc.desc Verify repeated negative at access reads elements from the tail of a large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -845,12 +748,11 @@ export default function ArrayAt1Test(): void {
       for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
       }
-      const startTime = Date.now();
+      let sum = 0;
       for (let i = 0; i < 100; i++) {
-        arr.at(-i - 1);
+        sum += arr.at(-i - 1);
       }
-      const endTime = Date.now();
-      expect(endTime >= startTime).assertTrue();
+      expect(sum).assertEqual(4950);
     });
 
     /**
@@ -888,7 +790,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4000
      * @tc.name testArrayAt040
-     * @tc.desc Verify at can avoid out-of-bounds direct index assumptions
+     * @tc.desc Verify out-of-bounds at access throws RangeError instead of behaving like direct indexing assumptions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -896,21 +798,12 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidIndex = 100;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -934,7 +827,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4200
      * @tc.name testArrayAt042
-     * @tc.desc Verify very large positive indexes return undefined
+     * @tc.desc Verify very large positive indexes throw RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -943,41 +836,25 @@ export default function ArrayAt1Test(): void {
       const arr = new Array<int>(10, 20, 30);
       const hugeIndex1 = 2147483647;
       const hugeIndex2 = Number.MAX_SAFE_INTEGER.toInt();
-      let caughtHugeIndex1 = false;
-      let errorTypeHugeIndex1 = '';
-      let errorDetailHugeIndex1 = '';
-      let caughtHugeIndex2 = false;
-      let errorTypeHugeIndex2 = '';
-      let errorDetailHugeIndex2 = '';
-
       try {
         arr.at(hugeIndex1);
+        expect().assertFail();
       } catch (e) {
-        caughtHugeIndex1 = true;
-        errorTypeHugeIndex1 = Class.of(e as Object).getName();
-        errorDetailHugeIndex1 = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
 
       try {
         arr.at(hugeIndex2);
+        expect().assertFail();
       } catch (e) {
-        caughtHugeIndex2 = true;
-        errorTypeHugeIndex2 = Class.of(e as Object).getName();
-        errorDetailHugeIndex2 = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caughtHugeIndex1).assertTrue();
-      expect(JSON.stringify(errorTypeHugeIndex1).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailHugeIndex1).length > 2).assertTrue();
-      expect(caughtHugeIndex2).assertTrue();
-      expect(JSON.stringify(errorTypeHugeIndex2).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetailHugeIndex2).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4300
      * @tc.name testArrayAt043
-     * @tc.desc Verify very small numeric indexes follow integer conversion semantics
+     * @tc.desc Verify very small numeric indexes follow integer conversion semantics and out-of-range normalization throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -987,22 +864,14 @@ export default function ArrayAt1Test(): void {
       const normalizedMinValueIndex = Number.MIN_VALUE.toInt();
       const normalizedMinSafeIndex = Number.MIN_SAFE_INTEGER.toInt();
       const minValueResult = arr.at(normalizedMinValueIndex);
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
       expect(minValueResult).assertEqual(10);
 
       try {
         arr.at(normalizedMinSafeIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -1061,7 +930,7 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4700
      * @tc.name testArrayAt047
-     * @tc.desc Verify invalid index enters the exception handling path in current runtime
+     * @tc.desc Verify invalid index throws RangeError in current runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1069,21 +938,12 @@ export default function ArrayAt1Test(): void {
     it('testArrayAt047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidIndex = 5;
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr.at(invalidIndex);
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**

@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe,
-  expect, it, Level, Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -373,8 +381,8 @@ export default function ArrayIteratorTest(): void {
      * @tc.name testArrayIterator016
      * @tc.desc Verify iterator handles sparse arrays and preserves undefined holes
      * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 2
+     * @tc.type Function
+     * @tc.level Level 2
      */
     it('testArrayIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(10, undefined, 30);
@@ -603,7 +611,7 @@ export default function ArrayIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ITERATOR_2900
      * @tc.name testArrayIterator029
-     * @tc.desc Verify iterator return method can end iteration early when supported
+     * @tc.desc Verify a partially consumed iterator continues from its current position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -611,10 +619,11 @@ export default function ArrayIteratorTest(): void {
     it('testArrayIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3, 4, 5);
       const iterator = arr.$_iterator();
-      expect(iterator.next().value).assertEqual(1);
-      expect(iterator.next().value).assertEqual(2);
-      const result = iterator.next();
-      expect(result.value).assertEqual(3);
+      const first = iterator.next();
+      expect(first.value).assertEqual(1);
+      expect(first.done).assertFalse();
+      const remaining = collectNumberValues(iterator);
+      compareNumberArrays(remaining, new Array<int>(2, 3, 4, 5));
     });
 
     /**
@@ -751,7 +760,7 @@ export default function ArrayIteratorTest(): void {
       let result = iterator.next();
       while (!result.done) {
         const current = result.value;
-        if (current == undefined || current > 3) {
+        if (current != undefined && current > 3) {
           break;
         }
         result = iterator.next();

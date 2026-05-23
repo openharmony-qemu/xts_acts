@@ -612,7 +612,7 @@ export default function ArrayConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3300
      * @tc.name testArrayConcat033
-     * @tc.desc Verify concat works stably for large-array timing scenarios
+     * @tc.desc Verify concat preserves order when combining two large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -624,17 +624,18 @@ export default function ArrayConcatTest(): void {
         arr1.pushOne(i);
         arr2.pushOne(i + 10000);
       }
-      const startTime = Date.now();
       const result = arr1.concat(arr2);
-      const endTime = Date.now();
       expect(result.length).assertEqual(20000);
-      expect(endTime >= startTime).assertTrue();
+      expect(result[0]).assertEqual(0);
+      expect(result[9999]).assertEqual(9999);
+      expect(result[10000]).assertEqual(10000);
+      expect(result[19999]).assertEqual(19999);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3400
      * @tc.name testArrayConcat034
-     * @tc.desc Verify concat handles many array parameters efficiently
+     * @tc.desc Verify concat preserves argument order when combining many array parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -645,11 +646,11 @@ export default function ArrayConcatTest(): void {
       for (let i = 0; i < 100; i++) {
         arrays.pushOne(singleNumberArray(i));
       }
-      const startTime = Date.now();
       const result = base.concat(...arrays);
-      const endTime = Date.now();
       expect(result.length).assertEqual(100);
-      expect(endTime >= startTime).assertTrue();
+      expect(result[0]).assertEqual(0);
+      expect(result[50]).assertEqual(50);
+      expect(result[99]).assertEqual(99);
     });
 
     /**

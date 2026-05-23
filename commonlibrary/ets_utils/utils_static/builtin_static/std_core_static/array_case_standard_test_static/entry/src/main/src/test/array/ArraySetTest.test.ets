@@ -15,8 +15,16 @@
  */
 
 import {
-  afterAll, afterEach, beforeAll, beforeEach, describe,
-  expect, it, Level, Size, TestType
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
@@ -123,27 +131,18 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2);
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[2147483647] = 100;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_0600
      * @tc.name testArraySet006
-     * @tc.desc Verify negative index writes fail at runtime after compile-safe parsing
+     * @tc.desc Verify negative index writes throw RangeError at runtime after compile-safe parsing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -151,21 +150,12 @@ export default function ArraySetTest(): void {
     it('testArraySet006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[idx] = 100;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -178,21 +168,12 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[10] = 100;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -426,8 +407,6 @@ export default function ArraySetTest(): void {
       const arr = new Array<int>(1, 2, 3);
       const validReplacement = 100;
 
-      // ArkTS rejects assigning a string value to a number array at compile time,
-      // so the runtime suite only keeps the valid control path executable.
       arr[0] = validReplacement;
       expect(arr[0]).assertEqual(validReplacement);
     });
@@ -529,27 +508,18 @@ export default function ArraySetTest(): void {
      */
     it('testArraySet030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[5] = 100;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_3100
      * @tc.name testArraySet031
-     * @tc.desc Verify negative set indexes fail at runtime after compile-safe parsing
+     * @tc.desc Verify negative set indexes throw RangeError at runtime after compile-safe parsing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -557,21 +527,12 @@ export default function ArraySetTest(): void {
     it('testArraySet031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
       const idx = Number.parseInt('-1').toInt();
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[idx] = 100;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
 
     /**
@@ -586,8 +547,6 @@ export default function ArraySetTest(): void {
       const arr = new Array<int>(1, 2, 3);
       const nextValue = Number.parseInt('123').toInt();
 
-      // ArkTS rejects assigning a string value to a number array at compile time,
-      // so the runtime suite verifies the neighboring valid write path instead.
       arr[1] = nextValue;
       expect(arr[1]).assertEqual(nextValue);
     });
@@ -842,7 +801,7 @@ export default function ArraySetTest(): void {
      * @tc.level Level 2
      */
     it('testArraySet048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(100);
+      const arr = Array.create<int>(100, 0);
       for (let i = 0; i < arr.length; i++) {
         arr[i] = i;
       }
@@ -947,28 +906,19 @@ export default function ArraySetTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_SET_5500
      * @tc.name testArraySet055
-     * @tc.desc Verify empty arrays do not allow setting any valid index
+     * @tc.desc Verify empty arrays throw RangeError when setting any index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testArraySet055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      let caught = false;
-      let errorType = '';
-      let errorDetail = '';
-
       try {
         arr[0] = 1;
+        expect().assertFail();
       } catch (e) {
-        caught = true;
-        errorType = Class.of(e as Object).getName();
-        errorDetail = JSON.stringify(e);
+        expect(e.name).assertEqual('RangeError');
       }
-
-      expect(caught).assertTrue();
-      expect(JSON.stringify(errorType).length > 2).assertTrue();
-      expect(JSON.stringify(errorDetail).length > 2).assertTrue();
     });
   });
 }

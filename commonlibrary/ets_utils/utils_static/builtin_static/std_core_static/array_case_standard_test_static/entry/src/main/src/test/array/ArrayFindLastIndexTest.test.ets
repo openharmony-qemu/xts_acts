@@ -48,11 +48,10 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30, 20, 10);
-        const result = arr.findLastIndex((v: number): boolean => v == 20);
-        expect(result).assertEqual(3);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30, 20, 10);
+      const result = arr.findLastIndex((v: number): boolean => v == 20);
+      expect(result).assertEqual(3);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0200
@@ -63,11 +62,10 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30, 40, 50);
-        const result = arr.findLastIndex((v: number): boolean => v < 40);
-        expect(result).assertEqual(2);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const result = arr.findLastIndex((v: number): boolean => v < 40);
+      expect(result).assertEqual(2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0300
@@ -78,10 +76,9 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30);
-        expect(arr.findLastIndex((v: number): boolean => v > 100)).assertEqual(-1);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30);
+      expect(arr.findLastIndex((v: number): boolean => v > 100)).assertEqual(-1);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0400
@@ -92,10 +89,9 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>();
-        expect(arr.findLastIndex((v: number): boolean => true)).assertEqual(-1);
-      }
-    );
+      const arr = new Array<number>();
+      expect(arr.findLastIndex((v: number): boolean => true)).assertEqual(-1);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0500
@@ -106,11 +102,10 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30);
-        const result = arr.findLastIndex((v: number): boolean => v > 25);
-        expect(result).assertEqual(2);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30);
+      const result = arr.findLastIndex((v: number): boolean => v > 25);
+      expect(result).assertEqual(2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0600
@@ -121,17 +116,16 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const i1 = new FindLastIndexItem006();
-        i1.value = 10;
-        const i2 = new FindLastIndexItem006();
-        i2.value = 20;
-        const i3 = new FindLastIndexItem006();
-        i3.value = 10;
-        const arr = new Array<FindLastIndexItem006>(i1, i2, i3);
-        const result = arr.findLastIndex((item: FindLastIndexItem006): boolean => item.value == 10);
-        expect(result).assertEqual(2);
-      }
-    );
+      const i1 = new FindLastIndexItem006();
+      i1.value = 10;
+      const i2 = new FindLastIndexItem006();
+      i2.value = 20;
+      const i3 = new FindLastIndexItem006();
+      i3.value = 10;
+      const arr = new Array<FindLastIndexItem006>(i1, i2, i3);
+      const result = arr.findLastIndex((item: FindLastIndexItem006): boolean => item.value == 10);
+      expect(result).assertEqual(2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0700
@@ -142,11 +136,10 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30, 40, 50);
-        const result = arr.findLastIndex((v: number): boolean => v % 3 == 0);
-        expect(result).assertEqual(2);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30, 40, 50);
+      const result = arr.findLastIndex((v: number): boolean => v % 3 == 0);
+      expect(result).assertEqual(2);
+    });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0800
@@ -157,13 +150,13 @@ export default function ArrayFindLastIndexTest(): void {
      * @tc.level Level 2
      */
     it('testArrayFindLastIndex008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const arr = new Array<number>(10, 20, 30, 20, 10);
-        const first = arr.findIndex((v: number): boolean => v == 20);
-        const last = arr.findLastIndex((v: number): boolean => v == 20);
-        expect(first).assertEqual(1);
-        expect(last).assertEqual(3);
-      }
-    );
+      const arr = new Array<number>(10, 20, 30, 20, 10);
+      const first = arr.findIndex((v: number): boolean => v == 20);
+      const last = arr.findLastIndex((v: number): boolean => v == 20);
+      expect(first).assertEqual(1);
+      expect(last).assertEqual(3);
+    });
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FIND_LAST_INDEX_0900
      * @tc.name testArrayFindLastIndex009

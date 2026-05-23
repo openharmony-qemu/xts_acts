@@ -37,13 +37,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0100
-     * @tc.name testArrayCopyWithin001
+     * @tc.name testArrayCopyWithin3001
      * @tc.desc Verify copyWithin accepts target and start int parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c', 'd');
       arr.copyWithin(1, 2);
       expect(arr[0]).assertEqual('a');
@@ -54,13 +54,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0200
-     * @tc.name testArrayCopyWithin002
+     * @tc.name testArrayCopyWithin3002
      * @tc.desc Verify the omitted end parameter defaults to the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.copyWithin(0, 2);
       expect(arr[0]).assertEqual(3);
@@ -69,13 +69,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0300
-     * @tc.name testArrayCopyWithin003
+     * @tc.name testArrayCopyWithin3003
      * @tc.desc Verify copyWithin returns the array instance itself
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const result = arr.copyWithin(1, 2);
       expect(result === arr).assertTrue();
@@ -83,13 +83,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0400
-     * @tc.name testArrayCopyWithin004
+     * @tc.name testArrayCopyWithin3004
      * @tc.desc Verify copyWithin mutates the original array in place
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       const originalRef = arr;
       arr.copyWithin(1, 2);
@@ -99,13 +99,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0500
-     * @tc.name testArrayCopyWithin005
+     * @tc.name testArrayCopyWithin3005
      * @tc.desc Verify no change occurs when start is greater than or equal to the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       const original = arr.toString();
       arr.copyWithin(0, 10);
@@ -114,13 +114,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0600
-     * @tc.name testArrayCopyWithin006
+     * @tc.name testArrayCopyWithin3006
      * @tc.desc Verify no change occurs when target equals start
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.copyWithin(2, 2);
       expect(arr[0]).assertEqual(1);
@@ -130,13 +130,13 @@ export default function ArrayCopyWithin3Test(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_COPYWITHIN_THREE_0700
-     * @tc.name testArrayCopyWithin007
+     * @tc.name testArrayCopyWithin3007
      * @tc.desc Verify copyWithin can duplicate a leading segment to the tail of the array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayCopyWithin007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayCopyWithin3007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3, 4);
       arr.copyWithin(2, 0);
       expect(arr.toString()).assertEqual('1,2,1,2');
