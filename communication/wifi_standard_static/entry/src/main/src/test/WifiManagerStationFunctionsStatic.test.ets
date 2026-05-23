@@ -3267,12 +3267,6 @@ export default function actsWifiManagerFunctionsTest() {
         expect(netWorkId >= 0).assertTrue();
         await wifiManager.connectToCandidateConfigWithUserAction(netWorkId);
         hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
-        await Utils.msSleep(2000);
-        wifiManager.disconnect();
-        hilog.info(domain, tag, `${caseName} disconnect success`);
-        await Utils.msSleep(2000);
-        await wifiManager.removeCandidateConfig(netWorkId);
-        hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
       } catch (err) {
         hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
         if (err.code === 801) {
@@ -3280,6 +3274,18 @@ export default function actsWifiManagerFunctionsTest() {
           expect(err.code).assertEqual(801);
         } else {
           expect().assertFail();
+        }
+        try {
+          await Utils.msSleep(2000);
+          wifiManager.disconnect();
+          hilog.info(domain, tag, `${caseName} disconnect success`);
+          if (netWorkId >= 0) {
+            await Utils.msSleep(2000);
+            await wifiManager.removeCandidateConfig(netWorkId);
+            hilog.info(domain, tag, `${caseName} cleanup: removeCandidateConfig success`);
+          }
+        } catch (cleanupErr) {
+          hilog.error(domain, tag, `${caseName} cleanup failed: ` + cleanupErr.message);
         }
       }
       hilog.info(domain, tag, `${caseName} test end`);
