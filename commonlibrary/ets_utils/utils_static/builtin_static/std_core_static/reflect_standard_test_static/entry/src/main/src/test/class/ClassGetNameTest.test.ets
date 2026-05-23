@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -400,7 +400,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<int | string>();
         let name = clazz.getName();
-        console.info(name); // 类似 "{Ustd.core.Int,std.core.String}"
+        console.info(name);
         expect(clazz.isUnion()).assertEqual(true);
     });
 
@@ -658,15 +658,12 @@ export default function ClassGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetName033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 测试是否每次调用返回新字符串还是相同引用
         let clazz = Class.from<MyClass033>();
         let name1 = clazz.getName();
         let name2 = clazz.getName();
 
-        // 值相等
         expect(name1).assertEqual(name2);
 
-        // 引用可能相等也可能不等，取决于实现
         console.info("Same reference: " + (name1 === name2));
     });
 
@@ -735,10 +732,9 @@ export default function ClassGetNameTest(): void {
         let name = clazz.getName();
         let descriptor = clazz.getDescriptor();
 
-        console.info("Name: " + name); // "MyClass037"
-        console.info("Descriptor: " + descriptor); // "LMyClass;" 或类似格式
+        console.info("Name: " + name);
+        console.info("Descriptor: " + descriptor);
 
-        // name是简单类名，descriptor是JVM风格的描述符
         expect(name !== descriptor).assertTrue();
         expect(Utils.classNameMatches(name, "MyClass037")).assertTrue();
         expect(descriptor).assertContain("MyClass037");

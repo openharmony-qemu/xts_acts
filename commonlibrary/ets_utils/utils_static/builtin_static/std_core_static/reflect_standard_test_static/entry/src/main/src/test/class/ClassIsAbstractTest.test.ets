@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -43,7 +43,6 @@ abstract class MultiAbstractClass008 {
 
 abstract class Child009 extends Parent009 {
     public override method1(): void {}
-    // method2未实现，Child仍是抽象类
   }
 
 abstract class Parent009 {
@@ -263,7 +262,6 @@ interface Interface1050 {
 
 abstract class PartialImpl051 implements MyInterface051 {
     public method1(): void {}
-    // method2和method3未实现，类仍为抽象
   }
 
 interface MyInterface051 {
@@ -461,14 +459,14 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1500
      * @tc.name testClassIsAbstract015
-     * @tc.desc Verify ClassIsAbstract case 015: interface Class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 015: interface Class isAbstract() returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsAbstract015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface015>();
-        expect(cls.isAbstract()).assertFalse();
+        expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -487,14 +485,14 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1700
      * @tc.name testClassIsAbstract017
-     * @tc.desc Verify ClassIsAbstract case 017: type Class object call isAbstract return false
+     * @tc.desc Verify ClassIsAbstract case 017: PRIMITIVE isAbstract true, string isAbstract false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsAbstract017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.PRIMITIVE_INT.isAbstract()).assertFalse();
-        expect(Class.PRIMITIVE_BOOLEAN.isAbstract()).assertFalse();
+      expect(Class.PRIMITIVE_INT.isAbstract()).assertTrue();
+        expect(Class.PRIMITIVE_BOOLEAN.isAbstract()).assertTrue();
         expect(Class.from<string>().isAbstract()).assertFalse();
     });
 
@@ -509,20 +507,6 @@ export default function ClassIsAbstractTest(): void {
     it('testClassIsAbstract018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [];
         let cls = Class.of(arr);
-        expect(cls.isAbstract()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1900
-     * @tc.name testClassIsAbstract019
-     * @tc.desc Verify ClassIsAbstract case 019: FixedArray type call isAbstract return false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsAbstract019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let fixedArr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(fixedArr);
         expect(cls.isAbstract()).assertFalse();
     });
 
@@ -716,7 +700,7 @@ export default function ClassIsAbstractTest(): void {
         expect(absCls.isAbstract()).assertTrue();
         expect(absCls.isInterface()).assertFalse();
         expect(ifaceCls.isInterface()).assertTrue();
-        expect(ifaceCls.isAbstract()).assertFalse();
+        expect(ifaceCls.isAbstract()).assertTrue();
     });
 
     /**

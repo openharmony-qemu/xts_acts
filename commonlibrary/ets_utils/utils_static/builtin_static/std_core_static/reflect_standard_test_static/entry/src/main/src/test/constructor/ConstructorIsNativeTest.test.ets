@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -349,7 +349,7 @@ export default function ConstructorIsNativeTest(): void {
       let constructors = Class.from<MyClass017>().getConstructors();
         for (let i = 0; i < constructors.length; i++) {
           let isNative = constructors[i].isNative();
-          expect(isNative).assertFalse(); // 用户定义的构造函数都应该是false
+          expect(isNative).assertFalse();
         }
     });
 
@@ -381,7 +381,6 @@ export default function ConstructorIsNativeTest(): void {
       let userConstructor = Class.from<MyClass019>().getConstructors()[0];
         expect(userConstructor.isNative()).assertFalse();
 
-        // 内置类（如Array）的构造函数
         let arrayConstructors = Class.from<Array<int>>().getConstructors();
         for (let i = 0; i < arrayConstructors.length; i++) {
           let name = arrayConstructors[i].getName();

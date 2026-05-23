@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -237,7 +237,6 @@ class ManyStaticMethodsClass030 {
       public static method3(): void {}
       public static method4(): void {}
       public static method5(): void {}
-      // ... 假设有100个静态方法
   }
 
 class EmptyClass031 {}
@@ -685,7 +684,6 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
         let methods = cls.getStaticMethods();
-        // FixedArray是定长数组，长度固定
         expect(methods.length).assertLarger(0);
     });
 
@@ -745,7 +743,6 @@ export default function ClassGetStaticMethodsTest(): void {
       let cls = Class.from<OverloadClass016>();
         let methods = cls.getStaticMethods();
         expect(methods.length).assertEqual(3);
-        // 每个重载都是独立的StaticMethod对象
         let names: Array<string> = new Array<string>();
         for (let i = 0; i < methods.length; i++) {
             names.push(methods[i].getName());
@@ -784,7 +781,6 @@ export default function ClassGetStaticMethodsTest(): void {
      */
     it('testClassGetStaticMethods018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
-        // 类未初始化不影响静态方法获取
         let methods = cls.getStaticMethods();
         expect(methods.length).assertEqual(1);
     });
@@ -800,7 +796,6 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ClassWithGetter019>();
         let methods = cls.getStaticMethods();
-        // 静态getter以"%%get-"开头命名
         let hasGetter = false;
         for (let i = 0; i < methods.length; i++) {
             if (methods[i].isGetter()) {
@@ -932,7 +927,6 @@ export default function ClassGetStaticMethodsTest(): void {
         expect(parentMethods[0].getName()).assertEqual("process");
         expect(childMethods[0].getName()).assertEqual("process");
 
-        // 验证是不同类的方法
         expect(Utils.classNameMatches(parentMethods[0].getOwner().getName(), "ParentClass025")).assertTrue();
         expect(Utils.classNameMatches(childMethods[0].getOwner().getName(), "ChildClass025")).assertTrue();
     });

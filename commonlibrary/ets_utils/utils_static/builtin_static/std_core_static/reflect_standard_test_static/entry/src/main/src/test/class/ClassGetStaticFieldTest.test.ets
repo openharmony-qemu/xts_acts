@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -387,7 +387,6 @@ export default function ClassGetStaticFieldTest(): void {
       let cls = Class.from<TestClass012>();
         let field = cls.getStaticField('myField');
         
-        // 验证StaticField的方法可用
         expect(field!.getName() !== null).assertTrue();
         expect(field!.getType() !== null).assertTrue();
         expect(field!.getOwner() !== null).assertTrue();
@@ -502,15 +501,12 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass020>();
         
-        // 可以找到子类静态字段
         let nameField = cls.getStaticField('name');
         expect(nameField !== null).assertTrue();
         
-        // 找不到父类静态字段
         let ageField = cls.getStaticField('age');
         expect(ageField === undefined).assertTrue();
         
-        // 通过父类Class对象查找
         let parentAgeField = cls.getSuper()!.getStaticField('age');
         expect(parentAgeField !== null).assertTrue();
         expect(parentAgeField!.getName()).assertEqual('age');
@@ -527,17 +523,14 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child021>();
         
-        // 子类只能找到自己的静态字段
         expect(childCls.getStaticField('c') !== null).assertTrue();
         expect(childCls.getStaticField('b') === undefined).assertTrue();
         expect(childCls.getStaticField('a') === undefined).assertTrue();
         
-        // 通过父类查找
         let parentCls = childCls.getSuper()!;
         expect(parentCls.getStaticField('b') !== null).assertTrue();
         expect(parentCls.getStaticField('a') === undefined).assertTrue();
         
-        // 通过祖父类查找
         let grandParentCls = parentCls.getSuper()!;
         expect(grandParentCls.getStaticField('a') !== null).assertTrue();
     });
@@ -553,13 +546,11 @@ export default function ClassGetStaticFieldTest(): void {
     it('testClassGetStaticField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child022>();
         
-        // 子类只能看到自己的data
         let childField = childCls.getStaticField('data');
         expect(childField !== null).assertTrue();
         expect(Utils.classNameMatches(childField!.getOwner().getName(), 'Child022')).assertTrue();
         expect(childField!.getValue(childCls) as string).assertEqual('child');
         
-        // 父类的data需要通过父类Class对象
         let parentField = childCls.getSuper()!.getStaticField('data');
         expect(parentField !== null).assertTrue();
         expect(Utils.classNameMatches(parentField!.getOwner().getName(), 'Parent022')).assertTrue();
@@ -618,7 +609,6 @@ export default function ClassGetStaticFieldTest(): void {
      */
     it('testClassGetStaticField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 可能需要先initialize
         cls.initialize();
         let field = cls.getStaticField('name');
         expect(field !== null).assertTrue();
@@ -774,7 +764,6 @@ export default function ClassGetStaticFieldTest(): void {
         let field1 = cls.getStaticField('name');
         let field2 = cls.getStaticField('name');
         
-        // 验证字段属性相同
         expect(field1!.getName()).assertEqual(field2!.getName());
         expect(field1!.getType().getName()).assertEqual(field2!.getType().getName());
     });

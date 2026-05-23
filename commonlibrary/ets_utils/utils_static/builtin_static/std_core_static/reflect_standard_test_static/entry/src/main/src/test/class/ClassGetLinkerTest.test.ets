@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -209,8 +209,6 @@ export default function ClassGetLinkerTest(): void {
      */
     it('testClassGetLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass002>()
-        // 以下代码应该在编译期报错
-        // let linker = cls.getLinker("invalid_param")
         expect(cls.getLinker() !== null).assertTrue()
     });
 
@@ -315,7 +313,6 @@ export default function ClassGetLinkerTest(): void {
 
         expect(parentLinker !== null).assertTrue()
         expect(childLinker !== null).assertTrue()
-        // 验证父子类的RuntimeLinker关系
     });
 
     /**
@@ -473,7 +470,6 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass019>()
         let linker = cls.getLinker()
-        // 验证linker具有RuntimeLinker的接口特征
         expect(typeof linker).assertEqual("object")
     });
 
@@ -558,7 +554,6 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 假设自定义类在某个模块中
 
         let cls = Class.from<MyClass024>()
         let linker = cls.getLinker()
@@ -609,11 +604,6 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 外部模块类示例见注释；此处用本模块类占位验证 getLinker
-        // import { ExternalClass } from 'module'
-        // let cls = Class.from<ExternalClass>()
-        // let linker = cls.getLinker()
-        // expect(linker !== null).assertTrue()
         let cls = Class.from<MyClass001>()
         expect(cls.getLinker() !== null).assertTrue()
     });
@@ -644,7 +634,6 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<UninitializedClass029>()
         let linker = cls.getLinker()
         expect(linker !== null).assertTrue()
-        // 此时类可能未初始化，但getLinker应该正常工作
     });
 
     /**
@@ -716,7 +705,6 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 创建多个类并获取它们的RuntimeLinker
         for (let i = 0; i < 100; i++) {
 
           let cls = Class.from<DynamicClass034>()
@@ -751,7 +739,6 @@ export default function ClassGetLinkerTest(): void {
       let cls = Class.from<MyClass036>()
         let linker = cls.getLinker()
         let descriptor = cls.getDescriptor()
-        // 使用RuntimeLinker验证描述符
         expect(linker !== null).assertTrue()
         expect(descriptor !== null).assertTrue()
     });
@@ -815,7 +802,6 @@ export default function ClassGetLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetLinker040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 确保在API 24+上运行
 
         let cls = Class.from<MyClass040>()
         let linker = cls.getLinker()
@@ -833,7 +819,7 @@ export default function ClassGetLinkerTest(): void {
     it('testClassGetLinker041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass041>()
         let linker = clazz.getLinker()
-        console.info(linker !== undefined) // true
+        console.info(linker !== undefined)
         let cls = linker!.loadClass('std.core.Map')
         console.info(cls!.getName())
         

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -238,7 +238,6 @@ class GenericClass096<K, V> {
 class ServiceB097 {
     public serviceA: ServiceA097;
     public constructor() {
-      // 使用from获取ServiceA的Class对象
       let cls = Class.from<ServiceA097>();
       this.serviceA = cls.createInstance() as ServiceA097;
     }
@@ -943,7 +942,6 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 首次访问，类未初始化
         let cls = Class.from<UninitializedClass043>();
         expect(cls !== null).assertTrue();
         expect(Utils.classNameMatches(cls.getName(), "UninitializedClass043")).assertTrue();
@@ -1152,7 +1150,6 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Class.from<T>() 描述泛型类型参数；Class.PRIMITIVE_* 描述运行时原始类型标记，isPrimitive 语义不同
       let cls = Class.from<int>();
         expect(cls.isPrimitive()).assertFalse();
         expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
@@ -1501,7 +1498,6 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 首次from会触发初始化
         let cls = Class.from<LazyClass084>();
         expect(cls !== null).assertTrue();
         expect(LazyClass084.value).assertEqual(100);
@@ -1608,7 +1604,6 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 注意：ArkTS-Sta可能不支持真正的多线程，此处为概念性测试
         let cls1 = Class.from<Map<int, string>>();
         let cls2 = Class.from<Map<int, string>>();
         expect(cls1 === cls2).assertTrue();
@@ -1623,16 +1618,13 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // from不需要实例
         let cls1 = Class.from<MyClass092>();
         expect(cls1 !== null).assertTrue();
         
-        // of需要实例
         let obj = new MyClass092();
         let cls2 = Class.of(obj);
         expect(cls2 !== null).assertTrue();
         
-        // 两者返回同一Class对象
         expect(cls1 === cls2).assertTrue();
     });
 
@@ -1647,15 +1639,12 @@ export default function ClassFromTest(): void {
     it('testClassFrom093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>();
         
-        // ofAny：运行时获取类型
         let cls1 = Class.ofAny(obj);
         expect(cls1 !== null).assertTrue();
         
-        // from：编译时指定类型
         let cls2 = Class.from<Map<int, string>>();
         expect(cls2 !== null).assertTrue();
         
-        // 结果相同
         expect(cls1!.getName() === cls2.getName()).assertTrue();
     });
 
@@ -1684,26 +1673,20 @@ export default function ClassFromTest(): void {
     it('testClassFrom095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass095>();
         
-        // 获取类名
         expect(Utils.classNameMatches(cls.getName(), "MyClass095")).assertTrue();
         
-        // 获取父类
         let superCls = cls.getSuper();
         expect(superCls !== null).assertTrue();
         
-        // 获取实例字段
         let fields = cls.getInstanceFields();
-        expect(fields.length).assertEqual(1); // 只有field1是public
+        expect(fields.length).assertEqual(1);
         
-        // 获取实例方法
         let methods = cls.getInstanceMethods();
         expect(methods.length).assertLarger(0);
         
-        // 获取构造函数
         let constructors = cls.getConstructors();
         expect(constructors.length).assertEqual(2);
         
-        // 获取静态方法
         let staticMethods = cls.getStaticMethods();
         expect(staticMethods.length).assertLarger(0);
     });
@@ -1721,7 +1704,6 @@ export default function ClassFromTest(): void {
         expect(cls !== null).assertTrue();
         expect(Utils.classNameMatches(cls.getName(), "GenericClass096")).assertTrue();
         
-        // 创建实例
         let obj = cls.createInstance() as GenericClass096<string, int>;
         expect(obj !== null).assertTrue();
     });
@@ -1780,11 +1762,9 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 正确：返回Class对象
         let cls = Class.from<MyClass100>();
         expect(cls !== null).assertTrue();
         
-        // 编译器确保类型正确
         let instance = cls.createInstance() as MyClass100;
         expect(instance.value).assertEqual(0);
     });
@@ -1812,10 +1792,8 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 缓存Class对象
         const MY_CLASS: Class = Class.from<MyClass102>();
         
-        // 使用缓存的Class对象
 
         
         let obj1 = createInstance102();
@@ -1833,13 +1811,11 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 不好的做法：循环中重复from
         for (let i = 0; i < 100; i++) {
-          let cls = Class.from<MyClass103>(); // 每次都from
+          let cls = Class.from<MyClass103>();
           expect(Utils.classNameMatches(cls.getName(), "MyClass103")).assertTrue();
         }
         
-        // 好的做法：from一次，多次使用
         let cls = Class.from<MyClass103>();
         for (let i = 0; i < 100; i++) {
           let obj = cls.createInstance() as MyClass103;
@@ -1873,16 +1849,13 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
      */
     it('testClassFrom105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // from：编译时已知类型
         let cls1 = Class.from<MyClass105>();
         expect(cls1 !== null).assertTrue();
         
-        // ofAny：运行时获取类型
         let obj: Any = new MyClass105();
         let cls2 = Class.ofAny(obj);
         expect(cls2 !== null).assertTrue();
         
-        // 结果一致
         expect(cls1 === cls2).assertTrue();
     });
 

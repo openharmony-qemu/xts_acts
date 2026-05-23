@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -47,7 +47,7 @@ class MixedTypes005 {
   }
 
 class EmptyClass006 {
-      private static field: string = ''; // 鍙湁private闈欐€佸瓧娈?
+      private static field: string = '';
   }
 
 class PrivateOnly007 {
@@ -256,7 +256,7 @@ export default function ClassGetStaticFieldsTest(): void {
 
         let cls = Class.from<MyClass001>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(1); // 鍙湁public闈欐€佸瓧娈?
+        expect(fields.length).assertEqual(1);
     });
 
     /**
@@ -269,7 +269,6 @@ export default function ClassGetStaticFieldsTest(): void {
      */
     it('testClassGetStaticFields002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 閿欒鐢ㄦ硶锛氫紶閫掑弬鏁?
         try {
             let fields = looseReflect(cls as Object).getStaticFields('invalid');
             expect().assertFail();
@@ -353,7 +352,7 @@ export default function ClassGetStaticFieldsTest(): void {
     it('testClassGetStaticFields007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateOnly007>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(0); // private鍜宲rotected閮戒笉鍙
+        expect(fields.length).assertEqual(0);
     });
 
     /**
@@ -381,11 +380,10 @@ export default function ClassGetStaticFieldsTest(): void {
     it('testClassGetStaticFields009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass009>();
         let fields = asStaticFieldArray(cls.getStaticFields());
-        expect(fields.length).assertEqual(1); // 鍙湁name
+        expect(fields.length).assertEqual(1);
         
-        // 閫氳繃鐖剁被Class瀵硅薄鑾峰彇鐖剁被闈欐€佸瓧娈?
         let parentFields = asStaticFieldArray(cls.getSuper()!.getStaticFields());
-        expect(parentFields.length).assertEqual(1); // 鍙湁age
+        expect(parentFields.length).assertEqual(1);
     });
 
     /**
@@ -399,13 +397,13 @@ export default function ClassGetStaticFieldsTest(): void {
     it('testClassGetStaticFields010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child010>();
         let childFields = asStaticFieldArray(childCls.getStaticFields());
-        expect(childFields.length).assertEqual(1); // 鍙湁c
+        expect(childFields.length).assertEqual(1);
         
         let parentFields = asStaticFieldArray(childCls.getSuper()!.getStaticFields());
-        expect(parentFields.length).assertEqual(1); // 鍙湁b
+        expect(parentFields.length).assertEqual(1);
         
         let grandParentFields = asStaticFieldArray(childCls.getSuper()!.getSuper()!.getStaticFields());
-        expect(grandParentFields.length).assertEqual(1); // 鍙湁a
+        expect(grandParentFields.length).assertEqual(1);
     });
 
     /**
@@ -420,11 +418,9 @@ export default function ClassGetStaticFieldsTest(): void {
       let derivedCls = Class.from<Derived011>();
         let fields = asStaticFieldArray(derivedCls.getStaticFields());
         
-        // 鍙兘鑾峰彇Derived鑷繁鐨勯潤鎬佸瓧娈?
         expect(fields.length).assertEqual(1);
         expect(fields[0].getName()).assertEqual('derivedField');
         
-        // Base鐨勯潤鎬佸瓧娈甸渶瑕侀€氳繃Base绫昏幏鍙?
         let baseCls = Class.from<Base011>();
         let baseFields = asStaticFieldArray(baseCls.getStaticFields());
         expect(baseFields.length).assertEqual(1);
@@ -592,7 +588,6 @@ export default function ClassGetStaticFieldsTest(): void {
       let cls = Class.from<AccessTest020>();
         let fields = asStaticFieldArray(cls.getStaticFields());
         
-        // 鍙湁public瀛楁鍙
         expect(fields.length).assertEqual(1);
         expect(fields[0].getName()).assertEqual('publicField');
     });
@@ -632,12 +627,10 @@ export default function ClassGetStaticFieldsTest(): void {
     it('testClassGetStaticFields022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedClass022>();
         
-        // getStaticFields鍙繑鍥為潤鎬佸瓧娈?
         let staticFields = asStaticFieldArray(cls.getStaticFields());
         expect(staticFields.length).assertEqual(1);
         expect(staticFields[0].getName()).assertEqual('staticField');
         
-        // getInstanceFields鍙繑鍥炲疄渚嬪瓧娈?
         let instanceFields = asInstanceFieldArrayFromCls(cls.getInstanceFields());
         expect(instanceFields.length).assertEqual(1);
         expect(instanceFields[0].getName()).assertEqual('instanceField');
@@ -657,7 +650,6 @@ export default function ClassGetStaticFieldsTest(): void {
         let fields2 = asStaticFieldArray(cls.getStaticFields());
         
         expect(fields1.length).assertEqual(fields2.length);
-        // 楠岃瘉瀛楁鍐呭鐩稿悓
         for (let i = 0; i < fields1.length; i++) {
             expect(fields1[i].getName()).assertEqual(fields2[i].getName());
         }

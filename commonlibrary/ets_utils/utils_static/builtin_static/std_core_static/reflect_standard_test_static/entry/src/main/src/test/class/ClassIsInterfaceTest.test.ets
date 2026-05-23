@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -670,7 +670,6 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsInterface036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect：仅 final class 修饰的类 isFinal() 为 true，类名含 Final 不算
       let cls = Class.from<FinalClass036>();
         expect(cls.isFinal()).assertFalse();
         expect(cls.isInterface()).assertFalse();
@@ -790,7 +789,7 @@ export default function ClassIsInterfaceTest(): void {
         let cls = Class.ofAny(obj);
         expect(cls !== undefined).assertTrue();
         if (cls !== undefined) {
-          expect(cls.isInterface()).assertFalse(); // 对象字面量不是接口类型
+          expect(cls.isInterface()).assertFalse();
         }
     });
 
@@ -942,7 +941,6 @@ export default function ClassIsInterfaceTest(): void {
      */
     it('testClassIsInterface055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NotInitializedClass055>();
-        // 未调用initialize()，直接调用isInterface
         let result = cls.isInterface();
         expect(result).assertFalse();
     });

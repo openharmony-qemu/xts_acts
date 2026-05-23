@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,7 +44,6 @@ class MyClass011 {
     public static value: int = 0;
   }
 
-// 39690-2.11: 静态字段初始化链触发循环 clinit（classes.md static 初始化）
 class InitGuard012 {
     static depth: int = 0;
   }
@@ -1286,7 +1285,6 @@ export default function runClassInitializeTest(): void {
      * @tc.level Level 2
      */
     it('testClassInitialize006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // initialize() 对已加载类应幂等；重复调用不应抛错
       let cls = Class.from<MyClass006>();
         cls.initialize();
         cls.initialize();
@@ -1533,7 +1531,6 @@ export default function runClassInitializeTest(): void {
      * @tc.level Level 2
      */
     it('testClassInitialize022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 39690-2.10：MyClass022 仅本用例使用；Class.from 可能已触发 clinit，initCount 应为 1
       let cls = Class.from<MyClass022>();
         let task1: () => void = (): void => { cls.initialize(); };
         let task2: () => void = (): void => { cls.initialize(); };
@@ -1551,7 +1548,6 @@ export default function runClassInitializeTest(): void {
      * @tc.level Level 2
      */
     it('testClassInitialize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 39690-2.10：重复 initialize 不改变 initCount（静态块仅在 clinit 执行一次）
       let cls = Class.from<MyClass023>();
         cls.initialize();
         let count1 = MyClass023.initCount;
@@ -1584,7 +1580,6 @@ export default function runClassInitializeTest(): void {
      * @tc.level Level 2
      */
     it('testClassInitialize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 用例内重置 initialized，避免受同文件其它用例已触发静态初始化的影响
       let cls = Class.from<MyClass025>();
         MyClass025.initialized = false;
         expect(MyClass025.initialized).assertEqual(false);

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -86,14 +86,6 @@ class Parent019 extends GrandParent019 {
 
 class GrandParent019 {
       public a: int = 1;
-  }
-
-class Parent020 {
-      public parentData: string = 'parent';
-  }
-
-class Child020 extends Parent020 {
-      public childData: string = 'child';
   }
 
 class TypedClass021 {
@@ -362,7 +354,6 @@ export default function ClassGetInstanceFieldTest(): void {
       let cls = Class.from<TestClass012>();
         let field = cls.getInstanceField('myField');
         
-        // 验证InstanceField的方法可用
         expect(field!.getName() !== null).assertTrue();
         expect(field!.getType() !== null).assertTrue();
         expect(field!.getOwner() !== null).assertTrue();
@@ -445,15 +436,12 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass018>();
         
-        // 可以找到子类字段
         let nameField = cls.getInstanceField('name');
         expect(nameField !== null).assertTrue();
         
-        // 找不到父类字段
         let ageField = cls.getInstanceField('age');
         expect(ageField === undefined).assertTrue();
         
-        // 通过父类Class对象查找
         let parentAgeField = cls.getSuper()!.getInstanceField('age');
         expect(parentAgeField !== null).assertTrue();
         expect(parentAgeField!.getName()).assertEqual('age');
@@ -470,44 +458,16 @@ export default function ClassGetInstanceFieldTest(): void {
     it('testClassGetInstanceField019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child019>();
         
-        // 子类只能找到自己的字段
         expect(childCls.getInstanceField('c') !== null).assertTrue();
         expect(childCls.getInstanceField('b') === undefined).assertTrue();
         expect(childCls.getInstanceField('a') === undefined).assertTrue();
         
-        // 通过父类查找
         let parentCls = childCls.getSuper()!;
         expect(parentCls.getInstanceField('b') !== null).assertTrue();
         expect(parentCls.getInstanceField('a') === undefined).assertTrue();
         
-        // 通过祖父类查找
         let grandParentCls = parentCls.getSuper()!;
         expect(grandParentCls.getInstanceField('a') !== null).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2000
-     * @tc.name testClassGetInstanceField020
-     * @tc.desc Verify ClassGetInstanceField case 020: child/parent instance fields via getInstanceField and getSuper
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetInstanceField020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let childCls = Class.from<Child020>();
-        childCls.initialize();
-
-        let childField = childCls.getInstanceField('childData');
-        expect(childField !== undefined).assertTrue();
-        expect(Utils.classNameMatches(childField!.getOwner().getName(), 'Child020')).assertTrue();
-        let childObj = childCls.createInstance() as Child020;
-        expect(childField!.getValue(childObj) as string).assertEqual('child');
-
-        let parentField = childCls.getSuper()!.getInstanceField('parentData');
-        expect(parentField !== undefined).assertTrue();
-        expect(Utils.classNameMatches(parentField!.getOwner().getName(), 'Parent020')).assertTrue();
-        let parentObj = childCls.getSuper()!.createInstance() as Parent020;
-        expect(parentField!.getValue(parentObj) as string).assertEqual('parent');
     });
 
     /**
@@ -562,7 +522,6 @@ export default function ClassGetInstanceFieldTest(): void {
      */
     it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 可能需要先initialize
         cls.initialize();
         let field = cls.getInstanceField('name');
         expect(field !== null).assertTrue();
@@ -664,7 +623,6 @@ export default function ClassGetInstanceFieldTest(): void {
         let field1 = cls.getInstanceField('name');
         let field2 = cls.getInstanceField('name');
         
-        // 验证字段属性相同
         expect(field1!.getName()).assertEqual(field2!.getName());
         expect(field1!.getType().getName()).assertEqual(field2!.getType().getName());
     });

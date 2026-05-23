@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -275,7 +275,6 @@ class Data065 {
 function serialize065(obj: Object): string {
     let cls = Class.of(obj);
     let fields = cls.getInstanceFields();
-    // 基于Class信息序列化
     return "";
   }
 
@@ -515,12 +514,10 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Object类型
         let obj = new Array<int>();
         let cls1 = Class.of(obj);
         expect(cls1 !== null).assertTrue();
 
-        // null类型
         let cls2 = Class.of(null);
         expect(cls2 !== null).assertTrue();
     });
@@ -1202,7 +1199,6 @@ export default function ClassOfTest(): void {
         let obj2 = new MyClass();
         let cls1 = Class.of(obj1);
         let cls2 = Class.of(obj2);
-        // 验证是否返回同一个Class实例或等价的实例
         expect(cls1.getName()).assertEqual(cls2.getName());
     });
 
@@ -1315,7 +1311,6 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 模拟旧代码的使用方式
 
 
         let obj = new MyClass();
@@ -1347,7 +1342,6 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
      */
     it('testClassOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // arkts-sta-reflect.md Class.of：参数 Object|null，返回值 Class（无 null 示例；与 013/036 一致）
       let direct = Class.of(null);
         expect(direct !== null).assertTrue();
         let result = safeGetClass069(null);

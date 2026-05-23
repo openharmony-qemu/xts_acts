@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -345,7 +345,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass007>())[0];
         try {
-          ctor.createInstance([1]); // 参数不足
+          ctor.createInstance([1]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -363,7 +363,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass008>())[0];
         try {
-          ctor.createInstance([1, 2]); // 参数过多
+          ctor.createInstance([1, 2]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -542,7 +542,7 @@ export default function ConstructorCreateInstanceTest(): void {
     it('testConstructorCreateInstance020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = asConstructorList(Class.from<MyClass020>())[0];
         try {
-          ctor.createInstance([1]); // 缺少参数
+          ctor.createInstance([1]);
           expect().assertFail();
         } catch (error) {
           expect(error !== null).assertTrue();
@@ -706,7 +706,6 @@ export default function ConstructorCreateInstanceTest(): void {
      * @tc.level Level 2
      */
     it('testConstructorCreateInstance029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 方式1：通过Constructor.createInstance()
         let ctor = asConstructorList(Class.from<MyClass029>())[0];
         let instance1 = ctor.createInstance([42]) as MyClass029;
 

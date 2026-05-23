@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -67,7 +67,6 @@ class MyClass014 {
 
 class MyClass015 {
       public static test(a: int, b: string, c: boolean): void {
-          // 方法实现
       }
   }
 
@@ -705,7 +704,6 @@ export default function ClassGetStaticMethodTest(): void {
      */
     it('testClassGetStaticMethod012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        // 应该在编译时报错，但测试运行时行为
         try {
           looseReflect(cls as Object).getStaticMethod(123 as Object);
           expect().assertFail();
@@ -899,7 +897,7 @@ export default function ClassGetStaticMethodTest(): void {
       let cls = Class.from<MyClass024>();
         try {
             let method = cls.getStaticMethod('test');
-            expect().assertFail(); // 应该抛出Error
+            expect().assertFail();
         } catch (error) {
             expect(error !== null).assertTrue();
         }
@@ -1064,7 +1062,6 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 假设有一个包含native方法的类
         let cls = Class.from<SystemClass>();
         let method = cls.getStaticMethod('nativeMethod');
         expect(method !== null).assertTrue();
@@ -1177,7 +1174,6 @@ export default function ClassGetStaticMethodTest(): void {
         }
         expect(method !== undefined).assertTrue();
 
-        // 验证返回对象的所有方法
         expect(method!.getName() !== null).assertTrue();
         expect(method!.getOwner() !== null).assertTrue();
         expect(method!.getReturnType() !== null).assertTrue();
@@ -1221,11 +1217,9 @@ export default function ClassGetStaticMethodTest(): void {
       let cls = Class.from<MyClass043>();
         let method = cls.getStaticMethod('test', [Class.from<string>()]);
         
-        // 正确调用
         let result1 = method!.invoke(['hello']);
         expect(result1 as string).assertEqual('hello');
         
-        // 类型不匹配应该抛出TypeError
         try {
             method!.invoke([123]);
             expect().assertFail();
@@ -1285,7 +1279,6 @@ export default function ClassGetStaticMethodTest(): void {
      */
     it('testClassGetStaticMethod046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass046>();
-        // 类未显式初始化，但首次使用时会自动初始化
         let method = cls.getStaticMethod('test');
         expect(method !== null).assertTrue();
     });
@@ -1301,7 +1294,7 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass047>();
         let method = cls.getStaticMethod('fieldName');
-        expect(method).assertUndefined(); // 应该使用getStaticField而不是getStaticMethod
+        expect(method).assertUndefined();
     });
 
     /**
@@ -1469,7 +1462,7 @@ export default function ClassGetStaticMethodTest(): void {
         let method2 = cls.getStaticMethod('test', []);
         
         expect(method1!.equals(method2!)).assertTrue();
-        expect(method1 === method2).assertFalse(); // 不同对象但相等
+        expect(method1 === method2).assertFalse();
     });
 
     /**
@@ -1500,7 +1493,6 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 动态调用
         let cls = Class.from<StringUtils058>();
         let methodName = 'toUpperCase';
         let method = cls.getStaticMethod(methodName, [Class.from<string>()]);
@@ -1517,7 +1509,6 @@ export default function ClassGetStaticMethodTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetStaticMethod059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 动态发现并调用插件方法
         let pluginCls = Class.from<MyPlugin059>();
         let initMethod = pluginCls.getStaticMethod('initialize');
         let execMethod = pluginCls.getStaticMethod('execute', [Class.from<Object>()]);
@@ -1626,7 +1617,6 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Calculator064>();
         
-        // 链式调用：获取方法并执行
         let addMethod: reflect.StaticMethod | undefined;
         let mulMethod: reflect.StaticMethod | undefined;
         let methods = asStaticMethodArray(cls.getStaticMethods());
@@ -1658,12 +1648,10 @@ export default function ClassGetStaticMethodTest(): void {
     it('testClassGetStaticMethod065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass065>();
         
-        // 获取字段
         let field = cls.getStaticField('dataField');
         expect(field !== null).assertTrue();
         expect(field!.getValue(cls) as int).assertEqual(100);
         
-        // 获取方法（虽然同名但不同）
         let method = cls.getStaticMethod('data');
         expect(method !== null).assertTrue();
         expect(method!.invoke() as string).assertEqual('method');

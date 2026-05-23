@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -128,9 +128,9 @@ export default function ClassGetUnionConstituentTypesTest(): void {
           typeNames.push(types[i].getName());
         }
         expect(typeNames.some((n: string) => Utils.reflectScalarTypeNameMatches(n, 'int'))).assertTrue();
-        expect(typeNames.some((n: string) => Utils.classNameMatches(n, 'String'))).assertTrue(); // string
-        expect(typeNames.some((n: string) => Utils.reflectScalarTypeNameMatches(n, 'boolean'))).assertTrue(); // boolean
-        expect(typeNames.some((n: string) => Utils.reflectScalarTypeNameMatches(n, 'double'))).assertTrue(); // double
+        expect(typeNames.some((n: string) => Utils.classNameMatches(n, 'String'))).assertTrue();
+        expect(typeNames.some((n: string) => Utils.reflectScalarTypeNameMatches(n, 'boolean'))).assertTrue();
+        expect(typeNames.some((n: string) => Utils.reflectScalarTypeNameMatches(n, 'double'))).assertTrue();
       });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0600
@@ -167,15 +167,12 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 普通类�?
         let cls1 = Class.from<int>();
         let types1 = cls1.getUnionConstituentTypes();
         expect(types1 === undefined).assertTrue();
-        // 对象类型
         let cls2 = Class.from<TestClass008>();
         let types2 = cls2.getUnionConstituentTypes();
         expect(types2 === undefined).assertTrue();
-        // 数组类型
         let cls3 = Class.from<Array<int>>();
         let types3 = cls3.getUnionConstituentTypes();
         expect(types3 === undefined).assertTrue();
@@ -189,7 +186,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 退化情况：T | T 等价�?T
         let cls = Class.from<int | int>();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
@@ -252,7 +248,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // (int | string) | boolean 展平�?int | string | boolean
         let cls = Class.from<int | string | boolean>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
         expect(types.length).assertEqual(3);
@@ -335,12 +330,9 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         let cls = Class.from<int | string | Array<double>>();
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
         expect(types.length).assertEqual(3);
-        // 验证返回的类型名�?
         for (let i = 0; i < types.length; i++) {
           let name = types[i].getName();
           console.info('Type ' + i + ': ' + name);
-          // 可能的输�? "std.core.Array", "std.core.Int", "std.core.String"
-          // 顺序可能不确�?
         }
         let typeNames: Array<string> = new Array<string>();
         for (let i = 0; i < types.length; i++) {
@@ -394,7 +386,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      */
     it('testClassGetUnionConstituentTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.from<int | string>();
-        // 通常不需要initialize即可获取联合类型信息
         let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
         expect(types !== null).assertTrue();
       });
@@ -407,9 +398,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 假设getUnionConstituentTypes被标记为废弃
         let cls = Class.from<int | string>();
-        let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object); // 应显示弃用警�?
+        let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
         expect(types.length).assertEqual(2);
       });
     /**
@@ -421,9 +411,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 不需要await
         let cls = Class.from<int | string>();
-        let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object); // 同步调用
+        let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
         expect(types !== null).assertTrue();
       });
     /**
@@ -435,7 +424,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 假设�?0个类型的联合
         let cls = Class.from<int | string | boolean | double | float | long | short | byte | char | Array<int>>();
         expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
@@ -475,13 +463,11 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // int | string | int 应该去重�?int | string
         let cls = Class.from<int | string | int>();
         expect(cls.isUnion()).assertTrue();
         let typesRaw = cls.getUnionConstituentTypes();
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
-          // 可能去重，也可能不去重，取决于实�?
           expect(types.length).assertLessOrEqual(3);
           if (types.length === 2) {
             let typeNames: Array<string> = new Array<string>();
@@ -506,10 +492,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // T | never 等价�?T
         let cls = Class.from<int>();
         let typesRaw = cls.getUnionConstituentTypes();
-        // 可能返回undefined或只包含int
         if (typesRaw !== undefined) {
           let types = asUnionConstituentTypes(typesRaw as Object);
           expect(types.length).assertLessOrEqual(2);
@@ -598,7 +582,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
         let types1 = asUnionConstituentTypes(raw1 as Object);
         let types2 = asUnionConstituentTypes(raw2 as Object);
         expect(types1.length).assertEqual(types2.length);
-        // 验证类型相同
         for (let i = 0; i < types1.length; i++) {
           expect(types1[i].getName()).assertEqual(types2[i].getName());
         }
@@ -612,7 +595,6 @@ export default function ClassGetUnionConstituentTypesTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetUnionConstituentTypes030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        // 全是原始类型的联�?
         let cls1 = Class.from<int | string | boolean>();
         expect(cls1.isPrimitive()).assertFalse();
         if (cls1.isUnion()) {

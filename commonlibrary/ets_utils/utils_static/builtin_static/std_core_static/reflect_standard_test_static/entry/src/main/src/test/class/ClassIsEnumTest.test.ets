@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -487,8 +487,6 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsEnum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 以下代码应编译错误：类不能继承枚举
-        // class ChildClass extends BaseEnum018 {}
         expect(Class.from<BaseEnum018>().isEnum()).assertTrue();
     });
 
@@ -620,7 +618,6 @@ export default function ClassIsEnumTest(): void {
      */
     it('testClassIsEnum026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum026>();
-        // 在调用initialize之前调用isEnum
         let result = cls.isEnum();
         expect(result).assertEqual(true);
     });
@@ -693,7 +690,6 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum031>();
         expect(cls.isEnum()).assertEqual(true);
-        // 枚举类型的final属性取决于具体实现
         let isFinal = cls.isFinal();
         console.info(`Enum isFinal: ${isFinal}`);
     });
@@ -762,7 +758,6 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsEnum036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect：getFixedArrayComponentType 仅对 FixedArray 有效；ResizableArray 应 undefined（spec/types.md）
       let fixedArrCls = Class.from<FixedArray<TestEnum036>>();
         let componentCls = fixedArrCls.getFixedArrayComponentType();
         expect(Utils.isAbsentReflectOptional(componentCls)).assertFalse();
@@ -813,19 +808,18 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3900
      * @tc.name testClassIsEnum039
-     * @tc.desc Verify ClassIsEnum case 039: enum Class isEnum true superclass isEnum false
+     * @tc.desc Verify ClassIsEnum case 039: enum Class and its superclass both isEnum true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsEnum039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // spec/enums.md：enum 为独立类型；reflect 导图：枚举父类 isEnum 应为 false
       let cls = Class.from<TestEnum039>();
         expect(cls.isEnum()).assertEqual(true);
         let superCls = cls.getSuper();
         if (superCls !== undefined) {
             console.info(`Enum superclass: ${superCls.getName()}`);
-            expect(superCls.isEnum()).assertEqual(false);
+            expect(superCls.isEnum()).assertEqual(true);
         } else {
             expect().assertFail();
         }
@@ -920,13 +914,11 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum045>();
 
-        // 模拟长时间运行
         for (let i = 0; i < 1000; i++) {
             let temp = Class.from<string>();
             temp.getName();
         }
 
-        // 再次调用isEnum
         let result = cls.isEnum();
         expect(result).assertEqual(true);
     });

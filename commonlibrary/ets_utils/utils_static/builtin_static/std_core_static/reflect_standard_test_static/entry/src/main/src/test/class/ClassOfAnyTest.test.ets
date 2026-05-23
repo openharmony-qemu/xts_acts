@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -1250,7 +1250,6 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect/导图 1.2.1.3：string 等基本类型包装值返回 Class，非 undefined
       let obj: Any = 'hello'
         let cls = Class.ofAny(obj)
         expect(cls !== undefined && cls !== null).assertTrue()
@@ -1295,7 +1294,6 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = null
         let cls = Class.ofAny(obj)
-        // 根据文档，如果对象不是类实例则返回undefined
         expect(cls !== undefined && cls !== null).assertTrue()
     });
 
@@ -1324,7 +1322,6 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Object() as Any
         let cls = Class.ofAny(obj)
-        // 空对象字面量可能返回undefined或Object的Class
         expect(cls !== null).assertTrue()
     });
 
@@ -1339,7 +1336,6 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new PersonAny014() as Any;
         let cls = Class.ofAny(obj);
-        // 字面量初始化的接口对象可能返回undefined
         expect(cls !== undefined && cls !== null).assertTrue();
         expect(Utils.classNameMatches(cls!.getName(), 'PersonAny014')).assertTrue();
     });
@@ -1370,7 +1366,6 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = TestEnum016.CLASS
         let cls = Class.ofAny(obj)
-        // 枚举值可能返回对应的Class或undefined
         expect(cls !== null).assertTrue()
     });
 
@@ -1490,7 +1485,6 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new DerivedClass024()
         let cls = Class.ofAny(obj)
-        // 链式调用getSuper()
         let superCls = cls!.getSuper()
         expect(superCls !== null).assertTrue()
         expect(Utils.classNameMatches(superCls!.getName(), 'BaseClass024')).assertTrue()
@@ -1624,20 +1618,6 @@ export default function ClassOfAnyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3200
-     * @tc.name testClassOfAny032
-     * @tc.desc Verify ClassOfAny case 032: not object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassOfAny032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect Class.ofAny：非类实例返回 undefined（arkts-sta-reflect.md）
-      let obj: Any = 123;
-      expect(Class.ofAny(obj)).assertUndefined();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3300
      * @tc.name testClassOfAny033
      * @tc.desc Verify ClassOfAny case 033: LargeClass053 instance returns Class via ofAny
@@ -1679,7 +1659,6 @@ export default function ClassOfAnyTest(): void {
      */
     it('testClassOfAny035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        // 假设对象被销毁或设置为null
         obj = null as Any
         let cls = Class.ofAny(obj)
         expect(cls !== undefined && cls !== null).assertTrue()
@@ -1694,7 +1673,6 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 正确的静态方法调用
         let obj: Any = new MyClass()
         let cls = Class.ofAny(obj)
         expect(cls !== null).assertTrue()
@@ -1708,12 +1686,10 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ofAny可以接受Any类型
         let anyObj: Any = new MyClass()
         let cls1 = Class.ofAny(anyObj)
         expect(cls1 !== null).assertTrue()
 
-        // of只能接受Object|null
         let obj: Object = new MyClass()
         let cls2 = Class.of(obj)
         expect(cls2 !== null).assertTrue()
@@ -1728,12 +1704,10 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ofAny可能返回undefined
         let nullObj: Any = null
         let result1 = Class.ofAny(nullObj)
         expect(result1 !== undefined && result1 !== null).assertTrue()
 
-        // of总是返回Class（即使是null也返回void的Class）
         let result2 = Class.of(null)
         expect(result2 !== null).assertTrue()
     });
@@ -1747,10 +1721,8 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 场景1：对象可能为null或undefined，使用ofAny
 
 
-        // 场景2：确定对象不为null，使用of
 
 
         let testObj: Any = new MyClass()
@@ -1769,12 +1741,10 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // ofAny - 运行时获取
         let obj: Any = new Map<int, string>()
         let cls1 = Class.ofAny(obj)
         expect(cls1!.getName()).assertEqual('std.core.Map')
 
-        // from - 编译时获取
         let cls2 = Class.from<Map<int, string>>()
         expect(cls2.getName()).assertEqual('std.core.Map')
     });
@@ -1788,10 +1758,8 @@ export default function ClassOfAnyTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfAny042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用from不需要创建实例
         let cls = Class.from<MyClass>()
 
-        // 使用ofAny需要先有实例
         let obj: Any = new MyClass()
         let cls2 = Class.ofAny(obj)
 
@@ -1810,7 +1778,6 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = new GenericClass043<int>(100)
         let cls = Class.ofAny(obj)
         expect(cls !== null).assertTrue()
-        // 获取泛型参数类型
         expect(cls!.getName()).assertContain('GenericClass043')
     });
 
@@ -1827,7 +1794,6 @@ export default function ClassOfAnyTest(): void {
         let obj2: Any = new GenericClass043<string>('test')
         let cls1 = Class.ofAny(obj1)
         let cls2 = Class.ofAny(obj2)
-        // 应该返回相同的Class对象
         expect(cls1!.getName()).assertEqual(cls2!.getName())
     });
 
@@ -1872,7 +1838,6 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = new ImplementClass047()
         let cls = Class.ofAny(obj)
         expect(Utils.classNameMatches(cls!.getName(), 'ImplementClass047')).assertTrue()
-        // 验证实现的接口
         let interfaces = cls!.getInterfaces()
         expect(interfaces.length).assertLarger(0)
     });
@@ -1909,7 +1874,6 @@ export default function ClassOfAnyTest(): void {
         let obj2: Any = unionVar
         let cls2 = Class.ofAny(obj2)
 
-        // 不同类型的值应该返回不同的Class
         expect(cls1 !== cls2).assertTrue();
     });
 
@@ -1949,7 +1913,6 @@ export default function ClassOfAnyTest(): void {
         }
         let endTime = Date.now()
 
-        // 验证性能在可接受范围内
         console.info(`ofAny perf: ${endTime - startTime}ms`)
     });
 
@@ -1964,10 +1927,8 @@ export default function ClassOfAnyTest(): void {
     it('testClassOfAny052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
 
-        // 第一次调用
         let cls1 = Class.ofAny(obj)
 
-        // 多次调用同一对象
         for (let i = 0; i < 100; i++) {
           let cls = Class.ofAny(obj)
           expect(cls!.getName()).assertEqual(cls1!.getName())

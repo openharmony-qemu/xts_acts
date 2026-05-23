@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -417,7 +417,7 @@ export default function ConstructorIsProtectedTest(): void {
           if (ctorRef.isPublic()) count++;
           if (ctorRef.isPrivate()) count++;
           if (ctorRef.isProtected()) count++;
-          expect(count).assertEqual(1); // 每个构造函数只能有一个访问级别
+          expect(count).assertEqual(1);
         }
     });
 

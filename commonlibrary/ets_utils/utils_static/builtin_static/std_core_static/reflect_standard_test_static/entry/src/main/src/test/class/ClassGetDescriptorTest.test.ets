@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -179,17 +179,14 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Set类
       let cls1 = Class.from<Set<string>>();
       let desc1 = cls1.getDescriptor();
       expect(desc1).assertEqual("Lstd/core/Set;");
 
-      // Map类
       let cls2 = Class.from<Map<int, string>>();
       let desc2 = cls2.getDescriptor();
       expect(desc2).assertEqual("Lstd/core/Map;");
 
-      // Array类
       let cls3 = Class.from<Array<int>>();
       let desc3 = cls3.getDescriptor();
       expect(desc3).assertEqual("Lstd/core/Array;");
@@ -285,7 +282,6 @@ export default function ClassGetDescriptorTest(): void {
       let cls2 = Class.from<Set<int>>();
       let desc2 = cls2.getDescriptor();
 
-      // 泛型被擦除，描述符应该相同
       expect(desc1).assertEqual(desc2);
     });
 
@@ -411,13 +407,12 @@ export default function ClassGetDescriptorTest(): void {
      */
     it('testClassGetDescriptor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CustomClass>();
-      // 类尚未初始化
       let descriptor = cls.getDescriptor();
       expect(descriptor !== "").assertTrue();
 
-      cls.initialize(); // 初始化类
+      cls.initialize();
       let descriptor2 = cls.getDescriptor();
-      expect(descriptor).assertEqual(descriptor2); // 结果一致
+      expect(descriptor).assertEqual(descriptor2);
     });
 
     /**
@@ -502,11 +497,11 @@ export default function ClassGetDescriptorTest(): void {
     it('testClassGetDescriptor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
       let descriptor = cls.getDescriptor();
-      expect(descriptor).assertEqual("I"); // int的描述符是"I"
+      expect(descriptor).assertEqual("I");
 
       let cls2 = Class.PRIMITIVE_BOOLEAN;
       let descriptor2 = cls2.getDescriptor();
-      expect(descriptor2).assertEqual("Z"); // boolean的描述符是"Z"
+      expect(descriptor2).assertEqual("Z");
     });
 
     /**
@@ -556,7 +551,6 @@ export default function ClassGetDescriptorTest(): void {
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
       let descriptor = cls.getDescriptor();
-      // 联合类型有特殊的描述符格式
       expect(descriptor.length).assertLarger(0);
     });
 
@@ -661,13 +655,10 @@ export default function ClassGetDescriptorTest(): void {
       let name = cls.getName();
       let descriptor = cls.getDescriptor();
 
-      // name格式: "std.core.Set"
       expect(name.indexOf("std.core.Set")).assertLarger(-1);
 
-      // descriptor格式: "Lstd/core/Set;"
       expect(descriptor).assertEqual("Lstd/core/Set;");
 
-      // 描述符不是简单的名称转换
       expect(descriptor !== name).assertTrue();
     });
 
@@ -894,15 +885,13 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetDescriptor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 描述符应遵循JVM规范，不依赖平台
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
 
-      // 验证是有效的JVM描述符
       expect(descriptor.startsWith("L")).assertTrue();
       expect(descriptor.endsWith(";")).assertTrue();
-      expect(descriptor.indexOf("..")).assertEqual(-1); // 不使用..
-      expect(descriptor.indexOf("//")).assertEqual(-1); // 不使用//
+      expect(descriptor.indexOf("..")).assertEqual(-1);
+      expect(descriptor.indexOf("//")).assertEqual(-1);
     });
 
   });

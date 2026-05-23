@@ -466,7 +466,6 @@ export class MyClass083 {
   }
 
 export class LargeClass084 {
-      // 100 instance methods
       public method001(): void {}
       public method002(): void {}
       public method003(): void {}
@@ -586,7 +585,6 @@ export class MyClass086 {
 export class MyClass087 {
       public method1(): void {}
       public method2(): void {}
-      // ... 更多方法
   }
 
 export function dynamicCall088(obj: Object, methodName: string, a: int, b: int): int {
@@ -710,26 +708,20 @@ export class MinimalClass100 {
   }
 
 export class ComplexClass101 {
-      // 字段
       public publicField: int = 0;
       private privateField: string = '';
       protected protectedField: boolean = true;
 
-      // 静态字段
       public static staticField: double = 0.0;
 
-      // 构造函数
       public constructor() {}
       public constructor(value: int) { this.publicField = value; }
 
-      // 实例方法
       public instanceMethod(): void {}
       private privateInstanceMethod(): void {}
 
-      // 静态方法
       public static staticMethod(): void {}
 
-      // Getter/Setter
       public get property(): string { return this.privateField; }
       public set property(value: string) { this.privateField = value; }
   }

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -128,7 +128,6 @@ class ManyMethodsClass013 {
       public method8(): void {}
       public method9(): void {}
       public method10(): void {}
-      // ... 更多方法
   }
 
 class OverloadClass014 {
@@ -150,7 +149,7 @@ class PublicClass015 {
   }
 
 class DefaultPublicClass016 {
-      defaultMethod(): void {} // 默认public
+      defaultMethod(): void {}
   }
 
 class MixedClass017 {
@@ -316,7 +315,7 @@ abstract class AbstractClass036 {
   }
 
 class NativeTestClass037 {
-      public $_set(index: int, val: string): void {} // 模拟native方法
+      public $_set(index: int, val: string): void {}
   }
 
 abstract class AbstractClass038 {
@@ -475,29 +474,23 @@ class BaseClass064 {
   }
 
 class CompleteClass065 {
-      // 实例字段
       public publicField: string = 'test';
       private privateField: int = 0;
       
-      // 静态字�?
       public static publicStaticField: boolean = true;
       private static privateStaticField: int = 0;
       
-      // 实例方法
       public publicInstanceMethod(): void {}
       private privateInstanceMethod(): void {}
       protected protectedInstanceMethod(): void {}
       
-      // 静态方�?
       public static publicStaticMethod(): void {}
       private static privateStaticMethod(): void {}
       
-      // getter/setter
       private _property: string = '';
       public get property(): string { return this._property; }
       public set property(value: string) { this._property = value; }
       
-      // 构造函�?
       public constructor() {}
       public constructor(param: string) {}
   }
@@ -552,8 +545,7 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<CompatClass061>();
         let methods = cls.getInstanceMethods();
         
-        // 验证所有版本都返回相同的方�?
-                expect(methods.length).assertEqual(2); // ����ʱ������public����
+                expect(methods.length).assertEqual(2);
     });
 
     /**
@@ -565,12 +557,10 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetInstanceMethods062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 假设有另一个模块的�?
 
         let cls = Class.from<ExternalClass>();
         let methods = cls.getInstanceMethods();
         
-        // 应该能正确获取外部类的public实例方法
         expect(methods.length).assertLargerOrEqual(0);
     });
 
@@ -586,9 +576,6 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<ChildClass063>();
         let methods = cls.getInstanceMethods();
         
-        // 应该包含method1, method2, childMethod�?个）
-        // 不包含parentMethod（父类方法）
-        // 不包含privateMethod（私有方法）
         expect(methods.length).assertEqual(3);
         
         let methodNames = new Array<string>();
@@ -615,9 +602,7 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<GenericClass064<int>>();
         let methods = cls.getInstanceMethods();
         
-        // 应该包含genericMethod和ownMethod
-        // 不包含baseMethod（父类方法）
-                expect(methods.length).assertEqual(2); // ����ʱ������public����
+                expect(methods.length).assertEqual(2);
     });
 
     /**
@@ -632,18 +617,8 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<CompleteClass065>();
         let methods = cls.getInstanceMethods();
         
-        // 应该包含�?
-        // - publicInstanceMethod
-        // - protectedInstanceMethod
-        // - %%get-property
-        // - %%set-property
-        // 不包含：
-        // - privateInstanceMethod（私有）
-        // - publicStaticMethod（静态）
-        // - privateStaticMethod（静态且私有�?
-        // - 构造函�?
         
-        expect(methods.length).assertEqual(3); // 2个方�?+ 1个getter + 1个setter
+        expect(methods.length).assertEqual(3);
     });
 
     /**
@@ -658,8 +633,6 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<MyClass066>();
         let methods = cls.getInstanceMethods();
         
-        // 应该包含：test(2个重�?, sayHi
-        // 不包含：privateMethod（私有）, sayHello（父类方法）
         expect(methods.length).assertEqual(3);
         
         let methodNames = new Array<string>();
@@ -667,21 +640,18 @@ export default function ClassGetInstanceMethodsTest(): void {
             methodNames.push(methods[i].getName());
         }
         
-        // 验证包含test方法（可能有多个重载�?
         let testCount = 0;
         for (let i = 0; i < methodNames.length; i++) {
             if (methodNames[i] === "test") {
                 testCount++;
             }
         }
-        expect(testCount).assertEqual(2); // 2个test重载
+        expect(testCount).assertEqual(2);
         
-        // 验证包含sayHi
         expect(strArrayContains(methodNames, "sayHi")).assertTrue();
         
-        // 验证父类方法
         methods = cls.getSuper()!.getInstanceMethods();
-        expect(methods.length).assertEqual(1); // sayHello
+        expect(methods.length).assertEqual(1);
         let parentMethod = findInstanceMethodByName(methods, "sayHello");
         expect(parentMethod !== undefined).assertTrue();
         expect(parentMethod!.getName()).assertEqual("sayHello");

@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -135,7 +135,6 @@ class Parent019 {
   }
 
 class Child019 extends Parent019 {
-      // 无显式构造函数
   }
 
 class PublicConstructor020 {
@@ -601,7 +600,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass010>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1); // FixedArray有固定length
+        expect(constructors.length).assertEqual(1);
     });
 
     /**
@@ -687,7 +686,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(0); // 基本类型无构造函数
+        expect(constructors.length).assertEqual(0);
     });
 
     /**
@@ -701,7 +700,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass017>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1); // 只有ChildClass的构造函数
+        expect(constructors.length).assertEqual(1);
         expect(constructors[0].getParametersNum()).assertEqual(1);
     });
 
@@ -716,7 +715,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child018>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1); // 只有Child的构造函数
+        expect(constructors.length).assertEqual(1);
     });
 
     /**
@@ -730,7 +729,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child019>();
         let constructors = constructorsToArray(childCls);
-        expect(constructors.length).assertEqual(1); // 默认构造函数
+        expect(constructors.length).assertEqual(1);
     });
 
     /**
@@ -947,7 +946,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoExplicitConstructor034>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1); // 默认构造函数
+        expect(constructors.length).assertEqual(1);
     });
 
     /**
@@ -1064,7 +1063,6 @@ export default function ClassGetConstructorsTest(): void {
      */
     it('testClassGetConstructors042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UninitializedClass042>();
-        // 类尚未初始化
         let constructors = constructorsToArray(cls);
         expect(constructors.length).assertEqual(1);
     });
@@ -1080,7 +1078,7 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InitFailClass043>();
         let constructors = constructorsToArray(cls);
-        expect(constructors.length).assertEqual(1); // 反射不受构造函数执行影响
+        expect(constructors.length).assertEqual(1);
     });
 
     /**
@@ -1503,8 +1501,8 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<TestClass070>();
         let constructors1 = constructorsToArray(cls);
         let constructors2 = constructorsToArray(cls);
-        expect(constructors1[0] === constructors2[0]).assertFalse(); // 不同引用
-        expect(constructors1[0].equals(constructors2[0])).assertTrue(); // 但相等
+        expect(constructors1[0] === constructors2[0]).assertFalse();
+        expect(constructors1[0].equals(constructors2[0])).assertTrue();
     });
 
     /**
@@ -1556,7 +1554,6 @@ export default function ClassGetConstructorsTest(): void {
      */
     it('testClassGetConstructors073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass073>();
-        // 模拟并发访问（如果支持TaskPool）
         let results: Array<int> = new Array<int>();
         for (let i = 0; i < 10; i++) {
             results.push(cls.getConstructors().length);
@@ -1576,7 +1573,6 @@ export default function ClassGetConstructorsTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetConstructors074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 验证接口从API version 24开始支持
 
         let cls = Class.from<TestClass074>();
         let constructors = constructorsToArray(cls);
@@ -1594,7 +1590,6 @@ export default function ClassGetConstructorsTest(): void {
     it('testClassGetConstructors075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrayCls = Class.from<Array<int>>();
         let constructors = constructorsToArray(arrayCls);
-        // Array类可能有默认构造函数
         expect(constructors.length).assertLargerOrEqual(0);
     });
 
@@ -1639,7 +1634,6 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<Serializable078>();
         let constructors = constructorsToArray(cls);
         expect(constructors.length).assertLarger(0);
-        // 查找接受string参数的构造函数
         let stringCtor: reflect.Constructor | undefined;
         for (let i = 0; i < constructors.length; i++) {
             let params = constructors[i].getParameterTypes();

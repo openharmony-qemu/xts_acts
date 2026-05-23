@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -107,7 +107,7 @@ class AsyncCaller015 {
       public async testAsyncCaller(): Promise<Class | undefined> {
           return await new Promise<Class | undefined>((resolve) => {
               let callerClass = Class.ofCaller()
-              resolve(callerClass)  // 可能返回undefined
+              resolve(callerClass)
           })
       }
   }
@@ -155,13 +155,13 @@ class Logger018 {
 
 class UserClass019 {
       public callSecure(svc: SecureService019): boolean {
-          return svc.restrictedMethod()  // 返回false
+          return svc.restrictedMethod()
       }
   }
 
 class AdminClass019 {
       public callSecure(svc: SecureService019): boolean {
-          return svc.restrictedMethod()  // 返回true
+          return svc.restrictedMethod()
       }
   }
 
@@ -284,7 +284,6 @@ class ResilientService027 {
 class SafeCaller028 {
       public getCallerInfo(): string {
           let callerClass = Class.ofCaller()
-          // 使用可选链和空值合并
           return callerClass?.getName() ?? "unknown"
       }
   }
@@ -292,7 +291,6 @@ class SafeCaller028 {
 class VersionTest029 {
       public testCompatibility(): void {
           let callerClass = Class.ofCaller()
-          // 验证行为符合API版本规范
           expect(callerClass !== undefined && callerClass !== null).assertTrue()
       }
   }
@@ -300,7 +298,7 @@ class VersionTest029 {
 class Module2Class030 {
       public testCrossModule(): Class | undefined {
           let m1 = new Module1Class030()
-          return m1.getCallerFromModule1()  // 应返回Module1Class
+          return m1.getCallerFromModule1()
       }
   }
 
@@ -354,7 +352,6 @@ class C033 {
 
 class B033 {
       public testCaller(): boolean {
-          // reflect API：ofCaller 与 Class.from<A>() 比较，见 arkts-sta-reflect.md Class.ofCaller 示例
           return Class.ofCaller() == Class.from<A033>()
       }
   }
@@ -875,7 +872,6 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfCaller033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 测试
         expect(new A033().test()).assertTrue()
         expect(new C033().test()).assertFalse()
     });
@@ -889,7 +885,6 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
      */
     it('testClassOfCaller034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 测试
         expect(Utils.ofCallerNameMatchesOrHarness(new X034().dispatch(), "X034")).assertTrue()
         expect(Utils.ofCallerNameMatchesOrHarness(new Y034().dispatch(), "Y034")).assertTrue()
     });

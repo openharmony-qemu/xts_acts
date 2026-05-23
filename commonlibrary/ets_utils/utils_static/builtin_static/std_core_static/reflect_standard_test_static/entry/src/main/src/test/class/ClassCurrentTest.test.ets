@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -51,7 +51,7 @@ class TestClass006 {
 class ChildClass007 extends ParentClass007 {
       public testParentCall(): string {
           let cls = this.getCurrentClass();
-          return cls.getName(); // 返回 "ChildClass007"
+          return cls.getName();
       }
   }
 
@@ -120,7 +120,7 @@ class OuterClass013 {
 class TestClass014 {
       public verifySubtype(): boolean {
           let cls = Class.current();
-          return cls.isSubtypeOf(cls); // 应该返回true
+          return cls.isSubtypeOf(cls);
       }
   }
 
@@ -167,7 +167,7 @@ class TestClass020 {
       public testConsistency(): boolean {
           let cls1 = Class.current();
           let cls2 = Class.current();
-          return cls1 === cls2; // 应该返回true
+          return cls1 === cls2;
       }
   }
 
@@ -215,21 +215,16 @@ class TestClass028 {
       public field: int = 0;
       
       public compareAllMethods(): void {
-          // current() - 获取当前类
           let currentCls = Class.current();
           
-          // of() - 获取对象实例的类
           let ofCls = Class.of(this);
           
-          // from() - 获取类型Class对象
           let fromCls = Class.from<TestClass028>();
           
-          // 三者应该返回相同的Class对象
           expect(currentCls === ofCls).assertTrue();
           expect(currentCls === fromCls).assertTrue();
           expect(ofCls === fromCls).assertTrue();
           
-          // 验证类名
           expect(Utils.classNameMatches(currentCls.getName(), "TestClass028")).assertTrue();
           expect(Utils.classNameMatches(ofCls.getName(), "TestClass028")).assertTrue();
           expect(Utils.classNameMatches(fromCls.getName(), "TestClass028")).assertTrue();
@@ -237,17 +232,14 @@ class TestClass028 {
   }
 
 class TestClass029 {
-      // 场景1: 在实例方法中获取当前类 - 使用current()
       public method1(): Class {
           return Class.current();
       }
       
-      // 场景2: 有对象实例需要获取类 - 使用of()
       public method2(obj: TestClass029): Class {
           return Class.of(obj);
       }
       
-      // 场景3: 没有对象实例，需要获取类型 - 使用from()
       public static method3(): Class {
           return Class.from<TestClass029>();
       }
@@ -256,7 +248,6 @@ class TestClass029 {
 class TestClass030 {
       public testNotPrimitive(): boolean {
           let cls = Class.current();
-          // current()返回的是TestClass，不是基本类型
           expect(cls.isPrimitive()).assertFalse();
           expect(cls === Class.PRIMITIVE_INT).assertFalse();
           return true;
@@ -330,7 +321,6 @@ class TestClass039 {
           }
           let endTime = Date.now();
           let duration = endTime - startTime;
-          // 验证性能在可接受范围内
           console.info(`Class.current 10000 calls: ${duration}ms`);
       }
   }
@@ -339,21 +329,18 @@ class TestClass040 {
       public comparePerformance(): void {
           let obj = this;
           
-          // 测试current()性能
           let start1 = Date.now();
           for (let i = 0; i < 10000; i++) {
               let cls = Class.current();
           }
           let time1 = Date.now() - start1;
           
-          // 测试of()性能
           let start2 = Date.now();
           for (let i = 0; i < 10000; i++) {
               let cls = Class.of(obj);
           }
           let time2 = Date.now() - start2;
           
-          // current()应该比of()更快（不需要解析对象）
           console.info(`current=${time1}ms of=${time2}ms`);
       }
   }
@@ -364,7 +351,6 @@ class TestClass041 {
           let cls2 = Class.current();
           let cls3 = Class.current();
           
-          // 应该返回同一个Class对象（单例模式）
           expect(cls1 === cls2).assertTrue();
           expect(cls2 === cls3).assertTrue();
           expect(cls1 === cls3).assertTrue();
@@ -384,7 +370,6 @@ class TestClass042 {
 
 class TestClass044 {
       public testAPIVersion(): void {
-          // current()从API version 24开始支持
           let cls = Class.current();
           expect(cls !== null).assertTrue();
       }
@@ -405,7 +390,6 @@ export class Module1Class045 {
   }
 
 class User046 extends Model046 {
-      // 继承getTableName方法
   }
 
 class Model046 {
@@ -430,7 +414,7 @@ class Serializable047 {
 
 class Service048 extends Logger048 {
       public doSomething(): void {
-          this.logInfo("doing something"); // 输出: [Service048] doing something
+          this.logInfo("doing something");
       }
   }
 
@@ -532,7 +516,6 @@ interface Interface1054 {}
 class TestClass055 {
       public regressionTest(): void {
           let cls = Class.current();
-          // 验证之前问题的修复
           expect(cls !== null).assertTrue();
           expect(cls.getName() !== "").assertTrue();
       }
@@ -541,7 +524,6 @@ class TestClass055 {
 class TestClass056 {
       public testBackwardCompatibility(): void {
           let cls = Class.current();
-          // 验证旧版本的行为仍然保持
           expect(Utils.classNameMatches(cls.getName(), "TestClass056")).assertTrue();
           expect(cls.getSuper() !== null).assertTrue();
       }
@@ -697,7 +679,7 @@ export default function ClassCurrentTest(): void {
      */
     it('testClassCurrent011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConcreteClass011();
-        let cls = obj.getAbstractClass(); // 返回AbstractClass
+        let cls = obj.getAbstractClass();
         expect(Utils.classNameMatches(cls.getName(), "AbstractClass011")).assertTrue();
         expect(Class.from<AbstractClass011>().isAbstract()).assertTrue();
     });
@@ -900,9 +882,7 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // from()可以在任何地方调用
         let fromCls = Class.from<TestClass026>();
-        // current()需要通过实例方法调用
         let obj = new TestClass026();
         let currentCls = obj.testCurrent();
         expect(fromCls === currentCls).assertTrue();
@@ -972,7 +952,6 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 如果有包装类，验证current()返回包装类而非基本类型
 
         let wrapper = new NumberWrapper031();
         let cls = wrapper.getClass();
@@ -1048,7 +1027,6 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new UnionClass036();
         let cls = obj.getClass();
-        // 验证current()返回的是UnionClass而非联合类型
         expect(Utils.classNameMatches(cls.getName(), "UnionClass036")).assertTrue();
     });
 
@@ -1061,7 +1039,6 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 验证current()返回的Class对象的isUnion()行为
         let unionCls = Class.from<int | string>();
         expect(unionCls.isUnion()).assertTrue();
         
@@ -1290,12 +1267,10 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
      */
     it('testClassCurrent053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 创建多层继承结构
 
 
 
 
-        // ...更多层级
         
         let obj = new L3053();
         let cls = obj.getClass();

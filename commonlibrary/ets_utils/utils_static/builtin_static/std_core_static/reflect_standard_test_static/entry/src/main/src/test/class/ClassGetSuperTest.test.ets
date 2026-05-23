@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -434,7 +434,6 @@ export default function ClassGetSuperTest(): void {
         expect(superClazz !== null).assertTrue()
         let isCls: boolean = superClazz instanceof Class;
         expect(isCls).assertTrue()
-        // 可以调用Class的方法
         let name = superClazz!.getName()
         expect(name).assertEqual("std.core.Object")
     });
@@ -464,7 +463,6 @@ export default function ClassGetSuperTest(): void {
     it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass013>()
         let parentClazz = childClazz.getSuper()
-        // 使用返回的Class对象
         let fields = asInstanceFieldArraySuper(parentClazz!.getInstanceFields())
         expect(fields.length).assertEqual(1)
         expect(fields[0].getName()).assertEqual("parentField")
@@ -479,13 +477,11 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 测试各种基本类型
         let boolClass = Class.PRIMITIVE_BOOLEAN
         let intClass = Class.PRIMITIVE_INT
         let stringClass = Class.from<string>()
-        // 基本类型可能没有父类或有特定父类
         let boolSuper = boolClass.getSuper()
-        expect(boolSuper !== null).assertTrue() // 或根据实际情况验证
+        expect(boolSuper !== null).assertTrue()
     });
 
     /**
@@ -500,7 +496,6 @@ export default function ClassGetSuperTest(): void {
       let arrClass = Class.from<Array<int>>()
         let arrSuper = arrClass.getSuper()
         expect(arrSuper !== null).assertTrue()
-        // 数组可能有特殊的父类
         console.info(arrSuper!.getName())
     });
 
@@ -548,7 +543,6 @@ export default function ClassGetSuperTest(): void {
         let isUnion = unionClass.isUnion()
         expect(isUnion).assertTrue()
         let unionSuper = unionClass.getSuper()
-        // 联合类型可能返回undefined或有特定父类
         console.info(unionSuper)
     });
 
@@ -564,7 +558,6 @@ export default function ClassGetSuperTest(): void {
       let enumClass = Class.from<TestEnum019>()
         let enumSuper = enumClass.getSuper()
         expect(enumSuper !== null).assertTrue()
-        // 枚举可能有特殊的父类
         console.info(enumSuper!.getName())
     });
 
@@ -593,7 +586,6 @@ export default function ClassGetSuperTest(): void {
      */
     it('testClassGetSuper021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass021>()
-        // 不调用initialize()
         let superClazz = clazz.getSuper()
         expect(superClazz !== null).assertTrue()
     });
@@ -665,9 +657,6 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 如果语言支持多重继承
-        // class Child026 extends Parent1026, Parent2026 {}
-        // 否则测试接口实现
 
 
         let clazz = Class.from<Child026>()
@@ -705,7 +694,6 @@ export default function ClassGetSuperTest(): void {
       let clazz = Class.from<ChildClass028>()
         let superClazz = clazz.getSuper()
         expect(Utils.classNameMatches(superClazz!.getName(), "ParentClass028")).assertTrue()
-        // 验证接口通过getInterfaces获取
         let interfaces = clazz.getInterfaces()
         expect(interfaces.length).assertEqual(1)
     });
@@ -738,7 +726,6 @@ export default function ClassGetSuperTest(): void {
       let childClazz = Class.from<ChildClass030>()
         let parentClazz = childClazz.getSuper()
         expect(parentClazz !== null).assertTrue()
-        // 验证isSubtypeOf关系
         expect(childClazz.isSubtypeOf(parentClazz!)).assertTrue()
     });
 
@@ -823,7 +810,6 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
      */
     it('testClassGetSuper035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 39690-2.11：沿 getSuper 遍历继承链；depth<100 防止元数据环或异常链死循环（与 Initialize012 循环依赖场景区分）
       let serviceClazz = Class.from<UserService035>()
         let current: Class | undefined = serviceClazz
         let depth = 0
@@ -847,7 +833,6 @@ export default function ClassGetSuperTest(): void {
       let modelClazz = Class.from<UserModel036>()
         let superClazz = modelClazz.getSuper()
         expect(Utils.classNameMatches(superClazz!.getName(), "BaseModel036")).assertTrue()
-        // ORM可以基于此映射表结构
     });
 
     /**

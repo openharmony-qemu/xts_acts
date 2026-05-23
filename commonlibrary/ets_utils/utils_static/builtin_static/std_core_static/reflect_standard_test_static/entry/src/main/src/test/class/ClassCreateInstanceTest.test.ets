@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ *     http:
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -398,7 +398,6 @@ class PluginManager052 {
 
 class MyPlugin052 implements Plugin052 {
     public initialize(): void {
-      // 初始化逻辑
     }
     public execute(): string {
       return 'plugin executed';
@@ -969,7 +968,7 @@ export default function ClassCreateInstanceTest(): void {
         let cls = Class.from<DeprecatedClass030>();
         let obj = cls.createInstance() as DeprecatedClass030;
         expect(obj.value).assertEqual('deprecated');
-        // 可能会有弃用警告
+
     });
 
     /**
@@ -1220,7 +1219,6 @@ export default function ClassCreateInstanceTest(): void {
      */
     it('testClassCreateInstance045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass045>();
-        // 未调用initialize，直接createInstance应该自动初始化
         let obj = cls.createInstance() as TestClass045;
         expect(obj.value).assertEqual(100);
     });
@@ -1294,7 +1292,6 @@ export default function ClassCreateInstanceTest(): void {
           instances.push(cls.createInstance() as MemoryTest049);
         }
         expect(instances.length).assertEqual(1000);
-        // 验证所有实例都正确创建
         for (let obj of instances) {
           expect(obj.data.length).assertEqual(5);
         }
