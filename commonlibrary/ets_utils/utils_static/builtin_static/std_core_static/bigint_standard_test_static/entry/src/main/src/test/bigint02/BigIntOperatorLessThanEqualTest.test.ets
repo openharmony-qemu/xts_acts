@@ -121,5 +121,24 @@ export default function BigIntOperatorLessThanEqualTest(): void {
           a.operatorLessThanEqual(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0700
+     * @tc.name testBigIntOperatorLessThanEqualConsecutive0700
+     * @tc.desc Verify operatorLessThanEqual for consecutive increments on large values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanEqualConsecutive0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const base = BigInt('999999999999999999999999999990');
+        const next = base.operatorAdd(BigInt(1));
+        const next2 = next.operatorAdd(BigInt(1));
+        expect(base.operatorLessThanEqual(next)).assertTrue();
+        expect(next.operatorLessThanEqual(next2)).assertTrue();
+        expect(base.operatorLessThanEqual(next2)).assertTrue();
+        expect(next2.operatorLessThanEqual(base)).assertFalse();
+        expect(next.operatorLessThanEqual(next)).assertTrue();
+      });
   });
 }

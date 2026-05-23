@@ -121,5 +121,22 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
           a.operatorGreaterThanEqual(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0700
+     * @tc.name testBigIntOperatorGreaterThanEqualNumberBoundary0700
+     * @tc.desc Verify operatorGreaterThanEqual aligns with double-constructible Number boundaries
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorGreaterThanEqualNumberBoundary0700',
+      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        const fromDouble = BigInt(9007199254740991.0);
+        const fromString = BigInt('9007199254740991');
+        expect(fromDouble.operatorGreaterThanEqual(fromString)).assertTrue();
+        expect(fromDouble.operatorGreaterThanEqual(BigInt(9007199254740990))).assertTrue();
+        expect(BigInt(9007199254740992.0).operatorGreaterThanEqual(BigInt(9007199254740991.0))).assertTrue();
+        expect(BigInt(9007199254740990.0).operatorGreaterThanEqual(BigInt(9007199254740991.0))).assertFalse();
+      });
   });
 }

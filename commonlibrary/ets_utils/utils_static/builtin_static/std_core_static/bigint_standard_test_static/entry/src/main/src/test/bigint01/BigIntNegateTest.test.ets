@@ -60,7 +60,7 @@ export default function BigIntNegateTest(): void {
      */
     it('testBigIntNegateDoubleNegate0300',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(8).negate().negate().toString()).assertEqual('8');
+        expect(BigInt(42).negate().negate().toString()).assertEqual('42');
         expect(BigInt(-123).negate().negate().toString()).assertEqual('-123');
         expect(BigInt(0).negate().negate().toString()).assertEqual('0');
       });
@@ -75,10 +75,9 @@ export default function BigIntNegateTest(): void {
      */
     it('testBigIntNegateSafeIntegerMagnitude0400',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const maxSafe = '9007199254740991';
+        const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
         expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
         expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
-        expect(BigInt(0).negate().toString()).assertEqual('0');
       });
 
     /**
@@ -91,10 +90,10 @@ export default function BigIntNegateTest(): void {
      */
     it('testBigIntNegateReturnType0500',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const value = BigInt(8);
+        const value = BigInt(100);
         const result = value.negate();
         expect(typeof result === 'bigint').assertTrue();
-        expect(value.toString()).assertEqual('8');
+        expect(value.toString()).assertEqual('100');
         expect(result !== value).assertTrue();
       });
 
@@ -108,11 +107,12 @@ export default function BigIntNegateTest(): void {
      */
     it('testBigIntNegateNoThrow0600',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('42').negate().toString()).assertEqual('-42');
+        expect(BigInt('77').negate().toString()).assertEqual('-77');
         expect(BigInt(true).negate().toString()).assertEqual('-1');
         expect(BigInt(false).negate().toString()).assertEqual('0');
-        const value = BigInt(99);
-        expect(value.negate().toString()).assertEqual('-99');
+        const original = BigInt('88');
+        const copied = BigInt(original);
+        expect(copied.negate().toString()).assertEqual('-88');
       });
   });
 }
