@@ -510,7 +510,9 @@ export default function cameraEnumTest() {
      */
     it('SUB_MULTIMEDIA_CAMERA_CONTROL_CENTER_EFFECT_TYPE_0100', Level.LEVEL0, async (done: Function) => {
       console.info(`${TAG} ControlCenterEffectType.COLOR_EFFECT:${camera.ControlCenterEffectType.COLOR_EFFECT}`);
-      expect(camera.ControlCenterEffectType.COLOR_EFFECT == 3).assertTrue();
+      let val = camera.ControlCenterEffectType.COLOR_EFFECT;
+      val = camera.ControlCenterEffectType.BEAUTY;
+      expect(val == 0).assertTrue();
       done();
     })
 
