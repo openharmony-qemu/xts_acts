@@ -109,7 +109,7 @@ struct ContextMenuMaxHeight {
         .onClick(() => {
           this.isShow2 = !this.isShow2;
         })
-        .bindMenu(this.isShow2, this.MyMenu,  {
+        .bindContextMenu(this.isShow2, this.MyMenu,  {
           maxHeight:LengthMetrics.vp(300)
         })
 
@@ -131,7 +131,7 @@ struct ContextMenuMaxHeight {
         .onClick(() => {
           this.isShow4 = !this.isShow4;
         })
-        .bindMenu(this.isShow4, this.MyMenu, {
+        .bindContextMenu(this.isShow4, this.MyMenu, {
           maxHeight:LengthMetrics.fp(200)
         })
 
@@ -154,7 +154,7 @@ struct ContextMenuMaxHeight {
         .onClick(() => {
           this.isShow6 = !this.isShow6;
         })
-        .bindMenu(this.isShow6, this.MyMenu, {
+        .bindContextMenu(this.isShow6, this.MyMenu, {
           maxHeight:LengthMetrics.vp(0),
           scrollBar: BarState.Off
         })
@@ -166,7 +166,7 @@ struct ContextMenuMaxHeight {
         .onClick(() => {
           this.isShow7 = !this.isShow7;
         })
-        .bindMenu(this.isShow7, this.MyMenu, {
+        .bindContextMenu(this.isShow7, this.MyMenu, {
           maxHeight:LengthMetrics.vp(-1),
           scrollBar: BarState.Auto
         })
