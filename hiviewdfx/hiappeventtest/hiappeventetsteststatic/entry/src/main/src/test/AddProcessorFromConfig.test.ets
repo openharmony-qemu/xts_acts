@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -246,6 +247,48 @@ export default function addProcessorTestFromConfigTest() {
         const bErr = err as BusinessError;
         hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3011 > error code: ${bErr.code}, error msg: ${bErr.message}`);
         expect(bErr.code == 11105001).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3012
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3012
+     * @tc.desc   验证addProcessorFromConfig入参configName为null，返回值401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_HiAppEvent_Static_Js_3012', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3012 start');
+      hiAppEvent.addProcessorFromConfig("ha_app_event", ).then((processorId) => {
+        expect(processorId > 0).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        const bErr = err as BusinessError;
+        hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3012 > error code: ${bErr.code}, error msg: ${bErr.message}`);
+        expect(bErr.code == 401).assertTrue();
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3013
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3013
+     * @tc.desc   验证addProcessorFromConfig入参configName为undefined，返回值401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DFX_DFT_HiAppEvent_Static_Js_3013', Level.LEVEL3, async (done: () => void): Promise<void> => {
+      hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3013 start');
+      hiAppEvent.addProcessorFromConfig("ha_app_event", undefined).then((processorId) => {
+        expect(processorId > 0).assertTrue();
+        done();
+      }).catch((err: Error) => {
+        const bErr = err as BusinessError;
+        hilog.error(logDomain, tag, `SUB_DFX_DFT_HiAppEvent_Static_Js_3013 > error code: ${bErr.code}, error msg: ${bErr.message}`);
+        expect(bErr.code == 401).assertTrue();
         done();
       });
     });

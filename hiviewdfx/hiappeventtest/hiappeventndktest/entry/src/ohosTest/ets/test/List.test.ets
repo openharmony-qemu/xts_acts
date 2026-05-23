@@ -16,10 +16,12 @@ import SetEventConfigMinidumpTest from './SetEventConfigMinidumpTest.test';
 import abilityTest from './Ability.test';
 import processorNDKTest from './processorNDK.test';
 import OhHiAppEventSetEventConfig from './OhHiAppEventSetEventConfig.test';
+import OhHiAppEventParameter  from './OhHiAppEventParameter.test'
 
 export default function testsuite() {
   SetEventConfigMinidumpTest();
   abilityTest();
   processorNDKTest();
   OhHiAppEventSetEventConfig();
+  OhHiAppEventParameter();
 }
