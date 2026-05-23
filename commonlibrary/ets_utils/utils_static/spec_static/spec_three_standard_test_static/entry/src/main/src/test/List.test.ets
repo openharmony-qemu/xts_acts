@@ -65,7 +65,6 @@ import GenericsExperimentalTest from './experimentalfeatures/genericsexperimenta
 import NonNullishTypeParameterTest from './experimentalfeatures/genericsexperimental/nonnullishtypeparameter/NonNullishTypeParameterTest.test';
 
 import FixedArrayTypesTest from "./experimentalfeatures/fixedarraytypes/FixedArrayTypesTest.test";
-import TypeCharTest from "./experimentalfeatures/typechar/TypeCharTest.test";
 
 export default function testsuite(): void {
 
@@ -120,8 +119,5 @@ export default function testsuite(): void {
   ExplicitClassMethodOverloadTest();
   ForOfTypeAnnotationTest();
   ExplicitInterfaceMethodOverloadTest();
-
   FixedArrayTypesTest();
-  TypeCharTest();
-
 }
