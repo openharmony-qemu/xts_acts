@@ -70,6 +70,9 @@ import { UiComponent, UiDriver, BY, Component, Driver, UiWindow, ON, MatchPatter
         console.info('[bluetooth_js]acl state change result'+ JSON.stringify(data));
         expect(data).not().assertUndefined();
     }
+    function onAclStateChangeCallback(data : bluetooth.AclStateResult) {
+        console.info('pin required = '+ JSON.stringify(data));
+    }
 
     const PROFILE_UUID_HFP_AG = '0000111F-0000-1000-8000-00805F9B34FB';
     const PROFILE_UUID_HFP_HF = '0000111E-0000-1000-8000-00805F9B34FB';
