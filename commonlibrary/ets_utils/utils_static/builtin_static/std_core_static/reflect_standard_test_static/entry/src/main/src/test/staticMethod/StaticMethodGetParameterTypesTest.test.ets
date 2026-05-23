@@ -17,6 +17,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
+enum TestColor { Red, Green, Blue }
+
 class MyClass001 {
   public static test(a: int, b: string): void {}
 }
@@ -118,6 +120,18 @@ class MyClass020 {
   public static m1(a: int): void {}
   public static m2(a: int, b: string): void {}
   public static m3(a: int, b: string, c: boolean): void {}
+}
+
+class MyClass021 {
+  public static enumParam(c: TestColor): void {}
+}
+
+class MyClass022 {
+  public static constrainedParam<T extends Object>(p: T): void {}
+}
+
+class MyClass023 {
+  public static unionParam(value: int | string | boolean): void {}
 }
 
 export default function StaticMethodGetParameterTypesTest(): void {
@@ -235,7 +249,6 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
       // spec/types.md:1327: optional parameter type is T|undefined (nullish union).
-      // Known divergence: at runtime isUnion() returns false for this union type.
       expect(paramTypes[1].getName().includes('String')).assertTrue();
     });
 
@@ -515,6 +528,63 @@ export default function StaticMethodGetParameterTypesTest(): void {
         let paramTypes: FixedArray<Class> = methods[i].getParameterTypes();
         expect(paramTypes.length).assertEqual(expectedLengths[i]);
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPES_2100
+     * @tc.name testStaticMethodGetParameterTypes021
+     * @tc.desc Verify getParameterTypes() for enum type parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass021>();
+      let method = cls.getStaticMethod('enumParam');
+      expect(method != undefined).assertTrue();
+      let paramTypes: FixedArray<Class> = method!.getParameterTypes();
+      expect(paramTypes.length).assertEqual(1);
+      expect(paramTypes[0].isEnum()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPES_2200
+     * @tc.name testStaticMethodGetParameterTypes022
+     * @tc.desc Verify getParameterTypes() for constrained generic type parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterTypes022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // spec/generics.md:64 — T extends Object is compatible with Object methods
+      let cls: Class = Class.from<MyClass022>();
+      let method = cls.getStaticMethod('constrainedParam');
+      expect(method != undefined).assertTrue();
+      let paramTypes: FixedArray<Class> = method!.getParameterTypes();
+      expect(paramTypes.length).assertEqual(1);
+      let paramType = paramTypes[0];
+      expect(paramType != null).assertTrue();
+      expect(paramType.isPrimitive()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPES_2300
+     * @tc.name testStaticMethodGetParameterTypes023
+     * @tc.desc Verify getUnionConstituentTypes() on union type parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetParameterTypes023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass023>();
+      let method = cls.getStaticMethod('unionParam');
+      expect(method != undefined).assertTrue();
+      let paramTypes: FixedArray<Class> = method!.getParameterTypes();
+      expect(paramTypes.length).assertEqual(1);
+      let paramType = paramTypes[0];
+      expect(paramType.isUnion()).assertTrue();
+      let constituents = paramType.getUnionConstituentTypes();
+      expect(constituents != null).assertTrue();
     });
   });
 }

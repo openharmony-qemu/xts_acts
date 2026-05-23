@@ -178,6 +178,15 @@ class MyClass032 {
   public static test(): int { return 42; }
 }
 
+class MyClass033 {
+  public static test(): string { return 'no param'; }
+  public static test(msg: string): string { return msg; }
+}
+
+class MyClass034 {
+  public static noParam(): int { return 42; }
+}
+
 export default function StaticMethodInvokeTest(): void {
   describe('StaticMethodInvokeTest', (): void => {
     beforeAll((): void => {
@@ -802,6 +811,46 @@ export default function StaticMethodInvokeTest(): void {
         let result: int = method!.invoke() as int;
         expect(result).assertEqual(42);
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_3600
+     * @tc.name testStaticMethodInvoke036
+     * @tc.desc Verify getStaticMethod without signature throws Error when multiple overloads exist
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass033>();
+      // arkts-sta-reflect.md:880 — Error is thrown when signature is omitted and multiple overloads exist
+      try {
+        cls.getStaticMethod('test');
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('Error');
+      }
+      // With explicit signature, it should work
+      let method = cls.getStaticMethod('test', []);
+      expect(method != undefined).assertTrue();
+      expect(method!.invoke() as string).assertEqual('no param');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_3700
+     * @tc.name testStaticMethodInvoke037
+     * @tc.desc Verify invoke() with empty array behaves equivalently to invoke() without args
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass034>();
+      let method = cls.getStaticMethod('noParam');
+      expect(method != undefined).assertTrue();
+      let result1: int = method!.invoke() as int;
+      let result2: int = method!.invoke([]) as int;
+      expect(result1).assertEqual(result2);
     });
   });
 }

@@ -17,6 +17,8 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
+enum TestColor { Red, Green, Blue }
+
 class MyClass001 {
   public static test(): string {
     return '';
@@ -125,6 +127,14 @@ class MyClass019 {
   public static m2(): int { return 0; }
   public static m3(): boolean { return true; }
   public static m4(): void {}
+}
+
+class MyClass020 {
+  public static getColor(): TestColor { return TestColor.Red; }
+}
+
+class MyClass021 {
+  public static identity<T extends Object>(value: T): T { return value; }
 }
 
 export default function StaticMethodGetReturnTypeTest(): void {
@@ -524,6 +534,38 @@ export default function StaticMethodGetReturnTypeTest(): void {
           expect(rt.getName()).assertEqual(expected);
         }
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_2000
+     * @tc.name testStaticMethodGetReturnType020
+     * @tc.desc Verify getReturnType() for enum return type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetReturnType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass020>();
+      let method = cls.getStaticMethod('getColor');
+      expect(method != undefined).assertTrue();
+      let rt = method!.getReturnType();
+      expect(rt.isEnum()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_RETURN_TYPE_2100
+     * @tc.name testStaticMethodGetReturnType021
+     * @tc.desc Verify getReturnType() for method with constrained generic type parameter
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetReturnType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass021>();
+      let method = cls.getStaticMethod('identity');
+      expect(method != undefined).assertTrue();
+      let rt = method!.getReturnType();
+      expect(rt != null).assertTrue();
     });
   });
 }

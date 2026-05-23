@@ -119,6 +119,23 @@ class MyClass015 {
   public static method3(): void {}
 }
 
+class MyClass016 {
+  public static parentMethod(): void {}
+  private static parentPrivate(): void {}
+}
+
+class MyClass017 extends MyClass016 {
+  public static childMethod(): void {}
+}
+
+class MyClass018 {
+  // No static methods
+}
+
+class MyClass019 {
+  public static onlyMethod(): void {}
+}
+
 export default function StaticMethodGetOwnerTest(): void {
   describe('StaticMethodGetOwnerTest', (): void => {
     beforeAll(() => {
@@ -416,6 +433,56 @@ export default function StaticMethodGetOwnerTest(): void {
         let nameFromMethod = owner.getName();
         expect(nameFromMethod).assertEqual(ownerName);
       }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_OWNER_1600
+     * @tc.name testStaticMethodGetOwner016
+     * @tc.desc Verify getStaticMethods() on child class only returns own methods, not parent methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // arkts-sta-reflect.md:822 — getStaticMethods() returns only this class's own methods
+      let childCls: Class = Class.from<MyClass017>();
+      let childMethods = childCls.getStaticMethods();
+      expect(childMethods.length).assertEqual(1);
+      expect(childMethods[0].getName()).assertEqual('childMethod');
+
+      let parentCls: Class = childCls.getSuper()!;
+      let parentMethods = parentCls.getStaticMethods();
+      expect(parentMethods.length).assertEqual(1);
+      expect(parentMethods[0].getName()).assertEqual('parentMethod');
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_OWNER_1700
+     * @tc.name testStaticMethodGetOwner017
+     * @tc.desc Verify getStaticMethods() returns empty for class with no static methods
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass018>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_OWNER_1800
+     * @tc.name testStaticMethodGetOwner018
+     * @tc.desc Verify getStaticMethods() returns exactly one method for class with single static method
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<MyClass019>();
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertEqual(1);
+      expect(methods[0].getName()).assertEqual('onlyMethod');
     });
   });
 }
