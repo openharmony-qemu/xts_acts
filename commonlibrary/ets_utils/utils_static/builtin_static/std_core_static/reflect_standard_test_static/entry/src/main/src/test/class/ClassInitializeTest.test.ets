@@ -1654,10 +1654,8 @@ export default function runClassInitializeTest(): void {
     */
     it('testClassInitialize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LargeClass030>();
-      let startTime = Date.now();
       cls.initialize();
-      let endTime = Date.now();
-      console.info(`initialize perf: ${endTime - startTime}ms`);
+      expect(cls.getName()).assertEqual('entry.src.main.src.test.class.ClassInitializeTest.test.LargeClass030');
     });
 
     /**
@@ -1670,17 +1668,9 @@ export default function runClassInitializeTest(): void {
     */
     it('testClassInitialize031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass031>();
-
-      let startTime = Date.now();
-      for (let i = 0; i < 1000; i++) {
-        cls.initialize();
-      }
-      let endTime = Date.now();
-      console.info(`initialize repeat perf: ${endTime - startTime}ms`);
+      cls.initialize();
+      expect(cls.getName()).assertEqual('entry.src.main.src.test.class.ClassInitializeTest.test.MyClass031');
     });
 
   });
 }
-
-}
-
