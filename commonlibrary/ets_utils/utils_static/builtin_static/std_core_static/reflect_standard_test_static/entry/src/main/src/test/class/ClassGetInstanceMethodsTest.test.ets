@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -64,462 +63,461 @@ class ExternalClass {
 }
 
 class MyClass001 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-      private privateMethod(): void {}
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+  private privateMethod(): void {}
+}
 
 class TestClass003 {
-      public testMethod(): void {}
-  }
+  public testMethod(): void {}
+}
 
 class TestClass004 {
-      public testMethod(): void {}
-  }
+  public testMethod(): void {}
+}
 
 class MyClass005 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+}
 
 class MyClass006 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-      public method3(): int { return 0; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+  public method3(): int { return 0; }
+}
 
 class MyClass007 {
-      public testMethod(): void {}
-  }
+  public testMethod(): void {}
+}
 
 class EmptyClass008 {
-      private privateMethod(): void {}
-      public static staticMethod(): void {}
-  }
+  private privateMethod(): void {}
+  public static staticMethod(): void {}
+}
 
 class PrivateOnlyClass009 {
-      private privateMethod1(): void {}
-      private privateMethod2(): string { return "test"; }
-  }
+  private privateMethod1(): void {}
+  private privateMethod2(): string { return "test"; }
+}
 
 class StaticOnlyClass010 {
-      public static staticMethod1(): void {}
-      public static staticMethod2(): string { return "test"; }
-  }
+  public static staticMethod1(): void {}
+  public static staticMethod2(): string { return "test"; }
+}
 
 class MyClass011 {
-      public testMethod(): void {}
-  }
+  public testMethod(): void {}
+}
 
 class MyClass012 {
-      public testMethod(param1: int, param2: string): boolean {
-          return true;
-      }
+  public testMethod(param1: int, param2: string): boolean {
+    return true;
   }
+}
 
 class ManyMethodsClass013 {
-      public method1(): void {}
-      public method2(): void {}
-      public method3(): void {}
-      public method4(): void {}
-      public method5(): void {}
-      public method6(): void {}
-      public method7(): void {}
-      public method8(): void {}
-      public method9(): void {}
-      public method10(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+  public method3(): void {}
+  public method4(): void {}
+  public method5(): void {}
+  public method6(): void {}
+  public method7(): void {}
+  public method8(): void {}
+  public method9(): void {}
+  public method10(): void {}
+}
 
 class OverloadClass014 {
-      public test(): string {
-          return "no param";
-      }
-      public test(msg: string): string {
-          return msg;
-      }
-      public test(msg: string, count: int): string {
-          return msg + count;
-      }
+  public test(): string {
+    return "no param";
   }
+  public test(msg: string): string {
+    return msg;
+  }
+  public test(msg: string, count: int): string {
+    return msg + count;
+  }
+}
 
 class PublicClass015 {
-      public publicMethod1(): void {}
-      public publicMethod2(): string { return "test"; }
-      public publicMethod3(): int { return 0; }
-  }
+  public publicMethod1(): void {}
+  public publicMethod2(): string { return "test"; }
+  public publicMethod3(): int { return 0; }
+}
 
 class DefaultPublicClass016 {
-      defaultMethod(): void {}
-  }
+  defaultMethod(): void {}
+}
 
 class MixedClass017 {
-      public publicMethod(): void {}
-      private privateMethod(): void {}
-  }
+  public publicMethod(): void {}
+  private privateMethod(): void {}
+}
 
 class AllPrivateClass018 {
-      private method1(): void {}
-      private method2(): string { return "test"; }
-  }
+  private method1(): void {}
+  private method2(): string { return "test"; }
+}
 
 class ProtectedClass019 {
-      public publicMethod(): void {}
-      protected protectedMethod(): void {}
-  }
+  public publicMethod(): void {}
+  protected protectedMethod(): void {}
+}
 
 class StaticClass020 {
-      public instanceMethod(): void {}
-      public static staticMethod(): void {}
-  }
+  public instanceMethod(): void {}
+  public static staticMethod(): void {}
+}
 
 class OnlyStaticClass021 {
-      public static method1(): void {}
-      public static method2(): string { return "test"; }
-  }
+  public static method1(): void {}
+  public static method2(): string { return "test"; }
+}
 
 class MyClass022 implements MyInterface022 {
-      public interfaceMethod(): string {
-          return "implemented";
-      }
-      public classMethod(): void {}
+  public interfaceMethod(): string {
+    return "implemented";
   }
+  public classMethod(): void {}
+}
 
 interface MyInterface022 {
-      interfaceMethod(): string;
-  }
+  interfaceMethod(): string;
+}
 
 class MultiInterfaceClass023 implements Interface1023, Interface2023 {
-      public method1(): void {}
-      public method2(): void {}
-      public ownMethod(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+  public ownMethod(): void {}
+}
 
 interface Interface2023 {
-      method2(): void;
-  }
+  method2(): void;
+}
 
 interface Interface1023 {
-      method1(): void;
-  }
+  method1(): void;
+}
 
 class ImplClass024 implements InterfaceWithDefault024 {
-      public defaultMethod(): string {
-          return "implementation";
-      }
+  public defaultMethod(): string {
+    return "implementation";
   }
+}
 
 interface InterfaceWithDefault024 {
-      defaultMethod(): string;
-  }
+  defaultMethod(): string;
+}
 
 class ChildClass025 extends ParentClass025 {
-      public childMethod(): void {}
-  }
+  public childMethod(): void {}
+}
 
 class ParentClass025 {
-      public parentMethod(): void {}
-  }
+  public parentMethod(): void {}
+}
 
 class ChildClass026 extends ParentClass026 {
-      public childMethod(): void {}
-  }
+  public childMethod(): void {}
+}
 
 class ParentClass026 extends GrandParentClass026 {
-      public parentMethod(): void {}
-  }
+  public parentMethod(): void {}
+}
 
 class GrandParentClass026 {
-      public grandParentMethod(): void {}
-  }
+  public grandParentMethod(): void {}
+}
 
 class ChildClass027 extends ParentClass027 {
-      public override overriddenMethod(): string {
-          return "child";
-      }
+  public override overriddenMethod(): string {
+    return "child";
   }
+}
 
 class ParentClass027 {
-      public overriddenMethod(): string {
-          return "parent";
-      }
+  public overriddenMethod(): string {
+    return "parent";
   }
+}
 
 class MixedClass028 extends ParentClass028 implements MyInterface028 {
-      public interfaceMethod(): void {}
-      public ownMethod(): void {}
-  }
+  public interfaceMethod(): void {}
+  public ownMethod(): void {}
+}
 
 interface MyInterface028 {
-      interfaceMethod(): void;
-  }
+  interfaceMethod(): void;
+}
 
 class ParentClass028 {
-      public parentMethod(): void {}
-  }
+  public parentMethod(): void {}
+}
 
 class GetterClass029 {
-      private _name: string = '';
-      public get name(): string {
-          return this._name;
-      }
-      public set name(value: string) {
-          this._name = value;
-      }
+  private _name: string = '';
+  public get name(): string {
+    return this._name;
   }
+  public set name(value: string) {
+    this._name = value;
+  }
+}
 
 class SetterClass030 {
-      private _value: int = 0;
-      public get value(): int {
-          return this._value;
-      }
-      public set value(val: int) {
-          this._value = val;
-      }
+  private _value: int = 0;
+  public get value(): int {
+    return this._value;
   }
+  public set value(val: int) {
+    this._value = val;
+  }
+}
 
 class ReadOnlyClass031 {
-      private _readonly: string = 'test';
-      public get readonly(): string {
-          return this._readonly;
-      }
+  private _readonly: string = 'test';
+  public get readonly(): string {
+    return this._readonly;
   }
+}
 
 class WithConstructor032 {
-      public constructor() {}
-      public constructor(param: string) {}
-      public normalMethod(): void {}
-  }
+  public constructor() {}
+  public constructor(param: string) {}
+  public normalMethod(): void {}
+}
 
 class AsyncClass033 {
-      public async asyncMethod(): Promise<string> {
-          return "async result";
-      }
-      public syncMethod(): void {}
+  public async asyncMethod(): Promise<string> {
+    return "async result";
   }
+  public syncMethod(): void {}
+}
 
 class GenericMethodClass034 {
-      public genericMethod<T>(param: T): T {
-          return param;
-      }
-      public normalMethod(): void {}
+  public genericMethod<T>(param: T): T {
+    return param;
   }
+  public normalMethod(): void {}
+}
 
 class FinalMethodClass035 {
-      public final finalMethod(): void {}
-      public normalMethod(): void {}
-  }
+  public final finalMethod(): void {}
+  public normalMethod(): void {}
+}
 
 abstract class AbstractClass036 {
-      public abstract abstractMethod(): void;
-      public concreteMethod(): void {}
-  }
+  public abstract abstractMethod(): void;
+  public concreteMethod(): void {}
+}
 
 class NativeTestClass037 {
-      public $_set(index: int, val: string): void {}
-  }
+  public $_set(index: int, val: string): void {}
+}
 
 abstract class AbstractClass038 {
-      public abstract abstractMethod(): void;
-      public concreteMethod(): string {
-          return "concrete";
-      }
-      private privateMethod(): void {}
+  public abstract abstractMethod(): void;
+  public concreteMethod(): string {
+    return "concrete";
   }
+  private privateMethod(): void {}
+}
 
 class FinalClass039 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+}
 
 interface TestInterface040 {
-      interfaceMethod(): void;
-  }
+  interfaceMethod(): void;
+}
 
 class GenericClass041<T> {
-      public genericMethod(param: T): T {
-          return param;
-      }
-      public normalMethod(): void {}
+  public genericMethod(param: T): T {
+    return param;
   }
+  public normalMethod(): void {}
+}
 
 class GenericContainer042<T> {
-      public get(value: T): T {
-          return value;
-      }
-      public set(value: T): void {}
+  public get(value: T): T {
+    return value;
   }
+  public set(value: T): void {}
+}
 
 class EmptyClass043 {}
 
 class LazyClass044 {
-      public method(): void {}
-  }
+  public method(): void {}
+}
 
 class TestClass045 {
-      public method(): void {}
-  }
+  public method(): void {}
+}
 
 class OriginalClass046 {
-      public originalMethod(): void {}
-  }
+  public originalMethod(): void {}
+}
 
 class OwnerClass047 {
-      public testMethod(): void {}
-  }
+  public testMethod(): void {}
+}
 
 class MixedClass048 {
-      public publicMethod(): void {}
-      private privateMethod(): void {}
-      protected protectedMethod(): void {}
-  }
+  public publicMethod(): void {}
+  private privateMethod(): void {}
+  protected protectedMethod(): void {}
+}
 
 class MixedClass049 {
-      public instanceMethod(): void {}
-      public static staticMethod(): void {}
-  }
+  public instanceMethod(): void {}
+  public static staticMethod(): void {}
+}
 
 class MixedClass050 {
-      public instanceMethod1(): void {}
-      public instanceMethod2(): string { return "test"; }
-      public static staticMethod1(): void {}
-      public static staticMethod2(): int { return 0; }
-  }
+  public instanceMethod1(): void {}
+  public instanceMethod2(): string { return "test"; }
+  public static staticMethod1(): void {}
+  public static staticMethod2(): int { return 0; }
+}
 
 class TestClass051 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+}
 
 class MixedClass052 {
-      public field1: string = 'test';
-      public field2: int = 0;
-      public method1(): void {}
-      public method2(): string { return "test"; }
-  }
+  public field1: string = 'test';
+  public field2: int = 0;
+  public method1(): void {}
+  public method2(): string { return "test"; }
+}
 
 class InvokeTestClass053 {
-      public greet(name: string): string {
-          return "Hello, " + name;
-      }
+  public greet(name: string): string {
+    return "Hello, " + name;
   }
+}
 
 class TraverseClass054 {
-      public method1(): void {}
-      public method2(): string { return "test"; }
-      public method3(param: int): boolean { return true; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+  public method3(param: int): boolean { return true; }
+}
 
 class FilterClass055 {
-      public async asyncMethod(): Promise<void> {}
-      public normalMethod(): void {}
-      public final finalMethod(): void {}
-  }
+  public async asyncMethod(): Promise<void> {}
+  public normalMethod(): void {}
+  public final finalMethod(): void {}
+}
 
 class SerializableClass056 {
-      public testMethod(param1: int, param2: string): boolean {
-          return true;
-      }
+  public testMethod(param1: int, param2: string): boolean {
+    return true;
   }
+}
 
 class LargeClass057 {
-      public m001(): void {}
-      public m002(): void {}
-      public m003(): void {}
-      public m004(): void {}
-      public m005(): void {}
-      public m100(): void {}
-  }
+  public m001(): void {}
+  public m002(): void {}
+  public m003(): void {}
+  public m004(): void {}
+  public m005(): void {}
+  public m100(): void {}
+}
 
 class TestClass058 {
-      public method(): void {}
-  }
+  public method(): void {}
+}
 
 class CompatClass061 {
-      public legacyMethod(): string {
-          return "legacy";
-      }
-      public newMethod(): string {
-          return "new";
-      }
+  public legacyMethod(): string {
+    return "legacy";
   }
+  public newMethod(): string {
+    return "new";
+  }
+}
 
 class ChildClass063 extends ParentClass063 implements Interface1063, Interface2063 {
-      public method1(): void {}
-      public method2(): void {}
-      public childMethod(): void {}
-      private privateMethod(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+  public childMethod(): void {}
+  private privateMethod(): void {}
+}
 
 class ParentClass063 {
-      public parentMethod(): void {}
-  }
+  public parentMethod(): void {}
+}
 
 interface Interface2063 {
-      method2(): void;
-  }
+  method2(): void;
+}
 
 interface Interface1063 {
-      method1(): void;
-  }
+  method1(): void;
+}
 
 class GenericClass064<T> extends BaseClass064 {
-      public genericMethod(param: T): T {
-          return param;
-      }
-      public ownMethod(): void {}
+  public genericMethod(param: T): T {
+    return param;
   }
+  public ownMethod(): void {}
+}
 
 class BaseClass064 {
-      public baseMethod(): void {}
-  }
+  public baseMethod(): void {}
+}
 
 class CompleteClass065 {
-      public publicField: string = 'test';
-      private privateField: int = 0;
-      
-      public static publicStaticField: boolean = true;
-      private static privateStaticField: int = 0;
-      
-      public publicInstanceMethod(): void {}
-      private privateInstanceMethod(): void {}
-      protected protectedInstanceMethod(): void {}
-      
-      public static publicStaticMethod(): void {}
-      private static privateStaticMethod(): void {}
-      
-      private _property: string = '';
-      public get property(): string { return this._property; }
-      public set property(value: string) { this._property = value; }
-      
-      public constructor() {}
-      public constructor(param: string) {}
-  }
+  public publicField: string = 'test';
+  private privateField: int = 0;
+
+  public static publicStaticField: boolean = true;
+  private static privateStaticField: int = 0;
+
+  public publicInstanceMethod(): void {}
+  private privateInstanceMethod(): void {}
+  protected protectedInstanceMethod(): void {}
+
+  public static publicStaticMethod(): void {}
+  private static privateStaticMethod(): void {}
+
+  private _property: string = '';
+  public get property(): string { return this._property; }
+  public set property(value: string) { this._property = value; }
+
+  public constructor() {}
+  public constructor(param: string) {}
+}
 
 class MyClass066 extends ParentClass066 implements MyInterface066 {
-      public test(): string {
-          return "test";
-      }
-      public test(msg: string): string {
-          return msg;
-      }
-      private privateMethod(msg: string): string {
-          return msg;
-      }
-      public sayHi(): string {
-          return "sayHi";
-      }
+  public test(): string {
+    return "test";
   }
+  public test(msg: string): string {
+    return msg;
+  }
+  private privateMethod(msg: string): string {
+    return msg;
+  }
+  public sayHi(): string {
+    return "sayHi";
+  }
+}
 
 interface MyInterface066 {
-      sayHi(): string;
-  }
+  sayHi(): string;
+}
 
 class ParentClass066 {
-      public sayHello(): string {
-          return "sayHello";
-      }
+  public sayHello(): string {
+    return "sayHello";
   }
-
+}
 
 export default function ClassGetInstanceMethodsTest(): void {
   describe('ClassGetInstanceMethodsTest', (): void => {
@@ -540,12 +538,12 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CompatClass061>();
-        let methods = cls.getInstanceMethods();
-        
-                expect(methods.length).assertEqual(2);
+      let methods = cls.getInstanceMethods();
+
+      expect(methods.length).assertEqual(2);
     });
 
     /**
@@ -555,13 +553,12 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ExternalClass>();
+      let methods = cls.getInstanceMethods();
 
-        let cls = Class.from<ExternalClass>();
-        let methods = cls.getInstanceMethods();
-        
-        expect(methods.length).assertLargerOrEqual(0);
+      expect(methods.length).assertLargerOrEqual(0);
     });
 
     /**
@@ -571,23 +568,23 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass063>();
-        let methods = cls.getInstanceMethods();
-        
-        expect(methods.length).assertEqual(3);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
-        }
-        
-        expect(strArrayContains(methodNames, "method1")).assertTrue();
-        expect(strArrayContains(methodNames, "method2")).assertTrue();
-        expect(strArrayContains(methodNames, "childMethod")).assertTrue();
-        expect(strArrayContains(methodNames, "parentMethod")).assertFalse();
-        expect(strArrayContains(methodNames, "privateMethod")).assertFalse();
+      let methods = cls.getInstanceMethods();
+
+      expect(methods.length).assertEqual(3);
+
+      let methodNames = new Array<string>();
+      for (let i = 0; i < methods.length; i++) {
+        methodNames.push(methods[i].getName());
+      }
+
+      expect(strArrayContains(methodNames, "method1")).assertTrue();
+      expect(strArrayContains(methodNames, "method2")).assertTrue();
+      expect(strArrayContains(methodNames, "childMethod")).assertTrue();
+      expect(strArrayContains(methodNames, "parentMethod")).assertFalse();
+      expect(strArrayContains(methodNames, "privateMethod")).assertFalse();
     });
 
     /**
@@ -597,12 +594,12 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass064<int>>();
-        let methods = cls.getInstanceMethods();
-        
-                expect(methods.length).assertEqual(2);
+      let methods = cls.getInstanceMethods();
+
+      expect(methods.length).assertEqual(2);
     });
 
     /**
@@ -612,13 +609,12 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CompleteClass065>();
-        let methods = cls.getInstanceMethods();
-        
-        
-        expect(methods.length).assertEqual(3);
+      let methods = cls.getInstanceMethods();
+
+      expect(methods.length).assertEqual(3);
     });
 
     /**
@@ -628,33 +624,33 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass066>();
-        let methods = cls.getInstanceMethods();
-        
-        expect(methods.length).assertEqual(3);
-        
-        let methodNames = new Array<string>();
-        for (let i = 0; i < methods.length; i++) {
-            methodNames.push(methods[i].getName());
+      let methods = cls.getInstanceMethods();
+
+      expect(methods.length).assertEqual(3);
+
+      let methodNames = new Array<string>();
+      for (let i = 0; i < methods.length; i++) {
+        methodNames.push(methods[i].getName());
+      }
+
+      let testCount = 0;
+      for (let i = 0; i < methodNames.length; i++) {
+        if (methodNames[i] === "test") {
+          testCount++;
         }
-        
-        let testCount = 0;
-        for (let i = 0; i < methodNames.length; i++) {
-            if (methodNames[i] === "test") {
-                testCount++;
-            }
-        }
-        expect(testCount).assertEqual(2);
-        
-        expect(strArrayContains(methodNames, "sayHi")).assertTrue();
-        
-        methods = cls.getSuper()!.getInstanceMethods();
-        expect(methods.length).assertEqual(1);
-        let parentMethod = findInstanceMethodByName(methods, "sayHello");
-        expect(parentMethod !== undefined).assertTrue();
-        expect(parentMethod!.getName()).assertEqual("sayHello");
+      }
+      expect(testCount).assertEqual(2);
+
+      expect(strArrayContains(methodNames, "sayHi")).assertTrue();
+
+      methods = cls.getSuper()!.getInstanceMethods();
+      expect(methods.length).assertEqual(1);
+      let parentMethod = findInstanceMethodByName(methods, "sayHello");
+      expect(parentMethod !== undefined).assertTrue();
+      expect(parentMethod!.getName()).assertEqual("sayHello");
     });
 
     /**
@@ -664,12 +660,13 @@ export default function ClassGetInstanceMethodsTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethods067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<Object>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertLargerOrEqual(0);
+      let cls = Class.from<Object>();
+      let methods = cls.getInstanceMethods();
+      expect(methods.length).assertLargerOrEqual(0);
     });
 
   });
 }
+
