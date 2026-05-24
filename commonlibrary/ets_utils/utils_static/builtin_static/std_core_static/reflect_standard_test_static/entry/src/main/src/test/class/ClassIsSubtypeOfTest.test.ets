@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -93,12 +92,12 @@ class A004 {}
 class B004 extends A004 {}
 
 class ParentClass009 {
-    public name: string = "parent";
-  }
+  public name: string = "parent";
+}
 
 class ChildClass009 extends ParentClass009 {
-    public age: int = 10;
-  }
+  public age: int = 10;
+}
 
 class ParentClass010 {}
 
@@ -139,46 +138,46 @@ class D016 extends C016 {}
 class E016 extends D016 {}
 
 interface MyInterface017 {
-    test(): void;
-  }
+  test(): void;
+}
 
 class MyClass017 implements MyInterface017 {
-    public test(): void {}
-  }
+  public test(): void {}
+}
 
 interface InterfaceA018 {
-    methodA(): void;
-  }
+  methodA(): void;
+}
 
 interface InterfaceB018 {
-    methodB(): void;
-  }
+  methodB(): void;
+}
 
 class MultiImpl018 implements InterfaceA018, InterfaceB018 {
-    public methodA(): void {}
-    public methodB(): void {}
-  }
+  public methodA(): void {}
+  public methodB(): void {}
+}
 
 interface ParentInterface019 {
-    method1(): void;
-  }
+  method1(): void;
+}
 
 interface ChildInterface019 extends ParentInterface019 {
-    method2(): void;
-  }
+  method2(): void;
+}
 
 interface ParentInterface020 {
-    method1(): void;
-  }
+  method1(): void;
+}
 
 interface ChildInterface020 extends ParentInterface020 {
-    method2(): void;
-  }
+  method2(): void;
+}
 
 class MyClass020 implements ChildInterface020 {
-    public method1(): void {}
-    public method2(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+}
 
 class A032 {}
 
@@ -187,14 +186,14 @@ class B032 extends A032 {}
 class Container032<T> {}
 
 class Doc033 implements Printable033 {
-    public print(): void {}
-  }
+  public print(): void {}
+}
 
 class Printer033<T extends Printable033> {}
 
 interface Printable033 {
-    print(): void;
-  }
+  print(): void;
+}
 
 class MyClass034 {}
 
@@ -209,29 +208,29 @@ final class Child037 extends Parent037 {}
 class Parent037 {}
 
 class ConcreteChild038 extends AbstractParent038 {
-    public method(): void {}
-  }
+  public method(): void {}
+}
 
 abstract class AbstractParent038 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 class ConcreteChild039 extends AbstractParent039 {}
 
 abstract class AbstractParent039 {}
 
 enum TestEnum040 {
-    VALUE1,
-    VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 interface ChildInterface041 extends ParentInterface041 {}
 
 interface ParentInterface041 {}
 
 interface MyInterface041 {
-    test(): void;
-  }
+  test(): void;
+}
 
 class Child042 extends Parent042 {}
 
@@ -272,9 +271,9 @@ class Child057 extends Parent057 {}
 class Parent057 {}
 
 class MyClass058 implements I1058, I2058 {
-    public method1(): void {}
-    public method2(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+}
 
 interface I2058 { method2(): void; }
 
@@ -299,60 +298,60 @@ class Dog067 extends Animal067 {}
 class Animal067 {}
 
 function checkCompatibility068(implClass: Class, apiClass: Class): boolean {
-    return implClass.isSubtypeOf(apiClass);
-  }
+  return implClass.isSubtypeOf(apiClass);
+}
 
 /** spec/semantics.md：未在子类型章节描述的 PRIMITIVE 互查应为 false；number≡double 为 Type Identity 例外 */
 function expectDistinctPrimitiveSubtypeOfSpec024(fromKind: string, toKind: string): boolean {
-    if ((fromKind === 'double' && toKind === 'number') || (fromKind === 'number' && toKind === 'double')) {
-      return true;
-    }
-    return false;
+  if ((fromKind === 'double' && toKind === 'number') || (fromKind === 'number' && toKind === 'double')) {
+    return true;
   }
+  return false;
+}
 
 class NewImplementation068 implements NewAPI068 {
-    public methodV1(): void {}
-    public methodV2(): void {}
-  }
+  public methodV1(): void {}
+  public methodV2(): void {}
+}
 
 interface NewAPI068 extends OldAPI068 {
-    methodV2(): void;
-  }
+  methodV2(): void;
+}
 
 interface OldAPI068 {
-    methodV1(): void;
-  }
+  methodV1(): void;
+}
 
 function validatePlugin069(pluginClass: Class): boolean {
-    let pluginInterface = Class.from<Plugin069>();
-    return pluginClass.isSubtypeOf(pluginInterface);
-  }
+  let pluginInterface = Class.from<Plugin069>();
+  return pluginClass.isSubtypeOf(pluginInterface);
+}
 
 class MyPlugin069 implements Plugin069 {
-    public initialize(): void {}
-    public execute(): void {}
-  }
+  public initialize(): void {}
+  public execute(): void {}
+}
 
 interface Plugin069 {
-    initialize(): void;
-    execute(): void;
-  }
+  initialize(): void;
+  execute(): void;
+}
 
 function isSerializable070(cls: Class): boolean {
-    let serializableIface = Class.from<Serializable070>();
-    return cls.isSubtypeOf(serializableIface);
-  }
+  let serializableIface = Class.from<Serializable070>();
+  return cls.isSubtypeOf(serializableIface);
+}
 
 class Data070 implements Serializable070 {
-    public value: int = 0;
-    public serialize(): string { return this.value.toString(); }
-    public deserialize(data: string): void { this.value = parseInt(data, 10).toInt(); }
-  }
+  public value: int = 0;
+  public serialize(): string { return this.value.toString(); }
+  public deserialize(data: string): void { this.value = parseInt(data, 10).toInt(); }
+}
 
 interface Serializable070 {
-    serialize(): string;
-    deserialize(data: string): void;
-  }
+  serialize(): string;
+  deserialize(data: string): void;
+}
 
 function safeCast067<T>(obj: Object, targetClass: Class): T | null {
   let objClass = Class.of(obj);
@@ -361,7 +360,6 @@ function safeCast067<T>(obj: Object, targetClass: Class): T | null {
   }
   return null;
 }
-
 
 export default function ClassIsSubtypeOfTest(): void {
   describe('ClassIsSubtypeOfTest', (): void => {
@@ -382,11 +380,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let parent = Class.from<SubtypeParent>();
-        expect(cls.isSubtypeOf(parent)).assertTrue();
+      let parent = Class.from<SubtypeParent>();
+      expect(cls.isSubtypeOf(parent)).assertTrue();
     });
 
     /**
@@ -396,12 +394,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass002>();
-        let parentClazz = Class.from<ParentClass002>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let parentClazz = Class.from<ParentClass002>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -411,13 +409,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let other = Class.from<OtherClass003>();
-        let extra = Class.from<ExtraClass003>();
-        expect(cls.isSubtypeOf(other)).assertFalse();
-        expect(cls.isSubtypeOf(extra)).assertFalse();
+      let other = Class.from<OtherClass003>();
+      let extra = Class.from<ExtraClass003>();
+      expect(cls.isSubtypeOf(other)).assertFalse();
+      expect(cls.isSubtypeOf(extra)).assertFalse();
     });
 
     /**
@@ -427,12 +425,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsB = Class.from<B004>();
-        let clsA = Class.from<A004>();
-        let result = clsB.isSubtypeOf(clsA);
-        expect(result).assertTrue();
+      let clsA = Class.from<A004>();
+      let result = clsB.isSubtypeOf(clsA);
+      expect(result).assertTrue();
     });
 
     /**
@@ -442,16 +440,16 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-          let result = cls.isSubtypeOf(null as Class);
-          expect(result).assertFalse();
-        } catch (error) {
-          console.log('error.name==', error.name);
-          expect(error.name).assertEqual('ClassCastError');
-        }
+      try {
+        let result = cls.isSubtypeOf(null as Class);
+        expect(result).assertFalse();
+      } catch (error) {
+        console.log('error.name==', error.name);
+        expect(error.name).assertEqual('ClassCastError');
+      }
     });
 
     /**
@@ -461,16 +459,16 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-          let result = cls.isSubtypeOf(undefined as Class);
-          expect(result).assertFalse();
-        } catch (error) {
-          console.log('error.name==', error.name);
-          expect(error.name).assertEqual('ClassCastError');
-        }
+      try {
+        let result = cls.isSubtypeOf(undefined as Class);
+        expect(result).assertFalse();
+      } catch (error) {
+        console.log('error.name==', error.name);
+        expect(error.name).assertEqual('ClassCastError');
+      }
     });
 
     /**
@@ -480,10 +478,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        expect(cls.isSubtypeOf(cls)).assertTrue();
+      expect(cls.isSubtypeOf(cls)).assertTrue();
     });
 
     /**
@@ -493,12 +491,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<number>();
-        let primitiveNumber = Class.PRIMITIVE_NUMBER;
-        let result = cls.isSubtypeOf(primitiveNumber);
-        expect(result).assertFalse();
+      let primitiveNumber = Class.PRIMITIVE_NUMBER;
+      let result = cls.isSubtypeOf(primitiveNumber);
+      expect(result).assertFalse();
     });
 
     /**
@@ -508,12 +506,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass009>();
-        let parentClazz = Class.from<ParentClass009>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let parentClazz = Class.from<ParentClass009>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -523,12 +521,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass010>();
-        let parentClazz = Class.from<ParentClass010>();
-        let result = parentClazz.isSubtypeOf(childClazz);
-        expect(result).assertFalse();
+      let parentClazz = Class.from<ParentClass010>();
+      let result = parentClazz.isSubtypeOf(childClazz);
+      expect(result).assertFalse();
     });
 
     /**
@@ -538,11 +536,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass011>();
-        let result = cls.isSubtypeOf(cls);
-        expect(result).assertTrue();
+      let result = cls.isSubtypeOf(cls);
+      expect(result).assertTrue();
     });
 
     /**
@@ -552,14 +550,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsA = Class.from<ClassA012>();
-        let clsB = Class.from<ClassB012>();
-        let result1 = clsA.isSubtypeOf(clsB);
-        let result2 = clsB.isSubtypeOf(clsA);
-        expect(result1).assertFalse();
-        expect(result2).assertFalse();
+      let clsB = Class.from<ClassB012>();
+      let result1 = clsA.isSubtypeOf(clsB);
+      let result2 = clsB.isSubtypeOf(clsA);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -569,12 +567,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<Child013>();
-        let grandParentClazz = Class.from<GrandParent013>();
-        let result = childClazz.isSubtypeOf(grandParentClazz);
-        expect(result).assertTrue();
+      let grandParentClazz = Class.from<GrandParent013>();
+      let result = childClazz.isSubtypeOf(grandParentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -584,12 +582,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<Child014>();
-        let parentClazz = Class.from<Parent014>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let parentClazz = Class.from<Parent014>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -599,12 +597,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentClazz = Class.from<Parent015>();
-        let childClazz = Class.from<Child015>();
-        let result = parentClazz.isSubtypeOf(childClazz);
-        expect(result).assertFalse();
+      let childClazz = Class.from<Child015>();
+      let result = parentClazz.isSubtypeOf(childClazz);
+      expect(result).assertFalse();
     });
 
     /**
@@ -614,12 +612,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsE = Class.from<E016>();
-        let clsA = Class.from<A016>();
-        let result = clsE.isSubtypeOf(clsA);
-        expect(result).assertTrue();
+      let clsA = Class.from<A016>();
+      let result = clsE.isSubtypeOf(clsA);
+      expect(result).assertTrue();
     });
 
     /**
@@ -629,12 +627,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
-        let iface = Class.from<MyInterface017>();
-        let result = cls.isSubtypeOf(iface);
-        expect(result).assertTrue();
+      let iface = Class.from<MyInterface017>();
+      let result = cls.isSubtypeOf(iface);
+      expect(result).assertTrue();
     });
 
     /**
@@ -644,13 +642,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiImpl018>();
-        let ifaceA = Class.from<InterfaceA018>();
-        let ifaceB = Class.from<InterfaceB018>();
-        expect(cls.isSubtypeOf(ifaceA)).assertTrue();
-        expect(cls.isSubtypeOf(ifaceB)).assertTrue();
+      let ifaceA = Class.from<InterfaceA018>();
+      let ifaceB = Class.from<InterfaceB018>();
+      expect(cls.isSubtypeOf(ifaceA)).assertTrue();
+      expect(cls.isSubtypeOf(ifaceB)).assertTrue();
     });
 
     /**
@@ -660,12 +658,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childIface = Class.from<ChildInterface019>();
-        let parentIface = Class.from<ParentInterface019>();
-        let result = childIface.isSubtypeOf(parentIface);
-        expect(result).assertTrue();
+      let parentIface = Class.from<ParentInterface019>();
+      let result = childIface.isSubtypeOf(parentIface);
+      expect(result).assertTrue();
     });
 
     /**
@@ -675,12 +673,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass020>();
-        let parentIface = Class.from<ParentInterface020>();
-        let result = cls.isSubtypeOf(parentIface);
-        expect(result).assertTrue();
+      let parentIface = Class.from<ParentInterface020>();
+      let result = cls.isSubtypeOf(parentIface);
+      expect(result).assertTrue();
     });
 
     /**
@@ -690,14 +688,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let numClass = Class.from<number>();
-        let primitiveNum = Class.PRIMITIVE_NUMBER;
-        let result1 = numClass.isSubtypeOf(primitiveNum);
-        let result2 = primitiveNum.isSubtypeOf(numClass);
-        expect(result1).assertFalse();
-        expect(result2).assertFalse();
+      let primitiveNum = Class.PRIMITIVE_NUMBER;
+      let result1 = numClass.isSubtypeOf(primitiveNum);
+      let result2 = primitiveNum.isSubtypeOf(numClass);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -707,14 +705,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boolClass = Class.from<boolean>();
-        let primitiveBool = Class.PRIMITIVE_BOOLEAN;
-        let result1 = boolClass.isSubtypeOf(primitiveBool);
-        let result2 = primitiveBool.isSubtypeOf(boolClass);
-        expect(result1).assertFalse();
-        expect(result2).assertFalse();
+      let primitiveBool = Class.PRIMITIVE_BOOLEAN;
+      let result1 = boolClass.isSubtypeOf(primitiveBool);
+      let result2 = primitiveBool.isSubtypeOf(boolClass);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -724,11 +722,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let strClass = Class.from<string>();
-        let result = strClass.isSubtypeOf(Class.PRIMITIVE_NUMBER);
-        expect(result).assertFalse();
+      let result = strClass.isSubtypeOf(Class.PRIMITIVE_NUMBER);
+      expect(result).assertFalse();
     });
 
     /**
@@ -738,38 +736,34 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let primitives = [
-          Class.PRIMITIVE_BOOLEAN,
-          Class.PRIMITIVE_BYTE,
-          Class.PRIMITIVE_CHAR,
-          Class.PRIMITIVE_SHORT,
-          Class.PRIMITIVE_INT,
-          Class.PRIMITIVE_LONG,
-          Class.PRIMITIVE_FLOAT,
-          Class.PRIMITIVE_DOUBLE,
-          Class.PRIMITIVE_NUMBER
-        ];
-        let kinds = [
-          'boolean', 'byte', 'char', 'short', 'int', 'long', 'float', 'double', 'number'
-        ];
-        for (let i = 0; i < primitives.length; i++) {
-          for (let j = 0; j < primitives.length; j++) {
-            if (i !== j) {
-              let result = primitives[i].isSubtypeOf(primitives[j]);
-              let expected = expectDistinctPrimitiveSubtypeOfSpec024(kinds[i], kinds[j]);
-              if (result !== expected) {
-                console.info(`testClassIsSubtypeOf024: ${kinds[i]}->${kinds[j]} spec=${expected} actual=${result}`);
-              }
-              if (expected) {
-                expect(result).assertTrue();
-              } else {
-                expect(result).assertFalse();
-              }
+      Class.PRIMITIVE_BOOLEAN,
+      Class.PRIMITIVE_BYTE,
+      Class.PRIMITIVE_CHAR,
+      Class.PRIMITIVE_SHORT,
+      Class.PRIMITIVE_INT,
+      Class.PRIMITIVE_LONG,
+      Class.PRIMITIVE_FLOAT,
+      Class.PRIMITIVE_DOUBLE,
+      Class.PRIMITIVE_NUMBER
+      ];
+      let kinds = [
+      'boolean', 'byte', 'char', 'short', 'int', 'long', 'float', 'double', 'number'
+      ];
+      for (let i = 0; i < primitives.length; i++) {
+        for (let j = 0; j < primitives.length; j++) {
+          if (i !== j) {
+            let result = primitives[i].isSubtypeOf(primitives[j]);
+            let expected = expectDistinctPrimitiveSubtypeOfSpec024(kinds[i], kinds[j]);
+            if (result !== expected) {
+              console.info(`testClassIsSubtypeOf024: ${kinds[i]}->${kinds[j]} spec=${expected} actual=${result}`);
             }
+            expect(result).assertEqual(expected);
           }
         }
+      }
     });
 
     /**
@@ -779,12 +773,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrNum = Class.from<Array<number>>();
-        let arrStr = Class.from<Array<string>>();
-        let result = arrNum.isSubtypeOf(arrStr);
-        expect(result).assertTrue();
+      let arrStr = Class.from<Array<string>>();
+      let result = arrNum.isSubtypeOf(arrStr);
+      expect(result).assertTrue();
     });
 
     /**
@@ -794,14 +788,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr = Class.from<FixedArray<int>>();
-        let normalArr = Class.from<Array<int>>();
-        let result1 = fixedArr.isSubtypeOf(normalArr);
-        let result2 = normalArr.isSubtypeOf(fixedArr);
-        expect(result1).assertFalse();
-        expect(result2).assertFalse();
+      let normalArr = Class.from<Array<int>>();
+      let result1 = fixedArr.isSubtypeOf(normalArr);
+      let result2 = normalArr.isSubtypeOf(fixedArr);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -811,11 +805,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrInt = Class.from<Array<int>>();
-        let arrDouble = Class.from<Array<double>>();
-        expect(arrInt.isSubtypeOf(arrDouble)).assertTrue();
+      let arrDouble = Class.from<Array<double>>();
+      expect(arrInt.isSubtypeOf(arrDouble)).assertTrue();
     });
 
     /**
@@ -825,15 +819,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let unionType = Class.from<int | string>();
-        let intType = Class.from<int>();
-        let strType = Class.from<string>();
-        let result1 = unionType.isSubtypeOf(intType);
-        let result2 = unionType.isSubtypeOf(strType);
-        expect(result1).assertFalse();
-        expect(result2).assertFalse();
+      let intType = Class.from<int>();
+      let strType = Class.from<string>();
+      let result1 = unionType.isSubtypeOf(intType);
+      let result2 = unionType.isSubtypeOf(strType);
+      expect(result1).assertFalse();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -843,11 +837,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intType = Class.from<int>();
-        let unionType = Class.from<int | string>();
-        expect(intType.isSubtypeOf(unionType)).assertTrue();
+      let unionType = Class.from<int | string>();
+      expect(intType.isSubtypeOf(unionType)).assertTrue();
     });
 
     /**
@@ -857,12 +851,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let complexUnion = Class.from<int | string | boolean | Array<double>>();
-        let intType = Class.from<int>();
-        let result = complexUnion.isSubtypeOf(intType);
-        expect(result).assertFalse();
+      let intType = Class.from<int>();
+      let result = complexUnion.isSubtypeOf(intType);
+      expect(result).assertFalse();
     });
 
     /**
@@ -872,11 +866,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mapIntStr = Class.from<Map<int, string>>();
-        let mapStrInt = Class.from<Map<string, int>>();
-        expect(mapIntStr.isSubtypeOf(mapStrInt)).assertTrue();
+      let mapStrInt = Class.from<Map<string, int>>();
+      expect(mapIntStr.isSubtypeOf(mapStrInt)).assertTrue();
     });
 
     /**
@@ -886,11 +880,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let containerB = Class.from<Container032<B032>>();
-        let containerA = Class.from<Container032<A032>>();
-        expect(containerB.isSubtypeOf(containerA)).assertTrue();
+      let containerA = Class.from<Container032<A032>>();
+      expect(containerB.isSubtypeOf(containerA)).assertTrue();
     });
 
     /**
@@ -900,12 +894,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let printerDoc = Class.from<Printer033<Doc033>>();
-        let printable = Class.from<Printable033>();
-        let result = printerDoc.isSubtypeOf(printable);
-        expect(result).assertFalse();
+      let printable = Class.from<Printable033>();
+      let result = printerDoc.isSubtypeOf(printable);
+      expect(result).assertFalse();
     });
 
     /**
@@ -915,12 +909,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass034>();
-        let objClass = Class.from<Object>();
-        let result = cls.isSubtypeOf(objClass);
-        expect(result).assertTrue();
+      let objClass = Class.from<Object>();
+      let result = cls.isSubtypeOf(objClass);
+      expect(result).assertTrue();
     });
 
     /**
@@ -930,12 +924,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass035>();
-        let objClass = Class.from<Object>();
-        let result = objClass.isSubtypeOf(cls);
-        expect(result).assertFalse();
+      let objClass = Class.from<Object>();
+      let result = objClass.isSubtypeOf(cls);
+      expect(result).assertFalse();
     });
 
     /**
@@ -945,12 +939,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<Child036>();
-        let parentClazz = Class.from<Parent036>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let parentClazz = Class.from<Parent036>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -960,12 +954,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let childClazz = Class.from<Child037>();
-        let parentClazz = Class.from<Parent037>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let childClazz = Class.from<Child037>();
+      let parentClazz = Class.from<Parent037>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -975,12 +969,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ConcreteChild038>();
-        let parentClazz = Class.from<AbstractParent038>();
-        let result = childClazz.isSubtypeOf(parentClazz);
-        expect(result).assertTrue();
+      let parentClazz = Class.from<AbstractParent038>();
+      let result = childClazz.isSubtypeOf(parentClazz);
+      expect(result).assertTrue();
     });
 
     /**
@@ -990,12 +984,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentClazz = Class.from<AbstractParent039>();
-        let childClazz = Class.from<ConcreteChild039>();
-        let result = parentClazz.isSubtypeOf(childClazz);
-        expect(result).assertFalse();
+      let childClazz = Class.from<ConcreteChild039>();
+      let result = parentClazz.isSubtypeOf(childClazz);
+      expect(result).assertFalse();
     });
 
     /**
@@ -1005,17 +999,17 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumClass = Class.from<TestEnum040>();
-        let objClass = Class.from<Object>();
-        let result = enumClass.isSubtypeOf(objClass);
-        expect(result).assertTrue();
-        
-        let enumClass2 = Class.from<TestEnum040>();
-        let otherEnum = Class.from<OtherEnum>();
-        let result2 = enumClass2.isSubtypeOf(otherEnum);
-        expect(result2).assertFalse();
+      let objClass = Class.from<Object>();
+      let result = enumClass.isSubtypeOf(objClass);
+      expect(result).assertTrue();
+
+      let enumClass2 = Class.from<TestEnum040>();
+      let otherEnum = Class.from<OtherEnum>();
+      let result2 = enumClass2.isSubtypeOf(otherEnum);
+      expect(result2).assertFalse();
     });
 
     /**
@@ -1025,17 +1019,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iface = Class.from<MyInterface041>();
-        expect(iface.isInterface()).assertTrue();
-        
+      expect(iface.isInterface()).assertTrue();
 
-
-        let childIface = Class.from<ChildInterface041>();
-        let parentIface = Class.from<ParentInterface041>();
-        let result = childIface.isSubtypeOf(parentIface);
-        expect(result).assertTrue();
+      let childIface = Class.from<ChildInterface041>();
+      let parentIface = Class.from<ParentInterface041>();
+      let result = childIface.isSubtypeOf(parentIface);
+      expect(result).assertTrue();
     });
 
     /**
@@ -1045,10 +1037,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<Child042>().isSubtypeOf(Class.from<Parent042>());
-        expect(result).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**
@@ -1058,10 +1050,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<C043>().isSubtypeOf(Class.from<A043>());
-        expect(result).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**
@@ -1071,10 +1063,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<MyClass044>().isSubtypeOf(Class.from<MyInterface044>());
-        expect(result).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**
@@ -1084,11 +1076,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass045>();
-        let result = cls.isSubtypeOf(cls);
-        expect(result).assertTrue();
+      let result = cls.isSubtypeOf(cls);
+      expect(result).assertTrue();
     });
 
     /**
@@ -1098,10 +1090,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<A046>().isSubtypeOf(Class.from<B046>());
-        expect(result).assertFalse();
+      expect(result).assertFalse();
     });
 
     /**
@@ -1111,10 +1103,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<Parent047>().isSubtypeOf(Class.from<Child047>());
-        expect(result).assertFalse();
+      expect(result).assertFalse();
     });
 
     /**
@@ -1124,7 +1116,7 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Array<int>>().isSubtypeOf(Class.from<Array<string>>())).assertTrue();
     });
@@ -1136,10 +1128,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<B049>().isSubtypeOf(Class.from<A049>());
-        expect(typeof result).assertEqual('boolean');
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -1149,12 +1141,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.from<B050>().isSubtypeOf(Class.from<A050>());
-        expect(typeof result === 'number').assertFalse();
-        expect(typeof result === 'string').assertFalse();
-        expect(typeof result === 'object').assertFalse();
+      expect(typeof result === 'number').assertFalse();
+      expect(typeof result === 'string').assertFalse();
+      expect(typeof result === 'object').assertFalse();
     });
 
     /**
@@ -1164,11 +1156,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        
       expect(Class.from<Subtype052_L7>().isSubtypeOf(Class.from<Subtype052_Root>())).assertTrue();
-        expect(Class.from<Subtype052_Root>().isSubtypeOf(Class.from<Subtype052_L7>())).assertFalse();
+      expect(Class.from<Subtype052_Root>().isSubtypeOf(Class.from<Subtype052_L7>())).assertFalse();
     });
 
     /**
@@ -1178,15 +1169,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let deepChildClass = Class.from<Subtype052_L7>();
-        let rootClass = Class.from<Subtype052_Root>();
-        let startTime = Date.now();
-        let result = deepChildClass.isSubtypeOf(rootClass);
-        let endTime = Date.now();
-        expect(result).assertTrue();
-        console.info(`isSubtypeOf perf: ${endTime - startTime}ms`);
+      let rootClass = Class.from<Subtype052_Root>();
+      let startTime = Date.now();
+      let result = deepChildClass.isSubtypeOf(rootClass);
+      let endTime = Date.now();
+      expect(result).assertTrue();
+      console.info(`isSubtypeOf perf: ${endTime - startTime}ms`);
     });
 
     /**
@@ -1196,14 +1187,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ManyInterfaces053>();
-        let startTime = Date.now();
-        let result = cls.isSubtypeOf(Class.from<Interface053A>());
-        let endTime = Date.now();
-        expect(result).assertTrue();
-        console.info(`isSubtypeOf batch perf: ${endTime - startTime}ms`);
+      let startTime = Date.now();
+      let result = cls.isSubtypeOf(Class.from<Interface053A>());
+      let endTime = Date.now();
+      expect(result).assertTrue();
+      console.info(`isSubtypeOf batch perf: ${endTime - startTime}ms`);
     });
 
     /**
@@ -1213,13 +1204,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let parent = Class.from<SubtypeParent>();
-        for (let i = 0; i < 100; i++) {
-          expect(cls.isSubtypeOf(parent)).assertTrue();
-        }
+      let parent = Class.from<SubtypeParent>();
+      for (let i = 0; i < 100; i++) {
+        expect(cls.isSubtypeOf(parent)).assertTrue();
+      }
     });
 
     /**
@@ -1229,11 +1220,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SubtypeChild>();
-        let parent = Class.from<SubtypeParent>();
-        expect(cls.isSubtypeOf(parent)).assertTrue();
+      let parent = Class.from<SubtypeParent>();
+      expect(cls.isSubtypeOf(parent)).assertTrue();
     });
 
     /**
@@ -1243,15 +1234,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsC = Class.from<C056>();
-        let current = clsC;
-        while (current.getSuper() !== undefined) {
-          let superClazz = current.getSuper()!;
-          expect(clsC.isSubtypeOf(superClazz)).assertTrue();
-          current = superClazz;
-        }
+      let current = clsC;
+      while (current.getSuper() !== undefined) {
+        let superClazz = current.getSuper()!;
+        expect(clsC.isSubtypeOf(superClazz)).assertTrue();
+        current = superClazz;
+      }
     });
 
     /**
@@ -1261,13 +1252,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<Child057>();
-        let superClazz = childClazz.getSuper();
-        if (superClazz !== undefined) {
-          expect(childClazz.isSubtypeOf(superClazz)).assertTrue();
-        }
+      let superClazz = childClazz.getSuper();
+      if (superClazz !== undefined) {
+        expect(childClazz.isSubtypeOf(superClazz)).assertTrue();
+      }
     });
 
     /**
@@ -1277,13 +1268,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass058>();
-        let interfaces = Utils.fixedArrayToArray(cls.getInterfaces());
-        for (let i = 0; i < interfaces.length; i++) {
-          expect(cls.isSubtypeOf(interfaces[i])).assertTrue();
-        }
+      let interfaces = Utils.fixedArrayToArray(cls.getInterfaces());
+      for (let i = 0; i < interfaces.length; i++) {
+        expect(cls.isSubtypeOf(interfaces[i])).assertTrue();
+      }
     });
 
     /**
@@ -1293,11 +1284,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let topIface = Class.from<TopInterface059>();
-        let baseIface = Class.from<BaseInterface059>();
-        expect(topIface.isSubtypeOf(baseIface)).assertTrue();
+      let baseIface = Class.from<BaseInterface059>();
+      expect(topIface.isSubtypeOf(baseIface)).assertTrue();
     });
 
     /**
@@ -1307,18 +1298,16 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let iface = Class.from<MyInterface060>();
-        expect(iface.isInterface()).assertTrue();
-        
+      expect(iface.isInterface()).assertTrue();
 
-
-        let childIface = Class.from<ChildInterface060>();
-        let parentIface = Class.from<ParentInterface060>();
-        expect(childIface.isInterface()).assertTrue();
-        expect(parentIface.isInterface()).assertTrue();
-        expect(childIface.isSubtypeOf(parentIface)).assertTrue();
+      let childIface = Class.from<ChildInterface060>();
+      let parentIface = Class.from<ParentInterface060>();
+      expect(childIface.isInterface()).assertTrue();
+      expect(parentIface.isInterface()).assertTrue();
+      expect(childIface.isSubtypeOf(parentIface)).assertTrue();
     });
 
     /**
@@ -1328,13 +1317,13 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
-        expect(Class.PRIMITIVE_NUMBER.isPrimitive()).assertTrue();
-        
-        let result = Class.PRIMITIVE_INT.isSubtypeOf(Class.PRIMITIVE_NUMBER);
-        expect(result).assertFalse();
+      expect(Class.PRIMITIVE_NUMBER.isPrimitive()).assertTrue();
+
+      let result = Class.PRIMITIVE_INT.isSubtypeOf(Class.PRIMITIVE_NUMBER);
+      expect(result).assertFalse();
     });
 
     /**
@@ -1344,16 +1333,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-          let result = cls.isSubtypeOf(null as Class);
-          expect(result).assertFalse();
-        } catch (error) {
-          console.log('error.name==', error.name);
-          expect(error.name).assertEqual('ClassCastError');
-        }
+      try {
+        cls.isSubtypeOf(null as Class);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
     });
 
     /**
@@ -1363,16 +1351,15 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-          let result = cls.isSubtypeOf(undefined as Class);
-          expect(result).assertFalse();
-        } catch (error) {
-          console.log('error.name==', error.name);
-          expect(error.name).assertEqual('ClassCastError');
-        }
+      try {
+        cls.isSubtypeOf(undefined as Class);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
     });
 
     /**
@@ -1382,11 +1369,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let otherClass = Class.from<ChildClass002>();
-        expect(cls.isSubtypeOf(otherClass)).assertFalse();
+      let otherClass = Class.from<ChildClass002>();
+      expect(cls.isSubtypeOf(otherClass)).assertFalse();
     });
 
     /**
@@ -1396,11 +1383,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoParent065>();
-        let objClass = Class.from<Object>();
-        expect(cls.isSubtypeOf(objClass)).assertTrue();
+      let objClass = Class.from<Object>();
+      expect(cls.isSubtypeOf(objClass)).assertTrue();
     });
 
     /**
@@ -1410,10 +1397,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objClass = Class.from<Object>();
-        expect(objClass.isSubtypeOf(objClass)).assertTrue();
+      expect(objClass.isSubtypeOf(objClass)).assertTrue();
     });
 
     /**
@@ -1423,11 +1410,11 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dog = new Dog067();
-        let result = safeCast067<Dog067>(dog, Class.from<Dog067>());
-        expect(result !== null).assertTrue();
+      let result = safeCast067<Dog067>(dog, Class.from<Dog067>());
+      expect(result !== null).assertTrue();
     });
 
     /**
@@ -1437,14 +1424,14 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let impl = Class.from<NewImplementation068>();
-        let oldApi = Class.from<OldAPI068>();
-        let newApi = Class.from<NewAPI068>();
-        
-        expect(checkCompatibility068(impl, oldApi)).assertTrue();
-        expect(checkCompatibility068(impl, newApi)).assertTrue();
+      let oldApi = Class.from<OldAPI068>();
+      let newApi = Class.from<NewAPI068>();
+
+      expect(checkCompatibility068(impl, oldApi)).assertTrue();
+      expect(checkCompatibility068(impl, newApi)).assertTrue();
     });
 
     /**
@@ -1454,10 +1441,10 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let myPluginClass = Class.from<MyPlugin069>();
-        expect(validatePlugin069(myPluginClass)).assertTrue();
+      expect(validatePlugin069(myPluginClass)).assertTrue();
     });
 
     /**
@@ -1467,11 +1454,12 @@ export default function ClassIsSubtypeOfTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsSubtypeOf070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let dataClass = Class.from<Data070>();
-        expect(isSerializable070(dataClass)).assertTrue();
+      expect(isSerializable070(dataClass)).assertTrue();
     });
 
   });
 }
+

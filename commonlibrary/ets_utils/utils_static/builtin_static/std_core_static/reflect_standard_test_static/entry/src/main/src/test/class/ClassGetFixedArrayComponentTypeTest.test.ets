@@ -12,87 +12,86 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass014 {
-    public name: string = "";
-  }
+  public name: string = "";
+}
 
 interface JsonSerializable015 {
-    toJSON(): string;
-  }
+  toJSON(): string;
+}
 
 class MyClass023 {
-    public name: string = "";
-  }
+  public name: string = "";
+}
 
 abstract class AbstractClass024 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 final class FinalClass025 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 interface MyInterface026 {
-    method(): void;
-  }
+  method(): void;
+}
 
 enum TestEnum033 {
-    VALUE1,
-    VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 function checkAndGetComponent049(cls: Class): Class | undefined {
-    if (!cls.isFixedArray()) {
-      return undefined;
-    }
-    return cls.getFixedArrayComponentType();
+  if (!cls.isFixedArray()) {
+    return undefined;
   }
+  return cls.getFixedArrayComponentType();
+}
 
 function isFixedArrayOf056(cls: Class, componentTypeName: string): boolean {
-    if (!cls.isFixedArray()) {
-      return false;
-    }
-    let componentType = cls.getFixedArrayComponentType();
-    if (componentType === undefined || componentType === null) {
-      return false;
-    }
-    const n = componentType!.getName();
-    if (componentTypeName === "std.core.String" || componentTypeName === "std.core.Boolean" || componentTypeName === "std.core.Char") {
-      return n === componentTypeName;
-    }
-    return Utils.reflectScalarTypeNameMatches(n, componentTypeName);
+  if (!cls.isFixedArray()) {
+    return false;
   }
+  let componentType = cls.getFixedArrayComponentType();
+  if (componentType === undefined || componentType === null) {
+    return false;
+  }
+  const n = componentType!.getName();
+  if (componentTypeName === "std.core.String" || componentTypeName === "std.core.Boolean" || componentTypeName === "std.core.Char") {
+    return n === componentTypeName;
+  }
+  return Utils.reflectScalarTypeNameMatches(n, componentTypeName);
+}
 
 class ReflectionUtils057 {
-    public static getTypeInfo(cls: Class): string {
-      if (cls.isFixedArray()) {
-        let componentType = cls.getFixedArrayComponentType();
-        return `FixedArray<${componentType!.getName()}>`;
-      } else if (cls.isUnion()) {
-        return `Union<${cls.getName()}>`;
-      } else {
-        return cls.getName();
-      }
+  public static getTypeInfo(cls: Class): string {
+    if (cls.isFixedArray()) {
+      let componentType = cls.getFixedArrayComponentType();
+      return `FixedArray<${componentType!.getName()}>`;
+    } else if (cls.isUnion()) {
+      return `Union<${cls.getName()}>`;
+    } else {
+      return cls.getName();
     }
   }
+}
 
 function createFixedArrayFromType058(componentType: Class, size: int): Object {
-    const n = componentType.getName();
-    if (Utils.reflectScalarTypeNameMatches(n, "i32")) {
-      let out: FixedArray<int> = new FixedArray<int>(size);
-      return out;
-    } else if (n === "std.core.String") {
-      let out2: FixedArray<string> = new FixedArray<string>(size);
-      return out2;
-    }
-    throw new Error("Unsupported component type");
+  const n = componentType.getName();
+  if (Utils.reflectScalarTypeNameMatches(n, "i32")) {
+    let out: FixedArray<int> = new FixedArray<int>(size);
+    return out;
+  } else if (n === "std.core.String") {
+    let out2: FixedArray<string> = new FixedArray<string>(size);
+    return out2;
   }
+  throw new Error("Unsupported component type");
+}
 
 function getComponentTypeName055<T>(arr: FixedArray<T>): string {
   let cls = Class.of(arr);
@@ -103,7 +102,6 @@ function getComponentTypeName055<T>(arr: FixedArray<T>): string {
   }
   return n;
 }
-
 
 export default function ClassGetFixedArrayComponentTypeTest(): void {
   describe('ClassGetFixedArrayComponentTypeTest', (): void => {
@@ -124,12 +122,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        let result = cls.getFixedArrayComponentType();
-        expect(result !== undefined && result !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(result!.getName(), "i32")).assertTrue();
+      let result = cls.getFixedArrayComponentType();
+      expect(result !== undefined && result !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(result!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -139,13 +137,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -155,13 +153,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<double> = [1.5, 2.5, 3.5];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "double")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "double")).assertTrue();
     });
 
     /**
@@ -171,12 +169,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<boolean> = [true, false, true];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.Boolean");
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.Boolean");
     });
 
     /**
@@ -186,12 +184,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<char> = [c'A', c'B', c'C'];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.Char");
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.Char");
     });
 
     /**
@@ -201,12 +199,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<string> = ["hello", "world"];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.String");
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -216,12 +214,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<long> = [100000 as long, 200000 as long];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "long")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "long")).assertTrue();
     });
 
     /**
@@ -231,12 +229,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<float> = [1.5f, 2.5f];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "float")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "float")).assertTrue();
     });
 
     /**
@@ -246,12 +244,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<byte> = [0x01, 0x02, 0x03];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "byte")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "byte")).assertTrue();
     });
 
     /**
@@ -261,12 +259,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<short> = [100, 200, 300];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "short")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "short")).assertTrue();
     });
 
     /**
@@ -276,12 +274,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<Array<int>> = [[1, 2], [3, 4]];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.Array");
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -291,14 +289,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map1 = new Map<string, int>();
-        let map2 = new Map<string, int>();
-        let arr: FixedArray<Map<string, int>> = [map1, map2];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.Map");
+      let map2 = new Map<string, int>();
+      let arr: FixedArray<Map<string, int>> = [map1, map2];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -308,14 +306,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set1 = new Set<int>();
-        let set2 = new Set<int>();
-        let arr: FixedArray<Set<int>> = [set1, set2];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType!.getName()).assertEqual("std.core.Set");
+      let set2 = new Set<int>();
+      let arr: FixedArray<Set<int>> = [set1, set2];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -325,14 +323,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1 = new MyClass014();
-        let obj2 = new MyClass014();
-        let arr: FixedArray<MyClass014> = [obj1, obj2];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.classNameMatches(componentType!.getName(), "MyClass014")).assertTrue();
+      let obj2 = new MyClass014();
+      let arr: FixedArray<MyClass014> = [obj1, obj2];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetFixedArrayComponentTypeTest.test.MyClass014");
     });
 
     /**
@@ -342,12 +340,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<JsonSerializable015> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.classNameMatches(componentType!.getName(), "JsonSerializable015")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetFixedArrayComponentTypeTest.test.JsonSerializable015");
     });
 
     /**
@@ -357,12 +355,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(arr);
+      expect(cls.getName()).assertContain("Array");
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -372,12 +371,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<string> = ["a", "b", "c"];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -387,12 +386,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -402,11 +401,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -416,10 +415,10 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let componentType = Class.PRIMITIVE_INT.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -429,10 +428,10 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let componentType = Class.from<string>().getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -442,10 +441,10 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let componentType = Class.PRIMITIVE_BOOLEAN.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -455,11 +454,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass023>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -469,11 +468,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass024>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -483,11 +482,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass025>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -497,11 +496,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface026>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -511,11 +510,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<JsonSerializable>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -525,11 +524,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -539,12 +538,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map = new Map<int, string>();
-        let cls = Class.of(map);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(map);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -554,12 +553,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>();
-        let cls = Class.of(set);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(set);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -569,11 +568,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -583,11 +582,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | Array<double>>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -597,11 +596,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum033>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -611,13 +610,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -627,12 +626,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = new FixedArray<int>(1000);
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -642,12 +641,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -657,15 +656,15 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let inner1: FixedArray<int> = [1, 2];
-        let inner2: FixedArray<int> = [3, 4];
-        let arr: FixedArray<FixedArray<int>> = [inner1, inner2];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== undefined && componentType !== null).assertTrue();
-        expect(componentType!.isFixedArray()).assertTrue();
+      let inner2: FixedArray<int> = [3, 4];
+      let arr: FixedArray<FixedArray<int>> = [inner1, inner2];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== undefined && componentType !== null).assertTrue();
+      expect(componentType!.isFixedArray()).assertTrue();
     });
 
     /**
@@ -675,13 +674,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== undefined && componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== undefined && componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -691,12 +690,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: Array<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let arr: Array<string> = ["a", "b"];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
 
     /**
@@ -706,26 +705,26 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteArr: FixedArray<byte> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(byteArr).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
-        let shortArr: FixedArray<short> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(shortArr).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
-        let intArr: FixedArray<int> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(intArr).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
-        let longArr: FixedArray<long> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(longArr).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
-        let floatArr: FixedArray<float> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(floatArr).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
-        let doubleArr: FixedArray<double> = [];
-        let doubleType = Class.of(doubleArr).getFixedArrayComponentType();
-        expect(doubleType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(doubleType!.getName(), "double")).assertTrue();
-        let boolArr: FixedArray<boolean> = [];
-        expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
-        let charArr: FixedArray<char> = [];
-        expect(Class.of(charArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Char");
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(byteArr).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
+      let shortArr: FixedArray<short> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(shortArr).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
+      let intArr: FixedArray<int> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(intArr).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
+      let longArr: FixedArray<long> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(longArr).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
+      let floatArr: FixedArray<float> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(floatArr).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
+      let doubleArr: FixedArray<double> = [];
+      let doubleType = Class.of(doubleArr).getFixedArrayComponentType();
+      expect(doubleType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(doubleType!.getName(), "double")).assertTrue();
+      let boolArr: FixedArray<boolean> = [];
+      expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
+      let charArr: FixedArray<char> = [];
+      expect(Class.of(charArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Char");
     });
 
     /**
@@ -735,21 +734,21 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== undefined && componentType !== null).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== undefined && componentType !== null).assertTrue();
 
-        let name = componentType!.getName();
-        expect(name.length).assertLarger(0);
+      let name = componentType!.getName();
+      expect(name.length).assertLarger(0);
 
-        let isPrim = componentType!.isPrimitive();
-        expect(typeof isPrim).assertEqual("boolean");
+      let isPrim = componentType!.isPrimitive();
+      expect(typeof isPrim).assertEqual("boolean");
 
-        let superCls = componentType!.getSuper();
-        expect(superCls !== undefined).assertTrue();
+      let superCls = componentType!.getSuper();
+      expect(superCls !== undefined).assertTrue();
     });
 
     /**
@@ -759,19 +758,19 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = new MyClass014();
-        let arr: FixedArray<MyClass014> = [m];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== undefined && componentType !== null).assertTrue();
+      let arr: FixedArray<MyClass014> = [m];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== undefined && componentType !== null).assertTrue();
 
-        let methods = componentType!.getInstanceMethods();
-        expect(methods.length).assertEqual(0);
+      let methods = componentType!.getInstanceMethods();
+      expect(methods.length).assertEqual(0);
 
-        let fields = componentType!.getInstanceFields();
-        expect(fields.length).assertLarger(0);
+      let fields = componentType!.getInstanceFields();
+      expect(fields.length).assertLarger(0);
     });
 
     /**
@@ -781,14 +780,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<Map<string, Array<int>>> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        let name = componentType!.getName();
-        expect(name).assertContain("std.core.Map");
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      let name = componentType!.getName();
+      expect(name).assertContain("std.core.Map");
     });
 
     /**
@@ -798,12 +797,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
     });
 
     /**
@@ -813,12 +812,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
     });
 
     /**
@@ -828,12 +827,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.of(arr);
+      cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(cls.getFixedArrayComponentType())).assertTrue();
     });
 
     /**
@@ -843,11 +842,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
+      let cls = Class.from<MyClass014>();
+      cls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(cls.getFixedArrayComponentType())).assertTrue();
     });
 
     /**
@@ -857,14 +856,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let t1 = cls.getFixedArrayComponentType();
-        let t2 = cls.getFixedArrayComponentType();
-        expect(t1 === t2).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(t1!.getName(), "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let t1 = cls.getFixedArrayComponentType();
+      let t2 = cls.getFixedArrayComponentType();
+      expect(t1 === t2).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(t1!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -874,18 +873,18 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: FixedArray<int> = [1, 2, 3];
-        let cls1 = Class.of(arr1);
-        let type1 = checkAndGetComponent049(cls1);
-        expect(type1 !== undefined && type1 !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
+      let cls1 = Class.of(arr1);
+      let type1 = checkAndGetComponent049(cls1);
+      expect(type1 !== undefined && type1 !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
 
-        let arr2: Array<int> = [1, 2, 3];
-        let cls2 = Class.of(arr2);
-        let type2 = checkAndGetComponent049(cls2);
-        expect(Utils.isAbsentReflectOptional(type2)).assertTrue();
+      let arr2: Array<int> = [1, 2, 3];
+      let cls2 = Class.of(arr2);
+      let type2 = checkAndGetComponent049(cls2);
+      expect(Utils.isAbsentReflectOptional(type2)).assertTrue();
     });
 
     /**
@@ -895,13 +894,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let type1 = cls.getFixedArrayComponentType();
-        let type2 = cls.getFixedArrayComponentType();
-        expect(type1!.getName()).assertEqual(type2!.getName());
+      let cls = Class.of(arr);
+      let type1 = cls.getFixedArrayComponentType();
+      let type2 = cls.getFixedArrayComponentType();
+      expect(type1!.getName()).assertEqual(type2!.getName());
     });
 
     /**
@@ -911,15 +910,15 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: FixedArray<int> = [1, 2, 3];
-        let arr2: FixedArray<int> = [4, 5, 6];
-        let cls1 = Class.of(arr1);
-        let cls2 = Class.of(arr2);
-        let type1 = cls1.getFixedArrayComponentType();
-        let type2 = cls2.getFixedArrayComponentType();
-        expect(type1!.getName()).assertEqual(type2!.getName());
+      let arr2: FixedArray<int> = [4, 5, 6];
+      let cls1 = Class.of(arr1);
+      let cls2 = Class.of(arr2);
+      let type1 = cls1.getFixedArrayComponentType();
+      let type2 = cls2.getFixedArrayComponentType();
+      expect(type1!.getName()).assertEqual(type2!.getName());
     });
 
     /**
@@ -929,16 +928,16 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<string> = ["a", "b"];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
 
-        let superCls = componentType!.getSuper();
-        expect(superCls !== null).assertTrue();
-        expect(superCls!.getName()).assertEqual("std.core.Object");
+      let superCls = componentType!.getSuper();
+      expect(superCls !== null).assertTrue();
+      expect(superCls!.getName()).assertEqual("std.core.Object");
     });
 
     /**
@@ -948,15 +947,15 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let largeArr: FixedArray<int> = new FixedArray<int>(10000);
-        let cls = Class.of(largeArr);
-        let startTime = Date.now();
-        let componentType = cls.getFixedArrayComponentType();
-        let endTime = Date.now();
-        expect(componentType !== null).assertTrue();
-        console.info(`getFixedArrayComponentType perf: ${endTime - startTime}ms`);
+      let cls = Class.of(largeArr);
+      let startTime = Date.now();
+      let componentType = cls.getFixedArrayComponentType();
+      let endTime = Date.now();
+      expect(componentType !== null).assertTrue();
+      console.info(`getFixedArrayComponentType perf: ${endTime - startTime}ms`);
     });
 
     /**
@@ -966,14 +965,12 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let cls = Class.from<FixedArray<int>>();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -983,13 +980,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intArr: FixedArray<int> = [1, 2, 3];
-        let strArr: FixedArray<string> = ["a", "b"];
+      let strArr: FixedArray<string> = ["a", "b"];
 
-        expect(getComponentTypeName055(intArr)).assertEqual("i32");
-        expect(getComponentTypeName055(strArr)).assertEqual("std.core.String");
+      expect(getComponentTypeName055(intArr)).assertEqual("i32");
+      expect(getComponentTypeName055(strArr)).assertEqual("std.core.String");
     });
 
     /**
@@ -999,17 +996,17 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intArr: FixedArray<int> = [1, 2, 3];
-        let strArr: FixedArray<string> = ["a", "b"];
-        let cls1 = Class.of(intArr);
-        let cls2 = Class.of(strArr);
+      let strArr: FixedArray<string> = ["a", "b"];
+      let cls1 = Class.of(intArr);
+      let cls2 = Class.of(strArr);
 
-        expect(isFixedArrayOf056(cls1, "i32")).assertTrue();
-        expect(isFixedArrayOf056(cls1, "std.core.String")).assertFalse();
-        expect(isFixedArrayOf056(cls2, "std.core.String")).assertTrue();
-        expect(isFixedArrayOf056(cls2, "i32")).assertFalse();
+      expect(isFixedArrayOf056(cls1, "i32")).assertTrue();
+      expect(isFixedArrayOf056(cls1, "std.core.String")).assertFalse();
+      expect(isFixedArrayOf056(cls2, "std.core.String")).assertTrue();
+      expect(isFixedArrayOf056(cls2, "i32")).assertFalse();
     });
 
     /**
@@ -1019,15 +1016,15 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let typeInfo = ReflectionUtils057.getTypeInfo(cls);
-        expect(typeInfo.startsWith("FixedArray<")).assertTrue();
-        expect(typeInfo.endsWith(">")).assertTrue();
-        const inner = typeInfo.substring("FixedArray<".length, typeInfo.length - 1);
-        expect(Utils.reflectScalarTypeNameMatches(inner, "i32")).assertTrue();
+      let cls = Class.of(arr);
+      let typeInfo = ReflectionUtils057.getTypeInfo(cls);
+      expect(typeInfo.startsWith("FixedArray<")).assertTrue();
+      expect(typeInfo.endsWith(">")).assertTrue();
+      const inner = typeInfo.substring("FixedArray<".length, typeInfo.length - 1);
+      expect(Utils.reflectScalarTypeNameMatches(inner, "i32")).assertTrue();
     });
 
     /**
@@ -1037,13 +1034,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        let newArr = createFixedArrayFromType058(componentType!, 10);
-        expect(newArr !== null).assertTrue();
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      let newArr = createFixedArrayFromType058(componentType!, 10);
+      expect(newArr !== null).assertTrue();
     });
 
     /**
@@ -1053,15 +1050,15 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteArr: FixedArray<byte> = [0 as byte, 127 as byte];
-        let longArr: FixedArray<long> = [0 as long, 9223372036854775807 as long];
+      let longArr: FixedArray<long> = [0 as long, 9223372036854775807 as long];
 
-        let byteComponentType = Class.of(byteArr).getFixedArrayComponentType();
-        let longComponentType = Class.of(longArr).getFixedArrayComponentType();
-        expect(Utils.reflectScalarTypeNameMatches(byteComponentType!.getName(), "byte")).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(longComponentType!.getName(), "long")).assertTrue();
+      let byteComponentType = Class.of(byteArr).getFixedArrayComponentType();
+      let longComponentType = Class.of(longArr).getFixedArrayComponentType();
+      expect(Utils.reflectScalarTypeNameMatches(byteComponentType!.getName(), "byte")).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(longComponentType!.getName(), "long")).assertTrue();
     });
 
     /**
@@ -1071,19 +1068,19 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1: FixedArray<int> = [1, 2, 3];
-        let cls1 = Class.of(arr1);
-        let type1 = cls1.getFixedArrayComponentType();
-        expect(type1 !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
+      let cls1 = Class.of(arr1);
+      let type1 = cls1.getFixedArrayComponentType();
+      expect(type1 !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
 
-        let arr2: FixedArray<double> = [1.5, 2.5, 3.5];
-        let cls2 = Class.of(arr2);
-        let type2 = cls2.getFixedArrayComponentType();
-        expect(type2 !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(type2!.getName(), "double")).assertTrue();
+      let arr2: FixedArray<double> = [1.5, 2.5, 3.5];
+      let cls2 = Class.of(arr2);
+      let type2 = cls2.getFixedArrayComponentType();
+      expect(type2 !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(type2!.getName(), "double")).assertTrue();
     });
 
     /**
@@ -1093,14 +1090,14 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let anyArr: Any = arr;
-        let cls = Class.ofAny(anyArr);
-        let componentType = cls!.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let anyArr: Any = arr;
+      let cls = Class.ofAny(anyArr);
+      let componentType = cls!.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -1110,12 +1107,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
+      let ofType = Class.of(arr).getFixedArrayComponentType();
+      let fromType = Class.from<FixedArray<int>>().getFixedArrayComponentType();
+      expect(ofType !== null && fromType !== null).assertTrue();
+      expect(ofType!.getName()).assertEqual(fromType!.getName());
     });
 
     /**
@@ -1125,14 +1123,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let arr: FixedArray<int> = [];
-        let cls = Class.of(arr);
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let arr: FixedArray<string> = [];
+      let cls = Class.of(arr);
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(componentType!.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -1142,21 +1139,21 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr: FixedArray<int> = [1, 2, 3];
-        let normalArr: Array<int> = [1, 2, 3];
+      let normalArr: Array<int> = [1, 2, 3];
 
-        let cls1 = Class.of(fixedArr);
-        let cls2 = Class.of(normalArr);
+      let cls1 = Class.of(fixedArr);
+      let cls2 = Class.of(normalArr);
 
-        expect(cls1.isFixedArray()).assertTrue();
-        let type1 = cls1.getFixedArrayComponentType();
-        expect(type1 !== null).assertTrue();
+      expect(cls1.isFixedArray()).assertTrue();
+      let type1 = cls1.getFixedArrayComponentType();
+      expect(type1 !== null).assertTrue();
 
-        expect(cls2.isFixedArray()).assertFalse();
-        let type2 = cls2.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(type2)).assertTrue();
+      expect(cls2.isFixedArray()).assertFalse();
+      let type2 = cls2.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(type2)).assertTrue();
     });
 
     /**
@@ -1166,27 +1163,28 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetFixedArrayComponentType065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b1: FixedArray<byte> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b1).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
-        let b2: FixedArray<short> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b2).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
-        let b3: FixedArray<int> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b3).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
-        let b4: FixedArray<long> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b4).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
-        let b5: FixedArray<float> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b5).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
-        let b6: FixedArray<double> = [];
-        expect(Utils.reflectScalarTypeNameMatches(Class.of(b6).getFixedArrayComponentType()!.getName(), "double")).assertTrue();
-        let boolArr: FixedArray<boolean> = [];
-        expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
-        let charArr: FixedArray<char> = [];
-        expect(Class.of(charArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Char");
-        let strArr: FixedArray<string> = [];
-        expect(Class.of(strArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.String");
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b1).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
+      let b2: FixedArray<short> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b2).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
+      let b3: FixedArray<int> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b3).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
+      let b4: FixedArray<long> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b4).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
+      let b5: FixedArray<float> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b5).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
+      let b6: FixedArray<double> = [];
+      expect(Utils.reflectScalarTypeNameMatches(Class.of(b6).getFixedArrayComponentType()!.getName(), "double")).assertTrue();
+      let boolArr: FixedArray<boolean> = [];
+      expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
+      let charArr: FixedArray<char> = [];
+      expect(Class.of(charArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Char");
+      let strArr: FixedArray<string> = [];
+      expect(Class.of(strArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.String");
     });
 
   });
 }
+
