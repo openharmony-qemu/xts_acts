@@ -12,478 +12,476 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class TestClass001 {
-      public getCurrentClass(): Class {
-          return Class.current();
-      }
+  public getCurrentClass(): Class {
+    return Class.current();
   }
+}
 
 function testGetCurrent002(): Class {
-      return Class.current();
-  }
+  return Class.current();
+}
 
 class MyClass004 {
-      public getClass(): Class {
-          return Class.current();
-      }
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 class TestClass005 {
-      public getAndVerifyType(): Class {
-          let cls = Class.current();
-          expect(cls instanceof Class).assertTrue();
-          return cls;
-      }
+  public getAndVerifyType(): Class {
+    let cls = Class.current();
+    expect(cls instanceof Class).assertTrue();
+    return cls;
   }
+}
 
 class TestClass006 {
-      public testChainCall(): string {
-          return Class.current().getName();
-      }
+  public testChainCall(): string {
+    return Class.current().getName();
   }
+}
 
 class ChildClass007 extends ParentClass007 {
-      public testParentCall(): string {
-          let cls = this.getCurrentClass();
-          return cls.getName();
-      }
+  public testParentCall(): string {
+    let cls = this.getCurrentClass();
+    return cls.getName();
   }
+}
 
 class ParentClass007 {
-      public getCurrentClass(): Class {
-          return Class.of(this);
-      }
+  public getCurrentClass(): Class {
+    return Class.of(this);
   }
+}
 
 class ChildClass008 extends ParentClass008 {
-  }
+}
 
 class ParentClass008 {
-      public getMyClass(): Class {
-          return Class.of(this);
-      }
+  public getMyClass(): Class {
+    return Class.of(this);
   }
+}
 
 class Child009 extends Parent009 {}
 
 class Parent009 extends GrandParent009 {}
 
 class GrandParent009 {
-      public getClassInfo(): Class {
-          return Class.of(this);
-      }
+  public getClassInfo(): Class {
+    return Class.of(this);
   }
+}
 
 final class FinalClass010 {
-      public getClass(): Class {
-          return Class.of(this);
-      }
+  public getClass(): Class {
+    return Class.of(this);
   }
+}
 
 class ConcreteClass011 extends AbstractClass011 {
-      public override method(): void {}
-  }
+  public override method(): void {}
+}
 
 abstract class AbstractClass011 {
-      public getAbstractClass(): Class {
-          return Class.from<AbstractClass011>();
-      }
-      public abstract method(): void;
+  public getAbstractClass(): Class {
+    return Class.from<AbstractClass011>();
   }
+  public abstract method(): void;
+}
 
 class GenericClass012<T> {
-      public getValue(): Class {
-          return Class.of(this);
-      }
+  public getValue(): Class {
+    return Class.of(this);
   }
+}
 
 class InnerClass013 {
-          public getInnerClass(): Class {
-              return Class.of(this);
-          }
-      }
+  public getInnerClass(): Class {
+    return Class.of(this);
+  }
+}
 
 class OuterClass013 {
-      public getClass(): Class {
-          return Class.of(this);
-      }
-      
-
+  public getClass(): Class {
+    return Class.of(this);
   }
+
+}
 
 class TestClass014 {
-      public verifySubtype(): boolean {
-          let cls = Class.current();
-          return cls.isSubtypeOf(cls);
-      }
+  public verifySubtype(): boolean {
+    let cls = Class.current();
+    return cls.isSubtypeOf(cls);
   }
+}
 
 class TestClass015 {
-      public testSuperClass(): string {
-          let cls = Class.current();
-          let superCls = cls.getSuper();
-          return superCls!.getName();
-      }
+  public testSuperClass(): string {
+    let cls = Class.current();
+    let superCls = cls.getSuper();
+    return superCls!.getName();
   }
+}
 
 class ParentClass015 {}
 
 class ChildClass015 extends ParentClass015 {}
 
 class TestClass017 {
-      public static getStaticClass(): Class {
-          return Class.current();
-      }
+  public static getStaticClass(): Class {
+    return Class.current();
   }
+}
 
 class TestClass018 {
-      public constructor() {
-          let cls = Class.current();
-          expect(Utils.classNameMatches(cls.getName(), "TestClass018")).assertTrue();
-      }
+  public constructor() {
+    let cls = Class.current();
+    expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass018");
   }
+}
 
 class TestClass019 {
-      private _name: string = '';
-      public get name(): string {
-          let cls = Class.current();
-          expect(Utils.classNameMatches(cls.getName(), "TestClass019")).assertTrue();
-          return this._name;
-      }
-      public set name(value: string) {
-          let cls = Class.current();
-          expect(Utils.classNameMatches(cls.getName(), "TestClass019")).assertTrue();
-          this._name = value;
-      }
+  private _name: string = '';
+  public get name(): string {
+    let cls = Class.current();
+    expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass019");
+    return this._name;
   }
+  public set name(value: string) {
+    let cls = Class.current();
+    expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass019");
+    this._name = value;
+  }
+}
 
 class TestClass020 {
-      public testConsistency(): boolean {
-          let cls1 = Class.current();
-          let cls2 = Class.current();
-          return cls1 === cls2;
-      }
+  public testConsistency(): boolean {
+    let cls1 = Class.current();
+    let cls2 = Class.current();
+    return cls1 === cls2;
   }
+}
 
 class TestClass022 {
-      public testCurrent(): string {
-          return Class.current().getName();
-      }
+  public testCurrent(): string {
+    return Class.current().getName();
   }
+}
 
 class TestClass023 {
-      public testOf(obj: TestClass023): string {
-          return Class.of(obj).getName();
-      }
+  public testOf(obj: TestClass023): string {
+    return Class.of(obj).getName();
   }
+}
 
 class TestClass024 {
-      public compareCurrentAndOf(): boolean {
-          let currentCls = Class.current();
-          let ofCls = Class.of(this);
-          return currentCls === ofCls;
-      }
+  public compareCurrentAndOf(): boolean {
+    let currentCls = Class.current();
+    let ofCls = Class.of(this);
+    return currentCls === ofCls;
   }
+}
 
 class TestClass025 {
-      public static testFrom(): string {
-          return Class.from<TestClass025>().getName();
-      }
+  public static testFrom(): string {
+    return Class.from<TestClass025>().getName();
   }
+}
 
 class TestClass026 {
-      public testCurrent(): Class {
-          return Class.current();
-      }
+  public testCurrent(): Class {
+    return Class.current();
   }
+}
 
 class TestClass027 {
-      public compareCurrentAndFrom(): boolean {
-          let currentCls = Class.current();
-          let fromCls = Class.from<TestClass027>();
-          return currentCls === fromCls;
-      }
+  public compareCurrentAndFrom(): boolean {
+    let currentCls = Class.current();
+    let fromCls = Class.from<TestClass027>();
+    return currentCls === fromCls;
   }
+}
 
 class TestClass028 {
-      public field: int = 0;
-      
-      public compareAllMethods(): void {
-          let currentCls = Class.current();
-          
-          let ofCls = Class.of(this);
-          
-          let fromCls = Class.from<TestClass028>();
-          
-          expect(currentCls === ofCls).assertTrue();
-          expect(currentCls === fromCls).assertTrue();
-          expect(ofCls === fromCls).assertTrue();
-          
-          expect(Utils.classNameMatches(currentCls.getName(), "TestClass028")).assertTrue();
-          expect(Utils.classNameMatches(ofCls.getName(), "TestClass028")).assertTrue();
-          expect(Utils.classNameMatches(fromCls.getName(), "TestClass028")).assertTrue();
-      }
+  public field: int = 0;
+
+  public compareAllMethods(): void {
+    let currentCls = Class.current();
+
+    let ofCls = Class.of(this);
+
+    let fromCls = Class.from<TestClass028>();
+
+    expect(currentCls === ofCls).assertTrue();
+    expect(currentCls === fromCls).assertTrue();
+    expect(ofCls === fromCls).assertTrue();
+
+    expect(currentCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass028");
+    expect(ofCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass028");
+    expect(fromCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass028");
   }
+}
 
 class TestClass029 {
-      public method1(): Class {
-          return Class.current();
-      }
-      
-      public method2(obj: TestClass029): Class {
-          return Class.of(obj);
-      }
-      
-      public static method3(): Class {
-          return Class.from<TestClass029>();
-      }
+  public method1(): Class {
+    return Class.current();
   }
+
+  public method2(obj: TestClass029): Class {
+    return Class.of(obj);
+  }
+
+  public static method3(): Class {
+    return Class.from<TestClass029>();
+  }
+}
 
 class TestClass030 {
-      public testNotPrimitive(): boolean {
-          let cls = Class.current();
-          expect(cls.isPrimitive()).assertFalse();
-          expect(cls === Class.PRIMITIVE_INT).assertFalse();
-          return true;
-      }
+  public testNotPrimitive(): boolean {
+    let cls = Class.current();
+    expect(cls.isPrimitive()).assertFalse();
+    expect(cls === Class.PRIMITIVE_INT).assertFalse();
+    return true;
   }
+}
 
 class NumberWrapper031 {
-      public value: double = 0.0;
-      public getClass(): Class {
-          return Class.current();
-      }
+  public value: double = 0.0;
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 class TestClass032 implements MyInterface032 {
-      public method(): void {}
-      public getClass(): Class {
-          return Class.current();
-      }
+  public method(): void {}
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 interface MyInterface032 {
-      method(): void;
-  }
+  method(): void;
+}
 
 class TestClass033 implements Interface1033, Interface2033 {
-      public getClass(): Class {
-          return Class.current();
-      }
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 interface Interface2033 {}
 
 interface Interface1033 {}
 
 enum TestEnum034 {
-      VALUE1,
-      VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 enum TestEnum035 {
-      VALUE1,
-      VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 class UnionClass036 {
-      public getClass(): Class {
-          return Class.current();
-      }
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 class NormalClass037 {
-      public getClass(): Class {
-          return Class.current();
-      }
+  public getClass(): Class {
+    return Class.current();
   }
+}
 
 class FixedArrayClass038 {
-      public getFixedArrayClass(): Class {
-          return Class.from<FixedArray<int>>();
-      }
-      public getCurrentClass(): Class {
-          return Class.current();
-      }
+  public getFixedArrayClass(): Class {
+    return Class.from<FixedArray<int>>();
   }
+  public getCurrentClass(): Class {
+    return Class.current();
+  }
+}
 
 class TestClass039 {
-      public performanceTest(): void {
-          let startTime = Date.now();
-          for (let i = 0; i < 10000; i++) {
-              let cls = Class.current();
-          }
-          let endTime = Date.now();
-          let duration = endTime - startTime;
-          console.info(`Class.current 10000 calls: ${duration}ms`);
-      }
+  public performanceTest(): void {
+    let startTime = Date.now();
+    for (let i = 0; i < 10000; i++) {
+      let cls = Class.current();
+    }
+    let endTime = Date.now();
+    let duration = endTime - startTime;
+    console.info(`Class.current 10000 calls: ${duration}ms`);
   }
+}
 
 class TestClass040 {
-      public comparePerformance(): void {
-          let obj = this;
-          
-          let start1 = Date.now();
-          for (let i = 0; i < 10000; i++) {
-              let cls = Class.current();
-          }
-          let time1 = Date.now() - start1;
-          
-          let start2 = Date.now();
-          for (let i = 0; i < 10000; i++) {
-              let cls = Class.of(obj);
-          }
-          let time2 = Date.now() - start2;
-          
-          console.info(`current=${time1}ms of=${time2}ms`);
-      }
+  public comparePerformance(): void {
+    let obj = this;
+
+    let start1 = Date.now();
+    for (let i = 0; i < 10000; i++) {
+      let cls = Class.current();
+    }
+    let time1 = Date.now() - start1;
+
+    let start2 = Date.now();
+    for (let i = 0; i < 10000; i++) {
+      let cls = Class.of(obj);
+    }
+    let time2 = Date.now() - start2;
+
+    console.info(`current=${time1}ms of=${time2}ms`);
   }
+}
 
 class TestClass041 {
-      public testMemory(): void {
-          let cls1 = Class.current();
-          let cls2 = Class.current();
-          let cls3 = Class.current();
-          
-          expect(cls1 === cls2).assertTrue();
-          expect(cls2 === cls3).assertTrue();
-          expect(cls1 === cls3).assertTrue();
-      }
+  public testMemory(): void {
+    let cls1 = Class.current();
+    let cls2 = Class.current();
+    let cls3 = Class.current();
+
+    expect(cls1 === cls2).assertTrue();
+    expect(cls2 === cls3).assertTrue();
+    expect(cls1 === cls3).assertTrue();
   }
+}
 
 class TestClass042 {
-      public memoryLeakTest(): void {
-          let first = Class.current();
-          let last = Class.current();
-          for (let i = 0; i < 10000; i++) {
-              last = Class.current();
-          }
-          expect(last === first).assertTrue();
-      }
+  public memoryLeakTest(): void {
+    let first = Class.current();
+    let last = Class.current();
+    for (let i = 0; i < 10000; i++) {
+      last = Class.current();
+    }
+    expect(last === first).assertTrue();
   }
+}
 
 class TestClass044 {
-      public testAPIVersion(): void {
-          let cls = Class.current();
-          expect(cls !== null).assertTrue();
-      }
+  public testAPIVersion(): void {
+    let cls = Class.current();
+    expect(cls !== null).assertTrue();
   }
+}
 
 class Module2Class045 {
-      public testCrossModule(): void {
-          let obj = new Module1Class045();
-          let cls = obj.getClass();
-          expect(Utils.classNameMatches(cls.getName(), "Module1Class045")).assertTrue();
-      }
+  public testCrossModule(): void {
+    let obj = new Module1Class045();
+    let cls = obj.getClass();
+    expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Module1Class045");
   }
+}
 
 export class Module1Class045 {
-      public getClass(): Class {
-          return Class.of(this);
-      }
+  public getClass(): Class {
+    return Class.of(this);
   }
+}
 
 class User046 extends Model046 {
-  }
+}
 
 class Model046 {
-      public getTableName(): string {
-          let cls = Class.of(this);
-          let n = cls.getName();
-          const lastDot = n.lastIndexOf('.');
-          const simple = lastDot >= 0 ? n.substring(lastDot + 1) : n;
-          const base = Utils.stripTrailingDigits(simple);
-          return base.toLowerCase() + 's';
-      }
+  public getTableName(): string {
+    let cls = Class.of(this);
+    let n = cls.getName();
+    const lastDot = n.lastIndexOf('.');
+    const simple = lastDot >= 0 ? n.substring(lastDot + 1) : n;
+    const base = Utils.stripTrailingDigits(simple);
+    return base.toLowerCase() + 's';
   }
+}
 
 class Serializable047 {
-      public toJSON(): string {
-          let cls = Class.current();
-          let obj: Record<string, Any> = {};
-          obj['className'] = cls.getName();
-          return JSON.stringify(obj);
-      }
+  public toJSON(): string {
+    let cls = Class.current();
+    let obj: Record<string, Any> = {};
+    obj['className'] = cls.getName();
+    return JSON.stringify(obj);
   }
+}
 
 class Service048 extends Logger048 {
-      public doSomething(): void {
-          this.logInfo("doing something");
-      }
+  public doSomething(): void {
+    this.logInfo("doing something");
   }
+}
 
 class Logger048 {
-      public logInfo(message: string): void {
-          let cls = Class.current();
-          console.info(`[${cls.getName()}] ${message}`);
-      }
+  public logInfo(message: string): void {
+    let cls = Class.current();
+    console.info(`[${cls.getName()}] ${message}`);
   }
+}
 
 class ErrorHandler049 {
-      public handleError(error: Error): void {
-          let cls = Class.current();
-          console.error(`Error in ${cls.getName()}: ${error.message}`);
-      }
+  public handleError(error: Error): void {
+    let cls = Class.current();
+    console.error(`Error in ${cls.getName()}: ${error.message}`);
   }
+}
 
 class TestClass050 extends ReflectionUtils050 {
-      public testMethod(msg: string): string {
-          return "Hello " + msg;
-      }
-      
-      public testDynamicCall(): string {
-          return this.callMethod("testMethod", "World") as string;
-      }
+  public testMethod(msg: string): string {
+    return "Hello " + msg;
   }
+
+  public testDynamicCall(): string {
+    return this.callMethod("testMethod", "World") as string;
+  }
+}
 
 class ReflectionUtils050 {
-      public callMethod(methodName: string, ...args: Any[]): Any {
-          let cls = Class.of(this);
-          let method = cls.getInstanceMethod(methodName);
-          if (method !== undefined) {
-              if (args.length === 0) {
-                  return method.invoke(this);
-              }
-              const buf: FixedArray<Any> = new FixedArray<Any>(args.length);
-              for (let i = 0; i < args.length; i++) {
-                  buf[i] = args[i];
-              }
-              return method.invoke(this, buf);
-          }
-          return undefined;
+  public callMethod(methodName: string, ...args: Any[]): Any {
+    let cls = Class.of(this);
+    let method = cls.getInstanceMethod(methodName);
+    if (method !== undefined) {
+      if (args.length === 0) {
+        return method.invoke(this);
       }
+      const buf: FixedArray<Any> = new FixedArray<Any>(args.length);
+      for (let i = 0; i < args.length; i++) {
+        buf[i] = args[i];
+      }
+      return method.invoke(this, buf);
+    }
+    return undefined;
   }
+}
 
 class TestClass051 extends FieldAccessor051 {
-      public name: string = "test";
-      
-      public testFieldAccess(): string {
-          return this.getFieldValue("name") as string;
-      }
+  public name: string = "test";
+
+  public testFieldAccess(): string {
+    return this.getFieldValue("name") as string;
   }
+}
 
 class FieldAccessor051 {
-      public getFieldValue(fieldName: string): Any {
-          let cls = Class.of(this);
-          let field = cls.getInstanceField(fieldName);
-          if (field !== undefined) {
-              return field.getValue(this);
-          }
-          return undefined;
-      }
+  public getFieldValue(fieldName: string): Any {
+    let cls = Class.of(this);
+    let field = cls.getInstanceField(fieldName);
+    if (field !== undefined) {
+      return field.getValue(this);
+    }
+    return undefined;
   }
+}
 
 class Level5052 extends Level4052 {
-      public getClass(): Class {
-          return Class.of(this);
-      }
+  public getClass(): Class {
+    return Class.of(this);
   }
+}
 
 class Level4052 extends Level3052 {}
 
@@ -502,10 +500,10 @@ class L1053 extends Base053 {}
 class Base053 { public getClass(): Class { return Class.of(this); } }
 
 class TestClass054 extends BaseClass054 implements Interface1054, Interface2054 {
-      public getClass(): Class {
-          return Class.of(this);
-      }
+  public getClass(): Class {
+    return Class.of(this);
   }
+}
 
 class BaseClass054 {}
 
@@ -514,21 +512,20 @@ interface Interface2054 {}
 interface Interface1054 {}
 
 class TestClass055 {
-      public regressionTest(): void {
-          let cls = Class.current();
-          expect(cls !== null).assertTrue();
-          expect(cls.getName() !== "").assertTrue();
-      }
+  public regressionTest(): void {
+    let cls = Class.current();
+    expect(cls !== null).assertTrue();
+    expect(cls.getName() !== "").assertTrue();
   }
+}
 
 class TestClass056 {
-      public testBackwardCompatibility(): void {
-          let cls = Class.current();
-          expect(Utils.classNameMatches(cls.getName(), "TestClass056")).assertTrue();
-          expect(cls.getSuper() !== null).assertTrue();
-      }
+  public testBackwardCompatibility(): void {
+    let cls = Class.current();
+    expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass056");
+    expect(cls.getSuper() !== null).assertTrue();
   }
-
+}
 
 export default function ClassCurrentTest(): void {
   describe('ClassCurrentTest', (): void => {
@@ -549,11 +546,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass001();
-        let cls = obj.getCurrentClass();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass001")).assertTrue();
+      let cls = obj.getCurrentClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass001");
     });
 
     /**
@@ -563,11 +560,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = testGetCurrent002();
-        expect(result !== null).assertTrue();
-        expect(result.getName().length > 0).assertTrue();
+      expect(result !== null).assertTrue();
+      expect(result.getName().length > 0).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
@@ -576,12 +573,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass004();
-        let cls = obj.getClass();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "MyClass004")).assertTrue();
+      let cls = obj.getClass();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.MyClass004");
     });
 
     /**
@@ -591,12 +588,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass005();
-        let cls = obj.getAndVerifyType();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass005")).assertTrue();
+      let cls = obj.getAndVerifyType();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass005");
     });
 
     /**
@@ -606,11 +603,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass006();
-        let name = obj.testChainCall();
-        expect(Utils.classNameMatches(name, "TestClass006")).assertTrue();
+      let name = obj.testChainCall();
+      expect(name).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass006");
     });
 
     /**
@@ -620,10 +617,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new ChildClass007();
-        expect(Utils.classNameMatches(child.testParentCall(), "ChildClass007")).assertTrue();
+      expect(child.testParentCall()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ChildClass007");
     });
 
     /**
@@ -633,11 +630,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new ChildClass008();
-        let cls = child.getMyClass();
-        expect(Utils.classNameMatches(cls.getName(), "ChildClass008")).assertTrue();
+      let cls = child.getMyClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ChildClass008");
     });
 
     /**
@@ -647,11 +644,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Child009();
-        let cls = obj.getClassInfo();
-        expect(Utils.classNameMatches(cls.getName(), "Child009")).assertTrue();
+      let cls = obj.getClassInfo();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Child009");
     });
 
     /**
@@ -661,12 +658,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new FinalClass010();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "FinalClass010")).assertTrue();
-        expect(Class.from<FinalClass010>().isFinal()).assertTrue();
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.FinalClass010");
+      expect(Class.from<FinalClass010>().isFinal()).assertTrue();
     });
 
     /**
@@ -676,12 +673,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConcreteClass011();
-        let cls = obj.getAbstractClass();
-        expect(Utils.classNameMatches(cls.getName(), "AbstractClass011")).assertTrue();
-        expect(Class.from<AbstractClass011>().isAbstract()).assertTrue();
+      let cls = obj.getAbstractClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.AbstractClass011");
+      expect(Class.from<AbstractClass011>().isAbstract()).assertTrue();
     });
 
     /**
@@ -691,11 +688,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new GenericClass012<int>();
-        let cls = obj.getValue();
-        expect(Utils.classNameMatches(cls.getName(), "GenericClass012")).assertTrue();
+      let cls = obj.getValue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.GenericClass012");
     });
 
     /**
@@ -705,12 +702,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outer = new OuterClass013();
-        let inner = new InnerClass013();
-        expect(Utils.classNameMatches(outer.getClass().getName(), "OuterClass013")).assertTrue();
-        expect(Utils.classNameMatches(inner.getInnerClass().getName(), "InnerClass013")).assertTrue();
+      let inner = new InnerClass013();
+      expect(outer.getClass().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.OuterClass013");
+      expect(inner.getInnerClass().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.InnerClass013");
     });
 
     /**
@@ -720,10 +717,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass014();
-        expect(obj.verifySubtype()).assertTrue();
+      expect(obj.verifySubtype()).assertTrue();
     });
 
     /**
@@ -733,11 +730,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass015();
-        let superName = obj.testSuperClass();
-        expect(superName.length > 0).assertTrue();
+      let superName = obj.testSuperClass();
+      expect(superName.length > 0).assertTrue();
     });
 
     /**
@@ -747,11 +744,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let globalClass = Class.current();
-        expect(globalClass !== null).assertTrue();
-        expect(globalClass.getName().length > 0).assertTrue();
+      expect(globalClass !== null).assertTrue();
+      expect(globalClass.getName().length > 0).assertTrue();
     });
 
     /**
@@ -761,10 +758,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = TestClass017.getStaticClass();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass017")).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass017");
     });
 
     /**
@@ -774,11 +771,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass018();
-        expect(obj !== null).assertTrue();
-        expect(Utils.classNameMatches(Class.from<TestClass018>().getName(), "TestClass018")).assertTrue();
+      expect(obj !== null).assertTrue();
+      expect(Class.from<TestClass018>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass018");
     });
 
     /**
@@ -788,11 +785,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass019();
-        obj.name = "n";
-        expect(obj.name).assertEqual("n");
+      obj.name = "n";
+      expect(obj.name).assertEqual("n");
     });
 
     /**
@@ -802,10 +799,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass020();
-        expect(obj.testConsistency()).assertTrue();
+      expect(obj.testConsistency()).assertTrue();
     });
 
     /**
@@ -815,10 +812,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new TestClass020();
-        expect(obj.testConsistency()).assertTrue();
+      let name1 = Class.current().getName();
+      let name2 = Class.current().getName();
+      expect(name1).assertEqual(name2);
+      expect(name1.length).assertLarger(0);
     });
 
     /**
@@ -828,10 +827,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass022();
-        expect(Utils.classNameMatches(obj.testCurrent(), "TestClass022")).assertTrue();
+      expect(obj.testCurrent()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass022");
     });
 
     /**
@@ -841,11 +840,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass023();
-        let testObj = new TestClass023();
-        expect(Utils.classNameMatches(obj.testOf(testObj), "TestClass023")).assertTrue();
+      let testObj = new TestClass023();
+      expect(obj.testOf(testObj)).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass023");
     });
 
     /**
@@ -855,10 +854,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass024();
-        expect(obj.compareCurrentAndOf()).assertTrue();
+      expect(obj.compareCurrentAndOf()).assertTrue();
     });
 
     /**
@@ -868,9 +867,9 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Utils.classNameMatches(TestClass025.testFrom(), "TestClass025")).assertTrue();
+      expect(TestClass025.testFrom()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass025");
     });
 
     /**
@@ -880,12 +879,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let fromCls = Class.from<TestClass026>();
-        let obj = new TestClass026();
-        let currentCls = obj.testCurrent();
-        expect(fromCls === currentCls).assertTrue();
+      let fromCls = Class.from<TestClass026>();
+      let obj = new TestClass026();
+      let currentCls = obj.testCurrent();
+      expect(fromCls === currentCls).assertTrue();
     });
 
     /**
@@ -895,10 +894,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass027();
-        expect(obj.compareCurrentAndFrom()).assertTrue();
+      expect(obj.compareCurrentAndFrom()).assertTrue();
     });
 
     /**
@@ -908,11 +907,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass028();
-        obj.compareAllMethods();
-        expect(Utils.classNameMatches(Class.from<TestClass028>().getName(), "TestClass028")).assertTrue();
+      obj.compareAllMethods();
+      expect(Class.from<TestClass028>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass028");
     });
 
     /**
@@ -922,12 +921,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass029();
-        expect(Utils.classNameMatches(obj.method1().getName(), "TestClass029")).assertTrue();
-        expect(Utils.classNameMatches(obj.method2(obj).getName(), "TestClass029")).assertTrue();
-        expect(Utils.classNameMatches(TestClass029.method3().getName(), "TestClass029")).assertTrue();
+      expect(obj.method1().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass029");
+      expect(obj.method2(obj).getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass029");
+      expect(TestClass029.method3().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass029");
     });
 
     /**
@@ -937,10 +936,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass030();
-        expect(obj.testNotPrimitive()).assertTrue();
+      expect(obj.testNotPrimitive()).assertTrue();
     });
 
     /**
@@ -950,13 +949,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let wrapper = new NumberWrapper031();
-        let cls = wrapper.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "NumberWrapper031")).assertTrue();
-        expect(cls === Class.PRIMITIVE_NUMBER).assertFalse();
+      let wrapper = new NumberWrapper031();
+      let cls = wrapper.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.NumberWrapper031");
+      expect(cls === Class.PRIMITIVE_NUMBER).assertFalse();
     });
 
     /**
@@ -966,12 +964,12 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: MyInterface032 = new TestClass032();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass032")).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass032");
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -981,13 +979,13 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass033();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass033")).assertTrue();
-        let interfaces = cls.getInterfaces();
-        expect(interfaces.length).assertEqual(2);
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass033");
+      let interfaces = cls.getInterfaces();
+      expect(interfaces.length).assertEqual(2);
     });
 
     /**
@@ -997,10 +995,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<TestEnum034>().isEnum()).assertTrue();
-        expect(Class.from<TestEnum034>().getName().length > 0).assertTrue();
+      expect(Class.from<TestEnum034>().getName().length > 0).assertTrue();
     });
 
     /**
@@ -1010,10 +1008,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls = Class.from<TestEnum035>();
-        expect(enumCls.isEnum()).assertTrue();
+      expect(enumCls.isEnum()).assertTrue();
     });
 
     /**
@@ -1023,11 +1021,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new UnionClass036();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "UnionClass036")).assertTrue();
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.UnionClass036");
     });
 
     /**
@@ -1037,15 +1035,14 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let unionCls = Class.from<int | string>();
-        expect(unionCls.isUnion()).assertTrue();
-        
+      let unionCls = Class.from<int | string>();
+      expect(unionCls.isUnion()).assertTrue();
 
-        let obj = new NormalClass037();
-        let currentCls = obj.getClass();
-        expect(currentCls.isUnion()).assertFalse();
+      let obj = new NormalClass037();
+      let currentCls = obj.getClass();
+      expect(currentCls.isUnion()).assertFalse();
     });
 
     /**
@@ -1055,15 +1052,15 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new FixedArrayClass038();
-        let currentCls = obj.getCurrentClass();
-        expect(Utils.classNameMatches(currentCls.getName(), "FixedArrayClass038")).assertTrue();
-        expect(currentCls.isFixedArray()).assertFalse();
-        
-        let fixedArrayCls = obj.getFixedArrayClass();
-        expect(fixedArrayCls.isFixedArray()).assertTrue();
+      let currentCls = obj.getCurrentClass();
+      expect(currentCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.FixedArrayClass038");
+      expect(currentCls.isFixedArray()).assertFalse();
+
+      let fixedArrayCls = obj.getFixedArrayClass();
+      expect(fixedArrayCls.isFixedArray()).assertTrue();
     });
 
     /**
@@ -1073,11 +1070,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass039();
-        obj.performanceTest();
-        expect(Utils.classNameMatches(Class.from<TestClass039>().getName(), "TestClass039")).assertTrue();
+      obj.performanceTest();
+      expect(Class.from<TestClass039>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass039");
     });
 
     /**
@@ -1087,11 +1084,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass040();
-        obj.comparePerformance();
-        expect(Utils.classNameMatches(Class.from<TestClass040>().getName(), "TestClass040")).assertTrue();
+      obj.comparePerformance();
+      expect(Class.from<TestClass040>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass040");
     });
 
     /**
@@ -1101,11 +1098,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass041();
-        obj.testMemory();
-        expect(Utils.classNameMatches(Class.from<TestClass041>().getName(), "TestClass041")).assertTrue();
+      obj.testMemory();
+      expect(Class.from<TestClass041>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass041");
     });
 
     /**
@@ -1115,11 +1112,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass042();
-        obj.memoryLeakTest();
-        expect(Utils.classNameMatches(Class.from<TestClass042>().getName(), "TestClass042")).assertTrue();
+      obj.memoryLeakTest();
+      expect(Class.from<TestClass042>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass042");
     });
 
     /**
@@ -1129,10 +1126,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new TestClass022();
-        expect(Utils.classNameMatches(obj.testCurrent(), "TestClass022")).assertTrue();
+      let obj = new TestClass026();
+      let currentCls = obj.testCurrent();
+      expect(currentCls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass026");
     });
 
     /**
@@ -1142,11 +1140,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass044();
-        obj.testAPIVersion();
-        expect(Utils.classNameMatches(Class.from<TestClass044>().getName(), "TestClass044")).assertTrue();
+      obj.testAPIVersion();
+      expect(Class.from<TestClass044>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass044");
     });
 
     /**
@@ -1156,11 +1154,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let m = new Module2Class045();
-        m.testCrossModule();
-        expect(Utils.classNameMatches(Class.from<Module1Class045>().getName(), "Module1Class045")).assertTrue();
+      m.testCrossModule();
+      expect(Class.from<Module1Class045>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Module1Class045");
     });
 
     /**
@@ -1170,10 +1168,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let user = new User046();
-        expect(user.getTableName()).assertEqual("users");
+      expect(user.getTableName()).assertEqual("users");
     });
 
     /**
@@ -1183,11 +1181,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Serializable047();
-        let json = obj.toJSON();
-        expect(json.includes("Serializable047")).assertTrue();
+      let json = obj.toJSON();
+      expect(json.includes("Serializable047")).assertTrue();
     });
 
     /**
@@ -1197,11 +1195,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s = new Service048();
-        s.doSomething();
-        expect(Utils.classNameMatches(Class.from<Service048>().getName(), "Service048")).assertTrue();
+      s.doSomething();
+      expect(Class.from<Service048>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Service048");
     });
 
     /**
@@ -1211,11 +1209,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let h = new ErrorHandler049();
-        h.handleError(new Error("e"));
-        expect(Utils.classNameMatches(Class.from<ErrorHandler049>().getName(), "ErrorHandler049")).assertTrue();
+      h.handleError(new Error("e"));
+      expect(Class.from<ErrorHandler049>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.ErrorHandler049");
     });
 
     /**
@@ -1225,10 +1223,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass050();
-        expect(obj.testDynamicCall()).assertEqual("Hello World");
+      expect(obj.testDynamicCall()).assertEqual("Hello World");
     });
 
     /**
@@ -1238,10 +1236,10 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass051();
-        expect(obj.testFieldAccess()).assertEqual("test");
+      expect(obj.testFieldAccess()).assertEqual("test");
     });
 
     /**
@@ -1251,11 +1249,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Level5052();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "Level5052")).assertTrue();
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.Level5052");
     });
 
     /**
@@ -1265,16 +1263,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-
-
-
-        
-        let obj = new L3053();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "L3053")).assertTrue();
+      let obj = new L3053();
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.L3053");
     });
 
     /**
@@ -1284,13 +1277,13 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass054();
-        let cls = obj.getClass();
-        expect(Utils.classNameMatches(cls.getName(), "TestClass054")).assertTrue();
-        expect(Utils.classNameMatches(cls.getSuper()!.getName(), "BaseClass054")).assertTrue();
-        expect(cls.getInterfaces().length).assertEqual(2);
+      let cls = obj.getClass();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass054");
+      expect(cls.getSuper()!.getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.BaseClass054");
+      expect(cls.getInterfaces().length).assertEqual(2);
     });
 
     /**
@@ -1300,11 +1293,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass055();
-        obj.regressionTest();
-        expect(Utils.classNameMatches(Class.from<TestClass055>().getName(), "TestClass055")).assertTrue();
+      obj.regressionTest();
+      expect(Class.from<TestClass055>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass055");
     });
 
     /**
@@ -1314,11 +1307,11 @@ export default function ClassCurrentTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassCurrent056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass056();
-        obj.testBackwardCompatibility();
-        expect(Utils.classNameMatches(Class.from<TestClass056>().getName(), "TestClass056")).assertTrue();
+      obj.testBackwardCompatibility();
+      expect(Class.from<TestClass056>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestClass056");
     });
 
   });
