@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -27,216 +26,215 @@ function asInstanceMethodEnum(methods: FixedArray<reflect.InstanceMethod>): Arra
 }
 
 enum TestEnum001 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum003 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum StringEnum004 {
-      FIRST = "first",
-      SECOND = "second"
-  }
+  FIRST = "first",
+  SECOND = "second"
+}
 
 enum MixedEnum005 {
-      FIRST = 1,
-      SECOND = 2,
-      THIRD = 3
-  }
+  FIRST = 1,
+  SECOND = 2,
+  THIRD = 3
+}
 
 enum ConstEnum006 {
-    A = 1,
-    B = 2
-  }
+  A = 1,
+  B = 2
+}
 
 enum EmptyEnum007 {
-  }
+}
 
 class MyClass008 {
-      public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 interface MyInterface009 {
-      name: string;
-  }
+  name: string;
+}
 
 abstract class AbstractClass016 {
-      public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 class FinalClass017 {
-      public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 enum BaseEnum018 {
-      VALUE1
-  }
+  VALUE1
+}
 
 enum TestEnum019 {
-      VALUE1,
-      VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 enum TestEnum020 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum021 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum022 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 class MyClass023 {}
 
 enum TestEnum023 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum024 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum025 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum026 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum027 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum028 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 interface MyInterface029 {
-      name: string;
-  }
+  name: string;
+}
 
 enum TestEnum030 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum031 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum032 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum033 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum034 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum035 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum036 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum037 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum038 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum039 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 class MyClass040 {}
 
 enum TestEnum040 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 function isEnumType040(cls: Class): boolean {
-      return cls.isEnum();
-  }
+  return cls.isEnum();
+}
 
 class MyClass041 {}
 
 enum TestEnum041 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 function processClass041(cls: Class): string {
-      if (cls.isEnum()) {
-          return "This is an enum type";
-      } else {
-          return "This is not an enum type";
-      }
+  if (cls.isEnum()) {
+    return "This is an enum type";
+  } else {
+    return "This is not an enum type";
   }
+}
 
 class MyClass042 {}
 
 enum TestEnum042 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 function isEnumValue042(value: Any): boolean {
-      let cls = Class.ofAny(value);
-      if (cls !== undefined) {
-          return cls.isEnum();
-      }
-      return false;
+  let cls = Class.ofAny(value);
+  if (cls !== undefined) {
+    return cls.isEnum();
   }
+  return false;
+}
 
 enum TestEnum043 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum044 {
-      CLASS,
-      METHOD
-  }
+  CLASS,
+  METHOD
+}
 
 enum TestEnum045 {
-      CLASS,
-      METHOD
-  }
-
+  CLASS,
+  METHOD
+}
 
 export default function ClassIsEnumTest(): void {
   describe('ClassIsEnumTest', (): void => {
@@ -257,11 +255,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum001>();
-        let result = cls.isEnum();
-        expect(result).assertTrue();
+      let result = cls.isEnum();
+      expect(result).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0300
@@ -270,11 +268,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum003>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -284,11 +282,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StringEnum004>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -298,11 +296,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedEnum005>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -312,11 +310,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstEnum006>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -326,11 +324,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyEnum007>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -340,11 +338,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -354,11 +352,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface009>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -368,11 +366,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<int>>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -382,11 +380,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<string>>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -396,11 +394,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -410,11 +408,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -424,16 +422,16 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<int>();
-        expect(cls1.isEnum()).assertEqual(false);
+      expect(cls1.isEnum()).assertEqual(false);
 
-        let cls2 = Class.from<string>();
-        expect(cls2.isEnum()).assertEqual(false);
+      let cls2 = Class.from<string>();
+      expect(cls2.isEnum()).assertEqual(false);
 
-        let cls3 = Class.from<boolean>();
-        expect(cls3.isEnum()).assertEqual(false);
+      let cls3 = Class.from<boolean>();
+      expect(cls3.isEnum()).assertEqual(false);
     });
 
     /**
@@ -443,11 +441,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -457,11 +455,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass016>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -471,11 +469,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass017>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(false);
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -485,9 +483,9 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(Class.from<BaseEnum018>().isEnum()).assertTrue();
+      expect(Class.from<BaseEnum018>().isEnum()).assertTrue();
     });
 
     /**
@@ -497,11 +495,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum019>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -511,12 +509,12 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumValue = TestEnum020.CLASS;
-        let cls = Class.of(enumValue);
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let cls = Class.of(enumValue);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -526,16 +524,12 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumValue: Any = TestEnum021.METHOD;
-        let cls = Class.ofAny(enumValue);
-        if (cls !== undefined) {
-            let result = cls.isEnum();
-            expect(result).assertEqual(true);
-        } else {
-            expect().assertFail();
-        }
+      let cls = Class.ofAny(enumValue);
+      expect(cls !== undefined).assertTrue();
+      expect(cls!.isEnum()).assertEqual(true);
     });
 
     /**
@@ -545,11 +539,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum022>();
-        let result = cls.isEnum();
-        expect(typeof result).assertEqual("boolean");
+      let result = cls.isEnum();
+      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -559,22 +553,17 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum023>();
-        if (cls.isEnum()) {
-            console.info("This is an enum type");
-        } else {
-            expect().assertFail();
-        }
+      let result = cls.isEnum();
+      expect(typeof result).assertEqual('boolean');
+      expect(result).assertTrue();
 
-
-        let cls2 = Class.from<MyClass023>();
-        if (!cls2.isEnum()) {
-            console.info("This is not an enum type");
-        } else {
-            expect().assertFail();
-        }
+      let cls2 = Class.from<MyClass023>();
+      let result2 = cls2.isEnum();
+      expect(typeof result2).assertEqual('boolean');
+      expect(result2).assertFalse();
     });
 
     /**
@@ -584,15 +573,15 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum024>();
-        let result1 = cls.isEnum();
-        let result2 = cls.isEnum();
-        let result3 = cls.isEnum();
-        expect(result1).assertEqual(result2);
-        expect(result2).assertEqual(result3);
-        expect(result1).assertEqual(true);
+      let result1 = cls.isEnum();
+      let result2 = cls.isEnum();
+      let result3 = cls.isEnum();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertEqual(true);
     });
 
     /**
@@ -602,10 +591,10 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum025>();
-        expect(cls.isEnum()).assertTrue();
+      expect(cls.isEnum()).assertTrue();
     });
 
     /**
@@ -615,11 +604,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum026>();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -629,12 +618,12 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum027>();
-        cls.initialize();
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      cls.initialize();
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
     /**
@@ -644,11 +633,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum028>();
-        expect(cls.isEnum()).assertEqual(true);
-        expect(cls.isInterface()).assertEqual(false);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isInterface()).assertEqual(false);
     });
 
     /**
@@ -658,11 +647,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface029>();
-        expect(cls.isInterface()).assertEqual(true);
-        expect(cls.isEnum()).assertEqual(false);
+      expect(cls.isInterface()).assertEqual(true);
+      expect(cls.isEnum()).assertEqual(false);
     });
 
     /**
@@ -672,11 +661,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum030>();
-        expect(cls.isEnum()).assertEqual(true);
-        expect(cls.isPrimitive()).assertEqual(false);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isPrimitive()).assertEqual(false);
     });
 
     /**
@@ -686,12 +675,12 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum031>();
-        expect(cls.isEnum()).assertEqual(true);
-        let isFinal = cls.isFinal();
-        console.info(`Enum isFinal: ${isFinal}`);
+      expect(cls.isEnum()).assertEqual(true);
+      let isFinal = cls.isFinal();
+      console.info(`Enum isFinal: ${isFinal}`);
     });
 
     /**
@@ -701,11 +690,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum032>();
-        expect(cls.isEnum()).assertEqual(true);
-        expect(cls.isAbstract()).assertEqual(false);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isAbstract()).assertEqual(false);
     });
 
     /**
@@ -715,11 +704,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum033>();
-        expect(cls.isEnum()).assertEqual(true);
-        expect(cls.isFixedArray()).assertEqual(false);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isFixedArray()).assertEqual(false);
     });
 
     /**
@@ -729,11 +718,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum034>();
-        expect(cls.isEnum()).assertEqual(true);
-        expect(cls.isUnion()).assertEqual(false);
+      expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isUnion()).assertEqual(false);
     });
 
     /**
@@ -743,10 +732,10 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum035>();
-        expect(cls.isEnum()).assertEqual(true);
+      expect(cls.isEnum()).assertEqual(true);
     });
 
     /**
@@ -756,17 +745,17 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArrCls = Class.from<FixedArray<TestEnum036>>();
-        let componentCls = fixedArrCls.getFixedArrayComponentType();
-        expect(Utils.isAbsentReflectOptional(componentCls)).assertFalse();
-        expect(componentCls!.isEnum()).assertEqual(true);
+      let componentCls = fixedArrCls.getFixedArrayComponentType();
+      expect(Utils.isAbsentReflectOptional(componentCls)).assertFalse();
+      expect(componentCls!.isEnum()).assertEqual(true);
 
-        let resizableArr: Array<TestEnum036> = [TestEnum036.CLASS, TestEnum036.METHOD];
-        expect(Utils.isAbsentReflectOptional(Class.of(resizableArr).getFixedArrayComponentType())).assertTrue();
+      let resizableArr: Array<TestEnum036> = [TestEnum036.CLASS, TestEnum036.METHOD];
+      expect(Utils.isAbsentReflectOptional(Class.of(resizableArr).getFixedArrayComponentType())).assertTrue();
 
-        expect(Class.from<TestEnum036>().isEnum()).assertEqual(true);
+      expect(Class.from<TestEnum036>().isEnum()).assertEqual(true);
     });
 
     /**
@@ -776,15 +765,15 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum037>();
-        expect(cls.isEnum()).assertEqual(true);
-        let fields = asStaticFieldEnum(cls.getStaticFields());
-        expect(fields.length).assertLarger(0);
-        for (let i = 0; i < fields.length; i++) {
-            console.info(fields[i].getName());
-        }
+      expect(cls.isEnum()).assertEqual(true);
+      let fields = asStaticFieldEnum(cls.getStaticFields());
+      expect(fields.length).assertLarger(0);
+      for (let i = 0; i < fields.length; i++) {
+        console.info(fields[i].getName());
+      }
     });
 
     /**
@@ -794,15 +783,15 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum038>();
-        expect(cls.isEnum()).assertEqual(true);
-        let methods = asInstanceMethodEnum(cls.getInstanceMethods());
-        expect(methods.length).assertLarger(0);
-        for (let i = 0; i < methods.length; i++) {
-            console.info(methods[i].getName());
-        }
+      expect(cls.isEnum()).assertEqual(true);
+      let methods = asInstanceMethodEnum(cls.getInstanceMethods());
+      expect(methods.length).assertLarger(0);
+      for (let i = 0; i < methods.length; i++) {
+        console.info(methods[i].getName());
+      }
     });
 
     /**
@@ -812,17 +801,13 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum039>();
-        expect(cls.isEnum()).assertEqual(true);
-        let superCls = cls.getSuper();
-        if (superCls !== undefined) {
-            console.info(`Enum superclass: ${superCls.getName()}`);
-            expect(superCls.isEnum()).assertEqual(true);
-        } else {
-            expect().assertFail();
-        }
+      expect(cls.isEnum()).assertEqual(true);
+      let superCls = cls.getSuper();
+      expect(superCls !== undefined && superCls !== null).assertTrue();
+      expect(superCls!.isEnum()).assertEqual(true);
     });
 
     /**
@@ -832,10 +817,10 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(isEnumType040(Class.from<TestEnum040>())).assertEqual(true);
-        expect(isEnumType040(Class.from<MyClass040>())).assertEqual(false);
+      expect(isEnumType040(Class.from<MyClass040>())).assertEqual(false);
     });
 
     /**
@@ -845,10 +830,10 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(processClass041(Class.from<TestEnum041>())).assertEqual("This is an enum type");
-        expect(processClass041(Class.from<MyClass041>())).assertEqual("This is not an enum type");
+      expect(processClass041(Class.from<MyClass041>())).assertEqual("This is not an enum type");
     });
 
     /**
@@ -858,11 +843,11 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(isEnumValue042(TestEnum042.CLASS)).assertEqual(true);
-        expect(isEnumValue042(new MyClass042())).assertEqual(false);
-        expect(isEnumValue042(123)).assertEqual(false);
+      expect(isEnumValue042(new MyClass042())).assertEqual(false);
+      expect(isEnumValue042(123)).assertEqual(false);
     });
 
     /**
@@ -872,16 +857,16 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum043>();
-        let startTime = Date.now();
-        for (let i = 0; i < 10000; i++) {
-            cls.isEnum();
-        }
-        let endTime = Date.now();
-        console.info(`10000 calls took ${endTime - startTime}ms`);
-        console.info(`isEnum 10000 calls: ${endTime - startTime}ms`);
+      let startTime = Date.now();
+      for (let i = 0; i < 10000; i++) {
+        cls.isEnum();
+      }
+      let endTime = Date.now();
+      console.info(`10000 calls took ${endTime - startTime}ms`);
+      console.info(`isEnum 10000 calls: ${endTime - startTime}ms`);
     });
 
     /**
@@ -891,16 +876,16 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum044>();
-        let results: Array<boolean> = [];
-        for (let i = 0; i < 100; i++) {
-            results.push(cls.isEnum());
-        }
-        for (let result of results) {
-            expect(result).assertEqual(true);
-        }
+      let results: Array<boolean> = [];
+      for (let i = 0; i < 100; i++) {
+        results.push(cls.isEnum());
+      }
+      for (let result of results) {
+        expect(result).assertEqual(true);
+      }
     });
 
     /**
@@ -910,17 +895,17 @@ export default function ClassIsEnumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsEnum045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum045>();
 
-        for (let i = 0; i < 1000; i++) {
-            let temp = Class.from<string>();
-            temp.getName();
-        }
+      for (let i = 0; i < 1000; i++) {
+        let temp = Class.from<string>();
+        temp.getName();
+      }
 
-        let result = cls.isEnum();
-        expect(result).assertEqual(true);
+      let result = cls.isEnum();
+      expect(result).assertEqual(true);
     });
 
   });
