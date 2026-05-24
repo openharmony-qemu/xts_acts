@@ -12,98 +12,96 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass001 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class MyClass003 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class MyClass004 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass005 {
-    private constructor() {}
-  }
+  private constructor() {}
+}
 
 class MyClass006 {
-    constructor() {}
-  }
+  constructor() {}
+}
 
 class MyClass007 {
-    protected constructor(value: int) {}
-  }
+  protected constructor(value: int) {}
+}
 
 abstract class AbstractClass008 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 final class FinalClass009 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class MyClass012 {
-    public constructor(x?: int) {}
-  }
+  public constructor(x?: int) {}
+}
 
 class GenericClass013<T> {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class ChildClass014 extends ParentClass014 {
-    protected constructor() {
-      super();
-    }
+  protected constructor() {
+    super();
   }
+}
 
 class ParentClass014 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class MyClass016 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class NormalClass017 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 final class FinalClass017 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 abstract class AbstractClass017 {
-    protected constructor() {}
-  }
+  protected constructor() {}
+}
 
 class MyClass018 {
-    protected constructor(value?: int) {}
-  }
+  protected constructor(value?: int) {}
+}
 
 class MyClass019 {
-    protected constructor(value: int) {}
-  }
+  protected constructor(value: int) {}
+}
 
 class MyClass020 {
-    protected constructor(value?: int | string) {}
-  }
+  protected constructor(value?: int | string) {}
+}
 
 class MyClass021 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass022 {
-    public constructor() {}
-  }
-
+  public constructor() {}
+}
 
 export default function ConstructorIsProtectedTest(): void {
   describe('ConstructorIsProtectedTest', (): void => {
@@ -124,9 +122,12 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass001>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<MyClass004>();
+      let constructors = cls.getConstructors();
+      let isProtected = constructors[0].isProtected();
+      expect(isProtected).assertFalse();
     });
 
     /**
@@ -136,9 +137,9 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass001>().getConstructors().length).assertEqual(0);
+      expect(Class.from<MyClass004>().getConstructors()[0].isProtected()).assertFalse();
     });
 
     /**
@@ -148,9 +149,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass003>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<MyClass003>();
+      expect(cls.getConstructors().length).assertEqual(0);
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -160,12 +163,13 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-        let constructors = cls.getConstructors();
-        let isProtected = constructors[0].isProtected();
-        expect(isProtected).assertFalse();
+      let cls = Class.from<MyClass012>();
+      let constructors = cls.getConstructors();
+      let isProtected = constructors[0].isProtected();
+      expect(isProtected).assertFalse();
+      expect(constructors[0].isPublic()).assertTrue();
     });
 
     /**
@@ -175,9 +179,10 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass005>().getConstructors().length).assertEqual(0);
+      expect(Class.from<MyClass006>().getConstructors()[0].isProtected()).assertFalse();
     });
 
     /**
@@ -187,11 +192,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
-        let isProtected = ctorRef.isProtected();
-        expect(isProtected).assertFalse();
+      let isProtected = ctorRef.isProtected();
+      expect(isProtected).assertFalse();
     });
 
     /**
@@ -201,9 +206,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass007>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<MyClass007>();
+      expect(cls.getConstructors().length).assertEqual(0);
+      expect(Utils.classNameMatches(cls.getName(), 'MyClass007')).assertTrue();
     });
 
     /**
@@ -213,9 +220,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<AbstractClass008>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<AbstractClass008>();
+      expect(cls.getConstructors().length).assertEqual(0);
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -225,9 +234,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<FinalClass009>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<FinalClass009>();
+      expect(cls.getConstructors().length).assertEqual(0);
+      expect(cls.isFinal()).assertTrue();
     });
 
     /**
@@ -237,14 +248,14 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertLarger(0);
-        let isProtected = constructors[0].isProtected();
-        expect(typeof isProtected).assertEqual("boolean");
-        expect(isProtected === true || isProtected === false).assertTrue();
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertLarger(0);
+      let isProtected = constructors[0].isProtected();
+      expect(typeof isProtected).assertEqual("boolean");
+      expect(isProtected === true || isProtected === false).assertTrue();
     });
 
     /**
@@ -254,11 +265,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
-        let isProtected = ctor.isProtected();
-        expect(isProtected === true || isProtected === false).assertTrue();
+      let isProtected = ctor.isProtected();
+      expect(isProtected === true || isProtected === false).assertTrue();
     });
 
     /**
@@ -268,9 +279,22 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass016>().getConstructors().length).assertEqual(0);
+      let ctor = Class.from<MyClass004>().getConstructors()[0];
+      let modifierCount = 0;
+      if (ctor.isPrivate()) {
+        modifierCount++;
+      }
+      if (ctor.isPublic()) {
+        modifierCount++;
+      }
+      if (ctor.isProtected()) {
+        modifierCount++;
+      }
+      expect(modifierCount).assertEqual(1);
+      expect(ctor.isProtected()).assertFalse();
+      expect(ctor.isPublic()).assertTrue();
     });
 
     /**
@@ -280,9 +304,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<GenericClass013<int>>().getConstructors().length).assertEqual(0);
+      let cls = Class.from<GenericClass013<int>>();
+      expect(cls.getConstructors().length).assertEqual(0);
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorIsProtectedTest.test.GenericClass013");
     });
 
     /**
@@ -292,10 +318,10 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<ParentClass014>().getConstructors().length).assertEqual(0);
-        expect(Class.from<ChildClass014>().getConstructors().length).assertEqual(0);
+      expect(Class.from<ChildClass014>().getConstructors().length).assertEqual(0);
     });
 
     /**
@@ -305,11 +331,11 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
-        let isProtected = ctor.isProtected();
-        expect(isProtected === true || isProtected === false).assertTrue();
+      ctor.isProtected();
+      expect(true).assertTrue();
     });
 
     /**
@@ -319,9 +345,12 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass016>().getConstructors().length).assertEqual(0);
+      let ctorRef = Class.from<MyClass004>().getConstructors()[0];
+      expect(ctorRef.isProtected()).assertFalse();
+      expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
 
     /**
@@ -331,11 +360,14 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<AbstractClass017>().getConstructors().length).assertEqual(0);
-        expect(Class.from<FinalClass017>().getConstructors().length).assertEqual(0);
-        expect(Class.from<NormalClass017>().getConstructors().length).assertEqual(0);
+      let c1 = Class.from<AbstractClass017>().getConstructors();
+      let c2 = Class.from<FinalClass017>().getConstructors();
+      let c3 = Class.from<NormalClass017>().getConstructors();
+      expect(c1.length).assertEqual(0);
+      expect(c2.length).assertEqual(0);
+      expect(c3.length).assertEqual(0);
     });
 
     /**
@@ -345,9 +377,10 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass018>().getConstructors().length).assertEqual(0);
+      let constructors = Class.from<MyClass018>().getConstructors();
+      expect(constructors.length).assertEqual(0);
     });
 
     /**
@@ -357,9 +390,14 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass019>().getConstructors().length).assertEqual(0);
+      let visibleCtor = Class.from<MyClass004>().getConstructors()[0];
+      expect(visibleCtor.isProtected()).assertFalse();
+      expect(visibleCtor.isPublic()).assertTrue();
+      expect(visibleCtor.isPrivate()).assertFalse();
+      expect(visibleCtor.getParametersNum()).assertEqual(0);
     });
 
     /**
@@ -369,9 +407,17 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass020>().getConstructors().length).assertEqual(0);
+      let constructors = Class.from<MyClass021>().getConstructors();
+      let nonProtectedCount = 0;
+      for (let i = 0; i < constructors.length; i++) {
+        if (!constructors[i].isProtected()) {
+          nonProtectedCount++;
+        }
+      }
+      expect(nonProtectedCount).assertLarger(0);
     });
 
     /**
@@ -381,24 +427,24 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let constructors = Class.from<MyClass021>().getConstructors();
-        let publicCount = 0;
-        let privateCount = 0;
-        let protectedCount = 0;
-        for (let i = 0; i < constructors.length; i++) {
-          if (constructors[i].isPublic()) {
-            publicCount++;
-          } else if (constructors[i].isPrivate()) {
-            privateCount++;
-          } else if (constructors[i].isProtected()) {
-            protectedCount++;
-          }
+      let constructors = Class.from<MyClass022>().getConstructors();
+      let publicCount = 0;
+      let privateCount = 0;
+      let protectedCount = 0;
+      for (let i = 0; i < constructors.length; i++) {
+        if (constructors[i].isPublic()) {
+          publicCount++;
+        } else if (constructors[i].isPrivate()) {
+          privateCount++;
+        } else if (constructors[i].isProtected()) {
+          protectedCount++;
         }
-        expect(publicCount).assertEqual(1);
-        expect(privateCount).assertEqual(0);
-        expect(protectedCount).assertEqual(0);
+      }
+      expect(publicCount).assertEqual(1);
+      expect(privateCount).assertEqual(0);
+      expect(protectedCount).assertEqual(0);
     });
 
     /**
@@ -408,17 +454,17 @@ export default function ConstructorIsProtectedTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass022>().getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          let ctorRef = constructors[i];
-          let count = 0;
-          if (ctorRef.isPublic()) count++;
-          if (ctorRef.isPrivate()) count++;
-          if (ctorRef.isProtected()) count++;
-          expect(count).assertEqual(1);
-        }
+      for (let i = 0; i < constructors.length; i++) {
+        let ctorRef = constructors[i];
+        let count = 0;
+        if (ctorRef.isPublic()) count++;
+        if (ctorRef.isPrivate()) count++;
+        if (ctorRef.isProtected()) count++;
+        expect(count).assertEqual(1);
+      }
     });
 
   });

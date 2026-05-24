@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -38,15 +37,15 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass082>();
-        try {
-            let method = cls.getInstanceMethod('test', [Class.from<Map<string, Map<int, Array<string>>>>()]);
-            expect(method !== null && method !== undefined).assertTrue();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
+      try {
+        let method = cls.getInstanceMethod('test', [Class.from<Map<string, Map<int, Array<string>>>>()]);
+        expect(method !== null && method !== undefined).assertTrue();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -56,12 +55,12 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass083>();
-        let sig: FixedArray<Class> = [cls];
-        let method = cls.getInstanceMethod('test', sig);
-        expect(method !== null).assertTrue();
+      let sig: FixedArray<Class> = [cls];
+      let method = cls.getInstanceMethod('test', sig);
+      expect(method !== null).assertTrue();
     });
 
     /**
@@ -71,18 +70,18 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LargeClass084>();
-        let found: int = 0;
-        for (let i = 1; i <= 100; i++) {
-            let methodName = `method${i.toString().padStart(3, '0')}`;
-            if (cls.getInstanceMethod(methodName) !== null) {
-                found++;
-            }
+      let found: int = 0;
+      for (let i = 1; i <= 100; i++) {
+        let methodName = `method${i.toString().padStart(3, '0')}`;
+        if (cls.getInstanceMethod(methodName) !== null) {
+          found++;
         }
-        expect(found).assertEqual(100);
-        expect(cls.getInstanceMethod('method999') === undefined).assertTrue();
+      }
+      expect(found).assertEqual(100);
+      expect(cls.getInstanceMethod('method999') === undefined).assertTrue();
     });
 
     /**
@@ -92,22 +91,22 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass085>();
-        expect(cls.getInstanceMethod('test') !== null).assertTrue();
-        let methods: Array<reflect.InstanceMethod> = new Array<reflect.InstanceMethod>();
-        for (let i = 0; i < 100; i++) {
-            let method = cls.getInstanceMethod('test');
-            if (method !== undefined) {
-                methods.push(method);
-            }
+      expect(cls.getInstanceMethod('test') !== null).assertTrue();
+      let methods: Array<reflect.InstanceMethod> = new Array<reflect.InstanceMethod>();
+      for (let i = 0; i < 100; i++) {
+        let method = cls.getInstanceMethod('test');
+        if (method !== undefined) {
+          methods.push(method);
         }
-        expect(methods.length).assertEqual(100);
-        let first = methods[0];
-        for (let i = 1; i < methods.length; i++) {
-            expect(first.equals(methods[i])).assertEqual(true);
-        }
+      }
+      expect(methods.length).assertEqual(100);
+      let first = methods[0];
+      for (let i = 1; i < methods.length; i++) {
+        expect(first.equals(methods[i])).assertEqual(true);
+      }
     });
 
     /**
@@ -117,11 +116,11 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        for (let i = 0; i < 10; i++) {
-            expect(findMethod086()).assertEqual('found');
-        }
+      for (let i = 0; i < 10; i++) {
+        expect(findMethod086()).assertEqual('found');
+      }
     });
 
     /**
@@ -131,17 +130,17 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass087>();
-        let methods: Array<reflect.InstanceMethod> = new Array<reflect.InstanceMethod>();
-        for (let i = 0; i < 10000; i++) {
-            let method = cls.getInstanceMethod('method1');
-            if (method !== undefined) {
-                methods.push(method);
-            }
+      let methods: Array<reflect.InstanceMethod> = new Array<reflect.InstanceMethod>();
+      for (let i = 0; i < 10000; i++) {
+        let method = cls.getInstanceMethod('method1');
+        if (method !== undefined) {
+          methods.push(method);
         }
-        expect(methods.length).assertEqual(10000);
+      }
+      expect(methods.length).assertEqual(10000);
     });
 
     /**
@@ -151,12 +150,12 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let calc = new Calculator088();
-        expect(dynamicCall088(calc, 'add', 10, 20)).assertEqual(30);
-        expect(dynamicCall088(calc, 'subtract', 20, 10)).assertEqual(10);
-        expect(dynamicCall088(calc, 'multiply', 5, 6)).assertEqual(30);
+      expect(dynamicCall088(calc, 'add', 10, 20)).assertEqual(30);
+      expect(dynamicCall088(calc, 'subtract', 20, 10)).assertEqual(10);
+      expect(dynamicCall088(calc, 'multiply', 5, 6)).assertEqual(30);
     });
 
     /**
@@ -166,11 +165,11 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass089();
-        expect(hasMethod089(obj, 'existingMethod')).assertEqual(true);
-        expect(hasMethod089(obj, 'nonExistentMethod')).assertEqual(false);
+      expect(hasMethod089(obj, 'existingMethod')).assertEqual(true);
+      expect(hasMethod089(obj, 'nonExistentMethod')).assertEqual(false);
     });
 
     /**
@@ -180,13 +179,13 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass090();
-        let result = ReflectionUtils090.invokeMethod(obj, 'greet', 'World');
-        expect(result).assertEqual('Hello, World');
-        expect(ReflectionUtils090.methodExists(obj, 'greet')).assertEqual(true);
-        expect(ReflectionUtils090.methodExists(obj, 'unknown')).assertEqual(false);
+      let result = ReflectionUtils090.invokeMethod(obj, 'greet', 'World');
+      expect(result).assertEqual('Hello, World');
+      expect(ReflectionUtils090.methodExists(obj, 'greet')).assertEqual(true);
+      expect(ReflectionUtils090.methodExists(obj, 'unknown')).assertEqual(false);
     });
 
     /**
@@ -196,12 +195,12 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls24 = Class.from<APIClass24091>();
-        let cls25 = Class.from<APIClass25091>();
-        expect(cls24.getInstanceMethod('method24') !== null).assertTrue();
-        expect(cls25.getInstanceMethod('method25') !== null).assertTrue();
+      let cls24 = Class.from<APIClass24091>();
+      let cls25 = Class.from<APIClass25091>();
+      expect(cls24.getInstanceMethod('method24') !== null).assertTrue();
+      expect(cls25.getInstanceMethod('method25') !== null).assertTrue();
     });
 
     /**
@@ -211,35 +210,35 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let arrayCls = Class.from<Array<int>>();
-        let pushMethod: reflect.InstanceMethod | undefined;
-        let arrayMethods = Utils.fixedArrayToArray(arrayCls.getInstanceMethods());
-        for (let i = 0; i < arrayMethods.length; i++) {
-          let method = arrayMethods[i];
-          if (method.getName() === 'push' && method.getParametersNum() === 1) {
-            pushMethod = method;
-            break;
-          }
+      let arrayCls = Class.from<Array<int>>();
+      let pushMethod: reflect.InstanceMethod | undefined;
+      let arrayMethods = Utils.fixedArrayToArray(arrayCls.getInstanceMethods());
+      for (let i = 0; i < arrayMethods.length; i++) {
+        let method = arrayMethods[i];
+        if (method.getName() === 'push' && method.getParametersNum() === 1) {
+          pushMethod = method;
+          break;
         }
-        if (pushMethod !== undefined) {
-          expect(pushMethod!.isNative()).assertEqual(true);
-        }
+      }
+      if (pushMethod !== undefined) {
+        expect(pushMethod!.isNative()).assertEqual(true);
+      }
 
-        let mapCls = Class.from<Map<string, int>>();
-        let setMethod: reflect.InstanceMethod | undefined;
-        let mapMethods = Utils.fixedArrayToArray(mapCls.getInstanceMethods());
-        for (let i = 0; i < mapMethods.length; i++) {
-          let method = mapMethods[i];
-          if (method.getName() === 'set' && method.getParametersNum() === 2) {
-            setMethod = method;
-            break;
-          }
+      let mapCls = Class.from<Map<string, int>>();
+      let setMethod: reflect.InstanceMethod | undefined;
+      let mapMethods = Utils.fixedArrayToArray(mapCls.getInstanceMethods());
+      for (let i = 0; i < mapMethods.length; i++) {
+        let method = mapMethods[i];
+        if (method.getName() === 'set' && method.getParametersNum() === 2) {
+          setMethod = method;
+          break;
         }
-        if (setMethod !== undefined) {
-          expect(setMethod!.getName()).assertEqual('set');
-        }
+      }
+      if (setMethod !== undefined) {
+        expect(setMethod!.getName()).assertEqual('set');
+      }
     });
 
     /**
@@ -249,14 +248,14 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass093>();
-        let method = cls.getInstanceMethod('asyncMethod');
-        expect(method !== null).assertTrue();
-        expect(method!.isAsync()).assertEqual(true);
-        let returnType = method!.getReturnType();
-        expect(returnType!.getName()).assertContain('Promise');
+      let method = cls.getInstanceMethod('asyncMethod');
+      expect(method !== null).assertTrue();
+      expect(method!.isAsync()).assertEqual(true);
+      let returnType = method!.getReturnType();
+      expect(returnType!.getName()).assertContain('Promise');
     });
 
     /**
@@ -266,13 +265,13 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Builder094>();
-        let method = cls.getInstanceMethod('setName', [Class.from<string>()]);
-        expect(method !== null).assertTrue();
-        let returnType = method!.getReturnType();
-        expect(Utils.classNameMatches(returnType!.getName(), 'Builder094')).assertTrue();
+      let method = cls.getInstanceMethod('setName', [Class.from<string>()]);
+      expect(method !== null).assertTrue();
+      let returnType = method!.getReturnType();
+      expect(returnType!.getName()).assertEqual('entry.src.main.src.test.class.InstMethodFixtures.test.Builder094');
     });
 
     /**
@@ -282,13 +281,13 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass095>();
-        let method = cls.getInstanceMethod('getValue');
-        expect(method !== null).assertTrue();
-        let returnType = method!.getReturnType();
-        expect(returnType!.isUnion()).assertEqual(true);
+      let method = cls.getInstanceMethod('getValue');
+      expect(method !== null).assertTrue();
+      let returnType = method!.getReturnType();
+      expect(returnType!.isUnion()).assertEqual(true);
     });
 
     /**
@@ -298,17 +297,17 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass096>();
-        let method = cls.getInstanceMethod('alwaysThrow');
-        expect(method !== null).assertTrue();
-        try {
-            method!.invoke(new MyClass096());
-            expect().assertFail();
-        } catch (error) {
-            expect(error !== null).assertTrue();
-        }
+      let method = cls.getInstanceMethod('alwaysThrow');
+      expect(method !== null).assertTrue();
+      try {
+        method!.invoke(new MyClass096());
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -318,14 +317,14 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass097>();
-        let method = cls.getInstanceMethod('combinedMethod');
-        expect(method !== null).assertTrue();
-        expect(method!.isPublic()).assertEqual(true);
-        expect(method!.isAsync()).assertEqual(true);
-        expect(method!.isFinal()).assertEqual(true);
+      let method = cls.getInstanceMethod('combinedMethod');
+      expect(method !== null).assertTrue();
+      expect(method!.isPublic()).assertEqual(true);
+      expect(method!.isAsync()).assertEqual(true);
+      expect(method!.isFinal()).assertEqual(true);
     });
 
     /**
@@ -335,12 +334,12 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass098>();
-        let method = cls.getInstanceMethod('concreteMethod');
-        expect(method !== null).assertTrue();
-        expect(method!.isAbstract()).assertEqual(false);
+      let method = cls.getInstanceMethod('concreteMethod');
+      expect(method !== null).assertTrue();
+      expect(method!.isAbstract()).assertEqual(false);
     });
 
     /**
@@ -350,11 +349,11 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass099>();
-        let method = cls.getInstanceMethod('process', [Class.from<int>()]);
-        expect(method !== null).assertTrue();
+      let method = cls.getInstanceMethod('process', [Class.from<int>()]);
+      expect(method !== null).assertTrue();
     });
 
     /**
@@ -364,11 +363,11 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MinimalClass100>();
-        let method = cls.getInstanceMethod('min');
-        expect(method !== null).assertTrue();
+      let method = cls.getInstanceMethod('min');
+      expect(method !== null).assertTrue();
     });
 
     /**
@@ -378,15 +377,15 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexClass101>();
 
-        expect(cls.getInstanceMethod('instanceMethod') !== null).assertTrue();
-        expect(cls.getInstanceMethod('privateInstanceMethod')).assertEqual(undefined);
-        expect(cls.getInstanceMethod('staticMethod')).assertEqual(undefined);
-        expect(cls.getInstanceMethod('%%get-property') !== null).assertTrue();
-        expect(cls.getInstanceMethod('%%set-property') !== null).assertTrue();
+      expect(cls.getInstanceMethod('instanceMethod') !== null).assertTrue();
+      expect(cls.getInstanceMethod('privateInstanceMethod')).assertEqual(undefined);
+      expect(cls.getInstanceMethod('staticMethod')).assertEqual(undefined);
+      expect(cls.getInstanceMethod('%%get-property') !== null).assertTrue();
+      expect(cls.getInstanceMethod('%%set-property') !== null).assertTrue();
     });
 
     /**
@@ -396,14 +395,15 @@ export default function ClassGetInstanceMethodTest002(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceMethod102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GrandChild102>();
 
-        expect(cls.getInstanceMethod('grandChildMethod') !== null).assertTrue();
-        expect(cls.getInstanceMethod('childMethod')).assertEqual(undefined);
-        expect(cls.getInstanceMethod('parentMethod')).assertEqual(undefined);
-        expect(cls.getInstanceMethod('grandParentMethod')).assertEqual(undefined);
+      expect(cls.getInstanceMethod('grandChildMethod') !== null).assertTrue();
+      expect(cls.getInstanceMethod('childMethod')).assertEqual(undefined);
+      expect(cls.getInstanceMethod('parentMethod')).assertEqual(undefined);
+      expect(cls.getInstanceMethod('grandParentMethod')).assertEqual(undefined);
     });
   });
 }
+
