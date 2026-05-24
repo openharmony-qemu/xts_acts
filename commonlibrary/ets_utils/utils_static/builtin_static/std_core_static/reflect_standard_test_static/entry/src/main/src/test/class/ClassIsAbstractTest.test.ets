@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -23,114 +22,114 @@ abstract class AbstractClass001 {}
 abstract class MyAbstractClass003 {}
 
 abstract class MyAbstractClass004 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 abstract class MyAbstractClass005 {}
 
 abstract class AbstractClass006 {}
 
 abstract class ClassWithAbstractMethod007 {
-    public abstract doSomething(): void;
-    public normalMethod(): void {}
-  }
+  public abstract doSomething(): void;
+  public normalMethod(): void {}
+}
 
 abstract class MultiAbstractClass008 {
-    public abstract method1(): void;
-    public abstract method2(): string;
-    public abstract method3(): int;
-  }
+  public abstract method1(): void;
+  public abstract method2(): string;
+  public abstract method3(): int;
+}
 
 abstract class Child009 extends Parent009 {
-    public override method1(): void {}
-  }
+  public override method1(): void {}
+}
 
 abstract class Parent009 {
-    public abstract method1(): void;
-    public abstract method2(): void;
-  }
+  public abstract method1(): void;
+  public abstract method2(): void;
+}
 
 class NormalClass010 {}
 
 class ConcreteClass011 {
-    public name: string = "";
-    public constructor(name: string) {
-      this.name = name;
-    }
+  public name: string = "";
+  public constructor(name: string) {
+    this.name = name;
   }
+}
 
 class ConcreteChild012 extends AbstractParent012 {
-    public override method1(): void {}
-    public override method2(): void {}
-  }
+  public override method1(): void {}
+  public override method2(): void {}
+}
 
 abstract class AbstractParent012 {
-    public abstract method1(): void;
-    public abstract method2(): void;
-  }
+  public abstract method1(): void;
+  public abstract method2(): void;
+}
 
 class StaticClass013 {
-    public static value: int = 100;
-    public static func(): void {}
-  }
+  public static value: int = 100;
+  public static func(): void {}
+}
 
 class FinalClass014 {}
 
 interface MyInterface015 {
-    method(): void;
-  }
+  method(): void;
+}
 
 enum TestEnum016 {
-    VALUE1,
-    VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 class MyClass021 {}
 
 abstract class Level1022 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 abstract class Level2022 extends Level1022 {}
 
 class Level3022 extends Level2022 {
-    public override method(): void {}
-  }
+  public override method(): void {}
+}
 
 abstract class EmptyAbstractClass023 {}
 
 abstract class AbstractWithFields024 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 abstract class MixedClass025 {
-    public abstract abstractMethod(): void;
-    public concreteMethod(): string {
-      return "concrete";
-    }
+  public abstract abstractMethod(): void;
+  public concreteMethod(): string {
+    return "concrete";
   }
+}
 
 abstract class AbstractImpl026 implements MyInterface026 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 interface MyInterface026 {
-    method(): void;
-  }
+  method(): void;
+}
 
 abstract class AbstractClass029 {}
 
 abstract class GenericAbstractClass030<T> {
-    public abstract process(value: T): void;
-  }
+  public abstract process(value: T): void;
+}
 
 abstract class GenericAbstract031<T> {
-    public abstract getValue(): T;
-  }
+  public abstract getValue(): T;
+}
 
 abstract class ConditionalClass032 {
-    public abstract conditionalMethod(): void;
-  }
+  public abstract conditionalMethod(): void;
+}
 
 interface MyInterface033 {}
 
@@ -143,69 +142,69 @@ abstract class AbstractClass034 {}
 abstract class AbstractClass035 {}
 
 enum TestEnum035 {
-    VALUE1, VALUE2
-  }
+  VALUE1, VALUE2
+}
 
 abstract class AbstractClass036 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 class ConcreteClass037 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 class ConcreteChild038 extends AbstractParent038 {
-    public override method(): void {}
-  }
+  public override method(): void {}
+}
 
 abstract class AbstractParent038 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 interface Product039 {}
 
 abstract class Factory039 {
-    public abstract createProduct(): Product039;
-  }
+  public abstract createProduct(): Product039;
+}
 
 class ConcreteFactory040 extends Factory040 {
-    public override createProduct(): Product040 {
-      return {} as Product040;
-    }
+  public override createProduct(): Product040 {
+    return {} as Product040;
   }
+}
 
 interface Product040 {}
 
 abstract class Factory040 {
-    public abstract createProduct(): Product040;
-  }
+  public abstract createProduct(): Product040;
+}
 
 abstract class Template041 {
-    public final process(): void {
-      this.step1();
-      this.step2();
-    }
-    protected abstract step1(): void;
-    protected abstract step2(): void;
+  public final process(): void {
+    this.step1();
+    this.step2();
   }
+  protected abstract step1(): void;
+  protected abstract step2(): void;
+}
 
 abstract class AbstractStrategy042 implements Strategy042 {
-    public abstract execute(): void;
-    protected common(): void {}
-  }
+  public abstract execute(): void;
+  protected common(): void {}
+}
 
 interface Strategy042 {
-    execute(): void;
-  }
+  execute(): void;
+}
 
 abstract class Subject043 {
-    private observers: Array<Observer043> = [];
-    public abstract notify(): void;
-  }
+  private observers: Array<Observer043> = [];
+  public abstract notify(): void;
+}
 
 abstract class Observer043 {
-    public abstract update(data: string): void;
-  }
+  public abstract update(data: string): void;
+}
 
 abstract class AbstractClass044 {}
 
@@ -222,54 +221,52 @@ abstract class Abs1046 {}
 abstract class PublicAbstract047 {}
 
 abstract class InnerAbstract048 {
-      public abstract method(): void;
-    }
+  public abstract method(): void;
+}
 
 class Outer048 {
-
-  }
+}
 
 class Concrete049 extends Top049 {
-    public override method1(): void {}
-    public override method2(): void {}
-    public override method3(): void {}
-  }
+  public override method1(): void {}
+  public override method2(): void {}
+  public override method3(): void {}
+}
 
 abstract class Top049 extends Middle049 {
-    public abstract method3(): void;
-  }
+  public abstract method3(): void;
+}
 
 abstract class Middle049 extends Base049 {
-    public abstract method2(): void;
-  }
+  public abstract method2(): void;
+}
 
 abstract class Base049 {
-    public abstract method1(): void;
-  }
+  public abstract method1(): void;
+}
 
 abstract class AbstractImpl050 implements Interface1050, Interface2050 {
-    public abstract method1(): void;
-    public abstract method2(): void;
-  }
+  public abstract method1(): void;
+  public abstract method2(): void;
+}
 
 interface Interface2050 {
-    method2(): void;
-  }
+  method2(): void;
+}
 
 interface Interface1050 {
-    method1(): void;
-  }
+  method1(): void;
+}
 
 abstract class PartialImpl051 implements MyInterface051 {
-    public method1(): void {}
-  }
+  public method1(): void {}
+}
 
 interface MyInterface051 {
-    method1(): void;
-    method2(): void;
-    method3(): void;
-  }
-
+  method1(): void;
+  method2(): void;
+  method3(): void;
+}
 
 export default function ClassIsAbstractTest(): void {
   describe('ClassIsAbstractTest', (): void => {
@@ -290,11 +287,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass001>();
-        let result = cls.isAbstract();
-        expect(result).assertTrue();
+      let result = cls.isAbstract();
+      expect(result).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0300
@@ -303,10 +300,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyAbstractClass003>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -316,10 +313,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyAbstractClass004>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -329,10 +326,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.ofAny(undefined as Any);
-        expect(cls).assertUndefined();
+      let cls = Class.from<MyAbstractClass004>();
+      expect(cls.isAbstract()).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassIsAbstractTest.test.MyAbstractClass004");
     });
 
     /**
@@ -342,12 +340,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass006>();
-        let result = cls.isAbstract();
-        expect(result).assertEqual(true);
-        expect(typeof result).assertEqual("boolean");
+      let result = cls.isAbstract();
+      expect(result).assertEqual(true);
+      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -357,10 +355,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ClassWithAbstractMethod007>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -370,10 +368,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiAbstractClass008>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -383,10 +381,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Child009>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -396,12 +394,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NormalClass010>();
-        let result = cls.isAbstract();
-        expect(result).assertFalse();
-        expect(typeof result).assertEqual("boolean");
+      let result = cls.isAbstract();
+      expect(result).assertFalse();
+      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -411,10 +409,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass011>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -424,10 +422,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteChild012>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -437,10 +435,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticClass013>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -450,10 +448,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass014>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -463,10 +461,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface015>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -476,10 +474,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum016>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -489,11 +487,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isAbstract()).assertTrue();
-        expect(Class.PRIMITIVE_BOOLEAN.isAbstract()).assertTrue();
-        expect(Class.from<string>().isAbstract()).assertFalse();
+      expect(Class.PRIMITIVE_BOOLEAN.isAbstract()).assertTrue();
+      expect(Class.from<string>().isAbstract()).assertFalse();
     });
 
     /**
@@ -503,11 +501,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [];
-        let cls = Class.of(arr);
-        expect(cls.isAbstract()).assertFalse();
+      let cls = Class.of(arr);
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -517,10 +515,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -530,13 +528,13 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass021>();
-        let objSuper = cls.getSuper();
-        if (objSuper !== undefined) {
-          expect(objSuper.isAbstract()).assertFalse();
-        }
+      let objSuper = cls.getSuper();
+      if (objSuper !== undefined) {
+        expect(objSuper.isAbstract()).assertFalse();
+      }
     });
 
     /**
@@ -546,11 +544,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Level1022>().isAbstract()).assertTrue();
-        expect(Class.from<Level2022>().isAbstract()).assertTrue();
-        expect(Class.from<Level3022>().isAbstract()).assertFalse();
+      expect(Class.from<Level2022>().isAbstract()).assertTrue();
+      expect(Class.from<Level3022>().isAbstract()).assertFalse();
     });
 
     /**
@@ -560,10 +558,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyAbstractClass023>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -573,10 +571,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractWithFields024>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -586,10 +584,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedClass025>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -599,10 +597,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractImpl026>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -612,10 +610,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -625,10 +623,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.ofAny(undefined);
-        expect(cls).assertEqual(undefined);
+      expect(cls).assertEqual(undefined);
     });
 
     /**
@@ -638,11 +636,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let anyCls: Any = Class.from<AbstractClass029>() as Any;
-        let cls = anyCls as Class;
-        expect(cls.isAbstract()).assertTrue();
+      let cls = anyCls as Class;
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -652,10 +650,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericAbstractClass030<int>>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -665,12 +663,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intCls = Class.from<GenericAbstract031<int>>();
-        let strCls = Class.from<GenericAbstract031<string>>();
-        expect(intCls.isAbstract()).assertTrue();
-        expect(strCls.isAbstract()).assertTrue();
+      let strCls = Class.from<GenericAbstract031<string>>();
+      expect(intCls.isAbstract()).assertTrue();
+      expect(strCls.isAbstract()).assertTrue();
     });
 
     /**
@@ -680,10 +678,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConditionalClass032>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -693,14 +691,14 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absCls = Class.from<AbstractClass033>();
-        let ifaceCls = Class.from<MyInterface033>();
-        expect(absCls.isAbstract()).assertTrue();
-        expect(absCls.isInterface()).assertFalse();
-        expect(ifaceCls.isInterface()).assertTrue();
-        expect(ifaceCls.isAbstract()).assertTrue();
+      let ifaceCls = Class.from<MyInterface033>();
+      expect(absCls.isAbstract()).assertTrue();
+      expect(absCls.isInterface()).assertFalse();
+      expect(ifaceCls.isInterface()).assertTrue();
+      expect(ifaceCls.isAbstract()).assertTrue();
     });
 
     /**
@@ -710,13 +708,13 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let absCls = Class.from<AbstractClass034>();
-        let finalCls = Class.from<FinalClass034>();
-        expect(absCls.isAbstract() && absCls.isFinal()).assertFalse();
-        expect(finalCls.isAbstract()).assertFalse();
-        expect(finalCls.isFinal()).assertTrue();
+      let finalCls = Class.from<FinalClass034>();
+      expect(absCls.isAbstract() && absCls.isFinal()).assertFalse();
+      expect(finalCls.isAbstract()).assertFalse();
+      expect(finalCls.isFinal()).assertTrue();
     });
 
     /**
@@ -726,14 +724,14 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumCls = Class.from<TestEnum035>();
-        let absCls = Class.from<AbstractClass035>();
-        expect(enumCls.isEnum()).assertTrue();
-        expect(enumCls.isAbstract()).assertFalse();
-        expect(absCls.isAbstract()).assertTrue();
-        expect(absCls.isEnum()).assertFalse();
+      let absCls = Class.from<AbstractClass035>();
+      expect(enumCls.isEnum()).assertTrue();
+      expect(enumCls.isAbstract()).assertFalse();
+      expect(absCls.isAbstract()).assertTrue();
+      expect(absCls.isEnum()).assertFalse();
     });
 
     /**
@@ -743,16 +741,16 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass036>();
-        expect(cls.isAbstract()).assertTrue();
-        try {
-          cls.createInstance();
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      expect(cls.isAbstract()).assertTrue();
+      try {
+        cls.createInstance();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -762,12 +760,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass037>();
-        expect(cls.isAbstract()).assertFalse();
-        let obj = cls.createInstance();
-        expect(obj !== null).assertTrue();
+      expect(cls.isAbstract()).assertFalse();
+      let obj = cls.createInstance();
+      expect(obj !== null).assertTrue();
     });
 
     /**
@@ -777,14 +775,14 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ConcreteChild038>();
-        let parentCls = childCls.getSuper();
-        expect(childCls.isAbstract()).assertFalse();
-        if (parentCls !== undefined) {
-          expect(parentCls.isAbstract()).assertTrue();
-        }
+      let parentCls = childCls.getSuper();
+      expect(childCls.isAbstract()).assertFalse();
+      if (parentCls !== undefined) {
+        expect(parentCls.isAbstract()).assertTrue();
+      }
     });
 
     /**
@@ -794,10 +792,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Factory039>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -807,10 +805,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteFactory040>();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -820,10 +818,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Template041>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -833,12 +831,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ifaceCls = Class.from<Strategy042>();
-        let absCls = Class.from<AbstractStrategy042>();
-        expect(ifaceCls.isInterface()).assertTrue();
-        expect(absCls.isAbstract()).assertTrue();
+      let absCls = Class.from<AbstractStrategy042>();
+      expect(ifaceCls.isInterface()).assertTrue();
+      expect(absCls.isAbstract()).assertTrue();
     });
 
     /**
@@ -848,12 +846,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let observerCls = Class.from<Observer043>();
-        let subjectCls = Class.from<Subject043>();
-        expect(observerCls.isAbstract()).assertTrue();
-        expect(subjectCls.isAbstract()).assertTrue();
+      let subjectCls = Class.from<Subject043>();
+      expect(observerCls.isAbstract()).assertTrue();
+      expect(subjectCls.isAbstract()).assertTrue();
     });
 
     /**
@@ -863,15 +861,15 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass044>();
-        let result1 = cls.isAbstract();
-        let result2 = cls.isAbstract();
-        let result3 = cls.isAbstract();
-        expect(result1).assertEqual(result2);
-        expect(result2).assertEqual(result3);
-        expect(result3).assertTrue();
+      let result1 = cls.isAbstract();
+      let result2 = cls.isAbstract();
+      let result3 = cls.isAbstract();
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result3).assertTrue();
     });
 
     /**
@@ -881,11 +879,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<AbstractClass045>();
-        let cls2 = Class.from<AbstractClass045>();
-        expect(cls1.isAbstract()).assertEqual(cls2.isAbstract());
+      let cls2 = Class.from<AbstractClass045>();
+      expect(cls1.isAbstract()).assertEqual(cls2.isAbstract());
     });
 
     /**
@@ -895,17 +893,17 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Array<Class> = new Array<Class>();
-        classes.push(Class.from<Abs1046>());
-        classes.push(Class.from<Abs2046>());
-        classes.push(Class.from<Concrete1046>());
-        classes.push(Class.from<Concrete2046>());
-        for (let i = 0; i < classes.length; i++) {
-          let result = classes[i].isAbstract();
-          expect(typeof result).assertEqual("boolean");
-        }
+      classes.push(Class.from<Abs1046>());
+      classes.push(Class.from<Abs2046>());
+      classes.push(Class.from<Concrete1046>());
+      classes.push(Class.from<Concrete2046>());
+      for (let i = 0; i < classes.length; i++) {
+        let result = classes[i].isAbstract();
+        expect(typeof result).assertEqual("boolean");
+      }
     });
 
     /**
@@ -915,10 +913,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicAbstract047>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -928,10 +926,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InnerAbstract048>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -941,12 +939,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Base049>().isAbstract()).assertTrue();
-        expect(Class.from<Middle049>().isAbstract()).assertTrue();
-        expect(Class.from<Top049>().isAbstract()).assertTrue();
-        expect(Class.from<Concrete049>().isAbstract()).assertFalse();
+      expect(Class.from<Middle049>().isAbstract()).assertTrue();
+      expect(Class.from<Top049>().isAbstract()).assertTrue();
+      expect(Class.from<Concrete049>().isAbstract()).assertFalse();
     });
 
     /**
@@ -956,11 +954,11 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractImpl050>();
-        expect(cls.isAbstract()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      expect(cls.isAbstract()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -970,11 +968,12 @@ export default function ClassIsAbstractTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsAbstract051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PartialImpl051>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
   });
 }
+
