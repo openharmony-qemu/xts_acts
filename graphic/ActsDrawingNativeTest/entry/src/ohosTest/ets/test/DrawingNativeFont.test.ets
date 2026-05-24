@@ -1617,7 +1617,7 @@ export default function DrawingNativeFontTest() {
      * @tc.size   SMALLTEST
      * @tc.level  LEVEL0
      */
-    it('testFontGetTextPathWit hFallbackNomal', Level.LEVEL0, () => {
+    it('testFontGetTextPathWithFallbackNomal', Level.LEVEL0, () => {
       const result = libDrawingNative.DrawingFontGetTextPathWithFallback(0);
       expect(result).assertEqual(0);
     })
