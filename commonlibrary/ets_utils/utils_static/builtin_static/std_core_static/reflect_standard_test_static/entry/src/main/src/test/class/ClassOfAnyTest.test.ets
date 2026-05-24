@@ -1013,139 +1013,136 @@ class LargeClass053 {
   public field886: int = 886;
   public field887: int = 887;
   public field888: int = 888;
-      public field887: int = 887;
-      public field888: int = 888;
-      public field889: int = 889;
-      public field890: int = 890;
-      public field891: int = 891;
-      public field892: int = 892;
-      public field893: int = 893;
-      public field894: int = 894;
-      public field895: int = 895;
-      public field896: int = 896;
-      public field897: int = 897;
-      public field898: int = 898;
-      public field899: int = 899;
-      public field900: int = 900;
-      public field901: int = 901;
-      public field902: int = 902;
-      public field903: int = 903;
-      public field904: int = 904;
-      public field905: int = 905;
-      public field906: int = 906;
-      public field907: int = 907;
-      public field908: int = 908;
-      public field909: int = 909;
-      public field910: int = 910;
-      public field911: int = 911;
-      public field912: int = 912;
-      public field913: int = 913;
-      public field914: int = 914;
-      public field915: int = 915;
-      public field916: int = 916;
-      public field917: int = 917;
-      public field918: int = 918;
-      public field919: int = 919;
-      public field920: int = 920;
-      public field921: int = 921;
-      public field922: int = 922;
-      public field923: int = 923;
-      public field924: int = 924;
-      public field925: int = 925;
-      public field926: int = 926;
-      public field927: int = 927;
-      public field928: int = 928;
-      public field929: int = 929;
-      public field930: int = 930;
-      public field931: int = 931;
-      public field932: int = 932;
-      public field933: int = 933;
-      public field934: int = 934;
-      public field935: int = 935;
-      public field936: int = 936;
-      public field937: int = 937;
-      public field938: int = 938;
-      public field939: int = 939;
-      public field940: int = 940;
-      public field941: int = 941;
-      public field942: int = 942;
-      public field943: int = 943;
-      public field944: int = 944;
-      public field945: int = 945;
-      public field946: int = 946;
-      public field947: int = 947;
-      public field948: int = 948;
-      public field949: int = 949;
-      public field950: int = 950;
-      public field951: int = 951;
-      public field952: int = 952;
-      public field953: int = 953;
-      public field954: int = 954;
-      public field955: int = 955;
-      public field956: int = 956;
-      public field957: int = 957;
-      public field958: int = 958;
-      public field959: int = 959;
-      public field960: int = 960;
-      public field961: int = 961;
-      public field962: int = 962;
-      public field963: int = 963;
-      public field964: int = 964;
-      public field965: int = 965;
-      public field966: int = 966;
-      public field967: int = 967;
-      public field968: int = 968;
-      public field969: int = 969;
-      public field970: int = 970;
-      public field971: int = 971;
-      public field972: int = 972;
-      public field973: int = 973;
-      public field974: int = 974;
-      public field975: int = 975;
-      public field976: int = 976;
-      public field977: int = 977;
-      public field978: int = 978;
-      public field979: int = 979;
-      public field980: int = 980;
-      public field981: int = 981;
-      public field982: int = 982;
-      public field983: int = 983;
-      public field984: int = 984;
-      public field985: int = 985;
-      public field986: int = 986;
-      public field987: int = 987;
-      public field988: int = 988;
-      public field989: int = 989;
-      public field990: int = 990;
-      public field991: int = 991;
-      public field992: int = 992;
-      public field993: int = 993;
-      public field994: int = 994;
-      public field995: int = 995;
-      public field996: int = 996;
-      public field997: int = 997;
-      public field998: int = 998;
-      public field999: int = 999;
-      public field1000: int = 1000;
-  }
+  public field889: int = 889;
+  public field890: int = 890;
+  public field891: int = 891;
+  public field892: int = 892;
+  public field893: int = 893;
+  public field894: int = 894;
+  public field895: int = 895;
+  public field896: int = 896;
+  public field897: int = 897;
+  public field898: int = 898;
+  public field899: int = 899;
+  public field900: int = 900;
+  public field901: int = 901;
+  public field902: int = 902;
+  public field903: int = 903;
+  public field904: int = 904;
+  public field905: int = 905;
+  public field906: int = 906;
+  public field907: int = 907;
+  public field908: int = 908;
+  public field909: int = 909;
+  public field910: int = 910;
+  public field911: int = 911;
+  public field912: int = 912;
+  public field913: int = 913;
+  public field914: int = 914;
+  public field915: int = 915;
+  public field916: int = 916;
+  public field917: int = 917;
+  public field918: int = 918;
+  public field919: int = 919;
+  public field920: int = 920;
+  public field921: int = 921;
+  public field922: int = 922;
+  public field923: int = 923;
+  public field924: int = 924;
+  public field925: int = 925;
+  public field926: int = 926;
+  public field927: int = 927;
+  public field928: int = 928;
+  public field929: int = 929;
+  public field930: int = 930;
+  public field931: int = 931;
+  public field932: int = 932;
+  public field933: int = 933;
+  public field934: int = 934;
+  public field935: int = 935;
+  public field936: int = 936;
+  public field937: int = 937;
+  public field938: int = 938;
+  public field939: int = 939;
+  public field940: int = 940;
+  public field941: int = 941;
+  public field942: int = 942;
+  public field943: int = 943;
+  public field944: int = 944;
+  public field945: int = 945;
+  public field946: int = 946;
+  public field947: int = 947;
+  public field948: int = 948;
+  public field949: int = 949;
+  public field950: int = 950;
+  public field951: int = 951;
+  public field952: int = 952;
+  public field953: int = 953;
+  public field954: int = 954;
+  public field955: int = 955;
+  public field956: int = 956;
+  public field957: int = 957;
+  public field958: int = 958;
+  public field959: int = 959;
+  public field960: int = 960;
+  public field961: int = 961;
+  public field962: int = 962;
+  public field963: int = 963;
+  public field964: int = 964;
+  public field965: int = 965;
+  public field966: int = 966;
+  public field967: int = 967;
+  public field968: int = 968;
+  public field969: int = 969;
+  public field970: int = 970;
+  public field971: int = 971;
+  public field972: int = 972;
+  public field973: int = 973;
+  public field974: int = 974;
+  public field975: int = 975;
+  public field976: int = 976;
+  public field977: int = 977;
+  public field978: int = 978;
+  public field979: int = 979;
+  public field980: int = 980;
+  public field981: int = 981;
+  public field982: int = 982;
+  public field983: int = 983;
+  public field984: int = 984;
+  public field985: int = 985;
+  public field986: int = 986;
+  public field987: int = 987;
+  public field988: int = 988;
+  public field989: int = 989;
+  public field990: int = 990;
+  public field991: int = 991;
+  public field992: int = 992;
+  public field993: int = 993;
+  public field994: int = 994;
+  public field995: int = 995;
+  public field996: int = 996;
+  public field997: int = 997;
+  public field998: int = 998;
+  public field999: int = 999;
+  public field1000: int = 1000;
+}
 
 class Level3054 {
-    public value: int = 100
-  }
+  public value: int = 100
+}
 
 class Level2054 {
-    public level3: Level3054 = new Level3054()
-  }
+  public level3: Level3054 = new Level3054()
+}
 
 class Level1054 {
-    public level2: Level2054 = new Level2054()
-  }
+  public level2: Level2054 = new Level2054()
+}
 
 class PersonAny014 {
-    public name: string = 'Alice'
-    public age: int = 30
-  }
-
+  public name: string = 'Alice'
+  public age: int = 30
+}
 
 export default function ClassOfAnyTest(): void {
   describe('ClassOfAnyTest', (): void => {
@@ -1166,11 +1163,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual("entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass")
     });
 
     /**
@@ -1180,7 +1178,7 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.ofAny(undefined as Any);
       expect(cls).assertUndefined();
@@ -1192,11 +1190,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass004()
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'MyClass004')).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass004')
     });
 
     /**
@@ -1206,11 +1204,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>()
-        let cls = Class.ofAny(obj)
-        expect(cls!.getName()).assertEqual('std.core.Map')
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('std.core.Map')
     });
 
     /**
@@ -1220,11 +1218,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Array<int>()
-        let cls = Class.ofAny(obj)
-        expect(cls!.getName()).assertEqual('std.core.Array')
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('std.core.Array')
     });
 
     /**
@@ -1234,11 +1232,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Set<string>()
-        let cls = Class.ofAny(obj)
-        expect(cls!.getName()).assertEqual('std.core.Set')
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('std.core.Set')
     });
 
     /**
@@ -1248,11 +1246,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = 'hello'
-        let cls = Class.ofAny(obj)
-        expect(cls !== undefined && cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('std.core.String')
     });
 
     /**
@@ -1262,11 +1261,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = 123
-        let cls = Class.ofAny(obj)
-        expect(cls !== undefined && cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), 'int')).assertTrue()
     });
 
     /**
@@ -1276,11 +1276,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = true
-        let cls = Class.ofAny(obj)
-        expect(cls !== undefined && cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), 'boolean')).assertTrue()
     });
 
     /**
@@ -1290,11 +1291,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = null
-        let cls = Class.ofAny(obj)
-        expect(cls !== undefined && cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual(Class.of(null).getName())
     });
 
     /**
@@ -1304,11 +1306,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = undefined
-        let cls = Class.ofAny(obj)
-        expect(cls).assertUndefined()
+      let cls = Class.ofAny(obj)
+      expect(cls).assertUndefined()
     });
 
     /**
@@ -1318,11 +1320,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Object() as Any
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('std.core.Object')
     });
 
     /**
@@ -1332,12 +1335,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new PersonAny014() as Any;
-        let cls = Class.ofAny(obj);
-        expect(cls !== undefined && cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls!.getName(), 'PersonAny014')).assertTrue();
+      let cls = Class.ofAny(obj);
+      expect(cls !== undefined && cls !== null).assertTrue();
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.PersonAny014');
     });
 
     /**
@@ -1347,12 +1350,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new FixedArray<int>(3)
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
-        expect(cls!.isFixedArray()).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.isFixedArray()).assertTrue()
     });
 
     /**
@@ -1362,11 +1365,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = TestEnum016.CLASS
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.isEnum()).assertTrue()
+      expect(Utils.classNameMatches(cls!.getName(), 'TestEnum016')).assertTrue()
     });
 
     /**
@@ -1376,11 +1381,15 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = myFunc017
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.isEnum()).assertFalse()
+      expect(cls!.isAbstract()).assertFalse()
+      let clsAgain = Class.ofAny(obj)
+      expect(clsAgain!.getName()).assertEqual(cls!.getName())
     });
 
     /**
@@ -1390,12 +1399,15 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrowFunc = () => {}
-        let obj: Any = arrowFunc
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let obj: Any = arrowFunc
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.isEnum()).assertFalse()
+      let clsAgain = Class.ofAny(obj)
+      expect(clsAgain!.getName()).assertEqual(cls!.getName())
     });
 
     /**
@@ -1405,12 +1417,15 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let asyncFunc = async (): Promise<void> => {}
-        let obj: Any = asyncFunc
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let obj: Any = asyncFunc
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(reflect.isFuncObjAsync(asyncFunc)).assertTrue()
+      let clsAgain = Class.ofAny(obj)
+      expect(clsAgain!.getName()).assertEqual(cls!.getName())
     });
 
     /**
@@ -1420,11 +1435,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsObj: Any = new MyClass()
-        let cls = Class.ofAny(clsObj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(clsObj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
 
     /**
@@ -1434,15 +1450,15 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = Class.from<Target021>().getLinker()
-        let handler = new MyHandler021(new Target021())
-        let interfaces = [Class.from<MyInterface021>()] as FixedArray<Class>
-        let proxyObj = reflect.Proxy.create(linker, interfaces, handler)
-        let cls = Class.ofAny(proxyObj)
-        expect(cls !== null).assertTrue()
-        expect(reflect.Proxy.isProxyClass(cls!)).assertTrue()
+      let handler = new MyHandler021(new Target021())
+      let interfaces = [Class.from<MyInterface021>()] as FixedArray<Class>
+      let proxyObj = reflect.Proxy.create(linker, interfaces, handler)
+      let cls = Class.ofAny(proxyObj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(reflect.Proxy.isProxyClass(cls!)).assertTrue()
     });
 
     /**
@@ -1452,12 +1468,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new TestClass022()
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
-        expect(Utils.classNameMatches(cls!.getName(), 'TestClass022')).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.TestClass022')
     });
 
     /**
@@ -1467,11 +1483,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyCustomClass023()
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'MyCustomClass023')).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyCustomClass023')
     });
 
     /**
@@ -1481,13 +1497,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new DerivedClass024()
-        let cls = Class.ofAny(obj)
-        let superCls = cls!.getSuper()
-        expect(superCls !== null).assertTrue()
-        expect(Utils.classNameMatches(superCls!.getName(), 'BaseClass024')).assertTrue()
+      let cls = Class.ofAny(obj)
+      let superCls = cls!.getSuper()
+      expect(superCls !== null).assertTrue()
+      expect(superCls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.BaseClass024')
     });
 
     /**
@@ -1497,14 +1513,14 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.ofAny(undefined as Any)).assertUndefined()
 
-        let obj4: Any = new MyClass()
-        let cls4 = Class.ofAny(obj4)
-        expect(cls4 !== undefined && cls4 !== null).assertTrue()
-        expect(Utils.classNameMatches(cls4!.getName(), 'MyClass')).assertTrue()
+      let obj4: Any = new MyClass()
+      let cls4 = Class.ofAny(obj4)
+      expect(cls4 !== undefined && cls4 !== null).assertTrue()
+      expect(cls4!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
 
     /**
@@ -1514,15 +1530,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>()
-        let result: Class | undefined = Class.ofAny(obj)
-        if (result !== undefined) {
-          expect(result.getName()).assertEqual('std.core.Map')
-        } else {
-          expect().assertFail()
-        }
+      let result: Class | undefined = Class.ofAny(obj)
+      expect(result !== undefined).assertTrue();
+      expect(result!.getName()).assertEqual('std.core.Map')
     });
 
     /**
@@ -1532,16 +1545,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        let cls = Class.ofAny(obj)
-        if (cls !== undefined) {
-          expect(typeof cls).assertEqual('object')
-          expect(cls.getName().length).assertLarger(0)
-        } else {
-          expect().assertFail()
-        }
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined).assertTrue();
+      expect(typeof cls).assertEqual('object')
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
 
     /**
@@ -1551,16 +1561,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Array<string>()
-        let cls = Class.ofAny(obj)
-        if (cls !== undefined) {
-          expect(cls.getSuper() !== undefined && cls.getSuper() !== null).assertTrue()
-          expect(cls.getName().length).assertLarger(0)
-        } else {
-          expect().assertFail()
-        }
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined).assertTrue();
+      expect(cls!.getSuper() !== undefined && cls!.getSuper() !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('std.core.Array')
     });
 
     /**
@@ -1570,18 +1577,15 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        let cls = Class.ofAny(obj)
-        if (cls !== undefined) {
-          expect(cls.getName().length).assertLarger(0)
-          expect(cls.getSuper() !== undefined && cls.getSuper() !== null).assertTrue()
-          expect(cls.isSubtypeOf(cls)).assertTrue()
-          expect(cls.getInterfaces() !== undefined && cls.getInterfaces() !== null).assertTrue()
-        } else {
-          expect().assertFail()
-        }
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined).assertTrue();
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
+      expect(cls!.getSuper() !== undefined && cls!.getSuper() !== null).assertTrue()
+      expect(cls!.isSubtypeOf(cls!)).assertTrue()
+      expect(cls!.getInterfaces() !== undefined && cls!.getInterfaces() !== null).assertTrue()
     });
 
     /**
@@ -1591,14 +1595,14 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        let cls1 = Class.ofAny(obj)
-        let cls2 = Class.ofAny(obj)
-        expect(cls1 !== null).assertTrue()
-        expect(cls2 !== null).assertTrue()
-        expect(cls1!.getName()).assertEqual(cls2!.getName())
+      let cls1 = Class.ofAny(obj)
+      let cls2 = Class.ofAny(obj)
+      expect(cls1 !== undefined && cls1 !== null).assertTrue()
+      expect(cls2 !== undefined && cls2 !== null).assertTrue()
+      expect(cls1!.getName()).assertEqual(cls2!.getName())
     });
 
     /**
@@ -1608,13 +1612,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1: Any = new ClassA031()
-        let obj2: Any = new ClassB031()
-        let cls1 = Class.ofAny(obj1)
-        let cls2 = Class.ofAny(obj2)
-        expect(cls1!.getName() !== cls2!.getName()).assertTrue();
+      let obj2: Any = new ClassB031()
+      let cls1 = Class.ofAny(obj1)
+      let cls2 = Class.ofAny(obj2)
+      expect(cls1!.getName() !== cls2!.getName()).assertTrue();
     });
 
     /**
@@ -1624,11 +1628,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new LargeClass053();
-        let cls = Class.ofAny(obj);
-        expect(cls !== undefined && cls !== null).assertTrue();
+      let cls = Class.ofAny(obj);
+      expect(cls !== undefined && cls !== null).assertTrue();
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.LargeClass053');
     });
 
     /**
@@ -1638,15 +1643,16 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let node1 = new Node034()
-        let node2 = new Node034()
-        node1.next = node2
-        node2.next = node1
-        let obj: Any = node1
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let node2 = new Node034()
+      node1.next = node2
+      node2.next = node1
+      let obj: Any = node1
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.Node034')
     });
 
     /**
@@ -1656,12 +1662,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        obj = null as Any
-        let cls = Class.ofAny(obj)
-        expect(cls !== undefined && cls !== null).assertTrue()
+      obj = null as Any
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual(Class.of(null).getName())
     });
 
     /**
@@ -1671,11 +1678,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let obj: Any = new MyClass()
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let obj: Any = new MyClass()
+      let ofAnyFn = Class.ofAny
+      let cls = ofAnyFn(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3800
@@ -1684,15 +1693,17 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let anyObj: Any = new MyClass()
-        let cls1 = Class.ofAny(anyObj)
-        expect(cls1 !== null).assertTrue()
+      let anyObj: Any = new MyClass()
+      let cls1 = Class.ofAny(anyObj)
+      expect(cls1 !== undefined && cls1 !== null).assertTrue()
+      expect(cls1!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
 
-        let obj: Object = new MyClass()
-        let cls2 = Class.of(obj)
-        expect(cls2 !== null).assertTrue()
+      let obj: Object = new MyClass()
+      let cls2 = Class.of(obj)
+      expect(cls2 !== null).assertTrue()
+      expect(cls2.getName()).assertEqual(cls1!.getName())
     });
 
     /**
@@ -1702,14 +1713,16 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let nullObj: Any = null
-        let result1 = Class.ofAny(nullObj)
-        expect(result1 !== undefined && result1 !== null).assertTrue()
+      let nullObj: Any = null
+      let result1 = Class.ofAny(nullObj)
+      expect(result1 !== undefined && result1 !== null).assertTrue()
+      expect(result1!.getName()).assertEqual(Class.of(null).getName())
 
-        let result2 = Class.of(null)
-        expect(result2 !== null).assertTrue()
+      let result2 = Class.of(null)
+      expect(result2 !== null).assertTrue()
+      expect(result2.getName()).assertEqual(result1!.getName())
     });
 
     /**
@@ -1719,17 +1732,14 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-
-
-
-        let testObj: Any = new MyClass()
-        let cls1 = getClassFromAny040(testObj)
-        let cls2 = getClassFromObject040(testObj as Object)
-        expect(cls1 !== null).assertTrue()
-        expect(cls2 !== null).assertTrue()
+      let testObj: Any = new MyClass()
+      let cls1 = getClassFromAny040(testObj)
+      let cls2 = getClassFromObject040(testObj as Object)
+      expect(cls1 !== undefined && cls1 !== null).assertTrue()
+      expect(cls2 !== null).assertTrue()
+      expect(cls1!.getName()).assertEqual(cls2.getName())
     });
 
     /**
@@ -1739,14 +1749,14 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let obj: Any = new Map<int, string>()
-        let cls1 = Class.ofAny(obj)
-        expect(cls1!.getName()).assertEqual('std.core.Map')
+      let obj: Any = new Map<int, string>()
+      let cls1 = Class.ofAny(obj)
+      expect(cls1!.getName()).assertEqual('std.core.Map')
 
-        let cls2 = Class.from<Map<int, string>>()
-        expect(cls2.getName()).assertEqual('std.core.Map')
+      let cls2 = Class.from<Map<int, string>>()
+      expect(cls2.getName()).assertEqual('std.core.Map')
     });
 
     /**
@@ -1756,14 +1766,14 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<MyClass>()
+      let cls = Class.from<MyClass>()
 
-        let obj: Any = new MyClass()
-        let cls2 = Class.ofAny(obj)
+      let obj: Any = new MyClass()
+      let cls2 = Class.ofAny(obj)
 
-        expect(cls.getName()).assertEqual(cls2!.getName())
+      expect(cls.getName()).assertEqual(cls2!.getName())
     });
 
     /**
@@ -1773,12 +1783,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new GenericClass043<int>(100)
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
-        expect(cls!.getName()).assertContain('GenericClass043')
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.GenericClass043')
     });
 
     /**
@@ -1788,13 +1798,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1: Any = new GenericClass043<int>(100)
-        let obj2: Any = new GenericClass043<string>('test')
-        let cls1 = Class.ofAny(obj1)
-        let cls2 = Class.ofAny(obj2)
-        expect(cls1!.getName()).assertEqual(cls2!.getName())
+      let obj2: Any = new GenericClass043<string>('test')
+      let cls1 = Class.ofAny(obj1)
+      let cls2 = Class.ofAny(obj2)
+      expect(cls1!.getName()).assertEqual(cls2!.getName())
     });
 
     /**
@@ -1804,11 +1814,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Child045()
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'Child045')).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.Child045')
     });
 
     /**
@@ -1818,12 +1828,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentRef: Parent046 = new Child046()
-        let obj: Any = parentRef
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'Child046')).assertTrue()
+      let obj: Any = parentRef
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.Child046')
     });
 
     /**
@@ -1833,13 +1843,13 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new ImplementClass047()
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'ImplementClass047')).assertTrue()
-        let interfaces = cls!.getInterfaces()
-        expect(interfaces.length).assertLarger(0)
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.ImplementClass047')
+      let interfaces = cls!.getInterfaces()
+      expect(interfaces.length).assertLarger(0)
     });
 
     /**
@@ -1849,12 +1859,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MultiImpl048()
-        let cls = Class.ofAny(obj)
-        let interfaces = cls!.getInterfaces()
-        expect(interfaces.length).assertEqual(2)
+      let cls = Class.ofAny(obj)
+      let interfaces = cls!.getInterfaces()
+      expect(interfaces.length).assertEqual(2)
     });
 
     /**
@@ -1864,17 +1874,17 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let unionVar: int | string = 100
-        let obj1: Any = unionVar
-        let cls1 = Class.ofAny(obj1)
+      let obj1: Any = unionVar
+      let cls1 = Class.ofAny(obj1)
 
-        unionVar = 'test'
-        let obj2: Any = unionVar
-        let cls2 = Class.ofAny(obj2)
+      unionVar = 'test'
+      let obj2: Any = unionVar
+      let cls2 = Class.ofAny(obj2)
 
-        expect(cls1 !== cls2).assertTrue();
+      expect(cls1 !== cls2).assertTrue();
     });
 
     /**
@@ -1884,12 +1894,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let anyObj: Any = new MyClass()
-        let cls = Class.ofAny(anyObj)
-        expect(cls !== undefined && cls !== null).assertTrue()
-        expect(Utils.classNameMatches(cls!.getName(), 'MyClass')).assertTrue()
+      let cls = Class.ofAny(anyObj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
 
     /**
@@ -1899,21 +1909,20 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let objects: Array<Any> = []
-        for (let i = 0; i < 1000; i++) {
-          objects.push(new MyClass())
-        }
+      let objects: Array<Any> = []
+      for (let i = 0; i < 1000; i++) {
+        objects.push(new MyClass())
+      }
 
-        let startTime = Date.now()
-        for (let obj of objects) {
-          let cls = Class.ofAny(obj)
-          expect(cls !== null).assertTrue()
-        }
-        let endTime = Date.now()
+      for (let obj of objects) {
+        let cls = Class.ofAny(obj)
+        expect(cls !== undefined && cls !== null).assertTrue()
+      }
 
-        console.info(`ofAny perf: ${endTime - startTime}ms`)
+      let sampleCls = Class.ofAny(objects[0])
+      expect(sampleCls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
     });
 
     /**
@@ -1923,16 +1932,16 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
 
-        let cls1 = Class.ofAny(obj)
+      let cls1 = Class.ofAny(obj)
 
-        for (let i = 0; i < 100; i++) {
-          let cls = Class.ofAny(obj)
-          expect(cls!.getName()).assertEqual(cls1!.getName())
-        }
+      for (let i = 0; i < 100; i++) {
+        let cls = Class.ofAny(obj)
+        expect(cls!.getName()).assertEqual(cls1!.getName())
+      }
     });
 
     /**
@@ -1942,11 +1951,12 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new LargeClass053()
-        let cls = Class.ofAny(obj)
-        expect(cls !== null).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls !== undefined && cls !== null).assertTrue()
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.LargeClass053')
     });
 
     /**
@@ -1956,11 +1966,11 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Level1054()
-        let cls = Class.ofAny(obj)
-        expect(Utils.classNameMatches(cls!.getName(), 'Level1054')).assertTrue()
+      let cls = Class.ofAny(obj)
+      expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.Level1054')
     });
 
     /**
@@ -1970,14 +1980,16 @@ export default function ClassOfAnyTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassOfAny055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new MyClass()
-        for (let i = 0; i < 10; i++) {
-          let cls = Class.ofAny(obj)
-          expect(cls !== null).assertTrue()
-        }
+      for (let i = 0; i < 10; i++) {
+        let cls = Class.ofAny(obj)
+        expect(cls !== undefined && cls !== null).assertTrue()
+        expect(cls!.getName()).assertEqual('entry.src.main.src.test.class.ClassOfAnyTest.test.MyClass')
+      }
     });
 
   });
 }
+
