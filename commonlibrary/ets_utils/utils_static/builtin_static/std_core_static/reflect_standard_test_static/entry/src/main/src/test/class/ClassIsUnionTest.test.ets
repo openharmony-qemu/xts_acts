@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -25,18 +24,17 @@ class MyClass008 {}
 interface MyInterface009 {}
 
 enum TestEnum012 {
-    VALUE1,
-    VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 function getValue044(): int | string {
-    return 42;
-  }
+  return 42;
+}
 
 class MyClass045 {
-    public value: int | string = 0
-  }
-
+  public value: int | string = 0
+}
 
 export default function ClassIsUnionTest(): void {
   describe('ClassIsUnionTest', (): void => {
@@ -57,11 +55,11 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        let result = cls.isUnion();
-        expect(result).assertTrue();
+      let result = cls.isUnion();
+      expect(result).assertTrue();
     });
 
     /**
@@ -71,10 +69,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -84,12 +82,12 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let obj: int | string = 42;
-        let cls = Class.ofAny(obj);
-        expect(cls !== undefined).assertTrue();
-        expect(typeof cls!.isUnion()).assertEqual("boolean");
+      let obj: int | string = 42;
+      let cls = Class.ofAny(obj);
+      expect(cls !== undefined).assertTrue();
+      expect(typeof cls!.isUnion()).assertEqual("boolean");
     });
 
     /**
@@ -99,10 +97,12 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
+      let result = cls.isUnion();
+      expect(typeof result).assertEqual("boolean");
+      expect(result).assertTrue();
     });
 
     /**
@@ -112,10 +112,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | boolean>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -125,10 +125,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int> | Map<string, int> | Set<double>>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -138,10 +138,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -151,10 +151,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -164,10 +164,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface009>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -177,10 +177,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -190,10 +190,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -203,10 +203,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum012>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -216,10 +216,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<int>();
-        expect(cls.isUnion()).assertFalse();
+      let cls = Class.from<int | int>();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -229,10 +229,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | null>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -242,10 +242,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<string | undefined>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -255,10 +255,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | undefined>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -268,11 +268,11 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        let result = cls.isUnion();
-        expect(typeof result).assertEqual("boolean");
+      let result = cls.isUnion();
+      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -282,15 +282,14 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        if (cls.isUnion()) {
-          let name = cls.getName();
-          expect(name).assertContain("{U");
-          expect(name).assertContain("std.core.Int");
-          expect(name).assertContain("std.core.String");
-        }
+      expect(cls.isUnion()).assertTrue();
+      let name = cls.getName();
+      expect(name).assertContain("{U");
+      expect(name).assertContain("std.core.Int");
+      expect(name).assertContain("std.core.String");
     });
 
     /**
@@ -300,10 +299,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -313,11 +312,11 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<int | string>();
-        cls.initialize();
-        expect(cls.isUnion()).assertTrue();
+      let cls = Class.from<int | string>();
+      cls.initialize();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -327,13 +326,13 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<int | long>();
-        expect(cls1.isUnion()).assertTrue();
+      expect(cls1.isUnion()).assertTrue();
 
-        let cls2 = Class.from<byte | short>();
-        expect(cls2.isUnion()).assertTrue();
+      let cls2 = Class.from<byte | short>();
+      expect(cls2.isUnion()).assertTrue();
     });
 
     /**
@@ -343,13 +342,13 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<float | double>();
-        expect(cls1.isUnion()).assertTrue();
+      expect(cls1.isUnion()).assertTrue();
 
-        let cls2 = Class.from<number | double>();
-        expect(cls2.isUnion()).assertFalse();
+      let cls2 = Class.from<number | double>();
+      expect(cls2.isUnion()).assertFalse();
     });
 
     /**
@@ -359,10 +358,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean | int>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -372,10 +371,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int> | Array<string>>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -385,10 +384,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, string> | Map<string, int>>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -398,10 +397,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<int> | Set<double>>();
-        expect(cls.isUnion()).assertFalse();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -411,13 +410,13 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<int | Array<string>>();
-        expect(cls1.isUnion()).assertTrue();
+      expect(cls1.isUnion()).assertTrue();
 
-        let cls2 = Class.from<string | Map<int, double>>();
-        expect(cls2.isUnion()).assertTrue();
+      let cls2 = Class.from<string | Map<int, double>>();
+      expect(cls2.isUnion()).assertTrue();
     });
 
     /**
@@ -427,10 +426,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<int | string | boolean>();
-        expect(cls.isUnion()).assertTrue();
+      let cls = Class.from<int | string | boolean>();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -440,10 +439,10 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | Array<int> | Map<string, double>>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -453,16 +452,13 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | boolean>();
-        if (cls.isUnion()) {
-          let types = cls.getUnionConstituentTypes();
-          expect(types !== undefined).assertTrue();
-          if (types !== undefined) {
-            expect(types.length).assertEqual(3);
-          }
-        }
+      expect(cls.isUnion()).assertTrue();
+      let types = cls.getUnionConstituentTypes();
+      expect(types !== undefined).assertTrue();
+      expect(types!.length).assertEqual(3);
     });
 
     /**
@@ -472,13 +468,11 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        if (!cls.isUnion()) {
-          let types = cls.getUnionConstituentTypes();
-          expect(types).assertUndefined();
-        }
+      expect(cls.isUnion()).assertFalse();
+      expect(cls.getUnionConstituentTypes()).assertUndefined();
     });
 
     /**
@@ -488,298 +482,295 @@ export default function ClassIsUnionTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsUnion033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        if (cls.isUnion()) {
-          let name = cls.getName();
-          expect(name.indexOf("{U") === 0).assertTrue();
-          expect(name.indexOf("}") >= 0).assertTrue();
-        }
+      expect(cls.isUnion()).assertTrue();
+      let name = cls.getName();
+      expect(name.indexOf("{U") === 0).assertTrue();
+      expect(name.indexOf("}") >= 0).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3400
      * @tc.name testClassIsUnion034
      * @tc.desc Verify ClassIsUnion case 034: verify type getNamenot {U
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int>();
-        if (!cls.isUnion()) {
-          let name = cls.getName();
-          expect(name.indexOf("{U")).assertEqual(-1);
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3500
-     * @tc.name testClassIsUnion035
-     * @tc.desc Verify ClassIsUnion case 035: type not interface type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3600
-     * @tc.name testClassIsUnion036
-     * @tc.desc Verify ClassIsUnion case 036: type not type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.isEnum()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3700
-     * @tc.name testClassIsUnion037
-     * @tc.desc Verify ClassIsUnion case 037: type not type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.isPrimitive()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3800
-     * @tc.name testClassIsUnion038
-     * @tc.desc Verify ClassIsUnion case 038: type not array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.isFixedArray()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3900
-     * @tc.name testClassIsUnion039
-     * @tc.desc Verify ClassIsUnion case 039: eight-type union isUnion with eight constituents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string | boolean | double | float | long | byte | short>();
-        expect(cls.isUnion()).assertTrue();
-        let types = cls.getUnionConstituentTypes();
-        if (types !== undefined) {
-          expect(types.length).assertEqual(8);
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4000
-     * @tc.name testClassIsUnion040
-     * @tc.desc Verify ClassIsUnion case 040: int|string union isUnion with two constituents
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        let types = cls.getUnionConstituentTypes();
-        if (types !== undefined) {
-          expect(types.length).assertEqual(2);
-        }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4100
-     * @tc.name testClassIsUnion041
-     * @tc.desc Verify ClassIsUnion case 041: void type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | void>();
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int>();
         expect(cls.isUnion()).assertFalse();
-    });
+        let name = cls.getName();
+        expect(name.indexOf("{U")).assertEqual(-1);
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4200
-     * @tc.name testClassIsUnion042
-     * @tc.desc Verify ClassIsUnion case 042: never type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<int | never>();
-        expect(cls.isUnion()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4300
-     * @tc.name testClassIsUnion043
-     * @tc.desc Verify ClassIsUnion case 043: parameters type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4400
-     * @tc.name testClassIsUnion044
-     * @tc.desc Verify ClassIsUnion case 044: return type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-        expect(getValue044()).assertEqual(42);
-        expect(cls.isUnion()).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4500
-     * @tc.name testClassIsUnion045
-     * @tc.desc Verify ClassIsUnion case 045: property using type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3500
+       * @tc.name testClassIsUnion035
+       * @tc.desc Verify ClassIsUnion case 035: type not interface type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         let cls = Class.from<int | string>();
         expect(cls.isUnion()).assertTrue();
-    });
+        expect(cls.isInterface()).assertFalse();
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4600
-     * @tc.name testClassIsUnion046
-     * @tc.desc Verify ClassIsUnion case 046: Class object call isUnion returns same
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3600
+       * @tc.name testClassIsUnion036
+       * @tc.desc Verify ClassIsUnion case 036: type not type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+        expect(cls.isEnum()).assertFalse();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3700
+       * @tc.name testClassIsUnion037
+       * @tc.desc Verify ClassIsUnion case 037: type not type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+        expect(cls.isPrimitive()).assertFalse();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3800
+       * @tc.name testClassIsUnion038
+       * @tc.desc Verify ClassIsUnion case 038: type not array
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+        expect(cls.isFixedArray()).assertFalse();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_3900
+       * @tc.name testClassIsUnion039
+       * @tc.desc Verify ClassIsUnion case 039: eight-type union isUnion with eight constituents
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string | boolean | double | float | long | byte | short>();
+        expect(cls.isUnion()).assertTrue();
+        let types = cls.getUnionConstituentTypes();
+        expect(types !== undefined).assertTrue();
+        expect(types!.length).assertEqual(8);
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4000
+       * @tc.name testClassIsUnion040
+       * @tc.desc Verify ClassIsUnion case 040: int|string union isUnion with two constituents
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+        let types = cls.getUnionConstituentTypes();
+        expect(types !== undefined).assertTrue();
+        expect(types!.length).assertEqual(2);
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4100
+       * @tc.name testClassIsUnion041
+       * @tc.desc Verify ClassIsUnion case 041: void type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | void>();
+        expect(cls.isUnion()).assertFalse();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4200
+       * @tc.name testClassIsUnion042
+       * @tc.desc Verify ClassIsUnion case 042: never type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | never>();
+        expect(cls.isUnion()).assertFalse();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4300
+       * @tc.name testClassIsUnion043
+       * @tc.desc Verify ClassIsUnion case 043: parameters type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4400
+       * @tc.name testClassIsUnion044
+       * @tc.desc Verify ClassIsUnion case 044: return type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(getValue044()).assertEqual(42);
+        expect(cls.isUnion()).assertTrue();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4500
+       * @tc.name testClassIsUnion045
+       * @tc.desc Verify ClassIsUnion case 045: property using type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
+        expect(cls.isUnion()).assertTrue();
+      });
+
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4600
+       * @tc.name testClassIsUnion046
+       * @tc.desc Verify ClassIsUnion case 046: Class object call isUnion returns same
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<int | string>();
         let result1 = cls.isUnion();
         let result2 = cls.isUnion();
         let result3 = cls.isUnion();
         expect(result1).assertEqual(result2);
         expect(result2).assertEqual(result3);
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4700
-     * @tc.name testClassIsUnion047
-     * @tc.desc Verify ClassIsUnion case 047: multiple different Class object when call isUnion()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<int | string>();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4700
+       * @tc.name testClassIsUnion047
+       * @tc.desc Verify ClassIsUnion case 047: multiple different Class object when call isUnion()
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls1 = Class.from<int | string>();
         let cls2 = Class.from<boolean | double>();
         let cls3 = Class.from<Array<int> | Map<string, int>>();
 
         expect(cls1.isUnion()).assertTrue();
         expect(cls2.isUnion()).assertTrue();
         expect(cls3.isUnion()).assertTrue();
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4800
-     * @tc.name testClassIsUnion048
-     * @tc.desc Verify ClassIsUnion case 048: using typeof type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let value: int | string = 42;
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4800
+       * @tc.name testClassIsUnion048
+       * @tc.desc Verify ClassIsUnion case 048: using typeof type
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let value: int | string = 42;
         let cls = Class.from<int | string>();
         expect(value).assertEqual(42);
         expect(cls.isUnion()).assertTrue();
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4900
-     * @tc.name testClassIsUnion049
-     * @tc.desc Verify ClassIsUnion case 049: string|boolean union isUnion true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<string | boolean>();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_4900
+       * @tc.name testClassIsUnion049
+       * @tc.desc Verify ClassIsUnion case 049: string|boolean union isUnion true
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls = Class.from<string | boolean>();
         expect(cls.isUnion()).assertTrue();
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5000
-     * @tc.name testClassIsUnion050
-     * @tc.desc Verify ClassIsUnion case 050: int and string Classes subtype of int|string union
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let unionCls = Class.from<int | string>();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5000
+       * @tc.name testClassIsUnion050
+       * @tc.desc Verify ClassIsUnion case 050: int and string Classes subtype of int|string union
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let unionCls = Class.from<int | string>();
         let intCls = Class.from<int>();
         let stringCls = Class.from<string>();
 
         expect(intCls.isSubtypeOf(unionCls)).assertTrue();
         expect(stringCls.isSubtypeOf(unionCls)).assertTrue();
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5100
-     * @tc.name testClassIsUnion051
-     * @tc.desc Verify ClassIsUnion case 051: narrower union isSubtypeOf wider union
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<int | string>();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5100
+       * @tc.name testClassIsUnion051
+       * @tc.desc Verify ClassIsUnion case 051: narrower union isSubtypeOf wider union
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        let cls1 = Class.from<int | string>();
         let cls2 = Class.from<int | string | boolean>();
 
         expect(cls1.isSubtypeOf(cls2)).assertTrue();
-    });
+      });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5200
-     * @tc.name testClassIsUnion052
-     * @tc.desc Verify ClassIsUnion case 052: isUnion()method in scenario not throw error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsUnion052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<int | string>().isUnion()).assertTrue();
+      /**
+       * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_5200
+       * @tc.name testClassIsUnion052
+       * @tc.desc Verify ClassIsUnion case 052: isUnion()method in scenario not throw error
+       * @tc.size MediumTest
+       * @tc.type Function
+       * @tc.level Level 2
+      */
+      it('testClassIsUnion052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+        expect(Class.from<int | string>().isUnion()).assertTrue();
         expect(Class.from<boolean | double>().isUnion()).assertTrue();
         expect(Class.from<Array<int> | Map<string, int>>().isUnion()).assertTrue();
         expect(Class.from<int>().isUnion()).assertFalse();
         expect(Class.from<MyClass001>().isUnion()).assertFalse();
-    });
+      });
 
-  });
-}
+    });
+  }
+
