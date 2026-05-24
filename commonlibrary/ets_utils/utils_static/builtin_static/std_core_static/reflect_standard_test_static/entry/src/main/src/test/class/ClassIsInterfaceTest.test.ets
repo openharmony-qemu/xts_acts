@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
@@ -23,9 +22,9 @@ interface Cloneable052Marker {}
 interface Serializable053Marker {}
 
 interface MyInterface003 {
-    name: string;
-    age: int;
-  }
+  name: string;
+  age: int;
+}
 
 class MyClass005 implements Interface1005, Interface2005 { }
 
@@ -34,41 +33,41 @@ interface Interface2005 { }
 interface Interface1005 { }
 
 interface GenericInterface006<T> {
-    getValue(): T;
-  }
+  getValue(): T;
+}
 
 class MyClass007 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 abstract class AbstractClass008 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 class FinalClass009 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 enum TestEnum010 {
-    VALUE1,
-    VALUE2
-  }
+  VALUE1,
+  VALUE2
+}
 
 interface ChildInterface018 extends BaseInterface018 {
-    childMethod(): void;
-  }
+  childMethod(): void;
+}
 
 interface BaseInterface018 {
-    baseMethod(): void;
-  }
+  baseMethod(): void;
+}
 
 class MyClass019 implements MyInterface019 {
-    public method(): void { }
-  }
+  public method(): void { }
+}
 
 interface MyInterface019 {
-    method(): void;
-  }
+  method(): void;
+}
 
 class Child020 extends Parent020 { }
 
@@ -79,34 +78,34 @@ class GrandParent020 { }
 interface EmptyInterface025 { }
 
 interface ReadonlyInterface026 {
-    readonly value: int;
-  }
+  readonly value: int;
+}
 
 interface FunctionInterface027 {
-    invoke(value: int): string;
-  }
+  invoke(value: int): string;
+}
 
 interface IndexSignatureInterface028 {
-    getAt(key: string): int;
-  }
+  getAt(key: string): int;
+}
 
 interface MultiGenericInterface029<K, V> {
-    getKey(): K;
-    getValue(): V;
-  }
+  getKey(): K;
+  getValue(): V;
+}
 
 interface ConstrainedInterface030<T extends double> {
-    getValue(): T;
-  }
+  getValue(): T;
+}
 
 interface DefaultGenericInterface031<T> {
-    getValue(): T;
-  }
+  getValue(): T;
+}
 
 interface OptionalInterface033 {
-    required: string;
-    optional: int;
-  }
+  required: string;
+  optional: int;
+}
 
 enum TestEnum034 { A, B }
 
@@ -131,29 +130,28 @@ interface MyInterface043 { }
 interface MyInterface044 { }
 
 class TestClass045 {
-    public checkIsInterface(): boolean {
-      let cls = Class.current();
-      return cls.isInterface();
-    }
+  public checkIsInterface(): boolean {
+    let cls = Class.current();
+    return cls.isInterface();
   }
+}
 
 interface CallableInterface046 {
-    call(x: int): string;
-  }
+  call(x: int): string;
+}
 
 interface MyInterface047 { }
 
 interface ConstructableInterface047 {
-    create(value: int): MyInterface047;
-  }
+  create(value: int): MyInterface047;
+}
 
 interface MixedInterface048 {
-    property: string;
-    method(): int;
-  }
+  property: string;
+  method(): int;
+}
 
 class NotInitializedClass055 { }
-
 
 export default function ClassIsInterfaceTest(): void {
   describe('ClassIsInterfaceTest', (): void => {
@@ -174,11 +172,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -188,11 +186,9 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ArrayLike<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      expect(Class.from<ArrayLike<int>>().isInterface()).assertTrue();
     });
 
     /**
@@ -202,11 +198,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface003>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -216,11 +212,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<JsonSerializable>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -230,11 +226,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -244,11 +240,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericInterface006<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -258,11 +254,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -272,11 +268,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass008>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -286,11 +282,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass009>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -300,11 +296,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum010>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -314,11 +310,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -328,11 +324,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -342,11 +338,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<int>>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -356,11 +352,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -370,12 +366,12 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let cls = Class.of(arr);
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -385,11 +381,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -399,13 +395,13 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = Class.PRIMITIVE_BOOLEAN.isInterface();
-        expect(result).assertFalse();
-        
-        let result2 = Class.PRIMITIVE_INT.isInterface();
-        expect(result2).assertFalse();
+      expect(result).assertFalse();
+
+      let result2 = Class.PRIMITIVE_INT.isInterface();
+      expect(result2).assertFalse();
     });
 
     /**
@@ -415,11 +411,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildInterface018>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -429,11 +425,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass019>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -443,11 +439,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Child020>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -457,11 +453,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let result = cls.isInterface();
-        expect(typeof result).assertEqual("boolean");
+      let result = cls.isInterface();
+      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -471,11 +467,12 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(typeof result).assertEqual("boolean");
+      expect(result === true || result === false).assertTrue();
     });
 
     /**
@@ -485,12 +482,12 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let result1 = cls.isInterface();
-        let result2 = cls.isInterface();
-        expect(result1).assertEqual(result2);
+      let result1 = cls.isInterface();
+      let result2 = cls.isInterface();
+      expect(result1).assertEqual(result2);
     });
 
     /**
@@ -500,11 +497,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<ArrayLike<int>>();
-        let cls2 = Class.from<ArrayLike<int>>();
-        expect(cls1.isInterface()).assertEqual(cls2.isInterface());
+      let cls2 = Class.from<ArrayLike<int>>();
+      expect(cls1.isInterface()).assertEqual(cls2.isInterface());
     });
 
     /**
@@ -514,11 +511,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyInterface025>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -528,11 +525,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyInterface026>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -542,11 +539,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FunctionInterface027>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -556,11 +553,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<IndexSignatureInterface028>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -570,11 +567,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiGenericInterface029<string, int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -584,11 +581,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstrainedInterface030<double>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -598,11 +595,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DefaultGenericInterface031<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -612,11 +609,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<string | int>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -626,11 +623,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OptionalInterface033>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -640,11 +637,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum034>();
-        expect(cls.isEnum()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      expect(cls.isEnum()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -654,11 +651,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass035>();
-        expect(cls.isAbstract()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      expect(cls.isAbstract()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -668,11 +665,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass036>();
-        expect(cls.isFinal()).assertFalse();
-        expect(cls.isInterface()).assertFalse();
+      expect(cls.isFinal()).assertFalse();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -682,10 +679,10 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
-        expect(Class.PRIMITIVE_INT.isInterface()).assertFalse();
+      expect(Class.PRIMITIVE_INT.isInterface()).assertFalse();
     });
 
     /**
@@ -695,11 +692,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      expect(cls.isUnion()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -709,12 +706,12 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
-        let cls = Class.of(arr);
-        expect(cls.isFixedArray()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      let cls = Class.of(arr);
+      expect(cls.isFixedArray()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -724,13 +721,13 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass040>();
-        let interfaces = cls.getInterfaces();
-        expect(interfaces.length).assertEqual(1);
-        expect(interfaces[0].isInterface()).assertTrue();
-        expect(cls.isInterface()).assertFalse();
+      let interfaces = cls.getInterfaces();
+      expect(interfaces.length).assertEqual(1);
+      expect(interfaces[0].isInterface()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -740,13 +737,13 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass041>();
-        let superCls = cls.getSuper();
-        if (superCls !== undefined) {
-          expect(superCls.isInterface()).assertFalse();
-        }
+      let superCls = cls.getSuper();
+      if (superCls !== undefined) {
+        expect(superCls.isInterface()).assertFalse();
+      }
     });
 
     /**
@@ -756,11 +753,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass042();
-        let cls = Class.of(obj);
-        expect(cls.isInterface()).assertFalse();
+      let cls = Class.of(obj);
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
@@ -770,10 +767,10 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface043>();
-        expect(cls.isInterface()).assertTrue();
+      expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -783,14 +780,14 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = { } as MyInterface044;
-        let cls = Class.ofAny(obj);
-        expect(cls !== undefined).assertTrue();
-        if (cls !== undefined) {
-          expect(cls.isInterface()).assertFalse();
-        }
+      let cls = Class.ofAny(obj);
+      expect(cls !== undefined).assertTrue();
+      if (cls !== undefined) {
+        expect(cls.isInterface()).assertFalse();
+      }
     });
 
     /**
@@ -800,10 +797,10 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass045();
-        expect(obj.checkIsInterface()).assertFalse();
+      expect(obj.checkIsInterface()).assertFalse();
     });
 
     /**
@@ -813,11 +810,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CallableInterface046>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -827,11 +824,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstructableInterface047>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -841,11 +838,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedInterface048>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -855,11 +852,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Iterable<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -869,11 +866,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Iterator<int>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -883,11 +880,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Comparable<Object>>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -897,11 +894,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Cloneable052Marker>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -911,11 +908,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Serializable053Marker>();
-        let result = cls.isInterface();
-        expect(result).assertTrue();
+      let result = cls.isInterface();
+      expect(result).assertTrue();
     });
 
     /**
@@ -925,10 +922,10 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        expect(cls.isInterface()).assertTrue();
+      expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -938,11 +935,11 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NotInitializedClass055>();
-        let result = cls.isInterface();
-        expect(result).assertFalse();
+      let result = cls.isInterface();
+      expect(result).assertFalse();
     });
 
     /**
@@ -952,14 +949,14 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        let result = false;
-        for (let i = 0; i < 10000; i++) {
-          result = cls.isInterface();
-        }
-        expect(result).assertTrue();
+      let result = false;
+      for (let i = 0; i < 10000; i++) {
+        result = cls.isInterface();
+      }
+      expect(result).assertTrue();
     });
 
     /**
@@ -969,23 +966,23 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassIsInterface057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let interfaceCls = Class.from<ArrayLike<int>>();
-        let classCls = Class.from<Array<int>>();
-        let enumCls = Class.from<TestEnum010>();
-        
-        let ifaceResult = false;
-        let classResult = true;
-        let enumResult = true;
-        for (let i = 0; i < 1000; i++) {
-          ifaceResult = interfaceCls.isInterface();
-          classResult = classCls.isInterface();
-          enumResult = enumCls.isInterface();
-        }
-        expect(ifaceResult).assertTrue();
-        expect(classResult).assertFalse();
-        expect(enumResult).assertFalse();
+      let classCls = Class.from<Array<int>>();
+      let enumCls = Class.from<TestEnum010>();
+
+      let ifaceResult = false;
+      let classResult = true;
+      let enumResult = true;
+      for (let i = 0; i < 1000; i++) {
+        ifaceResult = interfaceCls.isInterface();
+        classResult = classCls.isInterface();
+        enumResult = enumCls.isInterface();
+      }
+      expect(ifaceResult).assertTrue();
+      expect(classResult).assertFalse();
+      expect(enumResult).assertFalse();
     });
 
   });

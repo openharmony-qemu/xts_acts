@@ -12,103 +12,101 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 import { looseReflect } from './VoidFn.test';
 
 class MyClass001 {
-      public name: string = 'test';
-      public count: int = 0;
-  }
+  public name: string = 'test';
+  public count: int = 0;
+}
 
 class TestClass004 {
-      public name: string = '';
-      public age: int = 0;
-  }
+  public name: string = '';
+  public age: int = 0;
+}
 
 class SpecialClass006 {
-      public field_name: string = '';
-      public $dollarField: string = '';
-      public 字段名: string = '';
-  }
+  public field_name: string = '';
+  public $dollarField: string = '';
+  public 字段名: string = '';
+}
 
 class UnicodeClass007 {
-      public 名字: string = '';
-      public имя: string = '';
-      public 名前: string = '';
-  }
+  public 名字: string = '';
+  public имя: string = '';
+  public 名前: string = '';
+}
 
 class CaseClass011 {
-      public Name: string = '';
-      public name: string = '';
-      public NAME: string = '';
-  }
+  public Name: string = '';
+  public name: string = '';
+  public NAME: string = '';
+}
 
 class TestClass012 {
-      public myField: string = 'test';
-  }
+  public myField: string = 'test';
+}
 
 class CompleteTest014 {
-      public readonly data: string = 'value';
-  }
+  public readonly data: string = 'value';
+}
 
 class TestClass015 {
-      public name: string = '';
-  }
+  public name: string = '';
+}
 
 class PrivateTest016 {
-      public publicField: string = '';
-      private privateField: string = '';
-  }
+  public publicField: string = '';
+  private privateField: string = '';
+}
 
 class ProtectedTest017 {
-      protected protectedField: string = '';
-  }
+  protected protectedField: string = '';
+}
 
 class ChildClass018 extends ParentClass018 {
-      public name: string = '';
-  }
+  public name: string = '';
+}
 
 class ParentClass018 {
-      public age: int = 0;
-  }
+  public age: int = 0;
+}
 
 class Child019 extends Parent019 {
-      public c: boolean = false;
-  }
+  public c: boolean = false;
+}
 
 class Parent019 extends GrandParent019 {
-      public b: string = '';
-  }
+  public b: string = '';
+}
 
 class GrandParent019 {
-      public a: int = 1;
-  }
+  public a: int = 1;
+}
 
 class TypedClass021 {
-      public strField: string = '';
-      public numField: int = 0;
-      public boolField: boolean = false;
-      public arrField: Array<int> = [];
-  }
+  public strField: string = '';
+  public numField: int = 0;
+  public boolField: boolean = false;
+  public arrField: Array<int> = [];
+}
 
 class LongName026 {
-  }
+}
 
 class KeywordName027 {
-      public kwClass: string = '';
-      public kwFunction: string = '';
-      public kwReturn: string = '';
-  }
+  public kwClass: string = '';
+  public kwFunction: string = '';
+  public kwReturn: string = '';
+}
 
 class ModifierClass028 {
-      public readonly readonlyPublic: string = '';
-      public mutablePublic: string = '';
-  }
-
+  public readonly readonlyPublic: string = '';
+  public mutablePublic: string = '';
+}
 
 export default function ClassGetInstanceFieldTest(): void {
   describe('ClassGetInstanceFieldTest', (): void => {
@@ -129,12 +127,11 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-
-        let cls = Class.from<MyClass001>();
-        let field = cls.getInstanceField('name');
-        expect(field !== null).assertTrue();
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name');
+      expect(field !== null).assertTrue();
     });
 
     /**
@@ -144,15 +141,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = looseReflect(cls as Object).getInstanceField();
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = looseReflect(cls as Object).getInstanceField();
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -162,15 +159,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = looseReflect(cls as Object).getInstanceField('name', 'extra');
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = looseReflect(cls as Object).getInstanceField('name', 'extra');
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -180,14 +177,14 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass004>();
-        let field1 = cls.getInstanceField('name');
-        expect(field1!.getName()).assertEqual('name');
-        
-        let field2 = cls.getInstanceField('age');
-        expect(field2!.getName()).assertEqual('age');
+      let field1 = cls.getInstanceField('name');
+      expect(field1!.getName()).assertEqual('name');
+
+      let field2 = cls.getInstanceField('age');
+      expect(field2!.getName()).assertEqual('age');
     });
 
     /**
@@ -197,11 +194,11 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let field = cls.getInstanceField('');
-        expect(Utils.isAbsentOptional(field)).assertTrue();
+      let field = cls.getInstanceField('');
+      expect(Utils.isAbsentOptional(field)).assertTrue();
     });
 
     /**
@@ -211,22 +208,22 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SpecialClass006>();
-        let field1 = cls.getInstanceField('field_name');
-        expect(field1 !== undefined).assertTrue();
-        expect(field1!.getName()).assertEqual('field_name');
+      let field1 = cls.getInstanceField('field_name');
+      expect(field1 !== undefined).assertTrue();
+      expect(field1!.getName()).assertEqual('field_name');
 
-        let field2 = cls.getInstanceField('$dollarField');
-        expect(field2 !== undefined).assertTrue();
-        expect(field2!.getName()).assertEqual('$dollarField');
+      let field2 = cls.getInstanceField('$dollarField');
+      expect(field2 !== undefined).assertTrue();
+      expect(field2!.getName()).assertEqual('$dollarField');
 
-        let field3 = cls.getInstanceField('字段名');
-        expect(field3 !== undefined).assertTrue();
-        expect(field3!.getName()).assertEqual('字段名');
+      let field3 = cls.getInstanceField('字段名');
+      expect(field3 !== undefined).assertTrue();
+      expect(field3!.getName()).assertEqual('字段名');
 
-        expect(cls.getInstanceField('field-name') === undefined).assertTrue();
+      expect(cls.getInstanceField('field-name') === undefined).assertTrue();
     });
 
     /**
@@ -236,20 +233,20 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UnicodeClass007>();
-        let field1 = cls.getInstanceField('名字');
-        expect(field1 !== undefined).assertTrue();
-        expect(field1!.getName()).assertEqual('名字');
+      let field1 = cls.getInstanceField('名字');
+      expect(field1 !== undefined).assertTrue();
+      expect(field1!.getName()).assertEqual('名字');
 
-        let field2 = cls.getInstanceField('имя');
-        expect(field2 !== undefined).assertTrue();
-        expect(field2!.getName()).assertEqual('имя');
+      let field2 = cls.getInstanceField('имя');
+      expect(field2 !== undefined).assertTrue();
+      expect(field2!.getName()).assertEqual('имя');
 
-        let field3 = cls.getInstanceField('名前');
-        expect(field3 !== undefined).assertTrue();
-        expect(field3!.getName()).assertEqual('名前');
+      let field3 = cls.getInstanceField('名前');
+      expect(field3 !== undefined).assertTrue();
+      expect(field3!.getName()).assertEqual('名前');
     });
 
     /**
@@ -259,15 +256,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = cls.getInstanceField(null as string);
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = cls.getInstanceField(null as string);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -277,15 +274,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = cls.getInstanceField(undefined as string);
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = cls.getInstanceField(undefined as string);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -295,15 +292,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = looseReflect(cls as Object).getInstanceField(123 as Object);
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = looseReflect(cls as Object).getInstanceField(123 as Object);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -313,16 +310,16 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CaseClass011>();
-        let field1 = cls.getInstanceField('Name');
-        let field2 = cls.getInstanceField('name');
-        let field3 = cls.getInstanceField('NAME');
-        
-        expect(field1!.getName()).assertEqual('Name');
-        expect(field2!.getName()).assertEqual('name');
-        expect(field3!.getName()).assertEqual('NAME');
+      let field1 = cls.getInstanceField('Name');
+      let field2 = cls.getInstanceField('name');
+      let field3 = cls.getInstanceField('NAME');
+
+      expect(field1!.getName()).assertEqual('Name');
+      expect(field2!.getName()).assertEqual('name');
+      expect(field3!.getName()).assertEqual('NAME');
     });
 
     /**
@@ -332,14 +329,14 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass012>();
-        let field = cls.getInstanceField('myField');
-        
-        expect(field !== null).assertTrue();
-        expect(field instanceof reflect.InstanceField).assertTrue();
-        expect(field!.getName()).assertEqual('myField');
+      let field = cls.getInstanceField('myField');
+
+      expect(field !== null).assertTrue();
+      expect(field instanceof reflect.InstanceField).assertTrue();
+      expect(field!.getName()).assertEqual('myField');
     });
 
     /**
@@ -349,15 +346,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass012>();
-        let field = cls.getInstanceField('myField');
-        
-        expect(field!.getName() !== null).assertTrue();
-        expect(field!.getType() !== null).assertTrue();
-        expect(field!.getOwner() !== null).assertTrue();
-        expect(typeof field!.isPublic()).assertEqual('boolean');
+      let field = cls.getInstanceField('myField');
+
+      expect(field!.getName() !== null).assertTrue();
+      expect(field!.getType() !== null).assertTrue();
+      expect(field!.getOwner() !== null).assertTrue();
+      expect(typeof field!.isPublic()).assertEqual('boolean');
     });
 
     /**
@@ -367,16 +364,16 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CompleteTest014>();
-        let field = cls.getInstanceField('data');
-        
-        expect(field!.getName()).assertEqual('data');
-        expect(field!.isReadonly()).assertTrue();
-        expect(field!.isPublic()).assertTrue();
-        expect(field!.isPrivate()).assertFalse();
-        expect(field!.isProtected()).assertFalse();
+      let field = cls.getInstanceField('data');
+
+      expect(field!.getName()).assertEqual('data');
+      expect(field!.isReadonly()).assertTrue();
+      expect(field!.isPublic()).assertTrue();
+      expect(field!.isPrivate()).assertFalse();
+      expect(field!.isProtected()).assertFalse();
     });
 
     /**
@@ -386,12 +383,12 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass015>();
-        let field = cls.getInstanceField('remark');
-        
-        expect(field === undefined).assertTrue();
+      let field = cls.getInstanceField('remark');
+
+      expect(field === undefined).assertTrue();
     });
 
     /**
@@ -401,14 +398,14 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateTest016>();
-        let field1 = cls.getInstanceField('publicField');
-        expect(field1 !== null).assertTrue();
-        
-        let field2 = cls.getInstanceField('privateField');
-        expect(field2 === undefined).assertTrue();
+      let field1 = cls.getInstanceField('publicField');
+      expect(field1 !== null).assertTrue();
+
+      let field2 = cls.getInstanceField('privateField');
+      expect(field2 === undefined).assertTrue();
     });
 
     /**
@@ -418,11 +415,11 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedTest017>();
-        let field = cls.getInstanceField('protectedField');
-        expect(field === undefined).assertTrue();
+      let field = cls.getInstanceField('protectedField');
+      expect(field === undefined).assertTrue();
     });
 
     /**
@@ -432,19 +429,19 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass018>();
-        
-        let nameField = cls.getInstanceField('name');
-        expect(nameField !== null).assertTrue();
-        
-        let ageField = cls.getInstanceField('age');
-        expect(ageField === undefined).assertTrue();
-        
-        let parentAgeField = cls.getSuper()!.getInstanceField('age');
-        expect(parentAgeField !== null).assertTrue();
-        expect(parentAgeField!.getName()).assertEqual('age');
+
+      let nameField = cls.getInstanceField('name');
+      expect(nameField !== null).assertTrue();
+
+      let ageField = cls.getInstanceField('age');
+      expect(ageField === undefined).assertTrue();
+
+      let parentAgeField = cls.getSuper()!.getInstanceField('age');
+      expect(parentAgeField !== null).assertTrue();
+      expect(parentAgeField!.getName()).assertEqual('age');
     });
 
     /**
@@ -454,20 +451,20 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child019>();
-        
-        expect(childCls.getInstanceField('c') !== null).assertTrue();
-        expect(childCls.getInstanceField('b') === undefined).assertTrue();
-        expect(childCls.getInstanceField('a') === undefined).assertTrue();
-        
-        let parentCls = childCls.getSuper()!;
-        expect(parentCls.getInstanceField('b') !== null).assertTrue();
-        expect(parentCls.getInstanceField('a') === undefined).assertTrue();
-        
-        let grandParentCls = parentCls.getSuper()!;
-        expect(grandParentCls.getInstanceField('a') !== null).assertTrue();
+
+      expect(childCls.getInstanceField('c') !== null).assertTrue();
+      expect(childCls.getInstanceField('b') === undefined).assertTrue();
+      expect(childCls.getInstanceField('a') === undefined).assertTrue();
+
+      let parentCls = childCls.getSuper()!;
+      expect(parentCls.getInstanceField('b') !== null).assertTrue();
+      expect(parentCls.getInstanceField('a') === undefined).assertTrue();
+
+      let grandParentCls = parentCls.getSuper()!;
+      expect(grandParentCls.getInstanceField('a') !== null).assertTrue();
     });
 
     /**
@@ -477,21 +474,21 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypedClass021>();
-        
-        let strField = cls.getInstanceField('strField');
-        expect(strField!.getType().getName()).assertEqual('std.core.String');
-        
-        let numField = cls.getInstanceField('numField');
-        expect(numField!.getType().getName()).assertEqual('i32');
-        
-        let boolField = cls.getInstanceField('boolField');
-        expect(Utils.reflectScalarTypeNameMatches(boolField!.getType().getName(), 'boolean')).assertTrue();
-        
-        let arrField = cls.getInstanceField('arrField');
-        expect(arrField!.getType().getName()).assertEqual('std.core.Array');
+
+      let strField = cls.getInstanceField('strField');
+      expect(strField!.getType().getName()).assertEqual('std.core.String');
+
+      let numField = cls.getInstanceField('numField');
+      expect(numField!.getType().getName()).assertEqual('i32');
+
+      let boolField = cls.getInstanceField('boolField');
+      expect(Utils.reflectScalarTypeNameMatches(boolField!.getType().getName(), 'boolean')).assertTrue();
+
+      let arrField = cls.getInstanceField('arrField');
+      expect(arrField!.getType().getName()).assertEqual('std.core.Array');
     });
 
     /**
@@ -501,15 +498,15 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        try {
-            let field = looseReflect(cls as Object).getInstanceField(123 as Object);
-            expect().assertFail();
-        } catch (e) {
-            expect(e instanceof Error).assertTrue();
-        }
+      try {
+        let field = looseReflect(cls as Object).getInstanceField(true as Object);
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof Error).assertTrue();
+      }
     });
 
     /**
@@ -519,13 +516,13 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        cls.initialize();
-        let field = cls.getInstanceField('name');
-        expect(field !== null).assertTrue();
-        expect(field!.getName()).assertEqual('name');
+      cls.initialize();
+      let field = cls.getInstanceField('name');
+      expect(field !== null).assertTrue();
+      expect(field!.getName()).assertEqual('name');
     });
 
     /**
@@ -535,11 +532,14 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let field = cls.getInstanceField('name');
-        expect(field !== null).assertTrue();
+      let field1 = cls.getInstanceField('name');
+      let field2 = cls.getInstanceField('name');
+      expect(field1 !== null).assertTrue();
+      expect(field2 !== null).assertTrue();
+      expect(field1!.getName()).assertEqual(field2!.getName());
     });
 
     /**
@@ -549,11 +549,13 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let field = cls.getInstanceField('name');
-        expect(field !== null).assertTrue();
+      let field = cls.getInstanceField('name');
+      expect(field !== null).assertTrue();
+      expect(field!.getName()).assertEqual('name');
+      expect(field!.getType().getName()).assertEqual('std.core.String');
     });
 
     /**
@@ -563,12 +565,12 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LongName026>();
-        let longName = 'a'.repeat(1000);
-        let field = cls.getInstanceField(longName);
-        expect(field === undefined).assertTrue();
+      let longName = 'a'.repeat(1000);
+      let field = cls.getInstanceField(longName);
+      expect(field === undefined).assertTrue();
     });
 
     /**
@@ -578,16 +580,16 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<KeywordName027>();
-        let field1 = cls.getInstanceField('kwClass');
-        let field2 = cls.getInstanceField('kwFunction');
-        let field3 = cls.getInstanceField('kwReturn');
-        
-        expect(field1 !== null).assertTrue();
-        expect(field2 !== null).assertTrue();
-        expect(field3 !== null).assertTrue();
+      let field1 = cls.getInstanceField('kwClass');
+      let field2 = cls.getInstanceField('kwFunction');
+      let field3 = cls.getInstanceField('kwReturn');
+
+      expect(field1 !== null).assertTrue();
+      expect(field2 !== null).assertTrue();
+      expect(field3 !== null).assertTrue();
     });
 
     /**
@@ -597,17 +599,17 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass028>();
-        
-        let field1 = cls.getInstanceField('readonlyPublic');
-        expect(field1 !== null).assertTrue();
-        expect(field1!.isReadonly()).assertTrue();
-        
-        let field2 = cls.getInstanceField('mutablePublic');
-        expect(field2 !== null).assertTrue();
-        expect(field2!.isReadonly()).assertFalse();
+
+      let field1 = cls.getInstanceField('readonlyPublic');
+      expect(field1 !== null).assertTrue();
+      expect(field1!.isReadonly()).assertTrue();
+
+      let field2 = cls.getInstanceField('mutablePublic');
+      expect(field2 !== null).assertTrue();
+      expect(field2!.isReadonly()).assertFalse();
     });
 
     /**
@@ -617,15 +619,16 @@ export default function ClassGetInstanceFieldTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetInstanceField029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let field1 = cls.getInstanceField('name');
-        let field2 = cls.getInstanceField('name');
-        
-        expect(field1!.getName()).assertEqual(field2!.getName());
-        expect(field1!.getType().getName()).assertEqual(field2!.getType().getName());
+      let field1 = cls.getInstanceField('name');
+      let field2 = cls.getInstanceField('name');
+
+      expect(field1!.getName()).assertEqual(field2!.getName());
+      expect(field1!.getType().getName()).assertEqual(field2!.getType().getName());
     });
 
   });
 }
+
