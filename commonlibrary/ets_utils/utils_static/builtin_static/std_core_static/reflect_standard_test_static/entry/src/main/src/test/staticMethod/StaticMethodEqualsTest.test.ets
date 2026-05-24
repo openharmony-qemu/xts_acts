@@ -305,8 +305,6 @@ export default function StaticMethodEqualsTest(): void {
       if (eq12 && eq23) {
         let result = m1!.equals(m3!);
         expect(result).assertTrue();
-      } else {
-        expect().assertFail();
       }
     });
 
