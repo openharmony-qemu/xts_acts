@@ -12,118 +12,117 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass021 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 class ChildClass022 extends ParentClass022 {
-    public childField: string = "child";
-  }
+  public childField: string = "child";
+}
 
 class ParentClass022 {
-    public parentField: int = 0;
-  }
+  public parentField: int = 0;
+}
 
 class GenericClass023<T> {
-    public value: T | undefined = undefined;
-  }
+  public value: T | undefined = undefined;
+}
 
 class MultiGenericClass024<K, V> {
-    public key: K | undefined = undefined;
-    public value: V | undefined = undefined;
-  }
+  public key: K | undefined = undefined;
+  public value: V | undefined = undefined;
+}
 
 abstract class AbstractClass025 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 class ConcreteClass026 extends AbstractClass026 {
-    public override method(): void {}
-  }
+  public override method(): void {}
+}
 
 abstract class AbstractClass026 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 final class FinalClass027 {
-    public name: string = "final";
-  }
+  public name: string = "final";
+}
 
 interface MyInterface028 {
-    name: string;
-    age: int;
-  }
+  name: string;
+  age: int;
+}
 
 interface GenericInterface029<T> {
-    getValue(): T;
-  }
+  getValue(): T;
+}
 
 class MultiInterfaceClass032 implements Interface1032, Interface2032 {
-    public method1(): void {}
-    public method2(): void {}
-  }
+  public method1(): void {}
+  public method2(): void {}
+}
 
 interface Interface2032 {
-    method2(): void;
-  }
+  method2(): void;
+}
 
 interface Interface1032 {
-    method1(): void;
-  }
+  method1(): void;
+}
 
 enum TestEnum033 {
-    VALUE1,
-    VALUE2,
-    VALUE3
-  }
+  VALUE1,
+  VALUE2,
+  VALUE3
+}
 
 enum StringEnum034 {
-    NAME = "name",
-    AGE = "age"
-  }
+  NAME = "name",
+  AGE = "age"
+}
 
 class TypeB037 {
-    public fieldB: string = "";
-  }
+  public fieldB: string = "";
+}
 
 class TypeA037 {
-    public fieldA: int = 0;
-  }
+  public fieldA: int = 0;
+}
 
 class UninitializedClass043 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 class Node046 {
-    public next: Node046 | null = null;
-    public value: int = 0;
-  }
+  public next: Node046 | null = null;
+  public value: int = 0;
+}
 
 class ConstrainedClass047<T extends Constraint047> {
-  }
+}
 
 interface Constraint047 {
-    id: int;
-  }
+  id: int;
+}
 
 class Item047ForConstrained implements Constraint047 {
-    id: int = 0;
-    name: string = "";
-  }
+  id: int = 0;
+  name: string = "";
+}
 
 class MyClass049 {
-    public name: string = "";
-  }
+  public name: string = "";
+}
 
 class ChildClass053 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 class ChildClass054 extends ParentClass054 {}
 
@@ -138,180 +137,180 @@ final class FinalClass059 {}
 abstract class AbstractClass060 {}
 
 class MyClass064 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 class MyClass065 implements MyInterface065 {
-    public method(): void {}
-  }
+  public method(): void {}
+}
 
 interface MyInterface065 {
-    method(): void;
-  }
+  method(): void;
+}
 
 class MyClass066 {
-    public method1(): void {}
-    public method2(): string { return "test"; }
-  }
+  public method1(): void {}
+  public method2(): string { return "test"; }
+}
 
 class MyClass067 {
-    public static staticMethod(): void {}
-  }
+  public static staticMethod(): void {}
+}
 
 class MyClass068 {
-    public field1: int = 0;
-    public field2: string = "";
-  }
+  public field1: int = 0;
+  public field2: string = "";
+}
 
 class MyClass069 {
-    public static staticField: int = 0;
-  }
+  public static staticField: int = 0;
+}
 
 class MyClass070 {
-    public constructor() {}
-    public constructor(value: int) {}
-  }
+  public constructor() {}
+  public constructor(value: int) {}
+}
 
 interface MyInterface073 {}
 
 class MultiGeneric075<A, B, C, D, E> {}
 
 class MyClass076 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 class ChildClass077 extends ParentClass077 {}
 
 class ParentClass077 {}
 
 class MyClass078 implements MyInterface078 {
-    public method(): void {}
-  }
+  public method(): void {}
+}
 
 interface MyInterface078 {
-    method(): void;
-  }
+  method(): void;
+}
 
 abstract class AbstractClass080 {
-    public abstract method(): void;
-  }
+  public abstract method(): void;
+}
 
 final class FinalClass081 {}
 
 class LazyClass084 {
-    public static value: int = 100;
-    static {
-      console.info("LazyClass084 initialized");
-    }
+  public static value: int = 100;
+  static {
+    console.info("LazyClass084 initialized");
   }
+}
 
 class StaticInitClass085 {
-    public static initialized: boolean = false;
-    static {
-      StaticInitClass085.initialized = true;
-    }
+  public static initialized: boolean = false;
+  static {
+    StaticInitClass085.initialized = true;
   }
+}
 
 class MyClass092 {
-    public name: string = "test";
-  }
+  public name: string = "test";
+}
 
 class MyClass095 {
-    public field1: int = 0;
-    private field2: string = "";
-    public constructor() {}
-    public constructor(value: int) {}
-    public method1(): void {}
-    public static staticMethod(): void {}
-  }
+  public field1: int = 0;
+  private field2: string = "";
+  public constructor() {}
+  public constructor(value: int) {}
+  public method1(): void {}
+  public static staticMethod(): void {}
+}
 
 class GenericClass096<K, V> {
-    public map: Map<K, V> = new Map<K, V>();
-    public get(key: K): V | undefined {
-      return this.map.get(key);
-    }
-    public set(key: K, value: V): void {
-      this.map.set(key, value);
-    }
+  public map: Map<K, V> = new Map<K, V>();
+  public get(key: K): V | undefined {
+    return this.map.get(key);
   }
+  public set(key: K, value: V): void {
+    this.map.set(key, value);
+  }
+}
 
 class ServiceB097 {
-    public serviceA: ServiceA097;
-    public constructor() {
-      let cls = Class.from<ServiceA097>();
-      this.serviceA = cls.createInstance() as ServiceA097;
-    }
-    public call(): string {
-      return this.serviceA.method();
-    }
+  public serviceA: ServiceA097;
+  public constructor() {
+    let cls = Class.from<ServiceA097>();
+    this.serviceA = cls.createInstance() as ServiceA097;
   }
+  public call(): string {
+    return this.serviceA.method();
+  }
+}
 
 class ServiceA097 {
-    public method(): string {
-      return "ServiceA097";
-    }
+  public method(): string {
+    return "ServiceA097";
   }
+}
 
 class SerializableClass098 {
-    public id: int = 0;
-    public name: string = "";
-    public toJSON(): string {
-      let payload: Record<string, Any> = {};
-      payload['id'] = this.id;
-      payload['name'] = this.name;
-      return JSON.stringify(payload);
-    }
+  public id: int = 0;
+  public name: string = "";
+  public toJSON(): string {
+    let payload: Record<string, Any> = {};
+    payload['id'] = this.id;
+    payload['name'] = this.name;
+    return JSON.stringify(payload);
   }
+}
 
 function serialize098(obj: SerializableClass098): string {
-    let cls = Class.from<SerializableClass098>();
-    if (cls.isInterface() || cls.isAbstract()) {
-      throw new Error("Cannot serialize interface or abstract class");
-    }
-    return obj.toJSON();
+  let cls = Class.from<SerializableClass098>();
+  if (cls.isInterface() || cls.isAbstract()) {
+    throw new Error("Cannot serialize interface or abstract class");
   }
+  return obj.toJSON();
+}
 
 class PluginManager099 {
-    private plugins: Array<Plugin099> = [];
-    public register<T extends Plugin099>(pluginClass: Class): void {
-      let plugin = pluginClass.createInstance() as T;
-      this.plugins.push(plugin);
-    }
-    public executeAll(): void {
-      for (let i = 0; i < this.plugins.length; i++) {
-        this.plugins[i].execute();
-      }
+  private plugins: Array<Plugin099> = [];
+  public register<T extends Plugin099>(pluginClass: Class): void {
+    let plugin = pluginClass.createInstance() as T;
+    this.plugins.push(plugin);
+  }
+  public executeAll(): void {
+    for (let i = 0; i < this.plugins.length; i++) {
+      this.plugins[i].execute();
     }
   }
+}
 
 class PluginA099 implements Plugin099 {
-    public name: string = "PluginA099";
-    public execute(): void {
-      console.info("PluginA099 executed");
-    }
+  public name: string = "PluginA099";
+  public execute(): void {
+    console.info("PluginA099 executed");
   }
+}
 
 interface Plugin099 {
-    name: string;
-    execute(): void;
-  }
+  name: string;
+  execute(): void;
+}
 
 class MyClass100 {
-    public value: int = 0;
-  }
+  public value: int = 0;
+}
 
 class Derived101 implements Base101 {
-    public id: int = 0;
-    public name: string = "";
-  }
+  public id: int = 0;
+  public name: string = "";
+}
 
 interface Base101 {
-    id: int;
-  }
+  id: int;
+}
 
 function createInstance102(): MyClass102 {
-    return Class.from<MyClass102>().createInstance() as MyClass102;
-  }
+  return Class.from<MyClass102>().createInstance() as MyClass102;
+}
 
 class MyClass102 {}
 
@@ -320,7 +319,6 @@ class MyClass103 {}
 class MyClass104 {}
 
 class MyClass105 {}
-
 
 export default function ClassFromTest(): void {
   describe('ClassFromTest', (): void => {
@@ -341,11 +339,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "boolean")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "boolean")).assertTrue();
     });
 
     /**
@@ -355,11 +353,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<byte>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "byte")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "byte")).assertTrue();
     });
 
     /**
@@ -369,11 +367,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<char>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "char")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "char")).assertTrue();
     });
 
     /**
@@ -383,11 +381,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<short>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "short")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "short")).assertTrue();
     });
 
     /**
@@ -397,11 +395,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "int")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "int")).assertTrue();
     });
 
     /**
@@ -411,11 +409,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<long>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "long")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "long")).assertTrue();
     });
 
     /**
@@ -425,11 +423,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<float>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "float")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "float")).assertTrue();
     });
 
     /**
@@ -439,11 +437,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<double>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "double")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "double")).assertTrue();
     });
 
     /**
@@ -453,11 +451,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<number>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "number")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "number")).assertTrue();
     });
 
     /**
@@ -467,11 +465,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<void>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
     });
 
     /**
@@ -481,11 +479,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<string>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.String");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -495,11 +493,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<String>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.String");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -509,11 +507,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Array");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -523,11 +521,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<string>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Array");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -537,11 +535,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<Array<int>>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Array");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -551,11 +549,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isFixedArray()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isFixedArray()).assertTrue();
     });
 
     /**
@@ -565,11 +563,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, string>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -579,11 +577,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls !== null).assertTrue();
+      expect(cls.getDescriptor()).assertEqual("Lstd/core/Map;");
     });
 
     /**
@@ -593,11 +591,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Set");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -607,11 +605,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Set<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Set");
+      let cls = Class.from<Map<string, int>>();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -621,11 +619,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass021>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "MyClass021")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass021");
     });
 
     /**
@@ -635,11 +633,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass022>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "ChildClass022")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.ChildClass022");
     });
 
     /**
@@ -649,11 +647,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass023<int>>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "GenericClass023")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.GenericClass023");
     });
 
     /**
@@ -663,11 +661,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiGenericClass024<string, int>>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "MultiGenericClass024")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MultiGenericClass024");
     });
 
     /**
@@ -677,12 +675,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass025>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isAbstract()).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "AbstractClass025")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.AbstractClass025");
     });
 
     /**
@@ -692,11 +690,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConcreteClass026>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isAbstract()).assertFalse();
+      expect(cls !== null).assertTrue();
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -706,12 +704,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass027>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isFinal()).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "FinalClass027")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isFinal()).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.FinalClass027");
     });
 
     /**
@@ -721,12 +719,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface028>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isInterface()).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "MyInterface028")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isInterface()).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyInterface028");
     });
 
     /**
@@ -736,11 +734,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericInterface029<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isInterface()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -750,12 +748,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isInterface()).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.ArrayLike");
+      expect(cls !== null).assertTrue();
+      expect(cls.isInterface()).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.ArrayLike");
     });
 
     /**
@@ -765,12 +763,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<JsonSerializable>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isInterface()).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.JsonSerializable");
+      expect(cls !== null).assertTrue();
+      expect(cls.isInterface()).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.JsonSerializable");
     });
 
     /**
@@ -780,12 +778,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiInterfaceClass032>();
-        expect(cls !== null).assertTrue();
-        let interfaces = cls.getInterfaces();
-        expect(interfaces.length).assertEqual(2);
+      expect(cls !== null).assertTrue();
+      let interfaces = cls.getInterfaces();
+      expect(interfaces.length).assertEqual(2);
     });
 
     /**
@@ -795,12 +793,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum033>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isEnum()).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "TestEnum033")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isEnum()).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.TestEnum033");
     });
 
     /**
@@ -810,11 +808,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StringEnum034>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isEnum()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isEnum()).assertTrue();
     });
 
     /**
@@ -824,12 +822,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
-        expect(cls.getName()).assertContain("{U");
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
+      expect(cls.getName()).assertContain("{U");
     });
 
     /**
@@ -839,13 +837,13 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | boolean>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
-        let constituentTypes = cls.getUnionConstituentTypes()!;
-        expect(constituentTypes.length).assertEqual(3);
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
+      let constituentTypes = cls.getUnionConstituentTypes()!;
+      expect(constituentTypes.length).assertEqual(3);
     });
 
     /**
@@ -855,11 +853,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypeA037 | TypeB037>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -869,13 +867,13 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<double> | string>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
-        let constituentTypes = cls.getUnionConstituentTypes()!;
-        expect(constituentTypes.length).assertEqual(2);
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
+      let constituentTypes = cls.getUnionConstituentTypes()!;
+      expect(constituentTypes.length).assertEqual(2);
     });
 
     /**
@@ -885,11 +883,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, Array<string>>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -899,11 +897,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<FixedArray<int>>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Set");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -913,11 +911,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Object");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Object");
     });
 
     /**
@@ -927,10 +925,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Any>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -940,11 +938,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<UninitializedClass043>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "UninitializedClass043")).assertTrue();
+      let cls = Class.from<UninitializedClass043>();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.UninitializedClass043");
     });
 
     /**
@@ -954,10 +952,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -967,12 +965,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<boolean>();
-        let cls2 = Class.PRIMITIVE_BOOLEAN;
-        expect(cls1.isPrimitive()).assertFalse();
-        expect(cls2.isPrimitive()).assertTrue();
+      let cls2 = Class.PRIMITIVE_BOOLEAN;
+      expect(cls1.isPrimitive()).assertFalse();
+      expect(cls2.isPrimitive()).assertTrue();
     });
 
     /**
@@ -982,11 +980,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node046>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "Node046")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.Node046");
     });
 
     /**
@@ -996,11 +994,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstrainedClass047<Item047ForConstrained>>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "ConstrainedClass047")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.ConstrainedClass047");
     });
 
     /**
@@ -1010,11 +1008,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | null>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -1024,11 +1022,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass049 | null>();
-        expect(cls !== null).assertTrue();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -1038,11 +1036,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        expect(cls !== null).assertTrue();
-        expect(typeof cls).assertEqual("object");
+      expect(cls !== null).assertTrue();
+      expect(typeof cls).assertEqual("object");
     });
 
     /**
@@ -1052,11 +1050,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<int>();
-        let cls2 = Class.from<int>();
-        expect(cls1 === cls2).assertTrue();
+      let cls2 = Class.from<int>();
+      expect(cls1 === cls2).assertTrue();
     });
 
     /**
@@ -1066,10 +1064,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, string>>();
-        expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -1079,12 +1077,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass053>();
-        let superCls = cls.getSuper();
-        expect(superCls !== null).assertTrue();
-        expect(superCls!.getName()).assertEqual("std.core.Object");
+      let superCls = cls.getSuper();
+      expect(superCls !== null).assertTrue();
+      expect(superCls!.getName()).assertEqual("std.core.Object");
     });
 
     /**
@@ -1094,11 +1092,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass054>();
-        let parentCls = Class.from<ParentClass054>();
-        expect(childCls.isSubtypeOf(parentCls)).assertTrue();
+      let parentCls = Class.from<ParentClass054>();
+      expect(childCls.isSubtypeOf(parentCls)).assertTrue();
     });
 
     /**
@@ -1108,11 +1106,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        let linker = cls.getLinker();
-        expect(linker !== null).assertTrue();
+      let linker = cls.getLinker();
+      expect(linker !== null).assertTrue();
     });
 
     /**
@@ -1122,10 +1120,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface056>();
-        expect(cls.isInterface()).assertTrue();
+      expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -1135,10 +1133,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum057>();
-        expect(cls.isEnum()).assertTrue();
+      expect(cls.isEnum()).assertTrue();
     });
 
     /**
@@ -1148,11 +1146,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        expect(cls.isPrimitive()).assertFalse();
-        expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
+      expect(cls.isPrimitive()).assertFalse();
+      expect(Class.PRIMITIVE_INT.isPrimitive()).assertTrue();
     });
 
     /**
@@ -1162,10 +1160,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass059>();
-        expect(cls.isFinal()).assertTrue();
+      expect(cls.isFinal()).assertTrue();
     });
 
     /**
@@ -1175,10 +1173,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass060>();
-        expect(cls.isAbstract()).assertTrue();
+      expect(cls.isAbstract()).assertTrue();
     });
 
     /**
@@ -1188,10 +1186,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        expect(cls.isFixedArray()).assertTrue();
+      expect(cls.isFixedArray()).assertTrue();
     });
 
     /**
@@ -1201,10 +1199,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
-        expect(cls.isUnion()).assertTrue();
+      expect(cls.isUnion()).assertTrue();
     });
 
     /**
@@ -1214,10 +1212,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
-        expect(cls.getDescriptor()).assertEqual("Lstd/core/Set;");
+      expect(cls.getDescriptor()).assertEqual("Lstd/core/Set;");
     });
 
     /**
@@ -1227,11 +1225,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass064>();
-        let obj = cls.createInstance() as MyClass064;
-        expect(obj.name).assertEqual("test");
+      let obj = cls.createInstance() as MyClass064;
+      expect(obj.name).assertEqual("test");
     });
 
     /**
@@ -1241,11 +1239,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass065>();
-        let interfaces = cls.getInterfaces();
-        expect(interfaces.length).assertLarger(0);
+      let interfaces = cls.getInterfaces();
+      expect(interfaces.length).assertLarger(0);
     });
 
     /**
@@ -1255,11 +1253,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass066>();
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertLarger(0);
+      let methods = cls.getInstanceMethods();
+      expect(methods.length).assertLarger(0);
     });
 
     /**
@@ -1269,11 +1267,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass067>();
-        let methods = cls.getStaticMethods();
-        expect(methods.length).assertLarger(0);
+      let methods = cls.getStaticMethods();
+      expect(methods.length).assertLarger(0);
     });
 
     /**
@@ -1283,11 +1281,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass068>();
-        let fields = cls.getInstanceFields();
-        expect(fields.length).assertEqual(2);
+      let fields = cls.getInstanceFields();
+      expect(fields.length).assertEqual(2);
     });
 
     /**
@@ -1297,11 +1295,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass069>();
-        let fields = cls.getStaticFields();
-        expect(fields.length).assertEqual(1);
+      let fields = cls.getStaticFields();
+      expect(fields.length).assertEqual(1);
     });
 
     /**
@@ -1311,11 +1309,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass070>();
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(2);
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertEqual(2);
     });
 
     /**
@@ -1325,11 +1323,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string | Array<double>>();
-        let arr = cls.getUnionConstituentTypes()!;
-        expect(arr.length).assertEqual(3);
+      let arr = cls.getUnionConstituentTypes()!;
+      expect(arr.length).assertEqual(3);
     });
 
     /**
@@ -1339,12 +1337,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
-        let componentType = cls.getFixedArrayComponentType();
-        expect(componentType !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
     });
 
     /**
@@ -1354,11 +1352,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface073>();
-        let interfaces = cls.getInterfaces();
-        expect(interfaces.length).assertEqual(0);
+      let interfaces = cls.getInterfaces();
+      expect(interfaces.length).assertEqual(0);
     });
 
     /**
@@ -1368,10 +1366,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<int, Map<string, Map<int, string>>>>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1381,10 +1379,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiGeneric075<int, string, boolean, double, char>>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1394,12 +1392,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass076();
-        let cls1 = Class.from<MyClass076>();
-        let cls2 = Class.of(obj);
-        expect(cls1 === cls2).assertTrue();
+      let cls1 = Class.from<MyClass076>();
+      let cls2 = Class.of(obj);
+      expect(cls1 === cls2).assertTrue();
     });
 
     /**
@@ -1409,12 +1407,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass077>();
-        let parentCls = Class.from<ParentClass077>();
-        expect(childCls.isSubtypeOf(parentCls)).assertTrue();
-        expect(parentCls.isSubtypeOf(childCls)).assertFalse();
+      let parentCls = Class.from<ParentClass077>();
+      expect(childCls.isSubtypeOf(parentCls)).assertTrue();
+      expect(parentCls.isSubtypeOf(childCls)).assertFalse();
     });
 
     /**
@@ -1424,11 +1422,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass078>();
-        let ifc = Class.from<MyInterface078>();
-        expect(cls.isSubtypeOf(ifc)).assertTrue();
+      let ifc = Class.from<MyInterface078>();
+      expect(cls.isSubtypeOf(ifc)).assertTrue();
     });
 
     /**
@@ -1438,10 +1436,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
-        expect(cls.isSubtypeOf(cls)).assertTrue();
+      expect(cls.isSubtypeOf(cls)).assertTrue();
     });
 
     /**
@@ -1451,16 +1449,16 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass080>();
-        expect(cls.isAbstract()).assertTrue();
-        try {
-          cls.createInstance();
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      expect(cls.isAbstract()).assertTrue();
+      try {
+        cls.createInstance();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -1470,10 +1468,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass081>();
-        expect(cls.isFinal()).assertTrue();
+      expect(cls.isFinal()).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0830
@@ -1482,11 +1480,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<void>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
     });
 
     /**
@@ -1496,11 +1494,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<LazyClass084>();
-        expect(cls !== null).assertTrue();
-        expect(LazyClass084.value).assertEqual(100);
+      let cls = Class.from<LazyClass084>();
+      expect(cls !== null).assertTrue();
+      expect(LazyClass084.value).assertEqual(100);
     });
 
     /**
@@ -1510,11 +1508,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticInitClass085>();
-        expect(cls !== null).assertTrue();
-        expect(StaticInitClass085.initialized).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(StaticInitClass085.initialized).assertTrue();
     });
 
     /**
@@ -1524,10 +1522,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<never>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1537,10 +1535,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
-        expect(cls !== null).assertTrue();
+      expect(cls !== null).assertTrue();
     });
 
     /**
@@ -1550,14 +1548,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class | null = null;
-        for (let i = 0; i < 1000; i++) {
-          cls = Class.from<int>();
-        }
-        expect(cls !== null).assertTrue();
-        expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), "int")).assertTrue();
+      for (let i = 0; i < 1000; i++) {
+        cls = Class.from<int>();
+      }
+      expect(cls !== null).assertTrue();
+      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), "int")).assertTrue();
     });
 
     /**
@@ -1567,15 +1565,15 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<int>() !== null).assertTrue();
-        expect(Class.from<string>() !== null).assertTrue();
-        expect(Class.from<boolean>() !== null).assertTrue();
-        expect(Class.from<double>() !== null).assertTrue();
-        expect(Class.from<Array<int>>() !== null).assertTrue();
-        expect(Class.from<Map<string, int>>() !== null).assertTrue();
-        expect(Class.from<Set<double>>() !== null).assertTrue();
+      expect(Class.from<string>() !== null).assertTrue();
+      expect(Class.from<boolean>() !== null).assertTrue();
+      expect(Class.from<double>() !== null).assertTrue();
+      expect(Class.from<Array<int>>() !== null).assertTrue();
+      expect(Class.from<Map<string, int>>() !== null).assertTrue();
+      expect(Class.from<Set<double>>() !== null).assertTrue();
     });
 
     /**
@@ -1585,14 +1583,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let first = Class.from<Array<int>>();
-        let last = Class.from<Array<int>>();
-        for (let i = 0; i < 10000; i++) {
-          last = Class.from<Array<int>>();
-        }
-        expect(last === first).assertTrue();
+      let last = Class.from<Array<int>>();
+      for (let i = 0; i < 10000; i++) {
+        last = Class.from<Array<int>>();
+      }
+      expect(last === first).assertTrue();
     });
 
     /**
@@ -1602,11 +1600,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls1 = Class.from<Map<int, string>>();
-        let cls2 = Class.from<Map<int, string>>();
-        expect(cls1 === cls2).assertTrue();
+      let cls1 = Class.from<Map<int, string>>();
+      let cls2 = Class.from<Map<int, string>>();
+      expect(cls1 === cls2).assertTrue();
     });
 
     /**
@@ -1616,16 +1614,16 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls1 = Class.from<MyClass092>();
-        expect(cls1 !== null).assertTrue();
-        
-        let obj = new MyClass092();
-        let cls2 = Class.of(obj);
-        expect(cls2 !== null).assertTrue();
-        
-        expect(cls1 === cls2).assertTrue();
+      let cls1 = Class.from<MyClass092>();
+      expect(cls1 !== null).assertTrue();
+
+      let obj = new MyClass092();
+      let cls2 = Class.of(obj);
+      expect(cls2 !== null).assertTrue();
+
+      expect(cls1 === cls2).assertTrue();
     });
 
     /**
@@ -1635,17 +1633,17 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new Map<int, string>();
-        
-        let cls1 = Class.ofAny(obj);
-        expect(cls1 !== null).assertTrue();
-        
-        let cls2 = Class.from<Map<int, string>>();
-        expect(cls2 !== null).assertTrue();
-        
-        expect(cls1!.getName() === cls2.getName()).assertTrue();
+
+      let cls1 = Class.ofAny(obj);
+      expect(cls1 !== null).assertTrue();
+
+      let cls2 = Class.from<Map<int, string>>();
+      expect(cls2 !== null).assertTrue();
+
+      expect(cls1!.getName() === cls2.getName()).assertTrue();
     });
 
     /**
@@ -1655,11 +1653,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
-        expect(cls !== null).assertTrue();
-        expect(cls.getName()).assertEqual("std.core.Array");
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -1669,26 +1667,26 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass095>();
-        
-        expect(Utils.classNameMatches(cls.getName(), "MyClass095")).assertTrue();
-        
-        let superCls = cls.getSuper();
-        expect(superCls !== null).assertTrue();
-        
-        let fields = cls.getInstanceFields();
-        expect(fields.length).assertEqual(1);
-        
-        let methods = cls.getInstanceMethods();
-        expect(methods.length).assertLarger(0);
-        
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(2);
-        
-        let staticMethods = cls.getStaticMethods();
-        expect(staticMethods.length).assertLarger(0);
+
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass095");
+
+      let superCls = cls.getSuper();
+      expect(superCls !== null).assertTrue();
+
+      let fields = cls.getInstanceFields();
+      expect(fields.length).assertEqual(1);
+
+      let methods = cls.getInstanceMethods();
+      expect(methods.length).assertLarger(0);
+
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertEqual(2);
+
+      let staticMethods = cls.getStaticMethods();
+      expect(staticMethods.length).assertLarger(0);
     });
 
     /**
@@ -1698,14 +1696,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass096<string, int>>();
-        expect(cls !== null).assertTrue();
-        expect(Utils.classNameMatches(cls.getName(), "GenericClass096")).assertTrue();
-        
-        let obj = cls.createInstance() as GenericClass096<string, int>;
-        expect(obj !== null).assertTrue();
+      expect(cls !== null).assertTrue();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.GenericClass096");
+
+      let obj = cls.createInstance() as GenericClass096<string, int>;
+      expect(obj !== null).assertTrue();
     });
 
     /**
@@ -1715,10 +1713,10 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let serviceB = new ServiceB097();
-        expect(serviceB.call()).assertEqual("ServiceA097");
+      expect(serviceB.call()).assertEqual("ServiceA097");
     });
 
     /**
@@ -1728,14 +1726,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new SerializableClass098();
-        obj.id = 100;
-        obj.name = "test";
-        let json = serialize098(obj);
-        expect(json).assertContain("id");
-        expect(json).assertContain("name");
+      obj.id = 100;
+      obj.name = "test";
+      let json = serialize098(obj);
+      expect(json).assertContain("id");
+      expect(json).assertContain("name");
     });
 
     /**
@@ -1745,12 +1743,12 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let manager = new PluginManager099();
-        manager.register<PluginA099>(Class.from<PluginA099>());
-        manager.executeAll();
-        expect(Utils.classNameMatches(Class.from<PluginA099>().getName(), "PluginA099")).assertTrue();
+      manager.register<PluginA099>(Class.from<PluginA099>());
+      manager.executeAll();
+      expect(Class.from<PluginA099>().getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.PluginA099");
     });
 
     /**
@@ -1760,13 +1758,13 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls = Class.from<MyClass100>();
-        expect(cls !== null).assertTrue();
-        
-        let instance = cls.createInstance() as MyClass100;
-        expect(instance.value).assertEqual(0);
+      let cls = Class.from<MyClass100>();
+      expect(cls !== null).assertTrue();
+
+      let instance = cls.createInstance() as MyClass100;
+      expect(instance.value).assertEqual(0);
     });
 
     /**
@@ -1776,11 +1774,11 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Derived101>();
-        let instance = cls.createInstance() as Derived101;
-        expect(instance.id).assertEqual(0);
+      let instance = cls.createInstance() as Derived101;
+      expect(instance.id).assertEqual(0);
     });
 
     /**
@@ -1790,16 +1788,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const MY_CLASS: Class = Class.from<MyClass102>();
-        
+      const MY_CLASS: Class = Class.from<MyClass102>();
 
-        
-        let obj1 = createInstance102();
-        let obj2 = createInstance102();
-        expect(obj1 !== null).assertTrue();
-        expect(obj2 !== null).assertTrue();
+      let obj1 = createInstance102();
+      let obj2 = createInstance102();
+      expect(obj1 !== null).assertTrue();
+      expect(obj2 !== null).assertTrue();
     });
 
     /**
@@ -1809,18 +1805,18 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        for (let i = 0; i < 100; i++) {
-          let cls = Class.from<MyClass103>();
-          expect(Utils.classNameMatches(cls.getName(), "MyClass103")).assertTrue();
-        }
-        
+      for (let i = 0; i < 100; i++) {
         let cls = Class.from<MyClass103>();
-        for (let i = 0; i < 100; i++) {
-          let obj = cls.createInstance() as MyClass103;
-          expect(obj !== null).assertTrue();
-        }
+        expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassFromTest.test.MyClass103");
+      }
+
+      let cls = Class.from<MyClass103>();
+      for (let i = 0; i < 100; i++) {
+        let obj = cls.createInstance() as MyClass103;
+        expect(obj !== null).assertTrue();
+      }
     });
 
     /**
@@ -1830,14 +1826,14 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass104>();
-        let obj = new MyClass104();
-        let cls2 = Class.of(obj);
-        
-        expect(cls1 === cls2).assertTrue();
-        expect(cls1.getName() === cls2.getName()).assertTrue();
+      let obj = new MyClass104();
+      let cls2 = Class.of(obj);
+
+      expect(cls1 === cls2).assertTrue();
+      expect(cls1.getName() === cls2.getName()).assertTrue();
     });
 
     /**
@@ -1847,16 +1843,16 @@ export default function ClassFromTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassFrom105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let cls1 = Class.from<MyClass105>();
-        expect(cls1 !== null).assertTrue();
-        
-        let obj: Any = new MyClass105();
-        let cls2 = Class.ofAny(obj);
-        expect(cls2 !== null).assertTrue();
-        
-        expect(cls1 === cls2).assertTrue();
+      let cls1 = Class.from<MyClass105>();
+      expect(cls1 !== null).assertTrue();
+
+      let obj: Any = new MyClass105();
+      let cls2 = Class.ofAny(obj);
+      expect(cls2 !== null).assertTrue();
+
+      expect(cls1 === cls2).assertTrue();
     });
 
   });
