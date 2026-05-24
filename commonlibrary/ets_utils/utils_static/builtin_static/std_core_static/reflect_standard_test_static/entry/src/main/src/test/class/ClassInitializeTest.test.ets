@@ -1013,182 +1013,180 @@ class LargeClass030 {
   public field827: int = 827;
   public field828: int = 828;
   public field829: int = 829;
-      public field829: int = 829;
-      public field830: int = 830;
-      public field831: int = 831;
-      public field832: int = 832;
-      public field833: int = 833;
-      public field834: int = 834;
-      public field835: int = 835;
-      public field836: int = 836;
-      public field837: int = 837;
-      public field838: int = 838;
-      public field839: int = 839;
-      public field840: int = 840;
-      public field841: int = 841;
-      public field842: int = 842;
-      public field843: int = 843;
-      public field844: int = 844;
-      public field845: int = 845;
-      public field846: int = 846;
-      public field847: int = 847;
-      public field848: int = 848;
-      public field849: int = 849;
-      public field850: int = 850;
-      public field851: int = 851;
-      public field852: int = 852;
-      public field853: int = 853;
-      public field854: int = 854;
-      public field855: int = 855;
-      public field856: int = 856;
-      public field857: int = 857;
-      public field858: int = 858;
-      public field859: int = 859;
-      public field860: int = 860;
-      public field861: int = 861;
-      public field862: int = 862;
-      public field863: int = 863;
-      public field864: int = 864;
-      public field865: int = 865;
-      public field866: int = 866;
-      public field867: int = 867;
-      public field868: int = 868;
-      public field869: int = 869;
-      public field870: int = 870;
-      public field871: int = 871;
-      public field872: int = 872;
-      public field873: int = 873;
-      public field874: int = 874;
-      public field875: int = 875;
-      public field876: int = 876;
-      public field877: int = 877;
-      public field878: int = 878;
-      public field879: int = 879;
-      public field880: int = 880;
-      public field881: int = 881;
-      public field882: int = 882;
-      public field883: int = 883;
-      public field884: int = 884;
-      public field885: int = 885;
-      public field886: int = 886;
-      public field887: int = 887;
-      public field888: int = 888;
-      public field889: int = 889;
-      public field890: int = 890;
-      public field891: int = 891;
-      public field892: int = 892;
-      public field893: int = 893;
-      public field894: int = 894;
-      public field895: int = 895;
-      public field896: int = 896;
-      public field897: int = 897;
-      public field898: int = 898;
-      public field899: int = 899;
-      public field900: int = 900;
-      public field901: int = 901;
-      public field902: int = 902;
-      public field903: int = 903;
-      public field904: int = 904;
-      public field905: int = 905;
-      public field906: int = 906;
-      public field907: int = 907;
-      public field908: int = 908;
-      public field909: int = 909;
-      public field910: int = 910;
-      public field911: int = 911;
-      public field912: int = 912;
-      public field913: int = 913;
-      public field914: int = 914;
-      public field915: int = 915;
-      public field916: int = 916;
-      public field917: int = 917;
-      public field918: int = 918;
-      public field919: int = 919;
-      public field920: int = 920;
-      public field921: int = 921;
-      public field922: int = 922;
-      public field923: int = 923;
-      public field924: int = 924;
-      public field925: int = 925;
-      public field926: int = 926;
-      public field927: int = 927;
-      public field928: int = 928;
-      public field929: int = 929;
-      public field930: int = 930;
-      public field931: int = 931;
-      public field932: int = 932;
-      public field933: int = 933;
-      public field934: int = 934;
-      public field935: int = 935;
-      public field936: int = 936;
-      public field937: int = 937;
-      public field938: int = 938;
-      public field939: int = 939;
-      public field940: int = 940;
-      public field941: int = 941;
-      public field942: int = 942;
-      public field943: int = 943;
-      public field944: int = 944;
-      public field945: int = 945;
-      public field946: int = 946;
-      public field947: int = 947;
-      public field948: int = 948;
-      public field949: int = 949;
-      public field950: int = 950;
-      public field951: int = 951;
-      public field952: int = 952;
-      public field953: int = 953;
-      public field954: int = 954;
-      public field955: int = 955;
-      public field956: int = 956;
-      public field957: int = 957;
-      public field958: int = 958;
-      public field959: int = 959;
-      public field960: int = 960;
-      public field961: int = 961;
-      public field962: int = 962;
-      public field963: int = 963;
-      public field964: int = 964;
-      public field965: int = 965;
-      public field966: int = 966;
-      public field967: int = 967;
-      public field968: int = 968;
-      public field969: int = 969;
-      public field970: int = 970;
-      public field971: int = 971;
-      public field972: int = 972;
-      public field973: int = 973;
-      public field974: int = 974;
-      public field975: int = 975;
-      public field976: int = 976;
-      public field977: int = 977;
-      public field978: int = 978;
-      public field979: int = 979;
-      public field980: int = 980;
-      public field981: int = 981;
-      public field982: int = 982;
-      public field983: int = 983;
-      public field984: int = 984;
-      public field985: int = 985;
-      public field986: int = 986;
-      public field987: int = 987;
-      public field988: int = 988;
-      public field989: int = 989;
-      public field990: int = 990;
-      public field991: int = 991;
-      public field992: int = 992;
-      public field993: int = 993;
-      public field994: int = 994;
-      public field995: int = 995;
-      public field996: int = 996;
-      public field997: int = 997;
-      public field998: int = 998;
-      public field999: int = 999;
-      public field1000: int = 1000;
-  }
+  public field830: int = 830;
+  public field831: int = 831;
+  public field832: int = 832;
+  public field833: int = 833;
+  public field834: int = 834;
+  public field835: int = 835;
+  public field836: int = 836;
+  public field837: int = 837;
+  public field838: int = 838;
+  public field839: int = 839;
+  public field840: int = 840;
+  public field841: int = 841;
+  public field842: int = 842;
+  public field843: int = 843;
+  public field844: int = 844;
+  public field845: int = 845;
+  public field846: int = 846;
+  public field847: int = 847;
+  public field848: int = 848;
+  public field849: int = 849;
+  public field850: int = 850;
+  public field851: int = 851;
+  public field852: int = 852;
+  public field853: int = 853;
+  public field854: int = 854;
+  public field855: int = 855;
+  public field856: int = 856;
+  public field857: int = 857;
+  public field858: int = 858;
+  public field859: int = 859;
+  public field860: int = 860;
+  public field861: int = 861;
+  public field862: int = 862;
+  public field863: int = 863;
+  public field864: int = 864;
+  public field865: int = 865;
+  public field866: int = 866;
+  public field867: int = 867;
+  public field868: int = 868;
+  public field869: int = 869;
+  public field870: int = 870;
+  public field871: int = 871;
+  public field872: int = 872;
+  public field873: int = 873;
+  public field874: int = 874;
+  public field875: int = 875;
+  public field876: int = 876;
+  public field877: int = 877;
+  public field878: int = 878;
+  public field879: int = 879;
+  public field880: int = 880;
+  public field881: int = 881;
+  public field882: int = 882;
+  public field883: int = 883;
+  public field884: int = 884;
+  public field885: int = 885;
+  public field886: int = 886;
+  public field887: int = 887;
+  public field888: int = 888;
+  public field889: int = 889;
+  public field890: int = 890;
+  public field891: int = 891;
+  public field892: int = 892;
+  public field893: int = 893;
+  public field894: int = 894;
+  public field895: int = 895;
+  public field896: int = 896;
+  public field897: int = 897;
+  public field898: int = 898;
+  public field899: int = 899;
+  public field900: int = 900;
+  public field901: int = 901;
+  public field902: int = 902;
+  public field903: int = 903;
+  public field904: int = 904;
+  public field905: int = 905;
+  public field906: int = 906;
+  public field907: int = 907;
+  public field908: int = 908;
+  public field909: int = 909;
+  public field910: int = 910;
+  public field911: int = 911;
+  public field912: int = 912;
+  public field913: int = 913;
+  public field914: int = 914;
+  public field915: int = 915;
+  public field916: int = 916;
+  public field917: int = 917;
+  public field918: int = 918;
+  public field919: int = 919;
+  public field920: int = 920;
+  public field921: int = 921;
+  public field922: int = 922;
+  public field923: int = 923;
+  public field924: int = 924;
+  public field925: int = 925;
+  public field926: int = 926;
+  public field927: int = 927;
+  public field928: int = 928;
+  public field929: int = 929;
+  public field930: int = 930;
+  public field931: int = 931;
+  public field932: int = 932;
+  public field933: int = 933;
+  public field934: int = 934;
+  public field935: int = 935;
+  public field936: int = 936;
+  public field937: int = 937;
+  public field938: int = 938;
+  public field939: int = 939;
+  public field940: int = 940;
+  public field941: int = 941;
+  public field942: int = 942;
+  public field943: int = 943;
+  public field944: int = 944;
+  public field945: int = 945;
+  public field946: int = 946;
+  public field947: int = 947;
+  public field948: int = 948;
+  public field949: int = 949;
+  public field950: int = 950;
+  public field951: int = 951;
+  public field952: int = 952;
+  public field953: int = 953;
+  public field954: int = 954;
+  public field955: int = 955;
+  public field956: int = 956;
+  public field957: int = 957;
+  public field958: int = 958;
+  public field959: int = 959;
+  public field960: int = 960;
+  public field961: int = 961;
+  public field962: int = 962;
+  public field963: int = 963;
+  public field964: int = 964;
+  public field965: int = 965;
+  public field966: int = 966;
+  public field967: int = 967;
+  public field968: int = 968;
+  public field969: int = 969;
+  public field970: int = 970;
+  public field971: int = 971;
+  public field972: int = 972;
+  public field973: int = 973;
+  public field974: int = 974;
+  public field975: int = 975;
+  public field976: int = 976;
+  public field977: int = 977;
+  public field978: int = 978;
+  public field979: int = 979;
+  public field980: int = 980;
+  public field981: int = 981;
+  public field982: int = 982;
+  public field983: int = 983;
+  public field984: int = 984;
+  public field985: int = 985;
+  public field986: int = 986;
+  public field987: int = 987;
+  public field988: int = 988;
+  public field989: int = 989;
+  public field990: int = 990;
+  public field991: int = 991;
+  public field992: int = 992;
+  public field993: int = 993;
+  public field994: int = 994;
+  public field995: int = 995;
+  public field996: int = 996;
+  public field997: int = 997;
+  public field998: int = 998;
+  public field999: int = 999;
+  public field1000: int = 1000;
+}
 
 class MyClass031 {}
-
 
 export default function runClassInitializeTest(): void {
   describe('ClassInitializeTest', (): void => {
@@ -1209,11 +1207,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        cls.initialize();
-        expect(cls.getName().length).assertLarger(0);
+      cls.initialize();
+      expect(cls.getName().length).assertLarger(0);
     });
 
     /**
@@ -1223,15 +1221,15 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass002>();
-        try {
-          looseReflect(cls as Object).initialize("invalid" as string);
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      try {
+        looseReflect(cls as Object).initialize("invalid" as string);
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -1241,7 +1239,7 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let result: void = cls.initialize();
@@ -1255,11 +1253,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
-        let result: void = cls.initialize();
-        expect(result).assertUndefined();
+      let result: void = cls.initialize();
+      expect(typeof result).assertEqual("undefined");
     });
 
     /**
@@ -1269,11 +1267,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
-        cls.initialize();
-        expect(cls.getName().length).assertLarger(0);
+      cls.initialize();
+      expect(cls.getName().length).assertLarger(0);
     });
 
     /**
@@ -1283,12 +1281,12 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass006>();
-        cls.initialize();
-        cls.initialize();
-        expect(Utils.classNameMatches(cls.getName(), "MyClass006")).assertTrue();
+      cls.initialize();
+      cls.initialize();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassInitializeTest.test.MyClass006");
     });
 
     /**
@@ -1298,11 +1296,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
-        cls.initialize();
-        expect(MyClass007.value).assertEqual(0);
+      cls.initialize();
+      expect(MyClass007.value).assertEqual(0);
     });
 
     /**
@@ -1312,11 +1310,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
-        cls.initialize();
-        expect(MyClass008.initialized).assertEqual(true);
+      cls.initialize();
+      expect(MyClass008.initialized).assertEqual(true);
     });
 
     /**
@@ -1326,15 +1324,15 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class | null = null;
-        try {
-          cls!.initialize();
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      try {
+        cls!.initialize();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -1344,15 +1342,15 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class | undefined = undefined;
-        try {
-          cls!.initialize();
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      try {
+        cls!.initialize();
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -1362,11 +1360,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass011>();
-        cls.initialize();
-        expect(MyClass011.value).assertEqual(0);
+      cls.initialize();
+      expect(MyClass011.value).assertEqual(0);
     });
 
     /**
@@ -1376,15 +1374,15 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       InitGuard012.depth = 0;
-        try {
-          let _ = InitCycleA012.marker;
-          expect().assertFail();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-        }
+      try {
+        let _ = InitCycleA012.marker;
+        expect().assertFail();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+      }
     });
 
     /**
@@ -1394,16 +1392,16 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
-        try {
-          cls.initialize();
-        } catch (error) {
-          expect(error !== null).assertTrue();
-          return;
-        }
-        expect(MyClass013.largeArray.length).assertLarger(0);
+      try {
+        cls.initialize();
+      } catch (error) {
+        expect(error !== null).assertTrue();
+        return;
+      }
+      expect(MyClass013.largeArray.length).assertLarger(0);
     });
 
     /**
@@ -1413,12 +1411,12 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass014>();
-        cls.initialize();
-        let obj = cls.createInstance() as MyClass014;
-        expect(obj.name).assertEqual("test");
+      cls.initialize();
+      let obj = cls.createInstance() as MyClass014;
+      expect(obj.name).assertEqual("test");
     });
 
     /**
@@ -1428,11 +1426,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass015>();
-        cls.initialize();
-        expect(AbstractClass015.value).assertEqual(100);
+      cls.initialize();
+      expect(AbstractClass015.value).assertEqual(100);
     });
 
     /**
@@ -1442,11 +1440,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass016<int>>();
-        cls.initialize();
-        expect(GenericClass016.value).assertEqual(200);
+      cls.initialize();
+      expect(GenericClass016.value).assertEqual(200);
     });
 
     /**
@@ -1456,11 +1454,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass017>();
-        cls.initialize();
-        expect(FinalClass017.value).assertEqual(300);
+      cls.initialize();
+      expect(FinalClass017.value).assertEqual(300);
     });
 
     /**
@@ -1470,11 +1468,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface018>();
-        cls.initialize();
-        expect(cls.isInterface()).assertTrue();
+      cls.initialize();
+      expect(cls.isInterface()).assertTrue();
     });
 
     /**
@@ -1484,11 +1482,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
-        cls.initialize();
-        expect(cls.isPrimitive()).assertTrue();
+      cls.initialize();
+      expect(cls.isPrimitive()).assertTrue();
     });
 
     /**
@@ -1498,12 +1496,12 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass020>();
-        childCls.initialize();
-        expect(ParentClass020.order[0]).assertEqual("parent");
-        expect(ParentClass020.order[1]).assertEqual("child");
+      childCls.initialize();
+      expect(ParentClass020.order[0]).assertEqual("parent");
+      expect(ParentClass020.order[1]).assertEqual("child");
     });
 
     /**
@@ -1513,13 +1511,13 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child021>();
-        childCls.initialize();
-        expect(GrandParent021.order[0]).assertEqual("grandparent");
-        expect(GrandParent021.order[1]).assertEqual("parent");
-        expect(GrandParent021.order[2]).assertEqual("child");
+      childCls.initialize();
+      expect(GrandParent021.order[0]).assertEqual("grandparent");
+      expect(GrandParent021.order[1]).assertEqual("parent");
+      expect(GrandParent021.order[2]).assertEqual("child");
     });
 
     /**
@@ -1529,14 +1527,14 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass022>();
-        let task1: () => void = (): void => { cls.initialize(); };
-        let task2: () => void = (): void => { cls.initialize(); };
-        task1();
-        task2();
-        expect(MyClass022.initCount).assertEqual(1);
+      let task1: () => void = (): void => { cls.initialize(); };
+      let task2: () => void = (): void => { cls.initialize(); };
+      task1();
+      task2();
+      expect(MyClass022.initCount).assertEqual(1);
     });
 
     /**
@@ -1546,14 +1544,14 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass023>();
-        cls.initialize();
-        let count1 = MyClass023.initCount;
-        cls.initialize();
-        let count2 = MyClass023.initCount;
-        expect(count1).assertEqual(count2);
+      cls.initialize();
+      let count1 = MyClass023.initCount;
+      cls.initialize();
+      let count2 = MyClass023.initCount;
+      expect(count1).assertEqual(count2);
     });
 
     /**
@@ -1563,10 +1561,10 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass024>();
-        let obj = cls.createInstance();
+      let obj = cls.createInstance();
       expect(obj !== null).assertTrue();
       expect(MyClass024.initialized).assertEqual(true);
     });
@@ -1578,13 +1576,13 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass025>();
-        MyClass025.initialized = false;
-        expect(MyClass025.initialized).assertEqual(false);
-        let name = cls.getName();
-      expect(Utils.classNameMatches(name, 'MyClass025')).assertTrue();
+      MyClass025.initialized = false;
+      expect(MyClass025.initialized).assertEqual(false);
+      let name = cls.getName();
+      expect(name).assertEqual('entry.src.main.src.test.class.ClassInitializeTest.test.MyClass025');
       expect(MyClass025.initialized).assertEqual(false);
     });
 
@@ -1595,11 +1593,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<EmptyClass026>();
-        cls.initialize();
-        expect(Utils.classNameMatches(cls.getName(), 'EmptyClass026')).assertTrue();
+      cls.initialize();
+      expect(cls.getName()).assertEqual('entry.src.main.src.test.class.ClassInitializeTest.test.EmptyClass026');
     });
 
     /**
@@ -1609,11 +1607,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexClass027>();
-        cls.initialize();
-        expect(ComplexClass027.data.get("one")).assertEqual(1);
+      cls.initialize();
+      expect(ComplexClass027.data.get("one")).assertEqual(1);
     });
 
     /**
@@ -1623,13 +1621,13 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass028>();
-        cls.initialize();
-        expect(MyClass028.ready).assertEqual(true);
-        let obj = cls.createInstance() as MyClass028;
-        expect(obj.value).assertEqual(0);
+      cls.initialize();
+      expect(MyClass028.ready).assertEqual(true);
+      let obj = cls.createInstance() as MyClass028;
+      expect(obj.value).assertEqual(0);
     });
 
     /**
@@ -1639,11 +1637,11 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass029>();
-        let obj = cls.createInstance() as MyClass029;
-        expect(MyClass029.ready).assertEqual(true);
+      let obj = cls.createInstance() as MyClass029;
+      expect(MyClass029.ready).assertEqual(true);
     });
 
     /**
@@ -1653,13 +1651,13 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LargeClass030>();
-        let startTime = Date.now();
-        cls.initialize();
-        let endTime = Date.now();
-        console.info(`initialize perf: ${endTime - startTime}ms`);
+      let startTime = Date.now();
+      cls.initialize();
+      let endTime = Date.now();
+      console.info(`initialize perf: ${endTime - startTime}ms`);
     });
 
     /**
@@ -1669,18 +1667,20 @@ export default function runClassInitializeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassInitialize031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass031>();
 
-        let startTime = Date.now();
-        for (let i = 0; i < 1000; i++) {
-          cls.initialize();
-        }
-        let endTime = Date.now();
-        console.info(`initialize repeat perf: ${endTime - startTime}ms`);
+      let startTime = Date.now();
+      for (let i = 0; i < 1000; i++) {
+        cls.initialize();
+      }
+      let endTime = Date.now();
+      console.info(`initialize repeat perf: ${endTime - startTime}ms`);
     });
 
   });
+}
+
 }
 
