@@ -38,7 +38,7 @@ export default function InstanceTest(): void {
      */
     it('testInstance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -67,7 +67,7 @@ export default function InstanceTest(): void {
     it('testInstance003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let typedLinker: BootRuntimeLinker = linker;
-      expect(typedLinker !== null).assertTrue();
+      expect(typedLinker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -80,7 +80,7 @@ export default function InstanceTest(): void {
      */
     it('testInstance004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== undefined).assertTrue();
+      expect(typeof linker !== 'undefined').assertTrue();
     });
 
     /**
@@ -94,9 +94,10 @@ export default function InstanceTest(): void {
     it('testInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fieldInstance: BootRuntimeLinker = BootRuntimeLinker.instance;
       let funcInstance: BootRuntimeLinker = getBootRuntimeLinker();
-      // verify both return non-null BootRuntimeLinker instances
-      expect(fieldInstance !== null).assertTrue();
-      expect(funcInstance !== null).assertTrue();
+      // verify identity relationship between static field and getter function
+      expect(fieldInstance instanceof BootRuntimeLinker).assertTrue();
+      expect(funcInstance instanceof BootRuntimeLinker).assertTrue();
+      expect(fieldInstance === funcInstance).assertTrue();
     });
 
     /**
@@ -139,7 +140,7 @@ export default function InstanceTest(): void {
     it('testInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // cross-file reference: instanceof tests covered in BootRuntimeLinkerTest
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -152,7 +153,7 @@ export default function InstanceTest(): void {
      */
     it('testInstance009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let useLinker = (linker: BootRuntimeLinker): void => {
-        expect(linker !== null).assertTrue();
+        expect(linker instanceof BootRuntimeLinker).assertTrue();
       }
       useLinker(BootRuntimeLinker.instance);
     });
@@ -166,9 +167,9 @@ export default function InstanceTest(): void {
      * @tc.level Level 2
      */
     it('testInstance010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let linker: BootRuntimeLinker | undefined = BootRuntimeLinker.instance;
       if (linker !== undefined) {
-        expect(linker !== null).assertTrue();
+        expect(linker instanceof BootRuntimeLinker).assertTrue();
       }
     });
 
@@ -182,8 +183,7 @@ export default function InstanceTest(): void {
      */
     it('testInstance011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
-      expect(linker !== undefined).assertTrue();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -197,7 +197,7 @@ export default function InstanceTest(): void {
     it('testInstance012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // compile-time verification: field initializer BootRuntimeLinker compatible with declaration type
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -210,7 +210,7 @@ export default function InstanceTest(): void {
      */
     it('testInstance013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
   });
 }

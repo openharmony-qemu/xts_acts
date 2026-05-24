@@ -67,7 +67,6 @@ export default function GetBootRuntimeLinkerTest(): void {
     it('testGetBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = getBootRuntimeLinker();
       expect(linker instanceof BootRuntimeLinker).assertTrue();
-      expect(linker !== undefined).assertTrue();
     });
 
     /**
@@ -111,7 +110,7 @@ export default function GetBootRuntimeLinkerTest(): void {
     it('testGetBootRuntimeLinker006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let typedLinker: BootRuntimeLinker = linker;
-      expect(typedLinker !== null).assertTrue();
+      expect(typedLinker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**

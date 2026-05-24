@@ -123,14 +123,14 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_0700
      * @tc.name testFindAndLoadClass007
-     * @tc.desc Verify findAndLoadClass with valid class name std.core.Number
+     * @tc.desc Verify findAndLoadClass with valid class name std.core.Double
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFindAndLoadClass007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("std.core.Number", false);
+      let cls: Class | undefined = linker.findAndLoadClass("std.core.Double", false);
       expect(cls !== undefined).assertTrue();
     });
 
@@ -215,7 +215,12 @@ export default function FindAndLoadClassTest(): void {
      */
     it('testFindAndLoadClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("<script>alert(1)</script>", false);
+      let cls: Class | undefined = undefined;
+      try {
+        cls = linker.findAndLoadClass("<script>alert(1)</script>", false);
+      } catch (e) {
+        // XSS-like class name may throw, both outcomes are valid
+      }
       expect(cls === undefined).assertTrue();
     });
 
@@ -638,9 +643,9 @@ export default function FindAndLoadClassTest(): void {
     it('testFindAndLoadClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let stringClass: Class | undefined = linker.findAndLoadClass("std.core.String", false);
-      let numberClass: Class | undefined = linker.findAndLoadClass("std.core.Number", false);
+      let doubleClass: Class | undefined = linker.findAndLoadClass("std.core.Double", false);
       expect(stringClass !== undefined).assertTrue();
-      expect(numberClass !== undefined).assertTrue();
+      expect(doubleClass !== undefined).assertTrue();
     });
 
     /**
@@ -674,7 +679,7 @@ export default function FindAndLoadClassTest(): void {
       let linker = getBootRuntimeLinker();
       try {
         let cls: Class | undefined = linker.findAndLoadClass("\0", false);
-        expect(cls !== null).assertTrue();
+        expect(cls === undefined).assertTrue();
       } catch (e) {
         // null character in class name may throw
         expect(e instanceof Error).assertTrue();

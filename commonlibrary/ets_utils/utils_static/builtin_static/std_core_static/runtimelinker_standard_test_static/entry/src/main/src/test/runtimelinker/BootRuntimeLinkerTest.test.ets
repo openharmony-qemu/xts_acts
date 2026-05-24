@@ -80,8 +80,8 @@ export default function BootRuntimeLinkerTest(): void {
      */
     it('testBootRuntimeLinker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      let found = linker.findLoadedClass("std.core.String");
-      expect(found !== null).assertTrue();
+      let found: Class | undefined = linker.findLoadedClass("std.core.String");
+      expect(found !== undefined).assertTrue();
     });
 
     /**
