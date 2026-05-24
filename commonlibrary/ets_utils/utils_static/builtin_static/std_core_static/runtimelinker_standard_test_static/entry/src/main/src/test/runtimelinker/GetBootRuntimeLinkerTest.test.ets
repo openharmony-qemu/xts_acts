@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function GetBootRuntimeLinkerTest(): void {
@@ -86,7 +97,7 @@ export default function GetBootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0500
      * @tc.name testGetBootRuntimeLinker005
-     * @tc.desc Verify getBootRuntimeLinker as export function can be imported and called from another module
+     * @tc.desc Verify getBootRuntimeLinker can be called from a local function scope
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

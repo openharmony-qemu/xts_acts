@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function FindAndLoadClassTest(): void {
@@ -364,7 +375,7 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2300
      * @tc.name testFindAndLoadClass023
-     * @tc.desc Verify findAndLoadClass with init=true loads and initializes class
+     * @tc.desc Verify findAndLoadClass with init=true returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -378,7 +389,7 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2400
      * @tc.name testFindAndLoadClass024
-     * @tc.desc Verify findAndLoadClass with init=false loads class without initialization
+     * @tc.desc Verify findAndLoadClass with init=false returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -392,7 +403,7 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2500
      * @tc.name testFindAndLoadClass025
-     * @tc.desc Verify behavior difference between init=true and init=false for same class
+     * @tc.desc Verify same class loaded with init=true and init=false returns identical Class reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -681,7 +692,6 @@ export default function FindAndLoadClassTest(): void {
         let cls: Class | undefined = linker.findAndLoadClass("\0", false);
         expect(cls === undefined).assertTrue();
       } catch (e) {
-        // null character in class name may throw
         expect(e instanceof Error).assertTrue();
       }
     });
@@ -714,6 +724,58 @@ export default function FindAndLoadClassTest(): void {
       let skipReason: string = "compile-time verification only";
       expect(skipReason.length > 0).assertTrue();
       return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4500
+     * @tc.name testFindAndLoadClass045
+     * @tc.desc Verify Class.getLinker returns BootRuntimeLinker instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
+      if (cls !== undefined) {
+        let classLinker: RuntimeLinker = cls.getLinker();
+        expect(classLinker instanceof BootRuntimeLinker).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4600
+     * @tc.name testFindAndLoadClass046
+     * @tc.desc Verify Class.initialize does not throw for loaded class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", true);
+      if (cls !== undefined) {
+        cls.initialize();
+        expect(cls.getName().length > 0).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4700
+     * @tc.name testFindAndLoadClass047
+     * @tc.desc Verify Class.isSubtypeOf returns boolean for related class pair
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      let stringCls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
+      let objectCls: Class | undefined = linker.findAndLoadClass("std.core.Object", false);
+      if (stringCls !== undefined && objectCls !== undefined) {
+        let isSubtype: boolean = stringCls.isSubtypeOf(objectCls);
+        expect(typeof isSubtype === 'boolean').assertTrue();
+      }
     });
   });
 }

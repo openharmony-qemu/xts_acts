@@ -13,7 +13,18 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function BootRuntimeLinkerTest(): void {
@@ -162,7 +173,7 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1000
      * @tc.name testBootRuntimeLinker010
-     * @tc.desc Verify null cannot be directly assigned to non-nullish BootRuntimeLinker type
+     * @tc.desc Verify BootRuntimeLinker|null union type can hold null value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -177,7 +188,7 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1100
      * @tc.name testBootRuntimeLinker011
-     * @tc.desc Verify T|undefined union type is not assignable to Object
+     * @tc.desc Verify BootRuntimeLinker|undefined union type can hold undefined value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -201,6 +212,38 @@ export default function BootRuntimeLinkerTest(): void {
       let skipReason: string = "compile-time verification only";
       expect(skipReason.length > 0).assertTrue();
       return;
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1300
+     * @tc.name testBootRuntimeLinker013
+     * @tc.desc Verify getType returns Type for valid type descriptor std.core.String
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBootRuntimeLinker013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let typeResult: Type | undefined = linker.getType("std.core.String" as TypeDescriptor);
+      expect(typeResult !== undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1400
+     * @tc.name testBootRuntimeLinker014
+     * @tc.desc Verify loadClass throws LinkerClassNotFoundError for non-existent class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBootRuntimeLinker014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      try {
+        linker.loadClass("com.nonexistent.FakeClass");
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof LinkerClassNotFoundError).assertTrue();
+      }
     });
   });
 }
