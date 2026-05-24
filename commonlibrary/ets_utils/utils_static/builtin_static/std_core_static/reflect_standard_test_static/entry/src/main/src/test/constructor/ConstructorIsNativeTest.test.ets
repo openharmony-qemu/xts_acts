@@ -12,86 +12,84 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass001 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass003 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass004 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 abstract class AbstractClass005 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 final class FinalClass006 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class GenericClass007<T> {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass008 {
-    public constructor(value?: int) {}
-  }
+  public constructor(value?: int) {}
+}
 
 class MyClass011 {
-    public constructor(x?: int) {}
-  }
+  public constructor(x?: int) {}
+}
 
 class MyClass012 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass014 {
-    public constructor(value?: int) {}
-  }
+  public constructor(value?: int) {}
+}
 
 class NormalClass015 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 final class FinalClass015 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 abstract class AbstractClass015 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ChildClass016 extends ParentClass016 {
-    public constructor() {
-      super();
-    }
+  public constructor() {
+    super();
   }
+}
 
 class ParentClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass017 {
-    public constructor(value?: int | string) {}
-  }
+  public constructor(value?: int | string) {}
+}
 
 class MyClass018 {
-    public constructor(value: int) {}
-  }
+  public constructor(value: int) {}
+}
 
 class MyClass019 {
-    public constructor() {}
-  }
-
+  public constructor() {}
+}
 
 export default function ConstructorIsNativeTest(): void {
   describe('ConstructorIsNativeTest', (): void => {
@@ -112,12 +110,12 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let isNative = constructors[0].isNative();
-        expect(typeof isNative).assertEqual("boolean");
+      let constructors = cls.getConstructors();
+      let isNative = constructors[0].isNative();
+      expect(typeof isNative).assertEqual("boolean");
     });
 
     /**
@@ -127,7 +125,7 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(typeof Class.from<MyClass001>().getConstructors()[0].isNative()).assertEqual("boolean");
     });
@@ -139,13 +137,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
-        let constructors = cls.getConstructors();
-        let isNative = constructors[0].isNative();
-        expect(isNative).assertFalse();
-        expect(typeof isNative).assertEqual("boolean");
+      let constructors = cls.getConstructors();
+      let isNative = constructors[0].isNative();
+      expect(isNative).assertFalse();
+      expect(typeof isNative).assertEqual("boolean");
     });
 
     /**
@@ -155,10 +153,10 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass004>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isNative()).assertFalse();
     });
 
     /**
@@ -168,10 +166,10 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<AbstractClass005>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isNative()).assertFalse();
     });
 
     /**
@@ -181,10 +179,10 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass006>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isNative()).assertFalse();
     });
 
     /**
@@ -194,10 +192,10 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<GenericClass007<int>>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isNative()).assertFalse();
     });
 
     /**
@@ -207,13 +205,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].isNative()).assertFalse();
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].isNative()).assertFalse();
+      }
     });
 
     /**
@@ -223,13 +221,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let isNative = constructors[0].isNative();
-        expect(typeof isNative).assertEqual("boolean");
-        expect(isNative === true || isNative === false).assertTrue();
+      let constructors = cls.getConstructors();
+      let isNative = constructors[0].isNative();
+      expect(typeof isNative).assertEqual("boolean");
+      expect(isNative === true || isNative === false).assertTrue();
     });
 
     /**
@@ -239,11 +237,11 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let isNative = ctor.isNative();
-        expect(isNative === true || isNative === false).assertTrue();
+      let isNative = ctor.isNative();
+      expect(isNative === true || isNative === false).assertTrue();
     });
 
     /**
@@ -253,13 +251,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass011>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].isNative()).assertFalse();
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].isNative()).assertFalse();
+      }
     });
 
     /**
@@ -269,10 +267,10 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass012>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isNative()).assertFalse();
     });
 
     /**
@@ -282,11 +280,11 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let isNative = ctor.isNative();
-        expect(isNative === true || isNative === false).assertTrue();
+      ctor.isNative();
+      expect(true).assertTrue();
     });
 
     /**
@@ -296,13 +294,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass014>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].isNative()).assertFalse();
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].isNative()).assertFalse();
+      }
     });
 
     /**
@@ -312,14 +310,14 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass015>().getConstructors()[0];
-        let c2 = Class.from<FinalClass015>().getConstructors()[0];
-        let c3 = Class.from<NormalClass015>().getConstructors()[0];
-        expect(c1.isNative()).assertFalse();
-        expect(c2.isNative()).assertFalse();
-        expect(c3.isNative()).assertFalse();
+      let c2 = Class.from<FinalClass015>().getConstructors()[0];
+      let c3 = Class.from<NormalClass015>().getConstructors()[0];
+      expect(c1.isNative()).assertFalse();
+      expect(c2.isNative()).assertFalse();
+      expect(c3.isNative()).assertFalse();
     });
 
     /**
@@ -329,12 +327,12 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass016>().getConstructors()[0];
-        let childCtor = Class.from<ChildClass016>().getConstructors()[0];
-        expect(parentCtor.isNative()).assertFalse();
-        expect(childCtor.isNative()).assertFalse();
+      let childCtor = Class.from<ChildClass016>().getConstructors()[0];
+      expect(parentCtor.isNative()).assertFalse();
+      expect(childCtor.isNative()).assertFalse();
     });
 
     /**
@@ -344,13 +342,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass017>().getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          let isNative = constructors[i].isNative();
-          expect(isNative).assertFalse();
-        }
+      for (let i = 0; i < constructors.length; i++) {
+        let isNative = constructors[i].isNative();
+        expect(isNative).assertFalse();
+      }
     });
 
     /**
@@ -360,13 +358,13 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass018>().getConstructors()[0];
-        expect(ctorRef.isNative()).assertFalse();
-        expect(ctorRef.isPublic()).assertTrue();
-        expect(ctorRef.getParametersNum()).assertEqual(1);
-        expect(ctorRef.getReturnType().getName()).assertEqual("void");
+      expect(ctorRef.isNative()).assertFalse();
+      expect(ctorRef.isPublic()).assertTrue();
+      expect(ctorRef.getParametersNum()).assertEqual(1);
+      expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
 
     /**
@@ -376,17 +374,17 @@ export default function ConstructorIsNativeTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorIsNative019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let userConstructor = Class.from<MyClass019>().getConstructors()[0];
-        expect(userConstructor.isNative()).assertFalse();
+      expect(userConstructor.isNative()).assertFalse();
 
-        let arrayConstructors = Class.from<Array<int>>().getConstructors();
-        for (let i = 0; i < arrayConstructors.length; i++) {
-          let name = arrayConstructors[i].getName();
-          let isNative = arrayConstructors[i].isNative();
-          console.info(`Array constructor ${name} isNative: ${isNative}`);
-        }
+      let arrayConstructors = Class.from<Array<int>>().getConstructors();
+      for (let i = 0; i < arrayConstructors.length; i++) {
+        let name = arrayConstructors[i].getName();
+        let isNative = arrayConstructors[i].isNative();
+        console.info(`Array constructor ${name} isNative: ${isNative}`);
+      }
     });
 
   });

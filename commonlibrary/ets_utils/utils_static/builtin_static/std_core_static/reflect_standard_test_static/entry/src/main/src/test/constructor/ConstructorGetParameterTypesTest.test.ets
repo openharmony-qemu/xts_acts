@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import {
   afterAll,
@@ -128,7 +127,6 @@ class MyClass021 {
   }
 }
 
-
 export default function ConstructorGetParameterTypesTest(): void {
   describe('ConstructorGetParameterTypesTest', (): void => {
     beforeAll(() => {
@@ -148,7 +146,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let constructors = cls.getConstructors();
@@ -163,7 +161,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass001>().getConstructors()[0].getParameterTypes().length).assertEqual(2);
     });
@@ -175,7 +173,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
       let constructors = cls.getConstructors();
@@ -192,7 +190,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let constructors = cls.getConstructors();
@@ -207,7 +205,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
       let constructors = cls.getConstructors();
@@ -223,7 +221,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass006>();
       let constructors = cls.getConstructors();
@@ -242,7 +240,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       let constructors = cls.getConstructors();
@@ -259,7 +257,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
       let constructors = cls.getConstructors();
@@ -276,12 +274,12 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass009>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
-      expect(Utils.classNameMatches(paramTypes[0].getName(), "MyClass009")).assertTrue();
+      expect(paramTypes[0].getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetParameterTypesTest.test.MyClass009");
     });
 
     /**
@@ -291,13 +289,13 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let constructors = cls.getConstructors();
       let paramTypes = constructors[0].getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
-      expect(Utils.classNameMatches(paramTypes[0].getName(), "String")).assertTrue();
+      expect(paramTypes[0].getName()).assertEqual("std.core.String");
       expect(Utils.reflectScalarTypeNameMatches(paramTypes[1].getName(), "int")).assertTrue();
     });
 
@@ -308,7 +306,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
@@ -326,7 +324,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
@@ -340,7 +338,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
       let constructors = cls.getConstructors();
@@ -364,7 +362,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass014>();
       let constructors = cls.getConstructors();
@@ -382,7 +380,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass015>().getConstructors();
       expect(constructors.length).assertEqual(1);
@@ -396,7 +394,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
@@ -410,7 +408,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
       let constructors = cls.getConstructors();
@@ -425,7 +423,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass018>().getConstructors()[0];
       let c2 = Class.from<FinalClass018>().getConstructors()[0];
@@ -447,7 +445,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass019>().getConstructors()[0];
       let childCtor = Class.from<ChildClass019>().getConstructors()[0];
@@ -467,7 +465,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass020>().getConstructors();
       expect(constructors.length).assertEqual(1);
@@ -481,7 +479,7 @@ export default function ConstructorGetParameterTypesTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParameterTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass021>().getConstructors()[0];
       let paramTypes = ctorRef.getParameterTypes();
@@ -492,3 +490,4 @@ export default function ConstructorGetParameterTypesTest(): void {
 
   });
 }
+

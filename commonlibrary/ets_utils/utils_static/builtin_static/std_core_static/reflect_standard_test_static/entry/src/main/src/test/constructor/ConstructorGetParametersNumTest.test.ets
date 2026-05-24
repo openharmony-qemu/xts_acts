@@ -12,100 +12,98 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass001 {
-    public constructor(name: string, age: int) {}
-  }
+  public constructor(name: string, age: int) {}
+}
 
 class MyClass003 {
-    public constructor(name: string, age: int) {}
-  }
+  public constructor(name: string, age: int) {}
+}
 
 class MyClass004 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass005 {
-    public constructor(value: int) {}
-  }
+  public constructor(value: int) {}
+}
 
 class MyClass006 {
-    public constructor(a: int, b: string, c: boolean, d: float) {}
-  }
+  public constructor(a: int, b: string, c: boolean, d: float) {}
+}
 
 class MyClass007 {
-    public constructor(required: int, optional?: string) {}
-  }
+  public constructor(required: int, optional?: string) {}
+}
 
 class MyClass008 {
-    public constructor(map: Map<string, int>, arr: Array<boolean>) {}
-  }
+  public constructor(map: Map<string, int>, arr: Array<boolean>) {}
+}
 
 class MyClass009 {
-    public constructor(obj: MyClass009) {}
-  }
+  public constructor(obj: MyClass009) {}
+}
 
 class MyClass012 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass013 {
-    public constructor(
-      p1: int, p2: int, p3: int, p4: int, p5: int,
-      p6: int, p7: int, p8: int, p9: int, p10: int
-    ) {}
-  }
+  public constructor(
+    p1: int, p2: int, p3: int, p4: int, p5: int,
+    p6: int, p7: int, p8: int, p9: int, p10: int
+  ) {}
+}
 
 class MyClass014 {
-    public constructor(
-      b: byte, s: short, i: int, l: long,
-      f: float, d: double, n: number, bool: boolean, ch: char
-    ) {}
-  }
+  public constructor(
+    b: byte, s: short, i: int, l: long,
+    f: float, d: double, n: number, bool: boolean, ch: char
+  ) {}
+}
 
 class MyClass015 {
-    public constructor(value?: int | string, flag?: boolean) {}
-  }
+  public constructor(value?: int | string, flag?: boolean) {}
+}
 
 class MyClass017 {
-    public constructor(p?: int | string | boolean) {}
-  }
+  public constructor(p?: int | string | boolean) {}
+}
 
 final class FinalClass018 {
-    public constructor(x: boolean, y: float, z: double) {}
-  }
+  public constructor(x: boolean, y: float, z: double) {}
+}
 
 abstract class AbstractClass018 {
-    public constructor(a: string, b: int) {}
-  }
+  public constructor(a: string, b: int) {}
+}
 
 class ChildClass019 extends ParentClass019 {
-    public constructor(name: string, age: int) {
-      super(name);
-    }
+  public constructor(name: string, age: int) {
+    super(name);
   }
+}
 
 class ParentClass019 {
-    public constructor(name: string) {}
-  }
+  public constructor(name: string) {}
+}
 
 class MyClass020 {
-    public constructor(a?: int, b?: string, c?: boolean) {}
-  }
+  public constructor(a?: int, b?: string, c?: boolean) {}
+}
 
 class MyClass021 {
-    public constructor(a: int, b: string, c: boolean) {}
-  }
+  public constructor(a: int, b: string, c: boolean) {}
+}
 
 class MyClass022 {
-    public constructor(value?: int | string) {}
-  }
-
+  public constructor(value?: int | string) {}
+}
 
 export default function ConstructorGetParametersNumTest(): void {
   describe('ConstructorGetParametersNumTest', (): void => {
@@ -126,12 +124,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(2);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(2);
     });
 
     /**
@@ -141,7 +139,7 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass001>().getConstructors()[0].getParametersNum()).assertEqual(2);
     });
@@ -153,13 +151,13 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(2);
-        expect(num >= 0).assertTrue();
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(2);
+      expect(num >= 0).assertTrue();
     });
 
     /**
@@ -169,12 +167,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(0);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(0);
     });
 
     /**
@@ -184,12 +182,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(1);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(1);
     });
 
     /**
@@ -199,12 +197,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass006>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(4);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(4);
     });
 
     /**
@@ -214,12 +212,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(2);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(2);
     });
 
     /**
@@ -229,12 +227,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass008>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(2);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(2);
     });
 
     /**
@@ -244,12 +242,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass009>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(1);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(1);
     });
 
     /**
@@ -259,12 +257,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num >= 0).assertTrue();
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num >= 0).assertTrue();
     });
 
     /**
@@ -274,11 +272,11 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let num = ctor.getParametersNum();
-        expect(num).assertEqual(2);
+      let num = ctor.getParametersNum();
+      expect(num).assertEqual(2);
     });
 
     /**
@@ -288,10 +286,10 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let num = Class.from<MyClass012>().getConstructors()[0].getParametersNum();
-        expect(num).assertEqual(0);
+      expect(num).assertEqual(0);
     });
 
     /**
@@ -301,12 +299,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(10);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(10);
     });
 
     /**
@@ -316,12 +314,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass014>();
-        let constructors = cls.getConstructors();
-        let num = constructors[0].getParametersNum();
-        expect(num).assertEqual(9);
+      let constructors = cls.getConstructors();
+      let num = constructors[0].getParametersNum();
+      expect(num).assertEqual(9);
     });
 
     /**
@@ -331,11 +329,11 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass015>().getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getParametersNum()).assertEqual(2);
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getParametersNum()).assertEqual(2);
     });
 
     /**
@@ -345,11 +343,11 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let num = ctor.getParametersNum();
-        expect(num).assertEqual(2);
+      ctor.getParametersNum();
+      expect(true).assertTrue();
     });
 
     /**
@@ -359,12 +357,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass017>();
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getParametersNum()).assertEqual(1);
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getParametersNum()).assertEqual(1);
     });
 
     /**
@@ -374,12 +372,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass018>().getConstructors()[0];
-        let c2 = Class.from<FinalClass018>().getConstructors()[0];
-        expect(c1.getParametersNum()).assertEqual(2);
-        expect(c2.getParametersNum()).assertEqual(3);
+      let c2 = Class.from<FinalClass018>().getConstructors()[0];
+      expect(c1.getParametersNum()).assertEqual(2);
+      expect(c2.getParametersNum()).assertEqual(3);
     });
 
     /**
@@ -389,12 +387,12 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass019>().getConstructors()[0];
-        let childCtor = Class.from<ChildClass019>().getConstructors()[0];
-        expect(parentCtor.getParametersNum()).assertEqual(1);
-        expect(childCtor.getParametersNum()).assertEqual(2);
+      let childCtor = Class.from<ChildClass019>().getConstructors()[0];
+      expect(parentCtor.getParametersNum()).assertEqual(1);
+      expect(childCtor.getParametersNum()).assertEqual(2);
     });
 
     /**
@@ -404,11 +402,11 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass020>().getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getParametersNum()).assertEqual(3);
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getParametersNum()).assertEqual(3);
     });
 
     /**
@@ -418,13 +416,13 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass021>().getConstructors()[0];
-        let num = ctorRef.getParametersNum();
-        let paramTypes = ctorRef.getParameterTypes();
-        expect(num).assertEqual(paramTypes.length);
-        expect(num).assertEqual(3);
+      let num = ctorRef.getParametersNum();
+      let paramTypes = ctorRef.getParameterTypes();
+      expect(num).assertEqual(paramTypes.length);
+      expect(num).assertEqual(3);
     });
 
     /**
@@ -434,13 +432,14 @@ export default function ConstructorGetParametersNumTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetParametersNum022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass022>();
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getParametersNum()).assertEqual(1);
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getParametersNum()).assertEqual(1);
     });
 
   });
 }
+

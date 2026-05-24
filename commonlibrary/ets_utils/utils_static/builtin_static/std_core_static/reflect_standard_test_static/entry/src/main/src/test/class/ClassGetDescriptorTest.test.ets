@@ -12,8 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import {
   afterAll,
@@ -78,7 +77,7 @@ function descriptorToName035(descriptor: string): string {
 function isValidStdDescriptor038(descriptor: string): boolean {
   return descriptor.startsWith("Lstd/core/") &&
   descriptor.endsWith(";") &&
-    descriptor.length > 10;
+  descriptor.length > 10;
 }
 
 class OuterClass042Inner042 {
@@ -116,7 +115,6 @@ function toJVMSignature046(cls: Class): string {
   return cls.getDescriptor();
 }
 
-
 export default function ClassGetDescriptorTest(): void {
   describe('ClassGetDescriptorTest', (): void => {
     beforeAll(() => {
@@ -136,7 +134,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -150,7 +148,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -164,7 +162,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let descriptor = Class.from<Map<int, string>>().getDescriptor();
       expect(descriptor).assertEqual("Lstd/core/Map;");
@@ -177,7 +175,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Set<string>>();
       let desc1 = cls1.getDescriptor();
@@ -199,7 +197,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       let descriptor = cls.getDescriptor();
@@ -214,7 +212,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       let descriptor = cls.getDescriptor();
@@ -230,7 +228,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
       let descriptor = cls.getDescriptor();
@@ -245,7 +243,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -259,7 +257,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -274,7 +272,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Set<string>>();
       let desc1 = cls1.getDescriptor();
@@ -292,7 +290,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -307,7 +305,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Set<string>>();
       let cls2 = Class.from<Map<int, string>>();
@@ -325,7 +323,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Set<string>>();
       let cls2 = Class.from<Set<string>>();
@@ -343,7 +341,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [];
       let cls = Class.of(arr);
@@ -358,7 +356,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
       let cls = Class.of(arr);
@@ -373,7 +371,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let row1: FixedArray<int> = [1, 2];
       let row2: FixedArray<int> = [3, 4];
@@ -390,11 +388,11 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
-        let descriptor = cls.getDescriptor();
-        expect(descriptor.length).assertLarger(0);
+      let descriptor = cls.getDescriptor();
+      expect(descriptor.length).assertLarger(0);
     });
 
     /**
@@ -404,7 +402,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CustomClass>();
       let descriptor = cls.getDescriptor();
@@ -422,7 +420,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass020>();
       let descriptor = cls.getDescriptor();
@@ -436,7 +434,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass021>();
       let descriptor = cls.getDescriptor();
@@ -450,7 +448,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DescriptorJsonSerializable>();
       let descriptor = cls.getDescriptor();
@@ -465,7 +463,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface023>();
       let descriptor = cls.getDescriptor();
@@ -479,7 +477,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
       let descriptor = cls.getDescriptor();
@@ -493,7 +491,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
       let descriptor = cls.getDescriptor();
@@ -511,7 +509,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Array<string>>();
       let cls2 = Class.from<Array<int>>();
@@ -532,7 +530,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, Array<int>>>();
       let descriptor = cls.getDescriptor();
@@ -546,7 +544,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
@@ -561,7 +559,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum029>();
       let descriptor = cls.getDescriptor();
@@ -576,7 +574,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Set<string>>();
       let cls2 = Class.from<Set<int>>();
@@ -598,7 +596,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Map<string, int>>();
       let cls2 = Class.from<Map<int, string>>();
@@ -620,7 +618,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<string>>();
       let descriptor = cls.getDescriptor();
@@ -634,7 +632,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
       let descriptor = cls.getDescriptor();
@@ -648,7 +646,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
 
@@ -669,7 +667,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -685,7 +683,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
 
@@ -704,15 +702,13 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<Set<string>>();
-      let cls2 = Class.from<Set<string>>();
-
-      let desc1 = cls1.getDescriptor();
-      let desc2 = cls2.getDescriptor();
-
-      expect(desc1).assertEqual(desc2);
+      let mapDesc = Class.from<Map<int, string>>().getDescriptor();
+      let setDesc = Class.from<Set<string>>().getDescriptor();
+      expect(mapDesc).assertEqual("Lstd/core/Map;");
+      expect(setDesc).assertEqual("Lstd/core/Set;");
+      expect(mapDesc === setDesc).assertFalse();
     });
 
     /**
@@ -722,13 +718,13 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let factories: Array<() => Class> = [
-        (): Class => Class.from<Set<string>>(),
-        (): Class => Class.from<Map<int, string>>(),
-        (): Class => Class.from<Array<int>>(),
-        (): Class => Class.from<Array<string>>(),
+      (): Class => Class.from<Set<string>>(),
+      (): Class => Class.from<Map<int, string>>(),
+      (): Class => Class.from<Array<int>>(),
+      (): Class => Class.from<Array<string>>(),
       ];
       for (let i = 0; i < factories.length; i++) {
         let cls = factories[i]();
@@ -744,7 +740,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
 
@@ -764,7 +760,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
 
@@ -782,7 +778,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DescriptorTestMyClass041>();
       let descriptor = cls.getDescriptor();
@@ -796,7 +792,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OuterClass042Inner042>();
       let descriptor = cls.getDescriptor();
@@ -810,7 +806,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new DescriptorAnon043Holder();
       let cls = Class.of(obj);
@@ -825,7 +821,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       TypeRegistry044.register(cls);
@@ -839,7 +835,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let info = getTypeInfo045(cls);
@@ -855,7 +851,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let signature = toJVMSignature046(cls);
@@ -869,9 +865,10 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Set<string>>();
+      let setObj = new Set<int>();
+      let cls = Class.of(setObj);
       let descriptor = cls.getDescriptor();
       expect(descriptor).assertEqual("Lstd/core/Set;");
     });
@@ -883,7 +880,7 @@ export default function ClassGetDescriptorTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testClassGetDescriptor048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       let descriptor = cls.getDescriptor();
@@ -896,3 +893,4 @@ export default function ClassGetDescriptorTest(): void {
 
   });
 }
+

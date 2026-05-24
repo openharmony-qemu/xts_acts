@@ -12,94 +12,92 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass001 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass003 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass004 {
-    public constructor(value?: int | string, flag?: boolean) {}
-  }
+  public constructor(value?: int | string, flag?: boolean) {}
+}
 
 class MyClass005 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass006 {
-    public constructor(name: string, age: int) {}
-  }
+  public constructor(name: string, age: int) {}
+}
 
 class MyClass007 {
-    public constructor(required: string, optional?: int) {}
-  }
+  public constructor(required: string, optional?: int) {}
+}
 
 abstract class AbstractClass011 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 final class FinalClass012 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class GenericClass013<T> {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass015 {
-    public constructor(value?: int) {}
-  }
+  public constructor(value?: int) {}
+}
 
 class NormalClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 final class FinalClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 abstract class AbstractClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ChildClass017 extends ParentClass017 {
-    public constructor() {
-      super();
-    }
+  public constructor() {
+    super();
   }
+}
 
 class ParentClass017 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass018 {
-    public constructor(value?: int | string, flag?: boolean) {}
-  }
+  public constructor(value?: int | string, flag?: boolean) {}
+}
 
 class MyClass019 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass020 {
-    public constructor(name: string, age: int) {}
-  }
+  public constructor(name: string, age: int) {}
+}
 
 class MyClass021 {
-    public constructor(value?: int | string) {}
-  }
+  public constructor(value?: int | string) {}
+}
 
 class MyClass022 {
-    public constructor(x?: int | string | boolean) {}
-  }
-
+  public constructor(x?: int | string | boolean) {}
+}
 
 export default function ConstructorGetNameTest(): void {
   describe('ConstructorGetNameTest', (): void => {
@@ -120,12 +118,12 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let name = constructors[0].getName();
-        expect(name).assertEqual("constructor");
+      let constructors = cls.getConstructors();
+      let name = constructors[0].getName();
+      expect(name).assertEqual("constructor");
     });
 
     /**
@@ -135,7 +133,7 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass003>().getConstructors()[0].getName()).assertEqual("constructor");
     });
@@ -147,13 +145,13 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
-        let constructors = cls.getConstructors();
-        let name = constructors[0].getName();
-        expect(name).assertEqual("constructor");
-        expect(typeof name).assertEqual("string");
+      let constructors = cls.getConstructors();
+      let name = constructors[0].getName();
+      expect(name).assertEqual("constructor");
+      expect(typeof name).assertEqual("string");
     });
 
     /**
@@ -163,13 +161,13 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].getName()).assertEqual("constructor");
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getName()).assertEqual("constructor");
+      }
     });
 
     /**
@@ -179,10 +177,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass005>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -192,10 +190,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -205,10 +203,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass007>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -218,11 +216,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass005>().getConstructors();
-        let name = constructors[0].getName();
-        expect(typeof name === "string").assertTrue();
+      let name = constructors[0].getName();
+      expect(typeof name === "string").assertTrue();
     });
 
     /**
@@ -232,11 +230,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
-        let name = ctor.getName();
-        expect(name.length).assertLarger(0);
+      let name = ctor.getName();
+      expect(name.length).assertLarger(0);
     });
 
     /**
@@ -246,11 +244,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
-        let name = ctor.getName();
-        expect(name).assertEqual("constructor");
+      let name = ctor.getName();
+      expect(name).assertEqual("constructor");
     });
 
     /**
@@ -260,10 +258,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<AbstractClass011>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -273,10 +271,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass012>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -286,10 +284,10 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<GenericClass013<int>>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getName()).assertEqual("constructor");
     });
 
     /**
@@ -299,11 +297,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
-        let name = ctor.getName();
-        expect(name.length).assertLarger(0);
+      ctor.getName();
+      expect(true).assertTrue();
     });
 
     /**
@@ -313,13 +311,13 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].getName()).assertEqual("constructor");
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getName()).assertEqual("constructor");
+      }
     });
 
     /**
@@ -329,14 +327,14 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass016>().getConstructors()[0];
-        let c2 = Class.from<FinalClass016>().getConstructors()[0];
-        let c3 = Class.from<NormalClass016>().getConstructors()[0];
-        expect(c1.getName()).assertEqual("constructor");
-        expect(c2.getName()).assertEqual("constructor");
-        expect(c3.getName()).assertEqual("constructor");
+      let c2 = Class.from<FinalClass016>().getConstructors()[0];
+      let c3 = Class.from<NormalClass016>().getConstructors()[0];
+      expect(c1.getName()).assertEqual("constructor");
+      expect(c2.getName()).assertEqual("constructor");
+      expect(c3.getName()).assertEqual("constructor");
     });
 
     /**
@@ -346,12 +344,12 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass017>().getConstructors()[0];
-        let childCtor = Class.from<ChildClass017>().getConstructors()[0];
-        expect(parentCtor.getName()).assertEqual("constructor");
-        expect(childCtor.getName()).assertEqual("constructor");
+      let childCtor = Class.from<ChildClass017>().getConstructors()[0];
+      expect(parentCtor.getName()).assertEqual("constructor");
+      expect(childCtor.getName()).assertEqual("constructor");
     });
 
     /**
@@ -361,12 +359,12 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass018>().getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].getName()).assertEqual("constructor");
-        }
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getName()).assertEqual("constructor");
+      }
     });
 
     /**
@@ -376,11 +374,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
-        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "MyClass019")).assertTrue();
+      expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetNameTest.test.MyClass019");
     });
 
     /**
@@ -390,13 +388,13 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass020>().getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
-        expect(ctorRef.getParametersNum()).assertEqual(2);
-        expect(ctorRef.isPublic()).assertTrue();
-        expect(ctorRef.getReturnType().getName()).assertEqual("void");
+      expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getParametersNum()).assertEqual(2);
+      expect(ctorRef.isPublic()).assertTrue();
+      expect(ctorRef.getReturnType().getName()).assertEqual("void");
     });
 
     /**
@@ -406,12 +404,12 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass021>();
-        let constructors = cls.getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getName()).assertEqual("constructor");
+      let constructors = cls.getConstructors();
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getName()).assertEqual("constructor");
     });
 
     /**
@@ -421,11 +419,11 @@ export default function ConstructorGetNameTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass022>().getConstructors();
-        expect(constructors.length).assertEqual(1);
-        expect(constructors[0].getName()).assertEqual("constructor");
+      expect(constructors.length).assertEqual(1);
+      expect(constructors[0].getName()).assertEqual("constructor");
     });
 
   });

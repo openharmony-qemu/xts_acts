@@ -12,95 +12,93 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
 class MyClass001 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass003 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ClassB004 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ClassA004 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ChildClass005 extends ParentClass005 {
-    public constructor() {
-      super();
-    }
+  public constructor() {
+    super();
   }
+}
 
 class ParentClass005 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class GenericClass006<T> {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 abstract class AbstractClass007 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass010 {
-    public constructor(value?: int) {}
-  }
+  public constructor(value?: int) {}
+}
 
 final class FinalClass011 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass012 {
-    public constructor(value?: int | string) {}
-  }
+  public constructor(value?: int | string) {}
+}
 
 class MyClass013 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass015 {
-    public constructor(value?: int) {}
-  }
+  public constructor(value?: int) {}
+}
 
 class NormalClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 final class FinalClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 abstract class AbstractClass016 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass017 {
-    public constructor(value?: int | string, flag?: boolean) {}
-  }
+  public constructor(value?: int | string, flag?: boolean) {}
+}
 
 class MyClass018 {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class ParentClass {
-    public constructor() {}
-  }
+  public constructor() {}
+}
 
 class MyClass019 extends ParentClass {
-    public constructor(value: int) {}
-    public static staticMethod(): void {}
-  }
-
+  public constructor(value: int) {}
+  public static staticMethod(): void {}
+}
 
 export default function ConstructorGetOwnerTest(): void {
   describe('ConstructorGetOwnerTest', (): void => {
@@ -121,12 +119,12 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let owner = constructors[0].getOwner();
-        expect(Utils.classNameMatches(owner.getName(), "MyClass001")).assertTrue();
+      let constructors = cls.getConstructors();
+      let owner = constructors[0].getOwner();
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 
     /**
@@ -136,9 +134,9 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Utils.classNameMatches(Class.from<MyClass001>().getConstructors()[0].getOwner().getName(), "MyClass001")).assertTrue();
+      expect(Class.from<MyClass001>().getConstructors()[0].getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 
     /**
@@ -148,13 +146,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
-        let constructors = cls.getConstructors();
-        let owner = constructors[0].getOwner();
-        expect(owner !== null).assertTrue();
-        expect(Utils.classNameMatches(owner.getName(), "MyClass003")).assertTrue();
+      let constructors = cls.getConstructors();
+      let owner = constructors[0].getOwner();
+      expect(owner !== null).assertTrue();
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass003");
     });
 
     /**
@@ -164,12 +162,12 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorA = Class.from<ClassA004>().getConstructors()[0];
-        let ctorB = Class.from<ClassB004>().getConstructors()[0];
-        expect(Utils.classNameMatches(ctorA.getOwner().getName(), "ClassA004")).assertTrue();
-        expect(Utils.classNameMatches(ctorB.getOwner().getName(), "ClassB004")).assertTrue();
+      let ctorB = Class.from<ClassB004>().getConstructors()[0];
+      expect(ctorA.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.ClassA004");
+      expect(ctorB.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.ClassB004");
     });
 
     /**
@@ -179,12 +177,12 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let parentCtor = Class.from<ParentClass005>().getConstructors()[0];
-        let childCtor = Class.from<ChildClass005>().getConstructors()[0];
-        expect(Utils.classNameMatches(parentCtor.getOwner().getName(), "ParentClass005")).assertTrue();
-        expect(Utils.classNameMatches(childCtor.getOwner().getName(), "ChildClass005")).assertTrue();
+      let childCtor = Class.from<ChildClass005>().getConstructors()[0];
+      expect(parentCtor.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.ParentClass005");
+      expect(childCtor.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.ChildClass005");
     });
 
     /**
@@ -194,11 +192,11 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass006<int>>();
-        let ctorRef = cls.getConstructors()[0];
-        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "GenericClass006")).assertTrue();
+      let ctorRef = cls.getConstructors()[0];
+      expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.GenericClass006");
     });
 
     /**
@@ -208,10 +206,10 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<AbstractClass007>().getConstructors()[0];
-        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "AbstractClass007")).assertTrue();
+      expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.AbstractClass007");
     });
 
     /**
@@ -221,13 +219,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
-        let constructors = cls.getConstructors();
-        let owner = constructors[0].getOwner();
-        expect(typeof owner).assertEqual("object");
-        expect(Utils.classNameMatches(owner.getName(), "MyClass001")).assertTrue();
+      let constructors = cls.getConstructors();
+      let owner = constructors[0].getOwner();
+      expect(typeof owner).assertEqual("object");
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 
     /**
@@ -237,15 +235,15 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let owner = ctor.getOwner();
-        expect(Utils.classNameMatches(owner.getName(), "MyClass001")).assertTrue();
-        expect(owner.getSuper() !== null).assertTrue();
-        expect(Utils.classNameMatches(owner.getSuper()!.getName(), "Object")).assertTrue();
-        expect(owner.isSubtypeOf(Class.from<MyClass001>())).assertTrue();
-        expect(owner.getConstructors().length).assertLarger(0);
+      let owner = ctor.getOwner();
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
+      expect(owner.getSuper() !== null).assertTrue();
+      expect(owner.getSuper()!.getName()).assertEqual("std.core.Object");
+      expect(owner.isSubtypeOf(Class.from<MyClass001>())).assertTrue();
+      expect(owner.getConstructors().length).assertLarger(0);
     });
 
     /**
@@ -255,13 +253,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass010>();
-        let constructors = cls.getConstructors();
-        let owner = constructors[0].getOwner();
-        let ownerConstructors = owner.getConstructors();
-        expect(ownerConstructors.length).assertEqual(constructors.length);
+      let constructors = cls.getConstructors();
+      let owner = constructors[0].getOwner();
+      let ownerConstructors = owner.getConstructors();
+      expect(ownerConstructors.length).assertEqual(constructors.length);
     });
 
     /**
@@ -271,10 +269,10 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<FinalClass011>().getConstructors()[0];
-        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "FinalClass011")).assertTrue();
+      expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.FinalClass011");
     });
 
     /**
@@ -284,13 +282,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass012>().getConstructors();
-        let ownerClass = constructors[0].getOwner();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].getOwner().getName()).assertEqual(ownerClass.getName());
-        }
+      let ownerClass = constructors[0].getOwner();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getOwner().getName()).assertEqual(ownerClass.getName());
+      }
     });
 
     /**
@@ -300,11 +298,11 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass013>();
-        let ctorRef = cls.getConstructors()[0];
-        expect(cls.getName()).assertEqual(ctorRef.getOwner().getName());
+      let ctorRef = cls.getConstructors()[0];
+      expect(cls.getName()).assertEqual(ctorRef.getOwner().getName());
     });
 
     /**
@@ -314,11 +312,11 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
-        let owner = ctor.getOwner();
-        expect(owner.getName().length).assertLarger(0);
+      let owner = ctor.getOwner();
+      expect(owner.getName().length).assertLarger(0);
     });
 
     /**
@@ -328,13 +326,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass015>();
-        let constructors = cls.getConstructors();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(Utils.classNameMatches(constructors[i].getOwner().getName(), "MyClass015")).assertTrue();
-        }
+      let constructors = cls.getConstructors();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass015");
+      }
     });
 
     /**
@@ -344,14 +342,14 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass016>().getConstructors()[0];
-        let c2 = Class.from<FinalClass016>().getConstructors()[0];
-        let c3 = Class.from<NormalClass016>().getConstructors()[0];
-        expect(Utils.classNameMatches(c1.getOwner().getName(), "AbstractClass016")).assertTrue();
-        expect(Utils.classNameMatches(c2.getOwner().getName(), "FinalClass016")).assertTrue();
-        expect(Utils.classNameMatches(c3.getOwner().getName(), "NormalClass016")).assertTrue();
+      let c2 = Class.from<FinalClass016>().getConstructors()[0];
+      let c3 = Class.from<NormalClass016>().getConstructors()[0];
+      expect(c1.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.AbstractClass016");
+      expect(c2.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.FinalClass016");
+      expect(c3.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.NormalClass016");
     });
 
     /**
@@ -361,13 +359,13 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass017>().getConstructors();
-        let ownerClass = constructors[0].getOwner();
-        for (let i = 0; i < constructors.length; i++) {
-          expect(constructors[i].getOwner().getName()).assertEqual(ownerClass.getName());
-        }
+      let ownerClass = constructors[0].getOwner();
+      for (let i = 0; i < constructors.length; i++) {
+        expect(constructors[i].getOwner().getName()).assertEqual(ownerClass.getName());
+      }
     });
 
     /**
@@ -377,12 +375,12 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass018>();
-        let ctorRef = cls.getConstructors()[0];
-        expect(ctorRef.getName()).assertEqual("constructor");
-        expect(Utils.classNameMatches(ctorRef.getOwner().getName(), "MyClass018")).assertTrue();
+      let ctorRef = cls.getConstructors()[0];
+      expect(ctorRef.getName()).assertEqual("constructor");
+      expect(ctorRef.getOwner().getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass018");
     });
 
     /**
@@ -392,15 +390,16 @@ export default function ConstructorGetOwnerTest(): void {
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
-     */
+    */
     it('testConstructorGetOwner019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
-        let owner = ctorRef.getOwner();
+      let owner = ctorRef.getOwner();
 
-        expect(Utils.classNameMatches(owner.getName(), "MyClass019")).assertTrue();
-        expect(owner.getSuper() !== null).assertTrue();
-        expect(owner.getStaticMethods().length).assertLarger(0);
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass019");
+      expect(owner.getSuper() !== null).assertTrue();
+      expect(owner.getStaticMethods().length).assertLarger(0);
     });
 
   });
 }
+

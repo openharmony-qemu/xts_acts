@@ -11,7 +11,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+*/
 
 import ClassCreateInstanceTest from './class/ClassCreateInstanceTest.test';
 import ClassCurrentTest from './class/ClassCurrentTest.test';
@@ -56,10 +56,7 @@ import ConstructorIsPrivateTest from './constructor/ConstructorIsPrivateTest.tes
 import ConstructorIsProtectedTest from './constructor/ConstructorIsProtectedTest.test';
 import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test';
 
-
-
 export default function testsuite(): void {
-
   ClassCreateInstanceTest();
   ClassCurrentTest();
   ClassFromTest();
@@ -105,3 +102,4 @@ export default function testsuite(): void {
   ConstructorIsPublicTest();
 
 }
+

@@ -12,7 +12,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+*/
 
 export function wrapVoidFn(fn: () => (void | undefined)): () => void {
   return (): void => {
@@ -62,3 +62,4 @@ class LooseClassStaticAdapter implements LooseClassStatic {
 export function looseClassOf(): LooseClassStatic {
   return new LooseClassStaticAdapter();
 }
+

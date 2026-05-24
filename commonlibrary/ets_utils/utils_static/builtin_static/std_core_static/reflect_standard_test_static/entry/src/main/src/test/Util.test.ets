@@ -11,10 +11,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
+*/
 
 export default class Utils {
-  /** Class.getName() may return FQN; tests compare with the simple source name. */
+  /** Internal helper for Class.ofCaller harness names only; user types use assertEqual(FQN). */
   static classNameMatches(actualName: string, simpleName: string): boolean {
     if (actualName === simpleName) {
       return true;
@@ -24,9 +24,9 @@ export default class Utils {
   }
 
   /**
-   * Class.ofCaller under Hypium may resolve to a synthetic harness type (name often ends with "ETSGLOBAL")
-   * instead of the application class. Prefer matching the real caller; otherwise accept the harness token.
-   */
+  * Class.ofCaller under Hypium may resolve to a synthetic harness type (name often ends with "ETSGLOBAL")
+  * instead of the application class. Prefer matching the real caller; otherwise accept the harness token.
+  */
   static ofCallerNameMatchesOrHarness(actualName: string, simpleName: string): boolean {
     if (Utils.classNameMatches(actualName, simpleName)) {
       return true;
@@ -69,8 +69,8 @@ export default class Utils {
   }
 
   /**
-   * Copy FixedArray into std.core.Array. Runtime cannot cast FixedArray<T> to Array<T>.
-   */
+  * Copy FixedArray into std.core.Array. Runtime cannot cast FixedArray<T> to Array<T>.
+  */
   static fixedArrayToArray<T>(raw: FixedArray<T>): Array<T> {
     const out: Array<T> = [];
     for (let i = 0; i < raw.length; i++) {
@@ -102,8 +102,8 @@ export default class Utils {
   }
 
   /**
-   * Class.getName() for primitive / boxed / ArkTS aliases (e.g. std.core.Int vs int vs i32).
-   */
+  * Class.getName() for primitive / boxed / ArkTS aliases (e.g. std.core.Int vs int vs i32).
+  */
   static reflectScalarTypeNameMatches(actual: string, legacyKeyword: string): boolean {
     if (actual === legacyKeyword) {
       return true;
@@ -156,9 +156,10 @@ export default class Utils {
 
   static async msSleep(count: int): Promise<int> {
     return new Promise<int>((resolve: (value: int | PromiseLike<int>) => void, reject: (value: Error) => void) => {
-      setTimeout(() => {
-        resolve(0);
-      }, count);
+        setTimeout(() => {
+            resolve(0);
+          }, count);
     });
-  }
 }
+}
+
