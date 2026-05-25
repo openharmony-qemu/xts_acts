@@ -3133,7 +3133,6 @@ int NULL_CHECK_008()
 static napi_value normalAVbufferTest(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    napi_create_int32(env, result, &res);
     int result = NULL_CHECK_001();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_001 = %{public}d", result);
     if (result != TEST_PASS) {

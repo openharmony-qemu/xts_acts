@@ -90,7 +90,7 @@ export default function nativeAVScreenCaptureNdkTest() {
     it('SUB_MULTIMEDIA_SCREEN_CAPTURE_NORMAL_AVBUFFER_0100', Level.LEVEL0,async (done: Function) => {
       console.info(Tag + "normalAVbufferTest-------------before click:");
       let result: number = myScreenCaptureNdk.normalAVbufferTest();
-      expect(number).assertEqual(0);
+      expect(result).assertEqual(0);
       done();
     });
 
