@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ErrormangerTest from './errormanger.test';
+import ErrormangerTest from './ErrorManger.test';
 export default function testsuite() {
   ErrormangerTest();
 }
