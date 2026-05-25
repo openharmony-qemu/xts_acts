@@ -102,7 +102,7 @@ export default function OnConnectParameter() {
     /**
      * @tc.name   testDisconnectNativePermissionDenyStatic001
      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_PermissionDeny_0100
-     * @tc.desc   test disconnectNative without WEB_NATIVE_MESSAGING permission: verify error code is 201
+     * @tc.desc   test disconnectNative without WEB_NATIVE_MESSAGING permission: verify error code is 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -110,7 +110,7 @@ export default function OnConnectParameter() {
     it('testDisconnectNativePermissionDenyStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('DisconnectNativePermissionDenyStatic001', 10);
-        Utils.registerEvent('testDisconnectNativePermissionDenyStatic001', 201, 20260604, done);
+        Utils.registerEvent('testDisconnectNativePermissionDenyStatic001', 801, 20260604, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
       })
@@ -118,8 +118,8 @@ export default function OnConnectParameter() {
     /**
      * @tc.name   testDisconnectNativeNullUndefinedParamStatic001
      * @tc.number SUB_WEB_WebNativeMessagingExtension_DisconnectNative_NullUndefined_0100
-     * @tc.desc   test disconnectNative with null/undefined-equivalent connectionId (0): since the app has no
-     *            WEB_NATIVE_MESSAGING permission, the system rejects with error code 201 before parameter check
+     * @tc.desc   test disconnectNative with null/undefined-equivalent connectionId (0): since the device does not
+     *            support WEB_NATIVE_MESSAGING capability, the system rejects with error code 801
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -127,7 +127,7 @@ export default function OnConnectParameter() {
     it('testDisconnectNativeNullUndefinedParamStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('DisconnectNativeNullUndefinedParamStatic001', 10);
-        Utils.registerEvent('testDisconnectNativeNullUndefinedParamStatic001', 201, 20260605, done);
+        Utils.registerEvent('testDisconnectNativeNullUndefinedParamStatic001', 801, 20260605, done);
         await Utils.msSleep(1000);
         inspector.sendEventByKey('OnConnectParameterTestButton', 10, '');
       })

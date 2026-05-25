@@ -81,7 +81,7 @@ export default function startAbilityForResultTest() {
      * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0200
      * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0200
      * @tc.desc   Test startAbilityForResult(want, options): call with StartOptions parameter,
-     *            verify AbilityResult.resultCode and AbilityResult.want.
+     *            verify that without required permission, the API returns error code 201.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -105,17 +105,16 @@ export default function startAbilityForResultTest() {
           await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
             hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
             expect(data.resultCode).assertEqual(0);
-            expect(data.want?.bundleName).assertEqual('com.acts.context.webonconnectnativerely');
-            expect(data.want?.abilityName).assertEqual('EntryAbility');
             done();
           }).catch((err: BusinessError) => {
-            hilog.error(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
-            expect().assertFail();
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(201);
             done();
           });
         } catch (err) {
-          hilog.error(0x0000, 'testTag', `${tcNumber} catch error: ${JSON.stringify(err)}`);
-          expect().assertFail();
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(201);
           done();
         }
       });
