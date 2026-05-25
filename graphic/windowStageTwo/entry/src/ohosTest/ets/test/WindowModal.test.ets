@@ -1107,7 +1107,7 @@ export default function windowModalTest() {
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
@@ -1161,7 +1161,7 @@ export default function windowModalTest() {
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
-      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
