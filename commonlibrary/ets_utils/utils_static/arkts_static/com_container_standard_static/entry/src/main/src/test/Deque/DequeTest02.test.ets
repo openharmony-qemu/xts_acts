@@ -77,7 +77,7 @@ class C1 {
   }
 }
 
-export default function dequeArraylistInsertFront01Test(): void {
+export default function Deque02Test(): void {
   describe('dequeArraylistInsertFront01Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
@@ -1009,7 +1009,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Int8Array>();
         const typedArray = new Int8Array([-128, 127, 0, 50]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Int8Array).map((v: number): number => Number(v))).assertDeepEquals([-128, 127, 0, 50]);
+        expect(Array.from(deque.getFirst() as Int8Array).map((v: number): number => Number(v))).assertDeepEquals([-128.0, 127.0, 0.0, 50.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1030,7 +1030,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Uint8Array>();
         const typedArray = new Uint8Array([0, 255, 100, 200]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Uint8Array).map((v: number): number => Number(v))).assertDeepEquals([0, 255, 100, 200]);
+        expect(Array.from(deque.getFirst() as Uint8Array).map((v: number): number => Number(v))).assertDeepEquals([0.0, 255.0, 100.0, 200.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1051,7 +1051,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Uint8ClampedArray>();
         const typedArray = new Uint8ClampedArray([-1, 0, 255, 256, 100]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Uint8ClampedArray).map((v: number): number => Number(v))).assertDeepEquals([0, 0, 255, 255, 100]);
+        expect(Array.from(deque.getFirst() as Uint8ClampedArray).map((v: number): number => Number(v))).assertDeepEquals([0.0, 0.0, 255.0, 255.0, 100.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1072,7 +1072,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Int16Array>();
         const typedArray = new Int16Array([-32768, 32767, 0, 1000]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Int16Array).map((v: number): number => Number(v))).assertDeepEquals([-32768, 32767, 0, 1000]);
+        expect(Array.from(deque.getFirst() as Int16Array).map((v: number): number => Number(v))).assertDeepEquals([-32768.0, 32767.0, 0.0, 1000.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1093,7 +1093,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Uint16Array>();
         const typedArray = new Uint16Array([0, 65535, 1000, 2000]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Uint16Array).map((v: number): number => Number(v))).assertDeepEquals([0, 65535, 1000, 2000]);
+        expect(Array.from(deque.getFirst() as Uint16Array).map((v: number): number => Number(v))).assertDeepEquals([0.0, 65535.0, 1000.0, 2000.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1114,7 +1114,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         let deque = new Deque<Int32Array>();
         const typedArray = new Int32Array([-2147483648, 2147483647, 0, 100000]);
         deque.insertFront(typedArray);
-        expect(Array.from(deque.getFirst() as Int32Array).map((v: number): number => Number(v))).assertDeepEquals([-2147483648, 2147483647, 0, 100000]);
+        expect(Array.from(deque.getFirst() as Int32Array).map((v: number): number => Number(v))).assertDeepEquals([-2147483648.0, 2147483647.0, 0.0, 100000.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
@@ -1136,7 +1136,7 @@ export default function dequeArraylistInsertFront01Test(): void {
         const typedArray = new Uint32Array([0, 4294967295, 100000, 200000]);
         deque.insertFront(typedArray);
         let resultArr: number[] = Array.from(deque.getFirst() as Uint32Array).map((v: number): number => Number(v));
-        expect(resultArr).assertDeepEquals([0, 4294967295.0, 100000, 200000]);
+        expect(resultArr).assertDeepEquals([0.0, 4294967295.0, 100000.0, 200000.0]);
         expect(deque.length).assertEqual(1);
 
         console.log(TAG + ' done');
