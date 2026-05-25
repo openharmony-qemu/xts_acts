@@ -23,6 +23,7 @@ import { beforeAll, describe, expect, Hypium, it, Level, Size, TAG, TestType } f
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { fileIo } from '@kit.CoreFileKit';
 import { createUserAlbum } from '../Common.test';
+import Utils from '../Util.test';
 let testContext: Context = Hypium.get('Context') as Context;
 
 export default function MediaAssetChangeRequestStaticTest(): void {
