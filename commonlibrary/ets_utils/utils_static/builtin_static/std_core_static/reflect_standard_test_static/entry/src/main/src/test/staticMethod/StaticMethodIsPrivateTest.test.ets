@@ -64,7 +64,7 @@ class MyClass011 {
 }
 
 class MyClass012 {
-private static privateMethod1(): void {}
+  private static privateMethod1(): void {}
   private static privateMethod2(): void {}
   private static privateMethod3(): void {}
 }
@@ -363,8 +363,8 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-        let isPrivate: boolean = method!.isPrivate();
-        expect(isPrivate).assertFalse();
+      let isPrivate: boolean = method!.isPrivate();
+      expect(isPrivate).assertFalse();
     });
 
     /**

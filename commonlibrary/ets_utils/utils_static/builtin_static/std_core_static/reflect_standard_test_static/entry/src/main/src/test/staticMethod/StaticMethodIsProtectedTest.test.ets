@@ -64,7 +64,7 @@ class MyClass011 {
 }
 
 class MyClass012 {
-protected static protectedMethod1(): void {}
+  protected static protectedMethod1(): void {}
   protected static protectedMethod2(): void {}
   protected static protectedMethod3(): void {}
 }
@@ -389,8 +389,8 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-        let isProtected: boolean = method!.isProtected();
-        expect(isProtected).assertFalse();
+      let isProtected: boolean = method!.isProtected();
+      expect(isProtected).assertFalse();
     });
 
     /**

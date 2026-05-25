@@ -417,8 +417,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-        let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-        expect(paramTypes != null).assertTrue();
+      let paramTypes: FixedArray<Class> = method!.getParameterTypes();
+      expect(paramTypes != null).assertTrue();
     });
 
     /**
@@ -437,9 +437,12 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(m1 != undefined).assertTrue();
       expect(m2 != undefined).assertTrue();
       expect(m3 != undefined).assertTrue();
-      expect(m1!.getParameterTypes()[0].getName()).assertEqual('i32');
-      expect(m2!.getParameterTypes()[0].getName()).assertEqual('std.core.String');
-      expect(m3!.getParameterTypes()[0].getName()).assertEqual('u1');
+      let param0 = m1!.getParameterTypes()[0].getName();
+      expect(param0).assertEqual('i32');
+      let param1 = m2!.getParameterTypes()[0].getName();
+      expect(param1).assertEqual('std.core.String');
+      let param2 = m3!.getParameterTypes()[0].getName();
+      expect(param2).assertEqual('u1');
     });
 
     /**

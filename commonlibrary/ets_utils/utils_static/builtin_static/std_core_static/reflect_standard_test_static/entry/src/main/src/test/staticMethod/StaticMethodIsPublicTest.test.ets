@@ -368,8 +368,8 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-        let isPublic: boolean = method!.isPublic();
-        expect(isPublic).assertTrue();
+      let isPublic: boolean = method!.isPublic();
+      expect(isPublic).assertTrue();
     });
 
     /**

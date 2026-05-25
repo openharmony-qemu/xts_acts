@@ -458,8 +458,8 @@ export default function StaticMethodIsGetterTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
-        let isGetter: boolean = method!.isGetter();
-        expect(isGetter).assertTrue();
+      let isGetter: boolean = method!.isGetter();
+      expect(isGetter).assertTrue();
     });
 
     /**

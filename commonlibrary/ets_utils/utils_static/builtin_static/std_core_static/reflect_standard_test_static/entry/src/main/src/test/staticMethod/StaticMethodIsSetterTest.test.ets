@@ -467,8 +467,8 @@ export default function StaticMethodIsSetterTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
-        let isSetter: boolean = method!.isSetter();
-        expect(isSetter).assertTrue();
+      let isSetter: boolean = method!.isSetter();
+      expect(isSetter).assertTrue();
     });
 
     /**

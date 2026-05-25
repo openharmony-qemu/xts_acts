@@ -291,8 +291,8 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-        let isNative: boolean = method!.isNative();
-        expect(isNative).assertFalse();
+      let isNative: boolean = method!.isNative();
+      expect(isNative).assertFalse();
     });
 
     /**

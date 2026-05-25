@@ -341,10 +341,10 @@ export default function StaticMethodEqualsTest(): void {
       let method2 = cls.getStaticMethod('test');
       expect(method1 != undefined).assertTrue();
       expect(method2 != undefined).assertTrue();
-        let result = method1!.equals(method2!);
-        expect(result).assertTrue();
-        let resultType = Class.of(result).getName();
-        expect(resultType).assertEqual('std.core.Boolean');
+      let result = method1!.equals(method2!);
+      expect(result).assertTrue();
+      let resultType = Class.of(result).getName();
+      expect(resultType).assertEqual('std.core.Boolean');
     });
 
     /**
