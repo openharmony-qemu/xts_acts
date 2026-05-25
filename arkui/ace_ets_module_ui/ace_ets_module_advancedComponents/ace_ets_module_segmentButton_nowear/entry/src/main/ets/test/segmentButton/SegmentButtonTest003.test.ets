@@ -63,6 +63,8 @@ export default function SegmentButtonTest003() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
+        .$children[0]
         .$children[2]
         .$children[3]
       console.info("[SegmentButtonTest003_001] component obj is: " + JSON.stringify(obj));
@@ -83,6 +85,8 @@ export default function SegmentButtonTest003() {
       console.info('[SegmentButtonTest003_002] START');
       await CommonFunc.sleep(2000);
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]

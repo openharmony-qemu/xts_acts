@@ -40,7 +40,7 @@ export default function SegmentBtnMaterialTest0070() {
         router.clear();
         let pages = router.getState();
         console.info("get current pages:" + JSON.stringify(pages));
-        if (!("RepeatCloseReuse0110" == pages.name)) {
+        if (!("SegmentBtnMaterial0070" == pages.name)) {
           console.info("get SegmentBtnMaterialTest0070 pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -74,10 +74,12 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[1]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj1 is: " + JSON.stringify(obj));
       expect(obj1.$attrs.systemMaterial == null).assertTrue()
       let obj2: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj2 is: " + JSON.stringify(obj2));
@@ -85,11 +87,13 @@ export default function SegmentBtnMaterialTest0070() {
       let obj3: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[3]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.$attrs.systemMaterial == null).assertTrue()
       let obj4: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[3]
         .$children[1]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj4 is: " + JSON.stringify(obj4));
       expect(obj4.$attrs.systemMaterial == null).assertTrue()
       const driver = Driver.create();
@@ -104,11 +108,13 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[1]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj6 is: " + JSON.stringify(obj6));
       expect(JSON.stringify(obj6.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj7: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj7 is: " + JSON.stringify(obj7));
@@ -117,12 +123,14 @@ export default function SegmentBtnMaterialTest0070() {
       let obj8: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[3]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj8 is: " + JSON.stringify(obj8));
       expect(JSON.stringify(obj8.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj9: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[3]
         .$children[1]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj9 is: " + JSON.stringify(obj9));
       expect(JSON.stringify(obj9.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
@@ -136,10 +144,12 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[1]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj11 is: " + JSON.stringify(obj11));
       expect(obj11.$attrs.systemMaterial == null).assertTrue()
       let obj12: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj12 is: " + JSON.stringify(obj12));
@@ -147,11 +157,13 @@ export default function SegmentBtnMaterialTest0070() {
       let obj13: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[3]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj13 is: " + JSON.stringify(obj13));
       expect(obj13.$attrs.systemMaterial == null).assertTrue()
       let obj14: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[3]
         .$children[1]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj14 is: " + JSON.stringify(obj14));
       expect(obj14.$attrs.systemMaterial == null).assertTrue()
       console.info('[SegmentBtnMaterialTest0070_001] END');

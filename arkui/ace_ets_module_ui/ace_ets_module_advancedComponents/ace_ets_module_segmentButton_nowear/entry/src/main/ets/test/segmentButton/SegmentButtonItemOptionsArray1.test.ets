@@ -70,6 +70,8 @@ export default function SegmentButtonItemOptionsArray1() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
+        .$children[0]
         .$children[2]
         .$children[0]
         .$children[0]
@@ -99,6 +101,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await btn.click();
        await CommonFunc.sleep(1000);
        let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -137,6 +141,8 @@ export default function SegmentButtonItemOptionsArray1() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
+        .$children[0]
         .$children[2]
         .$children[3]
         .$children[0]
@@ -165,6 +171,8 @@ export default function SegmentButtonItemOptionsArray1() {
        await btn.click();
        await CommonFunc.sleep(1000);
        let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -202,6 +210,8 @@ export default function SegmentButtonItemOptionsArray1() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
+        .$children[0]
         .$children[2]
         .$children[1]
         .$children[0]
@@ -229,6 +239,8 @@ export default function SegmentButtonItemOptionsArray1() {
       await btn.click();
       await CommonFunc.sleep(1000);
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]

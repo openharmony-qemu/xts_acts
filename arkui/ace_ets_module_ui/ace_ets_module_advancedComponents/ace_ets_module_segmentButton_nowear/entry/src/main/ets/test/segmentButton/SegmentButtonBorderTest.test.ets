@@ -69,7 +69,12 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[0]
       console.info("[SegmentButtonBorderTest_001_1] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.borderRadius).assertEqual('14.00vp');
+      expect(JSON.stringify(obj.$attrs.borderRadius)).assertEqual(JSON.stringify({
+        topLeft: "14.00vp",
+        topRight: "14.00vp",
+        bottomLeft: "14.00vp",
+        bottomRight: "14.00vp"
+      }));
       await CommonFunc.sleep(1000);
       let obj2: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
@@ -118,7 +123,12 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[0]
       console.info("[SegmentButtonBorderTest_002_1] component obj is: " + JSON.stringify(obj3));
-      expect(obj3.$attrs.borderRadius).assertEqual('20.00vp');
+      expect(JSON.stringify(obj3.$attrs.borderRadius)).assertEqual(JSON.stringify({
+        topLeft: "20.00vp",
+        topRight: "20.00vp",
+        bottomLeft: "20.00vp",
+        bottomRight: "20.00vp"
+      }));
       await CommonFunc.sleep(1000);
       let obj4: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
         .$children[0]
