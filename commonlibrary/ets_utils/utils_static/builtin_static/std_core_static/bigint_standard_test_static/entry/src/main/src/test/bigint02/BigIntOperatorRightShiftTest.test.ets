@@ -47,13 +47,13 @@ export default function BigIntOperatorRightShiftTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0300
-     * @tc.name testBigIntOperatorRightShiftInvalid0300
+     * @tc.name testBigIntOperatorRightShiftInvalidArg0300
      * @tc.desc Verify operatorRightShift rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorRightShiftInvalid0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorRightShiftInvalidArg0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(256);
 
       expect((): void => {

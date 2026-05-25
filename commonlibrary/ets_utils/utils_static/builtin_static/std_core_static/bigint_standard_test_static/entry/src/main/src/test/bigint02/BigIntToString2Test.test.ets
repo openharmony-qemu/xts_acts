@@ -99,13 +99,13 @@ export default function BigIntToString2Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0600
-     * @tc.name testBigIntToString2InvalidRadix0600
+     * @tc.name testBigIntToString2InvalidArgRadix0600
      * @tc.desc Verify toString throws RangeError for radix outside 2..36
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString2InvalidRadix0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString2InvalidArgRadix0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const radixZero = 0;
       const radixBelowMin = 1;
       const radixAboveMax = 37;

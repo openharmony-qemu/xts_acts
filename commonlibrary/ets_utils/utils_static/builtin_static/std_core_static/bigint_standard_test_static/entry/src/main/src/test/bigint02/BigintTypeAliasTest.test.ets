@@ -20,13 +20,13 @@ export default function BigintTypeAliasTest(): void {
   describe('bigint type alias (mindmap bigint)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0100
-     * @tc.name testBigintTypeAliasAssign0100
+     * @tc.name testBigIntTypeAliasAssign0100
      * @tc.desc Verify bigint type alias assignment from BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasAssign0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntTypeAliasAssign0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const value: bigint = BigInt(100);
 
       expect(value.toString()).assertEqual('100');
@@ -38,13 +38,13 @@ export default function BigintTypeAliasTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0200
-     * @tc.name testBigintTypeAliasOps0200
+     * @tc.name testBigIntTypeAliasOps0200
      * @tc.desc Verify bigint supports BigInt operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasOps0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntTypeAliasOps0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a: bigint = BigInt(10);
       const b: bigint = BigInt(20);
       const sum: bigint = a.operatorAdd(b);
@@ -57,13 +57,13 @@ export default function BigintTypeAliasTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0300
-     * @tc.name testBigintTypeAliasStatic0300
+     * @tc.name testBigIntTypeAliasStatic0300
      * @tc.desc Verify static methods assign to bigint
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasStatic0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntTypeAliasStatic0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const truncated: bigint = BigInt.asIntN(8, BigInt(256));
 
       expect(truncated.toString()).assertEqual('0');
@@ -73,13 +73,13 @@ export default function BigintTypeAliasTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0400
-     * @tc.name testBigintTypeAliasInvalidConstruct0400
+     * @tc.name testBigIntTypeAliasInvalidArgConstruct0400
      * @tc.desc Verify invalid BigInt construction throws
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasInvalidConstruct0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntTypeAliasInvalidArgConstruct0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
 
       expect((): void => {

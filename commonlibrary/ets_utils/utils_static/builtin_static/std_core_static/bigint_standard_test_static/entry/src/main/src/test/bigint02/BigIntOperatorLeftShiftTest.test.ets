@@ -62,25 +62,25 @@ export default function BigIntOperatorLeftShiftTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0400
-     * @tc.name testBigIntOperatorLeftShiftReturn0400
+     * @tc.name testBigIntOperatorLeftShiftReturnType0400
      * @tc.desc Verify operatorLeftShift returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShiftReturn0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShiftReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(typeof BigInt(1).operatorLeftShift(BigInt(2)) === 'bigint').assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0500
-     * @tc.name testBigIntOperatorLeftShiftInvalid0500
+     * @tc.name testBigIntOperatorLeftShiftInvalidArg0500
      * @tc.desc Verify operatorLeftShift rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLeftShiftInvalid0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLeftShiftInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(1);
 
       expect((): void => {

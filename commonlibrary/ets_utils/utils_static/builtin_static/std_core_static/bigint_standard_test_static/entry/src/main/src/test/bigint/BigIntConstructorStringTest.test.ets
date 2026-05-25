@@ -71,13 +71,13 @@ export default function BigIntConstructorStringTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0500
-     * @tc.name testBigIntConstructorStringInvalidDecimal0500
+     * @tc.name testBigIntConstructorStringInvalidArgDecimal0500
      * @tc.desc Verify invalid decimal string throws when constructing BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringInvalidDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorStringInvalidArgDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
 
       expect((): void => {

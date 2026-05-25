@@ -119,13 +119,13 @@ export default function BigIntFromULongTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_FROMULONG_0700
-     * @tc.name testBigIntFromULongInvalidArgThrows0700
+     * @tc.name testBigIntFromULongInvalidArg0700
      * @tc.desc Verify fromULong rejects null cast to long at runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntFromULongInvalidArgThrows0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntFromULongInvalidArg0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt.fromULong(null as Object as long);
       }).assertThrowError('ClassCastError');

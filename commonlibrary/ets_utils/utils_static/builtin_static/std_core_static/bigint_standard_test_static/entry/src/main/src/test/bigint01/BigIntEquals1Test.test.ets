@@ -88,13 +88,13 @@ export default function BigIntEquals1Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0500
-     * @tc.name testBigIntEqualsBigIntInvalidArgThrows0500
+     * @tc.name testBigIntEqualsBigIntInvalidArg0500
      * @tc.desc Verify equals(to: BigInt) throws ClassCastError when runtime value is not BigInt; as BigInt / as object as BigInt selects this overload only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntInvalidArgThrows0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntEqualsBigIntInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(42);
       // Non-BigInt via equals(other: Any) returns false; see BigIntEquals2Test.
 

@@ -114,13 +114,13 @@ export default function BigIntOperatorAddTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0600
-     * @tc.name testBigIntOperatorAddInvalidArgThrows0600
+     * @tc.name testBigIntOperatorAddInvalidArg0600
      * @tc.desc Verify operatorAdd rejects null, undefined, and wrong types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorAddInvalidArgThrows0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorAddInvalidArg0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
 
       expect((): void => {
