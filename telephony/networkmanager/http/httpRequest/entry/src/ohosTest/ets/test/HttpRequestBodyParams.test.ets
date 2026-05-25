@@ -38,8 +38,8 @@ export function ExpectEqual(exp: string | number | boolean, assert: string | num
   }
 }
 
-export default function HttpBodyParameterTest() {
-  describe('HttpBodyParameterTest', () => {
+export default function HttpBodyParametersTest() {
+  describe('HttpBodyParametersTest', () => {
 
     /**
      * @tc.name   testHttpBodyParameter0100
@@ -49,7 +49,7 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testHttpBodyParameter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testHttpBodyParameter0100';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
@@ -94,7 +94,7 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testHttpBodyParameter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testHttpBodyParameter0200';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
@@ -140,7 +140,7 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testHttpBodyParameter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testHttpBodyParameter0300';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
@@ -369,7 +369,7 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testHttpBodyParameter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testHttpBodyParameter0800';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
@@ -414,7 +414,7 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testHttpBodyParameter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testHttpBodyParameter0900';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
@@ -472,7 +472,7 @@ export default function HttpBodyParameterTest() {
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
-          queryParams: undefined,
+          queryParams: undefined
         };
         let data: http.HttpResponse = await httpRequest.request(XTS_TEST_URL, options);
         console.info(`${caseName} data: ${JSON.stringify(data)}`);
@@ -588,7 +588,7 @@ export default function HttpBodyParameterTest() {
     /**
      * @tc.name   testHttpBodyParameter1300
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1300
-     * @tc.desc   Send text data in both the request body and extra, body`overrides extraData`
+     * @tc.desc   Send text data in both the request body and extra, body overrides extraData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -621,7 +621,7 @@ export default function HttpBodyParameterTest() {
         }
         console.info(`${caseName} ResultStr: ${resultStr}`);
         ExpectTrue(resultStr.includes('sent to data body'));
-        ExpectTrue(!resultStr.includes('sent to data extra') || resultStr.includes('sent to data body'));
+        ExpectTrue(!resultStr.includes('sent to data extra') && resultStr.includes('sent to data body'));
       } catch (err) {
         console.info(`${caseName} request fail err : ${JSON.stringify(err)}`);
         ExpectFail();
@@ -636,7 +636,7 @@ export default function HttpBodyParameterTest() {
     /**
      * @tc.name   testHttpBodyParameter1400
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1400
-     * @tc.desc   Send object data in both the request body and queryParams, Simultaneous return of body and queryParams`
+     * @tc.desc   Send object data in both the request body and queryParams, Simultaneous return of body and queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -689,7 +689,7 @@ export default function HttpBodyParameterTest() {
     /**
      * @tc.name   testHttpBodyParameter1500
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1500
-     * @tc.desc   Send object data in both the request extra and queryParams, queryParams`overrides extraData
+     * @tc.desc   Send object data in both the request extra and queryParams, queryParams overrides extraData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
