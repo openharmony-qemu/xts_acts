@@ -407,4 +407,5 @@ export default function NullCheckTest() {
     it('NULL_CHECK_031', Level.LEVEL0, () => {
       expect(libAudioDecoder.NULL_CHECK(30)).assertEqual(0);
     })
+  })
 }
