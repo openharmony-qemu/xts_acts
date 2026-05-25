@@ -1976,7 +1976,7 @@ export default function windowFocusTest() {
         await subWindow.setUIContent('testability/pages/Index5');
         let displayInfo: display.Display = display.getDefaultDisplaySync()
         console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
-        await subWindow.resizeAsync(displayInfo.width,displayInfo.height)
+        await subWindow.resize(displayInfo.width,displayInfo.height)
         await subWindow.showWindow();
         await sleep(1000);
         subWindow.on('windowHighlightChange', callback)
