@@ -67,15 +67,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0100
-     * @tc.name      : SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0100
-     * @tc.desc      : camera capture 1 dynamic photo with multi Different config
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100
+     * @tc.name SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100
+     * @tc.desc camera capture 1 dynamic photo with multi Different config
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
-    it('SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0100'
+    it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0100'
       try {
         //预制条件
         let capturePhotoNum = 1;
@@ -195,15 +195,15 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
     })
 
     /**
-     * @tc.number    : SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0200
-     * @tc.name      : SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0200
-     * @tc.desc      : camera capture 1 dynamic photo with multi Different config
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200
+     * @tc.name SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200
+     * @tc.desc camera capture 1 dynamic photo with multi Different config
+     * @tc.size MEDIUMTEST
+     * @tc.type FUNCTION
+     * @tc.level LEVEL0
      */
-    it('SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let testNum = 'SUB_CAMERA_CAPTURE_DYNAMIC_PHOTO_TEST_MULTI_CONFIG_0200'
+    it('SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let testNum = 'SUB_MULTIMEDIA_CAMERA_CAPTURE_DYNAMIC_PHOTO_MULTI_CONFIG_0200'
       try {
         //预制条件
         let capturePhotoNum = 1;
