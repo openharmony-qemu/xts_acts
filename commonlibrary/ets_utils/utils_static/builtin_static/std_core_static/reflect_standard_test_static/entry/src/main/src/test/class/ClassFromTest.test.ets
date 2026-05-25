@@ -1203,6 +1203,10 @@ export default function ClassFromTest(): void {
     it('testClassFrom062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<byte | short>();
       expect(cls.isUnion()).assertTrue();
+      let constituents = cls.getUnionConstituentTypes()!;
+      expect(constituents.length).assertEqual(2);
+      expect(constituents[0].getName()).assertEqual(Class.from<byte>().getName());
+      expect(constituents[1].getName()).assertEqual(Class.from<short>().getName());
     });
 
     /**
