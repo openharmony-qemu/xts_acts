@@ -1195,13 +1195,13 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0620
      * @tc.name testClassFrom062
-     * @tc.desc Verify ClassFrom case 062: return Class object call isUnion()
+     * @tc.desc Verify ClassFrom case 062: byte|short union from() constituent Class names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
+      let cls = Class.from<byte | short>();
       expect(cls.isUnion()).assertTrue();
     });
 
