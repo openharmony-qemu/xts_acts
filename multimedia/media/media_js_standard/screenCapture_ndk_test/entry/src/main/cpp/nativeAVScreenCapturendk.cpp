@@ -3132,47 +3132,58 @@ int NULL_CHECK_008()
 
 static napi_value normalAVbufferTest(napi_env env, napi_callback_info info)
 {
-    int res = NULL_CHECK_001();
+    napi_value res;
+    napi_create_int32(env, result, &res);
+    int result = NULL_CHECK_001();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_001 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_002();
+    result = NULL_CHECK_002();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_002 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_003();
+    result = NULL_CHECK_003();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_003 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_004();
+    result = NULL_CHECK_004();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_004 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_005();
+    result = NULL_CHECK_005();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_005 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_006();
+    result = NULL_CHECK_006();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_006 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_007();
+    result = NULL_CHECK_007();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_007 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    res = NULL_CHECK_008();
+    result = NULL_CHECK_008();
     OH_LOG_INFO(LOG_APP, "normalAVbufferTest NULL_CHECK_008 = %{public}d", res);
-    if (ret != TEST_PASS) {
-        return TEST_FAILED;
+    if (result != TEST_PASS) {
+        napi_create_int32(env, TEST_FAILED, &res);
+        return res;
     }
-    return TEST_PASS;
+    napi_create_int32(env, TEST_PASS, &res);
+    return res;
 }
 
 EXTERN_C_START
