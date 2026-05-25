@@ -1842,5 +1842,263 @@ export default function StreamWritable01Test(): void {
       }
     });
 
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4200
+     * @tc.name      testStreamWritable01Chapter0042
+     * @tc.desc      Test writing Uint8Array with Uint16 boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const uint16Values = [0, 65535, 65536, 32768];
+      const uint8Array = new Uint8Array(uint16Values.length);
+      for (let i = 0; i < uint16Values.length; i++) {
+        uint8Array[i] = uint16Values[i] & 0xFF;
+      }
+      try {
+        const writableStream = new TestWritable01_42();
+        const result = writableStream.write(uint8Array);
+        expect(result).assertTrue();
+        const receivedData = writableStream.getData();
+        expect(receivedData != null).assertTrue();
+        expect((receivedData as Uint8Array).length).assertEqual(4);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4300
+     * @tc.name      testStreamWritable01Chapter0043
+     * @tc.desc      Test writing string with all escape sequences
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const escapeSequences = '\\a\\b\\f\\n\\r\\t\\v\\\\\\\'\\"\\?\\0\\123\\x41';
+      try {
+        const writableStream = new TestWritable01_43();
+        const result = writableStream.write(escapeSequences, 'utf8');
+        expect(result).assertTrue();
+        expect(writableStream.getData()).assertEqual(escapeSequences);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4400
+     * @tc.name      testStreamWritable01Chapter0044
+     * @tc.desc      Test writing Uint8ClampedArray type data converted to Uint8Array
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const clampedArray = new Uint8ClampedArray([0, 255, 128, 200, 50]);
+      const uint8Array = new Uint8Array(clampedArray.length);
+      for (let i = 0; i < clampedArray.length; i++) {
+        uint8Array[i] = clampedArray[i];
+      }
+      try {
+        const writableStream = new TestWritable01_44();
+        const result = writableStream.write(uint8Array);
+        expect(result).assertTrue();
+        const receivedData = writableStream.getData();
+        expect(receivedData != null).assertTrue();
+        expect((receivedData as Uint8Array).length).assertEqual(5);
+        expect((receivedData as Uint8Array)[0]).assertEqual(0);
+        expect((receivedData as Uint8Array)[1]).assertEqual(255);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4500
+     * @tc.name      testStreamWritable01Chapter0045
+     * @tc.desc      Test writing mixed data types to stream
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const writableStream = new TestWritable01_45();
+        const result1 = writableStream.write('Hello', 'utf8');
+        const result2 = writableStream.write(new Uint8Array([32]));
+        const result3 = writableStream.write('World', 'utf8');
+        const result4 = writableStream.write(new Uint8Array([33]));
+        const result5 = writableStream.write('123', 'ascii');
+        expect(result1).assertTrue();
+        expect(result2).assertTrue();
+        expect(result3).assertTrue();
+        expect(result4).assertTrue();
+        expect(result5).assertTrue();
+        expect(writableStream.getItems().length).assertEqual(5);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4600
+     * @tc.name      testStreamWritable01Chapter0046
+     * @tc.desc      Test writing without providing callback function
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        const writableStream = new TestWritable01_46();
+        const result = writableStream.write('test data', 'utf8');
+        expect(result).assertTrue();
+        setTimeout(() => {
+          expect(writableStream.getWriteCalled()).assertTrue();
+        }, 10);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4700
+     * @tc.name      testStreamWritable01Chapter0047
+     * @tc.desc      Test writing large string data
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let largeString = '';
+      const targetLength = 10000;
+      for (let i = 0; i < targetLength; i++) {
+        largeString += 'A';
+      }
+      try {
+        const writableStream = new TestWritable01_47();
+        const result = writableStream.write(largeString, 'utf8');
+        expect(result).assertTrue();
+        setTimeout(() => {
+          expect(writableStream.getWriteCalled()).assertTrue();
+          expect(writableStream.getLength()).assertEqual(targetLength);
+        }, 50);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4800
+     * @tc.name      testStreamWritable01Chapter0048
+     * @tc.desc      Test writing Uint8Array created from regular number array
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const numberArray: number[] = [72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63];
+      const uint8Array = new Uint8Array(numberArray);
+      try {
+        const writableStream = new TestWritable01_48();
+        const result = writableStream.write(uint8Array);
+        expect(result).assertTrue();
+        const receivedData = writableStream.getData();
+        expect(receivedData != null).assertTrue();
+        expect((receivedData as Uint8Array).length).assertEqual(14);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_4900
+     * @tc.name      testStreamWritable01Chapter0049
+     * @tc.desc      Test writing Uint8Array representing HelloWorld123?
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const uint8Array = new Uint8Array([72, 101, 108, 108, 111, 87, 111, 114, 108, 100, 49, 50, 51, 63]);
+      try {
+        const writableStream = new TestWritable01_49();
+        const result = writableStream.write(uint8Array);
+        expect(result).assertTrue();
+        const receivedData = writableStream.getData();
+        expect(receivedData != null).assertTrue();
+        const expected = "HelloWorld123?";
+        let actual = "";
+        for (let i = 0; i < (receivedData as Uint8Array).length; i++) {
+          actual += String.fromCharCode((receivedData as Uint8Array)[i].toInt());
+        }
+        expect(actual).assertEqual(expected);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_5000
+     * @tc.name      testStreamWritable01Chapter0050
+     * @tc.desc      Test writing Uint8Array with various non-numeric scenarios
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 2
+     */
+    it('testStreamWritable01Chapter0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const writableStream = new TestWritable01_50();
+      try {
+        const array1 = new Uint8Array([72, 101, NaN, Infinity, 108, 111]);
+        const result1 = writableStream.write(array1);
+        expect(result1).assertEqual(true);
+      } catch (error) {
+        expect(error.code).assertEqual(10200035);
+      }
+      try {
+        const specialArray: number[] = [];
+        specialArray[0] = 72;
+        specialArray[1] = 101;
+        const uint8Array = new Uint8Array(specialArray);
+        const result2 = writableStream.write(uint8Array);
+        expect(result2).assertEqual(true);
+      } catch (error) {
+        expect(error.code).assertEqual(401);
+      }
+    });
+
+    /**
+     * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTONE_5100
+     * @tc.name      testStreamWritable01Chapter0051
+     * @tc.desc      Test writing Uint8Array with all boundary values
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level      Level 2
+     */
+    it('testStreamWritable01Chapter0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const testValues = [0, 255, 0, 0];
+      const uint8Array = new Uint8Array(4);
+      uint8Array[0] = 0;
+      uint8Array[1] = 255;
+      uint8Array[2] = 256 & 0xFF;
+      uint8Array[3] = (-1) & 0xFF;
+      try {
+        const writableStream = new TestWritable01_51();
+        const result = writableStream.write(uint8Array);
+        expect(result).assertTrue();
+        const receivedData = writableStream.getData();
+        expect(receivedData != null).assertTrue();
+        expect((receivedData as Uint8Array).length).assertEqual(4);
+        expect((receivedData as Uint8Array)[0]).assertEqual(0);
+        expect((receivedData as Uint8Array)[1]).assertEqual(255);
+        expect((receivedData as Uint8Array)[2]).assertEqual(0);
+        expect((receivedData as Uint8Array)[3]).assertEqual(255);
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
+    });
   })
 }
