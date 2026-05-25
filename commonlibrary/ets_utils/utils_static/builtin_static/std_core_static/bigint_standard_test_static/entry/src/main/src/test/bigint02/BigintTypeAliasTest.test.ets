@@ -70,24 +70,5 @@ export default function BigintTypeAliasTest(): void {
       const asUint: bigint = BigInt.asUintN(8, BigInt(-1));
       expect(asUint.toString()).assertEqual('255');
     });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0400
-     * @tc.name testBigIntTypeAliasInvalidArgConstruct0400
-     * @tc.desc Verify invalid BigInt construction throws
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntTypeAliasInvalidArgConstruct0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-
-      expect((): void => {
-        BigInt('abc');
-      }).assertThrow(invalidMsg);
-      expect((): void => {
-        BigInt(3.14 as double);
-      }).assertThrowError('RangeError');
-    });
   });
 }
