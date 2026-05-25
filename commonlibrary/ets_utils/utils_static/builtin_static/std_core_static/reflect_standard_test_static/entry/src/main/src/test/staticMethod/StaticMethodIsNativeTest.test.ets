@@ -418,14 +418,11 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<Array<int>>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
-      let validCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
         let isNative: boolean = methods[i].isNative();
-        if (isNative == true || isNative == false) {
-          validCount++;
-        }
+        let isNativeType = Class.of(isNative).getName();
+        expect(isNativeType).assertEqual('std.core.Boolean');
       }
-      expect(validCount).assertEqual(methods.length);
     });
 
     /**
