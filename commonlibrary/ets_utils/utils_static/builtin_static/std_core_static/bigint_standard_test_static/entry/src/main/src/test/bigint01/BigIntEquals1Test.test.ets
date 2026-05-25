@@ -26,16 +26,15 @@ export default function BigIntEquals1Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntTrue0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).equals(BigInt(42))).assertTrue();
-        expect(BigInt(0).equals(BigInt(0))).assertTrue();
-        expect(BigInt(-42).equals(BigInt(-42))).assertTrue();
-        expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
-        expect(BigInt(42).equals(BigInt('42'))).assertTrue();
-        expect(BigInt(0).equals(BigInt('0'))).assertTrue();
-        expect(BigInt(42).equals(BigInt(BigInt(42)))).assertTrue();
-      });
+    it('testBigIntEqualsBigIntTrue0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).equals(BigInt(42))).assertTrue();
+      expect(BigInt(0).equals(BigInt(0))).assertTrue();
+      expect(BigInt(-42).equals(BigInt(-42))).assertTrue();
+      expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
+      expect(BigInt(42).equals(BigInt('42'))).assertTrue();
+      expect(BigInt(0).equals(BigInt('0'))).assertTrue();
+      expect(BigInt(42).equals(BigInt(BigInt(42)))).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0200
@@ -45,13 +44,12 @@ export default function BigIntEquals1Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntFalse0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).equals(BigInt(99))).assertFalse();
-        expect(BigInt(-42).equals(BigInt(42))).assertFalse();
-        expect(BigInt(1).equals(BigInt(-1))).assertFalse();
-        expect(BigInt('99999999999999999999').equals(BigInt('88888888888888888888'))).assertFalse();
-      });
+    it('testBigIntEqualsBigIntFalse0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).equals(BigInt(99))).assertFalse();
+      expect(BigInt(-42).equals(BigInt(42))).assertFalse();
+      expect(BigInt(1).equals(BigInt(-1))).assertFalse();
+      expect(BigInt('99999999999999999999').equals(BigInt('88888888888888888888'))).assertFalse();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0300
@@ -61,15 +59,15 @@ export default function BigIntEquals1Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntBoundary0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const huge = '999999999999999999999999999999';
-        expect(BigInt(huge).equals(BigInt(huge))).assertTrue();
-        expect(BigInt(huge).equals(BigInt('999999999999999999999999999998'))).assertFalse();
-        const neg = '-' + huge;
-        expect(BigInt(neg).equals(BigInt(neg))).assertTrue();
-        expect(BigInt(neg).equals(BigInt(huge))).assertFalse();
-      });
+    it('testBigIntEqualsBigIntBoundary0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const huge = '999999999999999999999999999999';
+
+      expect(BigInt(huge).equals(BigInt(huge))).assertTrue();
+      expect(BigInt(huge).equals(BigInt('999999999999999999999999999998'))).assertFalse();
+      const neg = '-' + huge;
+      expect(BigInt(neg).equals(BigInt(neg))).assertTrue();
+      expect(BigInt(neg).equals(BigInt(huge))).assertFalse();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0400
@@ -79,46 +77,49 @@ export default function BigIntEquals1Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntReturnType0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const t = BigInt(42).equals(BigInt(42));
-        const f = BigInt(42).equals(BigInt(99));
-        expect(typeof t === 'boolean').assertTrue();
-        expect(t).assertTrue();
-        expect(f).assertFalse();
-      });
+    it('testBigIntEqualsBigIntReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const t = BigInt(42).equals(BigInt(42));
+      const f = BigInt(42).equals(BigInt(99));
+
+      expect(typeof t === 'boolean').assertTrue();
+      expect(t).assertTrue();
+      expect(f).assertFalse();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0500
      * @tc.name testBigIntEqualsBigIntInvalidArgThrows0500
-     * @tc.desc Verify equals(to: BigInt) throws ClassCastError when runtime value is not BigInt; cast selects this overload only
+     * @tc.desc Verify equals(to: BigInt) throws ClassCastError when runtime value is not BigInt; as BigInt / as object as BigInt selects this overload only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntInvalidArgThrows0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = BigInt(42);
-        // Non-BigInt via equals(other: Any) returns false; see BigIntEquals2Test.
-        expect((): void => {
-          a.equals(null as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.equals(undefined as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.equals('42' as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.equals(42 as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.equals(true as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.equals({} as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-      });
+    it('testBigIntEqualsBigIntInvalidArgThrows0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const a = BigInt(42);
+      // Non-BigInt via equals(other: Any) returns false; see BigIntEquals2Test.
+
+      expect((): void => {
+        a.equals(null as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals(undefined as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals('42' as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals(42 as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals(true as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals({} as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.equals(((): void => {}) as object as BigInt);
+      }).assertThrowError('ClassCastError');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0600
@@ -128,9 +129,8 @@ export default function BigIntEquals1Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntNormalNoThrow0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).equals(BigInt(42))).assertTrue();
-      });
+    it('testBigIntEqualsBigIntNormalNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).equals(BigInt(42))).assertTrue();
+    });
   });
 }

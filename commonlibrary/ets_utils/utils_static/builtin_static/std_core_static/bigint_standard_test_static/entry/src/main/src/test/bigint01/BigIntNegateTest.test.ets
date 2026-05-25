@@ -26,14 +26,13 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateSigns0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(8).negate().toString()).assertEqual('-8');
-        expect(BigInt(1).negate().toString()).assertEqual('-1');
-        expect(BigInt(-8).negate().toString()).assertEqual('8');
-        expect(BigInt(-1).negate().toString()).assertEqual('1');
-        expect(BigInt(0).negate().toString()).assertEqual('0');
-      });
+    it('testBigIntNegateSigns0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(8).negate().toString()).assertEqual('-8');
+      expect(BigInt(1).negate().toString()).assertEqual('-1');
+      expect(BigInt(-8).negate().toString()).assertEqual('8');
+      expect(BigInt(-1).negate().toString()).assertEqual('1');
+      expect(BigInt(0).negate().toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0200
@@ -43,12 +42,12 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateLarge0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const huge = '999999999999999999999999999999';
-        expect(BigInt(huge).negate().toString()).assertEqual('-' + huge);
-        expect(BigInt('-' + huge).negate().toString()).assertEqual(huge);
-      });
+    it('testBigIntNegateLarge0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const huge = '999999999999999999999999999999';
+
+      expect(BigInt(huge).negate().toString()).assertEqual('-' + huge);
+      expect(BigInt('-' + huge).negate().toString()).assertEqual(huge);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0300
@@ -58,12 +57,11 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateDoubleNegate0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).negate().negate().toString()).assertEqual('42');
-        expect(BigInt(-123).negate().negate().toString()).assertEqual('-123');
-        expect(BigInt(0).negate().negate().toString()).assertEqual('0');
-      });
+    it('testBigIntNegateDoubleNegate0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).negate().negate().toString()).assertEqual('42');
+      expect(BigInt(-123).negate().negate().toString()).assertEqual('-123');
+      expect(BigInt(0).negate().negate().toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0400
@@ -73,12 +71,12 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateSafeIntegerMagnitude0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
-        expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
-        expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
-      });
+    it('testBigIntNegateSafeIntegerMagnitude0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
+
+      expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
+      expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0500
@@ -88,14 +86,14 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateReturnType0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const value = BigInt(100);
-        const result = value.negate();
-        expect(typeof result === 'bigint').assertTrue();
-        expect(value.toString()).assertEqual('100');
-        expect(result !== value).assertTrue();
-      });
+    it('testBigIntNegateReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const value = BigInt(100);
+      const result = value.negate();
+
+      expect(typeof result === 'bigint').assertTrue();
+      expect(value.toString()).assertEqual('100');
+      expect(result !== value).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0600
@@ -105,14 +103,13 @@ export default function BigIntNegateTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateNoThrow0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('77').negate().toString()).assertEqual('-77');
-        expect(BigInt(true).negate().toString()).assertEqual('-1');
-        expect(BigInt(false).negate().toString()).assertEqual('0');
-        const original = BigInt('88');
-        const copied = BigInt(original);
-        expect(copied.negate().toString()).assertEqual('-88');
-      });
+    it('testBigIntNegateNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('77').negate().toString()).assertEqual('-77');
+      expect(BigInt(true).negate().toString()).assertEqual('-1');
+      expect(BigInt(false).negate().toString()).assertEqual('0');
+      const original = BigInt('88');
+      const copied = BigInt(original);
+      expect(copied.negate().toString()).assertEqual('-88');
+    });
   });
 }

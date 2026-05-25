@@ -26,15 +26,14 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongPositive0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(1).getLong()).assertEqual(1);
-        expect(BigInt(42).getLong()).assertEqual(42);
-        expect(BigInt(1000000).getLong()).assertEqual(1000000);
-        expect(BigInt(127).getLong()).assertEqual(127);
-        expect(BigInt(32767).getLong()).assertEqual(32767);
-        expect(BigInt(2147483647).getLong()).assertEqual(2147483647);
-      });
+    it('testBigIntGetLongPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(1).getLong()).assertEqual(1);
+      expect(BigInt(42).getLong()).assertEqual(42);
+      expect(BigInt(1000000).getLong()).assertEqual(1000000);
+      expect(BigInt(127).getLong()).assertEqual(127);
+      expect(BigInt(32767).getLong()).assertEqual(32767);
+      expect(BigInt(2147483647).getLong()).assertEqual(2147483647);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0200
@@ -44,12 +43,11 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongNegative0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(-1).getLong()).assertEqual(-1);
-        expect(BigInt(-42).getLong()).assertEqual(-42);
-        expect(BigInt(-1000000).getLong()).assertEqual(-1000000);
-      });
+    it('testBigIntGetLongNegative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-1).getLong()).assertEqual(-1);
+      expect(BigInt(-42).getLong()).assertEqual(-42);
+      expect(BigInt(-1000000).getLong()).assertEqual(-1000000);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0300
@@ -59,10 +57,9 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongZero0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(0).getLong()).assertEqual(0);
-      });
+    it('testBigIntGetLongZero0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(0).getLong()).assertEqual(0);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0400
@@ -72,11 +69,10 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongBoundary0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(9223372036854775807).getLong()).assertEqual(9223372036854775807);
-        expect(BigInt(-9223372036854775808).getLong()).assertEqual(-9223372036854775808);
-      });
+    it('testBigIntGetLongBoundary0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(9223372036854775807).getLong()).assertEqual(9223372036854775807);
+      expect(BigInt(-9223372036854775808).getLong()).assertEqual(-9223372036854775808);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0500
@@ -86,13 +82,12 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongOverflowWrap0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808); // LONG_MAX + 1
-        expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807); // LONG_MIN - 1
-        expect(BigInt('18446744073709551616').getLong()).assertEqual(0); // 2^64 wraps to 0
-        expect(BigInt('-18446744073709551617').getLong()).assertEqual(-1);
-      });
+    it('testBigIntGetLongOverflowWrap0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808); // LONG_MAX + 1
+      expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807); // LONG_MIN - 1
+      expect(BigInt('18446744073709551616').getLong()).assertEqual(0); // 2^64 wraps to 0
+      expect(BigInt('-18446744073709551617').getLong()).assertEqual(-1);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0600
@@ -102,15 +97,15 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongApiSemantics0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const within = BigInt(9223372036854775807);
-        expect(within.getLong()).assertEqual(9223372036854775807);
-        expect(within.getLong()).assertEqual(within.getLong());
-        const wrapped = BigInt('9223372036854775808');
-        expect(wrapped.getLong()).assertEqual(-9223372036854775808);
-        expect(wrapped.getLong()).assertEqual(-9223372036854775808);
-      });
+    it('testBigIntGetLongApiSemantics0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const within = BigInt(9223372036854775807);
+
+      expect(within.getLong()).assertEqual(9223372036854775807);
+      expect(within.getLong()).assertEqual(within.getLong());
+      const wrapped = BigInt('9223372036854775808');
+      expect(wrapped.getLong()).assertEqual(-9223372036854775808);
+      expect(wrapped.getLong()).assertEqual(-9223372036854775808);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0700
@@ -120,13 +115,13 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongConsistent0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = BigInt(8);
-        const first = v.getLong();
-        expect(first).assertEqual(8);
-        expect(v.getLong()).assertEqual(first);
-      });
+    it('testBigIntGetLongConsistent0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v = BigInt(8);
+      const first = v.getLong();
+
+      expect(first).assertEqual(8);
+      expect(v.getLong()).assertEqual(first);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0800
@@ -136,11 +131,10 @@ export default function BigIntGetLongTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongNoThrow0800',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
-        expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
-        expect(BigInt('-99999999999999999999999').getLong()).assertEqual(-200376420520689663);
-      });
+    it('testBigIntGetLongNoThrow0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
+      expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
+      expect(BigInt('-99999999999999999999999').getLong()).assertEqual(-200376420520689663);
+    });
   });
 }
