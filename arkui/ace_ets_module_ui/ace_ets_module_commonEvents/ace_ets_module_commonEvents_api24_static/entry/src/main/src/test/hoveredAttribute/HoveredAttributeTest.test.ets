@@ -77,6 +77,7 @@ export default function HoveredAttributeTest(): void {
       let obj = JSON.parseJsonElement(strJson);
       let hoverColor: string = obj.getElement('$attrs').getString('backgroundColor');
       console.info('[SUB_ACE_ARKUI_APPLYHOVEREDATTRIBUTE_0100] hoverColor: ' + hoverColor);
+      expect(hoverColor).assertEqual('#FFFF0000');
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
@@ -117,6 +118,8 @@ export default function HoveredAttributeTest(): void {
         await CommonFunc.sleep(500);
         let strJson = inspector.getInspectorByKey('modifierHoverBtn');
         let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFF0000');
+
         await driver.mouseMoveTo(moveOutCenter);
         await CommonFunc.sleep(500);
         strJson = inspector.getInspectorByKey('modifierHoverBtn');
@@ -327,15 +330,94 @@ export default function HoveredAttributeTest(): void {
     });
 
     /**
-     * @tc.number    SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0300
-     * @tc.name      addSupportedUIStatesHoveredRemove
-     * @tc.desc      Test removeSupportedUIStates then hover should not change color.
+     * @tc.number    SUB_ACE_ARKUI_ONHOVER_HOVERED_0100
+     * @tc.name      onHoverHoveredHoverTest
+     * @tc.desc      Test onHover effect on Text.
      * @tc.level     LEVEL1
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('addSupportedUIStatesHoveredRemove', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0300] START');
+    it('onHoverHoveredHoverTest', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
+      let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
+      await driver.mouseMoveTo(moveOutCenter);
+      await CommonFunc.sleep(500);
+
+      let component = await driver.findComponent(ON.id('frameNodeHoverText'));
+      let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] frameNodeHoverText center: ' + JSON.stringify(center));
+      await driver.mouseMoveTo(center);
+      await CommonFunc.sleep(500);
+
+      let strJson = inspector.getInspectorByKey('frameNodeHoverText');
+      let obj = JSON.parseJsonElement(strJson);
+      let hoverColor: string = obj.getElement('$attrs').getString('backgroundColor');
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] hoverColor: ' + hoverColor);
+      expect(hoverColor).assertEqual('#FF0000FF');
+
+      await driver.mouseMoveTo(moveOutCenter);
+      await CommonFunc.sleep(500);
+
+      strJson = inspector.getInspectorByKey('frameNodeHoverText');
+      obj = JSON.parseJsonElement(strJson);
+      let normalColor: string = obj.getElement('$attrs').getString('backgroundColor');
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] normalColor: ' + normalColor);
+      expect(normalColor).assertEqual('#FF008000');
+
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0100] END');
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_ARKUI_ONHOVER_HOVERED_0200
+     * @tc.name      onHoverHoveredStateSwitch
+     * @tc.desc      Test onHover state switch multiple times.
+     * @tc.level     LEVEL1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
+    it('onHoverHoveredStateSwitch', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0200] START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let component = await driver.findComponent(ON.id('frameNodeHoverText'));
+      let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
+      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
+      let moveOutCenter: Point = await (moveOutComponent?.getBoundsCenter() as Promise<Point>);
+
+      for (let i: number = 0; i < 3; i++) {
+        await driver.mouseMoveTo(center);
+        await CommonFunc.sleep(500);
+        let strJson = inspector.getInspectorByKey('frameNodeHoverText');
+        let obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF0000FF');
+
+        await driver.mouseMoveTo(moveOutCenter);
+        await CommonFunc.sleep(500);
+        strJson = inspector.getInspectorByKey('frameNodeHoverText');
+        obj = JSON.parseJsonElement(strJson);
+        expect(obj.getElement('$attrs').getString('backgroundColor')).assertEqual('#FF008000');
+      }
+
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0200] END');
+      done();
+    });
+
+    /**
+     * @tc.number    SUB_ACE_ARKUI_ONHOVER_HOVERED_0300
+     * @tc.name      onHoverHoveredRemove
+     * @tc.desc      Test onHover after remove button clicked.
+     * @tc.level     LEVEL1
+     * @tc.type      FUNCTION
+     * @tc.size      MEDIUMTEST
+     */
+    it('onHoverHoveredRemove', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -345,30 +427,30 @@ export default function HoveredAttributeTest(): void {
 
       let component = await driver.findComponent(ON.id('frameNodeHoverText'));
       let center: Point = await (component?.getBoundsCenter() as Promise<Point>);
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0300] frameNodeHoverText center: ' + JSON.stringify(center));
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] frameNodeHoverText center: ' + JSON.stringify(center));
       await driver.mouseMoveTo(center);
       await CommonFunc.sleep(500);
 
       let strJson = inspector.getInspectorByKey('frameNodeHoverText');
       let obj = JSON.parseJsonElement(strJson);
       let hoverColor: string = obj.getElement('$attrs').getString('backgroundColor');
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0300] hoverColor: ' + hoverColor);
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] hoverColor: ' + hoverColor);
       expect(hoverColor).assertEqual('#FF008000');
 
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0300] END');
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0300] END');
       done();
     });
 
     /**
-     * @tc.number    SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0400
-     * @tc.name      addSupportedUIStatesHoveredNormalState
-     * @tc.desc      Test NORMAL state judgment logic with == operator.
+     * @tc.number    SUB_ACE_ARKUI_ONHOVER_HOVERED_0400
+     * @tc.name      onHoverHoveredNormalState
+     * @tc.desc      Test onHover normal state.
      * @tc.level     LEVEL1
      * @tc.type      FUNCTION
      * @tc.size      MEDIUMTEST
      */
-    it('addSupportedUIStatesHoveredNormalState', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0400] START');
+    it('onHoverHoveredNormalState', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
@@ -380,10 +462,10 @@ export default function HoveredAttributeTest(): void {
       let strJson = inspector.getInspectorByKey('frameNodeHoverText');
       let obj = JSON.parseJsonElement(strJson);
       let normalColor: string = obj.getElement('$attrs').getString('backgroundColor');
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0400] normalColor: ' + normalColor);
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0400] normalColor: ' + normalColor);
       expect(normalColor).assertEqual('#FF008000');
 
-      console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0400] END');
+      console.info('[SUB_ACE_ARKUI_ONHOVER_HOVERED_0400] END');
       done();
     });
   });

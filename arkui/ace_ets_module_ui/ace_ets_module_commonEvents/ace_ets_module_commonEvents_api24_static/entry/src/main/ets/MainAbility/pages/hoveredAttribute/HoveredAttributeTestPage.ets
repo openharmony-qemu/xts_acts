@@ -32,9 +32,14 @@ import {
   CommonMethod,
   CustomStyles,
   Scroll,
+  NodeContainer,
   Blank
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
+
+import { NodeController, LengthMetrics, FrameNode} from '@ohos.arkui.node'
+import { UIContext } from '@ohos.arkui.UIContext'
+import hilog from '@ohos.hilog'
 
 class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -43,7 +48,45 @@ class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
   applyHoveredAttribute(instance: ButtonAttribute): void {
     instance.backgroundColor('#FF0000');
   }
+
+  applyPressedAttribute(instance: ButtonAttribute): void {
+    instance.backgroundColor('#ff00ff19');
+  }
+
+  monitoredStates(): int {
+    return 17;
+  }
 }
+
+
+class MyNodeController extends NodeController {
+  public rootNode: FrameNode | null = null;
+  public node01: FrameNode | null = null;
+
+  makeNode(uiContext: UIContext): FrameNode | null {
+    hilog.info(0x0000, 'testTag', 'wll makeNode start');
+    this.rootNode = new FrameNode(uiContext);
+    let a = new FrameNode(uiContext);
+    this.rootNode!.appendChild(a)
+    hilog.info(0x0000, 'testTag', 'wll makeNode 1');
+    a.commonAttribute
+      .borderWidth(2)
+      .backgroundColor(Color.Red)
+      .size({width: 100, height: 150})
+      .id("frameNode001")
+    a.addSupportedUIStates(31, (node: FrameNode, currentUIStates: int) => {
+      if (currentUIStates == 0) {
+        node.commonAttribute.backgroundColor(Color.Red)
+      }
+      if (currentUIStates == 16) {
+        node.commonAttribute.backgroundColor(Color.Blue)
+      }
+    }, false)
+
+    return this.rootNode;
+  }
+}
+
 
 @Entry
 @Component
@@ -51,6 +94,8 @@ struct HoveredAttributeTestPage {
   @State modifier: MyButtonModifier = new MyButtonModifier();
   @State frameNodeBgColor: string = '#008000';
   @State frameNodeRemoved: boolean = false;
+
+  private myNodeController: MyNodeController = new MyNodeController();
 
   hoveredStyles: CustomStyles = (instance: CommonMethod): void => {
     instance.backgroundColor('#FF0000');
@@ -96,6 +141,8 @@ struct HoveredAttributeTestPage {
           .fontColor(Color.Gray)
           .textAlign(TextAlign.Center)
           .margin({ top: '5%' } as Margin)
+
+        NodeContainer(this.myNodeController).id("NodeContainer001")
 
         Text('HoverTarget')
           .id('frameNodeHoverText')
