@@ -935,6 +935,7 @@ export default function StreamTest_04(): void {
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMTESTFOUR_3000
      * @tc.name      Readableconstructor02Test0011
+     * @tc.desc      Create Readable instance with negative highWaterMark and push string chunk.
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 2

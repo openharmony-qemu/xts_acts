@@ -213,7 +213,7 @@ export default function StreamWritable06Test(): void {
 
     /**
      * @tc.number    SUB_COMMONLIBRARY_UTIL_STREAMWRITABLETESTSIX_0800
-     * @tc.name      testStreamWritableWritableTest06Chapter0008
+     * @tc.name      testStreamWritable06Chapter0008
      * @tc.desc      Test off with large repeated string in block scope
      * @tc.size      MediumTest
      * @tc.type      Function
