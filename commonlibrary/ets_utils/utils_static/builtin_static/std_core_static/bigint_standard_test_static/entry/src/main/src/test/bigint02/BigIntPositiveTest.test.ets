@@ -36,6 +36,7 @@ export default function BigIntPositiveTest(): void {
         expect(BigInt('456').positive()).assertTrue();
         expect(BigInt('-456').positive()).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0200
      * @tc.name testBigIntPositiveComplementNegative0200
@@ -53,6 +54,7 @@ export default function BigIntPositiveTest(): void {
         expect(BigInt(0).positive()).assertTrue();
         expect(BigInt(0).negative()).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0300
      * @tc.name testBigIntPositiveReturnType0300
@@ -70,6 +72,7 @@ export default function BigIntPositiveTest(): void {
         expect(typeof r1 === 'boolean').assertTrue();
         expect(r1 === r2 && r2 === r3).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0400
      * @tc.name testBigIntPositiveBoundary0400
@@ -90,6 +93,7 @@ export default function BigIntPositiveTest(): void {
         expect(BigInt(9007199254740991.0).positive()).assertTrue();
         expect(BigInt(-9007199254740991.0).positive()).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0500
      * @tc.name testBigIntPositiveLargeMagnitude0500

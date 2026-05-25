@@ -36,6 +36,7 @@ export default function BigIntToString3Test(): void {
         expect(BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
         expect(BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0200
      * @tc.name testBigIntToString3Negative0200
@@ -50,6 +51,7 @@ export default function BigIntToString3Test(): void {
         const radix16: double = 16.0;
         expect(BigInt(-sample255).toString(Double.toInt(radix16))).assertEqual('-ff');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0300
      * @tc.name testBigIntToString3InvalidRadix0300

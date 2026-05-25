@@ -33,6 +33,7 @@ export default function BigIntOperatorMultiplyTest(): void {
         expect(BigInt(-3).operatorMultiply(BigInt(-4)).toString()).assertEqual('12');
         expect(BigInt(7).operatorMultiply(BigInt(7)).toString()).assertEqual('49');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0200
      * @tc.name testBigIntOperatorMultiplyZero0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorMultiplyTest(): void {
         expect(BigInt(100).operatorMultiply(BigInt(0)).toString()).assertEqual('0');
         expect(BigInt(99).operatorMultiply(BigInt(1)).toString()).assertEqual('99');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0300
      * @tc.name testBigIntOperatorMultiplyLarge0300
@@ -58,6 +60,7 @@ export default function BigIntOperatorMultiplyTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt('999999999').operatorMultiply(BigInt('999999999')).toString()).assertEqual('999999998000000001');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0400
      * @tc.name testBigIntOperatorMultiplyReturnType0400
@@ -71,6 +74,7 @@ export default function BigIntOperatorMultiplyTest(): void {
         const result = BigInt(10).operatorMultiply(BigInt(3));
         expect(typeof result === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0500
      * @tc.name testBigIntOperatorMultiplyInvalidArg0500
@@ -98,6 +102,7 @@ export default function BigIntOperatorMultiplyTest(): void {
           a.operatorMultiply(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0600
      * @tc.name testBigIntOperatorMultiplyBoundary0600

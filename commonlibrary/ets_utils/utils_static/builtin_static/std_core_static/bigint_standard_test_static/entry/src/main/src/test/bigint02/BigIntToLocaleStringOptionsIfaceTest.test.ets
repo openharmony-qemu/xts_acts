@@ -32,6 +32,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
         const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
         expect(val.toLocaleString('en-US', opts)).assertEqual('1,234,567');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0200
      * @tc.name testBigIntToLocaleStringCompactShort0200
@@ -46,6 +47,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
         const opts: BigIntToLocaleStringOptions = { notation: 'compact', compactDisplay: 'short' };
         expect(val.toLocaleString('zh-CN', opts)).assertEqual('100万');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0300
      * @tc.name testBigIntToLocaleStringCompactLong0300
@@ -60,6 +62,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
         const opts: BigIntToLocaleStringOptions = { notation: 'compact', compactDisplay: 'long' };
         expect(val.toLocaleString('en-US', opts)).assertEqual('1 million');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0400
      * @tc.name testBigIntToLocaleStringNegativeStandard0400
@@ -74,6 +77,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
         const opts: BigIntToLocaleStringOptions = { notation: 'standard' };
         expect(val.toLocaleString('en-US', opts)).assertEqual('-1,234,567');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0500
      * @tc.name testBigIntToLocaleStringZeroOptions0500

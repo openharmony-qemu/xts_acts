@@ -32,6 +32,7 @@ export default function BigIntOperatorRightShiftTest(): void {
         expect(BigInt(10).operatorRightShift(BigInt(1)).toString()).assertEqual('5');
         expect(BigInt(-8).operatorRightShift(BigInt(1)).toString()).assertEqual('-4');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0200
      * @tc.name testBigIntOperatorRightShiftNegative0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorRightShiftTest(): void {
         expect(BigInt('-9223372036854775808').operatorRightShift(BigInt(1)).toString())
           .assertEqual('-4611686018427387904');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0300
      * @tc.name testBigIntOperatorRightShiftInvalid0300
@@ -73,6 +75,7 @@ export default function BigIntOperatorRightShiftTest(): void {
           a.operatorRightShift(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0400
      * @tc.name testBigIntOperatorRightShiftZero0400
@@ -87,6 +90,7 @@ export default function BigIntOperatorRightShiftTest(): void {
         expect(BigInt(0).operatorRightShift(BigInt(5)).toString()).assertEqual('0');
         expect(BigInt(-8).operatorRightShift(BigInt(0)).toString()).assertEqual('-8');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0500
      * @tc.name testBigIntOperatorRightShiftNegativeShift0500
@@ -106,6 +110,7 @@ export default function BigIntOperatorRightShiftTest(): void {
         expect(w.operatorRightShift(BigInt(-2)).toString())
           .assertEqual(w.operatorLeftShift(BigInt(2)).toString());
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0600
      * @tc.name testBigIntOperatorRightShiftHuge0600

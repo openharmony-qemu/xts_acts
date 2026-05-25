@@ -36,6 +36,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
         expect(BigInt(0).operatorGreaterThan(BigInt(0))).assertFalse();
         expect(BigInt(42).operatorGreaterThan(BigInt(42))).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0200
      * @tc.name testBigIntOperatorGreaterThanBoundary0200
@@ -50,6 +51,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
         expect(BigInt(maxSafe).operatorGreaterThan(BigInt('9007199254740990'))).assertTrue();
         expect(BigInt('9007199254740990').operatorGreaterThan(BigInt(maxSafe))).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0300
      * @tc.name testBigIntOperatorGreaterThanReturnType0300
@@ -62,6 +64,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorGreaterThan(BigInt(2)) === 'boolean').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0400
      * @tc.name testBigIntOperatorGreaterThanInvalidArg0400

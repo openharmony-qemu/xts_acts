@@ -32,6 +32,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
         expect(BigInt(5).operatorLeftShift(BigInt(1)).toString()).assertEqual('10');
         expect(BigInt(-1).operatorLeftShift(BigInt(1)).toString()).assertEqual('-2');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0200
      * @tc.name testBigIntOperatorLeftShiftZero0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
         expect(BigInt(0).operatorLeftShift(BigInt(5)).toString()).assertEqual('0');
         expect(BigInt(-8).operatorLeftShift(BigInt(0)).toString()).assertEqual('-8');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0300
      * @tc.name testBigIntOperatorLeftShiftLarge0300
@@ -63,6 +65,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
         expect(BigInt(-1).operatorLeftShift(BigInt(100)).toString())
           .assertEqual('-1267650600228229401496703205376');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0400
      * @tc.name testBigIntOperatorLeftShiftReturn0400
@@ -75,6 +78,7 @@ export default function BigIntOperatorLeftShiftTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorLeftShift(BigInt(2)) === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0500
      * @tc.name testBigIntOperatorLeftShiftInvalid0500

@@ -30,6 +30,7 @@ export default function BigIntToLocaleString1Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(1000000).toLocaleString()).assertEqual('1,000,000');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0200
      * @tc.name testBigIntToLocaleString1Zero0200
@@ -42,6 +43,7 @@ export default function BigIntToLocaleString1Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(0).toLocaleString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0300
      * @tc.name testBigIntToLocaleString1Negative0300
@@ -54,6 +56,7 @@ export default function BigIntToLocaleString1Test(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt(-1000000).toLocaleString()).assertEqual('-1,000,000');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0400
      * @tc.name testBigIntToLocaleString1SmallPositive0400
@@ -67,6 +70,7 @@ export default function BigIntToLocaleString1Test(): void {
         expect(BigInt(42).toLocaleString()).assertEqual('42');
         expect(BigInt(1).toLocaleString()).assertEqual('1');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0500
      * @tc.name testBigIntToLocaleString1Large0500

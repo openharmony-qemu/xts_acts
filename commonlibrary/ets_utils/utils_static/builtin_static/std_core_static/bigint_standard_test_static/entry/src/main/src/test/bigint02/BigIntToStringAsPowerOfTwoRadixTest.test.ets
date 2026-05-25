@@ -34,6 +34,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
         expect(BigInt(sample255).toStringAsPowerOfTwoRadix(radixHex)).assertEqual('ff');
         expect(BigInt(8).toStringAsPowerOfTwoRadix(radixBin)).assertEqual('1000');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0200
      * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidNonPower0200
@@ -44,10 +45,11 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
      */
     it('testBigIntToStringAsPowerOfTwoRadixInvalidNonPower0200',
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const sample255 = 255; 
-        const radixNonPower = 3; 
+        const sample255 = 255;
+        const radixNonPower = 3;
         expect(BigInt(sample255).toStringAsPowerOfTwoRadix(radixNonPower)).assertEqual('10101010');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0300
      * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidZero0300
@@ -62,6 +64,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
           BigInt(255).toStringAsPowerOfTwoRadix(0);
         }).assertThrowError('Error');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0400
      * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidNegative0400

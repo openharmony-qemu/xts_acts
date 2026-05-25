@@ -32,6 +32,7 @@ export default function BigIntOperatorModuleTest(): void {
         expect(BigInt(20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
         expect(BigInt(-10).operatorModule(BigInt(3)).toString()).assertEqual('-1');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0200
      * @tc.name testBigIntOperatorModuleDivisorOne0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorModuleTest(): void {
         expect(BigInt(-42).operatorModule(BigInt(-1)).toString()).assertEqual('0');
         expect(BigInt(7).operatorModule(BigInt(-1)).toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0300
      * @tc.name testBigIntOperatorModuleZeroDividend0300
@@ -60,6 +62,7 @@ export default function BigIntOperatorModuleTest(): void {
         expect(BigInt(0).operatorModule(BigInt(-7)).toString()).assertEqual('0');
         expect(BigInt(0).operatorModule(BigInt(1)).toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0400
      * @tc.name testBigIntOperatorModuleReturnType0400
@@ -73,6 +76,7 @@ export default function BigIntOperatorModuleTest(): void {
         const result = BigInt(10).operatorModule(BigInt(3));
         expect(typeof result === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0500
      * @tc.name testBigIntOperatorModuleInvalidArg0500
@@ -100,6 +104,7 @@ export default function BigIntOperatorModuleTest(): void {
           a.operatorModule(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0600
      * @tc.name testBigIntOperatorModuleDivByZero0600
@@ -120,6 +125,7 @@ export default function BigIntOperatorModuleTest(): void {
           BigInt(-42).operatorModule(BigInt(0));
         }).assertThrowError('Error');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0700
      * @tc.name testBigIntOperatorModuleNegative0700
@@ -135,6 +141,7 @@ export default function BigIntOperatorModuleTest(): void {
         expect(BigInt(-12).operatorModule(BigInt(5)).toString()).assertEqual('-2');
         expect(BigInt(-20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0800
      * @tc.name testBigIntOperatorModuleLarge0800
@@ -150,6 +157,7 @@ export default function BigIntOperatorModuleTest(): void {
         expect(BigInt('-999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString())
           .assertEqual('-99999999999999999999');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0900
      * @tc.name testBigIntOperatorModuleTruncateSemantics0900

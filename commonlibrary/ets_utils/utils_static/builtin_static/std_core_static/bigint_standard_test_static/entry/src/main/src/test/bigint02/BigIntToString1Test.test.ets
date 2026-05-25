@@ -33,6 +33,7 @@ export default function BigIntToString1Test(): void {
         expect(BigInt(0).toString()).assertEqual('0');
         expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0200
      * @tc.name testBigIntToString1Large0200

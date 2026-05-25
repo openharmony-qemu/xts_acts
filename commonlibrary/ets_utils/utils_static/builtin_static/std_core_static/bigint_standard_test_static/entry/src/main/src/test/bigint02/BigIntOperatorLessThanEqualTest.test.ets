@@ -34,6 +34,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
         expect(BigInt(-5).operatorLessThanEqual(BigInt(-10))).assertFalse();
         expect(BigInt(0).operatorLessThanEqual(BigInt(0))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0200
      * @tc.name testBigIntOperatorLessThanEqualBoundary0200
@@ -51,6 +52,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
         expect(BigInt('-9223372036854775808').operatorLessThanEqual(BigInt('-9223372036854775807'))).assertTrue();
         expect(BigInt('9223372036854775807').operatorLessThanEqual(BigInt('9223372036854775807'))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0300
      * @tc.name testBigIntOperatorLessThanEqualZeroSign0300
@@ -66,6 +68,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
         expect(BigInt(0).operatorLessThanEqual(BigInt(-1))).assertFalse();
         expect(BigInt(1).operatorLessThanEqual(BigInt(0))).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0400
      * @tc.name testBigIntOperatorLessThanEqualLarge0400
@@ -82,6 +85,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
         expect(next.operatorLessThanEqual(base)).assertFalse();
         expect(next.operatorLessThanEqual(next)).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0500
      * @tc.name testBigIntOperatorLessThanEqualReturnType0500
@@ -94,6 +98,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorLessThanEqual(BigInt(2)) === 'boolean').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0600
      * @tc.name testBigIntOperatorLessThanEqualInvalidArg0600
@@ -121,6 +126,7 @@ export default function BigIntOperatorLessThanEqualTest(): void {
           a.operatorLessThanEqual(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0700
      * @tc.name testBigIntOperatorLessThanEqualConsecutive0700

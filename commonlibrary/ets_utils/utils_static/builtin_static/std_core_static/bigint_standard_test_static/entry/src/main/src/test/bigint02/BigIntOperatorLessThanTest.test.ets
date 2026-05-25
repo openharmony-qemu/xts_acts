@@ -35,6 +35,7 @@ export default function BigIntOperatorLessThanTest(): void {
         expect(BigInt(0).operatorLessThan(BigInt(0))).assertFalse();
         expect(BigInt(42).operatorLessThan(BigInt(42))).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0200
      * @tc.name testBigIntOperatorLessThanBoundary0200
@@ -49,6 +50,7 @@ export default function BigIntOperatorLessThanTest(): void {
         expect(BigInt(maxSafe).operatorLessThan(BigInt('9007199254740990'))).assertFalse();
         expect(BigInt('9007199254740990').operatorLessThan(BigInt(maxSafe))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0300
      * @tc.name testBigIntOperatorLessThanZero0300
@@ -66,6 +68,7 @@ export default function BigIntOperatorLessThanTest(): void {
         expect(BigInt(0).operatorLessThan(BigInt(0))).assertFalse();
         expect(BigInt(1).operatorLessThan(BigInt(0))).assertFalse();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0400
      * @tc.name testBigIntOperatorLessThanReturnType0400
@@ -78,6 +81,7 @@ export default function BigIntOperatorLessThanTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorLessThan(BigInt(2)) === 'boolean').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0500
      * @tc.name testBigIntOperatorLessThanInvalidArg0500

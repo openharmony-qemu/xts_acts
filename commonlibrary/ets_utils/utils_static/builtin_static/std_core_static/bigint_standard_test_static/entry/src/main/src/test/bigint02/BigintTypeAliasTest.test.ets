@@ -35,6 +35,7 @@ export default function BigintTypeAliasTest(): void {
         val = BigInt(200);
         expect(val.toString()).assertEqual('200');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0200
      * @tc.name testBigintTypeAliasOps0200
@@ -53,6 +54,7 @@ export default function BigintTypeAliasTest(): void {
         const asClass: bigint = a;
         expect(asClass.equals(a)).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0300
      * @tc.name testBigintTypeAliasStatic0300
@@ -68,6 +70,7 @@ export default function BigintTypeAliasTest(): void {
         const asUint: bigint = BigInt.asUintN(8, BigInt(-1));
         expect(asUint.toString()).assertEqual('255');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0400
      * @tc.name testBigintTypeAliasInvalidConstruct0400

@@ -39,6 +39,7 @@ export default function BigIntOperatorIncrementTest(): void {
         expect(BigInt('-9223372036854775808').operatorIncrement().toString())
           .assertEqual('-9223372036854775807');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0200
      * @tc.name testBigIntOperatorIncrementImmutable0200
@@ -55,6 +56,7 @@ export default function BigIntOperatorIncrementTest(): void {
         expect(v.toString()).assertEqual(orig);
         expect(result.toString()).assertEqual('6');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0300
      * @tc.name testBigIntOperatorIncrementReturnType0300
@@ -67,6 +69,7 @@ export default function BigIntOperatorIncrementTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0400
      * @tc.name testBigIntOperatorIncrementLarge0400
@@ -84,6 +87,7 @@ export default function BigIntOperatorIncrementTest(): void {
         expect(BigInt('9223372036854775807').operatorIncrement().toString())
           .assertEqual('9223372036854775808');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0500
      * @tc.name testBigIntOperatorIncrementMaxSafeInteger0500

@@ -34,6 +34,7 @@ export default function BigIntValueOfTest(): void {
         expect(BigInt(-456).valueOf().toString()).assertEqual('-456');
         expect(BigInt(0).valueOf().toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0200
      * @tc.name testBigIntValueOfReturnType0200
@@ -46,6 +47,7 @@ export default function BigIntValueOfTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(42).valueOf() === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0300
      * @tc.name testBigIntValueOfStable0300
@@ -59,6 +61,7 @@ export default function BigIntValueOfTest(): void {
         const v = BigInt(99);
         expect(v.valueOf().equals(v.valueOf())).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0400
      * @tc.name testBigIntValueOfMaxSafeInteger0400
@@ -75,6 +78,7 @@ export default function BigIntValueOfTest(): void {
         expect(BigInt(`-${maxSafe}`).valueOf().toString()).assertEqual('-9007199254740991');
         expect(BigInt(maxSafe).valueOf().equals(BigInt(maxSafe))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0500
      * @tc.name testBigIntValueOfLargeMagnitude0500

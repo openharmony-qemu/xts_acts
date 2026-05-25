@@ -39,6 +39,7 @@ export default function BigIntOperatorDecrementTest(): void {
         expect(BigInt('-9223372036854775807').operatorDecrement().toString())
           .assertEqual('-9223372036854775808');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0200
      * @tc.name testBigIntOperatorDecrementImmutable0200
@@ -55,6 +56,7 @@ export default function BigIntOperatorDecrementTest(): void {
         expect(v.toString()).assertEqual(orig);
         expect(result.toString()).assertEqual('4');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0300
      * @tc.name testBigIntOperatorDecrementReturnType0300

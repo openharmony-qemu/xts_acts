@@ -33,6 +33,7 @@ export default function BigIntOperatorSubtractTest(): void {
         expect(BigInt(-10).operatorSubtract(BigInt(5)).toString()).assertEqual('-15');
         expect(BigInt(-8).operatorSubtract(BigInt(-3)).toString()).assertEqual('-5');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0200
      * @tc.name testBigIntOperatorSubtractZero0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorSubtractTest(): void {
         expect(BigInt(42).operatorSubtract(BigInt(0)).toString()).assertEqual('42');
         expect(BigInt(0).operatorSubtract(BigInt(0)).toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0300
      * @tc.name testBigIntOperatorSubtractLarge0300
@@ -58,6 +60,7 @@ export default function BigIntOperatorSubtractTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(BigInt('99999999999999999999').operatorSubtract(BigInt('12345678901234567890')).toString()).assertEqual('87654321098765432109');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0400
      * @tc.name testBigIntOperatorSubtractReturnType0400
@@ -71,6 +74,7 @@ export default function BigIntOperatorSubtractTest(): void {
         const result = BigInt(10).operatorSubtract(BigInt(3));
         expect(typeof result === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0500
      * @tc.name testBigIntOperatorSubtractInvalidArg0500

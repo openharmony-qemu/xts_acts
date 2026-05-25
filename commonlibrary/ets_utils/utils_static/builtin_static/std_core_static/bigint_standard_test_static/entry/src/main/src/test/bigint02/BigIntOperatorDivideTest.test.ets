@@ -33,6 +33,7 @@ export default function BigIntOperatorDivideTest(): void {
         expect(BigInt(-10).operatorDivide(BigInt(5)).toString()).assertEqual('-2');
         expect(BigInt(7).operatorDivide(BigInt(7)).toString()).assertEqual('1');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0200
      * @tc.name testBigIntOperatorDivideZero0200
@@ -46,6 +47,7 @@ export default function BigIntOperatorDivideTest(): void {
         expect(BigInt(0).operatorDivide(BigInt(5)).toString()).assertEqual('0');
         expect(BigInt(0).operatorDivide(BigInt(-7)).toString()).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0300
      * @tc.name testBigIntOperatorDivideNegativeTruncate0300
@@ -63,6 +65,7 @@ export default function BigIntOperatorDivideTest(): void {
         expect(BigInt('100000000000000000001').operatorDivide(BigInt('100000000000000000000')).toString())
           .assertEqual('1');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0400
      * @tc.name testBigIntOperatorDivideReturnType0400
@@ -76,6 +79,7 @@ export default function BigIntOperatorDivideTest(): void {
         const result = BigInt(10).operatorDivide(BigInt(3));
         expect(typeof result === 'bigint').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0500
      * @tc.name testBigIntOperatorDivideInvalidArg0500
@@ -103,6 +107,7 @@ export default function BigIntOperatorDivideTest(): void {
           a.operatorDivide(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0600
      * @tc.name testBigIntOperatorDivideDivByZero0600
@@ -123,6 +128,7 @@ export default function BigIntOperatorDivideTest(): void {
           BigInt(-42).operatorDivide(BigInt(0));
         }).assertThrowError('Error');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0700
      * @tc.name testBigIntOperatorDivideLarge0700

@@ -35,6 +35,7 @@ export default function BigIntPowTest(): void {
         expect(BigInt(-2).pow(BigInt(3)).toString()).assertEqual('-8');
         expect(BigInt(-2).pow(BigInt(4)).toString()).assertEqual('16');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POW_0200
      * @tc.name testBigIntPowSpecial0200
@@ -51,6 +52,7 @@ export default function BigIntPowTest(): void {
         expect(BigInt(-1).pow(BigInt(4)).toString()).assertEqual('1');
         expect(BigInt(-1).pow(BigInt(3)).toString()).assertEqual('-1');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POW_0300
      * @tc.name testBigIntPowLarge0300
@@ -66,6 +68,7 @@ export default function BigIntPowTest(): void {
         expect(BigInt(999999999).pow(BigInt(2)).toString()).assertEqual('999999998000000001');
         expect(BigInt(10).pow(BigInt(20)).toString()).assertEqual('100000000000000000000');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POW_0400
      * @tc.name testBigIntPowNegativeExponent0400
@@ -83,6 +86,7 @@ export default function BigIntPowTest(): void {
           BigInt(2).pow(BigInt(-100));
         }).assertThrowError('RangeError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_POW_0500
      * @tc.name testBigIntPowInvalidArg0500

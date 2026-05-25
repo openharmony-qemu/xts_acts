@@ -35,6 +35,7 @@ export default function BigIntToString2Test(): void {
         expect(BigInt(sample255).toString(16)).assertEqual('ff');
         expect(BigInt(radixMax).toString(radixMax)).assertEqual('10');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0200
      * @tc.name testBigIntToString2Negative0200
@@ -48,6 +49,7 @@ export default function BigIntToString2Test(): void {
         const sample255 = 255;
         expect(BigInt(-sample255).toString(16)).assertEqual('-ff');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0300
      * @tc.name testBigIntToString2InvalidRadix0300
@@ -67,6 +69,7 @@ export default function BigIntToString2Test(): void {
           BigInt(10).toString(radixAboveMax);
         }).assertThrowError('RangeError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0400
      * @tc.name testBigIntToString2Zero0400
@@ -82,6 +85,7 @@ export default function BigIntToString2Test(): void {
         expect(BigInt(0).toString(16)).assertEqual('0');
         expect(BigInt(0).toString(36)).assertEqual('0');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_2_0500
      * @tc.name testBigIntToString2Large0500

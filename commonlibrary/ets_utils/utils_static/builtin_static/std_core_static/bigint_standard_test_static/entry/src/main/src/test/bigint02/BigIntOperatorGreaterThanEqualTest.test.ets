@@ -34,6 +34,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(BigInt(-5).operatorGreaterThanEqual(BigInt(-10))).assertTrue();
         expect(BigInt(0).operatorGreaterThanEqual(BigInt(0))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0200
      * @tc.name testBigIntOperatorGreaterThanEqualBoundary0200
@@ -51,6 +52,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(BigInt('-9223372036854775808').operatorGreaterThanEqual(BigInt('-9223372036854775807'))).assertFalse();
         expect(BigInt('9223372036854775807').operatorGreaterThanEqual(BigInt('9223372036854775807'))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0300
      * @tc.name testBigIntOperatorGreaterThanEqualZeroSign0300
@@ -66,6 +68,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(BigInt(0).operatorGreaterThanEqual(BigInt(-1))).assertTrue();
         expect(BigInt(1).operatorGreaterThanEqual(BigInt(0))).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0400
      * @tc.name testBigIntOperatorGreaterThanEqualLarge0400
@@ -82,6 +85,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
         expect(next.operatorGreaterThanEqual(base)).assertTrue();
         expect(next.operatorGreaterThanEqual(next)).assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0500
      * @tc.name testBigIntOperatorGreaterThanEqualReturnType0500
@@ -94,6 +98,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
       TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
         expect(typeof BigInt(1).operatorGreaterThanEqual(BigInt(2)) === 'boolean').assertTrue();
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0600
      * @tc.name testBigIntOperatorGreaterThanEqualInvalidArg0600
@@ -121,6 +126,7 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
           a.operatorGreaterThanEqual(true as object as BigInt);
         }).assertThrowError('ClassCastError');
       });
+
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GTE_0700
      * @tc.name testBigIntOperatorGreaterThanEqualNumberBoundary0700
