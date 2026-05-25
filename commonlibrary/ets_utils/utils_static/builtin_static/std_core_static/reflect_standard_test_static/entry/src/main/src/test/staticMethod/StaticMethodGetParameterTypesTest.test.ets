@@ -336,9 +336,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let paramTypes = method!.getParameterTypes();
-      let typeName = Class.of(paramTypes).getName();
-      // TODO: 改用可索引访问验证数组类型: expect(paramTypes[0]!.getName()).assertEqual('i32')
+      let paramTypes: FixedArray<Class> = method!.getParameterTypes();
+      let firstParamName: string = paramTypes[0]!.getName();
+      expect(firstParamName).assertEqual('i32');
     });
 
     /**
