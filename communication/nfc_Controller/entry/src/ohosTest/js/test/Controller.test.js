@@ -141,6 +141,20 @@ export default function nfcControllerTest() {
             expect(checkopennfc).assertEqual(NfcState.STATE_ON);
         })
 
+        /**
+         * @tc.name   SUB_COMMUNICATION_NFC_Cont_0600
+         * @tc.number SUB_COMMUNICATION_NFC_Cont_0600
+         * @tc.desc   Checks whether a device supports NFC.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_NFC_Cont_0600', Level.LEVEL0, function ()  {
+            let nfcisSupported = controller.isNfcSupported();
+            console.info("[NFC_test] controller6 nfcisSupported is -> " + nfcisSupported);
+            expect(nfcisSupported).assertTrue();
+        })
+
         console.info("*************[nfc_test] start nfc js unit test end*************");
     })
 }
