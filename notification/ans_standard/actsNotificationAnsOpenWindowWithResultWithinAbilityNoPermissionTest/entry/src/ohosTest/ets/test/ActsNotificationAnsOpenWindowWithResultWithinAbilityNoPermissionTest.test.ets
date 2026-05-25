@@ -66,13 +66,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
         await driver.assertComponentExist(ON.text('通知管理'));
         let button2 = await driver.findComponent(ON.text('确定'));
@@ -115,13 +110,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
         await sleep(500)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
@@ -190,44 +180,38 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
-        await sleep(1000);
+        await sleep(2000);
+        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
+        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
+        expect(scrollBar != null).assertTrue()
+        await scrollBar.scrollToBottom()
+        await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
-          await sleep(500)
+          await sleep(1500)
         }
-        let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
-        console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
-        expect(scrollBar != null).assertTrue()
-        await scrollBar.scrollToBottom()
-        await sleep(500)
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
         if (button2 !== null) {
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
-          await sleep(500)
+          await sleep(1500)
         }
-        await sleep(500)
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
         if (button8 !== null) {
           console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
           await sleep(1000);
           await button8.click()
-          await sleep(100)
+          await sleep(1000)
         }
       } catch (err) {
         console.error(testNum + `openNotificationSettingsWithResult fail: ${JSON.stringify(err)}${err.message}`);
@@ -302,27 +286,22 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
         await sleep(1000);
         let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
-        await sleep(500)
+        await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
-          await sleep(500)
+          await sleep(1500)
         }
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -330,16 +309,15 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
           await sleep(1000);
           await button2.click()
-          await sleep(500)
+          await sleep(1500)
         }
-        await sleep(500)
         let button8 = await driver.findComponent(ON.text('确定'));
         console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
         if (button8 !== null) {
           console.info(testNum + `button8 is ${JSON.stringify(button8)}`);
           await sleep(1000);
           await button8.click()
-          await sleep(100)
+          await sleep(1000)
         }
         await sleep(2000)
         notificationManager.openNotificationSettingsWithResult(context).then((data) => {
@@ -353,13 +331,8 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
         await sleep(1000)
         let button9 = await driver.findComponent(ON.type("SymbolGlyph"));
@@ -414,27 +387,22 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-            if (err.code === 801) {
-              expect(err.code).assertEqual(801);
-              done();
-            } else {
-              expect(false).assertTrue();
-              done();
-            }
+          expect(false).assertTrue();
+          done()
         });
-        await sleep(1000);
+        await sleep(2000);
         let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
         console.info(testNum + `scrollToBottom scrollBar, ${JSON.stringify(scrollBar)} `);
         expect(scrollBar != null).assertTrue()
         await scrollBar.scrollToBottom()
-        await sleep(500)
+        await sleep(1500)
         let button = await driver.findComponent(ON.text('横幅通知'));
         console.info(testNum + `button is ${JSON.stringify(button)}`);
         if (button !== null) {
           console.info(testNum + `button is ${JSON.stringify(button)}`);
           await sleep(1000);
           await button.click()
-          await sleep(500)
+          await sleep(1500)
         }
         let button2 = await driver.findComponent(ON.text('桌面角标'));
         console.info(testNum + `button2 is ${JSON.stringify(button2)}`);
@@ -451,7 +419,7 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           console.info(testNum + `button6 is ${JSON.stringify(button6)}`);
           await sleep(1000);
           await button6.click()
-          await sleep(100)
+          await sleep(1000)
         }
         await sleep(500)
         await notificationManager.publish(notificationRequest).then(() => {
