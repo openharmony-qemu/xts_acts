@@ -25,6 +25,12 @@ target_link_libraries(audioDecoderAvBuffer PUBLIC libace_napi.z.so libhilog_ndk.
 add_library(audiovividencoder SHARED audiovividencoder.cpp)
 target_link_libraries(audiovividencoder PUBLIC libace_napi.z.so libhilog_ndk.z.so libnative_media_core.so libnative_media_acodec.so libnative_media_codecbase.so)
 
+add_library(audioopuscodec SHARED audioopuscodec.cpp)
+target_link_libraries(audioopuscodec PUBLIC libace_napi.z.so libnative_media_core.so libnative_media_acodec.so libnative_media_codecbase.so)
+
+add_library(audioamrencoder SHARED audioamrencoder.cpp)
+target_link_libraries(audioamrencoder PUBLIC libace_napi.z.so libnative_media_core.so libnative_media_acodec.so libnative_media_codecbase.so)
+
 add_library(videodecoderndk SHARED videodecoderndk.cpp)
 target_link_libraries(videodecoderndk PUBLIC libace_napi.z.so libhilog_ndk.z.so libnative_media_core.so libnative_media_codecbase.so libnative_window.so libnative_media_vdec.so)
 
