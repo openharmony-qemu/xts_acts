@@ -184,6 +184,7 @@ export default function StaticMethodIsNativeTest(): void {
       let method = cls004.getStaticMethod('abstractMethod');
       expect(method != undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
+
     });
 
     /**
@@ -219,30 +220,12 @@ export default function StaticMethodIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_0700
      * @tc.name testStaticMethodIsNative007
-     * @tc.desc Verify isNative() returns false for getter and setter methods
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodIsNative007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass007>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
-      expect(getter!.isNative()).assertFalse();
-      expect(setter!.isNative()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_0800
-     * @tc.name testStaticMethodIsNative008
      * @tc.desc Verify isNative() return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -253,14 +236,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_0900
-     * @tc.name testStaticMethodIsNative009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_0800
+     * @tc.name testStaticMethodIsNative008
      * @tc.desc Verify isNative() returns false for all access level methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
@@ -270,14 +253,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1000
-     * @tc.name testStaticMethodIsNative010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_0900
+     * @tc.name testStaticMethodIsNative009
      * @tc.desc Verify isNative() returns false for annotated methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let m1 = cls.getStaticMethod('deprecatedMethod');
       let m2 = cls.getStaticMethod('finalMethod');
@@ -288,14 +271,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1100
-     * @tc.name testStaticMethodIsNative011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1000
+     * @tc.name testStaticMethodIsNative010
      * @tc.desc Verify isNative() does not throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -304,14 +287,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1200
-     * @tc.name testStaticMethodIsNative012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1100
+     * @tc.name testStaticMethodIsNative011
      * @tc.desc Verify isNative() for methods with different modifiers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
@@ -325,14 +308,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1300
-     * @tc.name testStaticMethodIsNative013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1200
+     * @tc.name testStaticMethodIsNative012
      * @tc.desc Verify isNative() returns false for async method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('fetchData');
       expect(method != undefined).assertTrue();
@@ -340,14 +323,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1400
-     * @tc.name testStaticMethodIsNative014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1300
+     * @tc.name testStaticMethodIsNative013
      * @tc.desc Verify isNative() for normal, abstract, and final class methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass015>();
       let clsFin = Class.from<FinalClass015>();
       let clsNor = Class.from<NormalClass015>();
@@ -363,14 +346,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1500
-     * @tc.name testStaticMethodIsNative015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1400
+     * @tc.name testStaticMethodIsNative014
      * @tc.desc Verify isNative() for getter and setter static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass016>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
@@ -381,14 +364,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1600
-     * @tc.name testStaticMethodIsNative016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1500
+     * @tc.name testStaticMethodIsNative015
      * @tc.desc Verify isNative() returns false for all user-defined static methods in a class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass017>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       for (let i: int = 0; i < methods.length; i++) {
@@ -398,14 +381,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1700
-     * @tc.name testStaticMethodIsNative017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1600
+     * @tc.name testStaticMethodIsNative016
      * @tc.desc Verify isNative() combined with other method property checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls018 = Class.from<MyClass018>();
       let method = cls018.getStaticMethod('test');
       expect(method != undefined).assertTrue();
@@ -415,14 +398,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1800
-     * @tc.name testStaticMethodIsNative018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1700
+     * @tc.name testStaticMethodIsNative017
      * @tc.desc Verify isNative() on built-in Array methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<Array<int>>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertLarger(0);
@@ -437,14 +420,14 @@ export default function StaticMethodIsNativeTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1900
-     * @tc.name testStaticMethodIsNative019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_IS_NATIVE_1800
+     * @tc.name testStaticMethodIsNative018
      * @tc.desc Verify isNative() comparison between built-in and user-defined methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodIsNative019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodIsNative018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls019 = Class.from<MyClass019>();
       let userMethod = cls019.getStaticMethod('myMethod');
       expect(userMethod != undefined).assertTrue();
