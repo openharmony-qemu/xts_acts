@@ -187,14 +187,14 @@ struct DrawableDescriptorReleaseTest {
       return null;
     }
     try {
-      return this.resManager.getDrawableDescriptor($r('app.media.startIcon').id);
+      return this.resManager.getDrawableDescriptor($r('app.media.tree').id);
     } catch (e) {
       return null;
     }
   }
 
   private createAnimatedDrawable(): AnimatedDrawableDescriptor {
-    return new AnimatedDrawableDescriptor($r('app.media.startIcon'), { iterations: 1 });
+    return new AnimatedDrawableDescriptor($r('app.media.tree'), { iterations: 1 });
   }
 
   Test001() {
