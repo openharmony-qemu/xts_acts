@@ -17,27 +17,27 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function tabsBarFloatingStyle() {
-  describe('tabsBarFloatingStyle', () => {
+export default function TabsBarFloatingStyle() {
+  describe('TabsBarFloatingStyle', () => {
     beforeEach(async (done: Function) => {
-      console.info("tabsBarFloatingStyle beforeEach start");
+      console.info("TabsBarFloatingStyle beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Tabs/tabsBarFloatingStyle',
+        url: 'MainAbility/pages/Tabs/TabsBarFloatingStyle',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info("get tabsBarFloatingStyle state pages:" + JSON.stringify(pages));
-        if (!("tabsBarFloatingStyle" == pages.name)) {
-          console.info("get tabsBarFloatingStyle pages.name:" + JSON.stringify(pages.name));
+        console.info("get TabsBarFloatingStyle state pages:" + JSON.stringify(pages));
+        if (!("TabsBarFloatingStyle" == pages.name)) {
+          console.info("get TabsBarFloatingStyle pages.name:" + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push tabsBarFloatingStyle page result:" + JSON.stringify(result));
+          console.info("push TabsBarFloatingStyle page result:" + JSON.stringify(result));
         }
       } catch (err) {
-        console.error("push tabsBarFloatingStyle page error:" + err);
+        console.error("push TabsBarFloatingStyle page error:" + err);
       }
-      console.info("tabsBarFloatingStyle beforeEach end");
+      console.info("TabsBarFloatingStyle beforeEach end");
       done();
     });
 
