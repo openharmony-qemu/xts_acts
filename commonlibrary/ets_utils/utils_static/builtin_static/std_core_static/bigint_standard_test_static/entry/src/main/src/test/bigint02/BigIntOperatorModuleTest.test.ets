@@ -71,7 +71,7 @@ export default function BigIntOperatorModuleTest(): void {
     it('testBigIntOperatorModuleReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result = BigInt(10).operatorModule(BigInt(3));
 
-      expect(typeof result === 'bigint').assertTrue();
+      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**

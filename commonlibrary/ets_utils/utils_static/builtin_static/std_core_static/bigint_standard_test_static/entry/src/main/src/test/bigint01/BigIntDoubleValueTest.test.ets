@@ -63,7 +63,7 @@ export default function BigIntDoubleValueTest(): void {
     it('testBigIntDoubleValueReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const r = BigInt(42).doubleValue();
 
-      expect(typeof r === 'number').assertTrue();
+      expect(Class.of(r)).assertEqual(Class.from<double>());
       expect(r % 1).assertEqual(0);
       const bn = BigInt(-42);
       const d1 = bn.doubleValue();

@@ -126,5 +126,44 @@ export default function BigIntConstructorStringTest(): void {
       expect(BigInt('0b1010').toString()).assertEqual('10');
       expect(BigInt('0o77').toString()).assertEqual('63');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0900
+     * @tc.name testBigIntConstructorStringInvalidArgHex0900
+     * @tc.desc Verify invalid hex digit in prefixed string throws when constructing BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringInvalidArgHex0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
+
+      expect((): void => {
+        BigInt('0xGG');
+      }).assertThrow(invalidMsg);
+      expect((): void => {
+        BigInt('0b102');
+      }).assertThrow(invalidMsg);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_1000
+     * @tc.name testBigIntConstructorStringInvalidArgMixedDecimal1000
+     * @tc.desc Verify invalid decimal strings throw; dotted forms use non-integer number conversion (current runtime)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringInvalidArgMixedDecimal1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
+      const dottedDecimalMsg = "Can't convert number 1.5 to BigInt because it's not an integer";
+
+      expect((): void => {
+        BigInt('12abc');
+      }).assertThrow(invalidMsg);
+      expect((): void => {
+        BigInt('1.5');
+      }).assertThrow(dottedDecimalMsg);
+    });
   });
 }

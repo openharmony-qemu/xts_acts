@@ -67,7 +67,7 @@ export default function BigIntPositiveTest(): void {
       const r2 = bn.positive();
       const r3 = bn.positive();
 
-      expect(typeof r1 === 'boolean').assertTrue();
+      expect(Class.of(r1)).assertEqual(Class.from<boolean>());
       expect(r1 === r2 && r2 === r3).assertTrue();
     });
 

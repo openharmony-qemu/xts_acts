@@ -99,12 +99,15 @@ export default function BigIntGetLongTest(): void {
      */
     it('testBigIntGetLongApiSemantics0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const within = BigInt(9223372036854775807);
+      const firstWithin = within.getLong();
 
-      expect(within.getLong()).assertEqual(9223372036854775807);
-      expect(within.getLong()).assertEqual(within.getLong());
+      expect(firstWithin).assertEqual(9223372036854775807);
+      expect(within.getLong()).assertEqual(firstWithin);
       const wrapped = BigInt('9223372036854775808');
-      expect(wrapped.getLong()).assertEqual(-9223372036854775808);
-      expect(wrapped.getLong()).assertEqual(-9223372036854775808);
+      const firstWrapped = wrapped.getLong();
+
+      expect(firstWrapped).assertEqual(-9223372036854775808);
+      expect(wrapped.getLong()).assertEqual(firstWrapped);
     });
 
     /**

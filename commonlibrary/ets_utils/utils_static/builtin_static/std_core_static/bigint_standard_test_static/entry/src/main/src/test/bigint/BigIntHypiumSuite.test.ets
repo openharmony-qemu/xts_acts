@@ -21,6 +21,7 @@ import BigIntConstructorBooleanTest from './BigIntConstructorBooleanTest.test';
 import BigIntConstructorCopyTest from './BigIntConstructorCopyTest.test';
 import BigIntAsUintNTest from './BigIntAsUintNTest.test';
 import BigIntAsIntNTest from './BigIntAsIntNTest.test';
+import BigIntPerformanceTest from './BigIntPerformanceTest.test';
 
 export default function runBigIntHypiumTests(): void {
   BigIntConstructorNoArgTest();
@@ -31,4 +32,5 @@ export default function runBigIntHypiumTests(): void {
   BigIntConstructorCopyTest();
   BigIntAsUintNTest();
   BigIntAsIntNTest();
+  BigIntPerformanceTest();
 }

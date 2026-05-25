@@ -69,7 +69,7 @@ export default function BigIntOperatorMultiplyTest(): void {
     it('testBigIntOperatorMultiplyReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result = BigInt(10).operatorMultiply(BigInt(3));
 
-      expect(typeof result === 'bigint').assertTrue();
+      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**

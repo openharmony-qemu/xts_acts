@@ -93,7 +93,9 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanEqualReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(typeof BigInt(1).operatorGreaterThanEqual(BigInt(2)) === 'boolean').assertTrue();
+      const result = BigInt(1).operatorGreaterThanEqual(BigInt(2));
+
+      expect(Class.of(result)).assertEqual(Class.from<boolean>());
     });
 
     /**

@@ -64,7 +64,7 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorIncrementReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
+      expect(Class.of(BigInt(1).operatorIncrement() as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**

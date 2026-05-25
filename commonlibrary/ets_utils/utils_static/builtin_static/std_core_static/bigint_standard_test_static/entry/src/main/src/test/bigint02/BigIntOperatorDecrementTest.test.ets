@@ -64,7 +64,7 @@ export default function BigIntOperatorDecrementTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorDecrementReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(typeof BigInt(1).operatorDecrement() === 'bigint').assertTrue();
+      expect(Class.of(BigInt(1).operatorDecrement() as Object)).assertEqual(Class.from<BigInt>());
     });
   });
 }

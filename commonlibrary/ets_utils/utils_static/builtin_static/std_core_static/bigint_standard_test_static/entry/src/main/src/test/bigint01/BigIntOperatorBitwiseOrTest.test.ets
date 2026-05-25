@@ -93,7 +93,7 @@ export default function BigIntOperatorBitwiseOrTest(): void {
       const right = BigInt(5);
       const result = left.operatorBitwiseOr(right);
 
-      expect(typeof result === 'bigint').assertTrue();
+      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
       expect(left.toString()).assertEqual('12');
       expect(right.toString()).assertEqual('5');
     });

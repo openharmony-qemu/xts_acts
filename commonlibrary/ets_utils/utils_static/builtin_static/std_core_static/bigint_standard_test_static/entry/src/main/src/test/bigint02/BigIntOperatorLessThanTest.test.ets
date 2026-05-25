@@ -76,7 +76,9 @@ export default function BigIntOperatorLessThanTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(typeof BigInt(1).operatorLessThan(BigInt(2)) === 'boolean').assertTrue();
+      const result = BigInt(1).operatorLessThan(BigInt(2));
+
+      expect(Class.of(result)).assertEqual(Class.from<boolean>());
     });
 
     /**

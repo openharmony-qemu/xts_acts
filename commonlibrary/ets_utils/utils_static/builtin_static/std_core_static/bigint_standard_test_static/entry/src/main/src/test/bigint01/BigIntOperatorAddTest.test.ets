@@ -104,7 +104,7 @@ export default function BigIntOperatorAddTest(): void {
       const b = BigInt(5);
       const result = a.operatorAdd(b);
 
-      expect(typeof result === 'bigint').assertTrue();
+      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
       expect(BigInt(1).operatorAdd(BigInt(2)).operatorAdd(BigInt(3)).toString()).assertEqual('6');
       const a2 = BigInt(1);
       const b2 = BigInt(2);

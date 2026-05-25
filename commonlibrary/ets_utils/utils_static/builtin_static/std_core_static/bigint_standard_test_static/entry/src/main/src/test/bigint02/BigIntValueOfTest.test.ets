@@ -44,7 +44,7 @@ export default function BigIntValueOfTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntValueOfReturnType0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(typeof BigInt(42).valueOf() === 'bigint').assertTrue();
+      expect(Class.of(BigInt(42).valueOf() as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**

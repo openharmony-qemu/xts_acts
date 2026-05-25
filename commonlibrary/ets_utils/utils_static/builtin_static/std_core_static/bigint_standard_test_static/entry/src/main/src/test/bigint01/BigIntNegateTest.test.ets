@@ -90,7 +90,7 @@ export default function BigIntNegateTest(): void {
       const value = BigInt(100);
       const result = value.negate();
 
-      expect(typeof result === 'bigint').assertTrue();
+      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
       expect(value.toString()).assertEqual('100');
       expect(result !== value).assertTrue();
     });

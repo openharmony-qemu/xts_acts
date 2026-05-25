@@ -63,7 +63,7 @@ export default function BigIntNegativeTest(): void {
       const r2 = bn.negative();
       const r3 = bn.negative();
 
-      expect(typeof r1 === 'boolean').assertTrue();
+      expect(Class.of(r1)).assertEqual(Class.from<boolean>());
       expect(r1 === r2 && r2 === r3).assertTrue();
     });
 

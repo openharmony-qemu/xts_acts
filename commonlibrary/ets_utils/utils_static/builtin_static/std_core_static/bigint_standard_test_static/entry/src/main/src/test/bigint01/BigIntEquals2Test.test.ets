@@ -92,7 +92,7 @@ export default function BigIntEquals2Test(): void {
       const t = BigInt(42).equals(BigInt(42));
       const f = BigInt(42).equals(42);
 
-      expect(typeof t === 'boolean').assertTrue();
+      expect(Class.of(t)).assertEqual(Class.from<boolean>());
       expect(t).assertTrue();
       expect(f).assertFalse();
     });
