@@ -408,6 +408,9 @@ struct PickerComponent {
           let completedResult: CompletedResult = await this.pickerController.completed();
           console.info('testPicker completed result=' + JSON.stringify(completedResult));
           let result: PhotoPickerResult = new PhotoPickerResult();
+
+          result.completedResult = completedResult;
+
           result.photoUris = completedResult?.photoUris ?? [];
           result.contextRecoveryInfo = completedResult?.contextRecoveryInfo;
           result.movingPhotoBadgeStates = completedResult?.movingPhotoBadgeStates ?? [];

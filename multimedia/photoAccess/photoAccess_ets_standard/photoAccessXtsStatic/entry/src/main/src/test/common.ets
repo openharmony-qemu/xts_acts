@@ -25,7 +25,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { common } from '@kit.AbilityKit';
 
-export const LOG_TAG = '[PhotoAccessXts].';
+export const LOG_TAG:string = '[PhotoAccessXts1].';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 const COMMON_WAIT_DURATION: number = 500;
@@ -61,7 +61,7 @@ export async function getPermission(name?: Permissions): Promise<void> {
       (err: BusinessError | null, data: PermissionRequestResult | undefined) => {
         hilog.info(0x0000, 'testTag', '  requestPermissionsFromUser end');
       });
-    await Utils.msSleep(5000);
+    await Utils.msSleep(1000);
     hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
     for (let i = 0; i < arr.length; i++) {
       let dr = Driver.create();

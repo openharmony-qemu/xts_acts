@@ -131,6 +131,7 @@ describe("FaultlogJsTest", function () {
             while (subscribedEventCnt < 1) {
                 await msleep(100);
             }
+            await msleep(3000);
             EndSubscriptionOnEvent(watcher)
             console.info("--------DFX_DFR_Faultlogger_Interface_0400 4" + "----------");
             let ret = await faultlogger.querySelfFaultLog(faultlogger.FaultType.CPP_CRASH);

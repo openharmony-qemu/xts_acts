@@ -29,9 +29,9 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class VisibleAreaChangeModifier implements AttributeModifier<CommonAttribute> {
-  @State public change: boolean = true;
-  @State public change2: boolean = true;
-  @State public visibleText: string = 'test';
+  public change: boolean = true;
+  public change2: boolean = true;
+  public visibleText: string = 'test';
 
   applyNormalAttribute(instance: CommonAttribute): void {
     if (this.change && this.change2) {

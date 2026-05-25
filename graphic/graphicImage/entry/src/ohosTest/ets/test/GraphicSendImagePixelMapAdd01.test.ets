@@ -970,5 +970,66 @@ export default function GraphicSendImagePixelMapAdd01() {
         }
       })
 
+    /**
+     * @tc.name   sendableImagePixelMapAdd02_0500
+     * @tc.number SUB_GRAPHIC_image_sendable_createPixelMap_0500
+     * @tc.desc   sendableImage createPixelMap API - srcPixelFormat: ALPHA_U8, pixelFormat: ALPHA_U8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('sendableImagePixelMapAdd02_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data sendableImagePixelMapAdd02_0500 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          srcPixelFormat: image.PixelMapFormat.Y8,
+          pixelFormat: image.PixelMapFormat.Y8,
+        };
+        try {
+          let pixelMap: sendableImage.PixelMap = await sendableImage.createPixelMap(color, opts);
+          console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap.release();
+          done();
+        } catch(err){
+          console.info(msgStr + 'failed ', err);
+          expect().assertFail();
+          done();
+        }
+      })
+    /**
+     * @tc.name   sendableImagePixelMapAdd02_0600
+     * @tc.number SUB_GRAPHIC_image_sendable_createPixelMap_0600
+     * @tc.desc   sendableImage createPixelMapSync API - srcPixelFormat: ALPHA_U8, pixelFormat: ALPHA_U8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('sendableImagePixelMapAdd02_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr = 'www data sendableImagePixelMapAdd02_0600 ';
+        const color: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          srcPixelFormat: image.PixelMapFormat.Y8,
+          pixelFormat: image.PixelMapFormat.Y8,
+        };
+        try {
+          let pixelMap: sendableImage.PixelMap = sendableImage.createPixelMapSync(color, opts);
+          console.info(msgStr + 'success ', pixelMap.isEditable, pixelMap.isStrideAlignment);
+          expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
+          await pixelMap.release();
+          done();
+        } catch(err){
+          console.info(msgStr + 'failed ', err);
+          expect().assertFail();
+          done();
+        }
+      })
+
   })
 }

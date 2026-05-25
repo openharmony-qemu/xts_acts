@@ -305,6 +305,28 @@ struct setBlanklessLoadingWithKeyTest {
                 }
                 break;
               }
+              case 'testClearBlanklessLoadingCacheNoArgs001': {
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache();
+                  Utils.emitEvent(true, 148560);
+                } catch (error) {
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(true, 148560);
+                  } else { Utils.emitEvent(false, 148560); }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCacheEmptyArray001': {
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache([]);
+                  Utils.emitEvent(true, 148570);
+                } catch (error) {
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(true, 148570);
+                  } else { Utils.emitEvent(false, 148570); }
+                }
+                break;
+              }
               case 'testSetBlanklessLoadingWithKey005': {
                 let msg = 'testSetBlanklessLoadingWithKey005'
                 let key = 'setBlanklessLoadingWithKey005';

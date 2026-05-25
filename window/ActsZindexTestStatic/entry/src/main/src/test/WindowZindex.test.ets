@@ -15,6 +15,7 @@
 import { describe, it, expect, TestType, Size, Level, beforeAll,beforeEach} from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
+import { SystemProperties } from '@ohos.arkui.component';
 
 import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
@@ -1951,6 +1952,29 @@ export default function WindowZindexTest() {
         }
   
       })
+
+
+      /**
+       * @tc.name SUB_WINDOW_SystemProperties_focused_highlighted_static_0100
+       * @tc.number SUB_WINDOW_SystemProperties_focused_highlighted_static_0100
+       * @tc.desc SUB_WINDOW_SystemProperties_focused_highlighted_static_0100
+       * @tc.type FUNCTION
+       * @tc.size MEDIUMTEST
+       * @tc.level LEVEL0
+       */
+      it('SUB_WINDOW_SystemProperties_focused_highlighted_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+        let caseName: string = 'SUB_WINDOW_SystemProperties_focused_highlighted_static_0100 ';
+        console.log(caseName + 'begin');
+        try {
+          expect(SystemProperties.WINDOW_IS_FOCUSED).assertEqual('system.window.focused');
+          expect(SystemProperties.WINDOW_IS_HIGHLIGHTED).assertEqual('system.window.highlighted');
+          done();
+        } catch (e) {
+          console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
+          expect().assertFail();
+          done()
+        }
+      });
 
 
       

@@ -20,6 +20,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import deviceInfo from '@ohos.deviceInfo';
+import { canIUse } from '@internal.full.global';
 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -32,6 +33,7 @@ export default function NoParentSubWindowFocusZLevelStatic(): void {
         let win: window.Window | undefined;
         let context: common.UIAbilityContext | undefined;
         let isFreeWindowMode:boolean = false;
+        let canIUseRes:boolean = false;
         let deviceType: string = deviceInfo.deviceType;
         console.info(`deviceType: ${deviceType}`);
         beforeAll(async () => {
@@ -57,6 +59,8 @@ export default function NoParentSubWindowFocusZLevelStatic(): void {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             hilog.info(0x0000, '[ANI]',`beforeAll isFreeWindowMode: `+ isFreeWindowMode);
+            canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+            console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
         })
         
     /**
@@ -101,8 +105,13 @@ export default function NoParentSubWindowFocusZLevelStatic(): void {
           }).catch((err: Error) => {
           console.error(msgStr +
             `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-          expect(false).assertTrue();
-          done();
+             if (!canIUseRes) {
+               expect(err.code).assertEqual(1300002);
+               expect(err.message !== '').assertTrue();
+             } else {
+               expect(false).assertTrue();
+             }
+             done();
         });
       }
     )

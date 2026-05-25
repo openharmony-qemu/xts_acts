@@ -53,7 +53,8 @@ let PlayParameters: media.PlayParameters = {
   rate: audio.AudioRendererRate.RENDER_RATE_DOUBLE,
   leftVolume: 0.2,
   rightVolume: 0.8,
-  priority: 0
+  priority: 0,
+  pitch: 2
 }
 
 function expectFalse() {
@@ -3642,6 +3643,63 @@ export default function soundPoolTest() {
       }
     })
 
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1900
+     * @tc.desc   Function test. Error code: 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1900', Level.LEVEL0,async (done: Function) => {
+      console.info(`${TAG}: SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_PLAY_ASYNC_1900 in`);
+      try {
+        await createSoundPool();
+        if (!soundPool) {
+          console.error(`${TAG}:createSoundPool soundPool is null`);
+          expectFalse();
+          done();
+          return;
+        }
+        soundPool.on('error', (error) => {
+          console.error(`${TAG}: onError called! error happened, message is: ${error.message}`);
+          expectFalse();
+          done();
+          return;
+        })
+        soundId = await soundPool.load(fd1, 0, length1);
+        await sleep(2000);
+        let streamId_ = -1;
+        soundPool.play(soundId, {
+          pitch: 5
+        }, (err, streamId) => {
+          if (err) {
+            console.info(`${TAG}: playCallback error: ${JSON.stringify(err)}`);
+            expectFalse();
+          } else {
+            if (streamId > 0) {
+              console.info(`${TAG}: playCallback with param.parallelPlayFlag success, streamId: ${streamId}`);
+              streamId_ = streamId;
+            } else {
+              console.info(`${TAG}: playCallback with param.parallelPlayFlag fail! streamId: ${streamId}`);
+              expectFalse();
+            }
+          }
+        })
+        await sleep(500);
+        if (streamId_ != -1) {
+          await sleep(5000);
+          await soundPool.stop(streamId_);
+        }
+        done();
+        return;
+      } catch (error) {
+        console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
+        expectFalse();
+        done();
+        return;
+      }
+    })
 
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIA_SOUNDPOOL_FUNCTION_STOP_0100

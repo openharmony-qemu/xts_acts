@@ -1514,7 +1514,7 @@ export default function WindowImmersiveTest() {
                 await (win! as window.Window).destroyWindow();
                 expect(false).assertTrue();
                 done();
-            }).catch(async(err:Error):PromiseLike<void>|undefined=>{
+            }).catch(async(err:Error): Promise<void> => {
                 err === err as BusinessError;
                 if(err!.code !== 801){
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to setSystemAvoidAreaEnabled. Cause:' + JSON.stringify(err));

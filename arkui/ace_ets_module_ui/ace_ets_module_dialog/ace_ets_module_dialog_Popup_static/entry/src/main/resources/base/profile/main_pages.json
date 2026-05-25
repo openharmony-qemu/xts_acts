@@ -6,6 +6,11 @@
     "MainAbility/pages/popup/CustomPopupOptions",
     "MainAbility/pages/popup/PopupOptions",
     "MainAbility/pages/popup/PopupCommonOptions",
-    "MainAbility/pages/TipsOptions/TipsOptions"
+    "MainAbility/pages/TipsOptions/TipsOptions",
+    "MainAbility/pages/uimaterial/ImmersiveStyleTest",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsMaterialColor",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsColorInvert",
+    "MainAbility/pages/uimaterial/ImmersiveOptionsApplyShadow",
+    "MainAbility/pages/uimaterial/UIMaterialTestPage"
   ]
 }

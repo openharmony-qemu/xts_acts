@@ -18,7 +18,7 @@ import { LocalStorage } from '@ohos.arkui.stateManagement';
 const TAG: string = '[ExampleEmbeddedAbility]'
 export default class EmbeddedGetWindowAvoidAreaAbility extends EmbeddedUIExtensionAbility {
 
-  onSessionCreate(want: Want, session: UIExtensionContentSession) {
+  onSessionCreate(want: Want, session: UIExtensionContentSession): void {
     console.info(TAG, `onSessionCreate, want: ${JSON.stringify(want)}`);
     let param: Record<string, UIExtensionContentSession> = {
       'session1': session

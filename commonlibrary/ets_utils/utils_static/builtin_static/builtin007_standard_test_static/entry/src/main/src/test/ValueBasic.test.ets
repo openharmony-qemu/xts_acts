@@ -103,8 +103,8 @@ export default function valueBasicTest(): void {
           let negativeZero: double = -0;
           let instance = DoubleValue.of(negativeZero);
           let doubleValue = instance as DoubleValue;
-          expect(1 / doubleValue.getValueData()).assertEqual(Number.POSITIVE_INFINITY);
-          expect(-1 / doubleValue.getValueData()).assertEqual(Number.NEGATIVE_INFINITY);
+          expect(1 / doubleValue.getValueData()).assertEqual(Number.NEGATIVE_INFINITY);
+          expect(-1 / doubleValue.getValueData()).assertEqual(Number.POSITIVE_INFINITY);
         } catch (err) {
           console.error(`${TAG} failed, error: ${err}`);
           expect().assertFail();

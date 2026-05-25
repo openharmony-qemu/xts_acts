@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 import DisplayTest from "./DisplayTest.test";
-export default function testsuite() {
+export default function testsuite():void {
   DisplayTest();
 }

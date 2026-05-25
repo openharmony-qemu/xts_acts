@@ -25,7 +25,7 @@ import {
 
 @ComponentV2
 struct LifecycleTestComp {
-  @State statusText: string = 'init';
+  public statusText: string = 'init';
 
   aboutToAppear() {
     try {

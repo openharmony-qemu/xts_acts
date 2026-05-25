@@ -931,5 +931,72 @@ export default function dataShareConfigDeleteTest() {
         expect(err.code).assertEqual("401");
       }
     });
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest028
+     * @tc.number SUB_DistributedData_DataShare_SDK_DeleteAll_0300
+     * @tc.desc   Delete All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.delete(undefined);
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest028 failed.code =" + err.code + ",message=" + err.message);
+        expect(err.code).assertEqual("401");
+      }
+    });
+
+    /**
+     * @tc.name   dataShareConfigDeleteTest029
+     * @tc.number SUB_DistributedData_DataShare_SDK_DeleteAll_0400
+     * @tc.desc   Delete All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.delete(g_config);
+        await g_handle!.delete(g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length == 0).assertTrue();
+          console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest029 results.length =" + results.length);
+          results.forEach((result) => {
+            console.info(TAG + `[DataShareProvider] URI: ${result.uri}, Result: ${result.result}`);
+            expect().assertFail();
+          });
+        }).catch((err: BusinessError) => {
+          console.error(TAG + "[DataShareProvider] delete failed,err =" + JSON.stringify(err));
+          expect().assertFail();
+        })
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest029 failed.code =" + err.code + ",message=" + err.message);
+        expect().assertFail();
+      }
+    });
+    
+    /**
+     * @tc.name   dataShareConfigDeleteTest030
+     * @tc.number SUB_DistributedData_DataShare_SDK_DeleteAll_0500
+     * @tc.desc   Delete All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('dataShareConfigDeleteTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      try {
+        await g_handle!.delete(g_config).then((results: dataShare.DataProxyResult[]) => {
+          expect(results.length > 0).assertTrue();
+        }).catch((err: BusinessError) => {
+          console.error(TAG + "[DataShareProvider] delete failed, err: " + JSON.stringify(err));
+          expect().assertFail();
+        })
+      } catch (err) {
+        console.error(TAG + "[DataShareProvider] dataShareConfigDeleteTest030 failed. code: " + err.code + ", message: " + err.message);
+        expect().assertFail();
+      }
+    });
   })
 }

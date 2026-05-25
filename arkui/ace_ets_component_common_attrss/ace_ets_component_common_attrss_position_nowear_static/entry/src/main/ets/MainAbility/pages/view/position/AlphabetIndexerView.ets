@@ -15,6 +15,8 @@
  */
 
 import {
+  Entry,
+  Column,
   Component,
   AlphabetIndexer,
   AlphabetIndexerOptions,
@@ -24,6 +26,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct AlphabetIndexerView {
   @Link _position!: Position;
@@ -33,18 +36,20 @@ export struct AlphabetIndexerView {
     'O', 'P', 'Q', 'R', 'S', 'T', 'U',
     'V', 'W', 'X', 'Y', 'Z']
 
-  build() {
-    AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
-      .selectedColor(0xFFFFFF)
-      .popupColor(0xFFFAF0)
-      .selectedBackgroundColor(0xCCCCCC)
-      .popupBackground(0xD2B48C)
-      .usingPopup(true)
-      .selectedFont({ size: 16, weight: FontWeight.Bolder })
-      .popupFont({ size: 30, weight: FontWeight.Bolder })
-      .itemSize(28)
-      .alignStyle(IndexerAlign.Left)
-      .position(this._position)
-      .key(this.componentKey)
+  build():void {
+    Column(){
+      AlphabetIndexer({ arrayValue: this.value, selected: 0 } as AlphabetIndexerOptions)
+        .selectedColor(0xFFFFFF)
+        .popupColor(0xFFFAF0)
+        .selectedBackgroundColor(0xCCCCCC)
+        .popupBackground(0xD2B48C)
+        .usingPopup(true)
+        .selectedFont({ size: 16, weight: FontWeight.Bolder })
+        .popupFont({ size: 30, weight: FontWeight.Bolder })
+        .itemSize(28)
+        .alignStyle(IndexerAlign.Left)
+        .position(this._position)
+        .key(this.componentKey)
+    }
   }
 }
