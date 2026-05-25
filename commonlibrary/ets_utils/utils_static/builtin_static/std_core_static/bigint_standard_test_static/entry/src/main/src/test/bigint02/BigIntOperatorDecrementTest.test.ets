@@ -26,19 +26,17 @@ export default function BigIntOperatorDecrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrementBasic0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v1 = BigInt(43);
-        expect(v1.operatorDecrement().toString()).assertEqual('42');
-        const v2 = BigInt(1);
-        expect(v2.operatorDecrement().toString()).assertEqual('0');
-        const v3 = BigInt(0);
-        expect(v3.operatorDecrement().toString()).assertEqual('-1');
-        expect(BigInt('9223372036854775807').operatorDecrement().toString())
-          .assertEqual('9223372036854775806');
-        expect(BigInt('-9223372036854775807').operatorDecrement().toString())
-          .assertEqual('-9223372036854775808');
-      });
+    it('testBigIntOperatorDecrementBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v1 = BigInt(43);
+
+      expect(v1.operatorDecrement().toString()).assertEqual('42');
+      const v2 = BigInt(1);
+      expect(v2.operatorDecrement().toString()).assertEqual('0');
+      const v3 = BigInt(0);
+      expect(v3.operatorDecrement().toString()).assertEqual('-1');
+      expect(BigInt('9223372036854775807').operatorDecrement().toString()).assertEqual('9223372036854775806');
+      expect(BigInt('-9223372036854775807').operatorDecrement().toString()).assertEqual('-9223372036854775808');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0200
@@ -48,14 +46,14 @@ export default function BigIntOperatorDecrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrementImmutable0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = BigInt(5);
-        const orig = v.toString();
-        const result = v.operatorDecrement();
-        expect(v.toString()).assertEqual(orig);
-        expect(result.toString()).assertEqual('4');
-      });
+    it('testBigIntOperatorDecrementImmutable0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v = BigInt(5);
+      const orig = v.toString();
+      const result = v.operatorDecrement();
+
+      expect(v.toString()).assertEqual(orig);
+      expect(result.toString()).assertEqual('4');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0300
@@ -65,9 +63,8 @@ export default function BigIntOperatorDecrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorDecrementReturnType0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(typeof BigInt(1).operatorDecrement() === 'bigint').assertTrue();
-      });
+    it('testBigIntOperatorDecrementReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(typeof BigInt(1).operatorDecrement() === 'bigint').assertTrue();
+    });
   });
 }

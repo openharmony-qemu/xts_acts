@@ -26,15 +26,15 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleStringOptionsProps0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        let options: BigIntToLocaleStringOptions = { compactDisplay: 'short' };
-        expect(options.compactDisplay).assertEqual('short');
-        options = { notation: 'compact' };
-        expect(options.compactDisplay).assertUndefined();
-        options = { compactDisplay: 'long', notation: 'compact' };
-        expect(options.compactDisplay).assertEqual('long');
-        expect(options.notation).assertEqual('compact');
-      });
+    it('testBigIntToLocaleStringOptionsProps0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      let options: BigIntToLocaleStringOptions = { compactDisplay: 'short' };
+
+      expect(options.compactDisplay).assertEqual('short');
+      options = { notation: 'compact' };
+      expect(options.compactDisplay).assertUndefined();
+      options = { compactDisplay: 'long', notation: 'compact' };
+      expect(options.compactDisplay).assertEqual('long');
+      expect(options.notation).assertEqual('compact');
+    });
   });
 }

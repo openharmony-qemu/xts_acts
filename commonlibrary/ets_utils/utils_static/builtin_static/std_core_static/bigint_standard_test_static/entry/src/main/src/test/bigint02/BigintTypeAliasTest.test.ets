@@ -26,15 +26,15 @@ export default function BigintTypeAliasTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasAssign0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const value: bigint = BigInt(100);
-        expect(value.toString()).assertEqual('100');
-        let val: bigint = BigInt(42);
-        expect(val.toString()).assertEqual('42');
-        val = BigInt(200);
-        expect(val.toString()).assertEqual('200');
-      });
+    it('testBigintTypeAliasAssign0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const value: bigint = BigInt(100);
+
+      expect(value.toString()).assertEqual('100');
+      let val: bigint = BigInt(42);
+      expect(val.toString()).assertEqual('42');
+      val = BigInt(200);
+      expect(val.toString()).assertEqual('200');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0200
@@ -44,16 +44,16 @@ export default function BigintTypeAliasTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasOps0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a: bigint = BigInt(10);
-        const b: bigint = BigInt(20);
-        const sum: bigint = a.operatorAdd(b);
-        expect(sum.toString()).assertEqual('30');
-        expect(typeof a === 'bigint').assertTrue();
-        const asClass: bigint = a;
-        expect(asClass.equals(a)).assertTrue();
-      });
+    it('testBigintTypeAliasOps0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const a: bigint = BigInt(10);
+      const b: bigint = BigInt(20);
+      const sum: bigint = a.operatorAdd(b);
+
+      expect(sum.toString()).assertEqual('30');
+      expect(typeof a === 'bigint').assertTrue();
+      const asClass: bigint = a;
+      expect(asClass.equals(a)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0300
@@ -63,13 +63,13 @@ export default function BigintTypeAliasTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasStatic0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const truncated: bigint = BigInt.asIntN(8, BigInt(256));
-        expect(truncated.toString()).assertEqual('0');
-        const asUint: bigint = BigInt.asUintN(8, BigInt(-1));
-        expect(asUint.toString()).assertEqual('255');
-      });
+    it('testBigintTypeAliasStatic0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const truncated: bigint = BigInt.asIntN(8, BigInt(256));
+
+      expect(truncated.toString()).assertEqual('0');
+      const asUint: bigint = BigInt.asUintN(8, BigInt(-1));
+      expect(asUint.toString()).assertEqual('255');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0400
@@ -79,15 +79,15 @@ export default function BigintTypeAliasTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigintTypeAliasInvalidConstruct0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-        expect((): void => {
-          BigInt('abc');
-        }).assertThrow(invalidMsg);
-        expect((): void => {
-          BigInt(3.14 as double);
-        }).assertThrowError('RangeError');
-      });
+    it('testBigintTypeAliasInvalidConstruct0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
+
+      expect((): void => {
+        BigInt('abc');
+      }).assertThrow(invalidMsg);
+      expect((): void => {
+        BigInt(3.14 as double);
+      }).assertThrowError('RangeError');
+    });
   });
 }
