@@ -23,7 +23,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import Want from '@ohos.app.ability.Want';
 import { ColorMetrics } from '@kit.ArkUI';
 import deviceInfo from '@ohos.deviceInfo';
-
+import display from '@ohos.display';
 
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -68,6 +68,17 @@ async function terminateAbilityCycle(caseName: string) {
     await sleep(1000)
   }
   AppStorage.delete('startNum')
+}
+
+async function resizeAndMove(windowClassStart: window.Window, message: string) {
+  let displayWidth = display.getDefaultDisplaySync().width
+  let displayHeight = display.getDefaultDisplaySync().height
+  let minWindowWidth = windowClassStart.getWindowLimits().minWidth
+  let minWindowHeight = windowClassStart.getWindowLimits().minHeight
+  await windowClassStart.moveWindowToAsync(Number(displayWidth * 0.2), Number(displayHeight * 0.2))
+  console.log(`${message} moveWindowToAsync success`);
+  await windowClassStart.resizeAsync(minWindowWidth! + 10, minWindowHeight! + 10)
+  console.log(`${message} resizeAsync success`);
 }
 
 async function terminateAbility(caseName: string) {
@@ -155,15 +166,15 @@ export default function windowAutoSaveTest() {
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       let promise = mainWindowClass.getWindowStateSnapshot();
-        promise.then((data) => {
-          let jsonObj: object = JSON.parse(data);
-          console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
-          isPCMode = jsonObj["isPcMode"];
-          isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
-        }).catch((err: BusinessError) => {
-          console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
-        });
-        console.info(`beforeAll: isPCMode=${isPCMode}`);
+      promise.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: isPCMode=${isPCMode}`);
       driver = Driver.create();
     })
     beforeEach(() => {
@@ -184,11 +195,11 @@ export default function windowAutoSaveTest() {
           await sleep(1000)
           lastWindow = await window.getLastWindow(context)
           lastID = lastWindow.getWindowProperties().id
-      }
+        }
       } catch (error) {
         console.log('afterEach fail cause'+error)
       }
-      
+
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
@@ -220,12 +231,20 @@ export default function windowAutoSaveTest() {
       try {
         windowStageStart.setWindowRectAutoSave(true).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
+          if(isFreeWindowMode){
+            let windowStatusType = windowStageStart.getMainWindowSync().getWindowStatus()
+            if (windowStatusType === 1 || windowStatusType === 2){
+              await windowStageStart.getMainWindowSync().recover()
+            }
+          }
+          await sleep(1000)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowClassStart, message)
+          await sleep(1000)
           let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
+          await sleep(3000)
           // 关闭Ability
           await terminateAbility(message)
           await sleep(1000)
@@ -244,7 +263,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -275,64 +294,61 @@ export default function windowAutoSaveTest() {
       const message = 'setWindowRectAutoSaveTestTrue_0200';
       // 拉起Ability
       if(deviceType === '2in1' || isPCMode == true){
-      let windowStageStart = await startAbility(message, context)
-      // 设置setWindowRectAutoSave = true
-      try {
-        windowStageStart.setWindowRectAutoSave(true).then(async () => {
-          console.info(`${message} setWindowRectAutoSave`)
-          // 更改窗口大小&位置
-          let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
-          let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
-          // 二分屏
-          let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 关闭Ability&退出分屏
-          await driver.click(2340, 977);
-          await terminateAbility(message)
-          await sleep(1000)
-          
-          await mainWindowClass.recover();
-          
-          // 重新拉起Ability
-          windowStageStart = await startAbility(message, context)
-          let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
-          // 恢复
-          await windowStageStart.setWindowRectAutoSave(false)
-          // windowRect1 & windowRect2 的大小位置一致
-          expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          done()
-        }).catch((err: BusinessError) => {
-          if (err.code == 801) {
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
-            done();
-          }else if(!isFreeWindowMode){
-            expect(err.code).assertEqual(1300010);
-            done();
-          } else {
-            console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-        })
-      } catch (exception) {
-        console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
-        expect().assertFail();
+        let windowStageStart = await startAbility(message, context)
+        // 设置setWindowRectAutoSave = true
+        try {
+          windowStageStart.setWindowRectAutoSave(true).then(async () => {
+            console.info(`${message} setWindowRectAutoSave`)
+            // 更改窗口大小&位置
+            let windowClassStart = windowStageStart.getMainWindowSync()
+            await resizeAndMove(windowClassStart, message)
+            await sleep(1000)
+            let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
+            console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
+            // 二分屏
+            let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+            await sleep(1000)
+            let titlePoint = await title.getBounds()
+            await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+            await sleep(1000)
+            // 关闭Ability&退出分屏
+            await terminateAbility(message)
+            await sleep(1000)
+
+            // 重新拉起Ability
+            windowStageStart = await startAbility(message, context)
+            let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
+            console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
+            // 恢复
+            await windowStageStart.setWindowRectAutoSave(false)
+            // windowRect1 & windowRect2 的大小位置一致
+            expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
+            done()
+          }).catch((err: BusinessError) => {
+            if (err.code == 801) {
+              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+
+              done();
+            }else if(!isFreeWindowMode){
+              expect(err.code).assertEqual(1300010);
+              done();
+            } else {
+              console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        } catch (exception) {
+          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
+          expect().assertFail();
+          done();
+        }
+      }else{
         done();
       }
-    }else{
-      done();
-    }
 
     })
 
@@ -354,11 +370,10 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
           // 最大化
           await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
           // 关闭Ability
+          await sleep(1000)
           await terminateAbility(message)
           await sleep(1000)
           // 重新拉起Ability
@@ -371,14 +386,18 @@ export default function windowAutoSaveTest() {
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
           // 窗口全屏，非沉浸式
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE)
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
+          }
           //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
           expect(isLayoutFullScreen).assertFalse()
           done()
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -415,18 +434,25 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          if(isFreeWindowMode){
+            let windowStatusType = windowClassStart.getWindowStatus()
+            if (windowStatusType === 1 || windowStatusType === 2){
+              await windowClassStart.recover()
+            }
+          }
           await sleep(1000)
           let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
+          await sleep(1000)
           // 沉浸式
           await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          await sleep(1000)
           // 关闭Ability
           await terminateAbility(message)
           await sleep(1000)
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
+          await sleep(1000)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
           // 恢复
@@ -440,7 +466,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -477,17 +503,19 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowClassStart, message)
+          await sleep(1000)
           let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
           // 最小化
           await windowClassStart.minimize()
+          await sleep(1000)
           // 关闭Ability
           await terminateAbility(message)
           await sleep(1000)
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
+          await sleep(1000)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
           // 恢复
@@ -501,7 +529,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -538,8 +566,8 @@ export default function windowAutoSaveTest() {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowClassStart, message)
+          await sleep(1000)
           let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
           console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
           // 拉起Ability
@@ -555,7 +583,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -609,21 +637,21 @@ export default function windowAutoSaveTest() {
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
           if(isFreeWindowMode){
-            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE)
             //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
             expect(isLayoutFullScreen).assertFalse()
             done()
           }else{
-            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
             //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
             expect(isLayoutFullScreen).assertEqual(false)
             done()
           }
-          
+
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -673,21 +701,21 @@ export default function windowAutoSaveTest() {
           // 恢复
           await windowStageStart.setWindowRectAutoSave(false)
           if(isFreeWindowMode){
-            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE) 
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE)
             //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
             expect(isLayoutFullScreen).assertFalse()
             done()
           }else{
-            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN) 
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
             //开发不兼容变更，附下changelog：https://gitee.com/openharmony/docs/pulls/65733
             expect(isLayoutFullScreen).assertEqual(false)
             done()
           }
-          
+
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -718,12 +746,11 @@ export default function windowAutoSaveTest() {
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowClassStart, message)
           await sleep(1000)
           // 关闭Ability
           await terminateAbility(message)
@@ -741,7 +768,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           }else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -771,62 +798,59 @@ export default function windowAutoSaveTest() {
       const message = 'setWindowRectAutoSaveTestFalse_0200';
       // 拉起Ability
       if(deviceType === '2in1'|| isPCMode == true){
-      let windowStageStart = await startAbility(message, context)
-      let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-      console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
-      // 设置setWindowRectAutoSave = false
-      try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
-          console.info(`${message} setWindowRectAutoSave`)
-          // 更改窗口大小&位置
-          let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
-          // 二分屏
-          let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 关闭Ability&退出分屏
-          await driver.click(2340, 977);
-          await terminateAbility(message)
-          await sleep(1000)
-          
-          await mainWindowClass.recover();
-          
-          // 重新拉起Ability
-          windowStageStart = await startAbility(message, context)
-          let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
-          // windowRect2 为窗口默认创建大小
-          expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          done()
-        }).catch((err: BusinessError) => {
-          if (err.code == 801) {
-            console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
-            done();
-          }else if(!isFreeWindowMode){
-            expect(err.code).assertEqual(1300010);
-            done();
-          } else {
-            console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
-            expect(false).assertTrue();
-            done();
-          }
-        })
-      } catch (exception) {
-        console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
-        expect().assertFail();
+        let windowStageStart = await startAbility(message, context)
+        let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
+        console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
+        // 设置setWindowRectAutoSave = false
+        try {
+          windowStageStart.setWindowRectAutoSave(false).then(async () => {
+            console.info(`${message} setWindowRectAutoSave`)
+            // 更改窗口大小&位置
+            let windowClassStart = windowStageStart.getMainWindowSync()
+            await resizeAndMove(windowClassStart, message)
+            await sleep(1000)
+            // 二分屏
+            let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+            await sleep(1000)
+            let titlePoint = await title.getBounds()
+            await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+            await sleep(1000)
+            // 关闭Ability&退出分屏
+            await terminateAbility(message)
+            await sleep(1000)
+
+            // 重新拉起Ability
+            windowStageStart = await startAbility(message, context)
+            let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
+            console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
+            // windowRect2 为窗口默认创建大小
+            expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
+            done()
+          }).catch((err: BusinessError) => {
+            if (err.code == 801) {
+              console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
+
+              done();
+            }else if(!isFreeWindowMode){
+              expect(err.code).assertEqual(1300010);
+              done();
+            } else {
+              console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
+              expect(false).assertTrue();
+              done();
+            }
+          })
+        } catch (exception) {
+          console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${exception.code}, message: ${exception.message}`)
+          expect().assertFail();
+          done();
+        }
+      }else{
         done();
       }
-    }else{
-      done();
-    }
 
     })
 
@@ -846,14 +870,12 @@ export default function windowAutoSaveTest() {
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
-          // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
           // 最大化
           await windowClassStart.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          await sleep(1000)
           // 关闭Ability
           await terminateAbility(message)
           await sleep(1000)
@@ -870,7 +892,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -905,14 +927,21 @@ export default function windowAutoSaveTest() {
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          if(isFreeWindowMode){
+            let windowStatusType = windowClassStart.getWindowStatus()
+            if (windowStatusType === 1 || windowStatusType === 2){
+              await windowClassStart.recover()
+            }
+          }
+          await resizeAndMove(windowClassStart, message)
+          await sleep(1000)
           // 沉浸式
           await windowClassStart.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          await sleep(1000)
           // 关闭Ability
           await terminateAbility(message)
           await sleep(1000)
@@ -929,7 +958,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -964,12 +993,12 @@ export default function windowAutoSaveTest() {
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
           let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowClassStart, message)
+          await sleep(1000)
           // 最小化
           await windowClassStart.minimize()
           // 关闭Ability
@@ -988,7 +1017,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -1019,28 +1048,28 @@ export default function windowAutoSaveTest() {
       const message = 'setWindowRectAutoSaveTestFalse_0600';
       // 拉起Ability
       let windowStageStart = await startAbility(message, context)
-      let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-      console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 更改窗口大小&位置
-          let windowClassStart = windowStageStart.getMainWindowSync()
-          await windowClassStart.moveWindowToAsync(300, 400)
-          await windowClassStart.resizeAsync(1000, 1200)
+          await resizeAndMove(windowStageStart.getMainWindowSync(), message)
+          await sleep(1000)
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
-          let windowRect2 = windowStageStart2.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
-          // windowRect1 & windowRect2 的大小一致
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          done()
+          let windowStatusType = windowStageStart2.getMainWindowSync().getWindowStatus()
+          console.info(`${message} windowStatusType = ${windowStatusType}`);
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
+            done()
+          }
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else if(!isFreeWindowMode){
             expect(err.code).assertEqual(1300010);
@@ -1071,11 +1100,9 @@ export default function windowAutoSaveTest() {
       const message = 'setWindowRectAutoSaveTestFalse_0700';
       // 拉起Ability
       let windowStageStart = await startAbility(message, context)
-      let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-      console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（非沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
@@ -1084,21 +1111,26 @@ export default function windowAutoSaveTest() {
           }else{
             await terminateAbility(message);
           }
-          
+
+          await sleep(1000)
+
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
-          let windowRect2 = windowStageStart2.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
-          await terminateAbilityCycle('afterEach')
           // windowRect1 & windowRect2 的大小一致
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          done()
+          let windowStatusType = windowStageStart2.getMainWindowSync().getWindowStatus()
+          console.info(`${message} windowStatusType = ${windowStatusType}`);
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
+            done()
+          }
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -1126,11 +1158,9 @@ export default function windowAutoSaveTest() {
       const message = 'setWindowRectAutoSaveTestFalse_0800';
       // 拉起Ability
       let windowStageStart = await startAbility(message, context)
-      let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
-      console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
       // 设置setWindowRectAutoSave = false
       try {
-         windowStageStart.setWindowRectAutoSave(false).then(async () => {
+        windowStageStart.setWindowRectAutoSave(false).then(async () => {
           console.info(`${message} setWindowRectAutoSave`)
           // 窗口最大化（沉浸式）
           let windowClassStart = windowStageStart.getMainWindowSync()
@@ -1139,21 +1169,26 @@ export default function windowAutoSaveTest() {
           }else{
             await terminateAbility(message);
           }
-          
+
+          await sleep(1000)
+
           // 拉起Ability
           let windowStageStart2 = await startAbility(message, context)
           // 窗口全屏，非沉浸式
-          let windowRect2 = windowStageStart2.getMainWindowSync().getWindowProperties().windowRect
-          console.info(`${message} windowRect2 = ${JSON.stringify(windowRect2)}`)
-          await terminateAbilityCycle('afterEach')
           // windowRect1 & windowRect2 的大小一致
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          done()
+          let windowStatusType = windowStageStart2.getMainWindowSync().getWindowStatus()
+          console.info(`${message} windowStatusType = ${windowStatusType}`);
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FLOATING)
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
+            done()
+          }
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
@@ -1268,12 +1303,11 @@ export default function windowAutoSaveTest() {
         let mainWindow = windowStageStart.getMainWindowSync();
         windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          mainWindow.moveWindowToAsync(300, 400)
-          mainWindow.resizeAsync(1000, 1200);
-          await sleep(300);
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000);
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
-          await sleep(300);
+          await sleep(1000);
           await terminateAbility2(caseName)
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
@@ -1320,62 +1354,60 @@ export default function windowAutoSaveTest() {
       let caseName: string = 'test_SetWindowRectAutoSave_0200 ';
       console.log(caseName + 'begin');
       if(deviceType === '2in1'|| isPCMode == true){
-      let windowStageStart = await startAbility2(caseName, context);
-      try {
-        let mainWindow = windowStageStart.getMainWindowSync();
-        windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
-          console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200);
-          let windowRect1 = mainWindow.getWindowProperties().windowRect;
-          console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
-          await sleep(300);
-          // 二分屏
-          let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 关闭Ability&退出分屏
-          await driver.click(2340, 977);
-          await terminateAbility2(caseName)
-          
-          await mainWindowClass.recover();
-          
-          let windowStageStart2 = await startAbility2(caseName, context);
-          let mainWindow2 = windowStageStart2.getMainWindowSync();
-          let windowRect2 = mainWindow2.getWindowProperties().windowRect
-          console.info(caseName + 'windowRect2: ' + JSON.stringify(windowRect2));
-          expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          await windowStageStart2.setWindowRectAutoSave(false,false);
-          await terminateAbility2(caseName)
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
-          await terminateAbility2(caseName)
-          if (err.code == 801) {
-            console.info(caseName + 'this deviceType does not support the Capability.');
-            done()
-          }else if(!isFreeWindowMode){
-            expect(err.code).assertEqual(1300010);
+        let windowStageStart = await startAbility2(caseName, context);
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
+            console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
+            await resizeAndMove(mainWindow, caseName)
+            await sleep(1000);
+            let windowRect1 = mainWindow.getWindowProperties().windowRect;
+            console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
+            await sleep(300);
+            // 二分屏
+            let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+            await sleep(1000)
+            let titlePoint = await title.getBounds()
+            await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+            await sleep(1000)
+            // 关闭Ability&退出分屏
+            await terminateAbility2(caseName)
+            await sleep(1000)
+
+            let windowStageStart2 = await startAbility2(caseName, context);
+            let mainWindow2 = windowStageStart2.getMainWindowSync();
+            let windowRect2 = mainWindow2.getWindowProperties().windowRect
+            console.info(caseName + 'windowRect2: ' + JSON.stringify(windowRect2));
+            expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
+            await windowStageStart2.setWindowRectAutoSave(false,false);
+            await terminateAbility2(caseName)
             done();
-          }else {
-            expect().assertFail();
-            done();
-          }
-        });
-      } catch (err) {
-        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-        await terminateAbility2(caseName)
-        expect().assertFail()
-        done()
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
+            await terminateAbility2(caseName)
+            if (err.code == 801) {
+              console.info(caseName + 'this deviceType does not support the Capability.');
+              done()
+            }else if(!isFreeWindowMode){
+              expect(err.code).assertEqual(1300010);
+              done();
+            }else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (err) {
+          console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+          await terminateAbility2(caseName)
+          expect().assertFail()
+          done()
+        }
+      }else{
+        done();
       }
-    }else{
-      done();
-    }
     });
 
     /**
@@ -1394,21 +1426,27 @@ export default function windowAutoSaveTest() {
         let mainWindow = windowStageStart.getMainWindowSync();
         windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
           await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          await sleep(1000)
           await terminateAbility2(caseName)
+          await sleep(1000)
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
           let windowRect2 = mainWindow2.getWindowProperties().windowRect
           console.info(caseName + 'windowRect2: ' + JSON.stringify(windowRect2));
           let windowStatusType = mainWindow2.getWindowStatus()
-          expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE)
+          console.info(`${caseName} windowStatusType = ${windowStatusType}`)
           await windowStageStart2.setWindowRectAutoSave(false,false);
           await terminateAbility2(caseName)
-          done();
+          if(isFreeWindowMode){
+            expect(windowStatusType).assertEqual(window.WindowStatusType.MAXIMIZE)
+            done()
+          }else{
+            expect(windowStatusType).assertEqual(window.WindowStatusType.FULL_SCREEN)
+            done()
+          }
         }).catch(async (err: BusinessError) => {
           console.error(caseName + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
           await terminateAbility2(caseName)
@@ -1447,8 +1485,16 @@ export default function windowAutoSaveTest() {
         let mainWindow = windowStageStart.getMainWindowSync();
         windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          if(isFreeWindowMode){
+            let windowStatusType = mainWindow.getWindowStatus()
+            if (windowStatusType === 1 || windowStatusType === 2){
+              await mainWindow.recover()
+            }
+          }
+          await sleep(1000)
+          // 更改窗口大小&位置
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000)
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
@@ -1502,8 +1548,8 @@ export default function windowAutoSaveTest() {
         let mainWindow = windowStageStart.getMainWindowSync();
         windowStageStart.setWindowRectAutoSave(true,true).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000)
           let windowRect1 = mainWindow.getWindowProperties().windowRect;
           console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
           await mainWindow.minimize()
@@ -1559,8 +1605,8 @@ export default function windowAutoSaveTest() {
         console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
         windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000)
           await terminateAbility2(caseName)
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
@@ -1607,61 +1653,59 @@ export default function windowAutoSaveTest() {
       let caseName: string = 'test_SetWindowRectAutoSave_0700 ';
       console.log(caseName + 'begin');
       if(deviceType === '2in1'|| isPCMode == true){
-      let windowStageStart = await startAbility2(caseName, context);
-      try {
-        let mainWindow = windowStageStart.getMainWindowSync();
-        let windowRect1 = mainWindow.getWindowProperties().windowRect;
-        console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
-        windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
-          console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
-          // 二分屏
-          let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
-          await sleep(1000)
-          let titlePoint = await title.getBounds()
-          await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
-          await sleep(1000)
-          // 关闭Ability&退出分屏
-          await driver.click(2340, 977);
-          await terminateAbility2(caseName)
-          
-          await mainWindowClass.recover();
-          
-          let windowStageStart2 = await startAbility2(caseName, context);
-          let mainWindow2 = windowStageStart2.getMainWindowSync();
-          let windowRect2 = mainWindow2.getWindowProperties().windowRect
-          console.info(caseName + 'windowRect2: ' + JSON.stringify(windowRect2));
-          expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
-          expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
-          await windowStageStart2.setWindowRectAutoSave(false,false);
-          await terminateAbility2(caseName)
-          done();
-        }).catch(async (err: BusinessError) => {
-          console.error(caseName + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
-          await terminateAbility2(caseName)
-          if (err.code == 801) {
-            console.info(caseName + 'this deviceType does not support the Capability.');
-            done()
-          }else if(!isFreeWindowMode){
-            expect(err.code).assertEqual(1300010);
+        let windowStageStart = await startAbility2(caseName, context);
+        try {
+          let mainWindow = windowStageStart.getMainWindowSync();
+          let windowRect1 = mainWindow.getWindowProperties().windowRect;
+          console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
+          windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
+            console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
+            await resizeAndMove(mainWindow, caseName)
+            await sleep(1000)
+            // 二分屏
+            let title = await driver.findComponent(ON.id('ContainerModalTitleRow'))
+            await sleep(1000)
+            let titlePoint = await title.getBounds()
+            await driver.drag(titlePoint.left + 100, titlePoint.top + 10, 0, titlePoint.top + 10, 5000)
+            await sleep(1000)
+            // 关闭Ability&退出分屏
+            await terminateAbility2(caseName)
+            await sleep(1000)
+
+            let windowStageStart2 = await startAbility2(caseName, context);
+            let mainWindow2 = windowStageStart2.getMainWindowSync();
+            let windowRect2 = mainWindow2.getWindowProperties().windowRect
+            console.info(caseName + 'windowRect2: ' + JSON.stringify(windowRect2));
+            expect(Math.abs(windowRect2.left-windowRect1.left)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.top-windowRect1.top)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.width-windowRect1.width)).assertLessOrEqual(1);
+            expect(Math.abs(windowRect2.height-windowRect1.height)).assertLessOrEqual(1);
+            await windowStageStart2.setWindowRectAutoSave(false,false);
+            await terminateAbility2(caseName)
             done();
-          } else {
-            expect().assertFail();
-            done();
-          }
-        });
-      } catch (err) {
-        console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
-        await terminateAbility2(caseName)
-        expect().assertFail()
-        done()
+          }).catch(async (err: BusinessError) => {
+            console.error(caseName + 'Failed to call setWindowRectAutoSave. Cause: ' + JSON.stringify(err));
+            await terminateAbility2(caseName)
+            if (err.code == 801) {
+              console.info(caseName + 'this deviceType does not support the Capability.');
+              done()
+            }else if(!isFreeWindowMode){
+              expect(err.code).assertEqual(1300010);
+              done();
+            } else {
+              expect().assertFail();
+              done();
+            }
+          });
+        } catch (err) {
+          console.error(caseName + 'Failed. Cause:' + JSON.stringify(err));
+          await terminateAbility2(caseName)
+          expect().assertFail()
+          done()
+        }
+      }else{
+        done();
       }
-    }else{
-      done();
-    }
     });
 
     /**
@@ -1682,9 +1726,9 @@ export default function windowAutoSaveTest() {
         console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
         windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          await sleep(1000)
           await mainWindow.maximize(window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING)
+          await sleep(1000)
           await terminateAbility2(caseName)
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
@@ -1737,9 +1781,10 @@ export default function windowAutoSaveTest() {
         console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
         windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000)
           await mainWindow.maximize(window.MaximizePresentation.ENTER_IMMERSIVE)
+          await sleep(1000)
           await terminateAbility2(caseName)
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
@@ -1792,8 +1837,8 @@ export default function windowAutoSaveTest() {
         console.info(caseName + 'windowRect1: ' + JSON.stringify(windowRect1));
         windowStageStart.setWindowRectAutoSave(false,false).then(async () => {
           console.info(caseName + 'Succeeded in calling setWindowRectAutoSave.');
-          await mainWindow.moveWindowToAsync(300, 400)
-          await mainWindow.resizeAsync(1000, 1200)
+          await resizeAndMove(mainWindow, caseName)
+          await sleep(1000)
           await mainWindow.minimize()
           await terminateAbility2(caseName)
           let windowStageStart2 = await startAbility2(caseName, context);
@@ -1828,7 +1873,7 @@ export default function windowAutoSaveTest() {
         done()
       }
     });
-   
+
 
     /**
      * @tc.name   testisWindowRectAutoSave
@@ -1875,7 +1920,7 @@ export default function windowAutoSaveTest() {
         }).catch((err: BusinessError) => {
           if (err.code == 801) {
             console.info(`${message} Capability not supported. Failed to call the API due to limited device capabilities.`);
-           
+
             done();
           } else {
             console.error(`${message} Failed to check whether the window support the rect auto-save. Cause code: ${err.code}, message: ${err.message}`);
