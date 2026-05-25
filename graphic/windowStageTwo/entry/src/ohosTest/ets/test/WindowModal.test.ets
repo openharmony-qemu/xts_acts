@@ -1108,8 +1108,8 @@ export default function windowModalTest() {
       let btnCenter = await btn.getBoundsCenter()
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindow = await windowStage.createSubWindow("testSubWindow");
       try {
-        let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
         await subWindow.resizeAsync(400, 500)
         await subWindow.moveWindowToAsync(400, 400)
@@ -1141,6 +1141,7 @@ export default function windowModalTest() {
         } else {
           expect(true).assertFail()
         }
+        await subWindow.destroyWindow()
         done()
       }
     })
@@ -1162,8 +1163,8 @@ export default function windowModalTest() {
       let btnCenter = await btn.getBoundsCenter()
       let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
       console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindow = await windowStage.createSubWindow("testSubWindow");
       try {
-        let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
         await subWindow.resizeAsync(400, 500)
         await subWindow.moveWindowToAsync(400, 400)
@@ -1195,6 +1196,7 @@ export default function windowModalTest() {
         } else {
           expect(true).assertFail()
         }
+        await subWindow.destroyWindow()
         done();
       }
     })
