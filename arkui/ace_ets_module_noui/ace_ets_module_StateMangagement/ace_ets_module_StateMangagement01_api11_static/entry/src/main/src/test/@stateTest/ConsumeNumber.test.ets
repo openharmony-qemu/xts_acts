@@ -94,7 +94,7 @@ it('ConsumeNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       console.info('ConsumeNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state1'));
+      let button = await driver.findComponent(ON.id('ConsumeNumber_state1'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeNumber');
@@ -117,7 +117,7 @@ it('ConsumeNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info('ConsumeNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state2'));
+      let button = await driver.findComponent(ON.id('ConsumeNumber_state2'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeNumber');
@@ -140,7 +140,7 @@ it('ConsumeNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       console.info('ConsumeNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state3'));
+      let button = await driver.findComponent(ON.id('ConsumeNumber_state3'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeNumber');
@@ -163,7 +163,7 @@ it('ConsumeNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       console.info('ConsumeNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state4'));
+      let button = await driver.findComponent(ON.id('ConsumeNumber_state4'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeNumber');
@@ -186,7 +186,7 @@ it('ConsumeNumber_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       console.info('ConsumeNumber_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('state5'));
+      let button = await driver.findComponent(ON.id('ConsumeNumber_state5'));
       await (button?.click() as Promise<void>) ;
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ConsumeNumber');

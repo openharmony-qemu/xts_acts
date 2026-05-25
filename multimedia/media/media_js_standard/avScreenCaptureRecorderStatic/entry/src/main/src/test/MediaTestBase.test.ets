@@ -36,6 +36,7 @@ export default class MediaTestBase {
   TAG = "[AvScreenCaptureLocalTest] ";
   SETONCALLBACK_EVENT = 'setAvScreenCaptureCallback';
   SET_MIC_ENABLE_EVENT = 'setMicEnable';
+  SET_MIC_ENABLE_EVENT_FALSE = 'setMicEnableFalse';
   SET_PICKER_MODE_EVENT = 'setPickerMode';
   EXCLUDE_PICKER_WINDOWS_EVENT = 'excludePickerWindows';
   PRESENT_PICKER = 'presentPicker';
@@ -264,6 +265,16 @@ export default class MediaTestBase {
       case 'setMicEnable':
         steps.shift();
         await avScreenCaptureRecorder!!.setMicEnabled(true).then(() => {
+          console.info('avScreenCaptureRecorder setMicEnabled success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
+          expect().assertFail()
+        })
+        break;
+      case 'setMicEnableFalse':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setMicEnabled(false).then(() => {
           console.info('avScreenCaptureRecorder setMicEnabled success');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         }).catch((err: Error) => {

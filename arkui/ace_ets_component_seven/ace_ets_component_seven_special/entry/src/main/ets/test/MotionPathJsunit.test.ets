@@ -70,7 +70,7 @@ export default function motionPathJsunit() {
       } catch (err) {
         console.info("motionPathTest_0100 on events_emitter err : " + JSON.stringify(err));
       }
-      console.info("motionPathTest_0100 click result is: " + JSON.stringify(sendEventByKey('button', 10, "")));
+      console.info("motionPathTest_0100 click result is: " + JSON.stringify(sendEventByKey('motionPath_button', 10, "")));
       await Utils.sleep(1000);
       console.info('motionPathTest_0100 END');
       done();

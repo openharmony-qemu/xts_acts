@@ -283,7 +283,7 @@ it('testtextMinFontSize_static_0011', Level.LEVEL0, async () => {
 it('testtextCopyOptionText_static_0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextCopyOptionText0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('copyOptionText');
+      let strJson = inspector.getInspectorByKey('text_copyOptionText');
       console.info("[testtextCopyOptionText0001] component copyOption strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');

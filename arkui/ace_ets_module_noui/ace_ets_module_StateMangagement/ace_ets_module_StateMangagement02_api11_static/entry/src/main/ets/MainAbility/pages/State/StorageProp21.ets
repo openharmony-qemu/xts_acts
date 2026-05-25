@@ -79,25 +79,25 @@ struct StoragePropRef21 {
   build() {
     Column() {
       Button(`button1: ${this.stringCode}`).width("100%").height('5%')
-        .key("button1")
+        .key("StorageProp21_button1")
         .onClick((e: ClickEvent) => {
           this.stringCode = 'cd';
         })
 
       Button(`button2: ${this.numberCode}`).width("100%").height('5%')
-        .key("button2")
+        .key("StorageProp21_button2")
         .onClick((e: ClickEvent) => {
           this.numberCode = 3
         })
 
       Button(`button3: ${this.booleanCode}`).width("100%").height('5%')
-        .key("button3")
+        .key("StorageProp21_button3")
         .onClick((e: ClickEvent) => {
           this.booleanCode = false
         })
 
       Button(`button4: ${this.enumCode}`).width("100%").height('5%')
-        .key("button4")
+        .key("StorageProp21_button4")
         .onClick((e: ClickEvent) => {
           this.enumCode = KFC21.Y
         })

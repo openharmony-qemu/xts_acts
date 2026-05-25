@@ -335,6 +335,29 @@ async function errorListen(done: Function, testName: string, context: common.UIA
   }
 }
 
+async function listenComplete(done: Function) {
+  let currentProgress: number = 0;
+  if (mTranscoder !== undefined) {
+    // 转码完成回调函数。
+    mTranscoder.on('complete', async () => {
+      console.info(`AVTranscoder is completed`);
+    });
+    // 进度上报回调函数。
+    mTranscoder.on('progressUpdate', (progress: number) => {
+      console.info(`AVTranscoder progressUpdate = ${progress}`);
+      currentProgress = progress;
+    })
+    while(currentProgress < 100){
+      console.info(`AVTranscoder progress is`, currentProgress);
+      await sleep(50);
+    }
+    mTranscoder!.off('complete');
+    mTranscoder!.off('progressUpdate');
+    done();
+  }
+}
+
+
 export default function AVTranscoderTest() {
   describe('AVTranscoderTest', () => {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -710,6 +733,7 @@ export default function AVTranscoderTest() {
       });
       await prepareAVTranscoder(done, testName);
       await startAVTranscoder(done, testName);
+      await listenComplete(done);
       done();
     })
 
@@ -757,6 +781,7 @@ export default function AVTranscoderTest() {
         console.error('addWatermark failed and catch error is ' + err.message + err.code);
         expect(err.code).assertEqual(5400108);
       }
+      done();
     })
 
     /**

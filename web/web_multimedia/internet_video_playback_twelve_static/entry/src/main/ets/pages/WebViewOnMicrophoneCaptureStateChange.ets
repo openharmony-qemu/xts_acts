@@ -146,6 +146,19 @@ struct webViewController {
               break;
             }
 
+            case "emitPauseMicrophoneErrorCodeStatic001": {
+              try {
+                let controllerNull: webView.WebviewController = new webView.WebviewController(undefined);
+                controllerNull.pauseMicrophone();
+                Utils.emitEvent(0, 20260502);
+              } catch (error) {
+                const err = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${err.code}, Message: ${err.message}`);
+                Utils.emitEvent(err.code, 20260502);
+              }
+              break;
+            }
+
           }
         })
       }

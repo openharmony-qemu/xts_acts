@@ -39,7 +39,7 @@ struct NavigatorCode {
       .active(this.active)
       .target(this.target)
       .type(this.typeValue)
-      .key('Navigator')
+      .key('navigator_Navigator')
 
       Navigator() {
         Text('Go to ' + this.Text + ' page').width('100%').textAlign(TextAlign.Center)

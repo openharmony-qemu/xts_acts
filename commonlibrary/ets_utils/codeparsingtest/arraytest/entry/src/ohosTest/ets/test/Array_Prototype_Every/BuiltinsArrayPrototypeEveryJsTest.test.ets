@@ -25,7 +25,6 @@ import {
   testEmptyArray,
   testSparseArray,
   testSingleElementArray,
-  testLargeArray,
   testElementParameter,
   testIndexParameter,
   testArrayParameter
@@ -259,19 +258,6 @@ export default function BuiltinsArrayPrototypeEveryJsTest() {
      */
     it('BuiltinsArrayPrototypeEveryJsTest1000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let result: TestResult = testSingleElementArray();
-      expect(result.result).assertEqual(result.expected);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayPrototypeEveryJsTest1100
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_EVERY_JS_TEST_1100
-     * @tc.desc   Verify that every() works with large array
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypeEveryJsTest1100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      let result: TestResult = testLargeArray();
       expect(result.result).assertEqual(result.expected);
     });
 

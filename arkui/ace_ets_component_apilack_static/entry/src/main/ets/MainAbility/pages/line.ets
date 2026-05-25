@@ -60,7 +60,7 @@ struct LineNe {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("neText")
+        .key("line_neText")
       Line({ width: 50, height: 100 }).startPoint([0, 0]).endPoint([50, 100]).key("line1")
       Line()
         .width(200)

@@ -75,36 +75,38 @@ export default function FrameNodeProvideChildTest() {
       await CommonFunc.sleep(1000);
 
       let button = await driver.findComponent(ON.id('getUndefined'));
- 	  await button.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button.click();
+ 	    await CommonFunc.sleep(2000);
 
- 	  let button1 = await driver.findComponent(ON.id('getNull'));
- 	  await button1.click();
- 	  await CommonFunc.sleep(2000);
+ 	    let button1 = await driver.findComponent(ON.id('getNull'));
+ 	    await button1.click();
+ 	    await CommonFunc.sleep(2000);
      
       let button2 = await driver.findComponent(ON.id('getChildCountDefault'));
- 	  await button2.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button2.click();
+ 	    await CommonFunc.sleep(2000);
 
       let button3 = await driver.findComponent(ON.id('getChildCount(ALL_EXPAND)'));
- 	  await button3.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button3.click();
+ 	    await CommonFunc.sleep(2000);
 
       let button4 = await driver.findComponent(ON.id('getChildCount(ONLY_EXPANDED)'));
- 	  await button4.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button4.click();
+ 	    await CommonFunc.sleep(2000);
 
       let button5 = await driver.findComponent(ON.id('getChildCount(ALL_NOT_EXPAND)'));
- 	  await button5.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button5.click();
+ 	    await CommonFunc.sleep(2000);
 
       let button6 = await driver.findComponent(ON.id('getChildWithLazyExpand'));
- 	  await button6.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button6.click();
+ 	    await CommonFunc.sleep(2000);
+      let strJson1 = getInspectorByKey('FrameNodeProvideChildText');
 
       let button7 = await driver.findComponent(ON.id('getChildWithLazyNotExpand'));
- 	  await button7.click();
- 	  await CommonFunc.sleep(2000);
+ 	    await button7.click();
+ 	    await CommonFunc.sleep(2000);
+      let strJson2 = getInspectorByKey('FrameNodeProvideChildText');
       
       expect(ExpandMode.LAZY_EXPAND).assertEqual(2);
       expect(ExpandMode.LAZY_NOT_EXPAND).assertEqual(3);
@@ -112,7 +114,7 @@ export default function FrameNodeProvideChildTest() {
       expect(ChildrenCountMode.ALL_EXPAND).assertEqual(0);
       expect(ChildrenCountMode.ONLY_EXPANDED).assertEqual(1);
       expect(ChildrenCountMode.ALL_NOT_EXPAND).assertEqual(2);
-      
+
       console.info('[FrameNodeProvideChildTest_0100] END');
       done();
     });
