@@ -931,6 +931,8 @@ int DemuxerFunctionTrack0010()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -960,6 +962,8 @@ int DemuxerFunctionTrack0020()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -984,6 +988,8 @@ int DemuxerFunctionTrack0030()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1019,6 +1025,8 @@ int DemuxerFunctionTrack0040()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1045,6 +1053,8 @@ int DemuxerFunctionTrack0060()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1069,6 +1079,8 @@ int DemuxerFunctionTrack0061()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1095,6 +1107,8 @@ int DemuxerFunctionTrack0070()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1121,6 +1135,8 @@ int DemuxerFunctionTrack0080()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1153,6 +1169,8 @@ int DemuxerFunctionTrack0090()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1199,6 +1217,8 @@ int DemuxerFunctionTrack0130()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1245,6 +1265,8 @@ int DemuxerFunctionTrack0140()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1289,6 +1311,8 @@ int DemuxerFunctionTrack0150()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1334,6 +1358,8 @@ int DemuxerFunctionTrack0160()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1379,6 +1405,8 @@ int DemuxerFunctionTrack0170()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1425,6 +1453,8 @@ int DemuxerFunctionTrack0180()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1470,6 +1500,8 @@ int DemuxerFunctionTrack0190()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1487,6 +1519,8 @@ int DemuxerFunctionAudioTrack0010()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1516,6 +1550,8 @@ int DemuxerFunctionAudioTrack0020()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1545,6 +1581,8 @@ int DemuxerFunctionAudioTrack0030()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1580,6 +1618,8 @@ int DemuxerFunctionAudioTrack0040()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1606,6 +1646,8 @@ int DemuxerFunctionAudioTrack0060()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1630,6 +1672,8 @@ int DemuxerFunctionAudioTrack0061()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1656,6 +1700,8 @@ int DemuxerFunctionAudioTrack0070()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1682,6 +1728,8 @@ int DemuxerFunctionAudioTrack0080()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1714,6 +1762,8 @@ int DemuxerFunctionAudioTrack0090()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1759,6 +1809,8 @@ int DemuxerFunctionAudioTrack0130()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1804,6 +1856,8 @@ int DemuxerFunctionAudioTrack0140()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1848,6 +1902,8 @@ int DemuxerFunctionAudioTrack0150()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1893,6 +1949,8 @@ int DemuxerFunctionAudioTrack0160()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1938,6 +1996,8 @@ int DemuxerFunctionAudioTrack0170()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -1984,6 +2044,8 @@ int DemuxerFunctionAudioTrack0180()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -2030,6 +2092,8 @@ int DemuxerFunctionAudioTrack0190()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -2044,6 +2108,8 @@ int DemuxerFunctionAdd0010()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -2058,6 +2124,8 @@ int DemuxerFunctionAdd0020()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
@@ -2095,6 +2163,8 @@ int DemuxerFunctionAdd0030()
         close(fd);
         fd = -1;
     }
+    OH_AVBuffer_Destroy(avBuffer);
+    avBuffer = nullptr
     return 0;
 }
 
