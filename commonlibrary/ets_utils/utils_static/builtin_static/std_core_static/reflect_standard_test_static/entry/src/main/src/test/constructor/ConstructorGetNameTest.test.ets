@@ -233,8 +233,7 @@ export default function ConstructorGetNameTest(): void {
     */
     it('testConstructorGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass005>().getConstructors()[0];
-      let name = ctor.getName();
-      expect(name.length).assertLarger(0);
+      expect(ctor.getName()).assertEqual("constructor");
     });
 
     /**

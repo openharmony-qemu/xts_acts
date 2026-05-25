@@ -150,7 +150,8 @@ export default function ConstructorIsPrivateTest(): void {
     */
     it('testConstructorIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass003>().getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(Class.from<MyClass003>().getName(), 'MyClass003')).assertTrue();
+      expect(Class.from<MyClass003>().getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass003");
     });
 
     /**
@@ -206,7 +207,8 @@ export default function ConstructorIsPrivateTest(): void {
     */
     it('testConstructorIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass007>().getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(Class.from<MyClass007>().getName(), 'MyClass007')).assertTrue();
+      expect(Class.from<MyClass007>().getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass007");
     });
 
     /**
@@ -220,7 +222,8 @@ export default function ConstructorIsPrivateTest(): void {
     it('testConstructorIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass008>();
       expect(cls.getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(cls.getName(), 'AbstractClass008')).assertTrue();
+      expect(cls.getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.AbstractClass008");
     });
 
     /**
@@ -234,7 +237,8 @@ export default function ConstructorIsPrivateTest(): void {
     it('testConstructorIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass009>();
       expect(cls.getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(cls.getName(), 'FinalClass009')).assertTrue();
+      expect(cls.getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.FinalClass009");
     });
 
     /**
@@ -372,7 +376,8 @@ export default function ConstructorIsPrivateTest(): void {
     */
     it('testConstructorIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass018>().getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(Class.from<MyClass018>().getName(), 'MyClass018')).assertTrue();
+      expect(Class.from<MyClass018>().getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass018");
     });
 
     /**

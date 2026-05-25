@@ -14,58 +14,9 @@
 */
 
 export default class Utils {
-  /** Internal helper for Class.ofCaller harness names only; user types use assertEqual(FQN). */
-  static classNameMatches(actualName: string, simpleName: string): boolean {
-    if (actualName === simpleName) {
-      return true;
-    }
-    const suffix = '.' + simpleName;
-    return actualName.length > simpleName.length && actualName.endsWith(suffix);
-  }
-
-  /**
-  * Class.ofCaller under Hypium may resolve to a synthetic harness type (name often ends with "ETSGLOBAL")
-  * instead of the application class. Prefer matching the real caller; otherwise accept the harness token.
-  */
-  static ofCallerNameMatchesOrHarness(actualName: string, simpleName: string): boolean {
-    if (Utils.classNameMatches(actualName, simpleName)) {
-      return true;
-    }
-    if (Utils.classNameMatches(actualName, "ETSGLOBAL")) {
-      return true;
-    }
-    return Utils.ofCallerHypiumHarnessName(actualName);
-  }
-
-  /** Hypium / StaticSpec top-level it() may expose a non-ETSGLOBAL harness Class name. */
-  static ofCallerHypiumHarnessName(actualName: string): boolean {
-    if (actualName.length === 0) {
-      return false;
-    }
-    if (actualName.includes("StaticSpec")) {
-      return true;
-    }
-    if (actualName.includes("hypium")) {
-      return true;
-    }
-    if (actualName.includes("ClassOfCallerTest")) {
-      return true;
-    }
-    return false;
-  }
-
-  /** Strip trailing ASCII digits (ArkTS has no JS RegExp literal for /[0-9]+$/). */
-  static stripTrailingDigits(s: string): string {
-    let end = s.length;
-    while (end > 0) {
-      const one: string = s.substring(end - 1, end);
-      if (one >= '0' && one <= '9') {
-        end--;
-      } else {
-        break;
-      }
-    }
-    return s.substring(0, end);
+  /** Module prefix for ClassOfCallerTest user types (full FQN = prefix + "." + simpleName). */
+  static classOfCallerModulePrefix(): string {
+    return "entry.src.main.src.test.class.ClassOfCallerTest.test";
   }
 
   /**
@@ -101,48 +52,48 @@ export default class Utils {
     return Utils.isAbsentOptional(v);
   }
 
-  /**
-  * Class.getName() for primitive / boxed / ArkTS aliases (e.g. std.core.Int vs int vs i32).
-  */
-  static reflectScalarTypeNameMatches(actual: string, legacyKeyword: string): boolean {
-    if (actual === legacyKeyword) {
-      return true;
-    }
-    if (legacyKeyword === 'boolean' && (actual === 'std.core.Boolean' || actual === 'bool' || actual === 'u1')) {
-      return true;
-    }
-    if (legacyKeyword === 'byte' && (actual === 'std.core.Byte' || actual === 'i8')) {
-      return true;
-    }
-    if (legacyKeyword === 'char' && (actual === 'std.core.Char' || actual === 'u8' || actual === 'u16')) {
-      return true;
-    }
-    if (legacyKeyword === 'short' && (actual === 'std.core.Short' || actual === 'i16')) {
-      return true;
-    }
-    if (legacyKeyword === 'int' && (actual === 'std.core.Int' || actual === 'i32')) {
-      return true;
-    }
-    if (legacyKeyword === 'long' && (actual === 'std.core.Long' || actual === 'i64')) {
-      return true;
-    }
-    if (legacyKeyword === 'float' && (actual === 'std.core.Float' || actual === 'f32')) {
-      return true;
-    }
-    if (legacyKeyword === 'double' && (actual === 'std.core.Double' || actual === 'f64')) {
-      return true;
-    }
-    if (legacyKeyword === 'number' && (actual === 'std.core.Double' || actual === 'f64' || actual === 'double' || actual === 'number')) {
-      return true;
-    }
-    if (legacyKeyword === 'void' && (actual === 'void' || actual === 'std.core.Void' || actual === 'N')) {
-      return true;
-    }
-    if (legacyKeyword === 'i32' && (actual === 'i32' || actual === 'std.core.Int' || actual === 'int')) {
-      return true;
-    }
-    return false;
+  /** Class.from<T>() scalar getName() FQN (boxed class names). */
+  static scalarClassFromBooleanFqn(): string { return "std.core.Boolean"; }
+  static scalarClassFromByteFqn(): string { return "std.core.Byte"; }
+  static scalarClassFromCharFqn(): string { return "std.core.Char"; }
+  static scalarClassFromShortFqn(): string { return "std.core.Short"; }
+  static scalarClassFromIntFqn(): string { return "std.core.Int"; }
+  static scalarClassFromLongFqn(): string { return "std.core.Long"; }
+  static scalarClassFromFloatFqn(): string { return "std.core.Float"; }
+  static scalarClassFromDoubleFqn(): string { return "std.core.Double"; }
+  static scalarClassFromNumberFqn(): string { return "std.core.Double"; }
+  static scalarClassFromVoidFqn(): string { return "N"; }
+
+  /** getParameterType / getParameterTypes primitive spellings. */
+  static scalarParameterI8Fqn(): string { return "i8"; }
+  static scalarParameterI16Fqn(): string { return "i16"; }
+  static scalarParameterI32Fqn(): string { return "i32"; }
+  static scalarParameterI64Fqn(): string { return "i64"; }
+  static scalarParameterF32Fqn(): string { return "f32"; }
+  static scalarParameterF64Fqn(): string { return "f64"; }
+
+  /** getFixedArrayComponentType / Class.from<FixedArray<T>> component Class.getName(). */
+  static scalarReflectI8Fqn(): string { return "std.core.Byte"; }
+  static scalarReflectI16Fqn(): string { return "std.core.Short"; }
+  static scalarReflectI32Fqn(): string { return "std.core.Int"; }
+  static scalarReflectI64Fqn(): string { return "std.core.Long"; }
+  static scalarReflectF32Fqn(): string { return "std.core.Float"; }
+  static scalarReflectF64Fqn(): string { return "std.core.Double"; }
+  static scalarFixedArrayBooleanFqn(): string { return "std.core.Boolean"; }
+
+  /** Class.of(FixedArray<T> instance).getName() for scalar T (e.g. std.core.Int[]). */
+  static scalarReflectI32FixedArrayInstanceFqn(): string {
+    return `${Utils.scalarReflectI32Fqn()}[]`;
   }
+
+  /** ReflectionUtils057-style FixedArray<T> type info string. */
+  static fixedArrayTypeInfoFqn(componentFqn: string): string {
+    return `FixedArray<${componentFqn}>`;
+  }
+
+  /** Class.PRIMITIVE_* getName() spellings. */
+  static scalarPrimitiveBooleanFqn(): string { return "u1"; }
+  static scalarPrimitiveVoidFqn(): string { return "void"; }
 
   static mindMapItSuffix(seq: int): string {
     if (seq < 10) {
@@ -156,10 +107,10 @@ export default class Utils {
 
   static async msSleep(count: int): Promise<int> {
     return new Promise<int>((resolve: (value: int | PromiseLike<int>) => void, reject: (value: Error) => void) => {
-        setTimeout(() => {
-            resolve(0);
-          }, count);
+      setTimeout(() => {
+        resolve(0);
+      }, count);
     });
-}
+  }
 }
 

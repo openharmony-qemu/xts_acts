@@ -663,7 +663,7 @@ export default function ClassIsPrimitiveTest(): void {
     */
     it('testClassIsPrimitive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.PRIMITIVE_BOOLEAN.isPrimitive()).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(Class.PRIMITIVE_BOOLEAN.getName(), "boolean")).assertTrue();
+      expect(Class.PRIMITIVE_BOOLEAN.getName()).assertEqual(Utils.scalarPrimitiveBooleanFqn());
       expect(Class.from<boolean>().isPrimitive()).assertFalse();
       expect(Class.from<MyClass>().isPrimitive()).assertFalse();
     });

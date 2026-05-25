@@ -65,7 +65,25 @@ function isFixedArrayOf056(cls: Class, componentTypeName: string): boolean {
   if (componentTypeName === "std.core.String" || componentTypeName === "std.core.Boolean" || componentTypeName === "std.core.Char") {
     return n === componentTypeName;
   }
-  return Utils.reflectScalarTypeNameMatches(n, componentTypeName);
+  if (componentTypeName === Utils.scalarReflectI32Fqn()) {
+    return n === Utils.scalarReflectI32Fqn();
+  }
+  if (componentTypeName === Utils.scalarReflectI8Fqn()) {
+    return n === Utils.scalarReflectI8Fqn();
+  }
+  if (componentTypeName === Utils.scalarReflectI16Fqn()) {
+    return n === Utils.scalarReflectI16Fqn();
+  }
+  if (componentTypeName === Utils.scalarReflectI64Fqn()) {
+    return n === Utils.scalarReflectI64Fqn();
+  }
+  if (componentTypeName === Utils.scalarReflectF32Fqn()) {
+    return n === Utils.scalarReflectF32Fqn();
+  }
+  if (componentTypeName === Utils.scalarReflectF64Fqn()) {
+    return n === Utils.scalarReflectF64Fqn();
+  }
+  return false;
 }
 
 class ReflectionUtils057 {
@@ -83,7 +101,7 @@ class ReflectionUtils057 {
 
 function createFixedArrayFromType058(componentType: Class, size: int): Object {
   const n = componentType.getName();
-  if (Utils.reflectScalarTypeNameMatches(n, "i32")) {
+  if (n === Utils.scalarReflectI32Fqn()) {
     let out: FixedArray<int> = new FixedArray<int>(size);
     return out;
   } else if (n === "std.core.String") {
@@ -97,8 +115,8 @@ function getComponentTypeName055<T>(arr: FixedArray<T>): string {
   let cls = Class.of(arr);
   let componentType = cls.getFixedArrayComponentType();
   const n = componentType!.getName();
-  if (Utils.reflectScalarTypeNameMatches(n, "i32")) {
-    return "i32";
+  if (n === Utils.scalarReflectI32Fqn()) {
+    return Utils.scalarReflectI32Fqn();
   }
   return n;
 }
@@ -127,7 +145,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.from<FixedArray<int>>();
       let result = cls.getFixedArrayComponentType();
       expect(result !== undefined && result !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(result!.getName(), "i32")).assertTrue();
+      expect(result!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -143,7 +161,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -159,7 +177,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "double")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectF64Fqn());
     });
 
     /**
@@ -219,7 +237,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<long> = [100000 as long, 200000 as long];
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "long")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI64Fqn());
     });
 
     /**
@@ -234,7 +252,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<float> = [1.5f, 2.5f];
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "float")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectF32Fqn());
     });
 
     /**
@@ -249,7 +267,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<byte> = [0x01, 0x02, 0x03];
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "byte")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI8Fqn());
     });
 
     /**
@@ -264,7 +282,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<short> = [100, 200, 300];
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "short")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI16Fqn());
     });
 
     /**
@@ -359,7 +377,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     it('testClassGetFixedArrayComponentType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: Array<int> = [1, 2, 3];
       let cls = Class.of(arr);
-      expect(cls.getName()).assertContain("Array");
+      expect(cls.getName()).assertEqual("std.core.Array");
       let componentType = cls.getFixedArrayComponentType();
       expect(Utils.isAbsentReflectOptional(componentType)).assertTrue();
     });
@@ -616,7 +634,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -631,7 +649,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<int> = new FixedArray<int>(1000);
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -646,7 +664,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<int> = [1];
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -680,7 +698,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== undefined && componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -708,19 +726,19 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     */
     it('testClassGetFixedArrayComponentType040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let byteArr: FixedArray<byte> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(byteArr).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
+      expect(Class.of(byteArr).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI8Fqn());
       let shortArr: FixedArray<short> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(shortArr).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
+      expect(Class.of(shortArr).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI16Fqn());
       let intArr: FixedArray<int> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(intArr).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
+      expect(Class.of(intArr).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
       let longArr: FixedArray<long> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(longArr).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
+      expect(Class.of(longArr).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI64Fqn());
       let floatArr: FixedArray<float> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(floatArr).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
+      expect(Class.of(floatArr).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectF32Fqn());
       let doubleArr: FixedArray<double> = [];
       let doubleType = Class.of(doubleArr).getFixedArrayComponentType();
       expect(doubleType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(doubleType!.getName(), "double")).assertTrue();
+      expect(doubleType!.getName()).assertEqual(Utils.scalarClassFromDoubleFqn());
       let boolArr: FixedArray<boolean> = [];
       expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
       let charArr: FixedArray<char> = [];
@@ -741,8 +759,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== undefined && componentType !== null).assertTrue();
 
-      let name = componentType!.getName();
-      expect(name.length).assertLarger(0);
+      expect(componentType!.getName()).assertEqual(Class.from<int>().getName());
 
       let isPrim = componentType!.isPrimitive();
       expect(typeof isPrim).assertEqual("boolean");
@@ -787,7 +804,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
       let name = componentType!.getName();
-      expect(name).assertContain("std.core.Map");
+      expect(name).assertEqual("std.core.Map");
     });
 
     /**
@@ -863,7 +880,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let t1 = cls.getFixedArrayComponentType();
       let t2 = cls.getFixedArrayComponentType();
       expect(t1 === t2).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(t1!.getName(), "i32")).assertTrue();
+      expect(t1!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -879,7 +896,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls1 = Class.of(arr1);
       let type1 = checkAndGetComponent049(cls1);
       expect(type1 !== undefined && type1 !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
+      expect(type1!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
 
       let arr2: Array<int> = [1, 2, 3];
       let cls2 = Class.of(arr2);
@@ -967,10 +984,11 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetFixedArrayComponentType054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<FixedArray<int>>();
+      let arr: FixedArray<int> = new FixedArray<int>(3);
+      let cls = Class.of(arr);
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -985,7 +1003,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let intArr: FixedArray<int> = [1, 2, 3];
       let strArr: FixedArray<string> = ["a", "b"];
 
-      expect(getComponentTypeName055(intArr)).assertEqual("i32");
+      expect(getComponentTypeName055(intArr)).assertEqual(Utils.scalarReflectI32Fqn());
       expect(getComponentTypeName055(strArr)).assertEqual("std.core.String");
     });
 
@@ -1003,10 +1021,10 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls1 = Class.of(intArr);
       let cls2 = Class.of(strArr);
 
-      expect(isFixedArrayOf056(cls1, "i32")).assertTrue();
+      expect(isFixedArrayOf056(cls1, Utils.scalarReflectI32Fqn())).assertTrue();
       expect(isFixedArrayOf056(cls1, "std.core.String")).assertFalse();
       expect(isFixedArrayOf056(cls2, "std.core.String")).assertTrue();
-      expect(isFixedArrayOf056(cls2, "i32")).assertFalse();
+      expect(isFixedArrayOf056(cls2, Utils.scalarReflectI32Fqn())).assertFalse();
     });
 
     /**
@@ -1021,10 +1039,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let arr: FixedArray<int> = [1, 2, 3];
       let cls = Class.of(arr);
       let typeInfo = ReflectionUtils057.getTypeInfo(cls);
-      expect(typeInfo.startsWith("FixedArray<")).assertTrue();
-      expect(typeInfo.endsWith(">")).assertTrue();
-      const inner = typeInfo.substring("FixedArray<".length, typeInfo.length - 1);
-      expect(Utils.reflectScalarTypeNameMatches(inner, "i32")).assertTrue();
+      expect(typeInfo).assertEqual(Utils.fixedArrayTypeInfoFqn(Utils.scalarReflectI32Fqn()));
     });
 
     /**
@@ -1057,8 +1072,8 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
 
       let byteComponentType = Class.of(byteArr).getFixedArrayComponentType();
       let longComponentType = Class.of(longArr).getFixedArrayComponentType();
-      expect(Utils.reflectScalarTypeNameMatches(byteComponentType!.getName(), "byte")).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(longComponentType!.getName(), "long")).assertTrue();
+      expect(byteComponentType!.getName()).assertEqual(Utils.scalarClassFromByteFqn());
+      expect(longComponentType!.getName()).assertEqual(Utils.scalarClassFromLongFqn());
     });
 
     /**
@@ -1074,13 +1089,13 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls1 = Class.of(arr1);
       let type1 = cls1.getFixedArrayComponentType();
       expect(type1 !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(type1!.getName(), "i32")).assertTrue();
+      expect(type1!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
 
       let arr2: FixedArray<double> = [1.5, 2.5, 3.5];
       let cls2 = Class.of(arr2);
       let type2 = cls2.getFixedArrayComponentType();
       expect(type2 !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(type2!.getName(), "double")).assertTrue();
+      expect(type2!.getName()).assertEqual(Utils.scalarClassFromDoubleFqn());
     });
 
     /**
@@ -1097,7 +1112,7 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
       let cls = Class.ofAny(anyArr);
       let componentType = cls!.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -1166,17 +1181,17 @@ export default function ClassGetFixedArrayComponentTypeTest(): void {
     */
     it('testClassGetFixedArrayComponentType065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let b1: FixedArray<byte> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b1).getFixedArrayComponentType()!.getName(), "byte")).assertTrue();
+      expect(Class.of(b1).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI8Fqn());
       let b2: FixedArray<short> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b2).getFixedArrayComponentType()!.getName(), "short")).assertTrue();
+      expect(Class.of(b2).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI16Fqn());
       let b3: FixedArray<int> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b3).getFixedArrayComponentType()!.getName(), "i32")).assertTrue();
+      expect(Class.of(b3).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
       let b4: FixedArray<long> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b4).getFixedArrayComponentType()!.getName(), "long")).assertTrue();
+      expect(Class.of(b4).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectI64Fqn());
       let b5: FixedArray<float> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b5).getFixedArrayComponentType()!.getName(), "float")).assertTrue();
+      expect(Class.of(b5).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectF32Fqn());
       let b6: FixedArray<double> = [];
-      expect(Utils.reflectScalarTypeNameMatches(Class.of(b6).getFixedArrayComponentType()!.getName(), "double")).assertTrue();
+      expect(Class.of(b6).getFixedArrayComponentType()!.getName()).assertEqual(Utils.scalarReflectF64Fqn());
       let boolArr: FixedArray<boolean> = [];
       expect(Class.of(boolArr).getFixedArrayComponentType()!.getName()).assertEqual("std.core.Boolean");
       let charArr: FixedArray<char> = [];

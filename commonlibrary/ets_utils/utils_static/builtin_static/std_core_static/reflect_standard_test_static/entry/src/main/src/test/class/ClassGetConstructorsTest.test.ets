@@ -1185,7 +1185,7 @@ export default function ClassGetConstructorsTest(): void {
       expect(constructors[0].getParametersNum()).assertEqual(3);
       expect(constructors[0].getParameterType(0)!.getName()).assertEqual('i32');
       expect(constructors[0].getParameterType(1)!.getName()).assertEqual('std.core.String');
-      expect(Utils.reflectScalarTypeNameMatches(constructors[0].getParameterType(2)!.getName(), 'boolean')).assertTrue();
+      expect(constructors[0].getParameterType(2)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
     });
 
     /**
@@ -1248,7 +1248,7 @@ export default function ClassGetConstructorsTest(): void {
       try {
         constructors[0].getParameterType(10);
         expect().assertFail();
-      } catch (_e) {
+      } catch (e) {
         expect(true).assertTrue();
       }
     });
@@ -1267,7 +1267,7 @@ export default function ClassGetConstructorsTest(): void {
       try {
         constructors[0].getParameterType(-1);
         expect().assertFail();
-      } catch (_e) {
+      } catch (e) {
         expect(true).assertTrue();
       }
     });

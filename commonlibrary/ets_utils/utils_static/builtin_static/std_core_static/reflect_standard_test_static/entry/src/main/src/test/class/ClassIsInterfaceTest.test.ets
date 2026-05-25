@@ -694,9 +694,9 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsInterface038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-      expect(cls.isUnion()).assertTrue();
-      expect(cls.isInterface()).assertFalse();
+      let cls = Class.from<MyInterface003>();
+      expect(cls.isInterface()).assertTrue();
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**

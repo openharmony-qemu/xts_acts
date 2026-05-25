@@ -846,7 +846,7 @@ export default function ClassGetInstanceMethodTest001(): void {
       let method = cls.getInstanceMethod('asyncMethod');
       expect(method !== null).assertTrue();
       expect(method!.isAsync()).assertEqual(true);
-      expect(method!.getReturnType().getName()).assertContain('Promise');
+      expect(method!.getReturnType().getName()).assertEqual(Class.from<Promise<string>>().getName());
     });
 
     /**
@@ -944,7 +944,7 @@ export default function ClassGetInstanceMethodTest001(): void {
       expect(method !== undefined).assertTrue();
       expect(method!.getParametersNum()).assertEqual(2);
       expect(method!.getParameterType(0)!.getName()).assertEqual('std.core.String');
-      expect(Utils.reflectScalarTypeNameMatches(method!.getParameterType(1)!.getName(), 'int')).assertTrue();
+      expect(method!.getParameterType(1)!.getName()).assertEqual(Utils.scalarParameterI32Fqn());
     });
 
     /**

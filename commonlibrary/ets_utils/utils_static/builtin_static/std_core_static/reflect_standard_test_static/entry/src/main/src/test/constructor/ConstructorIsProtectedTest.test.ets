@@ -210,7 +210,8 @@ export default function ConstructorIsProtectedTest(): void {
     it('testConstructorIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       expect(cls.getConstructors().length).assertEqual(0);
-      expect(Utils.classNameMatches(cls.getName(), 'MyClass007')).assertTrue();
+      expect(cls.getName()).assertEqual(
+        "entry.src.main.src.test.constructor.ConstructorIsProtectedTest.test.MyClass007");
     });
 
     /**

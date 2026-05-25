@@ -485,7 +485,7 @@ export default function ClassGetInstanceFieldTest(): void {
       expect(numField!.getType().getName()).assertEqual('i32');
 
       let boolField = cls.getInstanceField('boolField');
-      expect(Utils.reflectScalarTypeNameMatches(boolField!.getType().getName(), 'boolean')).assertTrue();
+      expect(boolField!.getType().getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
 
       let arrField = cls.getInstanceField('arrField');
       expect(arrField!.getType().getName()).assertEqual('std.core.Array');

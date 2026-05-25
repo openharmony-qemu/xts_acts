@@ -1266,7 +1266,7 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = 123
       let cls = Class.ofAny(obj)
       expect(cls !== undefined && cls !== null).assertTrue()
-      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), 'int')).assertTrue()
+      expect(cls!.getName()).assertEqual(Utils.scalarClassFromIntFqn())
     });
 
     /**
@@ -1281,7 +1281,7 @@ export default function ClassOfAnyTest(): void {
       let obj: Any = true
       let cls = Class.ofAny(obj)
       expect(cls !== undefined && cls !== null).assertTrue()
-      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), 'boolean')).assertTrue()
+      expect(cls!.getName()).assertEqual(Utils.scalarClassFromBooleanFqn())
     });
 
     /**
@@ -1371,7 +1371,7 @@ export default function ClassOfAnyTest(): void {
       let cls = Class.ofAny(obj)
       expect(cls !== undefined && cls !== null).assertTrue()
       expect(cls!.isEnum()).assertTrue()
-      expect(Utils.classNameMatches(cls!.getName(), 'TestEnum016')).assertTrue()
+      expect(cls!.getName()).assertEqual("entry.src.main.src.test.class.ClassOfAnyTest.test.TestEnum016")
     });
 
     /**

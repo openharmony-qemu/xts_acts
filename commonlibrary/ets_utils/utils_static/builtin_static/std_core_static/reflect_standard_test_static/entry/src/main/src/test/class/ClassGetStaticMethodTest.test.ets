@@ -1420,9 +1420,9 @@ export default function ClassGetStaticMethodTest(): void {
       }
       expect(method !== undefined).assertTrue();
       expect(method!.getParametersNum()).assertEqual(3);
-      expect(Utils.reflectScalarTypeNameMatches(method!.getParameterType(0)!.getName(), 'int')).assertTrue();
+      expect(method!.getParameterType(0)!.getName()).assertEqual(Utils.scalarParameterI32Fqn());
       expect(method!.getParameterType(1)!.getName()).assertEqual('std.core.String');
-      expect(Utils.reflectScalarTypeNameMatches(method!.getParameterType(2)!.getName(), 'boolean')).assertTrue();
+      expect(method!.getParameterType(2)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
     });
 
     /**

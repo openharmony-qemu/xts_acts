@@ -32,6 +32,9 @@ function getValue044(): int | string {
   return 42;
 }
 
+function acceptUnion043(_v: int | string): void {
+}
+
 class MyClass045 {
   public value: int | string = 0
 }
@@ -287,9 +290,7 @@ export default function ClassIsUnionTest(): void {
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
       let name = cls.getName();
-      expect(name).assertContain("{U");
-      expect(name).assertContain("std.core.Int");
-      expect(name).assertContain("std.core.String");
+      expect(name).assertEqual(Class.from<int | string>().getName());
     });
 
     /**
@@ -302,6 +303,9 @@ export default function ClassIsUnionTest(): void {
     */
     it('testClassIsUnion019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
+      let name1 = cls.getName();
+      let name2 = cls.getName();
+      expect(name1).assertEqual(name2);
       expect(cls.isUnion()).assertTrue();
     });
 
@@ -428,7 +432,7 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsUnion029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string | boolean>();
+      let cls = Class.from<(int | string) | boolean>();
       expect(cls.isUnion()).assertTrue();
     });
 
@@ -486,9 +490,11 @@ export default function ClassIsUnionTest(): void {
     it('testClassIsUnion033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
-      let name = cls.getName();
-      expect(name.indexOf("{U") === 0).assertTrue();
-      expect(name.indexOf("}") >= 0).assertTrue();
+      let types = cls.getUnionConstituentTypes();
+      expect(types !== undefined).assertTrue();
+      expect(types!.length).assertEqual(2);
+      expect(types![0].getName()).assertEqual(Class.from<int>().getName());
+      expect(types![1].getName()).assertEqual(Class.from<string>().getName());
     });
 
     /**
@@ -502,8 +508,7 @@ export default function ClassIsUnionTest(): void {
     it('testClassIsUnion034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       expect(cls.isUnion()).assertFalse();
-      let name = cls.getName();
-      expect(name.indexOf("{U")).assertEqual(-1);
+      expect(cls.getName()).assertEqual("std.core.Int");
     });
 
     /**
@@ -629,6 +634,7 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsUnion043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      acceptUnion043(1);
       let cls = Class.from<int | string>();
       expect(cls.isUnion()).assertTrue();
     });
@@ -656,8 +662,9 @@ export default function ClassIsUnionTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsUnion045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<int | string>();
-      expect(cls.isUnion()).assertTrue();
+      let obj = new MyClass045();
+      expect(Class.of(obj).isUnion()).assertFalse();
+      expect(Class.from<int | string>().isUnion()).assertTrue();
     });
 
     /**

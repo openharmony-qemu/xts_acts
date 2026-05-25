@@ -1211,7 +1211,7 @@ export default function runClassInitializeTest(): void {
     it('testClassInitialize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       cls.initialize();
-      expect(cls.getName().length).assertLarger(0);
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassInitializeTest.test.MyClass001");
     });
 
     /**
@@ -1271,7 +1271,7 @@ export default function runClassInitializeTest(): void {
     it('testClassInitialize005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass005>();
       cls.initialize();
-      expect(cls.getName().length).assertLarger(0);
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassInitializeTest.test.MyClass005");
     });
 
     /**

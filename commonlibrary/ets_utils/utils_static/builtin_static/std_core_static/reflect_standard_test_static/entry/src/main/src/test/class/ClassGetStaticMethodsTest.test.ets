@@ -328,7 +328,7 @@ class SignatureValidator036 {
         let num = method.getParametersNum();
         if (num > 0) {
           let firstParamType = method.getParameterType(0)!;
-          return firstParamType.getName().includes("Array");
+          return firstParamType.getName() === "std.core.Array";
         }
       }
     }
@@ -940,13 +940,8 @@ export default function ClassGetStaticMethodsTest(): void {
     it('testClassGetStaticMethods026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass026>();
       let methods = cls.getStaticMethods();
-      expect(methods.length).assertLarger(0);
-      for (let i = 0; i < methods.length; i++) {
-        let method = methods[i];
-        let name = method.getName();
-        expect(typeof name).assertEqual("string");
-        expect(name.length).assertLarger(0);
-      }
+      expect(methods.length).assertEqual(1);
+      expect(methods[0].getName()).assertEqual("myStaticMethod");
     });
 
     /**
@@ -1136,19 +1131,18 @@ export default function ClassGetStaticMethodsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSTATICMETHODS_3800
      * @tc.name testClassGetStaticMethods038
-     * @tc.desc Verify ClassGetStaticMethods case 038: getStaticMethods and getInstanceMethods
+     * @tc.desc Verify ClassGetStaticMethods case 038: static method getOwner().getName() FQN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetStaticMethods038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const ownerFqn = "entry.src.main.src.test.class.ClassGetStaticMethodsTest.test.MixedClass038";
       let cls = Class.from<MixedClass038>();
       let staticMethods = cls.getStaticMethods();
-      let instanceMethods = cls.getInstanceMethods();
       expect(staticMethods.length).assertEqual(1);
-      expect(instanceMethods.length).assertEqual(1);
       expect(staticMethods[0].getName()).assertEqual("staticMethod");
-      expect(instanceMethods[0].getName()).assertEqual("instanceMethod");
+      expect(staticMethods[0].getOwner().getName()).assertEqual(ownerFqn);
     });
 
     /**

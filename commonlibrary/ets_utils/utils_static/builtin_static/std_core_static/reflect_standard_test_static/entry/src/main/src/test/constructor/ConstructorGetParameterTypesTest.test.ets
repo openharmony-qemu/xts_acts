@@ -229,7 +229,7 @@ export default function ConstructorGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(4);
       expect(paramTypes[0].getName()).assertEqual("i32");
       expect(paramTypes[1].getName()).assertEqual("std.core.String");
-      expect(Utils.reflectScalarTypeNameMatches(paramTypes[2].getName(), "boolean")).assertTrue();
+      expect(paramTypes[2].getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
       expect(paramTypes[3].getName()).assertEqual("f32");
     });
 
@@ -296,7 +296,7 @@ export default function ConstructorGetParameterTypesTest(): void {
       let paramTypes = constructors[0].getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual("std.core.String");
-      expect(Utils.reflectScalarTypeNameMatches(paramTypes[1].getName(), "int")).assertTrue();
+      expect(paramTypes[1].getName()).assertEqual(Utils.scalarParameterI32Fqn());
     });
 
     /**
@@ -310,8 +310,9 @@ export default function ConstructorGetParameterTypesTest(): void {
     it('testConstructorGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let paramTypes = ctor.getParameterTypes();
+      expect(paramTypes[0].getName()).assertEqual("std.core.String");
+      expect(paramTypes[1].getName()).assertEqual("i32");
       for (let i = 0; i < paramTypes.length; i++) {
-        expect(paramTypes[i].getName().length).assertLarger(0);
         expect(typeof paramTypes[i].isPrimitive()).assertEqual("boolean");
         expect(typeof paramTypes[i].isInterface()).assertEqual("boolean");
       }
@@ -350,9 +351,9 @@ export default function ConstructorGetParameterTypesTest(): void {
       expect(paramTypes[3].getName()).assertEqual("i64");
       expect(paramTypes[4].getName()).assertEqual("f32");
       expect(paramTypes[5].getName()).assertEqual("f64");
-      expect(Utils.reflectScalarTypeNameMatches(paramTypes[6].getName(), "number")).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(paramTypes[7].getName(), "boolean")).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(paramTypes[8].getName(), "char")).assertTrue();
+      expect(paramTypes[6].getName()).assertEqual(Class.PRIMITIVE_NUMBER.getName());
+      expect(paramTypes[7].getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
+      expect(paramTypes[8].getName()).assertEqual(Class.PRIMITIVE_CHAR.getName());
     });
 
     /**
@@ -433,7 +434,7 @@ export default function ConstructorGetParameterTypesTest(): void {
       expect(p2.length).assertEqual(3);
       expect(p1[0].getName()).assertEqual("std.core.String");
       expect(p1[1].getName()).assertEqual("i32");
-      expect(Utils.reflectScalarTypeNameMatches(p2[0].getName(), "boolean")).assertTrue();
+      expect(p2[0].getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
       expect(p2[1].getName()).assertEqual("f32");
       expect(p2[2].getName()).assertEqual("f64");
     });

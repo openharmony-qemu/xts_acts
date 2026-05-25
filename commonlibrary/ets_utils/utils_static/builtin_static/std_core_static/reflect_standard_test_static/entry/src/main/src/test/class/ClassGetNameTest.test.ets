@@ -86,22 +86,13 @@ class MyService028 {}
 class ControllerRegistry029 {
   private static controllers: Map<string, Object> = new Map<string, Object>();
 
-  private static toSimpleName(name: string): string {
-    let idx = name.lastIndexOf('.');
-    if (idx >= 0) {
-      return name.substring(idx + 1);
-    }
-    return name;
-  }
-
   public static register(controller: Object): void {
     let clazz = Class.of(controller);
-    let name = ControllerRegistry029.toSimpleName(clazz.getName());
-    ControllerRegistry029.controllers.set(name, controller);
+    ControllerRegistry029.controllers.set(clazz.getName(), controller);
   }
 
-  public static get(controllerName: string): Object | undefined {
-    return ControllerRegistry029.controllers.get(ControllerRegistry029.toSimpleName(controllerName));
+  public static get(controllerFqn: string): Object | undefined {
+    return ControllerRegistry029.controllers.get(controllerFqn);
   }
 }
 
@@ -313,16 +304,16 @@ export default function ClassGetNameTest(): void {
     */
     it('testClassGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boolClass = Class.PRIMITIVE_BOOLEAN;
-      expect(Utils.reflectScalarTypeNameMatches(boolClass.getName(), "boolean")).assertTrue();
+      expect(boolClass.getName()).assertEqual(Utils.scalarPrimitiveBooleanFqn());
 
       let intClass = Class.PRIMITIVE_INT;
-      expect(Utils.reflectScalarTypeNameMatches(intClass.getName(), "int")).assertTrue();
+      expect(intClass.getName()).assertEqual(Utils.scalarParameterI32Fqn());
 
       let floatClass = Class.PRIMITIVE_FLOAT;
-      expect(Utils.reflectScalarTypeNameMatches(floatClass.getName(), "float")).assertTrue();
+      expect(floatClass.getName()).assertEqual(Utils.scalarParameterF32Fqn());
 
       let voidClass = Class.PRIMITIVE_VOID;
-      expect(Utils.reflectScalarTypeNameMatches(voidClass.getName(), "void")).assertTrue();
+      expect(voidClass.getName()).assertEqual(Utils.scalarPrimitiveVoidFqn());
     });
 
     /**
@@ -336,9 +327,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<int>();
       let clazz = Class.of(arr);
-      let name = clazz.getName();
-      expect(name.length > 0).assertTrue();
-      expect(name).assertEqual("std.core.Array");
+      expect(clazz.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -352,9 +341,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map = new Map<string, int>();
       let clazz = Class.of(map);
-      let name = clazz.getName();
-      expect(name.length > 0).assertTrue();
-      expect(name).assertEqual("std.core.Map");
+      expect(clazz.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -368,9 +355,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>();
       let clazz = Class.of(set);
-      let name = clazz.getName();
-      expect(name.length > 0).assertTrue();
-      expect(name).assertEqual("std.core.Set");
+      expect(clazz.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -413,10 +398,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: FixedArray<int> = [1, 2, 3];
       let clazz = Class.of(arr);
-      let name = clazz.getName();
-      expect(name.length > 0).assertTrue();
-      expect(name.indexOf('[') >= 0).assertTrue();
-      expect(name.indexOf(']') >= 0).assertTrue();
+      expect(clazz.getName()).assertEqual(Utils.scalarReflectI32FixedArrayInstanceFqn());
     });
 
     /**
@@ -491,8 +473,7 @@ export default function ClassGetNameTest(): void {
     */
     it('testClassGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<TestClass022>();
-      let name = clazz.getName();
-      expect(name.length).assertLarger(0);
+      expect(clazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.TestClass022");
     });
 
     /**
@@ -505,10 +486,7 @@ export default function ClassGetNameTest(): void {
     */
     it('testClassGetName023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<A023>();
-      let name = clazz.getName();
-      expect(name.length > 0).assertTrue();
-
-      expect(name).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.A023");
+      expect(clazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.A023");
     });
 
     /**
@@ -523,19 +501,6 @@ export default function ClassGetNameTest(): void {
       let clazz = Class.from<_PrivateClass024>();
       let name = clazz.getName();
       expect(name).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test._PrivateClass024");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETNAME_2500
-     * @tc.name testClassGetName025
-     * @tc.desc Verify ClassGetName case 025: verify not
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetName025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<MyClass001>();
-      expect(clazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.MyClass001");
     });
 
     /**
@@ -589,13 +554,17 @@ export default function ClassGetNameTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetName029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const userFqn = "entry.src.main.src.test.class.ClassGetNameTest.test.UserController029";
+      const productFqn = "entry.src.main.src.test.class.ClassGetNameTest.test.ProductController029";
       ControllerRegistry029.register(new UserController029());
       ControllerRegistry029.register(new ProductController029());
 
-      let userCtrl = ControllerRegistry029.get("UserController029");
-      let productCtrl = ControllerRegistry029.get("ProductController029");
+      let userCtrl = ControllerRegistry029.get(userFqn);
+      let productCtrl = ControllerRegistry029.get(productFqn);
       expect(userCtrl !== undefined).assertTrue();
       expect(productCtrl !== undefined).assertTrue();
+      expect(Class.of(userCtrl!).getName()).assertEqual(userFqn);
+      expect(Class.of(productCtrl!).getName()).assertEqual(productFqn);
     });
 
     /**
@@ -607,10 +576,11 @@ export default function ClassGetNameTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetName030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const configFqn = "entry.src.main.src.test.class.ClassGetNameTest.test.Config030";
       let configClass = Class.from<Config030>();
+      expect(configClass.getName()).assertEqual(configFqn);
       let serialized = Serializer030.serializeClass(configClass);
-      expect(serialized).assertContain("Config030");
-      expect(serialized).assertContain("Class");
+      expect(serialized).assertEqual('{"class":"' + configFqn + '","type":"Class"}');
     });
 
     /**
@@ -637,10 +607,9 @@ export default function ClassGetNameTest(): void {
     */
     it('testClassGetName032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let startTime = Date.now();
+      const expected = "entry.src.main.src.test.class.ClassGetNameTest.test.MyClass033";
       for (let i = 0; i < 100; i++) {
-        let clazz = Class.from<MyClass033>();
-        let name = clazz.getName();
-        expect(name.length).assertLarger(0);
+        expect(Class.from<MyClass033>().getName()).assertEqual(expected);
       }
       let endTime = Date.now();
       console.info("获取100个类名耗时: " + (endTime - startTime) + "ms");
@@ -693,7 +662,7 @@ export default function ClassGetNameTest(): void {
     it('testClassGetName035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let interfaceClazz = Class.from<MyInterface035>();
       let classClazz = Class.from<MyClass035>();
-      expect(interfaceClazz.getName().length > 0).assertTrue();
+      expect(interfaceClazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.MyInterface035");
       expect(classClazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.MyClass035");
       expect(interfaceClazz.isInterface()).assertTrue();
       expect(classClazz.isInterface()).assertFalse();
@@ -712,7 +681,7 @@ export default function ClassGetNameTest(): void {
       let intClazz = Class.PRIMITIVE_INT;
       expect(myClassClazz.getName()).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.MyClass036");
       expect(myClassClazz.isPrimitive()).assertFalse();
-      expect(Utils.reflectScalarTypeNameMatches(intClazz.getName(), "int")).assertTrue();
+      expect(intClazz.getName()).assertEqual(Utils.scalarParameterI32Fqn());
       expect(intClazz.isPrimitive()).assertTrue();
     });
 
@@ -734,7 +703,9 @@ export default function ClassGetNameTest(): void {
 
       expect(name !== descriptor).assertTrue();
       expect(name).assertEqual("entry.src.main.src.test.class.ClassGetNameTest.test.MyClass037");
-      expect(descriptor).assertContain("MyClass037");
+      let inner = descriptor.substring(1, descriptor.length - 1);
+      let nameFromDescriptor = inner.split('/').join('.');
+      expect(nameFromDescriptor).assertEqual(name);
     });
 
   });

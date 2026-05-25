@@ -343,7 +343,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<boolean>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "boolean")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromBooleanFqn());
     });
 
     /**
@@ -357,7 +357,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<byte>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "byte")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromByteFqn());
     });
 
     /**
@@ -371,7 +371,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<char>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "char")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromCharFqn());
     });
 
     /**
@@ -385,7 +385,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<short>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "short")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromShortFqn());
     });
 
     /**
@@ -399,7 +399,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "int")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromIntFqn());
     });
 
     /**
@@ -413,7 +413,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<long>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "long")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromLongFqn());
     });
 
     /**
@@ -427,7 +427,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<float>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "float")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromFloatFqn());
     });
 
     /**
@@ -441,7 +441,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<double>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "double")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromDoubleFqn());
     });
 
     /**
@@ -455,7 +455,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<number>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "number")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromNumberFqn());
     });
 
     /**
@@ -469,7 +469,7 @@ export default function ClassFromTest(): void {
     it('testClassFrom010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<void>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromVoidFqn());
     });
 
     /**
@@ -827,7 +827,7 @@ export default function ClassFromTest(): void {
       let cls = Class.from<int | string>();
       expect(cls !== null).assertTrue();
       expect(cls.isUnion()).assertTrue();
-      expect(cls.getName()).assertContain("{U");
+      expect(cls.getName()).assertEqual(Class.from<int | string>().getName());
     });
 
     /**
@@ -1342,7 +1342,7 @@ export default function ClassFromTest(): void {
       let cls = Class.from<FixedArray<int>>();
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "i32")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -1482,9 +1482,9 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
     */
     it('testClassFrom083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<void>();
+      let cls = Class.from<Promise<void>>();
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), "void")).assertTrue();
+      expect(cls.getName()).assertEqual(Class.from<Promise<void>>().getName());
     });
 
     /**
@@ -1555,7 +1555,7 @@ export default function ClassFromTest(): void {
         cls = Class.from<int>();
       }
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls!.getName(), "int")).assertTrue();
+      expect(cls!.getName()).assertEqual(Utils.scalarClassFromIntFqn());
     });
 
     /**
@@ -1655,9 +1655,10 @@ export default function ClassFromTest(): void {
      * @tc.level Level 2
     */
     it('testClassFrom094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Array<int>>();
+      let cls = Class.from<Set<string>>();
       expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.Array");
+      expect(cls.getName()).assertEqual("std.core.Set");
+      expect(cls.getDescriptor()).assertEqual("Lstd/core/Set;");
     });
 
     /**

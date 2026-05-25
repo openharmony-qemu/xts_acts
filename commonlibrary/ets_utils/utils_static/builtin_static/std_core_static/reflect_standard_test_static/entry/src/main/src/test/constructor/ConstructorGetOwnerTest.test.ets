@@ -316,7 +316,7 @@ export default function ConstructorGetOwnerTest(): void {
     it('testConstructorGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let owner = ctor.getOwner();
-      expect(owner.getName().length).assertLarger(0);
+      expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 
     /**

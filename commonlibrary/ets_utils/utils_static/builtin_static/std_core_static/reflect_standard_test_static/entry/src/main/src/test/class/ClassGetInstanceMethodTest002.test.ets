@@ -255,7 +255,7 @@ export default function ClassGetInstanceMethodTest002(): void {
       expect(method !== null).assertTrue();
       expect(method!.isAsync()).assertEqual(true);
       let returnType = method!.getReturnType();
-      expect(returnType!.getName()).assertContain('Promise');
+      expect(returnType!.getName()).assertEqual(Class.from<Promise<string>>().getName());
     });
 
     /**

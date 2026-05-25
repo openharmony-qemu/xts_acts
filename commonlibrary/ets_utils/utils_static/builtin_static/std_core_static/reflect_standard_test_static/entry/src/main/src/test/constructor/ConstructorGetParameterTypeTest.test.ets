@@ -279,7 +279,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       let ctorRef = Class.from<MyClass012>().getConstructors()[0];
       expect(ctorRef.getParameterType(0)!.getName()).assertEqual("i32");
       expect(ctorRef.getParameterType(1)!.getName()).assertEqual("std.core.String");
-      expect(Utils.reflectScalarTypeNameMatches(ctorRef.getParameterType(2)!.getName(), "boolean")).assertTrue();
+      expect(ctorRef.getParameterType(2)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
       expect(ctorRef.getParameterType(3)!.getName()).assertEqual("f32");
     });
 
@@ -343,7 +343,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       let paramType = ctorMyClass001().getParameterType(0);
       if (paramType !== undefined) {
         expect(typeof paramType).assertEqual("object");
-        expect(paramType.getName().length).assertLarger(0);
+        expect(paramType.getName()).assertEqual("std.core.String");
       }
     });
 
@@ -387,7 +387,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     */
     it('testConstructorGetParameterType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass019>().getConstructors()[0];
-      expect(Utils.reflectScalarTypeNameMatches(ctorRef.getParameterType(2)!.getName(), "boolean")).assertTrue();
+      expect(ctorRef.getParameterType(2)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
     });
 
     /**
@@ -452,7 +452,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       let c1 = Class.from<AbstractClass023>().getConstructors()[0];
       let c2 = Class.from<FinalClass023>().getConstructors()[0];
       expect(c1.getParameterType(0)!.getName()).assertEqual("std.core.String");
-      expect(Utils.reflectScalarTypeNameMatches(c2.getParameterType(0)!.getName(), "boolean")).assertTrue();
+      expect(c2.getParameterType(0)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
     });
 
     /**
@@ -466,11 +466,10 @@ export default function ConstructorGetParameterTypeTest(): void {
     it('testConstructorGetParameterType024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass024>().getConstructors()[0];
       let paramNum = ctorRef.getParametersNum();
-      for (let i = 0; i < paramNum; i++) {
-        let paramType = ctorRef.getParameterType(i);
-        expect(paramType !== null).assertTrue();
-        expect(paramType!.getName().length).assertLarger(0);
-      }
+      expect(ctorRef.getParameterType(0)!.getName()).assertEqual("i32");
+      expect(ctorRef.getParameterType(1)!.getName()).assertEqual("std.core.String");
+      expect(ctorRef.getParameterType(2)!.getName()).assertEqual(Class.PRIMITIVE_BOOLEAN.getName());
+      expect(ctorRef.getParameterType(3)!.getName()).assertEqual("f32");
     });
 
     /**
@@ -504,7 +503,7 @@ export default function ConstructorGetParameterTypeTest(): void {
       expect(constructors.length).assertEqual(1);
       let type1 = constructors[0].getParameterType(0);
       expect(type1 !== undefined).assertTrue();
-      expect(type1!.getName().length > 0).assertTrue();
+      expect(type1!.getName()).assertEqual(Class.from<int | string>().getName());
     });
 
   });

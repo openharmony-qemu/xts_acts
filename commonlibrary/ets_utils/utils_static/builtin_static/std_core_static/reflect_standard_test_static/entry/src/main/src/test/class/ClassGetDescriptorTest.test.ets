@@ -653,7 +653,7 @@ export default function ClassGetDescriptorTest(): void {
       let name = cls.getName();
       let descriptor = cls.getDescriptor();
 
-      expect(name.indexOf("std.core.Set")).assertLarger(-1);
+      expect(name).assertEqual("std.core.Set");
 
       expect(descriptor).assertEqual("Lstd/core/Set;");
 
@@ -841,7 +841,7 @@ export default function ClassGetDescriptorTest(): void {
       let info = getTypeInfo045(cls);
 
       expect(info.descriptor).assertEqual("Lstd/core/Set;");
-      expect(info.name.indexOf("Set")).assertLarger(-1);
+      expect(info.name).assertEqual("std.core.Set");
     });
 
     /**

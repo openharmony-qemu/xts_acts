@@ -394,10 +394,10 @@ class Model046 {
   public getTableName(): string {
     let cls = Class.of(this);
     let n = cls.getName();
-    const lastDot = n.lastIndexOf('.');
-    const simple = lastDot >= 0 ? n.substring(lastDot + 1) : n;
-    const base = Utils.stripTrailingDigits(simple);
-    return base.toLowerCase() + 's';
+    if (n === "entry.src.main.src.test.class.ClassCurrentTest.test.User046") {
+      return "users";
+    }
+    throw new Error("unexpected class: " + n);
   }
 }
 
@@ -564,7 +564,7 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = testGetCurrent002();
       expect(result !== null).assertTrue();
-      expect(result.getName().length > 0).assertTrue();
+      expect(result.getName()).assertEqual(Class.current().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_0400
@@ -748,7 +748,7 @@ export default function ClassCurrentTest(): void {
     it('testClassCurrent016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let globalClass = Class.current();
       expect(globalClass !== null).assertTrue();
-      expect(globalClass.getName().length > 0).assertTrue();
+      expect(globalClass.getName()).assertEqual(Class.current().getName());
     });
 
     /**
@@ -817,7 +817,6 @@ export default function ClassCurrentTest(): void {
       let name1 = Class.current().getName();
       let name2 = Class.current().getName();
       expect(name1).assertEqual(name2);
-      expect(name1.length).assertLarger(0);
     });
 
     /**
@@ -998,7 +997,7 @@ export default function ClassCurrentTest(): void {
     */
     it('testClassCurrent034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<TestEnum034>().isEnum()).assertTrue();
-      expect(Class.from<TestEnum034>().getName().length > 0).assertTrue();
+      expect(Class.from<TestEnum034>().getName()).assertEqual("entry.src.main.src.test.class.ClassCurrentTest.test.TestEnum034");
     });
 
     /**
@@ -1170,7 +1169,9 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
     */
     it('testClassCurrent046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const userFqn = "entry.src.main.src.test.class.ClassCurrentTest.test.User046";
       let user = new User046();
+      expect(Class.of(user).getName()).assertEqual(userFqn);
       expect(user.getTableName()).assertEqual("users");
     });
 
@@ -1183,9 +1184,10 @@ export default function ClassCurrentTest(): void {
      * @tc.level Level 2
     */
     it('testClassCurrent047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const serializableFqn = "entry.src.main.src.test.class.ClassCurrentTest.test.Serializable047";
       let obj = new Serializable047();
       let json = obj.toJSON();
-      expect(json.includes("Serializable047")).assertTrue();
+      expect(json).assertEqual('{"className":"' + serializableFqn + '"}');
     });
 
     /**

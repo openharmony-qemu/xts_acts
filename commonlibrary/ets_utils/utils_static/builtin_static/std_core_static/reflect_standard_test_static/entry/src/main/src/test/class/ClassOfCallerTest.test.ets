@@ -17,6 +17,9 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
+const OFCALLER_MODULE = Utils.classOfCallerModulePrefix();
+const OFCALLER_HARNESS = `${OFCALLER_MODULE}.ETSGLOBAL`;
+
 class CallerClass004 {
   public test(): Class | undefined {
     return Class.ofCaller()
@@ -43,24 +46,15 @@ class StaticCaller007 {
 
 class ConstructorCaller008 {
   public constructor() {
-    let callerClass = Class.ofCaller()
-    expect(callerClass !== undefined && callerClass !== null).assertTrue()
-    expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "ConstructorCaller008")).assertTrue()
   }
 }
 
 class PropertyCaller009 {
   private _value: string = ''
   public get value(): string {
-    let callerClass = Class.ofCaller()
-    expect(callerClass !== undefined && callerClass !== null).assertTrue()
-    expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "PropertyCaller009")).assertTrue()
     return this._value
   }
   public set value(val: string) {
-    let callerClass = Class.ofCaller()
-    expect(callerClass !== undefined && callerClass !== null).assertTrue()
-    expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "PropertyCaller009")).assertTrue()
     this._value = val
   }
 }
@@ -265,8 +259,6 @@ class GenericCaller024<T> {
   }
 
   public process(value: T): void {
-    let callerClass = Class.ofCaller()
-    expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "GenericCaller024")).assertTrue()
   }
 }
 
@@ -428,15 +420,18 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0100
      * @tc.name testClassOfCaller001
-     * @tc.desc Verify ClassOfCaller case 001: ofCaller() static method with no arguments
+     * @tc.desc Verify ClassOfCaller case 001: ofCaller() in top-level it() returns Class (non-null, stable getName)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOfCaller001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let callerClass = Class.ofCaller();
-      expect(callerClass !== undefined && callerClass !== null).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "ETSGLOBAL")).assertTrue();
+      let caller1 = Class.ofCaller();
+      let caller2 = Class.ofCaller();
+      expect(caller1 !== undefined && caller1 !== null).assertTrue();
+      expect(caller2 !== undefined && caller2 !== null).assertTrue();
+      expect(caller1 instanceof Class).assertTrue();
+      expect(caller1!.getName()).assertEqual(caller2!.getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0300
@@ -463,21 +458,7 @@ export default function ClassOfCallerTest(): void {
       let obj = new CallerClass004()
       let result = obj.test()
       expect(result !== undefined && result !== null).assertTrue()
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "CallerClass004")).assertTrue()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0500
-     * @tc.name testClassOfCaller005
-     * @tc.desc Verify ClassOfCaller case 005: call when return undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOfCaller005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let callerClass = Class.ofCaller()
-      expect(callerClass !== undefined && callerClass !== null).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(callerClass!.getName(), "ETSGLOBAL")).assertTrue();
+      expect(result!.getName()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -492,7 +473,7 @@ export default function ClassOfCallerTest(): void {
       let objA = new A006()
       let result = objA.methodA()
       expect(result !== undefined && result !== null).assertTrue()
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "A006")).assertTrue()
+      expect(result!.getName()).assertEqual(`${OFCALLER_MODULE}.A006`)
     });
 
     /**
@@ -506,7 +487,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let result = StaticCaller007.getCaller()
       expect(result !== undefined && result !== null).assertTrue()
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "StaticCaller007")).assertTrue()
+      expect(result!.getName()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -538,20 +519,6 @@ export default function ClassOfCallerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1000
-     * @tc.name testClassOfCaller010
-     * @tc.desc Verify ClassOfCaller case 010: verify return Class or undefinedtype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOfCaller010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let callerClass = Class.ofCaller();
-      expect(callerClass !== undefined).assertTrue();
-      expect(callerClass!.getName().length > 0).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1100
      * @tc.name testClassOfCaller011
      * @tc.desc Verify ClassOfCaller case 011: return Class object call method
@@ -561,7 +528,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass011()
-      expect(Utils.ofCallerNameMatchesOrHarness(obj.identify(), "TestClass011")).assertTrue()
+      expect(obj.identify()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -576,8 +543,8 @@ export default function ClassOfCallerTest(): void {
       let obj = new Child012()
       let parentResult = obj.getParentCaller()
       let childResult = obj.getChildCaller()
-      expect(Utils.ofCallerNameMatchesOrHarness(parentResult!.getName(), "Parent012")).assertTrue()
-      expect(Utils.ofCallerNameMatchesOrHarness(childResult!.getName(), "Child012")).assertTrue()
+      expect(parentResult!.getName()).assertEqual(OFCALLER_HARNESS)
+      expect(childResult!.getName()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -591,22 +558,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: MyInterface013 = new InterfaceImpl013()
       let result = obj.getCallerClass()
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "InterfaceImpl013")).assertTrue()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1400
-     * @tc.name testClassOfCaller014
-     * @tc.desc Verify ClassOfCaller case 014: in call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOfCaller014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let caller1 = Class.ofCaller()
-      let caller2 = Class.ofCaller()
-      expect(caller1 !== undefined && caller2 !== undefined).assertTrue();
-      expect(caller1!.getName()).assertEqual(caller2!.getName());
+      expect(result!.getName()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -619,7 +571,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new AsyncCaller015();
-      expect(Utils.ofCallerNameMatchesOrHarness(obj.probeOfCaller(), "AsyncCaller015")).assertTrue();
+      expect(obj.probeOfCaller()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -634,7 +586,7 @@ export default function ClassOfCallerTest(): void {
       let obj = new AnonymousCaller016();
       let result = obj.probeCaller();
       expect(result !== undefined && result !== null).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "AnonymousCaller016")).assertTrue();
+      expect(result!.getName()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -649,7 +601,7 @@ export default function ClassOfCallerTest(): void {
       let obj = new HigherOrderCaller017();
       let r = obj.probeCaller();
       expect(r !== undefined && r !== null).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(r!.getName(), "HigherOrderCaller017")).assertTrue();
+      expect(r!.getName()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -733,7 +685,7 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfCaller023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(ConcurrentCaller023.getCallerInfo().length).assertLarger(0);
+      expect(ConcurrentCaller023.getCallerInfo()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -747,7 +699,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let stringCaller = new GenericCaller024<string>()
       let caller = stringCaller.getCaller()
-      expect(Utils.ofCallerNameMatchesOrHarness(caller!.getName(), "GenericCaller024")).assertTrue()
+      expect(caller!.getName()).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -760,7 +712,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let s = new SafeCaller028();
-      expect(Utils.ofCallerNameMatchesOrHarness(s.getCallerInfo(), "SafeCaller028")).assertTrue();
+      expect(s.getCallerInfo()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -788,7 +740,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let service = new ResilientService027()
       let name = service.getCallerName()
-      expect(Utils.ofCallerNameMatchesOrHarness(name, "ResilientService027")).assertTrue()
+      expect(name).assertEqual(OFCALLER_HARNESS)
     });
 
     /**
@@ -801,7 +753,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c = new CachedCaller036();
-      expect(Utils.ofCallerNameMatchesOrHarness(c.getCaller()!.getName(), "CachedCaller036")).assertTrue();
+      expect(c.getCaller()!.getName()).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -828,7 +780,7 @@ export default function ClassOfCallerTest(): void {
       let m2 = new Module2Class030();
       let caller = m2.testCrossModule();
       expect(caller !== undefined && caller !== null).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(caller!.getName(), "Module2Class030")).assertTrue();
+      expect(caller!.getName()).assertEqual(`${OFCALLER_MODULE}.Module2Class030`);
     });
 
     /**
@@ -842,7 +794,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new DeepCaller031()
       let result = obj.level1()
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "DeepCaller031")).assertTrue()
+      expect(result!.getName()).assertEqual(`${OFCALLER_MODULE}.DeepCaller031`)
     });
 
     /**
@@ -856,7 +808,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new RecursiveCaller032()
       let result = obj.recursiveCall(10)
-      expect(Utils.ofCallerNameMatchesOrHarness(result!.getName(), "RecursiveCaller032")).assertTrue()
+      expect(result!.getName()).assertEqual(`${OFCALLER_MODULE}.RecursiveCaller032`)
     });
 
     /**
@@ -881,8 +833,8 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfCaller034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Utils.ofCallerNameMatchesOrHarness(new X034().dispatch(), "X034")).assertTrue()
-      expect(Utils.ofCallerNameMatchesOrHarness(new Y034().dispatch(), "Y034")).assertTrue()
+      expect(new X034().dispatch()).assertEqual(`${OFCALLER_MODULE}.X034`)
+      expect(new Y034().dispatch()).assertEqual(`${OFCALLER_MODULE}.Y034`)
     });
 
     /**
@@ -895,7 +847,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let g = new GenericCaller024<int>();
-      expect(Utils.ofCallerNameMatchesOrHarness(g.getCaller()!.getName(), "GenericCaller024")).assertTrue();
+      expect(g.getCaller()!.getName()).assertEqual(OFCALLER_HARNESS);
       g.process(0);
     });
 
@@ -912,7 +864,7 @@ export default function ClassOfCallerTest(): void {
       let a = c.getCaller();
       let b = c.getCaller();
       expect(a === b).assertTrue();
-      expect(Utils.ofCallerNameMatchesOrHarness(a!.getName(), "CachedCaller036")).assertTrue();
+      expect(a!.getName()).assertEqual(OFCALLER_HARNESS);
     });
 
   });

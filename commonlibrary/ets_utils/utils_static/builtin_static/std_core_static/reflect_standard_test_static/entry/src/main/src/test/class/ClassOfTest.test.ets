@@ -554,7 +554,7 @@ export default function ClassOfTest(): void {
       let boxedInt: Object = 42 as Object;
       let cls = Class.of(boxedInt);
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), 'int')).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromIntFqn());
     });
 
     /**
@@ -744,7 +744,7 @@ export default function ClassOfTest(): void {
     it('testClassOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
       expect(cls !== null).assertTrue();
-      expect(cls.getName().length).assertLarger(0);
+      expect(cls.getName()).assertEqual("std.core.Null");
     });
 
     /**
@@ -817,7 +817,7 @@ export default function ClassOfTest(): void {
       let obj = new Map<int, string>();
       let cls: Class = Class.of(obj);
       expect(cls !== null).assertTrue();
-      expect(cls.getName().length > 0).assertTrue();
+      expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -833,7 +833,7 @@ export default function ClassOfTest(): void {
       let cls1 = Class.of(obj1);
       let obj2: Object | null = null;
       let cls2 = Class.of(obj2);
-      expect(cls1.getName()).assertContain("Map");
+      expect(cls1.getName()).assertEqual("std.core.Map");
       expect(cls2 !== null).assertTrue();
       expect(cls2!.getName()).assertEqual(Class.of(null).getName());
     });
@@ -883,9 +883,9 @@ export default function ClassOfTest(): void {
 
       let map3 = new Map<int, int>();
       let cls3 = Class.of(map3);
-      expect(cls1.getName()).assertContain("Map");
-      expect(cls2.getName()).assertContain("Map");
-      expect(cls3.getName()).assertContain("Map");
+      expect(cls1.getName()).assertEqual("std.core.Map");
+      expect(cls2.getName()).assertEqual("std.core.Map");
+      expect(cls3.getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -905,9 +905,9 @@ export default function ClassOfTest(): void {
 
       let arr3 = new Array<Object>();
       let cls3 = Class.of(arr3);
-      expect(cls1.getName()).assertContain("Array");
-      expect(cls2.getName()).assertContain("Array");
-      expect(cls3.getName()).assertContain("Array");
+      expect(cls1.getName()).assertEqual("std.core.Array");
+      expect(cls2.getName()).assertEqual("std.core.Array");
+      expect(cls3.getName()).assertEqual("std.core.Array");
     });
 
     /**
@@ -924,8 +924,8 @@ export default function ClassOfTest(): void {
 
       let set2 = new Set<string>();
       let cls2 = Class.of(set2);
-      expect(cls1.getName()).assertContain("Set");
-      expect(cls2.getName()).assertContain("Set");
+      expect(cls1.getName()).assertEqual("std.core.Set");
+      expect(cls2.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -943,7 +943,7 @@ export default function ClassOfTest(): void {
 
       let componentType = cls.getFixedArrayComponentType();
       expect(componentType !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(componentType!.getName(), "int")).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -1152,7 +1152,7 @@ export default function ClassOfTest(): void {
       }
       let endTime = Date.now();
       expect(endTime - startTime).assertLarger(0);
-      expect(Class.from<Map<int, string>>().getName().length > 0).assertTrue();
+      expect(Class.from<Map<int, string>>().getName()).assertEqual("std.core.Map");
     });
 
     /**
@@ -1234,7 +1234,7 @@ export default function ClassOfTest(): void {
       let sharedObj = new Array<int>();
       for (let i = 0; i < 10; i++) {
         let cls = Class.of(sharedObj);
-        expect(cls.getName()).assertContain("Array");
+        expect(cls.getName()).assertEqual("std.core.Array");
       }
     });
 
@@ -1336,7 +1336,7 @@ export default function ClassOfTest(): void {
       let boxedInt: Object = 123 as Object;
       let cls = Class.of(boxedInt);
       expect(cls !== null).assertTrue();
-      expect(Utils.reflectScalarTypeNameMatches(cls.getName(), 'int')).assertTrue();
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromIntFqn());
     });
 
     /**
