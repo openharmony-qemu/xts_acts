@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { describe, it, expect, beforeAll, afterEach, Level, beforeEach } from '../../../../hypium/index';
-import { ListItemGroupstickyFooterGroup } from '@ohos.arkui.component'
+import { List, ListItemGroup, ListItem, StickyStyle } from '@ohos.arkui.component'
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
