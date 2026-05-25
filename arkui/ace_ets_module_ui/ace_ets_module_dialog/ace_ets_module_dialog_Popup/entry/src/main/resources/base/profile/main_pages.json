@@ -35,6 +35,7 @@
     "MainAbility/pages/popupSystemMaterial/SheetOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupCommonOptionsSystemMaterial",
     "MainAbility/pages/popupSystemMaterial/PopupOptionsSystemMaterial",
-    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial"
+    "MainAbility/pages/popupSystemMaterial/TipsOptionsSystemMaterial",
+    "MainAbility/pages/popup/PopupColorMode"
   ]
 }

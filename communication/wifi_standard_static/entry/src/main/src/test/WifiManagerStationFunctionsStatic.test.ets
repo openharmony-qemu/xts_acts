@@ -43,7 +43,34 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, '%{public}s', 'afterAll end');
       done();
     });
-
+    /**
+     * @tc.number SUB_Communication_WifiManager_removeCandidateConfig_0000
+     * @tc.name SUB_Communication_WifiManager_removeCandidateConfig_0000
+     * @tc.desc Test removeCandidateConfig with 异常操作
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_removeCandidateConfig_0000", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_removeCandidateConfig_0000";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let networkId: int = 500;
+      try {
+        await wifiManager.removeCandidateConfig(networkId);
+        hilog.info(domain, tag, `${caseName} removeCandidateConfig success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
     /**
      * @tc.number SUB_Communication_WifiManager_Constant_WifiSecurityType_0001
      * @tc.name SUB_Communication_WifiManager_Constant_WifiSecurityType_0001
@@ -548,6 +575,10 @@ export default function actsWifiManagerFunctionsTest() {
           expect(typeof infos[0].centerFrequency1 === `int`).assertTrue();
           hilog.info(domain, tag, `${caseName} getScanInfoList infoElems:` + JSON.stringify(infos[0].infoElems) + `, type: ` + typeof infos[0].infoElems);
           expect(Array.isArray(infos[0].infoElems)).assertTrue();
+          let wifiInfoElem: wifiManager.WifiInfoElem = infos[0].infoElems[0];
+          hilog.info(domain, tag, `${caseName} getScanInfoList infoElems [0] wifiInfoElem eid:` + JSON.stringify(wifiInfoElem.eid) + `, type: ` + typeof wifiInfoElem.eid);
+          expect(typeof wifiInfoElem.eid).assertEqual('int');
+          hilog.info(domain, tag, `${caseName} getScanInfoList infoElems [0] wifiInfoElem content:` + JSON.stringify(wifiInfoElem.content) + `, type: ` + typeof wifiInfoElem.content);
           hilog.info(domain, tag, `${caseName} getScanInfoList timestamp:` + infos[0].timestamp + `, type: ` + typeof infos[0].timestamp);
           expect(typeof infos[0].timestamp === `long`).assertTrue();
           hilog.info(domain, tag, `${caseName} getScanInfoList supportedWifiCategory:` + infos[0].supportedWifiCategory + `, type: ` + typeof infos[0].supportedWifiCategory);
@@ -3212,5 +3243,143 @@ export default function actsWifiManagerFunctionsTest() {
       hilog.info(domain, tag, `${caseName} test end`);
       done();
     });
+
+    /**
+     * @tc.number SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076
+     * @tc.name SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076
+     * @tc.desc Test connectToCandidateConfigWithUserAction with normal call (application interface)
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_ConnectToCandidateConfigWithUserAction_Promise_0076";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let netWorkId: int;
+      try {
+        let wifiDeviceConfig: wifiManager.WifiDeviceConfig = {
+          "ssid": "test_user_action",
+          "preSharedKey": "12345678",
+          "securityType": wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
+        };
+        netWorkId = await wifiManager.addCandidateConfig(wifiDeviceConfig);
+        hilog.info(domain, tag, `${caseName} addCandidateConfig success, networkId: ` + netWorkId);
+        expect(typeof netWorkId === 'int').assertTrue();
+        expect(netWorkId >= 0).assertTrue();
+        await wifiManager.connectToCandidateConfigWithUserAction(netWorkId);
+        hilog.info(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+        try {
+          await Utils.msSleep(2000);
+          wifiManager.disconnect();
+          hilog.info(domain, tag, `${caseName} disconnect success`);
+          if (netWorkId >= 0) {
+            await Utils.msSleep(2000);
+            await wifiManager.removeCandidateConfig(netWorkId);
+            hilog.info(domain, tag, `${caseName} cleanup: removeCandidateConfig success`);
+          }
+        } catch (cleanupErr) {
+          hilog.error(domain, tag, `${caseName} cleanup failed: ` + cleanupErr.message);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_StartScan_0077
+     * @tc.name SUB_Communication_WifiManager_StartScan_0077
+     * @tc.desc Test startScan return void
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_StartScan_0077", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_StartScan_0077";
+      hilog.info(domain, tag, `${caseName} test start`);
+      try {
+        wifiManager.startScan();
+        hilog.info(domain, tag, `${caseName} startScan success`);
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect().assertFail();
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
+    /**
+     * @tc.number SUB_Communication_WifiManager_addCandidateConfig_0078
+     * @tc.name SUB_Communication_WifiManager_addCandidateConfig_0078
+     * @tc.desc Test addCandidateConfig with 预期401
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_addCandidateConfig_0078", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_addCandidateConfig_0078";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let config: wifiManager.WifiDeviceConfig = {
+        ssid: "CANDIDATE_SSID",
+        bssid: "11:22:33:23",
+        preSharedKey: "candidate123",
+        securityType: wifiManager.WifiSecurityType.WIFI_SEC_TYPE_PSK
+      };
+      try {
+        await CallbackMethods.addCandidateConfigCallback(config);
+        hilog.error(domain, tag, `${caseName} addCandidateConfig Callback success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+    /**
+     * @tc.number SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
+     * @tc.name SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079
+     * @tc.desc Test addCandidateConfig with 预期401
+     * @tc.level Level 0
+     * @tc.type Function
+     * @tc.size MEDIUMTEST
+     */
+    it("SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let caseName = "LOG_SUB_Communication_WifiManager_connectToCandidateConfigWithUserAction_0079";
+      hilog.info(domain, tag, `${caseName} test start`);
+      let networkId: int = -1;
+      try {
+        await wifiManager.connectToCandidateConfigWithUserAction(networkId);
+        hilog.error(domain, tag, `${caseName} connectToCandidateConfigWithUserAction success`);
+        expect().assertFail();
+      } catch (err) {
+        hilog.error(domain, tag, `${caseName} catch errCode:` + err.code + `,errMessage:` + err.message);
+        if (err.code === 801) {
+          hilog.info(domain, tag, `${caseName} api is not support`);
+          expect(err.code).assertEqual(801);
+        } else {
+          expect(err.code).assertEqual(401);
+        }
+      }
+      hilog.info(domain, tag, `${caseName} test end`);
+      done();
+    });
+
   })
 }

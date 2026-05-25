@@ -77,7 +77,7 @@ export default function stackAlignContentJsunit() {
 it('teststackAlignContent_static_0001', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('Stack');
+      let strJson = inspector.getInspectorByKey('stack_y_Stack');
       console.info("[teststackAlignContent0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Stack');
@@ -98,7 +98,7 @@ it('teststackAlignContent_static_0001', Level.LEVEL0, async () => {
 it('teststackAlignContent_static_0002', Level.LEVEL0, async () => {
       console.info('stackAlignContent teststackAlignContent0002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('Stack');
+      let strJson = inspector.getInspectorByKey('stack_y_Stack');
       console.info("[teststackAlignContent0002] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Stack');
