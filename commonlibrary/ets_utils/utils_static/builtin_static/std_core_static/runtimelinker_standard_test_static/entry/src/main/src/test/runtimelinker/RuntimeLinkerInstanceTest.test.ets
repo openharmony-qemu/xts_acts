@@ -31,163 +31,79 @@ export default function InstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0100
      * @tc.name testInstance001
-     * @tc.desc Verify static field access via BootRuntimeLinker.instance returns valid instance
+     * @tc.desc Verify static field access via BootRuntimeLinker.instance returns
+     *            a non-null valid BootRuntimeLinker instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testInstance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker !== null).assertTrue();
       expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0200
      * @tc.name testInstance002
-     * @tc.desc Verify compile-time error when accessing static field instance through an
-     *            instance reference rather than the class name. ArkTS enforces that static
-     *            fields are only accessible via the class qualifier (spec/classes.md).
-     *            Runtime assertion verifies the correct access pattern works.
+     * @tc.desc Verify the compile-time type of instance field is BootRuntimeLinker,
+     *            assignable to a BootRuntimeLinker-typed variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testInstance002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: static field not accessible via instance.
-      // The legal pattern (BootRuntimeLinker.instance) is validated at runtime below.
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0300
-     * @tc.name testInstance003
-     * @tc.desc Verify compile-time type of instance field is BootRuntimeLinker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let typedLinker: BootRuntimeLinker = linker;
       expect(typedLinker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0400
-     * @tc.name testInstance004
-     * @tc.desc Verify identity relationship between instance field and getBootRuntimeLinker return value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0300
+     * @tc.name testInstance003
+     * @tc.desc Verify BootRuntimeLinker.instance and getBootRuntimeLinker()
+     *            return the same singleton instance (identity check)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstance004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInstance003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fieldInstance: BootRuntimeLinker = BootRuntimeLinker.instance;
       let funcInstance: BootRuntimeLinker = getBootRuntimeLinker();
-      // verify identity relationship between static field and getter function
       expect(fieldInstance instanceof BootRuntimeLinker).assertTrue();
       expect(funcInstance instanceof BootRuntimeLinker).assertTrue();
       expect(fieldInstance === funcInstance).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0500
-     * @tc.name testInstance005
-     * @tc.desc Verify compile-time error when reassigning readonly static field instance.
-     *            ArkTS prohibits reassignment to readonly fields (spec/classes.md).
-     *            Runtime assertion verifies the field is accessible and returns a valid instance.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: readonly field cannot be reassigned.
-      // The legal read-access pattern is validated at runtime below.
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0600
-     * @tc.name testInstance006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0400
+     * @tc.name testInstance004
      * @tc.desc Verify multiple accesses to instance field return the same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstance006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInstance004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ref1: BootRuntimeLinker = BootRuntimeLinker.instance;
       let ref2: BootRuntimeLinker = BootRuntimeLinker.instance;
       expect(ref1 === ref2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0700
-     * @tc.name testInstance007
-     * @tc.desc Verify instanceof check is covered in BootRuntimeLinker test mindmap
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0500
+     * @tc.name testInstance005
+     * @tc.desc Verify instance field value can be passed as a function parameter
+     *            of type BootRuntimeLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstance007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // cross-file reference: instanceof tests covered in BootRuntimeLinkerTest
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0800
-     * @tc.name testInstance008
-     * @tc.desc Verify instance field value can be passed as function parameter of BootRuntimeLinker type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let useLinker = (linker: BootRuntimeLinker): void => {
+        expect(linker !== null).assertTrue();
         expect(linker instanceof BootRuntimeLinker).assertTrue();
       }
       useLinker(BootRuntimeLinker.instance);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0900
-     * @tc.name testInstance009
-     * @tc.desc Verify static field initialized at class load time with valid BootRuntimeLinker object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1000
-     * @tc.name testInstance010
-     * @tc.desc Verify field initializer type is compatible with field declaration type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification: field initializer BootRuntimeLinker compatible with declaration type
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1100
-     * @tc.name testInstance011
-     * @tc.desc Verify public static field instance accessible from imported module
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstance011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
   });
 }

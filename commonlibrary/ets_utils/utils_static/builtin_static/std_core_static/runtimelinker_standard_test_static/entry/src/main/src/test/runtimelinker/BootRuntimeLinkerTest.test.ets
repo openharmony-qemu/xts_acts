@@ -42,7 +42,8 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0100
      * @tc.name testBootRuntimeLinker001
-     * @tc.desc Verify BootRuntimeLinker declared as final class can be imported and referenced
+     * @tc.desc Verify BootRuntimeLinker declared as final class can be imported,
+     *            referenced, and its instance field accessed via class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -55,57 +56,40 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0200
      * @tc.name testBootRuntimeLinker002
-     * @tc.desc Verify compile-time error when extending final class BootRuntimeLinker.
-     *            ArkTS prohibits inheritance from final classes (spec/classes.md Final Classes).
-     *            Runtime assertion verifies the class can still be instantiated and used.
+     * @tc.desc Verify inherited method loadClass("std.core.String") returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: extending final class is a compile-time error.
-      // The legal usage (accessing instance, instanceof check) is validated below.
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0300
-     * @tc.name testBootRuntimeLinker003
-     * @tc.desc Verify BootRuntimeLinker inherits instance method loadClass from RuntimeLinker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.loadClass("std.core.String");
       expect(cls !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0400
-     * @tc.name testBootRuntimeLinker004
-     * @tc.desc Verify inherited method findLoadedClass is callable
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0300
+     * @tc.name testBootRuntimeLinker003
+     * @tc.desc Verify inherited method findLoadedClass("std.core.String") returns valid Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let found: Class | undefined = linker.findLoadedClass("std.core.String");
       expect(found !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0500
-     * @tc.name testBootRuntimeLinker005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0400
+     * @tc.name testBootRuntimeLinker004
      * @tc.desc Verify BootRuntimeLinker as reference type is assignable to Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let takesObject = (obj: Object): void => {
         expect(obj instanceof BootRuntimeLinker).assertTrue();
       }
@@ -114,28 +98,29 @@ export default function BootRuntimeLinkerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0600
-     * @tc.name testBootRuntimeLinker006
-     * @tc.desc Verify typeof on BootRuntimeLinker instance returns object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0500
+     * @tc.name testBootRuntimeLinker005
+     * @tc.desc Verify typeof on BootRuntimeLinker instance returns 'object'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let typeResult: string = typeof linker;
       expect(typeResult === 'object').assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0700
-     * @tc.name testBootRuntimeLinker007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0600
+     * @tc.name testBootRuntimeLinker006
      * @tc.desc Verify BootRuntimeLinker instance passes instanceof check against itself
+     *            after casting to Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let obj: Object = linker as Object;
       let isBootLinker: boolean = obj instanceof BootRuntimeLinker;
@@ -143,14 +128,14 @@ export default function BootRuntimeLinkerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0800
-     * @tc.name testBootRuntimeLinker008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0700
+     * @tc.name testBootRuntimeLinker007
      * @tc.desc Verify BootRuntimeLinker instance passes instanceof check against parent RuntimeLinker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let obj: Object = linker as Object;
       let isRuntimeLinker: boolean = obj instanceof RuntimeLinker;
@@ -158,93 +143,54 @@ export default function BootRuntimeLinkerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0900
-     * @tc.name testBootRuntimeLinker009
-     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker to incompatible
-     *            string type. ArkTS type system prevents cross-hierarchy assignment at compile
-     *            time (spec/semantics.md assignability). Runtime assertion validates correct
-     *            BootRuntimeLinker assignment works.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0800
+     * @tc.name testBootRuntimeLinker008
+     * @tc.desc Verify BootRuntimeLinker|null union type can hold null value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: BootRuntimeLinker not assignable to string.
-      // The correct-typed assignment is validated at runtime below.
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1000
-     * @tc.name testBootRuntimeLinker010
-     * @tc.desc Verify BootRuntimeLinker|null nullish union type can hold null value.
-     *            null alone is not assignable to BootRuntimeLinker (compile-time error
-     *            per spec/types.md Nullish Types), but is valid within a T|null union type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBootRuntimeLinker010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let nullableLinker: BootRuntimeLinker | null = null;
       expect(nullableLinker === null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1100
-     * @tc.name testBootRuntimeLinker011
-     * @tc.desc Verify BootRuntimeLinker|undefined nullish union type can hold undefined value.
-     *            T|undefined nullish type is not assignable to Object (compile-time error
-     *            per spec/types.md Nullish Types), but undefined is valid within the union type.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0900
+     * @tc.name testBootRuntimeLinker009
+     * @tc.desc Verify BootRuntimeLinker|undefined union type can hold undefined value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let maybeLinker: BootRuntimeLinker | undefined = undefined;
       expect(maybeLinker === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1200
-     * @tc.name testBootRuntimeLinker012
-     * @tc.desc Verify compile-time error when extending final class BootRuntimeLinker.
-     *            This is a stronger test for the final-class constraint (spec/classes.md).
-     *            Runtime assertion verifies the class works correctly without extension.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1000
+     * @tc.name testBootRuntimeLinker010
+     * @tc.desc Verify getType returns Type instance for valid type descriptor "std.core.String"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: final class + extends = compile-time error.
-      // The legal usage without extension is validated at runtime below.
-      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1300
-     * @tc.name testBootRuntimeLinker013
-     * @tc.desc Verify getType returns Type for valid type descriptor std.core.String
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBootRuntimeLinker013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       let typeResult: Type | undefined = linker.getType("std.core.String" as TypeDescriptor);
       expect(typeResult !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1400
-     * @tc.name testBootRuntimeLinker014
-     * @tc.desc Verify loadClass throws LinkerClassNotFoundError for non-existent class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1100
+     * @tc.name testBootRuntimeLinker011
+     * @tc.desc Verify loadClass throws LinkerClassNotFoundError for non-existent class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBootRuntimeLinker014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testBootRuntimeLinker011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
       try {
         linker.loadClass("com.nonexistent.FakeClass");

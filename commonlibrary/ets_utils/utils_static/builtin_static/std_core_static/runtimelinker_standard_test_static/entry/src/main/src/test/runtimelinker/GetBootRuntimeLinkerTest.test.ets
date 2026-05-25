@@ -42,69 +42,41 @@ export default function GetBootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0100
      * @tc.name testGetBootRuntimeLinker001
-     * @tc.desc Verify getBootRuntimeLinker returns BootRuntimeLinker instance with zero parameters
+     * @tc.desc Verify getBootRuntimeLinker() called with zero parameters returns
+     *            a non-null BootRuntimeLinker instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetBootRuntimeLinker001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      expect(linker !== null).assertTrue();
       expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0200
      * @tc.name testGetBootRuntimeLinker002
-     * @tc.desc Verify compile-time error when passing extra argument to getBootRuntimeLinker(),
-     *            which accepts zero parameters. ArkTS enforces strict parameter count matching
-     *            (spec/semantics.md). Runtime assertion verifies the zero-arg call succeeds.
+     * @tc.desc Verify multiple calls to getBootRuntimeLinker() return the same singleton instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetBootRuntimeLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: passing argument to parameterless function is an error.
-      // The legal zero-argument call is validated at runtime below.
-      let linker: BootRuntimeLinker = getBootRuntimeLinker();
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0300
-     * @tc.name testGetBootRuntimeLinker003
-     * @tc.desc Verify getBootRuntimeLinker returns non-null BootRuntimeLinker instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker: BootRuntimeLinker = getBootRuntimeLinker();
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0400
-     * @tc.name testGetBootRuntimeLinker004
-     * @tc.desc Verify multiple calls to getBootRuntimeLinker return the same singleton instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetBootRuntimeLinker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker1: BootRuntimeLinker = getBootRuntimeLinker();
       let linker2: BootRuntimeLinker = getBootRuntimeLinker();
       expect(linker1 === linker2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0500
-     * @tc.name testGetBootRuntimeLinker005
-     * @tc.desc Verify getBootRuntimeLinker can be called from a local function scope
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0300
+     * @tc.name testGetBootRuntimeLinker003
+     * @tc.desc Verify getBootRuntimeLinker() can be called from within a local function scope
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetBootRuntimeLinker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let testInAnotherModule = (): void => {
         let linker: BootRuntimeLinker = getBootRuntimeLinker();
         expect(linker instanceof BootRuntimeLinker).assertTrue();
@@ -113,65 +85,32 @@ export default function GetBootRuntimeLinkerTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0600
-     * @tc.name testGetBootRuntimeLinker006
-     * @tc.desc Verify compile-time return type is BootRuntimeLinker and assignable to same-type variable
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0400
+     * @tc.name testGetBootRuntimeLinker004
+     * @tc.desc Verify return type of getBootRuntimeLinker() is inferred as BootRuntimeLinker
+     *            and is assignable to a BootRuntimeLinker-typed variable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetBootRuntimeLinker006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetBootRuntimeLinker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let typedLinker: BootRuntimeLinker = linker;
       expect(typedLinker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0700
-     * @tc.name testGetBootRuntimeLinker007
-     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker to incompatible
-     *            string type. ArkTS type system prevents cross-type assignment at compile time
-     *            (spec/semantics.md assignability). Runtime assertion validates the correct
-     *            BootRuntimeLinker assignment works.
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0500
+     * @tc.name testGetBootRuntimeLinker005
+     * @tc.desc Verify getBootRuntimeLinker() does not throw any exception during normal call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetBootRuntimeLinker007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // Compile-time verification: BootRuntimeLinker not assignable to string.
-      // The correct-typed assignment is validated at runtime below.
-      let linker: BootRuntimeLinker = getBootRuntimeLinker();
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0800
-     * @tc.name testGetBootRuntimeLinker008
-     * @tc.desc Verify 100 consecutive calls to getBootRuntimeLinker all return valid instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetBootRuntimeLinker008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let count: int = 0;
-      while (count < 100) {
-        let linker: BootRuntimeLinker = getBootRuntimeLinker();
-        expect(linker instanceof BootRuntimeLinker).assertTrue();
-        count++;
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0900
-     * @tc.name testGetBootRuntimeLinker009
-     * @tc.desc Verify getBootRuntimeLinker does not throw exception during normal call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetBootRuntimeLinker009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetBootRuntimeLinker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let linker: BootRuntimeLinker = getBootRuntimeLinker();
+        expect(linker !== null).assertTrue();
         expect(linker instanceof BootRuntimeLinker).assertTrue();
       } catch (e) {
         expect().assertFail();
