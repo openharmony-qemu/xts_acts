@@ -26,15 +26,15 @@ export default function configureWriteTest() {
     hilog.info(domain, tag, 'describe start');
 
     /**
-     * @tc.name   HiAppEventSub32
-     * @tc.number DFX_DFT_HiAppEvent_Sub_3200
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_SubStatic_3200
+     * @tc.number SUB_DFX_DFT_HiAppEvent_SubStatic_3200
      * @tc.desc   HiAppEvent write interface test.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('HiAppEventSub32', Level.LEVEL3, ():void => {
-      hilog.info(domain, tag, 'testHiAppEventSub32 start')
+    it('SUB_DFX_DFT_HiAppEvent_SubStatic_3200', Level.LEVEL3, ():void => {
+      hilog.info(domain, tag, 'SUB_DFX_DFT_HiAppEvent_SubStatic_3200 start')
       try{
         hiAppEvent.configure({
           disable: true
@@ -49,7 +49,7 @@ export default function configureWriteTest() {
           } as Record<string, int|string|boolean|(int|string|boolean)[]>
         }, (err: BusinessError<void> | null) => {
           if (err) {
-            hilog.error(domain, tag, `HiAppEventSub32 > code: ${err.code}, message: ${err.message}`);
+            hilog.error(domain, tag, `SUB_DFX_DFT_HiAppEvent_SubStatic_3200 > code: ${err.code}, message: ${err.message}`);
             expect(err?.code == 11100001).assertTrue()
             return;
           }
@@ -62,9 +62,9 @@ export default function configureWriteTest() {
         }, 500)
 
       } catch (err) {
-        hilog.error(domain, tag, `HiAppEventSub32 delay > error code: ${err.code}, error msg: ${err.message}`)
+        hilog.error(domain, tag, `SUB_DFX_DFT_HiAppEvent_SubStatic_3200 delay > error code: ${err.code}, error msg: ${err.message}`)
         expect(false).assertTrue()
-        hilog.info(domain, tag, 'HiAppEventSub32 end')
+        hilog.info(domain, tag, 'SUB_DFX_DFT_HiAppEvent_SubStatic_3200 end')
       }
     })
 
