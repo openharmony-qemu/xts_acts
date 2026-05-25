@@ -54,6 +54,10 @@ export default function AccessibilityTest() {
       await CommonFunc.sleep(200);
     });
 
+    afterAll(() => {
+      console.info('AccessibilityTest beforeAll end');
+    });
+
     describe('accessibilityNextFocusId', () => {
       
       /**
