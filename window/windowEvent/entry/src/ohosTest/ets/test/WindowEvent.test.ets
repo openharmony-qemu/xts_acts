@@ -1781,6 +1781,84 @@ export default function windowEventTest() {
       }
     })
 
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_null_param
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_BOUNDARY_0300
+     * @tc.desc   验证三个参数传入null时返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_null_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_null_param';
+      console.log(caseName + 'begin');
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_null_param');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        await subWindow.setWindowMaskWithAlpha(null, null, null);
+        console.error(caseName + ' setWindowMaskWithAlpha should not succeed');
+        expect().assertFail();
+        await subWindow.destroyWindow();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code === 401) {
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testSetWindowMaskWithAlpha_undefined_param
+     * @tc.number SUB_WINDOW_SETEVENTMASKWITHALPHA_BOUNDARY_0400
+     * @tc.desc   验证三个参数传入undefined时返回401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowMaskWithAlpha_undefined_param', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = 'testSetWindowMaskWithAlpha_undefined_param';
+      console.log(caseName + 'begin');
+
+      let subWindow = await windowStage.createSubWindow('testSetWindowMaskWithAlpha_undefined_param');
+      console.info(caseName + ' createSubWindow success');
+      await subWindow.setUIContent('testability/pages/Index1');
+      console.info(caseName + ' setUIContent success');
+      await subWindow.showWindow();
+      console.info(caseName + ' showWindow success');
+      await sleep(300);
+
+      try {
+        await subWindow.setWindowMaskWithAlpha(undefined, undefined, undefined);
+        console.error(caseName + ' setWindowMaskWithAlpha should not succeed');
+        expect().assertFail();
+        await subWindow.destroyWindow();
+        done();
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(caseName + ' failed. Caused: err.code ' + err.code + ' ,err.message: ' + err.message);
+        await subWindow.destroyWindow();
+        if (err.code === 401) {
+          expect(err.code).assertEqual(401);
+        } else {
+          expect().assertFail();
+        }
+        done();
+      }
+    })
+
 
   })
 }
