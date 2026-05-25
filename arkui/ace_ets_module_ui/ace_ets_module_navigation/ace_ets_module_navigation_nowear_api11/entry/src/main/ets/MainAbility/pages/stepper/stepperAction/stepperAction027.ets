@@ -12,13 +12,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import window from '@ohos.window';
+import common from '@ohos.app.ability.common';
 
 @Entry
 @Component
 struct stepperAction027 {
   @State currentIndex: number = 0
+  private changeOrientation(isLandscape: boolean) {
+    let context = getContext(this) as common.UIAbilityContext;
+    window.getLastWindow(context).then((lastWindow) => {
+      lastWindow.setPreferredOrientation(isLandscape ? window.Orientation.LANDSCAPE : window.Orientation.PORTRAIT)
+    });
+  }
+
   build() {
     Column(){
+      Row() {
+        Button('竖屏')
+          .id('stepper_changeOrientation_false')
+          .onClick(() => {
+            this.changeOrientation(false)
+          })
+        Button('横屏')
+          .id('stepper_changeOrientation_true')
+          .id('')
+          .onClick(() => {
+            this.changeOrientation(true)
+          })
+      }.margin(5)
       Stepper({
         index: this.currentIndex
       }) {
@@ -39,6 +61,6 @@ struct stepperAction027 {
           .prevLabel('Previous2222222222222222222222222222222222222222222222222222')
       }
     }
-    .height('90%')
+    .height('70%')
   }
 }

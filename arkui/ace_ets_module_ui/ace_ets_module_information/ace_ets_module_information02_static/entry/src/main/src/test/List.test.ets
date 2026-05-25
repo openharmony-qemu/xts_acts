@@ -16,6 +16,7 @@
 
 import textTimerFontWeightTest from './TextTimerTest/TextTimerfontWeight.test';
 import TextTimerStartTimeTest from './TextTimerTest/TextTimerStartTime.test';
+import TextTimerConfigurationStartTimeTest from './TextTimerTest/TextTimerConfigurationStartTime.test';
 import textClockFormatTest from './TextClockTest/TextClockformatTest.test';
 import qRCodeResourceStrTest from './QRCodeTest/QRCodeResourceStrTest.test';
 import actsBadgeTest from './BadgeTest/BadgeStyle.test'
@@ -27,4 +28,5 @@ export default function testsuite() {
   actsBadgeTest();
   badgeResourceTest();
   TextTimerStartTimeTest();
+  TextTimerConfigurationStartTimeTest();
 }

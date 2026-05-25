@@ -28,7 +28,7 @@ import ChipCloseOptions from './chip/ChipCloseOptions.test'
 import ChipFontScale from './chip/ChipFontScale.test'
 import ChipFontSize from './chip/ChipFontSize.test'
 import ChipPadding from './chip/ChipPadding.test'
-
+import ChipBackgroundSystemMaterialTest from './chip/ChipBackgroundSystemMaterialTest.test'
 import startSpaceTest from './ChipGroupTest/startSpaceTest.test'
 import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
 import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
@@ -55,4 +55,5 @@ export default function testsuite() {
   ChipFontSize();
   ChipFontScale();
   ChipCloseOptions();
+  ChipBackgroundSystemMaterialTest();
 }

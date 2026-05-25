@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2023-2026 iSoftStone Information Technology (Group) Co.,Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,14 +35,14 @@ interface objectCss {
   message: string;
 }
 
-class StringFields {
+export class StringFields {
   str: string = '';
 }
 
 @Entry
 @Component
 struct webViewContGetUrlAndOthersError {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str:string = '';

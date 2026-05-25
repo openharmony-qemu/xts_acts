@@ -18,12 +18,12 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
 import common from '@ohos.app.ability.common';
 import { getPermission, driveFn, sleep } from '../../common'
 
-export default function MediaLibraryAvailabilityTest() {
+export default function mediaLibraryAvailabilityTest() {
 
   const context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let helper = photoAccessHelper.getPhotoAccessHelper(context);
 
-  describe('MediaLibraryAvailabilityTest', () => {
+  describe('mediaLibraryAvailabilityTest', () => {
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();

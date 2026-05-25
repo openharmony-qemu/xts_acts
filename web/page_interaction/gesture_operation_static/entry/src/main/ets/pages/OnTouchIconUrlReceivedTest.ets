@@ -50,7 +50,7 @@ import image from '@ohos.multimedia.image';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry

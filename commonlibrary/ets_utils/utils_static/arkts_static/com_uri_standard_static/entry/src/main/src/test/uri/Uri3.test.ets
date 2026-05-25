@@ -19,7 +19,7 @@ import {
 import uri from '@ohos.uri';
 import { BusinessError } from '@ohos.base';
 
-export default function uriPropertiesTest() {
+export default function uriPropertiesTest(): void {
   describe('uriPropertiesTest', (): void => {
 
     /**

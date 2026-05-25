@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles2BaseFunc.h"
-#include "../ActsKhrgles20001TestSuite.h"
+#include "../ActsGles2MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles20001TestSuite, TestCase_000673,
+static SHRINK_HWTEST_F(ActsGles2MainUncover0001TestSuite, TestCase_000673,
         "dEQP-GLES2.functional.polygon_o",
         "ffset.default_render_with_units");

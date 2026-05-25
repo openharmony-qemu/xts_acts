@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,PopInfo,HorizontalAlign,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,NavPathInfo,NavDestinationContext,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,NavigationOperation,PanGesture,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,GestureEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
+  FontWeight,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment,BarStyle,LaunchMode
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -35,13 +35,17 @@ interface Param {
   data1: string,
   data2: Data2
 }
+
+initModule('./GetStateByIndexPage')
+
 @Entry({routeName:'pushNameRouter'})
 @Component
-struct PushNameRouterPage {
+struct PushNameRouterPage1 {
    routePage:() => void = () => {
      console.log('+++++++++++++++++++++++++++1');
     const uiContext = this.getUIContext();
     if (uiContext && uiContext.getRouter()) {
+      initModule('./GetStateByIndexPage')
       console.log('+++++++++++++++++++++++++++2');
       uiContext.getRouter().pushNamedRoute({
         name: 'pushNameRouter',

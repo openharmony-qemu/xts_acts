@@ -220,7 +220,7 @@ static TEST_FUN g_gFunArray[] = {
     Signbit0900, Signbit1000, Signbit1100, Signbit1200, Signbit1300, Signbit1400, Signbit1500,
 };
 
-static int SignbitInnerTestWithArgs(int argc, char* argv[])
+static int SignbitInnerTestImpl(int argc, char* argv[])
 {
     int num = sizeof(g_gFunArray) / sizeof(TEST_FUN);
     for (int pos = 0; pos < num; ++pos) {
@@ -234,5 +234,5 @@ int SignbitInnerTest(void)
 {
     static char libcProg[] = "libc_test";
     char* libcArgv[] = { libcProg, nullptr };
-    return SignbitInnerTestWithArgs(1, libcArgv);
+    return SignbitInnerTestImpl(1, libcArgv);
 }

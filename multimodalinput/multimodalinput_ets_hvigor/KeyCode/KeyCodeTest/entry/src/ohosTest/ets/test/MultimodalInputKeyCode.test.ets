@@ -538,5 +538,30 @@ export default function MultimodalInputKeyCodeTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_KEYCODE_0100
+     * @tc.number SUB_MMI_Input_Api_KEYCODE_0100
+     * @tc.desc   Test keycode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_KEYCODE_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_KEYCODE_0100";
+      console.info(`${caseName} enter`);
+      try {
+        let KEYCODE_XKEY = 3232;
+        let KEYCODE_AOD_SINGLE_CLICK = 2740;
+        expect(KeyCode.KEYCODE_XKEY == KEYCODE_XKEY).assertTrue();
+        expect(KeyCode.KEYCODE_AOD_SINGLE_CLICK == KEYCODE_AOD_SINGLE_CLICK).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${caseName} catch fail`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} exit`);
+    });
   });
 }

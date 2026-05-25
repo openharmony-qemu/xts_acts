@@ -255,6 +255,20 @@ export default function unistd_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   write
+     * @tc.number SUB_THIRDPARTY_MUSL_WRITE_0100
+     * @tc.desc   libc-test write
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("write", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("write");
+      expect(result).assertEqual(0);
+      done();
+    });
     /**
      * @tc.name   dup3
      * @tc.type   FUNCTION
@@ -474,6 +488,20 @@ export default function unistd_group_test() {
      */
     it("nice", Level.LEVEL1, async (done: Function) => {
       const result = await testNapi.runTest("nice");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   access
+     * @tc.number SUB_THIRDPARTY_MUSL_ACCESS_0100
+     * @tc.desc   libc-test access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("access", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("access");
       expect(result).assertEqual(0);
       done();
     });

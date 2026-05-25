@@ -63,14 +63,14 @@ export default function EnableToolBarAdaptation() {
       let driver = Driver.create();
       await driver.delayMs(500);
 
-      await driver.assertComponentExist(ON.text('a'));
+      await driver.assertComponentExist(ON.text('a0'));
       await driver.delayMs(500);
       let btn1: Component = await driver.findComponent(ON.id('showTextId'));
       await btn1.click()
       console.info('[EnableToolBarAdaptation_0100] btn1 click');
       await driver.delayMs(500);
 
-      let text: Component | null = await driver.findComponent(ON.text('a'));
+      let text: Component | null = await driver.findComponent(ON.text('a0'));
       await driver.delayMs(500);
       expect(text).assertEqual(null);
       console.info('EnableToolBarAdaptation_0100 END');
@@ -95,6 +95,7 @@ export default function EnableToolBarAdaptation() {
       let btn1: Component = await driver.findComponent(ON.id('pushOneId'));
       await btn1.click()
       console.info('[EnableToolBarAdaptation_0200] btn1 click');
+      await driver.delayMs(1500);
 
       await driver.assertComponentExist(ON.text('a1'));
       await driver.delayMs(500);

@@ -27,9 +27,7 @@ struct Index2 {
    build() {
            Column() {
              Text(this.message)
-             Button('next page') {
-               Text('next page')
-             }
+             Button('next page')
            }
              .width('100%')
 

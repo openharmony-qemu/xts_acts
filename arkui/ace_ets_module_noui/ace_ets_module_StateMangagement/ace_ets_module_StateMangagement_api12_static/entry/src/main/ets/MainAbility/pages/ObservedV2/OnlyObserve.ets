@@ -37,6 +37,7 @@ import {
 
 @ObservedV2
 export class Son5{
+  @Trace num : number = 20;
   age :number =18
 }
 export class Father5 {

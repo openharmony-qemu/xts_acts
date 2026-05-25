@@ -37,7 +37,7 @@ import { http } from '@kit.NetworkKit';
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 const EVENT_ID_SET_SUITE_KEY = 177009;
 const driver = Driver.create();
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 

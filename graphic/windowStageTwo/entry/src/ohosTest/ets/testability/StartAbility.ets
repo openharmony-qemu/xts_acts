@@ -44,6 +44,7 @@ export default class StartAbility extends UIAbility {
       }
       hilog.info(domain, 'testTag', 'Succeeded in loading the content.');
       AppStorage.setOrCreate('windowStageStart',windowStage);
+      AppStorage.setOrCreate('contextStart',this.context);
       let startNum = (AppStorage.get('startNum') ? AppStorage.get('startNum') : 0) as number
       AppStorage.setOrCreate('startNum', startNum + 1)
     });

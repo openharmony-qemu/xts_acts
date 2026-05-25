@@ -37,6 +37,8 @@ import TextCommonTextComputing9 from './MeasureTest/TextCommonTextComputing9.tes
 import TextGetParagraphsTest from './MeasureTest/TextGetParagraphsTest.test';
 import MeasureTextTest from './MeasureTest/MeasureText.test';
 
+import EditDecorationThicknessScaleTest from './EditCommonTest/EditDecorationThicknessScale.test';
+
 import BindSelectionMenuTest from './BindSelectionMenuTest.test';
 import KeyboardAvoidModeTest from './KeyboardAvoidMode.test';
 import ResourceModifierTest from './ResourceModifier.test';
@@ -73,6 +75,8 @@ import TextAreaEllipsisModeTest from './EllipsisModeTest/TextAreaEllipsisModeTes
 import TextEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
 import TextInputEllipsisModeTest from './EllipsisModeTest/TextInputEllipsisModeTest.test';
 import Marquee from './ScrollTest/Marquee.test';
+import MarqueeNull from './ScrollTest/Marquee_null.test';
+import MarqueeUndefined from './ScrollTest/Marquee_undefined.test';
 
 export default function testsuite() {
   TextControllerTest();
@@ -101,6 +105,9 @@ export default function testsuite() {
   TextCommonTextComputing9() 
   TextGetParagraphsTest()
   MeasureTextTest()
+
+  EditDecorationThicknessScaleTest()
+  
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
@@ -133,4 +140,6 @@ export default function testsuite() {
   TextEllipsisModeTest();
   TextInputEllipsisModeTest();
   Marquee();
+  MarqueeNull();
+  MarqueeUndefined();
 }

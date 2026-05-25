@@ -2710,7 +2710,10 @@ export default function GraphicImagePixelMapAPI2601() {
         try {
           let pixelMap = await image.createPixelMap(color, opts);
           let alphaPixelMap: image.PixelMap = await pixelMap.extractAlphaPixelMap();
+          console.info(msgStr + ' pixelMap enum ', alphaPixelMap.isEditable, alphaPixelMap.isStrideAlignment);
           expect(alphaPixelMap !== undefined).assertTrue();
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
           await alphaPixelMap.release();
           await pixelMap.release();
           console.info(msgStr + 'extractAlphaPixelMap success');
@@ -2921,7 +2924,10 @@ export default function GraphicImagePixelMapAPI2601() {
         try {
           let pixelMap = await image.createPixelMap(color, opts);
           let alphaPixelMap: image.PixelMap = pixelMap.extractAlphaPixelMapSync();
+          console.info(msgStr + ' pixelMap enum ', alphaPixelMap.isEditable, alphaPixelMap.isStrideAlignment);
           expect(alphaPixelMap !== undefined).assertTrue();
+          expect(alphaPixelMap.isEditable).assertFalse();
+          expect(alphaPixelMap.isStrideAlignment).assertFalse();
           await alphaPixelMap.release();
           await pixelMap.release();
           console.info(msgStr + 'extractAlphaPixelMapSync success');

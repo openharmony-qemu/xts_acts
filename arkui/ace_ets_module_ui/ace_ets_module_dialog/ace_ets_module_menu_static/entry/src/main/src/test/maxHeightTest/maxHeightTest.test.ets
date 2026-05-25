@@ -86,6 +86,8 @@ export default function maxHeightTest(): void{
 
       expect(Math.round(rect1.bottom) > 0).assertTrue();
       await CommonFunc.sleep(1500);
+      await (button1?.click() as Promise<void>);
+      await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0100] END')
       done();
     });
@@ -105,7 +107,6 @@ export default function maxHeightTest(): void{
 
       let button2 = await driver.findComponent(ON.id('vp'));
       await (button2?.click() as Promise<void>);
-      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn2 = await driver.findComponent(ON.id('menu'));
@@ -118,6 +119,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect2.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button2?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0200] END')
       done();
@@ -138,7 +141,6 @@ export default function maxHeightTest(): void{
 
       let button3 = await driver.findComponent(ON.id('px'));
       await (button3?.click() as Promise<void>);
-      await (button3?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn3 = await driver.findComponent(ON.id('menu'));
@@ -151,6 +153,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect3.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button3?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0300] END')
       done();
@@ -171,7 +175,6 @@ export default function maxHeightTest(): void{
 
       let button4 = await driver.findComponent(ON.id('fp'));
       await (button4?.click() as Promise<void>);
-      await (button4?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn4 = await driver.findComponent(ON.id('menu'));
@@ -184,6 +187,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect4.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button4?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0400] END')
       done();
@@ -204,7 +209,6 @@ export default function maxHeightTest(): void{
 
       let button5 = await driver.findComponent(ON.id('lpx'));
       await (button5?.click() as Promise<void>);
-      await (button5?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn5 = await driver.findComponent(ON.id('menu'));
@@ -217,6 +221,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect5.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button5?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0500] END')
       done();
@@ -237,7 +243,6 @@ export default function maxHeightTest(): void{
 
       let button6 = await driver.findComponent(ON.id('0'));
       await (button6?.click() as Promise<void>);
-      await (button6?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn6 = await driver.findComponent(ON.id('menu'));
@@ -250,6 +255,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect6.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button6?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0600] END')
       done();
@@ -270,7 +277,6 @@ export default function maxHeightTest(): void{
 
       let button7 = await driver.findComponent(ON.id('-1'));
       await (button7?.click() as Promise<void>);
-      await (button7?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn7 = await driver.findComponent(ON.id('menu'));
@@ -283,6 +289,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect7.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button7?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0700] END')
       done();
@@ -303,7 +311,6 @@ export default function maxHeightTest(): void{
 
       let button8 = await driver.findComponent(ON.id('undefined'));
       await (button8?.click() as Promise<void>);
-      await (button8?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       const btn8 = await driver.findComponent(ON.id('menu'));
@@ -316,6 +323,8 @@ export default function maxHeightTest(): void{
       await CommonFunc.sleep(1500);
 
       expect(Math.round(rect8.bottom) > 0).assertTrue();
+      await CommonFunc.sleep(1500);
+      await (button8?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       console.info('[maxHeightTest_0800] END')
       done();

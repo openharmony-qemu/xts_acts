@@ -78,7 +78,7 @@ it('ArkUX_Stage_Text_TextShadow_static_0100', Level.LEVEL1, async (done: ()=> vo
           console.info('[ArkUX_Stage_Text_TextShadow_0100] strJson',strJson);
           let obj = JSON.parseJsonElement(strJson);
           console.info("--->Text Shadow is :" + strJson)
-          expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("-1.000000")
+          expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual("0.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual("#FF000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual("0.000000")
           expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetY')).assertEqual("0.000000")

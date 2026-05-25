@@ -16,6 +16,7 @@
 #ifndef SRC_FUNCTIONALEXT_SYMVER_H_H
 #define SRC_FUNCTIONALEXT_SYMVER_H_H
 
+int RelocSymverTest();
 int DlsymTest();
 int DlvsymTest();
 int DynlinkTest();

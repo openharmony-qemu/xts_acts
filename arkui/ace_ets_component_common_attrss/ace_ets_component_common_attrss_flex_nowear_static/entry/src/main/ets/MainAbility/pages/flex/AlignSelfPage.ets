@@ -115,7 +115,7 @@ import router from '@ohos.router'
 import { attrsManager, GrowValue } from '../../common/AttrsManager';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
-import Utils, { RectValue, DefaultAlign, RectValue, RouterParams } from '../../common/Utils';
+import Utils, { RectValue, DefaultAlign, RouterParams } from '../../common/Utils';
 
 @Entry
 @Component

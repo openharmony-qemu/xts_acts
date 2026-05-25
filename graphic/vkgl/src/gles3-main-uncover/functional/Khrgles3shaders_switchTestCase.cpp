@@ -16,41 +16,41 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000195,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000195,
         "dEQP-GLES3.functional.shaders.s",
         "witch.default_only_static_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000196,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000196,
         "dEQP-GLES3.functional.shaders.sw",
         "itch.default_only_static_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000197,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000197,
         "dEQP-GLES3.functional.shaders.sw",
         "itch.default_only_uniform_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000198,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000198,
         "dEQP-GLES3.functional.shaders.swi",
         "tch.default_only_uniform_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000199,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000199,
         "dEQP-GLES3.functional.shaders.swit",
         "ch.empty_case_default_static_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000200,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000200,
         "dEQP-GLES3.functional.shaders.switc",
         "h.empty_case_default_static_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000201,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000201,
         "dEQP-GLES3.functional.shaders.switc",
         "h.empty_case_default_uniform_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000202,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000202,
         "dEQP-GLES3.functional.shaders.switch",
         ".empty_case_default_uniform_fragment");

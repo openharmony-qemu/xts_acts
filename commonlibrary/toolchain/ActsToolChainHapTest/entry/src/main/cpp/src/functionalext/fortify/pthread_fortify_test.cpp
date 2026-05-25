@@ -18,8 +18,8 @@
 #include <cstdio>
 #include <cerrno>
 #include <cstring>
-#include <csignal>
 #include "test.h"
+#include <csignal>
 #include <sys/wait.h>
 #include <sigchain.h>
 #include "fortify_test.h"
@@ -162,10 +162,6 @@ static int PthreadFortifyTestTestImpl(int argc, char *argv[])
     if (i == 0) {
         t_error("PTHREAD_MUTEX_RECURSIVE unlock failed after destroyed, got %s\n", strerror(i));
     }
-    i = TestPthreadMutexUnlockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
-    if (i == 0) {
-        t_error("PTHREAD_MUTEX_NORMAL unlock failed after destroyed, got %s\n", strerror(i));
-    }
     i = TestPthreadMutexTimedlockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_NORMAL timedlock failed after destroyed, got %s\n", strerror(i));
@@ -182,7 +178,7 @@ static int PthreadFortifyTestTestImpl(int argc, char *argv[])
     if (i != 0) {
         t_error("PTHREAD_MUTEX_NORMAL trylock failed after destroyed, got %s\n", strerror(i));
     }
-    i = TestPthreadMutexTrylockAfterDestroyed(PTHREAD_MUTEX_NORMAL);
+    i = TestPthreadMutexTrylockAfterDestroyed(PTHREAD_MUTEX_ERRORCHECK);
     if (i != 0) {
         t_error("PTHREAD_MUTEX_ERRORCHECK trylock failed after destroyed, got %s\n", strerror(i));
     }

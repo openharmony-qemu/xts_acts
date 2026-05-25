@@ -254,7 +254,7 @@ export default function textMinFontSizeJsunit() {
     it('testtextCopyOptionText0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextCopyOptionText0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('copyOptionText');
+      let strJson = getInspectorByKey('text_copyOptionText');
       console.info("[testtextCopyOptionText0001] component copyOption strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');

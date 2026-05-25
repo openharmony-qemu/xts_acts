@@ -20,6 +20,7 @@
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avformat.h>
 #include <hilog/log.h>
+#include <napi/native_api.h>
 
 using namespace std;
 using namespace OHOS;
@@ -38,6 +39,12 @@ constexpr int SUCCESS_CODE = 0;
 constexpr int32_t DEFAULT_WIDTH = 1920;
 constexpr int32_t DEFAULT_HEIGHT = 1080;
 constexpr int32_t DEFAULT_FRAME_RATE = 30;
+constexpr int32_t ONE = 1;
+constexpr int32_t TWO = 2;
+constexpr int32_t THREE = 3;
+constexpr double RATION = 0.5;
+constexpr double RATION1 = 0.01;
+
 }
 
 const char* const OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30 =
@@ -127,7 +134,14 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     return SUCCESS_CODE;
 }
 
-int VideoDecodeSyncSs265Func0010Test()
+napi_value CreateIntInt32Result(napi_env env, int32_t value)
+{
+    napi_value result;
+    napi_create_int32(env, value, &result);
+    return result;
+}
+
+napi_value VideoDecodeSyncSs265Func0010Test(napi_env env, napi_callback_info info)
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
     if (g_capHevc != nullptr) {
@@ -139,24 +153,24 @@ int VideoDecodeSyncSs265Func0010Test()
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV12;
         vDecSample->enbleSyncMode = 1;
         if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-            return -1;
-        };
+            return CreateIntInt32Result(env, -1);
+        }
         if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         vDecSample->WaitForEOS();
         if (vDecSample->errCount != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoDecodeSyncSs265Func0020Test()
+napi_value VideoDecodeSyncSs265Func0020Test(napi_env env, napi_callback_info info)
 {
     HevcSwdecFuncNdkTest::SetUpTestCase();
     if (g_capHevc != nullptr) {
@@ -168,25 +182,25 @@ int VideoDecodeSyncSs265Func0020Test()
         vDecSample->defualtPixelFormat = AV_PIXEL_FORMAT_NV21;
         vDecSample->enbleSyncMode = 1;
         if (vDecSample->CreateVideoDecoder(g_codecNameHevc) != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (vDecSample->ConfigureVideoDecoder() != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         if (vDecSample->StartVideoDecoder() != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         vDecSample->WaitForEOS();
         if (vDecSample->errCount != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
 }
 
-int VideoSwdecH265BlankFrame0010Test()
-{
+ napi_value VideoSwdecH265BlankFrame0010Test(napi_env env, napi_callback_info info)
+ {
     HevcSwdecFuncNdkTest::SetUpTestCase();
     if (g_capHevc != nullptr) {
         auto vDecSample = make_shared<VDecAPI11Sample>();
@@ -197,13 +211,248 @@ int VideoSwdecH265BlankFrame0010Test()
         vDecSample->sfOutput = false;
         vDecSample->enbleBlankFrame = 1;
         if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
         vDecSample->WaitForEOS();
         if (vDecSample->errCount != AV_ERR_OK) {
-            return -1;
+            return CreateIntInt32Result(env, -1);
         }
-        return 0;
+        return CreateIntInt32Result(env, 0);
     }
-    return 0;
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0010Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_FULL;
+        vDecSample->defaultDecoderSpeed = ONE;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0020Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_FULL;
+        vDecSample->defaultDecoderSpeed = RATION;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0030Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_ADAPTIVE;
+        vDecSample->defaultDecoderSpeed = THREE;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0040Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_ADAPTIVE;
+        vDecSample->defaultDecoderSpeed = ONE;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0050Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->retentionRatioSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_FULL;
+        vDecSample->defaultDecoderSpeed = ONE;
+        vDecSample->defaultRetentionRadio = RATION;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0060Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_UNIFORM;
+        vDecSample->defaultDecoderSpeed = THREE;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0070Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->retentionModeSet = true;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultRetentionMode = OH_FRAME_RETENTION_MODE_UNIFORM;
+        vDecSample->defaultDecoderSpeed = ONE;
+        vDecSample->defaultRetentionRadio = RATION1;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0080Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultDecoderSpeed = TWO;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
+}
+
+napi_value VideoSwdecH265Speed0090Test(napi_env env, napi_callback_info info)
+{
+    HevcSwdecFuncNdkTest::SetUpTestCase();
+    if (g_capHevc != nullptr) {
+        auto vDecSample = make_shared<VDecAPI11Sample>();
+        vDecSample->inpDir = OHOS::Media::HevcSwdecFuncNdkTest::INP_DIR_1080_30;
+        vDecSample->defaultWidth = DEFAULT_WIDTH;
+        vDecSample->defaultHeight = DEFAULT_HEIGHT;
+        vDecSample->defaultFrameRate = DEFAULT_FRAME_RATE;
+        vDecSample->decoderSpeedSet = true;
+        vDecSample->retentionRatioSet = true;
+        vDecSample->enableHash = false;
+        vDecSample->defaultDecoderSpeed = TWO;
+        vDecSample->defaultRetentionRadio = RATION;
+        if (vDecSample->RunVideoDec(g_codecNameHevc) != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        vDecSample->WaitForEOS();
+        if (vDecSample->errCount != AV_ERR_OK) {
+            return CreateIntInt32Result(env, -1);
+        }
+        return CreateIntInt32Result(env, 0);
+    }
+    return CreateIntInt32Result(env, 0);
 }

@@ -545,7 +545,7 @@ export default function EAWorkerPostToMainTest(): void {
                     let waiter = new Promise<Any>((resolve)=>{
                         resolver = resolve;
                     })
-                    await worker.run<void>(async (): void => {
+                    await worker.run<void>(async (): Promise<void> => {
                         try {
                             await EAWorker.postToMain<int>((): int => {
                                 throw new Error("Test exception in postToMain");

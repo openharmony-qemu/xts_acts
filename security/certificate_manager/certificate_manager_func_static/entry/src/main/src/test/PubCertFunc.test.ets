@@ -493,5 +493,32 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
       hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1400 end');
       done();
     });
+
+    /**
+     * @tc.name   SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500
+     * @tc.number SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500
+     * @tc.desc   import USB key certificate with PURPOSE_ALL, return error 17500011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 start');
+      let keyUri: string = 'test';
+      let certData: Uint8Array = new Uint8Array([0x30, 0x82, 0x0b, 0xc1, 0x02, 0x01]);
+      let ukeyInfo: certManager.UkeyInfo = {
+        certPurpose: certManager.CertificatePurpose.PURPOSE_ALL,
+      };
+      try {
+        await certManager.importUkeyCertificate(keyUri, certData, ukeyInfo);
+        expect(null).assertFail();
+      } catch (err) {
+        let error: BusinessError = err as BusinessError;
+        hilog.error(domain, tag, '%{public}s', `SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 failed. Code: ${error.code}, message: ${error.message}`);
+        expect(error.code).assertEqual(17500011);
+      }
+      hilog.info(domain, tag, '%{public}s', 'SUB_Security_CertManager_ImportUkeyCertificate_Func_Static_1500 end');
+      done();
+    });
   })
 }

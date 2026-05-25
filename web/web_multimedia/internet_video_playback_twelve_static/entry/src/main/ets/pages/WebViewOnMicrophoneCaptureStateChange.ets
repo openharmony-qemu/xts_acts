@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -25,7 +25,7 @@ import { canIUse } from '@internal.full.global'
 import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
 import { Driver, ON } from '@ohos.UiTest';
 const driver = Driver.create();
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 
@@ -33,7 +33,7 @@ class StringFields {
 @Entry
 @Component
 struct webViewController {
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   uiContext: UIContext = this.getUIContext();
   @State isReceive: number = -1;
@@ -126,6 +126,35 @@ struct webViewController {
 
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+            case "emitPauseMicrophoneStatic001": {
+              try {
+                this.controller.pauseMicrophone();
+                Utils.emitEvent(true, 20260501);
+              } catch (error) {
+                error = error as BusinessError;
+                const e = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${e.code},  Message: ${e.message}`);
+                if (Number((error as BusinessError).code) === 17100001) {
+                  Utils.emitEvent(true, 20260501);
+                } else {
+                  Utils.emitEvent(false, 20260501);
+                }
+              }
+              break;
+            }
+
+            case "emitPauseMicrophoneErrorCodeStatic001": {
+              try {
+                let controllerNull: webView.WebviewController = new webView.WebviewController(undefined);
+                controllerNull.pauseMicrophone();
+                Utils.emitEvent(0, 20260502);
+              } catch (error) {
+                const err = error as BusinessError;
+                console.error(`pauseMicrophone ErrorCode: ${err.code}, Message: ${err.message}`);
+                Utils.emitEvent(err.code, 20260502);
               }
               break;
             }

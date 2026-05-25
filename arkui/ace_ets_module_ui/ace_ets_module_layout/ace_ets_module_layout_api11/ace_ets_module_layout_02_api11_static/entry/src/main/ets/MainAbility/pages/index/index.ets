@@ -40,7 +40,6 @@ import {
   State,
   AppStorage
 } from '@ohos.arkui.stateManagement'
-import { AppStorage } from '@ohos.arkui.stateManagement'
 import { Router,UIContext } from '@ohos.arkui.UIContext';
 
 @Entry

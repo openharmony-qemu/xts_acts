@@ -460,5 +460,33 @@ export default function ctype_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   iswprint
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWPRINT_0100
+     * @tc.desc   libc-test iswprint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("iswprint", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("iswprint");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   iswalpha
+     * @tc.number SUB_THIRDPARTY_MUSL_ISWALPHA_0100
+     * @tc.desc   libc-test iswalpha
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('iswalpha', Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest('iswalpha');
+      expect(result).assertEqual(0);
+      done();
+    })
   });
 }

@@ -27,6 +27,20 @@ import disableTextStyleAnimationTest from './textPickerDialogTest/disableTextSty
 import hoverModeAreaTest from './textPickerDialogTest/hoverModeArea.test'
 import offsetTest from './textPickerDialogTest/offset.test'
 import TextPickerDialogBackgroundColorTest from './textPickerDialogTest/TextPickerDialogBackgroundColor.test'
+import acceptButtonStyleTest from './textPickerDialogTest/acceptButtonStyle.test'
+import TextPickerDialogBGBlurStyleTest from './textPickerDialogTest/TextPickerDialogBGBlurStyle.test'
+import TextPickerDialogDefaultTextStyleTest from './textPickerDialogTest/TextPickerDialogDefaultTextStyle.test'
+import TextPickerDialogDisableTextStyleAnimationTest from './textPickerDialogTest/TextPickerDialogDisableTextStyleAnimation.test'
+import TextPickerDialogEnableHapticFeedbackTest from './textPickerDialogTest/TextPickerDialogEnableHapticFeedback.test'
+import TextPickerDialogSelectedTextStyleTest from './textPickerDialogTest/TextPickerDialogSelectedTextStyle.test'
+import TextPickerDialogShadowTest from './textPickerDialogTest/TextPickerDialogShadow.test'
+import textPickerDialogTextStyleTest from './textPickerDialogTest/TextPickerDialogTextStyle.test'
+import textPickerDialogDisappearTextStyleTest from './textPickerDialogTest/TextPickerDialogDisappearTextStyle.test'
+import TextPickerDialogBackgroundEffectTest from './textPickerDialogTest/TextPickerDialogBackgroundEffect.test'
+import cancelButtonStyleTest from './textPickerDialogTest/TextPickerDialogCancelButtonStyle.test'
+import enableHoverModeTest from './textPickerDialogTest/enableHoverMode.test'
+import defaultPickerItemHeightTest from './textPickerDialogTest/defaultPickerItemHeight.test'
+import selectedBackgroundStyleTest from './textPickerDialogTest/selectedBackgroundStyle.test'
 
 export default function testsuite() {
   alignmentTest();
@@ -39,4 +53,18 @@ export default function testsuite() {
   textPickerOnEnterSelectedArea();
   textPickerOnAccept();
   textPickerOnCancel();
+  TextPickerDialogBGBlurStyleTest();
+  TextPickerDialogDefaultTextStyleTest();
+  TextPickerDialogDisableTextStyleAnimationTest();
+  TextPickerDialogSelectedTextStyleTest();
+  TextPickerDialogShadowTest();
+  textPickerDialogDisappearTextStyleTest();
+  TextPickerDialogEnableHapticFeedbackTest();
+  TextPickerDialogBackgroundEffectTest();
+  selectedBackgroundStyleTest();
+  textPickerDialogTextStyleTest();
+  cancelButtonStyleTest();
+  enableHoverModeTest();
+  acceptButtonStyleTest();
+  defaultPickerItemHeightTest();
 }

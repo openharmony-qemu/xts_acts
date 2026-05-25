@@ -50,6 +50,7 @@ extern volatile int g_tStatus;
 
 int TPrintf(const char* s, ...);
 int TMemfill(void);
+char *t_pathrel(char *buf, size_t n, char *argv0, char *p);
 
 void TFdfill(void);
 

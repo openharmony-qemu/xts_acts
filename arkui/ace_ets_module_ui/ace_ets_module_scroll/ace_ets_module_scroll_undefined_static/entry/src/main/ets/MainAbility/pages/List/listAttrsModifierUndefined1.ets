@@ -22,15 +22,15 @@ import {
   AttributeModifier,
   ListAttribute
 } from '@ohos.arkui.component';
-import { State, Observed } from '@ohos.arkui.stateManagement';
+import { State, Observed, Track } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog'
 import { MyDataSource } from './MyDataSource'
 
 @Observed
 export class MyModifier implements AttributeModifier<ListAttribute> {
-  @State public isCachedCount: boolean = true;
-  @State public isCachedIsShown: boolean = true;
-  @State public isMaintainVisibleContentPosition: boolean = true;
+  @Track public isCachedCount: boolean = true;
+  @Track public isCachedIsShown: boolean = true;
+  @Track public isMaintainVisibleContentPosition: boolean = true;
 
   applyNormalAttribute(instance: ListAttribute): void {
     instance
@@ -48,8 +48,6 @@ struct ListEventPage1 {
   @State myModifier: MyModifier = new MyModifier();
 
   build() {
-    Text(this.message)
-      .id('List_text')
     Scroll() {
       Column() {
         List({ space: 12, initialIndex: 0 }) {

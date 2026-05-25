@@ -31,7 +31,7 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void> {
+  async onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 

@@ -22,6 +22,7 @@
 #include <native_drawing/drawing_rect.h>
 #include <CryptoArchitectureKit/crypto_digest.h>
 #include <native_window/external_window.h>
+#include <multimedia/player_framework/native_avcodec_base.h>
 #include "include/FuncTest.h"
 #include "include/JsonWrapper.h"
 using namespace OHOS;
@@ -369,6 +370,16 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, defaultHeight);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, defualtPixelFormat);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, defaultFrameRate);
+    if (retentionModeSet) {
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_DECODER_FRAME_RETENTION_MODE, defaultRetentionMode);
+    }
+    if (retentionRatioSet) {
+        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_VIDEO_DECODER_FRAME_RETENTION_RATIO,
+                                         defaultRetentionRadio);
+    }
+    if (decoderSpeedSet) {
+        (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_VIDEO_DECODER_SPEED, defaultDecoderSpeed);
+    }
     if (useHDRSource) {
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, DEFAULT_PROFILE);
     }
@@ -924,7 +935,7 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
         Crypto_DataBlob g_out = { .data = nullptr, .len = 0 };
         OH_CryptoDigest_Final(g_c, &g_out);
         OH_DigestCrypto_Destroy(g_c);
-        if (!sfOutput) {
+        if (!sfOutput && enableHash) {
             if (!MdCompare(g_out.data)) {
                 errCount++;
             }

@@ -40,7 +40,6 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderImageOption, EffectComponentAttribute,
   FormComponentAttribute, ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, AlignRuleOption } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {

@@ -21,23 +21,22 @@
 #define SUCCESS_CODE 0
 #define EXPECTED_HANDLER_COUNT 1
 #define INVALID_SIGNAL 99999
-
 static int g_handlerCount = 0;
 const int SIGNAL = SIGALRM;
 
-static void Handler(int sig)
+static void handler(int sig)
 {
     g_handlerCount++;
 }
 
 int Prepare(sigset_t *set)
 {
-    g_handlerCount = 0;
+    g_handlerCount = SUCCESS_CODE;
 
-    struct sigaction act = {.sa_flags = 0, .sa_handler = Handler};
-    struct sigaction oldAct = {};
+    struct sigaction act = {.sa_flags = SUCCESS_CODE, .sa_handler = handler};
+    struct sigaction oldAct = {SUCCESS_CODE};
     int result = sigaction(SIGNAL, &act, &oldAct);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
@@ -46,26 +45,26 @@ int Prepare(sigset_t *set)
     }
 
     result = raise(SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
-    if (g_handlerCount != EXPECTED_HANDLER_COUNT) {
+    if (g_handlerCount != 1) {
         return -1;
     }
 
     result = sigemptyset(set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
     result = sigaddset(set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, set);
+    if (result != SUCCESS_CODE) {
         return result;
     }
 
@@ -81,28 +80,28 @@ void Sigset0100(void)
 {
     sigset_t set;
     int result = Prepare(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
-    sigset(SIGNAL, Handler);
-    if (errno != 0) {
+    errno = SUCCESS_CODE;
+    sigset(SIGNAL, handler);
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -116,28 +115,28 @@ void Sigset0200(void)
 {
     sigset_t set;
     int result = Prepare(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_IGN);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -151,28 +150,28 @@ void Sigset0300(void)
 {
     sigset_t set;
     int result = Prepare(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_DFL);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -186,28 +185,28 @@ void Sigset0400(void)
 {
     sigset_t set;
     int result = Prepare(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigemptyset(&set);
-    if (result != 0) {
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
-    errno = 0;
+    errno = SUCCESS_CODE;
     sigset(SIGNAL, SIG_HOLD);
-    if (errno != 0) {
+    if (errno != SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 
-    result = sigprocmask(SIG_BLOCK, nullptr, &set);
-    if (result != 0) {
+    result = sigprocmask(SIG_BLOCK, NULL, &set);
+    if (result != SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 
     result = sigismember(&set, SIGNAL);
-    if (result == 0) {
+    if (result == SUCCESS_CODE) {
         t_error("%s failed: result = %d\n", __func__, result);
     }
 }
@@ -219,16 +218,16 @@ void Sigset0400(void)
  */
 void Sigset0500(void)
 {
-    errno = 0;
-    int sig = INVALID_SIGNAL;
+    errno = SUCCESS_CODE;
+    int signal = INVALID_SIGNAL;
 
-    sigset(SIGNAL, SIG_DFL);
-    if (errno == 0) {
+    sigset(signal, SIG_DFL);
+    if (errno == SUCCESS_CODE) {
         t_error("%s failed: errno = %d\n", __func__, errno);
     }
 }
 
-static int SigsetTestImpl(int argc, char *argv[])
+static int SigsetTest_impl(int argc, char *argv[])
 {
     Sigset0100();
     Sigset0200();
@@ -236,12 +235,12 @@ static int SigsetTestImpl(int argc, char *argv[])
     Sigset0400();
     Sigset0500();
 
-    return T_STATUS;
+    return g_tStatus;
 }
 
 int SigsetTest(void)
 {
     static char libcProg[] = "libc_test";
-    char *libcArgv[] = { libcProg, nullptr };
-    return SigsetTestImpl(1, libcArgv);
+    char *libcArgv[] = { libcProg, NULL };
+    return SigsetTest_impl(1, libcArgv);
 }

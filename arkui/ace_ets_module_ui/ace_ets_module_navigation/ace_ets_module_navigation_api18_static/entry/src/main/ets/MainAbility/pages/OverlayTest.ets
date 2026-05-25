@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,Search,Axis,NavPathInfo,
+  Entry,Component,$r,Scroll,Builder,List,Search,NavPathInfo,
   Column,Navigation,Stack,Text,Color,Flex,ItemAlign,Button,ClickEvent,
-  Axis,Margin,ForEach,NavPathStack,wrapBuilder} from '@ohos.arkui.component';
+  Margin,ForEach,NavPathStack,wrapBuilder} from '@ohos.arkui.component';
 import {
   State,
   Link,

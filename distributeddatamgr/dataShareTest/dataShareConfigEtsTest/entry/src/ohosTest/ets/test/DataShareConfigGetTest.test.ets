@@ -488,6 +488,7 @@ export default function dataShareConfigGetTest() {
         expect().assertFail();
       }
     });
+    
     /**
      * @tc.name   dataShareConfigGetTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_0520
@@ -615,7 +616,6 @@ export default function dataShareConfigGetTest() {
         expect().assertFail();
       }
     });
-
 
     /**
      * @tc.name   dataShareConfigGetTest019

@@ -24,7 +24,7 @@ class NoInterfaceClass {}
 
 
 
-export default function type_07Test() {
+export default function type_07Test(): void {
   describe('type_07Test', (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

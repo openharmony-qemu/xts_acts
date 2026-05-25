@@ -42,7 +42,7 @@ export class Link0100Class {
 
 @Component
 struct ChildLink0100 {
-  @Link value: Link0100Class = new Link0100Class()
+  @Link value: Link0100Class
 
   build() {
     Text(String(this.value.age)).id('tvLink0100Child')

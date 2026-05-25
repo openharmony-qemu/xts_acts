@@ -81,7 +81,7 @@ struct promptExample {
   build() {
     Column() {
       Button('showActionMenu')
-        .key('button1')
+        .key('ohosPrompt24_button1')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -105,7 +105,7 @@ struct promptExample {
             })
         })
       Button('showDialog')
-        .key('button2')
+        .key('ohosPrompt24_button2')
         .backgroundColor('#FF0B8FE2')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -183,7 +183,7 @@ struct promptExample {
             })
         })
       Button('showDialog2')
-        .key('button5')
+        .key('ohosPrompt24_button5_01')
         .backgroundColor('#ffe20b56')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -209,7 +209,7 @@ struct promptExample {
             });
         })
       Button('showDialog2')
-        .key('button5')
+        .key('ohosPrompt24_button5_02')
         .backgroundColor('#ffe20b56')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -243,7 +243,7 @@ struct promptExample {
           ;
         })
       Button('showDialog2')
-        .key('button5')
+        .key('ohosPrompt24_button5_03')
         .backgroundColor('#ffe20b56')
         .fontSize(20)
         .margin({ top: 20 } as Margin)
@@ -278,7 +278,7 @@ struct promptExample {
         })
 
       Button('showDialog2')
-        .key('button5')
+        .key('ohosPrompt24_button5_04')
         .backgroundColor('#ffe20b56')
         .fontSize(20)
         .margin({ top: 20 } as Margin)

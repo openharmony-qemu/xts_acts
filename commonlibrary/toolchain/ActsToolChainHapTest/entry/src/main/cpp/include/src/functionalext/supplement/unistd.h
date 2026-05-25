@@ -39,6 +39,7 @@ int SetsidTest();
 int SetuidTest();
 int SleepTest();
 int UsleepTest();
+int WriteTest();
 int WritevTest();
 
 int Dup3TestCompat();

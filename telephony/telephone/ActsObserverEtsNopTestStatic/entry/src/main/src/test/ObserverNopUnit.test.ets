@@ -40,36 +40,6 @@ export default function ObserverNopTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.name   testTelephonyObserverNetworkStateChangeOnNoP0100
-     * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0100
-     * @tc.desc   Using the observer on ('networkStateChange',options,callback) method without permission
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it("testTelephonyObserverNetworkStateChangeOnNoP0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let caseName: string = 'testTelephonyObserverNetworkStateChangeOnNoP0100';
-      hilog.info(domain, tag, '%{public}s', caseName+ ' start');
-      try {
-        let options: observer.ObserverOptions = {
-          slotId: 0
-        }
-        observer.on('networkStateChange', options, (data: observer.NetworkState) => {
-          hilog.info(domain, tag, '%{public}s', caseName +': on observer, data: ->'+JSON.stringify(data));
-          ExpectFail();
-          hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-          done();
-        });
-      } catch (error) {
-        error = error as BusinessError;
-        hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
-        ExpectTrue(error.code == 201 || error.code == 401);
-        hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
-        done();
-      }
-    })
-
-    /**
      * @tc.name   testTelephonyObserverNetworkStateChangeOnNoP0200
      * @tc.number SUB_Telephony_Observer_NetworkStateChangeOn_NoP_0200
      * @tc.desc   Using the observer on ('networkStateChange',callback) method without permission
@@ -81,14 +51,14 @@ export default function ObserverNopTest() {
       let caseName: string = 'testTelephonyObserverNetworkStateChangeOnNoP0200';
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
-        observer.on('networkStateChange', (data: observer.NetworkState) => {
+        observer.onNetworkStateChange((data: observer.NetworkState) => {
           hilog.info(domain, tag, '%{public}s', caseName +': on observer, data: ->'+JSON.stringify(data));
           ExpectFail();
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         });
      } catch (error) {
-        error = error as BusinessError;
+       
         hilog.info(domain, tag, '%{public}s', caseName +'  catch error is '+JSON.stringify(error));
         ExpectTrue(error.code == 201);
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');

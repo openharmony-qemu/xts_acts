@@ -22,6 +22,9 @@ interface TestA {
 }
 
 class MyArray extends Array<number> {
+    public static of<T>(...values: T[]): Array<T> {
+      return Array.of(...values);
+    }
 }
 
 export default function builtinsArrayOfTest() {

@@ -39,6 +39,7 @@ const LINEAR_P3 = 23;
 const LINEAR_SRGB = 24;
 const LINEAR_BT709 = 24;
 const LINEAR_BT2020 = 25;
+const ADOBE_RGB = 1;
 export default function ColorSpaceNameTest() {
   describe('ColorSpaceNameTest', () => {
     /**
@@ -653,6 +654,29 @@ export default function ColorSpaceNameTest() {
           done();
         } catch (err) {
           console.error("====> SUB_OH_CreateColorSpaceFromNameCUSTOM_2800 catch err: " + err);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   SUB_GRAPHIC_GRAPHIC_2D_ColorSpace_OHCreateColorSpaceFromNameADOBERGB_2900
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_ColorSpace_OHCreateColorSpaceFromNameADOBERGB_2900
+     * @tc.desc   Test OHCreateColorSpaceFromNameADOBERGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_GRAPHIC_GRAPHIC_2D_ColorSpace_OHCreateColorSpaceFromNameADOBERGB_2900',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        try {
+          console.info("====> SUB_OH_CreateColorSpaceFromNameADOBERGB_2900 start====");
+          let result: number = libGraphics2DApi20.OHCreateColorSpaceFromNameADOBERGB();
+          console.info("====> SUB_OH_CreateColorSpaceFromNameADOBERGB_2900 result====", result);
+          expect(result).assertEqual(ADOBE_RGB);
+          done();
+        } catch (err) {
+          console.error("====> SUB_OH_CreateColorSpaceFromNameADOBERGB_2900 catch err: " + err);
           done();
         }
       })

@@ -18,12 +18,12 @@ import { describe, it, expect, beforeAll, Level } from '@ohos/hypium'
 import common from '@ohos.app.ability.common';
 import { getPermission, driveFn, sleep } from '../../common'
 
-export default function MediaLibraryAvailabilityNoPermissionTest() {
+export default function mediaLibraryAvailabilityNoPermissionTest() {
 
   const context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
   let helper = photoAccessHelper.getPhotoAccessHelper(context);
 
-  describe('MediaLibraryAvailabilityNoPermissionTest', () => {
+  describe('mediaLibraryAvailabilityNoPermissionTest', () => {
     /**
      * @tc.name   SUB_MULTIMEDIA_MEDIALIBRARY_PHOTOACCESSHELPER_MEDIALIBRARYAVAILABILITY_NO_PERMISSION_TEST_0100
      * @tc.number SUB_MULTIMEDIA_MEDIALIBRARY_PHOTOACCESSHELPER_MEDIALIBRARYAVAILABILITY_NO_PERMISSION_TEST_0100

@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30003TestSuite.h"
+#include "../ActsGles3KhrMainUncover0003TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30003TestSuite, TestCase_002502,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0003TestSuite, TestCase_002502,
         "KHR-GLES3.cull_distance.functional_test_i",
         "tem_7_primitive_mode_points_max_culldist_3");

@@ -97,7 +97,7 @@ static int FinitefTestImpl(int argc, char* argv[])
 
 int FinitefTest(void)
 {
-    static char libcProgStub[] = "libc_test";
-    char* libcArgvStub[] = { libcProgStub, nullptr };
-    return FinitefTestImpl(1, libcArgvStub);
+    static char libcProg[] = "libc_test";
+    char* libcArgv[] = { libcProg, nullptr };
+    return FinitefTestImpl(1, libcArgv);
 }

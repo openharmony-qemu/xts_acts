@@ -22,7 +22,7 @@ import { State } from "@ohos.arkui.stateManagement";
 import { Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { CopyOptions,WebMediaOptions,Entry, Component, Column, Row, Button,Text,ClickEvent, Web,$rawfile } from "@ohos.arkui.component";
-class StringFields {
+export class StringFields {
   public str: string = '';
 }
 @Entry
@@ -31,7 +31,7 @@ struct webViewWebCursiveFont {
   @State str: string = ""
   controller: webView.WebviewController = new webView.WebviewController(undefined);
   @State family: string | undefined= "cursive";
-  stringObj: StringFields  = new StringFields ();
+  stringObj: StringFields  = new StringFields();
 
   aboutToAppear(): void {
     console.info("Entry aboutToAppear");

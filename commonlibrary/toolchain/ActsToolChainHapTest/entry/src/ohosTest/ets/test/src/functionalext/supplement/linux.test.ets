@@ -223,6 +223,35 @@ export default function linux_group_test() {
       expect(result).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   copy_file_range
+     * @tc.number SUB_THIRDPARTY_MUSL_COPY_FILE_RANGE_0100
+     * @tc.desc   libc-test copy_file_range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("copy_file_range", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("copy_file_range");
+      expect(result).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   sendfile
+     * @tc.number SUB_THIRDPARTY_MUSL_SENDFILE_0100
+     * @tc.desc   libc-test sendfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("sendfile", Level.LEVEL1, async (done: Function) => {
+      const result = await testNapi.runTest("sendfile");
+      expect(result).assertEqual(0);
+      done();
+    });
+
     /**
      * @tc.name   name_to_handle_at
      * @tc.number SUB_THIRDPARTY_MUSL_NAME_TO_HANDLE_AT_0100

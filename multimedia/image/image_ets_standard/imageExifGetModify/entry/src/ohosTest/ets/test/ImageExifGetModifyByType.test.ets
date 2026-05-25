@@ -70,6 +70,7 @@ interface EnumValuePair<T> {
 let cacheDir: string | undefined;
 let isSupportHEIFDecode: boolean;
 let isSupportHdr: Boolean;
+let isSupportedTiff: boolean = true;
 const READ_FAILED = 7700202;
 const UNSUPPORTED_IMAGE_FORMATS = 7700102;
 const PROPERTY_NOT_EXIST = 7700204;
@@ -103,6 +104,9 @@ export default function imageExifGetModifyByTypeTest() {
       isSupportHdr =
         !display.getDefaultDisplaySync().hdrFormats.includes(hdrCapability.HDRFormat.NONE) &&
         display.getDefaultDisplaySync().hdrFormats.length != 0;
+      let formats = await image.getImageSourceSupportedFormats();
+      isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
     })
 
     beforeEach(() => {
@@ -880,6 +884,14 @@ export default function imageExifGetModifyByTypeTest() {
       return imageValue;
     }
 
+    let sleep = async (delay: number): Promise<void> => {
+      return new Promise((resolve, _) => {
+        setTimeout(async () => {
+          resolve();
+        }, delay);
+      });
+    };
+
     /**
      * @tc.number      SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100
      * @tc.name        SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0100
@@ -973,6 +985,7 @@ export default function imageExifGetModifyByTypeTest() {
      * @tc.level       Level 0
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0500", Level.LEVEL0, async (done:() => void)=>{
+      await sleep(20);
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_EXIFMETADATA_PROMISE_0500";
       let result = await verifyMetadataProperties2(testTag, "test_exif_readWrite_jpg_v2.jpg", "fd", "exifMetadata", readAndWriteExifMetadata, exifReadWriteValidationRules);
       console.info(`${testTag} verifyMetadataProperties2 result is: ${result}`);
@@ -5227,6 +5240,11 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATA_TIFF_METADATA_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       try {
         let keys: image.TiffPropertyKey[] = Array.from(tiffMetadataMap.keys());
         console.info(`${testTag} TIFF metadata keys to read: ${keys}`);
@@ -5423,6 +5441,11 @@ export default function imageExifGetModifyByTypeTest() {
      */
     it("SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100", Level.LEVEL0, async (done:() => void)=>{
       const testTag: string = "SUB_MULTIMEDIA_IMAGE_READIMAGEMETADATABYTYPE_TIFF_METADATA_0100";
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       let result: boolean = true;
       let keys: image.TiffPropertyKey[] = Array.from(tiffMetadataMap.keys());
       const imageSourceApi = await getImageSource("tiff_xmp.tiff", "fd");
