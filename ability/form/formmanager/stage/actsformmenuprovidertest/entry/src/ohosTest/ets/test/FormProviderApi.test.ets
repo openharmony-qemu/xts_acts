@@ -147,6 +147,8 @@ export default function formProviderTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if (error.code === ERROR_CODE3) {
           expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error.code === ERROR_CODE8) {
+          expect(error.code).assertEqual(ERROR_CODE8);
         } else {
           hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
           `${TAG} formProvider getPublishedFormInfoById error: ${JSON.stringify(error)}`);
@@ -313,6 +315,8 @@ export default function formProviderTest() {
           expect(error.code).assertEqual(ERROR_CODE2);
         } else if (error.code === ERROR_CODE3) {
           expect(error.code).assertEqual(ERROR_CODE3);
+        } else if (error.code === ERROR_CODE8) {
+          expect(error.code).assertEqual(ERROR_CODE8);
         } else {
           hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
           `${TAG} formProvider getPublishedRunningFormInfoById error: ${JSON.stringify(error)}`);
