@@ -299,12 +299,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls006 = Class.from<MyClass006>();
       let method = cls006.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke(['string instead of int']);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.invoke(['string instead of int']);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -319,12 +315,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls007 = Class.from<MyClass007>();
       let method = cls007.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke([1]);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.invoke([1]);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -339,12 +331,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls008 = Class.from<MyClass008>();
       let method = cls008.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke([1, 2]);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.invoke([1, 2]);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -581,12 +569,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls020 = Class.from<MyClass020>();
       let method = cls020.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke(['string']);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.invoke(['string']);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -601,12 +585,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls021 = Class.from<MyClass021>();
       let method = cls021.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke([1]);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.invoke([1]);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -621,12 +601,8 @@ export default function StaticMethodInvokeTest(): void {
       let cls022 = Class.from<MyClass022>();
       let method = cls022.getStaticMethod('throwError');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke();
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('Error');
-      }
+      let fn = () => method!.invoke();
+      expect(fn).assertThrowError('Error');
     });
 
     /**
@@ -691,12 +667,13 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls026.getStaticMethod('asyncError');
       expect(method != undefined).assertTrue();
       let promise: Promise<string> = method!.invoke() as Promise<string>;
+      let hasError: boolean = false;
       try {
         await promise;
-        expect().assertFail();
       } catch (error) {
-        expect(error.name).assertEqual('Error');
+        hasError = (error.name === 'Error');
       }
+      expect(hasError).assertTrue();
     });
 
     /**
@@ -816,12 +793,8 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass033>();
       // arkts-sta-reflect.md:880 — Error is thrown when signature is omitted and multiple overloads exist
-      try {
-        cls.getStaticMethod('test');
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('Error');
-      }
+      let fn = () => cls.getStaticMethod('test');
+      expect(fn).assertThrowError('Error');
       // With explicit signature, it should work
       let method = cls.getStaticMethod('test', []);
       expect(method != undefined).assertTrue();

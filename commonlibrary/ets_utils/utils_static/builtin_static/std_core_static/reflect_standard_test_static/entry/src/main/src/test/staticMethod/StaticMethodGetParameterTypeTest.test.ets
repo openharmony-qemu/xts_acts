@@ -212,12 +212,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        let paramType = method!.getParameterType(-1);
-        expect(paramType === undefined).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.getParameterType(-1);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -232,12 +228,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        let paramType = method!.getParameterType(10);
-        expect(paramType === undefined).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.getParameterType(10);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -252,12 +244,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        let paramType = method!.getParameterType(2147483647);
-        expect(paramType === undefined).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.getParameterType(2147483647);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -308,12 +296,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('noParam');
       expect(method != undefined).assertTrue();
-      try {
-        method!.getParameterType(0);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.getParameterType(0);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
@@ -328,12 +312,8 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.getParameterType(100);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      let fn = () => method!.getParameterType(100);
+      expect(fn).assertThrowError('TypeError');
     });
 
     /**
