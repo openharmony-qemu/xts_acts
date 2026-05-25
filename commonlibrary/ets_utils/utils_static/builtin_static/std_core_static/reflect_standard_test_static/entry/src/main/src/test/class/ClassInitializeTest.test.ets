@@ -1228,7 +1228,8 @@ export default function runClassInitializeTest(): void {
         looseReflect(cls as Object).initialize("invalid" as string);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -1320,7 +1321,7 @@ export default function runClassInitializeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_0900
      * @tc.name testClassInitialize009
-     * @tc.desc Verify ClassInitialize case 009: null Class reference call initialize throws
+     * @tc.desc Verify ClassInitialize case 009: null Class reference call initialize throws NullPointerError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1331,14 +1332,15 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('NullPointerError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_INITIALIZE_1000
      * @tc.name testClassInitialize010
-     * @tc.desc Verify ClassInitialize case 010: undefined Class reference call initialize throws
+     * @tc.desc Verify ClassInitialize case 010: undefined Class reference call initialize throws NullPointerError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1349,7 +1351,8 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('NullPointerError');
       }
     });
 
@@ -1381,7 +1384,9 @@ export default function runClassInitializeTest(): void {
         let _ = InitCycleA012.marker;
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
+        expect((error as Error).message.indexOf('Circular static initialization') >= 0).assertEqual(true);
       }
     });
 
@@ -1398,7 +1403,8 @@ export default function runClassInitializeTest(): void {
       try {
         cls.initialize();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
         return;
       }
       expect(MyClass013.largeArray.length).assertLarger(0);

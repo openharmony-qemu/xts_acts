@@ -148,7 +148,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField();
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -166,7 +167,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField('name', 'extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -263,7 +265,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(null as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -281,7 +284,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(undefined as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -299,7 +303,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField(123 as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -505,7 +510,8 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField(true as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 

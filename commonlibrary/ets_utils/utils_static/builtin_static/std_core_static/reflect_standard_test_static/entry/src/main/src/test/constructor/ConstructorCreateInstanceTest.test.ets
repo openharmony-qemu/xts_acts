@@ -328,14 +328,15 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance(["string instead of int"]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0700
      * @tc.name testConstructorCreateInstance007
-     * @tc.desc Verify ConstructorCreateInstance case 007: error parameters
+     * @tc.desc Verify ConstructorCreateInstance case 007: wrong parameter count throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -346,14 +347,15 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0800
      * @tc.name testConstructorCreateInstance008
-     * @tc.desc Verify ConstructorCreateInstance case 008: parameters
+     * @tc.desc Verify ConstructorCreateInstance case 008: too many parameters throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -364,7 +366,8 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1, 2]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -525,14 +528,15 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance(["string"]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2000
      * @tc.name testConstructorCreateInstance020
-     * @tc.desc Verify ConstructorCreateInstance case 020: parameters not throw TypeError
+     * @tc.desc Verify ConstructorCreateInstance case 020: wrong parameter count throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -543,7 +547,8 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -561,7 +566,8 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
       }
     });
 

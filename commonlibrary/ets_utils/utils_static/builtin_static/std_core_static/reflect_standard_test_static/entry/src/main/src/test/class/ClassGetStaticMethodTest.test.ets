@@ -573,7 +573,8 @@ export default function ClassGetStaticMethodTest(): void {
         looseReflect(cls as Object).getStaticMethod('test', [Class.from<string>()] as Object, Class.from<number>() as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -705,7 +706,8 @@ export default function ClassGetStaticMethodTest(): void {
         looseReflect(cls as Object).getStaticMethod(123 as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
       expect(cls.getStaticMethod('test') !== null).assertTrue();
     });
@@ -847,7 +849,8 @@ export default function ClassGetStaticMethodTest(): void {
         let method = cls.getStaticMethod('test', null as FixedArray<Class>);
         expect(method).assertNull();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -896,7 +899,8 @@ export default function ClassGetStaticMethodTest(): void {
         let method = cls.getStaticMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
       }
     });
 
@@ -1221,8 +1225,8 @@ export default function ClassGetStaticMethodTest(): void {
         method!.invoke([123]);
         expect().assertFail();
       } catch (error) {
-        let isTe: boolean = error instanceof TypeError;
-        expect(isTe).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -1240,9 +1244,9 @@ export default function ClassGetStaticMethodTest(): void {
         let method = cls.getStaticMethod('test');
         expect().assertFail();
       } catch (error) {
-        let isErr: boolean = error instanceof Error;
-        expect(isErr).assertTrue();
-        expect(error.message).assertContain('signature');
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
+        expect((error as Error).message.indexOf('signature') >= 0).assertEqual(true);
       }
     });
 

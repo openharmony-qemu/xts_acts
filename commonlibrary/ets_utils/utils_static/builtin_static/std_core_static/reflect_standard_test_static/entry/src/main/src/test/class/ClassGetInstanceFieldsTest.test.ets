@@ -237,7 +237,8 @@ export default function ClassGetInstanceFieldsTest(): void {
         let fields = looseReflect(cls as Object).getInstanceFields('invalid');
         expect().assertFail();
       } catch (e) {
-        expect(e !== null).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -391,8 +392,8 @@ export default function ClassGetInstanceFieldsTest(): void {
         let fields = looseReflect(cls as Object).getInstanceFields('extra');
         expect().assertFail();
       } catch (e) {
-        let isErr: boolean = e instanceof Error;
-        expect(isErr).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 

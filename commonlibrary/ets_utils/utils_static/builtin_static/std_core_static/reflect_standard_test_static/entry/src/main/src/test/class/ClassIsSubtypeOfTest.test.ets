@@ -447,8 +447,8 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(null as Class);
         expect(result).assertFalse();
       } catch (error) {
-        console.log('error.name==', error.name);
-        expect(error.name).assertEqual('ClassCastError');
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -466,8 +466,8 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(undefined as Class);
         expect(result).assertFalse();
       } catch (error) {
-        console.log('error.name==', error.name);
-        expect(error.name).assertEqual('ClassCastError');
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 

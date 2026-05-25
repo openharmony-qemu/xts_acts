@@ -1249,7 +1249,8 @@ export default function ClassGetConstructorsTest(): void {
         constructors[0].getParameterType(10);
         expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -1268,7 +1269,8 @@ export default function ClassGetConstructorsTest(): void {
         constructors[0].getParameterType(-1);
         expect().assertFail();
       } catch (e) {
-        expect(true).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
     });
 

@@ -159,7 +159,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorMyClass001().getParameterType(-1);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -176,7 +177,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorMyClass001().getParameterType(10);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -193,7 +195,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorMyClass001().getParameterType(2147483647);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -210,7 +213,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorMyClass001().getParameterType(null as int);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -227,7 +231,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         looseConstructor(ctorMyClass001() as Object).getParameterType(undefined as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -245,7 +250,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         looseConstructor(ctorMyClass001() as Object).getParameterType(1.5 as Object);
       } catch (error) {
         threw = true;
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
       expect(threw).assertTrue();
     });
@@ -297,7 +303,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorRef.getParameterType(0);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -314,7 +321,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorMyClass001().getParameterType(100);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 
@@ -405,7 +413,8 @@ export default function ConstructorGetParameterTypeTest(): void {
         ctorRef.getParameterType(1);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('TypeError');
       }
     });
 

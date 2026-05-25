@@ -270,7 +270,8 @@ export default function ClassGetStaticFieldsTest(): void {
         let fields = looseReflect(cls as Object).getStaticFields('invalid');
         expect().assertFail();
       } catch (e) {
-        expect(e !== null).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 
@@ -476,7 +477,8 @@ export default function ClassGetStaticFieldsTest(): void {
         let fields = looseReflect(cls as Object).getStaticFields('extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('ClassCastError');
       }
     });
 

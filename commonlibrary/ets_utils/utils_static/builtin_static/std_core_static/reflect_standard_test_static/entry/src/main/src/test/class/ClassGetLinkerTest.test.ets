@@ -563,7 +563,7 @@ export default function ClassGetLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETLINKER_2500
      * @tc.name testClassGetLinker025
-     * @tc.desc Verify ClassGetLinker case 025: using RuntimeLinker not in
+     * @tc.desc Verify ClassGetLinker case 025: loadClass non-existent class throws LinkerClassNotFoundError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -575,7 +575,8 @@ export default function ClassGetLinkerTest(): void {
         linker.loadClass('non.existent.Class')
         expect().assertFail()
       } catch (error) {
-        expect(error !== null).assertTrue()
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('LinkerClassNotFoundError');
       }
     });
 

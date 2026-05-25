@@ -347,7 +347,9 @@ export default function ClassOfTest(): void {
         looseClassOf().of(obj, "extra" as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
+        expect((error as Error).message.indexOf('Class.of expects 1 argument') >= 0).assertEqual(true);
       }
     });
 
@@ -538,7 +540,8 @@ export default function ClassOfTest(): void {
         Class.of(undefined as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
       }
     });
 

@@ -1457,7 +1457,8 @@ export default function ClassFromTest(): void {
         cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error !== null).assertTrue();
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('Error');
       }
     });
 
