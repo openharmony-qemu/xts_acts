@@ -1,16 +1,14 @@
 
-import baseEnumConstructorTest from "./enum/BaseEnumConstructorTest.test.ets";
-import baseEnumGetNameTest from "./enum/BaseEnumGetNameTest.test.ets";
-import baseEnumTest from "./enum/BaseEnumTest.test.ets";
-import baseEnumToStringTest from "./enum/BaseEnumToStringTest.test.ets";
-import baseEnumValueOfTest from "./enum/BaseEnumValueOfTest.test.ets";
+import bootRuntimeLinkerTest from "./runtimelinker/BootRuntimeLinkerTest.test";
+import runtimeLinkerFindAndLoadClassTest from "./runtimelinker/RuntimeLinkerFindAndLoadClassTest.test";
+import getBootRuntimeLinkerTest from "./runtimelinker/GetBootRuntimeLinkerTest.test";
+import runtimeLinkerInstanceTest from "./runtimelinker/RuntimeLinkerInstanceTest.test";
 
 export default function testsuite(): void {
 
-  baseEnumConstructorTest();
-  baseEnumGetNameTest();
-  baseEnumTest();
-  baseEnumToStringTest();
-  baseEnumValueOfTest();
+  bootRuntimeLinkerTest();
+  runtimeLinkerFindAndLoadClassTest();
+  getBootRuntimeLinkerTest();
+  runtimeLinkerInstanceTest();
 
 }
