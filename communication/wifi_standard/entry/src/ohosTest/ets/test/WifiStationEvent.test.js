@@ -203,10 +203,10 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0001 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] enableHotspot: " + wifiext.enableHotspot())
-                    done();
+                    console.info("[wifi_test] enableHotspot: " + wifiext.enableHotspot());
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0001 canIUse isAccessToken error: " + e);
             }
@@ -229,10 +229,10 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0002 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] disableHotspot: " + wifiext.disableHotspot())
-                    done();
+                    console.info("[wifi_test] disableHotspot: " + wifiext.disableHotspot());
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0002 canIUse isAccessToken error: " + e);
             }
@@ -259,9 +259,9 @@ export default function actsWifiEventTest() {
                         .then(data => {
                             console.info("[wifi_test]getSupportedPowerModel promise result -> " + JSON.stringify(data));
                         });
-                    done();
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0003 canIUse isAccessToken error: " + e);
             }
@@ -298,9 +298,9 @@ export default function actsWifiEventTest() {
                         });
                     }
                     await getSupportedPowerModelResult();
-                    done();
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0004 canIUse isAccessToken error: " + e);
             }
@@ -327,9 +327,9 @@ export default function actsWifiEventTest() {
                         .then(data => {
                             console.info("[wifi_test]getPowerModel promise result -> " + JSON.stringify(data));
                         });
-                    done();
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0005 canIUse isAccessToken error: " + e);
             }
@@ -366,9 +366,9 @@ export default function actsWifiEventTest() {
                         });
                     }
                     await getPowerModelResult();
-                    done();
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0006 canIUse isAccessToken error: " + e);
             }
@@ -390,9 +390,10 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0007 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.SLEEPING))
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.SLEEPING));
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0007 canIUse isAccessToken error: " + e);
                 expect().assertFail();
@@ -414,9 +415,10 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0008 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.GENERAL))
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.GENERAL));
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0008 canIUse isAccessToken error: " + e);
                 expect().assertFail();
@@ -438,9 +440,10 @@ export default function actsWifiEventTest() {
                 var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0009 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
-                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.THROUGH_WALL))
+                    console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.THROUGH_WALL));
+                } else {
+                    expect(isAccessToken).assertFalse();
                 }
-                expect(isAccessToken).assertFalse();
             } catch (e) {
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0009 canIUse isAccessToken error: " + e);
                 expect().assertFail();
