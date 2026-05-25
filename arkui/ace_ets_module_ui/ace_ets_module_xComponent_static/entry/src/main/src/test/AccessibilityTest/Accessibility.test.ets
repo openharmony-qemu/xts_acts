@@ -58,7 +58,7 @@ export default function AccessibilityTest() {
       
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_NO_PARAM_0100
-       * @tc.name noParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_NO_PARAM_0100
        * @tc.desc Test accessibilityNextFocusId without second parameter (API 26+)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -81,7 +81,7 @@ export default function AccessibilityTest() {
 
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_UNDEFINED_0200
-       * @tc.name undefinedParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_UNDEFINED_0200
        * @tc.desc Test accessibilityNextFocusId with undefined second parameter (API 26+)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -104,7 +104,7 @@ export default function AccessibilityTest() {
 
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_FALSE_0300
-       * @tc.name falseParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_FALSE_0300
        * @tc.desc Test accessibilityNextFocusId with isConsiderDescendants: false (API 26+)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -127,7 +127,7 @@ export default function AccessibilityTest() {
 
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_TRUE_0400
-       * @tc.name trueParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_NEXT_FOCUS_ID_TRUE_0400
        * @tc.desc Test accessibilityNextFocusId with isConsiderDescendants: true (API 26+)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -153,7 +153,7 @@ export default function AccessibilityTest() {
       
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_VALID_0100
-       * @tc.name validParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_VALID_0100
        * @tc.desc Test accessibilityCustomActions with valid array parameter (API 26.0.0)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -176,7 +176,7 @@ export default function AccessibilityTest() {
 
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_UNDEFINED_0200
-       * @tc.name undefinedParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_UNDEFINED_0200
        * @tc.desc Test accessibilityCustomActions with undefined parameter (API 26.0.0)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
@@ -199,7 +199,7 @@ export default function AccessibilityTest() {
 
       /**
        * @tc.number SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_EMPTY_0300
-       * @tc.name emptyParam
+       * @tc.name SUB_ARKUI_ACCESSIBILITY_CUSTOM_ACTIONS_EMPTY_0300
        * @tc.desc Test accessibilityCustomActions with empty array parameter (API 26.0.0)
        * @tc.type FUNCTION
        * @tc.size SMALLTEST
