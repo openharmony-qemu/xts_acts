@@ -1215,7 +1215,7 @@ export default function DisplayNdkTest() {
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
           expect(result).assertEqual(0);
-          if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+          if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode) || isSupportFreeWindowMode) {
             let cap:string = displayClass.getDisplayCapability();
             let curFoldStatus: display.FoldStatus = display.getFoldStatus();
             console.info(caseName + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);

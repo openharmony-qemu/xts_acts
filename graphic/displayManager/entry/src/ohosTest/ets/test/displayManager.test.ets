@@ -93,6 +93,7 @@ export default function displayTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let isPCMode: boolean = false;
+    let isSupportFreeWindowMode: boolean = false;
     let displayClass = display.getDefaultDisplaySync();
     let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
@@ -115,8 +116,9 @@ export default function displayTest() {
       let promiseSnapshot = windowClass.getWindowStateSnapshot();
       promiseSnapshot.then((data) => {
         let jsonObj: object = JSON.parse(data);
-        console.info(`beforeAll: Succeeded. data=${data}, isPcMode=${jsonObj["isPcMode"]}`);
+        console.info(`beforeAll: Succeeded. data=${data}, isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
         isPCMode = jsonObj["isPcMode"];
+        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
@@ -4604,7 +4606,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
             count++;
         };
-        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode) || isSupportFreeWindowMode) {
           let cap: string = displayClass.getDisplayCapability();
           let curFoldStatus: display.FoldStatus = display.getFoldStatus();
           console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
