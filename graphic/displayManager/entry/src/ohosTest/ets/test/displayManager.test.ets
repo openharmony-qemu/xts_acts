@@ -92,6 +92,7 @@ export default function displayTest() {
     let isSupportRotate = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
     let displayClass = display.getDefaultDisplaySync();
     let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
@@ -111,6 +112,14 @@ export default function displayTest() {
       console.error(`beforeAll isPCStatus: ` + isPCStatus);
 
       let windowClass = windowStage.getMainWindowSync();
+      let promiseSnapshot = windowClass.getWindowStateSnapshot();
+      promiseSnapshot.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMode=${jsonObj["isPcMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
       isFreeWindowMode = windowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
@@ -4572,6 +4581,81 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   test_on_availableAreaChange_registerListener
+    * @tc.number SUB_BASIC_WMS_on_availableAreaChange_registerListener_0600
+    * @tc.desc   test_on_availableAreaChange register listener
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_on_availableAreaChange_registerListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_on_availableAreaChange_registerListener';
+      console.log(caseName + ' begin');
+      try {
+        let displayClass: display.Display = display.getDefaultDisplaySync();
+        let windowClass = windowStage.getMainWindowSync();
+        let count: number = 0;
+        let callback: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            count++;
+        };
+        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+          let cap: string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+          if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+            displayClass = display.getDisplayByIdSync(999);
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+            try {
+              let moveConfiguration: window.MoveConfiguration = {
+                displayId: 999
+              };
+              let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+              promise2.then(() => {
+                console.info(caseName + ' Succeeded in moving the window2.');
+                let rect = windowClass?.getWindowProperties().windowRect;
+                console.info(caseName + ` Get window rect: ` + JSON.stringify(rect));
+              }).catch((err: BusinessError) => {
+                console.error(caseName + ` Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+            } catch (exception) {
+              console.error(caseName + ` Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+            }
+          } else {
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+          }
+          await sleep(1000);
+          windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          windowClass.setTitleAndDockHoverShown(false, false);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          windowClass.recover();
+          displayClass.off('availableAreaChange', callback);
+        } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+          displayClass.on('availableAreaChange', callback);
+          await sleep(2000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          displayClass.off('availableAreaChange', callback);
+        } else {
+          expect(count).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
         done();
       }
     });

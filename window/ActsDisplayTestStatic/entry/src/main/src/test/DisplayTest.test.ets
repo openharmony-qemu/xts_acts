@@ -126,6 +126,7 @@ export default function DisplayTest():void {
         let isSyscapSessionManagerSupported = false;
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
+        let isPCMode: boolean = false;
         let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage | undefined;
         let win: window.Window;
@@ -138,6 +139,7 @@ export default function DisplayTest():void {
         let foldDisplayMode:string= '';
         let rotation:string[];
         let orientation:string[];
+        let foldType:long = -1;
         let code:number = 0;
         let displayFoldStatus:display.FoldStatus;
         let context: common.UIAbilityContext | undefined;
@@ -158,6 +160,15 @@ export default function DisplayTest():void {
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
             hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
             let windowClass:window.Window = windowStage!.getMainWindowSync();
+            let promiseSnapshot = windowClass.getWindowStateSnapshot();
+            promiseSnapshot.then((data) => {
+                let str = JSON.parseJsonElement(data);
+                let isPcMode = str.getBoolean('isPcMode')
+                hilog.info(domain, tag, `beforeAll: Succeeded. data=${data}, isPcMode=${isPcMode}`);
+
+            }).catch((err: Error):PromiseLike<void>|undefined => {
+                hilog.error(domain, tag, `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+            });
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
             await Utils.msSleep(300);
             let Orientation1 = display.getDefaultDisplaySync().orientation;
@@ -173,6 +184,10 @@ export default function DisplayTest():void {
             await Utils.msSleep(300);
             try{
                 let data:string = displayClass.getDisplayCapability();
+                let capabilityData = JSON.parseJsonElement(data);
+                hilog.info(domain, tag, 'jsUnittest beforeAll =' + data);
+                foldType = Double.toLong(parseInt(capabilityData.getString('foldScreenType')[0]))
+                hilog.info(domain, tag, 'jsUnittest beforeAll foldType =' + foldType);
                 // let capabilityData = JSON.parse(data);
                 // hilog.info(domain, tag, 'jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
                 // for(const capability of capabilityData!.capability){
@@ -3822,6 +3837,86 @@ export default function DisplayTest():void {
         }
         };
     })
+
+    /**
+     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ON_AVAILABLECHANFGE_0100
+     * @tc.name      test_on_availableAreaChange_static_0100
+     * @tc.desc      test_on_availableAreaChange
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 3
+     */
+    it('test_on_availableAreaChange_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+        let caseName : string = 'test_on_availableAreaChange_static_0100';
+        let msgStr : string = 'jsunittest ' + caseName + ' ';
+        hilog.info(0x0000, '[ANI]',msgStr + 'begin');
+        let windowClass:window.Window = windowStage!.getMainWindowSync();
+        let count = 0;
+        let callback: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(0x0000, '[ANI]', msgStr + `Listening enabled. Data: ${JSON.stringify(data)}`);
+            count++;
+        };
+        try {
+            if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+                let cap:string = displayClass.getDisplayCapability();
+                let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+                hilog.info(0x0000, '[ANI]', msgStr + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+                if (foldType === 5 && curFoldStatus === 3) {
+                    displayClass = display.getDisplayByIdSync(999);
+                    displayClass.onAvailableAreaChange(callback);
+                    try {
+                        let moveConfiguration: window.MoveConfiguration = {
+                            displayId: 999
+                        };
+                        let promise2 = windowClass!.moveWindowToAsync(300, 300, moveConfiguration);
+                        promise2.then(() => {
+                            hilog.info(0x0000, '[ANI]', msgStr + 'Succeeded in moving the window2.');
+                            let rect = windowClass?.getWindowProperties().windowRect;
+                            hilog.info(0x0000, '[ANI]', msgStr + `Get window rect: ` + JSON.stringify(rect));
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
+                            hilog.error(0x0000, '[ANI]', msgStr + `Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+                        });
+                    } catch (exception) {
+                        hilog.error(0x0000, '[ANI]', msgStr + `Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+                    }
+                } else {
+                    displayClass.onAvailableAreaChange(callback);
+                }
+                windowClass!.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+                windowClass!.setTitleAndDockHoverShown(false, false);
+                await Utils.msSleep(1000);
+                expect(count).assertLarger(0);
+                windowClass!.recover();
+                displayClass.offAvailableAreaChange(callback);
+                done();
+            } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+                displayClass.onAvailableAreaChange(callback);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                await Utils.msSleep(1000);
+                await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+                await Utils.msSleep(1000);
+                expect(count).assertLarger(0);
+                await Utils.msSleep(1000);
+                await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+                displayClass.offAvailableAreaChange(callback);
+                done();
+            } else {
+                expect(count).assertEqual(0);
+                done()
+            }
+        }
+        catch (err) {
+            hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
+            if (err.code == 801) {
+                hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
+                done();
+            }
+            else {
+                expect().assertFail();
+                done();
+            }
+        }
+    });
 
 
 

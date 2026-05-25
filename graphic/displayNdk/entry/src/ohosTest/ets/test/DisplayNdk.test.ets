@@ -1218,7 +1218,7 @@ export default function DisplayNdkTest() {
           if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
             let cap:string = displayClass.getDisplayCapability();
             let curFoldStatus: display.FoldStatus = display.getFoldStatus();
-            console.info(`Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+            console.info(caseName + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
             if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
               try {
                 let moveConfiguration: window.MoveConfiguration = {
@@ -1247,11 +1247,13 @@ export default function DisplayNdkTest() {
             expect(count).assertLarger(0);
             windowClass!.recover();
             done()
-          } else if (deviceType === 'tablet' && !isPCMode) {
+          } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+            await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+            await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
             await sleep(1000);
             count = testNapi.getAreaLinsterCount();
-            expect(count).assertLargerOrEqual(0);
+            expect(count).assertLarger(0);
             await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             done();
