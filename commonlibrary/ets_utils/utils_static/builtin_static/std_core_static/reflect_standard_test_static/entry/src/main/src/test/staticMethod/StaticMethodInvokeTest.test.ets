@@ -262,7 +262,6 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls004.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       // spec/types.md:1725: string|null is a nullish union and should accept null.
-      //   method!.invoke([null]);
       let invokeResult = method!.invoke([null]);
       let isUndefined = invokeResult === undefined;
       expect(isUndefined).assertTrue();
