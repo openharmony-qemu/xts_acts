@@ -302,25 +302,25 @@ int ProcessMp3SkipSampleFrame(SkipSampleFrameContext &ctx)
     }
     if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     if (OH_AVBuffer_GetBufferAttr(avBuffer, &ctx.attr) != AV_ERR_OK) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
     if (format == nullptr) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     OH_AVBuffer_Destroy(avBuffer);
-    avBuffer == nullptr
+    avBuffer = nullptr
     uint8_t *addr = nullptr;
     size_t buffSize = 0;
     if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
@@ -345,25 +345,25 @@ int ProcessOggSkipSampleFrame(SkipSampleFrameContext &ctx)
     }
     if (OH_AVDemuxer_ReadSampleBuffer(demuxer, 0, avBuffer) != AV_ERR_OK) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     if (OH_AVBuffer_GetBufferAttr(avBuffer, &ctx.attr) != AV_ERR_OK) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     OH_AVFormat *format = OH_AVBuffer_GetParameter(avBuffer);
     if (format == nullptr) {
         OH_AVBuffer_Destroy(avBuffer);
-        avBuffer == nullptr
+        avBuffer = nullptr
         close(ctx.fd);
         return -1;
     }
     OH_AVBuffer_Destroy(avBuffer);
-    avBuffer == nullptr
+    avBuffer = nullptr
     uint8_t *addr = nullptr;
     size_t buffSize = 0;
     if (OH_AVFormat_GetBuffer(format, OH_MD_KEY_BUFFER_SKIP_SAMPLES_INFO, &addr, &buffSize)) {
