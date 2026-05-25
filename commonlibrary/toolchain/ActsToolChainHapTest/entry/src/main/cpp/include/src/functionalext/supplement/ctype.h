@@ -17,5 +17,7 @@
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_CTYPE_H_H
 
 int CtypeGetMbCurMaxTest();
+int TolowerTest();
+int ToupperTest();
 
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_CTYPE_H_H
