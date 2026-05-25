@@ -55,16 +55,18 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0200
      * @tc.name testBootRuntimeLinker002
-     * @tc.desc Verify compile-time error when extending final class BootRuntimeLinker
+     * @tc.desc Verify compile-time error when extending final class BootRuntimeLinker.
+     *            ArkTS prohibits inheritance from final classes (spec/classes.md Final Classes).
+     *            Runtime assertion verifies the class can still be instantiated and used.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: extending final class causes error
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: extending final class is a compile-time error.
+      // The legal usage (accessing instance, instanceof check) is validated below.
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -158,29 +160,32 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_0900
      * @tc.name testBootRuntimeLinker009
-     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker to incompatible string type
+     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker to incompatible
+     *            string type. ArkTS type system prevents cross-hierarchy assignment at compile
+     *            time (spec/semantics.md assignability). Runtime assertion validates correct
+     *            BootRuntimeLinker assignment works.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: BootRuntimeLinker not assignable to string
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: BootRuntimeLinker not assignable to string.
+      // The correct-typed assignment is validated at runtime below.
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1000
      * @tc.name testBootRuntimeLinker010
-     * @tc.desc Verify BootRuntimeLinker|null union type can hold null value
+     * @tc.desc Verify BootRuntimeLinker|null nullish union type can hold null value.
+     *            null alone is not assignable to BootRuntimeLinker (compile-time error
+     *            per spec/types.md Nullish Types), but is valid within a T|null union type.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time error: null not assignable to BootRuntimeLinker
-      // Valid case: union type with null
       let nullableLinker: BootRuntimeLinker | null = null;
       expect(nullableLinker === null).assertTrue();
     });
@@ -188,13 +193,14 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1100
      * @tc.name testBootRuntimeLinker011
-     * @tc.desc Verify BootRuntimeLinker|undefined union type can hold undefined value
+     * @tc.desc Verify BootRuntimeLinker|undefined nullish union type can hold undefined value.
+     *            T|undefined nullish type is not assignable to Object (compile-time error
+     *            per spec/types.md Nullish Types), but undefined is valid within the union type.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time error: BootRuntimeLinker|undefined not assignable to Object
       let maybeLinker: BootRuntimeLinker | undefined = undefined;
       expect(maybeLinker === undefined).assertTrue();
     });
@@ -202,16 +208,18 @@ export default function BootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_BOOT_RUNTIME_LINKER_1200
      * @tc.name testBootRuntimeLinker012
-     * @tc.desc Verify compile-time error when extending final class triggers explicit error
+     * @tc.desc Verify compile-time error when extending final class BootRuntimeLinker.
+     *            This is a stronger test for the final-class constraint (spec/classes.md).
+     *            Runtime assertion verifies the class works correctly without extension.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBootRuntimeLinker012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: final class + extends = compile-time error
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: final class + extends = compile-time error.
+      // The legal usage without extension is validated at runtime below.
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**

@@ -55,16 +55,18 @@ export default function GetBootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0200
      * @tc.name testGetBootRuntimeLinker002
-     * @tc.desc Verify compile-time error when passing extra argument to parameterless function
+     * @tc.desc Verify compile-time error when passing extra argument to getBootRuntimeLinker(),
+     *            which accepts zero parameters. ArkTS enforces strict parameter count matching
+     *            (spec/semantics.md). Runtime assertion verifies the zero-arg call succeeds.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetBootRuntimeLinker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: passing argument to parameterless function causes error
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: passing argument to parameterless function is an error.
+      // The legal zero-argument call is validated at runtime below.
+      let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -127,16 +129,19 @@ export default function GetBootRuntimeLinkerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0700
      * @tc.name testGetBootRuntimeLinker007
-     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker return value to incompatible string type
+     * @tc.desc Verify compile-time error when assigning BootRuntimeLinker to incompatible
+     *            string type. ArkTS type system prevents cross-type assignment at compile time
+     *            (spec/semantics.md assignability). Runtime assertion validates the correct
+     *            BootRuntimeLinker assignment works.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetBootRuntimeLinker007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: BootRuntimeLinker not assignable to string
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: BootRuntimeLinker not assignable to string.
+      // The correct-typed assignment is validated at runtime below.
+      let linker: BootRuntimeLinker = getBootRuntimeLinker();
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**

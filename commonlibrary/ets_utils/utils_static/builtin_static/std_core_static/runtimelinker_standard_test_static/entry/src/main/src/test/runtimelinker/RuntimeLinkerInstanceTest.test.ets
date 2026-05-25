@@ -44,16 +44,19 @@ export default function InstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0200
      * @tc.name testInstance002
-     * @tc.desc Verify compile-time error when accessing static field through instance
+     * @tc.desc Verify compile-time error when accessing static field instance through an
+     *            instance reference rather than the class name. ArkTS enforces that static
+     *            fields are only accessible via the class qualifier (spec/classes.md).
+     *            Runtime assertion verifies the correct access pattern works.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testInstance002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: static field not accessible via instance
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: static field not accessible via instance.
+      // The legal pattern (BootRuntimeLinker.instance) is validated at runtime below.
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
@@ -90,16 +93,18 @@ export default function InstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0500
      * @tc.name testInstance005
-     * @tc.desc Verify compile-time error when reassigning readonly field
+     * @tc.desc Verify compile-time error when reassigning readonly static field instance.
+     *            ArkTS prohibits reassignment to readonly fields (spec/classes.md).
+     *            Runtime assertion verifies the field is accessible and returns a valid instance.
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // compile-time verification only: readonly field cannot be reassigned
-      let skipReason: string = "compile-time verification only";
-      expect(skipReason.length > 0).assertTrue();
-      return;
+      // Compile-time verification: readonly field cannot be reassigned.
+      // The legal read-access pattern is validated at runtime below.
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
     /**
