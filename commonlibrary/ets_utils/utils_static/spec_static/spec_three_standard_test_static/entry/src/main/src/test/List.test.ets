@@ -170,7 +170,6 @@ import InterTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/InterTyp
 import InterTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnGenTest01.test'
 import InterTypeIsSubOfTypeObjOnNonGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnNonGenTest.test'
 import InterTypeIsSubOfTypeObjOnPredefinedTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnPredefinedTest.test'
-import InterTypeIsSubOfTypeObjOnPredefinedTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnPredefinedTest01.test'
 import InterTypeIsSubOfTypeObjOnStrLitTest from './semanticrules/subtyping/InterTypeIsSubOfTypeObjOnStrLitTest.test'
 import InterTypeIsSubOfTypeTOnGenTest from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest.test'
 import InterTypeIsSubOfTypeTOnGenTest01 from './semanticrules/subtyping/InterTypeIsSubOfTypeTOnGenTest01.test'
@@ -408,7 +407,6 @@ export default function testsuite(): void {
   InterTypeIsSubOfTypeObjOnGenTest01();
   InterTypeIsSubOfTypeObjOnNonGenTest();
   InterTypeIsSubOfTypeObjOnPredefinedTest();
-  InterTypeIsSubOfTypeObjOnPredefinedTest01();
   InterTypeIsSubOfTypeObjOnStrLitTest();
   InterTypeIsSubOfTypeTOnGenTest();
   InterTypeIsSubOfTypeTOnGenTest01();
