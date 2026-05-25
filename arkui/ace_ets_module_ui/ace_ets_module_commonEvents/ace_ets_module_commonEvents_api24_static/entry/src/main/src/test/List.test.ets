@@ -46,6 +46,7 @@ import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldR
 import orphanCharOptimization from './orphanCharOptimization/orphanCharOptimization.test'
 import orphanCharOptimizationundefined from './orphanCharOptimization/orphanCharOptimization_undefined.test'
 import HoveredAttributeTest from './hoveredAttribute/HoveredAttributeTest.test'
+import EnableEventPassthroughTest from './enableEventPassthrough/EnableEventPassthroughTest.test'
 
 export default function testsuite() {
   getSizeLimitationTest();
@@ -81,4 +82,5 @@ export default function testsuite() {
   shouldRecognizerParallelWith();
   orphanCharOptimizationundefined();
   HoveredAttributeTest();
+  EnableEventPassthroughTest();
 }
