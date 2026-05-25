@@ -25,7 +25,7 @@ import builtinsDoubleThirdPrototypebTest from './DoubleThirdTest.test';
 import builtinsDoubleFourthPrototypebTest from './DoubleFourthTest.test';
 import builtinsDoubleFifthPrototypebTest from './DoubleFifthTest.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   builtinsShortPrototypebTest();
   builtinsShortSecondPrototypebTest();
   builtinsFloatPrototypebTest();

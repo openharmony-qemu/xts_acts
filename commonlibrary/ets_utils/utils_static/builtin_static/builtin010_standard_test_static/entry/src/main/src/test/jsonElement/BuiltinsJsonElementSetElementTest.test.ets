@@ -22,7 +22,7 @@ function init(size: number): string {
   ans += '{"a":1}]';
   return ans;
 }
-export default function builtinsJsonElementSetElementTest() {
+export default function builtinsJsonElementSetElementTest(): void {
   describe("builtinsJsonElementSetElementTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
