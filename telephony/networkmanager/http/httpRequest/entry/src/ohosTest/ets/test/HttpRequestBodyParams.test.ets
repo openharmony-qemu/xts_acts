@@ -42,15 +42,15 @@ export default function HttpBodyParameterTest() {
   describe('HttpBodyParameterTest', () => {
 
     /**
-     * @tc.name   testHttpBodyParameterTest0100
+     * @tc.name   testHttpBodyParameter0100
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_0100
      * @tc.desc   Send text data in the request body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameterTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0100';
+    it('testHttpBodyParameter0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0100';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -87,15 +87,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest0200
+     * @tc.name   testHttpBodyParameter0200
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_0200
      * @tc.desc   Send object data in the request body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameterTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0200';
+    it('testHttpBodyParameter0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0200';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -133,15 +133,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest0300
+     * @tc.name   testHttpBodyParameter0300
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_0300
      * @tc.desc   Send binary data in the request body
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameterTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0300';
+    it('testHttpBodyParameter0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0300';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -186,8 +186,8 @@ export default function HttpBodyParameterTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0400';
+    it('testHttpBodyParameter0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0400';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -362,15 +362,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest0800
+     * @tc.name   testHttpBodyParameter0800
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_0800
      * @tc.desc   Send string data in the request queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameterTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0800';
+    it('testHttpBodyParameter0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0800';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -407,15 +407,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest0900
+     * @tc.name   testHttpBodyParameter0900
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_0900
      * @tc.desc   Send object data in the request queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testHttpBodyParameterTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest0900';
+    it('testHttpBodyParameter0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter0900';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -456,15 +456,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1000
+     * @tc.name   testHttpBodyParameter1000
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1000
      * @tc.desc   Send undefined data in the request queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1000';
+    it('testHttpBodyParameter1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1000';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -499,15 +499,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1100
+     * @tc.name   testHttpBodyParameter1100
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1100
      * @tc.desc   Send empty string data in the request queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1100';
+    it('testHttpBodyParameter1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1100';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -543,15 +543,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1200
+     * @tc.name   testHttpBodyParameter1200
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1200
      * @tc.desc   Send empty object data in the request queryParams
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1200';
+    it('testHttpBodyParameter1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1200';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -586,15 +586,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1300
+     * @tc.name   testHttpBodyParameter1300
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1300
      * @tc.desc   Send text data in both the request body and extra, body`overrides extraData`
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1300';
+    it('testHttpBodyParameter1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1300';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -634,15 +634,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1400
+     * @tc.name   testHttpBodyParameter1400
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1400
      * @tc.desc   Send object data in both the request body and queryParams, Simultaneous return of body and queryParams`
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1400';
+    it('testHttpBodyParameter1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1400';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
@@ -687,15 +687,15 @@ export default function HttpBodyParameterTest() {
       console.info(`${caseName}---End`);
     });
     /**
-     * @tc.name   testHttpBodyParameterTest1500
+     * @tc.name   testHttpBodyParameter1500
      * @tc.number SUB_NetworkMgr_Http_Body_Parameter_1500
      * @tc.desc   Send object data in both the request extra and queryParams, queryParams`overrides extraData
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testHttpBodyParameterTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      const caseName: string = 'testHttpBodyParameterTest1500';
+    it('testHttpBodyParameter1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = 'testHttpBodyParameter1500';
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
