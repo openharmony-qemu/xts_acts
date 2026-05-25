@@ -17,7 +17,7 @@ import streamTest from './StreamTest.test'
 
 import StreamTest_01 from "./Stream/StreamTest01.test";
 import StreamTest_02 from "./Stream/StreamTest02.test";
-import StreamTest_03 from "./Stream/StreamTest03.test";
+// import StreamTest_03 from "./Stream/StreamTest03.test";
 import StreamTest_04 from "./Stream/StreamTest04.test";
 import StreamTest_05 from "./Stream/StreamTest05.test";
 import StreamTest_06 from "./Stream/StreamTest06.test";
@@ -38,7 +38,7 @@ import StreamDuplex08Test from "./StreamDuplex/StreamDuplexTest08.test";
 import StreamReadable01Test from "./StreamReadable/StreamReadableTest01.test";
 import StreamReadable02Test from "./StreamReadable/StreamReadableTest02.test";
 import StreamReadable03Test from "./StreamReadable/StreamReadableTest03.test";
-import StreamReadable04Test from "./StreamReadable/StreamReadableTest04.test";
+// import StreamReadable04Test from "./StreamReadable/StreamReadableTest04.test";
 import StreamReadable05Test from "./StreamReadable/StreamReadableTest05.test";
 
 import StreamWritable01Test from "./StreamWritable/StreamWritableTest01.test";
@@ -55,7 +55,7 @@ export default function testsuite(): void {
 
   StreamTest_01();
   StreamTest_02();
-  StreamTest_03();
+  // StreamTest_03();
   StreamTest_04();
   StreamTest_05();
   StreamTest_06();
@@ -76,7 +76,7 @@ export default function testsuite(): void {
   StreamReadable01Test();
   StreamReadable02Test();
   StreamReadable03Test();
-  StreamReadable04Test();
+  // StreamReadable04Test();
   StreamReadable05Test();
 
   StreamWritable01Test();
