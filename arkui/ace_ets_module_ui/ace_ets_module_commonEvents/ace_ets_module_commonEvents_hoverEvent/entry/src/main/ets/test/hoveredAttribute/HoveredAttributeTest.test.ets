@@ -392,6 +392,7 @@ export default function HoveredAttributeTest() {
       let obj: ESObject = JSON.parse(strJson);
       let hoverColor: string = obj.$attrs.backgroundColor;
       console.info('[SUB_ACE_ARKUI_ADDSUPPORTEDUISTATES_HOVERED_0100] hoverColor: ' + hoverColor);
+      expect(hoverColor).assertContain('#FF0000FF');
 
       await driver.mouseMoveTo(moveOutPoint);
       await Utils.sleep(500);
@@ -435,6 +436,7 @@ export default function HoveredAttributeTest() {
         await Utils.sleep(500);
         let strJson = getInspectorByKey('frameNodeHoverText');
         let obj: ESObject = JSON.parse(strJson);
+        expect(obj.$attrs.backgroundColor).assertContain('#FF0000FF');
 
         await driver.mouseMoveTo(moveOutPoint);
         await Utils.sleep(500);

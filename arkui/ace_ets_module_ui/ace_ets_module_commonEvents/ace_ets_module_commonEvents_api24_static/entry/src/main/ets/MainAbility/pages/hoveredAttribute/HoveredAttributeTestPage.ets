@@ -73,7 +73,7 @@ class MyNodeController extends NodeController {
       .borderWidth(2)
       .backgroundColor(Color.Red)
       .size({width: 100, height: 150})
-      .id("frameNode001")
+      .id('frameNode001')
     a.addSupportedUIStates(31, (node: FrameNode, currentUIStates: int) => {
       if (currentUIStates == 0) {
         node.commonAttribute.backgroundColor(Color.Red)
@@ -142,7 +142,7 @@ struct HoveredAttributeTestPage {
           .textAlign(TextAlign.Center)
           .margin({ top: '5%' } as Margin)
 
-        NodeContainer(this.myNodeController).id("NodeContainer001")
+        NodeContainer(this.myNodeController).id('NodeContainer001')
 
         Text('HoverTarget')
           .id('frameNodeHoverText')
