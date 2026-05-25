@@ -200,7 +200,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0001 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0001 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     console.info("[wifi_test] enableHotspot: " + wifiext.enableHotspot());
@@ -226,7 +226,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0002 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0002 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     console.info("[wifi_test] disableHotspot: " + wifiext.disableHotspot());
@@ -252,7 +252,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0003 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0003 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     await wifiext.getSupportedPowerModel()
@@ -281,7 +281,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0004 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0004 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     function getSupportedPowerModelResult(){
@@ -320,7 +320,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0005 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0005 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     await wifiext.getPowerModel()
@@ -349,7 +349,7 @@ export default function actsWifiEventTest() {
             console.info('SUB_Communication_WiFi_SysCaps_Test_0006 start');
             let ret = false;
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFi_SysCaps_Test_0006 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     function getPowerModelResult(){
@@ -387,7 +387,7 @@ export default function actsWifiEventTest() {
         it('SUB_Communication_WiFiExt_SysCaps_Test_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFiExt_SysCaps_Test_0007 start');
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0007 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.SLEEPING));
@@ -412,7 +412,7 @@ export default function actsWifiEventTest() {
         it('SUB_Communication_WiFiExt_SysCaps_Test_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFiExt_SysCaps_Test_0008 start');
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0008 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.GENERAL));
@@ -437,7 +437,7 @@ export default function actsWifiEventTest() {
         it('SUB_Communication_WiFiExt_SysCaps_Test_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info('SUB_Communication_WiFiExt_SysCaps_Test_0009 start');
             try {
-                var isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
+                let isAccessToken = canIUse("SystemCapability.Communication.WiFi.AP.Extension");
                 console.info("SUB_Communication_WiFiExt_SysCaps_Test_0009 test.syscap.param.001 : " + isAccessToken);
                 if (isAccessToken) {
                     console.info("[wifi_test] setPowerModel: " + wifiext.setPowerModel(wifiext.PowerModel.THROUGH_WALL));
