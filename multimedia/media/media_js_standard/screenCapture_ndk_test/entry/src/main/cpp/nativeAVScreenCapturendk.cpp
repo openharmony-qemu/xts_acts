@@ -3113,7 +3113,6 @@ int NULL_CHECK_008()
     int32_t* rectDepth = rectData.data();
 
     bool ret = OH_AVFormat_SetIntBuffer(format, OH_SCREEN_CAPTURE_CONTENT_RECT, rectDepth, rectData.size());
-
     if (!ret) {
         return TEST_FAILED;
     }
