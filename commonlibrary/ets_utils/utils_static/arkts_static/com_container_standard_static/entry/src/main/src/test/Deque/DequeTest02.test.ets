@@ -101,7 +101,7 @@ export default function dequeArraylistInsertFront01Test(): void {
     })
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0100
      * @tc.name      testArraylistInsertFront01NumberBasic0001
      * @tc.desc      insert normal positive integer to deque front
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0200
      * @tc.name      testArraylistInsertFront01NumberZero0002
      * @tc.desc      insert number zero to deque front
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0300
      * @tc.name      testArraylistInsertFront01NumberNegativeZero0003
      * @tc.desc      insert negative zero to deque front (verify -0 equals 0 in JS/ArkTS)
      * @tc.size      MediumTest
@@ -161,7 +161,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0400
      * @tc.name      testArraylistInsertFront01NumberNegative0004
      * @tc.desc      insert negative integer to deque front
      * @tc.size      MediumTest
@@ -181,7 +181,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0500
      * @tc.name      testArraylistInsertFront01NumberFloat0005
      * @tc.desc      insert floating point number to deque front
      * @tc.size      MediumTest
@@ -201,7 +201,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0600
      * @tc.name      testArraylistInsertFront01NumberNaN0006
      * @tc.desc      insert NaN to deque front
      * @tc.size      MediumTest
@@ -221,7 +221,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0700
      * @tc.name      testArraylistInsertFront01NumberInfinity0007
      * @tc.desc      insert positive Infinity to deque front
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0800
      * @tc.name      testArraylistInsertFront01NumberNegativeInfinity0008
      * @tc.desc      insert negative Infinity to deque front
      * @tc.size      MediumTest
@@ -261,7 +261,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_0900
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_0900
      * @tc.name      testArraylistInsertFront01NumberMaxValue0009
      * @tc.desc      insert Number.MAX_VALUE to deque front
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1000
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1000
      * @tc.name      testArraylistInsertFront01NumberMinValue0010
      * @tc.desc      insert Number.MIN_VALUE to deque front
      * @tc.size      MediumTest
@@ -301,7 +301,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1100
      * @tc.name      testArraylistInsertFront01NumberEpsilon0011
      * @tc.desc      insert Number.EPSILON to deque front
      * @tc.size      MediumTest
@@ -321,7 +321,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1200
      * @tc.name      testArraylistInsertFront01NumberMaxSafeInteger0012
      * @tc.desc      insert Number.MAX_SAFE_INTEGER to deque front
      * @tc.size      MediumTest
@@ -341,7 +341,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1300
      * @tc.name      testArraylistInsertFront01NumberHex0013
      * @tc.desc      insert hexadecimal number to deque front (verify conversion to decimal)
      * @tc.size      MediumTest
@@ -361,7 +361,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1400
      * @tc.name      testArraylistInsertFront01NumberOctal0014
      * @tc.desc      insert octal number to deque front (verify conversion to decimal)
      * @tc.size      MediumTest
@@ -381,7 +381,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1500
      * @tc.name      testArraylistInsertFront01NumberExponent0015
      * @tc.desc      insert exponent calculation result to deque front
      * @tc.size      MediumTest
@@ -401,7 +401,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1600
      * @tc.name      testArraylistInsertFront01NumberScientific0016
      * @tc.desc      insert scientific notation number to deque front (verify conversion to decimal)
      * @tc.size      MediumTest
@@ -421,7 +421,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1700
      * @tc.name      testArraylistInsertFront01StringEmpty0017
      * @tc.desc      insert empty string to deque front
      * @tc.size      MediumTest
@@ -441,7 +441,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1800
      * @tc.name      testArraylistInsertFront01StringNormal0018
      * @tc.desc      insert normal text string to deque front
      * @tc.size      MediumTest
@@ -461,7 +461,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_1900
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_1900
      * @tc.name      testArraylistInsertFront01StringSpecialChars0019
      * @tc.desc      insert special characters string to deque front
      * @tc.size      MediumTest
@@ -482,7 +482,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2000
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2000
      * @tc.name      testArraylistInsertFront01StringAsciiChars0020
      * @tc.desc      insert full ASCII characters string to deque front
      * @tc.size      MediumTest
@@ -503,7 +503,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2100
      * @tc.name      testArraylistInsertFront01StringEscapeChars0021
      * @tc.desc      insert escape characters string to deque front
      * @tc.size      MediumTest
@@ -524,7 +524,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2200
      * @tc.name      testArraylistInsertFront01StringEmoji0022
      * @tc.desc      insert emoji string to deque front
      * @tc.size      MediumTest
@@ -544,7 +544,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2300
      * @tc.name      testArraylistInsertFront01StringUnicode0023
      * @tc.desc      insert Unicode string to deque front
      * @tc.size      MediumTest
@@ -564,7 +564,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2400
      * @tc.name      testArraylistInsertFront01StringKeywordNaN0024
      * @tc.desc      insert "NaN" string to deque front (distinguish from Number.NaN)
      * @tc.size      MediumTest
@@ -584,7 +584,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2500
      * @tc.name      testArraylistInsertFront01StringKeywordUndefined0025
      * @tc.desc      insert "undefined" string to deque front (distinguish from undefined value)
      * @tc.size      MediumTest
@@ -604,7 +604,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2600
      * @tc.name      testArraylistInsertFront01BooleanTrue0026
      * @tc.desc      insert boolean true to deque front
      * @tc.size      MediumTest
@@ -624,7 +624,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2700
      * @tc.name      testArraylistInsertFront01BooleanFalse0027
      * @tc.desc      insert boolean false to deque front
      * @tc.size      MediumTest
@@ -644,7 +644,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2800
      * @tc.name      testArraylistInsertFront01ArrayNormal0028
      * @tc.desc      insert normal number array to deque front
      * @tc.size      MediumTest
@@ -665,7 +665,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_2900
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_2900
      * @tc.name      testArraylistInsertFront01ArrayWithZeros0029
      * @tc.desc      insert array with multiple zeros to deque front
      * @tc.size      MediumTest
@@ -686,7 +686,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3000
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3000
      * @tc.name      testArraylistInsertFront01ArrayWithNegatives0030
      * @tc.desc      insert array with negative numbers to deque front
      * @tc.size      MediumTest
@@ -707,7 +707,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3100
      * @tc.name      testArraylistInsertFront01ArrayEmpty0031
      * @tc.desc      insert empty array to deque front
      * @tc.size      MediumTest
@@ -728,7 +728,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3200
      * @tc.name      testArraylistInsertFront01ArrayWithNaN0032
      * @tc.desc      insert array with NaN to deque front
      * @tc.size      MediumTest
@@ -753,7 +753,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3300
      * @tc.name      testArraylistInsertFront01ArrayWithInfinity0033
      * @tc.desc      insert array with Infinity to deque front
      * @tc.size      MediumTest
@@ -779,7 +779,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3400
      * @tc.name      testArraylistInsertFront01ArrayMixedTypes0034
      * @tc.desc      insert array with mixed types to deque front
      * @tc.size      MediumTest
@@ -800,7 +800,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3500
      * @tc.name      testArraylistInsertFront01ObjectSimple0035
      * @tc.desc      insert simple key-value object to deque front
      * @tc.size      MediumTest
@@ -821,7 +821,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3600
      * @tc.name      testArraylistInsertFront01ObjectNested0036
      * @tc.desc      insert nested object to deque front
      * @tc.size      MediumTest
@@ -845,7 +845,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3700
      * @tc.name      testArraylistInsertFront01ObjectEmpty0037
      * @tc.desc      insert empty object to deque front
      * @tc.size      MediumTest
@@ -866,7 +866,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3800
      * @tc.name      testArraylistInsertFront01ObjectWithUndefined0038
      * @tc.desc      insert object with undefined property to deque front
      * @tc.size      MediumTest
@@ -887,7 +887,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_3900
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_3900
      * @tc.name      testArraylistInsertFront01ObjectWithNull0039
      * @tc.desc      insert object with null property to deque front
      * @tc.size      MediumTest
@@ -908,7 +908,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4000
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4000
      * @tc.name      testArraylistInsertFront01ObjectWithNaN0040
      * @tc.desc      insert object with NaN property to deque front
      * @tc.size      MediumTest
@@ -931,7 +931,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4100
      * @tc.name      testArraylistInsertFront01ObjectWithInfinity0041
      * @tc.desc      insert object with Infinity property to deque front
      * @tc.size      MediumTest
@@ -955,7 +955,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4200
      * @tc.name      testArraylistInsertFront01Null0042
      * @tc.desc      insert null value to deque front
      * @tc.size      MediumTest
@@ -975,7 +975,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4300
      * @tc.name      testArraylistInsertFront01Undefined0043
      * @tc.desc      insert undefined value to deque front
      * @tc.size      MediumTest
@@ -995,7 +995,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4400
      * @tc.name      testArraylistInsertFront01Int8Array0044
      * @tc.desc      insert Int8Array to deque front
      * @tc.size      MediumTest
@@ -1016,7 +1016,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4500
      * @tc.name      testArraylistInsertFront01Uint8Array0045
      * @tc.desc      insert Uint8Array to deque front
      * @tc.size      MediumTest
@@ -1037,7 +1037,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4600
      * @tc.name      testArraylistInsertFront01Uint8ClampedArray0046
      * @tc.desc      insert Uint8ClampedArray to deque front (verify value clamping)
      * @tc.size      MediumTest
@@ -1058,7 +1058,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4700
      * @tc.name      testArraylistInsertFront01Int16Array0047
      * @tc.desc      insert Int16Array to deque front
      * @tc.size      MediumTest
@@ -1079,7 +1079,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4800
      * @tc.name      testArraylistInsertFront01Uint16Array0048
      * @tc.desc      insert Uint16Array to deque front
      * @tc.size      MediumTest
@@ -1100,7 +1100,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_4900
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_4900
      * @tc.name      testArraylistInsertFront01Int32Array0049
      * @tc.desc      insert Int32Array to deque front
      * @tc.size      MediumTest
@@ -1121,7 +1121,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5000
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5000
      * @tc.name      testArraylistInsertFront01Uint32Array0050
      * @tc.desc      insert Uint32Array to deque front
      * @tc.size      MediumTest
@@ -1143,7 +1143,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5100
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5100
      * @tc.name      testArraylistInsertFront01Float32Array0051
      * @tc.desc      insert Float32Array to deque front
      * @tc.size      MediumTest
@@ -1168,7 +1168,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5200
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5200
      * @tc.name      testArraylistInsertFront01Float64Array0052
      * @tc.desc      insert Float64Array to deque front
      * @tc.size      MediumTest
@@ -1193,7 +1193,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5300
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5300
      * @tc.name      testArraylistInsertFront01MultipleElements0053
      * @tc.desc      insert multiple elements to deque front (verify order)
      * @tc.size      MediumTest
@@ -1221,7 +1221,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5400
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5400
      * @tc.name      testArraylistInsertFront01MixedTypes0054
      * @tc.desc      insert mixed types to deque front (using explicit union type)
      * @tc.size      MediumTest
@@ -1250,7 +1250,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5500
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5500
      * @tc.name      testArraylistInsertFront01Performance0055
      * @tc.desc      performance test: insert large quantity of elements to deque front
      * @tc.size      LargeTest
@@ -1279,7 +1279,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5600
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5600
      * @tc.name      testArraylistInsertFront01LargeString0056
      * @tc.desc      performance test: insert large string to deque front
      * @tc.size      LargeTest
@@ -1302,7 +1302,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5700
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5700
      * @tc.name      testArraylistInsertFront01CustomClassObject0057
      * @tc.desc      insert custom class object to deque front
      * @tc.size      MediumTest
@@ -1330,7 +1330,7 @@ export default function dequeArraylistInsertFront01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_ARRAYLIST_INSERTFRONT01_5800
+     * @tc.number    SUB_UTIL_DEQUE_TESTTWO_5800
      * @tc.name      testArraylistInsertFront01MixedCustomObjectTypes0058
      * @tc.desc      insert mixed custom class object, string and number to deque front
      * @tc.size      MediumTest

@@ -99,7 +99,7 @@ export default function Deque04Test(): void {
     })
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0100
      * @tc.name      testDeque02GetLast0031
      * @tc.desc      test Deque getLast with large objects
      * @tc.size      MediumTest
@@ -132,7 +132,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0200
      * @tc.name      testDeque02GetLast0032
      * @tc.desc      test Deque getLast with treeString type
      * @tc.size      MediumTest
@@ -165,7 +165,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0300
      * @tc.name      testDeque02GetLast0033
      * @tc.desc      test Deque getLast with sliceString type
      * @tc.size      MediumTest
@@ -192,7 +192,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0400
      * @tc.name      testDeque02GetLast0034
      * @tc.desc      test Deque getLast with non-empty deque
      * @tc.size      MediumTest
@@ -213,7 +213,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0500
      * @tc.name      testDeque02GetLast0035
      * @tc.desc      test Deque getLast with Unicode strings
      * @tc.size      MediumTest
@@ -238,7 +238,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0600
      * @tc.name      testDeque02GetLast0036
      * @tc.desc      test Deque getLast with moderate size strings
      * @tc.size      MediumTest
@@ -262,7 +262,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_GETLAST02_3700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0700
      * @tc.name      testDeque02GetLast0037
      * @tc.desc      test Deque getLast with example from documentation
      * @tc.size      MediumTest
@@ -286,7 +286,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0800
      * @tc.name      testDeque03InsertEnd0001
      * @tc.desc      test Deque insertEnd with Int8Array boundary values
      * @tc.size      MediumTest
@@ -310,7 +310,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_0900
      * @tc.name      testDeque03InsertEnd0002
      * @tc.desc      test Deque insertEnd with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -334,7 +334,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1000
      * @tc.name      testDeque03InsertEnd0003
      * @tc.desc      test Deque insertEnd with Uint8ClampedArray clamped behavior
      * @tc.size      MediumTest
@@ -358,7 +358,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1100
      * @tc.name      testDeque03InsertEnd0004
      * @tc.desc      test Deque insertEnd with Int16Array boundary values
      * @tc.size      MediumTest
@@ -382,7 +382,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1200
      * @tc.name      testDeque03InsertEnd0005
      * @tc.desc      test Deque insertEnd with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -406,7 +406,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1300
      * @tc.name      testDeque03InsertEnd0006
      * @tc.desc      test Deque insertEnd with Int32Array boundary values
      * @tc.size      MediumTest
@@ -430,7 +430,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1400
      * @tc.name      testDeque03InsertEnd0007
      * @tc.desc      test Deque insertEnd with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -454,7 +454,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1500
      * @tc.name      testDeque03InsertEnd0008
      * @tc.desc      test Deque insertEnd with Float32Array boundary and special values
      * @tc.size      MediumTest
@@ -483,7 +483,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_0900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1600
      * @tc.name      testDeque03InsertEnd0009
      * @tc.desc      test Deque insertEnd with Float64Array boundary values
      * @tc.size      MediumTest
@@ -507,7 +507,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1700
      * @tc.name      testDeque03InsertEnd0010
      * @tc.desc      test Deque insertEnd with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -531,7 +531,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1800
      * @tc.name      testDeque03InsertEnd0011
      * @tc.desc      test Deque insertEnd with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -555,7 +555,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_1900
      * @tc.name      testDeque03InsertEnd0012
      * @tc.desc      test Deque insertEnd with TypedArray special value storage rules
      * @tc.size      MediumTest
@@ -581,7 +581,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2000
      * @tc.name      testDeque03InsertEnd0013
      * @tc.desc      test Deque insertEnd with String type - undefined/null/empty
      * @tc.size      MediumTest
@@ -606,7 +606,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2100
      * @tc.name      testDeque03InsertEnd0014
      * @tc.desc      test Deque insertEnd with String type - special characters
      * @tc.size      MediumTest
@@ -631,7 +631,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2200
      * @tc.name      testDeque03InsertEnd0015
      * @tc.desc      test Deque insertEnd with String type - escape sequences
      * @tc.size      MediumTest
@@ -657,7 +657,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2300
      * @tc.name      testDeque03InsertEnd0016
      * @tc.desc      test Deque insertEnd with String type - emojis and Unicode
      * @tc.size      MediumTest
@@ -687,7 +687,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2400
      * @tc.name      testDeque03InsertEnd0017
      * @tc.desc      test Deque insertEnd with String type - keywords
      * @tc.size      MediumTest
@@ -714,7 +714,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2500
      * @tc.name      testDeque03InsertEnd0018
      * @tc.desc      test Deque insertEnd with Number type - basic values
      * @tc.size      MediumTest
@@ -741,7 +741,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_1900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2600
      * @tc.name      testDeque03InsertEnd0019
      * @tc.desc      test Deque insertEnd with Number type - boundary values
      * @tc.size      MediumTest
@@ -768,7 +768,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2700
      * @tc.name      testDeque03InsertEnd0020
      * @tc.desc      test Deque insertEnd with Number type - different numeric representations
      * @tc.size      MediumTest
@@ -797,7 +797,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2800
      * @tc.name      testDeque03InsertEnd0021
      * @tc.desc      test Deque insertEnd with BigInt type
      * @tc.size      MediumTest
@@ -823,7 +823,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_2900
      * @tc.name      testDeque03InsertEnd0022
      * @tc.desc      test Deque insertEnd with Boolean type
      * @tc.size      MediumTest
@@ -854,7 +854,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3000
      * @tc.name      testDeque03InsertEnd0023
      * @tc.desc      test Deque insertEnd with Array type - normal arrays
      * @tc.size      MediumTest
@@ -879,7 +879,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3100
      * @tc.name      testDeque03InsertEnd0024
      * @tc.desc      test Deque insertEnd with Array type - special arrays
      * @tc.size      MediumTest
@@ -908,7 +908,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3200
      * @tc.name      testDeque03InsertEnd0025
      * @tc.desc      test Deque insertEnd with TestObject type - basic objects
      * @tc.size      MediumTest
@@ -937,7 +937,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3300
      * @tc.name      testDeque03InsertEnd0026
      * @tc.desc      test Deque insertEnd with ComplexObject type
      * @tc.size      MediumTest
@@ -967,7 +967,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3400
      * @tc.name      testDeque03InsertEnd0027
      * @tc.desc      test Deque insertEnd with ObjectWithBuiltins type
      * @tc.size      MediumTest
@@ -993,7 +993,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3500
      * @tc.name      testDeque03InsertEnd0028
      * @tc.desc      test Deque insertEnd with union type (as per documentation example)
      * @tc.size      MediumTest
@@ -1021,7 +1021,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_2900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3600
      * @tc.name      testDeque03InsertEnd0029
      * @tc.desc      test Deque insertEnd with large number of elements
      * @tc.size      LargeTest
@@ -1046,7 +1046,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3700
      * @tc.name      testDeque03InsertEnd0030
      * @tc.desc      test Deque insertEnd with treeString type
      * @tc.size      LargeTest
@@ -1080,7 +1080,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3800
      * @tc.name      testDeque03InsertEnd0031
      * @tc.desc      test Deque insertEnd with sliceString type
      * @tc.size      MediumTest
@@ -1108,7 +1108,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_3900
      * @tc.name      testDeque03InsertEnd0032
      * @tc.desc      test Deque insertEnd with illegal Unicode strings
      * @tc.size      MediumTest
@@ -1134,7 +1134,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4000
      * @tc.name      testDeque03InsertEnd0033
      * @tc.desc      test Deque insertEnd with NaN/Infinity arrays
      * @tc.size      MediumTest
@@ -1157,7 +1157,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4100
      * @tc.name      testDeque03InsertEnd0034
      * @tc.desc      test Deque insertEnd with different numeric ranges
      * @tc.size      MediumTest
@@ -1188,7 +1188,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4200
      * @tc.name      testDeque03InsertEnd0035
      * @tc.desc      test Deque insertEnd with mixed object types
      * @tc.size      MediumTest
@@ -1221,7 +1221,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4300
      * @tc.name      testDeque03InsertEnd0036
      * @tc.desc      test Deque insertEnd performance with moderate size strings
      * @tc.size      MediumTest
@@ -1246,7 +1246,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_INSERTEND03_3700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4400
      * @tc.name      testDeque03InsertEnd0037
      * @tc.desc      test Deque insertEnd with chained operations
      * @tc.size      MediumTest
@@ -1277,7 +1277,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4500
      * @tc.name      testDeque04ForEach0001
      * @tc.desc      test Deque forEach with Int8Array boundary values
      * @tc.size      MediumTest
@@ -1313,7 +1313,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4600
      * @tc.name      testDeque04ForEach0002
      * @tc.desc      test Deque forEach with Uint8Array boundary values
      * @tc.size      MediumTest
@@ -1346,7 +1346,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4700
      * @tc.name      testDeque04ForEach0003
      * @tc.desc      test Deque forEach with Uint8ClampedArray clamped behavior
      * @tc.size      MediumTest
@@ -1372,7 +1372,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4800
      * @tc.name      testDeque04ForEach0004
      * @tc.desc      test Deque forEach with Int16Array boundary values
      * @tc.size      MediumTest
@@ -1402,7 +1402,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_4900
      * @tc.name      testDeque04ForEach0005
      * @tc.desc      test Deque forEach with Uint16Array boundary values
      * @tc.size      MediumTest
@@ -1428,7 +1428,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5000
      * @tc.name      testDeque04ForEach0006
      * @tc.desc      test Deque forEach with Int32Array boundary values
      * @tc.size      MediumTest
@@ -1458,7 +1458,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5100
      * @tc.name      testDeque04ForEach0007
      * @tc.desc      test Deque forEach with Uint32Array boundary values
      * @tc.size      MediumTest
@@ -1485,7 +1485,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5200
      * @tc.name      testDeque04ForEach0008
      * @tc.desc      test Deque forEach with Float32Array boundary and special values
      * @tc.size      MediumTest
@@ -1526,7 +1526,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_0900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5300
      * @tc.name      testDeque04ForEach0009
      * @tc.desc      test Deque forEach with Float64Array boundary values
      * @tc.size      MediumTest
@@ -1555,7 +1555,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5400
      * @tc.name      testDeque04ForEach0010
      * @tc.desc      test Deque forEach with BigInt64Array boundary values
      * @tc.size      MediumTest
@@ -1584,7 +1584,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5500
      * @tc.name      testDeque04ForEach0011
      * @tc.desc      test Deque forEach with BigUint64Array boundary values
      * @tc.size      MediumTest
@@ -1610,7 +1610,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5600
      * @tc.name      testDeque04ForEach0012
      * @tc.desc      test Deque forEach with TypedArray special value storage rules
      * @tc.size      MediumTest
@@ -1645,7 +1645,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5700
      * @tc.name      testDeque04ForEach0013
      * @tc.desc      test Deque forEach with String type - basic values
      * @tc.size      MediumTest
@@ -1676,7 +1676,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5800
      * @tc.name      testDeque04ForEach0014
      * @tc.desc      test Deque forEach with String type - special characters
      * @tc.size      MediumTest
@@ -1705,7 +1705,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_5900
      * @tc.name      testDeque04ForEach0015
      * @tc.desc      test Deque forEach with String type - escape sequences
      * @tc.size      MediumTest
@@ -1739,7 +1739,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_6000
      * @tc.name      testDeque04ForEach0016
      * @tc.desc      test Deque forEach with String type - emojis and Unicode
      * @tc.size      MediumTest
@@ -1776,7 +1776,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_6100
      * @tc.name      testDeque04ForEach0017
      * @tc.desc      test Deque forEach with String type - keywords
      * @tc.size      MediumTest
@@ -1802,7 +1802,7 @@ export default function Deque04Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFOUR_6200
      * @tc.name      testDeque04ForEach0018
      * @tc.desc      test Deque forEach with Number type - basic values
      * @tc.size      MediumTest

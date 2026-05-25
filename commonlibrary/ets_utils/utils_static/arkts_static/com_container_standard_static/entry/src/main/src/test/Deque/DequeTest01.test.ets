@@ -57,7 +57,7 @@ export default function Deque01Test(): void {
     })
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0100
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0100
      * @tc.name      testDeque01Has0001
      * @tc.desc      Check if Deque contains existing number element
      * @tc.size      MediumTest
@@ -79,7 +79,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0200
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0200
      * @tc.name      testDeque01Has0002
      * @tc.desc      Check if Deque contains non-existent number element
      * @tc.size      MediumTest
@@ -100,7 +100,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0300
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0300
      * @tc.name      testDeque01Has0003
      * @tc.desc      Check if Deque contains string element
      * @tc.size      MediumTest
@@ -121,7 +121,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0400
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0400
      * @tc.name      testDeque01Has0004
      * @tc.desc      Check if Deque contains empty string
      * @tc.size      MediumTest
@@ -142,7 +142,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0500
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0500
      * @tc.name      testDeque01Has0005
      * @tc.desc      Check if Deque contains boolean element
      * @tc.size      MediumTest
@@ -165,7 +165,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0600
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0600
      * @tc.name      testDeque01Has0006
      * @tc.desc      Check if Deque contains number special values
      * @tc.size      MediumTest
@@ -199,7 +199,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0700
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0700
      * @tc.name      testDeque01Has0007
      * @tc.desc      Check if Deque contains number boundary values
      * @tc.size      MediumTest
@@ -231,7 +231,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0800
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0800
      * @tc.name      testDeque01Has0008
      * @tc.desc      Check if Deque contains numbers in various formats
      * @tc.size      MediumTest
@@ -260,7 +260,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_0900
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_0900
      * @tc.name      testDeque01Has0009
      * @tc.desc      Check if Deque contains BigInt element
      * @tc.size      MediumTest
@@ -281,7 +281,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1000
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1000
      * @tc.name      testDeque01Has0010
      * @tc.desc      Check if Deque contains string with special characters
      * @tc.size      MediumTest
@@ -302,7 +302,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1100
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1100
      * @tc.name      testDeque01Has0011
      * @tc.desc      Check if Deque contains string with emoji characters
      * @tc.size      MediumTest
@@ -323,7 +323,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1200
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1200
      * @tc.name      testDeque01Has0012
      * @tc.desc      Check if Deque contains array element
      * @tc.size      MediumTest
@@ -344,7 +344,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1300
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1300
      * @tc.name      testDeque01Has0013
      * @tc.desc      Check if Deque contains TypedArray element
      * @tc.size      MediumTest
@@ -365,7 +365,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1400
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1400
      * @tc.name      testDeque01Has0014
      * @tc.desc      Check if Deque contains null element
      * @tc.size      MediumTest
@@ -386,7 +386,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1500
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1500
      * @tc.name      testDeque01Has0015
      * @tc.desc      Check if Deque contains undefined element
      * @tc.size      MediumTest
@@ -407,7 +407,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1600
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1600
      * @tc.name      testDeque01Has0016
      * @tc.desc      Check if Deque contains custom object element
      * @tc.size      MediumTest
@@ -428,7 +428,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1700
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1700
      * @tc.name      testDeque01Has0017
      * @tc.desc      Check if Deque contains elements of multiple types
      * @tc.size      MediumTest
@@ -458,7 +458,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1800
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1800
      * @tc.name      testDeque01Has0018
      * @tc.desc      Check if Deque contains duplicate elements
      * @tc.size      MediumTest
@@ -480,7 +480,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_1900
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_1900
      * @tc.name      testDeque01Has0019
      * @tc.desc      Check if empty Deque contains element
      * @tc.size      MediumTest
@@ -499,7 +499,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_2000
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_2000
      * @tc.name      testDeque01Has0020
      * @tc.desc      Check has method uses reference equality for objects in Deque
      * @tc.size      MediumTest
@@ -523,7 +523,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_2100
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_2100
      * @tc.name      testDeque01Has0021
      * @tc.desc      Check if Deque contains element after removal
      * @tc.size      MediumTest
@@ -550,7 +550,7 @@ export default function Deque01Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_HAS01_2200
+     * @tc.number    SUB_UTIL_DEQUE_TESTONE_2200
      * @tc.name      testDeque01Has0022
      * @tc.desc      Check has for elements inserted from both ends
      * @tc.size      MediumTest

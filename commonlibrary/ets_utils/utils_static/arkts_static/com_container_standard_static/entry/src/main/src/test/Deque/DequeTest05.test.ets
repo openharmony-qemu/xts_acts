@@ -106,7 +106,7 @@ export default function Deque05Test(): void {
     })
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_1900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0100
      * @tc.name      testDeque04ForEach0019
      * @tc.desc      test Deque forEach with Number type - boundary values
      * @tc.size      MediumTest
@@ -141,7 +141,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0200
      * @tc.name      testDeque04ForEach0020
      * @tc.desc      test Deque forEach with Number type - different numeric representations
      * @tc.size      MediumTest
@@ -176,7 +176,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0300
      * @tc.name      testDeque04ForEach0021
      * @tc.desc      test Deque forEach with BigInt type
      * @tc.size      MediumTest
@@ -207,7 +207,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0400
      * @tc.name      testDeque04ForEach0022
      * @tc.desc      test Deque forEach with Boolean type
      * @tc.size      MediumTest
@@ -241,7 +241,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0500
      * @tc.name      testDeque04ForEach0023
      * @tc.desc      test Deque forEach with Array type - normal arrays
      * @tc.size      MediumTest
@@ -278,7 +278,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0600
      * @tc.name      testDeque04ForEach0024
      * @tc.desc      test Deque forEach with custom object type
      * @tc.size      MediumTest
@@ -311,7 +311,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0700
      * @tc.name      testDeque04ForEach0025
      * @tc.desc      test Deque forEach with TestObject type
      * @tc.size      MediumTest
@@ -353,7 +353,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0800
      * @tc.name      testDeque04ForEach0026
      * @tc.desc      test Deque forEach with thisArg parameter using arrow function
      * @tc.size      MediumTest
@@ -381,7 +381,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_0900
      * @tc.name      testDeque04ForEach0027
      * @tc.desc      test Deque forEach with empty deque
      * @tc.size      MediumTest
@@ -405,7 +405,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2800
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1000
      * @tc.name      testDeque04ForEach0028
      * @tc.desc      test Deque forEach with documentation example
      * @tc.size      MediumTest
@@ -436,7 +436,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_2900
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1100
      * @tc.name      testDeque04ForEach0029
      * @tc.desc      test Deque forEach with large number of elements
      * @tc.size      MediumTest
@@ -467,7 +467,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3000
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1200
      * @tc.name      testDeque04ForEach0030
      * @tc.desc      test Deque forEach with treeString type
      * @tc.size      MediumTest
@@ -512,7 +512,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3100
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1300
      * @tc.name      testDeque04ForEach0031
      * @tc.desc      test Deque forEach with sliceString type
      * @tc.size      MediumTest
@@ -544,7 +544,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3200
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1400
      * @tc.name      testDeque04ForEach0032
      * @tc.desc      test Deque forEach with illegal Unicode strings
      * @tc.size      MediumTest
@@ -575,7 +575,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3300
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1500
      * @tc.name      testDeque04ForEach0033
      * @tc.desc      test Deque forEach with NaN/Infinity arrays
      * @tc.size      MediumTest
@@ -609,7 +609,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3400
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1600
      * @tc.name      testDeque04ForEach0034
      * @tc.desc      test Deque forEach with different numeric ranges
      * @tc.size      MediumTest
@@ -659,7 +659,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3500
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1700
      * @tc.name      testDeque04ForEach0035
      * @tc.desc      test Deque forEach with mixed object types using arrow function
      * @tc.size      MediumTest
@@ -689,7 +689,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3600
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1800
      * @tc.name      testDeque04ForEach0036
      * @tc.desc      test Deque forEach performance with moderate size strings
      * @tc.size      MediumTest
@@ -721,7 +721,7 @@ export default function Deque05Test(): void {
       });
 
     /**
-     * @tc.number    SUB_DEQUE_FOREACH04_3700
+     * @tc.number    SUB_UTIL_DEQUE_TESTFIVE_1900
      * @tc.name      testDeque04ForEach0037
      * @tc.desc      test Deque forEach with arrow function
      * @tc.size      MediumTest
