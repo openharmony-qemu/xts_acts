@@ -1978,7 +1978,7 @@ export default function windowFocusTest() {
         console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
         await subWindow.resizeAsync(displayInfo.width,displayInfo.height)
         await subWindow.showWindow();
-        await sleep(100);
+        await sleep(1000);
         subWindow.on('windowHighlightChange', callback)
         subWindow.on('windowEvent', callback2);
         let mainWin = windowStage.getMainWindowSync();
