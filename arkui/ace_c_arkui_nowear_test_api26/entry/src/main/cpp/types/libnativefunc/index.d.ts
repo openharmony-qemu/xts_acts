@@ -15,3 +15,33 @@
 
 export const RenderNodeUtils_001: () => number;
 export const RenderNodeUtils_002: () => number;
+
+export const TestRenderNodeBlurStyleOption_001: () => number;
+
+export const TestRenderNodeBlurStyleOption_002: () => number;
+
+export const TestRenderNodeBlurStyleOption_003: () => number;
+
+export const TestRenderNodeBlurStyleOption_004: () => number;
+
+export const TestRenderNodeBlurStyleOption_005: () => number;
+
+export const TestRenderNodeBlurStyleOption_006: () => number;
+
+export const TestRenderNodeBlurStyleOption_007: () => number;
+
+export const TestRenderNodeBlurStyleOption_008: () => number;
+
+export const TestRenderNodeBlurStyleOption_009: () => number;
+
+export const TestRenderNodeBlurStyleOption_010: () => number;
+
+export const TestRenderNodeBlurStyleOption_011: () => number;
+
+export const TestRenderNodeBlurStyleOption_012: () => number;
+
+export const TestRenderNodeBlurStyleOption_013: () => number;
+
+export const TestRenderNodeBlurStyleOption_014: () => number;
+
+export const TestRenderNodeBlurStyleOption_015: () => number;

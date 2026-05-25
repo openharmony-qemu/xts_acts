@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,6 +37,20 @@ import IDataSourcePrefetchingMethods from './Prefetcher/IDataSourcePrefetchingMe
 import ReuseObjectRawTest from './ReuseObject/ReuseObjectRawTest.test';
 import LazyForEachReleaseStrategyTest from './LazyForeach/LazyForEachReleaseStrategy.test';
 import LazyForEachCustomComponentFreezeModeStaticTest from './LazyForeach/LazyForEachCustomComponentFreezeModeStaticTest.test';
+import SyncMonitorNotWildcardsTest from './SyncMonitor/SyncMonitorNotWildcards.test';
+import PersistentStorageApiTest from './PersistentStorage/PersistentStorageApi.test';
+import PersistenceV2ApiTest from './PersistenceV2/PersistenceV2Api.test';
+import AddMonitorWildcard from './AddMonitorTest/AddMonitorWildcard.test';
+import AddMonitorWildcardUnerfined from './AddMonitorTest/AddMonitorWildcardUnerfined.test';
+import MonitorWildcards from './Monitor/MonitorWildcards.test';
+import PersistenceV2NotifyOnErrorTest from './PersistenceV2/PersistenceV2NotifyOnErrorTest.test';
+import componentLifecycleDecoratorsTest from './lifecycle/ComponentLifecycleDecorators.test';
+import reuseComponentLifecycleTest from './lifecycle/ReuseComponentLifecycle.test';
+import reuseV2ComponentLifecycleTest from './lifecycle/ReuseV2ComponentLifecycle.test';
+import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
+import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
+import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
+import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -55,11 +69,26 @@ export default function testsuite() {
   AddMonitorObservedV2Map(); 
   AddMonitorObservedV2Set(); 
   AddMonitorErrorCode();
-  AddMonitorParentChild(); 
+  AddMonitorParentChild();
   AddMonitorTwoDimensionalArray(); 
   BasicPrefetcherMethods();
   IDataSourcePrefetchingMethods();
   //ReuseObjectRawTest(); 
   LazyForEachReleaseStrategyTest();
   LazyForEachCustomComponentFreezeModeStaticTest();
+  SyncMonitorNotWildcardsTest();
+  PersistentStorageApiTest();
+  PersistenceV2ApiTest();
+  PersistenceV2NotifyOnErrorTest();
+  AddMonitorWildcard();
+  MonitorWildcards();
+  AddMonitorWildcardUnerfined();
+  componentLifecycleDecoratorsTest();
+  reuseComponentLifecycleTest();
+  reuseV2ComponentLifecycleTest();
+  SVDeepListenMakeObservedTest();
+  SVDeepListenMakeObservedFalseTest();
+  SVDeepListenObservedAndObjectlinkTest();
+  SVDeepListenObservedBuiltInTest();
+
 }

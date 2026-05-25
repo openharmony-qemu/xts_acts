@@ -32,7 +32,7 @@ import {
   Week,
   FontWeight,
   Axis,
-  Margin,DialogAlignment, CustomBuilderT, wrapBuilder,
+  Margin, CustomBuilderT, wrapBuilder,
   PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,DialogAlignment
 } from '@ohos.arkui.component';

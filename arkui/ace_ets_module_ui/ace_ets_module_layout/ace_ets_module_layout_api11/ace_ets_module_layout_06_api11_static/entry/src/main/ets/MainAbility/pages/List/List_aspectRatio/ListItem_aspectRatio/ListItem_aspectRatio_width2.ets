@@ -36,7 +36,6 @@ import {
   ListItemAlign,
   BarState,
   Axis,
-  TextAlign,
   Builder,
   TextAlign
 } from '@ohos.arkui.component'

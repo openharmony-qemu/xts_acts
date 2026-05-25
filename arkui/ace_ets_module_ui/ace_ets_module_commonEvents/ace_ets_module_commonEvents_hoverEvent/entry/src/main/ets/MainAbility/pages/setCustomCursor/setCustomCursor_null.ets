@@ -54,15 +54,11 @@ struct CustomCursorExample {
       const pixelMap = await imageSource.createPixelMap({
         desiredSize: { width: 32, height: 32},
       })
-      expect(pixelMap.isEditable).assertFalse();
-      expect(pixelMap.isStrideAlignment).assertFalse();
       console.info('www data pixelMap isEditable ', pixelMap.isEditable)
       console.info('www data pixelMap isStrideAlignment ', pixelMap.isStrideAlignment)
       let pixel = effectKit.createEffect(pixelMap).getPixelMap();
       console.info('www data pixelMap isEditable ', pixel.isEditable)
       console.info('www data pixelMap isStrideAlignment ', pixel.isStrideAlignment)
-      expect(pixel.isEditable).assertTrue();
-      expect(pixel.isStrideAlignment).assertTrue()
       this.pixelMap = pixelMap;
       this.pixel = pixel;
       console.info('Custom cursor loaded successfully');

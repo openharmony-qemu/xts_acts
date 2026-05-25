@@ -21,7 +21,6 @@ import {
   ColumnOptions,
   Component,
   Entry,
-  Margin,
   Text,
   FontWeight,
   Margin,

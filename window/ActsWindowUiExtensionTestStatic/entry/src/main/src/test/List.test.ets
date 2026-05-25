@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 import UIExtensionTest from "./UIExtension.test";
-export default function testsuite() {
+export default function testsuite(): void {
   UIExtensionTest();
 }

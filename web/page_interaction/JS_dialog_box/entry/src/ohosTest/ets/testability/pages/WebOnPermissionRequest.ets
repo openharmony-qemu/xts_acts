@@ -142,7 +142,12 @@ struct WebOnPermissionRequest {
                         this.isOperateEnd = 1
                       })
                     let component = await driver.waitForComponent(ON.text('允许'),10000);
-                    await component.click();
+                    if(component) {
+                      await component.click();
+                    } else {
+                      let buttonFour = await driver.waitForComponent(ON.text('本次使用允许'),10000);
+                      await buttonFour.click();
+                    }
                     await Utils.waitForReleaseDriver(this.str, driver)
                     await Utils.waitForExist(()=>this.isOperateEnd, this.str+' isOperateEnd', 1, 1000);
                     await Utils.waitForExist(()=>this.isOnConsoleEnd, this.str+' isOnConsoleEnd', 1, 1000);

@@ -26,7 +26,7 @@ import {
 } from '../../../hypium/index';
 import Utils from './Util.test';
 
-export default function DataViewTest() {
+export default function DataViewTest(): void {
   describe("dataViewTest", (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

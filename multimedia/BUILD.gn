@@ -71,6 +71,7 @@ group("multimedia") {
       "audio/audio_js_standard/audio_c_cover_test:ActsAudioCCoverTest",
       "audio/audio_js_standard/AudioSuiteEngine:ActsAudioSuiteEngineTest",
       "audio/audio_js_standard/AudioStreamBuilderHap:ActsAudioStreamBuilderHapTest",
+      "audio/audio_js_standard/AudioRenderStage:audio_render_stage_js_hap",
       "audio/ActsAudioOHndkTest:ActsAudioOHndkTest",
       "av_codec/ActsDemuxerTest:ActsDemuxerHapTest",
       "av_codec/vcodec/ActsH263SwDecoderTest:ActsH263swDecoderHapTest",

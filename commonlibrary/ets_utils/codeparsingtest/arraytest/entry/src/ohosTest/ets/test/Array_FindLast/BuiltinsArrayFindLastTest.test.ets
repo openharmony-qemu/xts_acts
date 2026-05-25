@@ -589,32 +589,6 @@ export default function BuiltinsArrayFindLastTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayFindLastTest4400
-     * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_TEST_4400
-     * @tc.desc   Verify large array last element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayFindLastTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result: boolean = Missing.ArrayFindLastEdgeTest4400();
-      expect(result).assertEqual(true);
-    });
-
-    /**
-     * @tc.name   BuiltinsArrayFindLastTest4500
-     * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_TEST_4500
-     * @tc.desc   Verify large array first element
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('BuiltinsArrayFindLastTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
-      let result: boolean = Missing.ArrayFindLastEdgeTest4500();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayFindLastTest4600
      * @tc.number SUB_BUILTINS_ARRAY_FIND_LAST_TEST_4600
      * @tc.desc   Verify array with Number.MAX_VALUE

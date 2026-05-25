@@ -93,6 +93,7 @@ export default function displayTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let displayClass = display.getDefaultDisplaySync();
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -138,6 +139,8 @@ export default function displayTest() {
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -623,21 +626,237 @@ export default function displayTest() {
      * @tc.level  LEVEL0
      */
     it('testIsCaptured', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsCaptured';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      try {
-        let status = display.isCaptured();
-        console.log(msgStr + 'status:' + status);
-        expect(status).assertFalse();
+let caseName = 'testIsCaptured';
+let msgStr = 'jsunittest ' + caseName + ' ';
+console.log(msgStr + 'begin');
+try {
+let status = display.isCaptured();
+console.log(msgStr + 'status:' + status);
+expect(status).assertFalse();
+class VirtualScreenConfig {
+name : string = '';
+width : number = 0;
+height : number = 0;
+density : number = 0;
+surfaceId : string = '';
+supportsFocus ?: boolean = true;
+}
+
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured();
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_default
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ * @tc.desc   check current device capture status with bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+ it('testIsCapturedByBundleName_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_default';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ["com.example.displaymanager"];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_empty_array
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
+ * @tc.desc   check current device capture status with empty bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_empty_array', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_empty_array';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = [];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_1400004
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+ * @tc.desc   check current device capture status with bundleName list input which is over max size
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_1400004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_1400004';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
+     '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36',
+      '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56',
+       '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76',
+        '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101'];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'succeeded in calling isCapturedByBundleName')
+    expect().assertFail();
+    done();
+  }
+  catch (error) {
+    console.error(msgStr + 'Failed. Code: ' + JSON.stringify(error));
+    expect(error.code).assertEqual(1400004)
+    done();
+  }
+});
+/**
+ * @tc.name      testIsCaptured_004
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0010
+ * @tc.desc      Test isCaptured with undefined parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_004';
+  console.info(`${message} begin`);
+  try {
+    let undefinedParam: undefined = undefined;
+    let result: boolean;
+    try {
+      result = display.isCaptured(undefinedParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Undefined parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-      catch (exception) {
-        console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-        expect().assertFail();
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
+
+/**
+ * @tc.name      testIsCaptured_006
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0020
+ * @tc.desc      Test isCaptured with null parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_006';
+  console.info(`${message} begin`);
+  try {
+    let nullParam: null = null;
+    let result: boolean;
+    try {
+      result = display.isCaptured(nullParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Null parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-    });
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
     /**
      * @tc.name   test_getAvailableArea_default
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
@@ -1607,8 +1826,13 @@ export default function displayTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-
-          done();
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
+              expect(err.code).assertEqual(801)
+              done();
+          } else {
+              expect(err.code).assertEqual(1400001);
+              done();
+          }
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));

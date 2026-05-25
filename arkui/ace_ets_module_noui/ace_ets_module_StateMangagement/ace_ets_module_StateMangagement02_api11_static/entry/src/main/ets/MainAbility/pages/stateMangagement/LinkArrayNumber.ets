@@ -59,7 +59,7 @@ import hilog from "@ohos.hilog";
 import common from '@ohos.app.ability.common';
 @Component
 struct LinkArrayNumberChild {
-  @Link value: Array<number> = new Array<number>(1, 2, 3)
+  @Link value: Array<number>;
 
   build() {
     Column() {

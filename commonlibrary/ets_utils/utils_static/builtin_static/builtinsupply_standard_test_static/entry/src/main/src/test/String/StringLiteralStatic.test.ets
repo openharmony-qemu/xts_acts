@@ -24,7 +24,7 @@ export async function sleep(time: int): Promise<int> {
 }
 type Color = 'red' | 'green' | 'blue';
 
-export default function BuiltinsStringLiteralTest() {
+export default function BuiltinsStringLiteralTest(): void {
   describe('BuiltinsStringLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

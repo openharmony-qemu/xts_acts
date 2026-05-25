@@ -51,7 +51,7 @@ struct SwiperExample {
         .onClick(() => {
           this.modifier0.isUndefined = !this.modifier0.isUndefined
         }).id('changeButton')
-      List() {
+      Column() {
         Text('interval').fontSize(20).margin(15).width('90%')
         Swiper(this.swiperController, () => {
           ForEach(['1', '2', '3', '4'], (item: string) => {

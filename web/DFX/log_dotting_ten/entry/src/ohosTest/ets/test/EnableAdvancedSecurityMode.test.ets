@@ -315,5 +315,33 @@ export default function EnableAdvancedSecurityMode() {
       sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
     })
 
+    /**
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_1900
+     * @tc.name       testEnableAdvancedSecurityMode019
+     * @tc.desc       enableAdvancedSecurityMode with null param
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testEnableAdvancedSecurityMode019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      Utils.emitEvent('emitEnableAdvancedSecurityMode019', 10)
+      Utils.registerEvent('testEnableAdvancedSecurityMode019', true, 210019, done);
+      sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
+    })
+
+    /**
+     * @tc.number     SUB_WEB_ENABLE_ADVANCEDSECURITYMODE_2000
+     * @tc.name       testEnableAdvancedSecurityMode020
+     * @tc.desc       enableAdvancedSecurityMode with undefined param
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 3
+     */
+    it('testEnableAdvancedSecurityMode020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      Utils.emitEvent('emitEnableAdvancedSecurityMode020', 10)
+      Utils.registerEvent('testEnableAdvancedSecurityMode020', true, 210020, done);
+      sendEventByKey('EnableAdvancedSecurityModeButton', 10, '');
+    })
+
   })
 }

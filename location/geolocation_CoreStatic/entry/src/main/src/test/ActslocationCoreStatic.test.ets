@@ -1508,6 +1508,7 @@ export default function actslocationTest() {
                 wlanBssidArray, rssiThreshold, needStartScan);
             hilog.info(domain, tag, 'SUB_Location_findMatchingWlan_promiss_0100 result: %{public}s', JSON.stringify(result));
             expect(result instanceof Array).assertTrue();
+            expect(result.length > 0).assertTrue();
             if (result.length > 0) {
               hilog.info(domain, tag, 'result[0].index: %{public}d', result[0].index);
               hilog.info(domain, tag, 'result[0].ssid: %{public}s', result[0].ssid);
@@ -1615,8 +1616,8 @@ export default function actslocationTest() {
          */
         it('SUB_Location_findMatchingWlan_promiss_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
           try {
-            geoLocationManager.disableLocation()
-            await Utils.msSleep(1000)
+            geoLocationManager.disableLocation();
+            await Utils.msSleep(1000);
             let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
             if (locationEnabled) {
                 hilog.info(domain, tag, 'Location is enabled, skip error code test');

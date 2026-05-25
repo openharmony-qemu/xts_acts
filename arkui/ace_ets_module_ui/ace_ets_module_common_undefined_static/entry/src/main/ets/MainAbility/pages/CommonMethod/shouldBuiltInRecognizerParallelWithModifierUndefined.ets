@@ -32,8 +32,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class ShouldParallelModifier implements AttributeModifier<CommonAttribute> {
-  @State public change: Boolean = true
-  @State public count: Int = 0
+  public change: Boolean = true
+  public count: Int = 0
   private childRecognizer: GestureRecognizer = new GestureRecognizer();
   private currentRecognizer: GestureRecognizer = new GestureRecognizer();
 

@@ -2236,7 +2236,9 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + 'pixelMap enum ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           await pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');

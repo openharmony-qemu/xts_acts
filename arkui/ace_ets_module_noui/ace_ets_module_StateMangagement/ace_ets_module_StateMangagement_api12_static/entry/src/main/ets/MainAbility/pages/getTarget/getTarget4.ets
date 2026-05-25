@@ -46,6 +46,7 @@ export class InfoV1Observed {
 
 @ObservedV2
 export class InfoV1Observedv2 {
+  @Trace age: number = 20
   public a: InfoV1Observed;
 
   constructor(a: InfoV1Observed) {

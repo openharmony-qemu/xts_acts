@@ -62,7 +62,7 @@ export default class MediaTestBase {
     await this.msleepAsync(SLEEP_TIME_2000);
     console.info(TAG, `UiDriver start`);
     for (let i = 0; i < num; i++) {
-      let button = await driver.findComponent(BY.text('允许'));
+      let button = await driver.findComponent(BY.text('允许')) || await driver.findComponent(BY.text('始终允许'));
       if (button == null) {
         let cmd = "hidumper -s WindowManagerService -a'-a'";
         await delegator.executeShellCommand(cmd);
@@ -70,9 +70,7 @@ export default class MediaTestBase {
       }
       console.info(TAG, `button is ${JSON.stringify(button)}`);
       await this.msleepAsync(SLEEP_TIME_2000);
-      if (await driver.findComponent(BY.text('允许')) != null) {
-        await button.click();
-      }
+      await button.click();
       await this.msleepAsync(SLEEP_TIME_2000);
     }
     await this.msleepAsync(SLEEP_TIME_2000);

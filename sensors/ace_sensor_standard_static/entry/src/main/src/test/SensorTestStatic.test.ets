@@ -323,7 +323,7 @@ export default function SensorJsStaticTest() {
     let TAG = '';
     let Available = false;
 
-    beforeAll((done: () => void): Promise<void> =>{
+    beforeAll((done: () => void): void =>{
       hilog.info(domain, tag, 'beforeAll called');
       try {
         sensor.getSensorList((err: BusinessError<void> | null, data: Array<sensor.Sensor> | undefined) => {

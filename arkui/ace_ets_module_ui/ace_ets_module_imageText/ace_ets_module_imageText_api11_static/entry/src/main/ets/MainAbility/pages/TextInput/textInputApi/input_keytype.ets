@@ -25,8 +25,7 @@ import {
   InputType,
   EnterKeyType,
   FontStyle,
-  FontWeight,
-  EnterKeyType
+  FontWeight
 } from '@ohos.arkui.component'
 import {
   State,
