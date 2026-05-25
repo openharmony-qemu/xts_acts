@@ -39,7 +39,6 @@ export default function InstanceTest(): void {
      */
     it('testInstance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      expect(linker !== null).assertTrue();
       expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
@@ -100,7 +99,6 @@ export default function InstanceTest(): void {
      */
     it('testInstance005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let useLinker = (linker: BootRuntimeLinker): void => {
-        expect(linker !== null).assertTrue();
         expect(linker instanceof BootRuntimeLinker).assertTrue();
       }
       useLinker(BootRuntimeLinker.instance);

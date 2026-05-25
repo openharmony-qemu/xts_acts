@@ -178,7 +178,7 @@ export default function BootRuntimeLinkerTest(): void {
      */
     it('testBootRuntimeLinker010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
-      let typeResult: Type | undefined = linker.getType("std.core.String" as TypeDescriptor);
+      let typeResult: Type | undefined = linker.getType("std.core.String");
       expect(typeResult !== undefined).assertTrue();
     });
 
