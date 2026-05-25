@@ -176,7 +176,6 @@ export default function StaticMethodIsPublicTest(): void {
       expect(method != undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
-      expect(typeof isPublic).assertEqual('boolean');
     });
 
     /**
@@ -281,10 +280,10 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let isPublic: boolean = method!.isPublic();
-      expect(typeof isPublic).assertEqual('boolean');
-      let isBoolean: boolean = isPublic === true || isPublic === false;
-      expect(isBoolean).assertTrue();
+      let isPublic = method!.isPublic();
+      let isPublicType = Class.of(isPublic).getName();
+      expect(isPublicType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -364,12 +363,8 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
         let isPublic: boolean = method!.isPublic();
         expect(isPublic).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

@@ -116,7 +116,6 @@ export default function StaticMethodGetNameTest(): void {
       expect(method != undefined).assertTrue();
       let name: string = method!.getName();
       expect(name).assertEqual('test');
-      expect(typeof name).assertEqual('string');
     });
 
     /**
@@ -173,8 +172,9 @@ export default function StaticMethodGetNameTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let name: string = method!.getName();
-      expect(typeof name === 'string').assertTrue();
+      let name = method!.getName();
+      let nameType = Class.of(name).getName();
+      expect(nameType).assertEqual('std.core.String');
     });
 
     /**
@@ -236,12 +236,8 @@ export default function StaticMethodGetNameTest(): void {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
         let name: string = method!.getName();
         expect(name != null).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

@@ -154,7 +154,6 @@ export default function StaticMethodIsNativeTest(): void {
       expect(method != undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
-      expect(typeof isNative).assertEqual('boolean');
     });
 
     /**
@@ -247,10 +246,10 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let isNative: boolean = method!.isNative();
-      expect(typeof isNative).assertEqual('boolean');
-      let isBoolean: boolean = isNative === true || isNative === false;
-      expect(isBoolean).assertTrue();
+      let isNative = method!.isNative();
+      let isNativeType = Class.of(isNative).getName();
+      expect(isNativeType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -300,12 +299,8 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
         let isNative: boolean = method!.isNative();
         expect(isNative).assertFalse();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**
@@ -457,8 +452,9 @@ export default function StaticMethodIsNativeTest(): void {
       let arrayCls: Class = Class.from<Array<int>>();
       let arrayMethods = arrayCls.getStaticMethods();
       for (let i: int = 0; i < arrayMethods.length; i++) {
-        let isNative: boolean = arrayMethods[i].isNative();
-        expect(typeof isNative).assertEqual('boolean');
+        let isNative = arrayMethods[i].isNative();
+        let isNativeType = Class.of(isNative).getName();
+        expect(isNativeType).assertEqual('std.core.Boolean');
       }
     });
   });

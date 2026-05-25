@@ -219,7 +219,6 @@ export default function StaticMethodIsGetterTest(): void {
       expect(method != undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
       expect(isGetter).assertTrue();
-      expect(typeof isGetter).assertEqual('boolean');
     });
 
     /**
@@ -343,10 +342,10 @@ export default function StaticMethodIsGetterTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
-      let isGetter: boolean = method!.isGetter();
-      expect(typeof isGetter).assertEqual('boolean');
-      let isBoolean: boolean = isGetter === true || isGetter === false;
-      expect(isBoolean).assertTrue();
+      let isGetter = method!.isGetter();
+      let isGetterType = Class.of(isGetter).getName();
+      expect(isGetterType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -456,12 +455,8 @@ export default function StaticMethodIsGetterTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%get-name');
       expect(method != undefined).assertTrue();
-      try {
         let isGetter: boolean = method!.isGetter();
         expect(isGetter).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

@@ -297,10 +297,10 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      let isProtected: boolean = method!.isProtected();
-      expect(typeof isProtected).assertEqual('boolean');
-      let isBoolean: boolean = isProtected === true || isProtected === false;
-      expect(isBoolean).assertTrue();
+      let isProtected = method!.isProtected();
+      let isProtectedType = Class.of(isProtected).getName();
+      expect(isProtectedType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -384,12 +384,8 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      try {
         let isProtected: boolean = method!.isProtected();
         expect(isProtected).assertFalse();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

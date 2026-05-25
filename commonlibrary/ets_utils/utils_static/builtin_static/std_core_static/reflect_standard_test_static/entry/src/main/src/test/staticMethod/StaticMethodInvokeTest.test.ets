@@ -211,12 +211,10 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
-        method!.invoke();
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      //   method!.invoke();
+      let invokeResult = method!.invoke();
+      let isUndefined = invokeResult === undefined;
+      expect(isUndefined).assertTrue();
     });
 
     /**
@@ -264,13 +262,10 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls004.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       // spec/types.md:1725: string|null is a nullish union and should accept null.
-      // Runtime behavior is unstable for invoke([null]) — may succeed or throw TypeError.
-      try {
-        method!.invoke([null]);
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      //   method!.invoke([null]);
+      let invokeResult = method!.invoke([null]);
+      let isUndefined = invokeResult === undefined;
+      expect(isUndefined).assertTrue();
     });
 
     /**
@@ -286,13 +281,10 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls005.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       // spec/types.md:1327: optional parameter type is T|undefined (nullish union).
-      // Runtime behavior for invoke([undefined]) may throw TypeError.
-      try {
-        method!.invoke([undefined]);
-        expect(true).assertTrue();
-      } catch (error) {
-        expect(error.name).assertEqual('TypeError');
-      }
+      //   method!.invoke([undefined]);
+      let invokeResult = method!.invoke([undefined]);
+      let isUndefined = invokeResult === undefined;
+      expect(isUndefined).assertTrue();
     });
 
     /**
@@ -522,8 +514,8 @@ export default function StaticMethodInvokeTest(): void {
       let method = cls016.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let result = method!.invoke();
-      let type: string = typeof result;
-      expect(type).assertEqual('string');
+      let resultType = Class.of(result as Object).getName();
+      expect(resultType).assertEqual('std.core.String');
       expect(result as string).assertEqual('test');
     });
 

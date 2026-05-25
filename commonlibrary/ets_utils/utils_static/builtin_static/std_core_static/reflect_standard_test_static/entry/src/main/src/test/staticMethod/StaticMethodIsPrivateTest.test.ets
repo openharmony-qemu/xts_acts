@@ -287,10 +287,10 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      let isPrivate: boolean = method!.isPrivate();
-      expect(typeof isPrivate).assertEqual('boolean');
-      let isBoolean: boolean = isPrivate === true || isPrivate === false;
-      expect(isBoolean).assertTrue();
+      let isPrivate = method!.isPrivate();
+      let isPrivateType = Class.of(isPrivate).getName();
+      expect(isPrivateType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -358,12 +358,8 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method != undefined).assertTrue();
-      try {
         let isPrivate: boolean = method!.isPrivate();
         expect(isPrivate).assertFalse();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

@@ -175,7 +175,6 @@ export default function StaticMethodGetParametersNumTest(): void {
       expect(method != undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
-      expect(typeof num).assertEqual('int');
     });
 
     /**
@@ -318,8 +317,9 @@ export default function StaticMethodGetParametersNumTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let num: int = method!.getParametersNum();
-      expect(typeof num).assertEqual('int');
+      let num = method!.getParametersNum();
+      let numType = Class.of(num).getName();
+      expect(numType).assertEqual('std.core.Int');
     });
 
     /**
@@ -382,12 +382,8 @@ export default function StaticMethodGetParametersNumTest(): void {
       let cls: Class = Class.from<MyClass016>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
         let num: int = method!.getParametersNum();
         expect(num).assertEqual(1);
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

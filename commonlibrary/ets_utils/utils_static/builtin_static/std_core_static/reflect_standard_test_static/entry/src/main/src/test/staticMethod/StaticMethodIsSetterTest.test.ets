@@ -226,7 +226,6 @@ export default function StaticMethodIsSetterTest(): void {
       expect(method != undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertTrue();
-      expect(typeof isSetter).assertEqual('boolean');
     });
 
     /**
@@ -350,10 +349,10 @@ export default function StaticMethodIsSetterTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
-      let isSetter: boolean = method!.isSetter();
-      expect(typeof isSetter).assertEqual('boolean');
-      let isBoolean: boolean = isSetter === true || isSetter === false;
-      expect(isBoolean).assertTrue();
+      let isSetter = method!.isSetter();
+      let isSetterType = Class.of(isSetter).getName();
+      expect(isSetterType).assertEqual('std.core.Boolean');
+
     });
 
     /**
@@ -465,12 +464,8 @@ export default function StaticMethodIsSetterTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('%%set-name');
       expect(method != undefined).assertTrue();
-      try {
         let isSetter: boolean = method!.isSetter();
         expect(isSetter).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**

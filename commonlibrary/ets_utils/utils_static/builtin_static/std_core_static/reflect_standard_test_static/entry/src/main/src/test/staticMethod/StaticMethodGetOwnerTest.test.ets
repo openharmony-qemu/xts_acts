@@ -254,8 +254,9 @@ export default function StaticMethodGetOwnerTest(): void {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      let owner: Class = method!.getOwner();
-      expect(typeof owner).assertEqual('object');
+      let owner = method!.getOwner();
+      let ownerTypeName = Class.of(owner).getName();
+      expect(ownerTypeName != null).assertTrue();
       expect(owner.getName != null).assertTrue();
     });
 
@@ -321,12 +322,8 @@ export default function StaticMethodGetOwnerTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
-      try {
         let owner: Class = method!.getOwner();
         expect(owner != null).assertTrue();
-      } catch (error) {
-        expect().assertFail();
-      }
     });
 
     /**
