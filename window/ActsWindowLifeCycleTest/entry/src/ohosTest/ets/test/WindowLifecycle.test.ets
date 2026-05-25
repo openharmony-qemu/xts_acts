@@ -3330,6 +3330,7 @@ export default function WindowLifecycle() {
    async (done: Function) => {
      let caseName = "testWindow_Front_Desk_Split_Restore_0200";
      console.log(caseName + " begin");
+     let driver = Driver.create()
      let displayInfo: display.Display = display.getDefaultDisplaySync()
      console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
      if (deviceType === '2in1') {
