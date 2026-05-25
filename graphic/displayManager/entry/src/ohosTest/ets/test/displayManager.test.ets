@@ -116,7 +116,7 @@ export default function displayTest() {
       let promiseSnapshot = windowClass.getWindowStateSnapshot();
       promiseSnapshot.then((data) => {
         let jsonObj: object = JSON.parse(data);
-        console.info(`beforeAll: Succeeded. data=${data}, isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        console.info(`beforeAll: Succeeded. data=${data}, isPCMode=${jsonObj["isPcMode"]}, isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
         isPCMode = jsonObj["isPcMode"];
         isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
       }).catch((err: BusinessError) => {
