@@ -218,7 +218,7 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_1500
-     * @tc.desc Verify typeof fixed.resizable equals "boolean"
+     * @tc.desc Verify Class.of(new Boolean(resizable)) equals Class.of(ref) for fixed and resizable
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -226,8 +226,9 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const fixed = new ArrayBuffer(4);
       const resizable = new ArrayBuffer(2, 8);
-      expect(typeof fixed.resizable).assertEqual("boolean");
-      expect(typeof resizable.resizable).assertEqual("boolean");
+      const ref: boolean = false;
+      expect(Class.of(new Boolean(fixed.resizable)) === Class.of(new Boolean(ref))).assertTrue();
+      expect(Class.of(new Boolean(resizable.resizable)) === Class.of(new Boolean(ref))).assertTrue();
     });
     /**
      * @tc.name testArrayBufferResizableField0016

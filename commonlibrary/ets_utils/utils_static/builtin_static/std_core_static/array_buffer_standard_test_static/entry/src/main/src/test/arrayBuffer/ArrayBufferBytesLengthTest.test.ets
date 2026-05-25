@@ -543,14 +543,15 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_3800
-     * @tc.desc Verify typeof len equals 'int'
+     * @tc.desc Verify Class.of(new Int(len)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferBytesLength0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let len = ArrayBuffer.bytesLength('ABC', 'utf8')
-      expect(typeof len).assertEqual('int')
+      const ref: int = 0;
+      expect(Class.of(new Int(len)) === Class.of(new Int(ref))).assertTrue();
     });
 
     /**

@@ -215,7 +215,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_1400
-     * @tc.desc Verify typeof result equals "boolean"
+     * @tc.desc Verify Class.of(new Boolean(result)) equals Class.of(new Boolean(ref))
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -223,7 +223,8 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const result = buffer.detached;
-      expect(typeof result).assertEqual("boolean");
+      const ref: boolean = false;
+      expect(Class.of(new Boolean(result)) === Class.of(new Boolean(ref))).assertTrue();
     });
     /**
      * @tc.name testArrayBufferDetachedField0015
@@ -387,7 +388,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_2600
-     * @tc.desc Verify typeof result === 'boolean' && result === false is true
+     * @tc.desc Verify Class.of(new Boolean(result)) equals Class.of(ref) and result is false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -395,7 +396,9 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8, 16);
       buffer.resize(0);
-      expect(typeof buffer.detached === 'boolean').assertTrue();
+      const result = buffer.detached;
+      const ref: boolean = false;
+      expect(Class.of(new Boolean(result)) === Class.of(new Boolean(ref))).assertTrue();
       expect(buffer.detached).assertFalse();
     });
   });

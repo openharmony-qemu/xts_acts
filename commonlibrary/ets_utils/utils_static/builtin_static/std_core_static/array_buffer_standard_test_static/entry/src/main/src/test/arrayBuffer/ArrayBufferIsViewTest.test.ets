@@ -160,7 +160,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_1000
-     * @tc.desc Verify isView returns false and typeof result is boolean for ArrayBuffer
+     * @tc.desc Verify isView returns false and Class.of(new Boolean(result)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -168,7 +168,9 @@ export default function arrayBufferIsViewTest(): void {
     it('testArrayBufferIsView0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       expect(ArrayBuffer.isView(buffer)).assertFalse();
-      expect(typeof ArrayBuffer.isView(buffer) === 'boolean').assertTrue();
+      const result = ArrayBuffer.isView(buffer);
+      const ref: boolean = false;
+      expect(Class.of(new Boolean(result)) === Class.of(new Boolean(ref))).assertTrue();
     });
 
     /**
@@ -351,7 +353,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_2500
-     * @tc.desc Verify typeof ArrayBuffer.isView(view) equals 'boolean'
+     * @tc.desc Verify Class.of(new Boolean(result)) equals Class.of(ref) for isView(view)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -359,7 +361,9 @@ export default function arrayBufferIsViewTest(): void {
     it('testArrayBufferIsView0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       const view = new DataView(buffer);
-      expect(typeof ArrayBuffer.isView(view) === 'boolean').assertTrue();
+      const result = ArrayBuffer.isView(view);
+      const ref: boolean = false;
+      expect(Class.of(new Boolean(result)) === Class.of(new Boolean(ref))).assertTrue();
     });
 
     /**

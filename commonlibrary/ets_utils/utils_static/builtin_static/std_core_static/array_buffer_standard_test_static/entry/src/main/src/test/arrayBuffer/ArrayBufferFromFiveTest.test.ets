@@ -417,14 +417,15 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_3100
-     * @tc.desc Verify typeof buf.byteLength equals 'int'
+     * @tc.desc Verify Class.of(new Int(byteLength)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buf = ArrayBuffer.from('ABC', 'utf8');
-      expect(typeof buf.byteLength).assertEqual('int');
+      const ref: int = 0;
+      expect(Class.of(new Int(buf.byteLength)) === Class.of(new Int(ref))).assertTrue();
     });
     /**
      * @tc.name testArrayBufferFromFive0032

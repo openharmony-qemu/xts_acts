@@ -117,7 +117,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0700
-     * @tc.desc Verify byteLength typeof is int and len equals 4
+     * @tc.desc Verify Class.of(new Int(len)) equals Class.of(ref) and len equals 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -125,7 +125,8 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer: ArrayBufferLike = new ArrayBuffer(4);
       const len: int = buffer.byteLength;
-      expect(typeof len === 'int').assertTrue();
+      const ref: int = 0;
+      expect(Class.of(new Int(len)) === Class.of(new Int(ref))).assertTrue();
       expect(len).assertEqual(4);
     });
     /**
@@ -200,7 +201,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_1300
-     * @tc.desc Verify typeof str === 'string' is true
+     * @tc.desc Verify Class.of(new String(str)) equals Class.of(ref) is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -208,7 +209,8 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer: ArrayBufferLike = new ArrayBuffer(4);
       const str: string = buffer.toString();
-      expect(typeof str === 'string').assertTrue();
+      const ref: string = '';
+      expect(Class.of(new String(str as Any)) === Class.of(new String(ref as Any))).assertTrue();
     });
     /**
      * @tc.name testArrayBufferLike0014

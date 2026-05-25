@@ -728,7 +728,7 @@ export default function arrayBufferFromSevenTest(): void {
     /**
      * @tc.name testArrayBufferFromSeven0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SEVEN_3800
-     * @tc.desc Verify from result is ArrayBuffer, byteLength typeof is int, Class.of matches ref
+     * @tc.desc Verify from result is ArrayBuffer, Class.of(new Int(byteLength)) equals Class.of(ref), Class.of matches ref
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -738,7 +738,8 @@ export default function arrayBufferFromSevenTest(): void {
       const result = ArrayBuffer.from(source, 1, 3);
       const ref = new ArrayBuffer(0);
       expect(result instanceof ArrayBuffer).assertTrue();
-      expect(typeof result.byteLength).assertEqual('int');
+      const intRef: int = 0;
+      expect(Class.of(new Int(result.byteLength)) === Class.of(new Int(intRef))).assertTrue();
       expect(Class.of(result) === Class.of(ref)).assertTrue();
     });
     /**

@@ -392,7 +392,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_2200
-     * @tc.desc Verify byteLength typeof is int
+     * @tc.desc Verify Class.of(new Int(byteLength)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -400,7 +400,8 @@ export default function arrayBufferFromThreeTest(): void {
     it('testArrayBufferFromThree0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u8 = new Uint8Array([1, 2, 3]);
       const result = ArrayBuffer.from(u8);
-      expect(typeof result.byteLength === 'int').assertTrue();
+      const ref: int = 0;
+      expect(Class.of(new Int(result.byteLength)) === Class.of(new Int(ref))).assertTrue();
     });
 
     /**

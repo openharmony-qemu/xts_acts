@@ -393,7 +393,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_2500
-     * @tc.desc Verify byteLength typeof is int
+     * @tc.desc Verify Class.of(new Int(byteLength)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -401,7 +401,8 @@ export default function arrayBufferFromSixTest(): void {
     it('testArrayBufferFromSix0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = ArrayBuffer.from('abcd', 'utf8');
       const result = ArrayBuffer.from(source, 1, 2);
-      expect(typeof result.byteLength === 'int').assertTrue();
+      const ref: int = 0;
+      expect(Class.of(new Int(result.byteLength)) === Class.of(new Int(ref))).assertTrue();
     });
     /**
      * @tc.name testArrayBufferFromSix0026

@@ -480,21 +480,21 @@ export default function byteConstructorTwoTest(): void {
     /**
      * @tc.name testByteConstructorTwo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3100
-     * @tc.desc Verify kind === 'byte' is true
+     * @tc.desc Verify Class.of(b) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testByteConstructorTwo0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
-      const kind: string = typeof b;
-      expect(kind === 'byte').assertTrue();
+      const ref = new Byte(Int.toByte(0));
+      expect(Class.of(b) === Class.of(ref)).assertTrue();
     });
 
     /**
      * @tc.name testByteConstructorTwo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BYTE_CONSTRUCTOR_TWO_3200
-     * @tc.desc Verify typeof val === 'byte' is true
+     * @tc.desc Verify Class.of(new Byte(val)) equals Class.of(ref)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -502,7 +502,8 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const b = new Byte(Int.toByte(64));
       const val: byte = b.toByte();
-      expect(typeof val === 'byte').assertTrue();
+      const ref: byte = Int.toByte(0);
+      expect(Class.of(new Byte(val)) === Class.of(new Byte(ref))).assertTrue();
     });
   });
 }
