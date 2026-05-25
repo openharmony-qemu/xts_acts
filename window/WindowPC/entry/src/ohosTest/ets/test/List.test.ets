@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import windowTitleBarTest from './WindowTitleBar.test';
-import windowAutoSaveTest from './WindowAutoSave.test';';
+import windowAutoSaveTest from './WindowAutoSave.test';
 import windowPCTest from './WindowPC.test';
 
 export default function testsuite() {
