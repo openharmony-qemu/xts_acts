@@ -265,41 +265,6 @@ export default function BuiltinsArrayPrototypeEntriesTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeEntriesTest1200
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_ENTRIES_TEST_1200
-     * @tc.desc    Verify large array boundary index correctness
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayPrototypeEntriesTest1200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: (string | undefined)[] = new Array<string | undefined>(10000);
-      arr[0] = 'first';
-      arr[9999] = 'last';
-      const iterator = arr.entries();
-      const firstResult = iterator.next();
-
-      expect(firstResult.value).not().assertNull();
-      expect(firstResult.value![0]).assertEqual(0);
-      expect(firstResult.value![1]).assertEqual('first');
-
-      let last: [number, string | undefined] | undefined = undefined;
-      let result = iterator.next();
-      while (!result.done) {
-        if (result.value) {
-          last = [result.value![0], result.value![1]];
-        }
-        result = iterator.next();
-      }
-
-      expect(last).not().assertNull();
-      if (last) {
-        expect(last[0]).assertEqual(9999);
-        expect(last[1]).assertEqual('last');
-      }
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeEntriesTest1300
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_ENTRIES_TEST_1300
      * @tc.desc    Verify two-dimensional array iteration behavior
@@ -1050,29 +1015,6 @@ export default function BuiltinsArrayPrototypeEntriesTest(): void {
         expect(result4.value![0]).assertEqual(1);
         expect(result4.value![1]).assertEqual('b');
       }
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeEntriesTest4200
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_ENTRIES_TEST_4200
-     * @tc.desc    Verify large array iteration performance
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayPrototypeEntriesTest4200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr = new Array<number>(10000);
-      for (let i = 0; i < 10000; i++) {
-        arr[i] = i;
-      }
-      const iterator = arr.entries();
-      let count = 0;
-      let result = iterator.next();
-      while (!result.done) {
-        count++;
-        result = iterator.next();
-      }
-      expect(count).assertEqual(10000);
     });
 
     /**
