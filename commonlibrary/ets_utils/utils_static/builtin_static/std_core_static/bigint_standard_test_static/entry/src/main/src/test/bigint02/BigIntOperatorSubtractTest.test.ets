@@ -26,13 +26,12 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractBasic0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(12).operatorSubtract(BigInt(5)).toString()).assertEqual('7');
-        expect(BigInt(20).operatorSubtract(BigInt(-5)).toString()).assertEqual('25');
-        expect(BigInt(-10).operatorSubtract(BigInt(5)).toString()).assertEqual('-15');
-        expect(BigInt(-8).operatorSubtract(BigInt(-3)).toString()).assertEqual('-5');
-      });
+    it('testBigIntOperatorSubtractBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(12).operatorSubtract(BigInt(5)).toString()).assertEqual('7');
+      expect(BigInt(20).operatorSubtract(BigInt(-5)).toString()).assertEqual('25');
+      expect(BigInt(-10).operatorSubtract(BigInt(5)).toString()).assertEqual('-15');
+      expect(BigInt(-8).operatorSubtract(BigInt(-3)).toString()).assertEqual('-5');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0200
@@ -42,11 +41,10 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractZero0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).operatorSubtract(BigInt(0)).toString()).assertEqual('42');
-        expect(BigInt(0).operatorSubtract(BigInt(0)).toString()).assertEqual('0');
-      });
+    it('testBigIntOperatorSubtractZero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).operatorSubtract(BigInt(0)).toString()).assertEqual('42');
+      expect(BigInt(0).operatorSubtract(BigInt(0)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0300
@@ -56,10 +54,9 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractLarge0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('99999999999999999999').operatorSubtract(BigInt('12345678901234567890')).toString()).assertEqual('87654321098765432109');
-      });
+    it('testBigIntOperatorSubtractLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('99999999999999999999').operatorSubtract(BigInt('12345678901234567890')).toString()).assertEqual('87654321098765432109');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0400
@@ -69,11 +66,11 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractReturnType0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const result = BigInt(10).operatorSubtract(BigInt(3));
-        expect(typeof result === 'bigint').assertTrue();
-      });
+    it('testBigIntOperatorSubtractReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = BigInt(10).operatorSubtract(BigInt(3));
+
+      expect(typeof result === 'bigint').assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0500
@@ -83,25 +80,25 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractInvalidArg0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = BigInt(10);
-        expect((): void => {
-          a.operatorSubtract(null as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorSubtract(undefined as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorSubtract('abc' as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorSubtract(123 as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorSubtract(true as Object as BigInt);
-        }).assertThrowError('ClassCastError');
-      });
+    it('testBigIntOperatorSubtractInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const a = BigInt(10);
+
+      expect((): void => {
+        a.operatorSubtract(null as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorSubtract(undefined as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorSubtract('abc' as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorSubtract(123 as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorSubtract(true as object as BigInt);
+      }).assertThrowError('ClassCastError');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0600
@@ -111,14 +108,14 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractSelfZero0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const zero = BigInt(0);
-        expect(BigInt(42).operatorSubtract(BigInt(42)).equals(zero)).assertTrue();
-        expect(BigInt(-99).operatorSubtract(BigInt(-99)).toString()).assertEqual('0');
-        const huge = BigInt('999999999999999999999999999999');
-        expect(huge.operatorSubtract(huge).toString()).assertEqual('0');
-      });
+    it('testBigIntOperatorSubtractSelfZero0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const zero = BigInt(0);
+
+      expect(BigInt(42).operatorSubtract(BigInt(42)).equals(zero)).assertTrue();
+      expect(BigInt(-99).operatorSubtract(BigInt(-99)).toString()).assertEqual('0');
+      const huge = BigInt('999999999999999999999999999999');
+      expect(huge.operatorSubtract(huge).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0700
@@ -128,14 +125,11 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorSubtractBorrow0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(1000).operatorSubtract(BigInt(1)).toString()).assertEqual('999');
-        expect(BigInt('100000000000000000000').operatorSubtract(BigInt(1)).toString())
-          .assertEqual('99999999999999999999');
-        expect(BigInt(0).operatorSubtract(BigInt(1)).toString()).assertEqual('-1');
-        expect(BigInt('9223372036854775808').operatorSubtract(BigInt('9223372036854775807')).toString())
-          .assertEqual('1');
-      });
+    it('testBigIntOperatorSubtractBorrow0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(1000).operatorSubtract(BigInt(1)).toString()).assertEqual('999');
+      expect(BigInt('100000000000000000000').operatorSubtract(BigInt(1)).toString()).assertEqual('99999999999999999999');
+      expect(BigInt(0).operatorSubtract(BigInt(1)).toString()).assertEqual('-1');
+      expect(BigInt('9223372036854775808').operatorSubtract(BigInt('9223372036854775807')).toString()).assertEqual('1');
+    });
   });
 }

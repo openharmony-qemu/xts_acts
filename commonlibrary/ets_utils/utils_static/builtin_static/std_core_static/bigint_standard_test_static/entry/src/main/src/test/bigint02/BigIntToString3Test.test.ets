@@ -26,16 +26,16 @@ export default function BigIntToString3Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3DoubleRadix0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const sample255 = 255; // 0xFF: byte-aligned sample for radix conversion
-        const radix16: double = 16.0; // hex
-        const radix2: double = 2.0;
-        const radix8: double = 8.0;
-        expect(BigInt(sample255).toString(Double.toInt(radix16))).assertEqual('ff');
-        expect(BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
-        expect(BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
-      });
+    it('testBigIntToString3DoubleRadix0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sample255 = 255; // 0xFF: byte-aligned sample for radix conversion
+      const radix16: double = 16.0; // hex
+      const radix2: double = 2.0;
+      const radix8: double = 8.0;
+
+      expect(BigInt(sample255).toString(Double.toInt(radix16))).assertEqual('ff');
+      expect(BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
+      expect(BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0200
@@ -45,12 +45,12 @@ export default function BigIntToString3Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3Negative0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const sample255 = 255;
-        const radix16: double = 16.0;
-        expect(BigInt(-sample255).toString(Double.toInt(radix16))).assertEqual('-ff');
-      });
+    it('testBigIntToString3Negative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const sample255 = 255;
+      const radix16: double = 16.0;
+
+      expect(BigInt(-sample255).toString(Double.toInt(radix16))).assertEqual('-ff');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0300
@@ -60,16 +60,16 @@ export default function BigIntToString3Test(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3InvalidRadix0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const radixBelowMin: double = 1.0; // legal int radix starts at 2
-        const radixAboveMax: double = 37.0; // legal int radix ends at 36
-        expect((): void => {
-          BigInt(10).toString(Double.toInt(radixBelowMin));
-        }).assertThrowError('RangeError');
-        expect((): void => {
-          BigInt(10).toString(Double.toInt(radixAboveMax));
-        }).assertThrowError('RangeError');
-      });
+    it('testBigIntToString3InvalidRadix0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const radixBelowMin: double = 1.0; // legal int radix starts at 2
+      const radixAboveMax: double = 37.0; // legal int radix ends at 36
+
+      expect((): void => {
+        BigInt(10).toString(Double.toInt(radixBelowMin));
+      }).assertThrowError('RangeError');
+      expect((): void => {
+        BigInt(10).toString(Double.toInt(radixAboveMax));
+      }).assertThrowError('RangeError');
+    });
   });
 }

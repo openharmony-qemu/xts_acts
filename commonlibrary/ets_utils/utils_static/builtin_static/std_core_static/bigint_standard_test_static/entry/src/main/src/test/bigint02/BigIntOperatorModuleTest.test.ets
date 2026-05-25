@@ -26,12 +26,11 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleBasic0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(12).operatorModule(BigInt(5)).toString()).assertEqual('2');
-        expect(BigInt(20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
-        expect(BigInt(-10).operatorModule(BigInt(3)).toString()).assertEqual('-1');
-      });
+    it('testBigIntOperatorModuleBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(12).operatorModule(BigInt(5)).toString()).assertEqual('2');
+      expect(BigInt(20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
+      expect(BigInt(-10).operatorModule(BigInt(3)).toString()).assertEqual('-1');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0200
@@ -41,12 +40,11 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleDivisorOne0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(42).operatorModule(BigInt(1)).toString()).assertEqual('0');
-        expect(BigInt(-42).operatorModule(BigInt(-1)).toString()).assertEqual('0');
-        expect(BigInt(7).operatorModule(BigInt(-1)).toString()).assertEqual('0');
-      });
+    it('testBigIntOperatorModuleDivisorOne0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(42).operatorModule(BigInt(1)).toString()).assertEqual('0');
+      expect(BigInt(-42).operatorModule(BigInt(-1)).toString()).assertEqual('0');
+      expect(BigInt(7).operatorModule(BigInt(-1)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0300
@@ -56,12 +54,11 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleZeroDividend0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(0).operatorModule(BigInt(5)).toString()).assertEqual('0');
-        expect(BigInt(0).operatorModule(BigInt(-7)).toString()).assertEqual('0');
-        expect(BigInt(0).operatorModule(BigInt(1)).toString()).assertEqual('0');
-      });
+    it('testBigIntOperatorModuleZeroDividend0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(0).operatorModule(BigInt(5)).toString()).assertEqual('0');
+      expect(BigInt(0).operatorModule(BigInt(-7)).toString()).assertEqual('0');
+      expect(BigInt(0).operatorModule(BigInt(1)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0400
@@ -71,11 +68,11 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleReturnType0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const result = BigInt(10).operatorModule(BigInt(3));
-        expect(typeof result === 'bigint').assertTrue();
-      });
+    it('testBigIntOperatorModuleReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const result = BigInt(10).operatorModule(BigInt(3));
+
+      expect(typeof result === 'bigint').assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0500
@@ -85,25 +82,25 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleInvalidArg0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = BigInt(10);
-        expect((): void => {
-          a.operatorModule(null as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorModule(undefined as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorModule('abc' as object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorModule(123 as object as BigInt);
-        }).assertThrowError('ClassCastError');
-        expect((): void => {
-          a.operatorModule(true as object as BigInt);
-        }).assertThrowError('ClassCastError');
-      });
+    it('testBigIntOperatorModuleInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const a = BigInt(10);
+
+      expect((): void => {
+        a.operatorModule(null as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorModule(undefined as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorModule('abc' as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorModule(123 as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        a.operatorModule(true as object as BigInt);
+      }).assertThrowError('ClassCastError');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0600
@@ -113,18 +110,17 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleDivByZero0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          BigInt(10).operatorModule(BigInt(0));
-        }).assertThrowError('Error');
-        expect((): void => {
-          BigInt(0).operatorModule(BigInt(0));
-        }).assertThrowError('Error');
-        expect((): void => {
-          BigInt(-42).operatorModule(BigInt(0));
-        }).assertThrowError('Error');
-      });
+    it('testBigIntOperatorModuleDivByZero0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        BigInt(10).operatorModule(BigInt(0));
+      }).assertThrowError('Error');
+      expect((): void => {
+        BigInt(0).operatorModule(BigInt(0));
+      }).assertThrowError('Error');
+      expect((): void => {
+        BigInt(-42).operatorModule(BigInt(0));
+      }).assertThrowError('Error');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0700
@@ -134,13 +130,12 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleNegative0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(-12).operatorModule(BigInt(-5)).toString()).assertEqual('-2');
-        expect(BigInt(12).operatorModule(BigInt(-5)).toString()).assertEqual('2');
-        expect(BigInt(-12).operatorModule(BigInt(5)).toString()).assertEqual('-2');
-        expect(BigInt(-20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
-      });
+    it('testBigIntOperatorModuleNegative0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-12).operatorModule(BigInt(-5)).toString()).assertEqual('-2');
+      expect(BigInt(12).operatorModule(BigInt(-5)).toString()).assertEqual('2');
+      expect(BigInt(-12).operatorModule(BigInt(5)).toString()).assertEqual('-2');
+      expect(BigInt(-20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0800
@@ -150,13 +145,10 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleLarge0800',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString())
-          .assertEqual('99999999999999999999');
-        expect(BigInt('-999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString())
-          .assertEqual('-99999999999999999999');
-      });
+    it('testBigIntOperatorModuleLarge0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString()).assertEqual('99999999999999999999');
+      expect(BigInt('-999999999999999999999999999999').operatorModule(BigInt('100000000000000000000')).toString()).assertEqual('-99999999999999999999');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0900
@@ -166,14 +158,13 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorModuleTruncateSemantics0900',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(-7).operatorModule(BigInt(3)).toString()).assertEqual('-1');
-        expect(BigInt(7).operatorModule(BigInt(-3)).toString()).assertEqual('1');
-        expect(BigInt(-7).operatorModule(BigInt(-3)).toString()).assertEqual('-1');
-        const q = BigInt(-7).operatorDivide(BigInt(3));
-        const r = BigInt(-7).operatorModule(BigInt(3));
-        expect(q.operatorMultiply(BigInt(3)).operatorAdd(r).toString()).assertEqual('-7');
-      });
+    it('testBigIntOperatorModuleTruncateSemantics0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-7).operatorModule(BigInt(3)).toString()).assertEqual('-1');
+      expect(BigInt(7).operatorModule(BigInt(-3)).toString()).assertEqual('1');
+      expect(BigInt(-7).operatorModule(BigInt(-3)).toString()).assertEqual('-1');
+      const q = BigInt(-7).operatorDivide(BigInt(3));
+      const r = BigInt(-7).operatorModule(BigInt(3));
+      expect(q.operatorMultiply(BigInt(3)).operatorAdd(r).toString()).assertEqual('-7');
+    });
   });
 }

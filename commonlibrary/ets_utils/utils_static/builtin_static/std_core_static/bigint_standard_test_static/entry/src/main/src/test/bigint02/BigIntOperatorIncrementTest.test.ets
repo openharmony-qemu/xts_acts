@@ -26,19 +26,17 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementBasic0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v1 = BigInt(41);
-        expect(v1.operatorIncrement().toString()).assertEqual('42');
-        const v2 = BigInt(0);
-        expect(v2.operatorIncrement().toString()).assertEqual('1');
-        const v3 = BigInt(-2);
-        expect(v3.operatorIncrement().toString()).assertEqual('-1');
-        expect(BigInt('9223372036854775806').operatorIncrement().toString())
-          .assertEqual('9223372036854775807');
-        expect(BigInt('-9223372036854775808').operatorIncrement().toString())
-          .assertEqual('-9223372036854775807');
-      });
+    it('testBigIntOperatorIncrementBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v1 = BigInt(41);
+
+      expect(v1.operatorIncrement().toString()).assertEqual('42');
+      const v2 = BigInt(0);
+      expect(v2.operatorIncrement().toString()).assertEqual('1');
+      const v3 = BigInt(-2);
+      expect(v3.operatorIncrement().toString()).assertEqual('-1');
+      expect(BigInt('9223372036854775806').operatorIncrement().toString()).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775808').operatorIncrement().toString()).assertEqual('-9223372036854775807');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0200
@@ -48,14 +46,14 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementImmutable0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const v = BigInt(5);
-        const orig = v.toString();
-        const result = v.operatorIncrement();
-        expect(v.toString()).assertEqual(orig);
-        expect(result.toString()).assertEqual('6');
-      });
+    it('testBigIntOperatorIncrementImmutable0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v = BigInt(5);
+      const orig = v.toString();
+      const result = v.operatorIncrement();
+
+      expect(v.toString()).assertEqual(orig);
+      expect(result.toString()).assertEqual('6');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0300
@@ -65,10 +63,9 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementReturnType0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
-      });
+    it('testBigIntOperatorIncrementReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(typeof BigInt(1).operatorIncrement() === 'bigint').assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0400
@@ -78,15 +75,11 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementLarge0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('999999999999999999999999999999').operatorIncrement().toString())
-          .assertEqual('1000000000000000000000000000000');
-        expect(BigInt('-999999999999999999999999999999').operatorIncrement().toString())
-          .assertEqual('-999999999999999999999999999998');
-        expect(BigInt('9223372036854775807').operatorIncrement().toString())
-          .assertEqual('9223372036854775808');
-      });
+    it('testBigIntOperatorIncrementLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('999999999999999999999999999999').operatorIncrement().toString()).assertEqual('1000000000000000000000000000000');
+      expect(BigInt('-999999999999999999999999999999').operatorIncrement().toString()).assertEqual('-999999999999999999999999999998');
+      expect(BigInt('9223372036854775807').operatorIncrement().toString()).assertEqual('9223372036854775808');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0500
@@ -96,11 +89,11 @@ export default function BigIntOperatorIncrementTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementMaxSafeInteger0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const maxSafe = '9007199254740991';
-        expect(BigInt(maxSafe).operatorIncrement().toString()).assertEqual('9007199254740992');
-        expect(BigInt(`-${maxSafe}`).operatorIncrement().toString()).assertEqual('-9007199254740990');
-      });
+    it('testBigIntOperatorIncrementMaxSafeInteger0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const maxSafe = '9007199254740991';
+
+      expect(BigInt(maxSafe).operatorIncrement().toString()).assertEqual('9007199254740992');
+      expect(BigInt(`-${maxSafe}`).operatorIncrement().toString()).assertEqual('-9007199254740990');
+    });
   });
 }
