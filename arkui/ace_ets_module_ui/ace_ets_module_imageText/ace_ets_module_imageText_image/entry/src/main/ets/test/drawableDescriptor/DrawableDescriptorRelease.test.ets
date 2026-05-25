@@ -64,7 +64,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult001');
         console.info('[drawableDescriptorIsReleasedFalse_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[drawableDescriptorIsReleasedFalse_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -97,7 +97,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult002');
         console.info('[drawableDescriptorGetPixelMapAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[drawableDescriptorGetPixelMapAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -131,7 +131,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult003');
         console.info('[drawableDescriptorReleaseTwice_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[drawableDescriptorReleaseTwice_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -164,7 +164,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult004');
         console.info('[layeredDrawableDescriptorGetForegroundAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[layeredDrawableDescriptorGetForegroundAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -198,7 +198,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult005');
         console.info('[layeredDrawableDescriptorGetBackgroundAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[layeredDrawableDescriptorGetBackgroundAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -232,7 +232,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult006');
         console.info('[layeredDrawableDescriptorGetMaskAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[layeredDrawableDescriptorGetMaskAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -266,7 +266,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult007');
         console.info('[pixelMapDrawableDescriptorGetPixelMapAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[pixelMapDrawableDescriptorGetPixelMapAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -300,7 +300,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult008');
         console.info('[animatedDrawableDescriptorGetPixelMapAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[animatedDrawableDescriptorGetPixelMapAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -334,7 +334,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult009');
         console.info('[animatedDrawableDescriptorGetAnimationControllerAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[animatedDrawableDescriptorGetAnimationControllerAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -368,7 +368,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult010');
         console.info('[animatedDrawableDescriptorLoadSyncAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[animatedDrawableDescriptorLoadSyncAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -402,7 +402,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult011');
         console.info('[animatedDrawableDescriptorLoadAfterRelease_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[animatedDrawableDescriptorLoadAfterRelease_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
@@ -436,7 +436,7 @@ export default function DrawableDescriptorReleaseTest() {
         let strJson = getInspectorByKey('txtTestResult012');
         console.info('[animatedDrawableDescriptorReleaseTwice_0100] inspector: ' + strJson);
         let obj: ESObject = JSON.parse(strJson);
-        let resultText: string = obj.$attrs.value;
+        let resultText: string = obj.$attrs.content;
         console.info('[animatedDrawableDescriptorReleaseTwice_0100] result: ' + resultText);
         
         expect(resultText).assertContain('PASS');
