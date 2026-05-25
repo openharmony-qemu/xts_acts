@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function BuiltinsDataViewSetInt32Test() {
+export default function BuiltinsDataViewSetInt32Test(): void {
   describe("BuiltinsDataViewSetInt32Test", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

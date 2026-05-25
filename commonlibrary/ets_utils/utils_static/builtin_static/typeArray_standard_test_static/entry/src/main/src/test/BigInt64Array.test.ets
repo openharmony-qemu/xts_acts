@@ -28,7 +28,7 @@ import {
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 
-export default function BigInt64ArrayTest() {
+export default function BigInt64ArrayTest(): void {
   describe('BigInt64ArrayTest', (): void => {
     // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);
