@@ -126,7 +126,7 @@ static int CheckTrackSelect(int32_t trackCount, OH_AVDemuxer *audioDemuxer)
     return 0;
 }
 
-static int DestroyBuffer()
+static void DestroyBuffer()
 {
     if (avBuffer != nullptr) {
         OH_AVBuffer_Destroy(avBuffer);
@@ -134,7 +134,7 @@ static int DestroyBuffer()
     }
 }
 
-static int DestroyFormat(OH_AVFormat *trackFormat)
+static void DestroyFormat(OH_AVFormat *trackFormat)
 {
     OH_AVFormat_Destroy(trackFormat);
     trackFormat = nullptr;
