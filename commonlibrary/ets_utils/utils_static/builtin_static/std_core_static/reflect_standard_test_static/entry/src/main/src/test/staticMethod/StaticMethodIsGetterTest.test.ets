@@ -126,8 +126,11 @@ class MyClass018 {
   public static get name(): string { return MyClass018._name; }
 }
 
+@interface TestAnno018 {}
+
 class MyClass019 {
   private static _value: int = 0;
+  @TestAnno018
   public static get value(): int { return MyClass019._value; }
 }
 

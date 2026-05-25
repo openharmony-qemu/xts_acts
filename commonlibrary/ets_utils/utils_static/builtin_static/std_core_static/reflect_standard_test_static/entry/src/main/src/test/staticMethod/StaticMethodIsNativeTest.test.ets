@@ -61,8 +61,17 @@ class MyClass010 {
   protected static protectedMethod(): void {}
 }
 
+@interface deprecated {
+  fromVersion: string
+}
+
+@interface TestAnno009 {}
+
 class MyClass011 {
+  @TestAnno009
+  @deprecated("5.0")
   public static deprecatedMethod(): void {}
+  @TestAnno009
   public static finalMethod(): void {}
 }
 

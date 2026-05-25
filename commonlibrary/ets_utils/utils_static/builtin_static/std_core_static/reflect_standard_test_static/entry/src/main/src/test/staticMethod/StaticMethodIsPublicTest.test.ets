@@ -89,7 +89,12 @@ class MyClass017 {
   public static async publicAsyncMethod(): Promise<void> { return; }
 }
 
+@interface deprecated {
+  fromVersion: string
+}
+
 class MyClass018 {
+  @deprecated("5.0")
   public static deprecatedMethod(): void {}
 }
 

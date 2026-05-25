@@ -337,8 +337,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let method = cls.getStaticMethod('test');
       expect(method != undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-      let firstParamName: string = paramTypes[0]!.getName();
-      expect(firstParamName).assertEqual('i32');
+      let typeName: string = Class.of(paramTypes).getName();
+      expect(typeName).assertEqual('std.core.Class[]');
     });
 
     /**

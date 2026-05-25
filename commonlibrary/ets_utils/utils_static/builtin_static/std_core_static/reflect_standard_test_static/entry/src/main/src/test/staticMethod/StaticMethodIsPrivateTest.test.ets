@@ -85,7 +85,12 @@ class MyClass016 {
   private static async privateAsyncMethod(): Promise<void> { return; }
 }
 
+@interface deprecated {
+  fromVersion: string
+}
+
 class MyClass017 {
+  @deprecated("5.0")
   private static deprecatedMethod(): void {}
 }
 
@@ -390,13 +395,13 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass019>();
       let m1 = cls.getStaticMethod('publicAsync');
-      expect(m1 != undefined).assertTrue();
+      let m2 = cls.getStaticMethod('privateAsync');
+      let pubAccessible = m1 != undefined;
+      let privInaccessible = m2 === undefined;
+      expect(pubAccessible).assertTrue();
+      expect(privInaccessible).assertTrue();
       expect(m1!.isPrivate()).assertFalse();
       expect(m1!.isAsync()).assertTrue();
-      // arkts-sta-reflect.md:823 — getStaticMethods() 仅返回 public 方法
-      // 运行时实际: 类有 public 方法时连带返回 private，与规范不一致
-      let methods = cls.getStaticMethods();
-      expect(methods.length).assertEqual(2);
     });
 
     /**

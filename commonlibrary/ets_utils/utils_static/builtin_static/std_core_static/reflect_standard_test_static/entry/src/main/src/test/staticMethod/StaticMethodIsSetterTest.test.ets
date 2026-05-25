@@ -127,8 +127,11 @@ class MyClass018 {
   public static set name(value: string) { MyClass018._name = value; }
 }
 
+@interface TestAnno018 {}
+
 class MyClass019 {
   private static _value: int = 0;
+  @TestAnno018
   public static set value(val: int) { MyClass019._value = val; }
 }
 
