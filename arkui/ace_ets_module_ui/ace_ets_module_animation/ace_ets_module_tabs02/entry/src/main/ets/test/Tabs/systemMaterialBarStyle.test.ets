@@ -16,6 +16,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
+import uiMaterial from '@ohos.arkui.uiMaterial';
 
 export default function systemMaterialBarStyle() {
   describe('systemMaterialBarStyle', () => {
