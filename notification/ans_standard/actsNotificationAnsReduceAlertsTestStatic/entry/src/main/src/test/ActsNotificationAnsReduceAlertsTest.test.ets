@@ -142,7 +142,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             console.info(TEST_SUITE_NAME + TAG + " publish success");
             await Utils.msSleep(1000)
             await notificationManager.getActiveNotifications()
-              .then(async(data: Array<notificationManager.NotificationRequest>) => {
+              .then((data: Array<notificationManager.NotificationRequest>) => {
                 console.info(TEST_SUITE_NAME + TAG +
                   ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
                 expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
@@ -151,7 +151,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
                 expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
                 done()
               })
-              .catch(async(err: Error):void => {
+              .catch((err: Error):void => {
                 console.error(TEST_SUITE_NAME + TAG +
                   `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
                 expect(false).assertTrue();
@@ -196,14 +196,14 @@ export default function ActsNotificationAnsReduceAlertsTest() {
           await notificationManager.publish(notificationRequest).then(async() => {
             console.info(TEST_SUITE_NAME + TAG + " publish success");
             await Utils.msSleep(500)
-            await notificationManager.getActiveNotifications().then(async(data: Array<notificationManager.NotificationRequest>) => {
+            await notificationManager.getActiveNotifications().then((data: Array<notificationManager.NotificationRequest>) => {
               console.info(TEST_SUITE_NAME + TAG + ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
               expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.vibrationEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.bannerEnabled).assertEqual(1)
               expect(data?.[0]?.notificationFlags?.lockScreenEnabled).assertEqual(1)
               done()
-            }).catch(async(err: Error):void => {
+            }).catch((err: Error):void => {
               console.error(TEST_SUITE_NAME + TAG + `Failed to get active notifications. Code is ${err.code}, message is ${err.message}`);
               expect(false).assertTrue();
               done()
@@ -254,7 +254,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             console.info(TEST_SUITE_NAME + TAG + " publish success");
             await Utils.msSleep(1000)
             await notificationManager.getActiveNotifications()
-              .then(async(data: Array<notificationManager.NotificationRequest>) => {
+              .then((data: Array<notificationManager.NotificationRequest>) => {
                 console.info(TEST_SUITE_NAME + TAG +
                   ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
                 expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
@@ -316,7 +316,7 @@ export default function ActsNotificationAnsReduceAlertsTest() {
             console.info(TEST_SUITE_NAME + TAG + " publish success");
             await Utils.msSleep(1000)
             await notificationManager.getActiveNotifications()
-              .then(async(data: Array<notificationManager.NotificationRequest>) => {
+              .then((data: Array<notificationManager.NotificationRequest>) => {
                 console.info(TEST_SUITE_NAME + TAG +
                   ` Scceeded in getting active notifications, data is ${JSON.stringify(data)}`);
                 expect(data?.[0]?.notificationFlags?.soundEnabled).assertEqual(1)
