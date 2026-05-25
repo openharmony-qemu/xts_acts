@@ -15,8 +15,6 @@
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
-
-/** 将 with 的索引参数转为 number（与测试用例中的 ToNumber/截断语义对齐） */
 function withIndexToNumber(index: number | string | boolean | null | undefined): number {
   if (index === null || index === undefined) {
     return 0;
@@ -30,7 +28,6 @@ function withIndexToNumber(index: number | string | boolean | null | undefined):
   return index;
 }
 
-/** 替代 ES2022 Array.prototype.at（当前 lib 未暴露 at 时使用） */
 function arrayAt<T>(arr: ReadonlyArray<T>, relativeIndex: number): T | undefined {
   const len: number = arr.length;
   let k: number = relativeIndex;
@@ -43,7 +40,6 @@ function arrayAt<T>(arr: ReadonlyArray<T>, relativeIndex: number): T | undefined
   return arr[k];
 }
 
-/** 替代 Array.prototype.with：浅拷贝并在规范化索引处替换元素 */
 function arrayWithSupplement<T>(arr: ReadonlyArray<T>, index: number | string | boolean | null | undefined, value: T): T[] {
   const len: number = arr.length;
   let n: number = withIndexToNumber(index);
@@ -857,7 +853,7 @@ export default function ArrayWithTestSupplement() {
     /**
      * @tc.name testArrayWithTest0152
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_5300
-     * @tc.desc 浅拷贝替换后原数组不变（ArkTS 下不使用 Object.freeze）
+     * @tc.desc Shallow replace leaves source array unchanged (no Object.freeze in ArkTS subset)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -872,7 +868,7 @@ export default function ArrayWithTestSupplement() {
     /**
      * @tc.name testArrayWithTest0153
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_5400
-     * @tc.desc 浅拷贝替换后原数组不变（ArkTS 下不使用 Object.seal）
+     * @tc.desc Shallow replace leaves source array unchanged (no Object.seal in ArkTS subset)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1669,7 +1665,7 @@ export default function ArrayWithTestSupplement() {
     /**
      * @tc.name testArrayWithTest0205
      * @tc.number SUB_COMMONLIBRARY_ARRAY_WITH_SUPPLEMENT_TEST_9916
-     * @tc.desc 原数组不变；with 语义返回新数组（ArkTS 下不使用 Object.freeze）
+     * @tc.desc Source array unchanged; with-like helper returns new array (no Object.freeze in ArkTS subset)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

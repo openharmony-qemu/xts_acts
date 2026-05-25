@@ -16,7 +16,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import Utils from '../../Util.test';
 
-/** 仅用于测试：产生单次 99 再结束的迭代器（避免非类型化对象字面量） */
 class Yield99Iterator implements IterableIterator<number> {
   private emitted: boolean = false;
 
@@ -65,7 +64,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_0200
-     * @tc.desc 1.1.2 Verify values() 迭代器可正常读取首元素（ArkTS 不使用 Symbol.toStringTag / Object.prototype.toString）
+     * @tc.desc 1.1.2 Verify values() iterator reads first element without Symbol.toStringTag or Object.prototype.toString
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -259,7 +258,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_1400
-     * @tc.desc 2.3.3 Verify for-of 可消费 values() 返回的迭代器（ArkTS 不校验 [Symbol.iterator] 自引用）
+     * @tc.desc 2.3.3 Verify for-of consumes iterator returned by values()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -512,7 +511,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_2600
-     * @tc.desc 5.1.1 Verify 实例上 values 与 [Symbol.iterator] 为同一函数引用（避免访问 Array.prototype 索引）
+     * @tc.desc 5.1.1 Verify on an instance values and Symbol.iterator are the same function reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -525,7 +524,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_2700
-     * @tc.desc 5.1.2 Verify values() 与 [Symbol.iterator]() 首段遍历结果一致（ArkTS 不使用 toStringTag）
+     * @tc.desc 5.1.2 Verify values() and Symbol.iterator() agree on first next()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -578,7 +577,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_3000
-     * @tc.desc 5.2.2 Verify 已创建的 values 迭代器仍按快照顺序完成（ArkTS 不使用 Object.defineProperty 改写 Symbol.iterator）
+     * @tc.desc 5.2.2 Verify existing values() iterator still completes in original order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -596,7 +595,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_3100
-     * @tc.desc 5.2.3 Verify 使用自定义迭代器类时 for-of 行为（替代改写数组 Symbol.iterator）
+     * @tc.desc 5.2.3 Verify for-of over custom iterator class
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -810,7 +809,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0142
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_4300
-     * @tc.desc 6.4.4 Verify 自定义类实例元素可被迭代（ArkTS 不使用 Symbol 字面量作元素）
+     * @tc.desc 6.4.4 Verify custom class instance elements are iterated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1197,7 +1196,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0161
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6200
-     * @tc.desc 9.3.1 Verify 迭代中将槽位置为 undefined 后下一值读取为 undefined（ArkTS 不使用 delete）
+     * @tc.desc 9.3.1 Verify assigning undefined to slot yields undefined on next iterator read
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1314,7 +1313,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0167
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6800
-     * @tc.desc 10.1.1 Verify 对 string[] 使用 values() 与遍历结果一致（替代 Array.prototype.values.call 类数组）
+     * @tc.desc 10.1.1 Verify string[] values() matches manual traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1331,7 +1330,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0168
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_6900
-     * @tc.desc 10.1.2 Verify 截断视图数组只遍历有效长度内元素
+     * @tc.desc 10.1.2 Verify fixed-length string array only iterates in-range elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1348,7 +1347,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0169
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7000
-     * @tc.desc 10.1.3 Verify number[] 的 values() 遍历
+     * @tc.desc 10.1.3 Verify number[] values() traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1365,7 +1364,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0170
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7100
-     * @tc.desc 10.2.1 Verify 对 string 使用字符迭代（替代 values.call 字符串）
+     * @tc.desc 10.2.1 Verify string character iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1382,7 +1381,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0171
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7200
-     * @tc.desc 10.3.1 Verify 全 undefined 槽位的数组通过 values() 迭代
+     * @tc.desc 10.3.1 Verify array of undefined slots via values()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1402,7 +1401,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0172
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7300
-     * @tc.desc 10.3.2 Verify 空数组 values() 立即结束
+     * @tc.desc 10.3.2 Verify empty array values() completes immediately
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1419,7 +1418,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0173
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7400
-     * @tc.desc 10.4.1 Verify 对 null 调用实例方法抛出 TypeError（ArkTS 不使用 Function.call）
+     * @tc.desc 10.4.1 Verify calling instance method on null throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1438,7 +1437,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0174
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7500
-     * @tc.desc 10.4.2 Verify 对 undefined 调用实例方法抛出 TypeError
+     * @tc.desc 10.4.2 Verify calling instance method on undefined throws TypeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1457,7 +1456,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0175
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7600
-     * @tc.desc 10.4.3 Verify 空数组迭代器立即结束（替代 number 上的 values.call）
+     * @tc.desc 10.4.3 Verify empty number[] iterator is immediately done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1472,7 +1471,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0176
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7700
-     * @tc.desc 10.4.4 Verify 空数组迭代器立即结束（替代 boolean 上的 values.call）
+     * @tc.desc 10.4.4 Verify empty boolean[] iterator is immediately done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1487,7 +1486,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0177
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7800
-     * @tc.desc 10.4.5 Verify 空数组迭代器立即结束（替代非法 length 对象）
+     * @tc.desc 10.4.5 Verify empty string[] iterator is immediately done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1502,7 +1501,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0178
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_7900
-     * @tc.desc 10.4.6 Verify 空数组迭代器立即结束（替代 NaN length 对象）
+     * @tc.desc 10.4.6 Verify empty string[] iterator is immediately done (NaN length object case)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1517,7 +1516,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0179
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_8000
-     * @tc.desc 10.4.7 Verify 定长 string[] 的 values() 只遍历有效元素（替代非整数 length 对象）
+     * @tc.desc 10.4.7 Verify fixed-length string[] values() iterates all elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1782,7 +1781,7 @@ export default function ArrayValuesTestSupplement() {
     /**
      * @tc.name testArrayValuesTest0194
      * @tc.number SUB_COMMONLIBRARY_ARRAY_VALUES_SUPPLEMENT_TEST_9500
-     * @tc.desc 12.3.5 Verify 将 [string, number] 对序列手动折叠为 Record（ArkTS 不使用 Object.fromEntries）
+     * @tc.desc 12.3.5 Verify folding [string, number] pairs into Record without Object.fromEntries
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
