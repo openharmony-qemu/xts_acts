@@ -32,5 +32,4 @@ libnative_media_acodec.so
 libnative_media_avdemuxer.so
 libnative_media_codecbase.so
 libhilog_ndk.z.so
-libnative_avscreen_capture.so
 )
