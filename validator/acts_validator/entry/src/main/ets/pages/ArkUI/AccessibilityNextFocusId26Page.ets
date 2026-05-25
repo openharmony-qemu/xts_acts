@@ -31,22 +31,21 @@ struct AccessibilityNextFocusId26Page {
     '1、开启屏幕朗读功能\n' +
     '2、点击"支持"按钮确认设备支持屏幕朗读\n' +
     '3、依次滑动测试以下组件:\n' +
-    '   - "正常入参-不传params"区域: 从按钮A1下滑→应跳转到按钮A2\n' +
-    '   - "正常入参-params=undefined"区域: 从按钮B1下滑→应跳转到按钮B2\n' +
-    '   - "isConsiderDescendants=false"区域: 从按钮C1下滑→应跳转到行C2容器本身(不聚焦后代)\n' +
-    '   - "isConsiderDescendants=true"区域: 从按钮D1下滑→应跳转到行D2后代按钮testD2\n' +
-    '   - "nextId=null"区域: 从按钮E下滑→按默认顺序到按钮F(null无效)\n' +
-    '   - "nextId=undefined"区域: 从按钮G下滑→按默认顺序到按钮H(undefined无效)\n' +
-    '   - "nextId=空字符串"区域: 从按钮I下滑→按默认顺序到按钮J(空字符串无效)\n' +
-    '   - "nextId指向不存在组件"区域: 从按钮K下滑→按默认顺序到按钮L(不存在id无效)\n' +
+    '   - "正常入参-不传params"区域: A1获焦，无论上下滑走焦都是A1 A2循环\n' +
+    '   - "正常入参-params=undefined"区域: B1获焦，无论上下滑都是B1 B2 循环\n' +
+    '   - "isConsiderDescendants=false"区域: C1获焦，无论上下滑都是C1 C4循环，testC2获焦下滑→testC3 下滑→isConsiderDescendants=true文本组件。\n' +
+    '   - testC3获焦上滑走焦：testC3 → testC2 → C4 → C1 → C4\n' +
+    '   - "isConsiderDescendants=true"区域: D1获焦下滑测试：D1 → testD2 → testD3 → D4 → D1;  D1获焦上滑测试：D1与D4内循环; \n' +
+    '   - testD3获焦上滑走焦：testD3 → testD2 → D1 → D4 → D1\n' +
+    '   - "nextId=null"区域:按钮E获焦下滑 → 按钮F\n' +
+    '   - "nextId=undefined"区域:按钮G获焦下滑 → 按钮H\n' +
+    '   - "nextId=空字符串"区域:按钮I获焦下滑 → 按钮J\n' +
+    '   - "nextId指向不存在组件"区域:按钮K获焦下滑 → 按钮L\n' +
     '4、所有测试完成后，点击"通过"按钮\n' +
     '\n' +
     '预期结果:\n' +
-    '1、正常入参: 焦点正确跳转到指定目标组件\n' +
-    '2、params不传/undefined: 等效，焦点正常跳转\n' +
-    '3、isConsiderDescendants=false: 跳转到容器本身，不聚焦后代节点\n' +
-    '4、isConsiderDescendants=true: 跳转到容器后代中的可聚焦节点\n' +
-    '5、nextId异常(null/undefined/空字符串/不存在): 设置无效，焦点按默认顺序移动\n';
+    '1、焦点正确跳转到指定目标组件\n'
+
   @State vueStatus: boolean = false;
   @State yesEnable: boolean = false;
 
@@ -341,7 +340,7 @@ struct AccessibilityNextFocusId26Page {
               .id('btnE')
               .width('45%')
               .height(40)
-              .accessibilityNextFocusId(null as string, { isConsiderDescendants: true })
+              .accessibilityNextFocusId(null, { isConsiderDescendants: true })
             Button('按钮F')
               .id('btnF')
               .width('45%')
@@ -367,7 +366,7 @@ struct AccessibilityNextFocusId26Page {
               .id('btnG')
               .width('45%')
               .height(40)
-              .accessibilityNextFocusId(undefined as string, { isConsiderDescendants: true })
+              .accessibilityNextFocusId(undefined, { isConsiderDescendants: true })
             Button('按钮H')
               .id('btnH')
               .width('45%')
