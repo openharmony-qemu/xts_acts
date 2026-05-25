@@ -3,7 +3,6 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import accessibility from '@ohos.accessibility'
 import { BusinessError } from '@ohos.base';
-import Rect from '@ohos.application.AccessibilityExtensionAbility';
 import { Resource } from 'global.resource';
 let domain: int = 0x0000;
 let tag: string = 'testTag';

@@ -15,7 +15,6 @@
  */
 import { Entry, Component, Flex, Text, Padding, Margin, TextAlign, TextOverflow, TextCase, Color, Length, Alignment, Direction, Position, ItemAlign, BorderStyle, ImageSize, Visibility, FontStyle, FontWeight, FlexDirection, FlexAlign, TextDecorationType } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import router from '@ohos.router';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 const router = AppStorage.get<Router>("router") as Router
 

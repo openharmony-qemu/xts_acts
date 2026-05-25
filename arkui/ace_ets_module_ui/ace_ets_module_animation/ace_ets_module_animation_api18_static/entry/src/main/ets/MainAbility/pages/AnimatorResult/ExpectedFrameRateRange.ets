@@ -22,7 +22,6 @@ import {
   Column,
   Component,
   Entry,
-  ExpectedFrameRateRange,
   KeyframeAnimateParam,
   KeyframeState,
   Margin,
