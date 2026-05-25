@@ -89,7 +89,7 @@ export default function StorageProp20Jsunit() {
      */
 it('StorageProp20Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StorageProp20Jsunit_static_0100] START');
-      let strJson1 = inspector.getInspectorByKey('text_state');
+      let strJson1 = inspector.getInspectorByKey('StorageProp20_text_state');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[StorageProp20Jsunit_static_0100] obj1 is: " + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('State:10');

@@ -47,7 +47,7 @@ struct PanelBackgroundMask {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onHeightChangeText")
+        .key("panel_y_onHeightChangeText")
         .onClick(() => {
           this.mode = PanelMode.Half
           this.navBarPosition = PanelMode.Half
@@ -58,7 +58,7 @@ struct PanelBackgroundMask {
           Text("panel-BackgroundMask").fontSize(30)
         }
       }
-      .key("panel")
+      .key("panel_y_panel")
       .mode(this.mode)
       .navBarPosition(this.navBarPosition)
       .backgroundColor('green')

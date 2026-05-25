@@ -7,6 +7,14 @@
     "MainAbility/pages/confirmDialog/confirmDialog",
     "MainAbility/pages/alertDialog/alertDialog",
     "MainAbility/pages/loadingDialog/loadingDialog",
-    "MainAbility/pages/customContentDialog/customContentDialog"
+    "MainAbility/pages/customContentDialog/customContentDialog",
+
+    "MainAbility/pages/SheetOptions/SheetOptionsSystemMaterial",
+    "MainAbility/pages/PopupOptions/PopupOptionsSystemMaterial",
+    "MainAbility/pages/CustomPopupOptions/CustomPopupOptionsSystemMaterial",
+    "MainAbility/pages/PopupCommonOptions/PopupCommonOptionsColorModeSystemMaterial",
+    "MainAbility/pages/PopupOptions/PopupOptionsColorMode",
+    "MainAbility/pages/CustomPopupOptions/CustomPopupOptionsColorMode",
+    "MainAbility/pages/ContextMenuOptions/ContextMenuOptionsColorMode"
   ]
 }

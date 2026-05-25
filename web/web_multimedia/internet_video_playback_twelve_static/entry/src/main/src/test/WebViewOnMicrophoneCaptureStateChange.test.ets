@@ -139,5 +139,25 @@ export default function ActsAceWebViewOnMicrophoneCaptureStateChangeTest() {
       done();
     })
 
+    /**
+     * @tc.name   testPauseMicrophoneErrorCodeStatic001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAUSEMICROPHONE_ERRORCODE_0100
+     * @tc.desc   test pauseMicrophone on unattached WebviewController: verify error code is 17100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testPauseMicrophoneErrorCodeStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent("emitPauseMicrophoneErrorCodeStatic001", 10)
+      await Utils.msSleep(2000);
+      Utils.registerEvent('testPauseMicrophoneErrorCodeStatic001', 17100001, 20260502, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('webViewOnMicrophoneCaptureStateChangeButton', 10, '');
+      await Utils.msSleep(2000);
+      done();
+    })
+
   })
 }

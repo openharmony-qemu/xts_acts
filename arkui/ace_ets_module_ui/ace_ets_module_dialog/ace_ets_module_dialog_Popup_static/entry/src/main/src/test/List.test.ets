@@ -27,6 +27,10 @@ import AlertDialogSystemMaterialTest from './dialogSystemMaterial/AlertDialogSys
 import BaseDialogOptionsSystemMaterialTest from './dialogSystemMaterial/BaseDialogOptionsSystemMaterial.test';
 import ShowDialogOptionsSystemMaterialTest from './dialogSystemMaterial/ShowDialogOptionsSystemMaterial.test';
 import ShowToastOptionsTest from './dialogSystemMaterial/ShowToastOptions.test';
+import ImmersiveStyleTest from './uimaterial/ImmersiveStyleTest.test';
+import ImmersiveOptionsMaterialColorTest from './uimaterial/ImmersiveOptionsMaterialColor.test';
+import ImmersiveOptionsColorInvertTest from './uimaterial/ImmersiveOptionsColorInvert.test';
+import UIMaterialTest from './uimaterial/UIMaterial.test';
 
 export default function testsuite() {
   popupTest();
@@ -42,4 +46,7 @@ export default function testsuite() {
   BaseDialogOptionsSystemMaterialTest();
   ShowDialogOptionsSystemMaterialTest();
   ShowToastOptionsTest();
+  ImmersiveStyleTest();
+  ImmersiveOptionsMaterialColorTest();
+  ImmersiveOptionsColorInvertTest();
 }

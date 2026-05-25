@@ -163,7 +163,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("backgroundBlurStyleText")
+        .key("common_y_backgroundBlurStyleText")
         .backgroundBlurStyle(BlurStyle.Thick)
 
       Text("common-BorderImage")
@@ -178,7 +178,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("borderImageText")
+        .key("common_y_borderImageText")
         .hitTestBehavior(HitTestMode.Default)
         .borderImage({
           source: {
@@ -214,7 +214,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("hoverEffectText")
+        .key("common_y_hoverEffectText")
         .hoverEffect(HoverEffect.Highlight)
 
       Text("common-HoverEffectScale")
@@ -229,7 +229,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("hoverEffectScaleText")
+        .key("common_y_hoverEffectScaleText")
         .hoverEffect(HoverEffect.Scale)
 
       Text("common-OnKeyEvent")
@@ -244,14 +244,14 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onKeyEventText")
+        .key("common_y_onKeyEventText")
 
       Button('common-OnKeyEvent')
         .onClick((e: ClickEvent) => {
           // this.buttonTab()
           // this.buttonOnKey()
         })
-        .key("onKeyEventButton")
+        .key("common_y_onKeyEventButton")
         .onKeyEvent((event: KeyEvent): boolean => {
           if (event.keyCode === 2054) {
             console.info("onKeyEvent 2054 inject Success ");
@@ -278,7 +278,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("tabIndexText")
+        .key("common_y_tabIndexText")
         .tabIndex(1)
 
       Text("common-ParallelGesture" + '\n' + this.value)
@@ -293,7 +293,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("parallelGestureText")
+        .key("common_y_parallelGestureText")
         .parallelGesture(TapGesture().onAction(() => {
           // 并行手势
           this.value = 'gesture onAction'
@@ -311,7 +311,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("sepiaText")
+        .key("common_y_sepiaText")
         .backgroundColor('#E78282')
         .sepia(1)
 
@@ -330,7 +330,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("alignRulesText")
+        .key("common_y_alignRulesText")
         .alignRules({
           top: { anchor: 'target', align: VerticalAlign.Bottom },
           right: { anchor: "target", align: HorizontalAlign.Center }
@@ -348,7 +348,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("stateStylesText")
+        .key("common_y_stateStylesText")
         .stateStyles({
           pressed: this.PressedStyles
         })
@@ -365,7 +365,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onVisibleAreaChangeText")
+        .key("common_y_onVisibleAreaChangeText")
 
       Text("common-OnPageHide")
         .width(320)
@@ -379,7 +379,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onPageHideText")
+        .key("common_y_onPageHideText")
 
       Text("common-OnBackPress")
         .width(320)
@@ -393,7 +393,7 @@ struct CommonBackgroundBlurStyle {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onBackPressText")
+        .key("common_y_onBackPressText")
 
     }.width("100%").height("100%")
   }

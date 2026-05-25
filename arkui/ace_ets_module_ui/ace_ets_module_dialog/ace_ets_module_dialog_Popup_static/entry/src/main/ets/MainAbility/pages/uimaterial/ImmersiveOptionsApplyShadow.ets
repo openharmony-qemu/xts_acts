@@ -1,4 +1,4 @@
-'use static'
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,32 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {
-  Entry,
-  Component,
-  Column,
-  Text,
-  FontWeight,
-  Row,
-  FlexAlign,
-  HorizontalAlign,
-  ColumnOptions,
-  RowOptions,
-  Margin
-} from '@ohos.arkui.component';
-import { uiMaterial } from '@kit.ArkUI';
+import { uiMaterial, Entry, Component, Column ,ColumnOptions, Text, FontWeight,
+  Row, FlexAlign, HorizontalAlign} from '@kit.ArkUI';
 
 @Entry
 @Component
 struct ImmersiveOptionsApplyShadow {
   build() {
-    Column({ space: 10 } as ColumnOptions) {
+    Column() {
       Text('ImmersiveOptions.applyShadow Test')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
-        .margin({ top: 20 } as Margin)
+        .margin({ top: 20 })
 
-      Row({ space: 10 } as RowOptions) {
+      Row() {
         Column() {
           Text('undefined')
         }
@@ -62,22 +50,11 @@ struct ImmersiveOptionsApplyShadow {
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THICK,
-          applyShadow: true,
-          interactive: true
+          applyShadow: true
         }))
       }
 
-      Column() {
-        Text('Material.empty applied')
-      }
-      .width(200)
-      .height(50)
-      .borderRadius(25)
-      .justifyContent(FlexAlign.Center)
-      .id('column_empty_material')
-      .systemMaterial(uiMaterial.Material.empty)
-
-      Row({ space: 10 } as RowOptions) {
+      Row() {
         Column() {
           Text('false')
         }
@@ -88,8 +65,7 @@ struct ImmersiveOptionsApplyShadow {
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THICK,
-          applyShadow: false,
-          interactive: false
+          applyShadow: false
         }))
 
         Column() {

@@ -36,6 +36,7 @@ import SheetTest from './SheetTest/Sheet.test'
 import scrollBarTest from './scrollBarTest/scrollBarTest.test';
 import maxHeightTest from './maxHeightTest/maxHeightTest.test';
 import targetSpaceTest from './targetSpaceTest/targetSpaceTest.test';
+import ContextMenuMaxHeightTest from './BindContextMenuTest/ContextMenuMaxHeightTest.test'
 
 export default function testsuite() {
   maskTest();
@@ -61,4 +62,5 @@ export default function testsuite() {
   scrollBarTest();
   maxHeightTest();
   targetSpaceTest();
+  ContextMenuMaxHeightTest();
 }
