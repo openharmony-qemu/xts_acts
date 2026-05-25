@@ -126,6 +126,20 @@ static int CheckTrackSelect(int32_t trackCount, OH_AVDemuxer *audioDemuxer)
     return 0;
 }
 
+static int DestroyBuffer()
+{
+    if (avBuffer != nullptr) {
+        OH_AVBuffer_Destroy(avBuffer);
+        avBuffer = nullptr;
+    }
+}
+
+static int DestroyFormat(OH_AVFormat *trackFormat)
+{
+    OH_AVFormat_Destroy(trackFormat);
+    trackFormat = nullptr;
+}
+
 static int CountAudioFrames(OH_AVDemuxer *audioDemuxer, OH_AVMemory *mem,
     int32_t trackCount, int audioFrameNum, int audioKeyNum)
 {
@@ -390,8 +404,7 @@ static bool HandleReadSampleError(OH_AVErrCode readResult, int32_t index, const 
     if (index != TRACKNUM_0) {
         return false;
     }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
     return true;
 }
 
@@ -494,8 +507,7 @@ static int ProcessSingleTrackAudio(AudioTrackParams &params)
     if ((params.videoIsEnd1 && (params.index == TRACKNUM_1)) ||
         (params.videoIsEnd2 && (params.index == TRACKNUM_2)) ||
         (params.videoIsEnd3 && (params.index == TRACKNUM_3))) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return 1;
     }
     
@@ -522,8 +534,7 @@ static int ProcessSingleTrackAudio(AudioTrackParams &params)
         return -1;
     }
     
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
     return 0;
 }
 
@@ -556,8 +567,7 @@ static int ProcessSingleTrackAudio0140(AudioTrack0140Params &params)
     if ((params.videoIsEnd1 && (params.index == TRACKNUM_1)) ||
         (params.videoIsEnd2 && (params.index == TRACKNUM_2)) ||
         (params.videoIsEnd3 && (params.index == TRACKNUM_3))) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return 1;
     }
     
@@ -584,8 +594,7 @@ static int ProcessSingleTrackAudio0140(AudioTrack0140Params &params)
         return -1;
     }
     
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
     return 0;
 }
 
@@ -604,16 +613,14 @@ static int ProcessSingleTrackSimple(SingleTrackSimpleParams &params)
     trackFormat = OH_AVSource_GetTrackFormat(source, params.index);
     if (trackFormat == nullptr ||
         !(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return -1;
     }
     
     if ((*params.inState.isEnd1 && params.index == TRACKNUM_1) ||
         (*params.inState.isEnd2 && params.index == TRACKNUM_2) ||
         (*params.inState.isEnd3 && params.index == TRACKNUM_3)) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return 1;
     }
     
@@ -626,8 +633,7 @@ static int ProcessSingleTrackSimple(SingleTrackSimpleParams &params)
         return -1;
     }
     
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
     return 0;
 }
 
@@ -711,32 +717,27 @@ static int ValidateTrackDescription(int32_t trackIndex, int32_t expectedType,
     }
     
     if (!(OH_AVFormat_GetIntValue(trackFormat, OH_MD_KEY_TRACK_TYPE, &g_trackType))) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return -1;
     }
     
     if (g_trackType != expectedType) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return -1;
     }
     
     const char *trackdescription = nullptr;
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION, &trackdescription))) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return -1;
     }
     
     if (strcmp(trackdescription, expectedDesc.c_str()) != 0) {
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
         return -1;
     }
     
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
     return 0;
 }
 
@@ -931,8 +932,7 @@ int DemuxerFunctionTrack0010()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -949,8 +949,7 @@ int DemuxerFunctionTrack0020()
     if (g_trackType != MEDIA_TYPE_AUXILIARY) { return -1; }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE, &trackRefType))) { return -1; }
     if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) { return -1; }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -962,8 +961,7 @@ int DemuxerFunctionTrack0020()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -988,8 +986,7 @@ int DemuxerFunctionTrack0030()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1010,8 +1007,7 @@ int DemuxerFunctionTrack0040()
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
         &trackIdsDepth, &bufferSize))) { return -1; }
     if (bufferSize != bufferSizeResult) { return -1; }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1025,8 +1021,7 @@ int DemuxerFunctionTrack0040()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1053,8 +1048,7 @@ int DemuxerFunctionTrack0060()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1079,8 +1073,7 @@ int DemuxerFunctionTrack0061()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1107,8 +1100,7 @@ int DemuxerFunctionTrack0070()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1135,8 +1127,7 @@ int DemuxerFunctionTrack0080()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1169,8 +1160,7 @@ int DemuxerFunctionTrack0090()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1217,8 +1207,7 @@ int DemuxerFunctionTrack0130()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1265,8 +1254,7 @@ int DemuxerFunctionTrack0140()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1303,16 +1291,14 @@ int DemuxerFunctionTrack0150()
             if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_16) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1350,16 +1336,14 @@ int DemuxerFunctionTrack0160()
             if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_16) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1398,15 +1382,13 @@ int DemuxerFunctionTrack0170()
             if (trackIdsPrey[TRACKNUM_0] != TRACKNUM_2) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1445,16 +1427,14 @@ int DemuxerFunctionTrack0180()
             if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_77) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1493,15 +1473,13 @@ int DemuxerFunctionTrack0190()
             if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1519,8 +1497,7 @@ int DemuxerFunctionAudioTrack0010()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1537,8 +1514,7 @@ int DemuxerFunctionAudioTrack0020()
     if (g_trackType != MEDIA_TYPE_AUXILIARY) { return -1; }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_REFERENCE_TYPE, &trackRefType))) { return -1; }
     if (strcmp(trackRefType, TRACK_REF_TYPE_DEPTH.c_str()) != 0) { return -1; }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1550,8 +1526,7 @@ int DemuxerFunctionAudioTrack0020()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1568,8 +1543,7 @@ int DemuxerFunctionAudioTrack0030()
     if (g_trackType != MEDIA_TYPE_AUXILIARY) { return -1; }
     if (!(OH_AVFormat_GetStringValue(trackFormat, OH_MD_KEY_TRACK_DESCRIPTION, &trackdescription))) { return -1; }
     if (strcmp(trackdescription, AUXILIARY_DEPTH_TRACK_KEY.c_str()) != 0) { return -1; }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1581,8 +1555,7 @@ int DemuxerFunctionAudioTrack0030()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1603,8 +1576,7 @@ int DemuxerFunctionAudioTrack0040()
     if (!(OH_AVFormat_GetIntBuffer(trackFormat, OH_MD_KEY_REFERENCE_TRACK_IDS,
         &trackIdsDepth, &bufferSize))) { return -1; }
     if (bufferSize != bufferSizeResult) { return -1; }
-    OH_AVFormat_Destroy(trackFormat);
-    trackFormat = nullptr;
+    DestroyFormat(trackFormat);
 
     trackFormat = OH_AVSource_GetTrackFormat(source, TRACKNUM_2);
     if (trackFormat == nullptr) { return -1; }
@@ -1618,8 +1590,7 @@ int DemuxerFunctionAudioTrack0040()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1646,8 +1617,7 @@ int DemuxerFunctionAudioTrack0060()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1672,8 +1642,7 @@ int DemuxerFunctionAudioTrack0061()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1700,8 +1669,7 @@ int DemuxerFunctionAudioTrack0070()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1728,8 +1696,7 @@ int DemuxerFunctionAudioTrack0080()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1762,8 +1729,7 @@ int DemuxerFunctionAudioTrack0090()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1809,8 +1775,7 @@ int DemuxerFunctionAudioTrack0130()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1856,8 +1821,7 @@ int DemuxerFunctionAudioTrack0140()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1894,16 +1858,14 @@ int DemuxerFunctionAudioTrack0150()
             if (trackIdsDepth[TRACKNUM_0] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_231) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1941,16 +1903,14 @@ int DemuxerFunctionAudioTrack0160()
             if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_431) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -1989,15 +1949,13 @@ int DemuxerFunctionAudioTrack0170()
             if (trackIdsPrey[TRACKNUM_1] != TRACKNUM_1) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -2036,16 +1994,14 @@ int DemuxerFunctionAudioTrack0180()
             if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (videoFrame != TRACKFRAME_431) { return -1; }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -2085,15 +2041,13 @@ int DemuxerFunctionAudioTrack0190()
             if (trackIdsDepth[TRACKNUM_2] != TRACKNUM_3) { return -1; }
             SetVideoValue(bufferAttr, videoIsEnd, videoFrame);
         }
-        OH_AVFormat_Destroy(trackFormat);
-        trackFormat = nullptr;
+        DestroyFormat(trackFormat);
     }
     if (fd >= 0) {
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -2108,8 +2062,7 @@ int DemuxerFunctionAdd0010()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -2124,8 +2077,7 @@ int DemuxerFunctionAdd0020()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
@@ -2163,8 +2115,7 @@ int DemuxerFunctionAdd0030()
         close(fd);
         fd = -1;
     }
-    OH_AVBuffer_Destroy(avBuffer);
-    avBuffer = nullptr
+    DestroyBuffer();
     return 0;
 }
 
