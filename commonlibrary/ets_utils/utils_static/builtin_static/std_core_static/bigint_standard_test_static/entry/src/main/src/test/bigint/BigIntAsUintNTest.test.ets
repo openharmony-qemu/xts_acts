@@ -34,11 +34,10 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintN8And32Bit0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt.asUintN(8, biInt(127)).toString()).assertEqual('127');
-        expect(BigInt.asUintN(32, biStr('4294967295')).toString()).assertEqual('4294967295');
-      });
+    it('testBigIntAsUintN8And32Bit0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(8, biInt(127)).toString()).assertEqual('127');
+      expect(BigInt.asUintN(32, biStr('4294967295')).toString()).assertEqual('4294967295');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0200
@@ -48,14 +47,13 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintN1Bit0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt.asUintN(1, biInt(0)).toString()).assertEqual('0');
-        expect(BigInt.asUintN(1, biInt(1)).toString()).assertEqual('1');
-        expect(BigInt.asUintN(1, biInt(2)).toString()).assertEqual('0');
-        expect(BigInt.asUintN(1, biInt(3)).toString()).assertEqual('1');
-        expect(BigInt.asUintN(1, biInt(-1)).toString()).assertEqual('1');
-      });
+    it('testBigIntAsUintN1Bit0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(1, biInt(0)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(1, biInt(1)).toString()).assertEqual('1');
+      expect(BigInt.asUintN(1, biInt(2)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(1, biInt(3)).toString()).assertEqual('1');
+      expect(BigInt.asUintN(1, biInt(-1)).toString()).assertEqual('1');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0300
@@ -65,15 +63,14 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintN8BitBoundary0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt.asUintN(8, biInt(255)).toString()).assertEqual('255');
-        expect(BigInt.asUintN(8, biInt(256)).toString()).assertEqual('0');
-        expect(BigInt.asUintN(8, biInt(257)).toString()).assertEqual('1');
-        expect(BigInt.asUintN(8, biInt(-1)).toString()).assertEqual('255');
-        expect(BigInt.asUintN(8, biInt(-128)).toString()).assertEqual('128');
-        expect(BigInt.asUintN(8, biInt(-256)).toString()).assertEqual('0');
-      });
+    it('testBigIntAsUintN8BitBoundary0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(8, biInt(255)).toString()).assertEqual('255');
+      expect(BigInt.asUintN(8, biInt(256)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(8, biInt(257)).toString()).assertEqual('1');
+      expect(BigInt.asUintN(8, biInt(-1)).toString()).assertEqual('255');
+      expect(BigInt.asUintN(8, biInt(-128)).toString()).assertEqual('128');
+      expect(BigInt.asUintN(8, biInt(-256)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0400
@@ -83,16 +80,14 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNMultiWidthMax0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt.asUintN(16, biInt(65535)).toString()).assertEqual('65535');
-        expect(BigInt.asUintN(16, biInt(65536)).toString()).assertEqual('0');
-        expect(BigInt.asUintN(32, biStr('4294967295')).toString()).assertEqual('4294967295');
-        expect(BigInt.asUintN(32, biStr('4294967296')).toString()).assertEqual('0');
-        expect(BigInt.asUintN(64, biStr('18446744073709551615')).toString())
-          .assertEqual('18446744073709551615');
-        expect(BigInt.asUintN(64, biStr('18446744073709551616')).toString()).assertEqual('0');
-      });
+    it('testBigIntAsUintNMultiWidthMax0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(16, biInt(65535)).toString()).assertEqual('65535');
+      expect(BigInt.asUintN(16, biInt(65536)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(32, biStr('4294967295')).toString()).assertEqual('4294967295');
+      expect(BigInt.asUintN(32, biStr('4294967296')).toString()).assertEqual('0');
+      expect(BigInt.asUintN(64, biStr('18446744073709551615')).toString()).assertEqual('18446744073709551615');
+      expect(BigInt.asUintN(64, biStr('18446744073709551616')).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0500
@@ -102,11 +97,10 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNZeroBits0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt.asUintN(0, biInt(0)).toString()).assertEqual('0');
-        expect(BigInt.asUintN(0, biInt(5)).toString()).assertEqual('0');
-      });
+    it('testBigIntAsUintNZeroBits0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(0, biInt(0)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(0, biInt(5)).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0600
@@ -116,15 +110,14 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNNegativeBits0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect((): void => {
-          BigInt.asUintN(-1, biInt(5));
-        }).assertThrowError('RangeError');
-        expect((): void => {
-          BigInt.asUintN(-100, biInt(5));
-        }).assertThrowError('RangeError');
-      });
+    it('testBigIntAsUintNNegativeBits0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        BigInt.asUintN(-1, biInt(5));
+      }).assertThrowError('RangeError');
+      expect((): void => {
+        BigInt.asUintN(-100, biInt(5));
+      }).assertThrowError('RangeError');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0700
@@ -134,14 +127,14 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNVersusAsIntN0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const u = BigInt.asUintN(8, biInt(200));
-        const s = BigInt.asIntN(8, biInt(200));
-        expect(u.toString()).assertEqual('200');
-        expect(s.toString()).assertEqual('-56');
-        expect(BigInt.asUintN(8, biInt(127)).equals(BigInt.asIntN(8, biInt(127)))).assertTrue();
-      });
+    it('testBigIntAsUintNVersusAsIntN0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const u = BigInt.asUintN(8, biInt(200));
+      const s = BigInt.asIntN(8, biInt(200));
+
+      expect(u.toString()).assertEqual('200');
+      expect(s.toString()).assertEqual('-56');
+      expect(BigInt.asUintN(8, biInt(127)).equals(BigInt.asIntN(8, biInt(127)))).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0800
@@ -151,14 +144,14 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNModEquivalence0800',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const masked = BigInt.asUintN(8, biInt(300));
-        const mod256 = biInt(300).operatorModule(biInt(256));
-        const alt = mod256.operatorLessThan(biInt(0)) ? mod256.operatorAdd(biInt(256)) : mod256;
-        expect(masked.equals(alt)).assertTrue();
-        expect(masked.toString()).assertEqual('44');
-      });
+    it('testBigIntAsUintNModEquivalence0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const masked = BigInt.asUintN(8, biInt(300));
+      const mod256 = biInt(300).operatorModule(biInt(256));
+      const alt = mod256.operatorLessThan(biInt(0)) ? mod256.operatorAdd(biInt(256)) : mod256;
+
+      expect(masked.equals(alt)).assertTrue();
+      expect(masked.toString()).assertEqual('44');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0900
@@ -168,13 +161,13 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNIdempotent0900',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const x = biInt(12345);
-        const once = BigInt.asUintN(8, x);
-        const twice = BigInt.asUintN(8, once);
-        expect(once.equals(twice)).assertTrue();
-      });
+    it('testBigIntAsUintNIdempotent0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const x = biInt(12345);
+      const once = BigInt.asUintN(8, x);
+      const twice = BigInt.asUintN(8, once);
+
+      expect(once.equals(twice)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_1000
@@ -184,10 +177,10 @@ export default function BigIntAsUintNTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNLargeExponent1000',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const p100 = biInt(2).pow(biInt(100));
-        expect(BigInt.asUintN(64, p100).toString()).assertEqual('0');
-      });
+    it('testBigIntAsUintNLargeExponent1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const p100 = biInt(2).pow(biInt(100));
+
+      expect(BigInt.asUintN(64, p100).toString()).assertEqual('0');
+    });
   });
 }

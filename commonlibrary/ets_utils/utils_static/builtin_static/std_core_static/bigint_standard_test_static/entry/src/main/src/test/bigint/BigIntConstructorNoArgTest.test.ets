@@ -26,11 +26,11 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgZero0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const zero = new BigInt();
-        expect(zero.toString()).assertEqual('0');
-      });
+    it('testBigIntConstructorNoArgZero0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const zero = new BigInt();
+
+      expect(zero.toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0200
@@ -40,12 +40,12 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgEqualsZero0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const noArg = new BigInt();
-        const withZero = BigInt(0);
-        expect(noArg.equals(withZero)).assertTrue();
-      });
+    it('testBigIntConstructorNoArgEqualsZero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const noArg = new BigInt();
+      const withZero = BigInt(0);
+
+      expect(noArg.equals(withZero)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0300
@@ -55,11 +55,11 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgInstance0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const zero = new BigInt();
-        expect(typeof zero === 'bigint').assertTrue();
-      });
+    it('testBigIntConstructorNoArgInstance0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const zero = new BigInt();
+
+      expect(typeof zero === 'bigint').assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0400
@@ -69,14 +69,14 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgRepeatedString0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const a = new BigInt();
-        const b = new BigInt();
-        expect(a.toString()).assertEqual('0');
-        expect(b.toString()).assertEqual('0');
-        expect(a.toString()).assertEqual(b.toString());
-      });
+    it('testBigIntConstructorNoArgRepeatedString0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const a = new BigInt();
+      const b = new BigInt();
+
+      expect(a.toString()).assertEqual('0');
+      expect(b.toString()).assertEqual('0');
+      expect(a.toString()).assertEqual(b.toString());
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0500
@@ -86,13 +86,13 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgLoop0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        for (let i = 0; i < 10; i++) {
-          const v = new BigInt();
-          expect(v.toString()).assertEqual('0');
-        }
-      });
+    it('testBigIntConstructorNoArgLoop0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      for (let i = 0; i < 10; i++) {
+        const v = new BigInt();
+
+        expect(v.toString()).assertEqual('0');
+      }
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0600
@@ -102,12 +102,12 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgAddOne0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const zero = new BigInt();
-        const one = BigInt(1);
-        expect(zero.operatorAdd(one).toString()).assertEqual('1');
-      });
+    it('testBigIntConstructorNoArgAddOne0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const zero = new BigInt();
+      const one = BigInt(1);
+
+      expect(zero.operatorAdd(one).toString()).assertEqual('1');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0700
@@ -117,14 +117,14 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgCompareOne0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const zero = new BigInt();
-        const one = BigInt(1);
-        expect(zero.operatorLessThan(one)).assertTrue();
-        expect(zero.operatorGreaterThan(one)).assertFalse();
-        expect(zero.equals(zero)).assertTrue();
-      });
+    it('testBigIntConstructorNoArgCompareOne0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const zero = new BigInt();
+      const one = BigInt(1);
+
+      expect(zero.operatorLessThan(one)).assertTrue();
+      expect(zero.operatorGreaterThan(one)).assertFalse();
+      expect(zero.equals(zero)).assertTrue();
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0800
@@ -134,12 +134,12 @@ export default function BigIntConstructorNoArgTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgStress0800',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        for (let i = 0; i < 100; i++) {
-          const v = new BigInt();
-          expect(v.toString()).assertEqual('0');
-        }
-      });
+    it('testBigIntConstructorNoArgStress0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      for (let i = 0; i < 100; i++) {
+        const v = new BigInt();
+
+        expect(v.toString()).assertEqual('0');
+      }
+    });
   });
 }

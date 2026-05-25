@@ -26,12 +26,11 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringDecimalPositive0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('0').toString()).assertEqual('0');
-        expect(BigInt('42').toString()).assertEqual('42');
-        expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
-      });
+    it('testBigIntConstructorStringDecimalPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('0').toString()).assertEqual('0');
+      expect(BigInt('42').toString()).assertEqual('42');
+      expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0200
@@ -41,11 +40,10 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringDecimalNegative0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('-1').toString()).assertEqual('-1');
-        expect(BigInt('-256').toString()).assertEqual('-256');
-      });
+    it('testBigIntConstructorStringDecimalNegative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('-1').toString()).assertEqual('-1');
+      expect(BigInt('-256').toString()).assertEqual('-256');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0300
@@ -55,10 +53,9 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringLeadingZeros0300',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('007').toString()).assertEqual('7');
-      });
+    it('testBigIntConstructorStringLeadingZeros0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('007').toString()).assertEqual('7');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0400
@@ -68,10 +65,9 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringEmptyString0400',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('').toString()).assertEqual('0');
-      });
+    it('testBigIntConstructorStringEmptyString0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('').toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0500
@@ -81,13 +77,13 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringInvalidDecimal0500',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-        expect((): void => {
-          BigInt('abc');
-        }).assertThrow(invalidMsg);
-      });
+    it('testBigIntConstructorStringInvalidDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
+
+      expect((): void => {
+        BigInt('abc');
+      }).assertThrow(invalidMsg);
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0600
@@ -97,12 +93,11 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringPositiveSign0600',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('+0').toString()).assertEqual('0');
-        expect(BigInt('+42').toString()).assertEqual('42');
-        expect(BigInt('+2147483647').toString()).assertEqual('2147483647');
-      });
+    it('testBigIntConstructorStringPositiveSign0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('+0').toString()).assertEqual('0');
+      expect(BigInt('+42').toString()).assertEqual('42');
+      expect(BigInt('+2147483647').toString()).assertEqual('2147483647');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0700
@@ -112,12 +107,11 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringWhitespace0700',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(' 42').toString()).assertEqual('42');
-        expect(BigInt('42 ').toString()).assertEqual('42');
-        expect(BigInt(' 42 ').toString()).assertEqual('42');
-      });
+    it('testBigIntConstructorStringWhitespace0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(' 42').toString()).assertEqual('42');
+      expect(BigInt('42 ').toString()).assertEqual('42');
+      expect(BigInt(' 42 ').toString()).assertEqual('42');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0800
@@ -127,11 +121,10 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorStringNonDecimalRadix0800',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt('0xFF').toString()).assertEqual('255');
-        expect(BigInt('0b1010').toString()).assertEqual('10');
-        expect(BigInt('0o77').toString()).assertEqual('63');
-      });
+    it('testBigIntConstructorStringNonDecimalRadix0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('0xFF').toString()).assertEqual('255');
+      expect(BigInt('0b1010').toString()).assertEqual('10');
+      expect(BigInt('0o77').toString()).assertEqual('63');
+    });
   });
 }

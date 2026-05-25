@@ -26,11 +26,10 @@ export default function BigIntConstructorBooleanTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBooleanLiterals0100',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        expect(BigInt(true).toString()).assertEqual('1');
-        expect(BigInt(false).toString()).assertEqual('0');
-      });
+    it('testBigIntConstructorBooleanLiterals0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(true).toString()).assertEqual('1');
+      expect(BigInt(false).toString()).assertEqual('0');
+    });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_BOOLEAN_0200
@@ -40,12 +39,12 @@ export default function BigIntConstructorBooleanTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorBooleanVariables0200',
-      TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const t: boolean = true;
-        const f: boolean = false;
-        expect(BigInt(t).toString()).assertEqual('1');
-        expect(BigInt(f).toString()).assertEqual('0');
-      });
+    it('testBigIntConstructorBooleanVariables0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const t: boolean = true;
+      const f: boolean = false;
+
+      expect(BigInt(t).toString()).assertEqual('1');
+      expect(BigInt(f).toString()).assertEqual('0');
+    });
   });
 }
