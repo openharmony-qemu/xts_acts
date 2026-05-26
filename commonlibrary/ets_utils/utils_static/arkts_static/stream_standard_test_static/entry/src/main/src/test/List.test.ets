@@ -19,6 +19,7 @@ import StreamTest_01 from "./Stream/StreamTest01.test";
 import StreamTest_04 from "./Stream/StreamTest04.test";
 import StreamTest_05 from "./Stream/StreamTest05.test";
 import StreamTest_06 from "./Stream/StreamTest06.test";
+import StreamTest_07 from "./Stream/StreamTest07.test";
 import StreamTest_08 from "./Stream/StreamTest08.test";
 import StreamTest_09 from "./Stream/StreamTest09.test";
 import StreamTest_10 from "./Stream/StreamTest10.test";
@@ -58,16 +59,15 @@ export default function testsuite(): void {
   StreamWritable07Test();
   StreamWritable08Test();
 
-
   StreamTest_04();
   StreamTest_05();
   StreamTest_06();
+  StreamTest_07();
   StreamTest_08();
   StreamTest_09();
   StreamTest_10();
 
   StreamTest_01();
-
 
   StreamDuplex01Test();
   StreamDuplex02Test();
