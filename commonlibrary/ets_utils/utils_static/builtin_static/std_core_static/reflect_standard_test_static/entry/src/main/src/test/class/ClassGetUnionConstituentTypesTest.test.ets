@@ -35,6 +35,15 @@ function asUnionConstituentTypes(raw: Object): FixedArray<Class> {
   return raw as FixedArray<Class>;
 }
 
+function unionHasConstituentNamed(types: FixedArray<Class>, name: string): boolean {
+  for (let i = 0; i < types.length; i++) {
+    if (types[i].getName() === name) {
+      return true;
+    }
+  }
+  return false;
+}
+
 export default function ClassGetUnionConstituentTypesTest(): void {
   describe('ClassGetUnionConstituentTypesTest', (): void => {
     beforeAll(() => {
@@ -116,14 +125,10 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       let cls = Class.from<int | string | boolean | double>();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(4);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromBooleanFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromDoubleFqn())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<int>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<string>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<boolean>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<double>().getName())).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_0600
@@ -194,12 +199,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       let cls = Class.from<string | null>();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(2);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.Null')).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<string>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, 'std.core.Null')).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1100
@@ -240,12 +241,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       expect(cls.isUnion()).assertTrue();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(2);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === 'std.core.Array')).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.Map')).assertTrue();
+      expect(types[0].getName()).assertEqual(Class.from<Array<int>>().getName());
+      expect(types[1].getName()).assertEqual(Class.from<Map<string, int>>().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1400
@@ -273,12 +270,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       expect(cls.isUnion()).assertTrue();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(2);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.Null')).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<string>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, 'std.core.Null')).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1600
@@ -296,13 +289,9 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       expect(raw1 !== undefined && raw2 !== undefined).assertTrue();
       let types = asUnionConstituentTypes(raw1 as Object);
       expect(types.length).assertEqual(3);
-      let typeNames016: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames016.push(types[i].getName());
-      }
-      expect(typeNames016.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames016.some((n: string) => n === 'std.core.String')).assertTrue();
-      expect(typeNames016.some((n: string) => n === 'std.core.Array')).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<int>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<string>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<Array<double>>().getName())).assertTrue();
       let typesAgain = asUnionConstituentTypes(raw2 as Object);
       expect(typesAgain.length).assertEqual(types.length);
     });
@@ -322,12 +311,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       for (let i = 0; i < types.length; i++) {
         expect(types[i].isUnion()).assertFalse();
       }
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
+      expect(types[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(types[1].getName()).assertEqual(Class.from<string>().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1800
@@ -341,12 +326,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       let cls = Class.from<int | string>();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(2);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
+      expect(types[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(types[1].getName()).assertEqual(Class.from<string>().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_1900
@@ -393,9 +374,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       expect(typesRaw !== undefined && typesRaw !== null).assertTrue();
       let types = asUnionConstituentTypes(typesRaw as Object);
       expect(types.length).assertEqual(2);
-      let names021: Array<string> = [types[0].getName(), types[1].getName()];
-      expect(names021.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(names021.some((n: string) => n === 'std.core.String')).assertTrue();
+      expect(types[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(types[1].getName()).assertEqual(Class.from<string>().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2200
@@ -423,13 +403,9 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       let cls = Class.from<int | string | Array<double>>();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(3);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.Array')).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<int>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<string>().getName())).assertTrue();
+      expect(unionHasConstituentNamed(types, Class.from<Array<double>>().getName())).assertTrue();
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2400
@@ -444,12 +420,8 @@ export default function ClassGetUnionConstituentTypesTest(): void {
       expect(cls.isUnion()).assertTrue();
       let types = asUnionConstituentTypes(cls.getUnionConstituentTypes() as Object);
       expect(types.length).assertEqual(2);
-      let typeNames: Array<string> = new Array<string>();
-      for (let i = 0; i < types.length; i++) {
-        typeNames.push(types[i].getName());
-      }
-      expect(typeNames.some((n: string) => n === Utils.scalarClassFromIntFqn())).assertTrue();
-      expect(typeNames.some((n: string) => n === 'std.core.String')).assertTrue();
+      expect(types[0].getName()).assertEqual(Class.from<int>().getName());
+      expect(types[1].getName()).assertEqual(Class.from<string>().getName());
     });
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETUNIONCONSTITUENTTYPES_2500
