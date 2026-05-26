@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntToString3Test(): void {
-  describe('BigInt.toString(radix double) (mindmap toString_3)', () => {
+  describe('BigInt.toString(radix double (mindmap toString_3)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0100
      * @tc.name testBigIntToString3DoubleRadix0100
@@ -27,14 +27,13 @@ export default function BigIntToString3Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString3DoubleRadix0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const sample255 = 255; // 0xFF: byte-aligned sample for radix conversion
-      const radix16: double = 16.0; // hex
-      const radix2: double = 2.0;
-      const radix8: double = 8.0;
-
-      expect(BigInt(sample255).toString(Double.toInt(radix16))).assertEqual('ff');
-      expect(BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
-      expect(BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
+        const sample255 = 255;
+        const radix16: double = 16.0;
+        const radix2: double = 2.0;
+        const radix8: double = 8.0;
+        expect(new BigInt(sample255).toString(Double.toInt(radix16))).assertEqual('ff');
+        expect(new BigInt(10).toString(Double.toInt(radix2))).assertEqual('1010');
+        expect(new BigInt(10).toString(Double.toInt(radix8))).assertEqual('12');
     });
 
     /**
@@ -46,23 +45,36 @@ export default function BigIntToString3Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString3Negative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const sample255 = 255;
-      const radix16: double = 16.0;
-
-      expect(BigInt(-sample255).toString(Double.toInt(radix16))).assertEqual('-ff');
+        const sample255 = 255;
+        const radix16: double = 16.0;
+        expect(new BigInt(-sample255).toString(Double.toInt(radix16))).assertEqual('-ff');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_3_0300
-     * @tc.name testBigIntToString3InvalidArgRadix0300
-     * @tc.desc Verify toString throws RangeError for invalid radix from double
+     * @tc.name testBigIntToString3ReturnType0300
+     * @tc.desc Mindmap return value: toString with double-derived radix returns string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString3InvalidArgRadix0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const radixBelowMin: double = 1.0; // legal int radix starts at 2
-      const radixAboveMax: double = 37.0; // legal int radix ends at 36
+    it('testBigIntToString3ReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const radix16: double = 16.0;
+
+      expect(Class.of(BigInt(255).toString(Double.toInt(radix16)))).assertEqual(Class.from<string>());
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0400
+     * @tc.name testBigIntToString3InvalidArgRadix0400
+     * @tc.desc Mindmap error handling: invalid radix from double throws RangeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3InvalidArgRadix0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const radixBelowMin: double = 1.0;
+      const radixAboveMax: double = 37.0;
 
       expect((): void => {
         BigInt(10).toString(Double.toInt(radixBelowMin));

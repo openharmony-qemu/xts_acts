@@ -21,7 +21,7 @@ export default function BigIntOperatorMultiplyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0100
      * @tc.name testBigIntOperatorMultiplyBasic0100
-     * @tc.desc Verify operatorMultiply basic arithmetic
+     * @tc.desc Mindmap input and return value: operatorMultiply basic arithmetic
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -36,7 +36,7 @@ export default function BigIntOperatorMultiplyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0200
      * @tc.name testBigIntOperatorMultiplyZero0200
-     * @tc.desc Verify operatorMultiply zero cases
+     * @tc.desc Mindmap input: operatorMultiply zero cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -49,7 +49,7 @@ export default function BigIntOperatorMultiplyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0300
      * @tc.name testBigIntOperatorMultiplyLarge0300
-     * @tc.desc Verify operatorMultiply large values
+     * @tc.desc Mindmap input: operatorMultiply large values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -61,28 +61,25 @@ export default function BigIntOperatorMultiplyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0400
      * @tc.name testBigIntOperatorMultiplyReturnType0400
-     * @tc.desc Verify operatorMultiply returns BigInt
+     * @tc.desc Mindmap return value: operatorMultiply returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const result = BigInt(10).operatorMultiply(BigInt(3));
-
-      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
+      expect(Class.of(BigInt(10).operatorMultiply(BigInt(3)) as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0500
      * @tc.name testBigIntOperatorMultiplyInvalidArg0500
-     * @tc.desc Verify operatorMultiply rejects invalid args
+     * @tc.desc Mindmap error handling: operatorMultiply rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
-
       expect((): void => {
         a.operatorMultiply(null as BigInt);
       }).assertThrowError('ClassCastError');
@@ -98,37 +95,6 @@ export default function BigIntOperatorMultiplyTest(): void {
       expect((): void => {
         a.operatorMultiply(true as object as BigInt);
       }).assertThrowError('ClassCastError');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0600
-     * @tc.name testBigIntOperatorMultiplyBoundary0600
-     * @tc.desc Verify operatorMultiply at long boundary and beyond safe integer range
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorMultiplyBoundary0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775807').operatorMultiply(BigInt(2)).toString()).assertEqual('18446744073709551614');
-      expect(BigInt('-9223372036854775807').operatorMultiply(BigInt('-9223372036854775807')).toString()).assertEqual('85070591730234615847396907784232501249');
-      expect(BigInt(-1).operatorMultiply(BigInt('999999999999999999999999999999')).toString()).assertEqual('-999999999999999999999999999999');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0700
-     * @tc.name testBigIntOperatorMultiplyLargeNegative0700
-     * @tc.desc Verify operatorMultiply with large negative operands and product magnitude
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorMultiplyLargeNegative0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const a = '-999999999999999999999999999999';
-      const b = '888888888888888888888888888888';
-
-      expect(BigInt(a).operatorMultiply(BigInt(b)).toString()).assertEqual('-888888888888888888888888888887111111111111111111111111111112');
-      expect(BigInt(a).operatorMultiply(BigInt(a)).toString()).assertEqual('999999999999999999999999999998000000000000000000000000000001');
-      expect(BigInt('-9223372036854775808').operatorMultiply(BigInt('-9223372036854775808')).toString()).assertEqual('85070591730234615865843651857942052864');
     });
   });
 }

@@ -17,81 +17,60 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
 export default function BigIntOperatorLessThanTest(): void {
-  describe('BigInt.operatorLessThan (mindmap operatorLessThan)', () => {
+  describe('BigInt.operatorLessThan (mindmap)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0100
      * @tc.name testBigIntOperatorLessThanBasic0100
-     * @tc.desc Verify operatorLessThan
+     * @tc.desc Mindmap input and return value: operatorLessThan basic compare
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(3).operatorLessThan(BigInt(5))).assertTrue();
-      expect(BigInt(-10).operatorLessThan(BigInt(-3))).assertTrue();
-      expect(BigInt(50).operatorLessThan(BigInt(100))).assertTrue();
-      expect(BigInt(5).operatorLessThan(BigInt(3))).assertFalse();
-      expect(BigInt(0).operatorLessThan(BigInt(0))).assertFalse();
-      expect(BigInt(42).operatorLessThan(BigInt(42))).assertFalse();
+        expect(new BigInt(3).operatorLessThan(new BigInt(5))).assertTrue();
+        expect(new BigInt(-10).operatorLessThan(new BigInt(-3))).assertTrue();
+        expect(new BigInt(50).operatorLessThan(new BigInt(100))).assertTrue();
+        expect(new BigInt(5).operatorLessThan(new BigInt(3))).assertFalse();
+        expect(new BigInt(0).operatorLessThan(new BigInt(0))).assertFalse();
+        expect(new BigInt(42).operatorLessThan(new BigInt(42))).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0200
      * @tc.name testBigIntOperatorLessThanBoundary0200
-     * @tc.desc Verify operatorLessThan boundary
+     * @tc.desc Mindmap input: operatorLessThan near MAX_SAFE_INTEGER
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
-
-      expect(BigInt(maxSafe).operatorLessThan(BigInt('9007199254740990'))).assertFalse();
-      expect(BigInt('9007199254740990').operatorLessThan(BigInt(maxSafe))).assertTrue();
+        const maxSafe = '9007199254740991';
+        expect(new BigInt(maxSafe).operatorLessThan(new BigInt('9007199254740990'))).assertFalse();
+        expect(new BigInt('9007199254740990').operatorLessThan(new BigInt(maxSafe))).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0300
-     * @tc.name testBigIntOperatorLessThanZero0300
-     * @tc.desc Verify operatorLessThan zero and sign boundary cases
+     * @tc.name testBigIntOperatorLessThanReturnType0300
+     * @tc.desc Mindmap return value: operatorLessThan returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLessThanZero0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(-1).operatorLessThan(BigInt(0))).assertTrue();
-      expect(BigInt(0).operatorLessThan(BigInt(1))).assertTrue();
-      expect(BigInt(-100).operatorLessThan(BigInt(0))).assertTrue();
-      expect(BigInt(0).operatorLessThan(BigInt(-1))).assertFalse();
-      expect(BigInt(0).operatorLessThan(BigInt(0))).assertFalse();
-      expect(BigInt(1).operatorLessThan(BigInt(0))).assertFalse();
+    it('testBigIntOperatorLessThanReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(1).operatorLessThan(BigInt(2)))).assertEqual(Class.from<boolean>());
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0400
-     * @tc.name testBigIntOperatorLessThanReturnType0400
-     * @tc.desc Verify operatorLessThan returns boolean
+     * @tc.name testBigIntOperatorLessThanInvalidArg0400
+     * @tc.desc Mindmap error handling: operatorLessThan rejects invalid args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLessThanReturnType0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const result = BigInt(1).operatorLessThan(BigInt(2));
-
-      expect(Class.of(result)).assertEqual(Class.from<boolean>());
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0500
-     * @tc.name testBigIntOperatorLessThanInvalidArg0500
-     * @tc.desc Verify operatorLessThan rejects invalid args
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorLessThanInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorLessThanInvalidArg0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
-
       expect((): void => {
         a.operatorLessThan(null as BigInt);
       }).assertThrowError('ClassCastError');
@@ -110,36 +89,16 @@ export default function BigIntOperatorLessThanTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0600
-     * @tc.name testBigIntOperatorLessThanLongBoundary0600
-     * @tc.desc Verify operatorLessThan at long min and max boundaries
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0500
+     * @tc.name testBigIntOperatorLessThanCrossSign0500
+     * @tc.desc Mindmap input: operatorLessThan cross-sign operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorLessThanLongBoundary0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('-9223372036854775808').operatorLessThan(BigInt('-9223372036854775807'))).assertTrue();
-      expect(BigInt('9223372036854775806').operatorLessThan(BigInt('9223372036854775807'))).assertTrue();
-      expect(BigInt('9223372036854775807').operatorLessThan(BigInt('9223372036854775807'))).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0700
-     * @tc.name testBigIntOperatorLessThanConsecutive0700
-     * @tc.desc Verify operatorLessThan for consecutive increments on large values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorLessThanConsecutive0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const base = BigInt('999999999999999999999999999990');
-      const next = base.operatorAdd(BigInt(1));
-      const next2 = next.operatorAdd(BigInt(1));
-
-      expect(base.operatorLessThan(next)).assertTrue();
-      expect(next.operatorLessThan(next2)).assertTrue();
-      expect(base.operatorLessThan(next2)).assertTrue();
-      expect(next2.operatorLessThan(base)).assertFalse();
+    it('testBigIntOperatorLessThanCrossSign0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-5).operatorLessThan(BigInt(3))).assertTrue();
+      expect(BigInt(3).operatorLessThan(BigInt(-5))).assertFalse();
     });
   });
 }

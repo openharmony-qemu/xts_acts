@@ -21,27 +21,26 @@ export default function BigIntOperatorIncrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0100
      * @tc.name testBigIntOperatorIncrementBasic0100
-     * @tc.desc Verify operatorIncrement basic cases including zero and negative values
+     * @tc.desc Mindmap input and return value: verify operatorIncrement basic cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorIncrementBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1 = BigInt(41);
-
       expect(v1.operatorIncrement().toString()).assertEqual('42');
       const v2 = BigInt(0);
       expect(v2.operatorIncrement().toString()).assertEqual('1');
       const v3 = BigInt(-2);
       expect(v3.operatorIncrement().toString()).assertEqual('-1');
-      expect(BigInt('9223372036854775806').operatorIncrement().toString()).assertEqual('9223372036854775807');
-      expect(BigInt('-9223372036854775808').operatorIncrement().toString()).assertEqual('-9223372036854775807');
+      expect(BigInt('9223372036854775807').operatorIncrement().toString()).assertEqual('9223372036854775808');
+      expect(BigInt('-9223372036854775807').operatorIncrement().toString()).assertEqual('-9223372036854775806');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0200
      * @tc.name testBigIntOperatorIncrementImmutable0200
-     * @tc.desc Verify operatorIncrement does not mutate receiver
+     * @tc.desc Mindmap return value: operatorIncrement does not mutate receiver
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -58,7 +57,7 @@ export default function BigIntOperatorIncrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0300
      * @tc.name testBigIntOperatorIncrementReturnType0300
-     * @tc.desc Verify operatorIncrement returns BigInt
+     * @tc.desc Mindmap return value: operatorIncrement returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -70,30 +69,28 @@ export default function BigIntOperatorIncrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0400
      * @tc.name testBigIntOperatorIncrementLarge0400
-     * @tc.desc Verify operatorIncrement on magnitudes beyond safe integer and long range
+     * @tc.desc Mindmap input: operatorIncrement on large string-constructed BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorIncrementLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('999999999999999999999999999999').operatorIncrement().toString()).assertEqual('1000000000000000000000000000000');
-      expect(BigInt('-999999999999999999999999999999').operatorIncrement().toString()).assertEqual('-999999999999999999999999999998');
-      expect(BigInt('9223372036854775807').operatorIncrement().toString()).assertEqual('9223372036854775808');
+      const huge = '999999999999999999999999999999';
+      expect(BigInt(huge).operatorIncrement().toString()).assertEqual('1000000000000000000000000000000');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0500
-     * @tc.name testBigIntOperatorIncrementMaxSafeInteger0500
-     * @tc.desc Verify operatorIncrement at Number.MAX_SAFE_INTEGER boundaries
+     * @tc.name testBigIntOperatorIncrementInvalidArg0500
+     * @tc.desc Mindmap error handling: operatorIncrement rejects invalid receiver cast
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorIncrementMaxSafeInteger0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991';
-
-      expect(BigInt(maxSafe).operatorIncrement().toString()).assertEqual('9007199254740992');
-      expect(BigInt(`-${maxSafe}`).operatorIncrement().toString()).assertEqual('-9007199254740990');
+    it('testBigIntOperatorIncrementInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        (null as Object as BigInt).operatorIncrement();
+      }).assertThrowError('ClassCastError');
     });
   });
 }

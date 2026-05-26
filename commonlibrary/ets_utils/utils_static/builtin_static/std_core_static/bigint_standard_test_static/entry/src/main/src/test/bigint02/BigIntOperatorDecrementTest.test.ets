@@ -21,14 +21,13 @@ export default function BigIntOperatorDecrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0100
      * @tc.name testBigIntOperatorDecrementBasic0100
-     * @tc.desc Verify operatorDecrement basic cases including zero and negative values
+     * @tc.desc Mindmap input and return value: verify operatorDecrement basic cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorDecrementBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v1 = BigInt(43);
-
       expect(v1.operatorDecrement().toString()).assertEqual('42');
       const v2 = BigInt(1);
       expect(v2.operatorDecrement().toString()).assertEqual('0');
@@ -41,7 +40,7 @@ export default function BigIntOperatorDecrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0200
      * @tc.name testBigIntOperatorDecrementImmutable0200
-     * @tc.desc Verify operatorDecrement does not mutate receiver
+     * @tc.desc Mindmap return value: operatorDecrement does not mutate receiver
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -58,13 +57,40 @@ export default function BigIntOperatorDecrementTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0300
      * @tc.name testBigIntOperatorDecrementReturnType0300
-     * @tc.desc Verify operatorDecrement returns BigInt
+     * @tc.desc Mindmap return value: operatorDecrement returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorDecrementReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(Class.of(BigInt(1).operatorDecrement() as Object)).assertEqual(Class.from<BigInt>());
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0400
+     * @tc.name testBigIntOperatorDecrementLarge0400
+     * @tc.desc Mindmap input: operatorDecrement on large string-constructed BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const huge = '999999999999999999999999999999';
+      expect(BigInt(huge).operatorDecrement().toString()).assertEqual('999999999999999999999999999998');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0500
+     * @tc.name testBigIntOperatorDecrementInvalidArg0500
+     * @tc.desc Mindmap error handling: operatorDecrement rejects invalid receiver cast
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        (null as Object as BigInt).operatorDecrement();
+      }).assertThrowError('ClassCastError');
     });
   });
 }

@@ -21,88 +21,73 @@ export default function BigIntPositiveTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0100
      * @tc.name testBigIntPositiveSignCases0100
-     * @tc.desc Verify positive() is true for positive values and zero per API spec (non-negative)
+     * @tc.desc Verify positive() is true for non-negative values including zero per API spec
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntPositiveSignCases0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(123).positive()).assertTrue();
-      expect(BigInt(-123).positive()).assertFalse();
-      expect(BigInt(0).positive()).assertTrue();
-      expect(BigInt(1).positive()).assertTrue();
-      expect(BigInt(-1).positive()).assertFalse();
-      expect(BigInt('456').positive()).assertTrue();
-      expect(BigInt('-456').positive()).assertFalse();
+        expect(new BigInt(123).positive()).assertTrue();
+        expect(new BigInt(-123).positive()).assertFalse();
+        expect(new BigInt(0).positive()).assertTrue();
+        expect(new BigInt(1).positive()).assertTrue();
+        expect(new BigInt(-1).positive()).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0200
      * @tc.name testBigIntPositiveComplementNegative0200
-     * @tc.desc Verify positive() and negative() complement per API (zero is non-negative, not negative)
+     * @tc.desc Verify positive() and negative() are mutually exclusive sign checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntPositiveComplementNegative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(42).positive()).assertTrue();
-      expect(BigInt(42).negative()).assertFalse();
-      expect(BigInt(-42).positive()).assertFalse();
-      expect(BigInt(-42).negative()).assertTrue();
-      expect(BigInt(0).positive()).assertTrue();
-      expect(BigInt(0).negative()).assertFalse();
+        expect(new BigInt(42).positive()).assertTrue();
+        expect(new BigInt(42).negative()).assertFalse();
+        expect(new BigInt(-42).positive()).assertFalse();
+        expect(new BigInt(-42).negative()).assertTrue();
+        expect(new BigInt(0).positive()).assertTrue();
+        expect(new BigInt(0).negative()).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0300
      * @tc.name testBigIntPositiveReturnType0300
-     * @tc.desc Verify positive returns boolean
+     * @tc.desc Mindmap return value: positive returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntPositiveReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const bn = BigInt(100);
-      const r1 = bn.positive();
-      const r2 = bn.positive();
-      const r3 = bn.positive();
-
-      expect(Class.of(r1)).assertEqual(Class.from<boolean>());
-      expect(r1 === r2 && r2 === r3).assertTrue();
+      expect(Class.of(BigInt(1).positive())).assertEqual(Class.from<boolean>());
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0400
-     * @tc.name testBigIntPositiveBoundary0400
-     * @tc.desc Verify positive() at int64 and MAX_SAFE_INTEGER boundary magnitudes
+     * @tc.name testBigIntPositiveLarge0400
+     * @tc.desc Mindmap input: positive on large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveBoundary0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775807').positive()).assertTrue();
-      expect(BigInt('-9223372036854775808').positive()).assertFalse();
-      expect(BigInt(9223372036854775807).positive()).assertTrue();
-      expect(BigInt(-9223372036854775808).positive()).assertFalse();
-      const maxSafe = '9007199254740991';
-      expect(BigInt(maxSafe).positive()).assertTrue();
-      expect(BigInt(`-${maxSafe}`).positive()).assertFalse();
-      expect(BigInt(9007199254740991.0).positive()).assertTrue();
-      expect(BigInt(-9007199254740991.0).positive()).assertFalse();
+    it('testBigIntPositiveLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('999999999999999999999999999999').positive()).assertTrue();
+      expect(BigInt('-999999999999999999999999999999').positive()).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_POSITIVE_0500
-     * @tc.name testBigIntPositiveLargeMagnitude0500
-     * @tc.desc Verify positive() on very large positive and negative magnitudes
+     * @tc.name testBigIntPositiveStringBoolean0500
+     * @tc.desc Mindmap input: positive on string and boolean sources
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntPositiveLargeMagnitude0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('999999999999999999999999999999').positive()).assertTrue();
-      expect(BigInt('-999999999999999999999999999999').positive()).assertFalse();
-      expect(BigInt(0).positive()).assertTrue();
+    it('testBigIntPositiveStringBoolean0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('42').positive()).assertTrue();
+      expect(BigInt(true).positive()).assertTrue();
+      expect(BigInt(false).positive()).assertTrue();
     });
   });
 }

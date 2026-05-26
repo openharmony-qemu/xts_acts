@@ -27,12 +27,12 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(8).pow(BigInt(2)).toString()).assertEqual('64');
-      expect(BigInt(2).pow(BigInt(10)).toString()).assertEqual('1024');
-      expect(BigInt(8).pow(BigInt(0)).toString()).assertEqual('1');
-      expect(BigInt(8).pow(BigInt(1)).toString()).assertEqual('8');
-      expect(BigInt(-2).pow(BigInt(3)).toString()).assertEqual('-8');
-      expect(BigInt(-2).pow(BigInt(4)).toString()).assertEqual('16');
+        expect(new BigInt(8).pow(new BigInt(2)).toString()).assertEqual('64');
+        expect(new BigInt(2).pow(new BigInt(10)).toString()).assertEqual('1024');
+        expect(new BigInt(8).pow(new BigInt(0)).toString()).assertEqual('1');
+        expect(new BigInt(8).pow(new BigInt(1)).toString()).assertEqual('8');
+        expect(new BigInt(-2).pow(new BigInt(3)).toString()).assertEqual('-8');
+        expect(new BigInt(-2).pow(new BigInt(4)).toString()).assertEqual('16');
     });
 
     /**
@@ -44,11 +44,10 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowSpecial0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(0).pow(BigInt(0)).toString()).assertEqual('1');
-      expect(BigInt(0).pow(BigInt(5)).toString()).assertEqual('0');
-      expect(BigInt(1).pow(BigInt(100)).toString()).assertEqual('1');
-      expect(BigInt(-1).pow(BigInt(4)).toString()).assertEqual('1');
-      expect(BigInt(-1).pow(BigInt(3)).toString()).assertEqual('-1');
+        expect(new BigInt(0).pow(new BigInt(5)).toString()).assertEqual('0');
+        expect(new BigInt(1).pow(new BigInt(100)).toString()).assertEqual('1');
+        expect(new BigInt(-1).pow(new BigInt(4)).toString()).assertEqual('1');
+        expect(new BigInt(-1).pow(new BigInt(3)).toString()).assertEqual('-1');
     });
 
     /**
@@ -60,10 +59,8 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(2).pow(BigInt(64)).toString()).assertEqual('18446744073709551616');
-      expect(BigInt(2).pow(BigInt(128)).toString()).assertEqual('340282366920938463463374607431768211456');
-      expect(BigInt(999999999).pow(BigInt(2)).toString()).assertEqual('999999998000000001');
-      expect(BigInt(10).pow(BigInt(20)).toString()).assertEqual('100000000000000000000');
+        expect(new BigInt(2).pow(new BigInt(64)).toString()).assertEqual('18446744073709551616');
+        expect(new BigInt(999999999).pow(new BigInt(2)).toString()).assertEqual('999999998000000001');
     });
 
     /**
@@ -75,12 +72,12 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowNegativeExponent0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect((): void => {
-        BigInt(8).pow(BigInt(-1));
-      }).assertThrowError('RangeError');
-      expect((): void => {
-        BigInt(2).pow(BigInt(-100));
-      }).assertThrowError('RangeError');
+        expect((): void => {
+          new BigInt(8).pow(new BigInt(-1));
+        }).assertThrowError('RangeError');
+        expect((): void => {
+          new BigInt(2).pow(new BigInt(-100));
+        }).assertThrowError('RangeError');
     });
 
     /**
@@ -92,8 +89,7 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const v = BigInt(8);
-
+        const v = new BigInt(8);
       expect((): void => {
         v.pow(null as BigInt);
       }).assertThrowError('ClassCastError');

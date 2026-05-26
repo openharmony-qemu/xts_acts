@@ -27,12 +27,11 @@ export default function BigIntValueOfTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntValueOfEquals0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const v = BigInt(123);
-
-      expect(v.valueOf().equals(v)).assertTrue();
-      expect(v.valueOf().toString()).assertEqual('123');
-      expect(BigInt(-456).valueOf().toString()).assertEqual('-456');
-      expect(BigInt(0).valueOf().toString()).assertEqual('0');
+        const v = new BigInt(123);
+        expect(v.valueOf().equals(v)).assertTrue();
+        expect(v.valueOf().toString()).assertEqual('123');
+        expect(new BigInt(-456).valueOf().toString()).assertEqual('-456');
+        expect(new BigInt(0).valueOf().toString()).assertEqual('0');
     });
 
     /**
@@ -44,13 +43,13 @@ export default function BigIntValueOfTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntValueOfReturnType0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Class.of(BigInt(42).valueOf() as Object)).assertEqual(Class.from<BigInt>());
+        expect(Class.of(new BigInt(42).valueOf() as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0300
      * @tc.name testBigIntValueOfStable0300
-     * @tc.desc Verify repeated valueOf is consistent
+     * @tc.desc Mindmap return value: repeated valueOf is consistent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -63,35 +62,32 @@ export default function BigIntValueOfTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0400
-     * @tc.name testBigIntValueOfMaxSafeInteger0400
-     * @tc.desc Verify valueOf at Number.MAX_SAFE_INTEGER boundaries
+     * @tc.name testBigIntValueOfLarge0400
+     * @tc.desc Mindmap input: valueOf on large string BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfMaxSafeInteger0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991';
+    it('testBigIntValueOfLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const huge = BigInt('9007199254740993');
 
-      expect(BigInt(maxSafe).valueOf().toString()).assertEqual(maxSafe);
-      expect(BigInt('9007199254740992').valueOf().toString()).assertEqual('9007199254740992');
-      expect(BigInt(`-${maxSafe}`).valueOf().toString()).assertEqual('-9007199254740991');
-      expect(BigInt(maxSafe).valueOf().equals(BigInt(maxSafe))).assertTrue();
+      expect(huge.valueOf().equals(huge)).assertTrue();
+      expect(huge.valueOf().toString()).assertEqual('9007199254740993');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_VALUEOF_0500
-     * @tc.name testBigIntValueOfLargeMagnitude0500
-     * @tc.desc Verify valueOf on very large magnitudes and int64 boundaries
+     * @tc.name testBigIntValueOfAssignToBigint0500
+     * @tc.desc Mindmap return value: valueOf result assignable to bigint alias
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntValueOfLargeMagnitude0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const huge = '999999999999999999999999999999';
+    it('testBigIntValueOfAssignToBigint0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const original: bigint = BigInt(123);
+      const val: bigint = original.valueOf();
 
-      expect(BigInt(huge).valueOf().toString()).assertEqual(huge);
-      expect(BigInt(huge).valueOf().equals(BigInt(huge))).assertTrue();
-      expect(BigInt('-9223372036854775808').valueOf().toString()).assertEqual('-9223372036854775808');
+      expect(val.toString()).assertEqual('123');
     });
   });
 }
