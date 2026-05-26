@@ -95,10 +95,6 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
         let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_PHOTO)
         for (let photoOutputProfile of cameraOutputCapability?.photoProfiles!) {
           for (let previewOutPutProfile of cameraOutputCapability?.previewProfiles!) {
-            if (photoOutputProfile.size.width * previewOutPutProfile.size.height !=
-              previewOutPutProfile.size.width * photoOutputProfile.size.height) {
-              continue;
-            }
             let photoOutput: camera.PhotoOutput | undefined = undefined
             let cameraInput: camera.CameraInput | undefined = undefined
             let previewOutPut: camera.PreviewOutput | undefined = undefined
@@ -229,10 +225,6 @@ export default function CameraCapturePhotosWithMultiDiffConfig() {
         let cameraOutputCapability = getCameraOutputCapability(cameraManager, camreId, camera.SceneMode.NORMAL_PHOTO)
         for (let photoOutputProfile of cameraOutputCapability?.photoProfiles!) {
           for (let previewOutPutProfile of cameraOutputCapability?.previewProfiles!) {
-            if (photoOutputProfile.size.width * previewOutPutProfile.size.height !=
-              previewOutPutProfile.size.width * photoOutputProfile.size.height) {
-              continue;
-            }
             let photoOutput: camera.PhotoOutput | undefined = undefined
             let cameraInput: camera.CameraInput | undefined = undefined
             let previewOutPut: camera.PreviewOutput | undefined = undefined
