@@ -83,5 +83,38 @@ export default function BigIntToString3Test(): void {
         BigInt(10).toString(Double.toInt(radixAboveMax));
       }).assertThrowError('RangeError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0500
+     * @tc.name testBigIntToString3RadixBounds0500
+     * @tc.desc Verify minimum radix 2 and maximum radix 36 via double narrowed to int
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3RadixBounds0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const radix2: double = 2.0;
+      const radix36: double = 36.0;
+
+      expect(BigInt(36).toString(Double.toInt(radix36))).assertEqual('10');
+      expect(BigInt(1).toString(Double.toInt(radix2))).assertEqual('1');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_3_0600
+     * @tc.name testBigIntToString3ZeroAndLongBounds0600
+     * @tc.desc Verify zero and signed long extrema with double-derived radix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString3ZeroAndLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const radix10: double = 10.0;
+      const radix16: double = 16.0;
+
+      expect(BigInt(0).toString(Double.toInt(radix10))).assertEqual('0');
+      expect(BigInt(9223372036854775807).toString(Double.toInt(radix16))).assertEqual('7fffffffffffffff');
+      expect(BigInt(-9223372036854775808).toString(Double.toInt(radix16))).assertEqual('-8000000000000000');
+    });
   });
 }

@@ -91,5 +91,36 @@ export default function BigIntNegativeTest(): void {
       expect(BigInt(true).negative()).assertFalse();
       expect(BigInt(false).negative()).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_NEGATIVE_0600
+     * @tc.name testBigIntNegativeFromULong0600
+     * @tc.desc Mindmap input: negative() on values from unsigned long construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntNegativeFromULong0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.fromULong(0).negative()).assertFalse();
+      expect(BigInt.fromULong(9223372036854775807).negative()).assertFalse();
+      expect(BigInt.fromULong(-1).negative()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_NEGATIVE_0700
+     * @tc.name testBigIntNegativeNegateFlip0700
+     * @tc.desc Mindmap input: negative() reflects sign after negate
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntNegativeNegateFlip0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const pos = BigInt(42);
+      const neg = BigInt(-42);
+
+      expect(pos.negate().negative()).assertTrue();
+      expect(neg.negate().negative()).assertFalse();
+      expect(BigInt(0).negate().negative()).assertFalse();
+    });
   });
 }

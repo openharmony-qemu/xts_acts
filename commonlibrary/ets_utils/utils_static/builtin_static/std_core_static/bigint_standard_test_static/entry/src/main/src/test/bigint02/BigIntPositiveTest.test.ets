@@ -86,8 +86,37 @@ export default function BigIntPositiveTest(): void {
      */
     it('testBigIntPositiveStringBoolean0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('42').positive()).assertTrue();
+      expect(BigInt('-42').positive()).assertFalse();
       expect(BigInt(true).positive()).assertTrue();
       expect(BigInt(false).positive()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_POSITIVE_0600
+     * @tc.name testBigIntPositiveLongBounds0600
+     * @tc.desc Mindmap input: positive() at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntPositiveLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(9223372036854775807).positive()).assertTrue();
+      expect(BigInt(-9223372036854775808).positive()).assertFalse();
+      expect(BigInt(-9223372036854775807).positive()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_POSITIVE_0700
+     * @tc.name testBigIntPositiveFromULong0700
+     * @tc.desc Mindmap input: positive() on values from unsigned long construction
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntPositiveFromULong0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.fromULong(0).positive()).assertTrue();
+      expect(BigInt.fromULong(9223372036854775807).positive()).assertTrue();
+      expect(BigInt.fromULong(-1).positive()).assertTrue();
     });
   });
 }
