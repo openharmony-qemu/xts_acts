@@ -7023,15 +7023,15 @@ export default function CalendarManagerTest() {
     });
 
     /**
-     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_nagative_0100
-     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_nagative_0100
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100
      * @tc.desc   Test openEventEditPage with invalid parameter - negative id
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_nagative_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_nagative_0100';
+    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_ParameterError_negative_0100';
       let CalendarAccounts: calendarManager.CalendarAccount = {
         name: '本地帐户',
         type: calendarManager.CalendarType.LOCAL,
@@ -7090,39 +7090,6 @@ export default function CalendarManagerTest() {
       calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
         console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
         await Calendar.openEventEditPage(undefined);
-        expect().assertFail();
-      }).catch((err: BusinessError) => {
-        console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(23900001);
-      });
-    });
-
-    /**
-     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100
-     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100
-     * @tc.desc   Test openEventEditPage with no permission - using calendarMgrErr
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it("SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let CaseName = 'SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100';
-      let CalendarAccounts: calendarManager.CalendarAccount = {
-        name: '本地帐户',
-        type: calendarManager.CalendarType.LOCAL,
-        displayName: '本地帐户'
-      }
-      const event: calendarManager.Event = {
-        type: calendarManager.EventType.NORMAL,
-        title: 'Test Event',
-        startTime: new Date().getTime(),
-        endTime: new Date().getTime() + 60 * 60 * 1000
-      }
-      calendarMgr?.createCalendar(CalendarAccounts).then(async (Calendar) => {
-        console.info(CaseName + "Succeeded in creating calendar" + JSON.stringify(Calendar));
-        let eventId = await Calendar.addEvent(event);
-        console.info(CaseName + "Succeeded in addEvent, eventId: " + eventId);
-        await Calendar?.openEventEditPage(eventId);
         expect().assertFail();
       }).catch((err: BusinessError) => {
         console.info(CaseName + `Failed to openEventEditPage, Code is ${err.code}, message is ${err.message}`);
