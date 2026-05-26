@@ -343,7 +343,7 @@ export default function arrayBufferAtomicTest(): void {
     /**
      * @tc.name testArrayBufferAtomic0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_2200
-     * @tc.desc Verify atomicAddI32(0,0,...) returns old 10 and updates cell to 15
+     * @tc.desc Verify atomicAddI32(0,0,...) returns old 41 and updates cell to 42
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -1094,6 +1094,46 @@ export default function arrayBufferAtomicTest(): void {
       const old = buffer.atomicExchangeU64(0, 0, Int.toLong(50));
       expect(old).assertEqual(5);
       expect(buffer.atomicLoadU64(0, 0)).assertEqual(50);
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_7300
+     * @tc.desc Error: atomicLoadI8(4,0) out of range throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      try {
+        const result = buffer.atomicLoadI8(4, 0);
+        console.info(`testArrayBufferAtomic0073 atomicLoadI8(4,0) result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        console.info(`testArrayBufferAtomic0073 atomicLoadI8(4,0) error: name=${e.name}`);
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferAtomic0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_ATOMIC_7400
+     * @tc.desc Error: atomicLoadI16(4,0) out of range throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferAtomic0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      try {
+        const result = buffer.atomicLoadI16(4, 0);
+        console.info(`testArrayBufferAtomic0074 atomicLoadI16(4,0) result: ${result}`);
+        expect().assertFail();
+      } catch (e) {
+        console.info(`testArrayBufferAtomic0074 atomicLoadI16(4,0) error: name=${e.name}`);
+        expect(e.name).assertEqual('RangeError');
+      }
     });
   });
 }

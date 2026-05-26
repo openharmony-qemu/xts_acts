@@ -53,7 +53,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0200
-     * @tc.desc Verify slice(2) number overload copies from index 2 to buffer end
+     * @tc.desc Verify slice(2) int overload copies from index 2 to buffer end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -172,6 +172,25 @@ export default function arrayBufferSliceOneTest(): void {
       for (let i: int = 0; i < 4; i++) {
         expect(copied.at(i)).assertEqual(buffer.at(i));
       }
+    });
+
+    /**
+     * @tc.name testArrayBufferSliceOne0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0900
+     * @tc.desc Verify int overload slice(6,8) copies last 2 bytes; NaN/fraction coercion covered in SliceTwo
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferSliceOne0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(8);
+      for (let i: int = 0; i < 8; i++) {
+        buffer.set(i, Int.toByte(i + 1));
+      }
+      const copied = buffer.slice(6, 8);
+      expect(copied.byteLength).assertEqual(2);
+      expect(copied.at(0)).assertEqual(Int.toByte(7));
+      expect(copied.at(1)).assertEqual(Int.toByte(8));
     });
   });
 }

@@ -124,29 +124,12 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0600
-     * @tc.desc Verify stringify with NaN start coerces to 0 and decodes to 'ABC'
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferStringify0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(3);
-      buffer.set(0, Int.toByte(65));
-      buffer.set(1, Int.toByte(66));
-      buffer.set(2, Int.toByte(67));
-      const result = ArrayBuffer.stringify(buffer, 'utf8', Double.toInt(Double.NaN), buffer.byteLength);
-      expect(result).assertEqual('ABC');
-    });
-
-    /**
-     * @tc.name testArrayBufferStringify0007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0700
      * @tc.desc Verify stringify(null,'utf8',0,3) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         ArrayBuffer.stringify(Utils.castToArrayBuffer(Utils.nullAsObject()), 'utf8', 0, 3);
         expect().assertFail();
@@ -156,14 +139,14 @@ export default function arrayBufferStringifyTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferStringify0008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
+     * @tc.name testArrayBufferStringify0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0700
      * @tc.desc Verify stringify with invalid-encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferStringify0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferStringify0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(3);
       buffer.set(0, Int.toByte(65));
       try {

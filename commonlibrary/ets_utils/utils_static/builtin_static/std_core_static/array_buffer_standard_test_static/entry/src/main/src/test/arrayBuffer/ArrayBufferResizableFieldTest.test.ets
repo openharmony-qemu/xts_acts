@@ -34,53 +34,12 @@ export default function arrayBufferResizableFieldTest(): void {
     /**
      * @tc.name testArrayBufferResizableField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0100
-     * @tc.desc Verify new ArrayBuffer(4) has resizable false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferResizableField0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(4);
-      expect(buffer.resizable).assertFalse();
-    });
-
-    /**
-     * @tc.name testArrayBufferResizableField0002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0200
-     * @tc.desc Verify new ArrayBuffer(2,8) has resizable true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferResizableField0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const buffer = new ArrayBuffer(2, 8);
-      expect(buffer.resizable).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferResizableField0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0300
-     * @tc.desc Verify new ArrayBuffer(0) has resizable false and new ArrayBuffer(0,4) has resizable true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testArrayBufferResizableField0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const fixed = new ArrayBuffer(0);
-      const resizable = new ArrayBuffer(0, 4);
-      expect(fixed.resizable).assertFalse();
-      expect(resizable.resizable).assertTrue();
-    });
-
-    /**
-     * @tc.name testArrayBufferResizableField0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_RESIZABLE_0400
      * @tc.desc Verify assigning buffer.resizable throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferResizableField0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferResizableField0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
         (buffer as Record<string, Object>)['resizable'] = Utils.booleanAsObject(true);

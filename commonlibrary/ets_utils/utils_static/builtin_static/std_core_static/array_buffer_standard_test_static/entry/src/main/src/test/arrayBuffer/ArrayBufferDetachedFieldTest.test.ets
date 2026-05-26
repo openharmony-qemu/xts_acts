@@ -34,7 +34,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0100
-     * @tc.desc Verify new ArrayBuffer(4) has detached false
+     * @tc.desc Verify new ArrayBuffer(8) has detached false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -75,6 +75,27 @@ export default function arrayBufferDetachedFieldTest(): void {
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
       }
+    });
+
+    /**
+     * @tc.name testArrayBufferDetachedField0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0400
+     * @tc.desc Verify slice/resize on attached buffer succeed; detached-buffer TypeError paths not testable in static XTS
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferDetachedField0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4, 8);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      expect(buffer.detached).assertFalse();
+      const copied = buffer.slice(0, 2);
+      expect(copied.byteLength).assertEqual(2);
+      expect(copied.at(0)).assertEqual(Int.toByte(10));
+      buffer.resize(3);
+      expect(buffer.byteLength).assertEqual(3);
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
     });
   });
 }

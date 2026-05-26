@@ -53,7 +53,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0200
-     * @tc.desc Verify from subview copies full 10-byte buffer and result is isolated from source mutations
+     * @tc.desc Verify from(Uint8Array subview) copies full underlying 10-byte buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -69,7 +69,17 @@ export default function arrayBufferFromThreeTest(): void {
       expect(fromSub.byteLength).assertEqual(10);
       expect(fromSub.at(3)).assertEqual(Int.toByte(3));
       expect(fromSub.at(7)).assertEqual(Int.toByte(7));
+    });
 
+    /**
+     * @tc.name testArrayBufferFromThree0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0300
+     * @tc.desc Verify from(Uint8Array) copy is isolated from source mutations
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromThree0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u8 = new Uint8Array([1, 2, 3]);
       const result = ArrayBuffer.from(u8);
       u8[0] = 99;
@@ -78,20 +88,40 @@ export default function arrayBufferFromThreeTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferFromThree0003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0300
-     * @tc.desc Verify from empty Uint8Array yields byteLength 0; single 255 and 1024-element arrays copy correctly
+     * @tc.name testArrayBufferFromThree0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0400
+     * @tc.desc Verify from(empty Uint8Array) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromThree0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromThree0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(ArrayBuffer.from(new Uint8Array(0)).byteLength).assertEqual(0);
+    });
 
+    /**
+     * @tc.name testArrayBufferFromThree0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0500
+     * @tc.desc Verify from(Uint8Array[255]) copies single byte 255
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromThree0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const one = ArrayBuffer.from(new Uint8Array([255]));
       expect(one.byteLength).assertEqual(1);
       expect(one.at(0)).assertEqual(Int.toByte(255));
+    });
 
+    /**
+     * @tc.name testArrayBufferFromThree0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0600
+     * @tc.desc Verify from(1024-element Uint8Array) copies byteLength and boundary bytes
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromThree0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const u8 = new Uint8Array(1024);
       for (let i: int = 0; i < 1024; i++) {
         u8[i] = Int.toByte(i % 256);
@@ -103,20 +133,43 @@ export default function arrayBufferFromThreeTest(): void {
     });
 
     /**
-     * @tc.name testArrayBufferFromThree0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0400
+     * @tc.name testArrayBufferFromThree0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0700
      * @tc.desc Verify from(Int8Array) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testArrayBufferFromThree0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayBufferFromThree0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const i8 = new Int8Array([1, 2, 3]);
       try {
         ArrayBuffer.from(Utils.castToUint8Array(i8 as Object));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferFromThree0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0800
+     * @tc.desc Verify from(Uint8Array) on attached buffer copies bytes; detached underlying (byteLength 0) not constructible in static XTS
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromThree0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buf = new ArrayBuffer(4);
+      buf.set(0, Int.toByte(10));
+      buf.set(1, Int.toByte(20));
+      buf.set(2, Int.toByte(30));
+      buf.set(3, Int.toByte(40));
+      expect(buf.detached).assertFalse();
+      const u8 = new Uint8Array(buf);
+      const result = ArrayBuffer.from(u8);
+      expect(result.byteLength).assertEqual(4);
+      for (let i: int = 0; i < 4; i++) {
+        expect(result.at(i)).assertEqual(buf.at(i));
       }
     });
   });
