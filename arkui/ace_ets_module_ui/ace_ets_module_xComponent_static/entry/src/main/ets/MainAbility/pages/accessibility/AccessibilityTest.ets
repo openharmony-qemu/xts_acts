@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +14,15 @@
  * limitations under the License.
  */
 
-'use static'
 
-import { Entry, Component, Column, Scroll, Text, BarState } from '@kit.ArkUI';
+import { Entry, Component, Column, Scroll, Text, BarState, ColumnOptions} from '@ohos.arkui.component';
 
 @Entry
 @Component
 struct AccessibilityTest {
   build() {
     Scroll() {
-      Column({ space: 10 }) {
+      Column({ space: 10 } as ColumnOptions) {
         Text('accessibilityNextFocusId no param')
           .width('90%')
           .height('10%')
