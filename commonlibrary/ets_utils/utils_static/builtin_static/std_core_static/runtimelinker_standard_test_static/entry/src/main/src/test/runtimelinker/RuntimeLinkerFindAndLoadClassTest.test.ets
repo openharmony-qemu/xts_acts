@@ -476,8 +476,8 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2800
      * @tc.name testFindAndLoadClass028
-     * @tc.desc Verify behavior when passing class name with embedded null byte "\0".
-     *            WARNING: This test passes "\0" to a native method (findAndLoadClass).
+     * @tc.desc Verify behavior when passing class name with embedded null byte "\x00".
+     *            WARNING: This test passes "\x00" to a native method (findAndLoadClass).
      *            If the ArkTS runtime forwards this string verbatim to a C-string API,
      *            the null byte may prematurely terminate the string. Use only in debug/dev
      *            builds; do NOT run in critical production pipelines unless the native
@@ -489,7 +489,7 @@ export default function FindAndLoadClassTest(): void {
     it('testFindAndLoadClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       try {
-        let cls: Class | undefined = linker.findAndLoadClass("\0", false);
+        let cls: Class | undefined = linker.findAndLoadClass("\x00", false);
         expect(cls === undefined).assertTrue();
       } catch (e) {
         expect(e instanceof Error).assertTrue();
