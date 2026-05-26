@@ -193,6 +193,7 @@ class NoArgClass {
   public static getDefault(): int { return 42; }
 }
 
+
 export default function StaticMethodInvokeTest(): void {
   describe('StaticMethodInvokeTest', (): void => {
     beforeAll((): void => {
@@ -300,8 +301,12 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<IntArgClass>();
       let method = cls.getStaticMethod('process');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke(['string instead of int']);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.invoke(['string instead of int']);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -316,8 +321,12 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<TwoArgClass>();
       let method = cls.getStaticMethod('combine');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke([1]);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.invoke([1]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -332,8 +341,12 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<FloatArgClass>();
       let method = cls.getStaticMethod('accept');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke([1, 2]);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.invoke([1, 2]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -570,8 +583,12 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<GreetingClass>();
       let method = cls.getStaticMethod('greet');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke([42]);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.invoke([42]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -583,11 +600,15 @@ export default function StaticMethodInvokeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodInvoke024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<TwoArgClass>();
-      let method = cls.getStaticMethod('combine');
+      let cls: Class = Class.from<CalculatorClass>();
+      let method = cls.getStaticMethod('sum');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke(['a', 'b']);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.invoke(['x', 'y']);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -602,8 +623,13 @@ export default function StaticMethodInvokeTest(): void {
       let cls: Class = Class.from<ErrorThrowingClass>();
       let method = cls.getStaticMethod('raise');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.invoke();
-      expect(fn).assertThrowError('Error');
+      let caught: boolean = false;
+      try {
+        method!.invoke();
+      } catch (error) {
+        caught = error.name === 'Error';
+      }
+      expect(caught).assertTrue();
     });
 
     /**
@@ -793,8 +819,12 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<OverloadClass>();
       // arkts-sta-reflect.md:880 — Error is thrown when signature is omitted and multiple overloads exist
-      let fn = () => cls.getStaticMethod('echo');
-      expect(fn).assertThrowError('Error');
+      try {
+        cls.getStaticMethod('echo');
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('Error');
+      }
       // With explicit signature, it should work
       let method = cls.getStaticMethod('echo', []);
       expect(method !== undefined).assertTrue();
@@ -817,5 +847,6 @@ export default function StaticMethodInvokeTest(): void {
       let result2: int = method!.invoke([]) as int;
       expect(result1).assertEqual(result2);
     });
+
   });
 }

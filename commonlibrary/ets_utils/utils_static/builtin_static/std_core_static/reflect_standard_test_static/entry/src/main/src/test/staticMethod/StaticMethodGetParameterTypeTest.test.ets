@@ -213,8 +213,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<NegIdxClass>();
       let method = cls.getStaticMethod('atIndex0');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.getParameterType(-1);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.getParameterType(-1);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -229,8 +233,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<OutOfRangeClass>();
       let method = cls.getStaticMethod('fetchZero');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.getParameterType(10);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.getParameterType(10);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -245,8 +253,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<MaxIntIdxClass>();
       let method = cls.getStaticMethod('atMaxIndex');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.getParameterType(2147483647);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.getParameterType(2147483647);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -301,8 +313,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<NoParamTypeClass>();
       let method = cls.getStaticMethod('noParam');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.getParameterType(0);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.getParameterType(0);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
@@ -317,8 +333,12 @@ export default function StaticMethodGetParameterTypeTest(): void {
       let cls: Class = Class.from<LargeIdxClass>();
       let method = cls.getStaticMethod('readAtLarge');
       expect(method !== undefined).assertTrue();
-      let fn = () => method!.getParameterType(100);
-      expect(fn).assertThrowError('TypeError');
+      try {
+        method!.getParameterType(100);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
     });
 
     /**
