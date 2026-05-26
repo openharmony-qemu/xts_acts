@@ -17,48 +17,48 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  public static test(): void {}
+class BasicOwnerClass {
+  public static sayHello(msg: string): string { return msg; }
 }
 
-class MyClass002 {
-  public static test(): void {}
+class NameOwnerClass {
+  public static getVersion(): int { return 1; }
 }
 
 class ClassA003 {
-  public static methodA(): void {}
+  public static methodA(x: int): string { return x.toString(); }
 }
 
 class ClassB003 {
-  public static methodB(): void {}
+  public static methodB(y: float): boolean { return y > 0.0; }
 }
 
 class ParentClass004 {
-  public static parentMethod(): void {}
+  public static parentMethod(msg: string): string { return msg; }
 }
 
 class ChildClass004 extends ParentClass004 {
-  public static childMethod(): void {}
+  public static childMethod(n: int): int { return n; }
 }
 
 class _PrivateClass005 {
-  public static test(): void {}
+  public static privateOp(): float { return 1.0; }
 }
 
 class $SpecialClass005 {
-  public static test(): void {}
+  public static specialOp(): boolean { return true; }
 }
 
-class MyClass006 {
-  public static test(): void {}
+class TypeCheckOwnerClass {
+  public static computeValue(n: int): int { return n; }
 }
 
-class MyClass007 {
-  public static test(): void {}
+class MethodListOwnerClass {
+  public static fetchName(): string { return 'name'; }
 }
 
 class GenericClass008<T> {
-  public static staticMethod(): void {}
+  public static staticMethod(): string { return 'generic'; }
 }
 
 interface Interface1009 {
@@ -69,71 +69,71 @@ interface Interface2009 {
   method2(): void;
 }
 
-class MyClass009 implements Interface1009, Interface2009 {
+class InterfaceOwnerClass implements Interface1009, Interface2009 {
   public method1(): void {}
   public method2(): void {}
-  public static ownMethod(): void {}
+  public static ownMethod(name: string): string { return name; }
 }
 
-class MyClass010 {
-  public static test(): void {}
+class NoThrowOwnerClass {
+  public static isValid(): boolean { return false; }
 }
 
-class MyClass011 {
-  public static publicMethod(): void {}
-  public static async asyncMethod(): Promise<void>  {}
-  public static finalMethod(): void {}
+class ModifierOwnerClass {
+  public static publicMethod(name: string): string { return name; }
+  public static async asyncMethod(delay: int): Promise<string> { return delay.toString(); }
+  public static finalMethod(value: int): int { return value; }
 }
 
-class MyClass012 {
-  public static async fetchData(): Promise<string> {
-    return 'data';
+class AsyncFetchOwnerClass {
+  public static async fetchData(): Promise<int> {
+    return 42;
   }
 }
 
 abstract class AbstractClass013 {
-  public static abstractMethod(): void {}
+  public static abstractMethod(): string { return 'abstract'; }
 }
 
 final class FinalClass013 {
-  public static finalMethod(): void {}
+  public static finalMethod(): int { return 0; }
 }
 
 class NormalClass013 {
-  public static normalMethod(): void {}
+  public static normalMethod(flag: boolean): boolean { return flag; }
 }
 
-class MyClass014 {
-  private static _name: string = '';
-  public static get name(): string {
-    return MyClass014._name;
+class PropertyOwnerClass {
+  private static _title: string = '';
+  public static get title(): string {
+    return PropertyOwnerClass._title;
   }
-  public static set name(value: string) {
-    MyClass014._name = value;
+  public static set title(value: string) {
+    PropertyOwnerClass._title = value;
   }
 }
 
-class MyClass015 {
-  public static method1(): void {}
-  public static method2(): void {}
-  public static method3(): void {}
+class MultiMethodOwnerClass {
+  public static method1(x: int): int { return x; }
+  public static method2(s: string): string { return s; }
+  public static method3(b: boolean): boolean { return b; }
 }
 
-class MyClass016 {
-  public static parentMethod(): void {}
+class BaseOwnerClass {
+  public static baseMethod(prefix: string): string { return prefix; }
   private static parentPrivate(): void {}
 }
 
-class MyClass017 extends MyClass016 {
-  public static childMethod(): void {}
+class DerivedOwnerClass extends BaseOwnerClass {
+  public static derivedMethod(k: int): int { return k; }
 }
 
-class MyClass018 {
+class EmptyOwnerClass {
   // No static methods
 }
 
-class MyClass019 {
-  public static onlyMethod(): void {}
+class SingleMethodOwnerClass {
+  public static onlyMethod(value: float): float { return value; }
 }
 
 export default function StaticMethodGetOwnerTest(): void {
@@ -157,8 +157,8 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<BasicOwnerClass>();
+      let method = cls.getStaticMethod('sayHello');
       expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
       expect(owner !== null).assertTrue();
@@ -173,12 +173,12 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NameOwnerClass>();
+      let method = cls.getStaticMethod('getVersion');
       expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
       expect(owner !== null).assertTrue();
-      let result = owner.getName().includes('MyClass002');
+      let result = owner.getName().includes('NameOwnerClass');
       expect(result).assertTrue();
     });
 
@@ -239,12 +239,12 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1: Class = Class.from<_PrivateClass005>();
       let cls2: Class = Class.from<$SpecialClass005>();
-      let m1 = cls1.getStaticMethod('test');
-      let m2 = cls2.getStaticMethod('test');
+      let m1 = cls1.getStaticMethod('privateOp');
+      let m2 = cls2.getStaticMethod('specialOp');
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
-      let o1Name = o1.getName().includes('_PrivateClass005');
-      expect(o1Name).assertTrue();
+      let result = o1.getName().includes('_PrivateClass005');
+      expect(result).assertTrue();
       let o2Name = o2.getName().includes('$SpecialClass005');
       expect(o2Name).assertTrue();
     });
@@ -258,8 +258,8 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass006>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<TypeCheckOwnerClass>();
+      let method = cls.getStaticMethod('computeValue');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
       let ownerTypeName = Class.of(owner).getName();
@@ -276,8 +276,8 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass007>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<MethodListOwnerClass>();
+      let method = cls.getStaticMethod('fetchName');
       expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
       expect(owner.getName() !== null).assertTrue();
@@ -311,11 +311,11 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
+      let cls: Class = Class.from<InterfaceOwnerClass>();
       let method = cls.getStaticMethod('ownMethod');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
-      let result = owner.getName().includes('MyClass009');
+      let result = owner.getName().includes('InterfaceOwnerClass');
       expect(result).assertTrue();
     });
 
@@ -328,8 +328,8 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NoThrowOwnerClass>();
+      let method = cls.getStaticMethod('isValid');
       expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
       expect(owner !== null).assertTrue();
@@ -344,7 +344,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<ModifierOwnerClass>();
       let m1 = cls.getStaticMethod('publicMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
@@ -354,11 +354,11 @@ export default function StaticMethodGetOwnerTest(): void {
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
-      let o1Name = o1.getName().includes('MyClass011');
+      let o1Name = o1.getName().includes('ModifierOwnerClass');
       expect(o1Name).assertTrue();
-      let o2Name = o2.getName().includes('MyClass011');
+      let o2Name = o2.getName().includes('ModifierOwnerClass');
       expect(o2Name).assertTrue();
-      let o3Name = o3.getName().includes('MyClass011');
+      let o3Name = o3.getName().includes('ModifierOwnerClass');
       expect(o3Name).assertTrue();
     });
 
@@ -371,11 +371,11 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
+      let cls: Class = Class.from<AsyncFetchOwnerClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
-      let result = owner.getName().includes('MyClass012');
+      let result = owner.getName().includes('AsyncFetchOwnerClass');
       expect(result).assertTrue();
     });
 
@@ -400,12 +400,12 @@ export default function StaticMethodGetOwnerTest(): void {
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
-      let o1Name = o1.getName().includes('AbstractClass013');
-      expect(o1Name).assertTrue();
-      let o2Name = o2.getName().includes('FinalClass013');
-      expect(o2Name).assertTrue();
-      let o3Name = o3.getName().includes('NormalClass013');
-      expect(o3Name).assertTrue();
+      let absName = o1.getName().includes('AbstractClass013');
+      expect(absName).assertTrue();
+      let finName = o2.getName().includes('FinalClass013');
+      expect(finName).assertTrue();
+      let norName = o3.getName().includes('NormalClass013');
+      expect(norName).assertTrue();
     });
 
     /**
@@ -417,16 +417,16 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<PropertyOwnerClass>();
+      let getter = cls.getStaticMethod('%%get-title');
+      let setter = cls.getStaticMethod('%%set-title');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       let gOwner = getter!.getOwner();
       let sOwner = setter!.getOwner();
-      let getterName = gOwner.getName().includes('MyClass014');
+      let getterName = gOwner.getName().includes('PropertyOwnerClass');
       expect(getterName).assertTrue();
-      let setterName = sOwner.getName().includes('MyClass014');
+      let setterName = sOwner.getName().includes('PropertyOwnerClass');
       expect(setterName).assertTrue();
     });
 
@@ -439,7 +439,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass015>();
+      let cls: Class = Class.from<MultiMethodOwnerClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let ownerName: string = cls.getName();
       for (let i: int = 0; i < methods.length; i++) {
@@ -460,15 +460,15 @@ export default function StaticMethodGetOwnerTest(): void {
      */
     it('testStaticMethodGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // arkts-sta-reflect.md:822 — getStaticMethods() returns only this class's own methods
-      let childCls: Class = Class.from<MyClass017>();
+      let childCls: Class = Class.from<DerivedOwnerClass>();
       let childMethods = childCls.getStaticMethods();
       expect(childMethods.length).assertEqual(1);
-      expect(childMethods[0].getName()).assertEqual('childMethod');
+      expect(childMethods[0].getName()).assertEqual('derivedMethod');
 
       let parentCls: Class = childCls.getSuper()!;
       let parentMethods = parentCls.getStaticMethods();
       expect(parentMethods.length).assertEqual(1);
-      expect(parentMethods[0].getName()).assertEqual('parentMethod');
+      expect(parentMethods[0].getName()).assertEqual('baseMethod');
     });
 
     /**
@@ -480,7 +480,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass018>();
+      let cls: Class = Class.from<EmptyOwnerClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -494,7 +494,7 @@ export default function StaticMethodGetOwnerTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass019>();
+      let cls: Class = Class.from<SingleMethodOwnerClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
       expect(methods[0].getName()).assertEqual('onlyMethod');

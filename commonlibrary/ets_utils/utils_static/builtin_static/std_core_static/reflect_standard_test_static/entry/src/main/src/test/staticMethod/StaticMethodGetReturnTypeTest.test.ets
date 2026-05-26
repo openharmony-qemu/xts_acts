@@ -19,30 +19,30 @@ import Utils from './../Util.test';
 
 enum TestColor { Red, Green, Blue }
 
-class MyClass001 {
-  public static test(): string {
+class GetReturnTypeClass {
+  public static getMessage(): string {
     return '';
   }
 }
 
-class MyClass002 {
+class BasicReturnTypesClass {
   public static returnString(): string { return 'test'; }
   public static returnInt(): int { return 42; }
   public static returnBoolean(): boolean { return true; }
 }
 
-class MyClass003 {
+class VoidReturnClass {
   public static noReturn(): void {
     console.info('no return');
   }
 }
 
-class MyClass004 {
-  public static returnObject(): MyClass004 { return new MyClass004(); }
+class ObjectReturnTypesClass {
+  public static returnObject(): ObjectReturnTypesClass { return new ObjectReturnTypesClass(); }
   public static returnMap(): Map<string, int> { return new Map<string, int>(); }
 }
 
-class MyClass005 {
+class ArrayReturnTypesClass {
   public static returnArray(): Array<int> { return [1, 2, 3]; }
   public static returnFixedArray(): FixedArray<string> {
     let arr: FixedArray<string> = ['a', 'b'];
@@ -50,34 +50,34 @@ class MyClass005 {
   }
 }
 
-class MyClass006 {
+class GenericReturnClass {
   public static returnGeneric(): Map<string, Array<int>> {
     return new Map<string, Array<int>>();
   }
 }
 
-class MyClass007 {
+class UnionReturnClass {
   public static returnUnion(): int | string { return 42; }
 }
 
-class MyClass008 {
+class PromiseReturnClass {
   public static async fetchData(): Promise<string> { return 'data'; }
 }
 
-class MyClass009 {
+class NullableReturnClass {
   public static returnNullable(): string | null { return null; }
   public static returnUndefinable(): int | undefined { return undefined; }
 }
 
-class MyClass010 {
-  public static test(): string { return ''; }
+class ObjMethodReturnClass {
+  public static getTypeName(): string { return ''; }
 }
 
-class MyClass011 {
-  public static test(): string { return ''; }
+class CompleteMethodReturnClass {
+  public static getMethodList(): string { return ''; }
 }
 
-class MyClass012 {
+class AllPrimitiveReturnClass {
   public static rByte(): byte { return 0; }
   public static rShort(): short { return 0; }
   public static rInt(): int { return 0; }
@@ -89,23 +89,23 @@ class MyClass012 {
   public static rChar(): char { return c'A'; }
 }
 
-class MyClass013 {
-  public static chain(): MyClass013 { return new MyClass013(); }
+class ThisReturnClass {
+  public static chain(): ThisReturnClass { return new ThisReturnClass(); }
 }
 
-class MyClass014 {
-  public static test(): string { return ''; }
+class NoThrowReturnClass {
+  public static noThrow(): string { return ''; }
 }
 
-class MyClass015 {
+class ModifierReturnClass {
   public static normalMethod(): string { return 'test'; }
-  public static async asyncMethod(): Promise<string> { return 'test'; }
-  public static finalMethod(): int { return 0; }
+  public static async asyncMethod(): Promise<int> { return 42; }
+  public static finalMethod(): boolean { return true; }
 }
 
-class MyClass016 {
+class AsyncReturnClass {
   public static async fetchData(): Promise<string> { return 'data'; }
-  public static async fetchNumber(): Promise<int> { return 42; }
+  public static async fetchNumber(): Promise<float> { return Double.toFloat(1.0); }
 }
 
 abstract class AbstractClass017 {
@@ -113,27 +113,27 @@ abstract class AbstractClass017 {
 }
 
 final class FinalClass017 {
-  public static finalMethod(): int { return 0; }
+  public static finalMethod(): boolean { return false; }
 }
 
-class MyClass018 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass018._name; }
-  public static set name(value: string) { MyClass018._name = value; }
+class PropertyReturnClass {
+  private static _label: string = '';
+  public static get label(): string { return PropertyReturnClass._label; }
+  public static set label(value: string) { PropertyReturnClass._label = value; }
 }
 
-class MyClass019 {
+class MultiMethodReturnClass {
   public static m1(): string { return ''; }
   public static m2(): int { return 0; }
   public static m3(): boolean { return true; }
-  public static m4(): void {}
+  public static m4(): float { return 1.0; }
 }
 
-class MyClass020 {
+class EnumReturnClass {
   public static getColor(): TestColor { return TestColor.Red; }
 }
 
-class MyClass021 {
+class GenericConstraintReturnClass {
   public static identity<T extends Object>(value: T): T { return value; }
 }
 
@@ -158,8 +158,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<GetReturnTypeClass>();
+      let method = cls.getStaticMethod('getMessage');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType !== null).assertTrue();
@@ -174,7 +174,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
+      let cls: Class = Class.from<BasicReturnTypesClass>();
       let m1 = cls.getStaticMethod('returnString');
       let m2 = cls.getStaticMethod('returnInt');
       let m3 = cls.getStaticMethod('returnBoolean');
@@ -198,7 +198,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<VoidReturnClass>();
       let method = cls.getStaticMethod('noReturn');
       expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
@@ -214,14 +214,14 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
+      let cls: Class = Class.from<ObjectReturnTypesClass>();
       let m1 = cls.getStaticMethod('returnObject');
       let m2 = cls.getStaticMethod('returnMap');
       expect(m1 !== undefined).assertTrue();
       expect(m2 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
-      let result = rt1.getName().includes('MyClass004');
+      let result = rt1.getName().includes('ObjectReturnTypesClass');
       expect(result).assertTrue();
       expect(rt2.getName()).assertEqual('std.core.Map');
     });
@@ -235,7 +235,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass005>();
+      let cls: Class = Class.from<ArrayReturnTypesClass>();
       let m1 = cls.getStaticMethod('returnArray');
       let m2 = cls.getStaticMethod('returnFixedArray');
       expect(m1 !== undefined).assertTrue();
@@ -255,7 +255,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass006>();
+      let cls: Class = Class.from<GenericReturnClass>();
       let method = cls.getStaticMethod('returnGeneric');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
@@ -271,7 +271,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass007>();
+      let cls: Class = Class.from<UnionReturnClass>();
       let method = cls.getStaticMethod('returnUnion');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
@@ -287,7 +287,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
+      let cls: Class = Class.from<PromiseReturnClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
@@ -304,7 +304,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
+      let cls: Class = Class.from<NullableReturnClass>();
       let m1 = cls.getStaticMethod('returnNullable');
       let m2 = cls.getStaticMethod('returnUndefinable');
       expect(m1 !== undefined).assertTrue();
@@ -326,8 +326,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<ObjMethodReturnClass>();
+      let method = cls.getStaticMethod('getTypeName');
       expect(method !== undefined).assertTrue();
       let returnType = method!.getReturnType();
       let returnTypeName = Class.of(returnType).getName();
@@ -344,8 +344,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<CompleteMethodReturnClass>();
+      let method = cls.getStaticMethod('getMethodList');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType.getName() !== null).assertTrue();
@@ -363,7 +363,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
+      let cls: Class = Class.from<AllPrimitiveReturnClass>();
       let mByte = cls.getStaticMethod('rByte');
       let mShort = cls.getStaticMethod('rShort');
       let mInt = cls.getStaticMethod('rInt');
@@ -402,11 +402,11 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
+      let cls: Class = Class.from<ThisReturnClass>();
       let method = cls.getStaticMethod('chain');
       expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
-      let result = rt.getName().includes('MyClass013');
+      let result = rt.getName().includes('ThisReturnClass');
       expect(result).assertTrue();
     });
 
@@ -419,8 +419,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NoThrowReturnClass>();
+      let method = cls.getStaticMethod('noThrow');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType !== null).assertTrue();
@@ -435,7 +435,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass015>();
+      let cls: Class = Class.from<ModifierReturnClass>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
@@ -448,7 +448,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(rt1.getName()).assertEqual('std.core.String');
       let result = rt2.getName().includes('Promise');
       expect(result).assertTrue();
-      expect(rt3.getName()).assertEqual('i32');
+      expect(rt3.getName()).assertEqual('u1');
     });
 
     /**
@@ -460,7 +460,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass016>();
+      let cls: Class = Class.from<AsyncReturnClass>();
       let m1 = cls.getStaticMethod('fetchData');
       let m2 = cls.getStaticMethod('fetchNumber');
       expect(m1 !== undefined).assertTrue();
@@ -491,7 +491,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       expect(rt1.getName()).assertEqual('std.core.String');
-      expect(rt2.getName()).assertEqual('i32');
+      expect(rt2.getName()).assertEqual('u1');
     });
 
     /**
@@ -503,9 +503,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass018>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<PropertyReturnClass>();
+      let getter = cls.getStaticMethod('%%get-label');
+      let setter = cls.getStaticMethod('%%set-label');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       let rtGetter = getter!.getReturnType();
@@ -523,13 +523,13 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass019>();
+      let cls: Class = Class.from<MultiMethodReturnClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let returnTypes: Map<string, string> = new Map<string, string>();
       returnTypes.set('m1', 'std.core.String');
       returnTypes.set('m2', 'i32');
       returnTypes.set('m3', 'u1');
-      returnTypes.set('m4', 'void');
+      returnTypes.set('m4', 'f32');
       for (let i: int = 0; i < methods.length; i++) {
         let method = methods[i];
         let methodName: string = method.getName();
@@ -550,7 +550,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass020>();
+      let cls: Class = Class.from<EnumReturnClass>();
       let method = cls.getStaticMethod('getColor');
       expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
@@ -566,7 +566,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetReturnType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass021>();
+      let cls: Class = Class.from<GenericConstraintReturnClass>();
       let method = cls.getStaticMethod('identity');
       expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();

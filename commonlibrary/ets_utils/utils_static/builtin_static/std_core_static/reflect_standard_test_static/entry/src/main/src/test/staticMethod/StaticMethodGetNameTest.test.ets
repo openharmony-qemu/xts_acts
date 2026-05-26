@@ -17,77 +17,79 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  public static test(): void {}
-}
-
-class MyClass002 {
-  public static test(): void {}
-}
-
-class MyClass003 {
-  public static method1(): void {}
-  public static method2(): void {}
-  public static methodName(): void {}
-  public static _privateMethod(): void {}
-}
-
-class MyClass004 {
-  private static _name: string = '';
-  public static get name(): string {
-    return MyClass004._name;
-  }
-  public static set name(value: string) {
-    MyClass004._name = value;
+class SingleNameClass {
+  public static sayHello(name: string): string {
+    return 'Hi ' + name;
   }
 }
 
-class MyClass005 {
-  public static test(): void {}
+class UnusedNameClass {
+  public static getVersion(): int { return 2; }
 }
 
-class MyClass006 {
-  public static test(): void {}
+class MultiNameClass {
+  public static method1(a: int): int { return a; }
+  public static method2(msg: string): string { return msg; }
+  public static methodName(flag: boolean): boolean { return flag; }
+  public static _privateMethod(): string { return 'private'; }
 }
 
-class MyClass007 {
-  public static a(): void {}
+class PropertyNameClass {
+  private static _label: string = '';
+  public static get label(): string {
+    return PropertyNameClass._label;
+  }
+  public static set label(value: string) {
+    PropertyNameClass._label = value;
+  }
 }
 
-class MyClass008 {
-  public static veryLongMethodNameWithManyCharacters(): void {}
+class ReturnTypeNameClass {
+  public static getMessage(): string { return 'OK'; }
 }
 
-class MyClass009 {
-  public static test(): void {}
+class NonEmptyNameClass {
+  public static compute(value: float): float { return Double.toFloat(value * 2.0); }
 }
 
-class MyClass010 {
-  public static publicMethod(): void {}
-  public static async asyncMethod(): Promise<void>  {}
-  public static finalMethod(): void {}
+class SingleCharNameClass {
+  public static z(): boolean { return true; }
 }
 
-class MyClass011 {
-  public static async fetchData(): Promise<string> {
-    return 'data';
+class LongNameClass {
+  public static veryLongMethodNameWithManyCharacters(): int { return 1; }
+}
+
+class NoThrowNameClass {
+  public static isReady(): boolean { return true; }
+}
+
+class ModifierNameClass {
+  public static publicMethod(name: string): string { return name; }
+  public static async asyncMethod(delay: int): Promise<string> { return delay.toString(); }
+  public static finalMethod(value: int): int { return value; }
+}
+
+class AsyncNameClass {
+  public static async fetchData(): Promise<int> {
+    return 42;
   }
 }
 
 class ClassA012 {
-  public static methodA(): void {}
+  public static methodA(x: int): string { return x.toString(); }
 }
 
 class ClassB012 {
-  public static methodB(): void {}
+  public static methodB(y: float): boolean { return y > 0.0; }
 }
 
 class ParentClass013 {
-  public static parentMethod(): void {}
+  public static parentMethod(msg: string): string { return msg; }
 }
 
 class ChildClass013 extends ParentClass013 {
-  public static childMethod(): void {}
+  public static childMethod(n: int): int { return n; }
 }
 
 export default function StaticMethodGetNameTest(): void {
@@ -111,11 +113,11 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<SingleNameClass>();
+      let method = cls.getStaticMethod('sayHello');
       expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
-      expect(name).assertEqual('test');
+      expect(name).assertEqual('sayHello');
     });
 
     /**
@@ -127,7 +129,7 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<MultiNameClass>();
       let m1 = cls.getStaticMethod('method1');
       let m2 = cls.getStaticMethod('method2');
       let mn = cls.getStaticMethod('methodName');
@@ -151,13 +153,13 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<PropertyNameClass>();
+      let getter = cls.getStaticMethod('%%get-label');
+      let setter = cls.getStaticMethod('%%set-label');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
-      expect(getter!.getName()).assertEqual('%%get-name');
-      expect(setter!.getName()).assertEqual('%%set-name');
+      expect(getter!.getName()).assertEqual('%%get-label');
+      expect(setter!.getName()).assertEqual('%%set-label');
     });
 
     /**
@@ -169,8 +171,8 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass005>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<ReturnTypeNameClass>();
+      let method = cls.getStaticMethod('getMessage');
       expect(method !== undefined).assertTrue();
       let name = method!.getName();
       let nameType = Class.of(name).getName();
@@ -186,8 +188,8 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass006>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NonEmptyNameClass>();
+      let method = cls.getStaticMethod('compute');
       expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
       expect(name.length).assertLarger(0);
@@ -202,10 +204,10 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass007>();
-      let method = cls.getStaticMethod('a');
+      let cls: Class = Class.from<SingleCharNameClass>();
+      let method = cls.getStaticMethod('z');
       expect(method !== undefined).assertTrue();
-      expect(method!.getName()).assertEqual('a');
+      expect(method!.getName()).assertEqual('z');
       expect(method!.getName().length).assertEqual(1);
     });
 
@@ -218,7 +220,7 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
+      let cls: Class = Class.from<LongNameClass>();
       let method = cls.getStaticMethod('veryLongMethodNameWithManyCharacters');
       expect(method !== undefined).assertTrue();
       expect(method!.getName()).assertEqual('veryLongMethodNameWithManyCharacters');
@@ -233,8 +235,8 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NoThrowNameClass>();
+      let method = cls.getStaticMethod('isReady');
       expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
       expect(name !== null).assertTrue();
@@ -249,7 +251,7 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
+      let cls: Class = Class.from<ModifierNameClass>();
       let mPublic = cls.getStaticMethod('publicMethod');
       let mAsync = cls.getStaticMethod('asyncMethod');
       let mFinal = cls.getStaticMethod('finalMethod');
@@ -270,7 +272,7 @@ export default function StaticMethodGetNameTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<AsyncNameClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       expect(method!.getName()).assertEqual('fetchData');

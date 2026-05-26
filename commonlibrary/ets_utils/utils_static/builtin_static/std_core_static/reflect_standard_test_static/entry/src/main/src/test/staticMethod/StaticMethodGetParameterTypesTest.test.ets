@@ -19,119 +19,119 @@ import Utils from './../Util.test';
 
 enum TestColor { Red, Green, Blue }
 
-class MyClass001 {
-  public static test(a: int, b: string): void {}
+class GetParamsClass {
+  public static getParams(a: int, b: string): string { return b; }
 }
 
-class MyClass002 {
-  public static test(a: int, b: string): void {}
+class ReadParamsClass {
+  public static readParams(x: int, y: string): int { return x; }
 }
 
-class MyClass003 {
-  public static noParam(): void {}
+class NoParamTypesClass {
+  public static noParam(): string { return 'none'; }
 }
 
-class MyClass004 {
-  public static singleParam(value: int): void {}
+class SingleParamTypesClass {
+  public static singleParam(value: int): string { return value.toString(); }
 }
 
-class MyClass005 {
-  public static multiTypes(a: int, b: string, c: boolean, d: float): void {}
+class MultiTypeParamsClass {
+  public static multiTypes(a: int, b: string, c: boolean, d: float): boolean { return true; }
 }
 
-class MyClass006 {
-  public static optionalParam(required: int, optional?: string): void {}
+class OptionalParamTypesClass {
+  public static optionalParam(required: int, optional?: string): string { return optional ?? ''; }
 }
 
-class MyClass007 {
-  public static genericParam(map: Map<string, int>, arr: Array<boolean>): void {}
+class GenericParamTypesClass {
+  public static genericParam(map: Map<string, int>, arr: Array<boolean>): int { return map.size; }
 }
 
-class MyClass008 {
-  public static varArgs(...args: int[]): void {}
+class VarArgsParamsClass {
+  public static varArgs(...args: int[]): int { return args.length; }
 }
 
-class MyClass009 {
-  public static unionParam(value: int | string): void {}
+class UnionParamTypesClass {
+  public static unionParam(value: int | string): boolean { return true; }
 }
 
 interface JsonSerializable010 { }
 
-class MyClass010 {
-  public static objectParam(obj: MyClass010): void {}
-  public static interfaceParam(obj: JsonSerializable010): void {}
+class ObjParamTypesClass {
+  public static objectParam(obj: ObjParamTypesClass): string { return 'obj'; }
+  public static interfaceParam(obj: JsonSerializable010): string { return 'iface'; }
 }
 
-class MyClass011 {
-  public static test(a: int, b: string): void {}
+class ArrayParamTypesClass {
+  public static listParams(a: int, b: string): boolean { return false; }
 }
 
-class MyClass012 {
-  public static test(a: int, b: string): void {}
+class UsableParamTypesClass {
+  public static checkParams(a: int, b: string): float { return 1.0; }
 }
 
-class MyClass013 {
+class AllPrimitiveParamsClass {
   public static allPrimitives(
     b: byte, s: short, i: int, l: long,
     f: float, d: double, n: number, bool: boolean, ch: char
-  ): void {}
+  ): string { return 'primitives'; }
 }
 
-class MyClass014 {
+class ManyParamTypesClass {
   public static manyParams(
     p1: int, p2: int, p3: int, p4: int, p5: int,
     p6: int, p7: int, p8: int, p9: int, p10: int
-  ): void {}
+  ): int { return p1; }
 }
 
-class MyClass015 {
-  public static test(a: int): void {}
+class NoThrowParamTypesClass {
+  public static oneParam(a: int): string { return a.toString(); }
 }
 
-class MyClass016 {
-  public static normalMethod(a: int): void {}
-  public static async asyncMethod(b: string): Promise<void> { return; }
-  public static finalMethod(c: boolean): void {}
+class ModifierParamTypesClass {
+  public static normalMethod(a: int): string { return a.toString(); }
+  public static async asyncMethod(b: string): Promise<int> { return b.length; }
+  public static finalMethod(c: boolean): string { return c.toString(); }
 }
 
-class MyClass017 {
-  public static async fetchData(url: string, timeout: int): Promise<string> {
-    return 'data';
+class AsyncParamTypesClass {
+  public static async fetchData(url: string, timeout: int): Promise<boolean> {
+    return true;
   }
 }
 
 abstract class AbstractClass018 {
-  public static abstractMethod(a: string, b: int): void {}
+  public static abstractMethod(a: string, b: int): boolean { return true; }
 }
 
 final class FinalClass018 {
-  public static finalMethod(x: boolean, y: float, z: double): void {}
+  public static finalMethod(x: boolean, y: float, z: double): string { return x.toString(); }
 }
 
-class MyClass019 {
-  private static _name: string = '';
-  private static _age: int = 0;
-  public static set name(value: string) { MyClass019._name = value; }
-  public static set age(value: int) { MyClass019._age = value; }
+class SetterParamTypesClass {
+  private static _first: string = '';
+  private static _second: int = 0;
+  public static set first(value: string) { SetterParamTypesClass._first = value; }
+  public static set second(value: int) { SetterParamTypesClass._second = value; }
 }
 
-class MyClass020 {
-  public static m0(): void {}
-  public static m1(a: int): void {}
-  public static m2(a: int, b: string): void {}
-  public static m3(a: int, b: string, c: boolean): void {}
+class MultiCountParamsClass {
+  public static m0(): string { return 'zero'; }
+  public static m1(a: int): boolean { return a > 0; }
+  public static m2(a: int, b: string): float { return 1.0; }
+  public static m3(a: int, b: string, c: boolean): int { return a; }
 }
 
-class MyClass021 {
-  public static enumParam(c: TestColor): void {}
+class EnumParamTypesClass {
+  public static enumParam(c: TestColor): string { return c.toString(); }
 }
 
-class MyClass022 {
-  public static constrainedParam<T extends Object>(p: T): void {}
+class ConstrainedParamTypesClass {
+  public static constrainedParam<T extends Object>(p: T): string { return p.toString(); }
 }
 
-class MyClass023 {
-  public static unionParam(value: int | string | boolean): void {}
+class UnionConstituentClass {
+  public static unionParam(value: int | string | boolean): int { return 0; }
 }
 
 export default function StaticMethodGetParameterTypesTest(): void {
@@ -155,8 +155,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<GetParamsClass>();
+      let method = cls.getStaticMethod('getParams');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes !== null).assertTrue();
@@ -171,8 +171,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<ReadParamsClass>();
+      let method = cls.getStaticMethod('readParams');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
@@ -189,7 +189,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<NoParamTypesClass>();
       let method = cls.getStaticMethod('noParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -205,7 +205,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
+      let cls: Class = Class.from<SingleParamTypesClass>();
       let method = cls.getStaticMethod('singleParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -222,7 +222,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass005>();
+      let cls: Class = Class.from<MultiTypeParamsClass>();
       let method = cls.getStaticMethod('multiTypes');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -242,7 +242,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass006>();
+      let cls: Class = Class.from<OptionalParamTypesClass>();
       let method = cls.getStaticMethod('optionalParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -261,7 +261,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass007>();
+      let cls: Class = Class.from<GenericParamTypesClass>();
       let method = cls.getStaticMethod('genericParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -279,7 +279,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
+      let cls: Class = Class.from<VarArgsParamsClass>();
       let method = cls.getStaticMethod('varArgs');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -296,7 +296,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
+      let cls: Class = Class.from<UnionParamTypesClass>();
       let method = cls.getStaticMethod('unionParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -313,14 +313,15 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
+      let cls: Class = Class.from<ObjParamTypesClass>();
       let m1 = cls.getStaticMethod('objectParam');
       let m2 = cls.getStaticMethod('interfaceParam');
       expect(m1 !== undefined).assertTrue();
       expect(m2 !== undefined).assertTrue();
       let p1: FixedArray<Class> = m1!.getParameterTypes();
       let p2: FixedArray<Class> = m2!.getParameterTypes();
-      expect(p1[0].getName().includes('MyClass010')).assertTrue();
+      let result = p1[0].getName().includes('ObjParamTypesClass');
+      expect(result).assertTrue();
       expect(p2[0].isInterface()).assertTrue();
     });
 
@@ -333,8 +334,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<ArrayParamTypesClass>();
+      let method = cls.getStaticMethod('listParams');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       let typeName: string = Class.of(paramTypes).getName();
@@ -350,8 +351,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<UsableParamTypesClass>();
+      let method = cls.getStaticMethod('checkParams');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       for (let i: int = 0; i < paramTypes.length; i++) {
@@ -370,7 +371,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
+      let cls: Class = Class.from<AllPrimitiveParamsClass>();
       let method = cls.getStaticMethod('allPrimitives');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -395,7 +396,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
+      let cls: Class = Class.from<ManyParamTypesClass>();
       let method = cls.getStaticMethod('manyParams');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -414,8 +415,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass015>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NoThrowParamTypesClass>();
+      let method = cls.getStaticMethod('oneParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes !== null).assertTrue();
@@ -430,7 +431,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass016>();
+      let cls: Class = Class.from<ModifierParamTypesClass>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
@@ -454,7 +455,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass017>();
+      let cls: Class = Class.from<AsyncParamTypesClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -498,9 +499,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass019>();
-      let setter1 = cls.getStaticMethod('%%set-name');
-      let setter2 = cls.getStaticMethod('%%set-age');
+      let cls: Class = Class.from<SetterParamTypesClass>();
+      let setter1 = cls.getStaticMethod('%%set-first');
+      let setter2 = cls.getStaticMethod('%%set-second');
       expect(setter1 !== undefined).assertTrue();
       expect(setter2 !== undefined).assertTrue();
       let p1: FixedArray<Class> = setter1!.getParameterTypes();
@@ -520,7 +521,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass020>();
+      let cls: Class = Class.from<MultiCountParamsClass>();
       // 注: 按索引断言依赖 getStaticMethods() 当前返回顺序
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let expectedLengths: FixedArray<int> = [0, 1, 2, 3];
@@ -539,7 +540,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass021>();
+      let cls: Class = Class.from<EnumParamTypesClass>();
       let method = cls.getStaticMethod('enumParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -557,7 +558,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      */
     it('testStaticMethodGetParameterTypes022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // spec/generics.md:64 — T extends Object is compatible with Object methods
-      let cls: Class = Class.from<MyClass022>();
+      let cls: Class = Class.from<ConstrainedParamTypesClass>();
       let method = cls.getStaticMethod('constrainedParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
@@ -576,7 +577,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodGetParameterTypes023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass023>();
+      let cls: Class = Class.from<UnionConstituentClass>();
       let method = cls.getStaticMethod('unionParam');
       expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
