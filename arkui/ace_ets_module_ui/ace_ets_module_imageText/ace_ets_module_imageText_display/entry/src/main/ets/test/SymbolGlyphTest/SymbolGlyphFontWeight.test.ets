@@ -612,6 +612,28 @@ export default function SymbolGlyphFontWeightTest26() {
     })
 
     /**
+     * @tc.name   symbolGlyphFontWeight_configs_null_0100
+     * @tc.number SUB_ARKUI_SYMBOLGLYPH_FONTWEIGHT_CONFIGS_0400
+     * @tc.desc   Test SymbolGlyph fontWeight property with null fontWeightConfigs
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
+     */
+    it('symbolGlyphFontWeight_configs_null_0100', Level.LEVEL2, async () => {
+      console.info('[symbolGlyphFontWeight_configs_null_0100] START');
+
+      let strJson: string = getInspectorByKey('symbolGlyph_fontWeight_configs_null');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+
+      console.info("[symbolGlyphFontWeight_configs_null_0100] obj is: " + JSON.stringify(obj.$attrs));
+      console.info("[symbolGlyphFontWeight_configs_null_0100] fontWeight is: " + obj.$attrs.fontWeight);
+
+      expect(obj.$type).assertEqual('SymbolGlyph');
+      expect(obj.$attrs.fontWeight).assertEqual('300');
+      console.info('[symbolGlyphFontWeight_configs_null_0100] END');
+    })
+
+    /**
      * @tc.name   symbolGlyphFontWeight_out_range_low_0100
      * @tc.number SUB_ARKUI_SYMBOLGLYPH_FONTWEIGHT_RANGE_0100
      * @tc.desc   Test SymbolGlyph fontWeight property with out of range low value (50)

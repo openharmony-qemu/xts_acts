@@ -1121,7 +1121,8 @@ export default function WindowLayoutStaticTest() {
                 await subWin.setUIContent('pages/index2');
                 await subWin.showWindow();
                 await Utils.msSleep(1000);
-                subWin.minimize(async(err: BusinessError<void> | null): void => {
+                subWin.minimize((err: BusinessError<void> | null) : void => {
+                    async (err: BusinessError<void> | null): Promise<void> => {
                     if (err!.code) {
                         err === err as BusinessError;
                         if (err!.code === 801) {
@@ -1139,6 +1140,7 @@ export default function WindowLayoutStaticTest() {
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
                     await subWin.destroyWindow();
                     done();
+                }(err)
                 });
             } catch (exception) {
                 exception === exception as BusinessError;
@@ -1222,7 +1224,7 @@ export default function WindowLayoutStaticTest() {
                     hilog.info(domain, tag, msgStr + 'Succeeded in minimizing window.');
                     await subWin.destroyWindow();
                     done();
-                }).catch(async(err: Error): PromiseLike<void> | undefined => {
+                }).catch(async(err: Error): Promise<void> => {
                     err === err as BusinessError;
                     if (err!.code === 801) {
                         hilog.info(domain, tag, msgStr + 'Capability not supported.');

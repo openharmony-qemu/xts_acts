@@ -26,10 +26,10 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier implements AttributeModifier<ColumnAttribute> {
-  @State public isBackgroundImageResizableUndefined: boolean = true;
-  @State public isHoverEffectUndefined: boolean = true;
-  @State public isBackgroundImageSizeUndefined: boolean = true;
-  @State public isHitTestBehaviorUndefined: boolean = true;
+  public isBackgroundImageResizableUndefined: boolean = true;
+  public isHoverEffectUndefined: boolean = true;
+  public isBackgroundImageSizeUndefined: boolean = true;
+  public isHitTestBehaviorUndefined: boolean = true;
 
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance
@@ -49,8 +49,8 @@ export class MyModifier implements AttributeModifier<ColumnAttribute> {
 
 @Observed
 export class MyModifierButton implements AttributeModifier<ButtonAttribute> {
-  @State public cnt : int = 0;
-  @State public isOnClickUndefined: boolean = true;
+  public cnt : int = 0;
+  public isOnClickUndefined: boolean = true;
 
   applyNormalAttribute(instance: ButtonAttribute): void {
     instance

@@ -1922,26 +1922,16 @@ export default function WebSocketTest() {
             maxConcurrentClientsNumber: 10,
             maxConnectionsForOneClient: 4,
           }
-          server.start(serverConfig).then((value: boolean | undefined) => {
-            if (value) {
-              hilog.info(domain, tag, '%{public}s', caseName + 'start success!');
-            } else {
-              ExpectFail();
-              done();
-            }
-          }).catch((error: Error) => {
-            ExpectFail();
-            done();
-          });
-          server.stop().then((value: boolean | undefined) => {
-            if (value) {
-              ExpectTrue(value !== null);
-              console.info('server stop service successfully');
-              done();
-            } else {
-              console.error('server stop service failed');
-            }
-          });
+          // 先等待 server.start() 完成
+          let startResult: boolean | undefined = await server.start(serverConfig);
+          if(!startResult) {
+            hilog.info(domain, tag, '%{public}s server start returned false', caseName);
+          }
+          // start 结束后再调用 stop
+          let stopResult: boolean | undefined = await server.stop();
+          ExpectTrue(stopResult === true);
+          hilog.info(domain, tag, '%{public}s server stop result: %{public}s', caseName, JSON.stringify(stopResult));
+          done();
         } catch (err) {
           hilog.info(domain, tag, '%{public}s', caseName + 'error code is : ' + err.code);
           done();

@@ -43,7 +43,7 @@ export default function drawingTsPath8Test(): void {
       const msg = 'testPathGetLastPointEmptyStatic';
       let path = new drawing.Path();
       try {
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         expect(result).assertEqual(undefined);
         console.info(msg + ' getLastPoint successes, result: ' + result);
       } catch (e) {
@@ -66,7 +66,7 @@ export default function drawingTsPath8Test(): void {
       let path = new drawing.Path();
       try {
         path.moveTo(10, 10);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -96,7 +96,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10, 10);
         path.lineTo(100, 100);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined= path.getLastPoint();
         if (result === undefined) {
           expect().assertFail();
         } else {
@@ -125,7 +125,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10, 10);
         path.quadTo(50, 50, 100, 100);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           expect().assertFail();
         } else {
@@ -154,7 +154,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10, 10);
         path.cubicTo(50, 50, 80, 80, 150, 150);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -184,7 +184,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10, 10);
         path.conicTo(100, 100, 200, 200, 0.5);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -215,7 +215,7 @@ export default function drawingTsPath8Test(): void {
         path.moveTo(10, 10);
         path.lineTo(100, 100);
         path.close();
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           expect().assertFail();
         } else {
@@ -246,7 +246,7 @@ export default function drawingTsPath8Test(): void {
         path.lineTo(50, 50);
         path.lineTo(100, 100);
         path.quadTo(150, 150, 200, 200);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           expect().assertFail();
         } else {
@@ -275,7 +275,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(0, 0);
         path.lineTo(0, 100);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -305,7 +305,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10, 10);
         path.lineTo(-100, -200);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -336,7 +336,7 @@ export default function drawingTsPath8Test(): void {
         let largeValue = 1000000;
         path.moveTo(0, 0);
         path.lineTo(largeValue, largeValue);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -366,7 +366,7 @@ export default function drawingTsPath8Test(): void {
       try {
         path.moveTo(10.5, 10.5);
         path.lineTo(100.25, 100.75);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -397,7 +397,7 @@ export default function drawingTsPath8Test(): void {
       path.lineTo(100, 100);
       try {
         path.reset();
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         expect(result).assertEqual(undefined);
         console.info(msg + ' getLastPoint successes, result: ' + result);
       } catch (e) {
@@ -421,9 +421,9 @@ export default function drawingTsPath8Test(): void {
       path.moveTo(10, 10);
       path.lineTo(100, 100);
       try {
-        let result1 = path.getLastPoint();
-        let result2 = path.getLastPoint();
-        let result3 = path.getLastPoint();
+        let result1:common2D.Point | undefined = path.getLastPoint();
+        let result2:common2D.Point | undefined = path.getLastPoint();
+        let result3:common2D.Point | undefined = path.getLastPoint();
         if (result1 === undefined || result2 === undefined || result3 === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -460,7 +460,7 @@ export default function drawingTsPath8Test(): void {
         path.quadTo(80, 80, 100, 100);
         path.cubicTo(120, 120, 140, 140, 160, 160);
         path.conicTo(180, 180, 200, 200, 1.5);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -493,7 +493,7 @@ export default function drawingTsPath8Test(): void {
         path.lineTo(100, 100);
         matrix.setScale(2, 2, 0, 0);
         path.transform(matrix);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -963,7 +963,7 @@ export default function drawingTsPath8Test(): void {
       let path = new drawing.Path();
       try {
         path.addCircle(100, 100, 50, drawing.PathDirection.CLOCKWISE);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -998,7 +998,7 @@ export default function drawingTsPath8Test(): void {
       };
       try {
         path.addRect(rect, drawing.PathDirection.CLOCKWISE);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -1079,7 +1079,7 @@ export default function drawingTsPath8Test(): void {
         path.moveTo(10, 10);
         path.lineTo(100, 100);
         path.setLastPoint(50, 50);
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         if (result === undefined) {
           console.info(msg + ' getLastPoint result is undefined, test failed.');
           expect().assertFail();
@@ -1110,7 +1110,7 @@ export default function drawingTsPath8Test(): void {
         path.moveTo(10, 10);
         path.lineTo(20, 20);
         path.rewind();
-        let result = path.getLastPoint();
+        let result:common2D.Point | undefined = path.getLastPoint();
         expect(result).assertEqual(undefined);
         console.info(msg + ' getLastPoint successes, result: ' + result);
       } catch (e) {

@@ -62,7 +62,14 @@ export default function ActsNotificationSecondaryDirectoryTest() {
     beforeEach(async (): Promise<void> => {
       console.info(`${TAG} beforeEach START`)
       await notificationManager.cancelAll()
-      await notificationManager.removeAllSlots();
+      notificationManager.removeAllSlots((e: Error | null) => {
+        if (e) {
+          let err :BusinessError = e as BusinessError
+          console.info(`${TAG} removeAllSlots AsyncCallback err: ${err}, errMes: ${err.message}`)
+        } else {
+          console.info(`${TAG} removeAllSlots AsyncCallback success`)
+        }
+      })
       await Utils.msSleep(1000);
       console.info(`${TAG} beforeEach END`)
     })

@@ -88,10 +88,21 @@ int TestCanvasDrawPathNormal();
 int TestCanvasDrawPathNull();
 int TestCanvasDrawPathInputDestroyed();
 
-// Canvas ResetClip
+// Canvas ResetClip related functions
 int TestCanvasResetClipNormal();
 int TestCanvasResetClipNull();
 int TestCanvasResetClipMultipleCalls();
+
+// Canvas DrawGlyphs related functions
+int TestCanvasDrawGlyphsNormal();
+int TestCanvasDrawGlyphsNull();
+int TestCanvasDrawGlyphsAbnormal();
+int TestCanvasDrawGlyphsMultipleCalls();
+
+// Canvas CanvasIsOpaque related functions
+int TestCanvasIsOpaqueNormal();
+int TestCanvasIsOpaqueNull();
+int TestCanvasIsOpaqueMultipleCalls();
 } // namespace Drawing
 } // namespace Rosen
 } // namespace OHOS

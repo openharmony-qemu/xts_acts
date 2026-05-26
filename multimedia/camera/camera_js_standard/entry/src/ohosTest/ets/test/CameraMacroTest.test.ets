@@ -55,7 +55,8 @@ let permission = ['ohos.permission.GRANT_SENSITIVE_PERMISSIONS',
   'ohos.permission.ABILITY_BACKGROUND_COMMUNICATION',
 ];
 
-let power: ESObject;
+let power1: ESObject;
+let power2: ESObject;
 
 let sleep = (ms: number = 66): Promise<string> => {
   return new Promise((resolve) => {
@@ -354,9 +355,12 @@ export default function CameraPhotoSessionTest() {
       await ability();
       await sleep(500);
       for (let i = 0; i < permission.length; i++) {
-        power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-        await power?.click();
-        power = null;
+        power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+        power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
+        await power1?.click();
+        await power2?.click();
+        power1 = null;
+        power2 = null;
         await sleep(500);
       }
     })

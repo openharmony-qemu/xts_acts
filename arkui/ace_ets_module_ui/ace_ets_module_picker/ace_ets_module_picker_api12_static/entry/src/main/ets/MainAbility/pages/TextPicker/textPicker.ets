@@ -15,7 +15,7 @@
  */
 
 
-import { Entry, Column, Component, Row, Toggle,  Text, TextPicker,FlexDirection,ItemAlign,FlexAlign,Flex } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, Text, TextPicker, FlexDirection, ItemAlign, FlexAlign, Flex } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 

@@ -46,7 +46,7 @@ struct GlobalLack {
       Button("Click2").fontSize(50)
         .onClick((e: ClickEvent) => {
           console.info("Click2" + JSON.stringify(inspector.sendEventByKey("Del", 10, "")));
-        }).key("Click2")
+        }).key("global_Click2")
       List({ space: 10 }) {
         ListItem() {
           Text("Hello world") {
@@ -58,7 +58,7 @@ struct GlobalLack {
           .borderRadius(10)
           .backgroundColor(0xFFFFFF)
         }
-        .key("ListItem")
+        .key("global_ListItem")
         .selectable(false)
         //.sticky(Sticky.None)
         // .editable(true)

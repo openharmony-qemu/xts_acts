@@ -51,7 +51,6 @@ constexpr uint32_t TWO = 2;
 constexpr uint32_t THREE = 3;
 constexpr uint32_t FOUR = 4;
 constexpr uint32_t FIVE = 5;
-constexpr uint32_t SIX = 6;
 OH_NativeImage* cNativeImage = {};
 OH_NativeImage* pNativeImage = {};
 VEncAPI11Sample* g_encSample = nullptr;
@@ -73,6 +72,10 @@ VEncAPI11Sample::~VEncAPI11Sample()
         OH_NativeWindow_DestroyNativeWindow(nativeWindow);
         nativeWindow = nullptr;
     }
+    if (g_encSample == this) {
+        g_encSample = nullptr;
+    }
+    roiInfo = nullptr;
     Release();
 }
 
@@ -101,16 +104,18 @@ static void onEncInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBu
         cout << "g_encSample or roiInfo is null" << endl;
         return;
     }
-    OH_AVFormat *parameter = OH_AVFormat_Create();
-    if (parameter == nullptr) {
-        cout << "Failed to create OH_AVFormat!" << endl;
-        return;
+    if (g_encSample->enableRoi) {
+        OH_AVFormat *parameter = OH_AVFormat_Create();
+        if (parameter == nullptr) {
+            cout << "Failed to create OH_AVFormat!" << endl;
+            return;
+        }
+        bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
+        cout << "ret = " << ret << endl;
+        cout << "roiInfo = " << g_encSample->roiInfo << endl;
+        OH_AVBuffer_SetParameter(buffer, parameter);
+        OH_AVFormat_Destroy(parameter);
     }
-    bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    cout << "ret = " << ret << endl;
-    cout << "roiInfo = " << g_encSample->roiInfo << endl;
-    OH_AVBuffer_SetParameter(buffer, parameter);
-    OH_AVFormat_Destroy(parameter);
     signal->inIdxQueue_.push(index);
     signal->inBufferQueue_.push(buffer);
     signal->inCond_.notify_all();
@@ -131,11 +136,13 @@ static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *para
         cout << "g_encSample or roiInfo is null" << endl;
         return;
     }
-    OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    if (!parameter || !userData) {
-        return;
+    if (g_encSample->enableRoi) {
+        OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
+        if (!parameter || !userData) {
+            return;
+        }
+        OH_VideoEncoder_PushInputParameter(codec, index);
     }
-    OH_VideoEncoder_PushInputParameter(codec, index);
 }
 
 int64_t VEncAPI11Sample::GetSystemTimeUs()
@@ -496,10 +503,8 @@ void VEncAPI11Sample::InputFuncSurface()
             continue;
         }
         if (!ReadOneFrameYUV420SP(dst)) {
-            err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
-                cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
-            }
+            OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, ohNativeWindowBuffer);
+            OH_VideoEncoder_NotifyEndOfStream(venc_);
             g_flagValue = false;
             break;
         }
@@ -518,8 +523,28 @@ void VEncAPI11Sample::InputFuncSurface()
             isParamSetSurface = true;
         }
         inputframeCount++;
-        if (sleepOnFPS) {
-            usleep(FRAME_INTERVAL);
+        usleep(FRAME_INTERVAL);
+        if (enableRoi) {
+            InputEnableRepeatSleep();
+        }
+    }
+}
+
+void VEncAPI11Sample::InputEnableRepeatSleep()
+{
+    inCount = inCount + 1;
+    int32_t inCountNum = 15;
+    if (enableRepeat && inCount == inCountNum) {
+        if (setMaxCount) {
+            int32_t sleepTimeMaxCount = 730000;
+            usleep(sleepTimeMaxCount);
+        } else {
+            int32_t sleepTime = 1000000;
+            usleep(sleepTime);
+        }
+        if (enableSeekEos) {
+            inFile_->clear();
+            inFile_->seekg(-1, ios::beg);
         }
     }
 }
@@ -957,26 +982,18 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
     while (getline(file, temp)) {
         switch (num) {
             case ZERO:
-                trim(temp);
-                config.inputDir = temp;
-                break;
-            case ONE:
-                trim(temp);
-                config.outputDir = temp;
-                break;
-            case TWO:
                 config.width = stoi(temp);
                 break;
-            case THREE:
+            case ONE:
                 config.height = stoi(temp);
                 break;
-            case FOUR:
+            case TWO:
                 config.bitrateMode = stoi(temp);
                 break;
-            case FIVE:
+            case THREE:
                 config.bitRate = stoi(temp);
                 break;
-            case SIX:
+            case FOUR:
                 config.surfaceMode = stoi(temp) == 1;
                 break;
             default:

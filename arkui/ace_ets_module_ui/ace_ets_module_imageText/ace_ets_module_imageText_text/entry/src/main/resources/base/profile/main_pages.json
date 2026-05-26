@@ -138,6 +138,7 @@
         "MainAbility/pages/Text/TextGetCharacter",
         "MainAbility/pages/Text/TextOrphanCharOptimization",
         "MainAbility/pages/Text/OrphanCharOptimization",
+        "MainAbility/pages/Text/OrphanCharOptimization_null",
         "MainAbility/pages/Text/TextFontVariations"
     ]
 }

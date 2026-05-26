@@ -300,6 +300,15 @@ export const ohDrawingReleaseArrayBuffer0400: () => number;
 export const ohDrawingReleaseArrayBuffer0500: () => number;
 export const ohDrawingReleaseArrayBuffer0600: () => number;
 export const ohDrawingReleaseArrayBuffer0700: () => number;
+export const ohDrawingSetTypographyAttributeBool0100: () => number;
+export const ohDrawingSetTypographyAttributeBool0200: () => number;
+export const ohDrawingGetTypographyAttributeBool0100: () => number;
+export const ohDrawingGetTypographyAttributeBool0200: () => number;
+export const ohDrawingSetTypographyAttributeBool0300: () => number;
+export const ohDrawingGetTypographyAttributeBool0300: () => number;
+export const ohDrawingSetTypographyAttributeBool0400: () => number;
+export const ohDrawingGetTypographyAttributeBool0400: () => number;
+export const ohDrawingSetTypographyAttributeBool0500: () => number;
 // cpp7
 export const ohDrawingGetFontFullDescriptorAttributeArray0100: () => number;
 export const ohDrawingGetFontFullDescriptorAttributeArray0200: () => number;

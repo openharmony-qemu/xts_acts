@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000113,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000113,
         "KHR-GLES31.core.arrays_of_arrays.sized_decla",
         "rations_invalid_sizes3_invalid_declaration_12");

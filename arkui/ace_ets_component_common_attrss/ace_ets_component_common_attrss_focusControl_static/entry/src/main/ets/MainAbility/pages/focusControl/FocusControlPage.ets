@@ -99,7 +99,6 @@ import {
   BreakPoints,
   TextTimer,
   Toggle,
-  Web,
   Circle,
   Ellipse,
   Line,

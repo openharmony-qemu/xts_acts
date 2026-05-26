@@ -31,7 +31,7 @@ export async function doCipher(algName: string, isEncrypt: boolean, rawData: cry
     console.info("[XTS] doCipher success");
     return data;
   } catch (error) {
-    console.error(`[XTS] doCipher ${error}, error code: ${error.code}`);
+    console.error(`[XTS] doCipher ${error}`);
     throw error as Error;
   }
 }

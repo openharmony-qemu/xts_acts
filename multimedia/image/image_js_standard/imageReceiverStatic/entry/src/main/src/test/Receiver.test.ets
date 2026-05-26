@@ -140,10 +140,10 @@ export default function ImageReceiver() {
             hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
           });
         let driver = Driver.create();
-        let permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
-        if (permissionButton != null) {
-          await permissionButton.click();
-        }
+        let permissionButton1 = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000)
+        let permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 1000)
+        await permissionButton1?.click();
+        await permissionButton2?.click();
 
         cameraManager = camera.getCameraManager(context);
         if (!cameraManager) {

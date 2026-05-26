@@ -12,6 +12,20 @@
     "MainAbility/pages/textPickerDialog/canLoop",
     "MainAbility/pages/textPickerDialog/TextPickerDialogBackgroundColor",
     "MainAbility/pages/textPickerDialog/TextPickerDialog_alignment",
-    "MainAbility/pages/textPickerDialog/TextPickerDialog_hoverModeArea"
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_hoverModeArea",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogBGBlurStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogDefaultTextStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogDisableTextStyleAnimation",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogEnableHapticFeedback",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogSelectedTextStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogShadow",
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_acceptButtonStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_enableHoverMode",
+    "MainAbility/pages/textPickerDialog/TextPickerDialog_defaultPickerItemHeight",
+    "MainAbility/pages/textPickerDialog/selectedBackgroundStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogBackgroundEffect",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogCancelButtonStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogTextStyle",
+    "MainAbility/pages/textPickerDialog/TextPickerDialogDisappearTextStyle"
   ]
 }

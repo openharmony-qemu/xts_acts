@@ -15,7 +15,7 @@
  */
 
 import { Entry, Component, Column, Text, Visibility, $r, FlexAlign, HorizontalAlign,
-  ImageSpan, Visibility} from '@ohos.arkui.component';
+  ImageSpan} from '@ohos.arkui.component';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 

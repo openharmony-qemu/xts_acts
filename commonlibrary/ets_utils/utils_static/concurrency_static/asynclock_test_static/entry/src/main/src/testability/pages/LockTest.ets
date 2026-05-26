@@ -1078,9 +1078,9 @@ export async function setDelayRequestAndCloseWorkerInstantlyTest(): Promise<stri
   });
   return check('setDelayRequestAndCloseWorkerInstantlyTest', Promise.all([p, p0]));
 }
-function promiseLockAsync(): Promise<Promise<void>> {
+function promiseLockAsync(): Promise<void> {
   let lock = new AsyncLock;
-  return lock.lockAsync(async (): Promise<void> => {
+  return lock.lockAsync<void>(async (): Promise<void> => {
     await new Promise<number>((resolve): void => {
       setTimeout((): void => {
         resolve(1);
@@ -1144,12 +1144,12 @@ export function doubleExitSharedLockTest(): Promise<string> {
   ]));
 }
 
-function lockAsyncPromise(mode?: AsyncLockMode): Promise<Promise<void>> {
+function lockAsyncPromise(mode?: AsyncLockMode): Promise<void> {
   if (mode == undefined) {
     mode = AsyncLockMode.EXCLUSIVE
   }
   let lock = AsyncLock.request('lock');
-  return lock.lockAsync(async (): Promise<void> => {
+  return lock.lockAsync<void>(async (): Promise<void> => {
     await new Promise<number>((resolve): void => {
       setTimeout((): void => {
         resolve(1);
@@ -1161,7 +1161,7 @@ function lockAsyncPromise(mode?: AsyncLockMode): Promise<Promise<void>> {
 
 // test entry point
 export async function pendingSharedRequestAfterGC(): Promise<string> {
-  let p: Promise<Promise<void>> = lockAsyncPromise(AsyncLockMode.SHARED);
-  let p0: Promise<Promise<void>> = lockAsyncPromise(AsyncLockMode.SHARED);
+  let p: Promise<void> = lockAsyncPromise(AsyncLockMode.SHARED);
+  let p0: Promise<void> = lockAsyncPromise(AsyncLockMode.SHARED);
   return check('pendingSharedRequestAfterGC', Promise.all([p, p0]));
 }

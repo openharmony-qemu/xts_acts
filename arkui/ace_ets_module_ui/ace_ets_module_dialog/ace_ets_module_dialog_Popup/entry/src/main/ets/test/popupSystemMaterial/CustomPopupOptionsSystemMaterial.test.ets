@@ -166,7 +166,7 @@ export default function CustomPopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomPopupOptionsSystemMaterial_0400 Popup Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -197,7 +197,7 @@ export default function CustomPopupOptionsSystemMaterial() {
       let obj: ESObject = JSON.parse(JSON.stringify(getInspectorTree()));
       let sheet: ESObject = obj.$children[1];
       let date = JSON.stringify(obj.$children[1].$children[0]);
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('CustomPopupOptionsSystemMaterial_0500 Popup Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);

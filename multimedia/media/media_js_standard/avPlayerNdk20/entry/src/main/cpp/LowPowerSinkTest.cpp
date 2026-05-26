@@ -49,6 +49,16 @@
 #define AVCODEC_SAMPLE_ERR_OK = 0,
 #define AVCODEC_SAMPLE_ERR_ERROR = -1,
 OH_AVSamplesBuffer *g_samples;
+auto g_defWidth = 1920;
+auto g_defHeight = 1080;
+auto g_longValue = 4000000;
+int32_t g_sampleFormat = 1;
+int32_t g_rawSample = 24;
+int32_t g_channelCount = 2;
+int32_t g_sampleRate = 44100;
+int32_t g_channelLayout = 3;
+const char *g_video = OH_AVCODEC_MIMETYPE_VIDEO_AVC;
+const char *g_audio = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
 
 struct SampleInfo {
     int32_t inputFd = -1;
@@ -1053,6 +1063,414 @@ static napi_value OH_LowPowerAudioSink_CreateByMime0100(napi_env env, napi_callb
     napi_create_int32(env, res, &retValue);
     return retValue;
 }
+
+void OnNeedInputParameter(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData){};
+static napi_value OH_LowPowerAudioSink_Prepare0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Prepare(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_Pause0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerAudioSink_Start(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Pause(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_Resume0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerAudioSink_Start(AudioSink);
+    test = OH_LowPowerAudioSink_Pause(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Resume(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_Flush0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    test = OH_LowPowerAudioSink_Start(AudioSink);
+    test = OH_LowPowerAudioSink_Pause(AudioSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Flush(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_Stop0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    test = OH_LowPowerAudioSink_Start(AudioSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Stop(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_Reset0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    test = OH_LowPowerAudioSink_Start(AudioSink);
+    test = OH_LowPowerAudioSink_Pause(AudioSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_Reset(AudioSink);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_SetVolume0200(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_SetVolume(AudioSink, 0.0);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
+
+static napi_value OH_LowPowerAudioSink_SetVolume0300(napi_env env, napi_callback_info info)
+{
+    if (!OH_LowPowerAVSink_GetCapability()) {
+        napi_value retValue;
+        napi_create_int32(env, 0, &retValue);
+        return retValue;
+    }
+    void *userData;
+    OH_AVCodec *encoder = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_AVC);
+    OH_LowPowerVideoSink *VideoSink = OH_LowPowerVideoSink_CreateByMime(g_video);
+    OH_AVFormat *Format = OH_AVFormat_Create();
+    OH_AVErrCode test = OH_LowPowerVideoSink_GetParameter(nullptr, nullptr);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_WIDTH, g_defWidth);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_HEIGHT, g_defHeight);
+    OH_AVFormat_SetIntValue(Format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
+    OH_AVFormat_SetLongValue(Format, OH_MD_KEY_BITRATE, g_longValue);
+    test = OH_LowPowerVideoSink_Configure(VideoSink, Format);
+    test = OH_VideoEncoder_RegisterParameterCallback(encoder, OnNeedInputParameter, userData);
+    OHNativeWindow *nativeWindow = nullptr;
+    test = OH_VideoEncoder_Configure(encoder, Format);
+    test = OH_VideoEncoder_GetSurface(encoder, &nativeWindow);
+    test = OH_LowPowerVideoSink_SetVideoSurface(VideoSink, nativeWindow);
+    OH_LowPowerAudioSink *AudioSink = OH_LowPowerAudioSink_CreateByMime(g_audio);
+    OH_AVFormat *AudioFormat = OH_AVFormat_Create();
+    OH_AVFormat_SetIntValue(AudioFormat, "audio_sample_format", g_sampleFormat);
+    OH_AVFormat_SetIntValue(AudioFormat, "audio.raw.sample.format", g_rawSample);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_count", g_channelCount);
+    OH_AVFormat_SetIntValue(AudioFormat, "sample_rate", g_sampleRate);
+    OH_AVFormat_SetIntValue(AudioFormat, "channel_layout", g_channelLayout);
+    test = OH_LowPowerAudioSink_Configure(AudioSink, AudioFormat);
+    test = OH_LowPowerVideoSink_SetSyncAudioSink(VideoSink, AudioSink);
+    test = OH_LowPowerVideoSink_Prepare(VideoSink);
+    test = OH_LowPowerAudioSink_Prepare(AudioSink);
+    test = OH_LowPowerVideoSink_StartDecoder(VideoSink);
+    test = OH_LowPowerVideoSink_StartRenderer(VideoSink);
+    OH_AVErrCode errcode = OH_LowPowerAudioSink_SetVolume(AudioSink, 1.0);
+    int32_t res = 1;
+    if (errcode == AV_ERR_OK) {
+        res = 0;
+    }
+    OH_LowPowerVideoSink_Destroy(VideoSink);
+    OH_LowPowerAudioSink_Destroy(AudioSink);
+    OH_VideoEncoder_Destroy(encoder);
+    OH_AVFormat_Destroy(Format);
+    OH_AVFormat_Destroy(AudioFormat);
+    napi_value retValue;
+    napi_create_int32(env, res, &retValue);
+    return retValue;
+}
 napi_property_descriptor desc[] = {
     {"OH_LowPowerAudioSink_Configure0100", nullptr, OH_LowPowerAudioSink_Configure0100, nullptr, nullptr, nullptr,
      napi_default, nullptr},
@@ -1176,6 +1594,22 @@ napi_property_descriptor desc[] = {
      nullptr, napi_default, nullptr},
     {"OH_LowPowerAudioSink_CreateByMime0100", nullptr, OH_LowPowerAudioSink_CreateByMime0100, nullptr, nullptr,
      nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Prepare0200", nullptr, OH_LowPowerAudioSink_Prepare0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Pause0200", nullptr, OH_LowPowerAudioSink_Pause0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Resume0200", nullptr, OH_LowPowerAudioSink_Resume0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Flush0200", nullptr, OH_LowPowerAudioSink_Flush0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Stop0200", nullptr, OH_LowPowerAudioSink_Stop0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_Reset0200", nullptr, OH_LowPowerAudioSink_Reset0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_SetVolume0200", nullptr, OH_LowPowerAudioSink_SetVolume0200, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
+    {"OH_LowPowerAudioSink_SetVolume0300", nullptr, OH_LowPowerAudioSink_SetVolume0300, nullptr,
+     nullptr, nullptr, napi_default, nullptr},
 
 };
 

@@ -1,5 +1,6 @@
 {
   "src": [
-    "pages/webSchemeHandlerResponse"
+    "pages/webSchemeHandlerResponse",
+    "pages/EnableAdvancedSecurityMode"
   ]
 }

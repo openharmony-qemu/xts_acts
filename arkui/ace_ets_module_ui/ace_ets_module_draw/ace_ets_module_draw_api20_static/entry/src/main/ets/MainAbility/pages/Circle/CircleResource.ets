@@ -15,7 +15,7 @@
 
 import {
   Entry, Component,
-  Column, ColumnOptions, Circle, $r,Text,
+  Column, ColumnOptions, Circle, $r,
   Flex, FlexDirection, ItemAlign, FlexAlign, ImageAIOptions,
   Text, Button, FontWeight, ClickEvent, Margin, Color, Row, RenderingContextSettings, CanvasRenderingContext2D, Canvas,
 } from '@ohos.arkui.component'

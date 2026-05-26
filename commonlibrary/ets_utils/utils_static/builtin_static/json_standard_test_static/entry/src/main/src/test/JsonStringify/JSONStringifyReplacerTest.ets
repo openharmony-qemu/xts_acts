@@ -76,7 +76,7 @@ interface TestObj13 {
   b?: number;
 }
 
-export default function JSONStringifyReplacerTest() {
+export default function JSONStringifyReplacerTest(): void {
   describe('JSONStringifyReplacerTest', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

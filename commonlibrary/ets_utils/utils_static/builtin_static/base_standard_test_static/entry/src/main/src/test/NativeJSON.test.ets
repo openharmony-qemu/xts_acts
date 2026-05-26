@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -44,7 +44,7 @@ interface text1 {
   equal1: number;
   equal2: number;
 }
-export default function NativeJsonTest() {
+export default function NativeJsonTest(): void {
 
   describe("NativeJsonTest", (): void => {
     afterEach(async (): Promise<void> => {

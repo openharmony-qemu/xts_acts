@@ -17,8 +17,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier implements AttributeModifier<ColumnAttribute> {
-  @State public isOnKeyEventDispatchUndefined: boolean = true;
-  @State public text: string = ''
+  public isOnKeyEventDispatchUndefined: boolean = true;
+  public text: string = ''
 
   applyNormalAttribute(instance: ColumnAttribute): void {
     instance

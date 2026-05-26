@@ -18,8 +18,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier implements AttributeModifier<TextAttribute> {
-  @State public cnt : int = 0;
-  @State public isOnSizeChangeUndefined: boolean = false;
+  public cnt : int = 0;
+  public isOnSizeChangeUndefined: boolean = false;
 
   applyNormalAttribute(instance: TextAttribute): void {
     instance

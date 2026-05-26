@@ -71,4 +71,8 @@ int UnlinkTest();
 int UnlinkatTest();
 int UsleepTest();
 int WritevTest();
+int LseekTest();
+int PreadTest();
+int PreadvTest();
+
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_UNISTD_H_H

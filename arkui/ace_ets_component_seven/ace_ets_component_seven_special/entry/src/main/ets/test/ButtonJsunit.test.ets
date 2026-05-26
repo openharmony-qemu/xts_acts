@@ -59,7 +59,7 @@ export default function buttonJsunit() {
     it('testButton1601', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1601] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1601] component testButton1601 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.type).assertEqual('ButtonType.Circle');
@@ -77,7 +77,7 @@ export default function buttonJsunit() {
     it('testButton1602', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1602] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1602] component testButton1602 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.stateEffect).assertEqual('true');
@@ -95,7 +95,7 @@ export default function buttonJsunit() {
     it('testButton1603', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1603] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1603] component testButton1603 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.fontColor).assertEqual('#FFCCCCCC');
@@ -113,7 +113,7 @@ export default function buttonJsunit() {
     it('testButton1604', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1604] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1604] component testButton1604 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.fontSize).assertEqual('12.00fp');
@@ -131,7 +131,7 @@ export default function buttonJsunit() {
     it('testButton1605', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1605] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1605] component testButton1605 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.fontWeight).assertEqual('FontWeight.Normal');
@@ -149,7 +149,7 @@ export default function buttonJsunit() {
     it('testButton1606', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1606] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1606] component testButton1606 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.fontFamily).assertEqual('cursive');
@@ -167,7 +167,7 @@ export default function buttonJsunit() {
     it('testButton1607', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1607] START');
       await Utils.sleep(1000);
-      let strJsonNew = getInspectorByKey('button');
+      let strJsonNew = getInspectorByKey('button_button');
       let objNew: ESObject = JSON.parse(strJsonNew);
       console.info("[testButton1607] component testButton1607 is: " + JSON.stringify(objNew.$attrs));
       expect(objNew.$attrs.fontStyle).assertEqual('FontStyle.Normal');

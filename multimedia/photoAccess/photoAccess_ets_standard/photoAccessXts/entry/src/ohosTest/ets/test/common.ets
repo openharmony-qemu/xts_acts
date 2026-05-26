@@ -137,9 +137,11 @@ export function photoFetchOption(testName: string, key: string,
 export async function driveFn() {
   let dr = Driver.create();
   await sleep(COMMON_WAIT_DURATION);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   await sleep(COMMON_WAIT_DURATION);
-  await power?.click();
+  await power1?.click();
+  await power2?.click();
   await sleep(COMMON_WAIT_DURATION)
 }
 

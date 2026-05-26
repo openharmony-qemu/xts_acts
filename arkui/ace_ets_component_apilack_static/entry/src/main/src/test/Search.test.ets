@@ -77,7 +77,7 @@ export default function searchOnCutJsunit() {
 it('testsearchOnCut_static_0001', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0001 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -98,7 +98,7 @@ it('testsearchOnCut_static_0001', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0002', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0002 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -119,7 +119,7 @@ it('testsearchOnCut_static_0002', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0003', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0003 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -140,7 +140,7 @@ it('testsearchOnCut_static_0003', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0004', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0004 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0004] component opacity strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -161,7 +161,7 @@ it('testsearchOnCut_static_0004', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0005', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0005 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0005] component align strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -182,7 +182,7 @@ it('testsearchOnCut_static_0005', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0006', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0006 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -203,7 +203,7 @@ it('testsearchOnCut_static_0006', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0007', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0007 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -224,7 +224,7 @@ it('testsearchOnCut_static_0007', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0009', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut009 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0009] component padding strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');
@@ -245,7 +245,7 @@ it('testsearchOnCut_static_0009', Level.LEVEL0, async () => {
 it('testsearchOnCut_static_0010', Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0010 START');
       await Utils.sleep(2000);
-      let strJson = inspector.getInspectorByKey('onCutText');
+      let strJson = inspector.getInspectorByKey('search_onCutText');
       console.info("[testsearchOnCut0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Text');

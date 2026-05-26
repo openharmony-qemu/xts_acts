@@ -24,7 +24,6 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  TextOverflow,
   Resource
 } from '@ohos.arkui.component'
 import {

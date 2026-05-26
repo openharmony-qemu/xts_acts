@@ -32,13 +32,13 @@ import {
   Margin
 } from '@ohos.arkui.component'
 import { AttributeModifier, CommonAttribute , ScrollAttribute} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
+import { State, Observed, Track } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
 export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-  @State public change: boolean = true;
-  @State public count: Int = 1;
+  @Track public change: boolean = true;
+  @Track public count: Int = 1;
 
   applyNormalAttribute(instance: ScrollAttribute): void {
     if (this.change) {

@@ -64,7 +64,7 @@ export default function ActsZlibInterfaceTest() {
         strategy: zlib.CompressStrategy.COMPRESS_STRATEGY_DEFAULT_STRATEGY
       };
       try {
-        zlib.compressFile(inFile33, outFile35, options).then((): Promise<void> => {
+        zlib.compressFile(inFile33, outFile35, options).then((): void => {
           hilog.info(domain, tag, 'getOriginalSize prepare test.zip success');
           try {
             zlib.getOriginalSize(outFile35).then((data: long): void => {

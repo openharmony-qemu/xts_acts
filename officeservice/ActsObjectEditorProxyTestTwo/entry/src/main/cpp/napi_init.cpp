@@ -42,6 +42,17 @@ static napi_value TestProxyGetFormatFromInfo_Normal(napi_env env, napi_callback_
         napi_create_int32(env, -1, &result);
         return result;
     }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal get format count ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_OK, &result);
+        return result;
+    }
     ContentEmbed_Format *format = nullptr;
     code = OH_ContentEmbed_GetFormatFromInfo(infoObj, 0, &format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal code: %{public}d", code);
@@ -95,7 +106,98 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal(napi_en
     char oeid[] = "TTT209FF-BBBB-DDDD-CAAA-000000000046";
     code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, "", format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal code: %{public}d", code);
-    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetOEidFromFormat_Normal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal create code: %{public}d", code);
+    napi_value result;
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal create content embed info ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal get format count ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_OK, &result);
+        return result;
+    }
+    ContentEmbed_Format *format = nullptr;
+    code = OH_ContentEmbed_GetFormatFromInfo(infoObj, 0, &format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char oeid[MAX_OEID_LENGTH] = {0};
+    code = OH_ContentEmbed_GetOEidFromFormat(format, oeid);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_Normal code: %{public}d", code);
+    if (code == CE_ERR_OK) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetNameAndDescriptionFromFormat_Normal(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal create code: %{public}d", code);
+    napi_value result;
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal create content embed info ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal get format count ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_OK, &result);
+        return result;
+    }
+    ContentEmbed_Format *format = nullptr;
+    code = OH_ContentEmbed_GetFormatFromInfo(infoObj, 0, &format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFormatFromInfo_Normal code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[MAX_NAME_LENGTH] = {0};
+    char description[MAX_DESCRIPTION_LENGTH] = {0};
+    code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(format, name, description);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_Normal get code: %{public}d", code);
+    if (code == CE_ERR_OK) {
         napi_create_int32(env, code, &result);
         return result;
     }
@@ -105,20 +207,33 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal(napi_en
 
 static napi_value TestProxyGetIconFromFormat_Normal(napi_env env, napi_callback_info info)
 {
-    ContentEmbed_Format *format = nullptr;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
     OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_Normal create code: %{public}d", code);
     napi_value result;
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    if (format == nullptr) {
+    if (code != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
     }
-    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
-    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, "", format);
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_Normal create content embed info ret: %{public}d", code);
+    if (code != CE_ERR_OK || infoObj == nullptr) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_Normal get format count ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_OK, &result);
+        return result;
+    }
+    ContentEmbed_Format *format = nullptr;
+    code = OH_ContentEmbed_GetFormatFromInfo(infoObj, 0, &format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_Normal code: %{public}d", code);
     if (code != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
@@ -131,7 +246,7 @@ static napi_value TestProxyGetIconFromFormat_Normal(napi_env env, napi_callback_
         napi_create_int32(env, code, &result);
         return result;
     }
-    napi_create_int32(env, code, &result);
+    napi_create_int32(env, -1, &result);
     return result;
 }
 
@@ -157,20 +272,33 @@ static napi_value TestProxyGetContentEmbedInfo_Normal(napi_env env, napi_callbac
 
 static napi_value TestProxyGetFileNameExtensionsFromFormat_Normal(napi_env env, napi_callback_info info)
 {
-    ContentEmbed_Format *format = nullptr;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
     OH_LOG_INFO(LOG_APP, "TestProxyGetFileNameExtensionsFromFormat_Normal create code: %{public}d", code);
     napi_value result;
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    if (format == nullptr) {
+    if (code != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
         return result;
     }
-    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
-    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, "", format);
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFileNameExtensionsFromFormat_Normal create content: %{public}d", code);
+    if (code != CE_ERR_OK || infoObj == nullptr) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    uint32_t formatCount = 0;
+    code = OH_ContentEmbed_GetFormatCountFromInfo(infoObj, &formatCount);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetFileNameExtensionsFromFormat_Normal get format count ret: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    if (formatCount == 0) {
+        napi_create_int32(env, CE_ERR_OK, &result);
+        return result;
+    }
+    ContentEmbed_Format *format = nullptr;
+    code = OH_ContentEmbed_GetFormatFromInfo(infoObj, 0, &format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetFileNameExtensionsFromFormat_Normal code: %{public}d", code);
     if (code != CE_ERR_OK) {
         napi_create_int32(env, -1, &result);
@@ -311,6 +439,12 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal", nullptr,
             TestProxyGetContentEmbedFormatByOEidAndLocale_Abnormal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetOEidFromFormat_Normal", nullptr,
+            TestProxyGetOEidFromFormat_Normal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetNameAndDescriptionFromFormat_Normal", nullptr,
+            TestProxyGetNameAndDescriptionFromFormat_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetIconFromFormat_Normal", nullptr,
             TestProxyGetIconFromFormat_Normal,

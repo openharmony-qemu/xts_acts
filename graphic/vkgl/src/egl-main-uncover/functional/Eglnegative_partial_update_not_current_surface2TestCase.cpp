@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000308,
+static SHRINK_HWTEST_F(ActsEglMainUncover0001TestSuite, TestCase_000308,
         "dEQP-EGL.functional.negative_par",
         "tial_update.not_current_surface2");

@@ -34,8 +34,6 @@ struct ListEventPage1 {
   @State isMaintainVisibleContentPosition: boolean = true;
 
   build() {
-    Text(this.message)
-      .id('List_text')
     Scroll() {
       Column() {
         List({ space: 12, initialIndex: 0 }) {

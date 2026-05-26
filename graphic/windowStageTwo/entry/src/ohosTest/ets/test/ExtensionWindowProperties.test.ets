@@ -2329,6 +2329,48 @@ export default function extensionWindowPropertiesTest() {
         expect().assertFail()
         done()
       }
+    })
+
+    /**
+     * @tc.name   testEnvWindowSizeInUec
+     * @tc.number SUB_WMS_UEC_ENV_WINDOWSIZE_IN_UEC_0100
+     * @tc.desc   testEnvWindowSizeInUec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testEnvWindowSizeInUec', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testEnvWindowSizeInUec ';
+      console.log(caseName + 'start run');
+      let subWindowClass: window.Window | undefined;
+
+      if (deviceType === '2in1') {
+        try {
+          subWindowClass = await windowStage.createSubWindow('testEnvWindowSizeInUec');
+          await subWindowClass.setUIContent("testability/pages/WindowTest/EmbeddedComponentEvn");
+          await subWindowClass.showWindow();
+          await sleep(2000);
+          // extensionWindow?.createSubWindowWithOptions
+          let btn = await driver.findComponent(ON.id('testEnv'))
+          console.log(caseName + ' btn : ' + btn);
+          await btn.click()
+          await sleep(1000)
+          // 获取接口返回信息
+          let errorMessage = await driver.findComponent(ON.id('HelloWorld'))
+          let errorMessageText = await errorMessage.getText()
+          console.log(caseName + 'errorMessageText : ' + errorMessageText);
+          expect(errorMessageText).assertEqual('true')
+          await subWindowClass.destroyWindow()
+          done();
+        } catch (exception) {
+          console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+          await subWindowClass?.destroyWindow()
+          expect().assertFail()
+          done()
+        }
+      } else {
+        done()
+      }
 
 
     })

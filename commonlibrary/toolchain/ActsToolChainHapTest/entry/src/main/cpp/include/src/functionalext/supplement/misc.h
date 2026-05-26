@@ -45,4 +45,6 @@ int PtsnameTest();
 int RealpathTest();
 int SetlogmaskTest();
 int UnameTest();
+int NftwTest();
+
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_MISC_H_H

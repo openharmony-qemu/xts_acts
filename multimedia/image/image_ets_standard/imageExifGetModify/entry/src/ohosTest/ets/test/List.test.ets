@@ -15,9 +15,11 @@
 import imageExifGetModifyTest from './ImageExifGetModify.test';
 import imageExifGetSyncTest from './ImageExifGetSync.test';
 import imageExifGetModifyByType from './ImageExifGetModifyByType.test';
+import ImageMetadata from './ImageMetadata.test';
 
 export default function testsuite() {
   imageExifGetModifyTest();
   imageExifGetSyncTest();
   imageExifGetModifyByType();
+  ImageMetadata();
 }

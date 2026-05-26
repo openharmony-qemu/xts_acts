@@ -36,6 +36,7 @@ export default class MediaTestBase {
   TAG = "[AvScreenCaptureLocalTest] ";
   SETONCALLBACK_EVENT = 'setAvScreenCaptureCallback';
   SET_MIC_ENABLE_EVENT = 'setMicEnable';
+  SET_MIC_ENABLE_EVENT_FALSE = 'setMicEnableFalse';
   SET_PICKER_MODE_EVENT = 'setPickerMode';
   EXCLUDE_PICKER_WINDOWS_EVENT = 'excludePickerWindows';
   PRESENT_PICKER = 'presentPicker';
@@ -72,6 +73,11 @@ export default class MediaTestBase {
   };
   avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null = null;
   avPlayer: media.AVPlayer | null = null;
+  isSucceeded: boolean = true;
+  
+  isTestSucceeded(): boolean {
+    return this.isSucceeded;
+  }
 
   setAVScreenCaptueCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: () => void) {
     // 状态机变化回调函数
@@ -266,8 +272,54 @@ export default class MediaTestBase {
           expect().assertFail()
         })
         break;
+      case 'setMicEnableFalse':
+        steps.shift();
+        await avScreenCaptureRecorder!!.setMicEnabled(false).then(() => {
+          console.info('avScreenCaptureRecorder setMicEnabled success');
+          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setMicEnabled failed, error: ' + err.message);
+          expect().assertFail()
+        })
+        break;
       case 'setPickerMode':
         steps.shift();
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_WINDOW).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.APP_ONLY).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
+        await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.SCREEN_WINDOW_AND_APP).then(() => {
+          console.info('avScreenCaptureRecorder setPickerMode success');
+        }).catch((err: Error) => {
+          console.error('avScreenCaptureRecorder setPickerMode failed, error: ' + err.message);
+          expect().assertFail();
+        })
         await avScreenCaptureRecorder!!.setPickerMode(media.PickerMode.WINDOW_ONLY).then(() => {
           console.info('avScreenCaptureRecorder setPickerMode success');
           this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
@@ -493,7 +545,8 @@ export default class MediaTestBase {
     console.info(`UiDriver start`)
     await this.msleepAsync(500)
     for (let i = 0; i < num; i++) {
-      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+      let button = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000) ||
+        await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 5000);
       console.info(`button is ${JSON.stringify(button)}`)
       if (button != null) {
         await button.click()
