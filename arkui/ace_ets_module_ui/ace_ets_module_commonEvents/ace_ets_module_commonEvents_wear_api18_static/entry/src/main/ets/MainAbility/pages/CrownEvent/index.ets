@@ -57,9 +57,7 @@ struct CityList {
             .id('onDigitalCrown')
             .onDigitalCrown((event: CrownEvent) => {
               // event.stopPropagation();
-              if(event.action == CrownAction.BEGIN){
-                 this.value='BEGIN'
-              }else if(event.action == CrownAction.UPDATE){
+              if(event.action == CrownAction.UPDATE){
                 this.value='UPDATE'
               }else if(event.action == CrownAction.END){
                 this.value='END'

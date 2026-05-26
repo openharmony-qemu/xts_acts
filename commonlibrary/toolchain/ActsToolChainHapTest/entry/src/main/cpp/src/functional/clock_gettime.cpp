@@ -1,31 +1,28 @@
-/*
- * Copyright (c) 2026 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
+#include <ctime>
 #include <cerrno>
 #include <cstring>
-#include <ctime>
 #include "test.h"
 
+
+#ifdef __arm__
+extern "C" int __clock_gettime64(clockid_t, struct timespec *);
+#else
+#define __clock_gettime64 clock_gettime
+#endif
+
+#define TEST(c, ...) \
+    ((c) || (t_error(#c " failed: " __VA_ARGS__), 0))
 int ClockGettimeTest()
 {
     struct timespec ts;
-    if (!(clock_gettime(CLOCK_REALTIME, &ts) == 0 && errno == 0)) {
-        t_error("clock_gettime(CLOCK_REALTIME, &ts) == 0 && errno == 0 failed: %s\n", strerror(errno));
-    }
-    if (!(CLOCK_GETTIME64(CLOCK_REALTIME, &ts) == 0 && errno == 0)) {
-        t_error("CLOCK_GETTIME64(CLOCK_REALTIME, &ts) == 0 && errno == 0 failed: %s\n", strerror(errno));
-    }
-    return T_STATUS;
+#ifdef __arm__
+#else
+#endif
+    errno = 0;
+    int ret1 = clock_gettime(CLOCK_REALTIME, &ts);
+    TEST(ret1 == 0, "%s\n", strerror(errno));
+    errno = 0;
+    int ret2 = __clock_gettime64(CLOCK_REALTIME, &ts);
+    TEST(ret2 == 0, "%s\n", strerror(errno));
+    return g_tStatus;
 }

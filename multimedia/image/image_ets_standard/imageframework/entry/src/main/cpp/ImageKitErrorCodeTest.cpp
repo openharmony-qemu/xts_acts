@@ -135,7 +135,11 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_STATIC_METADATA(napi_env env, napi_cal
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_STATIC_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
+    }
     return result;
 }
 
@@ -160,7 +164,11 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_DYNAMIC_METADATA(napi_env env, napi_ca
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_DYNAMIC_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
+    }
     return result;
 }
 
@@ -185,7 +193,11 @@ napi_value OH_Pixelmap_HdrMetadataKey_HDR_GAINMAP_METADATA(napi_env env, napi_ca
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
+    }
     return result;
 }
 
@@ -210,7 +222,11 @@ napi_value Image_ErrorCode_IMAGE_DMA_NOT_EXIST(napi_env env, napi_callback_info 
     OH_PixelmapNative_CreatePixelmap(data, dataLength, options, &pixelMapNative);
     OH_Pixelmap_HdrMetadataValue* value = new OH_Pixelmap_HdrMetadataValue;
     Image_ErrorCode errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &value);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_COPY_FAILED, &result);
+    }
     return result;
 }
 
@@ -239,7 +255,11 @@ napi_value OH_Pixelmap_HdrMetadataType_NONE(napi_env env, napi_callback_info inf
     Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, pvalue);
     OH_Pixelmap_HdrMetadataValue* pvalue2 = new OH_Pixelmap_HdrMetadataValue;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 napi_value OH_Pixelmap_HdrMetadataType_BASE(napi_env env, napi_callback_info info)
@@ -267,7 +287,11 @@ napi_value OH_Pixelmap_HdrMetadataType_BASE(napi_env env, napi_callback_info inf
     Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, pvalue);
     OH_Pixelmap_HdrMetadataValue* pvalue2 = new OH_Pixelmap_HdrMetadataValue;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -296,7 +320,11 @@ napi_value OH_Pixelmap_HdrMetadataType_GAINMAP(napi_env env, napi_callback_info 
     Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, pvalue);
     OH_Pixelmap_HdrMetadataValue* pvalue2 = new OH_Pixelmap_HdrMetadataValue;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -325,7 +353,11 @@ napi_value OH_Pixelmap_HdrMetadataType_ALTERNATE(napi_env env, napi_callback_inf
     Image_ErrorCode errCode = OH_PixelmapNative_SetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, pvalue);
     OH_Pixelmap_HdrMetadataValue* pvalue2 = new OH_Pixelmap_HdrMetadataValue;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -356,7 +388,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_displayPrimariesX(napi_env env, napi_ca
     pvalue2->staticMetadata.displayPrimariesX[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata  staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -387,7 +423,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_displayPrimariesY(napi_env env, napi_ca
     pvalue2->staticMetadata.displayPrimariesY[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -418,7 +458,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_whitePointX(napi_env env, napi_callback
     pvalue2->staticMetadata.whitePointX = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -449,7 +493,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_whitePointY(napi_env env, napi_callback
     pvalue2->staticMetadata.whitePointY = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -480,7 +528,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_maxLuminance(napi_env env, napi_callbac
     pvalue2->staticMetadata.maxLuminance = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -511,7 +563,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_minLuminance(napi_env env, napi_callbac
     pvalue2->staticMetadata.minLuminance = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -542,7 +598,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_maxContentLightLevel(napi_env env, napi
     pvalue2->staticMetadata.maxContentLightLevel = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -573,7 +633,11 @@ napi_value OH_Pixelmap_HdrStaticMetadata_maxFrameAverageLightLevel(napi_env env,
     pvalue2->staticMetadata.maxFrameAverageLightLevel = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrStaticMetadata staticMetadata = pvalue2->staticMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 napi_value OH_Pixelmap_HdrDynamicMetadata_data(napi_env env, napi_callback_info info)
@@ -603,7 +667,11 @@ napi_value OH_Pixelmap_HdrDynamicMetadata_data(napi_env env, napi_callback_info 
     pvalue2->dynamicMetadata.data = nullptr;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrDynamicMetadata dynamicMetadata = pvalue2->dynamicMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -634,7 +702,11 @@ napi_value OH_Pixelmap_HdrDynamicMetadata_length(napi_env env, napi_callback_inf
     pvalue2->dynamicMetadata.length = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrDynamicMetadata dynamicMetadata = pvalue2->dynamicMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -665,7 +737,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_writerVersion(napi_env env, napi_callb
     pvalue2->gainmapMetadata.writerVersion = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -696,7 +772,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_miniVersion(napi_env env, napi_callbac
     pvalue2->gainmapMetadata.miniVersion = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -727,7 +807,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_gainmapChannelNum(napi_env env, napi_c
     pvalue2->gainmapMetadata.gainmapChannelNum = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -758,7 +842,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_useBaseColorFlag(napi_env env, napi_ca
     pvalue2->gainmapMetadata.useBaseColorFlag = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -789,7 +877,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_baseHeadroom(napi_env env, napi_callba
     pvalue2->gainmapMetadata.baseHeadroom = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -820,7 +912,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_alternateHeadroom(napi_env env, napi_c
     pvalue2->gainmapMetadata.alternateHeadroom = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -851,7 +947,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_gainmapMax(napi_env env, napi_callback
     pvalue2->gainmapMetadata.gainmapMax[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -882,7 +982,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_gainmapMin(napi_env env, napi_callback
     pvalue2->gainmapMetadata.gainmapMin[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -913,7 +1017,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_gamma(napi_env env, napi_callback_info
     pvalue2->gainmapMetadata.gamma[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 
@@ -944,7 +1052,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_baselineOffset(napi_env env, napi_call
     pvalue2->gainmapMetadata.baselineOffset[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 napi_value OH_Pixelmap_HdrGainmapMetadata_alternateOffset(napi_env env, napi_callback_info info)
@@ -974,7 +1086,11 @@ napi_value OH_Pixelmap_HdrGainmapMetadata_alternateOffset(napi_env env, napi_cal
     pvalue2->gainmapMetadata.alternateOffset[0] = 0;
     errCode = OH_PixelmapNative_GetMetadata(pixelMapNative, HDR_GAINMAP_METADATA, &pvalue2);
     OH_Pixelmap_HdrGainmapMetadata gainmapMetadata = pvalue2->gainmapMetadata;
-    napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    if (errCode == IMAGE_DMA_NOT_EXIST) {
+        napi_create_int32(env, errCode == IMAGE_DMA_NOT_EXIST, &result);
+    } else {
+        napi_create_int32(env, errCode == IMAGE_SUCCESS, &result);
+    }
     return result;
 }
 

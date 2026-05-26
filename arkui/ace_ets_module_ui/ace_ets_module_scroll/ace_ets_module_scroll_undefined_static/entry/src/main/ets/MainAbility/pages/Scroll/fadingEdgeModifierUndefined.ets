@@ -39,12 +39,12 @@ import {
   FadingEdgeOptions
 } from '@ohos.arkui.component'
 import { AttributeModifier, CommonAttribute , ScrollAttribute} from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
+import { State, Observed, Track } from '@ohos.arkui.stateManagement'
 
 // ===================== Modifier 定义 =====================
 @Observed
 export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
-  @State public feEnabled1: boolean | undefined = true;
+  @Track public feEnabled1: boolean | undefined = true;
 
   applyNormalAttribute(instance: ScrollAttribute): void {
     instance.fadingEdge(this.feEnabled1, { fadingEdgeLength: LengthMetrics.vp(80) } as FadingEdgeOptions)

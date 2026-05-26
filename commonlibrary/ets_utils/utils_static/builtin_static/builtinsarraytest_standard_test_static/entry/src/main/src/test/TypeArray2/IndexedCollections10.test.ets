@@ -38,7 +38,7 @@ type RecursiveArray = Array<RecursiveArray | undefined>;
 
 type RecursiveArray3 = Array<RecursiveArray3 | number>;
 
-export default function IndexedCollections10Test() {
+export default function IndexedCollections10Test(): void {
   describe('IndexedCollections10Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

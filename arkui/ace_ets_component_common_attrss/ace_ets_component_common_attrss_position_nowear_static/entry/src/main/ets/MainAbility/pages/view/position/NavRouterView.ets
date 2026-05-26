@@ -15,6 +15,7 @@
  */
 
 import {
+  Entry,
   Component,
   Text,
   Row,
@@ -33,6 +34,7 @@ import {
 } from '@ohos.arkui.component';
 import { Link, State } from '@ohos.arkui.stateManagement';
 
+@Entry
 @Component
 export struct NavRouterView {
   @State isActive: boolean = false
@@ -40,8 +42,8 @@ export struct NavRouterView {
   @Link _position!: Position;
   private componentKey: string = '';
 
-  build() {
-    // NavRouter() {
+  build():void {
+    Column(){
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -64,10 +66,6 @@ export struct NavRouterView {
         }
       }.backgroundColor('#ccc')
       .title(`NavDestination`)
-    // }.onStateChange((isActivated: boolean) => {
-    //   console.info('isActivated = ' + isActivated);
-    // })
-    // .position(this._position)
-    // .key(this.componentKey)
+    }
   }
 }

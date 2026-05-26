@@ -16,21 +16,21 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000035,
+static SHRINK_HWTEST_F(ActsGles31MainUncover0001TestSuite, TestCase_000035,
         "dEQP-GLES31.functional.srgb_texture_",
         "decode.skip_decode.srgba8.texel_fetch");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000036,
+static SHRINK_HWTEST_F(ActsGles31MainUncover0001TestSuite, TestCase_000036,
         "dEQP-GLES31.functional.srgb_texture",
         "_decode.skip_decode.srg8.texel_fetch");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000037,
+static SHRINK_HWTEST_F(ActsGles31MainUncover0001TestSuite, TestCase_000037,
         "dEQP-GLES31.functional.srgb_texture",
         "_decode.skip_decode.sr8.texel_fetch");

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1384,7 +1384,7 @@ class DuplexProperty extends stream.Duplex {
   }
 }
 
-export default function streamTest() {
+export default function streamTest(): void {
   describe('streamTest',(): void =>  {
     afterEach(async () => {
       await mustCallCheckAll();
@@ -4613,7 +4613,7 @@ class TestReadable extends stream.Readable {
 
 const mustChecks: Function[] = [];
 
-export function mustNotCall() {
+export function mustNotCall(): Function {
   return mustCall(() => {
   }, 0);
 }

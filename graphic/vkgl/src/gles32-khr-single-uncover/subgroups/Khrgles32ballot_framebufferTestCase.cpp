@@ -16,25 +16,25 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000236,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000236,
         "KHR-Single-GLES32.subgroups.",
         "ballot.framebuffer.tess_eval");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000237,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000237,
         "KHR-Single-GLES32.subgroups.b",
         "allot.framebuffer.tess_control");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000238,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000238,
         "KHR-Single-GLES32.subgroups",
         ".ballot.framebuffer.geometry");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000239,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000239,
         "KHR-Single-GLES32.subgroup",
         "s.ballot.framebuffer.vertex");

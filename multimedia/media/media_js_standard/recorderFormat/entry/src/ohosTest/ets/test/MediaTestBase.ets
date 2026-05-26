@@ -188,15 +188,14 @@ export default class MediaTestBase {
       await btn1.click()
     }
     for (let i = 0; i < num; i++) {
-      let button = await driver.findComponent(BY.text('允许'))
+      let button = await driver.findComponent(BY.text('允许')) ||
+        await driver.findComponent(BY.text('始终允许'))
       if (button == null) {
         continue;
       }
       console.info(`button is ${JSON.stringify(button)}`)
       await this.sleep(2000)
-      if (await driver.findComponent(BY.text('允许')) != null) {
-        await button.click()
-      }
+      await button.click()
       await this.sleep(2000)
     }
     await this.sleep(500)

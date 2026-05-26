@@ -16,97 +16,97 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000212,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000212,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_int_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000213,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000213,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_ivec2_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000214,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000214,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_ivec3_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000215,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000215,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_ivec4_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000216,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000216,
         "KHR-Single-GLES32.subgroups.vote.fr",
         "ag_helper.subgroupall_uint_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000217,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000217,
         "KHR-Single-GLES32.subgroups.vote.fr",
         "ag_helper.subgroupany_uint_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000218,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000218,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_uint_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000219,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000219,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_uvec2_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000220,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000220,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_uvec3_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000221,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000221,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_uvec4_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000222,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000222,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_float_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000223,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000223,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_vec2_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000224,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000224,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_vec3_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000225,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000225,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_vec4_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000226,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000226,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_double_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000227,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000227,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_dvec2_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000228,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000228,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_dvec3_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000229,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000229,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_dvec4_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000230,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000230,
         "KHR-Single-GLES32.subgroups.vote.frag",
         "_helper.subgroupallequal_bool_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000231,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000231,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_bvec2_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000232,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000232,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_bvec3_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000233,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000233,
         "KHR-Single-GLES32.subgroups.vote.frag_",
         "helper.subgroupallequal_bvec4_fragment");

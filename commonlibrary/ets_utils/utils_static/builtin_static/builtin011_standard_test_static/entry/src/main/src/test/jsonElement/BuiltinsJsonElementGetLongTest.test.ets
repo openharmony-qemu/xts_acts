@@ -29,7 +29,7 @@ function init(size: number): string {
   return ans;
 }
 
-export default function BuiltinsJsonElementGetLongTest() {
+export default function BuiltinsJsonElementGetLongTest(): void {
   describe("BuiltinsJsonElementGetLongTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

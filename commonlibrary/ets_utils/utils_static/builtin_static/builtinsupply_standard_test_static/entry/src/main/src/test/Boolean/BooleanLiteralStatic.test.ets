@@ -32,7 +32,7 @@ interface Person15{
   isStudent:boolean;
 }
 
-export default function BuiltinsBooleanLiteralTest() {
+export default function BuiltinsBooleanLiteralTest(): void {
   describe('BuiltinsBooleanLiteralTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

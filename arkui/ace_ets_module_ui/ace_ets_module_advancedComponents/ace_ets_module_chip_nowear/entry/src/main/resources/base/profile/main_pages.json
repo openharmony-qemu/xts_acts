@@ -20,6 +20,7 @@
     "MainAbility/pages/ChipGroup/itemSpace",
     "MainAbility/pages/chip/localizedLabelMargin",
     "MainAbility/pages/ChipGroup/ChipGroupIconItemOptionsPage",
-    "MainAbility/pages/ChipGroup/ChipGroupSymbolItemOptionsPage"
+    "MainAbility/pages/ChipGroup/ChipGroupSymbolItemOptionsPage",
+    "MainAbility/pages/chip/ChipBackgroundSystemMaterial"
   ]
 }

@@ -19,7 +19,7 @@ import { BusinessError } from '@ohos.base';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-export default function BuiltinArrayconcatTest() {
+export default function BuiltinArrayconcatTest(): void {
   describe("BuiltinArrayconcatTest", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

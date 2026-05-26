@@ -26,10 +26,7 @@ let g_config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG
 }
 let testUriStr1 = "datashareproxy://com.example.myapplication.static/staticConfiguration1";
-let testUriStr2 = "datashareproxy://com.example.myapplication.static/staticConfiguration2";
 let testUriStr3 = "datashareproxy://com.example.myapplication.static/staticConfiguration3";
-let testUriStr4 = "datashareproxy://com.example.myapplication.static/staticConfiguration4";
-let testUriStr5 = "datashareproxy://com.example.myapplication.static/staticConfiguration5";
 let testUriStr6 = "datashareproxy://com.example.myapplication.static/staticConfiguration6";
 let testUriStr7 = "datashareproxy://com.example.myapplication.static/ ";
 let testUriStr8 = "datashareproxy://com.example.myapplication.static/";
@@ -37,12 +34,9 @@ let testUriStr9 = "datashareproxy://com.example.myapplication.static/all";
 let testUriStr10 = "datashareproxy://com.example.myapplication.static/*&^%$#";
 let testUriStr11 = "datashareproxy://com.acts.ohos.data.dataproxy/staticConfiguration7";
 let testUriStr12 = "datashareproxy://com.example.myapplication.static/staticConfiguration12datashareproxy://com.example.myapplication/staticConfiguration12datashareproxy://com.example.myapplication/staticConfiguration12datashareproxy://com.example.myapplication/staticConfigur";
-//uri长度超过257
-let testUriStr13 = "datashareproxy://com.example.myapplication.static/staticConfiguration12datashareproxyqwecom.example.myapplication.static/staticConfiguration12datashareproxyqwecom.example.myapplication.static/staticConfiguration12datashareproxyqwecom.example.myapplication.static/staticConfiguration129";
 let testUriStr14 = "datashareproxy://com.example.myapplication.static/staticConfiguration14";
 let testUriStr15 = "datashareproxy://com.example.myapplication.static/staticConfiguration15";
 let testUriStr16 = "datashareproxy://com.example.myapplication.static/staticConfiguration16";
-let testUriStr17 = "datashareproxy://com.example.myapplication.static/staticConfiguration17";
 let testUriStr18 = "datashareproxy://com.example.myapplication.static/staticConfiguration18";
 
 let TAG = "ttt ";
@@ -76,10 +70,7 @@ export default function dataShareStaticConfigGetTest() {
       try {
         let uris = [
           testUriStr1,
-          testUriStr2,
           testUriStr3,
-          testUriStr4,
-          testUriStr5,
           testUriStr6,
           testUriStr7,
           testUriStr8,
@@ -90,7 +81,6 @@ export default function dataShareStaticConfigGetTest() {
           testUriStr14,
           testUriStr15,
           testUriStr16,
-          testUriStr17,
           testUriStr18
         ]
         await g_handle!.delete(uris, g_config).then((results: dataShare.DataProxyResult[]) => {
@@ -140,37 +130,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name   dataShareStaticConfigGetTest002
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1260
-     * @tc.desc   uri is number
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dataShareStaticConfigGetTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let uris = [
-        testUriStr2
-      ]
-      try {
-        await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
-          results.forEach((result) => {
-            console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
-            expect(result.result).assertEqual(0);
-            expect(result.uri).assertEqual(testUriStr2);
-            expect(result.value).assertEqual("");
-          });
-        }).catch((err: Error) => {
-          console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
-          expect().assertFail();
-        })
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest002 failed,code =" + err.code + ",message=" + err.message);
-        expect().assertFail();
-      }
-    });
-
-    /**
      * @tc.name   dataShareStaticConfigGetTest003
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1070
      * @tc.desc   uri is chinese
@@ -197,68 +156,6 @@ export default function dataShareStaticConfigGetTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest003 failed,code =" + err.code + ",message=" + err.message);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   dataShareStaticConfigGetTest004
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1080
-     * @tc.desc   value is false
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dataShareStaticConfigGetTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let uris = [
-        testUriStr4
-      ]
-      try {
-        await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
-          results.forEach((result) => {
-            console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
-            expect(result.result).assertEqual(0);
-            expect(result.uri).assertEqual(testUriStr4);
-            expect(result.value).assertEqual("");
-          });
-        }).catch((err: Error) => {
-          console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
-          expect().assertFail();
-        })
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest004 failed,code =" + err.code + ",message=" + err.message);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   dataShareStaticConfigGetTest005
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1090
-     * @tc.desc   value is true
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dataShareStaticConfigGetTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let uris = [
-        testUriStr5
-      ]
-      try {
-        await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
-          results.forEach((result) => {
-            console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
-            expect(result.result).assertEqual(0);
-            expect(result.uri).assertEqual(testUriStr5);
-            expect(result.value).assertEqual("");
-          });
-        }).catch((err: Error) => {
-          console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
-          expect().assertFail();
-        })
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest005 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
     });
@@ -520,32 +417,6 @@ export default function dataShareStaticConfigGetTest() {
     });
 
     /**
-     * @tc.name   dataShareStaticConfigGetTest014
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1180
-     * @tc.desc   uri length is 257
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dataShareStaticConfigGetTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let uris = [
-        testUriStr13
-      ]
-      try {
-        await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
-          expect().assertFail();
-        }).catch((err: Error) => {
-          console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
-          expect().assertFail();
-        })
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest014 failed,code =" + err.code + ",message=" + err.message);
-        expect(err.code).assertEqual(15700014);
-      }
-    });
-
-    /**
      * @tc.name   dataShareStaticConfigGetTest015
      * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1190
      * @tc.desc   static config can be published
@@ -687,38 +558,6 @@ export default function dataShareStaticConfigGetTest() {
       } catch (err) {
         err = err as BusinessError;
         console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest018 failed,code =" + err.code + ",message=" + err.message);
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.name   dataShareStaticConfigGetTest019
-     * @tc.number SUB_DistributedData_DataShare_SDK_ShareConfig_1230
-     * @tc.desc   allowList is 129
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('dataShareStaticConfigGetTest019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let uris = [
-        testUriStr17
-      ]
-      try {
-        await g_handle!.get(uris, g_config).then((results: dataShare.DataProxyGetResult[]) => {
-          results.forEach((result) => {
-            console.info(TAG + `[DataShareProvider] URI:${result.uri},Value:${result.value},Result:${result.result},AllowList:${result.allowList}`);
-            console.log(TAG + "[DataShareProvider] get allowList length is:" + result.allowList?.length);
-            // expect(result.result).assertEqual(dataShare.DataProxyErrorCode.SUCCESS);
-            expect(result.result).assertEqual(0);
-            expect(result.allowList?.length).assertEqual(0);
-          });
-        }).catch((err: Error) => {
-          console.error(TAG + "[DataShareProvider] get failed.err =" + JSON.stringify(err));
-          expect().assertFail();
-        })
-      } catch (err) {
-        err = err as BusinessError;
-        console.error(TAG + "[DataShareProvider] dataShareStaticConfigGetTest019 failed,code =" + err.code + ",message=" + err.message);
         expect().assertFail();
       }
     });

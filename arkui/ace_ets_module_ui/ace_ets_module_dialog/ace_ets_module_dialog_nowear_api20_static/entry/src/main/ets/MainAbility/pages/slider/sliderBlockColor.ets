@@ -19,7 +19,6 @@ import {
   Text,
   Column,
   Component,
-  Color,
   Slider,
   Builder,
   Row,

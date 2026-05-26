@@ -34,7 +34,6 @@ import {
   Select,
   $r,
   FontStyle,
-  Color,
   ArrowPosition,
   Resource,
   Font,

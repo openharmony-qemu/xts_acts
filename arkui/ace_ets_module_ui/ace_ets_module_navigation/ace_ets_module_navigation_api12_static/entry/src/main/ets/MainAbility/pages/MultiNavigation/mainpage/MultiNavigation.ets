@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
   FontWeight,PopInfo,Margin,Swiper,ForEach,BuilderParam, NavPathInfo, NavigationInterception,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
@@ -44,7 +44,7 @@ let that: MultiNavigation;
 @Component
 export struct MultiNavigation {
   @State multiStack: MultiNavPathStack = new MultiNavPathStack();
-  @BuilderParam navDestination: (name: string, param?: object) => void = this.navDestination;
+  @BuilderParam navDestination: (name: string, param?: object) => void = this.MultiNavDestination;
   onHomeShowInTop?: (name: string) => void;
   private foldStatusCallback: Callback<display.FoldStatus> = (data: display.FoldStatus) => {
     hilog.info(0x0000, 'MultiNavigation', 'foldStatusCallback data.valueOf()=' + data.valueOf());

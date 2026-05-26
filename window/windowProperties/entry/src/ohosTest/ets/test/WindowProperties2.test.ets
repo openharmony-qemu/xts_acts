@@ -2795,6 +2795,7 @@ export default function windowPropertiesTest2() {
     it('testOnOcclusionStatewithMainWindowandSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOnOcclusionStatewithMainWindowandSubwindow ';
       console.log(caseName + 'begin');
+      
       let isSupported = canIUse("SystemCapability.Window.SessionManager");
       console.info(caseName + ' isSupported SystemCapability.Window.SessionManager: ' + JSON.stringify(isSupported));
       let subWindow: window.Window | undefined;

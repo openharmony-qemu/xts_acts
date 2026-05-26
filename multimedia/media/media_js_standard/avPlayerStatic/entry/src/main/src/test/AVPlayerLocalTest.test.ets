@@ -1595,6 +1595,14 @@ async function timedMetaDataON(avPlayer: media.AVPlayer | undefined, done: () =>
       if (metaData.contents) {
         console.info('onTimedMetaData contents: ' + JSON.stringify(metaData.contents));
       }
+       if (typeof (metaData.id) !== 'undefined') {
+        console.info('onTimedMetaData id: ' + metaData.id);
+        expect(typeof metaData.id === 'string').assertTrue();
+      }
+      if (typeof (metaData.classify) !== 'undefined') {
+        console.info('onTimedMetaData classify: ' + metaData.classify);
+        expect(typeof metaData.classify === 'string').assertTrue();
+      }
       avPlayer!.offTimedMetaData();
     } else {
       console.info('onTimedMetaData info is null');
@@ -2159,5 +2167,87 @@ export default function AVPlayerLocalTest() {
           testTimedMetaDataListening(fileDescriptor!, avPlayer, done);
         }
       });
+    
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100
+    * @tc.desc   Test stop() in IDLE state - error code 5400102
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 begin');
+      avPlayer = await media.createAVPlayer();
+      let currentState = avPlayer!.state;
+      console.info(TAG, 'Initial state: ' + currentState);
+      expect(currentState).assertEqual(IDLE);
+      await avPlayer!.stop().then(() => {
+        console.info(TAG, 'stop() should not succeed in IDLE state');
+        expect().assertFail();
+      }).catch((err: Error) => {
+        console.info(TAG, 'stop() failed with error code: ' + err.code);
+        expect(err.code).assertEqual(5400102);
+      });
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_STOP_static_0100 end');
+      done();
+    });
+
+    /**
+    * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
+    * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100
+    * @tc.desc   Test reset() in RELEASED state - error code 5400102
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 begin');
+      let testName = 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100';
+      avPlayer = await media.createAVPlayer();
+      let surfaceID: string = globalThis.value;
+      avPlayer!.onStateChange((state: media.AVPlayerState) => {
+        console.info(TAG, testName + 'state changed to: ' + state);
+        switch (state) {
+          case INITIALIZED:
+            if (!avPlayer) {
+              console.info(`avPlayer is null`);
+              break;
+            }
+            console.info(`case INITIALIZED`);
+            avPlayer!!.surfaceId = surfaceID;
+            expect(avPlayer!!.state).assertEqual(INITIALIZED);
+            avPlayer!.prepare().then(() => {
+              console.info(TAG, testName + 'prepare Succeeded');
+            }).catch((err: Error) => {
+              console.error(TAG, testName + 'prepare failed, error: ' + err!.message);
+            });
+            break;
+          case PREPARED:
+            console.info('case PREPARED');
+            avPlayer!.release().then(() => {
+              console.info(TAG, testName + 'Release Succeeded')
+            }).catch((err: Error) => {
+              console.error(TAG, testName + 'Release failed, error: ' + err!.message);
+            });
+            break;
+          case RELEASED:
+            console.info('case PREPARED');
+            avPlayer!.reset().then(() => {
+              console.info(TAG, testName + 'Reset Succeeded')
+              expect().assertFail();
+              done();
+            }).catch((err: Error) => {
+              let businessError = err as BusinessError;
+              console.error(TAG, testName + 'Reset failed, error code: ' + businessError.message);
+              expect(businessError.code).assertEqual(5400102);
+              done();
+            });
+            break;
+        }
+      });
+      avPlayer!.fdSrc = fileDescriptor;
+      console.info(TAG,'SUB_MULTIMEDIA_MEDIA_AVPLAYER_RESET_static_0100 end');
+    });
   })
 }

@@ -57,6 +57,7 @@ import closeMenuNullUndefinedTest from './MenuNullUndefined/closeMenu.test';
 import MenuItemNullTest from './MenuItemNullTest/MenuItemNullTest.test';
 import scrollBarTest from './MenuTest/scrollBar.test.ets';
 import maxHeightTest from './MenuTest/maxHeight.test.ets';
+import targetSpaceTest from './MenuTest/targetSpace.test.ets';
 
 export default function testsuite() {
   openMenuNullUndefinedTest();
@@ -101,4 +102,5 @@ export default function testsuite() {
   MenuItemNullTest();
   scrollBarTest();
   maxHeightTest();
+  targetSpaceTest();
 }

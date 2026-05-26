@@ -1,7 +1,22 @@
 {
   "src": [
     "MainAbility/pages/index/index",
-    "MainAbility/pages/bindSheet/sheetBorderWidth",
-    "MainAbility/pages/button/buttonMaxFontSize"
+    "MainAbility/pages/actionSheet/actionSheetMode",
+    "MainAbility/pages/actionSheet/index",
+    "MainAbility/pages/actionSheet/showActionSheetMode",
+    "MainAbility/pages/bindSheet/bindSheetRadius",
+    "MainAbility/pages/buttonType/buttonTypeTest",
+    "MainAbility/pages/customDialog/customDialogKeyboardAvoidDistance",
+    "MainAbility/pages/dialog/showAlertDialogMode",
+    "MainAbility/pages/dialog/showDialogMode",
+    "MainAbility/pages/prompt/openCustomDialogMode",
+    "MainAbility/pages/prompt/promptActionKeyboardAvoidDistance",
+    "MainAbility/pages/prompt/showActionMenuMode",
+
+    "MainAbility/pages/UIContext/index",
+    "MainAbility/pages/UIContext/openCustomDialogWithCtrMode",
+    "MainAbility/pages/UIContext/overlayManager",
+    "MainAbility/pages/UIContext/presentCustomDialogMode",
+    "MainAbility/pages/UIContext/uiOpenCustomDialogMode"
   ]
 }

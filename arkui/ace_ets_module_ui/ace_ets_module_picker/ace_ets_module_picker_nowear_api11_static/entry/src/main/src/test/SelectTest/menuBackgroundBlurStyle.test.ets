@@ -37,7 +37,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';

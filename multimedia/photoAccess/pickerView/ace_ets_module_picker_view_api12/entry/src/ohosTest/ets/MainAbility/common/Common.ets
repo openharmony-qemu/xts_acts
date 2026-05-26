@@ -7,7 +7,8 @@ export enum EventType {
   SELECT_CLICKTYPE,
   RECENT_PHOTO_INFO,
   VIDEO_PLAY_STATE,
-  ITEM_CLICKED_NOTIFY
+  ITEM_CLICKED_NOTIFY,
+  COMPLETED_RESULT
 }
 
 export default class CommonFunc {

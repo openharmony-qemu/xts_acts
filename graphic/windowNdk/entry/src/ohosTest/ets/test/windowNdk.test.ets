@@ -2150,11 +2150,11 @@ export default function windowNdk() {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`${caseName} windowId: ${windowId}`);
-          let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${Result}`);
-          expect(Result).assertEqual(0);
-
+          
           if (isSupport === true){
+            let Result: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${Result}`);
+            expect(Result).assertEqual(0);
             windowStage.setCustomDensity(2.0,true);
             await sleep(500);
             let CB_count = windowNdkTest.getFrameMetricsCBCount();
@@ -2172,12 +2172,12 @@ export default function windowNdk() {
 
             await sleep(500);
             windowStage.setCustomDensity(-1.0);
+            let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${ResultOff}`);
+            expect(ResultOff).assertEqual(0);
           }
-          
-          let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${ResultOff}`);
-          expect(ResultOff).assertEqual(0);
           done()
+          
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
           expect(false).assertTrue();
@@ -2204,13 +2204,13 @@ export default function windowNdk() {
           let windowClass = windowStage.getMainWindowSync();
           let windowId = windowClass.getWindowProperties().id;
           console.info(`${caseName} windowId: ${windowId}`);
-          let ResultOn: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
-          await sleep(500);
-          let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
-          console.info(`${caseName} Result: ${ResultOff}`);
-          expect(ResultOff).assertEqual(0);
           
           if (isSupport === true){
+            let ResultOn: number = windowNdkTest.registerFrameMetricsMeasuredCallback(windowId);
+            await sleep(500);
+            let ResultOff: number = windowNdkTest.unregisterFrameMetricsMeasuredCallback(windowId);
+            console.info(`${caseName} Result: ${ResultOff}`);
+            expect(ResultOff).assertEqual(0);
             windowStage.setCustomDensity(2.0,true);
             await sleep(500);
             let CB_count = windowNdkTest.getFrameMetricsCBCount();
@@ -2440,11 +2440,18 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_IsFirstDrawFrame_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsIsFirstDrawFrameOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} isFirstDrawFrame: ${okResult.isFirstDrawFrame}`);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsIsFirstDrawFrameOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} isFirstDrawFrame: ${okResult.isFirstDrawFrame}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+          }
           
-          expect(okResult.resultCode).assertEqual(0);
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2466,12 +2473,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetInputHandlingDuration_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetInputHandlingDurationOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} duration: ${okResult.duration}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.duration).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetInputHandlingDurationOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} duration: ${okResult.duration}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.duration).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2493,12 +2507,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} duration: ${okResult.duration}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.duration).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetLayoutMeasureDurationOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} duration: ${okResult.duration}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.duration).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));
@@ -2520,12 +2541,19 @@ export default function windowNdk() {
         let caseName = 'test_OH_WindowManager_FrameMetrics_GetVsyncTimestamp_OK_0100';
         try {
           console.info(`${caseName} start`);
-          let okResult = windowNdkTest.testFrameMetricsGetVsyncTimestampOK();
-          console.info(`${caseName} resultCode: ${okResult.resultCode}`);
-          console.info(`${caseName} timestamp: ${okResult.timestamp}`);
-          
-          expect(okResult.resultCode).assertEqual(0);
-          expect(okResult.timestamp).assertLargerOrEqual(0);
+
+          let isSupport = canIUse('SystemCapability.Window.SessionManager')
+          console.info(`${caseName} isSupport: ${isSupport}`);
+
+          if(isSupport){
+            let okResult = windowNdkTest.testFrameMetricsGetVsyncTimestampOK();
+            console.info(`${caseName} resultCode: ${okResult.resultCode}`);
+            console.info(`${caseName} timestamp: ${okResult.timestamp}`);
+            
+            expect(okResult.resultCode).assertEqual(0);
+            expect(okResult.timestamp).assertLargerOrEqual(0);
+          }
+
           done()
         } catch (err) {
           console.error(`${caseName} catch err: ` + JSON.stringify(err));

@@ -16,49 +16,49 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000005,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000005,
         "KHR-GLES3.shaders.struct",
         ".local.basic_equal_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000006,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000006,
         "KHR-GLES3.shaders.struct.",
         "local.basic_equal_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000007,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000007,
         "KHR-GLES3.shaders.struct.l",
         "ocal.basic_not_equal_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000008,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000008,
         "KHR-GLES3.shaders.struct.lo",
         "cal.basic_not_equal_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000009,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000009,
         "KHR-GLES3.shaders.struct.",
         "local.nested_equal_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000010,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000010,
         "KHR-GLES3.shaders.struct.l",
         "ocal.nested_equal_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000011,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000011,
         "KHR-GLES3.shaders.struct.lo",
         "cal.nested_not_equal_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000012,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000012,
         "KHR-GLES3.shaders.struct.loc",
         "al.nested_not_equal_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000013,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000013,
         "KHR-GLES3.shaders.struct.loca",
         "l.array_member_equality_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000014,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000014,
         "KHR-GLES3.shaders.struct.local",
         ".array_member_equality_fragment");

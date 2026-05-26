@@ -17,8 +17,8 @@
 #define SRC_FUNCTIONALEXT_SUPPLEMENT_LDSO_H_H
 
 int AGnuUnwindFindExidxTest();
-int DlIteratePhdrTest();
 int DladdrTest();
-
+int DlIteratePhdrTest();
 int DlIteratePhdrTestCompat();
+
 #endif // SRC_FUNCTIONALEXT_SUPPLEMENT_LDSO_H_H

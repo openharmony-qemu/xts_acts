@@ -57,15 +57,16 @@ export default function abilityTest() {
                     });
                 await Utils.msSleep(5000);
                 let driver = Driver.create();
-                let permissionButton: Component | null = null;
+                let permissionButton1: Component | null = null;
+                let permissionButton2: Component | null = null;
                 hilog.info(domain, tag, '%{public}s', '  beforeAll waitForComponent');
                 for (let i = 0; i < 4; i++) {
-                    permissionButton = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
-                    if (permissionButton != null) {
-                        await permissionButton.click();
-                        console.info('  after permissionButton.click ');
-                        await Utils.msSleep(1000); // 等待下一个权限请求弹窗出现
-                    }
+                    permissionButton1 = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 5000);
+                    permissionButton2 = await driver.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 5000);
+                    await permissionButton1?.click();
+                    await permissionButton2?.click();
+                    console.info('  after permissionButton.click ');
+                    await Utils.msSleep(1000); // 等待下一个权限请求弹窗出现
                 }
 
                 await Utils.msSleep(2000);

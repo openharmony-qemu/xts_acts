@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Utils, { BasePageConfig, TestValue,PageConfig,TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
+import Utils, { BasePageConfig, PageConfig,TestValue, RectValue } from '../../../ets/MainAbility/common/Utils';
 import CommonTest, { CallbackWithReturn } from '../common/CommonTest';
 import { describe, expect, beforeAll } from '../../../../hypium/index';
 import { AlignRuleOption, VerticalAlign, HorizontalAlign,focusControl } from '@ohos.arkui.component';

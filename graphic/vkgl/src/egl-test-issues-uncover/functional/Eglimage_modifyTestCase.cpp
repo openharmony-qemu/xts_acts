@@ -16,21 +16,21 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../EglBaseFunc.h"
-#include "../ActsEgl0001TestSuite.h"
+#include "../ActsEglTestIssuesUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000017,
+static SHRINK_HWTEST_F(ActsEglTestIssuesUncover0001TestSuite, TestCase_000017,
         "dEQP-EGL.functional.image.modi",
         "fy.*_rgb5_a1_tex_subimage_rgba8");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000019,
+static SHRINK_HWTEST_F(ActsEglTestIssuesUncover0001TestSuite, TestCase_000019,
         "dEQP-EGL.functional.image.modify.",
         "tex_rgba4_renderbuffer_clear_color");
 
-static SHRINK_HWTEST_F(ActsEgl0001TestSuite, TestCase_000020,
+static SHRINK_HWTEST_F(ActsEglTestIssuesUncover0001TestSuite, TestCase_000020,
         "dEQP-EGL.functional.image.modify.rende",
         "rbuffer_rgba4_renderbuffer_clear_color");

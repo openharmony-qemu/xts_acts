@@ -14,9 +14,21 @@
  */
 import SecurityCryptoFwPriKeyToPubKeyTestUnit from "./SecurityCryptoFwPriKeyGetPubKey.test";
 import SecurityCryptoFwReinforcementTestUnit from "./SecurityCryptoFwReinforcementOfString.test";
+import SecurityCryptoFwMLKeyGenTestUnit from "./SecurityCryptoFwMLKeyGen.test";
+import SecurityCryptoFwMLKeyConvertTestUnit from "./SecurityCryptoFwMLKeyConvert.test";
+import SecurityCryptoFwMLConvertErrorTestUnit from "./SecurityCryptoFwMLConvertError.test";
+import SecurityCryptoFwMLKeyEncodeTestUnit from "./SecurityCryptoFwMLKeyEncode.test";
+import SecurityCryptoMLEncapAndDecapTestUnit from "./SecurityCryptoMLEncapAndDecap.test";
+import SecurityCryptoMLSignVerifyTestUnit from "./SecurityCryptoMLSignVerify.test";
 
 
 export default function testsuite() {
   SecurityCryptoFwPriKeyToPubKeyTestUnit();
   SecurityCryptoFwReinforcementTestUnit();
+  SecurityCryptoFwMLKeyGenTestUnit();
+  SecurityCryptoFwMLKeyConvertTestUnit();
+  SecurityCryptoFwMLConvertErrorTestUnit();
+  SecurityCryptoFwMLKeyEncodeTestUnit();
+  SecurityCryptoMLEncapAndDecapTestUnit();
+  SecurityCryptoMLSignVerifyTestUnit();
 }

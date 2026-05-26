@@ -19,12 +19,16 @@ import uitestOnTest from './UitestOn.test';
 import uitestUiWindowTest from './UitestUiWindow.test';
 import uitestTest_api22 from './UitestApi22.test';
 import api20Test from './UitestApi20.test'
-export default function testsuite() {
+import uitestOnApi26Test from './UiTestOnApi26.test'
+import uitestApi26Test from './UiTestApi26.test'
+export default function testsuite(): void {
+  uitestApi26Test();
+  uitestOnApi26Test();
   uitestTest_api22();
   api20Test();
   uitestEnumTest();
   uitestComponentTest();
   uitestDriverTest();
   uitestOnTest();
-  uitestUiWindowTest()
+  uitestUiWindowTest();
 }

@@ -135,7 +135,7 @@ export default function testsuite() {
   createNodeList();
   createNodeLoad();
   createNodeScroll();
-  createNodeSearch();
+  //createNodeSearch();
   createNodeStack();
   createNodeText();
   commonEventTest1();

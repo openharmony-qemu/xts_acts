@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,NavPathInfo,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,NavPathInfo,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
   FontWeight,NavigationOperation,Margin,Swiper,ForEach,NavDestinationContext, PopInfo,CalendarAlign, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment

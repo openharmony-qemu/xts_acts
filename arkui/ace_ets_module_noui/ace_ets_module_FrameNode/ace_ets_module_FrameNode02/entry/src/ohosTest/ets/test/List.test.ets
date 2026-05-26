@@ -32,6 +32,7 @@ import createFrameNodesUIContextIntTest from './frameNodeTest/createFrameNodesUI
 import GetFrameNodeByIdTest from './frameNodeTest/GetFrameNodeById.test';
 import GetFrameNodeByUniqueIdTest from './frameNodeTest/GetFrameNodeByUniqueId.test';
 import LazyForEachReleaseStrategyTest from './frameNodeTest/LazyForEachReleaseStrategy.test';
+import FrameNodeProvideChildTest from './frameNodeTest/FrameNodeProvideChildTest.test';
 
 export default function testsuite() {
   APIsetOnclickTest();
@@ -54,4 +55,5 @@ export default function testsuite() {
   GetFrameNodeByIdTest()
   GetFrameNodeByUniqueIdTest()
   LazyForEachReleaseStrategyTest()
+  FrameNodeProvideChildTest()
 }

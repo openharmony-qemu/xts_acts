@@ -133,7 +133,7 @@ interface BaseI129 {
     b: number
 }
 
-export default function ArrayFilterTest() {
+export default function ArrayFilterTest(): void {
   describe('ArrayFilterTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

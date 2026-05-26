@@ -15,7 +15,7 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-export default function builtinsShortBoxConstructorText() {
+export default function builtinsShortBoxConstructorText(): void {
   describe("builtinsShortBoxConstructorText", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

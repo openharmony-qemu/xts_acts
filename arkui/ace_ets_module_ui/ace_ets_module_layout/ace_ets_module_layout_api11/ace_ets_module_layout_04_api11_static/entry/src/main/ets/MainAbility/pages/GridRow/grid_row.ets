@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Flex, FlexDirection, ItemAlign, GridRowDirection, FlexAlign, Text, GridRow, Alignment, TextAlign, TextOverflow, GridCol } from '@ohos.arkui.component'
+import { Entry, Component, Flex, FlexDirection, ItemAlign, GridRowDirection, FlexAlign, Column, Text, GridRow, Alignment, TextAlign, TextOverflow, GridCol } from '@ohos.arkui.component'
 import Log from '../../common/Log';
 
 const TAG = 'ets_apiLack_add';
@@ -46,7 +46,7 @@ struct Grid_rowOnBreakpointChange {
         .textOverflow({ overflow: TextOverflow.None })
         .key("onBreakpointChangeText")
 
-      GridCol({ span: 1 }) {
+      Column() {
         GridRow({ gutter: 10, columns: 50, direction: GridRowDirection.Row }) {
         }
         .key("GridRow")

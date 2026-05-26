@@ -732,7 +732,9 @@ export default function GraphicImagePixelMapAPI2603() {
         try {
           let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ',pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
@@ -795,7 +797,9 @@ export default function GraphicImagePixelMapAPI2603() {
         try {
           let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ',pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(typeof pixelMap.isStrideAlignment).assertEqual('boolean');
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');

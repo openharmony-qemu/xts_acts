@@ -38,6 +38,9 @@
 #include "unicode/uchar.h"
 #include "i18n/timezone.h"
 #include "i18n/errorcode.h"
+#include "unicode/ucnv_err.h"
+#include "unicode/ucnv.h"
+
 
 const static int32_t PREV_RAW_OFFSET = 28800000;
 
@@ -3366,6 +3369,204 @@ static napi_value testOH_i18n_GetTimeZoneRules_2800(napi_env env, napi_callback_
     return nValue;
 }
 
+static napi_value testUCNV_FROM_U_CALLBACK_SUBSTITUTE(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("GBK", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterFromUCallback oldAction = nullptr;
+    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_SUBSTITUTE, nullptr, &oldAction, &oldContext, &err);
+    UChar subst[] = u"*";
+    ucnv_setSubstString(conv, subst, 1, &err);
+    UChar src[] = u"Hello 你好 World 世界";
+    int32_t srcLen = sizeof(src) / sizeof(UChar);
+    char dest[100] = {0};
+    char* target = dest;
+    const char* targetLimit = dest + sizeof(dest);
+    const UChar* source = src;
+    ucnv_fromUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = U_SUCCESS(err);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_FROM_U_CALLBACK_STOP(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("GBK", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterFromUCallback oldAction = nullptr;
+    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_STOP, nullptr, &oldAction, &oldContext, &err);
+    UChar src[] = {0x0061, 0xD800, 0x0062};
+    int32_t srcLen = sizeof(src) / sizeof(UChar);
+    char dest[100] = {0};
+    char* target = dest;
+    const char* targetLimit = dest + sizeof(dest);
+    const UChar* source = src;
+    ucnv_fromUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = err == U_ILLEGAL_CHAR_FOUND;
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_TO_U_CALLBACK_STOP(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("GBK", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterToUCallback oldAction = nullptr;
+    ucnv_setToUCallBack(conv, UCNV_TO_U_CALLBACK_STOP, nullptr, &oldAction, &oldContext, &err);
+    const char src[] = "\x61\x81\x2E\x62";
+    int32_t srcLen = 4;
+    UChar dest[100] = {0};
+    UChar* target = dest;
+    const UChar* targetLimit = dest + sizeof(dest) / sizeof(UChar);
+    const char* source = src;
+    ucnv_toUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = (err == U_ILLEGAL_CHAR_FOUND);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_FROM_U_CALLBACK_SKIP(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("GBK", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterFromUCallback oldAction = nullptr;
+    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_SKIP, nullptr, &oldAction, &oldContext, &err);
+    UChar src[] = {0x0061, 0xd801, 0xdc01, 0x0062};
+    int32_t srcLen = sizeof(src) / sizeof(UChar);
+    char dest[100] = {0};
+    char* target = dest;
+    const char* targetLimit = dest + sizeof(dest);
+    const UChar* source = src;
+    ucnv_fromUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = U_SUCCESS(err) && (target - dest == 2);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_TO_U_CALLBACK_SKIP(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("GBK", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterToUCallback oldAction = nullptr;
+    ucnv_setToUCallBack(conv, UCNV_TO_U_CALLBACK_SKIP, nullptr, &oldAction, &oldContext, &err);
+    const char src[] = "\x61\x81\x2E\x62";
+    int32_t srcLen = 4;
+    UChar dest[100] = {0};
+    UChar* target = dest;
+    const UChar* targetLimit = dest + sizeof(dest) / sizeof(UChar);
+    const char* source = src;
+    ucnv_toUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = U_SUCCESS(err);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_TO_U_CALLBACK_SUBSTITUTE(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("UTF-8", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterToUCallback oldAction = nullptr;
+    ucnv_setToUCallBack(conv, UCNV_TO_U_CALLBACK_SUBSTITUTE, nullptr, &oldAction, &oldContext, &err);
+    const char src[] = "\x61\x7f\x62";
+    int32_t srcLen = 3;
+    UChar dest[100] = {0};
+    UChar* target = dest;
+    const UChar* targetLimit = dest + sizeof(dest) / sizeof(UChar);
+    const char* source = src;
+    ucnv_toUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = U_SUCCESS(err);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
+static napi_value testUCNV_FROM_U_CALLBACK_ESCAPE(napi_env env, napi_callback_info info)
+{
+    UErrorCode err = U_ZERO_ERROR;
+    UConverter* conv = ucnv_open("ibm-943", &err);
+    if (U_FAILURE(err)) {
+        printf("Failed to open converter");
+        return nullptr;
+    }
+    const void* oldContext = nullptr;
+    UConverterFromUCallback oldAction = nullptr;
+    ucnv_setFromUCallBack(conv, UCNV_FROM_U_CALLBACK_ESCAPE, UCNV_ESCAPE_C, &oldAction, &oldContext, &err);
+    UChar src[] = {0x0061, 0xd801, 0xdc01, 0x0062};
+    int32_t srcLen = sizeof(src) / sizeof(UChar);
+    char dest[200] = {0};
+    char* target = dest;
+    const char* targetLimit = dest + sizeof(dest);
+    const UChar* source = src;
+    ucnv_fromUnicode(conv, &target, targetLimit, &source, src + srcLen, nullptr, true, &err);
+    bool flag = U_SUCCESS(err);
+    napi_value nValue;
+    napi_status nStatus = napi_get_boolean(env, flag, &nValue);
+    if (nStatus != napi_ok) {
+        return nullptr;
+    }
+    ucnv_close(conv);
+    return nValue;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3782,6 +3983,20 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"testOH_i18n_GetTimeZoneRules_2800", nullptr, testOH_i18n_GetTimeZoneRules_2800, nullptr, nullptr, nullptr,
          napi_default, nullptr},
+        {"testUCNV_FROM_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_FROM_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testUCNV_FROM_U_CALLBACK_STOP", nullptr, testUCNV_FROM_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testUCNV_TO_U_CALLBACK_STOP", nullptr, testUCNV_TO_U_CALLBACK_STOP, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testUCNV_FROM_U_CALLBACK_SKIP", nullptr, testUCNV_FROM_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testUCNV_TO_U_CALLBACK_SKIP", nullptr, testUCNV_TO_U_CALLBACK_SKIP, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testUCNV_TO_U_CALLBACK_SUBSTITUTE", nullptr, testUCNV_TO_U_CALLBACK_SUBSTITUTE, nullptr, nullptr,
+         nullptr, napi_default, nullptr},
+        {"testUCNV_FROM_U_CALLBACK_ESCAPE", nullptr, testUCNV_FROM_U_CALLBACK_ESCAPE, nullptr, nullptr, nullptr,
+         napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

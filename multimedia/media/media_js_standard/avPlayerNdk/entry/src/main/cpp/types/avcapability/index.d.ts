@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 export const AVCapabilityIsSupportedHEVC: () => number;
+export const AVCapabilityIsSupportedHEVCEncoder: () => number;
 export const AVCapabilityIsSupportedH263: () => number;
 export const AVCapabilityIsSupportedMPEG2: () => number;
 export const AVCapabilityIsSupportedMPEG4: () => number;

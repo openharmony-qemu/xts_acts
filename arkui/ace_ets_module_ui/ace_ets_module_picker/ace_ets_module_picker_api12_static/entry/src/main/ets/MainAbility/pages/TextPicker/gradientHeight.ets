@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, Row, Toggle,  Text, TextPicker, Color, FontWeight } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, Toggle, Text, TextPicker, Color, FontWeight } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry

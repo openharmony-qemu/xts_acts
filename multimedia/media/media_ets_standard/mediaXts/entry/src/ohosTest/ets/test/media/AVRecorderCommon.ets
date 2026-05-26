@@ -58,10 +58,12 @@ export default class AVRecorderCommon {
     console.info(`UiDriver start`);
     let dr = Driver.create();
     await this.msleepAsync(SLEEP_TIME_500);
-    let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+    let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500) ||
+      await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
     await this.msleepAsync(SLEEP_TIME_500);
     await power?.click();
-    let power2 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
+    let power2 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500) ||
+      await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 500);
     await power2?.click();
     await this.msleepAsync(SLEEP_TIME_500);
     console.info(`UiDriver end`);

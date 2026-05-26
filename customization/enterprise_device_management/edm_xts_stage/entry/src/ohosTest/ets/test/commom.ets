@@ -115,6 +115,8 @@ const SUBSCRIBE_INVALID_EVENTS: Array<number> = [20, 21];
 const TEST_APP_ID_1: string = "test_app_id_1";
 const TEST_APP_ID_2: string = "test_app_id_2";
 const TEST_REAL_APP_ID_1: string = "1220095211531676480";
+const TEST_REAL_APP_ID_2: string = "com.example.extensionzerotest_BNtg4JBClbl92Rgc3jm/"
+  + "RfcAdrHXaM8F0QOiwVEhnV5ebE5jNIYnAx+weFRT3QTyUjRNdhmc2aAzWyi+5t5CoBM=";
 const TEST_POLICIES: string = "test_policies";
 const TEST_POLICY_NAME: string = "test_policy_name";
 const TEST_POLICY_VALUE: string = "\"test_policy_value\"";
@@ -320,5 +322,5 @@ export {
   TEST_PERMISSION_MANAGED_STATE_DENIED, TEST_PERMISSION_MANAGED_STATE_DEFAULT, TEST_APP_INSTANCE,
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
-  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode
+  getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode, TEST_REAL_APP_ID_2
 }

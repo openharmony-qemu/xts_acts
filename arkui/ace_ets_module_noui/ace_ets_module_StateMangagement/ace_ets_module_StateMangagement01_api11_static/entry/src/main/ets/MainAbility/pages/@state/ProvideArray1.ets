@@ -85,7 +85,7 @@ struct Ancestors_AU {
         .onClick(():void => {
           this.Array1 = [10] as Array<Length>;
         })
-        .key('state5')
+        .key('ProvideArray1_state5')
         .height('5%')
 
       Text("切换变量Date类型[1]-->new Date('2021-08-08')").height('5%')
@@ -93,7 +93,7 @@ struct Ancestors_AU {
         .onClick(():void => {
           this.Array1 = new Date('2021-08-08');
         })
-        .key('state6')
+        .key('ProvideArray1_state6')
         .height('5%')
 
       Text("切换变量Array<String>类型[1]-->['20']").height('5%')
@@ -101,7 +101,7 @@ struct Ancestors_AU {
         .onClick(():void => {
           this.Array1 = ['20'] as Array<String>;
         })
-        .key('state7')
+        .key('ProvideArray1_state7')
         .height('5%')
 
       Text("切换变量Array<Object>类型[1]-->[{number: 30}]").height('5%')
@@ -109,7 +109,7 @@ struct Ancestors_AU {
         .onClick(():void => {
           this.Array1 = [{number: 30}] as Array<Num>;
         })
-        .key('state8')
+        .key('ProvideArray1_state8')
         .height('5%')
 
       Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
@@ -117,7 +117,7 @@ struct Ancestors_AU {
         .onClick(():void => {
           this.Array1 = [$r('app.string.number')] as Array<Resource>;
         })
-        .key('state9')
+        .key('ProvideArray1_state9')
         .height('5%')
 
       Child_AU()
