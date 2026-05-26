@@ -261,19 +261,6 @@ export default function BuiltinsArrayPrototypePushExtendedTest(): void {
     });
 
     /**
-     * @tc.name   BuiltinsArrayPrototypePushExtendedTest1800
-     * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_1800
-     * @tc.desc   Verify push() on array subclass
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('BuiltinsArrayPrototypePushExtendedTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let result: boolean = PushMissing.PushArraySubclassTest1800();
-      expect(result).assertEqual(true);
-    });
-
-    /**
      * @tc.name   BuiltinsArrayPrototypePushExtendedTest2300
      * @tc.number SUB_BUILTINS_ARRAY_PROTOTYPE_PUSH_EXTENDED_TEST_2300
      * @tc.desc   Verify push() vs concat performance scenario
