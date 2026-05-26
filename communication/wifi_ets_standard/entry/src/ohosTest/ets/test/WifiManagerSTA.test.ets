@@ -591,6 +591,7 @@ export default function wifiSta() {
         if (networkId >= 0) {
           await wifiMg.removeCandidateConfig(networkId);
         }
+        expect().assertFail();
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -690,6 +691,7 @@ export default function wifiSta() {
         if (networkId >= 0) {
           await wifiMg.removeCandidateConfig(networkId);
         }
+        expect().assertFail();
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
@@ -786,6 +788,7 @@ export default function wifiSta() {
         if (networkId >= 0) {
           await wifiMg.removeCandidateConfig(networkId);
         }
+        expect().assertFail();
       } catch (err) {
         console.error(`${caseName} failed: ${JSON.stringify(err)}, code: ${err.code}, message: ${err.message}`);
         if (err.code === 801) {
