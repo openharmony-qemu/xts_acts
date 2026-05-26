@@ -168,6 +168,32 @@ struct injectOfflineResourcesTest {
               }
               break;
             }
+            case "testInjectOfflineResources007": {
+              let msg = "testInjectOfflineResources007"
+              try {
+                this.controller.injectOfflineResources(await getData([]));
+                Utils.emitEvent(true, 148407)
+              } catch (err) {
+                console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
+                Utils.emitEvent(err.code, 148407)
+              }
+              break;
+            }
+            case "testInjectOfflineResources008": {
+              let msg = "testInjectOfflineResources008"
+              try {
+                let resourceMaps = await getData();
+                for (let resourceMap of resourceMaps) {
+                  resourceMap.responseHeaders = [];
+                }
+                this.controller.injectOfflineResources(resourceMaps);
+                Utils.emitEvent(true, 148408)
+              } catch (err) {
+                console.error(msg + 'injectOfflineResources error: ' + err.code + ' message ' + err.message);
+                Utils.emitEvent(err.code, 148408)
+              }
+              break;
+            }
           }
         })
       }
