@@ -17,86 +17,111 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-// All test classes extracted here with numbered suffixes
-
-class StaticMethodEqualsSingleTestClass001 {
-  public static test(): void {}
-}
-
-class StaticMethodEqualsTwoDistinctStaticClass002 {
-  public static method1(): void {}
-  public static method2(): void {}
-}
-
-class StaticMethodEqualsCrossAClass003 {
-  public static test(): void {}
-}
-
-class StaticMethodEqualsCrossBClass003 {
-  public static test(): void {}
-}
-
-class StaticMethodEqualsOverloadParamClass004 {
-  public static test(value: int): void {}
-  public static test(value: string): void {}
-}
-
-class StaticMethodEqualsOverloadArityClass005 {
-  public static test(): void {}
-  public static test(value: int): void {}
-}
-
-class StaticMethodEqualsDifferentReturnClass006 {
-  public static testReturnString(): string {
-    return '';
-  }
-  public static testReturnInt(): int {
-    return 0;
+class SingleTestClass001 {
+  public static sayHello(name: string): string {
+    return 'Hello ' + name;
   }
 }
 
-class StaticMethodEqualsSyncAsyncClass007 {
-  public static syncMethod(): void {}
-  public static async asyncMethod(): Promise<void> {
+class TwoDistinctStaticClass002 {
+  public static add(a: int, b: int): int {
+    return a + b;
+  }
+  public static concat(x: string, y: string): string {
+    return x + y;
   }
 }
 
-abstract class StaticMethodEqualsAbstractTargetClass008 {
-  public static test(): void {}
-}
-
-final class StaticMethodEqualsFinalTargetClass009 {
-  public static test(): void {}
-}
-
-class StaticMethodEqualsGetterSetterClass010 {
-  private static _userName: string = '';
-  public static get userName(): string {
-    return StaticMethodEqualsGetterSetterClass010._userName;
-  }
-  public static set userName(value: string) {
-    StaticMethodEqualsGetterSetterClass010._userName = value;
+class CrossAClass003 {
+  public static getVersion(): int {
+    return 1;
   }
 }
 
-class StaticMethodEqualsMultiMethodClass011 {
-  public static method1(): void {}
-  public static method2(): void {}
-  public static method3(): void {}
+class CrossBClass003 {
+  public static getVersion(): string {
+    return 'v1.0';
+  }
 }
 
-class StaticMethodEqualsUniqueClass012 {
-  public static test(): void {}
+class OverloadParamClass004 {
+  public static format(value: int): string {
+    return value.toString();
+  }
+  public static format(value: boolean): int {
+    return value ? 1 : 0;
+  }
 }
 
-class StaticMethodEqualsSetClassA013 {
-  public static commonMethod(): void {}
-  public static methodA(): void {}
+class OverloadArityClass005 {
+  public static greet(): string {
+    return 'Hello';
+  }
+  public static greet(name: string): int {
+    return name.length;
+  }
 }
 
-class StaticMethodEqualsSetClassB013 {
-  public static commonMethod(): void {}
-  public static methodB(): void {}
+class DifferentReturnClass006 {
+  public static fetchName(): string {
+    return 'Alice';
+  }
+  public static fetchAge(): int {
+    return 30;
+  }
+}
+
+class SyncAsyncClass007 {
+  public static computeSync(n: int): int {
+    return n * 2;
+  }
+  public static async computeAsync(n: float): Promise<string> {
+    return n.toString();
+  }
+}
+
+abstract class AbstractTargetClass008 {
+  public static getAbstractLabel(): string {
+    return 'abstract';
+  }
+}
+
+final class FinalTargetClass009 {
+  public static getFinalId(): int {
+    return 999;
+  }
+}
+
+class GetterSetterClass010 {
+  private static _fullName: string = '';
+  public static get fullName(): string {
+    return GetterSetterClass010._fullName;
+  }
+  public static set fullName(value: string) {
+    GetterSetterClass010._fullName = value;
+  }
+}
+
+class MultiMethodClass011 {
+  public static alpha(): int { return 100; }
+  public static beta(): string { return 'beta'; }
+  public static gamma(): boolean { return false; }
+}
+
+class UniqueClass012 {
+  public static theOnly(): float {
+    return Double.toFloat(3.14);
+  }
+}
+
+class SetClassA013 {
+  public static shared(): string { return 'A'; }
+  public static extraA(): int { return 1; }
+}
+
+class SetClassB013 {
+  public static shared(): string { return 'B'; }
+  public static extraB(): boolean { return true; }
 }
 
 export default function StaticMethodEqualsTest(): void {
@@ -120,11 +145,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let method1 = cls.getStaticMethod('test');
-      let method2 = cls.getStaticMethod('test');
-      expect(method1 != undefined).assertTrue();
-      expect(method2 != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let method1 = cls.getStaticMethod('sayHello');
+      let method2 = cls.getStaticMethod('sayHello');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
       let result = method1!.equals(method2!);
       let resultType = Class.of(result).getName();
       expect(resultType).assertEqual('std.core.Boolean');
@@ -139,11 +164,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let method1 = cls.getStaticMethod('test');
-      let method2 = cls.getStaticMethod('test');
-      expect(method1 != undefined).assertTrue();
-      expect(method2 != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let method1 = cls.getStaticMethod('sayHello');
+      let method2 = cls.getStaticMethod('sayHello');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
       expect(method1!.equals(method2!)).assertTrue();
     });
 
@@ -156,11 +181,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsTwoDistinctStaticClass002>();
-      let m1 = cls.getStaticMethod('method1');
-      let m2 = cls.getStaticMethod('method2');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let cls = Class.from<TwoDistinctStaticClass002>();
+      let m1 = cls.getStaticMethod('add');
+      let m2 = cls.getStaticMethod('concat');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertFalse();
     });
 
@@ -173,12 +198,12 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsA = Class.from<StaticMethodEqualsCrossAClass003>();
-      let clsB = Class.from<StaticMethodEqualsCrossBClass003>();
-      let m1 = clsA.getStaticMethod('test');
-      let m2 = clsB.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let clsA = Class.from<CrossAClass003>();
+      let clsB = Class.from<CrossBClass003>();
+      let m1 = clsA.getStaticMethod('getVersion');
+      let m2 = clsB.getStaticMethod('getVersion');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertFalse();
     });
 
@@ -191,16 +216,15 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let method1 = cls.getStaticMethod('test');
-      let method2 = cls.getStaticMethod('test');
-      expect(method1 != undefined).assertTrue();
-      expect(method2 != undefined).assertTrue();
+      let cls = Class.from<DifferentReturnClass006>();
+      let method1 = cls.getStaticMethod('fetchName');
+      let method2 = cls.getStaticMethod('fetchName');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
       let result = method1!.equals(method2!);
       expect(result).assertTrue();
       let resultType = Class.of(result).getName();
       expect(resultType).assertEqual('std.core.Boolean');
-
     });
 
     /**
@@ -212,9 +236,9 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let method = cls.getStaticMethod('sayHello');
+      expect(method !== undefined).assertTrue();
       expect(method!.equals(method!)).assertTrue();
     });
 
@@ -227,7 +251,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsOverloadParamClass004>();
+      let cls = Class.from<OverloadParamClass004>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
       expect(methods[0].equals(methods[1])).assertFalse();
@@ -242,7 +266,7 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsOverloadArityClass005>();
+      let cls = Class.from<OverloadArityClass005>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(2);
       expect(methods[0].equals(methods[1])).assertFalse();
@@ -257,11 +281,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsDifferentReturnClass006>();
-      let m1 = cls.getStaticMethod('testReturnString');
-      let m2 = cls.getStaticMethod('testReturnInt');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let cls = Class.from<DifferentReturnClass006>();
+      let m1 = cls.getStaticMethod('fetchName');
+      let m2 = cls.getStaticMethod('fetchAge');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertFalse();
     });
 
@@ -274,11 +298,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let m1 = cls.getStaticMethod('test');
-      let m2 = cls.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let m1 = cls.getStaticMethod('sayHello');
+      let m2 = cls.getStaticMethod('sayHello');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let result1 = m1!.equals(m2!);
       let result2 = m2!.equals(m1!);
       expect(result1).assertEqual(result2);
@@ -293,13 +317,13 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let m1 = cls.getStaticMethod('test');
-      let m2 = cls.getStaticMethod('test');
-      let m3 = cls.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let m1 = cls.getStaticMethod('sayHello');
+      let m2 = cls.getStaticMethod('sayHello');
+      let m3 = cls.getStaticMethod('sayHello');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let eq12 = m1!.equals(m2!);
       let eq23 = m2!.equals(m3!);
       if (eq12 && eq23) {
@@ -317,11 +341,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let m1 = cls.getStaticMethod('test');
-      let m2 = cls.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let cls = Class.from<SingleTestClass001>();
+      let m1 = cls.getStaticMethod('sayHello');
+      let m2 = cls.getStaticMethod('sayHello');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let result1 = m1!.equals(m2!);
       let result2 = m1!.equals(m2!);
       expect(result1).assertEqual(result2);
@@ -336,11 +360,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSingleTestClass001>();
-      let method1 = cls.getStaticMethod('test');
-      let method2 = cls.getStaticMethod('test');
-      expect(method1 != undefined).assertTrue();
-      expect(method2 != undefined).assertTrue();
+      let cls = Class.from<FinalTargetClass009>();
+      let method1 = cls.getStaticMethod('getFinalId');
+      let method2 = cls.getStaticMethod('getFinalId');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
       let result = method1!.equals(method2!);
       expect(result).assertTrue();
       let resultType = Class.of(result).getName();
@@ -356,10 +380,10 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsSyncAsyncClass007>();
-      let syncMethod = cls.getStaticMethod('syncMethod');
-      let asyncMethod = cls.getStaticMethod('asyncMethod');
-      let bothDefined = syncMethod != undefined && asyncMethod != undefined;
+      let cls = Class.from<SyncAsyncClass007>();
+      let syncMethod = cls.getStaticMethod('computeSync');
+      let asyncMethod = cls.getStaticMethod('computeAsync');
+      let bothDefined = syncMethod !== undefined && asyncMethod !== undefined;
       expect(bothDefined).assertTrue();
       let result = syncMethod!.equals(asyncMethod!);
       expect(result).assertFalse();
@@ -374,11 +398,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsAbs = Class.from<StaticMethodEqualsAbstractTargetClass008>();
-      let m1 = clsAbs.getStaticMethod('test');
-      let m2 = clsAbs.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let clsAbs = Class.from<AbstractTargetClass008>();
+      let m1 = clsAbs.getStaticMethod('getAbstractLabel');
+      let m2 = clsAbs.getStaticMethod('getAbstractLabel');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertTrue();
     });
 
@@ -391,11 +415,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsFin = Class.from<StaticMethodEqualsFinalTargetClass009>();
-      let m1 = clsFin.getStaticMethod('test');
-      let m2 = clsFin.getStaticMethod('test');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      let clsFin = Class.from<FinalTargetClass009>();
+      let m1 = clsFin.getStaticMethod('getFinalId');
+      let m2 = clsFin.getStaticMethod('getFinalId');
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.equals(m2!)).assertTrue();
     });
 
@@ -408,11 +432,11 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsGetterSetterClass010>();
-      let getter1 = cls.getStaticMethod('%%get-userName');
-      let getter2 = cls.getStaticMethod('%%get-userName');
-      let setter = cls.getStaticMethod('%%set-userName');
-      let allDefined = getter1 != undefined && getter2 != undefined && setter != undefined;
+      let cls = Class.from<GetterSetterClass010>();
+      let getter1 = cls.getStaticMethod('%%get-fullName');
+      let getter2 = cls.getStaticMethod('%%get-fullName');
+      let setter = cls.getStaticMethod('%%set-fullName');
+      let allDefined = getter1 !== undefined && getter2 !== undefined && setter !== undefined;
       expect(allDefined).assertTrue();
       expect(getter1!.equals(getter2!)).assertTrue();
       expect(getter1!.equals(setter!)).assertFalse();
@@ -427,8 +451,8 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<StaticMethodEqualsMultiMethodClass011>();
-      let cls2 = Class.from<StaticMethodEqualsMultiMethodClass011>();
+      let cls1 = Class.from<MultiMethodClass011>();
+      let cls2 = Class.from<MultiMethodClass011>();
       // 注: 按索引比较依赖 getStaticMethods() 当前返回顺序
       let methods1 = cls1.getStaticMethods();
       let methods2 = cls2.getStaticMethods();
@@ -448,13 +472,13 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<StaticMethodEqualsUniqueClass012>();
-      let method1 = cls.getStaticMethod('test');
-      let method2 = cls.getStaticMethod('test');
-      let method3 = cls.getStaticMethod('test');
-      expect(method1 != undefined).assertTrue();
-      expect(method2 != undefined).assertTrue();
-      expect(method3 != undefined).assertTrue();
+      let cls = Class.from<UniqueClass012>();
+      let method1 = cls.getStaticMethod('theOnly');
+      let method2 = cls.getStaticMethod('theOnly');
+      let method3 = cls.getStaticMethod('theOnly');
+      expect(method1 !== undefined).assertTrue();
+      expect(method2 !== undefined).assertTrue();
+      expect(method3 !== undefined).assertTrue();
       let dupCount: int = 0;
       if (!method2!.equals(method1!)) {
         dupCount++;
@@ -474,8 +498,8 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clsA = Class.from<StaticMethodEqualsSetClassA013>();
-      let clsB = Class.from<StaticMethodEqualsSetClassB013>();
+      let clsA = Class.from<SetClassA013>();
+      let clsB = Class.from<SetClassB013>();
       let methodsA = clsA.getStaticMethods();
       let methodsB = clsB.getStaticMethods();
       let hit: int = 0;
@@ -488,6 +512,67 @@ export default function StaticMethodEqualsTest(): void {
         }
       }
       expect(hit).assertEqual(0);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2100
+     * @tc.name testStaticMethodEquals021
+     * @tc.desc Verify equals with methods having different parameter counts returns false
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = Class.from<OverloadArityClass005>();
+      let clsB = Class.from<SingleTestClass001>();
+      let mGreet = clsA.getStaticMethod('greet', []);
+      let mHello = clsB.getStaticMethod('sayHello');
+      expect(mGreet !== undefined).assertTrue();
+      expect(mHello !== undefined).assertTrue();
+      let result = mGreet!.equals(mHello!);
+      let resultType = Class.of(result).getName();
+      expect(resultType).assertEqual('std.core.Boolean');
+      expect(result).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2200
+     * @tc.name testStaticMethodEquals022
+     * @tc.desc Verify cross-class equals symmetry with different return types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsA = Class.from<CrossAClass003>();
+      let clsB = Class.from<CrossBClass003>();
+      let mA = clsA.getStaticMethod('getVersion');
+      let mB = clsB.getStaticMethod('getVersion');
+      expect(mA !== undefined).assertTrue();
+      expect(mB !== undefined).assertTrue();
+      let resultAB = mA!.equals(mB!);
+      let resultBA = mB!.equals(mA!);
+      expect(resultAB).assertEqual(resultBA);
+      expect(resultAB).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_EQUALS_2300
+     * @tc.name testStaticMethodEquals023
+     * @tc.desc Verify equals consistency across repeated getStaticMethod lookups
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultiMethodClass011>();
+      let methodBase = cls.getStaticMethod('alpha');
+      expect(methodBase !== undefined).assertTrue();
+      for (let i: int = 0; i < 10; i++) {
+        let methodNext = cls.getStaticMethod('alpha');
+        let eq = methodBase!.equals(methodNext!);
+        expect(eq).assertTrue();
+      }
     });
 
   });
