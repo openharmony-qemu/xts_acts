@@ -81,7 +81,7 @@ async function terminateAbility(caseName: string) {
 }
 export default function WindowLayoutTest() {
 
-    describe("WindowLayoutTest", (): void => {
+    describe("WindowLayoutTest", (): void => {.
         hilog.info(domain, tag, '%{public}s', 'WindowLayoutTest describe start');
         let windowStage: window.WindowStage | undefined;
         let win: window.Window | undefined;
@@ -3466,7 +3466,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -3536,7 +3536,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -3596,7 +3596,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -3657,7 +3657,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -3726,7 +3726,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch((err: Error): PromiseLike<void> | undefined => {
+                    }).catch((err: Error) => {
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
                         expect(false).assertTrue();
@@ -3783,7 +3783,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FULL_SCREEN);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         hilog.error(domain, tag, msgStr + `Failed. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -3825,7 +3825,7 @@ export default function WindowLayoutTest() {
                         await Utils.msSleep(200);
                         hilog.info(domain, tag, msgStr + 'Succeeded in maximizing window.');
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
 
                         if (!isSyscapSessionManagerSupported) {
@@ -4089,7 +4089,7 @@ export default function WindowLayoutTest() {
                         await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isSyscapSessionManagerSupported) {
@@ -4141,7 +4141,7 @@ export default function WindowLayoutTest() {
                         await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isSyscapSessionManagerSupported) {
@@ -4353,7 +4353,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4413,7 +4413,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4477,7 +4477,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4537,7 +4537,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4597,7 +4597,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4656,7 +4656,7 @@ export default function WindowLayoutTest() {
                             expect(windowStatus).assertEqual(window.WindowStatusType.FLOATING);
                         }
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
@@ -4712,7 +4712,7 @@ export default function WindowLayoutTest() {
                         await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error) => {
                         await terminateAbility(caseName);
                         if (!isFreeWindowMode) {
                             hilog.info(domain, tag, msgStr + `Capability not supported, skip test. Cause code: ${err!.code}, message: ${err!.message}`);
@@ -4771,7 +4771,7 @@ export default function WindowLayoutTest() {
                         await terminateAbility(caseName);
                         expect(false).assertTrue();
                         done();
-                    }).catch(async (err: Error): PromiseLike<void> | undefined => {
+                    }).catch(async (err: Error)=> {
                         await terminateAbility(caseName);
 
                         if (!isFreeWindowMode) {
