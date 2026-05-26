@@ -6,6 +6,7 @@
 **/oh-package-lock.json5
 **/oh_modules
 **/.vscode
+**/.idea
 **/.history
 
 # Claude Config Manager Extension - Security Rules
@@ -18,3 +19,8 @@
 # .claude/settings.json     # Team settings (official Claude Code)
 # .claude/commands/         # Team slash commands (official Claude Code)
 # .claude/.plans/           # Project documentation (extension-specific)
+
+commonlibrary/ets_utils/utils_static/builtin_static/std_core_static/reflect_standard_test_static/.gitignore
+commonlibrary/ets_utils/utils_static/builtin_static/std_core_static/reflect_standard_test_static/entry/.gitignore
+commonlibrary/ets_utils/utils_static/builtin_static/std_core_static/reflect_standard_test_static/entry/arktsconfig.json
+commonlibrary/ets_utils/utils_static/builtin_static/std_core_static/reflect_standard_test_static/entry/src/hypium/
