@@ -480,7 +480,7 @@ export default function RdbQueryByStep() : void {
       } catch(e) {
         const err = e as BusinessError;
         console.error(TAG + `queryByStep_003_Abnormal_columns failed message:${err.message} code:${err.code}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       } finally {
         resultSet?.close();
       }
@@ -491,7 +491,7 @@ export default function RdbQueryByStep() : void {
       } catch(e) {
         const err = e as BusinessError;
         console.error(TAG + `queryByStep_003_Abnormal_columns failed message:${err.message} code:${err.code}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       } finally {
         resultSet?.close();
       }
@@ -575,7 +575,7 @@ export default function RdbQueryByStep() : void {
       } catch(e) {
         const err = e as BusinessError;
         console.error(TAG + `queryByStep_005_abnormal_predicates failed message:${err.message} code:${err.code}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       } finally {
         resultSet?.close();
       }
@@ -586,7 +586,7 @@ export default function RdbQueryByStep() : void {
       } catch(e) {
         const err = e as BusinessError;
         console.error(TAG + `queryByStep_005_abnormal_predicates failed message:${err.message} code:${err.code}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       } finally {
         resultSet?.close();
       }
@@ -612,7 +612,7 @@ export default function RdbQueryByStep() : void {
       } catch(e) {
         const err = e as BusinessError;
         console.error(TAG + `queryByStep_006_abnormal_rdbStoreIsClose failed message:${err.message} code:${err.code}`);
-        expect(e.code).assertEqual(14800014);
+        expect(e.code).assertEqual("14800014");
       } finally {
         resultSet?.close();
         rdbStore = await relationalStore.getRdbStore(context, STORE_CONFIG);
