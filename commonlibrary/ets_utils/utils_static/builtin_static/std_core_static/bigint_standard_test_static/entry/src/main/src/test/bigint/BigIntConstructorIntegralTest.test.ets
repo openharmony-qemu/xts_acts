@@ -21,7 +21,7 @@ export default function BigIntConstructorIntegralTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0100
      * @tc.name testBigIntConstructorIntegralByteBoundary0100
-     * @tc.desc Verify byte boundary values 127 and -128 construct expected BigInt values
+     * @tc.desc Mindmap constructor_2 input: byte boundary 127 and -128
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -37,7 +37,7 @@ export default function BigIntConstructorIntegralTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0200
      * @tc.name testBigIntConstructorIntegralByteCommon0200
-     * @tc.desc Verify common byte values construct expected BigInt values
+     * @tc.desc Mindmap constructor_2 input: common byte values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -55,7 +55,7 @@ export default function BigIntConstructorIntegralTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0300
      * @tc.name testBigIntConstructorIntegralShortBoundary0300
-     * @tc.desc Verify short boundary values construct expected BigInt values
+     * @tc.desc Mindmap constructor_3 input: short boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -70,13 +70,26 @@ export default function BigIntConstructorIntegralTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0400
-     * @tc.name testBigIntConstructorIntegralIntCommon0400
-     * @tc.desc Verify common int literals construct expected BigInt values
+     * @tc.name testBigIntConstructorIntegralShortCommon0400
+     * @tc.desc Mindmap constructor_3 input: common short values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegralIntCommon0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorIntegralShortCommon0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(100 as short).toString()).assertEqual('100');
+      expect(BigInt(-100 as short).toString()).assertEqual('-100');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0500
+     * @tc.name testBigIntConstructorIntegralIntCommon0500
+     * @tc.desc Mindmap constructor_4 input: common int literals
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorIntegralIntCommon0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).toString()).assertEqual('0');
       expect(BigInt(1).toString()).assertEqual('1');
       expect(BigInt(-1).toString()).assertEqual('-1');
@@ -85,35 +98,49 @@ export default function BigIntConstructorIntegralTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0500
-     * @tc.name testBigIntConstructorIntegralIntBoundary0500
-     * @tc.desc Verify int boundary values 2147483647 and -2147483648 construct expected BigInt values
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0600
+     * @tc.name testBigIntConstructorIntegralIntBoundary0600
+     * @tc.desc Mindmap constructor_4 input: int max and min
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegralIntBoundary0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const hi: int = 2147483647; // INT_MAX
-      const lo: int = -2147483648; // INT_MIN
+    it('testBigIntConstructorIntegralIntBoundary0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const hi: int = 2147483647;
+      const lo: int = -2147483648;
 
       expect(BigInt(hi).toString()).assertEqual('2147483647');
       expect(BigInt(lo).toString()).assertEqual('-2147483648');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0600
-     * @tc.name testBigIntConstructorIntegralLongBoundary0600
-     * @tc.desc Verify long boundary values construct expected BigInt values
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0700
+     * @tc.name testBigIntConstructorIntegralLongBoundary0700
+     * @tc.desc Mindmap constructor_5 input: long max and min
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorIntegralLongBoundary0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const hi: long = 9223372036854775807; // LONG_MAX
-      const lo: long = -9223372036854775808; // LONG_MIN
+    it('testBigIntConstructorIntegralLongBoundary0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const hi: long = 9223372036854775807;
+      const lo: long = -9223372036854775808;
 
       expect(BigInt(hi).toString()).assertEqual('9223372036854775807');
       expect(BigInt(lo).toString()).assertEqual('-9223372036854775808');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_INTEGRAL_0800
+     * @tc.name testBigIntConstructorIntegralReturnType0800
+     * @tc.desc Mindmap return value: integral overloads return BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorIntegralReturnType0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(42 as byte) as Object)).assertEqual(Class.from<BigInt>());
+      expect(Class.of(BigInt(1000 as short) as Object)).assertEqual(Class.from<BigInt>());
+      expect(Class.of(BigInt(999) as Object)).assertEqual(Class.from<BigInt>());
     });
   });
 }

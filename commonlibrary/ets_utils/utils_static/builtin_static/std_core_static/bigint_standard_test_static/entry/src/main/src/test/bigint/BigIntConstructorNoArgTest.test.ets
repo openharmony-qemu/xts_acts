@@ -21,7 +21,7 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0100
      * @tc.name testBigIntConstructorNoArgZero0100
-     * @tc.desc Verify parameterless BigInt constructor yields zero
+     * @tc.desc Mindmap input: parameterless constructor yields zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -35,7 +35,7 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0200
      * @tc.name testBigIntConstructorNoArgEqualsZero0200
-     * @tc.desc Verify parameterless constructor equals BigInt constructed from zero
+     * @tc.desc Mindmap return value: equals BigInt constructed from zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -49,13 +49,13 @@ export default function BigIntConstructorNoArgTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0300
-     * @tc.name testBigIntConstructorNoArgInstance0300
-     * @tc.desc Verify parameterless constructor returns a BigInt instance
+     * @tc.name testBigIntConstructorNoArgReturnType0300
+     * @tc.desc Mindmap return value: parameterless constructor returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgInstance0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorNoArgReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const zero = new BigInt();
 
       expect(Class.of(zero as Object)).assertEqual(Class.from<BigInt>());
@@ -63,25 +63,27 @@ export default function BigIntConstructorNoArgTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0400
-     * @tc.name testBigIntConstructorNoArgRepeatedString0400
-     * @tc.desc Verify repeated parameterless constructions stringify to zero
+     * @tc.name testBigIntConstructorNoArgRepeated0400
+     * @tc.desc Mindmap return value: repeated constructions stringify to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntConstructorNoArgRepeatedString0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntConstructorNoArgRepeated0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = new BigInt();
       const b = new BigInt();
 
       expect(a.toString()).assertEqual('0');
       expect(b.toString()).assertEqual('0');
       expect(a.toString()).assertEqual(b.toString());
+      expect(a.operatorIncrement().toString()).assertEqual('1');
+      expect(b.toString()).assertEqual('0');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0500
      * @tc.name testBigIntConstructorNoArgLoop0500
-     * @tc.desc Verify multiple parameterless constructions in a loop yield zero
+     * @tc.desc Mindmap return value: looped parameterless constructions remain zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -97,7 +99,7 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0600
      * @tc.name testBigIntConstructorNoArgAddOne0600
-     * @tc.desc Verify parameterless BigInt plus one equals one
+     * @tc.desc Mindmap return value: zero plus one via operatorAdd
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -112,7 +114,7 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0700
      * @tc.name testBigIntConstructorNoArgCompareOne0700
-     * @tc.desc Verify parameterless BigInt compares correctly against one
+     * @tc.desc Mindmap return value: compare zero against one
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -129,7 +131,7 @@ export default function BigIntConstructorNoArgTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0800
      * @tc.name testBigIntConstructorNoArgStress0800
-     * @tc.desc Verify repeated parameterless constructions remain stable (up to 100 iterations)
+     * @tc.desc Mindmap error handling: many parameterless constructions remain stable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -140,6 +142,23 @@ export default function BigIntConstructorNoArgTest(): void {
 
         expect(v.toString()).assertEqual('0');
       }
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_NOARG_0900
+     * @tc.name testBigIntConstructorNoArgInvalidArg0900
+     * @tc.desc Mindmap error handling: null and undefined cast as no-arg overload input
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorNoArgInvalidArg0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect((): void => {
+        new BigInt(null as Object as int);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        new BigInt(undefined as Object as int);
+      }).assertThrowError('ClassCastError');
     });
   });
 }

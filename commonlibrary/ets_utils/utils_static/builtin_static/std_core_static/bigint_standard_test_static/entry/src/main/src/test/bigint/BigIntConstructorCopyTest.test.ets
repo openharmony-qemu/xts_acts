@@ -21,7 +21,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0100
      * @tc.name testBigIntConstructorCopyValueEqual0100
-     * @tc.desc Verify copy constructor produces equal BigInt value for positive int
+     * @tc.desc Mindmap input: copy positive int BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -36,7 +36,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0200
      * @tc.name testBigIntConstructorCopyLargeString0200
-     * @tc.desc Verify copy constructor matches large decimal string source
+     * @tc.desc Mindmap input: copy large decimal string BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -51,7 +51,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0300
      * @tc.name testBigIntConstructorCopyZero0300
-     * @tc.desc Verify copy constructor preserves zero BigInt value
+     * @tc.desc Mindmap input: copy zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -66,7 +66,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0400
      * @tc.name testBigIntConstructorCopyNegative0400
-     * @tc.desc Verify copy constructor preserves negative BigInt value -42
+     * @tc.desc Mindmap input: copy negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -81,7 +81,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0500
      * @tc.name testBigIntConstructorCopyMinLong0500
-     * @tc.desc Verify copy constructor preserves minimum long negative value
+     * @tc.desc Mindmap input: copy LONG_MIN string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -96,7 +96,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0600
      * @tc.name testBigIntConstructorCopyMaxLong0600
-     * @tc.desc Verify copy constructor preserves maximum long value
+     * @tc.desc Mindmap input: copy LONG_MAX
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -110,7 +110,7 @@ export default function BigIntConstructorCopyTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0700
      * @tc.name testBigIntConstructorCopyBeyondSafeInteger0700
-     * @tc.desc Verify copy constructor preserves value beyond MAX_SAFE_INTEGER
+     * @tc.desc Mindmap input: copy beyond double safe integer (string path)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -120,6 +120,40 @@ export default function BigIntConstructorCopyTest(): void {
       const copiedBeyond = BigInt(beyondSafe);
 
       expect(copiedBeyond.equals(beyondSafe)).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0800
+     * @tc.name testBigIntConstructorCopyReturnType0800
+     * @tc.desc Mindmap return value: copy constructor returns BigInt
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorCopyReturnType0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const original = BigInt(7);
+      const copied = BigInt(original);
+
+      expect(Class.of(copied as Object)).assertEqual(Class.from<BigInt>());
+      expect(copied.operatorAdd(BigInt(1)).toString()).assertEqual('8');
+      expect(original.toString()).assertEqual('7');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0900
+     * @tc.name testBigIntConstructorCopyImmutable0900
+     * @tc.desc Mindmap return value: mutating copy does not affect source
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorCopyImmutable0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const original = BigInt(10);
+      const copied = BigInt(original);
+      const sum = copied.operatorAdd(BigInt(5));
+
+      expect(original.toString()).assertEqual('10');
+      expect(sum.toString()).assertEqual('15');
     });
   });
 }
