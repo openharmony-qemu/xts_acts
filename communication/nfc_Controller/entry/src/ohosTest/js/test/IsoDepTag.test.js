@@ -592,6 +592,7 @@ export default function nfcIsoDepTagTest() {
                 expect().assertFail();
                 done();
             })
+            done();
         })
 
         /**
