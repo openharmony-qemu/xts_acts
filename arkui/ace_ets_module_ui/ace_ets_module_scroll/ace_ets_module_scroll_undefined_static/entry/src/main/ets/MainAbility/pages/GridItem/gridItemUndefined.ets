@@ -34,10 +34,10 @@ struct GridItemEventPage {
   @State isOnSelect: boolean = true;
 
   build() {
-    Text(this.message)
-      .id('GridItem_text')
     Scroll() {
       Column() {
+        Text(this.message)
+          .id('GridItem_text')
         Grid() {
           GridItem() {
             Text('4')

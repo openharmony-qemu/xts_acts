@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 import Url from '@ohos.url';
 import Utils from '../Util.test';
 
-export default function Escape_Url() {
+export default function Escape_Url(): void {
   describe('Escape_Url', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

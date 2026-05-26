@@ -15,14 +15,7 @@
 import { PlainArray } from '@kit.ArkTS';
 import { BusinessError } from '@ohos.base';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
-
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
+import Utils from '../Util.test';
 
 interface TestObject {
   a?: number;
@@ -41,7 +34,7 @@ export default function PlainArray07Test(): void {
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
       // Presets a clear action, which is performed after each unit test case ends.

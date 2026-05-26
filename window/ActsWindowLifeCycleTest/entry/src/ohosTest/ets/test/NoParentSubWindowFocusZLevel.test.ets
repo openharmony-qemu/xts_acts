@@ -69,6 +69,7 @@ export default function NoParentSubWindowFocusZLevel() {
     let isAutoWindow: string = '';
     let windowclassArr: Array<window.Window>;
     let isFreeWindowMode = false;
+    let canIUseRes: boolean = false;
     let isPCMode: boolean = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
@@ -81,6 +82,8 @@ export default function NoParentSubWindowFocusZLevel() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       let promise = windowClass.getWindowStateSnapshot();
       promise.then((data) => {
         let jsonObj: object = JSON.parse(data);
@@ -154,8 +157,13 @@ it('SUB_WINDOW_NoParentSubWindow_getLastWindow_0100',
       }).catch((err: BusinessError) => {
       console.error(msgStr +
         `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
-      expect(false).assertTrue();
-      done();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message !== '').assertTrue();
+        } else {
+          expect(false).assertTrue();
+        }
+        done();
     });
   }
 )

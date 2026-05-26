@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 SwanLink (Jiangsu) Technology Development Co., LTD.
+ * Copyright (c) 2025-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import Utils from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
-export default function valueBasicTest() {
+export default function valueBasicTest(): void {
 
   describe("valueBasicTest", (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -103,8 +103,8 @@ export default function valueBasicTest() {
           let negativeZero: double = -0;
           let instance = DoubleValue.of(negativeZero);
           let doubleValue = instance as DoubleValue;
-          expect(1 / doubleValue.getValueData()).assertEqual(Number.POSITIVE_INFINITY);
-          expect(-1 / doubleValue.getValueData()).assertEqual(Number.NEGATIVE_INFINITY);
+          expect(1 / doubleValue.getValueData()).assertEqual(Number.NEGATIVE_INFINITY);
+          expect(-1 / doubleValue.getValueData()).assertEqual(Number.POSITIVE_INFINITY);
         } catch (err) {
           console.error(`${TAG} failed, error: ${err}`);
           expect().assertFail();

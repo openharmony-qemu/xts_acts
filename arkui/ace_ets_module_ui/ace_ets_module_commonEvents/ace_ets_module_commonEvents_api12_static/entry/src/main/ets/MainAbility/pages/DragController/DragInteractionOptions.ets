@@ -15,7 +15,6 @@
  */
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
 import hilog from '@ohos.hilog';
-import { UIContext } from '@ohos.arkui.UIContext';
 import curves from '@ohos.curves';
 import dragController from '@ohos.arkui.dragController';
 import image from '@ohos.multimedia.image';

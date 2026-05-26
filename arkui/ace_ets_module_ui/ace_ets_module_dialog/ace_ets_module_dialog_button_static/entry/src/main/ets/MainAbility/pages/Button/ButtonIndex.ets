@@ -19,20 +19,10 @@ import {
   Blank,
   Font,
   TextAlign,
-  ClickEvent,
   Divider,
-  Component,
-  Column,
-  Button,
-  AttributeModifier,
   ButtonAttribute,
   ButtonLabelStyle,
-  Entry,
-  Row,
-  Text
 } from '@ohos.arkui.component'
-import { State, Observed } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog'
 
 import {
   Entry,

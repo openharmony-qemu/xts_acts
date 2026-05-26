@@ -72,7 +72,7 @@ export class StrClassA {
 //@ObjectLink支持多数据类型
 @Component
 struct ViewBOlk {
-  @ObjectLink class_B: StrClassA = new StrClassA("hello");
+  @ObjectLink class_B: StrClassA;
   build() {
     Row() {
       // 将ClassB的成员变量a在UI呈现出来

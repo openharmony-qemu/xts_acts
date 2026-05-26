@@ -21,6 +21,7 @@ import fs from '@ohos.file.fs'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
 let domain: int = 0x0000;
@@ -105,7 +106,8 @@ export default function requestDownloadStageStaticUnit() {
         title: 'XTS download test!',
         background: false
       }
-      request.downloadFile(baseContext!, downloadFileConfig, async (err, downloadTask):void => {
+      request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask): void => {
+        async (err: BusinessError<void>|null, downloadTask: request.DownloadTask|undefined): Promise<void> => {
         console.info("====>SUB_Request_downloadStage_Supplemental_Static_0100 downloadTask: " + downloadTask);
         try{
           if(err){
@@ -133,6 +135,7 @@ export default function requestDownloadStageStaticUnit() {
         }catch(e){
           console.info("====>SUB_Request_downloadStage_Supplemental_Static_0100 except error: " + e);
         }
+      }(err, downloadTask)
       });
     });
 
@@ -761,7 +764,7 @@ export default function requestDownloadStageStaticUnit() {
         let downloadTask = await request.downloadFile(baseContext!, downloadFileConfig);
         expect(downloadTask !== undefined).assertEqual(true);
 
-        request.downloadFile(baseContext!, downloadFileConfig, async (err, downloadTask):void => {
+        request.downloadFile(baseContext!, downloadFileConfig, (err, downloadTask): void => {
           console.info("====>SUB_Request_downloadStage_Supplemental_Static_1300 downloadTask: " + downloadTask);
           try{
             if(err){

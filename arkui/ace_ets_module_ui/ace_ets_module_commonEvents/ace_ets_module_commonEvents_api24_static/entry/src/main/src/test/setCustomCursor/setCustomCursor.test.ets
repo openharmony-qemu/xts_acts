@@ -75,12 +75,12 @@ export default function setCustomCursor(): void{
       let button1 = await driver.findComponent(ON.id('button01'));
       let point1: Point = await (button1?.getBoundsCenter() as Promise<Point>);
       await driver!.mouseClick({x: point1.x, y: point1.y}, MouseButton.MOUSE_BUTTON_LEFT);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
 
       let button2 = await driver.findComponent(ON.id('button02'));
       let point2: Point = await (button2?.getBoundsCenter() as Promise<Point>);
       await driver!.mouseClick({x: point2.x, y: point2.y}, MouseButton.MOUSE_BUTTON_LEFT);
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1500);
 
       let button3 = await driver.findComponent(ON.id('button03'));
       let point3: Point = await (button3?.getBoundsCenter() as Promise<Point>);

@@ -1490,7 +1490,7 @@ export default function NewEAWorkerTest() {
      * @tc.level Level 0
      */
     it('GetPriorityTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         const TAG: string = 'GetPriorityTest001';
         console.info(`${TAG} test start`);
         const priorities = [

@@ -524,7 +524,7 @@ int VideoEncodeCapability8300Test()
 
 int VideoEncodeHevcCapability0100Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         ASSERT_NE(nullptr, OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true));
         return 0;
     }
@@ -533,7 +533,7 @@ int VideoEncodeHevcCapability0100Test()
 
 int VideoEncodeHevcCapability0200Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         ASSERT_NE(nullptr, OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE));
         return 0;
     }
@@ -579,12 +579,12 @@ int VideoEncodeHevcCapability0500Test()
 
 int VideoEncodeHevcCapability0600Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVErrCode ret = AV_ERR_OK;
         OH_AVRange range;
         SecureMemset(&range, sizeof(OH_AVRange), 0, sizeof(OH_AVRange));
-        ASSERT_NE(nullptr, cap);
-        ret = OH_AVCapability_GetEncoderBitrateRange(cap, &range);
+        ASSERT_NE(nullptr, cap_hevc);
+        ret = OH_AVCapability_GetEncoderBitrateRange(cap_hevc, &range);
         ASSERT_EQ(AV_ERR_OK, ret);
         cout << "max val " << range.maxVal << "  min val " << range.minVal << endl;
         ASSERT_GE(range.minVal, 0);
@@ -610,8 +610,8 @@ int VideoEncodeHevcCapability0600Test()
 
 int VideoEncodeHevcCapability0700Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -622,7 +622,7 @@ int VideoEncodeHevcCapability0700Test()
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
 
-        bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_CBR);
+        bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_CBR);
         EXPECT_EQ(isSupported, true);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, BITRATE_MODE_CBR);
         EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
@@ -638,8 +638,8 @@ int VideoEncodeHevcCapability0700Test()
 
 int VideoEncodeHevcCapability5200Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();
@@ -649,7 +649,7 @@ int VideoEncodeHevcCapability5200Test()
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, AV_PIXEL_FORMAT_NV12);
         (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
         (void)OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-        bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap, BITRATE_MODE_VBR);
+        bool isSupported = OH_AVCapability_IsEncoderBitrateModeSupported(cap_hevc, BITRATE_MODE_VBR);
         EXPECT_EQ(isSupported, true);
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_ENCODE_BITRATE_MODE, BITRATE_MODE_VBR);
         EXPECT_EQ(AV_ERR_OK, OH_VideoEncoder_Configure(venc_, format));
@@ -660,7 +660,7 @@ int VideoEncodeHevcCapability5200Test()
 
 int VideoEncodeHevcCapability5300Test()
 {
-    if (cap) {
+    if (cap_hevc) {
         OH_AVCapability *capa = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
         ASSERT_NE(nullptr, capa);
         if (!strcmp(g_codecNameHEVC, "OMX.hisi.video.encoder.hevc")) {
@@ -688,8 +688,8 @@ int VideoEncodeHevcCapability5300Test()
 
 int VideoEncodeHevcCapability5400Test()
 {
-    if (cap) {
-        ASSERT_NE(nullptr, cap);
+    if (cap_hevc) {
+        ASSERT_NE(nullptr, cap_hevc);
         venc_ = OH_VideoEncoder_CreateByMime(OH_AVCODEC_MIMETYPE_VIDEO_HEVC);
         ASSERT_NE(nullptr, venc_);
         format = OH_AVFormat_Create();

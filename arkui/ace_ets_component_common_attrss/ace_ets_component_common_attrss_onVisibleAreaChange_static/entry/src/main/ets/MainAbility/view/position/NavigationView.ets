@@ -50,6 +50,7 @@ export struct NavigationView {
       List({ space: 12, initialIndex: 0 }) {
         ForEach(this.arr, (item: number, index: int) => {
           ListItem() {
+          Column() {
             // NavRouter() {
               Row() {
                 Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
@@ -77,6 +78,7 @@ export struct NavigationView {
             //   console.info('isActivated = ' + isActivated);
             //   this.dex = index
             // })
+            }
           }
         }, (item: number) => String(item))
       }

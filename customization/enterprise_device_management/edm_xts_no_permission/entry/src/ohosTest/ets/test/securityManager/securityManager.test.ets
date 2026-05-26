@@ -638,6 +638,31 @@ function testSetWatermarkImage() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_watermark_image_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WATERMARK_IMAGE_JS_0200
+   * @tc.desc   test securityManager setWatermarkImage with string source and permission denied 201
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_watermark_image_0200", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      let properties: securityManager.WatermarkProperties = {
+        intervalsRow: 1,
+        intervalsCol: 2
+      }
+      securityManager.setWatermarkImage(SELFWANT, WATERMARK_BUNDLE_NAME, PIXEL_MAP, DEFAULT_USER_ID, properties);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code === 201).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testCancelWatermarkImage() {

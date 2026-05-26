@@ -25,6 +25,7 @@ import {
   Level
 } from '../../../../hypium/index';
 import { PlainArray } from '@kit.ArkTS';
+import Utils from '../Util.test';
 
 interface GeneratedObjectLiteralInterface_4 {
   arr: number[];
@@ -215,20 +216,12 @@ class SymbolObject {
   }
 }
 
-function sleep(count: int): Promise<void> {
-  return new Promise<void>((resolve: (value: void) => void, reject: (reason: Error) => void) => {
-    setTimeout(() => {
-      resolve(undefined as void)
-    }, count)
-  })
-}
-
 export default function PlainArray05Test(): void {
   describe('PlainArray05Test', () => {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(30);
+      await Utils.msSleep(30);
     })
     afterEach(() => {
     })

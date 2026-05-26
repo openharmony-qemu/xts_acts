@@ -14,6 +14,8 @@
  */
 
 import actsWifiManagerFunctionsTest from "./WifiManagerStationFunctionsStatic.test";
+import actsWifiManagerP2PTest from "./WifiManagerP2PStatic.test";
 export default function testsuite() {
   actsWifiManagerFunctionsTest();
+  actsWifiManagerP2PTest();
 }

@@ -159,6 +159,8 @@ public:
     Camera_ImageRotation previewRotation_;
     uint32_t effectTypeSize_;
     Camera_ControlCenterEffectType* controlCenterEffectType_;
+    uint32_t zoomPointInfoSize_;
+    OH_Camera_ZoomPointInfo* zoomPointInfo_;
     bool isCreatePhotoOutputWithoutSurface_;
     bool isMacroSupported_;
     bool isEnableMacro_;
@@ -276,6 +278,8 @@ public:
     Camera_ErrorCode SessionGetZoomRatioRange(void);
     Camera_ErrorCode SessionGetZoomRatio(void);
     Camera_ErrorCode SessionSetZoomRatio(float zoom);
+    Camera_ErrorCode SessionGetZoomPointInfos(int useCaseCode);
+    Camera_ErrorCode SessionDeleteZoomPointInfos(int useCaseCode);
 
     Camera_ErrorCode SessionIsVideoStabilizationModeSupported(uint32_t mode);
     Camera_ErrorCode SessionGetVideoStabilizationMode(void);

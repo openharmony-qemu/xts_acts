@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,20 @@ import Stack02Test from "./Stack/StackTest02.test";
 import Stack03Test from "./Stack/StackTest03.test";
 import Stack04Test from "./Stack/StackTest04.test";
 
-export default function testsuite() {
+import ArrayList_01Test from "./ArrayList/ArrayListTest01.test";
+import ArrayList_02Test from "./ArrayList/ArrayListTest02.test";
+import ArrayList_03Test from "./ArrayList/ArrayListTest03.test";
+import ArrayList_04Test from "./ArrayList/ArrayListTest04.test";
+import ArrayList_05Test from "./ArrayList/ArrayListTest05.test";
+import ArrayList_06Test from "./ArrayList/ArrayListTest06.test";
+import ArrayList_07Test from "./ArrayList/ArrayListTest07.test";
+import ArrayList_08Test from "./ArrayList/ArrayListTest08.test";
+import ArrayList_09Test from "./ArrayList/ArrayListTest09.test";
+import ArrayList_10Test from "./ArrayList/ArrayListTest10.test";
+import ArrayList_11Test from "./ArrayList/ArrayListTest11.test";
+import ArrayList_12Test from "./ArrayList/ArrayListTest12.test";
+
+export default function testsuite(): void {
   ArraylistTest1();
   ArraylistTest2();
   HashMapTest1();
@@ -141,5 +154,19 @@ export default function testsuite() {
   Stack02Test();
   Stack03Test();
   Stack04Test();
+
+  ArrayList_01Test();
+  ArrayList_02Test();
+  ArrayList_03Test();
+  ArrayList_04Test();
+  ArrayList_05Test();
+  ArrayList_06Test();
+  ArrayList_07Test();
+  ArrayList_08Test();
+  ArrayList_09Test();
+  ArrayList_10Test();
+  ArrayList_11Test();
+  ArrayList_12Test();
+
 
 }

@@ -24,7 +24,6 @@ import {
   $r,
   RenderingContextSettings,
   CanvasRenderingContext2D,
-  CanvasRenderingContext2D,
   FlexDirection,
   ItemAlign,
   FlexAlign,

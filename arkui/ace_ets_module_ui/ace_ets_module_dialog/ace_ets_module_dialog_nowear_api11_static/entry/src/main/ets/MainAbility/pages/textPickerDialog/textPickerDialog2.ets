@@ -21,7 +21,7 @@ import {
   ClickEvent,TimePickerResult,
   Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
   Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
+  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
   ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin,TextPickerResult,TextPickerDialogOptions
 } from '@ohos.arkui.component'
 import {

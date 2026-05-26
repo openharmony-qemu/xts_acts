@@ -22,7 +22,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
-const ErrorCode17000005 = 17000005;
+const DeviceErrorCode = 17000005;
 
 export default function uitestApi26Test() {
   describe('uitestApi26Test', () => {
@@ -1004,29 +1004,48 @@ export default function uitestApi26Test() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
-      await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClick over');
     });
 
     /**
-     * @tc.name   testDriverTriggerPenKeyHandwritingWithPointClick
+     * @tc.name   testDriverTriggerPenKeySmartClick
      * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0200
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    it('testDriverTriggerPenKeyHandwritingWithPointClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick start');
+    it('testDriverTriggerPenKeySmartClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick start');
+      try {
+        await driver.triggerPenKey(PenKey.SMART, PenMode.HANDWRITING, PenKeyOperation.CLICK);
+        await driver.delayMs(500);
+      } catch (error) {
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick error: ' + error.code);
+        expect(error.code).assertEqual(DeviceErrorCode)
+      }
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartClick over');
+    });
+
+    /**
+     * @tc.name   testDriverTriggerPenKeySmartPointClick
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, CLICK operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testDriverTriggerPenKeySmartPointClick', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick start');
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       try {
         let nextPageButton = await driver.findComponent(ON.text('next page'));
         expect(nextPageButton != null).assertTrue();
         let clickPoint = await nextPageButton.getBoundsCenter();
-        await driver.triggerPenKey(PenKey.HANDWRITING, PenMode.HANDWRITING, PenKeyOperation.CLICK,
+        await driver.triggerPenKey(PenKey.SMART, PenMode.HANDWRITING, PenKeyOperation.CLICK,
           { point: clickPoint});
         await driver.delayMs(500);
         let backToIndexComponent = await driver.findComponent(ON.text('back to index'));
@@ -1034,16 +1053,16 @@ export default function uitestApi26Test() {
         let componentText: string = await backToIndexComponent.getText();
         expect(componentText).assertEqual('back to index');
       } catch (error) {
-        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick error: ' + error.code);
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
       await stopApplication('com.uitestScene.acts');
-      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingWithPointClick over');
+      hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeySmartPointClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0300
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1056,14 +1075,14 @@ export default function uitestApi26Test() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyHandwritingWithPointDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0400
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
      * @tc.desc   Test Driver.triggerPenKey with HANDWRITING mode, HANDWRITING key, DOUBLE_CLICK operation
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1087,14 +1106,14 @@ export default function uitestApi26Test() {
         expect(text).assertEqual('doubleClick')
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingDoubleClick over');
     });
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0500
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1116,7 +1135,7 @@ export default function uitestApi26Test() {
         expect(componentText).assertEqual('back to index');
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseClick over');
@@ -1124,7 +1143,7 @@ export default function uitestApi26Test() {
 
     /**
      * @tc.name   testDriverTriggerPenKeyAirMouseDoubleClick
-     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0600
+     * @tc.number SUB_testfwk_UITEST_DRIVER_TRIGGERPENKEY_PARAM_0700
      * @tc.desc   Test Driver.triggerPenKey with AIR_MOUSE mode, AIR_MOUSE key, DOUBLE_CLICK operation with point
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -1148,12 +1167,10 @@ export default function uitestApi26Test() {
         expect(text).assertEqual('doubleClick')
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005);
+        expect(error.code).assertEqual(DeviceErrorCode);
       }
       await stopApplication('com.uitestScene.acts');
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseDoubleClick over');
     });
-
-
   })
 }

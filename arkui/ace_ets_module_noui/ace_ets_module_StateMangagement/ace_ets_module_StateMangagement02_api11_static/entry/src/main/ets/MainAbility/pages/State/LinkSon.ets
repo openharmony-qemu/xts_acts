@@ -91,8 +91,8 @@ struct ParentLink {
 
 @Component
 struct SonLink1 {
-  @Link str1: string= ''
-  @Link num1: number = 1
+  @Link str1: string;
+  @Link num1: number;
 
   build() {
     Column() {
@@ -120,8 +120,8 @@ struct SonLink1 {
 
 @Component
 struct SonLink2 {
-  @Link str2: string = ''
-  @Link num2: number = 1
+  @Link str2: string;
+  @Link num2: number;
 
   build() {
     Column() {

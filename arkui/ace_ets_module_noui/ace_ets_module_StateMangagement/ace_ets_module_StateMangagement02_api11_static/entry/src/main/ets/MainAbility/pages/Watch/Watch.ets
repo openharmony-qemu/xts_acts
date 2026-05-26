@@ -43,7 +43,7 @@ export class PurchaseItem {
 
 @Component
 struct BasketViewer {
-  @Link @Watch('onBasketUpdated') shopBasket: PurchaseItem[]= [];
+  @Link @Watch('onBasketUpdated') shopBasket: PurchaseItem[];
   @State totalPurchase: number = 0;
 
   updateTotal(): number {

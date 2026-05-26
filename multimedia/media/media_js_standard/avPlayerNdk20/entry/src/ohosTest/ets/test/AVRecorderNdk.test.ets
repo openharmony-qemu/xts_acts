@@ -27,7 +27,8 @@ export default function AVRecorderNdkTest() {
       // requestPermissionsFromUser会判断权限的授权状态来决定是否唤起弹窗
       setTimeout(async () => {
         let driver: Driver = await Driver.create();
-        let text = await driver.findComponent(ON.text('允许'));
+        let text = await driver.findComponent(ON.text('允许')) ||
+          await driver.findComponent(ON.text('始终允许'));
         if (text) {
           await text.click()
         }

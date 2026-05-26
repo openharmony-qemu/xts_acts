@@ -18,6 +18,7 @@ group("std_core_static") {
   if (is_standard_system) {
     deps = [
       "bigint_standard_test_static:ActsBigintStandardTest"
+      "enum_standard_test_static:ActsEnumStaticTest",
     ]
   }
 }

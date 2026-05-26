@@ -93,6 +93,7 @@ export default function SegBtnItemTest0010() {
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
       console.info("[SegBtnItemTest0010_001] btn0.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -105,6 +106,7 @@ export default function SegBtnItemTest0010() {
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
       console.info("[SegBtnItemTest0010_001] btn1.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -114,6 +116,7 @@ export default function SegBtnItemTest0010() {
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[0]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[2]
       console.info("[SegBtnItemTest0010_001] btn2.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -121,6 +124,7 @@ export default function SegBtnItemTest0010() {
       expect(btn2.getElement('$attrs').getString("accessibilityLevel")).assertEqual('yes');
       await CommonFunc.sleep(500);
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
+        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[2]
@@ -146,6 +150,7 @@ export default function SegBtnItemTest0010() {
       let btn0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
       console.info("[SegBtnItemTest0010_002] btn0.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -158,6 +163,7 @@ export default function SegBtnItemTest0010() {
       let btn1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
       console.info("[SegBtnItemTest0010_002] btn1.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -167,6 +173,7 @@ export default function SegBtnItemTest0010() {
       let btn2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[2]
       console.info("[SegBtnItemTest0010_002] btn2.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -176,6 +183,7 @@ export default function SegBtnItemTest0010() {
       let btn3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[3]
       console.info("[SegBtnItemTest0010_002] btn3.getElement('$attrs').getString(accessibilityLevel is: " +
@@ -185,6 +193,7 @@ export default function SegBtnItemTest0010() {
       let icon0 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -199,6 +208,7 @@ export default function SegBtnItemTest0010() {
       let icon1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[2]
         .getArray("$children")[1]
         .getArray("$children")[0]

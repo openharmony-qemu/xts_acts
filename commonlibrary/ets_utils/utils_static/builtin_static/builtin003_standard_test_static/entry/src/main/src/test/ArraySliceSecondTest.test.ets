@@ -23,7 +23,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function Array_Slice_Second_Test_static() {
+export default function Array_Slice_Second_Test_static(): void {
   describe('Array_Slice_Second_Test_static', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

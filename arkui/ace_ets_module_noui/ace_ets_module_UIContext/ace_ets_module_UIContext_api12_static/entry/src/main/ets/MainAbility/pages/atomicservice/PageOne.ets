@@ -45,6 +45,7 @@ export function PageOneBuilder(name: string, param: Object) {
   PageOne()
 }
 
+@Entry
 @Component
 export struct PageOne {
   pageInfo: NavPathStack = new NavPathStack();

@@ -26,7 +26,7 @@ interface arrInter {
   length: number
 }
 
-export default function typeArrayFloat64ArrayTest() {
+export default function typeArrayFloat64ArrayTest(): void {
   describe('TypeArrayFloat64ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

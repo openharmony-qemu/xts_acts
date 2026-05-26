@@ -44,6 +44,13 @@ import AddMonitorWildcard from './AddMonitorTest/AddMonitorWildcard.test';
 import AddMonitorWildcardUnerfined from './AddMonitorTest/AddMonitorWildcardUnerfined.test';
 import MonitorWildcards from './Monitor/MonitorWildcards.test';
 import PersistenceV2NotifyOnErrorTest from './PersistenceV2/PersistenceV2NotifyOnErrorTest.test';
+import componentLifecycleDecoratorsTest from './lifecycle/ComponentLifecycleDecorators.test';
+import reuseComponentLifecycleTest from './lifecycle/ReuseComponentLifecycle.test';
+import reuseV2ComponentLifecycleTest from './lifecycle/ReuseV2ComponentLifecycle.test';
+import SVDeepListenMakeObservedTest from './stateVariableDeepListen/SVDeepListenMakeObservedTest.test';
+import SVDeepListenMakeObservedFalseTest from './stateVariableDeepListen/SVDeepListenMakeObservedFalseTest.test';
+import SVDeepListenObservedAndObjectlinkTest from './stateVariableDeepListen/SVDeepListenObservedAndObjectlinkTest.test';
+import SVDeepListenObservedBuiltInTest from './stateVariableDeepListen/SVDeepListenObservedBuiltInTest.test';
 
 export default function testsuite() {
   ArrayLikeStringTest(); 
@@ -76,5 +83,12 @@ export default function testsuite() {
   AddMonitorWildcard();
   MonitorWildcards();
   AddMonitorWildcardUnerfined();
+  componentLifecycleDecoratorsTest();
+  reuseComponentLifecycleTest();
+  reuseV2ComponentLifecycleTest();
+  SVDeepListenMakeObservedTest();
+  SVDeepListenMakeObservedFalseTest();
+  SVDeepListenObservedAndObjectlinkTest();
+  SVDeepListenObservedBuiltInTest();
 
 }

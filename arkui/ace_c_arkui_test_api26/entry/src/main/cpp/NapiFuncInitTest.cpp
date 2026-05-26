@@ -19,6 +19,7 @@
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
 #include "inspectorLabel/InspectorLabelTest.cpp"
+#include "accessibilityFocusId/AccessibilityFocusIdTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -66,6 +67,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"InspectorLabelTest_002", nullptr, InspectorLabelTest_002, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"InspectorLabelTest_003", nullptr, InspectorLabelTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityNextFocusIdTest_001", nullptr, AccessibilityNextFocusIdTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityNextFocusIdTest_002", nullptr, AccessibilityNextFocusIdTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityDefaultFocusTest_001", nullptr, AccessibilityDefaultFocusTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityDefaultFocusTest_002", nullptr, AccessibilityDefaultFocusTest_002, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

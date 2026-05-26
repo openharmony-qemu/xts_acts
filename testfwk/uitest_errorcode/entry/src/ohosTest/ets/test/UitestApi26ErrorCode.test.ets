@@ -21,7 +21,7 @@ const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
 const AsyncErrorCode = 17000002;
 const ParameterErrorCode = 17000007;
-const ErrorCode17000005 = 17000005;
+const DeviceErrorCode = 17000005;
 
 function sleep(nm: number) {
   return new Promise<void>((resolve: Function, reject: Function) => {
@@ -1433,7 +1433,7 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint error: ' + error.code);
-        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+        expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithoutPoint over');
     });
@@ -1453,7 +1453,7 @@ export default function uitestApi26ErrorTest() {
         expect().assertFail();
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint error: ' + error.code);
-        expect(error.code === ErrorCode17000005 || error.code === ParameterErrorCode).assertTrue();
+        expect(error.code === DeviceErrorCode || error.code === ParameterErrorCode).assertTrue();
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyAirMouseWithNullPoint over');
     });
@@ -1593,7 +1593,7 @@ export default function uitestApi26ErrorTest() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsNull over');
     });
@@ -1613,7 +1613,7 @@ export default function uitestApi26ErrorTest() {
         await driver.delayMs(500);
       } catch (error) {
         hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined error: ' + error.code);
-        expect(error.code).assertEqual(ErrorCode17000005)
+        expect(error.code).assertEqual(DeviceErrorCode)
       }
       hilog.info(0x0000, 'Driver_Api26', '%{public}s', TestTag + 'testDriverTriggerPenKeyHandwritingClickOptionsUndefined over');
     });

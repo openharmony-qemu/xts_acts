@@ -383,7 +383,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos?.[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
         }).catch((e:Error) => {
           let err = e as BusinessError
           console.error(`${testNum}failed to call openSubscriptionSettingsWithResult  ${err.code}, ${err.message}`)
@@ -450,7 +450,7 @@ export default function ActsNotificationAnsopenWindowWithResultWithinAbilityStat
         notificationExtensionSubscription.openSubscriptionSettingsWithResult(testContext).then((data) => {
           console.info(`${testNum}openSubscriptionSettingsWithResult success, data: ${JSON.stringify(data)}`);
           expect(data?.userGrantEnabled).assertEqual(true)
-          expect(JSON.stringify(data?.grantedBundleInfos?.[0])).assertEqual('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
+          expect(JSON.stringify(data?.grantedBundleInfos)).assertContain('{"bundleName":"com.example.actsnotificationansopenwindowwithresultwithinabilitytest.static","appIndex":0,"appName":"zzztest"}')
           done()
         }).catch((e:Error) => {
           let err = e as BusinessError

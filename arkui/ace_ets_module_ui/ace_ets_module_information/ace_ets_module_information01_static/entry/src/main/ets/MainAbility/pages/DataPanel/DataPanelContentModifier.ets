@@ -84,8 +84,7 @@ import {
   DatePickerAttribute,
   DatePickerDialogOptions,
   Scroll,
-  CustomBuilderT,
-  ContentModifier
+  CustomBuilderT
 } from '@ohos.arkui.component'
 import { State, Link, Observed } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog'
@@ -155,9 +154,9 @@ struct Index {
 
 @Component
 struct ChildItem {
-  @State item: number;
-  @State index: Int;
-  @State max: number;
+  @State item: number = 0;
+  @State index: Int = 0;
+  @State max: number = 0;
   public color1: string = '#65ff00dd'
   public color2: string = '#6500ff99'
   public color3: string = '#65ffe600'

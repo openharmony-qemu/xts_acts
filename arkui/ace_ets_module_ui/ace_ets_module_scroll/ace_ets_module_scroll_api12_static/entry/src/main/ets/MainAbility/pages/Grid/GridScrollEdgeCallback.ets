@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter'
-import events_emitter from '@ohos.events.emitter'
 import {
   Entry,
   Grid,

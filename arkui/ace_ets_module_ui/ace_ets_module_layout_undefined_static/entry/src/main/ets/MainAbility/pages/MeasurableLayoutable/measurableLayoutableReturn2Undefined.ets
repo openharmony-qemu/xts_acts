@@ -20,11 +20,10 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct MyStateSample {
-  @State message: string = 'Hello';
+  @State message: string = 'Measurable-Layoutable';
 
   build() {
     Column() {
-      this.message = 'Measurable-Layoutable';
       Text(this.message)
         .id('Text_MeasurableLayoutable')
       Custom1({ builder: columnChildren })

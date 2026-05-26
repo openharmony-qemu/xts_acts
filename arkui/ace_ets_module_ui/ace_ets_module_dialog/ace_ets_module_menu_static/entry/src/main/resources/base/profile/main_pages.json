@@ -17,6 +17,8 @@
     "MainAbility/pages/menuExpandSymbol/Menu",
     "MainAbility/pages/common/HoverScaleInterruption",
     "MainAbility/pages/scrollBar/scrollBarTest",
-    "MainAbility/pages/maxHeight/maxHeightTest"
+    "MainAbility/pages/maxHeight/maxHeightTest",
+    "MainAbility/pages/targetSpace/targetSpaceTest",
+    "MainAbility/pages/bindContextMenu/ContextMenuMaxHeight"
   ]
 }

@@ -20,7 +20,7 @@ struct SwiperExample {
           this.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         }).id('changeButton')
       Text(this.buttonText).id('swiper_text').fontSize(20).margin(15)
-      List() {
+      Column() {
         Text('indicatorInteractive').fontSize(20).margin(15).width('90%')
         Swiper(this.swiperController, () => {
           ForEach(['1', '2', '3', '4'], (item: string) => {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import buffer1Test from './buffer/Buffer1.test';
 import buffer2Test from './buffer/Buffer2.test';
 import buffer3Test from './buffer/Buffer3.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
   BufferTest();
   buffer1Test();
   buffer2Test();

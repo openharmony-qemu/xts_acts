@@ -16,7 +16,7 @@ import { AttributeModifier, CommonAttribute } from '@ohos.arkui.component'
 
 @Observed
 export class FocusOnTouchModifier implements AttributeModifier<CommonAttribute> {
-  @State public focusOnTouch: boolean | undefined = true;
+  public focusOnTouch: boolean | undefined = true;
 
   applyNormalAttribute(instance: CommonAttribute): void {
     instance.focusOnTouch(this.focusOnTouch);

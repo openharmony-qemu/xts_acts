@@ -20,7 +20,6 @@ import UDC from '@ohos.data.unifiedDataChannel';
 import { Entry, Component, Column, Row, Text, ColumnOptions, TouchType, CustomBuilder, DragItemInfo, Color, Button, TouchEvent, Margin,Builder} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component

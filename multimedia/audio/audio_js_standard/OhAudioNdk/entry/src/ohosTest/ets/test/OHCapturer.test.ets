@@ -256,8 +256,12 @@ export default function OhCapturerTest() {
     const driver: Driver = Driver.create();
     await driver.delayMs(number1500);
     const AllowBtn: Component = await driver.findComponent(ON.text('允许'));
+    const AllowBtn2: Component = await driver.findComponent(ON.text('始终允许'));
     if (AllowBtn) {
       await AllowBtn.click();
+    }
+    if (AllowBtn2) {
+      await AllowBtn2.click();
     }
   };
 

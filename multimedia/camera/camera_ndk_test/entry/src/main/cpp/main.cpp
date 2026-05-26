@@ -1235,6 +1235,36 @@ static napi_value SessionSetZoomRatio(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value SessionGetZoomPointInfos(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_ErrorCode ret = ndkCamera_->SessionGetZoomPointInfos(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionDeleteZoomPointInfos(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_ErrorCode ret = ndkCamera_->SessionDeleteZoomPointInfos(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SessionIsVideoStabilizationModeSupported(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -3986,6 +4016,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "sessionGetZoomRatio", nullptr, SessionGetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionSetZoomRatio", nullptr, SessionSetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionGetZoomPointInfos", nullptr, SessionGetZoomPointInfos, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "sessionDeleteZoomPointInfos", nullptr, SessionDeleteZoomPointInfos, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
         { "sessionIsVideoStabilizationModeSupported", nullptr, SessionIsVideoStabilizationModeSupported,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetVideoStabilizationMode", nullptr, SessionGetVideoStabilizationMode, nullptr, nullptr, nullptr,

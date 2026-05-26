@@ -27,7 +27,7 @@ interface Obj {
   value:number
 }
 
-export default function NaNTest() {
+export default function NaNTest(): void {
   describe('NaNTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
