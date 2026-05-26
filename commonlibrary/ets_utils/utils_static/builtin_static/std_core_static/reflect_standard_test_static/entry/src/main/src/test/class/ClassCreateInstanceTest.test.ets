@@ -1271,6 +1271,7 @@ export default function ClassCreateInstanceTest(): void {
       let endTime = Date.now();
       let duration = endTime - startTime;
       console.info(`createInstance 10000 calls: ${duration}ms`);
+      expect(duration < 1000).assertTrue();
     });
 
     /**
