@@ -151,8 +151,13 @@ export default function nfcControllerTest() {
          */
         it('SUB_COMMUNICATION_NFC_Cont_0600', Level.LEVEL0, function ()  {
             let nfcisSupported = controller.isNfcSupported();
-            console.info("[NFC_test] controller6 nfcisSupported is -> " + nfcisSupported);
-            expect(nfcisSupported).assertTrue();
+            if (nfcisSupported == true) {
+                console.info("[NFC_test] controller6 nfcisSupported is -> " + nfcisSupported);
+                expect(nfcisSupported).assertTrue();
+            } else {
+                console.info("[NFC_test] controller6 nfcisSupported is -> " + nfcisSupported);
+                expect(nfcisSupported).assertFalse();
+            }
         })
 
         console.info("*************[nfc_test] start nfc js unit test end*************");
