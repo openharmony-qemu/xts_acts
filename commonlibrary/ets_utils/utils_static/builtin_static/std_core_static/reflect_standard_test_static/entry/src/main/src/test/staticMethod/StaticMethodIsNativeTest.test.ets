@@ -17,48 +17,48 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  public static test(): void {}
+class NativeCheckClass {
+  public static isNativeCheck(): boolean { return false; }
 }
 
-class MyClass002 {
-  public static test(): void {}
+class VerifyNativeClass {
+  public static verifyNative(): string { return 'native'; }
 }
 
-class MyClass003 {
+class UserDefinedNativeClass {
   public static userMethod(): string { return 'user defined'; }
 }
 
 abstract class AbstractClass004 {
-  public static abstractMethod(): void {}
+  public static abstractMethod(): string { return 'abstract'; }
 }
 
 final class FinalClass005 {
-  public static finalMethod(): void {}
+  public static finalMethod(): int { return 0; }
 }
 
-class MyClass006 {
-  public static async asyncMethod(): Promise<void> { return; }
+class AsyncNativeClass {
+  public static async asyncMethod(): Promise<int> { return 42; }
 }
 
-class MyClass007 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass007._name; }
-  public static set name(value: string) { MyClass007._name = value; }
+class PropNativeClass {
+  private static _prop: string = '';
+  public static get prop(): string { return PropNativeClass._prop; }
+  public static set prop(value: string) { PropNativeClass._prop = value; }
 }
 
-class MyClass008 {
-  public static test(): void {}
+class GetNativeFlagClass {
+  public static getNativeFlag(): boolean { return false; }
 }
 
-class MyClass009 {
-  public static test(): void {}
+class SafeNativeClass {
+  public static safeNative(): string { return 'safe'; }
 }
 
-class MyClass010 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class ModifierNativeClass {
+  public static publicMethod(): string { return 'public'; }
+  private static privateMethod(): string { return 'private'; }
+  protected static protectedMethod(): string { return 'protected'; }
 }
 
 @interface deprecated {
@@ -67,58 +67,58 @@ class MyClass010 {
 
 @interface TestAnno009 {}
 
-class MyClass011 {
+class AnnoNativeClass {
   @TestAnno009
   @deprecated("5.0")
-  public static deprecatedMethod(): void {}
+  public static deprecatedMethod(): string { return 'deprecated'; }
   @TestAnno009
-  public static finalMethod(): void {}
+  public static finalMethod(): int { return 0; }
 }
 
-class MyClass012 {
-  public static test(): void {}
+class LastCheckNativeClass {
+  public static lastCheck(): boolean { return false; }
 }
 
-class MyClass013 {
-  public static normalMethod(): void {}
-  public static async asyncMethod(): Promise<void> { return; }
-  public static finalMethod(): void {}
+class MultiMethodNativeClass {
+  public static normalMethod(): string { return 'normal'; }
+  public static async asyncMethod(): Promise<string> { return 'async'; }
+  public static finalMethod(): int { return 0; }
 }
 
-class MyClass014 {
+class FetchDataNativeClass {
   public static async fetchData(): Promise<string> { return 'data'; }
 }
 
 abstract class AbstractClass015 {
-  public static abstractMethod(): void {}
+  public static abstractMethod(): boolean { return true; }
 }
 
 final class FinalClass015 {
-  public static finalMethod(): void {}
+  public static finalMethod(): string { return 'final'; }
 }
 
 class NormalClass015 {
-  public static normalMethod(): void {}
+  public static normalMethod(): int { return 0; }
 }
 
-class MyClass016 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass016._name; }
-  public static set name(value: string) { MyClass016._name = value; }
+class AttrNativeClass {
+  private static _attr: string = '';
+  public static get attr(): string { return AttrNativeClass._attr; }
+  public static set attr(value: string) { AttrNativeClass._attr = value; }
 }
 
-class MyClass017 {
-  public static method1(): void {}
-  public static method2(): void {}
-  public static method3(): void {}
+class MultiArgNativeClass {
+  public static method1(a: int): int { return a; }
+  public static method2(s: string): string { return s; }
+  public static method3(b: boolean): boolean { return b; }
 }
 
-class MyClass018 {
-  public static test(): void {}
+class BatchCheckNativeClass {
+  public static batchCheck(): boolean { return false; }
 }
 
-class MyClass019 {
-  public static myMethod(): void {}
+class CustomNativeClass {
+  public static myMethod(value: float): float { return value; }
 }
 
 export default function StaticMethodIsNativeTest(): void {
@@ -142,8 +142,8 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<NativeCheckClass>();
+      let method = cls.getStaticMethod('isNativeCheck');
       expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
@@ -158,8 +158,8 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<VerifyNativeClass>();
+      let method = cls.getStaticMethod('verifyNative');
       expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
@@ -174,7 +174,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<UserDefinedNativeClass>();
       let method = cls.getStaticMethod('userMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
@@ -220,7 +220,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls006 = Class.from<MyClass006>();
+      let cls006 = Class.from<AsyncNativeClass>();
       let method = cls006.getStaticMethod('asyncMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
@@ -235,8 +235,8 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<GetNativeFlagClass>();
+      let method = cls.getStaticMethod('getNativeFlag');
       expect(method !== undefined).assertTrue();
       let isNative = method!.isNative();
       let isNativeType = Class.of(isNative).getName();
@@ -253,7 +253,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
+      let cls: Class = Class.from<ModifierNativeClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
       let m1 = cls.getStaticMethod('publicMethod');
@@ -270,7 +270,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<AnnoNativeClass>();
       let m1 = cls.getStaticMethod('deprecatedMethod');
       let m2 = cls.getStaticMethod('finalMethod');
       expect(m1 !== undefined).assertTrue();
@@ -288,8 +288,8 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<LastCheckNativeClass>();
+      let method = cls.getStaticMethod('lastCheck');
       expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
@@ -304,7 +304,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
+      let cls: Class = Class.from<MultiMethodNativeClass>();
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
@@ -325,7 +325,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
+      let cls: Class = Class.from<FetchDataNativeClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
@@ -363,9 +363,9 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass016>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<AttrNativeClass>();
+      let getter = cls.getStaticMethod('%%get-attr');
+      let setter = cls.getStaticMethod('%%set-attr');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       expect(getter!.isNative()).assertFalse();
@@ -381,7 +381,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass017>();
+      let cls: Class = Class.from<MultiArgNativeClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       for (let i: int = 0; i < methods.length; i++) {
         let isNative: boolean = methods[i].isNative();
@@ -398,8 +398,8 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls018 = Class.from<MyClass018>();
-      let method = cls018.getStaticMethod('test');
+      let cls018 = Class.from<BatchCheckNativeClass>();
+      let method = cls018.getStaticMethod('batchCheck');
       expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
       expect(method!.isPublic()).assertTrue();
@@ -434,7 +434,7 @@ export default function StaticMethodIsNativeTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsNative018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls019 = Class.from<MyClass019>();
+      let cls019 = Class.from<CustomNativeClass>();
       let userMethod = cls019.getStaticMethod('myMethod');
       expect(userMethod !== undefined).assertTrue();
       expect(userMethod!.isNative()).assertFalse();

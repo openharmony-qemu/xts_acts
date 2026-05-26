@@ -17,121 +17,121 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  private static _name: string = '';
-  public static get name(): string {
-    return MyClass001._name;
+class TitleGetterClass {
+  private static _title: string = '';
+  public static get title(): string {
+    return TitleGetterClass._title;
   }
 }
 
-class MyClass002 {
-  private static _name: string = '';
-  public static get name(): string {
-    return MyClass002._name;
+class LabelGetterClass {
+  private static _label: string = '';
+  public static get label(): string {
+    return LabelGetterClass._label;
   }
 }
 
-class MyClass003 {
-  public static normalMethod(): void {}
+class NormalMethodGetterClass {
+  public static normalMethod(): string { return 'normal'; }
 }
 
-class MyClass004 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass004._name = value;
+class DataSetterOnlyClass {
+  private static _data: string = '';
+  public static set data(value: string) {
+    DataSetterOnlyClass._data = value;
   }
 }
 
-class MyClass005 {
-  private static _name: string = '';
-  public static get name(): string {
-    return MyClass005._name;
+class KeyGetterClass {
+  private static _key: string = '';
+  public static get key(): string {
+    return KeyGetterClass._key;
   }
 }
 
-class MyClass006 {
-  private static _name: string = '';
-  private static get name(): string {
-    return MyClass006._name;
+class SecretGetterClass {
+  private static _secret: string = '';
+  private static get secret(): string {
+    return SecretGetterClass._secret;
   }
 }
 
-class MyClass007 {
-  private static _name: string = '';
-  protected static get name(): string {
-    return MyClass007._name;
+class TokenGetterClass {
+  private static _token: string = '';
+  protected static get token(): string {
+    return TokenGetterClass._token;
   }
 }
 
-class MyClass008 {
+class MultiPropGetterClass {
   private static _str: string = '';
   private static _num: int = 0;
   private static _bool: boolean = true;
-  public static get strProp(): string { return MyClass008._str; }
-  public static get numProp(): int { return MyClass008._num; }
-  public static get boolProp(): boolean { return MyClass008._bool; }
+  public static get strProp(): string { return MultiPropGetterClass._str; }
+  public static get numProp(): int { return MultiPropGetterClass._num; }
+  public static get boolProp(): boolean { return MultiPropGetterClass._bool; }
 }
 
-class MyClass009 {
+class FullNameGetterClass {
   private static _firstName: string = '';
   private static _lastName: string = '';
   public static get fullName(): string {
-    return MyClass009._firstName + ' ' + MyClass009._lastName;
+    return FullNameGetterClass._firstName + ' ' + FullNameGetterClass._lastName;
   }
 }
 
-class MyClass010 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass010._name; }
+class TagGetterClass {
+  private static _tag: string = '';
+  public static get tag(): string { return TagGetterClass._tag; }
 }
 
-class MyClass011 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass011._name; }
+class CodeGetterClass {
+  private static _code: string = '';
+  public static get code(): string { return CodeGetterClass._code; }
 }
 
-class MyClass012 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass012._name; }
+class TextGetterClass {
+  private static _text: string = '';
+  public static get text(): string { return TextGetterClass._text; }
 }
 
-class MyClass013 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass013._name; }
-  public static set name(value: string) { MyClass013._name = value; }
+class AliasGetterSetterClass {
+  private static _alias: string = '';
+  public static get alias(): string { return AliasGetterSetterClass._alias; }
+  public static set alias(value: string) { AliasGetterSetterClass._alias = value; }
 }
 
 abstract class AbstractClass014 {
-  private static _value: int = 0;
-  public static get value(): int { return AbstractClass014._value; }
+  private static _amount: int = 0;
+  public static get amount(): int { return AbstractClass014._amount; }
 }
 
 final class FinalClass015 {
-  private static _value: int = 0;
-  public static get value(): int { return FinalClass015._value; }
+  private static _total: int = 0;
+  public static get total(): int { return FinalClass015._total; }
 }
 
-class MyClass016 {
+class ReadOnlyGetterClass {
   private static _readOnlyValue: int = 42;
-  public static get readOnlyValue(): int { return MyClass016._readOnlyValue; }
+  public static get readOnlyValue(): int { return ReadOnlyGetterClass._readOnlyValue; }
 }
 
-class MyClass017 {
+class MyPropGetterClass {
   private static _myProp: string = '';
-  public static get myProp(): string { return MyClass017._myProp; }
+  public static get myProp(): string { return MyPropGetterClass._myProp; }
 }
 
-class MyClass018 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass018._name; }
+class PrefixGetterClass {
+  private static _prefix: string = '';
+  public static get prefix(): string { return PrefixGetterClass._prefix; }
 }
 
 @interface TestAnno018 {}
 
-class MyClass019 {
-  private static _value: int = 0;
+class CountAnnoGetterClass {
+  private static _count: int = 0;
   @TestAnno018
-  public static get value(): int { return MyClass019._value; }
+  public static get count(): int { return CountAnnoGetterClass._count; }
 }
 
 abstract class AbstractClass021 {
@@ -149,35 +149,35 @@ class NormalClass021 {
   public static get normalValue(): int { return NormalClass021._normalValue; }
 }
 
-class MyClass022 {
-  private static _prop1: string = '';
-  private static _prop2: int = 0;
-  private static _prop3: boolean = true;
-  public static get prop1(): string { return MyClass022._prop1; }
-  public static get prop2(): int { return MyClass022._prop2; }
-  public static get prop3(): boolean { return MyClass022._prop3; }
+class AlphaBetaGetterClass {
+  private static _alpha: string = '';
+  private static _beta: int = 0;
+  private static _gamma: boolean = true;
+  public static get alpha(): string { return AlphaBetaGetterClass._alpha; }
+  public static get beta(): int { return AlphaBetaGetterClass._beta; }
+  public static get gamma(): boolean { return AlphaBetaGetterClass._gamma; }
 }
 
-class MyClass023 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass023._name; }
+class PathGetterClass {
+  private static _path: string = '';
+  public static get path(): string { return PathGetterClass._path; }
 }
 
-class MyClass024 {
-  private static _prop1: string = '';
-  private static _prop2: int = 0;
-  public static get prop1(): string { return MyClass024._prop1; }
-  public static set prop1(value: string) { MyClass024._prop1 = value; }
-  public static get prop2(): int { return MyClass024._prop2; }
-  public static normalMethod(): void {}
+class InputOutputGetterClass {
+  private static _input: string = '';
+  private static _output: int = 0;
+  public static get input(): string { return InputOutputGetterClass._input; }
+  public static set input(value: string) { InputOutputGetterClass._input = value; }
+  public static get output(): int { return InputOutputGetterClass._output; }
+  public static normalMethod(): string { return 'ok'; }
 }
 
-class MyClass025 {
-  private static _name: string = '';
-  private static _age: int = 0;
-  public static get name(): string { return MyClass025._name; }
-  public static set name(value: string) { MyClass025._name = value; }
-  public static get age(): int { return MyClass025._age; }
+class NickRankGetterClass {
+  private static _nick: string = '';
+  private static _rank: int = 0;
+  public static get nick(): string { return NickRankGetterClass._nick; }
+  public static set nick(value: string) { NickRankGetterClass._nick = value; }
+  public static get rank(): int { return NickRankGetterClass._rank; }
 }
 
 export default function StaticMethodIsGetterTest(): void {
@@ -201,8 +201,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('%%get-name');
+      let cls: Class = Class.from<TitleGetterClass>();
+      let method = cls.getStaticMethod('%%get-title');
       expect(method !== undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
       expect(isGetter).assertTrue();
@@ -217,8 +217,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('%%get-name');
+      let cls: Class = Class.from<LabelGetterClass>();
+      let method = cls.getStaticMethod('%%get-label');
       expect(method !== undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
       expect(isGetter).assertTrue();
@@ -233,7 +233,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<NormalMethodGetterClass>();
       let method = cls.getStaticMethod('normalMethod');
       expect(method !== undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
@@ -249,8 +249,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls004 = Class.from<MyClass004>();
-      let method = cls004.getStaticMethod('%%set-name');
+      let cls004 = Class.from<DataSetterOnlyClass>();
+      let method = cls004.getStaticMethod('%%set-data');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertFalse();
       expect(method!.isSetter()).assertTrue();
@@ -265,8 +265,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls005 = Class.from<MyClass005>();
-      let method = cls005.getStaticMethod('%%get-name');
+      let cls005 = Class.from<KeyGetterClass>();
+      let method = cls005.getStaticMethod('%%get-key');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -281,8 +281,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls006 = Class.from<MyClass006>();
-      let method = cls006.getStaticMethod('%%get-name');
+      let cls006 = Class.from<SecretGetterClass>();
+      let method = cls006.getStaticMethod('%%get-secret');
       expect(method === undefined).assertTrue();
     });
 
@@ -295,8 +295,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls007 = Class.from<MyClass007>();
-      let method = cls007.getStaticMethod('%%get-name');
+      let cls007 = Class.from<TokenGetterClass>();
+      let method = cls007.getStaticMethod('%%get-token');
       expect(method === undefined).assertTrue();
     });
 
@@ -309,7 +309,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
+      let cls: Class = Class.from<MultiPropGetterClass>();
       let mStr = cls.getStaticMethod('%%get-strProp');
       let mNum = cls.getStaticMethod('%%get-numProp');
       let mBool = cls.getStaticMethod('%%get-boolProp');
@@ -327,7 +327,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls009 = Class.from<MyClass009>();
+      let cls009 = Class.from<FullNameGetterClass>();
       let method = cls009.getStaticMethod('%%get-fullName');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -342,8 +342,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
-      let method = cls.getStaticMethod('%%get-name');
+      let cls: Class = Class.from<TagGetterClass>();
+      let method = cls.getStaticMethod('%%get-tag');
       expect(method !== undefined).assertTrue();
       let isGetter = method!.isGetter();
       let isGetterType = Class.of(isGetter).getName();
@@ -360,8 +360,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls012 = Class.from<MyClass012>();
-      let method = cls012.getStaticMethod('%%get-name');
+      let cls012 = Class.from<TextGetterClass>();
+      let method = cls012.getStaticMethod('%%get-text');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
       expect(method!.getParametersNum()).assertEqual(0);
@@ -376,9 +376,9 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<AliasGetterSetterClass>();
+      let getter = cls.getStaticMethod('%%get-alias');
+      let setter = cls.getStaticMethod('%%set-alias');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       expect(getter!.isGetter() && !getter!.isSetter()).assertTrue();
@@ -395,7 +395,7 @@ export default function StaticMethodIsGetterTest(): void {
      */
     it('testStaticMethodIsGetter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass014>();
-      let method = clsAbs.getStaticMethod('%%get-value');
+      let method = clsAbs.getStaticMethod('%%get-amount');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
     });
@@ -410,7 +410,7 @@ export default function StaticMethodIsGetterTest(): void {
      */
     it('testStaticMethodIsGetter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsFin = Class.from<FinalClass015>();
-      let method = clsFin.getStaticMethod('%%get-value');
+      let method = clsFin.getStaticMethod('%%get-total');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
     });
@@ -424,7 +424,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls016 = Class.from<MyClass016>();
+      let cls016 = Class.from<ReadOnlyGetterClass>();
       let method = cls016.getStaticMethod('%%get-readOnlyValue');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
@@ -439,7 +439,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls017 = Class.from<MyClass017>();
+      let cls017 = Class.from<MyPropGetterClass>();
       let method = cls017.getStaticMethod('%%get-myProp');
       expect(method !== null).assertTrue();
       expect(method!.getName()).assertEqual('%%get-myProp');
@@ -455,8 +455,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass018>();
-      let method = cls.getStaticMethod('%%get-name');
+      let cls: Class = Class.from<PrefixGetterClass>();
+      let method = cls.getStaticMethod('%%get-prefix');
       expect(method !== undefined).assertTrue();
       let isGetter: boolean = method!.isGetter();
       expect(isGetter).assertTrue();
@@ -471,8 +471,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls019 = Class.from<MyClass019>();
-      let method = cls019.getStaticMethod('%%get-value');
+      let cls019 = Class.from<CountAnnoGetterClass>();
+      let method = cls019.getStaticMethod('%%get-count');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -510,7 +510,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass022>();
+      let cls: Class = Class.from<AlphaBetaGetterClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let getterCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -530,8 +530,8 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls023 = Class.from<MyClass023>();
-      let method = cls023.getStaticMethod('%%get-name');
+      let cls023 = Class.from<PathGetterClass>();
+      let method = cls023.getStaticMethod('%%get-path');
       expect(method !== undefined).assertTrue();
       expect(method!.isGetter()).assertTrue();
       expect(method!.isSetter()).assertFalse();
@@ -549,7 +549,7 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass024>();
+      let cls: Class = Class.from<InputOutputGetterClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let getters: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -569,11 +569,11 @@ export default function StaticMethodIsGetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsGetter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass025>();
-      let nameGetter = cls.getStaticMethod('%%get-name');
-      let nameSetter = cls.getStaticMethod('%%set-name');
-      let ageGetter = cls.getStaticMethod('%%get-age');
-      let ageSetter = cls.getStaticMethod('%%set-age');
+      let cls: Class = Class.from<NickRankGetterClass>();
+      let nameGetter = cls.getStaticMethod('%%get-nick');
+      let nameSetter = cls.getStaticMethod('%%set-nick');
+      let ageGetter = cls.getStaticMethod('%%get-rank');
+      let ageSetter = cls.getStaticMethod('%%set-rank');
 
       expect(nameGetter !== undefined).assertTrue();
       expect(nameSetter !== undefined).assertTrue();
@@ -581,7 +581,8 @@ export default function StaticMethodIsGetterTest(): void {
       expect(nameGetter!.isGetter()).assertTrue();
       expect(nameSetter!.isSetter()).assertTrue();
       expect(ageGetter!.isGetter()).assertTrue();
-      expect(ageSetter === null).assertTrue();
+      let noSetter = ageSetter === undefined;
+      expect(noSetter).assertTrue();
     });
   });
 }

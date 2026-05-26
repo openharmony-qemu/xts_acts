@@ -17,126 +17,126 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  public static test(): void {}
+class OpenAClass {
+  public static openA(): string { return 'a'; }
 }
 
-class MyClass002 {
-  public static test(): void {}
+class OpenBClass {
+  public static openB(): int { return 1; }
 }
 
-class MyClass003 {
-  private static privateMethod(): void {}
+class PrivateOnlyPubClass {
+  private static privateMethod(): string { return 'priv'; }
 }
 
-class MyClass004 {
-  protected static protectedMethod(): void {}
+class ProtectedOnlyPubClass {
+  protected static protectedMethod(): string { return 'prot'; }
 }
 
-class MyClass005 {
-  static defaultMethod(): void {}
+class DefaultPubClass {
+  static defaultMethod(): string { return 'def'; }
 }
 
-class MyClass006 {
-  public static async asyncMethod(): Promise<void> { return; }
+class AsyncPubClass {
+  public static async asyncMethod(): Promise<string> { return 'async'; }
 }
 
-class MyClass007 {
-  public static finalMethod(): void {}
+class FinalPubClass {
+  public static finalMethod(): string { return 'final'; }
 }
 
-class MyClass008 {
-  private static async privateAsyncMethod(): Promise<void> { return; }
+class PrivateAsyncPubClass {
+  private static async privateAsyncMethod(): Promise<int> { return 42; }
 }
 
-class MyClass009 {
-  public static test(): void {}
+class VisibleAClass {
+  public static visibleA(): boolean { return true; }
 }
 
-class MyClass010 {
-  public static test(): void {}
+class VisibleBClass {
+  public static visibleB(): float { return 1.0; }
 }
 
-class MyClass011 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class AllModifierPubClass {
+  public static publicMethod(): string { return 'pub'; }
+  private static privateMethod(): string { return 'priv'; }
+  protected static protectedMethod(): string { return 'prot'; }
 }
 
 abstract class AbstractClass012 {
-  public static abstractMethod(): void {}
+  public static abstractMethod(): string { return 'abs'; }
 }
 
 final class FinalClass013 {
-  public static finalMethod(): void {}
+  public static finalMethod(): int { return 0; }
 }
 
-class MyClass014 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass014._name; }
-  public static set name(value: string) { MyClass014._name = value; }
+class AttrPubClass {
+  private static _attr: string = '';
+  public static get attr(): string { return AttrPubClass._attr; }
+  public static set attr(value: string) { AttrPubClass._attr = value; }
 }
 
-class MyClass015 {
-  public static test(): void {}
+class ExplicitAClass {
+  public static explicitA(): string { return 'x'; }
 }
 
-class MyClass016 {
-  public static publicFinalMethod(): void {}
+class PublicFinalPubClass {
+  public static publicFinalMethod(): int { return 0; }
 }
 
-class MyClass017 {
-  public static async publicAsyncMethod(): Promise<void> { return; }
+class PublicAsyncPubClass {
+  public static async publicAsyncMethod(): Promise<string> { return 'async'; }
 }
 
 @interface deprecated {
   fromVersion: string
 }
 
-class MyClass018 {
+class DeprecatedPubClass {
   @deprecated("5.0")
-  public static deprecatedMethod(): void {}
+  public static deprecatedMethod(): string { return 'dep'; }
 }
 
-class MyClass019 {
-  public static async fetchData(): Promise<string> { return 'data'; }
+class FetchDataPubClass {
+  public static async fetchData(): Promise<boolean> { return true; }
 }
 
-class MyClass020 {
-  private static async privateAsyncMethod(): Promise<void> { return; }
+class PrivateAsyncCoverClass {
+  private static async privateAsyncMethod(): Promise<string> { return 'priv'; }
 }
 
 abstract class AbstractClass021 {
-  public static abstractPublic(): void {}
+  public static abstractPublic(): string { return 'abs'; }
 }
 
 final class FinalClass021 {
-  public static finalPublic(): void {}
+  public static finalPublic(): int { return 0; }
 }
 
 class NormalClass021 {
-  public static normalPublic(): void {}
+  public static normalPublic(): boolean { return true; }
 }
 
-class MyClass022 {
-  public static factoryMethod(): MyClass022 { return new MyClass022(); }
+class FactoryPubClass {
+  public static factoryMethod(): FactoryPubClass { return new FactoryPubClass(); }
 }
 
-class MyClass023 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class ThreeModifierPubClass {
+  public static publicMethod(): int { return 0; }
+  private static privateMethod(): string { return 'p'; }
+  protected static protectedMethod(): boolean { return true; }
 }
 
-class MyClass024 {
-  public static test(): void {}
+class LastPubClass {
+  public static lastPublic(): boolean { return false; }
 }
 
-class MyClass025 {
-  public static m1(): void {}
-  private static m2(): void {}
-  protected static m3(): void {}
-  public static m4(): void {}
+class FourMethodPubClass {
+  public static m1(): string { return 'a'; }
+  private static m2(): int { return 1; }
+  protected static m3(): boolean { return true; }
+  public static m4(): float { return 1.0; }
 }
 
 export default function StaticMethodIsPublicTest(): void {
@@ -160,8 +160,8 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<OpenAClass>();
+      let method = cls.getStaticMethod('openA');
       expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
@@ -176,8 +176,8 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<OpenBClass>();
+      let method = cls.getStaticMethod('openB');
       expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
@@ -192,7 +192,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<PrivateOnlyPubClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -206,7 +206,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
+      let cls: Class = Class.from<ProtectedOnlyPubClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -220,7 +220,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass005>();
+      let cls: Class = Class.from<DefaultPubClass>();
       let method = cls.getStaticMethod('defaultMethod');
       expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
@@ -237,7 +237,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls006 = Class.from<MyClass006>();
+      let cls006 = Class.from<AsyncPubClass>();
       let method = cls006.getStaticMethod('asyncMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -253,7 +253,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls007 = Class.from<MyClass007>();
+      let cls007 = Class.from<FinalPubClass>();
       let method = cls007.getStaticMethod('finalMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -268,7 +268,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls008 = Class.from<MyClass008>();
+      let cls008 = Class.from<PrivateAsyncPubClass>();
       let methods = cls008.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -282,8 +282,8 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass009>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<VisibleAClass>();
+      let method = cls.getStaticMethod('visibleA');
       expect(method !== undefined).assertTrue();
       let isPublic = method!.isPublic();
       let isPublicType = Class.of(isPublic).getName();
@@ -300,7 +300,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<AllModifierPubClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
       let m1 = cls.getStaticMethod('publicMethod');
@@ -347,9 +347,9 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<AttrPubClass>();
+      let getter = cls.getStaticMethod('%%get-attr');
+      let setter = cls.getStaticMethod('%%set-attr');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       expect(getter!.isPublic()).assertTrue();
@@ -365,8 +365,8 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass015>();
-      let method = cls.getStaticMethod('test');
+      let cls: Class = Class.from<ExplicitAClass>();
+      let method = cls.getStaticMethod('explicitA');
       expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
@@ -381,7 +381,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls016 = Class.from<MyClass016>();
+      let cls016 = Class.from<PublicFinalPubClass>();
       let method = cls016.getStaticMethod('publicFinalMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -396,7 +396,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls017 = Class.from<MyClass017>();
+      let cls017 = Class.from<PublicAsyncPubClass>();
       let method = cls017.getStaticMethod('publicAsyncMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -412,7 +412,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls018 = Class.from<MyClass018>();
+      let cls018 = Class.from<DeprecatedPubClass>();
       let method = cls018.getStaticMethod('deprecatedMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -427,7 +427,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls019 = Class.from<MyClass019>();
+      let cls019 = Class.from<FetchDataPubClass>();
       let method = cls019.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -443,7 +443,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls020 = Class.from<MyClass020>();
+      let cls020 = Class.from<PrivateAsyncCoverClass>();
       let methods = cls020.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -480,7 +480,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls022 = Class.from<MyClass022>();
+      let cls022 = Class.from<FactoryPubClass>();
       let method = cls022.getStaticMethod('factoryMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -495,7 +495,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass023>();
+      let cls: Class = Class.from<ThreeModifierPubClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let publicCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -515,8 +515,8 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls024 = Class.from<MyClass024>();
-      let method = cls024.getStaticMethod('test');
+      let cls024 = Class.from<LastPubClass>();
+      let method = cls024.getStaticMethod('lastPublic');
       expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();
@@ -534,7 +534,7 @@ export default function StaticMethodIsPublicTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPublic024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass025>();
+      let cls: Class = Class.from<FourMethodPubClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let publicMethods: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {

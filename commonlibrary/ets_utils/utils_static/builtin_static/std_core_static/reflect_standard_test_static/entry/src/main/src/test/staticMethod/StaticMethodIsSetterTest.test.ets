@@ -17,122 +17,122 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass001._name = value;
+class TitleSetterClass {
+  private static _title: string = '';
+  public static set title(value: string) {
+    TitleSetterClass._title = value;
   }
 }
 
-class MyClass002 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass002._name = value;
+class LabelSetterClass {
+  private static _label: string = '';
+  public static set label(value: string) {
+    LabelSetterClass._label = value;
   }
 }
 
-class MyClass003 {
-  public static normalMethod(): void {}
+class NormalMethodSetterClass {
+  public static normalMethod(): string { return 'normal'; }
 }
 
-class MyClass004 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass004._name; }
+class KeyGetterSetterClass {
+  private static _key: string = '';
+  public static get key(): string { return KeyGetterSetterClass._key; }
 }
 
-class MyClass005 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass005._name = value;
+class TagSetterClass {
+  private static _tag: string = '';
+  public static set tag(value: string) {
+    TagSetterClass._tag = value;
   }
 }
 
-class MyClass006 {
-  private static _name: string = '';
-  private static set name(value: string) {
-    MyClass006._name = value;
+class SecretSetterClass {
+  private static _secret: string = '';
+  private static set secret(value: string) {
+    SecretSetterClass._secret = value;
   }
 }
 
-class MyClass007 {
-  private static _name: string = '';
-  protected static set name(value: string) {
-    MyClass007._name = value;
+class TokenSetterClass {
+  private static _token: string = '';
+  protected static set token(value: string) {
+    TokenSetterClass._token = value;
   }
 }
 
-class MyClass008 {
+class MultiPropSetterClass {
   private static _str: string = '';
   private static _num: int = 0;
   private static _bool: boolean = true;
-  public static set strProp(value: string) { MyClass008._str = value; }
-  public static set numProp(value: int) { MyClass008._num = value; }
-  public static set boolProp(value: boolean) { MyClass008._bool = value; }
+  public static set strProp(value: string) { MultiPropSetterClass._str = value; }
+  public static set numProp(value: int) { MultiPropSetterClass._num = value; }
+  public static set boolProp(value: boolean) { MultiPropSetterClass._bool = value; }
 }
 
-class MyClass009 {
+class WriteOnlySetterClass {
   private static _writeOnlyValue: int = 0;
   public static set writeOnlyValue(value: int) {
-    MyClass009._writeOnlyValue = value;
+    WriteOnlySetterClass._writeOnlyValue = value;
   }
 }
 
-class MyClass010 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass010._name = value;
+class CodeSetterClass {
+  private static _code: string = '';
+  public static set code(value: string) {
+    CodeSetterClass._code = value;
   }
 }
 
-class MyClass011 {
-  private static _name: string = '';
-  public static set name(value: string) {
-    MyClass011._name = value;
+class TextSetterClass {
+  private static _text: string = '';
+  public static set text(value: string) {
+    TextSetterClass._text = value;
   }
 }
 
-class MyClass012 {
-  private static _name: string = '';
-  public static set name(value: string) { MyClass012._name = value; }
+class PathSetterClass {
+  private static _path: string = '';
+  public static set path(value: string) { PathSetterClass._path = value; }
 }
 
-class MyClass013 {
-  private static _name: string = '';
-  public static set name(value: string) { MyClass013._name = value; }
+class AliasSetterClass {
+  private static _alias: string = '';
+  public static set alias(value: string) { AliasSetterClass._alias = value; }
 }
 
-class MyClass014 {
-  private static _name: string = '';
-  public static get name(): string { return MyClass014._name; }
-  public static set name(value: string) { MyClass014._name = value; }
+class PrefixGetterSetterClass {
+  private static _prefix: string = '';
+  public static get prefix(): string { return PrefixGetterSetterClass._prefix; }
+  public static set prefix(value: string) { PrefixGetterSetterClass._prefix = value; }
 }
 
 abstract class AbstractClass015 {
-  private static _value: int = 0;
-  public static set value(value: int) { AbstractClass015._value = value; }
+  private static _amount: int = 0;
+  public static set amount(value: int) { AbstractClass015._amount = value; }
 }
 
 final class FinalClass016 {
-  private static _value: int = 0;
-  public static set value(value: int) { FinalClass016._value = value; }
+  private static _total: int = 0;
+  public static set total(value: int) { FinalClass016._total = value; }
 }
 
-class MyClass017 {
+class MyPropSetterClass {
   private static _myProp: string = '';
-  public static set myProp(value: string) { MyClass017._myProp = value; }
+  public static set myProp(value: string) { MyPropSetterClass._myProp = value; }
 }
 
-class MyClass018 {
-  private static _name: string = '';
-  public static set name(value: string) { MyClass018._name = value; }
+class NickSetterClass {
+  private static _nick: string = '';
+  public static set nick(value: string) { NickSetterClass._nick = value; }
 }
 
 @interface TestAnno018 {}
 
-class MyClass019 {
-  private static _value: int = 0;
+class CountAnnoSetterClass {
+  private static _count: int = 0;
   @TestAnno018
-  public static set value(val: int) { MyClass019._value = val; }
+  public static set count(val: int) { CountAnnoSetterClass._count = val; }
 }
 
 abstract class AbstractClass021 {
@@ -150,41 +150,41 @@ class NormalClass021 {
   public static set normalValue(val: int) { NormalClass021._normalValue = val; }
 }
 
-class MyClass022 {
-  private static _prop1: string = '';
-  private static _prop2: int = 0;
-  private static _prop3: boolean = true;
-  public static set prop1(value: string) { MyClass022._prop1 = value; }
-  public static set prop2(value: int) { MyClass022._prop2 = value; }
-  public static set prop3(value: boolean) { MyClass022._prop3 = value; }
+class AlphaBetaSetterClass {
+  private static _alpha: string = '';
+  private static _beta: int = 0;
+  private static _gamma: boolean = true;
+  public static set alpha(value: string) { AlphaBetaSetterClass._alpha = value; }
+  public static set beta(value: int) { AlphaBetaSetterClass._beta = value; }
+  public static set gamma(value: boolean) { AlphaBetaSetterClass._gamma = value; }
 }
 
-class MyClass023 {
-  private static _name: string = '';
-  public static set name(value: string) { MyClass023._name = value; }
+class InputSetterClass {
+  private static _input: string = '';
+  public static set input(value: string) { InputSetterClass._input = value; }
 }
 
-class MyClass024 {
-  private static _prop1: string = '';
-  private static _prop2: int = 0;
-  public static get prop1(): string { return MyClass024._prop1; }
-  public static set prop1(value: string) { MyClass024._prop1 = value; }
-  public static set prop2(value: int) { MyClass024._prop2 = value; }
-  public static normalMethod(): void {}
+class FirstSecondSetterClass {
+  private static _first: string = '';
+  private static _second: int = 0;
+  public static get first(): string { return FirstSecondSetterClass._first; }
+  public static set first(value: string) { FirstSecondSetterClass._first = value; }
+  public static set second(value: int) { FirstSecondSetterClass._second = value; }
+  public static normalMethod(): string { return 'ok'; }
 }
 
-class MyClass025 {
-  private static _name: string = '';
-  private static _age: int = 0;
-  public static get name(): string { return MyClass025._name; }
-  public static set name(value: string) { MyClass025._name = value; }
-  public static set age(value: int) { MyClass025._age = value; }
+class XySetterClass {
+  private static _x: string = '';
+  private static _y: int = 0;
+  public static get x(): string { return XySetterClass._x; }
+  public static set x(value: string) { XySetterClass._x = value; }
+  public static set y(value: int) { XySetterClass._y = value; }
 }
 
-class MyClass026 {
-  private static _value: string = '';
-  public static get value(): string { return MyClass026._value; }
-  public static set value(val: string) { MyClass026._value = val; }
+class DataGetterSetterClass {
+  private static _data: string = '';
+  public static get data(): string { return DataGetterSetterClass._data; }
+  public static set data(val: string) { DataGetterSetterClass._data = val; }
 }
 
 export default function StaticMethodIsSetterTest(): void {
@@ -208,8 +208,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
-      let method = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<TitleSetterClass>();
+      let method = cls.getStaticMethod('%%set-title');
       expect(method !== undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertTrue();
@@ -224,8 +224,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass002>();
-      let method = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<LabelSetterClass>();
+      let method = cls.getStaticMethod('%%set-label');
       expect(method !== undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertTrue();
@@ -240,7 +240,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<NormalMethodSetterClass>();
       let method = cls.getStaticMethod('normalMethod');
       expect(method !== undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
@@ -256,8 +256,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls004 = Class.from<MyClass004>();
-      let method = cls004.getStaticMethod('%%get-name');
+      let cls004 = Class.from<KeyGetterSetterClass>();
+      let method = cls004.getStaticMethod('%%get-key');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertFalse();
       expect(method!.isGetter()).assertTrue();
@@ -272,8 +272,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls005 = Class.from<MyClass005>();
-      let method = cls005.getStaticMethod('%%set-name');
+      let cls005 = Class.from<TagSetterClass>();
+      let method = cls005.getStaticMethod('%%set-tag');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -288,8 +288,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls006 = Class.from<MyClass006>();
-      let method = cls006.getStaticMethod('%%set-name');
+      let cls006 = Class.from<SecretSetterClass>();
+      let method = cls006.getStaticMethod('%%set-secret');
       expect(method === undefined).assertTrue();
     });
 
@@ -302,8 +302,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls007 = Class.from<MyClass007>();
-      let method = cls007.getStaticMethod('%%set-name');
+      let cls007 = Class.from<TokenSetterClass>();
+      let method = cls007.getStaticMethod('%%set-token');
       expect(method === undefined).assertTrue();
     });
 
@@ -316,7 +316,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass008>();
+      let cls: Class = Class.from<MultiPropSetterClass>();
       let mStr = cls.getStaticMethod('%%set-strProp');
       let mNum = cls.getStaticMethod('%%set-numProp');
       let mBool = cls.getStaticMethod('%%set-boolProp');
@@ -334,7 +334,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls009 = Class.from<MyClass009>();
+      let cls009 = Class.from<WriteOnlySetterClass>();
       let method = cls009.getStaticMethod('%%set-writeOnlyValue');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
@@ -349,8 +349,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass010>();
-      let method = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<CodeSetterClass>();
+      let method = cls.getStaticMethod('%%set-code');
       expect(method !== undefined).assertTrue();
       let isSetter = method!.isSetter();
       let isSetterType = Class.of(isSetter).getName();
@@ -367,8 +367,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls012 = Class.from<MyClass012>();
-      let method = cls012.getStaticMethod('%%set-name');
+      let cls012 = Class.from<PathSetterClass>();
+      let method = cls012.getStaticMethod('%%set-path');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.getParametersNum()).assertEqual(1);
@@ -383,8 +383,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls013 = Class.from<MyClass013>();
-      let method = cls013.getStaticMethod('%%set-name');
+      let cls013 = Class.from<AliasSetterClass>();
+      let method = cls013.getStaticMethod('%%set-alias');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       let rt = method!.getReturnType();
@@ -400,9 +400,9 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass014>();
-      let getter = cls.getStaticMethod('%%get-name');
-      let setter = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<PrefixGetterSetterClass>();
+      let getter = cls.getStaticMethod('%%get-prefix');
+      let setter = cls.getStaticMethod('%%set-prefix');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       expect(setter!.isSetter() && !setter!.isGetter()).assertTrue();
@@ -419,7 +419,7 @@ export default function StaticMethodIsSetterTest(): void {
      */
     it('testStaticMethodIsSetter014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass015>();
-      let method = clsAbs.getStaticMethod('%%set-value');
+      let method = clsAbs.getStaticMethod('%%set-amount');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
     });
@@ -434,7 +434,7 @@ export default function StaticMethodIsSetterTest(): void {
      */
     it('testStaticMethodIsSetter015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsFin = Class.from<FinalClass016>();
-      let method = clsFin.getStaticMethod('%%set-value');
+      let method = clsFin.getStaticMethod('%%set-total');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
     });
@@ -448,7 +448,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls017 = Class.from<MyClass017>();
+      let cls017 = Class.from<MyPropSetterClass>();
       let method = cls017.getStaticMethod('%%set-myProp');
       expect(method !== null).assertTrue();
       expect(method!.getName()).assertEqual('%%set-myProp');
@@ -464,8 +464,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass018>();
-      let method = cls.getStaticMethod('%%set-name');
+      let cls: Class = Class.from<NickSetterClass>();
+      let method = cls.getStaticMethod('%%set-nick');
       expect(method !== undefined).assertTrue();
       let isSetter: boolean = method!.isSetter();
       expect(isSetter).assertTrue();
@@ -480,8 +480,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls019 = Class.from<MyClass019>();
-      let method = cls019.getStaticMethod('%%set-value');
+      let cls019 = Class.from<CountAnnoSetterClass>();
+      let method = cls019.getStaticMethod('%%set-count');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.isPublic()).assertTrue();
@@ -519,7 +519,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass022>();
+      let cls: Class = Class.from<AlphaBetaSetterClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let setterCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -539,8 +539,8 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls023 = Class.from<MyClass023>();
-      let method = cls023.getStaticMethod('%%set-name');
+      let cls023 = Class.from<InputSetterClass>();
+      let method = cls023.getStaticMethod('%%set-input');
       expect(method !== undefined).assertTrue();
       expect(method!.isSetter()).assertTrue();
       expect(method!.isGetter()).assertFalse();
@@ -558,7 +558,7 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass024>();
+      let cls: Class = Class.from<FirstSecondSetterClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let setters: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -578,11 +578,11 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass025>();
-      let nameGetter = cls.getStaticMethod('%%get-name');
-      let nameSetter = cls.getStaticMethod('%%set-name');
-      let ageSetter = cls.getStaticMethod('%%set-age');
-      let ageGetter = cls.getStaticMethod('%%get-age');
+      let cls: Class = Class.from<XySetterClass>();
+      let nameGetter = cls.getStaticMethod('%%get-x');
+      let nameSetter = cls.getStaticMethod('%%set-x');
+      let ageSetter = cls.getStaticMethod('%%set-y');
+      let ageGetter = cls.getStaticMethod('%%get-y');
 
       expect(nameGetter !== undefined).assertTrue();
       expect(nameSetter !== undefined).assertTrue();
@@ -590,7 +590,8 @@ export default function StaticMethodIsSetterTest(): void {
       expect(nameGetter!.isGetter()).assertTrue();
       expect(nameSetter!.isSetter()).assertTrue();
       expect(ageSetter!.isSetter()).assertTrue();
-      expect(ageGetter === null).assertTrue();
+      let noGetter = ageGetter === undefined;
+      expect(noGetter).assertTrue();
     });
 
     /**
@@ -602,9 +603,9 @@ export default function StaticMethodIsSetterTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsSetter024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass026>();
-      let getter = cls.getStaticMethod('%%get-value');
-      let setter = cls.getStaticMethod('%%set-value');
+      let cls: Class = Class.from<DataGetterSetterClass>();
+      let getter = cls.getStaticMethod('%%get-data');
+      let setter = cls.getStaticMethod('%%set-data');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
       expect(getter!.isGetter()).assertTrue();

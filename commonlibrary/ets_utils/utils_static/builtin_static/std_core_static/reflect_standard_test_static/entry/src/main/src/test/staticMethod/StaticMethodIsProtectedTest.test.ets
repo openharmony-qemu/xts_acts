@@ -17,151 +17,151 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-   protected static test(): void {}
+class GuardedAClass {
+   protected static guardedA(): string { return 'a'; }
 }
 
-class MyClass002 {
-   protected static test(): void {}
+class GuardedBClass {
+   protected static guardedB(): int { return 1; }
 }
 
-class MyClass003 {
-   public static publicMethod(): void {}
+class PublicOnlyProtClass {
+   public static publicMethod(): string { return 'public'; }
 }
 
-class MyClass004 {
-   private static privateMethod(): void {}
+class PrivateOnlyProtClass {
+   private static privateMethod(): string { return 'priv'; }
 }
 
-class MyClass005 {
-   protected static async protectedAsyncMethod(): Promise<void> { return; }
+class ProtectedAsyncClass {
+   protected static async protectedAsyncMethod(): Promise<string> { return 'async'; }
 }
 
-class MyClass006 {
-   protected static protectedFinalMethod(): void {}
+class ProtectedFinalClass {
+   protected static protectedFinalMethod(): string { return 'final'; }
 }
 
 abstract class AbstractClass007 {
-   protected static protectedMethod(): void {}
+   protected static protectedMethod(): string { return 'abs'; }
 }
 
 final class FinalClass008 {
-   protected static protectedMethod(): void {}
+   protected static protectedMethod(): int { return 0; }
 }
 
-class MyClass009 {
-   protected static test(): void {}
+class RestrictedAClass {
+   protected static restrictedA(): boolean { return true; }
 }
 
-class MyClass010 {
-   protected static test(): void {}
+class RestrictedBClass {
+   protected static restrictedB(): float { return 1.0; }
 }
 
-class MyClass011 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class AllModifierProtClass {
+  public static publicMethod(): string { return 'pub'; }
+  private static privateMethod(): string { return 'priv'; }
+  protected static protectedMethod(): string { return 'prot'; }
 }
 
-class MyClass012 {
-  protected static protectedMethod1(): void {}
-  protected static protectedMethod2(): void {}
-  protected static protectedMethod3(): void {}
+class ThreeProtectedMethodClass {
+  protected static protectedMethod1(): string { return 'a'; }
+  protected static protectedMethod2(): int { return 1; }
+  protected static protectedMethod3(): boolean { return false; }
 }
 
-class MyClass013 {
-  static defaultMethod(): void {}
+class DefaultProtClass {
+  static defaultMethod(): string { return 'def'; }
 }
 
 class ParentClass014 {
-  protected static parentProtected(): void {}
+  protected static parentProtected(): string { return 'parent'; }
 }
 
 class ChildClass014 extends ParentClass014 {
-  protected static childProtected(): void {}
+  protected static childProtected(): int { return 0; }
 }
 
-class MyClass015 {
-  protected static test(): void {}
+class InternalBProtClass {
+  protected static internalB(): string { return 'x'; }
 }
 
-class MyClass016 {
-  protected static protectedFinalMethod(): void {}
+class ProtectedFinalAltClass {
+  protected static protectedFinalMethod(): int { return 0; }
 }
 
-class MyClass017 {
-  protected static async protectedAsyncMethod(): Promise<void> { return; }
+class ProtectedAsyncAltClass {
+  protected static async protectedAsyncMethod(): Promise<int> { return 42; }
 }
 
 @interface deprecated {
   fromVersion: string
 }
 
-class MyClass018 {
+class DeprecatedProtectedClass {
   @deprecated("5.0")
-  protected static deprecatedMethod(): void {}
+  protected static deprecatedMethod(): string { return 'dep'; }
 }
 
-class MyClass019 {
-  protected static async fetchData(): Promise<string> { return 'data'; }
+class FetchDataProtectedClass {
+  protected static async fetchData(): Promise<boolean> { return true; }
 }
 
-class MyClass020 {
-  public static async publicAsync(): Promise<void> { return; }
-  protected static async protectedAsync(): Promise<void> { return; }
+class DualAsyncProtectedClass {
+  public static async publicAsync(): Promise<string> { return 'public'; }
+  protected static async protectedAsync(): Promise<int> { return 1; }
 }
 
 abstract class AbstractClass021 {
-  protected static abstractProtected(): void {}
+  protected static abstractProtected(): string { return 'abs'; }
 }
 
 final class FinalClass021 {
-  protected static finalProtected(): void {}
+  protected static finalProtected(): int { return 0; }
 }
 
 class NormalClass021 {
-  protected static normalProtected(): void {}
+  protected static normalProtected(): boolean { return true; }
 }
 
-class MyClass022 {
-  protected static utilityMethod(): void {}
+class UtilityProtectedClass {
+  protected static utilityMethod(): string { return 'util'; }
 }
 
-class MyClass023 {
-  protected static helperMethod(): void {}
+class HelperProtectedClass {
+  protected static helperMethod(): int { return 0; }
 }
 
-class MyClass024 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
-  protected static anotherProtected(): void {}
+class FourModifierProtClass {
+  public static publicMethod(): string { return 'pub'; }
+  private static privateMethod(): string { return 'priv'; }
+  protected static protectedMethod(): string { return 'prot'; }
+  protected static anotherProtected(): int { return 0; }
 }
 
-class MyClass025 {
-  protected static test(): void {}
+class LastGuardedClass {
+  protected static lastGuarded(): boolean { return false; }
 }
 
-class MyClass026 {
-  public static m1(): void {}
-  private static m2(): void {}
-  protected static m3(): void {}
-  protected static m4(): void {}
+class FourMethodProtClass {
+  public static m1(): string { return 'a'; }
+  private static m2(): int { return 1; }
+  protected static m3(): boolean { return true; }
+  protected static m4(): float { return 1.0; }
 }
 
-class MyClass027 {
-  public static m1(): void {}
-  private static m2(): void {}
-  protected static m3(): void {}
-  public static m4(): void {}
-  private static m5(): void {}
-  protected static m6(): void {}
+class SixMethodProtClass {
+  public static m1(): int { return 0; }
+  private static m2(): string { return 'b'; }
+  protected static m3(): float { return 1.0; }
+  public static m4(): boolean { return true; }
+  private static m5(): string { return 'e'; }
+  protected static m6(): int { return 6; }
 }
 
-class MyClass028 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class ThreeMethodProtClass {
+  public static publicMethod(): int { return 0; }
+  private static privateMethod(): string { return 'p'; }
+  protected static protectedMethod(): boolean { return true; }
 }
 
 export default function StaticMethodIsProtectedTest(): void {
@@ -185,11 +185,11 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
+      let cls: Class = Class.from<GuardedAClass>();
       let methods = cls.getStaticMethods();
       // Protected methods are not accessible via reflection; isProtected() cannot be called directly
       expect(methods.length).assertEqual(0);
-      let m = cls.getStaticMethod('test');
+      let m = cls.getStaticMethod('guardedA');
       expect(m === undefined).assertTrue();
     });
 
@@ -202,7 +202,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<PublicOnlyProtClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
@@ -218,7 +218,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
+      let cls: Class = Class.from<PrivateOnlyProtClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
       let m = cls.getStaticMethod('privateMethod');
@@ -234,7 +234,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls005 = Class.from<MyClass005>();
+      let cls005 = Class.from<ProtectedAsyncClass>();
       let methods = cls005.getStaticMethods();
       expect(methods.length).assertEqual(0);
       let m = cls005.getStaticMethod('protectedAsyncMethod');
@@ -250,7 +250,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls006 = Class.from<MyClass006>();
+      let cls006 = Class.from<ProtectedFinalClass>();
       let methods = cls006.getStaticMethods();
       expect(methods.length).assertEqual(0);
       let m = cls006.getStaticMethod('protectedFinalMethod');
@@ -299,7 +299,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected() 返回 boolean 类型
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<PublicOnlyProtClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isProtected = method!.isProtected();
@@ -317,7 +317,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<AllModifierProtClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       // 运行时: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
@@ -337,7 +337,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
+      let cls: Class = Class.from<ThreeProtectedMethodClass>();
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(0);
     });
@@ -351,7 +351,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
+      let cls: Class = Class.from<DefaultProtClass>();
       let method = cls.getStaticMethod('defaultMethod');
       expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
@@ -386,7 +386,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected() 不抛异常
-      let cls003 = Class.from<MyClass003>();
+      let cls003 = Class.from<PublicOnlyProtClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
@@ -402,7 +402,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls018 = Class.from<MyClass018>();
+      let cls018 = Class.from<DeprecatedProtectedClass>();
       let methods = cls018.getStaticMethods();
       expect(methods.length).assertEqual(0);
       let m = cls018.getStaticMethod('deprecatedMethod');
@@ -418,7 +418,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass020>();
+      let cls: Class = Class.from<DualAsyncProtectedClass>();
       let m1 = cls.getStaticMethod('publicAsync');
       let m2 = cls.getStaticMethod('protectedAsync');
       let pubAccessible = m1 !== undefined;
@@ -458,8 +458,8 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls022 = Class.from<MyClass022>();
-      let cls023 = Class.from<MyClass023>();
+      let cls022 = Class.from<UtilityProtectedClass>();
+      let cls023 = Class.from<HelperProtectedClass>();
       let m1Methods = cls022.getStaticMethods();
       let m2Methods = cls023.getStaticMethods();
       expect(m1Methods.length).assertEqual(0);
@@ -475,7 +475,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass024>();
+      let cls: Class = Class.from<FourModifierProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
@@ -498,7 +498,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected 与其他属性检查的组合
-      let cls003 = Class.from<MyClass003>();
+      let cls003 = Class.from<PublicOnlyProtClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isProtected()).assertFalse();
@@ -515,7 +515,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass026>();
+      let cls: Class = Class.from<FourMethodProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
@@ -537,7 +537,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass027>();
+      let cls: Class = Class.from<SixMethodProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
@@ -567,7 +567,7 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass028>();
+      let cls: Class = Class.from<ThreeMethodProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);

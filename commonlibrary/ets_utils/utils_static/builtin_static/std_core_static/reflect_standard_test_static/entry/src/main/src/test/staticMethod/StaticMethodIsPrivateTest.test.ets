@@ -17,136 +17,136 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class MyClass001 {
-  private static test(): void {}
+class HiddenAClass {
+  private static hiddenA(): string { return 'a'; }
 }
 
-class MyClass002 {
-  private static test(): void {}
+class HiddenBClass {
+  private static hiddenB(): int { return 1; }
 }
 
-class MyClass003 {
-  public static publicMethod(): void {}
+class PublicOnlyClass {
+  public static publicMethod(): string { return 'public'; }
 }
 
-class MyClass004 {
-  protected static protectedMethod(): void {}
+class ProtectedOnlyClass {
+  protected static protectedMethod(): string { return 'protected'; }
 }
 
-class MyClass005 {
-  private static async privateAsyncMethod(): Promise<void> { return; }
+class PrivateAsyncClassOnly {
+  private static async privateAsyncMethod(): Promise<string> { return 'async'; }
 }
 
-class MyClass006 {
-  private static privateFinalMethod(): void {}
+class PrivateFinalClassOnly {
+  private static privateFinalMethod(): string { return 'final'; }
 }
 
 abstract class AbstractClass007 {
-  private static privateMethod(): void {}
+  private static privateMethod(): string { return 'abs'; }
 }
 
 final class FinalClass008 {
-  private static privateMethod(): void {}
+  private static privateMethod(): int { return 0; }
 }
 
-class MyClass009 {
-  private static test(): void {}
+class SecretAClass {
+  private static secretA(): boolean { return true; }
 }
 
-class MyClass010 {
-  private static test(): void {}
+class SecretBClass {
+  private static secretB(): float { return 1.0; }
 }
 
-class MyClass011 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
+class AllModifierPrivateClass {
+  public static publicMethod(): string { return 'pub'; }
+  private static privateMethod(): string { return 'priv'; }
+  protected static protectedMethod(): string { return 'prot'; }
 }
 
-class MyClass012 {
-  private static privateMethod1(): void {}
-  private static privateMethod2(): void {}
-  private static privateMethod3(): void {}
+class ThreePrivateMethodClass {
+  private static privateMethod1(): string { return 'a'; }
+  private static privateMethod2(): int { return 1; }
+  private static privateMethod3(): boolean { return false; }
 }
 
-class MyClass013 {
-  static defaultMethod(): void {}
+class DefaultPrivateClass {
+  static defaultMethod(): string { return 'default'; }
 }
 
-class MyClass014 {
-  private static test(): void {}
+class InternalAClass {
+  private static internalA(): string { return 'x'; }
 }
 
-class MyClass015 {
-  private static privateFinalMethod(): void {}
+class PrivateFinalAltClass {
+  private static privateFinalMethod(): int { return 0; }
 }
 
-class MyClass016 {
-  private static async privateAsyncMethod(): Promise<void> { return; }
+class PrivateAsyncAltClass {
+  private static async privateAsyncMethod(): Promise<int> { return 42; }
 }
 
 @interface deprecated {
   fromVersion: string
 }
 
-class MyClass017 {
+class DeprecatedPrivateClass {
   @deprecated("5.0")
-  private static deprecatedMethod(): void {}
+  private static deprecatedMethod(): string { return 'dep'; }
 }
 
-class MyClass018 {
-  private static async fetchData(): Promise<string> { return 'data'; }
+class FetchDataPrivateClass {
+  private static async fetchData(): Promise<boolean> { return true; }
 }
 
-class MyClass019 {
-  public static async publicAsync(): Promise<void> { return; }
-  private static async privateAsync(): Promise<void> { return; }
+class DualAsyncPrivateClass {
+  public static async publicAsync(): Promise<string> { return 'public'; }
+  private static async privateAsync(): Promise<int> { return 1; }
 }
 
 abstract class AbstractClass020 {
-  private static abstractPrivate(): void {}
+  private static abstractPrivate(): string { return 'abs'; }
 }
 
 final class FinalClass020 {
-  private static finalPrivate(): void {}
+  private static finalPrivate(): int { return 0; }
 }
 
 class NormalClass020 {
-  private static normalPrivate(): void {}
+  private static normalPrivate(): boolean { return true; }
 }
 
-class MyClass021 {
-  private static factoryMethod(): MyClass021 { return new MyClass021(); }
+class FactoryPrivateClass {
+  private static factoryMethod(): FactoryPrivateClass { return new FactoryPrivateClass(); }
 }
 
-class MyClass022 {
-  private static utilityMethod(): void {}
+class UtilityPrivateClass {
+  private static utilityMethod(): string { return 'util'; }
 }
 
-class MyClass023 {
-  public static publicMethod(): void {}
-  private static privateMethod(): void {}
-  protected static protectedMethod(): void {}
-  private static anotherPrivate(): void {}
+class FourModifierPrivateClass {
+  public static publicMethod(): string { return 'pub'; }
+  private static privateMethod(): string { return 'priv'; }
+  protected static protectedMethod(): string { return 'prot'; }
+  private static anotherPrivate(): int { return 0; }
 }
 
-class MyClass024 {
-  private static test(): void {}
+class LastPrivateClass {
+  private static lastPrivate(): boolean { return false; }
 }
 
-class MyClass025 {
-  public static m1(): void {}
-  private static m2(): void {}
-  protected static m3(): void {}
-  private static m4(): void {}
+class FourMethodPrivateClass {
+  public static m1(): string { return 'a'; }
+  private static m2(): int { return 1; }
+  protected static m3(): boolean { return true; }
+  private static m4(): float { return 1.0; }
 }
 
-class MyClass026 {
-  public static m1(): void {}
-  private static m2(): void {}
-  protected static m3(): void {}
-  public static m4(): void {}
-  private static m5(): void {}
+class FiveMethodPrivateClass {
+  public static m1(): int { return 0; }
+  private static m2(): string { return 'b'; }
+  protected static m3(): float { return 1.0; }
+  public static m4(): boolean { return true; }
+  private static m5(): string { return 'e'; }
 }
 
 export default function StaticMethodIsPrivateTest(): void {
@@ -170,11 +170,11 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass001>();
+      let cls: Class = Class.from<HiddenAClass>();
       let methods = cls.getStaticMethods();
       // Private methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
-      let m = cls.getStaticMethod('test');
+      let m = cls.getStaticMethod('hiddenA');
       expect(m === undefined).assertTrue();
     });
 
@@ -187,7 +187,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<PublicOnlyClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
@@ -203,7 +203,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass004>();
+      let cls: Class = Class.from<ProtectedOnlyClass>();
       let methods = cls.getStaticMethods();
       // Protected methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
@@ -220,7 +220,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls5 = Class.from<MyClass005>();
+      let cls5 = Class.from<PrivateAsyncClassOnly>();
       let methods = cls5.getStaticMethods();
       // Private async methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
@@ -237,7 +237,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls6 = Class.from<MyClass006>();
+      let cls6 = Class.from<PrivateFinalClassOnly>();
       let methods = cls6.getStaticMethods();
       // Private final methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
@@ -289,7 +289,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 返回 boolean 类型
-      let cls: Class = Class.from<MyClass003>();
+      let cls: Class = Class.from<PublicOnlyClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate = method!.isPrivate();
@@ -307,7 +307,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass011>();
+      let cls: Class = Class.from<AllModifierPrivateClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       // 运行时实际: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
@@ -327,7 +327,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass012>();
+      let cls: Class = Class.from<ThreePrivateMethodClass>();
       let methods = cls.getStaticMethods();
       // Multiple private methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
@@ -342,7 +342,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass013>();
+      let cls: Class = Class.from<DefaultPrivateClass>();
       let method = cls.getStaticMethod('defaultMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
@@ -360,7 +360,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 不抛异常
-      let cls003 = Class.from<MyClass003>();
+      let cls003 = Class.from<PublicOnlyClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
@@ -376,7 +376,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls17 = Class.from<MyClass017>();
+      let cls17 = Class.from<DeprecatedPrivateClass>();
       let methods = cls17.getStaticMethods();
       // Deprecated private methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
@@ -393,7 +393,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass019>();
+      let cls: Class = Class.from<DualAsyncPrivateClass>();
       let m1 = cls.getStaticMethod('publicAsync');
       let m2 = cls.getStaticMethod('privateAsync');
       let pubAccessible = m1 !== undefined;
@@ -435,7 +435,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls021 = Class.from<MyClass021>();
+      let cls021 = Class.from<FactoryPrivateClass>();
       let methods = cls021.getStaticMethods();
       // Private factory methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
@@ -452,7 +452,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls022 = Class.from<MyClass022>();
+      let cls022 = Class.from<UtilityPrivateClass>();
       let methods = cls022.getStaticMethods();
       // Private utility methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
@@ -469,7 +469,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass023>();
+      let cls: Class = Class.from<FourModifierPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
@@ -492,7 +492,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate 与其他属性检查的组合
-      let cls003 = Class.from<MyClass003>();
+      let cls003 = Class.from<PublicOnlyClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       expect(method!.isPrivate()).assertFalse();
@@ -509,7 +509,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass025>();
+      let cls: Class = Class.from<FourMethodPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
@@ -531,7 +531,7 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<MyClass026>();
+      let cls: Class = Class.from<FiveMethodPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
