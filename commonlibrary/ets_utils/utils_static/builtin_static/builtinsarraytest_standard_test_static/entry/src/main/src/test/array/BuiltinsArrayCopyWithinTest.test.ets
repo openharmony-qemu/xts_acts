@@ -23,7 +23,7 @@ class DataTest {
   public abc?: number
 }
 
-export default function builtinsArrayCopyWithinTest() {
+export default function builtinsArrayCopyWithinTest(): void {
   describe('BuiltinsArrayCopyWithinTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

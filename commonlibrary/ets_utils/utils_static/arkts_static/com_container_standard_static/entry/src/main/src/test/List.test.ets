@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -90,7 +90,7 @@ import ArrayList_10Test from "./ArrayList/ArrayListTest10.test";
 import ArrayList_11Test from "./ArrayList/ArrayListTest11.test";
 import ArrayList_12Test from "./ArrayList/ArrayListTest12.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArraylistTest1();
   ArraylistTest2();
   HashMapTest1();

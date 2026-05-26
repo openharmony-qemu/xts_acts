@@ -1880,7 +1880,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest48(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest48(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100 end')
       done();
     })
@@ -1899,7 +1899,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest49(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest49(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200 end')
       done();
     })   
@@ -1918,7 +1918,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest50(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest50(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300 end')
       done();
     })   
@@ -1937,7 +1937,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest51(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest51(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400 end')
       done();
     })   
@@ -1956,7 +1956,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest52(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest52(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500 end')
       done();
     })   
@@ -1975,7 +1975,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest53(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest53(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600 end')
       done();
     })   
@@ -1994,7 +1994,7 @@ export default function AVRecorderFuncAccTest() {
       fdObject = await commonFun.getFd(fileName);
       fdPath = "fd://" + fdObject.fdNumber;
       avConfig.url = fdPath;
-      commonFun.avRecorderReliabilitTest54(avConfig, avRecorder, RECORDER_TIME, done);
+      await commonFun.avRecorderReliabilitTest54(avConfig, avRecorder, RECORDER_TIME, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700 end')
       done();
     })        

@@ -17,7 +17,9 @@ import InputDeviceTest from "./InputDevice.test";
 import InputConsumerTest from "./InputConsumer.test";
 import InputConsumerComplementTest from "./InputConsumerComplement.test";
 import InputDeviceComplementTest from "./InputDeviceComplement.test";
+import InputEventClientTest from "./InputEventClient.test";
 export default function testsuite() {
+    InputEventClientTest();
     TouchEventTest();
     InputDeviceTest();
     InputConsumerTest();

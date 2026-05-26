@@ -67,7 +67,7 @@ class User {
   }
 }
 
-export default function ArraySomeTest() {
+export default function ArraySomeTest(): void {
   describe('ArraySomeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

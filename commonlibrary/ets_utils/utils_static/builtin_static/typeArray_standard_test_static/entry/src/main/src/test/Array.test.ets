@@ -28,7 +28,7 @@ import {
 } from "../../../hypium/index";
 
 class C{}
-export default function arrayTest() {
+export default function arrayTest(): void {
   describe("arrayTest", (): void => {
     // afterEach(async (): Promise<void> => {
     //   await Utils.msSleep(20);

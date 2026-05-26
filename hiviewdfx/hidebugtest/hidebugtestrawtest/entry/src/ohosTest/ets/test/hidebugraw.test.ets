@@ -297,6 +297,198 @@ export default function HidebugrawTest() {
       }
       console.info(`testHidebugraw_0800 success end`)
     })
+
+    /**
+     * @tc.name   testHidebugrawprocess_0100
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0100
+     * @tc.desc   Test dumpJsRawHeapData(false, false, false) - No GC, No Clean, Thread Only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        console.info("output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0100 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0100 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0200
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0200
+     * @tc.desc   Test dumpJsRawHeapData(true, true, true) - GC, Clean, Process Dump
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=true, needClean=true, processDump=true
+          let filenameArray = await hidebug.dumpJsRawHeapData(true, true, true);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0200 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0200 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0300
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0300
+     * @tc.desc   Test dumpJsRawHeapData(true, false, true) - GC, No Clean, Process Dump
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=true, needClean=false, processDump=true
+          let filenameArray = await hidebug.dumpJsRawHeapData(true, false, true);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0300 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0300 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0400
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0400
+     * @tc.desc   Test dumpJsRawHeapData(false, true, false) - No GC, Clean, Thread Only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=true, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, true, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0400 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0400 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0500
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0500
+     * @tc.desc   Test dumpJsRawHeapData(true, false, false) - GC, No Clean, Thread Only
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=true, needClean=false, processDump=false
+          let filenameArray = await hidebug.dumpJsRawHeapData(true, false, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0500 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0500 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0600
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0600
+     * @tc.desc   Test dumpJsRawHeapData(false, false, true) - No GC, No Clean, Process Dump
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testHidebugrawprocess_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          // needGC=false, needClean=false, processDump=true
+          let filenameArray = await hidebug.dumpJsRawHeapData(false, false, true);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0600 success and generated file path is ${filenameArray}`)
+          expect(filenameArray.length).assertLarger(0);
+          expect(filenameArray[0].length).assertLarger(0);
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0600 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.name   testHidebugrawprocess_0700
+     * @tc.number SUB_DFX_DFR_Hidebug_Ets_Raw_0700
+     * @tc.desc   Test error code 11400112 (Repeated data dump)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testHidebugrawprocess_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      try {
+        let path: string = '/data/storage/el2/base/files/';
+        let freeSize = await statfs.getFreeSize(path);
+        let options13: hidebug.GwpAsanOptions = {
+          alwaysEnabled: true,
+          isRecover: undefined
+        };
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+          hidebug.dumpJsRawHeapData(true, true, false).then((filePath: string[]) => {
+            console.info(`Fire first dump success`)
+          })
+          await asyncSleep(200);
+          let filename = await hidebug.dumpJsRawHeapData(true, true, false);
+          console.info(`SUB_DFX_DFR_Hidebug_Ets_Raw_0700 success (Repetition allowed or handled). Path: ${filename}`)
+          done();
+        }
+        done();
+      } catch (error) {
+        console.error(`SUB_DFX_DFR_Hidebug_Ets_Raw_0700 error code: ${(error as BusinessError).code}, error msg: ${(error as BusinessError).message}`);
+        // 验证错误码 11400112
+        expect((error as BusinessError).code == 11400112).assertTrue();
+        await asyncSleep(5000); // 等待资源释放
+        done();
+      }
+    })
     
   })
 }

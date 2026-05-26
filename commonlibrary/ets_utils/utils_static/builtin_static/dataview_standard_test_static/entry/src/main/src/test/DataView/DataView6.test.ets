@@ -280,7 +280,7 @@ interface NestedViewBoundaryFormatTest {
   formatStr: string;
 }
 
-export default function DataView6Test() {
+export default function DataView6Test(): void {
   describe('DataView6Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

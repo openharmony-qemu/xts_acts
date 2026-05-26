@@ -78,6 +78,26 @@ export default function webViewControllerJsunit2() {
     });
 
     /**
+     * @tc.name   testSetScrollbarModeStatic003
+     * @tc.number testSetScrollbarMode0003
+     * @tc.desc   SetScrollbarMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetScrollbarModeStatic003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(1000);
+      emitKey = 'emitSetScrollbarMode003';
+      Utils.emitEvent(emitKey, 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent("emitSetScrollbarMode003", 2, 20260526, done);
+      await Utils.msSleep(3000);
+      inspector.sendEventByKey('webcomponent',10,'');
+      await Utils.msSleep(6000);
+      done();
+    });
+
+    /**
      * @tc.name   emitSetSocketIdleTimeoutStatic001
      * @tc.number SUB_ACE_WEB_setSocketIdleTimeout_API_0001
      * @tc.desc   test setSocketIdleTimeout 300

@@ -73,7 +73,7 @@ export async function sleep(time: int): Promise<int> {
     }, time);
   });
 }
-export default function EsArrayTest002(){
+export default function EsArrayTest002(): void {
   describe('EsArrayTest002', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {
