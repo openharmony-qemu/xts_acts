@@ -16,7 +16,6 @@
 
       import {
  	   Entry,
- 	   Text,
  	   Row,
  	   Column,
  	   Component,

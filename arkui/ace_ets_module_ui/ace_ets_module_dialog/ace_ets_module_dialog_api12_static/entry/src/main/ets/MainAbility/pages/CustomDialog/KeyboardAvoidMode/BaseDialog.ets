@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {  UIContext } from '@ohos.arkui.UIContext'
+
+import { PromptAction, UIContext } from '@ohos.arkui.UIContext'
 import {
   Entry,
   Component,
@@ -33,11 +34,12 @@ import {
   Axis,
   Margin,TextInput,KeyboardAvoidMode,wrapBuilder, CustomBuilderT,
   PickerTextStyle, CalendarAlign, CalendarPicker,Builder,TextOverflow, TextHeightAdaptivePolicy,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,ComponentContent,
+  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,ComponentContent
 } from '@ohos.arkui.component';
 import {
   State,
   Link,
+  AppStorage,
   PropRef,
 } from '@ohos.arkui.stateManagement';
 let customDialogId: int = 0
@@ -49,17 +51,9 @@ class Params {
   }
 }
 
-@Entry
-@Component
-struct BaseDialog_CustomDialogUser {
-  @State message: string = 'hello'
-  @State mText1: string = ''
-  @State mText2: string = ''
-  @State keyboardAvoidMode1: number | undefined = 0
-  @State keyboardAvoidMode2: number | undefined = 1
+@Builder
+function BaseDialog_CustomDialogExample(params: Params) {
 
-  @Builder
-  BaseDialog_CustomDialogExample() {
   Column() {
     Text('可展示在主窗口外的弹窗')
       .fontSize(30)
@@ -67,8 +61,10 @@ struct BaseDialog_CustomDialogUser {
     TextInput()
       .id('TextInput')
     Button('点我关闭弹窗')
-      .onClick((e:ClickEvent):void => {
-        this.getUIContext().getPromptAction().closeCustomDialog(customDialogId)
+      .onClick(():void => {
+        const uiContext = AppStorage.get<UIContext>('uiContext')
+        let promptAction: PromptAction = uiContext!.getPromptAction();
+        promptAction.closeCustomDialog(customDialogId)
       })
       .id('close')
       .backgroundColor(Color.Red)
@@ -81,8 +77,10 @@ struct BaseDialog_CustomDialogUser {
     TextInput()
 
     Button('点我关闭弹窗')
-      .onClick((e:ClickEvent):void => {
-        this.getUIContext().getPromptAction().closeCustomDialog(customDialogId)
+      .onClick(():void => {
+        const uiContext = AppStorage.get<UIContext>('uiContext')
+        let promptAction: PromptAction = uiContext!.getPromptAction();
+        promptAction.closeCustomDialog(customDialogId)
       })
       .margin(20)
     TextInput()
@@ -91,8 +89,10 @@ struct BaseDialog_CustomDialogUser {
       .height(100)
     TextInput()
     Button('点我关闭弹窗')
-      .onClick((e:ClickEvent):void => {
-        this.getUIContext().getPromptAction().closeCustomDialog(customDialogId)
+      .onClick(():void => {
+        const uiContext = AppStorage.get<UIContext>('uiContext')
+        let promptAction: PromptAction = uiContext!.getPromptAction();
+        promptAction.closeCustomDialog(customDialogId)
       })
       .margin(20)
     TextInput()
@@ -103,6 +103,20 @@ struct BaseDialog_CustomDialogUser {
   }.size({ width: 350, height: 600 }).backgroundColor(Color.Gray)
 }
 
+
+
+@Entry
+@Component
+struct BaseDialog_CustomDialogUser {
+  @State message: string = 'hello'
+  @State mText1: string = ''
+  @State mText2: string = ''
+  @State keyboardAvoidMode1: number | undefined = 0
+  @State keyboardAvoidMode2: number | undefined = 1
+
+  uiContext: UIContext = this.getUIContext()
+
+
   build() {
     Row() {
       Column() {
@@ -110,10 +124,10 @@ struct BaseDialog_CustomDialogUser {
           .id('text1')
         Button('DEFAULT')
           .id('btn1')
-          .onClick((e:ClickEvent):void => {
+          .onClick(():void => {
             let uiContext = this.getUIContext();
             console.log('------------DEFAULT--------xxx')
-            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(this.BaseDialog_CustomDialogExample), new Params(this.message));
+            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(BaseDialog_CustomDialogExample), new Params(this.message));
             console.log('------------DEFAULT--------')
             this.getUIContext().getPromptAction().openCustomDialog(contentNode, {
               keyboardAvoidMode: KeyboardAvoidMode.DEFAULT,
@@ -129,9 +143,9 @@ struct BaseDialog_CustomDialogUser {
           .id('text2')
         Button('NONE')
           .id('btn2')
-          .onClick((e:ClickEvent):void => {
+          .onClick(():void => {
             let uiContext = this.getUIContext();
-            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(this.BaseDialog_CustomDialogExample), new Params(this.message));
+            let contentNode = new ComponentContent<Params>(uiContext, wrapBuilder<CustomBuilderT<Params>>(BaseDialog_CustomDialogExample), new Params(this.message));
             this.getUIContext().getPromptAction().openCustomDialog(contentNode, {
               keyboardAvoidMode: KeyboardAvoidMode.NONE,
             })

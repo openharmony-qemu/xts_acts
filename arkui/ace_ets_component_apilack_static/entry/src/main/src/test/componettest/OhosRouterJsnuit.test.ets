@@ -53,7 +53,7 @@ export default function OhosRouterJsunit() {
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA',
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -86,7 +86,7 @@ export default function OhosRouterJsunit() {
 it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest001] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA',
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -114,7 +114,7 @@ it('ohosRouterTest_static_001', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest002] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -137,7 +137,7 @@ it('ohosRouterTest_static_002', Level.LEVEL0, async () => {
         console.info("[ohosRouterTest002] on events_emitter err : " + JSON.stringify(err));
       }
       console.info("[ohosRouterTest002] click push button result is: "
-        + JSON.stringify(inspector.sendEventByKey('pushButtonA', 10, "")));
+        + JSON.stringify(inspector.sendEventByKey('ohosRouterA_y_pushButtonA_01', 10, "")));
       await Utils.sleep(1000);
       routerInstance.back();
       await Utils.sleep(1000);
@@ -179,7 +179,7 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
       routerInstance.clear();
       await Utils.sleep(1000);
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       try {
         routerInstance.pushUrl(options);
@@ -188,7 +188,7 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
       }
       await Utils.sleep(1000);
       let optionsB: router.RouterOptions = {
-        url: 'pages/ohosRouterB'
+        url: 'MainAbility/pages/conponentadd/ohosRouterBg'
       }
       try {
         routerInstance.replaceUrl(optionsB);
@@ -212,7 +212,7 @@ it('ohosRouterTest_static_004', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest005] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -253,7 +253,7 @@ it('ohosRouterTest_static_005', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest006] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -293,7 +293,7 @@ it('ohosRouterTest_static_006', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest008] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -333,7 +333,7 @@ it('ohosRouterTest_static_008', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest007] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {
@@ -372,7 +372,7 @@ it('ohosRouterTest_static_007', Level.LEVEL0, async () => {
 it('ohosRouterTest_static_009', Level.LEVEL0, async () => {
       console.info('[ohosRouterTest009] START');
       let options: router.RouterOptions = {
-        url: 'pages/ohosRouterA'
+        url: 'MainAbility/pages/conponentadd/ohosRouterA_y'
       }
       const routerInstance = AppStorage.get<Router>("router") as Router
       try {

@@ -71,7 +71,7 @@ async function terminateAbility(caseName: string) {
     }
     await Utils.msSleep(1000)
 }
-export default function UIExtensionTest() {
+export default function UIExtensionTest(): void {
 
     describe("UIExtensionTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowZindexTest describe start');
@@ -1268,7 +1268,6 @@ export default function UIExtensionTest() {
           expect().assertFail()
           done()
         }
-  
   
       })
       

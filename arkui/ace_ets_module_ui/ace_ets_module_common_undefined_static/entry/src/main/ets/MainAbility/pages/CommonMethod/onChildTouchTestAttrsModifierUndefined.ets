@@ -30,7 +30,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier implements AttributeModifier<ColumnAttribute> {
-  @State public isOnChildTouchTestUndefined: boolean = true;
+  public isOnChildTouchTestUndefined: boolean = true;
   private handleChildTouchTest(touchinfo: Array<TouchTestInfo>): TouchResult {
     for (let info of touchinfo) {
       if (info.id === 'MyList') {

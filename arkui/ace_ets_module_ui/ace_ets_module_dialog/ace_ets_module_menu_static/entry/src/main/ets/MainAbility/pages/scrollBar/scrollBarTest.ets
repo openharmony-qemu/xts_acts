@@ -16,11 +16,11 @@
 'use static'
 
 import { Entry, Text, Column, Row, Component, Button, Marquee, Scroll, MarqueeUpdateStrategy } from '@kit.ArkUI';
-import { Entry, Text, Column, Component, Button, ClickEvent, Divider, Image, KeyEvent, Padding, $r, Row, Flex,
-  Scroll, Color, FontWeight, KeyType, AxisModel, FocusAxisEvent, ButtonType, UIContext, TextAttribute, ButtonAttribute,
+import { ClickEvent, Divider, Image, KeyEvent, Padding, $r, Flex,
+  Color, FontWeight, KeyType, AxisModel, FocusAxisEvent, ButtonType, UIContext, TextAttribute, 
   Position, Placement, MenuElement, LocalizedPadding, Margin, TabsController, Tabs, Visibility,TextAlign, ResourceStr,
-  MenuOptions, BarState,  Menu, MenuItem, ResponseType, FlexAlign, ItemAlign, FlexDirection, CounterAttribute,
-  ContextMenuOptions, DividerMode, DividerStyleOptions, MenuItemGroup, ResponseType, DividerStyleOptions, Builder,
+  MenuOptions, BarState,  Menu, MenuItem, FlexAlign, ItemAlign, FlexDirection, CounterAttribute,
+  ContextMenuOptions, DividerMode, MenuItemGroup, ResponseType, DividerStyleOptions, Builder,
   AttributeModifier, ButtonAttribute, SubMenuExpandingMode, FontStyle, Font, CustomBuilder, MenuItemOptions
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';

@@ -172,7 +172,7 @@ it('LocalStoageLinkOneJsunit_static_0400', Level.LEVEL0, async (done: () => void
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('localstorage:2,storLink2:2');
 
       let driver = Driver.create()
-      let button_changeInitialValue = await driver.findComponent(ON.id('button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(ON.id('LocalStoageLinkOne_button_changeInitialValue'));
       await (button_changeInitialValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
@@ -181,7 +181,7 @@ it('LocalStoageLinkOneJsunit_static_0400', Level.LEVEL0, async (done: () => void
       console.info("[LocalStoageLinkOneJsunit_static_0400] obj2 is: " + JSON.stringify(obj2));
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('localstorage:12,storLink2:12');
 
-      let button_changeLocalStorageValue = await driver.findComponent(ON.id('button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(ON.id('LocalStoageLinkOne_button_changeLocalStorageValue'));
       await (button_changeLocalStorageValue?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 

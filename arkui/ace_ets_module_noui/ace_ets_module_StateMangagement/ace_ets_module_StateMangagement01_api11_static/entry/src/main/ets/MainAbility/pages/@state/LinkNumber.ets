@@ -70,7 +70,7 @@ struct Child_CP {
         .onClick((e: ClickEvent) => {
           this.count = 10;
         })
-        .key('state1')
+        .key('LinkNumber_state1')
         .height('5%')
 
       Text("切换变量赋值Object").height('5%')
@@ -78,7 +78,7 @@ struct Child_CP {
         .onClick((e: ClickEvent) => {
           this.count = new Num4(20);
         })
-        .key('state2')
+        .key('LinkNumber_state2')
         .height('5%')
 
       Text("切换变量赋值string").height('5%')
@@ -86,7 +86,7 @@ struct Child_CP {
         .onClick((e: ClickEvent) => {
           this.count = '30';
         })
-        .key('state3')
+        .key('LinkNumber_state3')
         .height('5%')
 
       Text("切换变量赋值Date").height('5%')
@@ -94,7 +94,7 @@ struct Child_CP {
         .onClick((e: ClickEvent) => {
           this.count = new Date('2021-08-08');
         })
-        .key('state4')
+        .key('LinkNumber_state4')
         .height('5%')
 
       Text("切换变量赋值Boolean").height('5%')
@@ -102,7 +102,7 @@ struct Child_CP {
         .onClick((e: ClickEvent) => {
           this.count = true;
         })
-        .key('state5')
+        .key('LinkNumber_state5')
         .height('5%')
 
     }.width('100%')

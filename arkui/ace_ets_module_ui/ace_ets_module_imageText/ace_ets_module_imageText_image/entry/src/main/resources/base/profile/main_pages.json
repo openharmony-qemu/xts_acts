@@ -94,6 +94,7 @@
         "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorStateUndefinedAndNull",
         "MainAbility/pages/ImageAnimatorUndefinedAndNull/ImageAnimatorImagesUndefinedAndNull",
         "MainAbility/pages/ImageColorFilter/ImageColorFilterTestPage",
-        "MainAbility/pages/ImageReloadKey/ImageReloadKeyTest"
+        "MainAbility/pages/ImageReloadKey/ImageReloadKeyTest",
+        "MainAbility/pages/DrawableDescriptorRelease/DrawableDescriptorReleaseTest"
     ]
 }

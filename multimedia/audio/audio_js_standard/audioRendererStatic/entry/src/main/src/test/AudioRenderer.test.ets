@@ -14275,5 +14275,239 @@ export default function audioRendererTest() {
       await audioRenderer!.release();
       done();
     })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0001
+     * @tc.desc   set sample rate 384000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: 384000,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        console.info(`AudioRenderer create : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer create : ERROR`);
+        expect(false).assertTrue();
+      }
+      try {
+        await audioRenderer!.start();
+        console.info(`AudioRenderer start : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer start : ERROR`);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err: Error) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('AudioRenderer test case completed')
+      done();
+    })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0002
+     * @tc.desc   set sample rate SAMPLE_RATE_384000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_384000,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        console.info(`AudioRenderer create : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer create : ERROR`);
+        expect(false).assertTrue();
+      }
+      try {
+        await audioRenderer!.start();
+        console.info(`AudioRenderer start : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer start : ERROR`);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err: Error) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('AudioRenderer test case completed')
+      done();
+    })
+    
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0003
+     * @tc.desc   set sample rate 383990
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: 383990,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        console.info(`AudioRenderer create : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer create : ERROR`);
+        expect(false).assertTrue();
+      }
+      try {
+        await audioRenderer!.start();
+        console.info(`AudioRenderer start : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer start : ERROR`);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err: Error) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('AudioRenderer test case completed')
+      done();
+    })
+    
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0004
+     * @tc.desc   set sample rate 8010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: 8010,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = null;
+      try {
+        audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        console.info(`AudioRenderer create : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer create : ERROR`);
+        expect(false).assertTrue();
+      }
+      try {
+        await audioRenderer!.start();
+        console.info(`AudioRenderer start : SUCCESS`);
+      } catch (err) {
+        console.info(`AudioRenderer start : ERROR`);
+        expect(false).assertTrue();
+      }
+      await audioRenderer!.release().then(() => {
+        console.info(`AudioRenderer release : SUCCESS`);
+      }).catch((err: Error) => {
+        console.info(`AudioRenderer release :ERROR : ${err.message}`);
+        expect(false).assertTrue();
+      });
+      console.info('AudioRenderer test case completed')
+      done();
+    })
+    
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0005
+     * @tc.desc   set sample rate 7990
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_SAMPLE_RATE_STATIC_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: 7990,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0
+      }
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      }
+      let audioRenderer: audio.AudioRenderer | null = null;
+      try {
+       audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+       console.info(`AudioRenderer create : SUCCESS`);
+       expect(false).assertTrue();
+       } catch (err) {
+         console.info(`AudioRenderer create : ERROR`);
+         expect(Number(err.code)).assertEqual(401);
+       } finally {
+         if (audioRenderer) {
+           await audioRenderer.release();
+         }
+       }
+      console.info('AudioRenderer test case completed')
+      done();
+    })
   })
 }

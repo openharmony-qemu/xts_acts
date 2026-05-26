@@ -166,6 +166,11 @@ struct IndexPage {
     { title: 'SetCustomCursor', uri: 'pages/ArkUI/SetCustomCursor' },
     { title: 'PopupColorMode', uri: 'pages/ArkUI/PopupColorMode' },
     { title: 'AccessibilityCustomActionsTest', uri: 'pages/ArkUI/AccessibilityCustomActionsTest' },
+    { title: 'SmartGestureSelect', uri: 'pages/ArkUI/SmartGestureSelect' },
+    { title: 'SmartGestureMonitor001', uri: 'pages/ArkUI/SmartGestureMonitor001' },
+    { title: 'SmartGestureMonitor002', uri: 'pages/ArkUI/SmartGestureMonitor002' },
+    { title: 'SmartGestureMonitor003', uri: 'pages/ArkUI/SmartGestureMonitor003' },
+    { title: 'SmartGestureCallBack', uri: 'pages/ArkUI/SmartGestureCallBack' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

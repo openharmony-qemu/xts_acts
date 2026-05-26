@@ -22,20 +22,17 @@ function test_tanh_001 (n: string, pr: number, rm: Rounding, expected: string) {
     expect(expected).assertEqual(Decimal.tanh(n).valueOf());
     expect(expected).assertEqual(new Decimal(n).tanh().valueOf());
 }
-async function Delay(delay: number): Promise<void> {
-  return new Promise((resolve:Function)=>{
-    setTimeout(()=>{
-        resolve('Hello World!');
-    },delay);
-  });
+
+async function yieldThread(): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, 1));
 }
+
 export default function DecimalTest004() {
   describe("DecimalTest004", () => {
     beforeAll(() => {
         console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");
     });
-    beforeEach(async() => {
-        await Delay(2000);
+    beforeEach(() => {
         console.info("beforeEach: Prerequisites at the test case level, which are executed before each test case is executed.");
     });
     afterEach(() => {
@@ -47,13 +44,13 @@ export default function DecimalTest004() {
         console.info("start################################start");
     /**
      * @tc.name   Decimal_tanh_Func_001
-     * @tc.number DECIMAL_TEST_001
-     * @tc.desc   Test tanh
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0100
+     * @tc.desc   Test tanh (special values and low precision)
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Decimal_tanh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_tanh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
         Decimal.set ({
             precision: 40,
             rounding: 4,
@@ -82,6 +79,25 @@ export default function DecimalTest004() {
         test_tanh_001('0.6228344', 3, 6, '0.553');
         test_tanh_001('0.3860621505234646348994570686682533147396620957827359578508068456', 2, 1, '0.36');
         test_tanh_001('0.5499', 3, 2, '0.501');
+        await yieldThread();
+    });
+    /**
+     * @tc.name   Decimal_tanh_Func_002
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0200
+     * @tc.desc   Test tanh (low-medium precision)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Decimal_tanh_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        Decimal.set ({
+            precision: 40,
+            rounding: 4,
+            toExpNeg: -9e15,
+            toExpPos: 9e15,
+            minE: -9e15,
+            maxE: 9e15
+        });
         test_tanh_001('0.27', 4, 0, '0.2637');
         test_tanh_001('-0.20874419', 6, 0, '-0.205765');
         test_tanh_001('-0.9', 9, 0, '-0.716297871');
@@ -102,6 +118,25 @@ export default function DecimalTest004() {
         test_tanh_001('-0.60158', 2, 2, '-0.53');
         test_tanh_001('-0.566', 5, 6, '-0.51242');
         test_tanh_001('-0.5455', 1, 1, '-0.4');
+        await yieldThread();
+    });
+    /**
+     * @tc.name   Decimal_tanh_Func_003
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0300
+     * @tc.desc   Test tanh (medium precision)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Decimal_tanh_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        Decimal.set ({
+            precision: 40,
+            rounding: 4,
+            toExpNeg: -9e15,
+            toExpPos: 9e15,
+            minE: -9e15,
+            maxE: 9e15
+        });
         test_tanh_001('0.181743184255049315571704802510832099', 6, 5, '0.179768');
         test_tanh_001('-0.7', 2, 3, '-0.61');
         test_tanh_001('-0.410626', 8, 6, '-0.38900408');
@@ -120,6 +155,25 @@ export default function DecimalTest004() {
         test_tanh_001('-0.1624241525', 60, 5, '-0.161010729348804314083016365256060397030839070169914629959771');
         test_tanh_001('-0.3246133', 23, 0, '-0.3136723151870226491541');
         test_tanh_001('0.7574510519751273', 52, 2, '0.6395731248592590736391239000170979980280431536354096');
+        await yieldThread();
+    });
+    /**
+     * @tc.name   Decimal_tanh_Func_004
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0400
+     * @tc.desc   Test tanh (high precision 31-66)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Decimal_tanh_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        Decimal.set ({
+            precision: 40,
+            rounding: 4,
+            toExpNeg: -9e15,
+            toExpPos: 9e15,
+            minE: -9e15,
+            maxE: 9e15
+        });
         test_tanh_001('0.52677087', 9, 5, '0.482908861');
         test_tanh_001('0.01504298596871499648833185964254026', 19, 0, '0.01504185137182836531');
         test_tanh_001('-0.66543541401805503420777', 66, 4, '-0.581969286944420744706095110187298812957954793212156080645254407938');
@@ -140,6 +194,25 @@ export default function DecimalTest004() {
         test_tanh_001('-0.3503134189235148094342514029278811316170849354159958798993', 78, 4, '-0.336653471066707838641123262575513511831303224617968974634023553683297404695416');
         test_tanh_001('-0.666924383326373492780403568920198080574', 25, 5, '-0.5829531066013566651422653');
         test_tanh_001('-0.44325150067844726483860902210607088446679462', 1, 1, '-0.4');
+        await yieldThread();
+    });
+    /**
+     * @tc.name   Decimal_tanh_Func_005
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0500
+     * @tc.desc   Test tanh (high precision 73-135)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("Decimal_tanh_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
+        Decimal.set ({
+            precision: 40,
+            rounding: 4,
+            toExpNeg: -9e15,
+            toExpPos: 9e15,
+            minE: -9e15,
+            maxE: 9e15
+        });
         test_tanh_001('0.9034751706768019789827', 60, 6, '0.717985782691067206453512080792613565326893708313975428005223');
         test_tanh_001('0.2172485076904694895179', 63, 4, '0.213894002682974109904624836689545795117673726509639521578182275');
         test_tanh_001('-0.348534855137810830366231027941', 31, 3, '-0.3350755386644384737516713339319');
@@ -165,14 +238,14 @@ export default function DecimalTest004() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.name   Decimal_tanh_Func_002
-     * @tc.number DECIMAL_TEST_002
-     * @tc.desc   Test tanh
+     * @tc.name   Decimal_tanh_Func_006
+     * @tc.number SUB_COMMONLIBRARY_DECIMAL_TANH_0600
+     * @tc.desc   Test tanh error handling
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it("Decimal_tanh_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+    it("Decimal_tanh_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
             precision: 40,
             rounding: 4,

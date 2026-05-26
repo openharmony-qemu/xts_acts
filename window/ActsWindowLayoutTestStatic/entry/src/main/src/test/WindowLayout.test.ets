@@ -1707,7 +1707,7 @@ export default function WindowLayoutTest() {
                     console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch((err: Error): void => {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message != null).assertTrue();
@@ -1802,7 +1802,7 @@ export default function WindowLayoutTest() {
                     console.info(caseName + 'Succeeded in calling setReceiveDragEventEnabled.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch((err: Error): void => {
                     console.error(caseName + 'Failed to call setReceiveDragEventEnabled. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message != null).assertTrue();
@@ -1847,7 +1847,7 @@ export default function WindowLayoutTest() {
                         done();
 
                     });
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(msgStr + `Failed to create the subwindow. Cause code: ${err.code}, message: ${err.message}`);
                     await subWindowClass!.destroyWindow();
                     if (err.code == 801) {
@@ -2738,7 +2738,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async(err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):Promise<void> => {
                    err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -2832,7 +2832,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async(err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):Promise<void> => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));
@@ -3007,7 +3007,7 @@ export default function WindowLayoutTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in moving the window.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async(err: Error):PromiseLike<void>|undefined => {
+                }).catch(async(err: Error):Promise<void> => {
                     err === err as BusinessError;
                     if(err!.code !== 801){
                         hilog.error(0x0000, '[ANI]',msgStr + 'Failed to move the window. Cause:' + JSON.stringify(err));

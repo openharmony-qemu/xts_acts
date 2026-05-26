@@ -141,6 +141,14 @@ export default function ImageMetadata() {
     it('SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0003', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_SOURCE_READ_IMAGE_METADATA_BY_TYPE_0003'
       hilog.info(domain, testTag, `begin`);
+      let formats = await image.getImageSourceSupportedFormats();
+      let isSupportedTiff = formats.includes('image/tiff');
+      console.info('isSupportedTiff is ' + isSupportedTiff);
+      if (!isSupportedTiff) {
+        console.info(`${testTag} does not support tiff`);
+        done();
+        return
+      }
       try {
         const fileName = 'tiff_xmp.tiff';
         const imageSourceApi: image.ImageSource = await getImageSource(fileName, "uri");
