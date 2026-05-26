@@ -764,11 +764,12 @@ export default function StaticMethodInvokeTest(): void {
     it('testStaticMethodInvoke033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MultiMethodClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      let results: FixedArray<string> = ['', '', ''];
+      let invokeCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
-        results[i] = methods[i].getName();
+        methods[i].invoke();
+        invokeCount++;
       }
-      expect(results.length).assertEqual(3);
+      expect(invokeCount).assertEqual(3);
     });
 
     /**
