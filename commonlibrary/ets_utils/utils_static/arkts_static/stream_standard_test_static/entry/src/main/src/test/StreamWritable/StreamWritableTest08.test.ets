@@ -19,15 +19,26 @@ import Utils from '../Util.test';
 class TestWritableCh01 extends stream.Writable {
   receivedChunks: string[] = []
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+    if (typeof chunk === 'string') {
+      this.receivedChunks.push(chunk as string);
+    }
+    callback.unsafeCall();
+  }
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("Writable chunks", chunks);
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
-      if (typeof chunk === 'string') {
-        this.receivedChunks.push(chunk as string);
+    for (const chunk of chunks) {
+      if (chunk instanceof Uint8Array) {
+        let result = '';
+        for (let j = 0; j < chunk.length; j++) {
+          result += String.fromCharCode(chunk[j].toInt());
+        }
+        this.receivedChunks.push(result);
+      } else {
+        this.receivedChunks.push(chunk);
       }
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -35,28 +46,28 @@ class TestWritableCh02 extends stream.Writable {
   receivedChunks: (string | Uint8Array)[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks count:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      this.receivedChunks.push(chunks[i]);
+    for (const chunk of chunks) {
+      this.receivedChunks.push(chunk);
     }
     expect(chunks.length).assertEqual(2);
-    callback();
+    callback.unsafeCall();
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called instead of doWritev");
     this.receivedChunks.push(chunk);
-    callback();
+    callback.unsafeCall();
   }
 }
 
 class TestWritableCh03 extends stream.Writable {
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("Writable chunks", chunks);
     expect(chunks.length).assertEqual(0);
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -64,11 +75,10 @@ class TestWritableCh04 extends stream.Writable {
   receivedData: string[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks count:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+    for (const chunk of chunks) {
       if (typeof chunk === 'string') {
         this.receivedData.push(chunk as string);
       } else if (chunk instanceof Uint8Array) {
@@ -80,9 +90,9 @@ class TestWritableCh04 extends stream.Writable {
       }
     }
     expect(chunks.length).assertEqual(2);
-    callback();
+    callback.unsafeCall();
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called");
     if (typeof chunk === 'string') {
       this.receivedData.push(chunk as string);
@@ -93,7 +103,7 @@ class TestWritableCh04 extends stream.Writable {
       }
       this.receivedData.push(result);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -101,11 +111,10 @@ class TestWritableCh05 extends stream.Writable {
   receivedData: string[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks count:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+    for (const chunk of chunks) {
       if (typeof chunk === 'string') {
         this.receivedData.push(chunk as string);
       } else if (chunk instanceof Uint8Array) {
@@ -117,9 +126,9 @@ class TestWritableCh05 extends stream.Writable {
       }
     }
     expect(chunks.length).assertEqual(3);
-    callback();
+    callback.unsafeCall();
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called");
     if (typeof chunk === 'string') {
       this.receivedData.push(chunk as string);
@@ -130,7 +139,7 @@ class TestWritableCh05 extends stream.Writable {
       }
       this.receivedData.push(result);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -138,11 +147,10 @@ class TestWritableCh06 extends stream.Writable {
   receivedChunks: Uint8Array[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks count:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+    for (const chunk of chunks) {
       if (chunk instanceof Uint8Array) {
         this.receivedChunks.push(chunk);
       } else if (typeof chunk === 'string') {
@@ -155,9 +163,9 @@ class TestWritableCh06 extends stream.Writable {
       }
     }
     expect(chunks.length).assertEqual(4);
-    callback();
+    callback.unsafeCall();
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called");
     if (chunk instanceof Uint8Array) {
       this.receivedChunks.push(chunk);
@@ -169,22 +177,23 @@ class TestWritableCh06 extends stream.Writable {
       }
       this.receivedChunks.push(uint8Array);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
 class TestWritableCh07 extends stream.Writable {
   callbackCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("Writable chunks", chunks);
     expect(chunks.length).assertEqual(1);
-    const chunk = chunks[0];
-    if (typeof chunk === 'string') {
-      expect(chunk).assertEqual('test');
+    for (const chunk of chunks) {
+      if (typeof chunk === 'string') {
+        expect(chunk).assertEqual('test');
+      }
     }
     this.callbackCalled = true;
-    callback();
+    callback.unsafeCall();
   }
 }
 
@@ -192,11 +201,10 @@ class TestWritableCh08 extends stream.Writable {
   receivedData: string[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  doWritev(chunks: (string | Uint8Array)[], callback: () => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks length:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+    for (const chunk of chunks) {
       if (typeof chunk === 'string') {
         this.receivedData.push(chunk as string);
       } else if (chunk instanceof Uint8Array) {
@@ -208,9 +216,9 @@ class TestWritableCh08 extends stream.Writable {
       }
     }
     expect(chunks.length).assertEqual(10);
-    callback();
+    callback.unsafeCall();
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called");
     if (typeof chunk === 'string') {
       this.receivedData.push(chunk as string);
@@ -221,22 +229,21 @@ class TestWritableCh08 extends stream.Writable {
       }
       this.receivedData.push(result);
     }
-    callback();
+    callback.unsafeCall();
   }
 }
 
 class TestWritableCh09 extends stream.Writable {
   callbackExecutionCount: number = 0;
   constructor() { super(); }
-  _writev(chunks: (string | Uint8Array)[], callback: (error?: Error | null) => void): void {
-    this.doWritev(chunks, callback);
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
+    callback.unsafeCall();
+    this.callbackExecutionCount++;
   }
-  doWritev(chunks: (string | Uint8Array)[], callback: (error?: Error | null) => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("Writable chunks count:", chunks.length);
-    setTimeout((): void => {
-      callback();
-      this.callbackExecutionCount++;
-    }, 0);
+    callback.unsafeCall();
+    this.callbackExecutionCount++;
   }
 }
 
@@ -244,17 +251,10 @@ class TestWritableCh10 extends stream.Writable {
   receivedData: string[] = [];
   doWritevCalled: boolean = false;
   constructor() { super(); }
-  _writev(chunks: (string | Uint8Array)[], callback: (error?: Error | null) => void): void {
-    this.doWritev(chunks, callback);
-  }
-  _write(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
-    this.doWrite(chunk, encoding, callback);
-  }
-  doWritev(chunks: (string | Uint8Array)[], callback: (error?: Error | null) => void): void {
+  doWritev(chunks: string[] | Uint8Array[], callback: Function): void {
     console.info("doWritev called with chunks length:", chunks.length);
     this.doWritevCalled = true;
-    for (let i = 0; i < chunks.length; i++) {
-      const chunk = chunks[i];
+    for (const chunk of chunks) {
       if (typeof chunk === 'string') {
         this.receivedData.push(chunk as string);
       } else if (chunk instanceof Uint8Array) {
@@ -266,9 +266,9 @@ class TestWritableCh10 extends stream.Writable {
       }
     }
     expect(chunks.length).assertEqual(3);
-    setTimeout((): void => { callback(); }, 0);
+    setTimeout((): void => { callback.unsafeCall(); }, 0);
   }
-  doWrite(chunk: string | Uint8Array, encoding: string, callback: (error?: Error | null) => void): void {
+  doWrite(chunk: string | Uint8Array, encoding: string, callback: Function): void {
     console.info("doWrite called");
     if (typeof chunk === 'string') {
       this.receivedData.push(chunk as string);
@@ -279,7 +279,7 @@ class TestWritableCh10 extends stream.Writable {
       }
       this.receivedData.push(result);
     }
-    setTimeout((): void => { callback(); }, 0);
+    setTimeout((): void => { callback.unsafeCall(); }, 0);
   }
 }
 
