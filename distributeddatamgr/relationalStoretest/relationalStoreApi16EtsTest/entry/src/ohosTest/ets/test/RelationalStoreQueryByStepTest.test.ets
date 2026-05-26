@@ -169,7 +169,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep("");
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       }
       console.info(TAG + '************* rdbtestQueryByStepSql002 end *************');
     })
@@ -188,7 +188,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep(undefined);
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       }
       console.info(TAG + '************* rdbtestQueryByStepSql003 end *************');
     })
@@ -207,7 +207,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep(null);
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       }
       console.info(TAG + '************* rdbtestQueryByStepSql004 end *************');
     })
@@ -227,7 +227,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep("SELECT * FROM test WHERE name = 'Alice'");
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(14800014);
+        expect(e.code).assertEqual("14800014");
       }
       console.info(TAG + '************* rdbtestQueryByStepSql005 end *************');
     })
@@ -510,7 +510,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep(null,null);
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual(401);
+        expect(e.code).assertEqual("401");
       }
       console.info(TAG + '************* rdbtestQueryByStepSql016 end *************');
     })
