@@ -173,6 +173,8 @@ async function clickUpdatablePickerButton(driver: Driver) {
     isSlidingSupported: true,
     autoPlayScenes: [],
     appAlbumFilters: [],
+    gridMargin: { top: 1 },
+    photoBrowserMargin: { top: 2 },
   })
   pickerCtl.updatePickerOptions({
     mimeType: photoAccessHelper.PhotoViewMIMETypes.VIDEO_TYPE,
@@ -3154,6 +3156,7 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let fail = false;
       let callback = (event: events_emitter.EventData) => {
         let expectedMaxSelectNumber: number = 10;
         let expectedMaxSelectPhotoNumber: number = 5;
@@ -3187,26 +3190,33 @@ export default function TextPicker() {
 
         let msg: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker56 result msg ' + JSON.stringify(msg));
-        expect(photoAccessHelper.PlayMode.DEFAULT).assertEqual(0);
-        expect(expectedMaxSelectNumber).assertEqual(msg.maxSelectCount);
-        expect(expectedMaxSelectPhotoNumber).assertEqual(msg.maxPhotoSelectNumber);
-        expect(expectedMaxSelectVideoNumber).assertEqual(msg.maxVideoSelectNumber);
-        expect(expectedCheckBoxColor).assertEqual(msg.checkBoxColor);
-        expect(expectedCheckBoxTextColor).assertEqual(msg.checkboxTextColor);
-        expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
-        expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
-        expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
-        expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
-        expect(expectedEdgeEffect).assertEqual(msg.edgeEffect);
-        expect(expectedMimeType).assertEqual(msg.mimeType);
-        expect(expectedMimeTypeFilter).assertDeepEquals(msg.mimeTypeFilter);
-        expect(expectedRepeatSelectSupported).assertEqual(msg.isRepeatSelectSupported);
-        expect(expectedSelectMode).assertEqual(msg.selectMode);
-        expect(expectedSingleSelectionMode).assertEqual(msg.singleSelectionMode);
-        expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
-        expect(expectedAutoPlayScenes).assertDeepEquals(msg.autoPlayScenes);
-        expect(expectedAppAlbumFilters).assertDeepEquals(msg.appAlbumFilters);
-        expect(expectedBackgroundOpacity).assertDeepEquals(msg.backgroundOpacity);
+        try {
+          expect(photoAccessHelper.PlayMode.DEFAULT).assertEqual(0);
+          expect(expectedMaxSelectNumber).assertEqual(msg.maxSelectCount);
+          expect(expectedMaxSelectPhotoNumber).assertEqual(msg.maxPhotoSelectNumber);
+          expect(expectedMaxSelectVideoNumber).assertEqual(msg.maxVideoSelectNumber);
+          expect(expectedCheckBoxColor).assertEqual(msg.checkBoxColor);
+          expect(expectedCheckBoxTextColor).assertEqual(msg.checkboxTextColor);
+          expect(expectedBackgroundColor).assertEqual(msg.backgroundColor);
+          expect(expectedBrowserColorMode).assertEqual(msg.photoBrowserBackgroundColorMode);
+          expect(expectedUiComponentColorMode).assertEqual(msg.uiComponentColorMode);
+          expect(expectedIsSlidingSupported).assertEqual(msg.isSlidingSupported);
+          expect(expectedEdgeEffect).assertEqual(msg.edgeEffect);
+          expect(expectedMimeType).assertEqual(msg.mimeType);
+          expect(expectedMimeTypeFilter).assertDeepEquals(msg.mimeTypeFilter);
+          expect(expectedRepeatSelectSupported).assertEqual(msg.isRepeatSelectSupported);
+          expect(expectedSelectMode).assertEqual(msg.selectMode);
+          expect(expectedSingleSelectionMode).assertEqual(msg.singleSelectionMode);
+          expect(expectedPreselectedUris).assertDeepEquals(msg.preselectedUris);
+          expect(expectedAutoPlayScenes).assertDeepEquals(msg.autoPlayScenes);
+          expect(expectedAppAlbumFilters).assertDeepEquals(msg.appAlbumFilters);
+          expect(expectedBackgroundOpacity).assertDeepEquals(msg.backgroundOpacity);
+          expect(msg.gridMargin).assertDeepEquals({});
+          expect(msg.photoBrowserMargin).assertDeepEquals({});
+        } catch (e) {
+          console.error('testPicker56 fail', e.message);
+          fail = true;
+        }
       }
       let event: events_emitter.InnerEvent = {
         eventId: code,
@@ -3228,6 +3238,9 @@ export default function TextPicker() {
       router.back();
       events_emitter.off(event.eventId);
       console.info("testPicker56 finish");
+      if (fail) {
+        expect().assertFail()
+      }
       done();
     });
 
