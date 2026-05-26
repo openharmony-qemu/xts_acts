@@ -143,7 +143,7 @@ export default function queryByStepTest() {
      * @tc.desc   空数据
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql001 start *************');
@@ -160,7 +160,7 @@ export default function queryByStepTest() {
      * @tc.desc   第一个参数为空
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql002 start *************');
@@ -179,7 +179,7 @@ export default function queryByStepTest() {
      * @tc.desc   第一个参数为undefined
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql003 start *************');
@@ -198,7 +198,7 @@ export default function queryByStepTest() {
      * @tc.desc   第一个参数为null
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql004 start *************');
@@ -207,7 +207,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep(null);
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.info(TAG + '************* rdbtestQueryByStepSql004 end *************');
     })
@@ -217,7 +217,7 @@ export default function queryByStepTest() {
      * @tc.desc   RdbStore已关闭
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql005 start *************');
@@ -237,7 +237,7 @@ export default function queryByStepTest() {
      * @tc.desc   bindArgs数组
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql006 start *************');
@@ -262,7 +262,7 @@ export default function queryByStepTest() {
      * @tc.desc   空bindArgs数组
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql007 start *************');
@@ -285,7 +285,7 @@ export default function queryByStepTest() {
      * @tc.desc   空bindArgs数组[""]
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql008 start *************');
@@ -308,7 +308,7 @@ export default function queryByStepTest() {
      * @tc.desc   bindArgs数组为null
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql009 start *************');
@@ -331,7 +331,7 @@ export default function queryByStepTest() {
      * @tc.desc   bindArgs数组为undefined
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql010 start *************');
@@ -354,7 +354,7 @@ export default function queryByStepTest() {
      * @tc.desc   bindArgs数组超了
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql011 start *************');
@@ -378,7 +378,7 @@ export default function queryByStepTest() {
      * @tc.desc   超2M
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql012 start *************');
@@ -402,7 +402,7 @@ export default function queryByStepTest() {
      * @tc.desc   所有数据类型
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql013 start *************');
@@ -446,7 +446,7 @@ export default function queryByStepTest() {
      * @tc.desc   两个条件
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql014 start *************');
@@ -470,7 +470,7 @@ export default function queryByStepTest() {
      * @tc.desc   sql注入
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql015 start *************');
@@ -499,7 +499,7 @@ export default function queryByStepTest() {
      * @tc.desc   sql注入
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql016 start *************');
@@ -510,7 +510,7 @@ export default function queryByStepTest() {
         let resultSet = await store.queryByStep(null,null);
       }catch (e) {
         console.log(TAG + `testQueryByStepSql failed,err code is ${e.code},message is ${e.message}`);
-        expect("401").assertEqual(e.code);
+        expect(e.code).assertEqual(401);
       }
       console.info(TAG + '************* rdbtestQueryByStepSql016 end *************');
     })
@@ -520,7 +520,7 @@ export default function queryByStepTest() {
      * @tc.desc  return value
      * @tc.size   MediumTest
      * @tc.type   Function
-     * @tc.level  Level 2
+     * @tc.level  LEVEL2
      */
     it('rdbtestQueryByStepSql017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async  () => {
       console.info(TAG + '************* rdbtestQueryByStepSql017 start *************');
@@ -533,6 +533,6 @@ export default function queryByStepTest() {
       expect(resultSet.getString(resultSet.getColumnIndex("name"))).assertEqual("Alice");
       resultSet.close();
       console.info(TAG + '************* rdbtestQueryByStepSql017 end *************');
-    })
+    }) 
   });
-}
+} 
