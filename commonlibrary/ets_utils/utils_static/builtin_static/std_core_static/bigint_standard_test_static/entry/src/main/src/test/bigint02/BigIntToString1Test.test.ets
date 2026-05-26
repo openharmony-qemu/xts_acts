@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntToString1Test(): void {
   describe('BigInt.toString no-arg (mindmap toString_1)', () => {
@@ -68,8 +69,8 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1LongBounds0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(9223372036854775807).toString()).assertEqual('9223372036854775807');
-      expect(BigInt(-9223372036854775808).toString()).assertEqual('-9223372036854775808');
+      expect(BigInt(LONG_MAX).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MIN).toString()).assertEqual(LONG_MIN_STR);
     });
 
     /**

@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR } from '../BigIntTestLimits';
 
 export default function BigIntNegateTest(): void {
   describe('BigInt.negate (mindmap negate)', () => {
@@ -118,9 +119,9 @@ export default function BigIntNegateTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegateLongMin0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(-9223372036854775808).negate().toString()).assertEqual('9223372036854775808');
-      expect(BigInt(9223372036854775807).negate().toString()).assertEqual('-9223372036854775807');
-      expect(BigInt(-9223372036854775808).negate().negate().toString()).assertEqual('-9223372036854775808');
+      expect(BigInt(LONG_MIN).negate().toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(LONG_MAX).negate().toString()).assertEqual(LONG_MAX_NEGATED_STR);
+      expect(BigInt(LONG_MIN).negate().negate().toString()).assertEqual(LONG_MIN_STR);
     });
   });
 }

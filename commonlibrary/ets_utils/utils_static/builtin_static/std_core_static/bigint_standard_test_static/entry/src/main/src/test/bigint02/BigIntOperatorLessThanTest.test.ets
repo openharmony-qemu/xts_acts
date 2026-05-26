@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorLessThanTest(): void {
   describe('BigInt.operatorLessThan (mindmap)', () => {
@@ -110,13 +111,13 @@ export default function BigIntOperatorLessThanTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(min.operatorLessThan(max)).assertTrue();
       expect(max.operatorLessThan(min)).assertFalse();
-      expect(BigInt('-9223372036854775809').operatorLessThan(min)).assertTrue();
-      expect(max.operatorLessThan(BigInt('9223372036854775808'))).assertTrue();
+      expect(BigInt(LONG_MIN_MINUS_ONE_STR).operatorLessThan(min)).assertTrue();
+      expect(max.operatorLessThan(BigInt(LONG_MAX_PLUS_ONE_STR))).assertTrue();
     });
   });
 }

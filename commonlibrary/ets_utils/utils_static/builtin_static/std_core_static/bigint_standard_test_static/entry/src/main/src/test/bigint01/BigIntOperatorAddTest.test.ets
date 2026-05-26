@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorAddTest(): void {
   describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
@@ -139,14 +140,14 @@ export default function BigIntOperatorAddTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
-      expect(max.operatorAdd(BigInt(1)).toString()).assertEqual('9223372036854775808');
-      expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual('-9223372036854775809');
+      expect(max.operatorAdd(BigInt(1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
       expect(max.operatorAdd(min).toString()).assertEqual('-1');
-      expect(BigInt(0).operatorAdd(max).toString()).assertEqual('9223372036854775807');
-      expect(BigInt(0).operatorAdd(min).toString()).assertEqual('-9223372036854775808');
+      expect(BigInt(0).operatorAdd(max).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(0).operatorAdd(min).toString()).assertEqual(LONG_MIN_STR);
     });
   });
 }

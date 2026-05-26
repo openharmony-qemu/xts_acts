@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntGetLongTest(): void {
   describe('BigInt.getLong (mindmap getLong)', () => {
@@ -66,8 +67,8 @@ export default function BigIntGetLongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetLongBoundary0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(9223372036854775807).getLong()).assertEqual(9223372036854775807);
-      expect(BigInt(-9223372036854775808).getLong()).assertEqual(-9223372036854775808);
+      expect(BigInt(LONG_MAX).getLong()).assertEqual(LONG_MAX);
+      expect(BigInt(LONG_MIN).getLong()).assertEqual(LONG_MIN);
     });
 
     /**
@@ -79,9 +80,9 @@ export default function BigIntGetLongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetLongOverflowWrap0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
-      expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807);
-      expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
+      expect(BigInt(LONG_MAX_PLUS_ONE_STR).getLong()).assertEqual(LONG_MIN);
+      expect(BigInt(LONG_MIN_MINUS_ONE_STR).getLong()).assertEqual(LONG_MAX);
+      expect(BigInt(ULONG_MAX_PLUS_ONE_STR).getLong()).assertEqual(0);
     });
 
     /**
@@ -109,7 +110,7 @@ export default function BigIntGetLongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetLongNoThrow0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
+      expect(BigInt(LONG_MAX_PLUS_ONE_STR).getLong()).assertEqual(LONG_MIN);
       expect(BigInt('-99999999999999999999999').getLong()).assertEqual(-200376420520689663);
     });
   });

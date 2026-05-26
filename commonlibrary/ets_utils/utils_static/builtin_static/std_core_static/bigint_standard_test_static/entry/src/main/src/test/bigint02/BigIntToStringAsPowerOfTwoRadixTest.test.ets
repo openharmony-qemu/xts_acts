@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MIN_RADIX16_STR } from '../BigIntTestLimits';
 
 export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
   describe('BigInt.toStringAsPowerOfTwoRadix (mindmap)', () => {
@@ -102,11 +103,11 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntToStringAsPowerOfTwoRadixLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(max.toStringAsPowerOfTwoRadix(16)).assertEqual(max.toString(16));
-      expect(min.toStringAsPowerOfTwoRadix(16)).assertEqual('8000000000000000');
+      expect(min.toStringAsPowerOfTwoRadix(16)).assertEqual(LONG_MIN_RADIX16_STR);
     });
   });
 }

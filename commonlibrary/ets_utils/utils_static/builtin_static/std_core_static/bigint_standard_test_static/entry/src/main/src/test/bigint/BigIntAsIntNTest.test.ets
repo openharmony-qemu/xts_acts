@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, UINT32_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 import Utils from '../Util.test';
 
 export default function BigIntAsIntNTest(): void {
@@ -71,7 +72,7 @@ export default function BigIntAsIntNTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsIntN32Bit0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asIntN(32, Utils.biStr('4294967295')).toString()).assertEqual('-1');
+      expect(BigInt.asIntN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(32, Utils.biStr('2147483648')).toString()).assertEqual('-2147483648');
     });
 
@@ -144,12 +145,12 @@ export default function BigIntAsIntNTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsIntN64BitBoundary0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asIntN(64, Utils.biStr('9223372036854775807')).toString()).assertEqual('9223372036854775807');
-      expect(BigInt.asIntN(64, BigInt(-9223372036854775808)).toString()).assertEqual('-9223372036854775808');
-      expect(BigInt.asIntN(64, Utils.biStr('9223372036854775808')).toString()).assertEqual('-9223372036854775808');
-      expect(BigInt.asIntN(64, Utils.biStr('18446744073709551615')).toString()).assertEqual('-1');
+      expect(BigInt.asIntN(64, Utils.biStr(LONG_MAX_STR)).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt.asIntN(64, BigInt(LONG_MIN)).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt.asIntN(64, Utils.biStr(LONG_MAX_PLUS_ONE_STR)).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt.asIntN(64, Utils.biStr(ULONG_MAX_STR)).toString()).assertEqual('-1');
       expect(BigInt.asIntN(64, Utils.biStr('18446744073709551616')).toString()).assertEqual('0');
-      expect(BigInt.asIntN(64, Utils.biStr('-9223372036854775809')).toString()).assertEqual('9223372036854775807');
+      expect(BigInt.asIntN(64, Utils.biStr(LONG_MIN_MINUS_ONE_STR)).toString()).assertEqual(LONG_MAX_STR);
     });
 
     /**

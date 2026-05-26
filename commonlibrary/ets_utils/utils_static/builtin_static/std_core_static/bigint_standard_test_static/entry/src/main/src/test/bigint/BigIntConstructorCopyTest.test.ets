@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorCopyTest(): void {
   describe('BigInt copy constructor (mindmap constructor_9)', () => {
@@ -87,7 +88,7 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyMinLong0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const original = BigInt('-9223372036854775808');
+      const original = BigInt(LONG_MIN_STR);
       const copied = BigInt(original);
 
       expect(copied.equals(original)).assertTrue();
@@ -102,7 +103,7 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyMaxLong0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxLong = BigInt('9223372036854775807');
+      const maxLong = BigInt(LONG_MAX_STR);
 
       expect(BigInt(maxLong).equals(maxLong)).assertTrue();
     });
@@ -154,6 +155,23 @@ export default function BigIntConstructorCopyTest(): void {
 
       expect(original.toString()).assertEqual('10');
       expect(sum.toString()).assertEqual('15');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_1000
+     * @tc.name testBigIntConstructorCopyLongMinULongMax1000
+     * @tc.desc Mindmap input: copy at LONG_MIN and unsigned 64-bit maximum magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorCopyLongMinULongMax1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const minLong = BigInt(LONG_MIN_STR);
+      const umax = BigInt(ULONG_MAX_STR);
+
+      expect(BigInt(minLong).equals(minLong)).assertTrue();
+      expect(BigInt(umax).equals(umax)).assertTrue();
+      expect(BigInt(umax).toString()).assertEqual(ULONG_MAX_STR);
     });
   });
 }

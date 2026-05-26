@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntEquals2Test(): void {
   describe('BigInt.equals(other: Any) overload (mindmap equals_2)', () => {
@@ -128,11 +129,11 @@ export default function BigIntEquals2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnyLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
+      const max = BigInt(LONG_MAX);
 
-      expect(max.equals(BigInt('9223372036854775807'))).assertTrue();
-      expect(max.equals(BigInt('-9223372036854775808'))).assertFalse();
-      expect(max.equals(9223372036854775807 as object)).assertFalse();
+      expect(max.equals(BigInt(LONG_MAX_STR))).assertTrue();
+      expect(max.equals(BigInt(LONG_MIN_STR))).assertFalse();
+      expect(max.equals(LONG_MAX as object)).assertFalse();
     });
   });
 }

@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorStringTest(): void {
   describe('BigInt string constructor (mindmap constructor_7)', () => {
@@ -175,11 +176,24 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringLongBounds1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775807').toString()).assertEqual('9223372036854775807');
-      expect(BigInt('-9223372036854775808').toString()).assertEqual('-9223372036854775808');
-      expect(BigInt('+9223372036854775807').toString()).assertEqual('9223372036854775807');
-      expect(BigInt('9223372036854775808').toString()).assertEqual('9223372036854775808');
-      expect(BigInt('-9223372036854775809').toString()).assertEqual('-9223372036854775809');
+      expect(BigInt(LONG_MAX_STR).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MIN_STR).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt('+' + LONG_MAX_STR).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MAX_PLUS_ONE_STR).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(LONG_MIN_MINUS_ONE_STR).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_1200
+     * @tc.name testBigIntConstructorStringULongMax1200
+     * @tc.desc Verify decimal string at unsigned 64-bit maximum constructs exact BigInt value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringULongMax1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(ULONG_MAX_STR).toString()).assertEqual(ULONG_MAX_STR);
+      expect(BigInt(ULONG_MAX_STR).equals(BigInt.fromULong(-1))).assertTrue();
     });
   });
 }

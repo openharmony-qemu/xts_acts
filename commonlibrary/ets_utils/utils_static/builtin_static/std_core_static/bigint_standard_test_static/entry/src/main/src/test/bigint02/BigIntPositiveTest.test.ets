@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_NEGATED } from '../BigIntTestLimits';
 
 export default function BigIntPositiveTest(): void {
   describe('BigInt.positive (mindmap positive)', () => {
@@ -100,9 +101,9 @@ export default function BigIntPositiveTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPositiveLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(9223372036854775807).positive()).assertTrue();
-      expect(BigInt(-9223372036854775808).positive()).assertFalse();
-      expect(BigInt(-9223372036854775807).positive()).assertFalse();
+      expect(BigInt(LONG_MAX).positive()).assertTrue();
+      expect(BigInt(LONG_MIN).positive()).assertFalse();
+      expect(BigInt(LONG_MAX_NEGATED).positive()).assertFalse();
     });
 
     /**
@@ -115,7 +116,7 @@ export default function BigIntPositiveTest(): void {
      */
     it('testBigIntPositiveFromULong0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(0).positive()).assertTrue();
-      expect(BigInt.fromULong(9223372036854775807).positive()).assertTrue();
+      expect(BigInt.fromULong(LONG_MAX).positive()).assertTrue();
       expect(BigInt.fromULong(-1).positive()).assertTrue();
     });
   });

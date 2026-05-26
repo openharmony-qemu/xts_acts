@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_NEGATED_STR, LONG_EXTREMA_SPAN_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorSubtractTest(): void {
   describe('BigInt.operatorSubtract (mindmap operatorSubtract)', () => {
@@ -106,14 +107,14 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorSubtractLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(max.operatorSubtract(BigInt(1)).toString()).assertEqual('9223372036854775806');
-      expect(min.operatorSubtract(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
+      expect(min.operatorSubtract(BigInt(-1)).toString()).assertEqual(LONG_MAX_NEGATED_STR);
       expect(max.operatorSubtract(max).toString()).assertEqual('0');
       expect(min.operatorSubtract(min).toString()).assertEqual('0');
-      expect(max.operatorSubtract(min).toString()).assertEqual('18446744073709551615');
+      expect(max.operatorSubtract(min).toString()).assertEqual(LONG_EXTREMA_SPAN_STR);
     });
   });
 }

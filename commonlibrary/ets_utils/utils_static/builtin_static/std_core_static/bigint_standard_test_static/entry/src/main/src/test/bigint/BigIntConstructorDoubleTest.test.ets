@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {
@@ -175,6 +176,19 @@ export default function BigIntConstructorDoubleTest(): void {
       expect((): void => {
         BigInt(Number.NEGATIVE_INFINITY);
       }).assertThrowError('RangeError');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_1200
+     * @tc.name testBigIntConstructorDoubleLongBounds1200
+     * @tc.desc Verify double constructor at long extrema follows IEEE 754 rounding (LONG_MAX rounds up)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorDoubleLongBounds1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(Long.toDouble(LONG_MAX)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(Long.toDouble(LONG_MIN)).toString()).assertEqual(LONG_MIN_STR);
     });
   });
 }

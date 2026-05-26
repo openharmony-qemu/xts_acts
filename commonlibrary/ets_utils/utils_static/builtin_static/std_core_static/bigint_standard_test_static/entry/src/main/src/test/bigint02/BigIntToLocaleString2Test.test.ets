@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntToLocaleString2Test(): void {
   describe('BigInt.toLocaleString(locales, options) (mindmap toLocaleString_2)', () => {
@@ -142,8 +143,8 @@ export default function BigIntToLocaleString2Test(): void {
     it('testBigIntToLocaleString2LongBounds0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const opts: BigIntToLocaleStringOptions = { useGrouping: false };
 
-      expect(BigInt('9223372036854775807').toLocaleString('en-US', opts)).assertEqual('9223372036854775807');
-      expect(BigInt('-9223372036854775808').toLocaleString('en-US', opts)).assertEqual('-9223372036854775808');
+      expect(BigInt(LONG_MAX_STR).toLocaleString('en-US', opts)).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MIN_STR).toLocaleString('en-US', opts)).assertEqual(LONG_MIN_STR);
       expect(BigInt(0).toLocaleString('en-US', opts)).assertEqual('0');
     });
   });

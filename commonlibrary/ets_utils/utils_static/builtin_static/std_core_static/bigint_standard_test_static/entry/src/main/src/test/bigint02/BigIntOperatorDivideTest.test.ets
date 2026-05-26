@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorDivideTest(): void {
   describe('BigInt.operatorDivide (mindmap operatorDivide)', () => {
@@ -107,12 +108,12 @@ export default function BigIntOperatorDivideTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorDivideLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
-      expect(max.operatorDivide(BigInt(1)).toString()).assertEqual('9223372036854775807');
-      expect(min.operatorDivide(BigInt(1)).toString()).assertEqual('-9223372036854775808');
-      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual('9223372036854775808');
+      expect(max.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
+      expect(min.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(BigInt(0).operatorDivide(max).toString()).assertEqual('0');
     });
   });

@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, UINT32_MAX_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 import Utils from '../Util.test';
 
 export default function BigIntAsUintNTest(): void {
@@ -29,7 +30,7 @@ export default function BigIntAsUintNTest(): void {
      */
     it('testBigIntAsUintN8And32Bit0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asUintN(8, Utils.biInt(127)).toString()).assertEqual('127');
-      expect(BigInt.asUintN(32, Utils.biStr('4294967295')).toString()).assertEqual('4294967295');
+      expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual(UINT32_MAX_STR);
     });
 
     /**
@@ -76,9 +77,9 @@ export default function BigIntAsUintNTest(): void {
     it('testBigIntAsUintNMultiWidthMax0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.asUintN(16, Utils.biInt(65535)).toString()).assertEqual('65535');
       expect(BigInt.asUintN(16, Utils.biInt(65536)).toString()).assertEqual('0');
-      expect(BigInt.asUintN(32, Utils.biStr('4294967295')).toString()).assertEqual('4294967295');
+      expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual(UINT32_MAX_STR);
       expect(BigInt.asUintN(32, Utils.biStr('4294967296')).toString()).assertEqual('0');
-      expect(BigInt.asUintN(64, Utils.biStr('18446744073709551615')).toString()).assertEqual('18446744073709551615');
+      expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_STR)).toString()).assertEqual(ULONG_MAX_STR);
       expect(BigInt.asUintN(64, Utils.biStr('18446744073709551616')).toString()).assertEqual('0');
     });
 
@@ -185,9 +186,25 @@ export default function BigIntAsUintNTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsUintN64BitLongBounds1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asUintN(64, BigInt(9223372036854775807)).toString()).assertEqual('9223372036854775807');
-      expect(BigInt.asUintN(64, BigInt(-9223372036854775808)).toString()).assertEqual('9223372036854775808');
+      expect(BigInt.asUintN(64, BigInt(LONG_MAX)).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt.asUintN(64, BigInt(LONG_MIN)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(BigInt.asUintN(64, BigInt(0)).toString()).assertEqual('0');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_ASUINTN_1200
+     * @tc.name testBigIntAsUintNULongMax1200
+     * @tc.desc Verify 64-bit asUintN preserves unsigned maximum and truncates beyond uint64
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntAsUintNULongMax1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const umax = Utils.biStr(ULONG_MAX_STR);
+
+      expect(BigInt.asUintN(64, umax).toString()).assertEqual(ULONG_MAX_STR);
+      expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual('0');
+      expect(umax.operatorGreaterThan(BigInt(LONG_MAX))).assertTrue();
     });
   });
 }

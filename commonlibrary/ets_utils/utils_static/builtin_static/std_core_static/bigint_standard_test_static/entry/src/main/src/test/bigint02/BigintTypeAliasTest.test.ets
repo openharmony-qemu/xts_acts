@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigintTypeAliasTest(): void {
   describe('bigint type alias (mindmap bigint)', () => {
@@ -64,12 +65,12 @@ export default function BigintTypeAliasTest(): void {
       const fromByte: bigint = BigInt(127 as byte);
       const fromShort: bigint = BigInt(32767 as short);
       const fromInt: bigint = BigInt(2147483647);
-      const fromLong: bigint = BigInt(9223372036854775807);
+      const fromLong: bigint = BigInt(LONG_MAX);
 
       expect(fromByte.toString()).assertEqual('127');
       expect(fromShort.toString()).assertEqual('32767');
       expect(fromInt.toString()).assertEqual('2147483647');
-      expect(fromLong.toString()).assertEqual('9223372036854775807');
+      expect(fromLong.toString()).assertEqual(LONG_MAX_STR);
     });
 
     /**

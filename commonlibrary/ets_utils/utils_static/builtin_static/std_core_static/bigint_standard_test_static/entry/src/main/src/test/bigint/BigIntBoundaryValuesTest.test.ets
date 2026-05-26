@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, LONG_MAX_NEGATED, LONG_MAX_NEGATED_STR, LONG_EXTREMA_SPAN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntBoundaryValuesTest(): void {
   describe('BigInt boundary values (signed long extrema, zero, negatives)', () => {
@@ -27,10 +28,10 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesLongMaxMinConstruction0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const longMax: long = 9223372036854775807;
-      const longMin: long = -9223372036854775808;
-      const maxStr = '9223372036854775807';
-      const minStr = '-9223372036854775808';
+      const longMax: long = LONG_MAX;
+      const longMin: long = LONG_MIN;
+      const maxStr = LONG_MAX_STR;
+      const minStr = LONG_MIN_STR;
 
       expect(BigInt(longMax).toString()).assertEqual(maxStr);
       expect(BigInt(longMin).toString()).assertEqual(minStr);
@@ -49,16 +50,16 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesLongMaxMinArithmetic0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
       const one = BigInt(1);
 
-      expect(max.operatorAdd(one).toString()).assertEqual('9223372036854775808');
-      expect(min.operatorSubtract(one).toString()).assertEqual('-9223372036854775809');
+      expect(max.operatorAdd(one).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(min.operatorSubtract(one).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
       expect(max.operatorAdd(max).toString()).assertEqual('18446744073709551614');
       expect(min.operatorAdd(min).toString()).assertEqual('-18446744073709551616');
       expect(max.operatorAdd(min).toString()).assertEqual('-1');
-      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual('9223372036854775808');
+      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
     });
 
     /**
@@ -70,10 +71,10 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesLongMaxMinCompare0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
-      const maxPlusOne = BigInt('9223372036854775808');
-      const minMinusOne = BigInt('-9223372036854775809');
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
+      const maxPlusOne = BigInt(LONG_MAX_PLUS_ONE_STR);
+      const minMinusOne = BigInt(LONG_MIN_MINUS_ONE_STR);
 
       expect(max.operatorLessThan(maxPlusOne)).assertTrue();
       expect(maxPlusOne.operatorGreaterThan(max)).assertTrue();
@@ -94,8 +95,8 @@ export default function BigIntBoundaryValuesTest(): void {
      */
     it('testBigIntBoundaryValuesZeroArithmetic0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const zero = BigInt(0);
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(zero.operatorAdd(zero).toString()).assertEqual('0');
       expect(zero.operatorSubtract(zero).toString()).assertEqual('0');
@@ -116,8 +117,8 @@ export default function BigIntBoundaryValuesTest(): void {
      */
     it('testBigIntBoundaryValuesZeroSignAndEquals0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const zero = BigInt(0);
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(zero.negative()).assertFalse();
       expect(zero.positive()).assertTrue();
@@ -126,8 +127,8 @@ export default function BigIntBoundaryValuesTest(): void {
       expect(min.negative()).assertTrue();
       expect(min.positive()).assertFalse();
       expect(zero.equals(new BigInt())).assertTrue();
-      expect(max.equals(BigInt('9223372036854775807'))).assertTrue();
-      expect(min.equals(BigInt('-9223372036854775808'))).assertTrue();
+      expect(max.equals(BigInt(LONG_MAX_STR))).assertTrue();
+      expect(min.equals(BigInt(LONG_MIN_STR))).assertTrue();
     });
 
     /**
@@ -139,14 +140,14 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesLongMinNegate0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const min = BigInt(-9223372036854775808);
-      const max = BigInt(9223372036854775807);
+      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX);
       const negOne = BigInt(-1);
 
-      expect(min.negate().toString()).assertEqual('9223372036854775808');
-      expect(max.negate().toString()).assertEqual('-9223372036854775807');
+      expect(min.negate().toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(max.negate().toString()).assertEqual(LONG_MAX_NEGATED_STR);
       expect(negOne.negate().toString()).assertEqual('1');
-      expect(min.negate().negate().toString()).assertEqual('-9223372036854775808');
+      expect(min.negate().negate().toString()).assertEqual(LONG_MIN_STR);
     });
 
     /**
@@ -158,14 +159,14 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxPlusOne = BigInt('9223372036854775808');
-      const minMinusOne = BigInt('-9223372036854775809');
+      const maxPlusOne = BigInt(LONG_MAX_PLUS_ONE_STR);
+      const minMinusOne = BigInt(LONG_MIN_MINUS_ONE_STR);
       const one = BigInt(1);
 
-      expect(maxPlusOne.operatorSubtract(one).toString()).assertEqual('9223372036854775807');
-      expect(minMinusOne.operatorAdd(one).toString()).assertEqual('-9223372036854775808');
-      expect(maxPlusOne.getLong()).assertEqual(-9223372036854775808);
-      expect(minMinusOne.getLong()).assertEqual(9223372036854775807);
+      expect(maxPlusOne.operatorSubtract(one).toString()).assertEqual(LONG_MAX_STR);
+      expect(minMinusOne.operatorAdd(one).toString()).assertEqual(LONG_MIN_STR);
+      expect(maxPlusOne.getLong()).assertEqual(LONG_MIN);
+      expect(minMinusOne.getLong()).assertEqual(LONG_MAX);
     });
 
     /**
@@ -177,12 +178,74 @@ export default function BigIntBoundaryValuesTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntBoundaryValuesIncrementDecrement0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
-      expect(max.operatorIncrement().toString()).assertEqual('9223372036854775808');
-      expect(min.operatorDecrement().toString()).assertEqual('-9223372036854775809');
-      expect(BigInt('-9223372036854775807').operatorDecrement().toString()).assertEqual('-9223372036854775808');
+      expect(max.operatorIncrement().toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(min.operatorDecrement().toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
+      expect(BigInt(LONG_MAX_NEGATED_STR).operatorDecrement().toString()).assertEqual(LONG_MIN_STR);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BOUNDARY_0900
+     * @tc.name testBigIntBoundaryValuesULongMax0900
+     * @tc.desc Verify unsigned 64-bit maximum (2^64-1) construction and relations to long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntBoundaryValuesULongMax0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const umax = BigInt(ULONG_MAX_STR);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
+
+      expect(umax.toString()).assertEqual(ULONG_MAX_STR);
+      expect(BigInt.fromULong(-1).equals(umax)).assertTrue();
+      expect(umax.operatorGreaterThan(max)).assertTrue();
+      expect(max.operatorSubtract(min).toString()).assertEqual(LONG_EXTREMA_SPAN_STR);
+      expect(BigInt.asUintN(64, umax).toString()).assertEqual(ULONG_MAX_STR);
+      expect(umax.positive()).assertTrue();
+      expect(umax.negative()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BOUNDARY_1000
+     * @tc.name testBigIntBoundaryValuesNegativeAdjacent1000
+     * @tc.desc Verify sign and comparison at negative magnitudes adjacent to long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntBoundaryValuesNegativeAdjacent1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const negMax = BigInt(LONG_MAX_NEGATED);
+      const minMinusOne = BigInt(LONG_MIN_MINUS_ONE_STR);
+      const min = BigInt(LONG_MIN);
+
+      expect(negMax.negative()).assertTrue();
+      expect(negMax.positive()).assertFalse();
+      expect(minMinusOne.negative()).assertTrue();
+      expect(negMax.operatorGreaterThan(min)).assertTrue();
+      expect(minMinusOne.operatorLessThan(min)).assertTrue();
+      expect(negMax.operatorIncrement().toString()).assertEqual('-9223372036854775806');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BOUNDARY_1100
+     * @tc.name testBigIntBoundaryValuesBitwiseAtExtrema1100
+     * @tc.desc Verify bitwise operators at LONG_MAX, LONG_MIN, and ULONG_MAX magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntBoundaryValuesBitwiseAtExtrema1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
+      const umax = BigInt(ULONG_MAX_STR);
+
+      expect(max.operatorBitwiseXor(min).toString()).assertEqual('-1');
+      expect(umax.operatorBitwiseAnd(max).toString()).assertEqual(LONG_MAX_STR);
+      expect(umax.operatorBitwiseOr(BigInt(0)).toString()).assertEqual(ULONG_MAX_STR);
+      expect(min.operatorBitwiseNot().toString()).assertEqual(LONG_MAX_STR);
     });
   });
 }

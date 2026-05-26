@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, UINT32_MAX, UINT32_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntFromULongTest(): void {
   describe('BigInt.fromULong (mindmap fromULong)', () => {
@@ -31,7 +32,7 @@ export default function BigIntFromULongTest(): void {
       expect(BigInt.fromULong(1).toString()).assertEqual('1');
       expect(BigInt.fromULong(100).toString()).assertEqual('100');
       expect(BigInt.fromULong(2147483647).toString()).assertEqual('2147483647');
-      expect(BigInt.fromULong(4294967295).toString()).assertEqual('4294967295');
+      expect(BigInt.fromULong(UINT32_MAX).toString()).assertEqual(UINT32_MAX_STR);
     });
 
     /**
@@ -43,7 +44,7 @@ export default function BigIntFromULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntFromULongUnsignedInterpretation0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.fromULong(-1).toString()).assertEqual('18446744073709551615');
+      expect(BigInt.fromULong(-1).toString()).assertEqual(ULONG_MAX_STR);
       expect(BigInt.fromULong(-2).toString()).assertEqual('18446744073709551614');
       expect(BigInt.fromULong(-2147483648).toString()).assertEqual('18446744071562067968');
     });
@@ -73,7 +74,7 @@ export default function BigIntFromULongTest(): void {
      */
     it('testBigIntFromULongVsSignedValue0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(100).toString()).assertEqual(BigInt(100).toString());
-      expect(BigInt.fromULong(-1).toString()).assertEqual('18446744073709551615');
+      expect(BigInt.fromULong(-1).toString()).assertEqual(ULONG_MAX_STR);
       expect(BigInt.fromULong(-1).equals(BigInt(-1))).assertFalse();
     });
 
@@ -128,8 +129,8 @@ export default function BigIntFromULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntFromULongLongBoundary0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.fromULong(9223372036854775807).toString()).assertEqual('9223372036854775807');
-      expect(BigInt.fromULong(-9223372036854775808).toString()).assertEqual('9223372036854775808');
+      expect(BigInt.fromULong(LONG_MAX).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt.fromULong(LONG_MIN).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
     });
   });
 }

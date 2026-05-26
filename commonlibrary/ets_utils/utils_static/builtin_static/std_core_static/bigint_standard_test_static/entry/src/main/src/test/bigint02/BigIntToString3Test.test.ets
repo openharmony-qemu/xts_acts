@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
 
 export default function BigIntToString3Test(): void {
   describe('BigInt.toString(radix double (mindmap toString_3)', () => {
@@ -113,8 +114,8 @@ export default function BigIntToString3Test(): void {
       const radix16: double = 16.0;
 
       expect(BigInt(0).toString(Double.toInt(radix10))).assertEqual('0');
-      expect(BigInt(9223372036854775807).toString(Double.toInt(radix16))).assertEqual('7fffffffffffffff');
-      expect(BigInt(-9223372036854775808).toString(Double.toInt(radix16))).assertEqual('-8000000000000000');
+      expect(BigInt(LONG_MAX).toString(Double.toInt(radix16))).assertEqual('7fffffffffffffff');
+      expect(BigInt(LONG_MIN).toString(Double.toInt(radix16))).assertEqual('-8000000000000000');
     });
   });
 }

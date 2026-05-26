@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorBitwiseAndTest(): void {
   describe('BigInt.operatorBitwiseAnd (mindmap operatorBitwiseAnd)', () => {
@@ -125,7 +126,7 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseAndLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const mask = BigInt('18446744073709551615');
+      const mask = BigInt(ULONG_MAX_STR);
       const huge = BigInt('999999999999999999999999999999');
       expect(huge.operatorBitwiseAnd(mask).toString()).assertEqual('5076944270305263615');
     });
@@ -139,10 +140,10 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseAndLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
-      expect(max.operatorBitwiseAnd(max).toString()).assertEqual('9223372036854775807');
+      expect(max.operatorBitwiseAnd(max).toString()).assertEqual(LONG_MAX_STR);
       expect(min.operatorBitwiseAnd(max).toString()).assertEqual('0');
       expect(max.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
     });

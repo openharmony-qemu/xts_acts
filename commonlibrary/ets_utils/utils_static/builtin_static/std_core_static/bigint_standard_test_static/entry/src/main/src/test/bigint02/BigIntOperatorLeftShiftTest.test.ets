@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorLeftShiftTest(): void {
   describe('BigInt.operatorLeftShift (mindmap operatorLeftShift)', () => {
@@ -105,8 +106,9 @@ export default function BigIntOperatorLeftShiftTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLeftShiftLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(1).operatorLeftShift(BigInt(63)).toString()).assertEqual('9223372036854775808');
-      expect(BigInt(9223372036854775807).operatorLeftShift(BigInt(0)).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(1).operatorLeftShift(BigInt(63)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(LONG_MAX).operatorLeftShift(BigInt(0)).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MIN).operatorLeftShift(BigInt(0)).toString()).assertEqual(LONG_MIN_STR);
       expect(BigInt(0).operatorLeftShift(BigInt(100)).toString()).assertEqual('0');
     });
   });

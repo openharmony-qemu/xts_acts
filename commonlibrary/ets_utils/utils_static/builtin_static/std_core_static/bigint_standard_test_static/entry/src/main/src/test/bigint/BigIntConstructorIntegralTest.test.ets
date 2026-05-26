@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorIntegralTest(): void {
   describe('BigInt integral constructor (mindmap constructor_2~5)', () => {
@@ -122,11 +123,11 @@ export default function BigIntConstructorIntegralTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorIntegralLongBoundary0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const hi: long = 9223372036854775807;
-      const lo: long = -9223372036854775808;
+      const hi: long = LONG_MAX;
+      const lo: long = LONG_MIN;
 
-      expect(BigInt(hi).toString()).assertEqual('9223372036854775807');
-      expect(BigInt(lo).toString()).assertEqual('-9223372036854775808');
+      expect(BigInt(hi).toString()).assertEqual(LONG_MAX_STR);
+      expect(BigInt(lo).toString()).assertEqual(LONG_MIN_STR);
     });
 
     /**

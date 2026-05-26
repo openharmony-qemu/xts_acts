@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorMultiplyTest(): void {
   describe('BigInt.operatorMultiply (mindmap operatorMultiply)', () => {
@@ -106,14 +107,14 @@ export default function BigIntOperatorMultiplyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(max.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(min.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
-      expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
-      expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual('9223372036854775808');
-      expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual('9223372036854775807');
+      expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_NEGATED_STR);
+      expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
     });
   });
 }

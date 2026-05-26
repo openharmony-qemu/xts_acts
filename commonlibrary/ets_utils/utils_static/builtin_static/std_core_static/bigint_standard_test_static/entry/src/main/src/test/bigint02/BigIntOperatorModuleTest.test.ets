@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
 
 export default function BigIntOperatorModuleTest(): void {
   describe('BigInt.operatorModule (mindmap operatorModule)', () => {
@@ -106,8 +107,8 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorModuleLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(9223372036854775807);
-      const min = BigInt(-9223372036854775808);
+      const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(max.operatorModule(BigInt(2)).toString()).assertEqual('1');
       expect(min.operatorModule(BigInt(2)).toString()).assertEqual('0');
