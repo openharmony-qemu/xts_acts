@@ -27,7 +27,7 @@ export default function actsNotificationAnsCovered() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async () => {
       context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
-      notificationManager.requestEnableNotification(context).then(() => {
+      NotificationManager.requestEnableNotification(context).then(() => {
         console.info(`requestEnableNotification succeeded`);
       }).catch((err: BusinessError) => {
         console.info(`requestEnableNotification err: ` + JSON.stringify(err));
