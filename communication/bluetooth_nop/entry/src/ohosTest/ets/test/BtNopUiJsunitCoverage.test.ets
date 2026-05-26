@@ -374,9 +374,9 @@ export default function btNopUiJsunitCoverageTest() {
         } catch (error) {
           hilog.error(Domain, TAG,
             `sppConnect callback error, error code is: ${error.code}, error message is: ${error.message}`);
-          if (Number(error.code) ===801) {
+          if (Number(error.code) === 801) {
             expect(Number(error.code)).assertEqual(801);
-          }else{
+          } else {
             expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
           }
         }
