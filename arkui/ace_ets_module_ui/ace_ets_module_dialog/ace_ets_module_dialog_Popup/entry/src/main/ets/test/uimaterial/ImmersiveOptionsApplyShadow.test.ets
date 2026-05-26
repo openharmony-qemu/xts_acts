@@ -69,7 +69,7 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let strJson = getInspectorByKey('undefined');
       console.info('ImmersiveOptionsApplyShadowTest_0100 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0100 END');
       done();
@@ -102,7 +102,7 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let strJson = getInspectorByKey('true');
       console.info('ImmersiveOptionsApplyShadowTest_0200 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0200 END');
       done();
@@ -135,7 +135,7 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let strJson = getInspectorByKey('false');
       console.info('ImmersiveOptionsApplyShadowTest_0300 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0300 END');
       done();
@@ -165,7 +165,7 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let strJson = getInspectorByKey('default');
       console.info('ImmersiveOptionsApplyShadowTest_0400 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0400 END');
       done();
@@ -199,7 +199,7 @@ export default function ImmersiveOptionsApplyShadowTest() {
       let strJson = getInspectorByKey('empty');
       console.info('ImmersiveOptionsApplyShadowTest_0500 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveOptionsApplyShadowTest_0500 END');
       done();

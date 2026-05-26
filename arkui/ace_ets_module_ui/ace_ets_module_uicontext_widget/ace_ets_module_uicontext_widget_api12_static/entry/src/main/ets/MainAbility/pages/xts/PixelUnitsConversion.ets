@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { UIContext } from '@ohos.arkui.UIContext';
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,
   ColumnOptions,Scroller,Scroll
 } from '@ohos.arkui.component'

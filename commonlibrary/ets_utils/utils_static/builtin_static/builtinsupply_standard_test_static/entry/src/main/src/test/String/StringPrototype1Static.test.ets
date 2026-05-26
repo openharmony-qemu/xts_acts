@@ -27,7 +27,7 @@ function getIterator(s: string) {
   return s.$_iterator();
 }
 
-export default function builtinsStringPrototypeTest() {
+export default function builtinsStringPrototypeTest(): void {
   describe('builtinsStringPrototypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

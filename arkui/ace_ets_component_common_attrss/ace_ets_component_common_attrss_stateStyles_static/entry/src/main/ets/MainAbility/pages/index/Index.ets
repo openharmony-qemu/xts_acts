@@ -32,13 +32,11 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  FontWeight,
   ButtonType,
   ClickEvent,
   Margin,
   FontWeight
 } from '@ohos.arkui.component'
-import { Hypium } from '../../../../../hypium'
 import testsuite from '../../../../src/test/List.test'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

@@ -555,9 +555,9 @@ export default function actslocationTest() {
             console.info("addGnssGeofence_0100 success, fence id: " + id);
             expect(true).assertEqual(id != null);
             done();
-          }).catch((err: Object | null | undefined) => {
+          }).catch((err) => {
             console.error("addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code + ",errMessage:" + (err as BusinessError).message);
-            expect((err as BusinessError).code).assertEqual(201);
+            expect(err.code).assertEqual(201);
             done();
           });
           done();
@@ -905,7 +905,44 @@ export default function actslocationTest() {
       }
       await Utils.msSleep(1000);
       done();
-    })
+      })
+
+    /**
+     * @tc.number  SUB_Location_nop_findMatchingWlan_0100
+     * @tc.name    SUB_Location_nop_findMatchingWlan_0100
+     * @tc.desc    Test findMatchingWlan error code 201
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MEDIUMTEST
+     */
+    it('SUB_Location_nop_findMatchingWlan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {
+        let locationEnabled: boolean = geoLocationManager.isLocationEnabled();
+        if (locationEnabled) {
+            hilog.info(domain, tag, 'Location is enabled, skip error code test');
+            done();
+            return;
+        }
+        
+        let wlanBssidArray: Array<string> = ['AA:BB:CC:DD:EE:FF'];
+        let rssiThreshold: int = -70;
+        let needStartScan: boolean = true;
+        
+        let result: Array<geoLocationManager.MatchingWlanInfo> = await geoLocationManager.findMatchingWlan(
+            wlanBssidArray, rssiThreshold, needStartScan);
+        hilog.info(domain, tag, 'SUB_Location_nop_findMatchingWlan_0100 result: %{public}s', JSON.stringify(result));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        hilog.error(domain, tag, 'SUB_Location_nop_findMatchingWlan_0100 error: %{public}s', JSON.stringify(err));
+        if (err.code === 801) {
+            expect(err.code === 801).assertTrue();
+        } else {
+            expect(err.code === 201).assertTrue();
+        }
+        done();
+      }
+      });
 
 
 

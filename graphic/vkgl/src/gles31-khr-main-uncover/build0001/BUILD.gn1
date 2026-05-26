@@ -131,11 +131,11 @@ ohos_static_library("lib_uncover_gles31_khr_main_uncover_build0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles31TestSuite0001_gles31_khr_main_uncover_build0001") {
+ohos_moduletest_suite("ActsGles31KhrMainUncoverTestSuite0001_gles31_khr_main_uncover_build0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles310001TestSuite.cpp",
+    "../ActsGles31KhrMainUncover0001TestSuite.cpp",
     "../core/Khrgles31shader_atomic_counters_advanced-usage-multidim-array-smallTestCase.cpp",
     "../core/Khrgles31shader_atomic_counters_negative-large-offsetTestCase.cpp",
     "../core/Khrgles31compute_shader_simple-compute-shared_contextTestCase.cpp",

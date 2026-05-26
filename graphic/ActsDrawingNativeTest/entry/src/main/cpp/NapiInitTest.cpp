@@ -107,6 +107,8 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapNine),
     DECL_NAPI_DESC(DrawingCanvasCreateWithPixelMap),
     DECL_NAPI_DESC(DrawingCanvasDrawPixelMapRectConstraint),
+    DECL_NAPI_DESC(DrawingCanvasDrawGlyphs),
+    DECL_NAPI_DESC(DrawingCanvasIsOpaque),
     DECL_NAPI_DESC(DrawingColorFilterCreateBlendMode),
     DECL_NAPI_DESC(DrawingColorFilterCreateCompose),
     DECL_NAPI_DESC(DrawingColorFilterCreateMatrix),

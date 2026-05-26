@@ -625,6 +625,7 @@ export default function ActsDisplayNdkApi14Test() {
      */
     it('test_js_capture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_js_capture';
+      let callbackTriggered = false;
       try{
         let captureOption: screenshot.CaptureOption = {
           "displayId": 0
@@ -633,6 +634,7 @@ export default function ActsDisplayNdkApi14Test() {
         let callback = (status: boolean) => {
           console.info(caseName + 'capture status: ' + status);
           isCaptured = status;
+          callbackTriggered = true;
         };
         display.on('captureStatusChange', callback);
         let promise = screenshot.capture(captureOption);
@@ -645,6 +647,9 @@ export default function ActsDisplayNdkApi14Test() {
             expect(PixelMapWidth).assertLarger(0);
             expect(PixelMapHeight).assertLarger(0);
             PixelMap.release(); // PixelMap使用完后及时释放内存
+            while(!callbackTriggered) {
+              sleep(300);
+            }
             expect(isCaptured).assertEqual(true);
             done();
           })

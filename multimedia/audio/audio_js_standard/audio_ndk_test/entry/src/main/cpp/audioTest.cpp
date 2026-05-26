@@ -32,6 +32,7 @@
 #include "ohaudio/native_audio_volume_manager.h"
 #include "ohaudio/native_audio_stream_manager.h"
 #include "ohaudio/native_audio_session_base.h"
+#include "ohaudio/native_audio_device_enhance_manager.h"
 #include "hilog/log.h"
 #include <ctime>
 #include <set>
@@ -10057,6 +10058,87 @@ static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100(napi_env en
     return res;
 }
 
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(nullptr, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100 result: %{public}d", result);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, false);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(builder, true);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100 result: %{public}d", result);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOSTREAM_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100 fail");
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_SetCapturerLoopbackEffectEnabled(nullptr, false);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 result: %{public}d", result);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200 fail");
+    return res;
+}
+
 static int32_t PreferredOutputDeviceChangedCallback(
     OH_AudioDeviceDescriptorArray *audioDeviceDescriptorArray)
 {
@@ -10581,7 +10663,448 @@ static napi_value SUB_AUDIO_ROUTING_MANAGER_PREFERRED_INPUT_REGISTER_UNREGISTER_
         napi_create_int32(env, TEST_FAIL, &res);
     }
     return res;
-} 
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDeviceEnhanceManager(nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioCommon_Result result = OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100 fail, result is: %{public}d", result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    bool supported = false;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported(nullptr, &supported);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported(manager, nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    bool supported = false;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_IsEnhancedRoutingSupported(manager, &supported);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100 fail,result: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDevice(nullptr, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDevice(manager, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDevice(nullptr, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDevice(manager, nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 result: %{public}d", result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioRenderer* renderer = nullptr;
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer(
+        nullptr, renderer, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer(
+        manager, nullptr, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
+    OH_AudioRenderer* renderer = nullptr;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &renderer);
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer(
+        manager, renderer, nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100 result: %{public}d",
+        result);
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100 fail,result: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioCapturer* capturer = nullptr;
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer(
+        nullptr, capturer, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioDeviceDescriptor* descriptor = nullptr;
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer(
+        manager, nullptr, descriptor);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200 result: %{public}d",
+        result);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioCapturer* capturer = nullptr;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioCommon_Result result = OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer(
+        manager, capturer, nullptr);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100 result: %{public}d",
+        result);
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    if (result == AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        napi_create_int32(env, TEST_PASS, &res);
+        return res;
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioRoutingManager* routingManager = nullptr;
+    OH_AudioManager_GetAudioRoutingManager(&routingManager);
+    if (routingManager == nullptr) {
+        LOG("RoutingManager is nullptr");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioDeviceDescriptorArray* deviceArray = nullptr;
+    OH_AudioCommon_Result result = OH_AudioRoutingManager_GetAvailableDevices(
+        routingManager, AUDIO_DEVICE_USAGE_MEDIA_OUTPUT, &deviceArray);
+    LOG("GetAvailableDevices result: %{public}d, size: %{public}d", result, deviceArray ? deviceArray->size : 0);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && deviceArray != nullptr && deviceArray->size > 0) {
+        OH_AudioDeviceDescriptor* descriptor = deviceArray->descriptors[0];
+        result = OH_AudioDeviceEnhanceManager_SelectOutputDevice(manager, descriptor);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 result: %{public}d",
+            result);
+        OH_AudioRoutingManager_ReleaseDevices(routingManager, deviceArray);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioRoutingManager* routingManager = nullptr;
+    OH_AudioManager_GetAudioRoutingManager(&routingManager);
+    if (routingManager == nullptr) {
+        LOG("RoutingManager is nullptr");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioDeviceDescriptorArray* deviceArray = nullptr;
+    OH_AudioCommon_Result result = OH_AudioRoutingManager_GetAvailableDevices(
+        routingManager, AUDIO_DEVICE_USAGE_MEDIA_INPUT, &deviceArray);
+    LOG("GetAvailableDevices result: %{public}d, size: %{public}d", result, deviceArray ? deviceArray->size : 0);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && deviceArray != nullptr && deviceArray->size > 0) {
+        OH_AudioDeviceDescriptor* descriptor = deviceArray->descriptors[0];
+        result = OH_AudioDeviceEnhanceManager_SelectInputDevice(manager, descriptor);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 result: %{public}d",
+            result);
+        OH_AudioRoutingManager_ReleaseDevices(routingManager, deviceArray);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+    }
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100 fail, result is: %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioRoutingManager* routingManager = nullptr;
+    OH_AudioManager_GetAudioRoutingManager(&routingManager);
+    if (routingManager == nullptr) {
+        LOG("RoutingManager is nullptr");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
+    OH_AudioRenderer* renderer = nullptr;
+    OH_AudioStreamBuilder_GenerateRenderer(builder, &renderer);
+    OH_AudioDeviceDescriptorArray* deviceArray = nullptr;
+    OH_AudioCommon_Result result = OH_AudioRoutingManager_GetAvailableDevices(
+        routingManager, AUDIO_DEVICE_USAGE_MEDIA_OUTPUT, &deviceArray);
+    LOG("GetAvailableDevices result: %{public}d, size: %{public}d", result, deviceArray ? deviceArray->size : 0);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && deviceArray != nullptr && deviceArray->size > 0) {
+        OH_AudioDeviceDescriptor* descriptor = deviceArray->descriptors[0];
+        result = OH_AudioDeviceEnhanceManager_SelectOutputDeviceForAudioRenderer(manager, renderer, descriptor);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100 result: %{public}d",
+            result);
+        OH_AudioRoutingManager_ReleaseDevices(routingManager, deviceArray);
+        OH_AudioRenderer_Release(renderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+    }
+    OH_AudioRenderer_Release(renderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
+
+static napi_value SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100(
+    napi_env env, napi_callback_info info)
+{
+    napi_value res;
+    OH_AudioDeviceEnhanceManager* manager = nullptr;
+    OH_AudioManager_GetAudioDeviceEnhanceManager(&manager);
+    OH_AudioRoutingManager* routingManager = nullptr;
+    OH_AudioManager_GetAudioRoutingManager(&routingManager);
+    if (routingManager == nullptr) {
+        LOG("RoutingManager is nullptr");
+        napi_create_int32(env, TEST_FAIL, &res);
+        return res;
+    }
+    OH_AudioStreamBuilder* builder = CreateCapturerBuilder();
+    OH_AudioCapturer* capturer = nullptr;
+    OH_AudioStreamBuilder_GenerateCapturer(builder, &capturer);
+    OH_AudioDeviceDescriptorArray* deviceArray = nullptr;
+    OH_AudioCommon_Result result = OH_AudioRoutingManager_GetAvailableDevices(
+        routingManager, AUDIO_DEVICE_USAGE_MEDIA_INPUT, &deviceArray);
+    LOG("GetAvailableDevices result: %{public}d, size: %{public}d", result, deviceArray ? deviceArray->size : 0);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS && deviceArray != nullptr && deviceArray->size > 0) {
+        OH_AudioDeviceDescriptor* descriptor = deviceArray->descriptors[0];
+        result = OH_AudioDeviceEnhanceManager_SelectInputDeviceForAudioCapturer(manager, capturer, descriptor);
+        LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 result: %{public}d",
+            result);
+        OH_AudioRoutingManager_ReleaseDevices(routingManager, deviceArray);
+        OH_AudioCapturer_Release(capturer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+            napi_create_int32(env, TEST_PASS, &res);
+            return res;
+        }
+    }
+    OH_AudioCapturer_Release(capturer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    napi_create_int32(env, TEST_FAIL, &res);
+    LOG("SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100 fail,result : %{public}d",
+        result);
+    return res;
+}
 
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
@@ -11371,6 +11894,80 @@ napi_property_descriptor desc3[] = {
         SUB_MULTIMEDIA_AUDIO_AUDIOCAPTUREVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
         SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_PARAM_0300,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIOSTREAMBUILDER_SETCAPTURELOOPBACKEFFECT_RETURN_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_ADUIOSESSIONMANAGERVOICEREAPTED_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_GETMANAGER_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_ISENHANCEDROUTINGSUPPORTED_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_PARAM_0200,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_RETURN_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICE_SCENE_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICE_SCENE_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTOUTPUTDEVICERENDERER_SCENE_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100", nullptr,
+        SUB_MULTIMEDIA_AUDIO_AUDIODEVICEENHANCEMANAGER_SELECTINPUTDEVICECAPTURER_SCENE_0100,
+        nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {

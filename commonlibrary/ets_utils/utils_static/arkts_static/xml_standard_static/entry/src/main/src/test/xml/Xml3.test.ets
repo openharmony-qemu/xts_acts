@@ -61,7 +61,7 @@ function stringToArrayBuffer(str: string): ArrayBuffer {
   return uint8Array.buffer;
 }
 
-export default function actsXml3Test() {
+export default function actsXml3Test(): void {
   describe('actsXml3Test', (): void => {
 
     /**

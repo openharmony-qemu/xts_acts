@@ -64,7 +64,7 @@ export default function AlertDialogSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('AlertDialogSystemMaterial_0100 Dialog Undefined is visible');
 
       await CommonFunc.sleep(500);
@@ -97,7 +97,7 @@ export default function AlertDialogSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('AlertDialogSystemMaterial_0200 Dialog HDS THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -163,7 +163,7 @@ export default function AlertDialogSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('AlertDialogSystemMaterial_0400 Dialog Immersive THICK is visible');
 
       await CommonFunc.sleep(500);
@@ -196,7 +196,7 @@ export default function AlertDialogSystemMaterialTest() {
       let dialog: ESObject = obj.$children[1]
       let date = JSON.stringify(obj.$children[1].$children[0])
       console.info('obj'+JSON.stringify(JSON.parse(date).$attrs.systemMaterial.material.type))
-      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(JSON.parse(date).$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
       console.info('AlertDialogSystemMaterial_0500 Dialog Immersive ULTRA_THIN is visible');
 
       await CommonFunc.sleep(500);

@@ -499,5 +499,22 @@ export default function cameraEnumTest() {
       console.info(`${TAG} ControlCenterEffectType.AUTO_FRAMING:${camera.ControlCenterEffectType.AUTO_FRAMING}`);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CONTROL_CENTER_EFFECT_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CONTROL_CENTER_EFFECT_TYPE_0100
+     * @tc.desc   assert ControlCenterEffectType enums COLOR_EFFECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CONTROL_CENTER_EFFECT_TYPE_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`${TAG} ControlCenterEffectType.COLOR_EFFECT:${camera.ControlCenterEffectType.COLOR_EFFECT}`);
+      let val = camera.ControlCenterEffectType.COLOR_EFFECT;
+      val = camera.ControlCenterEffectType.BEAUTY;
+      expect(val == 0).assertTrue();
+      done();
+    })
+
   })
 }

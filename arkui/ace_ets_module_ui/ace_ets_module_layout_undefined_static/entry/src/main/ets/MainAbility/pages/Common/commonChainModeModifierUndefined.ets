@@ -34,7 +34,7 @@ export class MySelectModifier implements AttributeModifier<CommonAttribute> {
 
 @Entry
 @Component
-struct chainMode {
+struct chainModeTest {
   @State message: string = 'Hello World';
   @State modifier: MySelectModifier = new MySelectModifier()
 

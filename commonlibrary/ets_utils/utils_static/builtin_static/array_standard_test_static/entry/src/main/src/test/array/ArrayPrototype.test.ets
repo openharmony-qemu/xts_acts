@@ -55,7 +55,7 @@ interface test0090 {
   value: number
 }
 
-export default function ArrayPrototypeTest() {
+export default function ArrayPrototypeTest(): void {
   describe('ArrayPrototypeTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

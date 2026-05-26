@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,Axis,NavBarPosition,FlexAlign,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,AnimateParam,Search,TextAlign,NavBarPosition,FlexAlign,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,SearchController,
   Position,EffectType,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,TextOverflow,
-  FontWeight,Axis,Margin,Swiper,ForEach,BuilderParam, TouchType, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
+  FontWeight,Margin,Swiper,ForEach,BuilderParam, TouchType, Visibility,NavigationCommonTitle,NavDestinationCommonTitle,Alignment
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
@@ -39,17 +39,17 @@ import { NavWidthRangeAttrModifier } from './NavAttributeModifier';
 
 @Component
 export struct SubNavigation {
-  @Link isPortrait: boolean | undefined = false;
+  @State isPortrait: boolean | undefined = false;
   @State displayMode: number = 0;
-  @ObjectLink multiStack: MultiNavPathStack = new MultiNavPathStack()
+  @ObjectLink multiStack: MultiNavPathStack;
   @BuilderParam navDestination: (name: string, param?: object) => void = this.SubNavDestination;
   primaryStack: MyNavPathStack = new MyNavPathStack();
   @State secondaryStack: MyNavPathStack = new MyNavPathStack();
   @State primaryWidth: number | string = '50%';
-  @ObjectLink needRenderIsFullScreen: NeedRenderIsFullScreen =new NeedRenderIsFullScreen();
-  @ObjectLink needRenderLeftClickCount: NeedRenderLeftClickCount = new NeedRenderLeftClickCount();
-  @ObjectLink navWidthRangeModifier: NavWidthRangeAttrModifier = new NavWidthRangeAttrModifier();
-  @ObjectLink needRenderDisplayMode: NeedRenderDisplayMode = new NeedRenderDisplayMode();
+  @ObjectLink needRenderIsFullScreen: NeedRenderIsFullScreen;
+  @ObjectLink needRenderLeftClickCount: NeedRenderLeftClickCount;
+  @ObjectLink navWidthRangeModifier: NavWidthRangeAttrModifier;
+  @ObjectLink needRenderDisplayMode: NeedRenderDisplayMode;
   onNavigationModeChange?: (mode: NavigationMode) => void = (mode: NavigationMode) => {
   };
 

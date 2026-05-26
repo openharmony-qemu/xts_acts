@@ -32,7 +32,8 @@
     "MainAbility/pages/dialogSystemMaterial/BaseDialogOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/ActionMenuOptionsSystemMaterial",
     "MainAbility/pages/dialogSystemMaterial/CustomDialogControllerOptionsSystemMaterial",
-    "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial"
+    "MainAbility/pages/dialogSystemMaterial/ActionSheetOptionsSystemMaterial",
+    "MainAbility/pages/dialogSystemMaterial/ShowToastOptionsTestPage"
 
   ]
 }

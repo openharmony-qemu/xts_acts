@@ -33,6 +33,9 @@ import GraphicTextAPIAdd02 from './GraphicTextAPIAdd02.test';
 import GraphicTextAPI24 from './GraphicTextAPI24.test';
 import GraphicTextAPI26 from './GraphicTextAPI26.test';
 import GraphicTextAPI2602 from './GraphicTextAPI2602.test';
+import GraphicGetTextStyle from './GraphicGetTextStyle.test';
+import GraphicParagraphTest from './GraphicParagraphTest.test';
+import FontDescriptor from './FontDescriptor.test';
 export default function testsuite() {
   GraphicTextInterface();
   GraphicTextParagraphBuilder();
@@ -55,4 +58,7 @@ export default function testsuite() {
   GraphicTextAPI24();
   GraphicTextAPI26();
   GraphicTextAPI2602();
+  GraphicGetTextStyle();
+  GraphicParagraphTest();
+  FontDescriptor();
 }

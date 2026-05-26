@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Row, Toggle,  Text, Button, ClickEvent, ButtonRole, Checkbox, Position,XComponent,
-  Slider,SliderConfiguration,SurfaceRect,XComponentParameters,XComponentController,XComponentType,Slider,
+  Slider,SliderConfiguration,SurfaceRect,XComponentParameters,XComponentController,XComponentType,
   ColumnOptions, Shape, Path, Flex, Builder, Rating, Circle, Color, Visibility, Margin, FlexAlign,RatingConfiguration,
-  SliderChangeMode,ContentModifier,SliderConfiguration,WrappedBuilder,wrapBuilder,CustomBuilderT
+  SliderChangeMode,ContentModifier,WrappedBuilder,wrapBuilder,CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 @Builder function buildSlider23(config: SliderConfiguration) {

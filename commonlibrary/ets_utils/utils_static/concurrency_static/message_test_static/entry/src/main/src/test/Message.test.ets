@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,7 +35,7 @@ class MessageObject {
   }
 }
 
-export const Sleep = (ms: int) => {
+export function Sleep(ms: int): Promise<number> {
   return new Promise<number>((resolve) => {
     setTimeout(() => {
       resolve(1)
@@ -45,7 +45,7 @@ export const Sleep = (ms: int) => {
 
 type CB = () => void;
 
-export default function MessageTest() {
+export default function MessageTest(): void {
   describe('MessageTest', (): void => {
     afterEach(async () => {
       await Utils.msSleep(100);
@@ -182,7 +182,7 @@ export default function MessageTest() {
           }, worker)
           let msg = new concurrency.Message(1, handler);
           handler.sendMessage(msg);
-          expect(msg.getObject()).assertEqual(undefined);
+          expect(msg.getObject() as undefined).assertEqual(undefined);
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -276,7 +276,7 @@ export default function MessageTest() {
           await Sleep(200);
           expect(executed).assertTrue();
           expect(msg.getWhat()).assertEqual(-1000000);
-          expect(msg.getObject()).assertUndefined();
+          expect(msg.getObject() as undefined).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -329,7 +329,7 @@ export default function MessageTest() {
           await Sleep(1100);
           expect(executed).assertTrue();
           expect(msg.getWhat()).assertEqual(-1000000);
-          expect(msg.getObject()).assertUndefined();
+          expect(msg.getObject() as undefined).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -382,7 +382,7 @@ export default function MessageTest() {
           await Sleep(1200);
           expect(callbackExecuted).assertTrue();
           expect(message.getWhat()).assertEqual(-1000000);
-          expect(message.getObject()).assertUndefined();
+          expect(message.getObject() as undefined).assertUndefined();
           while (!flag) {
             await Utils.msSleep(100)
           }
@@ -517,7 +517,7 @@ export default function MessageTest() {
           }, worker);
           let message = new concurrency.Message(0, handler);
           handler.sendMessage(message);
-          expect(message.getObject()).assertEqual(undefined);
+          expect(message.getObject() as undefined).assertEqual(undefined);
           while (!flag) {
             await Utils.msSleep(100)
           }

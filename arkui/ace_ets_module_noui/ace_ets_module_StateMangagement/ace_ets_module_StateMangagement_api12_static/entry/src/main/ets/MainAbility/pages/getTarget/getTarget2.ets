@@ -36,6 +36,7 @@ import {
 
 @ObservedV2
 export class InfoV1Observedv2 {
+  @Trace age: number = 20
   name: string = 'Tom';
 
   constructor(name: string) {

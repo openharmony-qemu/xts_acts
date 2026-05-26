@@ -5,13 +5,21 @@ import photoAccessHelperNoPermissionStaticTest from "./PhotoAccessHelperNoPermis
 import photoAccessHelperReadPermissionStaticTest from "./PhotoAccessHelperReadPermission.test";
 import FetchResultStatic from "./FetchResult/FetchResult.test";
 import PhotoAssetStatic from "./PhotoAsset/PhotoAsset.test";
+import getAlbumIdByLPathTest from "./photoAccessHelper/getAlbumIdByLPath.test";
+import PhotoGetAssetsTestSupp from "./photoAccessHelper/PhotoGetAssets.test";
+import MediaLibraryAvailabilitySupp from "./photoAccessHelper/MediaLibraryAvailability.test";
+import photoMediaLibraryNoPermissionStatic from "./photoAccessHelper/MediaLibraryAvailabilityNoPermission.test";
 
-export default function testsuite() {
-  MediaAssetManagerStaticTest();
-  MediaAssetChangeRequestStaticTest();
+export default function testsuite(): void {
   photoAccessHelperNoPermissionStaticTest();
   photoAccessHelperReadPermissionStaticTest();
+  photoMediaLibraryNoPermissionStatic();
+  MediaLibraryAvailabilitySupp();
+  MediaAssetManagerStaticTest();
+  MediaAssetChangeRequestStaticTest();
   getAssetsTest();
   PhotoAssetStatic();
   FetchResultStatic();
+  PhotoGetAssetsTestSupp();
+  getAlbumIdByLPathTest();
 }

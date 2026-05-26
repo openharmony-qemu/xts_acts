@@ -386,7 +386,7 @@ export default function fileIOReadLines() {
           }
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_readLines_async_static_005 error: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });

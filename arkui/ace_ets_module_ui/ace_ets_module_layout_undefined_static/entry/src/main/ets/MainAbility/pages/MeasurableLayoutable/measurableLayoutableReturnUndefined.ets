@@ -128,10 +128,12 @@ struct Custom1 {
   }
 
   build() {
-    this.builder()
-    Text(this.strMeasurable)
-      .id('Text_Measurable')
-    Text(this.strLayoutable)
-      .id('Text_Layoutable')
+    Column(){
+      this.builder()
+      Text(this.strMeasurable)
+        .id('Text_Measurable')
+      Text(this.strLayoutable)
+        .id('Text_Layoutable')
+    }
   }
 }

@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2025 HiHope Open Source Organization.
+* Copyright (C) 2025-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function builtinsArrayCopyOfTest(){
+export default function builtinsArrayCopyOfTest(): void {
   describe('builtinsArrayCopyOfTest', (): void => {
     beforeAll((): void => {
       // Preset actions before all test cases

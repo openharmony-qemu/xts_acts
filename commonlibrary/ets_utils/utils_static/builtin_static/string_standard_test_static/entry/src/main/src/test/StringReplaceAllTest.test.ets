@@ -661,7 +661,7 @@ namespace replaceAllHelperTest {
   }
 }
 
-export default function StringReplaceAllTest() {
+export default function StringReplaceAllTest(): void {
   describe('StringReplaceAllTest', () => {
     beforeAll(() => {});
     beforeEach(async () => {

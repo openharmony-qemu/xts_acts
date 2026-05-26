@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,7 +15,7 @@
 import account from '@ohos.account.appAccount'
 import { describe, afterEach, it, expect, TestType, Size, Level } from '@ohos/hypium'
 
-export default function AppAccountParamLengthCheck() {
+export default function AppAccountParamLengthCheck(): void {
   describe('AppAccountParamLengthCheck', () => {
 
     let accountManager = account.createAppAccountManager();

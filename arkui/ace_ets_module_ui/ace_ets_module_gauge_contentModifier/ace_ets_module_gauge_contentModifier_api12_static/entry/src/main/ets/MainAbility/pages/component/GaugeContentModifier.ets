@@ -27,7 +27,6 @@ import {
   Color,
   Text,
   Divider,
-  Canvas,
   TabsController,
   TabContent,
   BarPosition,
@@ -51,7 +50,6 @@ import {
   Alignment,
   ScrollDirection,
   BarState,
-  Color,
   EdgeEffect,
   CustomBuilderT,
 } from '@ohos.arkui.component';

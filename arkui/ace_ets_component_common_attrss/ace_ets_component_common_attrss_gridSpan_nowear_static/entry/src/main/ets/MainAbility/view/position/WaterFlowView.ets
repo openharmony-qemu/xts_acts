@@ -17,7 +17,7 @@ import {Alignment,Scroller,TabsController,BarPosition,BarMode,TabContent,Tabs,Di
 import { State ,Link } from '@ohos.arkui.stateManagement'
 @Component
 export struct WaterFlowView {
-  @Link _position: Position={x:0,y:0};
+  public _position: Position={x:0,y:0};
   private componentKey: string='';
   @State minSize: number = 50
   @State maxSize: number = 100

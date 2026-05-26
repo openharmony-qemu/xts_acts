@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000554,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000554,
         "KHR-GLES31.core.arrays_of_arrays.Intera",
         "ctionArgumentAliasing5_var_type_index_0");

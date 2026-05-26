@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000438,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000438,
         "KHR-GLES31.core.arrays_of_arrays.Ex",
         "pressionsEquality1_var_type_index_13");

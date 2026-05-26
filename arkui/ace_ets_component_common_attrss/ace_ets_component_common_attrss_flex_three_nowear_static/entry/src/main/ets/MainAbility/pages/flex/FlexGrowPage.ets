@@ -29,11 +29,6 @@ import {
   ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection,CommonMethod,applyStyles
 } from '@ohos.arkui.component'
-import {
-  State,
-  // StateDecoratedVariable,
-  AppStorage
-} from '@ohos.arkui.stateManagement'
 import { State, AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { regObj } from '../../../MainAbility/common/Utils';

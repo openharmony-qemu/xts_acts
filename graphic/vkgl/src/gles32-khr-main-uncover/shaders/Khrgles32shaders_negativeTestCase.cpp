@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000005,
+static SHRINK_HWTEST_F(ActsGles32KhrMainUncover0001TestSuite, TestCase_000005,
         "KHR-GLES32.shaders.negative.non_pre",
         "cision_qualifiers_in_struct_members");

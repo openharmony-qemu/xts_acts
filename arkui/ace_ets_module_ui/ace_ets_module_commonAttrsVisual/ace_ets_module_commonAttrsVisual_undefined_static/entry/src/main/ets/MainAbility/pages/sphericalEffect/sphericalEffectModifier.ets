@@ -29,7 +29,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyTextInputAttributeModifier implements AttributeModifier<TextInputAttribute> {
-  @State public isChange: boolean = true
+  public isChange: boolean = true
 
   applyNormalAttribute(instance: TextInputAttribute): void {
     if (this.isChange) {

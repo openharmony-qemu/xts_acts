@@ -267,8 +267,10 @@ export default function requestPermissionOnSettingStaticTest() {
               });
             });
             Utils.msSleep(3000).awaitSync()
-            clickRequest(driver, '允许');
-          });
+            if(!clickRequest(driver, '允许')){
+              clickRequest(driver, '始终允许');
+            }
+        });
         } catch (error) {
           hilog.info(domain, tag, "Test_requestPermissionOnSetting_007 catch err" + JSON.stringify(error));
           expect(false).assertFail();
@@ -565,13 +567,21 @@ export default function requestPermissionOnSettingStaticTest() {
               }
             });
             Utils.msSleep(2000).awaitSync()
-            if (clickRequest(driver2, '允许')) {
-              clickRequest(driver2, '确定');
-            }
+            if(!clickRequest(driver1, '允许')) {
+              if(clickRequest(driver1, '始终允许')) {
+                clickRequest(driver1, '确定');
+               }
+               } else {
+                   clickRequest(driver1, '确定');
+               }
             Utils.msSleep(2000).awaitSync()
-            if (clickRequest(driver2, '允许')) {
-              clickRequest(driver2, '确定');
-            }
+            if(!clickRequest(driver1, '允许')) {
+              if(clickRequest(driver1, '始终允许')) {
+                clickRequest(driver1, '确定');
+               }
+               } else {
+                   clickRequest(driver1, '确定');
+               }
           });
           await Utils.msSleep(2000);
           if(!clickRequest(driver1, '禁止')) {

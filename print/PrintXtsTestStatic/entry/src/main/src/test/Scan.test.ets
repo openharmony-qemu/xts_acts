@@ -20,7 +20,7 @@ import { BusinessError } from '@ohos.base';
 const domain: int = 0x0000;
 const tag: string = 'testTag';
 
-export default function scanTest() {
+export default function scanTest(): void {
   describe("scanTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 

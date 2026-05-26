@@ -18,7 +18,7 @@ import Array_Slice_Second_Test_static from './ArraySliceSecondTest.test';
 import Array_Slice_Third_Test_static from './ArraySliceThirdTest.test';
 
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArrayToLocaleStringTest();
   ArrayToLocaleStringSecondTest();
   ArrayToReversedTest();

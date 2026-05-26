@@ -15,8 +15,8 @@
  */
 import { ToolType } from '@ohos.multimodalInput.mouseEvent'
 import Intl from '@ohos.intl';
-import { Entry, Column, Component, Row,RowOptions,ClickEvent, Toggle,  Text, TimePickerFormat,TimePicker,
-  TextPicker,Color,Button,FontWeight,Color,TimePickerResult, DateTimeOptions } from '@ohos.arkui.component'
+import { Entry, Column, Component, Row, RowOptions, ClickEvent, Toggle, Text, TimePickerFormat, TimePicker,
+  TextPicker, Color, Button, FontWeight, TimePickerResult, DateTimeOptions } from '@ohos.arkui.component'
 import { State, UIUtils } from '@ohos.arkui.stateManagement';
 
 @Entry

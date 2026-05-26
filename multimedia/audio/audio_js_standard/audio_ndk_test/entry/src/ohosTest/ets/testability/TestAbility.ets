@@ -45,8 +45,10 @@ export default class TestAbility extends UIAbility {
             let dr = Driver.create();
             await sleep(10000);
             let power = await dr?.waitForComponent(ON.text('允许',MatchPattern.EQUALS), 2000);
+            let power2 = await dr?.waitForComponent(ON.text('始终允许',MatchPattern.EQUALS), 500);
             await sleep(1000);
             await power?.click();
+            await power2?.click();
         }
         await driveFn();
         

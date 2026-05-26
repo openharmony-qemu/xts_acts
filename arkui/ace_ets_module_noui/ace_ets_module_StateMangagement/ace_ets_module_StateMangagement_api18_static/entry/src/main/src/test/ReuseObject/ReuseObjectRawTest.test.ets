@@ -68,7 +68,7 @@ export default function ReuseObjectRawTest() {
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
 
       console.info("[ReuseObjectRawTest_0100] params.raw is: " + AppStorage.get<RecordData>("ReuseObjectRaw"));
       expect(AppStorage.get<RecordData>("ReuseObjectRaw")).assertEqual('{"message":{"value":"Child1"}}');

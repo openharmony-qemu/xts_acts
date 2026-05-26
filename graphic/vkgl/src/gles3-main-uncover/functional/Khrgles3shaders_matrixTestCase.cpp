@@ -16,17 +16,17 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000193,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000193,
         "dEQP-GLES3.functional.shaders.matrix.",
         "inverse.dynamic.lowp_mat4_float_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000194,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000194,
         "dEQP-GLES3.functional.shaders.matrix.in",
         "verse.dynamic.mediump_mat4_float_vertex");

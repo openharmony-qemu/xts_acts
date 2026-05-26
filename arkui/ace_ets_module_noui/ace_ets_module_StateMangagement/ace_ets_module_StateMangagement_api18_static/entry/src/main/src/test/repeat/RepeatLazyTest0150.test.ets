@@ -86,7 +86,7 @@ export default function RepeatLazyTest0150() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id("btnRepeatLazy0150"));
       await (btn?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(5000);
       let text = await driver.findComponent(ON.text('item_0'))
       expect(text != null).assertTrue()
       console.info('[RepeatLazyTest0150_static_001] END');

@@ -131,11 +131,11 @@ ohos_static_library("lib_uncover_gles32_khr_single_uncover_build0007") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles32TestSuite0007_gles32_khr_single_uncover_build0007") {
+ohos_moduletest_suite("ActsGles32KhrSingleUncoverTestSuite0007_gles32_khr_single_uncover_build0007") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles320007TestSuite.cpp",
+    "../ActsGles32KhrSingleUncover0007TestSuite.cpp",
     "../subgroups/Khrgles32shape_graphicsTestCase.cpp",
     "../subgroups/Khrgles32shape_computeTestCase.cpp",
     "../subgroups/Khrgles32shape_framebufferTestCase.cpp", ]

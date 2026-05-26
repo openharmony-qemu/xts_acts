@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -33,7 +33,7 @@ import Utils from '../Util.test';
 let str = "";
 let strAttr = "";
 
-export default function xmlTest2() {
+export default function xmlTest2(): void {
   describe('xmlTest2', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

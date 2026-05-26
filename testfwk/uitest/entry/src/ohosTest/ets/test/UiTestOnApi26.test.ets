@@ -19,6 +19,7 @@ import { startAbility, stopApplication } from './Util.test'
 
 const waitUiReadyMs: number = 1000;
 const TestTag = 'UiTest_TAG';
+const ParameterErrorCode = 17000007;
 
 export default function uitestOnApi26Test() {
   describe('UitestOnApi26Test', () => {
@@ -59,8 +60,33 @@ export default function uitestOnApi26Test() {
     });
 
     /**
-     * @tc.name   testOnIsAfterComponentValid
+     * @tc.name   testOnIsBeforeComponentInvalid
      * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0200
+     * @tc.desc   Test On.isBefore(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsBeforeComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsBeforeComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let text2 = await driver.findComponent(ON.text('dialog'));
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.isBefore(text2);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsBeforeComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsBeforeComponentValid over`);
+    });
+
+    /**
+     * @tc.name   testOnIsAfterComponentValid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
      * @tc.desc   Test On.isAfter(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -81,8 +107,34 @@ export default function uitestOnApi26Test() {
     });
 
     /**
+     * @tc.name   testOnIsAfterComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0400
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnIsAfterComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnIsAfterComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let text2 = await driver.findComponent(ON.text('dialog'));
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.isAfter(text2);
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnIsAfterComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnIsAfterComponentInvalid over`);
+    });
+
+    /**
      * @tc.name   testOnWithinComponentValid
-     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0300
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0500
      * @tc.desc   Test On.within(com: Component) with valid Component parameter
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -102,5 +154,30 @@ export default function uitestOnApi26Test() {
       console.info(TestTag + 'testOnWithinComponentValid over');
     });
 
+    /**
+     * @tc.name   testOnWithinComponentInvalid
+     * @tc.number SUB_testfwk_UITEST_ON_ISBEFORE_COMPONENT_PARAM_0600
+     * @tc.desc   Test On.isAfter(com: Component) with invalid Component parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnWithinComponentInvalid', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
+      console.info(`testOnWithinComponentInvalid start`);
+      try {
+        await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
+        await driver.delayMs(waitUiReadyMs);
+        let scroller = await driver.findComponent(ON.type('Scroll'));
+        await driver.delayMs(waitUiReadyMs);
+        await stopApplication('com.uitestScene.acts');
+        await driver.delayMs(waitUiReadyMs);
+        ON.within(scroller)
+        expect().assertFail();
+      } catch (error) {
+        console.info(`testOnWithinComponentInvalid,error.code, ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(ParameterErrorCode);
+      }
+      console.info(`testOnWithinComponentInvalid over`);
+    });
   })
 }

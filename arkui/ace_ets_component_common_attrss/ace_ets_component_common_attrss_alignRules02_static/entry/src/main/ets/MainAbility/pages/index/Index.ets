@@ -34,8 +34,6 @@ import {
   FontWeight,
   ButtonType,
   ClickEvent,
-  Margin,
-  FontWeight
 } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';

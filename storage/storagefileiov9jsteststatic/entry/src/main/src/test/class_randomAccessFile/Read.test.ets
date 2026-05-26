@@ -397,7 +397,7 @@ export default function fileIORandomAccessFileRead() {
           randomaccessfile?.read(new ArrayBuffer(length), { offset: 1 }).then((readLength: long) => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_001 readLength: " + readLength);
             expect(readLength == length - 1).assertTrue();
-          }).catch((err: Error): Promise<void> => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_001 failed with error message: " + err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();
@@ -758,7 +758,7 @@ export default function fileIORandomAccessFileRead() {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_015 readLength: " + readLength);
             expect(readLength == length - 1).assertTrue();
             expect(randomaccessfile?.filePointer == readLength + initOffset).assertTrue();
-          }).catch((err: Error): Promise<void> => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_015 failed with error message: " + err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();

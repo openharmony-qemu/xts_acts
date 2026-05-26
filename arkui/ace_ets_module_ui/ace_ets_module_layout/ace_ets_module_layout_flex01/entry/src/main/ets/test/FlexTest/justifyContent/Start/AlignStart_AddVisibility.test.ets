@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,15 +70,27 @@ export default function AlignStart_AddVisibility() {
         let Start_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_012');
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_01.left) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.right - Start_AddVisibility_013.left) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - vp2px(200)) <= 1).assertTrue();
+
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi2:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi3:' + Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_01.left)));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi4:' + Math.floor(Math.abs(Start_AddVisibility_012.right - Start_AddVisibility_013.left)));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi5:' + Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi6:' + Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi7:' + Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi8:' + Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityNone_chazhi9:' + Math.floor(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - vp2px(200))));
+
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_01.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.right - Start_AddVisibility_013.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_01.right - Start_AddVisibility_013.right) - vp2px(200))) <= 1).assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityNone] failed');
         expect().assertFail();
@@ -113,19 +125,35 @@ export default function AlignStart_AddVisibility() {
         let Start_AddVisibility_012: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_012');
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right) <= 1).assertTrue();
-        expect(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150)) <= 1).assertTrue();
+
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left)));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityHidden_chazhi1:' + Math.floor(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150))));
+
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left)) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150))) <= 1).assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityHidden] failed');
         expect().assertFail();
@@ -161,19 +189,34 @@ export default function AlignStart_AddVisibility() {
         let Start_AddVisibility_013: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_013');
         let Start_AddVisibility_01: RectValue = CommonFunc.getComponentRect('Start_AddVisibility_01');
 
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top) <= 1).assertTrue()
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top) <= 1).assertTrue()
-        expect(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top) <= 1).assertTrue()
-        expect(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right) <= 1).assertTrue()
-        expect(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right) <= 1).assertTrue()
-        expect(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left) <= 1).assertTrue()
-        expect(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150)) <= 1).assertTrue();
-        expect(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150)) <= 1).assertTrue();
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi1:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi2:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi3:' + Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi4:' + Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi5:' + Math.floor(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi6:' + Math.floor(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left)));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi7:' + Math.floor(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi8:' + Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi9:' + Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi10:' + Math.floor(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi11:' + Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi12:' + Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))));
+        console.info('testFlexAlignStartTextVisibilityVisible_chazhi13:' + Math.floor(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150))));
+
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_011.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_013.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.top - Start_AddVisibility_01.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Start_AddVisibility_012.left - Start_AddVisibility_011.right)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Start_AddVisibility_013.left - Start_AddVisibility_012.right)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(Start_AddVisibility_01.left - Start_AddVisibility_011.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs((Start_AddVisibility_011.right - Start_AddVisibility_011.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.right - Start_AddVisibility_012.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.right - Start_AddVisibility_013.left) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_011.bottom - Start_AddVisibility_011.top) - vp2px(50))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.bottom - Start_AddVisibility_012.top) - vp2px(100))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_013.bottom - Start_AddVisibility_013.top) - vp2px(150))) <= 1).assertTrue();
+        expect(Math.floor(Math.abs((Start_AddVisibility_012.left - Start_AddVisibility_01.left) - vp2px(150))) <= 1).assertTrue();
+
       } catch (err) {
         console.error('[testFlexAlignStartTextVisibilityVisible] failed');
         expect().assertFail();

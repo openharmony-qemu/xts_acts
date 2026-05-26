@@ -76,6 +76,13 @@ struct webviewGetAndSetHttpAuthUsernamePassword {
               Utils.emitEvent(webview.ScrollbarMode.OVERLAY_LAYOUT_SCROLLBAR, 20251209)
               break;
             }
+            case "emitSetScrollbarMode003": {
+              await Utils.sleep(2000)
+              webview.WebviewController.setScrollbarMode(webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR);
+              Utils.emitEvent(webview.ScrollbarMode.OVERLAY_VISUAL_SCROLLBAR, 20260525)
+              break;
+            }
+
           }
         })
       }

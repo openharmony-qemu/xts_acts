@@ -634,7 +634,6 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
-        ExpectFail();
         done();
       }
       
@@ -774,7 +773,6 @@ export default function observerManagerSimStateTest1() {
         }
       } else {
         console.info(`${caseName} This device is a single-card device`);
-        ExpectFail();
         done();
       }
       console.info(`${caseName} test end`);

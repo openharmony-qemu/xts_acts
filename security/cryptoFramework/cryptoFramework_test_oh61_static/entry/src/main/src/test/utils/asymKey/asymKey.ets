@@ -677,7 +677,7 @@ export async function getPubKey(priKey: cryptoFramework.PriKey): Promise<cryptoF
 
     return pubKey;
   } catch (error) {
-    console.error(`[XTS] getPubKey ${error}, error code: ${error.code}`);
+    console.error(`[XTS] getPubKey ${error}`);
     throw error as Error;
   }
 }
@@ -688,7 +688,7 @@ export function getPubKeySync(priKey: cryptoFramework.PriKey): cryptoFramework.P
 
     return pubKey;
   } catch (error) {
-    console.error(`[XTS] getPubKeySync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] getPubKeySync ${error}`);
     throw error as Error;
   }
 }
@@ -700,7 +700,7 @@ export async function generatorKeyPair(algName: string): Promise<cryptoFramework
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] generatorKeyPair ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPair ${error}`);
     throw error as Error;
   }
 }
@@ -712,7 +712,7 @@ export function generatorKeyPairSync(algName: string): cryptoFramework.KeyPair {
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] generatorKeyPairSync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPairSync ${error}`);
     throw error as Error;
   }
 }
@@ -730,7 +730,7 @@ export async function generatorKeyPairCb(algName: string): Promise<cryptoFramewo
       });
     });
   } catch (error) {
-    console.error(`[XTS] generatorKeyPairCb ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPairCb ${error}`);
     throw error as Error;
   }
 }
@@ -748,7 +748,7 @@ export async function convertPemKeyPair(algName: string, priKey: string|null,
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] convertPemKeyPair ${error}, error code: ${error.code}`);
+    console.error(`[XTS] convertPemKeyPair ${error}`);
     throw error as Error;
   }
 }
@@ -766,7 +766,7 @@ export function convertPemKeyPairSync(algName: string, priKey: string|null,
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] convertPemKeyPairSync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] convertPemKeyPairSync ${error}`);
     throw error as Error;
   }
 }
@@ -779,7 +779,7 @@ export async function convertKeyPair(algName: string, priKey: cryptoFramework.Da
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] convertKeyPair ${error}, error code: ${error.code}`);
+    console.error(`[XTS] convertKeyPair ${error}`);
     throw error as Error;
   }
 }
@@ -792,7 +792,7 @@ export function convertKeyPairSync(algName: string, priKey: cryptoFramework.Data
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] convertKeyPairSync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] convertKeyPairSync ${error}`);
     throw error as Error;
   }
 }
@@ -811,7 +811,7 @@ export async function convertKeyPairCb(algName: string, priKey: cryptoFramework.
       });
     });
   } catch (error) {
-    console.error(`[XTS] convertKeyPairCb ${error}, error code: ${error.code}`);
+    console.error(`[XTS] convertKeyPairCb ${error}`);
     throw error as Error;
   }
 }
@@ -823,7 +823,7 @@ export async function generatorKeyPairBySpec(spec: cryptoFramework.AsyKeySpec): 
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] generatorKeyPairBySpec ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPairBySpec ${error}`);
     throw error as Error;
   }
 }
@@ -835,7 +835,7 @@ export function generatorKeyPairBySpecSync(spec: cryptoFramework.AsyKeySpec): cr
 
     return keyPair;
   } catch (error) {
-    console.error(`[XTS] generatorKeyPairBySpecSync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPairBySpecSync ${error}`);
     throw error as Error;
   }
 }
@@ -853,7 +853,7 @@ export async function generatorKeyPairBySpecCb(spec: cryptoFramework.AsyKeySpec)
       });
     });
   } catch (error) {
-    console.error(`[XTS] generatorKeyPairBySpecCb ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorKeyPairBySpecCb ${error}`);
     throw error as Error;
   }
 }
@@ -865,7 +865,7 @@ export async function generatorPriKeyBySpec(spec: cryptoFramework.AsyKeySpec): P
 
     return priKey;
   } catch (error) {
-    console.error(`[XTS] generatorPriKeyBySpec ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorPriKeyBySpec ${error}`);
     throw error as Error;
   }
 }
@@ -877,7 +877,7 @@ export function generatorPriKeyBySpecSync(spec: cryptoFramework.AsyKeySpec): cry
 
     return priKey;
   } catch (error) {
-    console.error(`[XTS] generatorPriKeyBySpecSync ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorPriKeyBySpecSync ${error}`);
     throw error as Error;
   }
 }
@@ -895,7 +895,7 @@ export async function generatorPriKeyBySpecCb(spec: cryptoFramework.AsyKeySpec):
       });
     });
   } catch (error) {
-    console.error(`[XTS] generatorPriKeyBySpecCb ${error}, error code: ${error.code}`);
+    console.error(`[XTS] generatorPriKeyBySpecCb ${error}`);
     throw error as Error;
   }
 }
@@ -906,7 +906,7 @@ export function getKeySpecItem(pubKey: cryptoFramework.PubKey, item: cryptoFrame
 
     return n.toString().length != 0 ? true : false;
   } catch (error) {
-    console.error(`[XTS] getKeySpecItem ${error}, error code: ${error.code}`);
+    console.error(`[XTS] getKeySpecItem ${error}`);
     throw error as Error;
   }
 }

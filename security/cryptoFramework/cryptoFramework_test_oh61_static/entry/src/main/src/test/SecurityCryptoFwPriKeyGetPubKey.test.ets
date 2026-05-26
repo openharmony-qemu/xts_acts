@@ -77,7 +77,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
         }
       } catch (error) {
-        console.error(`[XTS] Func_0100 ${error}, error code: ${error.code}`);
+        console.error(`[XTS] Func_0100 ${error}`);
         expect(null).assertFail();
       }
       done();
@@ -115,7 +115,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
             keyPair.priKey.clearMem();
           }
         } catch (error) {
-          console.error(`[XTS] Func_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -148,7 +148,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
             expect(ret).assertTrue();
           }
         } catch (error) {
-          console.error(`[XTS] Func_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -181,7 +181,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = await doVerify(signAlgName, signatureData, message, pubKey);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_0400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0400 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -219,7 +219,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           /* 销毁私钥 */
           keyPair.priKey.clearMem();
         } catch (error) {
-          console.error(`[XTS] Func_0500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -252,7 +252,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
 
         } catch (error) {
-          console.error(`[XTS] Func_0600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -293,7 +293,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = await doVerify(signAlgName, signatureData, message, pubKey);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_0700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0700 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -330,7 +330,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = await doVerify(algName, signatureData, message, pubKey);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_0800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_0800 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -380,7 +380,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = await doVerify(algName, signatureData, message, pubKey);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_1000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -427,7 +427,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           /* 销毁私钥 */
           keyPair.priKey.clearMem();
         } catch (error) {
-          console.error(`[XTS] Func_1100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -472,7 +472,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = compareDataBlob(secret1, secret2);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_1200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -500,7 +500,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.RSA_SK_BN);
         } catch (error) {
-          console.error(`[XTS] Func_1300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -532,7 +532,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.DSA_SK_BN);
         } catch (error) {
-          console.error(`[XTS] Func_1400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -560,7 +560,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.DH_L_NUM);
         } catch (error) {
-          console.error(`[XTS] Func_1500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1500 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
         }
         done();
@@ -606,7 +606,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.ECC_SK_BN);
         } catch (error) {
-          console.error(`[XTS] Func_1600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1600 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -630,7 +630,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.ED25519_SK_BN);
         } catch (error) {
-          console.error(`[XTS] Func_1700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -654,7 +654,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           expect(ret).assertTrue();
           getKeySpecItem(pubKey, cryptoFramework.AsyKeySpecItem.X25519_SK_BN);
         } catch (error) {
-          console.error(`[XTS] Func_1800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -685,7 +685,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           ret = compareDataBlob(data3, data4);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_1900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_1900 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -716,7 +716,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           ret = compareString(data3, data4);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_2000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_2000 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -745,7 +745,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = compareUint8Array(data.data, new Uint8Array(RSA_3072_PUBLIC_ENCODED));
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_2100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_2100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -772,7 +772,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           let ret: boolean = compareDataBlob(data1, data2);
           expect(ret).assertTrue();
         } catch (error) {
-          console.error(`[XTS] Func_2200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_2200 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -812,7 +812,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           keyPair.priKey.clearMem();
           priKey.clearMem();
         } catch (error) {
-          console.error(`[XTS] Func_2300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_2300 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -853,7 +853,7 @@ export default function SecurityCryptoFwPriKeyToPubKeyTestUnit() {
           keyPair2.priKey.clearMem();
           keyPair1.priKey.clearMem();
         } catch (error) {
-          console.error(`[XTS] Func_2400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Func_2400 ${error}`);
           expect(null).assertFail();
         }
         done();

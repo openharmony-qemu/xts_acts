@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 
-__attribute__((weak)) void call(void)
+__attribute__((weak)) void Call(void)
 {
     printf("hello world! \n");
 }

@@ -16,25 +16,25 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000291,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000291,
         "dEQP-GLES3.functional.negativ",
         "e_api.fragment.blend_equationi");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000292,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000292,
         "dEQP-GLES3.functional.negative_api",
         ".fragment.blend_equation_separatei");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000293,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000293,
         "dEQP-GLES3.functional.negat",
         "ive_api.fragment.blend_funci");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000294,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000294,
         "dEQP-GLES3.functional.negative_a",
         "pi.fragment.blend_func_separatei");
