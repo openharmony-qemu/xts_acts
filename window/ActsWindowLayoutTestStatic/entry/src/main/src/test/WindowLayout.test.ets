@@ -81,7 +81,7 @@ async function terminateAbility(caseName: string) {
 }
 export default function WindowLayoutTest() {
 
-    describe("WindowLayoutTest", (): void => {.
+    describe("WindowLayoutTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowLayoutTest describe start');
         let windowStage: window.WindowStage | undefined;
         let win: window.Window | undefined;
