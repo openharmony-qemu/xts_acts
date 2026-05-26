@@ -32,7 +32,7 @@ function expectAbsentInstanceMethod(cls: Class, name: string): void {
 }
 
 export default function ClassGetInstanceMethodTest001(): void {
-  describe('ClassGetInstanceMethodTest', (): void => {
+  describe('ClassGetInstanceMethodTest001', (): void => {
     beforeAll(() => {
     });
     beforeEach(async () => {
