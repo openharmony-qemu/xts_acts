@@ -225,5 +225,40 @@ export default function arrayBufferFromObjectTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferFromObject0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1300
+     * @tc.desc Error: fromObject(plain Object, 0, 4) throws Error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromObject0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        ArrayBuffer.fromObject(Utils.plainObject(), 0, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferFromObject0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1400
+     * @tc.desc Error: fromObject(src, 2, 10) throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromObject0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const src = new ArrayBuffer(4);
+      try {
+        ArrayBuffer.fromObject(src, 2, 10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
   });
 }

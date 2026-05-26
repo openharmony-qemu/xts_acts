@@ -82,5 +82,20 @@ export default function arrayBufferGetByteLengthTest(): void {
       const buffer = new ArrayBuffer(4, 16);
       expect(buffer.getByteLength()).assertEqual(4);
     });
+
+    /**
+     * @tc.name testArrayBufferGetByteLength0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0500
+     * @tc.desc Normal: verify getByteLength() reflects length after resize
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferGetByteLength0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 8);
+      buffer.resize(6);
+      expect(buffer.getByteLength()).assertEqual(6);
+      expect(buffer.getByteLength()).assertEqual(buffer.byteLength);
+    });
   });
 }

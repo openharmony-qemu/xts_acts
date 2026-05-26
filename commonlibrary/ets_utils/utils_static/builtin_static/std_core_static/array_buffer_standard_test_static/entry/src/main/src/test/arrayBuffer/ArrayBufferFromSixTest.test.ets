@@ -168,5 +168,23 @@ export default function arrayBufferFromSixTest(): void {
         expect(e.name).assertEqual('IndexOutOfBoundsError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferFromSix0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0900
+     * @tc.desc Error: from(source, 2, 10) throws IndexOutOfBoundsError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromSix0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const source = new ArrayBuffer(4);
+      try {
+        ArrayBuffer.from(source, 2, 10);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IndexOutOfBoundsError');
+      }
+    });
   });
 }

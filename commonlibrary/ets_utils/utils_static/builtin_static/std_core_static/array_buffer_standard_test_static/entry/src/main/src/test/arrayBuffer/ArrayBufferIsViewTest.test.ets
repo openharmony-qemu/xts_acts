@@ -115,5 +115,19 @@ export default function arrayBufferIsViewTest(): void {
         expect(e.name).assertEqual('ClassCastError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferIsView0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0700
+     * @tc.desc Normal: ArrayBuffer.isView returns true for Float64Array TypedArray
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferIsView0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(16);
+      const arr = new Float64Array(buffer);
+      expect(ArrayBuffer.isView(arr)).assertTrue();
+    });
   });
 }

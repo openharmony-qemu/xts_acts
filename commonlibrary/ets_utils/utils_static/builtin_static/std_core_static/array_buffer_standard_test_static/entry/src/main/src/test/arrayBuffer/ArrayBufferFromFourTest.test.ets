@@ -100,5 +100,22 @@ export default function arrayBufferFromFourTest(): void {
       expect(edge.at(2)).assertEqual(Double.toByte(256.0));
       expect(edge.at(3)).assertEqual(Double.toByte(-129.0));
     });
+
+    /**
+     * @tc.name testArrayBufferFromFour0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0400
+     * @tc.desc [error] invalid argument type throws ClassCastError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferFromFour0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        ArrayBuffer.from(null as double[]);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
+    });
   });
 }

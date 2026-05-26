@@ -1,4 +1,5 @@
 import arrayBufferAtTest from "./arrayBuffer/ArrayBufferAtTest.test";
+import arrayBufferAtomicTest from "./arrayBuffer/ArrayBufferAtomicTest.test";
 import arrayBufferBytesLengthTest from "./arrayBuffer/ArrayBufferBytesLengthTest.test";
 import arrayBufferByteLengthFieldTest from "./arrayBuffer/ArrayBufferByteLengthFieldTest.test";
 import arrayBufferDetachedFieldTest from "./arrayBuffer/ArrayBufferDetachedFieldTest.test";
@@ -27,6 +28,7 @@ import byteConstructorTwoTest from "./arrayBuffer/ByteConstructorTwoTest.test";
 
 export default function testsuite(): void {
   arrayBufferAtTest();
+  arrayBufferAtomicTest();
   arrayBufferByteLengthFieldTest();
   arrayBufferBytesLengthTest();
   arrayBufferDetachedFieldTest();

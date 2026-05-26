@@ -107,5 +107,57 @@ export default function arrayBufferResizeTest(): void {
         expect(e.name).assertEqual('TypeError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferResize0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0600
+     * @tc.desc Verify resize(-1) throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
+      try {
+        buffer.resize(-1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0700
+     * @tc.desc Verify resize shrinks resizable buffer byteLength
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(6, 8);
+      buffer.resize(3);
+      expect(buffer.byteLength).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testArrayBufferResize0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_RESIZE_0800
+     * @tc.desc Verify bytes in grown range are writable via set after resize
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferResize0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(2, 6);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.resize(4);
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
+      expect(buffer.byteLength).assertEqual(4);
+      expect(buffer.at(0)).assertEqual(Int.toByte(10));
+      expect(buffer.at(3)).assertEqual(Int.toByte(40));
+    });
   });
 }

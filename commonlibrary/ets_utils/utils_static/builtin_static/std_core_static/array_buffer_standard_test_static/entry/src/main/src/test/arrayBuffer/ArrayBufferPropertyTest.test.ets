@@ -111,5 +111,66 @@ export default function arrayBufferPropertyTest(): void {
         expect(e.name).assertEqual('RangeError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferProperty0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0600
+     * @tc.desc Error: constructor with length greater than maxByteLength throws RangeError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        new ArrayBuffer(8, 4);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('RangeError');
+      }
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0700
+     * @tc.desc Normal: number overload constructor creates fixed buffer with byteLength 4
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const len: number = 4.0;
+      const buffer = new ArrayBuffer(len);
+      expect(buffer.byteLength).assertEqual(4);
+      expect(buffer.resizable).assertFalse();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0800
+     * @tc.desc Normal: number overload with maxByteLength creates resizable buffer
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const len: number = 2.0;
+      const maxLen: number = 8.0;
+      const buffer = new ArrayBuffer(len, maxLen);
+      expect(buffer.byteLength).assertEqual(2);
+      expect(buffer.resizable).assertTrue();
+    });
+
+    /**
+     * @tc.name testArrayBufferProperty0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0900
+     * @tc.desc Boundary: fractional number length truncates to int byteLength
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferProperty0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const len: number = 4.9;
+      expect(new ArrayBuffer(len).byteLength).assertEqual(4);
+    });
   });
 }

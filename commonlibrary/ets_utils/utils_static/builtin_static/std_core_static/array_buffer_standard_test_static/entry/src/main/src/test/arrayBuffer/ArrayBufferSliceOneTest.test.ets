@@ -152,5 +152,26 @@ export default function arrayBufferSliceOneTest(): void {
       expect(copied.byteLength).assertEqual(1);
       expect(copied.at(0)).assertEqual(Int.toByte(88));
     });
+
+    /**
+     * @tc.name testArrayBufferSliceOne0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0800
+     * @tc.desc Normal: slice(0) omit end copies entire buffer (int overload)
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferSliceOne0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(4);
+      buffer.set(0, Int.toByte(10));
+      buffer.set(1, Int.toByte(20));
+      buffer.set(2, Int.toByte(30));
+      buffer.set(3, Int.toByte(40));
+      const copied = buffer.slice(0);
+      expect(copied.byteLength).assertEqual(4);
+      for (let i: int = 0; i < 4; i++) {
+        expect(copied.at(i)).assertEqual(buffer.at(i));
+      }
+    });
   });
 }
