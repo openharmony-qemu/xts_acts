@@ -33,7 +33,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0100
-     * @tc.desc Normal: slice(2, 6) copies 4 bytes from middle
+     * @tc.desc Verify slice(2,6) copies 4 bytes from middle with matching values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -53,7 +53,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0200
-     * @tc.desc Normal: slice(2) omit end copies to buffer end
+     * @tc.desc Verify slice(2) number overload copies from index 2 to buffer end
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0300
-     * @tc.desc Boundary: slice(0) copies entire buffer
+     * @tc.desc Verify slice(0) copies entire buffer with matching bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -94,7 +94,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0400
-     * @tc.desc Boundary: slice(begin, begin) yields empty copy
+     * @tc.desc Verify slice(2,2) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -109,7 +109,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0500
-     * @tc.desc Boundary: zero-length buffer slice yields empty copy
+     * @tc.desc Verify slice on zero-length buffer yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -123,7 +123,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0600
-     * @tc.desc Boundary: fractional begin 1.5 truncates to 1
+     * @tc.desc Verify slice(1.5,8) truncates begin to 1 and copies 7 bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -141,7 +141,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0700
-     * @tc.desc Boundary: NaN begin coerces to 0 (STA NaN→0)
+     * @tc.desc Verify slice(NaN,2) coerces begin to 0 and copies 2 bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -158,7 +158,7 @@ export default function arrayBufferSliceTwoTest(): void {
     /**
      * @tc.name testArrayBufferSliceTwo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_TWO_0800
-     * @tc.desc Boundary: mutating copied buffer does not change source
+     * @tc.desc Verify mutating slice copy does not change source byte at index 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

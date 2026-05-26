@@ -34,7 +34,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0100
-     * @tc.desc [normal] from(Uint8Array) copies length and every element
+     * @tc.desc Verify from(Uint8Array) copies byteLength 5 and elements 10,20,30,40,50
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -53,7 +53,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0200
-     * @tc.desc [normal] subview copies full underlying buffer; result is isolated from source
+     * @tc.desc Verify from subview copies full 10-byte buffer and result is isolated from source mutations
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -80,7 +80,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0300
-     * @tc.desc [boundary] empty, 255, and 1024-element Uint8Array
+     * @tc.desc Verify from empty Uint8Array yields byteLength 0; single 255 and 1024-element arrays copy correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -105,7 +105,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0400
-     * @tc.desc [error] non-Uint8Array argument throws ClassCastError
+     * @tc.desc Verify from(Int8Array) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

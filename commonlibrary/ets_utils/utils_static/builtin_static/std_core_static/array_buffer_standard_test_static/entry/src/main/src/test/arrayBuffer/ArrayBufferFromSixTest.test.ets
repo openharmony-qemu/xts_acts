@@ -34,7 +34,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0100
-     * @tc.desc Normal: from(source, 1, 2) copies 2 bytes from offset 1
+     * @tc.desc Verify from(source,1,2) copies 2 bytes from offset 1 with matching values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -53,7 +53,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0200
-     * @tc.desc Normal: from(source, 0, byteLength) copies entire buffer
+     * @tc.desc Verify from(source,0,byteLength) copies entire buffer with matching bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -74,7 +74,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0300
-     * @tc.desc Boundary: empty source with offset 0 and length 0 yields empty buffer
+     * @tc.desc Verify from(empty source,0,0) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -88,7 +88,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0400
-     * @tc.desc Boundary: offset at byteLength with length 0 yields empty buffer
+     * @tc.desc Verify from(source,byteLength,0) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -103,7 +103,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0500
-     * @tc.desc Boundary: copy last single byte at source.byteLength - 1
+     * @tc.desc Verify from(source,byteLength-1,1) copies last single byte
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0600
-     * @tc.desc Boundary: result is a distinct copy (result !== source)
+     * @tc.desc Verify from(source,0,byteLength) returns distinct copy where result !== source
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -135,7 +135,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0700
-     * @tc.desc Boundary: offset+length equals source.byteLength copies tail segment
+     * @tc.desc Verify from(source,offset,len) copies tail when offset+length equals byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -154,7 +154,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0800
-     * @tc.desc Error: from(source, -1, 1) throws IndexOutOfBoundsError
+     * @tc.desc Verify from(source,-1,1) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -172,7 +172,7 @@ export default function arrayBufferFromSixTest(): void {
     /**
      * @tc.name testArrayBufferFromSix0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_SIX_0900
-     * @tc.desc Error: from(source, 2, 10) throws IndexOutOfBoundsError
+     * @tc.desc Verify from(source,2,10) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

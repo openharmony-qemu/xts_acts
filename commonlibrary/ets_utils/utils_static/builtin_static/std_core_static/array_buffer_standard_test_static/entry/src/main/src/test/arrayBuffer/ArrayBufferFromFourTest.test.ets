@@ -34,7 +34,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0100
-     * @tc.desc [normal] from(double[]) converts each element to byte
+     * @tc.desc Verify from(double[1,2,3,4]) yields bytes 1,2,3,4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -52,7 +52,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0200
-     * @tc.desc [normal] fractional doubles truncate toward byte; copy is isolated
+     * @tc.desc Verify from truncates fractional doubles to byte and copy is isolated from source
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -78,7 +78,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0300
-     * @tc.desc [boundary] empty array, NaN/Infinity, and byte-range doubles
+     * @tc.desc Verify from empty double[], NaN/Infinity, and byte-range doubles convert correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -104,7 +104,7 @@ export default function arrayBufferFromFourTest(): void {
     /**
      * @tc.name testArrayBufferFromFour0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FOUR_0400
-     * @tc.desc [error] invalid argument type throws ClassCastError
+     * @tc.desc Verify from(null as double[]) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

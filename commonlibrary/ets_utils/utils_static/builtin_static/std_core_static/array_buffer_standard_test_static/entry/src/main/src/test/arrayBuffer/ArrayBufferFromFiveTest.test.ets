@@ -34,7 +34,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0100
-     * @tc.desc [normal] from(string, utf8) encodes ASCII to expected byteLength
+     * @tc.desc Verify from('ABC','utf8') yields byteLength 3 and ASCII bytes 65 and 67
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -49,7 +49,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0200
-     * @tc.desc [normal] supported encodings produce expected byteLength
+     * @tc.desc Verify from with utf-8, ascii, utf16le, ucs2, base64, hex, latin1, binary yields expected byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -68,7 +68,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0300
-     * @tc.desc [boundary] empty, CJK, and emoji utf8 byteLength
+     * @tc.desc Verify from empty string yields byteLength 0; CJK and emoji yield 6, 4, and 6 bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -85,7 +85,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0400
-     * @tc.desc [boundary] long utf8 string and distinct buffers for same input
+     * @tc.desc Verify from 10000-char string yields byteLength 10000 and two from('ABC') results are distinct
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +102,7 @@ export default function arrayBufferFromFiveTest(): void {
     /**
      * @tc.name testArrayBufferFromFive0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_FIVE_0500
-     * @tc.desc [error] unsupported encoding throws IllegalArgumentError
+     * @tc.desc Verify from with unsupported encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

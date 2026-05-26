@@ -34,7 +34,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0100
-     * @tc.desc [normal] from(FixedArray<byte>) copies length and every byte
+     * @tc.desc Verify from(FixedArray<byte>) copies byteLength 4 and every source byte
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -52,7 +52,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0200
-     * @tc.desc [normal] copy is independent of source and other from() results
+     * @tc.desc Verify from(FixedArray) copies are independent of source and other from() results
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0300
-     * @tc.desc [boundary] empty, single-element, and full byte-range FixedArray<byte>
+     * @tc.desc Verify from empty, single [42], and full byte-range FixedArray<byte> copy correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -98,7 +98,7 @@ export default function arrayBufferFromTwoTest(): void {
     /**
      * @tc.name testArrayBufferFromTwo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_TWO_0400
-     * @tc.desc [error] invalid argument type throws ClassCastError
+     * @tc.desc Verify from(null as FixedArray<byte>) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

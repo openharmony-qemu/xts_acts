@@ -33,7 +33,7 @@ export default function arrayBufferToStringTest(): void {
     /**
      * @tc.name testArrayBufferToString0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_0100
-     * @tc.desc Normal: verify toString() returns [object ArrayBuffer]
+     * @tc.desc Verify toString() on ArrayBuffer(8) returns '[object ArrayBuffer]'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -46,7 +46,7 @@ export default function arrayBufferToStringTest(): void {
     /**
      * @tc.name testArrayBufferToString0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_TO_STRING_0200
-     * @tc.desc Boundary: verify toString() returns [object ArrayBuffer] for zero-length buffer
+     * @tc.desc Verify toString() on zero-length buffer returns '[object ArrayBuffer]'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

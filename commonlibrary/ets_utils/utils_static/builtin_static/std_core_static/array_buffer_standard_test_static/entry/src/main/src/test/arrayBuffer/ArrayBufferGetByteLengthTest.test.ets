@@ -34,7 +34,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0100
-     * @tc.desc Normal: verify getByteLength() returns 8
+     * @tc.desc Verify getByteLength() on ArrayBuffer(8) returns 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -47,7 +47,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0200
-     * @tc.desc Boundary: verify getByteLength() returns 0 for zero-length buffer
+     * @tc.desc Verify getByteLength() on ArrayBuffer(0) returns 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -60,7 +60,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0300
-     * @tc.desc Normal: verify getByteLength() equals byteLength property once
+     * @tc.desc Verify getByteLength() equals byteLength property on ArrayBuffer(8)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0400
-     * @tc.desc Boundary: verify getByteLength() returns initial length for resizable buffer
+     * @tc.desc Verify getByteLength() returns 4 for new ArrayBuffer(4,16)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -86,7 +86,7 @@ export default function arrayBufferGetByteLengthTest(): void {
     /**
      * @tc.name testArrayBufferGetByteLength0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_METHOD_GET_BYTE_LENGTH_0500
-     * @tc.desc Normal: verify getByteLength() reflects length after resize
+     * @tc.desc Verify getByteLength() returns 6 and equals byteLength after resize(6)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

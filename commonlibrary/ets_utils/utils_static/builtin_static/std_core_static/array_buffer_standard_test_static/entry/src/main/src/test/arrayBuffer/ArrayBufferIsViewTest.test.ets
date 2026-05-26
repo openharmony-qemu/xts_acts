@@ -34,7 +34,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0100
-     * @tc.desc Normal: ArrayBuffer.isView returns true for DataView
+     * @tc.desc Verify ArrayBuffer.isView(DataView) returns true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -48,7 +48,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0200
-     * @tc.desc Normal: ArrayBuffer.isView returns true for Uint8Array TypedArray
+     * @tc.desc Verify ArrayBuffer.isView(Uint8Array) returns true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -62,7 +62,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0300
-     * @tc.desc Boundary: ArrayBuffer.isView returns true for view on zero-length buffer
+     * @tc.desc Verify ArrayBuffer.isView(DataView on zero-length buffer) returns true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -76,7 +76,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0400
-     * @tc.desc Normal: ArrayBuffer.isView returns false for ArrayBuffer itself
+     * @tc.desc Verify ArrayBuffer.isView(ArrayBuffer) returns false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -89,7 +89,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0500
-     * @tc.desc Normal: ArrayBuffer.isView returns false for plain Object
+     * @tc.desc Verify ArrayBuffer.isView(plain Object) returns false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -102,7 +102,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0600
-     * @tc.desc Error: ArrayBuffer.isView(null) throws ClassCastError
+     * @tc.desc Verify ArrayBuffer.isView(null) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferIsViewTest(): void {
     /**
      * @tc.name testArrayBufferIsView0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_IS_VIEW_0700
-     * @tc.desc Normal: ArrayBuffer.isView returns true for Float64Array TypedArray
+     * @tc.desc Verify ArrayBuffer.isView(Float64Array) returns true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

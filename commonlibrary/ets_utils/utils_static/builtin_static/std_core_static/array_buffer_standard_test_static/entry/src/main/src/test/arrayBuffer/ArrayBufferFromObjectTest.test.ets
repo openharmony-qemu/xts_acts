@@ -34,7 +34,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0100
-     * @tc.desc Normal: fromObject(string, utf8, length) encodes string bytes
+     * @tc.desc Verify fromObject('hello','utf8',5) yields byteLength 5 and UTF-8 bytes 104 and 111
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -49,7 +49,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0200
-     * @tc.desc Normal: fromObject(ArrayBuffer, offset, length) copies buffer segment
+     * @tc.desc Verify fromObject(src,2,4) copies 4 bytes matching src.at(2) through src.at(5)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -68,7 +68,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0300
-     * @tc.desc Boundary: empty string with length 0 yields empty buffer
+     * @tc.desc Verify fromObject('','utf8',0) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -81,7 +81,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0400
-     * @tc.desc Boundary: utf-8 alias encoding preserves hello bytes
+     * @tc.desc Verify fromObject('hello','utf-8',5) yields same UTF-8 bytes as utf8 encoding
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -96,7 +96,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0500
-     * @tc.desc Boundary: fromObject(ArrayBuffer, byteLength, 0) at end yields empty buffer
+     * @tc.desc Verify fromObject(src,src.byteLength,0) yields byteLength 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -111,7 +111,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0600
-     * @tc.desc Boundary: copy last single byte from ArrayBuffer source
+     * @tc.desc Verify fromObject(src,3,1) copies last byte 88 with byteLength 1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -127,7 +127,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0700
-     * @tc.desc Boundary: NaN offset coerces to 0 (STA NaN→0) on ArrayBuffer path
+     * @tc.desc Verify fromObject(src,NaN,2) coerces offset to 0 and copies first two bytes
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -144,7 +144,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0800
-     * @tc.desc Boundary: result is a distinct copy (result !== src)
+     * @tc.desc Verify fromObject(src,0,4) returns a distinct copy where result !== src
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -159,7 +159,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_0900
-     * @tc.desc Error: fromObject(number, 0, 4) throws Error
+     * @tc.desc Verify fromObject(number,0,4) throws Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -177,7 +177,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1000
-     * @tc.desc Error: fromObject(src, -1, 4) throws IndexOutOfBoundsError
+     * @tc.desc Verify fromObject(src,-1,4) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -195,7 +195,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1100
-     * @tc.desc Error: fromObject('hello', 'invalid-encoding', 5) throws IllegalArgumentError
+     * @tc.desc Verify fromObject('hello','invalid-encoding',5) throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -212,7 +212,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1200
-     * @tc.desc Error: fromObject(null as object, 0, 4) throws ClassCastError
+     * @tc.desc Verify fromObject(null,0,4) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -229,7 +229,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1300
-     * @tc.desc Error: fromObject(plain Object, 0, 4) throws Error
+     * @tc.desc Verify fromObject(plain Object,0,4) throws Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -246,7 +246,7 @@ export default function arrayBufferFromObjectTest(): void {
     /**
      * @tc.name testArrayBufferFromObject0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_OBJECT_1400
-     * @tc.desc Error: fromObject(src, 2, 10) throws IndexOutOfBoundsError
+     * @tc.desc Verify fromObject(src,2,10) throws IndexOutOfBoundsError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

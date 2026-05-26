@@ -34,7 +34,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0100
-     * @tc.desc Normal: DataView.buffer references underlying ArrayBuffer
+     * @tc.desc Verify DataView.buffer references underlying ArrayBuffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -48,7 +48,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0200
-     * @tc.desc Normal: view.byteLength equals span length for sub-range DataView
+     * @tc.desc Verify sub-range DataView byteLength equals span length 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -62,7 +62,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0300
-     * @tc.desc Normal: view.byteOffset equals constructor offset for sub-range DataView
+     * @tc.desc Verify sub-range DataView byteOffset equals constructor offset 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -76,7 +76,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0400
-     * @tc.desc Boundary: DataView on zero-length buffer has byteLength 0 and byteOffset 0
+     * @tc.desc Verify DataView on zero-length buffer has byteLength 0 and byteOffset 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -92,7 +92,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0500
-     * @tc.desc Boundary: view.byteOffset + view.byteLength equals buffer.byteLength for full-span view
+     * @tc.desc Verify full-span DataView byteOffset+byteLength equals buffer.byteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -106,7 +106,7 @@ export default function arrayBufferViewPropertyTest(): void {
     /**
      * @tc.name testArrayBufferViewProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_VIEW_PROPERTY_0600
-     * @tc.desc Error: DataView with byteOffset beyond buffer throws RangeError
+     * @tc.desc Verify new DataView(ab,16) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -34,7 +34,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0100
-     * @tc.desc Normal: fixed ArrayBuffer has byteLength 4, detached false, resizable false
+     * @tc.desc Verify new ArrayBuffer(4) has byteLength 4, detached false, resizable false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -49,7 +49,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0200
-     * @tc.desc Normal: resizable ArrayBuffer(2,8) has byteLength 2, detached false, resizable true
+     * @tc.desc Verify new ArrayBuffer(2,8) has byteLength 2, detached false, resizable true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -64,7 +64,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0300
-     * @tc.desc Boundary: zero-length fixed buffer has byteLength 0, detached false, resizable false
+     * @tc.desc Verify new ArrayBuffer(0) has byteLength 0, detached false, resizable false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -79,7 +79,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0400
-     * @tc.desc Boundary: zero-length resizable buffer has byteLength 0, detached false, resizable true
+     * @tc.desc Verify new ArrayBuffer(0,8) has byteLength 0, detached false, resizable true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -94,7 +94,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0500
-     * @tc.desc Error: constructor with negative length throws RangeError
+     * @tc.desc Verify new ArrayBuffer(-1) throws RangeError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -112,7 +112,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0600
-     * @tc.desc Error: constructor with length greater than maxByteLength throws RangeError
+     * @tc.desc Verify new ArrayBuffer(8,4) throws RangeError when length exceeds maxByteLength
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -129,7 +129,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0700
-     * @tc.desc Normal: number overload constructor creates fixed buffer with byteLength 4
+     * @tc.desc Verify number overload new ArrayBuffer(4.0) has byteLength 4 and resizable false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -144,7 +144,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0800
-     * @tc.desc Normal: number overload with maxByteLength creates resizable buffer
+     * @tc.desc Verify number overload new ArrayBuffer(2.0,8.0) has byteLength 2 and resizable true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -160,7 +160,7 @@ export default function arrayBufferPropertyTest(): void {
     /**
      * @tc.name testArrayBufferProperty0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0900
-     * @tc.desc Boundary: fractional number length truncates to int byteLength
+     * @tc.desc Verify new ArrayBuffer(4.9) truncates length to byteLength 4
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

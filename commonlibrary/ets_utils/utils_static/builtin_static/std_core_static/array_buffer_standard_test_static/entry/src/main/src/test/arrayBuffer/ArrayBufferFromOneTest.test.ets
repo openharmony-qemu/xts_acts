@@ -34,7 +34,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0100
-     * @tc.desc [normal] from(ValueArray<byte>) copies length and every byte
+     * @tc.desc Verify from(ValueArray<byte>) copies byteLength 5 and every source byte
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -52,7 +52,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0200
-     * @tc.desc [normal] copy is independent of source and other from() results
+     * @tc.desc Verify from(ValueArray) copies are independent of source and other from() results
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0300
-     * @tc.desc [boundary] empty, single-element, and 1024-element ValueArray<byte>
+     * @tc.desc Verify from empty, single-element, and 1024-element ValueArray<byte> copy correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -100,7 +100,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0400
-     * @tc.desc [boundary] byte edge values 127, -128, 0, -1 are preserved
+     * @tc.desc Verify from(ValueArray) preserves byte edge values 127, -128, 0, and -1
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -119,7 +119,7 @@ export default function arrayBufferFromOneTest(): void {
     /**
      * @tc.name testArrayBufferFromOne0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_ONE_0500
-     * @tc.desc [error] invalid argument type throws ClassCastError
+     * @tc.desc Verify from(null as ValueArray<byte>) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

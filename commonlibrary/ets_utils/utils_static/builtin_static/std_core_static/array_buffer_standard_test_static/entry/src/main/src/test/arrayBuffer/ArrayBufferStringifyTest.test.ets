@@ -34,7 +34,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0100
-     * @tc.desc Normal: stringify decodes full UTF-8 buffer to ABC
+     * @tc.desc Verify stringify(buf,'utf8',0,byteLength) decodes to 'ABC'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -51,7 +51,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0200
-     * @tc.desc Normal: stringify [1, 3) decodes partial range to BC
+     * @tc.desc Verify stringify(buf,'utf8',1,3) decodes partial range to 'BC'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -70,7 +70,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0300
-     * @tc.desc Normal: stringify decodes UTF-8 CJK bytes to 你好
+     * @tc.desc Verify stringify decodes UTF-8 CJK bytes to '你好'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -90,7 +90,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0400
-     * @tc.desc Boundary: empty range start==end returns empty string
+     * @tc.desc Verify stringify with start==end returns empty string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -107,7 +107,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0500
-     * @tc.desc Boundary: utf-8 alias encoding decodes to ABC
+     * @tc.desc Verify stringify with utf-8 alias decodes to 'ABC'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -124,7 +124,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0600
-     * @tc.desc Boundary: NaN start coerces to 0 (STA NaN→0)
+     * @tc.desc Verify stringify with NaN start coerces to 0 and decodes to 'ABC'
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -141,7 +141,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0700
-     * @tc.desc Error: stringify(null buffer, utf8, 0, 3) throws ClassCastError
+     * @tc.desc Verify stringify(null,'utf8',0,3) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -158,7 +158,7 @@ export default function arrayBufferStringifyTest(): void {
     /**
      * @tc.name testArrayBufferStringify0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
-     * @tc.desc Error: stringify(buffer, invalid-encoding, 0, byteLength) throws IllegalArgumentError
+     * @tc.desc Verify stringify with invalid-encoding throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

@@ -42,7 +42,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0100
-     * @tc.desc Normal: verify ArrayBufferLike byteLength equals 8
+     * @tc.desc Verify ArrayBufferLike byteLength equals 8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -55,7 +55,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0200
-     * @tc.desc Boundary: verify ArrayBufferLike byteLength equals 0
+     * @tc.desc Verify ArrayBufferLike byteLength equals 0 for zero-length buffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -68,7 +68,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0300
-     * @tc.desc Normal: verify ArrayBufferLike is assignable to ArrayBuffer and helper access
+     * @tc.desc Verify ArrayBufferLike is assignable to ArrayBuffer with byteLength 16 and instanceof ArrayBuffer
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -85,7 +85,7 @@ export default function arrayBufferLikeTest(): void {
     /**
      * @tc.name testArrayBufferLike0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_LIKE_0400
-     * @tc.desc Error: verify assigning byteLength on ArrayBufferLike throws ClassCastError
+     * @tc.desc Verify assigning byteLength on ArrayBufferLike throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

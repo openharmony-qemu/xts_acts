@@ -34,7 +34,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0100
-     * @tc.desc Normal: bytesLength('ABC', 'utf8') returns 3
+     * @tc.desc Verify bytesLength('ABC','utf8') returns 3
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -47,7 +47,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0200
-     * @tc.desc Normal: bytesLength('你好', 'utf8') returns 6
+     * @tc.desc Verify bytesLength('你好','utf8') returns 6
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -60,7 +60,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0300
-     * @tc.desc Boundary: bytesLength('', 'utf8') returns 0
+     * @tc.desc Verify bytesLength('','utf8') returns 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -73,7 +73,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0400
-     * @tc.desc Boundary: utf-8 alias encoding returns same length as utf8
+     * @tc.desc Verify bytesLength with utf-8 alias returns same length as utf8
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -86,7 +86,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0500
-     * @tc.desc Boundary: bytesLength for 10000-char ASCII string returns 10000
+     * @tc.desc Verify bytesLength for 10000-char ASCII string returns 10000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -99,7 +99,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0600
-     * @tc.desc Boundary: bytesLength for repeated CJK char returns 3000
+     * @tc.desc Verify bytesLength for 1000 repeated CJK chars returns 3000
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -112,7 +112,7 @@ export default function arrayBufferBytesLengthTest(): void {
     /**
      * @tc.name testArrayBufferBytesLength0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_BYTES_LENGTH_0700
-     * @tc.desc Error: bytesLength('ABC', 'invalid-encoding') throws IllegalArgumentError
+     * @tc.desc Verify bytesLength('ABC','invalid-encoding') throws IllegalArgumentError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
