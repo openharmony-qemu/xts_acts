@@ -3795,7 +3795,7 @@ export default function DisplayTest():void {
             count++;
         };
         try {
-            if (isInFreeWindowMode) {
+            if (isFreeWindowMode) {
                 let cap:string = displayClass.getDisplayCapability();
                 let curFoldStatus: display.FoldStatus = display.getFoldStatus();
                 hilog.info(0x0000, '[ANI]', msgStr + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -3827,7 +3827,7 @@ export default function DisplayTest():void {
                 windowClass!.recover();
                 displayClass.offAvailableAreaChange(callback);
                 done();
-            } else if (!isInFreeWindowMode && isSupportRotate) {
+            } else if (!isFreeWindowMode && isSupportRotate) {
                 displayClass.onAvailableAreaChange(callback);
                 await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                 await Utils.msSleep(1000);

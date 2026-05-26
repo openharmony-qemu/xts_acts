@@ -4604,7 +4604,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
             count++;
         };
-        if (isInFreeWindowMode) {
+        if (isFreeWindowMode) {
           let cap: string = displayClass.getDisplayCapability();
           let curFoldStatus: display.FoldStatus = display.getFoldStatus();
           console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -4638,7 +4638,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           expect(count).assertLarger(0);
           windowClass.recover();
           displayClass.off('availableAreaChange', callback);
-        } else if (!isInFreeWindowMode && isSupportRotate) {
+        } else if (!isFreeWindowMode && isSupportRotate) {
           displayClass.on('availableAreaChange', callback);
           await sleep(2000);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
