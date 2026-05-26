@@ -1,3 +1,4 @@
+'use static'
 /**
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-'use static';
+
 
 import { describe, it, expect, beforeAll, beforeEach, afterEach, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
@@ -54,7 +55,7 @@ export default function AccessibilityTest() {
       await CommonFunc.sleep(200);
     });
 
-    afterAll(() => {
+    afterAll(async (): Promise<void> => {
       console.info('AccessibilityTest beforeAll end');
     });
 
