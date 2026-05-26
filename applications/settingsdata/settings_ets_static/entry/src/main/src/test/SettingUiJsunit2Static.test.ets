@@ -2483,14 +2483,14 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   openBiometricsSettingsPage_valid_param
-     * @tc.number openBiometricsSettingsPage_valid_param
-     * @tc.desc   openBiometricsSettingsPage_valid_param
+     * @tc.name   SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openBiometricsSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
@@ -2509,14 +2509,14 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   openNfcSettingsPage_valid_param
-     * @tc.number openNfcSettingsPage_valid_param
-     * @tc.desc   openNfcSettingsPage_valid_param
+     * @tc.name   SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openNfcSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
@@ -2535,14 +2535,14 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.name   openAboutDeviceSettingsPage_valid_param
-     * @tc.number openAboutDeviceSettingsPage_valid_param
-     * @tc.desc   openAboutDeviceSettingsPage_valid_param
+     * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('openAboutDeviceSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isDeviceSupportInputMethod()) {
         done();
         return;
