@@ -204,7 +204,7 @@ export default function StaticMethodGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_0500
      * @tc.name testStaticMethodGetParameterType005
-     * @tc.desc Verify method exists and valid parameter access works (negative index throws TypeError at runtime)
+     * @tc.desc Verify getParameterType() with negative index throws TypeError (negative index throws TypeError at runtime)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
