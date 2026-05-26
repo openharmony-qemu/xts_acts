@@ -82,7 +82,7 @@ export default function byteConstructorTwoTest(): void {
     it('testByteConstructorTwo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const n: number = 256;
-        new Byte(Utils.castToByte(n as Object));
+        new Byte(Utils.castToByte(Utils.boxAsObject(n)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
@@ -99,7 +99,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        new Byte(Utils.castToByte(null as Object));
+        new Byte(Utils.castToByte(Utils.nullAsObject()));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
@@ -116,8 +116,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        const v: Object = (undefined as Object);
-        new Byte(v as byte);
+        new Byte(Utils.castToByte(Utils.undefinedAsObject()));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
@@ -152,7 +151,7 @@ export default function byteConstructorTwoTest(): void {
      */
     it('testByteConstructorTwo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        new Byte(Utils.castToByte(true as Object));
+        new Byte(Utils.castToByte(Utils.booleanAsObject(true)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');
@@ -188,7 +187,7 @@ export default function byteConstructorTwoTest(): void {
       try {
         const arr = new Array<number>();
         arr.pushOne(Int.toDouble(1));
-        new Byte(Utils.castToByte(arr as Object));
+        new Byte(Utils.castToByte(Utils.arrayNumberAsObject(arr)));
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

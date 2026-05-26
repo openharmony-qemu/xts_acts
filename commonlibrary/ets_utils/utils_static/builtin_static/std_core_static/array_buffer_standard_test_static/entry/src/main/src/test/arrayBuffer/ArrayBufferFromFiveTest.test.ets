@@ -25,17 +25,6 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-class ArrayBufferFromFiveHelper {
-  static assertIllegalArgument(build: () => void): void {
-    try {
-      build();
-      expect().assertFail();
-    } catch (e) {
-      expect(e.name).assertEqual('IllegalArgumentError');
-    }
-  }
-}
-
 export default function arrayBufferFromFiveTest(): void {
   describe('ArrayBufferFromFiveTest', (): void => {
     beforeEach(async (): Promise<void> => {
@@ -119,9 +108,12 @@ export default function arrayBufferFromFiveTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromFive0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ArrayBufferFromFiveHelper.assertIllegalArgument((): void => {
+      try {
         ArrayBuffer.from('ABC', 'invalid_encoding');
-      });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IllegalArgumentError');
+      }
     });
   });
 }

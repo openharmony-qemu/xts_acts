@@ -31,9 +31,6 @@ export default function arrayBufferPropertyTest(): void {
       await Utils.msSleep(30);
     });
 
-  // 本套件仅做构造后只读属性（byteLength / detached / resizable）的集成冒烟；
-  // 各属性及 constructor 异常另有独立用例文件覆盖。
-
     /**
      * @tc.name testArrayBufferProperty0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_PROPERTY_0100

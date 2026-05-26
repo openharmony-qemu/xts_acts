@@ -93,7 +93,7 @@ export default function arrayBufferLikeTest(): void {
     it('testArrayBufferLike0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer: ArrayBufferLike = new ArrayBuffer(8);
       try {
-        (buffer as Record<string, Object>)['byteLength'] = 16 as Object;
+        (buffer as Record<string, Object>)['byteLength'] = Utils.boxAsObject(16);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

@@ -70,7 +70,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     it('testArrayBufferDetachedField0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(8);
       try {
-        (buffer as Record<string, Object>)['detached'] = true as Object;
+        (buffer as Record<string, Object>)['detached'] = Utils.booleanAsObject(true);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

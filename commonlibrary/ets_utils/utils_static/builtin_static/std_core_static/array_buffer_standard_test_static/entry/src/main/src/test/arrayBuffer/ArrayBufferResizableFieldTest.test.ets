@@ -83,7 +83,7 @@ export default function arrayBufferResizableFieldTest(): void {
     it('testArrayBufferResizableField0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const buffer = new ArrayBuffer(4);
       try {
-        (buffer as Record<string, Object>)['resizable'] = true as Object;
+        (buffer as Record<string, Object>)['resizable'] = Utils.booleanAsObject(true);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

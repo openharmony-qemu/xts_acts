@@ -219,7 +219,7 @@ export default function arrayBufferFromObjectTest(): void {
      */
     it('testArrayBufferFromObject0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
-        ArrayBuffer.fromObject(null as Object, 0, 4);
+        ArrayBuffer.fromObject(Utils.nullAsObject(), 0, 4);
         expect().assertFail();
       } catch (e) {
         expect(e.name).assertEqual('ClassCastError');

@@ -25,21 +25,6 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-class ArrayBufferFromTwoHelper {
-  static castToFixedArrayByte(v: Object): FixedArray<byte> {
-    return v as FixedArray<byte>;
-  }
-
-  static assertClassCast(build: () => void): void {
-    try {
-      build();
-      expect().assertFail();
-    } catch (e) {
-      expect(e.name).assertEqual('ClassCastError');
-    }
-  }
-}
-
 export default function arrayBufferFromTwoTest(): void {
   describe('ArrayBufferFromTwoTest', (): void => {
     beforeEach(async (): Promise<void> => {
@@ -119,9 +104,12 @@ export default function arrayBufferFromTwoTest(): void {
      * @tc.level LEVEL2
      */
     it('testArrayBufferFromTwo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      ArrayBufferFromTwoHelper.assertClassCast((): void => {
-        ArrayBuffer.from(ArrayBufferFromTwoHelper.castToFixedArrayByte(null as Object));
-      });
+      try {
+        ArrayBuffer.from(Utils.castToFixedArrayByte(Utils.nullAsObject()));
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
     });
   });
 }

@@ -25,17 +25,6 @@ import {
 } from '../../../../hypium/index';
 import Utils from '../Util.test';
 
-class ArrayBufferFromThreeHelper {
-  static assertClassCast(build: () => void): void {
-    try {
-      build();
-      expect().assertFail();
-    } catch (e) {
-      expect(e.name).assertEqual('ClassCastError');
-    }
-  }
-}
-
 export default function arrayBufferFromThreeTest(): void {
   describe('ArrayBufferFromThreeTest', (): void => {
     beforeEach(async (): Promise<void> => {
@@ -123,9 +112,12 @@ export default function arrayBufferFromThreeTest(): void {
      */
     it('testArrayBufferFromThree0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const i8 = new Int8Array([1, 2, 3]);
-      ArrayBufferFromThreeHelper.assertClassCast((): void => {
+      try {
         ArrayBuffer.from(Utils.castToUint8Array(i8 as Object));
-      });
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('ClassCastError');
+      }
     });
   });
 }
