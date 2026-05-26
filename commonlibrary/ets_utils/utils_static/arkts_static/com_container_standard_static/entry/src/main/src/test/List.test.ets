@@ -90,7 +90,6 @@ import ArrayList_10Test from "./ArrayList/ArrayListTest10.test";
 import ArrayList_11Test from "./ArrayList/ArrayListTest11.test";
 import ArrayList_12Test from "./ArrayList/ArrayListTest12.test";
 
-
 export default function testsuite(): void {
   ArraylistTest1();
   ArraylistTest2();
