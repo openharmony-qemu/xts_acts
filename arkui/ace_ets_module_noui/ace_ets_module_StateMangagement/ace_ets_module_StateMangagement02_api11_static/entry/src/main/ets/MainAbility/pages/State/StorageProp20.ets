@@ -89,7 +89,7 @@ struct CompStorageProp20 {
   build() {
     Column(){
       Text(`State:${this.storProp1}`).height('5%')
-        .key('text_state')
+        .key('StorageProp20_text_state')
       Text(`Link:${this.storProp2}`).height('5%')
         .key('text_Link')
       Text(`PropRef:${this.storProp3}`).height('5%')

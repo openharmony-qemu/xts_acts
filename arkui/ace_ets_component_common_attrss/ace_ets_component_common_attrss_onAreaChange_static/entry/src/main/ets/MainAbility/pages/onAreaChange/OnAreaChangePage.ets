@@ -480,7 +480,7 @@ struct OnAreaChangePage {
             .width('50%')
             .height('100%')
             .applyStyles(this.commonStyle)
-            .bindSheet(this.isShow = true,this.myBuilder,{
+            .bindSheet(true,this.myBuilder,{
               height: 300,
               backgroundColor: Color.Green,
             })

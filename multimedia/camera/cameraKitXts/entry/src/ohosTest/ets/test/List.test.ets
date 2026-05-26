@@ -17,10 +17,18 @@ import getCameraManagerTest from './camera/getCameraManager.test';
 import colorManagementTest from './ColorManagement/colorManagementTest.test';
 import cameraOutPutTest from './CameraOutPut/cameraOutPut.test';
 import colorManagementQueryTest from  './ColorManagementQuery/colorManagementQuery.test';
+import CameraManagerTest from './CameraManager/CameraManager.test';
+import AutoExposureTest from './AutoExposure/AutoExposure.test';
+import AutoExposureQueryTest from './AutoExposureQuery/AutoExposureQuery.test';
+import FlashTest from './Flash/Flash.test';
 
 export default function testsuite() {
+  CameraManagerTest();
   getCameraManagerTest();
   colorManagementTest();
   cameraOutPutTest();
   colorManagementQueryTest();
+  AutoExposureTest();
+  AutoExposureQueryTest();
+  FlashTest();
 }

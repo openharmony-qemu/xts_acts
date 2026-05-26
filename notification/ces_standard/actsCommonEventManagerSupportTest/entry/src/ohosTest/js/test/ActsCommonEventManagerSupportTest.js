@@ -308,6 +308,7 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_REQ_ENABLE).assertEqual('usual.event.bluetooth.host.REQ_ENABLE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_REQ_DISABLE).assertEqual('usual.event.bluetooth.host.REQ_DISABLE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_UPDATE).assertEqual('usual.event.bluetooth.host.SCAN_MODE_UPDATE')
+      expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_SCAN_MODE_CHANGE).assertEqual('usual.event.bluetooth.host.SCAN_MODE_CHANGE')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_STARTED).assertEqual('usual.event.bluetooth.host.DISCOVERY_STARTED')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_DISCOVERY_FINISHED).assertEqual('usual.event.bluetooth.host.DISCOVERY_FINISHED')
       expect(commonEventManager.Support.COMMON_EVENT_BLUETOOTH_HOST_NAME_UPDATE).assertEqual('usual.event.bluetooth.host.NAME_UPDATE')
@@ -815,6 +816,51 @@ export default function ActsCommonEventManagerSupportTest() {
       expect(commonEventManager.Support.COMMON_EVENT_APP_FIRST_LAUNCH)
         .assertEqual('usual.event.APP_FIRST_LAUNCH')
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4500 END`)
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600
+     * @tc.desc   specific volumes on the device have been decrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_DECRYPTED)
+        .assertEqual('usual.event.VOLUME_DECRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4600 END`)
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700
+     * @tc.desc   specific volumes on the device have been encrypted common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTED)
+        .assertEqual('usual.event.VOLUME_ENCRYPTED')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4700 END`)
+    })
+
+    /**
+     * @tc.name   SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800
+     * @tc.number SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800
+     * @tc.desc   specific volumes on the device have had their encryption policy set common event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800', Level.LEVEL0, async function () {
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 START`)
+      expect(commonEventManager.Support.COMMON_EVENT_VOLUME_ENCRYPTION_POLICY_SET)
+        .assertEqual('usual.event.VOLUME_ENCRYPTION_POLICY_SET')
+      console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_4800 END`)
     })
     console.info(`${TAG} SUB_NOTIFICATION_CES_SUPPORT_ENUM_TEST END`)
   })

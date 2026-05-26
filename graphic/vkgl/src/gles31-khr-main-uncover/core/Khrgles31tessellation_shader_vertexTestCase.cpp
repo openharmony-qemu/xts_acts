@@ -16,57 +16,57 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000578,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000578,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_s",
         "pacing_primitive_mode_isolines_vs_mode_equal_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000579,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000579,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spacin",
         "g_primitive_mode_isolines_vs_mode_fractional_even_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000580,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000580,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spacin",
         "g_primitive_mode_isolines_vs_mode_fractional_odd_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000581,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000581,
         "KHR-GLES31.core.tessellation_shader.vertex.ve",
         "rtex_spacing_primitive_mode_isolines_vs_mode_");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000582,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000582,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_sp",
         "acing_primitive_mode_triangles_vs_mode_equal_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000583,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000583,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spacing",
         "_primitive_mode_triangles_vs_mode_fractional_even_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000584,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000584,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spacin",
         "g_primitive_mode_triangles_vs_mode_fractional_odd_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000585,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000585,
         "KHR-GLES31.core.tessellation_shader.vertex.ve",
         "rtex_spacing_primitive_mode_triangles_vs_mode_");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000586,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000586,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_",
         "spacing_primitive_mode_quads_vs_mode_equal_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000587,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000587,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spaci",
         "ng_primitive_mode_quads_vs_mode_fractional_even_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000588,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000588,
         "KHR-GLES31.core.tessellation_shader.vertex.vertex_spac",
         "ing_primitive_mode_quads_vs_mode_fractional_odd_spacing");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000589,
+static SHRINK_HWTEST_F(ActsGles31KhrMainUncover0001TestSuite, TestCase_000589,
         "KHR-GLES31.core.tessellation_shader.vertex.",
         "vertex_spacing_primitive_mode_quads_vs_mode_");

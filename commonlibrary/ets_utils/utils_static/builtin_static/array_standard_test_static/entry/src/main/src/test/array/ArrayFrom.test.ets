@@ -47,7 +47,7 @@ interface NestedObject069 {
 
 type MixedType067 = number | string | null;
 
-export default function ArrayFromTest() {
+export default function ArrayFromTest(): void {
   describe('ArrayFromTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

@@ -16,169 +16,169 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000280,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000280,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_int");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000281,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000281,
         "KHR-Single-GLES32.subgroups.ballot_broa",
         "dcast.compute.subgroupbroadcastfirst_int");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000282,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000282,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_ivec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000283,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000283,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_ivec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000284,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000284,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_ivec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000285,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000285,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_ivec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000286,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000286,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_ivec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000287,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000287,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_ivec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000288,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000288,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_uint");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000289,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000289,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_uint");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000290,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000290,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_uvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000291,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000291,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_uvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000292,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000292,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_uvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000293,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000293,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_uvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000294,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000294,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_uvec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000295,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000295,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_uvec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000296,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000296,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_float");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000297,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000297,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_float");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000298,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000298,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_vec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000299,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000299,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_vec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000300,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000300,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_vec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000301,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000301,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_vec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000302,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000302,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_vec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000303,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000303,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_vec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000304,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000304,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_double");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000305,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000305,
         "KHR-Single-GLES32.subgroups.ballot_broadc",
         "ast.compute.subgroupbroadcastfirst_double");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000306,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000306,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_dvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000307,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000307,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_dvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000308,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000308,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_dvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000309,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000309,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_dvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000310,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000310,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_dvec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000311,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000311,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_dvec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000312,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000312,
         "KHR-Single-GLES32.subgroups.ballot_br",
         "oadcast.compute.subgroupbroadcast_bool");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000313,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000313,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_bool");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000314,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000314,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_bvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000315,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000315,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_bvec2");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000316,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000316,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_bvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000317,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000317,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_bvec3");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000318,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000318,
         "KHR-Single-GLES32.subgroups.ballot_bro",
         "adcast.compute.subgroupbroadcast_bvec4");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000319,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000319,
         "KHR-Single-GLES32.subgroups.ballot_broad",
         "cast.compute.subgroupbroadcastfirst_bvec4");

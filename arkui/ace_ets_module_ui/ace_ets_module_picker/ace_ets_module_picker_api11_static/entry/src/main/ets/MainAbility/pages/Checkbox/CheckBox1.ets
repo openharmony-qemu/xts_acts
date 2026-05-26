@@ -36,9 +36,6 @@ import {
   Checkbox,
   Color,
   $r,
-  CheckBoxShape,
-  Color,
-  $r,
   CheckBoxShape
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'

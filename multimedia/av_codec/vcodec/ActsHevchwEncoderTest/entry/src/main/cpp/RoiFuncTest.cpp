@@ -14,6 +14,7 @@
  */
 #include <string>
 #include <limits>
+#include <unistd.h>
 #include <multimedia/player_framework/native_avcodec_videoencoder.h>
 #include <multimedia/player_framework/native_averrors.h>
 #include <multimedia/player_framework/native_avcodec_base.h>
@@ -71,11 +72,15 @@ namespace RoiFuncTest {
 void SetUpTestCase()
 {
     g_cap = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, true, HARDWARE);
-    CODEC_NAME = OH_AVCapability_GetName(g_cap);
-    cout << "codecname: " << CODEC_NAME << endl;
+    if (g_cap != nullptr) {
+        CODEC_NAME = OH_AVCapability_GetName(g_cap);
+        cout << "codecname: " << CODEC_NAME << endl;
+    }
     g_capHevc = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
-    CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
-    cout << "codecname_hevc: " << CODEC_HEVC << endl;
+    if (g_capHevc != nullptr) {
+        CODEC_HEVC = OH_AVCapability_GetName(g_capHevc);
+        cout << "codecname_hevc: " << CODEC_HEVC << endl;
+    }
 }
 void TearDown()
 {
@@ -97,9 +102,10 @@ int VIDEO_HW_ENCODE_ROI_FUNC_001()
     vEncSample->defaultWidth = DEFAULT_WIDTH_1920; //1920
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "10,10-100,100=-8;100,1-200,200=-4;"
-                      "300,350-430,440=-4;510,54050,690=-4;"
+                      "300,350-430,440=-4;510,540-650,690=-4;"
                       "700,710-820,1000=-4";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -123,6 +129,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_002()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "440,1272-1080,1920=-51";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -146,6 +153,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_003()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -168,6 +176,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_004()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1080_30;
@@ -191,6 +200,7 @@ int VIDEO_HW_ENCODE_ROI_FUNC_005()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1080; //1080
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1920_30;
@@ -214,9 +224,13 @@ int VIDEO_HW_ENCODE_ROI_FUNC_006()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "10,10-100,100=-8;100,10-200,200=-4;"
                         "300,350-430,440=-4;510,540-650,690=-4;"
-                        "700,710-80,1000=-4";
+                        "700,710-800,1000=-8";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
+    vEncSample->enableSeekEos = true;
+    vEncSample->enableRepeat = true;
+    vEncSample->setMaxCount = true;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -239,7 +253,11 @@ int VIDEO_HW_ENCODE_ROI_FUNC_007()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "400,1272-1080,1920=-51";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
+    vEncSample->enableSeekEos = true;
+    vEncSample->enableRepeat = true;
+    vEncSample->setMaxCount = true;
     vEncSample->defaultBitrateMode = VBR;
     vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -260,9 +278,14 @@ int VIDEO_HW_ENCODE_ROI_FUNC_008()
     auto vEncSample = make_unique<VEncAPI11Sample>();
     vEncSample->defaultWidth = DEFAULT_WIDTH_1080; //1080
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
-    vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;350,300-400,430=-4;540,510-690,650=51";
+    vEncSample->roiInfo = "10,10-100,100=-4;100,100-200,200=-4;"
+                        "350,300-400,430=-4;540,510-690,750=-8";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
+    vEncSample->enableSeekEos = true;
+    vEncSample->enableRepeat = true;
+    vEncSample->setMaxCount = true;
     vEncSample->defaultBitrateMode = CBR;
     vEncSample->inpDir = INP_DIR_1080_30;
     EXPECT_EQ(AV_ERR_OK, vEncSample->CreateVideoEncoder(CODEC_HEVC));
@@ -285,7 +308,11 @@ int VIDEO_HW_ENCODE_ROI_FUNC_009()
     vEncSample->defaultHeight = DEFAULT_HEIGHT_1920; //1920
     vEncSample->roiInfo = "0,0-500,500;500,500-600,600;600,500-700,600";
     vEncSample->outDir = OUT_DIR;
+    vEncSample->enableRoi = true;
     vEncSample->surfInput = true;
+    vEncSample->enableSeekEos = true;
+    vEncSample->enableRepeat = true;
+    vEncSample->setMaxCount = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1080_30;
@@ -310,6 +337,10 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
+    vEncSample->enableRoi = true;
+    vEncSample->enableSeekEos = true;
+    vEncSample->enableRepeat = true;
+    vEncSample->setMaxCount = true;
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1080_30;

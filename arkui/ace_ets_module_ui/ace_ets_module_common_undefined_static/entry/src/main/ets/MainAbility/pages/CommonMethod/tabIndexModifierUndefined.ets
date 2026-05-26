@@ -15,7 +15,7 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class TabIndexModifier implements AttributeModifier<CommonAttribute> {
-  @State public isTabIndex: Int | undefined = 3
+  public isTabIndex: Int | undefined = 3
 
   applyNormalAttribute(instance: CommonAttribute): void {
     instance.tabIndex(this.isTabIndex);

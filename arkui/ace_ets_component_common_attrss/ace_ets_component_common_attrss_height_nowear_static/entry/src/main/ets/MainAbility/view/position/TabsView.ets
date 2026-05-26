@@ -21,7 +21,7 @@ export struct TabsView {
   @State selectedFontColor: string = '#007DFF'
   @State currentIndex: int = 0
   private controller: TabsController = new TabsController()
-  @Link _position: Position={x:0,y:0};
+  public _position: Position={x:0,y:0};
   private componentKey: string='';
 
   @Builder

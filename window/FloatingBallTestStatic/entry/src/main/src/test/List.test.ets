@@ -13,6 +13,6 @@
  * limitations under the License.
  */
 import FloatingBallTest from "./FloatingBall.test";
-export default function testsuite() {
+export default function testsuite(): void {
   FloatingBallTest();
 }

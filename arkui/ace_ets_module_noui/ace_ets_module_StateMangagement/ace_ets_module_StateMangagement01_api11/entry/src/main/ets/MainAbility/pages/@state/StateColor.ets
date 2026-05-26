@@ -31,7 +31,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = Color.Orange;
         })
-        .key('state1')
+        .key('StateColor_state1')
         .height('5%')
 
       Text("设置变量number类型Orange-->008000").height('5%')
@@ -40,7 +40,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = 0x0000ff;
         })
-        .key('state2')
+        .key('StateColor_state2')
         .height('5%')
 
       Text("设置变量undefined类型pink-->undefined").height('5%')
@@ -49,7 +49,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = undefined
         })
-        .key('state3')
+        .key('StateColor_state3')
         .height('5%')
 
       Text("设置变量string类型pink-->'008000'").height('5%')
@@ -58,7 +58,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = '#FFA52A2A'
         })
-        .key('state4')
+        .key('StateColor_state4')
         .height('5%')
 
       Text("设置变量string类型pink-->null").height('5%')
@@ -67,7 +67,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = null
         })
-        .key('state5')
+        .key('StateColor_state5')
         .height('5%')
 
       Text("设置变量Resource类型pink-->Resource").height('5%')
@@ -76,7 +76,7 @@ struct MyComponent_AX {
         .onClick(() => {
           this.color = $r('app.string.color')
         })
-        .key('state6')
+        .key('StateColor_state6')
         .height('5%')
 
     }.width('100%')

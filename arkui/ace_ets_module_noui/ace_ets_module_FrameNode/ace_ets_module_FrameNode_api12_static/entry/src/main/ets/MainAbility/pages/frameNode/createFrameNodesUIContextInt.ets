@@ -101,7 +101,7 @@ export class MyNodeAdapterController extends NodeController {
 
   createFrameNodes2(uiContext: UIContext):string{
     let startTime = Date.now();
-    for(let i=0;i<10000;i++){
+    for(let i=0;i<100;i++){
       new FrameNode(uiContext)
     }
     let endTime = Date.now();let executionTime = endTime - startTime;

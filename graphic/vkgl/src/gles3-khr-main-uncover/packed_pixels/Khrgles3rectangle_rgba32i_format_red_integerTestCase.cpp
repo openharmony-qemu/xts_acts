@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3KhrMainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000702,
+static SHRINK_HWTEST_F(ActsGles3KhrMainUncover0001TestSuite, TestCase_000702,
         "KHR-GLES3.packed_pixels.rectan",
         "gle.rgba32i_format_red_integer");

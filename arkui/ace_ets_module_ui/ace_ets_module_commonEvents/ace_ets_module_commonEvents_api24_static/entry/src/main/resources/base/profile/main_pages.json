@@ -27,6 +27,10 @@
     "MainAbility/pages/getHistoricalPoints/Marquee",
     "MainAbility/pages/getSizeLimitation/GetSizeLimitation",
     "MainAbility/pages/setCustomCursor/setCustomCursor",
-    "MainAbility/pages/setCustomCursor/setCustomCursor_undefined"
+    "MainAbility/pages/setCustomCursor/setCustomCursor_undefined",
+    "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
+    "MainAbility/pages/orphanCharOptimization/orphanCharOptimization",
+    "MainAbility/pages/orphanCharOptimization/orphanCharOptimization_undefined",
+    "MainAbility/pages/enableEventPassthrough/EnableEventPassthroughPage"
   ]
 }

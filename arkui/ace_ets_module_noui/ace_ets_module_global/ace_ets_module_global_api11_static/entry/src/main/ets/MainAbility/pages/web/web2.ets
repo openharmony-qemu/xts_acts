@@ -15,11 +15,10 @@
  */
 
 import webview from '@ohos.web.webview';
-import {  WebResourceResponse } from '@ohos.arkui.component'
 import {
   Entry, Component,
-  Column, ColumnOptions, List, ListItem, ListOptions, Progress,  $rawfile, Web,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Web,  WebResourceResponse, Visibility,
+  Column, ColumnOptions, List, ListItem, ListOptions, Progress, $rawfile, Web,
+  Flex, FlexDirection, ItemAlign, FlexAlign, WebResourceResponse, Visibility,
   Text, TextAlign, Button, FontWeight, ClickEvent, Margin, Color, Row, OnResourceLoadEvent,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';

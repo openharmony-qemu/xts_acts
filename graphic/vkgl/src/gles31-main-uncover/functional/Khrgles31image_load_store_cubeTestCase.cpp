@@ -16,17 +16,17 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles31BaseFunc.h"
-#include "../ActsKhrgles310001TestSuite.h"
+#include "../ActsGles31MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000004,
+static SHRINK_HWTEST_F(ActsGles31MainUncover0001TestSuite, TestCase_000004,
         "dEQP-GLES31.functional.image_load_store.",
         "cube.atomic.comp_swap_r32ui_return_value");
 
-static SHRINK_HWTEST_F(ActsKhrgles310001TestSuite, TestCase_000005,
+static SHRINK_HWTEST_F(ActsGles31MainUncover0001TestSuite, TestCase_000005,
         "dEQP-GLES31.functional.image_load_store",
         ".cube.atomic.comp_swap_r32i_return_value");

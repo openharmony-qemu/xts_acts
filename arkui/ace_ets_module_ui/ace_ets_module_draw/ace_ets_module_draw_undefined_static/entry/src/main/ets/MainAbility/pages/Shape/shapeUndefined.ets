@@ -1,8 +1,25 @@
 'use static'
+
+/*
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 import {
   Entry,
   Text,
   Column,
+  ColumnOptions,
   Component,
   Button,
   ClickEvent,
@@ -63,9 +80,117 @@ struct ShapeEventPage {
   } as ViewportRect;
 
   build() {
-    Column() {
+    Column({space:3} as ColumnOptions) {
+      Row() {
+        Button('isStroke : ' + this.isStroke)
+          .id('Shape_stroke')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStroke = !this.isStroke;
+          })
+        Button('isAntiAlias : ' + this.isAntiAlias)
+          .id('Shape_antiAlias')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isAntiAlias = !this.isAntiAlias;
+          })
+      }
+
+      Row() {
+        Button('isStrokeDashOffset : ' + this.isStrokeDashOffset)
+          .id('Shape_strokeDashOffset')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeDashOffset = !this.isStrokeDashOffset;
+          })
+        Button('isStrokeWidth : ' + this.isStrokeWidth)
+          .id('Shape_strokeWidth')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeWidth = !this.isStrokeWidth;
+          })
+      }
+
+      Row() {
+        Button('isStrokeMiterLimit : ' + this.isStrokeMiterLimit)
+          .id('Shape_strokeMiterLimit')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeMiterLimit = !this.isStrokeMiterLimit;
+          })
+        Button('isStrokeLineCap : ' + this.isStrokeLineCap)
+          .id('Shape_strokeLineCap')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeLineCap = !this.isStrokeLineCap;
+          })
+      }
+
+      Row() {
+        Button('isStrokeDashArray : ' + this.isStrokeDashArray)
+          .id('Shape_strokeDashArray')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            if (this.isStrokeDashArray == undefined) {
+              this.isStrokeDashArray = [20];
+            } else {
+              this.isStrokeDashArray = undefined;
+            }
+          })
+        Button('isStrokeOpacity : ' + this.isStrokeOpacity)
+          .id('Shape_strokeOpacity')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeOpacity = !this.isStrokeOpacity;
+          })
+      }
+
+      Row() {
+        Button('isStrokeLineJoin : ' + this.isStrokeLineJoin)
+          .id('Shape_strokeLineJoin')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isStrokeLineJoin = !this.isStrokeLineJoin;
+          })
+        Button('isFill : ' + this.isFill)
+          .id('Shape_fill')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isFill = !this.isFill;
+          })
+      }
+
+      Row() {
+        Button('isFillOpacity : ' + this.isFillOpacity)
+          .id('Shape_fillOpacity')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isFillOpacity = !this.isFillOpacity;
+          })
+        Button('isValue: ' + this.isValue)
+          .id('Shape_mesh')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isValue = !this.isValue
+          })
+      }
+
+      Row() {
+        Button('isViewPort: ' + this.isViewPort)
+          .id('Shape_viewPort')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isViewPort = !this.isViewPort
+          })
+        Button('isShow: ' + this.isShow)
+          .id('Shape_show')
+          .height(10)
+          .onClick((e: ClickEvent) => {
+            this.isShow = !this.isShow
+          })
+      }
       Shape() {
-        Path().width(200).height(60).commands('M0 0 L400 0 L400 150 Z')
+        Path().width(200).height(30).commands('M0 0 L400 0 L400 150 Z')
       }
       .id('Shape')
       .stroke(this.isStroke ? '#2787D9' : undefined)
@@ -110,101 +235,6 @@ struct ShapeEventPage {
           .mesh(this.meshArray, 2, this.isValue ? 2 : undefined)
       }
 
-      Row() {
-        Button('isStroke : ' + this.isStroke)
-          .id('Shape_stroke')
-          .onClick((e: ClickEvent) => {
-            this.isStroke = !this.isStroke;
-          })
-        Button('isAntiAlias : ' + this.isAntiAlias)
-          .id('Shape_antiAlias')
-          .onClick((e: ClickEvent) => {
-            this.isAntiAlias = !this.isAntiAlias;
-          })
-      }
-
-      Row() {
-        Button('isStrokeDashOffset : ' + this.isStrokeDashOffset)
-          .id('Shape_strokeDashOffset')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeDashOffset = !this.isStrokeDashOffset;
-          })
-        Button('isStrokeWidth : ' + this.isStrokeWidth)
-          .id('Shape_strokeWidth')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeWidth = !this.isStrokeWidth;
-          })
-      }
-
-      Row() {
-        Button('isStrokeMiterLimit : ' + this.isStrokeMiterLimit)
-          .id('Shape_strokeMiterLimit')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeMiterLimit = !this.isStrokeMiterLimit;
-          })
-        Button('isStrokeLineCap : ' + this.isStrokeLineCap)
-          .id('Shape_strokeLineCap')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeLineCap = !this.isStrokeLineCap;
-          })
-      }
-
-      Row() {
-        Button('isStrokeDashArray : ' + this.isStrokeDashArray)
-          .id('Shape_strokeDashArray')
-          .onClick((e: ClickEvent) => {
-            if (this.isStrokeDashArray == undefined) {
-              this.isStrokeDashArray = [20];
-            } else {
-              this.isStrokeDashArray = undefined;
-            }
-          })
-        Button('isStrokeOpacity : ' + this.isStrokeOpacity)
-          .id('Shape_strokeOpacity')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeOpacity = !this.isStrokeOpacity;
-          })
-      }
-
-      Row() {
-        Button('isStrokeLineJoin : ' + this.isStrokeLineJoin)
-          .id('Shape_strokeLineJoin')
-          .onClick((e: ClickEvent) => {
-            this.isStrokeLineJoin = !this.isStrokeLineJoin;
-          })
-        Button('isFill : ' + this.isFill)
-          .id('Shape_fill')
-          .onClick((e: ClickEvent) => {
-            this.isFill = !this.isFill;
-          })
-      }
-
-      Row() {
-        Button('isFillOpacity : ' + this.isFillOpacity)
-          .id('Shape_fillOpacity')
-          .onClick((e: ClickEvent) => {
-            this.isFillOpacity = !this.isFillOpacity;
-          })
-        Button('isValue: ' + this.isValue)
-          .id('Shape_mesh')
-          .onClick((e: ClickEvent) => {
-            this.isValue = !this.isValue
-          })
-      }
-
-      Row() {
-        Button('isViewPort: ' + this.isViewPort)
-          .id('Shape_viewPort')
-          .onClick((e: ClickEvent) => {
-            this.isViewPort = !this.isViewPort
-          })
-        Button('isShow: ' + this.isShow) //是否创建组件
-          .id('Shape_show')
-          .onClick((e: ClickEvent) => {
-            this.isShow = !this.isShow
-          })
-      }
-
-    }.width('100%').margin({ top: 15 } as Margin)
+    }.width('100%').height('100%')
   }
 }

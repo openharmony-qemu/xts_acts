@@ -268,7 +268,7 @@ class SecondInterfaceImpl {
   }
 }
 
-export default function type_03Test() {
+export default function type_03Test(): void {
   describe('type_03Test', (): void => {
     // Dewm25 fines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

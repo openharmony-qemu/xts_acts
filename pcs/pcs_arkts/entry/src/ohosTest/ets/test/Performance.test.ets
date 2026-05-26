@@ -101,6 +101,7 @@ export default function performanceTest() {
           await driver.delayMs(2000)
         }
         let allowButton1 = await driver.findComponent(ON.text('允许'))
+        allowButton1 = allowButton1 == null ? await driver.findComponent(ON.text('始终允许')) : allowButton1
         if(allowButton1 != undefined && allowButton1 != null) {
           await allowButton1.click()
           await driver.delayMs(2000)

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { PreselectedInfo } from '@ohos.file.PhotoPickerComponent';
+import { PreselectedInfo, CompletedResult } from '@ohos.file.PhotoPickerComponent';
 import { photoAccessHelper, PickerColorMode } from '@kit.MediaLibraryKit'
 
 export class PhotoPickerResult {
@@ -44,4 +44,7 @@ export class PhotoPickerResult {
   public autoPlayScenes: photoAccessHelper.AutoPlayScene[] = [];
   public appAlbumFilters: Array<string> = [];
   public backgroundOpacity: number | undefined = undefined;
+  public contextRecoveryInfo?: photoAccessHelper.ContextRecoveryInfo;
+  public photoUris?: Array<string>;
+  public completedResult?: CompletedResult;
 }

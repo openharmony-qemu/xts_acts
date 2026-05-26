@@ -58,11 +58,11 @@ ohos_static_library("lib_uncover_gles32_khr_single_uncover_build0005") {
     "//third_party/vk-gl-cts/framework/delibs/deimage",
     "//third_party/vk-gl-cts/framework/delibs/destream",
 
-      "//third_party/vk-gl-cts/external/vulkancts/framework/vulkan",
+    "//third_party/vk-gl-cts/external/vulkancts/framework/vulkan",
     "//third_party/vk-gl-cts/build/external/vulkancts/framework/vulkan",
     "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan",
 
-        "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/api",
+    "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/api",
     "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/pipeline",
     "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/binding_model",
     "//third_party/vk-gl-cts/external/vulkancts/modules/vulkan/spirv_assembly",
@@ -131,11 +131,11 @@ ohos_static_library("lib_uncover_gles32_khr_single_uncover_build0005") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles32TestSuite0005_gles32_khr_single_uncover_build0005") {
+ohos_moduletest_suite("ActsGles32KhrSingleUncoverTestSuite0005_gles32_khr_single_uncover_build0005") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles320005TestSuite.cpp",
+    "../ActsGles32KhrSingleUncover0005TestSuite.cpp",
     "../subgroups/Khrgles32shuffle_graphicsTestCase.cpp",
     "../subgroups/Khrgles32shuffle_computeTestCase.cpp",
     "../subgroups/Khrgles32shuffle_framebufferTestCase.cpp", ]

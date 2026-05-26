@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import window from '@ohos.window';
+import display from '@ohos.display';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -376,6 +377,64 @@ export default function windowPropertiesTest3() {
         }
       }
 
+    });
+
+    /**
+     * @tc.name   testSetTouchableAreas_null
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_0900
+     * @tc.desc   传入null参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchableAreas_null';
+      try {
+        await mainWindowClass.setTouchableAreas(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTouchableAreas_undefined
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_1000
+     * @tc.desc   传入undefined参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchableAreas_undefined';
+      try {
+        await mainWindowClass.setTouchableAreas(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
     });
 
     /**
@@ -793,6 +852,110 @@ export default function windowPropertiesTest3() {
       }
     });
 
+    /**
+     * @tc.name   testSetWindowContainerModalColor_emptyString
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0800
+     * @tc.desc   设置空字符串颜色，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_emptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_emptyString';
+      let activeColor: string = '';
+      let inactiveColor: string = '';
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
+          if (exception.code === 401) {
+            console.info(`${message} Expected error 401.`);
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_null
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0900
+     * @tc.desc   设置null颜色参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_null';
+      try {
+        mainWindowClass.setWindowContainerModalColor(null, null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
+          if (exception.code === 401) {
+            console.info(`${message} Expected error 401.`);
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_1000
+     * @tc.desc   设置undefined颜色参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_undefined';
+      try {
+        mainWindowClass.setWindowContainerModalColor(undefined, undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
+          if (exception.code === 401) {
+            console.info(`${message} Expected error 401.`);
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
     // ==================== getAllWindowLayoutInfo 测试用例 ====================
 
     /**
@@ -1097,6 +1260,187 @@ export default function windowPropertiesTest3() {
           expect().assertFail();
           done();
         }
+      }
+    });
+
+    /**
+     * @tc.name   testGetAllWindowLayoutInfo_excludeSystemWindowsFalse
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0900
+     * @tc.desc   excludeSystemWindows为false，不排除系统窗口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAllWindowLayoutInfo_excludeSystemWindowsFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testGetAllWindowLayoutInfo_excludeSystemWindowsFalse';
+      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let option: window.WindowInfoOptions = { excludeSystemWindows: false };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      try {
+        let data = await window.getAllWindowLayoutInfo(displayId, option);
+        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+        expect(data.length > 0).assertTrue();
+        if (data.length > 0) {
+          let rect = data[0].windowRect;
+          expect(rect.left >= 0).assertTrue();
+          expect(rect.top >= 0).assertTrue();
+          expect(rect.width > 0).assertTrue();
+          expect(rect.height > 0).assertTrue();
+          let alpha = data[0].windowAlpha;
+          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+        }
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testGetAllWindowLayoutInfo_optionNull
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_1000
+     * @tc.desc   传入option为null，获取所有可见窗口布局信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAllWindowLayoutInfo_optionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testGetAllWindowLayoutInfo_optionNull';
+      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      try {
+        let data = await window.getAllWindowLayoutInfo(displayId, null);
+        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+        expect(data.length > 0).assertTrue();
+        if (data.length > 0) {
+          let rect = data[0].windowRect;
+          expect(rect.left >= 0).assertTrue();
+          expect(rect.top >= 0).assertTrue();
+          expect(rect.width > 0).assertTrue();
+          expect(rect.height > 0).assertTrue();
+          let alpha = data[0].windowAlpha;
+          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+        }
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== @Env(SystemProperties.WINDOW_SYSTEM_DENSITY) 测试用例 ====================
+
+    /**
+     * @tc.name   testEnvSystemDensity
+     * @tc.number SUB_WINDOW_ENV_SYSTEM_DENSITY_0100
+     * @tc.desc   验证@Env(SystemProperties.WINDOW_SYSTEM_DENSITY)获取的SystemDensity与getWindowDensityInfo查询结果一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnvSystemDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testEnvSystemDensity';
+      console.info(`${message} begin`);
+      
+      try {
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        
+        let envSystemDensity = AppStorage.get('SystemDensity') as number;
+        console.info(`${message} envSystemDensity from page: ${envSystemDensity}`);
+        
+        let densityInfo = mainWindowClass.getWindowDensityInfo();
+        console.info(`${message} densityInfo: ${JSON.stringify(densityInfo)}`);
+        let systemDensityFromApi = densityInfo.systemDensity;
+        console.info(`${message} systemDensity from getWindowDensityInfo: ${systemDensityFromApi}`);
+        
+        expect(envSystemDensity).assertEqual(systemDensityFromApi);
+        console.info(`${message} Succeeded. envSystemDensity equals systemDensity from API.`);
+        
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        if (exception.code === 801) {
+          if (!canIUseRes) {
+            console.info(`${message} Capability not supported and canIUse is false.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            console.info(`${message} Capability not supported but canIUse is true.`);
+            expect().assertFail();
+            done();
+          }
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    // ==================== @Env(SystemProperties.WINDOW_DISPLAY_ID) 测试用例 ====================
+
+    /**
+     * @tc.name   testEnvDisplayId
+     * @tc.number SUB_WINDOW_ENV_DISPLAY_ID_0100
+     * @tc.desc   验证@Env(SystemProperties.WINDOW_DISPLAY_ID)获取的DisplayId与getDefaultDisplaySync查询结果一致
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnvDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let message = 'testEnvDisplayId';
+      console.info(`${message} begin`);
+      
+      try {
+        await mainWindowClass.setUIContent('testability/pages/Index');
+        await sleep(500);
+        
+        let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+        console.info(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+        
+        let envDisplayId = AppStorage.get('DisplayId') as number;
+        console.info(`${message} envDisplayId from page: ${envDisplayId}`);
+        
+        let displayInfo = display.getDefaultDisplaySync();
+        console.info(`${message} displayInfo: ${JSON.stringify(displayInfo)}`);
+        let displayIdFromApi = displayInfo.id;
+        console.info(`${message} displayId from getDefaultDisplaySync: ${displayIdFromApi}`);
+        
+        expect(envDisplayId).assertEqual(displayIdFromApi);
+        console.info(`${message} Succeeded. envDisplayId equals displayId from API.`);
+        
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        expect().assertFail();
+        done();
       }
     });
   });

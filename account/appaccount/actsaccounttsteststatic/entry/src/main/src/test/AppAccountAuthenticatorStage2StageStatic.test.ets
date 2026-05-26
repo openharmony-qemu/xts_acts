@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,7 +30,7 @@ let tag: string = 'testTag';
 hilog.info(0x0000, tag, "====>in testPage====");
 let gContext: common.UIAbilityContext;
 
-export default function AppAccountAuthenticatorStage2StageStatic() {
+export default function AppAccountAuthenticatorStage2StageStatic(): void {
   describe('AppAccountAuthenticatorStage2StageStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");

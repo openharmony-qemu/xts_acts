@@ -16,13 +16,13 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../KhrglesextBaseFunc.h"
-#include "../ActsKhrglesext0002TestSuite.h"
+#include "../ActsGles32KhrGlesextUncover0002TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrglesext0002TestSuite, TestCase_001000,
+static SHRINK_HWTEST_F(ActsGles32KhrGlesextUncover0002TestSuite, TestCase_001000,
         "KHR-GLESEXT.fragment_shading_rate.complex.",
         "api_primitive_attachment_max_replace_37x37");

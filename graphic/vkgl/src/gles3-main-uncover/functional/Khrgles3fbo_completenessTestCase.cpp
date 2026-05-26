@@ -16,57 +16,57 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000251,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000251,
         "dEQP-GLES3.functional.fbo.completenes",
         "s.renderable.renderbuffer.color0.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000252,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000252,
         "dEQP-GLES3.functional.fbo.completeness.",
         "renderable.renderbuffer.color0.bgra8_ext");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000253,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000253,
         "dEQP-GLES3.functional.fbo.completenes",
         "s.renderable.renderbuffer.stencil.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000254,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000254,
         "dEQP-GLES3.functional.fbo.completeness.r",
         "enderable.renderbuffer.stencil.bgra8_ext");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000255,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000255,
         "dEQP-GLES3.functional.fbo.completene",
         "ss.renderable.renderbuffer.depth.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000256,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000256,
         "dEQP-GLES3.functional.fbo.completeness.",
         "renderable.renderbuffer.depth.bgra8_ext");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000257,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000257,
         "dEQP-GLES3.functional.fbo.complete",
         "ness.renderable.texture.color0.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000258,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000258,
         "dEQP-GLES3.functional.fbo.completenes",
         "s.renderable.texture.color0.bgra8_ext");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000259,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000259,
         "dEQP-GLES3.functional.fbo.completen",
         "ess.renderable.texture.stencil.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000260,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000260,
         "dEQP-GLES3.functional.fbo.completenes",
         "s.renderable.texture.stencil.bgra8_ext");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000261,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000261,
         "dEQP-GLES3.functional.fbo.complete",
         "ness.renderable.texture.depth.bgra");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000262,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000262,
         "dEQP-GLES3.functional.fbo.completene",
         "ss.renderable.texture.depth.bgra8_ext");

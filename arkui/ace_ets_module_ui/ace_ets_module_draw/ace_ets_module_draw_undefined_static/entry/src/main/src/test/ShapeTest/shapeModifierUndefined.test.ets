@@ -1,4 +1,5 @@
 'use static'
+
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -471,9 +472,9 @@ export default function ShapeModifierUndefinedTest() {
     it('ShapeModifierUndefinedTest_static_1400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ShapeModifierUndefinedTest_static_1400] START');
       let driver: Driver = Driver.create()
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('ShapeM2');
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
 
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('viewPort')))
         .assertEqual('\{"x":"1.00vp","y":"-2.00vp","width":"100.00vp","height":"200.00vp"\}');
@@ -483,12 +484,11 @@ export default function ShapeModifierUndefinedTest() {
       await (changeBtn_show?.click() as Promise<void>);
       await (changeBtn?.click() as Promise<void>);
       await (changeBtn_show?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       strJson = inspector.getInspectorByKey('ShapeM2');
       expect(JSON.stringifyJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('viewPort')))
         .assertEqual('\{\}');
-
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       await (changeBtn?.click() as Promise<void>);
       console.info('[ShapeModifierUndefinedTest_static_1400] END');
       done();

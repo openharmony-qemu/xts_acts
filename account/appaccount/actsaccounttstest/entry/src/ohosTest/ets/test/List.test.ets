@@ -23,7 +23,7 @@ import AppAccountParamCheck3 from './AppAccountParamCheck3.test';
 import AppAccountParamCheck4 from './AppAccountParamCheck4.test';
 import AppAccountParamCheck5 from './AppAccountParamCheck5.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
 	ActsAppAccountOptionalParameterTest()
 	AppAccountAuthenticatorStage2Stage()
 	AppAccountErrCodeCheck()

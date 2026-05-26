@@ -44,27 +44,28 @@ export class Inner {
   @Trace innerT3: number = 0
 
   @Monitor(['innerT1'])
-  onSingleChange(monitor: IMonitor) {
+  onSingleChange(monitor: IMonitor): void  {
     testSample.res1 = '测试1：'
   }
 
   @Monitor(['innerT2','innerT3'])
-  onMultiChange(monitor: IMonitor) {
+  onMultiChange(monitor: IMonitor): void  {
     testSample.res2 = '测试2：'
   }
 }
 
 @ObservedV2
 export class Outer {
+  @Trace age: number = 20
   inner: Inner = new Inner()
 
   @Monitor(['inner.innerT1'])
-  onSingleChange(monitor: IMonitor) {
+  onSingleChange(monitor: IMonitor): void  {
     testSample.res1 += "Success"
   }
 
   @Monitor(['inner.innerT2','inner.innerT3'])
-  onMultiChange(monitor: IMonitor) {
+  onMultiChange(monitor: IMonitor): void  {
     testSample.res2 += 'Success'
   }
 }

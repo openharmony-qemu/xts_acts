@@ -131,11 +131,11 @@ ohos_static_library("lib_uncover_gles3_khr_main_uncover_build0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles3TestSuite0001_gles3_khr_main_uncover_build0001") {
+ohos_moduletest_suite("ActsGles3KhrMainUncoverTestSuite0001_gles3_khr_main_uncover_build0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles30001TestSuite.cpp",
+    "../ActsGles3KhrMainUncover0001TestSuite.cpp",
     "../shaders/Khrgles3shaders_functionTestCase.cpp",
     "../shaders/Khrgles3shaders_structTestCase.cpp",
     "../shaders/Khrgles3shaders_uniform_block_negativeTestCase.cpp",

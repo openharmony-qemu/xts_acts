@@ -17,7 +17,7 @@ import {StickyStyle,Color,TextAlign,Builder,ForEach,ListItem,ListItemGroup,List,
 import { State ,Link} from '@ohos.arkui.stateManagement'
 @Component
 export struct ListItemGroupView {
-  @Link _markAnchor: Position =  {x: 10, y:10};
+  public _markAnchor: Position =  {x: 10, y:10};
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;

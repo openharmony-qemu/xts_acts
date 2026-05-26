@@ -29,6 +29,7 @@ group("decimal") {
       "decimal011:ActsDecimal11Test",
       "decimal012:ActsDecimal12Test",
       "decimal013:ActsDecimal13Test",
+      "decimal014:ActsDecimal14Test",
     ]
   }
 }

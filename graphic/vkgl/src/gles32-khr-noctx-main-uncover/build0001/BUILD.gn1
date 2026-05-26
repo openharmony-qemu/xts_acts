@@ -131,11 +131,11 @@ ohos_static_library("libkhrgles32func0001") {
   configs = [ ":deqp_platform_ohos_config" ]
 }
 
-ohos_moduletest_suite("ActsKhrgles32TestSuite0001") {
+ohos_moduletest_suite("ActsGles32KhrNoctxMainUncoverTestSuite0001") {
   subsystem_name = "graphic"
   part_name = "graphic_2d"
   sources = [ 
-    "../ActsKhrgles320001TestSuite.cpp",
+    "../ActsGles32KhrNoctxMainUncover0001TestSuite.cpp",
     "../es32/Khrgles32robustness_no_reset_notificationTestCase.cpp",
     "../es32/Khrgles32robustness_lose_context_on_resetTestCase.cpp",
     "../es32/Khrgles32robustness_getnuniformTestCase.cpp",

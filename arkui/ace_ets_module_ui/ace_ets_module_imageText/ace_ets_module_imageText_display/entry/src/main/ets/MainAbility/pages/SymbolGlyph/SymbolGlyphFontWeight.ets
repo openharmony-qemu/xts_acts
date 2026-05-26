@@ -142,6 +142,11 @@ struct SymbolGlyphFontWeight26 {
           .fontWeight(300, undefined)
           .fontSize(48)
           .id('symbolGlyph_fontWeight_configs_undefined')
+        
+        SymbolGlyph($r('sys.symbol.ohos_trash'))
+          .fontWeight(300, null)
+          .fontSize(48)
+          .id('symbolGlyph_fontWeight_configs_null')
 
         SymbolGlyph($r('sys.symbol.ohos_trash'))
           .fontWeight(500)

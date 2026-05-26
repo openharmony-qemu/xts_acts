@@ -61,10 +61,11 @@ function sleep(ms: number) {
 let driveFn = async () => {
   let dr = Driver.create();
   await sleep(SLEEP_TIME);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME);
-  if (power != undefined && power != null) {
-    await power?.click();
-  }
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME);
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), SLEEP_TIME);
+  await sleep(SLEEP_TIME);
+  await power1?.click();
+  await power2?.click();
 }
 
 function releaseCamera() {
@@ -1547,6 +1548,20 @@ export default function CameraXtsTest() {
      */
     it("testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPEPORTRAIT", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = cameraObj.sessionGetSupportedEffectTypes(camera.ControlCenterEffectType.PORTRAIT)
+      expect(ret).assertEqual(TEST_OK)
+      done()
+    })
+
+    /**
+     * @tc.name   testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPECOLOREFFECT
+     * @tc.number SUB_MULTIMEIDA_OH_Camera_ENUM_CONTROL_CENTER_TYPE_COLOR_EFFECT_0100
+     * @tc.desc   Test CONTROL_CENTER_EFFECT_TYPE_COLOR_EFFECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCameraControlCenterStatusInfoCONTROLCENTEREFFECTTYPECOLOREFFECT", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let ret = cameraObj.sessionGetSupportedEffectTypes(camera.ControlCenterEffectType.COLOR_EFFECT)
       expect(ret).assertEqual(TEST_OK)
       done()
     })

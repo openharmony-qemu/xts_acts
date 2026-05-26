@@ -187,7 +187,7 @@ class ProxyTarget implements ProxyInterface {
     }
 }
 
-export default function reflectTest() {
+export default function reflectTest(): void {
     describe('ReflectTest', (): void => {
         beforeAll(() => {
         })

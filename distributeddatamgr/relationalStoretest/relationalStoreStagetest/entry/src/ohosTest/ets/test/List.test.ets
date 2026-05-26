@@ -25,6 +25,8 @@ import relationalStoreRagStatusTest from './RelationalStoreRagStatus.test'
 import RDBStoreErrTest from './RDBStoreErr.test';
 import RdbPredicatesErrTest from './RdbPredicatesErrTest.test';
 import relationalStoreEtsTest from './RelationalStoreEtsTest.test';
+import CloudDataAutoSyncTrigger from './CloudDataAutoSyncTrigger.test';
+import RelationalStoreCloudSyncTest from './RdbCloudSync.test';
 export default function testsuite() {
   relationalStoreCloudSyncEtsTest()
   relationalStoreDistributedTest()
@@ -39,4 +41,6 @@ export default function testsuite() {
   RDBStoreErrTest();
   RdbPredicatesErrTest();
   relationalStoreEtsTest();
+  CloudDataAutoSyncTrigger();
+  RelationalStoreCloudSyncTest();
 }

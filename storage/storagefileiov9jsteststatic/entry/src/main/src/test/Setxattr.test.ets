@@ -46,7 +46,7 @@ export default function fileIOSetxattr() {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_001 the value is: ' + getValue);
           expect(getValue).assertEqual(attrValue);
           done();
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Async_Static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -71,7 +71,7 @@ export default function fileIOSetxattr() {
       try {
         fs.setxattr(fpath, attrKey, attrValue).then(() => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_002 error');
-        }).catch((err: Error): Promise<void> => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Setxattr_Sync_Static_002 Failed to set extended attribute' + JSON.stringify(err));
           expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
           done();

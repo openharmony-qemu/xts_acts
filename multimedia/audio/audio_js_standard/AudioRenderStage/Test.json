@@ -1,0 +1,40 @@
+{
+    "description": "Configuration for audio manager Tests",
+    "driver": {
+        "type": "OHJSUnitTest",
+        "test-timeout": "1500000",
+        "testcase-timeout": "50000",
+        "bundle-name": "com.example.audiorenderstage",
+        "shell-timeout": "60000",
+        "module-name": "entry_test"
+    },
+    "kits": [
+        {
+            "test-file-name": [
+                "ActsAudioRenderStageJsTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "uinput -T -m 300 2700 280 200",
+                "power-shell setmode 602",
+                "mkdir -p /data/app/el2/100/base/com.example.audiorenderstage/haps/entry_test/files",
+                "chmod 777 -R /data/app/el2/100/base/com.example.audiorenderstage/haps/entry_test"
+            ],
+            "teardown-command": [
+                "power-shell setmode 600"
+            ],
+            "cleanup-apps": true
+        },
+        {
+            "type": "PushKit",
+            "pre-push": [],
+            "push": [
+            ]
+        }
+    ]
+}

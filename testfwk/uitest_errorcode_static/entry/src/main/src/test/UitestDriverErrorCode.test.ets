@@ -36,7 +36,7 @@ function sleep(count:int) : Promise<int> {
 })
 }
 
-export default function uitestDriverErrorTest() {
+export default function uitestDriverErrorTest(): void {
   describe('uitestDriverErrorTest', (): void => {
     beforeAll(async () : Promise<void> => {
       hilog.info(domain, tag, "uitestDriverErrorTest loadup start!!!!!")

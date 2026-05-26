@@ -66,7 +66,7 @@ struct ScrollOnScrollBegin {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onScrollBeginText")
+        .key("scroll_onScrollBeginText")
       Scroll(this.scroller) {
         Column() {
           ForEach(this.arr, (item: number) => {

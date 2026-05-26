@@ -23,6 +23,7 @@ let privilege = 'ohos.privilege.manage_local_accounts';
 let teeToken = undefined;
 let deviceType = deviceInfo.deviceType;
 console.info("====>the value of the deviceinfo deviceType is: " + deviceType);
+let startTime = 0;
 
 export async function AcquireAuthorization() {
     console.info("====>in AcquireAuthorization");
@@ -30,7 +31,13 @@ export async function AcquireAuthorization() {
     let status = await manager.hasAuthorization(privilege);
     console.info("====>hasAuthorization data: " + JSON.stringify(status));
     if (status) {
-        return teeToken;
+        let costTime = Date.now() - startTime;
+        if (costTime < 250000) {
+            return teeToken;
+        } else {
+            console.info("====>The token is about to expire, start release and reAcquire, cost: " + JSON.stringify(costTime));
+            await manager.releaseAuthorization(privilege);
+        }
     }
     let configParams = {
         'uri': 'test.example.com',
@@ -63,6 +70,8 @@ export async function AcquireAuthorization() {
             option.isInteractionAllowed = true;
             let data = await manager.acquireAuthorization(privilege, option);
             console.info("====>acquireAuthorization data: " + JSON.stringify(data));
+            startTime = Date.now();
+            console.info("====>token effective start time: " + JSON.stringify(startTime));
             teeToken = data.token;
         }
     }

@@ -88,8 +88,8 @@ struct testExampleTwo {
 
 @CustomDialog
 struct testExample {
-  @Link textValue: string = ''
-  @Link inputValue: string = ''
+  @Link textValue: string 
+  @Link inputValue: string 
   dialogControllerTwo: CustomDialogController | null = new CustomDialogController({
     builder: testExampleTwo(),
     alignment: DialogAlignment.Bottom,

@@ -90,6 +90,7 @@ import registerPhotoChangeTest from './PhotoAccessHelper/registerPhotoChange.tes
 import manageRiskPermissionTest from './PhotoAccessHelper/manageRiskPermission.test'
 import createAssetWithShortTermPermissionTest from './PhotoAccessHelper/createAssetWithShortTermPermission.test';
 import setAssetCompatibleCapabilityTest from './PhotoAccessHelper/setAssetCompatibleAbility.test';
+import checkPhotoUrisReadPermissionTest from './PhotoAccessHelper/checkPhotoUrisReadPermission.test';
 
 export default function testsuite() {
   provisionResourcesTest();
@@ -170,4 +171,5 @@ export default function testsuite() {
   manageRiskPermissionTest();
   createAssetWithShortTermPermissionTest();
   setAssetCompatibleCapabilityTest();
+  checkPhotoUrisReadPermissionTest();
 }

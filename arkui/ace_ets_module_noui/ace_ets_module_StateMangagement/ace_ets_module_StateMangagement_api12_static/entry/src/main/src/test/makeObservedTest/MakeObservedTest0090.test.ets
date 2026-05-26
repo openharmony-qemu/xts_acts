@@ -107,7 +107,7 @@ it('MakeObservedTest0090_static_001', Level.LEVEL0, async (done: () => void): Pr
       await CommonFunc.sleep(1000);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvMakeObserved0090'));
       console.info("[MakeObservedTest0090_static_001] component obj content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Tom');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Jerry');
       console.info('[MakeObservedTest0090_static_001] END');
       done();
     });

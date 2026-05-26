@@ -92,7 +92,9 @@ export default function displayTest() {
     let isSupportRotate = false;
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
+    let isPCMode: boolean = false;
     let displayClass = display.getDefaultDisplaySync();
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -110,6 +112,14 @@ export default function displayTest() {
       console.error(`beforeAll isPCStatus: ` + isPCStatus);
 
       let windowClass = windowStage.getMainWindowSync();
+      let promiseSnapshot = windowClass.getWindowStateSnapshot();
+      promiseSnapshot.then((data) => {
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMode=${jsonObj["isPcMode"]}`);
+        isPCMode = jsonObj["isPcMode"];
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
       isFreeWindowMode = windowClass.isInFreeWindowMode();
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
@@ -138,6 +148,8 @@ export default function displayTest() {
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
       await sleep(300);
       console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`)
+      isSyscapSessionManagerSupported = canIUse('SystemCapability.Window.SessionManager');
+      console.info(`beforeAll isSyscapSessionManagerSupported: ` + isSyscapSessionManagerSupported);
     });
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -623,21 +635,237 @@ export default function displayTest() {
      * @tc.level  LEVEL0
      */
     it('testIsCaptured', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
-      let caseName = 'testIsCaptured';
-      let msgStr = 'jsunittest ' + caseName + ' ';
-      console.log(msgStr + 'begin');
-      try {
-        let status = display.isCaptured();
-        console.log(msgStr + 'status:' + status);
-        expect(status).assertFalse();
+let caseName = 'testIsCaptured';
+let msgStr = 'jsunittest ' + caseName + ' ';
+console.log(msgStr + 'begin');
+try {
+let status = display.isCaptured();
+console.log(msgStr + 'status:' + status);
+expect(status).assertFalse();
+class VirtualScreenConfig {
+name : string = '';
+width : number = 0;
+height : number = 0;
+density : number = 0;
+surfaceId : string = '';
+supportsFocus ?: boolean = true;
+}
+
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured();
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_default
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5190
+ * @tc.desc   check current device capture status with bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+ it('testIsCapturedByBundleName_default', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_default';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ["com.example.displaymanager"];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    if (!isSyscapSessionManagerSupported) {
+      expect(status).assertFalse();
+    } else {
+      expect(status).assertTrue();
+    }
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_empty_array
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5210
+ * @tc.desc   check current device capture status with empty bundleName list input
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_empty_array', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_empty_array';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = [];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    class VirtualScreenConfig {
+      name : string = '';
+      width : number = 0;
+      height : number = 0;
+      density : number = 0;
+      surfaceId : string = '';
+      supportsFocus ?: boolean = true;
+    }
+    
+    let config : VirtualScreenConfig = {
+      name: 'screen01',
+      width: 1080,
+      height: 2340,
+      density: 2,
+      surfaceId: '',
+      supportsFocus: false
+    };
+    let screenId: number = await display.createVirtualScreen(config);
+    status = display.isCaptured(bundleList);
+    console.log(msgStr + 'status:' + status);
+    expect(status).assertFalse();
+    await display.destroyVirtualScreen(screenId);
+    done();
+  }
+  catch (exception) {
+    console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
+    expect().assertFail();
+    done();
+  }
+});
+/**
+ * @tc.name   testIsCapturedByBundleName_1400004
+ * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+ * @tc.desc   check current device capture status with bundleName list input which is over max size
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testIsCapturedByBundleName_1400004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName = 'testIsCapturedByBundleName_1400004';
+  let msgStr = 'jsunittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+  let bundleList: Array<string> = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
+     '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36',
+      '37', '38', '39', '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56',
+       '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67', '68', '69', '70', '71', '72', '73', '74', '75', '76',
+        '77', '78', '79', '80', '81', '82', '83', '84', '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99', '100', '101'];
+  try {
+    let status = display.isCaptured(bundleList);
+    console.log(msgStr + 'succeeded in calling isCapturedByBundleName')
+    expect().assertFail();
+    done();
+  }
+  catch (error) {
+    console.error(msgStr + 'Failed. Code: ' + JSON.stringify(error));
+    expect(error.code).assertEqual(1400004)
+    done();
+  }
+});
+/**
+ * @tc.name      testIsCaptured_004
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0010
+ * @tc.desc      Test isCaptured with undefined parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_004';
+  console.info(`${message} begin`);
+  try {
+    let undefinedParam: undefined = undefined;
+    let result: boolean;
+    try {
+      result = display.isCaptured(undefinedParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Undefined parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-      catch (exception) {
-        console.error(msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
-        expect().assertFail();
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
+
+/**
+ * @tc.name      testIsCaptured_006
+ * @tc.number    SUB_BASIC_DMS_ISCAPTURED_PARAM_0020
+ * @tc.desc      Test isCaptured with null parameter (parameter error scenario).
+ * @tc.type      FUNCTION
+ * @tc.size      MEDIUMTEST
+ * @tc.level     LEVEL3
+ */
+it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  const message = 'testIsCaptured_006';
+  console.info(`${message} begin`);
+  try {
+    let nullParam: null = null;
+    let result: boolean;
+    try {
+      result = display.isCaptured(nullParam);
+      console.info(`${message} result: ${result}`);
+      expect(typeof result === 'boolean').assertTrue();
+      console.info(`${message} Null parameter is ignored, end`);
+      done();
+    } catch (err) {
+        console.info(`${message} Parameter error`);
+        expect(err.code).assertEqual(1400004);
         done();
-      }
-    });
+    }
+  } catch (exception) {
+    console.error(`${message} Exception: ${JSON.stringify(exception)}`);
+    expect().assertFail();
+    done();
+  }
+});
     /**
      * @tc.name   test_getAvailableArea_default
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_AVAILABLEAREA_0100
@@ -1607,8 +1835,13 @@ export default function displayTest() {
           done();
         }).catch((err: BusinessError) => {
           console.log(caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
-
-          done();
+          if (!isSyscapSessionManagerSupported || deviceType == 'wearable') {
+              expect(err.code).assertEqual(801)
+              done();
+          } else {
+              expect(err.code).assertEqual(1400001);
+              done();
+          }
         })
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
@@ -4348,6 +4581,81 @@ export default function displayTest() {
       } catch (err) {
         console.log(caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
         expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+    * @tc.name   test_on_availableAreaChange_registerListener
+    * @tc.number SUB_BASIC_WMS_on_availableAreaChange_registerListener_0600
+    * @tc.desc   test_on_availableAreaChange register listener
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
+    it('test_on_availableAreaChange_registerListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'test_on_availableAreaChange_registerListener';
+      console.log(caseName + ' begin');
+      try {
+        let displayClass: display.Display = display.getDefaultDisplaySync();
+        let windowClass = windowStage.getMainWindowSync();
+        let count: number = 0;
+        let callback: Callback<display.Rect> = (data: display.Rect) => {
+            console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
+            count++;
+        };
+        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+          let cap: string = displayClass.getDisplayCapability();
+          let curFoldStatus: display.FoldStatus = display.getFoldStatus();
+          console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
+          if (JSON.parse(cap).foldScreenType.split(',').map(Number)[0] === 5 && curFoldStatus === 3) {
+            displayClass = display.getDisplayByIdSync(999);
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+            try {
+              let moveConfiguration: window.MoveConfiguration = {
+                displayId: 999
+              };
+              let promise2 = windowClass.moveWindowToAsync(300, 300, moveConfiguration);
+              promise2.then(() => {
+                console.info(caseName + ' Succeeded in moving the window2.');
+                let rect = windowClass?.getWindowProperties().windowRect;
+                console.info(caseName + ` Get window rect: ` + JSON.stringify(rect));
+              }).catch((err: BusinessError) => {
+                console.error(caseName + ` Failed to move the window. Cause code: ${err.code}, message: ${err.message}`);
+              });
+            } catch (exception) {
+              console.error(caseName + ` Failed to move the window. Cause code: ${exception.code}, message: ${exception.message}`);
+            }
+          } else {
+            displayClass.on('availableAreaChange', callback);
+            await sleep(2000);
+          }
+          await sleep(1000);
+          windowClass.maximize(window.MaximizePresentation.ENTER_IMMERSIVE);
+          windowClass.setTitleAndDockHoverShown(false, false);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          windowClass.recover();
+          displayClass.off('availableAreaChange', callback);
+        } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+          displayClass.on('availableAreaChange', callback);
+          await sleep(2000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
+          await sleep(1000);
+          expect(count).assertLarger(0);
+          await sleep(1000);
+          await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
+          displayClass.off('availableAreaChange', callback);
+        } else {
+          expect(count).assertEqual(0);
+        }
+        done();
+      } catch (err) {
+        console.log(caseName + ': fail:' + err + ' ' + err.code);
+        expect(false).assertTrue();
         done();
       }
     });
