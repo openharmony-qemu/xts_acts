@@ -129,5 +129,24 @@ export default function BigIntOperatorAddTest(): void {
         a.operatorAdd(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_ADD_0700
+     * @tc.name testBigIntOperatorAddLongBounds0700
+     * @tc.desc Mindmap input: operatorAdd at signed long extrema and one step beyond
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorAddLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorAdd(BigInt(1)).toString()).assertEqual('9223372036854775808');
+      expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual('-9223372036854775809');
+      expect(max.operatorAdd(min).toString()).assertEqual('-1');
+      expect(BigInt(0).operatorAdd(max).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(0).operatorAdd(min).toString()).assertEqual('-9223372036854775808');
+    });
   });
 }

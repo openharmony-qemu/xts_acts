@@ -118,5 +118,21 @@ export default function BigIntEquals2Test(): void {
       expect(a.equals(42)).assertFalse();
       expect(a.equals(null)).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0700
+     * @tc.name testBigIntEqualsAnyLongBounds0700
+     * @tc.desc Mindmap input: equals(Any) on signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntEqualsAnyLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+
+      expect(max.equals(BigInt('9223372036854775807'))).assertTrue();
+      expect(max.equals(BigInt('-9223372036854775808'))).assertFalse();
+      expect(max.equals(9223372036854775807 as object)).assertFalse();
+    });
   });
 }

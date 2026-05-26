@@ -124,5 +124,22 @@ export default function BigIntOperatorBitwiseOrTest(): void {
     it('testBigIntOperatorBitwiseOrLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('18446744073709551615').operatorBitwiseOr(BigInt('18446744073709551616')).toString()).assertEqual('36893488147419103231');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0800
+     * @tc.name testBigIntOperatorBitwiseOrLongBounds0800
+     * @tc.desc Mindmap input: operatorBitwiseOr at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseOrLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorBitwiseOr(BigInt(0)).toString()).assertEqual('9223372036854775807');
+      expect(min.operatorBitwiseOr(max).toString()).assertEqual('-1');
+      expect(max.operatorBitwiseOr(min).toString()).assertEqual('-1');
+    });
   });
 }

@@ -175,5 +175,19 @@ export default function BigIntAsUintNTest(): void {
 
       expect(BigInt.asUintN(64, p100).toString()).assertEqual('0');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_ASUINTN_1100
+     * @tc.name testBigIntAsUintN64BitLongBounds1100
+     * @tc.desc Verify 64-bit asUintN at signed long extrema magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntAsUintN64BitLongBounds1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(64, BigInt(9223372036854775807)).toString()).assertEqual('9223372036854775807');
+      expect(BigInt.asUintN(64, BigInt(-9223372036854775808)).toString()).assertEqual('9223372036854775808');
+      expect(BigInt.asUintN(64, BigInt(0)).toString()).assertEqual('0');
+    });
   });
 }

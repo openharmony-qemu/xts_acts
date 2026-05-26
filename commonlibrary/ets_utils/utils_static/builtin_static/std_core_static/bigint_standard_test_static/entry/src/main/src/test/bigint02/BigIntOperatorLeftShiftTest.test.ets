@@ -95,5 +95,19 @@ export default function BigIntOperatorLeftShiftTest(): void {
         a.operatorLeftShift(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LSHIFT_0600
+     * @tc.name testBigIntOperatorLeftShiftLongBounds0600
+     * @tc.desc Mindmap input: operatorLeftShift crossing signed long maximum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLeftShiftLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(1).operatorLeftShift(BigInt(63)).toString()).assertEqual('9223372036854775808');
+      expect(BigInt(9223372036854775807).operatorLeftShift(BigInt(0)).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(0).operatorLeftShift(BigInt(100)).toString()).assertEqual('0');
+    });
   });
 }

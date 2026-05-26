@@ -16,6 +16,9 @@
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 
+// Decimal digit count of 2^4096: floor(4096 * log10(2)) + 1 === 1234
+const DECIMAL_LENGTH_2_POW_4096: int = 1234;
+
 export default function BigIntPerformanceLargeIntegerTest(): void {
   describe('BigInt ultra-large integer performance scenarios', () => {
     /**
@@ -30,7 +33,7 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
       const p4096 = BigInt(2).pow(BigInt(4096));
       const p4095 = BigInt(2).pow(BigInt(4095));
 
-      expect(p4096.toString().length).assertEqual(1234);
+      expect(p4096.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
       expect(p4096.operatorGreaterThan(p4095)).assertTrue();
     });
 
@@ -48,7 +51,7 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
       const product = half.operatorMultiply(half);
 
       expect(product.equals(expected)).assertTrue();
-      expect(product.toString().length).assertEqual(1234);
+      expect(product.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
     });
 
     /**
@@ -67,7 +70,7 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
         acc = acc.operatorSubtract(one);
       }
 
-      expect(acc.toString().length).assertEqual(1234);
+      expect(acc.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
       expect(acc.operatorLessThan(base)).assertTrue();
     });
 
@@ -120,7 +123,7 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
       const p4096 = BigInt(2).pow(BigInt(4096));
       const text = p4096.toString();
 
-      expect(text.length).assertEqual(1234);
+      expect(text.length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
       expect(text.startsWith('1')).assertTrue();
       expect(text.endsWith('0')).assertFalse();
     });

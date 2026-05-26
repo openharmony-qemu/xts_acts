@@ -92,5 +92,21 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
         BigInt(255).toStringAsPowerOfTwoRadix(-8);
       }).assertThrowError('Error');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0600
+     * @tc.name testBigIntToStringAsPowerOfTwoRadixLongBounds0600
+     * @tc.desc Mindmap return value: long extrema in radix 16; LONG_MIN is two's complement without minus prefix
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToStringAsPowerOfTwoRadixLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.toStringAsPowerOfTwoRadix(16)).assertEqual(max.toString(16));
+      expect(min.toStringAsPowerOfTwoRadix(16)).assertEqual('8000000000000000');
+    });
   });
 }

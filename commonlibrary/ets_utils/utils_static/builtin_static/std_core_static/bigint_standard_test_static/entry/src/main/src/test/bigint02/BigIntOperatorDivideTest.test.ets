@@ -97,5 +97,23 @@ export default function BigIntOperatorDivideTest(): void {
         BigInt(10).operatorDivide(BigInt(0));
       }).assertThrowError('Error');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0600
+     * @tc.name testBigIntOperatorDivideLongBounds0600
+     * @tc.desc Mindmap input: operatorDivide at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorDivide(BigInt(1)).toString()).assertEqual('9223372036854775807');
+      expect(min.operatorDivide(BigInt(1)).toString()).assertEqual('-9223372036854775808');
+      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual('9223372036854775808');
+      expect(BigInt(0).operatorDivide(max).toString()).assertEqual('0');
+    });
   });
 }

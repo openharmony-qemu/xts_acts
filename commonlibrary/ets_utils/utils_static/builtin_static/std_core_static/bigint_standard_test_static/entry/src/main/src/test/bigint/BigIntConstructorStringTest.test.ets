@@ -165,5 +165,21 @@ export default function BigIntConstructorStringTest(): void {
         BigInt('1.5');
       }).assertThrow(dottedDecimalMsg);
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_1100
+     * @tc.name testBigIntConstructorStringLongBounds1100
+     * @tc.desc Verify decimal strings at signed long extrema construct exact BigInt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntConstructorStringLongBounds1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775807').toString()).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775808').toString()).assertEqual('-9223372036854775808');
+      expect(BigInt('+9223372036854775807').toString()).assertEqual('9223372036854775807');
+      expect(BigInt('9223372036854775808').toString()).assertEqual('9223372036854775808');
+      expect(BigInt('-9223372036854775809').toString()).assertEqual('-9223372036854775809');
+    });
   });
 }

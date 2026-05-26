@@ -108,5 +108,19 @@ export default function BigIntNegateTest(): void {
       expect(BigInt(true).negate().toString()).assertEqual('-1');
       expect(BigInt(false).negate().toString()).assertEqual('0');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_NEGATE_0700
+     * @tc.name testBigIntNegateLongMin0700
+     * @tc.desc Mindmap input: negate signed long minimum and maximum magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntNegateLongMin0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-9223372036854775808).negate().toString()).assertEqual('9223372036854775808');
+      expect(BigInt(9223372036854775807).negate().toString()).assertEqual('-9223372036854775807');
+      expect(BigInt(-9223372036854775808).negate().negate().toString()).assertEqual('-9223372036854775808');
+    });
   });
 }

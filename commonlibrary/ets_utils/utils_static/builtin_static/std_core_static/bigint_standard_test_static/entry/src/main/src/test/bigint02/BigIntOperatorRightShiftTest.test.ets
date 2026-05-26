@@ -95,5 +95,19 @@ export default function BigIntOperatorRightShiftTest(): void {
         a.operatorRightShift(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_RSHIFT_0600
+     * @tc.name testBigIntOperatorRightShiftLongBounds0600
+     * @tc.desc Mindmap input: operatorRightShift from magnitude above signed long max
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorRightShiftLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775808').operatorRightShift(BigInt(1)).toString()).assertEqual('4611686018427387904');
+      expect(BigInt(-9223372036854775808).operatorRightShift(BigInt(1)).toString()).assertEqual('-4611686018427387904');
+      expect(BigInt(9223372036854775807).operatorRightShift(BigInt(0)).toString()).assertEqual('9223372036854775807');
+    });
   });
 }

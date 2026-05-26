@@ -96,5 +96,24 @@ export default function BigIntOperatorSubtractTest(): void {
         a.operatorSubtract(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_SUBTRACT_0600
+     * @tc.name testBigIntOperatorSubtractLongBounds0600
+     * @tc.desc Mindmap input: operatorSubtract at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorSubtractLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorSubtract(BigInt(1)).toString()).assertEqual('9223372036854775806');
+      expect(min.operatorSubtract(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
+      expect(max.operatorSubtract(max).toString()).assertEqual('0');
+      expect(min.operatorSubtract(min).toString()).assertEqual('0');
+      expect(max.operatorSubtract(min).toString()).assertEqual('18446744073709551615');
+    });
   });
 }

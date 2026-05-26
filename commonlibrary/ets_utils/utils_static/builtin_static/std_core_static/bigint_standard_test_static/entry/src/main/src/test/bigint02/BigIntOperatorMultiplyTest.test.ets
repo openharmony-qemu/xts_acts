@@ -96,5 +96,24 @@ export default function BigIntOperatorMultiplyTest(): void {
         a.operatorMultiply(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0600
+     * @tc.name testBigIntOperatorMultiplyLongBounds0600
+     * @tc.desc Mindmap input: operatorMultiply at signed long extrema with zero and sign flip
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorMultiplyLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
+      expect(min.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
+      expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
+      expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual('9223372036854775808');
+      expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual('9223372036854775807');
+    });
   });
 }

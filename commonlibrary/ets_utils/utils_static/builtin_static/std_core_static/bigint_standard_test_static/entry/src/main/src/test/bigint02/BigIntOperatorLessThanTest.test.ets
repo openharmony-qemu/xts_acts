@@ -100,5 +100,23 @@ export default function BigIntOperatorLessThanTest(): void {
       expect(BigInt(-5).operatorLessThan(BigInt(3))).assertTrue();
       expect(BigInt(3).operatorLessThan(BigInt(-5))).assertFalse();
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0600
+     * @tc.name testBigIntOperatorLessThanLongBounds0600
+     * @tc.desc Mindmap input: operatorLessThan at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorLessThanLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(min.operatorLessThan(max)).assertTrue();
+      expect(max.operatorLessThan(min)).assertFalse();
+      expect(BigInt('-9223372036854775809').operatorLessThan(min)).assertTrue();
+      expect(max.operatorLessThan(BigInt('9223372036854775808'))).assertTrue();
+    });
   });
 }

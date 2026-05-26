@@ -97,5 +97,22 @@ export default function BigIntToString2Test(): void {
         BigInt(10).toString(37);
       }).assertThrowError('RangeError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_2_0700
+     * @tc.name testBigIntToString2LongBounds0700
+     * @tc.desc Mindmap return value: signed long extrema radix-16 strings
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString2LongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.toString(16)).assertEqual('7fffffffffffffff');
+      expect(min.toString(16)).assertEqual('-8000000000000000');
+      expect(max.toString(2)).assertEqual(max.toStringAsBinary());
+    });
   });
 }

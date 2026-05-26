@@ -106,5 +106,20 @@ export default function BigIntPowTest(): void {
         v.pow(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_POW_0600
+     * @tc.name testBigIntPowLongBounds0600
+     * @tc.desc Verify pow at exponent crossing signed long maximum magnitude
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntPowLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(new BigInt(2).pow(new BigInt(63)).toString()).assertEqual('9223372036854775808');
+      expect(new BigInt(-1).pow(new BigInt(63)).toString()).assertEqual('-1');
+      expect(new BigInt(0).pow(new BigInt(0)).toString()).assertEqual('1');
+      expect(new BigInt(9223372036854775807).pow(new BigInt(0)).toString()).assertEqual('1');
+    });
   });
 }

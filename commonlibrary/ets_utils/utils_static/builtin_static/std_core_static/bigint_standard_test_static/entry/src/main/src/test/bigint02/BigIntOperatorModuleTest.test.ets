@@ -96,5 +96,23 @@ export default function BigIntOperatorModuleTest(): void {
         BigInt(10).operatorModule(BigInt(0));
       }).assertThrowError('Error');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0600
+     * @tc.name testBigIntOperatorModuleLongBounds0600
+     * @tc.desc Mindmap input: operatorModule at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorModule(BigInt(2)).toString()).assertEqual('1');
+      expect(min.operatorModule(BigInt(2)).toString()).assertEqual('0');
+      expect(BigInt(0).operatorModule(max).toString()).assertEqual('0');
+      expect(min.operatorModule(max).toString()).assertEqual('-1');
+    });
   });
 }

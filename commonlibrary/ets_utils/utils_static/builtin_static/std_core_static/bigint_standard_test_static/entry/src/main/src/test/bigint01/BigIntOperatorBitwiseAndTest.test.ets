@@ -129,5 +129,22 @@ export default function BigIntOperatorBitwiseAndTest(): void {
       const huge = BigInt('999999999999999999999999999999');
       expect(huge.operatorBitwiseAnd(mask).toString()).assertEqual('5076944270305263615');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0800
+     * @tc.name testBigIntOperatorBitwiseAndLongBounds0800
+     * @tc.desc Mindmap input: operatorBitwiseAnd at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseAndLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorBitwiseAnd(max).toString()).assertEqual('9223372036854775807');
+      expect(min.operatorBitwiseAnd(max).toString()).assertEqual('0');
+      expect(max.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+    });
   });
 }

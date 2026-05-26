@@ -111,5 +111,22 @@ export default function BigIntOperatorBitwiseXorTest(): void {
       const a = BigInt('999999999999999999999999999990');
       expect(a.operatorBitwiseXor(a).toString()).assertEqual('0');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_XOR_0700
+     * @tc.name testBigIntOperatorBitwiseXorLongBounds0700
+     * @tc.desc Mindmap input: operatorBitwiseXor at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseXorLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.operatorBitwiseXor(max).toString()).assertEqual('0');
+      expect(min.operatorBitwiseXor(min).toString()).assertEqual('0');
+      expect(max.operatorBitwiseXor(min).toString()).assertEqual('-1');
+    });
   });
 }

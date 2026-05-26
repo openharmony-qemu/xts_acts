@@ -130,5 +130,21 @@ export default function BigIntToLocaleString2Test(): void {
         BigInt(1).toLocaleString('en-US', true as object as BigIntToLocaleStringOptions);
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_2_0900
+     * @tc.name testBigIntToLocaleString2LongBounds0900
+     * @tc.desc Mindmap boundary: signed long extrema with locale and options
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToLocaleString2LongBounds0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const opts: BigIntToLocaleStringOptions = { useGrouping: false };
+
+      expect(BigInt('9223372036854775807').toLocaleString('en-US', opts)).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775808').toLocaleString('en-US', opts)).assertEqual('-9223372036854775808');
+      expect(BigInt(0).toLocaleString('en-US', opts)).assertEqual('0');
+    });
   });
 }

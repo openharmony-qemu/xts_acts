@@ -96,5 +96,19 @@ export default function BigIntDoubleValueTest(): void {
     it('testBigIntDoubleValueNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(999999).doubleValue()).assertEqual(999999.0);
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_DOUBLEVALUE_0700
+     * @tc.name testBigIntDoubleValueLongBounds0700
+     * @tc.desc Mindmap input: doubleValue at signed long extrema within exact double range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntDoubleValueLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(9223372036854775807).doubleValue()).assertEqual(9223372036854775807.0);
+      expect(BigInt(-9223372036854775808).doubleValue()).assertEqual(-9223372036854775808.0);
+      expect(BigInt(0).doubleValue()).assertEqual(0.0);
+    });
   });
 }

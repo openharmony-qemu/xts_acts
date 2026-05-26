@@ -127,5 +127,24 @@ export default function BigIntEquals1Test(): void {
     it('testBigIntEqualsBigIntNormalNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(42).equals(BigInt(42))).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_EQUALS_BI_0700
+     * @tc.name testBigIntEqualsBigIntLongBounds0700
+     * @tc.desc Mindmap input: equals on signed long extrema and adjacent magnitudes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntEqualsBigIntLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
+
+      expect(max.equals(BigInt('9223372036854775807'))).assertTrue();
+      expect(min.equals(BigInt('-9223372036854775808'))).assertTrue();
+      expect(max.equals(min)).assertFalse();
+      expect(max.equals(BigInt('9223372036854775808'))).assertFalse();
+      expect(BigInt(0).equals(new BigInt())).assertTrue();
+    });
   });
 }

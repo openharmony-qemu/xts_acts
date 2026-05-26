@@ -24,6 +24,7 @@ import BigIntAsIntNTest from './BigIntAsIntNTest.test';
 import BigIntPerformanceTest from './BigIntPerformanceTest.test';
 import BigIntPerformanceLargeIntegerTest from './BigIntPerformanceLargeIntegerTest.test';
 import BigIntPerformanceBatchCompareTest from './BigIntPerformanceBatchCompareTest.test';
+import BigIntBoundaryValuesTest from './BigIntBoundaryValuesTest.test';
 
 export default function runBigIntHypiumTests(): void {
   BigIntConstructorNoArgTest();
@@ -34,6 +35,7 @@ export default function runBigIntHypiumTests(): void {
   BigIntConstructorCopyTest();
   BigIntAsUintNTest();
   BigIntAsIntNTest();
+  BigIntBoundaryValuesTest();
   BigIntPerformanceTest();
   BigIntPerformanceLargeIntegerTest();
   BigIntPerformanceBatchCompareTest();
