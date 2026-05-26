@@ -16,12 +16,9 @@
 import streamTest from './StreamTest.test'
 
 import StreamTest_01 from "./Stream/StreamTest01.test";
-import StreamTest_02 from "./Stream/StreamTest02.test";
-// import StreamTest_03 from "./Stream/StreamTest03.test";
 import StreamTest_04 from "./Stream/StreamTest04.test";
 import StreamTest_05 from "./Stream/StreamTest05.test";
 import StreamTest_06 from "./Stream/StreamTest06.test";
-import StreamTest_07 from "./Stream/StreamTest07.test";
 import StreamTest_08 from "./Stream/StreamTest08.test";
 import StreamTest_09 from "./Stream/StreamTest09.test";
 import StreamTest_10 from "./Stream/StreamTest10.test";
@@ -38,7 +35,6 @@ import StreamDuplex08Test from "./StreamDuplex/StreamDuplexTest08.test";
 import StreamReadable01Test from "./StreamReadable/StreamReadableTest01.test";
 import StreamReadable02Test from "./StreamReadable/StreamReadableTest02.test";
 import StreamReadable03Test from "./StreamReadable/StreamReadableTest03.test";
-// import StreamReadable04Test from "./StreamReadable/StreamReadableTest04.test";
 import StreamReadable05Test from "./StreamReadable/StreamReadableTest05.test";
 
 import StreamWritable01Test from "./StreamWritable/StreamWritableTest01.test";
@@ -53,16 +49,25 @@ import StreamWritable08Test from "./StreamWritable/StreamWritableTest08.test";
 export default function testsuite(): void {
   streamTest();
 
-  StreamTest_01();
-  StreamTest_02();
-  // StreamTest_03();
+  StreamWritable01Test();
+  StreamWritable02Test();
+  StreamWritable03Test();
+  StreamWritable04Test();
+  StreamWritable05Test();
+  StreamWritable06Test();
+  StreamWritable07Test();
+  StreamWritable08Test();
+
+
   StreamTest_04();
   StreamTest_05();
   StreamTest_06();
-  StreamTest_07();
   StreamTest_08();
   StreamTest_09();
   StreamTest_10();
+
+  StreamTest_01();
+
 
   StreamDuplex01Test();
   StreamDuplex02Test();
@@ -73,18 +78,10 @@ export default function testsuite(): void {
   StreamDuplex07Test();
   StreamDuplex08Test();
 
+  StreamReadable05Test();
+
   StreamReadable01Test();
   StreamReadable02Test();
   StreamReadable03Test();
-  // StreamReadable04Test();
-  StreamReadable05Test();
 
-  StreamWritable01Test();
-  StreamWritable02Test();
-  StreamWritable03Test();
-  StreamWritable04Test();
-  StreamWritable05Test();
-  StreamWritable06Test();
-  StreamWritable07Test();
-  StreamWritable08Test();
 }
