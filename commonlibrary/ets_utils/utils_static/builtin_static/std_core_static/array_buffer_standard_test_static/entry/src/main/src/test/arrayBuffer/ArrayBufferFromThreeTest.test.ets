@@ -135,7 +135,7 @@ export default function arrayBufferFromThreeTest(): void {
     /**
      * @tc.name testArrayBufferFromThree0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FROM_THREE_0700
-     * @tc.desc Verify from(Int8Array) throws ClassCastError
+     * @tc.desc Verify cast Int8Array as Object to from(Uint8Array) throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

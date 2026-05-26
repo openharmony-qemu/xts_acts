@@ -156,5 +156,24 @@ export default function arrayBufferStringifyTest(): void {
         expect(e.name).assertEqual('IllegalArgumentError');
       }
     });
+
+    /**
+     * @tc.name testArrayBufferStringify0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_STRINGIFY_0800
+     * @tc.desc Verify stringify with end greater than byteLength throws IllegalArgumentError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testArrayBufferStringify0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const buffer = new ArrayBuffer(3);
+      buffer.set(0, Int.toByte(65));
+      try {
+        ArrayBuffer.stringify(buffer, 'utf8', 0, buffer.byteLength + 1);
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('IllegalArgumentError');
+      }
+    });
   });
 }

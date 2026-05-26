@@ -25,6 +25,7 @@ import {
 import Utils from '../Util.test';
 
 export default function arrayBufferResizeTest(): void {
+  // Static XTS: detached buffer cannot be constructed; resize on detached buffer (TypeError) is not covered.
   describe('ArrayBufferResizeTest', (): void => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);

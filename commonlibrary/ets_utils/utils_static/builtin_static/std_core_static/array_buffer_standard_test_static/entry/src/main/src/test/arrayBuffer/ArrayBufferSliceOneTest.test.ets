@@ -25,6 +25,7 @@ import {
 import Utils from '../Util.test';
 
 export default function arrayBufferSliceOneTest(): void {
+  // Static XTS: detached buffer cannot be constructed; slice on detached buffer (TypeError) is not covered.
   describe('ArrayBufferSliceOneTest', (): void => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
@@ -177,7 +178,7 @@ export default function arrayBufferSliceOneTest(): void {
     /**
      * @tc.name testArrayBufferSliceOne0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_SLICE_ONE_0900
-     * @tc.desc Verify int overload slice(6,8) copies last 2 bytes; NaN/fraction coercion covered in SliceTwo
+     * @tc.desc Verify int overload slice(6,8) copies last 2 bytes; number overload NaN/fraction in SliceTwo
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

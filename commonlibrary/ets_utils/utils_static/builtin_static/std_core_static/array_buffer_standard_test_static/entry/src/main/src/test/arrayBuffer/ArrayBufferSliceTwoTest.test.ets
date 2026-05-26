@@ -25,6 +25,7 @@ import {
 import Utils from '../Util.test';
 
 export default function arrayBufferSliceTwoTest(): void {
+  // Static XTS: detached buffer cannot be constructed; slice on detached buffer (TypeError) is not covered.
   describe('ArrayBufferSliceTwoTest', (): void => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);

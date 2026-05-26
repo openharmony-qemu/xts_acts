@@ -139,6 +139,7 @@ export default function arrayBufferFromObjectTest(): void {
       const result = ArrayBuffer.fromObject(src, Double.toInt(Double.NaN), 2);
       expect(result.byteLength).assertEqual(2);
       expect(result.at(0)).assertEqual(Int.toByte(10));
+      expect(result.at(1)).assertEqual(Int.toByte(20));
     });
 
     /**

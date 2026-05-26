@@ -26,6 +26,7 @@ import {
 import Utils from '../Util.test';
 
 export default function arrayBufferDetachedFieldTest(): void {
+  // Static XTS: detached===true buffer cannot be constructed; detached slice/resize TypeError paths are not covered here.
   describe('ArrayBufferDetachedFieldTest', (): void => {
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
@@ -34,7 +35,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0100
-     * @tc.desc Verify new ArrayBuffer(8) has detached false
+     * @tc.desc Verify new ArrayBuffer(8) has detached false (detached true not constructible in static XTS)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -80,7 +81,7 @@ export default function arrayBufferDetachedFieldTest(): void {
     /**
      * @tc.name testArrayBufferDetachedField0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_BUFFER_FIELD_DETACHED_0400
-     * @tc.desc Verify slice/resize on attached buffer succeed; detached-buffer TypeError paths not testable in static XTS
+     * @tc.desc Verify slice/resize on attached buffer succeed; detached-buffer TypeError not testable (cannot construct detached buffer)
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

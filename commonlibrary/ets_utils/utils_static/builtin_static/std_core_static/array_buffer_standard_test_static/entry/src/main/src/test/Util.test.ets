@@ -79,12 +79,4 @@ export default class Utils {
   static castToByte(v: Object): Byte {
     return v as Byte;
   }
-
-  static fromArrayBufferWithOffset(src: ArrayBuffer, byteOffset: Int, length?: Int): ArrayBuffer {
-    if (length !== undefined) {
-      return ArrayBuffer.from(src, byteOffset, length);
-    }
-    const tail: Int = src.byteLength - byteOffset;
-    return ArrayBuffer.from(src, byteOffset, tail);
-  }
 }
