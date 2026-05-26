@@ -36,7 +36,7 @@ import {
 
 @ObservedV2
 export class Message1 {
-  @Trace userID: number;
+  @Trace public userID: number;
   userName: string;
 
   constructor(userID?: number, userName?: string) {
@@ -47,7 +47,7 @@ export class Message1 {
 
 @ObservedV2
 export class Message2 {
-  @Trace userName: string;
+  @Trace public userName: string;
 
   constructor(userName?: string) {
     this.userName = userName ?? 'Jack';
@@ -61,7 +61,7 @@ const IMessageType2 = Class.from<Message2>();
 const as2: Message2 | undefined = AppStorageV2.connect<Message2>(IMessageType2, () => new Message2());
 
 // ttype为SampleClass的Class的对象已经在AppStorageV2中，将该对象返回给as3
-const Message3: Message2 = AppStorageV2.connect<Message2>(IMessageType2)!;
+const message3: Message2 = AppStorageV2.connect<Message2>(IMessageType2)!;
 
 let message2 = AppStorageV2.connect<Message1>(IMessageType1, '',() => {return new Message1()});
 
@@ -84,7 +84,7 @@ struct AppStorageV2Api {
           this.message1.userID += 1;
         })
       // 修改非@Trace装饰的类属性，UI不会同步刷新，但修改的类属性已同步回AppStorageV2
-      Button('Index userName: '+Message3.userName)
+      Button('Index userName: '+message3.userName)
         .id('AppStorageV2_connect2')
         .height('5%')
 
