@@ -249,7 +249,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
       // spec/types.md:1327: optional parameter type is T|undefined (nullish union).
-      expect(paramTypes[1].getName().includes('String')).assertTrue();
+      let paramName: string = paramTypes[1].getName();
+      let hasString: boolean = paramName.includes('String');
+      expect(hasString).assertTrue();
     });
 
     /**
@@ -340,6 +342,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       let typeName: string = Class.of(paramTypes).getName();
       expect(typeName).assertEqual('std.core.Class[]');
+      let isFixed: boolean = Class.of(paramTypes).isFixedArray();
+      expect(isFixed).assertTrue();
     });
 
     /**

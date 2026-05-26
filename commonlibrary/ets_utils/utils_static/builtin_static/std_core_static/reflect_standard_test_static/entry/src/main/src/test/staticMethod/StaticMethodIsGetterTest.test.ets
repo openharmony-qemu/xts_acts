@@ -381,8 +381,10 @@ export default function StaticMethodIsGetterTest(): void {
       let setter = cls.getStaticMethod('%%set-alias');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
-      expect(getter!.isGetter() && !getter!.isSetter()).assertTrue();
-      expect(setter!.isSetter() && !setter!.isGetter()).assertTrue();
+      let getterCheck: boolean = getter!.isGetter() && !getter!.isSetter();
+      expect(getterCheck).assertTrue();
+      let setterCheck: boolean = setter!.isSetter() && !setter!.isGetter();
+      expect(setterCheck).assertTrue();
     });
 
     /**

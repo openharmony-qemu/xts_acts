@@ -405,8 +405,10 @@ export default function StaticMethodIsSetterTest(): void {
       let setter = cls.getStaticMethod('%%set-prefix');
       expect(getter !== undefined).assertTrue();
       expect(setter !== undefined).assertTrue();
-      expect(setter!.isSetter() && !setter!.isGetter()).assertTrue();
-      expect(getter!.isGetter() && !getter!.isSetter()).assertTrue();
+      let setterCheck: boolean = setter!.isSetter() && !setter!.isGetter();
+      expect(setterCheck).assertTrue();
+      let getterCheck: boolean = getter!.isGetter() && !getter!.isSetter();
+      expect(getterCheck).assertTrue();
     });
 
     /**

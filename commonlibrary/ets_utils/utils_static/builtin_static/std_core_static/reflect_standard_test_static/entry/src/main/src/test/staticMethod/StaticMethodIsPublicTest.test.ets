@@ -305,7 +305,8 @@ export default function StaticMethodIsPublicTest(): void {
       expect(methods.length).assertEqual(1);
       let m1 = cls.getStaticMethod('publicMethod');
       expect(m1 !== undefined).assertTrue();
-      expect(m1!.isPublic() && !m1!.isPrivate() && !m1!.isProtected()).assertTrue();
+      let isPublicCheck: boolean = m1!.isPublic() && !m1!.isPrivate() && !m1!.isProtected();
+      expect(isPublicCheck).assertTrue();
     });
 
     /**

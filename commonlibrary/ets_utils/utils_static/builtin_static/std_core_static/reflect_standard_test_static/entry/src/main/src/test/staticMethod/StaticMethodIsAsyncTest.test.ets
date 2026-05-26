@@ -297,7 +297,9 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(syncMethod !== undefined).assertTrue();
       expect(asyncMethod!.isAsync()).assertTrue();
       let rt = asyncMethod!.getReturnType();
-      expect(rt.getName().includes('Promise')).assertTrue();
+      let rtName: string = rt.getName();
+      let hasPromise: boolean = rtName.includes('Promise');
+      expect(hasPromise).assertTrue();
       expect(syncMethod!.isAsync()).assertFalse();
     });
 
@@ -406,7 +408,9 @@ export default function StaticMethodIsAsyncTest(): void {
       expect(method !== undefined).assertTrue();
       expect(method!.isAsync()).assertTrue();
       let rt = method!.getReturnType();
-      expect(rt.getName().includes('Promise')).assertTrue();
+      let rtName: string = rt.getName();
+      let hasPromise: boolean = rtName.includes('Promise');
+      expect(hasPromise).assertTrue();
     });
 
     /**
@@ -541,7 +545,9 @@ export default function StaticMethodIsAsyncTest(): void {
       let syncRt = syncMethod!.getReturnType();
       let asyncRt = asyncMethod!.getReturnType();
       expect(syncRt.getName()).assertEqual('std.core.String');
-      expect(asyncRt.getName().includes('Promise')).assertTrue();
+      let asyncRtName: string = asyncRt.getName();
+      let hasPromise: boolean = asyncRtName.includes('Promise');
+      expect(hasPromise).assertTrue();
     });
 
     /**
