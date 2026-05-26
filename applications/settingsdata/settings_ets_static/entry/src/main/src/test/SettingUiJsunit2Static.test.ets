@@ -2481,5 +2481,83 @@ export default function settingUiJsunit() {
       expect(code).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openBiometricsSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openBiometricsSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openNfcSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openNfcSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
+     * @tc.number SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
+     * @tc.desc   SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
   })
 }
