@@ -72,7 +72,7 @@ export default function dataTest() {
                 done();
             }catch(err){
                 hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code)
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ catch err.message)
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message)
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
