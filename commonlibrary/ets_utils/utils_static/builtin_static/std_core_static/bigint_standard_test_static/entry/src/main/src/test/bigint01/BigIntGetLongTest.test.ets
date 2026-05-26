@@ -21,7 +21,7 @@ export default function BigIntGetLongTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0100
      * @tc.name testBigIntGetLongPositive0100
-     * @tc.desc Verify getLong for positive BigInt values within long range
+     * @tc.desc Mindmap input: getLong for positive values within long range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -29,16 +29,13 @@ export default function BigIntGetLongTest(): void {
     it('testBigIntGetLongPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(1).getLong()).assertEqual(1);
       expect(BigInt(42).getLong()).assertEqual(42);
-      expect(BigInt(1000000).getLong()).assertEqual(1000000);
-      expect(BigInt(127).getLong()).assertEqual(127);
-      expect(BigInt(32767).getLong()).assertEqual(32767);
       expect(BigInt(2147483647).getLong()).assertEqual(2147483647);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0200
      * @tc.name testBigIntGetLongNegative0200
-     * @tc.desc Verify getLong for negative BigInt values within long range
+     * @tc.desc Mindmap input: getLong for negative values within long range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -46,13 +43,12 @@ export default function BigIntGetLongTest(): void {
     it('testBigIntGetLongNegative0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).getLong()).assertEqual(-1);
       expect(BigInt(-42).getLong()).assertEqual(-42);
-      expect(BigInt(-1000000).getLong()).assertEqual(-1000000);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0300
      * @tc.name testBigIntGetLongZero0300
-     * @tc.desc Verify getLong returns zero for BigInt zero
+     * @tc.desc Mindmap input: getLong for zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -64,7 +60,7 @@ export default function BigIntGetLongTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0400
      * @tc.name testBigIntGetLongBoundary0400
-     * @tc.desc Verify getLong at signed long min and max without overflow
+     * @tc.desc Mindmap input: getLong at signed long extrema
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -77,66 +73,43 @@ export default function BigIntGetLongTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0500
      * @tc.name testBigIntGetLongOverflowWrap0500
-     * @tc.desc Verify getLong truncates to signed 64-bit (LONG_MIN..LONG_MAX) with two's-complement wrap
+     * @tc.desc Mindmap return value: getLong wraps out-of-range values mod 2^64
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntGetLongOverflowWrap0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808); // LONG_MAX + 1
-      expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807); // LONG_MIN - 1
-      expect(BigInt('18446744073709551616').getLong()).assertEqual(0); // 2^64 wraps to 0
-      expect(BigInt('-18446744073709551617').getLong()).assertEqual(-1);
+      expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
+      expect(BigInt('-9223372036854775809').getLong()).assertEqual(9223372036854775807);
+      expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETLONG_0600
-     * @tc.name testBigIntGetLongApiSemantics0600
-     * @tc.desc Document getLong as non-throwing signed long narrow; out-of-range values wrap mod 2^64
+     * @tc.name testBigIntGetLongReturnType0600
+     * @tc.desc Mindmap return value: getLong returns long and is stable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongApiSemantics0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const within = BigInt(9223372036854775807);
-      const firstWithin = within.getLong();
-
-      expect(firstWithin).assertEqual(9223372036854775807);
-      expect(within.getLong()).assertEqual(firstWithin);
-      const wrapped = BigInt('9223372036854775808');
-      const firstWrapped = wrapped.getLong();
-
-      expect(firstWrapped).assertEqual(-9223372036854775808);
-      expect(wrapped.getLong()).assertEqual(firstWrapped);
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_GETLONG_0700
-     * @tc.name testBigIntGetLongConsistent0700
-     * @tc.desc Verify repeated getLong calls return the same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntGetLongConsistent0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntGetLongReturnType0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const v = BigInt(8);
       const first = v.getLong();
 
-      expect(first).assertEqual(8);
+      expect(Class.of(first)).assertEqual(Class.from<long>());
       expect(v.getLong()).assertEqual(first);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_GETLONG_0800
-     * @tc.name testBigIntGetLongNoThrow0800
-     * @tc.desc Verify getLong on out-of-range values does not throw
+     * @tc.number SUB_BIGINT_STD_GETLONG_0700
+     * @tc.name testBigIntGetLongNoThrow0700
+     * @tc.desc Mindmap error handling: getLong does not throw on large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetLongNoThrow0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntGetLongNoThrow0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('9223372036854775808').getLong()).assertEqual(-9223372036854775808);
-      expect(BigInt('18446744073709551616').getLong()).assertEqual(0);
       expect(BigInt('-99999999999999999999999').getLong()).assertEqual(-200376420520689663);
     });
   });

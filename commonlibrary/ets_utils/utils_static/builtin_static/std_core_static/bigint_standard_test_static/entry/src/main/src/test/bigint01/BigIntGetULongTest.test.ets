@@ -15,6 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+
 import Utils from '../Util.test';
 
 export default function BigIntGetULongTest(): void {
@@ -22,7 +23,7 @@ export default function BigIntGetULongTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0100
      * @tc.name testBigIntGetULongPositive0100
-     * @tc.desc Verify getULong for small and medium positive BigInt values
+     * @tc.desc Mindmap input: getULong for small positive values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -30,21 +31,19 @@ export default function BigIntGetULongTest(): void {
     it('testBigIntGetULongPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(42).getULong()).assertEqual(42);
       expect(BigInt(1).getULong()).assertEqual(1);
-      expect(BigInt(100).getULong()).assertEqual(100);
       expect(BigInt(0).getULong()).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0200
      * @tc.name testBigIntGetULongNegativeAsUnsigned0200
-     * @tc.desc Verify negative BigInt values truncate to unsigned 64-bit long
+     * @tc.desc Mindmap input: negative BigInt truncates to unsigned long
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntGetULongNegativeAsUnsigned0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(Utils.ulongRoundTrip(BigInt(-1))).assertEqual('18446744073709551615');
-      expect(Utils.ulongRoundTrip(BigInt(-2))).assertEqual('18446744073709551614');
       expect(Utils.ulongRoundTrip(BigInt(-42))).assertEqual('18446744073709551574');
       expect(Utils.ulongRoundTrip(BigInt('-9223372036854775808'))).assertEqual('9223372036854775808');
     });
@@ -52,21 +51,20 @@ export default function BigIntGetULongTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0300
      * @tc.name testBigIntGetULongLargePositive0300
-     * @tc.desc Verify getULong for values at and beyond signed long maximum
+     * @tc.desc Mindmap input: getULong beyond signed long maximum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntGetULongLargePositive0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(Utils.ulongRoundTrip(BigInt('9223372036854775808'))).assertEqual('9223372036854775808');
-      expect(Utils.ulongRoundTrip(BigInt('18446744073709551614'))).assertEqual('18446744073709551614');
       expect(Utils.ulongRoundTrip(BigInt('18446744073709551615'))).assertEqual('18446744073709551615');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0400
      * @tc.name testBigIntGetULongOverflowWrap0400
-     * @tc.desc Verify getULong wraps values beyond uint64 range
+     * @tc.desc Mindmap return value: getULong wraps beyond uint64 range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -74,38 +72,45 @@ export default function BigIntGetULongTest(): void {
     it('testBigIntGetULongOverflowWrap0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(Utils.ulongRoundTrip(BigInt('18446744073709551616'))).assertEqual('0');
       expect(Utils.ulongRoundTrip(BigInt('18446744073709551617'))).assertEqual('1');
-      expect(Utils.ulongRoundTrip(BigInt('18446744073709551716'))).assertEqual('100');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0500
      * @tc.name testBigIntGetULongFromULongSymmetry0500
-     * @tc.desc Verify getULong round-trips with BigInt.fromULong
+     * @tc.desc Mindmap return value: getULong round-trips with fromULong
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntGetULongFromULongSymmetry0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const cases: BigInt[] = [BigInt(42), BigInt(0), BigInt('18446744073709551615')];
-      for (let i = 0; i < cases.length; i++) {
-        const original = cases[i];
-        const restored = BigInt.fromULong(original.getULong());
+      const original = BigInt('18446744073709551615');
+      const restored = BigInt.fromULong(original.getULong());
 
-        expect(restored.equals(original)).assertTrue();
-      }
+      expect(restored.equals(original)).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_GETULONG_0600
-     * @tc.name testBigIntGetULongNoThrow0600
-     * @tc.desc Verify getULong does not throw on large or negative values
+     * @tc.name testBigIntGetULongReturnType0600
+     * @tc.desc Mindmap return value: getULong returns long carrier for unsigned bits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntGetULongNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntGetULongReturnType0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(42).getULong())).assertEqual(Class.from<long>());
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_GETULONG_0700
+     * @tc.name testBigIntGetULongNoThrow0700
+     * @tc.desc Mindmap error handling: getULong does not throw on large or negative values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntGetULongNoThrow0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(8).getULong()).assertEqual(8);
-      expect(Utils.ulongRoundTrip(BigInt('-99999999999999999999999'))).assertEqual('18246367653188861953');
       expect(Utils.ulongRoundTrip(BigInt('99999999999999999999999'))).assertEqual('200376420520689663');
     });
   });

@@ -21,7 +21,7 @@ export default function BigIntNegativeTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0100
      * @tc.name testBigIntNegativeSignCases0100
-     * @tc.desc Verify negative() for positive, negative, and zero BigInt values
+     * @tc.desc Mindmap input: negative() for positive, negative, and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -32,14 +32,12 @@ export default function BigIntNegativeTest(): void {
       expect(BigInt(0).negative()).assertFalse();
       expect(BigInt(1).negative()).assertFalse();
       expect(BigInt(-1).negative()).assertTrue();
-      expect(BigInt('456').negative()).assertFalse();
-      expect(BigInt('-456').negative()).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0200
      * @tc.name testBigIntNegativeBoundary0200
-     * @tc.desc Verify negative() at int64 boundary magnitudes
+     * @tc.desc Mindmap input: negative() at long boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -52,7 +50,7 @@ export default function BigIntNegativeTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0300
      * @tc.name testBigIntNegativeReturnType0300
-     * @tc.desc Verify negative() returns boolean and is stable across calls
+     * @tc.desc Mindmap return value: negative() returns stable boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -61,23 +59,37 @@ export default function BigIntNegativeTest(): void {
       const bn = BigInt(-100);
       const r1 = bn.negative();
       const r2 = bn.negative();
-      const r3 = bn.negative();
 
       expect(Class.of(r1)).assertEqual(Class.from<boolean>());
-      expect(r1 === r2 && r2 === r3).assertTrue();
+      expect(r1 === r2).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATIVE_0400
-     * @tc.name testBigIntNegativeLargeMagnitude0400
-     * @tc.desc Verify negative() on very large positive and negative magnitudes
+     * @tc.name testBigIntNegativeLarge0400
+     * @tc.desc Mindmap input: negative() on large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegativeLargeMagnitude0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntNegativeLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('999999999999999999999999999999').negative()).assertFalse();
       expect(BigInt('-999999999999999999999999999999').negative()).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_NEGATIVE_0500
+     * @tc.name testBigIntNegativeStringBoolean0500
+     * @tc.desc Mindmap input: negative() on string and boolean sources
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntNegativeStringBoolean0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('456').negative()).assertFalse();
+      expect(BigInt('-456').negative()).assertTrue();
+      expect(BigInt(true).negative()).assertFalse();
+      expect(BigInt(false).negative()).assertFalse();
     });
   });
 }

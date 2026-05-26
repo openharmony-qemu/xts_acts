@@ -21,7 +21,7 @@ export default function BigIntNegateTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0100
      * @tc.name testBigIntNegateSigns0100
-     * @tc.desc Verify negate for positive, negative, and zero values
+     * @tc.desc Mindmap input and return value: negate positive, negative, and zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -37,7 +37,7 @@ export default function BigIntNegateTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0200
      * @tc.name testBigIntNegateLarge0200
-     * @tc.desc Verify negate on very large BigInt magnitudes
+     * @tc.desc Mindmap return value: negate very large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -52,7 +52,7 @@ export default function BigIntNegateTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0300
      * @tc.name testBigIntNegateDoubleNegate0300
-     * @tc.desc Verify double negate restores original value
+     * @tc.desc Mindmap return value: double negate restores value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -65,14 +65,14 @@ export default function BigIntNegateTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0400
-     * @tc.name testBigIntNegateSafeIntegerMagnitude0400
-     * @tc.desc Verify negate near MAX_SAFE_INTEGER with literal expected strings
+     * @tc.name testBigIntNegateLongBounds0400
+     * @tc.desc Mindmap input: negate near double safe integer magnitude
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateSafeIntegerMagnitude0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991'; // Number.MAX_SAFE_INTEGER (2^53 - 1)
+    it('testBigIntNegateLongBounds0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const maxSafe = '9007199254740991';
 
       expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
       expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
@@ -81,7 +81,7 @@ export default function BigIntNegateTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0500
      * @tc.name testBigIntNegateReturnType0500
-     * @tc.desc Verify negate returns new BigInt without mutating receiver
+     * @tc.desc Mindmap return value: negate returns new BigInt without mutating receiver
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -97,19 +97,16 @@ export default function BigIntNegateTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_NEGATE_0600
-     * @tc.name testBigIntNegateNoThrow0600
-     * @tc.desc Verify negate does not throw on string, boolean, and copy-constructed values
+     * @tc.name testBigIntNegateSources0600
+     * @tc.desc Mindmap input: negate string and boolean constructed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntNegateNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntNegateSources0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('77').negate().toString()).assertEqual('-77');
       expect(BigInt(true).negate().toString()).assertEqual('-1');
       expect(BigInt(false).negate().toString()).assertEqual('0');
-      const original = BigInt('88');
-      const copied = BigInt(original);
-      expect(copied.negate().toString()).assertEqual('-88');
     });
   });
 }

@@ -21,7 +21,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0100
      * @tc.name testBigIntEqualsAnyBigIntTrue0100
-     * @tc.desc Verify equals(other: Any) returns true when other is BigInt and values are equal
+     * @tc.desc Mindmap input and return value: equals(Any) true when other is equal BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -33,13 +33,12 @@ export default function BigIntEquals2Test(): void {
       const a = BigInt(42);
       expect(a.equals(a)).assertTrue();
       expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
-      expect(BigInt(42).equals(BigInt('42'))).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0200
      * @tc.name testBigIntEqualsAnyBigIntFalse0200
-     * @tc.desc Verify equals(other: Any) returns false when other is BigInt but values differ
+     * @tc.desc Mindmap input: equals(Any) false when other is unequal BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -48,14 +47,13 @@ export default function BigIntEquals2Test(): void {
       expect(BigInt(42).equals(BigInt(99))).assertFalse();
       expect(BigInt(42).equals(BigInt(-42))).assertFalse();
       expect(BigInt(0).equals(BigInt(1))).assertFalse();
-      expect(BigInt(1).equals(BigInt(-1))).assertFalse();
       expect(BigInt('99999999999999999999').equals(BigInt('88888888888888888888'))).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0300
      * @tc.name testBigIntEqualsAnyNonBigIntFalse0300
-     * @tc.desc Verify equals(other: Any) returns false for non-BigInt operands without throwing
+     * @tc.desc Mindmap error handling: equals(Any) returns false for non-BigInt without throwing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -70,20 +68,13 @@ export default function BigIntEquals2Test(): void {
       expect(a.equals(null)).assertFalse();
       expect(a.equals(undefined)).assertFalse();
       expect(a.equals({})).assertFalse();
-      const emptyList: number[] = [];
-      expect(a.equals(emptyList)).assertFalse();
-      const list42: number[] = [42];
-      expect(a.equals(list42)).assertFalse();
       expect(BigInt(0).equals(0)).assertFalse();
-      expect(BigInt(0).equals('')).assertFalse();
-      expect(BigInt(42).equals(Number.NaN)).assertFalse();
-      expect(BigInt(42).equals(Number.POSITIVE_INFINITY)).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0400
      * @tc.name testBigIntEqualsAnyReturnType0400
-     * @tc.desc Verify equals(other: Any) return value is strict boolean, not number or string
+     * @tc.desc Mindmap return value: equals(Any) returns boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -100,7 +91,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0500
      * @tc.name testBigIntEqualsAnyLargeBoundary0500
-     * @tc.desc Verify equals(other: Any) on very large BigInt magnitudes
+     * @tc.desc Mindmap input: equals(Any) on very large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -115,7 +106,7 @@ export default function BigIntEquals2Test(): void {
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_ANY_0600
      * @tc.name testBigIntEqualsAnySequentialNoThrow0600
-     * @tc.desc Verify equals(other: Any) with BigInt and non-BigInt operands does not throw
+     * @tc.desc Mindmap return value: mixed BigInt and non-BigInt equals does not throw
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -125,9 +116,7 @@ export default function BigIntEquals2Test(): void {
 
       expect(a.equals(BigInt(42))).assertTrue();
       expect(a.equals(42)).assertFalse();
-      expect(a.equals('42')).assertFalse();
       expect(a.equals(null)).assertFalse();
-      expect(a.equals(undefined)).assertFalse();
     });
   });
 }

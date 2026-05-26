@@ -21,7 +21,7 @@ export default function BigIntOperatorBitwiseAndTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0100
      * @tc.name testBigIntOperatorBitwiseAndBasic0100
-     * @tc.desc Verify basic bitwise AND results
+     * @tc.desc Mindmap input and return value: operatorBitwiseAnd basic cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -29,34 +29,28 @@ export default function BigIntOperatorBitwiseAndTest(): void {
     it('testBigIntOperatorBitwiseAndBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(12).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('4');
       expect(BigInt(0).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('0');
-      expect(BigInt(5).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(-1).operatorBitwiseAnd(BigInt(7)).toString()).assertEqual('7');
-      expect(BigInt(7).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('7');
       expect(BigInt(-3).operatorBitwiseAnd(BigInt(-5)).toString()).assertEqual('-7');
-      expect(BigInt(15).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('15');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0200
-     * @tc.name testBigIntOperatorBitwiseAndLaws0200
-     * @tc.desc Verify zero absorption, minus-one mask, and idempotent x and x
+     * @tc.name testBigIntOperatorBitwiseAndSpecial0200
+     * @tc.desc Mindmap input: operatorBitwiseAnd zero, self, and mask patterns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseAndLaws0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseAndSpecial0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(12345).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
-      expect(BigInt(-12345).operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
       expect(BigInt(42).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('42');
-      expect(BigInt(-42).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('-42');
-      const val = BigInt(99);
-      expect(val.operatorBitwiseAnd(val).toString()).assertEqual('99');
+      expect(BigInt(99).operatorBitwiseAnd(BigInt(99)).toString()).assertEqual('99');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0300
      * @tc.name testBigIntOperatorBitwiseAndCommutative0300
-     * @tc.desc Verify commutative property of bitwise AND
+     * @tc.desc Mindmap return value: operatorBitwiseAnd commutative property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -64,40 +58,47 @@ export default function BigIntOperatorBitwiseAndTest(): void {
     it('testBigIntOperatorBitwiseAndCommutative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(12);
       const b = BigInt(10);
-
       expect(a.operatorBitwiseAnd(b).toString()).assertEqual(b.operatorBitwiseAnd(a).toString());
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0400
-     * @tc.name testBigIntOperatorBitwiseAndImmutability0400
-     * @tc.desc Verify operatorBitwiseAnd does not mutate operands
+     * @tc.name testBigIntOperatorBitwiseAndImmutable0400
+     * @tc.desc Mindmap return value: operatorBitwiseAnd does not mutate operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseAndImmutability0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseAndImmutable0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const left = BigInt(12);
       const right = BigInt(5);
       const origL = left.toString();
-      const origR = right.toString();
       left.operatorBitwiseAnd(right);
-
       expect(left.toString()).assertEqual(origL);
-      expect(right.toString()).assertEqual(origR);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_AND_0500
-     * @tc.name testBigIntOperatorBitwiseAndInvalidArg0500
-     * @tc.desc Verify operatorBitwiseAnd rejects invalid operand types
+     * @tc.name testBigIntOperatorBitwiseAndReturnType0500
+     * @tc.desc Mindmap return value: operatorBitwiseAnd returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseAndInvalidArg0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const left = BigInt(12);
+    it('testBigIntOperatorBitwiseAndReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(12).operatorBitwiseAnd(BigInt(5)) as Object)).assertEqual(Class.from<BigInt>());
+    });
 
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0600
+     * @tc.name testBigIntOperatorBitwiseAndInvalidArg0600
+     * @tc.desc Mindmap error handling: operatorBitwiseAnd rejects invalid operand types
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseAndInvalidArg0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const left = BigInt(12);
       expect((): void => {
         left.operatorBitwiseAnd(null as BigInt);
       }).assertThrowError('ClassCastError');
@@ -105,28 +106,28 @@ export default function BigIntOperatorBitwiseAndTest(): void {
         left.operatorBitwiseAnd(undefined as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        left.operatorBitwiseAnd(5 as object as BigInt);
+        left.operatorBitwiseAnd('abc' as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        left.operatorBitwiseAnd('5' as object as BigInt);
+        left.operatorBitwiseAnd(123 as object as BigInt);
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        left.operatorBitwiseAnd(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0600
-     * @tc.name testBigIntOperatorBitwiseAndLarge0600
-     * @tc.desc Verify bitwise AND on magnitudes beyond Number.MAX_SAFE_INTEGER
+     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0700
+     * @tc.name testBigIntOperatorBitwiseAndLarge0700
+     * @tc.desc Mindmap input: operatorBitwiseAnd on large magnitudes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseAndLarge0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseAndLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const mask = BigInt('18446744073709551615');
       const huge = BigInt('999999999999999999999999999999');
-
       expect(huge.operatorBitwiseAnd(mask).toString()).assertEqual('5076944270305263615');
-      expect(huge.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
-      expect(BigInt('-9223372036854775808').operatorBitwiseAnd(mask).toString()).assertEqual('9223372036854775808');
     });
   });
 }

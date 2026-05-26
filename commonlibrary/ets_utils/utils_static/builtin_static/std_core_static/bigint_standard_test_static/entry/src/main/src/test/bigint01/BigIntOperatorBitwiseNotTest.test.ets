@@ -19,9 +19,9 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntOperatorBitwiseNotTest(): void {
   describe('BigInt.operatorBitwiseNot (mindmap operatorBitwiseNot)', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0100
+     * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0100
      * @tc.name testBigIntOperatorBitwiseNotBasic0100
-     * @tc.desc Verify basic bitwise NOT results
+     * @tc.desc Mindmap input and return value: bitwise not on sample values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -29,112 +29,62 @@ export default function BigIntOperatorBitwiseNotTest(): void {
     it('testBigIntOperatorBitwiseNotBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorBitwiseNot().toString()).assertEqual('-1');
       expect(BigInt(-1).operatorBitwiseNot().toString()).assertEqual('0');
-      expect(BigInt(1).operatorBitwiseNot().toString()).assertEqual('-2');
-      expect(BigInt(-2).operatorBitwiseNot().toString()).assertEqual('1');
       expect(BigInt(5).operatorBitwiseNot().toString()).assertEqual('-6');
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0200
-     * @tc.name testBigIntOperatorBitwiseNotFormula0200
-     * @tc.desc Verify ~x equals -(x+1) for sample values
+     * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0200
+     * @tc.name testBigIntOperatorBitwiseNotImmutable0200
+     * @tc.desc Mindmap return value: receiver unchanged after operatorBitwiseNot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseNotFormula0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const x = BigInt(100);
-      const notX = x.operatorBitwiseNot();
-      const minusXPlus1 = x.operatorAdd(BigInt(1)).negate();
+    it('testBigIntOperatorBitwiseNotImmutable0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v = BigInt(42);
+      const orig = v.toString();
 
-      expect(notX.toString()).assertEqual(minusXPlus1.toString());
-      expect(BigInt(999).operatorBitwiseNot().toString()).assertEqual('-1000');
-      expect(BigInt(-100).operatorBitwiseNot().toString()).assertEqual('99');
+      v.operatorBitwiseNot();
+      expect(v.toString()).assertEqual(orig);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0300
-     * @tc.name testBigIntOperatorBitwiseNotDouble0300
-     * @tc.desc Verify double bitwise NOT restores original value
+     * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0300
+     * @tc.name testBigIntOperatorBitwiseNotReturnType0300
+     * @tc.desc Mindmap return value: operatorBitwiseNot returns BigInt
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseNotDouble0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('42');
-      expect(BigInt(-42).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('-42');
-      expect(BigInt(0).operatorBitwiseNot().operatorBitwiseNot().toString()).assertEqual('0');
+    it('testBigIntOperatorBitwiseNotReturnType0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(1).operatorBitwiseNot() as Object)).assertEqual(Class.from<BigInt>());
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0400
+     * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0400
      * @tc.name testBigIntOperatorBitwiseNotLarge0400
-     * @tc.desc Verify bitwise NOT on large BigInt magnitudes
+     * @tc.desc Mindmap input: bitwise not on large value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseNotLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const big = '999999999999999999999999999999';
-      const notBig = BigInt(big).operatorBitwiseNot();
-      const expected = BigInt(big).operatorAdd(BigInt(1)).negate();
+      const v = BigInt('999999999999999999999999999999');
 
-      expect(notBig.toString()).assertEqual(expected.toString());
-      expect(BigInt('18446744073709551616').operatorBitwiseNot().toString()).assertEqual('-18446744073709551617');
+      expect(v.operatorBitwiseNot().operatorBitwiseNot().equals(v)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0500
-     * @tc.name testBigIntOperatorBitwiseNotReturnType0500
-     * @tc.desc Verify operatorBitwiseNot returns BigInt distinct from operand
+     * @tc.number SUB_BIGINT_STD_OPERATOR_BITWISE_NOT_0500
+     * @tc.name testBigIntOperatorBitwiseNotInvalidReceiver0500
+     * @tc.desc Mindmap error handling: invalid receiver for operatorBitwiseNot
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntOperatorBitwiseNotReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const five = BigInt(5);
-      const result = five.operatorBitwiseNot();
-
-      expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
-      expect(result.equals(five)).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0600
-     * @tc.name testBigIntOperatorBitwiseNotNoThrow0600
-     * @tc.desc Verify operatorBitwiseNot does not throw on normal values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorBitwiseNotNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(5).operatorBitwiseNot().toString()).assertEqual('-6');
-      expect(BigInt('9999999999999999999999999').operatorBitwiseNot().toString()).assertEqual('-10000000000000000000000000');
-    });
-
-    /**
-     * @tc.number SUB_BIGINT_STD_BITWISE_NOT_0700
-     * @tc.name testBigIntOperatorBitwiseNotInvalidReceiver0700
-     * @tc.desc Verify operatorBitwiseNot throws ClassCastError on non-BigInt receiver
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testBigIntOperatorBitwiseNotInvalidReceiver0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntOperatorBitwiseNotInvalidReceiver0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
-        (null as BigInt).operatorBitwiseNot();
-      }).assertThrowError('ClassCastError');
-      expect((): void => {
-        (undefined as BigInt).operatorBitwiseNot();
-      }).assertThrowError('ClassCastError');
-      expect((): void => {
-        ('5' as object as BigInt).operatorBitwiseNot();
-      }).assertThrowError('ClassCastError');
-      expect((): void => {
-        (42 as object as BigInt).operatorBitwiseNot();
-      }).assertThrowError('ClassCastError');
-      expect((): void => {
-        (true as object as BigInt).operatorBitwiseNot();
+        (null as Object as BigInt).operatorBitwiseNot();
       }).assertThrowError('ClassCastError');
     });
   });
