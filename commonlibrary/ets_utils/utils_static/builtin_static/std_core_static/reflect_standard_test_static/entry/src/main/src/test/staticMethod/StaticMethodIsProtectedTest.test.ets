@@ -204,7 +204,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
       expect(isProtected).assertFalse();
     });
@@ -301,7 +301,7 @@ export default function StaticMethodIsProtectedTest(): void {
       // 使用 public 方法验证 isProtected() 返回 boolean 类型
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isProtected = method!.isProtected();
       let isProtectedType = Class.of(isProtected).getName();
       expect(isProtectedType).assertEqual('std.core.Boolean');
@@ -319,7 +319,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       // 运行时: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       let isProtected = method!.isProtected();
       let isPublic = method!.isPublic();
@@ -353,7 +353,7 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('defaultMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
       // classes.md:835 — 无显式修饰符默认 public，此处应为 false
       expect(isProtected).assertFalse();
@@ -388,7 +388,7 @@ export default function StaticMethodIsProtectedTest(): void {
       // 使用 public 方法验证 isProtected() 不抛异常
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
       expect(isProtected).assertFalse();
     });
@@ -421,7 +421,7 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls: Class = Class.from<MyClass020>();
       let m1 = cls.getStaticMethod('publicAsync');
       let m2 = cls.getStaticMethod('protectedAsync');
-      let pubAccessible = m1 != undefined;
+      let pubAccessible = m1 !== undefined;
       let protInaccessible = m2 === undefined;
       expect(pubAccessible).assertTrue();
       expect(protInaccessible).assertTrue();
@@ -500,7 +500,7 @@ export default function StaticMethodIsProtectedTest(): void {
       // 使用 public 方法验证 isProtected 与其他属性检查的组合
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isProtected()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();

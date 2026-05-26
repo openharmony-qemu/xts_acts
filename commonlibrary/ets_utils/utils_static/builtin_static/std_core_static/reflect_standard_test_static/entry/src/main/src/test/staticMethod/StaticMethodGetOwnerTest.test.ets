@@ -159,9 +159,9 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      expect(owner != null).assertTrue();
+      expect(owner !== null).assertTrue();
     });
 
     /**
@@ -175,9 +175,9 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      expect(owner != null).assertTrue();
+      expect(owner !== null).assertTrue();
       let result = owner.getName().includes('MyClass002');
       expect(result).assertTrue();
     });
@@ -195,8 +195,8 @@ export default function StaticMethodGetOwnerTest(): void {
       let clsB = Class.from<ClassB003>();
       let methodA = clsA.getStaticMethod('methodA');
       let methodB = clsB.getStaticMethod('methodB');
-      expect(methodA != undefined).assertTrue();
-      expect(methodB != undefined).assertTrue();
+      expect(methodA !== undefined).assertTrue();
+      expect(methodB !== undefined).assertTrue();
       let ownerA = methodA!.getOwner();
       let ownerB = methodB!.getOwner();
       let nameA = ownerA.getName().includes('ClassA003');
@@ -218,8 +218,8 @@ export default function StaticMethodGetOwnerTest(): void {
       let childCls = Class.from<ChildClass004>();
       let parentMethod = parentCls.getStaticMethod('parentMethod');
       let childMethod = childCls.getStaticMethod('childMethod');
-      expect(parentMethod != undefined).assertTrue();
-      expect(childMethod != undefined).assertTrue();
+      expect(parentMethod !== undefined).assertTrue();
+      expect(childMethod !== undefined).assertTrue();
       let parentOwner = parentMethod!.getOwner();
       let childOwner = childMethod!.getOwner();
       let parentName = parentOwner.getName().includes('ParentClass004');
@@ -260,11 +260,11 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
       let ownerTypeName = Class.of(owner).getName();
-      expect(ownerTypeName != null).assertTrue();
-      expect(owner.getName != null).assertTrue();
+      expect(ownerTypeName !== null).assertTrue();
+      expect(owner.getName !== null).assertTrue();
     });
 
     /**
@@ -278,11 +278,11 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      expect(owner.getName() != null).assertTrue();
-      expect(owner.getSuper != null).assertTrue();
-      expect(owner.isSubtypeOf != null).assertTrue();
+      expect(owner.getName() !== null).assertTrue();
+      expect(owner.getSuper !== null).assertTrue();
+      expect(owner.isSubtypeOf !== null).assertTrue();
     });
 
     /**
@@ -296,7 +296,7 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<GenericClass008<int>>();
       let method = cls.getStaticMethod('staticMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
       let result = owner.getName().includes('GenericClass008');
       expect(result).assertTrue();
@@ -313,7 +313,7 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('ownMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
       let result = owner.getName().includes('MyClass009');
       expect(result).assertTrue();
@@ -330,9 +330,9 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
-      expect(owner != null).assertTrue();
+      expect(owner !== null).assertTrue();
     });
 
     /**
@@ -348,9 +348,9 @@ export default function StaticMethodGetOwnerTest(): void {
       let m1 = cls.getStaticMethod('publicMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
@@ -373,7 +373,7 @@ export default function StaticMethodGetOwnerTest(): void {
     it('testStaticMethodGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
       let result = owner.getName().includes('MyClass012');
       expect(result).assertTrue();
@@ -394,9 +394,9 @@ export default function StaticMethodGetOwnerTest(): void {
       let m1 = clsAbs.getStaticMethod('abstractMethod');
       let m2 = clsFin.getStaticMethod('finalMethod');
       let m3 = clsNor.getStaticMethod('normalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
@@ -420,8 +420,8 @@ export default function StaticMethodGetOwnerTest(): void {
       let cls: Class = Class.from<MyClass014>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       let gOwner = getter!.getOwner();
       let sOwner = setter!.getOwner();
       let getterName = gOwner.getName().includes('MyClass014');

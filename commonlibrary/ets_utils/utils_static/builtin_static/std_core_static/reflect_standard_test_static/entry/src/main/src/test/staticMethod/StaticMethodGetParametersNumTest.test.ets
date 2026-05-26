@@ -156,7 +156,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -172,7 +172,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -188,7 +188,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(0);
     });
@@ -204,7 +204,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let method = cls.getStaticMethod('singleParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(1);
     });
@@ -220,7 +220,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('multiTypes');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(4);
     });
@@ -236,7 +236,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('optionalParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -252,7 +252,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('varArgs');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -268,7 +268,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('genericParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -284,7 +284,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let setter = cls.getStaticMethod('%%set-name');
-      expect(setter != undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       let num: int = setter!.getParametersNum();
       expect(num).assertEqual(1);
     });
@@ -300,7 +300,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let getter = cls.getStaticMethod('%%get-name');
-      expect(getter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
       let num: int = getter!.getParametersNum();
       expect(num).assertEqual(0);
     });
@@ -316,7 +316,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num = method!.getParametersNum();
       let numType = Class.of(num).getName();
       expect(numType).assertEqual('std.core.Int');
@@ -333,7 +333,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num >= 0).assertTrue();
     });
@@ -349,7 +349,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('manyParams');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(10);
     });
@@ -365,7 +365,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('allPrimitives');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(9);
     });
@@ -381,7 +381,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass016>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(1);
     });
@@ -399,9 +399,9 @@ export default function StaticMethodGetParametersNumTest(): void {
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       expect(m1!.getParametersNum()).assertEqual(1);
       expect(m2!.getParametersNum()).assertEqual(1);
       expect(m3!.getParametersNum()).assertEqual(1);
@@ -418,7 +418,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass018>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       expect(num).assertEqual(2);
     });
@@ -436,8 +436,8 @@ export default function StaticMethodGetParametersNumTest(): void {
       let clsFin = Class.from<FinalClass019>();
       let m1 = clsAbs.getStaticMethod('abstractMethod');
       let m2 = clsFin.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.getParametersNum()).assertEqual(2);
       expect(m2!.getParametersNum()).assertEqual(3);
     });
@@ -456,10 +456,10 @@ export default function StaticMethodGetParametersNumTest(): void {
       let setter1 = cls.getStaticMethod('%%set-name');
       let getter2 = cls.getStaticMethod('%%get-age');
       let setter2 = cls.getStaticMethod('%%set-age');
-      expect(getter1 != undefined).assertTrue();
-      expect(setter1 != undefined).assertTrue();
-      expect(getter2 != undefined).assertTrue();
-      expect(setter2 != undefined).assertTrue();
+      expect(getter1 !== undefined).assertTrue();
+      expect(setter1 !== undefined).assertTrue();
+      expect(getter2 !== undefined).assertTrue();
+      expect(setter2 !== undefined).assertTrue();
       expect(getter1!.getParametersNum()).assertEqual(0);
       expect(setter1!.getParametersNum()).assertEqual(1);
       expect(getter2!.getParametersNum()).assertEqual(0);
@@ -496,7 +496,7 @@ export default function StaticMethodGetParametersNumTest(): void {
     it('testStaticMethodGetParametersNum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass022>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(num).assertEqual(paramTypes.length);

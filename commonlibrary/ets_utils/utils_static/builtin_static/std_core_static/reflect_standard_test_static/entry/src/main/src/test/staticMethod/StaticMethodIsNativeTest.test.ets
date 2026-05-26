@@ -144,7 +144,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
     });
@@ -160,7 +160,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
     });
@@ -176,7 +176,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('userMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
     });
 
@@ -191,7 +191,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls004 = Class.from<AbstractClass004>();
       let method = cls004.getStaticMethod('abstractMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
 
     });
@@ -207,7 +207,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls005 = Class.from<FinalClass005>();
       let method = cls005.getStaticMethod('finalMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
     });
 
@@ -222,7 +222,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls006 = Class.from<MyClass006>();
       let method = cls006.getStaticMethod('asyncMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
     });
 
@@ -237,7 +237,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isNative = method!.isNative();
       let isNativeType = Class.of(isNative).getName();
       expect(isNativeType).assertEqual('std.core.Boolean');
@@ -257,7 +257,7 @@ export default function StaticMethodIsNativeTest(): void {
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
       let m1 = cls.getStaticMethod('publicMethod');
-      expect(m1 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
     });
 
@@ -273,8 +273,8 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass011>();
       let m1 = cls.getStaticMethod('deprecatedMethod');
       let m2 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
     });
@@ -290,7 +290,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isNative: boolean = method!.isNative();
       expect(isNative).assertFalse();
     });
@@ -308,9 +308,9 @@ export default function StaticMethodIsNativeTest(): void {
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
       expect(m3!.isNative()).assertFalse();
@@ -327,7 +327,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
     });
 
@@ -346,9 +346,9 @@ export default function StaticMethodIsNativeTest(): void {
       let m1 = clsAbs.getStaticMethod('abstractMethod');
       let m2 = clsFin.getStaticMethod('finalMethod');
       let m3 = clsNor.getStaticMethod('normalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       expect(m1!.isNative()).assertFalse();
       expect(m2!.isNative()).assertFalse();
       expect(m3!.isNative()).assertFalse();
@@ -366,8 +366,8 @@ export default function StaticMethodIsNativeTest(): void {
       let cls: Class = Class.from<MyClass016>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       expect(getter!.isNative()).assertFalse();
       expect(setter!.isNative()).assertFalse();
     });
@@ -400,7 +400,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls018 = Class.from<MyClass018>();
       let method = cls018.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isNative()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertFalse();
@@ -436,7 +436,7 @@ export default function StaticMethodIsNativeTest(): void {
     it('testStaticMethodIsNative018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls019 = Class.from<MyClass019>();
       let userMethod = cls019.getStaticMethod('myMethod');
-      expect(userMethod != undefined).assertTrue();
+      expect(userMethod !== undefined).assertTrue();
       expect(userMethod!.isNative()).assertFalse();
       let arrayCls: Class = Class.from<Array<int>>();
       let arrayMethods = arrayCls.getStaticMethods();

@@ -160,9 +160,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
-      expect(returnType != null).assertTrue();
+      expect(returnType !== null).assertTrue();
     });
 
     /**
@@ -178,9 +178,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m1 = cls.getStaticMethod('returnString');
       let m2 = cls.getStaticMethod('returnInt');
       let m3 = cls.getStaticMethod('returnBoolean');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       let rt3 = m3!.getReturnType();
@@ -200,7 +200,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noReturn');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
       expect(rt.getName()).assertEqual('void');
     });
@@ -217,8 +217,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass004>();
       let m1 = cls.getStaticMethod('returnObject');
       let m2 = cls.getStaticMethod('returnMap');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       let result = rt1.getName().includes('MyClass004');
@@ -238,8 +238,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass005>();
       let m1 = cls.getStaticMethod('returnArray');
       let m2 = cls.getStaticMethod('returnFixedArray');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       expect(rt1.getName()).assertEqual('std.core.Array');
@@ -257,7 +257,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('returnGeneric');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType.getName()).assertEqual('std.core.Map');
     });
@@ -273,7 +273,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('returnUnion');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType.isUnion()).assertTrue();
     });
@@ -289,7 +289,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       let result = returnType.getName().includes('Promise');
       expect(result).assertTrue();
@@ -307,8 +307,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass009>();
       let m1 = cls.getStaticMethod('returnNullable');
       let m2 = cls.getStaticMethod('returnUndefinable');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       // spec/types.md:1725: T|undefined is a nullish union type, isUnion() should return true.
       // Known divergence: at runtime isUnion() returns false for int|undefined.
       let isUnion1 = m1!.getReturnType().isUnion();
@@ -328,11 +328,11 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass010>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType = method!.getReturnType();
       let returnTypeName = Class.of(returnType).getName();
-      expect(returnTypeName != null).assertTrue();
-      expect(returnType.getName != null).assertTrue();
+      expect(returnTypeName !== null).assertTrue();
+      expect(returnType.getName !== null).assertTrue();
     });
 
     /**
@@ -346,12 +346,12 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
-      expect(returnType.getName() != null).assertTrue();
-      expect(returnType.isPrimitive != null).assertTrue();
-      expect(returnType.isInterface != null).assertTrue();
-      expect(returnType.isFinal != null).assertTrue();
+      expect(returnType.getName() !== null).assertTrue();
+      expect(returnType.isPrimitive !== null).assertTrue();
+      expect(returnType.isInterface !== null).assertTrue();
+      expect(returnType.isFinal !== null).assertTrue();
     });
 
     /**
@@ -404,7 +404,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('chain');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
       let result = rt.getName().includes('MyClass013');
       expect(result).assertTrue();
@@ -421,9 +421,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
-      expect(returnType != null).assertTrue();
+      expect(returnType !== null).assertTrue();
     });
 
     /**
@@ -439,9 +439,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       let rt3 = m3!.getReturnType();
@@ -463,8 +463,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass016>();
       let m1 = cls.getStaticMethod('fetchData');
       let m2 = cls.getStaticMethod('fetchNumber');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let rt1: Class = m1!.getReturnType();
       let rt2: Class = m2!.getReturnType();
       let hasPromise1 = rt1.getName().includes('Promise');
@@ -486,8 +486,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let clsFin = Class.from<FinalClass017>();
       let m1 = clsAbs.getStaticMethod('abstractMethod');
       let m2 = clsFin.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
       expect(rt1.getName()).assertEqual('std.core.String');
@@ -506,8 +506,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let cls: Class = Class.from<MyClass018>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       let rtGetter = getter!.getReturnType();
       let rtSetter = setter!.getReturnType();
       expect(rtGetter.getName()).assertEqual('std.core.String');
@@ -552,7 +552,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass020>();
       let method = cls.getStaticMethod('getColor');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
       expect(rt.isEnum()).assertTrue();
     });
@@ -568,9 +568,9 @@ export default function StaticMethodGetReturnTypeTest(): void {
     it('testStaticMethodGetReturnType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass021>();
       let method = cls.getStaticMethod('identity');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
-      expect(rt != null).assertTrue();
+      expect(rt !== null).assertTrue();
     });
   });
 }

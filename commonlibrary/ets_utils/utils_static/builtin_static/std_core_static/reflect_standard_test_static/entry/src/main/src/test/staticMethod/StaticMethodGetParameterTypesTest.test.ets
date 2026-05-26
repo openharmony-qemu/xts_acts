@@ -157,9 +157,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-      expect(paramTypes != null).assertTrue();
+      expect(paramTypes !== null).assertTrue();
     });
 
     /**
@@ -173,7 +173,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
@@ -191,7 +191,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('noParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(0);
     });
@@ -207,7 +207,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass004>();
       let method = cls.getStaticMethod('singleParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].getName()).assertEqual('i32');
@@ -224,7 +224,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('multiTypes');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(4);
       expect(paramTypes[0].getName()).assertEqual('i32');
@@ -244,7 +244,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('optionalParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('i32');
@@ -263,7 +263,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('genericParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('std.core.Map');
@@ -281,7 +281,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('varArgs');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].getName()).assertEqual('std.core.Array');
@@ -298,7 +298,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('unionParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].isUnion()).assertTrue();
@@ -316,8 +316,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let cls: Class = Class.from<MyClass010>();
       let m1 = cls.getStaticMethod('objectParam');
       let m2 = cls.getStaticMethod('interfaceParam');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let p1: FixedArray<Class> = m1!.getParameterTypes();
       let p2: FixedArray<Class> = m2!.getParameterTypes();
       expect(p1[0].getName().includes('MyClass010')).assertTrue();
@@ -335,7 +335,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       let typeName: string = Class.of(paramTypes).getName();
       expect(typeName).assertEqual('std.core.Class[]');
@@ -352,12 +352,12 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass012>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       for (let i: int = 0; i < paramTypes.length; i++) {
-        expect(paramTypes[i].getName != null).assertTrue();
-        expect(paramTypes[i].isPrimitive != null).assertTrue();
-        expect(paramTypes[i].isInterface != null).assertTrue();
+        expect(paramTypes[i].getName !== null).assertTrue();
+        expect(paramTypes[i].isPrimitive !== null).assertTrue();
+        expect(paramTypes[i].isInterface !== null).assertTrue();
       }
     });
 
@@ -372,7 +372,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('allPrimitives');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(9);
       expect(paramTypes[0].getName()).assertEqual('i8');
@@ -397,7 +397,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass014>();
       let method = cls.getStaticMethod('manyParams');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(10);
       for (let i: int = 0; i < 10; i++) {
@@ -416,9 +416,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
-      expect(paramTypes != null).assertTrue();
+      expect(paramTypes !== null).assertTrue();
     });
 
     /**
@@ -434,9 +434,9 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let m1 = cls.getStaticMethod('normalMethod');
       let m2 = cls.getStaticMethod('asyncMethod');
       let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       let param0 = m1!.getParameterTypes()[0].getName();
       expect(param0).assertEqual('i32');
       let param1 = m2!.getParameterTypes()[0].getName();
@@ -456,7 +456,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass017>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(2);
       expect(paramTypes[0].getName()).assertEqual('std.core.String');
@@ -476,8 +476,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let clsFin = Class.from<FinalClass018>();
       let m1 = clsAbs.getStaticMethod('abstractMethod');
       let m2 = clsFin.getStaticMethod('finalMethod');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
       let p1: FixedArray<Class> = m1!.getParameterTypes();
       let p2: FixedArray<Class> = m2!.getParameterTypes();
       expect(p1.length).assertEqual(2);
@@ -501,8 +501,8 @@ export default function StaticMethodGetParameterTypesTest(): void {
       let cls: Class = Class.from<MyClass019>();
       let setter1 = cls.getStaticMethod('%%set-name');
       let setter2 = cls.getStaticMethod('%%set-age');
-      expect(setter1 != undefined).assertTrue();
-      expect(setter2 != undefined).assertTrue();
+      expect(setter1 !== undefined).assertTrue();
+      expect(setter2 !== undefined).assertTrue();
       let p1: FixedArray<Class> = setter1!.getParameterTypes();
       let p2: FixedArray<Class> = setter2!.getParameterTypes();
       expect(p1.length).assertEqual(1);
@@ -541,7 +541,7 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass021>();
       let method = cls.getStaticMethod('enumParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       expect(paramTypes[0].isEnum()).assertTrue();
@@ -559,11 +559,11 @@ export default function StaticMethodGetParameterTypesTest(): void {
       // spec/generics.md:64 — T extends Object is compatible with Object methods
       let cls: Class = Class.from<MyClass022>();
       let method = cls.getStaticMethod('constrainedParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       let paramType = paramTypes[0];
-      expect(paramType != null).assertTrue();
+      expect(paramType !== null).assertTrue();
       expect(paramType.isPrimitive()).assertFalse();
     });
 
@@ -578,13 +578,13 @@ export default function StaticMethodGetParameterTypesTest(): void {
     it('testStaticMethodGetParameterTypes023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass023>();
       let method = cls.getStaticMethod('unionParam');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let paramTypes: FixedArray<Class> = method!.getParameterTypes();
       expect(paramTypes.length).assertEqual(1);
       let paramType = paramTypes[0];
       expect(paramType.isUnion()).assertTrue();
       let constituents = paramType.getUnionConstituentTypes();
-      expect(constituents != null).assertTrue();
+      expect(constituents !== null).assertTrue();
     });
   });
 }

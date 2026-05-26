@@ -113,7 +113,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
       expect(name).assertEqual('test');
     });
@@ -154,8 +154,8 @@ export default function StaticMethodGetNameTest(): void {
       let cls: Class = Class.from<MyClass004>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       expect(getter!.getName()).assertEqual('%%get-name');
       expect(setter!.getName()).assertEqual('%%set-name');
     });
@@ -171,7 +171,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let name = method!.getName();
       let nameType = Class.of(name).getName();
       expect(nameType).assertEqual('std.core.String');
@@ -188,7 +188,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass006>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
       expect(name.length).assertLarger(0);
     });
@@ -204,7 +204,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass007>();
       let method = cls.getStaticMethod('a');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.getName()).assertEqual('a');
       expect(method!.getName().length).assertEqual(1);
     });
@@ -220,7 +220,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass008>();
       let method = cls.getStaticMethod('veryLongMethodNameWithManyCharacters');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.getName()).assertEqual('veryLongMethodNameWithManyCharacters');
     });
 
@@ -235,9 +235,9 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let name: string = method!.getName();
-      expect(name != null).assertTrue();
+      expect(name !== null).assertTrue();
     });
 
     /**
@@ -272,7 +272,7 @@ export default function StaticMethodGetNameTest(): void {
     it('testStaticMethodGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.getName()).assertEqual('fetchData');
     });
 
@@ -289,8 +289,8 @@ export default function StaticMethodGetNameTest(): void {
       let clsB = Class.from<ClassB012>();
       let methodA = clsA.getStaticMethod('methodA');
       let methodB = clsB.getStaticMethod('methodB');
-      expect(methodA != undefined).assertTrue();
-      expect(methodB != undefined).assertTrue();
+      expect(methodA !== undefined).assertTrue();
+      expect(methodB !== undefined).assertTrue();
       expect(methodA!.getName()).assertEqual('methodA');
       expect(methodB!.getName()).assertEqual('methodB');
     });
@@ -308,8 +308,8 @@ export default function StaticMethodGetNameTest(): void {
       let childCls = Class.from<ChildClass013>();
       let parentMethod = parentCls.getStaticMethod('parentMethod');
       let childMethod = childCls.getStaticMethod('childMethod');
-      expect(parentMethod != undefined).assertTrue();
-      expect(childMethod != undefined).assertTrue();
+      expect(parentMethod !== undefined).assertTrue();
+      expect(childMethod !== undefined).assertTrue();
       expect(parentMethod!.getName()).assertEqual('parentMethod');
       expect(childMethod!.getName()).assertEqual('childMethod');
     });

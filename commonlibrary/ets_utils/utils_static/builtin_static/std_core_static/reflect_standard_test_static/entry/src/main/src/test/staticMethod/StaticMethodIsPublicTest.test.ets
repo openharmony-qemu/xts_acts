@@ -162,7 +162,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass001>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
     });
@@ -178,7 +178,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass002>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
     });
@@ -222,7 +222,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass005>();
       let method = cls.getStaticMethod('defaultMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       // classes.md:835 — 无显式修饰符默认 public
       expect(isPublic).assertTrue();
@@ -239,7 +239,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls006 = Class.from<MyClass006>();
       let method = cls006.getStaticMethod('asyncMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
     });
@@ -255,7 +255,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls007 = Class.from<MyClass007>();
       let method = cls007.getStaticMethod('finalMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -284,7 +284,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass009>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPublic = method!.isPublic();
       let isPublicType = Class.of(isPublic).getName();
       expect(isPublicType).assertEqual('std.core.Boolean');
@@ -304,7 +304,7 @@ export default function StaticMethodIsPublicTest(): void {
       let methods = cls.getStaticMethods();
       expect(methods.length).assertEqual(1);
       let m1 = cls.getStaticMethod('publicMethod');
-      expect(m1 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
       expect(m1!.isPublic() && !m1!.isPrivate() && !m1!.isProtected()).assertTrue();
     });
 
@@ -319,7 +319,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls012 = Class.from<AbstractClass012>();
       let method = cls012.getStaticMethod('abstractMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -334,7 +334,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls013 = Class.from<FinalClass013>();
       let method = cls013.getStaticMethod('finalMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -350,8 +350,8 @@ export default function StaticMethodIsPublicTest(): void {
       let cls: Class = Class.from<MyClass014>();
       let getter = cls.getStaticMethod('%%get-name');
       let setter = cls.getStaticMethod('%%set-name');
-      expect(getter != undefined).assertTrue();
-      expect(setter != undefined).assertTrue();
+      expect(getter !== undefined).assertTrue();
+      expect(setter !== undefined).assertTrue();
       expect(getter!.isPublic()).assertTrue();
       expect(setter!.isPublic()).assertTrue();
     });
@@ -367,7 +367,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass015>();
       let method = cls.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPublic: boolean = method!.isPublic();
       expect(isPublic).assertTrue();
     });
@@ -383,7 +383,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls016 = Class.from<MyClass016>();
       let method = cls016.getStaticMethod('publicFinalMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -398,7 +398,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls017 = Class.from<MyClass017>();
       let method = cls017.getStaticMethod('publicAsyncMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
     });
@@ -414,7 +414,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls018 = Class.from<MyClass018>();
       let method = cls018.getStaticMethod('deprecatedMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -429,7 +429,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls019 = Class.from<MyClass019>();
       let method = cls019.getStaticMethod('fetchData');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isAsync()).assertTrue();
     });
@@ -463,9 +463,9 @@ export default function StaticMethodIsPublicTest(): void {
       let m1 = clsAbs.getStaticMethod('abstractPublic');
       let m2 = clsFin.getStaticMethod('finalPublic');
       let m3 = clsNor.getStaticMethod('normalPublic');
-      expect(m1 != undefined).assertTrue();
-      expect(m2 != undefined).assertTrue();
-      expect(m3 != undefined).assertTrue();
+      expect(m1 !== undefined).assertTrue();
+      expect(m2 !== undefined).assertTrue();
+      expect(m3 !== undefined).assertTrue();
       expect(m1!.isPublic()).assertTrue();
       expect(m2!.isPublic()).assertTrue();
       expect(m3!.isPublic()).assertTrue();
@@ -482,7 +482,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls022 = Class.from<MyClass022>();
       let method = cls022.getStaticMethod('factoryMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
     });
 
@@ -517,7 +517,7 @@ export default function StaticMethodIsPublicTest(): void {
     it('testStaticMethodIsPublic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls024 = Class.from<MyClass024>();
       let method = cls024.getStaticMethod('test');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isPrivate()).assertFalse();
       expect(method!.isProtected()).assertFalse();

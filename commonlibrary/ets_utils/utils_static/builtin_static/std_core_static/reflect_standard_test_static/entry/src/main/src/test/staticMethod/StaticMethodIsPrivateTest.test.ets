@@ -189,7 +189,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
       expect(isPrivate).assertFalse();
     });
@@ -291,7 +291,7 @@ export default function StaticMethodIsPrivateTest(): void {
       // 使用 public 方法验证 isPrivate() 返回 boolean 类型
       let cls: Class = Class.from<MyClass003>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPrivate = method!.isPrivate();
       let isPrivateType = Class.of(isPrivate).getName();
       expect(isPrivateType).assertEqual('std.core.Boolean');
@@ -309,7 +309,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass011>();
       let method = cls.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       // 运行时实际: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       let isPrivate = method!.isPrivate();
       let isPublic = method!.isPublic();
@@ -344,7 +344,7 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MyClass013>();
       let method = cls.getStaticMethod('defaultMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
       // classes.md:835 — 无显式修饰符默认 public，此处应为 false
       expect(isPrivate).assertFalse();
@@ -362,7 +362,7 @@ export default function StaticMethodIsPrivateTest(): void {
       // 使用 public 方法验证 isPrivate() 不抛异常
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
       expect(isPrivate).assertFalse();
     });
@@ -396,7 +396,7 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls: Class = Class.from<MyClass019>();
       let m1 = cls.getStaticMethod('publicAsync');
       let m2 = cls.getStaticMethod('privateAsync');
-      let pubAccessible = m1 != undefined;
+      let pubAccessible = m1 !== undefined;
       let privInaccessible = m2 === undefined;
       expect(pubAccessible).assertTrue();
       expect(privInaccessible).assertTrue();
@@ -494,7 +494,7 @@ export default function StaticMethodIsPrivateTest(): void {
       // 使用 public 方法验证 isPrivate 与其他属性检查的组合
       let cls003 = Class.from<MyClass003>();
       let method = cls003.getStaticMethod('publicMethod');
-      expect(method != undefined).assertTrue();
+      expect(method !== undefined).assertTrue();
       expect(method!.isPrivate()).assertFalse();
       expect(method!.isPublic()).assertTrue();
       expect(method!.isProtected()).assertFalse();
