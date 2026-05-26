@@ -7098,8 +7098,8 @@ export default function CalendarManagerTest() {
     });
 
     /**
-     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_23900001_0100
-     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_23900001_0100
+     * @tc.name   SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100
+     * @tc.number SUB_Application_CalendarManagerApi_OpenEventEditPage_PermissionDenied_0100
      * @tc.desc   Test openEventEditPage with no permission - using calendarMgrErr
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
