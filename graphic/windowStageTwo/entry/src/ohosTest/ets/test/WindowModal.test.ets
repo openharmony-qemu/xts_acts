@@ -1106,8 +1106,10 @@ export default function windowModalTest() {
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindow = await windowStage.createSubWindow("testSubWindow");
       try {
-        let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
         await subWindow.resizeAsync(400, 500)
         await subWindow.moveWindowToAsync(400, 400)
@@ -1134,7 +1136,12 @@ export default function windowModalTest() {
         });
       } catch (exception) {
         console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail()
+        if(!canIUseRes) {
+          expect(exception.code).assertEqual(801)
+        } else {
+          expect(true).assertFail()
+        }
+        await subWindow.destroyWindow()
         done()
       }
     })
@@ -1154,8 +1161,10 @@ export default function windowModalTest() {
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnCenter = await btn.getBoundsCenter()
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${message} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      let subWindow = await windowStage.createSubWindow("testSubWindow");
       try {
-        let subWindow = await windowStage.createSubWindow("testSubWindow");
         await subWindow.setUIContent('testability/pages/Index')
         await subWindow.resizeAsync(400, 500)
         await subWindow.moveWindowToAsync(400, 400)
@@ -1182,7 +1191,12 @@ export default function windowModalTest() {
         });
       } catch (exception) {
         console.error(`${message} Failed to create the subWindow. Cause code: ${exception.code}, message: ${exception.message}`);
-        expect().assertFail()
+        if(!canIUseRes) {
+          expect(exception.code).assertEqual(801)
+        } else {
+          expect(true).assertFail()
+        }
+        await subWindow.destroyWindow()
         done();
       }
     })
