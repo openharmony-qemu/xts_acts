@@ -70,11 +70,11 @@ export class MyNodeController extends NodeController {
         EAWorker.main().postTask(() => {
           col.appendChild(stack)
           this.myNode = stack
-          this.errorCode = 'createStackNode success'
+          this.errorCode = 'CreateStackNode success'
         })
       } catch (e) {
         EAWorker.main().postTask(() => {
-          this.errorCode = 'createStackNode error: ' + e.message
+          this.errorCode = 'CreateStackNode error: ' + e.message
         })
       }
     })
