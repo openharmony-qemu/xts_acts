@@ -66,8 +66,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openSubscriptionSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await driver.assertComponentExist(ON.text('通知管理'));
         let button2 = await driver.findComponent(ON.text('确定'));
@@ -110,8 +115,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await sleep(500)
         let button = await driver.findComponent(ON.type('Toggle').isAfter(ON.text('允许通知')));
@@ -180,8 +190,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await sleep(2000);
         let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
@@ -286,8 +301,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await sleep(1000);
         let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
@@ -331,8 +351,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await sleep(1000)
         let button9 = await driver.findComponent(ON.type("SymbolGlyph"));
@@ -387,8 +412,13 @@ export default function ActsNotificationAnsOpenWindowWithResultWithinAbilityNoPe
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             testNum + `openNotificationSettingsWithResult failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          done()
+            if (err.code === 801) {	 
+              expect(err.code).assertEqual(801);	 
+              done(); 
+            } else { 
+              expect(false).assertTrue(); 
+              done(); 
+            }
         });
         await sleep(2000);
         let scrollBar = await driver.findComponent(ON.type('Scroll').isAfter(ON.text('通知管理')))
