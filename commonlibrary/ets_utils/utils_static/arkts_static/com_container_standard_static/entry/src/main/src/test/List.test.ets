@@ -118,7 +118,7 @@ import LinkedListTest18 from "./LinkedList/LinkedListTest18.test";
 import LinkedListTest19 from "./LinkedList/LinkedListTest19.test";
 import LinkedListTest20 from "./LinkedList/LinkedListTest20.test";
 
-export default function testsuite() {
+export default function testsuite(): void {
   ArraylistTest1();
   ArraylistTest2();
   HashMapTest1();
