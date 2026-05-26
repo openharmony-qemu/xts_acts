@@ -2481,5 +2481,83 @@ export default function settingUiJsunit() {
       expect(code).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   openBiometricsSettingsPage_valid_param
+     * @tc.number openBiometricsSettingsPage_valid_param
+     * @tc.desc   openBiometricsSettingsPage_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openBiometricsSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openBiometricsSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openBiometricsSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openNfcSettingsPage_valid_param
+     * @tc.number openNfcSettingsPage_valid_param
+     * @tc.desc   openNfcSettingsPage_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openNfcSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openNfcSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openNfcSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   openAboutDeviceSettingsPage_valid_param
+     * @tc.number openAboutDeviceSettingsPage_valid_param
+     * @tc.desc   openAboutDeviceSettingsPage_valid_param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('openAboutDeviceSettingsPage_valid_param', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportInputMethod()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAboutDeviceSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openAboutDeviceSettingsPage_valid_param] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    });
   })
 }
