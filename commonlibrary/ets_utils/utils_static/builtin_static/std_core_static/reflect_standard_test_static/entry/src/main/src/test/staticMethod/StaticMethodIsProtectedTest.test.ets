@@ -386,7 +386,7 @@ export default function StaticMethodIsProtectedTest(): void {
      */
     it('testStaticMethodIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isProtected() 不抛异常
-      let cls003 = Class.from<PublicOnlyProtClass>();
+      let cls003 = Class.from<AllModifierProtClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();

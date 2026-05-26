@@ -360,7 +360,7 @@ export default function StaticMethodIsPrivateTest(): void {
      */
     it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 使用 public 方法验证 isPrivate() 不抛异常
-      let cls003 = Class.from<PublicOnlyClass>();
+      let cls003 = Class.from<AllModifierPrivateClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();

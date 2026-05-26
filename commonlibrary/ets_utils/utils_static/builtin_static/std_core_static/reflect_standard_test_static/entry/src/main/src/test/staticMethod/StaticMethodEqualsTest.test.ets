@@ -341,9 +341,9 @@ export default function StaticMethodEqualsTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<SingleTestClass001>();
-      let m1 = cls.getStaticMethod('sayHello');
-      let m2 = cls.getStaticMethod('sayHello');
+      let cls = Class.from<FinalTargetClass009>();
+      let m1 = cls.getStaticMethod('getFinalId');
+      let m2 = cls.getStaticMethod('getFinalId');
       expect(m1 !== undefined).assertTrue();
       expect(m2 !== undefined).assertTrue();
       let result1 = m1!.equals(m2!);
