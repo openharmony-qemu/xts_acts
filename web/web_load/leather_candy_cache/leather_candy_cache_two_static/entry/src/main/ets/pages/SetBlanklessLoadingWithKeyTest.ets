@@ -394,7 +394,7 @@ struct setBlanklessLoadingWithKeyTest {
                   Utils.emitEvent(0, 148570);
                 } catch (error) {
                   console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
-                  if (Number(error.code) == 801) {
+                  if (Number(error.code) === 801) {
                     Utils.emitEvent(0, 148570);
                     console.log(msg, ' 801 Capability not supported');
                   } else {
@@ -410,7 +410,7 @@ struct setBlanklessLoadingWithKeyTest {
                   Utils.emitEvent(0, 148580);
                 } catch (error) {
                   console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
-                  if (Number(error.code) == 801) {
+                  if (Number(error.code) === 801) {
                     Utils.emitEvent(0, 148580);
                     console.log(msg, ' 801 Capability not supported');
                   } else {

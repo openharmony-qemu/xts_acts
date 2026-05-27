@@ -175,9 +175,9 @@ export default function SetBlanklessLoadingWithKey() {
      * @tc.desc   test clearBlanklessLoadingCache value is undefined
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testClearBlanklessLoadingCacheStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testClearBlanklessLoadingCacheStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testClearBlanklessLoadingCache002', 10)
       await Utils.msSleep(3000);
@@ -194,9 +194,9 @@ export default function SetBlanklessLoadingWithKey() {
      * @tc.desc   test clearBlanklessLoadingCache value is []
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
+     * @tc.level  LEVEL2
      */
-    it('testClearBlanklessLoadingCacheStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testClearBlanklessLoadingCacheStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
       Utils.emitEvent('testClearBlanklessLoadingCache003', 10)
       await Utils.msSleep(3000);
