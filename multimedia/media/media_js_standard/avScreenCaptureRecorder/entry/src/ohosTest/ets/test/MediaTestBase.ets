@@ -40,6 +40,7 @@ export default class MediaTestBase {
   STOPRECORDER_EVENT = 'stop';
   RELEASECORDER_EVENT = 'release';
   PRESENTT_PICKER_EVENT = 'presentPicker';
+  ADDWATERMARK_EVENT = 'addWatermark'
   END_EVENT = 'end';
   FAIL_EVENT = 'fail';
   AV_CREATEAVPLAYER = 'createAVPlayer';
@@ -148,7 +149,7 @@ export default class MediaTestBase {
             this.testFail();
           }
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.CREATE_EVENT:
         steps.shift();
@@ -167,7 +168,7 @@ export default class MediaTestBase {
             this.testFail();
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.INIT_EVENT:
         steps.shift();
@@ -179,15 +180,15 @@ export default class MediaTestBase {
             console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code);
             expect(err.code).assertEqual(401);
             if (avConfig.fd == -1) {
-              let mySteps = new Array(
-                this.END_EVENT);
+              steps = [
+                this.END_EVENT];
             } else {
               console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
               this.testFail();
             }
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.SET_PICKER_MODE:
         steps.shift();
@@ -208,10 +209,8 @@ export default class MediaTestBase {
         }
 
         await this.driveFnNoSleep(1)
-        setTimeout(() => {
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }, recorderTime);
-
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.EXCLUDE_PICKER_WINDOWS:
         steps.shift();
@@ -226,10 +225,17 @@ export default class MediaTestBase {
         }
 
         await this.driveFnNoSleep(1)
-        setTimeout(() => {
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }, recorderTime);
-
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        break;
+      case this.ADDWATERMARK_EVENT:
+        steps.shift();
+        if (this.isTestSucceeded()) {
+          await this.handleWaterMark(avScreenCaptureRecorder);
+        }
+        await this.driveFnNoSleep(1)
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.STARTRECORDER_EVENT:
         steps.shift();
@@ -241,12 +247,9 @@ export default class MediaTestBase {
             this.testFail();
           });
         }
-
         await this.driveFnNoSleep(1)
-        setTimeout(() => {
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }, recorderTime);
-
+        await this.msleepAsync(recorderTime);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.SKIPPRIVACYMODE_EVENT:
         steps.shift();
@@ -265,7 +268,7 @@ export default class MediaTestBase {
             }
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.PAUSERECORDER_EVENT:
         steps.shift();
@@ -278,7 +281,7 @@ export default class MediaTestBase {
           });
         }
         await this.msleepAsync(recorderTime);
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.RESUMERECORDER_EVENT:
         steps.shift();
@@ -291,7 +294,7 @@ export default class MediaTestBase {
           });
         }
         await this.msleepAsync(recorderTime);
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.STOPRECORDER_EVENT:
         steps.shift();
@@ -303,7 +306,7 @@ export default class MediaTestBase {
             this.testFail();
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.RELEASECORDER_EVENT:
         steps.shift();
@@ -316,24 +319,25 @@ export default class MediaTestBase {
             this.testFail();
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         this.closeFd(this.outputFdObject.fd);
         break;
       case this.PRESENTT_PICKER_EVENT:
         steps.shift();
-        await avScreenCaptureRecorder?.presentPicker().then(() => {
-          console.info('avScreenCaptureRecorder presentPicker success');
-          this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-        }).catch((err: BusinessError) => {
-          console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
-          if (err.code == 5400102) {
-            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
-          } else {
-            console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
-            expect().assertFail()
-          }
-        })
-
+        if (this.isTestSucceeded()) {
+          await avScreenCaptureRecorder?.presentPicker().then(() => {
+            console.info('avScreenCaptureRecorder presentPicker success');
+            await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+          }).catch((err: BusinessError) => {
+            console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
+            if (err.code == 5400102) {
+              await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+            } else {
+              console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+              expect().assertFail()
+            }
+          })
+        }
         break;
       case this.SET_MIC_ENABLE_EVENT:
         steps.shift();
@@ -345,7 +349,7 @@ export default class MediaTestBase {
             this.testFail();
           });
         }
-        this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+        await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
         break;
       case this.AV_CREATEAVPLAYER:
         steps.shift();
@@ -762,6 +766,307 @@ export default class MediaTestBase {
     let exitCode: number = result['exitCode']
     console.info('isSupportSceneboard exitCode case', JSON.stringify(exitCode));
     return exitCode;
+  }
+
+  async createAVScreenCaptureRecorder(done: Function) {
+    await media.createAVScreenCaptureRecorder().then((captureRecorder) => {
+      if (captureRecorder != null) {
+        this.avScreenCaptureRecorder = captureRecorder;
+        console.info('createAVScreenCaptureRecorder success');
+      } else {
+        console.error('createAVScreenCaptureRecorder fail');
+        expect().assertFail();
+        done();
+      }
+    }).catch((error: BusinessError) => {
+        console.error(`createAVScreenCaptureRecorder catchCallback, error message:${error.message}`);
+        expect().assertFail();
+        done();
+    });
+  }
+
+  async initAVScreenCaptureRecorder(done: Function) {
+    this.outputName = mediaTestBthisase.resourceName();
+    this.outputFdObject = mediaTestBase.getFd(this.outputName);
+
+    let avConfig: media.AVScreenCaptureRecordConfig = {
+    fd: this.outputFdObject.fd,
+    frameWidth: 640,
+    frameHeight: 480,
+    videoBitrate: 10000000,
+    audioSampleRate: 48000,
+    audioChannelCount: 1,
+    audioBitrate: 96000,
+    preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H265_AAC_MP4,
+    strategy: {
+      privacyMaskMode: 1,
+    }
+    }
+    await this.avScreenCaptureRecorder?.init(avConfig).then(() => {
+      console.info('avScreenCaptureRecorder init success');
+    }).catch((err: BusinessError) => {
+      console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
+      console.info('avScreenCaptureRecorder initwitherror failed, error code is:' + err.code);
+      expect().assertFail();
+      done();
+    });
+  }
+
+  async startAVScreenCaptureRecorder(done: Function) {
+    await this.avScreenCaptureRecorder?.startRecording().then(() => {
+      console.info('avScreenCaptureRecorder start success');
+    }).catch((err: BusinessError) => {
+      console.error('avScreenCaptureRecorder start failed, error: ' + err.message);
+      expect().assertFail();
+      doen();
+    });
+  }
+
+  async stopAVScreenCaptureRecorder(done: Function) {
+    await this.avScreenCaptureRecorder?.stopRecording().then(() => {
+      console.info('avScreenCaptureRecorder stop success');
+    }).catch((err: BusinessError) => {
+      console.error('avScreenCaptureRecorder stop failed, error: ' + err.message);
+      expect().assertFail();
+      doen();
+    });
+  }
+
+  async releaseAVScreenCaptureRecorder(done: Function) {
+    await this.avScreenCaptureRecorder?.release().then(() => {
+      console.info('avScreenCaptureRecorder release success');
+      this.avScreenCaptureRecorder = null;
+    }).catch((err: BusinessError) => {
+      console.error('avScreenCaptureRecorder release failed, error: ' + err.message);
+      this.closeFd(this.outputFdObject.fd);
+      expect().assertFail();
+      doen();
+      });
+    this.closeFd(this.outputFdObject.fd);
+  }
+
+  async handleWaterMark(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await avScreenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect(watermarkCount).assertEqual(1);
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      this.testFail();
+    }
+  }
+
+  async handleWaterMarkErrorState(done: Function) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+      done();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(5400102);
+    }
+  }
+
+  async handleWaterMarkOutRange() {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+      // 循环调用 addWatermark 6次
+      for (let i = 0; i < 6; i++) {
+        const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(pixelMap, waterConfig);
+        console.info(`addWatermark success, times: ${i + 1}, watermarkCount: ${watermarkCount}`);
+        expect(watermarkCount).assertEqual(i + 1);
+      } 
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(5400108);
+    }
+  }
+
+  async handleWaterErrorValue1(done: Function) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(null, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+      done();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(401);
+    }
+  }
+
+  async handleWaterErrorValue2(done: Function) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(undefined, waterConfig);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+      done();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(401);
+    }
+  }
+
+  async handleWaterErrorValue3(done: Function) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(pixelMap, null);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+      done();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(401);
+    }
+  }
+
+  async handleWaterErrorValue4(done: Function) {
+    try {
+      console.info('addWatermark: start');
+      let color: ArrayBuffer = new ArrayBuffer(512 * 512 * 4);
+      let bufferArr = new Uint8Array(color);
+      for (let i = 0; i < bufferArr.length; i += 4) {
+        bufferArr[i] = 255;
+        bufferArr[i + 1] = 0;
+        bufferArr[i + 2] = 122;
+        bufferArr[i + 3] = 255;
+      }
+      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
+ 
+      let waterConfig: media.WatermarkConfiguration = {
+        top: 100,
+        left: 100,
+        width: 512,
+        height: 512,
+      }
+      console.info(`case addWatermark waterConfig` + JSON.stringify(waterConfig));
+ 
+      const watermarkCount: number = await this.avScreenCaptureRecorder!.addWatermark(pixelMap, undefined);
+      console.info(`addWatermark watermarkCount:` + watermarkCount);
+      expect().assertFail();
+      done();
+    } catch (error) {
+      console.error('addWatermark failed and catch error is ' + error.message + error.code);
+      expect(error.code).assertEqual(401);
+    }
   }
 }
 
