@@ -2965,7 +2965,7 @@ export default function windowLayoutTest() {
 
       } catch (err) {
         console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
-        if (!isSyscapSessionManagerSupported || (deviceType !== '2in1' && deviceType !== 'phone' && deviceType !== 'tablet')) {
+        if (!isSyscapSessionManagerSupported) {
           expect(err.code).assertEqual(801);
           done();
         } else {
