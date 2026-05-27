@@ -168,5 +168,44 @@ export default function SetBlanklessLoadingWithKey() {
       inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
       await Utils.msSleep(4000);
     })
+
+    /**
+     * @tc.name   testClearBlanklessLoadingCacheStatic002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHETEST_0200
+     * @tc.desc   test clearBlanklessLoadingCache value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearBlanklessLoadingCacheStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCache002', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCache002', 0, 148570, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+
+    /**
+     * @tc.name   testClearBlanklessLoadingCacheStatic003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_CLEARBLANKLESSLOADINGCACHETEST_0300
+     * @tc.desc   test clearBlanklessLoadingCache value is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testClearBlanklessLoadingCacheStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
+      Utils.emitEvent('testClearBlanklessLoadingCache003', 10)
+      await Utils.msSleep(3000);
+      Utils.registerEvent('testClearBlanklessLoadingCache003', 0, 148580, done);
+      await Utils.msSleep(2000);
+      inspector.sendEventByKey('setBlanklessLoadingWithKeyTestButton', 10, '');
+      await Utils.msSleep(6000);
+      done()
+    })
+    
   })
 }

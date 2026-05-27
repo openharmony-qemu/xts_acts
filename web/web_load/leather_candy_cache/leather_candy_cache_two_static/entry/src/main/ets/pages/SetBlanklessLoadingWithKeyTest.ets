@@ -387,6 +387,38 @@ struct setBlanklessLoadingWithKeyTest {
                 }
                 break;
               }
+              case 'testClearBlanklessLoadingCache002': {
+                let msg = 'testClearBlanklessLoadingCache002';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache(undefined);
+                  Utils.emitEvent(0, 148570);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(0, 148570);
+                    console.log(msg, ' 801 Capability not supported');
+                  } else {
+                    Utils.emitEvent(401, 148570);
+                  }
+                }
+                break;
+              }
+              case 'testClearBlanklessLoadingCache003': {
+                let msg = 'testClearBlanklessLoadingCache003';
+                try {
+                  webView.WebviewController.clearBlanklessLoadingCache([]);
+                  Utils.emitEvent(0, 148580);
+                } catch (error) {
+                  console.log(msg, 'ErrorCode: ' + error.code, ' Message: ' + error.message);
+                  if (Number(error.code) == 801) {
+                    Utils.emitEvent(0, 148580);
+                    console.log(msg, ' 801 Capability not supported');
+                  } else {
+                    Utils.emitEvent(401, 148580);
+                  }
+                }
+                break;
+              }
             }
           })
 
