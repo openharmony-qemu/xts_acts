@@ -676,8 +676,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         reflect.getInstanceFieldsRecursive(null as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -694,8 +693,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         reflect.getInstanceFieldsRecursive(undefined as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -712,8 +710,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         reflect.getInstanceFieldsRecursive((new BasicFieldClass()) as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -731,8 +728,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         reflect.getInstanceFieldsRecursive(invalidArg as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -750,8 +746,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         reflect.getInstanceFieldsRecursive(invalidArg as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -935,8 +930,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         fields[0].getValue(null as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -955,8 +949,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
         fields[0].getValue(undefined as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1186,8 +1179,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
             field.setValue(obj, "new value");
             expect().assertFail();
           } catch (error) {
-            expect(error instanceof Error).assertEqual(true);
-            expect((error as Error).name).assertEqual('TypeError');
+            expect(error.name).assertEqual('TypeError');
           }
         }
       }
@@ -1347,8 +1339,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
             field.setValue(obj, 200);
             expect().assertFail();
           } catch (error) {
-            expect(error instanceof Error).assertEqual(true);
-            expect((error as Error).name).assertEqual('TypeError');
+            expect(error.name).assertEqual('TypeError');
           }
         }
       }

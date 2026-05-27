@@ -638,8 +638,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive(null as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -656,8 +655,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive(undefined as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -674,8 +672,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive((new BasicGetterClass()) as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -693,8 +690,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive(invalidArg as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -712,8 +708,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive(invalidArg as Class);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1522,8 +1517,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         reflect.getInstanceGettersRecursive(Class.from<InvokeGetterClass>())[0].invoke(new InvokeOtherClass());
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 

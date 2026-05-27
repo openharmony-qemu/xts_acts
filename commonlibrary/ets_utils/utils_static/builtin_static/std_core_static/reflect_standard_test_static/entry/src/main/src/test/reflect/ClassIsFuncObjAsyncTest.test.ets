@@ -964,8 +964,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
         reflect.isFuncObjAsync(null as Function);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -982,8 +981,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
         reflect.isFuncObjAsync(undefined as Function);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1001,8 +999,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
         reflect.isFuncObjAsync(invalidArg as Function);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 

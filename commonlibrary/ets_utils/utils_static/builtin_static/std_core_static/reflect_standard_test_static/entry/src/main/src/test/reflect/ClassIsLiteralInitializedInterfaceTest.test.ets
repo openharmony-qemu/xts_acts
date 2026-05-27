@@ -321,8 +321,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
         reflect.isLiteralInitializedInterface(null as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -339,8 +338,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
         reflect.isLiteralInitializedInterface(undefined as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
