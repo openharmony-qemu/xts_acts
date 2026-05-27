@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import window from '@ohos.window';
+import display from '@ohos.display';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -65,9 +66,19 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_singleRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let message = 'testSetTouchableAreas_singleRect';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = Math.floor(currentWindowRect.width / 3);
+      let rectHeight = Math.floor(currentWindowRect.height / 3);
+      let rectLeft = Math.floor(currentWindowRect.width / 3);
+      let rectTop = Math.floor(currentWindowRect.height / 3);
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 }
+        { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -101,11 +112,31 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_multipleRects', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_multipleRects';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 },
-        { left: 0, top: 50, width: 150, height: 200 },
-        { left: 300, top: 300, width: 100, height: 100 }
+        { 
+          left: Math.floor(currentWindowRect.width / 3),
+          top: Math.floor(currentWindowRect.height / 3),
+          width: Math.floor(currentWindowRect.width / 3),
+          height: Math.floor(currentWindowRect.height / 3)
+        },
+        { 
+          left: 0,
+          top: Math.floor(currentWindowRect.height / 6),
+          width: Math.floor(currentWindowRect.width / 4),
+          height: Math.floor(currentWindowRect.height / 3)
+        },
+        { 
+          left: Math.floor(currentWindowRect.width * 2 / 3),
+          top: Math.floor(currentWindowRect.height * 2 / 3),
+          width: Math.floor(currentWindowRect.width / 3),
+          height: Math.floor(currentWindowRect.height / 3)
+        }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -139,10 +170,23 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_maxRects', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_maxRects';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = Math.floor(currentWindowRect.width / 10);
+      let rectHeight = Math.floor(currentWindowRect.height / 10);
       let touchableRects: Array<window.Rect> = [];
+      
       for (let i = 0; i < 10; i++) {
-        touchableRects.push({ left: i * 50, top: i * 50, width: 100, height: 100 });
+        touchableRects.push({
+          left: Math.floor(currentWindowRect.width * i / 10),
+          top: Math.floor(currentWindowRect.height * i / 10),
+          width: rectWidth,
+          height: rectHeight
+        });
       }
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -336,6 +380,64 @@ export default function windowPropertiesTest3() {
     });
 
     /**
+     * @tc.name   testSetTouchableAreas_null
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_0900
+     * @tc.desc   传入null参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchableAreas_null';
+      try {
+        await mainWindowClass.setTouchableAreas(null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetTouchableAreas_undefined
+     * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_FUNCTION_1000
+     * @tc.desc   传入undefined参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetTouchableAreas_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetTouchableAreas_undefined';
+      try {
+        await mainWindowClass.setTouchableAreas(undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
      * @tc.name   testSetTouchableAreas_floatParams
      * @tc.number SUB_WINDOW_SETTOUCHABLEAREAS_BOUNDARY_0100
      * @tc.desc   Rect参数使用浮点数，验证向下取整后调用成功
@@ -345,9 +447,20 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_floatParams', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_floatParams';
+      let currentWindowRect = mainWindowClass.getWindowProperties().windowRect;
+      console.info(`${message} currentWindowRect: ${JSON.stringify(currentWindowRect)}`);
+      
+      let rectWidth = 10.5;
+      let rectHeight = 10.5;
+      let rectLeft = 0;
+      let rectTop = 0;
+      
       let touchableRects: Array<window.Rect> = [
-        { left: 100.5, top: 100.5, width: 200.5, height: 200.5 }
+        { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
       ];
+      console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+      console.info(`${message} Verify float params: left=${rectLeft}, top=${rectTop}, width=${rectWidth}, height=${rectHeight}`);
+      
       try {
         await mainWindowClass.setTouchableAreas(touchableRects);
         console.info(`${message} Succeeded in setting touchable areas.`);
@@ -417,9 +530,6 @@ export default function windowPropertiesTest3() {
      */
     it('testSetTouchableAreas_windowDestroyed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let message = 'testSetTouchableAreas_windowDestroyed';
-      let touchableRects: Array<window.Rect> = [
-        { left: 100, top: 100, width: 200, height: 200 }
-      ];
       let config: window.Configuration = {
         name: 'testSetTouchableAreas_windowDestroyed',
         windowType: window.WindowType.TYPE_DIALOG,
@@ -428,6 +538,19 @@ export default function windowPropertiesTest3() {
       };
       try {
         let testWindow = await window.createWindow(config);
+        let testWindowRect = testWindow.getWindowProperties().windowRect;
+        console.info(`${message} testWindowRect: ${JSON.stringify(testWindowRect)}`);
+        
+        let rectWidth = Math.floor(testWindowRect.width / 3);
+        let rectHeight = Math.floor(testWindowRect.height / 3);
+        let rectLeft = Math.floor(testWindowRect.width / 3);
+        let rectTop = Math.floor(testWindowRect.height / 3);
+        
+        let touchableRects: Array<window.Rect> = [
+          { left: rectLeft, top: rectTop, width: rectWidth, height: rectHeight }
+        ];
+        console.info(`${message} touchableRects: ${JSON.stringify(touchableRects)}`);
+        
         await testWindow.destroyWindow();
         await sleep(500);
         try {
@@ -726,6 +849,106 @@ export default function windowPropertiesTest3() {
         err = err as BusinessError;
         console.error(`${message} Failed to create window. Cause: ${err.code}, ${err.message}`);
         done();
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_emptyString
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0800
+     * @tc.desc   设置空字符串颜色，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_emptyString', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_emptyString';
+      let activeColor: string = '';
+      let inactiveColor: string = '';
+      try {
+        mainWindowClass.setWindowContainerModalColor(activeColor, inactiveColor);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (deviceType === '2in1') {
+          if (exception.code === 401) {
+            console.info(`${message} Expected error 401.`);
+            expect(exception.code).assertEqual(401);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        } else {
+          if (exception.code === 801) {
+            console.info(`${message} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_null
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0900
+     * @tc.desc   设置null颜色参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_null';
+      try {
+        mainWindowClass.setWindowContainerModalColor(null, null);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testSetWindowContainerModalColor_undefined
+     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_1000
+     * @tc.desc   设置undefined颜色参数，验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testSetWindowContainerModalColor_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testSetWindowContainerModalColor_undefined';
+      try {
+        mainWindowClass.setWindowContainerModalColor(undefined, undefined);
+        console.error(`${message} Should not succeed.`);
+        expect().assertFail();
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (exception.code === 401) {
+          console.info(`${message} Expected error 401.`);
+          expect(exception.code).assertEqual(401);
+          done();
+        } else {
+          expect().assertFail();
+          done();
+        }
       }
     });
 
@@ -1035,5 +1258,95 @@ export default function windowPropertiesTest3() {
         }
       }
     });
+
+    /**
+     * @tc.name   testGetAllWindowLayoutInfo_excludeSystemWindowsFalse
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_0900
+     * @tc.desc   excludeSystemWindows为false，不排除系统窗口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAllWindowLayoutInfo_excludeSystemWindowsFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testGetAllWindowLayoutInfo_excludeSystemWindowsFalse';
+      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let option: window.WindowInfoOptions = { excludeSystemWindows: false };
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      try {
+        let data = await window.getAllWindowLayoutInfo(displayId, option);
+        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+        expect(data.length > 0).assertTrue();
+        if (data.length > 0) {
+          let rect = data[0].windowRect;
+          expect(rect.left >= 0).assertTrue();
+          expect(rect.top >= 0).assertTrue();
+          expect(rect.width > 0).assertTrue();
+          expect(rect.height > 0).assertTrue();
+          let alpha = data[0].windowAlpha;
+          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+        }
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testGetAllWindowLayoutInfo_optionNull
+     * @tc.number SUB_WINDOW_GETALLWINDOWLAYOUTINFO_FUNCTION_1000
+     * @tc.desc   传入option为null，获取所有可见窗口布局信息
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testGetAllWindowLayoutInfo_optionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let message = 'testGetAllWindowLayoutInfo_optionNull';
+      let displayId: number = mainWindowClass.getWindowProperties().displayId ?? 0;
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      try {
+        let data = await window.getAllWindowLayoutInfo(displayId, null);
+        console.info(`${message} Succeeded in getting window layout info. Data: ${JSON.stringify(data)}`);
+        expect(data.length > 0).assertTrue();
+        if (data.length > 0) {
+          let rect = data[0].windowRect;
+          expect(rect.left >= 0).assertTrue();
+          expect(rect.top >= 0).assertTrue();
+          expect(rect.width > 0).assertTrue();
+          expect(rect.height > 0).assertTrue();
+          let alpha = data[0].windowAlpha;
+          expect(alpha! >= 0 && alpha! <= 1).assertTrue();
+        }
+        done();
+      } catch (exception) {
+        exception = exception as BusinessError;
+        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
+        if (isSupport === false){
+          if (exception.code === 801) {
+            console.info(`${message} Capability not supported.`);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }else{
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
   });
 }
