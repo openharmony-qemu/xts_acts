@@ -231,6 +231,7 @@ export default function DemuxerFunc2TestTest() {
     });
 
     /**
+     * @tc.name SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0009
      * @tc.number SUB_MEDIA_DEMUXER_WAV_ALAW_FUNC_0009
      * @tc.desc test
      * @tc.type FUNC
@@ -497,7 +498,7 @@ export default function DemuxerFunc2TestTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('SUB_MEDIA_EMUXER_FUNCTION_AUDIO_TRACK_0020', Level.LEVEL1, async () => {
+    it('SUB_MEDIA_DEMUXER_FUNCTION_AUDIO_TRACK_0020', Level.LEVEL1, async () => {
       let result:number = await testNapi.runFunc2Test(30);
       expect(result).assertEqual(0);
     });
