@@ -1974,8 +1974,11 @@ export default function windowFocusTest() {
       let subWindow = await windowStage.createSubWindow('SUB_WINDOW_ENV_IS_FOCUSED_HIGHLIGHTED_0100');
       try {
         await subWindow.setUIContent('testability/pages/Index5');
+        let displayInfo: display.Display = display.getDefaultDisplaySync()
+        console.log(`${caseName} getDefaultDisplaySync: ${JSON.stringify(displayInfo)}`);
+        await subWindow.resize(displayInfo.width,displayInfo.height)
         await subWindow.showWindow();
-        await sleep(500);
+        await sleep(1000);
         subWindow.on('windowHighlightChange', callback)
         subWindow.on('windowEvent', callback2);
         let mainWin = windowStage.getMainWindowSync();

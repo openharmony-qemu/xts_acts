@@ -38,7 +38,7 @@ class Cat {
   }
 }
 
-export default function ArrayListTest2() {
+export default function ArrayListTest2(): void {
   describe('arrayListTest2', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(10)

@@ -17,10 +17,12 @@ import globalShortcutKeyTest from './globalShotCutKeyTest/globalShortcutKey.test
 import globalShortcutKeyTest3 from './globalShotCutKeyTest/globalShortcutKey3.test';
 import globalShortcutKeyTest2 from './globalShotCutKeyTest/globalShortcutKey2.test';
 import ShortcutKeyTest from './keyboardShortcutTest/ShortcutKey.test'
+import smartGestureShortcutTest from './SmartGestureTest/SmartGestureShortcut.test';
 
 export default function testsuite() {
   globalShortcutKeyTest();
   globalShortcutKeyTest2();
   globalShortcutKeyTest3();
   ShortcutKeyTest();
+  smartGestureShortcutTest();
 }

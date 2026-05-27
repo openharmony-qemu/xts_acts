@@ -223,6 +223,8 @@ export default function AVScreenCaptureRecorderTest() {
         mediaTestBase.SETONCALLBACK_EVENT,
         //setMicEnable
         mediaTestBase.SET_MIC_ENABLE_EVENT,
+        //setMicEnableFalse
+        mediaTestBase.SET_MIC_ENABLE_EVENT_FALSE,
         // start recorder
         mediaTestBase.STARTRECORDER_EVENT,
         // skip PrivacyMode

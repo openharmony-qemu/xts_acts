@@ -56,7 +56,7 @@ function tagValueFuncB(name: string, value: string): boolean {
   return true;
 }
 
-export default function actsXml4Test() {
+export default function actsXml4Test(): void {
   describe('actsXml4Test', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

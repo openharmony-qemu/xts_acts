@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-export default function Int8ArrayTest() {
+export default function Int8ArrayTest(): void {
   describe('Int8ArrayTest', (): void => {
 
     afterEach(async (): Promise<void> => {

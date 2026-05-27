@@ -23,6 +23,12 @@ import ArrayToSortedMindMapTest from './array/Array_ToSorted/ToSorted.test';
 import ArrayToSplicedMindMapTest from './array/Array_ToSpliced/ToSpliced.test';
 import ArrayToStringMindMapTest from './array/Array_ToString/ToString.test';
 import ArrayUnshiftMindMapTest from './array/Array_Unshift/Unshift.test';
+import ArrayValuesTestSupplement from './array/Array_Prototype_Values/ArrayValuesTest.test';
+import ArrayWithTestSupplement from './array/Array_Prototype_With/ArrayWithTest.test';
+import ArraySymbolIteratorTestSupplement from './array/Array_Prototype_Symbol_Iterator/ArraySymbolIteratorTest.test';
+import ArraySymbolUnscopables1TestSupplement from './array/Array_Prototype_Symbol_Unscopables/ArraySymbolUnscopables1Test.test';
+import ArraySymbolUnscopables2TestSupplement from './array/Array_Prototype_Symbol_Unscopables/ArraySymbolUnscopables2Test.test';
+import ArraySymbolSpeciesTestSupplement from './array/Array_Prototype_Symbol_Species/ArraySymbolSpeciesTest.test';
 
 
 export default function testsuite() {
@@ -36,4 +42,10 @@ export default function testsuite() {
   ArrayToSplicedMindMapTest();
   ArrayToStringMindMapTest();
   ArrayUnshiftMindMapTest();
+  ArrayValuesTestSupplement();
+  ArrayWithTestSupplement();
+  ArraySymbolIteratorTestSupplement();
+  ArraySymbolUnscopables1TestSupplement();
+  ArraySymbolUnscopables2TestSupplement();
+  ArraySymbolSpeciesTestSupplement();
 }

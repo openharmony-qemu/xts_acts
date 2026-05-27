@@ -1,4 +1,5 @@
 import abilityTest from './Ability.test';
+import startAbilityForResultTest from './StartAbilityForResult.test';
 import onConnectParameterTest from './OnConnectParameter.test';
 import onFailedParameterTest from './OnFailedParameter.test';
 import connectNativeParameterTest from './ConnectNativeParameter.test';
@@ -12,9 +13,9 @@ import webExtensionConnectionCallbackOnFailedParameterTest from './WebExtensionC
 import connectNativeNullUndefinedParameterTest from './ConnectNativeNullUndefinedParameter.test'
 import disconnectNativeNullUndefinedParameterTest from './DisconnectNativeNullUndefinedParameter.test'
 
-
 export default function testsuite() {
   abilityTest();
+  startAbilityForResultTest();
   onConnectParameterTest();
   onFailedParameterTest();
   connectNativeParameterTest();

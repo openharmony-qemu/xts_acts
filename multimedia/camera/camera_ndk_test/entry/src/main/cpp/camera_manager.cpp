@@ -1590,6 +1590,38 @@ Camera_ErrorCode NDKCamera::SessionSetZoomRatio(float zoom)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::SessionGetZoomPointInfos(int useCaseCode)
+{
+    LOG("SessionGetZoomPointInfos begin.");
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomPointInfoSize_, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &zoomPointInfoSize_, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, nullptr, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomPointInfoSize_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetZoomPointInfos failed. %d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SessionDeleteZoomPointInfos(int useCaseCode)
+{
+    LOG("SessionDeleteZoomPointInfos begin.");
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_DeleteZoomPointInfos(captureSession_, zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_DeleteZoomPointInfos(captureSession_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_DeleteZoomPointInfos failed. %d", ret_);
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::SessionIsVideoStabilizationModeSupported(uint32_t mode)
 {
     LOG("isVideoStabilizationModeSupported begin.");

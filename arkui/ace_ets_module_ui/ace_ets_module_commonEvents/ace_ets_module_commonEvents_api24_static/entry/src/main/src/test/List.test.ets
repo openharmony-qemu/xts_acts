@@ -45,6 +45,7 @@ import setCustomCursor from './setCustomCursor/setCustomCursor.test';
 import shouldRecognizerParallelWith from './shouldRecognizerParallelWith/shouldRecognizerParallelWith.test'
 import orphanCharOptimization from './orphanCharOptimization/orphanCharOptimization.test'
 import orphanCharOptimizationundefined from './orphanCharOptimization/orphanCharOptimization_undefined.test'
+import EnableEventPassthroughTest from './enableEventPassthrough/EnableEventPassthroughTest.test'
 
 export default function testsuite() {
   getSizeLimitationTest();
@@ -79,4 +80,5 @@ export default function testsuite() {
   setCustomCursor();
   shouldRecognizerParallelWith();
   orphanCharOptimizationundefined();
+  EnableEventPassthroughTest();
 }

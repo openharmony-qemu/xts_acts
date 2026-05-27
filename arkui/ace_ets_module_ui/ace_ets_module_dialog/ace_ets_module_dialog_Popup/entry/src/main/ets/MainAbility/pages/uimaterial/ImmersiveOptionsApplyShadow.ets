@@ -48,6 +48,8 @@ struct ImmersiveOptionsApplyShadow {
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THICK,
+          interactive:false,
+          lightEffect:undefined,
           applyShadow: true
         }))
       }
@@ -63,6 +65,8 @@ struct ImmersiveOptionsApplyShadow {
         .justifyContent(FlexAlign.Center)
         .systemMaterial(new uiMaterial.ImmersiveMaterial({
           style: uiMaterial.ImmersiveStyle.THICK,
+          lightEffect:{color:Color.Blue},
+          interactive:true,
           applyShadow: false
         }))
 

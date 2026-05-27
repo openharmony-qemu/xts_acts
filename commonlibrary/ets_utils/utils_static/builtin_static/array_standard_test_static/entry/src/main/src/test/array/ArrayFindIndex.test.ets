@@ -160,7 +160,7 @@ interface ArrLike094 {
     length: number;
 }
 
-export default function ArrayFindIndexTest() {
+export default function ArrayFindIndexTest(): void {
   describe('ArrayFindIndexTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

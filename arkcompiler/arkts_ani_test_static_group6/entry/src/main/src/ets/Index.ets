@@ -44,20 +44,38 @@ export class Foo {
   native test_CreateObjectInWorker(): int;
   native testBoxBooleanNative(): boolean;
   native testUnboxBooleanNative(): boolean;
+  native testUnboxBooleanExceptionNative(): boolean;
   native testBoxByteNative(): boolean;
+  native testBoxByteExceptionNative(): boolean;
   native testUnboxByteNative(): boolean;
   native testBoxCharNative(): boolean;
+  native testBoxCharExceptionNative(): boolean;
   native testUnboxCharNative(): boolean;
+  native testUnboxCharExceptionNative(): boolean;
   native testBoxDoubleNative(): boolean;
+  native testBoxDoubleExceptionNative(): boolean;
   native testUnboxDoubleNative(): boolean;
+  native testUnboxDoubleExceptionNative(): boolean;
   native testBoxFloatNative(): boolean;
+  native testBoxFloatExceptionNative(): boolean;
   native testUnboxFloatNative(): boolean;
+  native testUnboxFloatExceptionNative(): boolean;
   native testBoxIntNative(): boolean;
+  native testBoxIntExceptionNative(): boolean;
   native testUnboxIntNative(): boolean;
+  native testUnboxIntExceptionNative(): boolean;
   native testBoxLongNative(): boolean;
+  native testBoxLongExceptionNative(): boolean;
   native testUnboxLongNative(): boolean;
+  native testUnboxLongExceptionNative(): boolean;
   native testBoxShortNative(): boolean;
+  native testBoxShortExceptionNative(): boolean;
   native testUnboxShortNative(): boolean;
+  native testUnboxShortExceptionNative(): boolean;
+  native testStabilityLoop1000NormalNative(): boolean;
+  native testStabilityLoop1000ExceptionNative(): boolean;
+  native testStability10ThreadsNormalNative(): boolean;
+  native testStability10ThreadsExceptionNative(): boolean;
   
   constructor() {
   }

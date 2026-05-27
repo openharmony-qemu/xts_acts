@@ -2,6 +2,7 @@
   "src": [
     "MainAbility/pages/index/index",
     "MainAbility/pages/videoEnableShortcutKey",
-    "MainAbility/pages/VideoContentTransitionEffect"
+    "MainAbility/pages/VideoContentTransitionEffect",
+    "MainAbility/pages/Video/VideoSupportMoreNumberSpeedStatic"
   ]
 }
