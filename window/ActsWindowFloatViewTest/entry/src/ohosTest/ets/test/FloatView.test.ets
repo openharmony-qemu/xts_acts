@@ -3092,8 +3092,7 @@ export default function abilityTest() {
           done();
         }).catch((err: BusinessError) => {
           console.error(CaseName + ' Failed to set UI context by name. Cause: ' + err.code + ', message: ' + err.message);
-          expect(err.code).assertEqual(1300016);
-          expect(err.message != null).assertTrue();
+          expect(false).assertTrue();
           done();
         });
       } catch (e) {
@@ -3101,11 +3100,8 @@ export default function abilityTest() {
         expect(e.message != null).assertTrue();
         if (e.code === 801 && !isDeviceSupportFloatView) {
           done();
-        } else if (e.code === 401 || e.code === 1300016) {
-          expect(e.code).assertEqual(e.code);
-          done();
         } else {
-          expect(false).assertTrue();
+          expect(e.code).assertEqual(401);
           done();
         }
       }
