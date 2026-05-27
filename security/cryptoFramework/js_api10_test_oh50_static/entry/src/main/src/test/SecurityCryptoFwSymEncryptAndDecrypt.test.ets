@@ -391,11 +391,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
                 algKeyName = Number(keyLen) != 0 ? `${algName}_${keyLen}` : algName + "_128";
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
-              let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
+              let dataCipher: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.tagGcmEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
               if (dataCipher.data === null) {
                 throw new Error("[TEST] Data is null.")
               } else {
-                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let dataPlainText: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.tagGcmEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
                 let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
                 expect(ret).assertTrue();
               }
@@ -444,11 +444,11 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
                 algKeyName = Number(keyLen) != 0 ? `${algName}_${keyLen}` : algName + "_128";
               }
               let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algKeyName);
-              let dataCipher: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
+              let dataCipher: syncSymEncAndDecUtils.dataCcmSpec = syncSymEncAndDecUtils.tagCcmEncryptDecryptMessageSync(algEncDecName, true, symKey, data, paramSpec);
               if (dataCipher.data === null) {
                 throw new Error("[TEST] Data is null.")
               } else {
-                let dataPlainText: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.tagEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
+                let dataPlainText: syncSymEncAndDecUtils.dataCcmSpec = syncSymEncAndDecUtils.tagCcmEncryptDecryptMessageSync(algEncDecName, false, symKey, (dataCipher.data) as cryptoFramework.DataBlob, dataCipher.paramSpec);
                 let ret: Boolean = commonUtils.compareDataBlob(data, dataPlainText.data);
                 expect(ret).assertTrue();
               }
