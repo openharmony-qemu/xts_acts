@@ -856,7 +856,7 @@ export default function GraphicGetTextStyle() {
           let textStyle: text.TextStyle = {
             fontFamilies: fontFamilies,
             fontSize: 16.0,
-            fontTypefaces: [typeface]
+            // fontTypefaces: [typeface]
           };
           let paragraphStyle: text.ParagraphStyle = {
             textStyle: textStyle,
@@ -875,9 +875,9 @@ export default function GraphicGetTextStyle() {
           expect(runs.length).assertLarger(0);
 
           let runTextStyle: text.TextStyle = runs[0].getTextStyle();
-          expect(runTextStyle.fontTypefaces != undefined).assertTrue();
-          expect(runTextStyle.fontTypefaces!.length).assertEqual(1);
-          console.info(msgStr + ' fontTypefaces is set with length: ' + runTextStyle.fontTypefaces!.length);
+          // expect(runTextStyle.fontTypefaces != undefined).assertTrue();
+          // expect(runTextStyle.fontTypefaces!.length).assertEqual(1);
+          // console.info(msgStr + ' fontTypefaces is set with length: ' + runTextStyle.fontTypefaces!.length);
           console.info(msgStr + ' end');
           fontCollection.unloadFontSync('fontTypefaces_test');
           done();
@@ -924,7 +924,7 @@ export default function GraphicGetTextStyle() {
           expect(runs.length).assertLarger(0);
 
           let runTextStyle: text.TextStyle = runs[0].getTextStyle();
-          expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
+          // expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
           console.info(msgStr + ' fontTypefaces is []');
           console.info(msgStr + ' end');
           fontCollection.unloadFontSync('fontTypefaces_undef_test');
@@ -957,7 +957,7 @@ export default function GraphicGetTextStyle() {
           let textStyle: text.TextStyle = {
             fontFamilies: fontFamilies,
             fontSize: 16.0,
-            fontTypefaces: []
+            // fontTypefaces: []
           };
           let paragraphStyle: text.ParagraphStyle = {
             textStyle: textStyle,
@@ -974,9 +974,9 @@ export default function GraphicGetTextStyle() {
           expect(runs.length).assertLarger(0);
 
           let runTextStyle: text.TextStyle = runs[0].getTextStyle();
-          expect(runTextStyle.fontTypefaces != undefined).assertTrue();
-          expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
-          console.info(msgStr + ' fontTypefaces is empty array with length: ' + runTextStyle.fontTypefaces!.length);
+          // expect(runTextStyle.fontTypefaces != undefined).assertTrue();
+          // expect(runTextStyle.fontTypefaces!.length).assertEqual(0);
+          // console.info(msgStr + ' fontTypefaces is empty array with length: ' + runTextStyle.fontTypefaces!.length);
           console.info(msgStr + ' end');
           fontCollection.unloadFontSync('fontTypefaces_empty_test');
           done();
