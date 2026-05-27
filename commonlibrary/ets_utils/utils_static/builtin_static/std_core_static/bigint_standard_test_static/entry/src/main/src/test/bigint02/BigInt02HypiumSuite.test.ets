@@ -1,6 +1,6 @@
 /*
  * Hypium: BigInt mind-map test suite entry (entry/src/main/src/test/bigint02)
- * Mind-map directory: /Users/yuhu/word/web/HarmonyOS/bigint_standard_test_static/bigint
+ * Mind-map directory: bigint/ (repository root)
  */
 import BigIntOperatorMultiplyTest from './BigIntOperatorMultiplyTest.test';
 import BigIntOperatorSubtractTest from './BigIntOperatorSubtractTest.test';
