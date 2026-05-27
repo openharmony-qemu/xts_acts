@@ -3845,11 +3845,11 @@ export default function DisplayTest():void {
         }
         catch (err) {
             hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-            if (err.code == 801) {
+            if (!isSyscapSessionManagerSupported) {
+                expect(err.code).assertEqual(801);
                 hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
                 done();
-            }
-            else {
+            } else {
                 expect().assertFail();
                 done();
             }

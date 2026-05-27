@@ -4655,12 +4655,14 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (err) {
         console.log(caseName + ': fail:' + err + ' ' + err.code);
-        expect(false).assertTrue();
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     });
-
-
 
 
   })
