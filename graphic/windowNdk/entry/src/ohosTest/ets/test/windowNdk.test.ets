@@ -39,6 +39,10 @@ export default function windowNdk() {
     let context: common.UIAbilityContext;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let isStatusBarVisible : boolean = false;
+    let isNavigationVisible  : boolean = false;
+    let isTypeFloatNavigationVisible : boolean = false;
+    let isNavigationIndicatorVisible : boolean = false;
     let isFreeWindowMode = false;
     const WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED = 801;
     let deviceType: string = deviceInfo.deviceType;
@@ -74,6 +78,18 @@ export default function windowNdk() {
       } catch (err) {
         console.error('findComponent allowed failed: ' + JSON.stringify(err));
       }
+      let promise = windowClass.getWindowStateSnapshot();
+      promise.then((data)=>{
+        let jsonObj: object = JSON.parse(data);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}, systemUiVisible=${jsonObj["systemUiVisible"]}`);
+        isStatusBarVisible = systemUiVisible[0] === '1';
+        isNavigationVisible = systemUiVisible[1] === '1';
+        isTypeFloatNavigationVisible = systemUiVisible[2] === '1';
+        isNavigationIndicatorVisible = systemUiVisible[3] === '1';
+      }).catch((err: BusinessError) => {
+        console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+      });
+      console.info(`beforeAll: systemUiVisible=${systemUiVisible}`);
     })
     beforeEach(() => {
       console.log(`${Tag}:beforeEach start... `);
@@ -432,13 +448,13 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(isStatusBarVisible){
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
+        expect(flag).assertEqual(true)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(true)
+        expect(flag).assertEqual(false)
         done()
       }
     })
@@ -453,6 +469,7 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -463,15 +480,15 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
-        WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
-        done()
-      }else{
+      if(isStatusBarVisible){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
         expect(flag).assertEqual(true)
+        done()
+      }else{
+        WindowClass.off('avoidAreaChange')
+        expect(flag).assertEqual(false)
         done()
       }
     })
@@ -486,6 +503,7 @@ export default function windowNdk() {
      */
     it('test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_mainWindow_SetWindowStatusBarEnabled_false_enableAnimation_true";
+      windowNdkTest.setWindowStatusBarEnabled(windowId, true, true);
       let flag: boolean = false;
       WindowClass.on('avoidAreaChange', (data: window.AvoidAreaOptions) => {
         console.info(caseName + 'Succeeded in enabling the listener for system avoid area changes. type:' +
@@ -496,15 +514,15 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isFreeWindowMode){
+      if(isStatusBarVisible){
         WindowClass.off('avoidAreaChange')
-        expect(flag).assertEqual(false)
+        windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
+        await sleep(500)
+        expect(flag).assertEqual(true)
         done()
       }else{
         WindowClass.off('avoidAreaChange')
-        windowNdkTest.setWindowStatusBarEnabled(windowId, true ,true);
-        await sleep(500)
-        expect(flag).assertEqual(true)
+        expect(flag).assertEqual(false)
         done()
       }
     })

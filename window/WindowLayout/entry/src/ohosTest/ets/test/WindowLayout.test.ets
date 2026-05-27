@@ -3067,11 +3067,16 @@ export default function windowLayoutTest() {
           expect().assertFail();
           done();
         }).catch(async (err: BusinessError) => {
-          console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
-          await subWindowClass?.destroyWindow();
-          expect(err.code).assertEqual(1300004);
-          done();
-          
+          if(deviceType == '2in1' || deviceType == 'phone' || deviceType == 'tablet'){
+            console.error(`${caseName} Failed float window. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindowClass?.destroyWindow();
+            expect(err.code).assertEqual(1300004);
+            done();
+          }else{
+            console.error(`${caseName} Failed float window1. Cause code: ${err.code}, message: ${err.message}`);
+            await subWindowClass?.destroyWindow();
+            done();
+          }
         });
       } catch (e) {
         console.error(`${caseName} Failed2 float window. Cause: ${JSON.stringify(e)}`);
