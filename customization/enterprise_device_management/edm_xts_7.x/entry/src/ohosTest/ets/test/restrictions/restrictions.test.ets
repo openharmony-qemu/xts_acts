@@ -72,6 +72,296 @@ const LABEL_USB_SERIAL = "usbSerial";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
-
+    testSetDisallowedPolicy();
+    testGetDisallowedPolicy();
   })
+}
+
+function testSetDisallowedPolicy() {
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0100
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection feature using byod admin (disallow true)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0100", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, true);
+        expect(false).assertTrue();
+      } catch (error) {
+        if (Number(error.code) === 801) {
+          expect(Number(error.code) === 801).assertTrue();
+        } else {
+          expect(error.code === 9200002).assertTrue();
+        }
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0200
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection undefined disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0200", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, undefined);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0300
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection feature normal admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0300", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+        expect(ret).assertFalse();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0400
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection feature super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0400", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, true);
+        let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+        expect(ret).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 801).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0500
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0500", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code === 9200001).assertTrue();
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0600
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection with null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0600", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(null, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0700
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0700
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection with undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0700", Level.LEVEL2, async (done: Function) => {
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, false);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      }
+      done();
+    });
+
+   /**
+    * @tc.name   test_set_disallowed_policy_traffic_redirection_0800
+    * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0800
+    * @tc.desc   test restrictions setDisallowedPolicy with trafficredirection with null disallow
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+    it("test_set_disallowed_policy_traffic_redirection_0800", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        restrictions.setDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, null);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(Number(error.code) === 401).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    });
+}
+
+function testGetDisallowedPolicy() {
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0100
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0100
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature byod admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0100", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(error.code === 9200002).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0200
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0200
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature null admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0200", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+     try {
+       let ret = restrictions.getDisallowedPolicy(null, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0300
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0300
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature super admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0300", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(false).assertTrue();
+     } finally {
+       await adminManager.disableSuperAdmin(SELFHAPNAME);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0400
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0400
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature normal admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0400", Level.LEVEL2, async (done: Function) => {
+     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+     try {
+       let ret = restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(error.code === 9200002).assertTrue();
+     } finally {
+       await adminManager.disableAdmin(SELFWANT);
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0500
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0500
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature without admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0500", Level.LEVEL2, async (done: Function) => {
+     try {
+       restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(false).assertTrue();
+     } catch (error) {
+       expect(error.code === 9200001).assertTrue();
+     }
+     done();
+   });
+
+   /**
+    * @tc.name   test_get_disallowed_policy_traffic_redirection_0600
+    * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICYTRAFFIC_REDIRECTION_0600
+    * @tc.desc   test restrictions getDisallowedPolicy with trafficredirection feature undefined admin
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
+   it("test_get_disallowed_policy_traffic_redirection_0600", Level.LEVEL2, async (done: Function) => {
+     try {
+       let ret = restrictions.getDisallowedPolicy(undefined, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+       expect(ret).assertFalse();
+     } catch (error) {
+       expect(Number(error.code) === 401).assertTrue();
+     }
+     done();
+  });
 }

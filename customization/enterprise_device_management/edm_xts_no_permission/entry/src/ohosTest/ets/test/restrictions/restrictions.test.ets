@@ -520,6 +520,31 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETDISALLOWEDPOLICY_0600
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0600", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+}
+     done();
+   });
 }
 
 function testGetDisallowedPolicy() {
@@ -890,7 +915,7 @@ function testGetDisallowedPolicy() {
       }
     } finally {
       await adminManager.disableAdmin(SELFWANT);
-}
+    }
      done();
    });
 
@@ -943,6 +968,31 @@ function testGetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDPOLICY_0500
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0500", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, restrictions.FeatureForDevice.TRAFFIC_REDIRECTION);
+      expect(false).assertTrue();
+    } catch (error) {
+      if (Number(error.code) === 801) {
+        expect(Number(error.code) === 801).assertTrue();
+      } else {
+        expect(Number(error.code) === 201).assertTrue();
+      }
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+     done();
+   });
 }
 
 function testSetDisallowedForAccountPolicy() {
