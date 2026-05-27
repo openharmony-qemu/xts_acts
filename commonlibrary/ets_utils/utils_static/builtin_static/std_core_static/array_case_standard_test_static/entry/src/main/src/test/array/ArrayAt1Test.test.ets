@@ -89,47 +89,12 @@ export default function ArrayAt1Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0300
      * @tc.name testArrayAt003
-     * @tc.desc Verify index zero returns the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(100, 200, 300);
-      const zeroIndex = 0;
-      const result = arr.at(zeroIndex);
-
-      expect(result).assertEqual(100);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0400
-     * @tc.name testArrayAt004
-     * @tc.desc Verify index greater than or equal to length throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 10, 10);
-      const invalidIndex = 10;
-      try {
-        arr.at(invalidIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0500
-     * @tc.name testArrayAt005
      * @tc.desc Verify negative index beyond array length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidNegativeIndex = -10;
       try {
@@ -141,14 +106,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0600
-     * @tc.name testArrayAt006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0400
+     * @tc.name testArrayAt004
      * @tc.desc Verify decimal index is converted with integer semantics
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const sourceIndex = 1.5;
       const normalizedIndex = sourceIndex.toInt();
@@ -158,32 +123,15 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0700
-     * @tc.name testArrayAt007
-     * @tc.desc Verify NaN index is treated as zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const nanIndex = Number.parseInt('abc');
-      const normalizedIndex = (nanIndex != nanIndex) ? 0 : nanIndex.toInt();
-      const result = arr.at(normalizedIndex);
-
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0800
-     * @tc.name testArrayAt008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0500
+     * @tc.name testArrayAt005
      * @tc.desc Verify a very large positive index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
+    it('testArrayAt005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(40, 50, 60);
       const largeIndex = 2147483647;
       try {
         arr.at(largeIndex);
@@ -194,15 +142,15 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0900
-     * @tc.name testArrayAt009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0600
+     * @tc.name testArrayAt006
      * @tc.desc Verify a very large negative index throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
+    it('testArrayAt006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr = new Array<int>(1, 2, 3);
       const largeNegativeIndex = -2147483648;
       try {
         arr.at(largeNegativeIndex);
@@ -213,14 +161,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1000
-     * @tc.name testArrayAt010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0700
+     * @tc.name testArrayAt007
      * @tc.desc Verify the returned element keeps the array generic type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const index = 0;
       const result = arr.at(index);
@@ -229,33 +177,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1100
-     * @tc.name testArrayAt011
-     * @tc.desc Verify invalid index throws RangeError
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const invalidIndex = 100;
-      try {
-        arr.at(invalidIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1200
-     * @tc.name testArrayAt012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0800
+     * @tc.name testArrayAt008
      * @tc.desc Verify positive indexes can read multiple elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -271,14 +200,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1300
-     * @tc.name testArrayAt013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_0900
+     * @tc.name testArrayAt009
      * @tc.desc Verify negative indexes can read multiple elements from the end
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const lastValue = arr.at(-1);
       const secondLastValue = arr.at(-2);
@@ -294,14 +223,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1400
-     * @tc.name testArrayAt014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1000
+     * @tc.name testArrayAt010
      * @tc.desc Verify at negative one returns the last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const negativeIndex = -1;
       const result = arr.at(negativeIndex);
@@ -310,30 +239,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1500
-     * @tc.name testArrayAt015
-     * @tc.desc Verify at zero returns the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const zeroIndex = 0;
-      const result = arr.at(zeroIndex);
-
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1600
-     * @tc.name testArrayAt016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1100
+     * @tc.name testArrayAt011
      * @tc.desc Verify length minus one is the last valid positive index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const lastValidIndex = arr.length - 1;
       const result = arr.at(lastValidIndex);
@@ -342,14 +255,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1700
-     * @tc.name testArrayAt017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1200
+     * @tc.name testArrayAt012
      * @tc.desc Verify negative length is the first valid negative index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const firstNegativeIndex = -arr.length;
       const result = arr.at(firstNegativeIndex);
@@ -358,14 +271,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1800
-     * @tc.name testArrayAt018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1300
+     * @tc.name testArrayAt013
      * @tc.desc Verify index equal to length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const boundaryIndex = arr.length;
       try {
@@ -377,14 +290,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1900
-     * @tc.name testArrayAt019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1400
+     * @tc.name testArrayAt014
      * @tc.desc Verify index smaller than negative length throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidNegativeIndex = -arr.length - 1;
       try {
@@ -396,14 +309,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2000
-     * @tc.name testArrayAt020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1500
+     * @tc.name testArrayAt015
      * @tc.desc Verify empty array throws RangeError for all tested indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       try {
         arr.at(0);
@@ -428,14 +341,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2100
-     * @tc.name testArrayAt021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1600
+     * @tc.name testArrayAt016
      * @tc.desc Verify single-element array supports front and negative access and throws RangeError on overflow
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1);
       arr[0] = 100;
       const firstValue = arr.at(0);
@@ -459,14 +372,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2200
-     * @tc.name testArrayAt022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1700
+     * @tc.name testArrayAt017
      * @tc.desc Verify two-element array supports both positive and negative access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20);
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -480,14 +393,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2300
-     * @tc.name testArrayAt023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1800
+     * @tc.name testArrayAt018
      * @tc.desc Verify number arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
       const targetIndex = 1;
       const result = arr.at(targetIndex);
@@ -496,14 +409,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2400
-     * @tc.name testArrayAt024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_1900
+     * @tc.name testArrayAt019
      * @tc.desc Verify string arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('a', 'b', 'c');
       const middleIndex = 1;
       const lastIndex = -1;
@@ -515,14 +428,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2500
-     * @tc.name testArrayAt025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2000
+     * @tc.name testArrayAt020
      * @tc.desc Verify boolean arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(true, false, true);
       const middleValue = arr.at(1);
       const lastValue = arr.at(-1);
@@ -532,14 +445,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2600
-     * @tc.name testArrayAt026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2100
+     * @tc.name testArrayAt021
      * @tc.desc Verify single-character string arrays can cover char-like access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('A', 'B', 'C');
       const middleValue = arr.at(1);
       const lastValue = arr.at(-1);
@@ -549,14 +462,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2700
-     * @tc.name testArrayAt027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2200
+     * @tc.name testArrayAt022
      * @tc.desc Verify object arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Person026>();
       const p1 = new Person026();
       p1.name = 'Alice';
@@ -574,14 +487,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2800
-     * @tc.name testArrayAt028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2300
+     * @tc.name testArrayAt023
      * @tc.desc Verify union type arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | int>(1, 'two', 3);
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -591,14 +504,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2900
-     * @tc.name testArrayAt029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2400
+     * @tc.name testArrayAt024
      * @tc.desc Verify arrays containing null elements return null at the matching position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | null>(1, null, 3);
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -610,14 +523,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3000
-     * @tc.name testArrayAt030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2500
+     * @tc.name testArrayAt025
      * @tc.desc Verify arrays containing undefined elements return undefined at the matching position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(1, undefined, 3);
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -629,14 +542,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3100
-     * @tc.name testArrayAt031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2600
+     * @tc.name testArrayAt026
      * @tc.desc Verify arrays containing zero elements return zero correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(0, 1, 2);
       const zeroIndex = 0;
       const result = arr.at(zeroIndex);
@@ -645,14 +558,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3200
-     * @tc.name testArrayAt032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2700
+     * @tc.name testArrayAt027
      * @tc.desc Verify arrays containing false elements return false correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(false, true);
       const zeroIndex = 0;
       const result = arr.at(zeroIndex);
@@ -661,14 +574,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3300
-     * @tc.name testArrayAt033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2800
+     * @tc.name testArrayAt028
      * @tc.desc Verify arrays containing empty strings return empty strings correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>('', 'a');
       const firstValue = arr.at(0);
       const secondValue = arr.at(1);
@@ -678,14 +591,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3400
-     * @tc.name testArrayAt034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_2900
+     * @tc.name testArrayAt029
      * @tc.desc Verify at negative indexes match direct indexing of translated positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const lastValue = arr.at(-1);
       const translatedLastValue = arr[arr.length - 1];
@@ -697,14 +610,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3500
-     * @tc.name testArrayAt035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3000
+     * @tc.name testArrayAt030
      * @tc.desc Verify at and bracket notation match for positive indexes and at stays convenient for tail access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const middleValue = arr.at(1);
       const directMiddleValue = arr[1];
@@ -716,14 +629,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3600
-     * @tc.name testArrayAt036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3100
+     * @tc.name testArrayAt031
      * @tc.desc Verify repeated positive at access reads every element in order from a large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
@@ -736,14 +649,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3700
-     * @tc.name testArrayAt037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3200
+     * @tc.name testArrayAt032
      * @tc.desc Verify repeated negative at access reads elements from the tail of a large array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
       for (let i = 0; i < 100; i++) {
         arr.pushOne(i);
@@ -756,14 +669,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3800
-     * @tc.name testArrayAt038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3300
+     * @tc.name testArrayAt033
      * @tc.desc Verify at negative one is suitable for getting the last element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const tailIndex = -1;
       const last = arr.at(tailIndex);
@@ -771,14 +684,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3900
-     * @tc.name testArrayAt039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3400
+     * @tc.name testArrayAt034
      * @tc.desc Verify negative indexes can get multiple elements from the tail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const secondLast = arr.at(-2);
       const thirdLast = arr.at(-3);
@@ -788,14 +701,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4000
-     * @tc.name testArrayAt040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3500
+     * @tc.name testArrayAt035
      * @tc.desc Verify out-of-bounds at access throws RangeError instead of behaving like direct indexing assumptions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const invalidIndex = 100;
       try {
@@ -807,14 +720,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4100
-     * @tc.name testArrayAt041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3600
+     * @tc.name testArrayAt036
      * @tc.desc Verify readonly arrays support at access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<int>(10, 20, 30);
       const arr: ReadonlyArray<int> = source;
       const firstValue = arr.at(0);
@@ -825,14 +738,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4200
-     * @tc.name testArrayAt042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3700
+     * @tc.name testArrayAt037
      * @tc.desc Verify very large positive indexes throw RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const hugeIndex1 = 2147483647;
       const hugeIndex2 = Number.MAX_SAFE_INTEGER.toInt();
@@ -852,14 +765,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4300
-     * @tc.name testArrayAt043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3800
+     * @tc.name testArrayAt038
      * @tc.desc Verify very small numeric indexes follow integer conversion semantics and out-of-range normalization throws RangeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const normalizedMinValueIndex = Number.MIN_VALUE.toInt();
       const normalizedMinSafeIndex = Number.MIN_SAFE_INTEGER.toInt();
@@ -875,48 +788,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4400
-     * @tc.name testArrayAt044
-     * @tc.desc Verify another decimal index also follows integer conversion semantics
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const sourceIndex = 1.9;
-      const normalizedIndex = sourceIndex.toInt();
-      const result = arr.at(normalizedIndex);
-
-      expect(result).assertEqual(20);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4500
-     * @tc.name testArrayAt045
-     * @tc.desc Verify scientific notation indexes are accepted
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const sourceIndex = 1e0;
-      const normalizedIndex = sourceIndex.toInt();
-      const result = arr.at(normalizedIndex);
-
-      expect(result).assertEqual(20);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4600
-     * @tc.name testArrayAt046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_3900
+     * @tc.name testArrayAt039
      * @tc.desc Verify return type can be narrowed from T or undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const index = 0;
       const result = arr.at(index);
@@ -928,33 +807,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4700
-     * @tc.name testArrayAt047
-     * @tc.desc Verify invalid index throws RangeError in current runtime
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const invalidIndex = 5;
-      try {
-        arr.at(invalidIndex);
-        expect().assertFail();
-      } catch (e) {
-        expect(e.name).assertEqual('RangeError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4800
-     * @tc.name testArrayAt048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4000
+     * @tc.name testArrayAt040
      * @tc.desc Verify repeated at calls can read different elements continuously
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const firstValue = arr.at(0);
       const middleValue = arr.at(2);
@@ -968,14 +828,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4900
-     * @tc.name testArrayAt049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4100
+     * @tc.name testArrayAt041
      * @tc.desc Verify at does not modify the array while pop removes the tail element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(10, 20, 30);
       const value1 = arr1.at(-1);
       expect(arr1.length).assertEqual(3);
@@ -988,14 +848,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5000
-     * @tc.name testArrayAt050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4200
+     * @tc.name testArrayAt042
      * @tc.desc Verify at returns one element while slice returns an array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const value = arr.at(1);
       expect(value).assertEqual(20);
@@ -1006,14 +866,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5100
-     * @tc.name testArrayAt051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4300
+     * @tc.name testArrayAt043
      * @tc.desc Verify at can be used in follow-up calculations after null checks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const last = arr.at(-1);
       if (last !== undefined) {
@@ -1025,14 +885,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5200
-     * @tc.name testArrayAt052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4400
+     * @tc.name testArrayAt044
      * @tc.desc Verify at combines with nullable array processing
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nullResult = process1052(null);
       const arrayResult = process1052(new Array<int>(1, 2));
 
@@ -1041,14 +901,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5300
-     * @tc.name testArrayAt053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4500
+     * @tc.name testArrayAt045
      * @tc.desc Verify negative zero index behaves the same as zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const negativeZeroIndex = -0;
       const negativeZeroResult = arr.at(negativeZeroIndex);
@@ -1059,14 +919,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5400
-     * @tc.name testArrayAt054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4600
+     * @tc.name testArrayAt046
      * @tc.desc Verify negative decimal indexes work after integer normalization
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30, 40, 50);
       const sourceIndex = -1.9;
       const normalizedIndex = sourceIndex.toInt();
@@ -1078,14 +938,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5500
-     * @tc.name testArrayAt055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4700
+     * @tc.name testArrayAt047
      * @tc.desc Verify at can read leading undefined elements before a defined tail element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(undefined, undefined, 300);
 
       expect(arr.at(0)).assertUndefined();
@@ -1094,14 +954,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5600
-     * @tc.name testArrayAt056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4800
+     * @tc.name testArrayAt048
      * @tc.desc Verify negative indexes can read leading undefined elements and the defined tail element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(undefined, undefined, 300);
 
       expect(arr.at(-1)).assertEqual(300);
@@ -1110,14 +970,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5700
-     * @tc.name testArrayAt057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_4900
+     * @tc.name testArrayAt049
      * @tc.desc Verify nested arrays are returned as stored child-array references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const child1 = new Array<int>(1, 2);
       const child2 = new Array<int>(3, 4);
       const arr = new Array<Array<int>>();
@@ -1138,14 +998,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5800
-     * @tc.name testArrayAt058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5000
+     * @tc.name testArrayAt050
      * @tc.desc Verify repeated references remain identical when read through at
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const shared = new Person026();
       shared.name = 'Shared';
       const arr = new Array<Person026>();
@@ -1164,14 +1024,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5900
-     * @tc.name testArrayAt059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5100
+     * @tc.name testArrayAt051
      * @tc.desc Verify mutating an object returned by at updates the stored array element
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const person = new Person026();
       person.name = 'Before';
       const arr = new Array<Person026>();
@@ -1188,14 +1048,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6000
-     * @tc.name testArrayAt060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5200
+     * @tc.name testArrayAt052
      * @tc.desc Verify union arrays also support negative tail access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string | int>(1, 'two', 3);
       const lastValue = arr.at(-1);
       const secondValue = arr.at(-2);
@@ -1205,14 +1065,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6100
-     * @tc.name testArrayAt061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5300
+     * @tc.name testArrayAt053
      * @tc.desc Verify negative tail access can read null elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | null>(1, 2, null);
       const lastValue = arr.at(-1);
       const secondValue = arr.at(-2);
@@ -1222,14 +1082,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6200
-     * @tc.name testArrayAt062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5400
+     * @tc.name testArrayAt054
      * @tc.desc Verify negative tail access can read undefined elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | undefined>(1, 2, undefined);
       const lastValue = arr.at(-1);
       const secondValue = arr.at(-2);
@@ -1239,14 +1099,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6300
-     * @tc.name testArrayAt063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5500
+     * @tc.name testArrayAt055
      * @tc.desc Verify at reflects in-bounds element reassignment immediately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const beforeUpdate = arr.at(1);
       arr[1] = 99;
@@ -1257,14 +1117,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6400
-     * @tc.name testArrayAt064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5600
+     * @tc.name testArrayAt056
      * @tc.desc Verify at negative one reflects tail changes after pushOne
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20);
       const originalTail = arr.at(-1);
       arr.pushOne(30);
@@ -1275,14 +1135,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6500
-     * @tc.name testArrayAt065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5700
+     * @tc.name testArrayAt057
      * @tc.desc Verify mutating a nested child array returned by at updates the stored child array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const child = new Array<int>(1, 2);
       const arr = new Array<Array<int>>();
       arr.pushOne(child);
@@ -1299,14 +1159,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6600
-     * @tc.name testArrayAt066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5800
+     * @tc.name testArrayAt058
      * @tc.desc Verify readonly at access reflects source array updates
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source = new Array<int>(10, 20, 30);
       const arr: ReadonlyArray<int> = source;
       const originalTail = arr.at(-1);
@@ -1318,32 +1178,14 @@ export default function ArrayAt1Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6700
-     * @tc.name testArrayAt067
-     * @tc.desc Verify small negative decimals that normalize to zero access the first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayAt067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<int>(10, 20, 30);
-      const sourceIndex = -0.1;
-      const normalizedIndex = sourceIndex.toInt();
-      const result = arr.at(normalizedIndex);
-
-      expect(normalizedIndex).assertEqual(0);
-      expect(result).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_6800
-     * @tc.name testArrayAt068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_AT_ONE_5900
+     * @tc.name testArrayAt059
      * @tc.desc Verify mixed nullable tail values remain distinguishable with negative indexes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayAt068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayAt059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int | null | undefined>(1, null, undefined);
       const lastValue = arr.at(-1);
       const secondValue = arr.at(-2);

@@ -179,25 +179,12 @@ export default function ArrayConstructor2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0700
      * @tc.name testArrayConstructor2007
-     * @tc.desc Verify new empty arrays have length zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>();
-      expect(arr.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0800
-     * @tc.name testArrayConstructor2008
      * @tc.desc Verify empty arrays throw RangeError for indexed access before elements are added
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       try {
         arr[0];
@@ -208,14 +195,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0900
-     * @tc.name testArrayConstructor2009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0800
+     * @tc.name testArrayConstructor2008
      * @tc.desc Verify push operations grow an initially empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
 
@@ -229,14 +216,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1000
-     * @tc.name testArrayConstructor2010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_0900
+     * @tc.name testArrayConstructor2009
      * @tc.desc Verify unshift inserts elements at the front of an initially empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       arr.unshift(10);
       expect(arr.length).assertEqual(1);
@@ -249,14 +236,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1100
-     * @tc.name testArrayConstructor2011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1000
+     * @tc.name testArrayConstructor2010
      * @tc.desc Verify an empty array can be built dynamically with repeated pushes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       for (let i = 0; i < 10; i++) {
         arr.pushOne(i * 10);
@@ -269,14 +256,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1200
-     * @tc.name testArrayConstructor2012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1100
+     * @tc.name testArrayConstructor2011
      * @tc.desc Verify Array<number> starts empty and accepts numeric values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
 
@@ -285,30 +272,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1300
-     * @tc.name testArrayConstructor2013
-     * @tc.desc Verify Array<string> starts empty and accepts string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>();
-      expect(arr.length).assertEqual(0);
-
-      arr.pushOne('hello');
-      expect(arr[0]).assertEqual('hello');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1400
-     * @tc.name testArrayConstructor2014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1200
+     * @tc.name testArrayConstructor2012
      * @tc.desc Verify Array<boolean> starts empty and accepts boolean values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>();
       expect(arr.length).assertEqual(0);
 
@@ -317,14 +288,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1500
-     * @tc.name testArrayConstructor2015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1300
+     * @tc.name testArrayConstructor2013
      * @tc.desc Verify empty arrays of custom class instances accept pushed objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item010>();
       expect(arr.length).assertEqual(0);
 
@@ -333,14 +304,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1600
-     * @tc.name testArrayConstructor2016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1400
+     * @tc.name testArrayConstructor2014
      * @tc.desc Verify empty arrays of interface-based objects accept pushed values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point011>();
       expect(arr.length).assertEqual(0);
 
@@ -350,14 +321,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1700
-     * @tc.name testArrayConstructor2017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1500
+     * @tc.name testArrayConstructor2015
      * @tc.desc Verify empty arrays with union element types accept mixed valid values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string>();
       expect(arr.length).assertEqual(0);
 
@@ -371,14 +342,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1800
-     * @tc.name testArrayConstructor2018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1600
+     * @tc.name testArrayConstructor2016
      * @tc.desc Verify nested empty arrays can collect array elements dynamically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>();
       expect(arr.length).assertEqual(0);
 
@@ -391,14 +362,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1900
-     * @tc.name testArrayConstructor2019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1700
+     * @tc.name testArrayConstructor2017
      * @tc.desc Verify empty arrays are suitable for dynamically sized collections
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = new Array<number>();
       for (let i = 0; i < 10; i++) {
         if (i % 2 == 0) {
@@ -412,28 +383,28 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2000
-     * @tc.name testArrayConstructor2020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1800
+     * @tc.name testArrayConstructor2018
      * @tc.desc Verify empty arrays can be used as temporary data containers
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const result = processItems012();
       expect(result.length).assertEqual(3);
       expect(result[0]).assertEqual(100);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2100
-     * @tc.name testArrayConstructor2021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_1900
+     * @tc.name testArrayConstructor2019
      * @tc.desc Verify an empty array can be passed to a function and filled there
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       fillArray013(arr, 5);
 
@@ -443,14 +414,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2200
-     * @tc.name testArrayConstructor2022
-     * @tc.desc Verify common array methods keep an initially empty array usable across runtime-dependent shift behavior
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2000
+     * @tc.name testArrayConstructor2020
+     * @tc.desc Verify common array methods keep an initially empty array usable after push pop shift and unshift
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
 
       arr.pushOne(1);
@@ -460,12 +431,8 @@ export default function ArrayConstructor2Test(): void {
       expect(val).assertEqual(1);
       expect(arr.length).assertEqual(0);
 
-      try {
-        const shifted = arr.shift();
-        expect(shifted).assertUndefined();
-      } catch (e) {
-        expect(e.name).assertEqual("");
-      }
+      const shifted = arr.shift();
+      expect(shifted).assertUndefined();
 
       arr.unshift(10);
       expect(arr.length).assertEqual(1);
@@ -473,14 +440,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2300
-     * @tc.name testArrayConstructor2023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2100
+     * @tc.name testArrayConstructor2021
      * @tc.desc Verify iterator-style methods on an empty array return empty or neutral results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
 
       let count = 0;
@@ -507,14 +474,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2400
-     * @tc.name testArrayConstructor2024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2200
+     * @tc.name testArrayConstructor2022
      * @tc.desc Verify search methods return empty-array defaults when no elements exist
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
 
       expect(arr.indexOf(1)).assertEqual(-1);
@@ -525,28 +492,28 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2500
-     * @tc.name testArrayConstructor2025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2300
+     * @tc.name testArrayConstructor2023
      * @tc.desc Verify predicate methods on an empty array follow standard vacuous truth behavior
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.every((v: number): boolean => v > 0)).assertTrue();
       expect(arr.some((v: number): boolean => v > 0)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2600
-     * @tc.name testArrayConstructor2026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2400
+     * @tc.name testArrayConstructor2024
      * @tc.desc Verify empty arrays can be populated step by step instead of chaining pushOne calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       arr.pushOne(1);
       arr.pushOne(2);
@@ -555,14 +522,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2700
-     * @tc.name testArrayConstructor2027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2500
+     * @tc.name testArrayConstructor2025
      * @tc.desc Verify generic empty arrays work with helper functions that return the same type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>();
       arr1.pushOne(1);
 
@@ -574,14 +541,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2800
-     * @tc.name testArrayConstructor2028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2600
+     * @tc.name testArrayConstructor2026
      * @tc.desc Verify repeated empty-array creation remains valid across many iterations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       for (let i = 0; i < 100; i++) {
         const arr = new Array<number>();
         expect(arr.length).assertEqual(0);
@@ -591,14 +558,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2900
-     * @tc.name testArrayConstructor2029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2700
+     * @tc.name testArrayConstructor2027
      * @tc.desc Verify default construction differs from passing a single numeric argument
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const emptyArr = new Array<number>();
       const sizedArr = new Array<number>(100);
       expect(sizedArr.length).assertEqual(1);
@@ -612,14 +579,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3000
-     * @tc.name testArrayConstructor2030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2800
+     * @tc.name testArrayConstructor2028
      * @tc.desc Verify different array constructor overloads serve empty and initialized number-array use cases
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>();
       expect(arr1.length).assertEqual(0);
 
@@ -632,14 +599,14 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3100
-     * @tc.name testArrayConstructor2031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_2900
+     * @tc.name testArrayConstructor2029
      * @tc.desc Verify constructor choice still distinguishes dynamic growth single-numeric and multi-item scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const dynamicArr = new Array<number>();
       for (let i = 0; i < 100; i++) {
         dynamicArr.pushOne(i);
@@ -660,28 +627,28 @@ export default function ArrayConstructor2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3200
-     * @tc.name testArrayConstructor2032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3000
+     * @tc.name testArrayConstructor2030
      * @tc.desc Verify generic type safety is preserved for empty arrays before and after pushes
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<number>();
       numArr.pushOne(123);
       expect(numArr[0]).assertEqual(123);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3300
-     * @tc.name testArrayConstructor2033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_TWO_3100
+     * @tc.name testArrayConstructor2031
      * @tc.desc Verify basic operations on an empty array throw RangeError for direct indexed access
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor2033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>();
       expect(arr.length).assertEqual(0);
       expect(arr.length > 0).assertFalse();

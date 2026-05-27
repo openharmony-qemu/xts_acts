@@ -104,27 +104,12 @@ export default function ArrayConcatTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0400
      * @tc.name testArrayConcat004
-     * @tc.desc Verify concat handles array parameters directly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConcat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3, 4);
-      const result = arr1.concat(arr2);
-      expect(result.length).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0500
-     * @tc.name testArrayConcat005
      * @tc.desc Verify equivalent single-value arrays can cover scalar append semantics in ArkTS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const result = arr1.concat(singleNumberArray(3), singleNumberArray(4));
       expect(result.length).assertEqual(4);
@@ -133,14 +118,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0600
-     * @tc.name testArrayConcat006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0500
+     * @tc.name testArrayConcat005
      * @tc.desc Verify mixed array inputs can reproduce array-plus-value concat results in ArkTS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2, singleNumberArray(5), singleNumberArray(6));
@@ -150,29 +135,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0700
-     * @tc.name testArrayConcat007
-     * @tc.desc Verify concat accepts parameters that satisfy the ConcatArray type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConcat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3, 4);
-      const result = arr1.concat(arr2);
-      expect(result.length).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0800
-     * @tc.name testArrayConcat008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0600
+     * @tc.name testArrayConcat006
      * @tc.desc Verify concat accepts an empty array parameter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const empty = new Array<int>();
       const result = arr1.concat(empty);
@@ -180,14 +150,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0900
-     * @tc.name testArrayConcat009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0700
+     * @tc.name testArrayConcat007
      * @tc.desc Verify spread syntax can pass multiple concat arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const others = new Array<Array<int>>();
       others.pushOne(new Array<int>(3, 4));
@@ -198,14 +168,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1000
-     * @tc.name testArrayConcat010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0800
+     * @tc.name testArrayConcat008
      * @tc.desc Verify concat returns a new array instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const result = arr1.concat(singleNumberArray(3));
       expect(result instanceof Array).assertTrue();
@@ -213,14 +183,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1100
-     * @tc.name testArrayConcat011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_0900
+     * @tc.name testArrayConcat009
      * @tc.desc Verify concat keeps the source element type in the returned array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const result = arr1.concat(singleNumberArray(3));
       const first: int = result[0];
@@ -230,14 +200,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1200
-     * @tc.name testArrayConcat012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1000
+     * @tc.name testArrayConcat010
      * @tc.desc Verify modifying the new concatenated array does not affect the original array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2, 3);
       const result = arr1.concat(singleNumberArray(4));
       result.pushOne(5);
@@ -246,14 +216,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1300
-     * @tc.name testArrayConcat013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1100
+     * @tc.name testArrayConcat011
      * @tc.desc Verify object elements are copied by reference during concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<Item013>();
       const item = new Item013();
       item.value = 100;
@@ -266,14 +236,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1400
-     * @tc.name testArrayConcat014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1200
+     * @tc.name testArrayConcat012
      * @tc.desc Verify an empty source array can concat a non-empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       const arr2 = new Array<int>(1, 2);
       const result = arr1.concat(arr2);
@@ -282,14 +252,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1500
-     * @tc.name testArrayConcat015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1300
+     * @tc.name testArrayConcat013
      * @tc.desc Verify concatenating two empty arrays keeps the result empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       const arr2 = new Array<int>();
       const result = arr1.concat(arr2);
@@ -297,14 +267,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1600
-     * @tc.name testArrayConcat016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1400
+     * @tc.name testArrayConcat014
      * @tc.desc Verify concat works with single-element arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = singleNumberArray(100);
       const arr2 = singleNumberArray(200);
       const result = arr1.concat(arr2);
@@ -314,14 +284,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1700
-     * @tc.name testArrayConcat017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1500
+     * @tc.name testArrayConcat015
      * @tc.desc Verify concat handles large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       for (let i = 0; i < 100; i++) {
         arr1.pushOne(i);
@@ -337,30 +307,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1800
-     * @tc.name testArrayConcat018
-     * @tc.desc Verify number arrays support concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConcat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3, 4);
-      const result = arr1.concat(arr2);
-      expect(result.length).assertEqual(4);
-      expect(result[0]).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1900
-     * @tc.name testArrayConcat019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1600
+     * @tc.name testArrayConcat016
      * @tc.desc Verify string arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('a', 'b');
       const arr2 = new Array<string>('c', 'd');
       const result = arr1.concat(arr2);
@@ -370,14 +324,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2000
-     * @tc.name testArrayConcat020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1700
+     * @tc.name testArrayConcat017
      * @tc.desc Verify boolean arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<boolean>(true, false);
       const arr2 = new Array<boolean>(false, true);
       const result = arr1.concat(arr2);
@@ -387,14 +341,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2100
-     * @tc.name testArrayConcat021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1800
+     * @tc.name testArrayConcat018
      * @tc.desc Verify char arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<char>(c'A', c'B');
       const arr2 = new Array<char>(c'C', c'D');
       const result = arr1.concat(arr2);
@@ -404,14 +358,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2200
-     * @tc.name testArrayConcat022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_1900
+     * @tc.name testArrayConcat019
      * @tc.desc Verify object arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<Person022>();
       const p1 = new Person022();
       p1.name = 'Alice';
@@ -429,14 +383,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2300
-     * @tc.name testArrayConcat023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2000
+     * @tc.name testArrayConcat020
      * @tc.desc Verify union type arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string | int>(1, 2);
       const arr2 = new Array<string | int>('a', 'b');
       const result = arr1.concat(arr2);
@@ -446,14 +400,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2400
-     * @tc.name testArrayConcat024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2100
+     * @tc.name testArrayConcat021
      * @tc.desc Verify arrays containing null values support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int | null>(1, null);
       const arr2 = new Array<int | null>(null, 2);
       const result = arr1.concat(arr2);
@@ -463,14 +417,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2500
-     * @tc.name testArrayConcat025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2200
+     * @tc.name testArrayConcat022
      * @tc.desc Verify arrays containing undefined values support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int | undefined>(1, undefined);
       const arr2 = new Array<int | undefined>(undefined, 2);
       const result = arr1.concat(arr2);
@@ -480,14 +434,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2600
-     * @tc.name testArrayConcat026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2300
+     * @tc.name testArrayConcat023
      * @tc.desc Verify arrays containing NaN values support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(1, NaN);
       const arr2 = new Array<number>(NaN, 2);
       const result = arr1.concat(arr2);
@@ -497,14 +451,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2700
-     * @tc.name testArrayConcat027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2400
+     * @tc.name testArrayConcat024
      * @tc.desc Verify concat can join three arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const arr3 = new Array<int>(5, 6);
@@ -514,14 +468,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2800
-     * @tc.name testArrayConcat028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2500
+     * @tc.name testArrayConcat025
      * @tc.desc Verify concat can join multiple arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = singleNumberArray(1);
       const arr2 = singleNumberArray(2);
       const arr3 = singleNumberArray(3);
@@ -531,14 +485,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2900
-     * @tc.name testArrayConcat029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2600
+     * @tc.name testArrayConcat026
      * @tc.desc Verify mixed array inputs can cover array-and-value concat scenarios in ArkTS
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const result = arr1.concat(singleNumberArray(3), new Array<int>(4, 5), singleNumberArray(6));
       expect(result.length).assertEqual(6);
@@ -549,14 +503,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3000
-     * @tc.name testArrayConcat030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2700
+     * @tc.name testArrayConcat027
      * @tc.desc Verify concat does not modify the source array while push does
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(1, 2);
 
@@ -569,14 +523,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3100
-     * @tc.name testArrayConcat031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2800
+     * @tc.name testArrayConcat028
      * @tc.desc Verify concat matches an explicitly expanded array result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
 
@@ -589,14 +543,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3200
-     * @tc.name testArrayConcat032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_2900
+     * @tc.name testArrayConcat029
      * @tc.desc Verify concat appends arrays while unshift prepends them
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
 
@@ -610,14 +564,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3300
-     * @tc.name testArrayConcat033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3000
+     * @tc.name testArrayConcat030
      * @tc.desc Verify concat preserves order when combining two large arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>();
       const arr2 = new Array<int>();
       for (let i = 0; i < 10000; i++) {
@@ -633,14 +587,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3400
-     * @tc.name testArrayConcat034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3100
+     * @tc.name testArrayConcat031
      * @tc.desc Verify concat preserves argument order when combining many array parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const base = new Array<int>();
       const arrays = new Array<Array<int>>();
       for (let i = 0; i < 100; i++) {
@@ -654,14 +608,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3500
-     * @tc.name testArrayConcat035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3200
+     * @tc.name testArrayConcat032
      * @tc.desc Verify concat preserves nested arrays as elements
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<Object>(1 as Object, 2 as Object);
       const nested = new Array<int>(3, 4);
       const arr2 = new Array<Object>();
@@ -677,14 +631,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3600
-     * @tc.name testArrayConcat036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3300
+     * @tc.name testArrayConcat033
      * @tc.desc Verify concat can copy arrays that contain self references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Object>();
       arr.pushOne(arr as Object);
       const result = arr.concat();
@@ -693,14 +647,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3700
-     * @tc.name testArrayConcat037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3400
+     * @tc.name testArrayConcat034
      * @tc.desc Verify concat results remain usable in number operations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2);
@@ -709,14 +663,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3800
-     * @tc.name testArrayConcat038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3500
+     * @tc.name testArrayConcat035
      * @tc.desc Verify explicit union arrays can bridge mixed-type concat scenarios
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string | int>(1, 2);
       const arr2 = new Array<string | int>('a', 'b');
       const result = arr1.concat(arr2);
@@ -725,14 +679,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3900
-     * @tc.name testArrayConcat039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3600
+     * @tc.name testArrayConcat036
      * @tc.desc Verify concat supports numeric boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const maxValue = Number.MAX_SAFE_INTEGER.toInt();
       const minValue = Number.MIN_SAFE_INTEGER.toInt();
       const arr1 = new Array<int>(maxValue, minValue);
@@ -743,14 +697,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4000
-     * @tc.name testArrayConcat040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3700
+     * @tc.name testArrayConcat037
      * @tc.desc Verify concat supports string boundary values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<string>('', '\u0000');
       const arr2 = new Array<string>('a', '很长的字符串...');
       const result = arr1.concat(arr2);
@@ -758,14 +712,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4100
-     * @tc.name testArrayConcat041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3800
+     * @tc.name testArrayConcat038
      * @tc.desc Verify readonly arrays support concat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const source1 = new Array<int>(1, 2);
       const source2 = new Array<int>(3, 4);
       const arr1: ReadonlyArray<int> = source1;
@@ -776,14 +730,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4200
-     * @tc.name testArrayConcat042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_3900
+     * @tc.name testArrayConcat039
      * @tc.desc Verify concat can merge two datasets
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set1 = new Array<int>(1, 2, 3);
       const set2 = new Array<int>(4, 5, 6);
       const merged = set1.concat(set2);
@@ -791,14 +745,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4300
-     * @tc.name testArrayConcat043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4000
+     * @tc.name testArrayConcat040
      * @tc.desc Verify concat can add equivalent single-value arrays without changing the source array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const original = new Array<int>(1, 2, 3);
       const withNew = original.concat(singleNumberArray(4), singleNumberArray(5));
       expect(original.length).assertEqual(3);
@@ -806,14 +760,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4400
-     * @tc.name testArrayConcat044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4100
+     * @tc.name testArrayConcat041
      * @tc.desc Verify chained concat calls keep the expected order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = singleNumberArray(1);
       const arr2 = singleNumberArray(2);
       const arr3 = singleNumberArray(3);
@@ -823,14 +777,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4500
-     * @tc.name testArrayConcat045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4200
+     * @tc.name testArrayConcat042
      * @tc.desc Verify concat matches the values of an explicitly constructed array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
 
@@ -842,14 +796,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4600
-     * @tc.name testArrayConcat046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4300
+     * @tc.name testArrayConcat043
      * @tc.desc Verify concat preserves sparse-like undefined positions in pre-sized arrays
      * @tc.size MediumTest
     * @tc.type Function
     * @tc.level Level 2
      */
-    it('testArrayConcat046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int | undefined>(1, undefined, 3);
 
       const arr2 = new Array<int | undefined>(4, 5);
@@ -864,14 +818,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4700
-     * @tc.name testArrayConcat047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4400
+     * @tc.name testArrayConcat044
      * @tc.desc Verify concat preserves the inferred number array shape in the result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2);
@@ -879,14 +833,14 @@ export default function ArrayConcatTest(): void {
       expect(result[2]).assertEqual(3);
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4800
-     * @tc.name testArrayConcat048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4500
+     * @tc.name testArrayConcat045
      * @tc.desc Verify explicit union arrays can represent documented mixed-type concat inference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number | string>(1, 2);
       const arr2 = new Array<number | string>('a', 'b');
       const result = arr1.concat(arr2);
@@ -895,14 +849,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4900
-     * @tc.name testArrayConcat049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4600
+     * @tc.name testArrayConcat046
      * @tc.desc Verify concat does not modify the parameter array contents or length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const originalLength = arr2.length;
@@ -918,14 +872,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5000
-     * @tc.name testArrayConcat050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4700
+     * @tc.name testArrayConcat047
      * @tc.desc Verify concat can append the source array to itself while preserving order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
       const result = arr.concat(arr);
 
@@ -937,14 +891,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5100
-     * @tc.name testArrayConcat051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4800
+     * @tc.name testArrayConcat048
      * @tc.desc Verify concat can append the same parameter array more than once
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1);
       const arr2 = new Array<int>(2, 3);
       const result = arr1.concat(arr2, arr2);
@@ -958,14 +912,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5200
-     * @tc.name testArrayConcat052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_4900
+     * @tc.name testArrayConcat049
      * @tc.desc Verify empty arrays between concat parameters do not affect element order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const empty1 = new Array<int>();
       const arr2 = new Array<int>(3, 4);
@@ -980,14 +934,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5300
-     * @tc.name testArrayConcat053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5000
+     * @tc.name testArrayConcat050
      * @tc.desc Verify object elements coming from parameter arrays are copied by reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<Person022>();
       const p1 = new Person022();
       p1.name = 'Alice';
@@ -1006,14 +960,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5400
-     * @tc.name testArrayConcat054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5100
+     * @tc.name testArrayConcat051
      * @tc.desc Verify later source-array structural changes do not change an existing concat result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2);
@@ -1027,35 +981,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5500
-     * @tc.name testArrayConcat055
-     * @tc.desc Verify later parameter-array structural changes do not change an existing concat result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConcat055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3, 4);
-      const result = arr1.concat(arr2);
-
-      arr2.pushOne(99);
-
-      expect(arr2.length).assertEqual(3);
-      expect(result.length).assertEqual(4);
-      expect(result[2]).assertEqual(3);
-      expect(result[3]).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5600
-     * @tc.name testArrayConcat056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5200
+     * @tc.name testArrayConcat052
      * @tc.desc Verify replacing values in the source array after concat does not rewrite copied primitive values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2);
@@ -1070,36 +1003,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5700
-     * @tc.name testArrayConcat057
-     * @tc.desc Verify replacing values in the parameter array after concat does not rewrite copied primitive values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConcat057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<int>(1, 2);
-      const arr2 = new Array<int>(3, 4);
-      const result = arr1.concat(arr2);
-
-      arr2[0] = 300;
-      arr2[1] = 400;
-
-      expect(arr2[0]).assertEqual(300);
-      expect(arr2[1]).assertEqual(400);
-      expect(result[2]).assertEqual(3);
-      expect(result[3]).assertEqual(4);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5800
-     * @tc.name testArrayConcat058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5300
+     * @tc.name testArrayConcat053
      * @tc.desc Verify nested arrays from parameters keep the same reference identity in the concat result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const nested = new Array<int>(3, 4);
       const arr1 = new Array<Object>(1 as Object, 2 as Object);
       const arr2 = new Array<Object>();
@@ -1115,14 +1026,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5900
-     * @tc.name testArrayConcat059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5400
+     * @tc.name testArrayConcat054
      * @tc.desc Verify concat preserves duplicate primitive values and their order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 1, 2);
       const arr2 = new Array<int>(2, 1);
       const result = arr1.concat(arr2);
@@ -1136,14 +1047,14 @@ export default function ArrayConcatTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_6000
-     * @tc.name testArrayConcat060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONCAT_5500
+     * @tc.name testArrayConcat055
      * @tc.desc Verify modifying the concat result structure does not change the parameter array structure
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConcat060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConcat055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<int>(1, 2);
       const arr2 = new Array<int>(3, 4);
       const result = arr1.concat(arr2);

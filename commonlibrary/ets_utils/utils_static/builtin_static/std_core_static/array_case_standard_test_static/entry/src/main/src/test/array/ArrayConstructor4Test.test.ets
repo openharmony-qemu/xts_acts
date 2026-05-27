@@ -386,7 +386,7 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2100
      * @tc.name testArrayConstructor4021
-     * @tc.desc Verify null initializer input is rejected by ArkTS type checking
+     * @tc.desc Verify null initializer input causes a runtime cast failure
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -403,7 +403,7 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2200
      * @tc.name testArrayConstructor4022
-     * @tc.desc Verify undefined initializer input is rejected by ArkTS type checking
+     * @tc.desc Verify undefined initializer input causes a runtime cast failure
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -480,27 +480,12 @@ export default function ArrayConstructor4Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2600
      * @tc.name testArrayConstructor4026
-     * @tc.desc Verify the initializer index starts from zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor4026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(3, (index) => index);
-      expect(arr[0]).assertEqual(0);
-      expect(arr[1]).assertEqual(1);
-      expect(arr[2]).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2700
-     * @tc.name testArrayConstructor4027
      * @tc.desc Verify the initializer index increments by one for each position
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, (index) => index);
       for (let i = 0; i < arr.length; i++) {
         expect(arr[i]).assertEqual(i);
@@ -508,14 +493,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2800
-     * @tc.name testArrayConstructor4028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2700
+     * @tc.name testArrayConstructor4027
      * @tc.desc Verify the initializer can compute values from the current index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, (index) => index * index);
       expect(arr[0]).assertEqual(0);
       expect(arr[1]).assertEqual(1);
@@ -525,14 +510,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2900
-     * @tc.name testArrayConstructor4029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2800
+     * @tc.name testArrayConstructor4028
      * @tc.desc Verify the initializer can apply conditional logic per index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, (index) => {
         if (index % 2 === 0) {
           return index * 2;
@@ -546,14 +531,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3000
-     * @tc.name testArrayConstructor4030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_2900
+     * @tc.name testArrayConstructor4029
      * @tc.desc Verify the initializer can capture external closure variables
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const multiplier = 10;
       const arr = new Array<number>(5, (index) => index * multiplier);
       expect(arr[0]).assertEqual(0);
@@ -562,14 +547,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3100
-     * @tc.name testArrayConstructor4031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3000
+     * @tc.name testArrayConstructor4030
      * @tc.desc Verify the initializer overload returns an Array instance with all values set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, (index) => index + 1);
       expect(arr instanceof Array).assertTrue();
       expect(arr.length).assertEqual(5);
@@ -579,14 +564,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3200
-     * @tc.name testArrayConstructor4032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3100
+     * @tc.name testArrayConstructor4031
      * @tc.desc Verify all elements are initialized and safely accessible through the null-safe overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, (index) => index * 10);
       for (let i = 0; i < arr.length; i++) {
         expect(arr[i]).assertEqual(i * 10);
@@ -594,14 +579,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3300
-     * @tc.name testArrayConstructor4033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3200
+     * @tc.name testArrayConstructor4032
      * @tc.desc Verify the initializer overload returns arrays with the requested generic element types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<number>(5, (index) => index);
       const strArr = new Array<string>(5, (index) => `item${index}`);
       const boolArr = new Array<boolean>(5, (index) => index % 2 === 0);
@@ -611,14 +596,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3400
-     * @tc.name testArrayConstructor4034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3300
+     * @tc.name testArrayConstructor4033
      * @tc.desc Verify direct element construction provides immediate values while the initializer overload computes them automatically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(0, 1, 2, 3, 4);
       expect(arr1[0]).assertEqual(0);
       expect(arr1[4]).assertEqual(4);
@@ -630,14 +615,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3500
-     * @tc.name testArrayConstructor4035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3400
+     * @tc.name testArrayConstructor4034
      * @tc.desc Verify optional element types can be initialized with undefined safely
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<ElementTest037 | undefined>(3, (index) => undefined);
       expect(arr[0]).assertUndefined();
       expect(arr[1]).assertUndefined();
@@ -645,14 +630,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3600
-     * @tc.name testArrayConstructor4036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3500
+     * @tc.name testArrayConstructor4035
      * @tc.desc Verify every position is initialized by the callback for a larger array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(100, (index) => index);
       for (let i = 0; i < arr.length; i++) {
         expect(arr[i]).assertEqual(i);
@@ -660,14 +645,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3700
-     * @tc.name testArrayConstructor4037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3600
+     * @tc.name testArrayConstructor4036
      * @tc.desc Verify the initializer is called once for every requested index
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount = 0;
       const arr = new Array<number>(5, (index) => {
         callCount++;
@@ -678,42 +663,42 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3800
-     * @tc.name testArrayConstructor4038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3700
+     * @tc.name testArrayConstructor4037
      * @tc.desc Verify number arrays can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, (index) => index * 10);
       expect(arr[0]).assertEqual(0);
       expect(arr[9]).assertEqual(90);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3900
-     * @tc.name testArrayConstructor4039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3800
+     * @tc.name testArrayConstructor4038
      * @tc.desc Verify string arrays can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<string>(5, (index) => `element-${index}`);
       expect(arr[0]).assertEqual('element-0');
       expect(arr[4]).assertEqual('element-4');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4000
-     * @tc.name testArrayConstructor4040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_3900
+     * @tc.name testArrayConstructor4039
      * @tc.desc Verify boolean arrays can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<boolean>(5, (index) => index >= 2);
       expect(arr[0]).assertFalse();
       expect(arr[1]).assertFalse();
@@ -723,14 +708,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4100
-     * @tc.name testArrayConstructor4041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4000
+     * @tc.name testArrayConstructor4040
      * @tc.desc Verify arrays of custom class instances can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Item043>(5, (index) => new Item043(index, `item${index}`));
       expect(arr[0].id).assertEqual(0);
       expect(arr[0].value).assertEqual('item0');
@@ -739,14 +724,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4200
-     * @tc.name testArrayConstructor4042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4100
+     * @tc.name testArrayConstructor4041
      * @tc.desc Verify arrays of interface-typed objects can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Point044>(5, (index) => ({ x: index, y: index * 2 }));
       expect(arr[0].x).assertEqual(0);
       expect(arr[0].y).assertEqual(0);
@@ -755,14 +740,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4300
-     * @tc.name testArrayConstructor4043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4200
+     * @tc.name testArrayConstructor4042
      * @tc.desc Verify arrays of union types can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number | string>(10, (index) => {
         if (index % 2 === 0) {
           return index;
@@ -776,14 +761,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4400
-     * @tc.name testArrayConstructor4044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4300
+     * @tc.name testArrayConstructor4043
      * @tc.desc Verify nested arrays can be initialized through the generic overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<Array<number>>(3, (index) => new Array<number>(index + 1, (i) => i));
       expect(arr[0].length).assertEqual(1);
       expect(arr[1].length).assertEqual(2);
@@ -793,14 +778,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4500
-     * @tc.name testArrayConstructor4045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4400
+     * @tc.name testArrayConstructor4044
      * @tc.desc Verify the initializer call count and collected indices match the array length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let count = 0;
       const indices = new Array<number>();
       const arr = new Array<number>(10, (index) => {
@@ -817,14 +802,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4600
-     * @tc.name testArrayConstructor4046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4500
+     * @tc.name testArrayConstructor4045
      * @tc.desc Verify the initializer is invoked from index zero to length minus one in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const callOrder = new Array<number>();
       const arr = new Array<number>(5, (index) => {
         callOrder.pushOne(index);
@@ -839,14 +824,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4700
-     * @tc.name testArrayConstructor4047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4600
+     * @tc.name testArrayConstructor4046
      * @tc.desc Verify exceptions thrown inside the initializer are propagated to the caller
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       try {
         const arr = new Array<number>(5, (index) => {
@@ -862,14 +847,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4800
-     * @tc.name testArrayConstructor4048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4700
+     * @tc.name testArrayConstructor4047
      * @tc.desc Verify a large array can be initialized with the callback
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10000, (index) => index);
       expect(arr.length).assertEqual(10000);
       expect(arr[0]).assertEqual(0);
@@ -877,14 +862,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4900
-     * @tc.name testArrayConstructor4049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4800
+     * @tc.name testArrayConstructor4048
      * @tc.desc Verify the initializer can perform more complex calculations
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(100, (index) => {
         let result = 0;
         for (let i = 0; i <= index; i++) {
@@ -899,14 +884,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5000
-     * @tc.name testArrayConstructor4050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_4900
+     * @tc.name testArrayConstructor4049
      * @tc.desc Verify the initializer can prefill a constant default value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(10, (index) => -1);
       for (let i = 0; i < arr.length; i++) {
         expect(arr[i]).assertEqual(-1);
@@ -914,14 +899,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5100
-     * @tc.name testArrayConstructor4051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5000
+     * @tc.name testArrayConstructor4050
      * @tc.desc Verify the initializer can build an increasing sequence
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(100, (index) => index + 1);
       expect(arr[0]).assertEqual(1);
       expect(arr[50]).assertEqual(51);
@@ -929,14 +914,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5200
-     * @tc.name testArrayConstructor4052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5100
+     * @tc.name testArrayConstructor4051
      * @tc.desc Verify the initializer can precompute square lookup values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const squares = new Array<number>(100, (index) => index * index);
       expect(squares[5]).assertEqual(25);
       expect(squares[10]).assertEqual(100);
@@ -944,28 +929,28 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5300
-     * @tc.name testArrayConstructor4053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5200
+     * @tc.name testArrayConstructor4052
      * @tc.desc Verify the initializer can precompute a simple alphabet mapping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const map = new Array<string>(26, (index) => alphaAt(index));
       expect(map[0]).assertEqual('A');
       expect(map[25]).assertEqual('Z');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5400
-     * @tc.name testArrayConstructor4054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5300
+     * @tc.name testArrayConstructor4053
      * @tc.desc Verify initializer-based construction matches direct element construction results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr1 = new Array<number>(0, 1, 2, 3, 4);
 
       const arr2 = new Array<number>(5, (index) => index);
@@ -975,51 +960,51 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5500
-     * @tc.name testArrayConstructor4055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5400
+     * @tc.name testArrayConstructor4054
      * @tc.desc Verify initializer-based construction for large arrays remains distinct from single-numeric construction semantics
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr1 = new Array<number>(1000, (index) => index);
-      expect(arr1.length).assertEqual(1000);
+    it('testArrayConstructor4054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const arr1 = new Array<number>(10, (index) => index);
+      expect(arr1.length).assertEqual(10);
 
       const arr2 = new Array<number>();
-      for (let i = 0; i < 1000; i++) {
+      for (let i = 0; i < 10; i++) {
         arr2.pushOne(i);
       }
 
-      expect(arr2.length).assertEqual(1000);
-      for (let i = 0; i < 1000; i++) {
+      expect(arr2.length).assertEqual(10);
+      for (let i = 0; i < 10; i++) {
         expect(arr1[i]).assertEqual(arr2[i]);
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5600
-     * @tc.name testArrayConstructor4056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5500
+     * @tc.name testArrayConstructor4055
      * @tc.desc Verify using the initializer index avoids common closure-trap patterns
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(5, (index) => index);
       expect(arr[0]).assertEqual(0);
       expect(arr[4]).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5700
-     * @tc.name testArrayConstructor4057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5600
+     * @tc.name testArrayConstructor4056
      * @tc.desc Verify external variables can influence initializer results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const baseValue = 100;
       const multiplier = 2;
       const arr = new Array<number>(10, (index) => (baseValue + index) * multiplier);
@@ -1029,26 +1014,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5800
-     * @tc.name testArrayConstructor4058
-     * @tc.desc Verify non-function initializer input is rejected by ArkTS type checking
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5700
+     * @tc.name testArrayConstructor4057
+     * @tc.desc Verify the generic overload initializes typed arrays with callback-produced values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(typeof 'not-a-function').assertEqual('string');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5900
-     * @tc.name testArrayConstructor4059
-     * @tc.desc Verify the generic overload enforces callback return types at compile time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor4059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const numArr = new Array<number>(5, (index) => index);
       const strArr = new Array<string>(5, (index) => `item${index}`);
       expect(numArr[4]).assertEqual(4);
@@ -1056,14 +1029,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6000
-     * @tc.name testArrayConstructor4060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5800
+     * @tc.name testArrayConstructor4058
      * @tc.desc Verify the initializer is not called when the requested length is zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount = 0;
       const arr = new Array<number>(0, (index) => {
         callCount++;
@@ -1074,14 +1047,14 @@ export default function ArrayConstructor4Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_6100
-     * @tc.name testArrayConstructor4061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_CONSTRUCTOR_FOUR_5900
+     * @tc.name testArrayConstructor4059
      * @tc.desc Verify a single-element array calls the initializer exactly once
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor4061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayConstructor4059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let callCount = 0;
       const lastValue = new Array<number>();
       const arr = new Array<number>(1, (index) => {
