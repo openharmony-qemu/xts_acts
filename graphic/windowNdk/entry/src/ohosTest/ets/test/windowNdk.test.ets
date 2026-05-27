@@ -39,6 +39,7 @@ export default function windowNdk() {
     let context: common.UIAbilityContext;
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
+    let systemUiVisible:string = '';
     let isStatusBarVisible : boolean = false;
     let isNavigationVisible  : boolean = false;
     let isTypeFloatNavigationVisible : boolean = false;
@@ -78,10 +79,11 @@ export default function windowNdk() {
       } catch (err) {
         console.error('findComponent allowed failed: ' + JSON.stringify(err));
       }
-      let promise = windowClass.getWindowStateSnapshot();
+      let promise = WindowClass.getWindowStateSnapshot();
       promise.then((data)=>{
         let jsonObj: object = JSON.parse(data);
         console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}, systemUiVisible=${jsonObj["systemUiVisible"]}`);
+        systemUiVisible = jsonObj["systemUiVisible"];
         isStatusBarVisible = systemUiVisible[0] === '1';
         isNavigationVisible = systemUiVisible[1] === '1';
         isTypeFloatNavigationVisible = systemUiVisible[2] === '1';
