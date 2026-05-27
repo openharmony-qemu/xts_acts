@@ -21,7 +21,7 @@ const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 
 const TEST_BUNDLE_NAME = 'ohos.acts.distributedKvStore';
-const TEST_STORE_ID = 'KVManagerRootDir';
+const TEST_STORE_ID = 'KVManagerRootDirEts';
 let kvManager: factory.KVManager|null = null;
 let kvStore : factory.SingleKVStore|null = null;
 
