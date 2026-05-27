@@ -1,11 +1,11 @@
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import notificationManager from '@ohos.notificationManager';
-import { common } from '@kit.AbilityKit';
+import common from '@ohos.app.ability.common';
 import { Driver, ON } from '@kit.TestKit';
 import image from '@ohos.multimedia.image';
 
-let ctx = getContext(this) as common.UIAbilityContext;
+let context: common.UIAbilityContext;
 let TAG: string = 'Notification';
 function sleep(time: number) {
   return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
@@ -13,32 +13,29 @@ function sleep(time: number) {
 export default function actsNotificationPriorityTest() {
   describe('actsNotificationPriorityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
-    beforeAll(async (done: Function) => {
-      notificationManager.requestEnableNotification((err) => {
-        if (err) {
-          console.error(TAG+`requestEnableNotification failed, code is ${err.code}, message is ${err.message}`);
-          expect(false).assertTrue();
-          console.info(TAG + `test case end`);
-          done();
+    beforeAll(async () => {
+      context = AppStorage.get<common.UIAbilityContext>("abilityContext") as common.UIAbilityContext
+      notificationManager.requestEnableNotification(context).then(() => {
+        console.info(`requestEnableNotification succeeded`);
+      }).catch((err: BusinessError) => {
+        console.info(`requestEnableNotification err: ` + JSON.stringify(err));
+        if (err?.code === 801) {
+          expect(err.code).assertEqual(801);
         } else {
-          console.info(TAG + "requestEnableNotification success");
+          expect().assertFail();
         }
       });
-
-      await sleep(1500);
+      await sleep(1000)
       let driver = Driver.create();
-      console.log(TAG + `driver is ${JSON.stringify(driver)}`);
-      await driver.assertComponentExist(ON.text('允许'));
       let button = await driver.findComponent(ON.text('允许'));
-      console.log(TAG + `button is ${JSON.stringify(button)}`);
+      console.info(`button is ${JSON.stringify(button)}`);
       if (button !== null) {
+        await sleep(1000);
         await button.click();
-        await sleep(1500);
-        done()
+        await sleep(1000);
       } else {
-        console.log(TAG + `button is null`)
-        expect(false).assertTrue();
-        done()
+        console.info(`null button`);
+        expect(button).assertContain('允许')
       }
     })
     

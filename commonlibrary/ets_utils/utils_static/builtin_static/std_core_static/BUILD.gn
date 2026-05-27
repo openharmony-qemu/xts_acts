@@ -19,6 +19,7 @@ group("std_core_static") {
     deps = [
       "bigint_standard_test_static:ActsBigintStandardTest"
       "enum_standard_test_static:ActsEnumStaticTest",
+      "reflect_standard_test_static:ActsReflectStaticTest",
     ]
   }
 }
