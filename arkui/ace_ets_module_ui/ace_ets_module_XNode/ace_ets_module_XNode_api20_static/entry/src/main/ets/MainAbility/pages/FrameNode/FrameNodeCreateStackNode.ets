@@ -1,4 +1,5 @@
 'use static';
+
 /*
 * Copyright (c) 2026 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 import {
   Entry,
@@ -68,11 +70,11 @@ export class MyNodeController extends NodeController {
         EAWorker.main().postTask(() => {
           col.appendChild(stack)
           this.myNode = stack
-          this.errorCode = 'createStackNode success'
+          this.errorCode = 'CreateStackNode success'
         })
       } catch (e) {
         EAWorker.main().postTask(() => {
-          this.errorCode = 'createStackNode error: ' + e.message
+          this.errorCode = 'CreateStackNode error: ' + e.message
         })
       }
     })

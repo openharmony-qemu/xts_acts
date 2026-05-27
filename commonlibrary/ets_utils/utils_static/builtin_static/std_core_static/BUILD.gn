@@ -19,8 +19,8 @@ group("std_core_static") {
     deps = [
         "enum_standard_test_static:ActsEnumStaticTest",
         "reflect_standard_test_static:ActsReflectStaticTest",
+        "array_case_standard_test_static:ActsArrayCaseStaticTest",
         "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
-        
     ]
   }
 }
