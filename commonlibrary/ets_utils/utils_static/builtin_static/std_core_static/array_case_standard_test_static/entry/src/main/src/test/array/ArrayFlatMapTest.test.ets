@@ -135,8 +135,9 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2);
       const result = arr.flatMap<string>((v: number): Array<string> => new Array<string>(v.toString()));
+      const valueType = Class.of(result[0]).getName().split('.');
       expect(result.length).assertEqual(2);
-      expect(typeof result[0]).assertEqual('string');
+      expect(valueType[valueType.length - 1]).assertEqual('String');
       expect(result[0]).assertEqual('1');
     });
 
@@ -401,8 +402,9 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3];
       const result: Array<number> = arr.flatMap<number>((v: number): Array<number> => [v, v * 2]);
+      const valueType = Class.of(result[0]).getName().split('.');
       expect(result.length).assertEqual(6);
-      expect(typeof result[0]).assertEqual('number');
+      expect(valueType[valueType.length - 1]).assertEqual('Double');
       expect(result[5]).assertEqual(6);
     });
 
@@ -688,7 +690,7 @@ export default function ArrayFlatMapTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FLAT_MAP_3500
      * @tc.name testArrayFlatMap035
-     * @tc.desc Verify documented scenario 10.2 与map+flat性能对比
+     * @tc.desc Verify documented scenario 10.2 flatMap matches map followed by flat
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -698,16 +700,10 @@ export default function ArrayFlatMapTest(): void {
       for (let i: int = 0; i < 100; i++) {
         arr.pushOne(i);
       }
-      const start1: number = Date.now();
       const result1: Array<number> = arr.flatMap<number>((v: number): Array<number> => [v, v * 2]);
-      const end1: number = Date.now();
-      const start2: number = Date.now();
       const result2: Array<number> = arr.map((v: number): Array<number> => [v, v * 2]).flat<number>(1);
-      const end2: number = Date.now();
       expect(result1.length).assertEqual(result2.length);
       expect(result1.toString()).assertEqual(result2.toString());
-      expect(end1 >= start1).assertTrue();
-      expect(end2 >= start2).assertTrue();
     });
 
     /**
@@ -775,8 +771,9 @@ export default function ArrayFlatMapTest(): void {
     it('testArrayFlatMap039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3];
       const result: Array<string> = arr.flatMap<string>((v: number): Array<string> => [v.toString()]);
+      const valueType = Class.of(result[0]).getName().split('.');
       expect(result.length).assertEqual(3);
-      expect(typeof result[0]).assertEqual('string');
+      expect(valueType[valueType.length - 1]).assertEqual('String');
       expect(result[0]).assertEqual('1');
     });
 

@@ -115,7 +115,8 @@ export default function ArrayIteratorTest(): void {
     it('testArrayIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(10, 20, 30);
       const iterator = arr.$_iterator();
-      expect(typeof iterator.next).assertEqual('function');
+      const nextType = iterator.next
+      expect(nextType.name).assertEqual('next');
       expect(iterator.next().value).assertEqual(10);
     });
 
@@ -132,7 +133,8 @@ export default function ArrayIteratorTest(): void {
       const iterator = arr.$_iterator();
       let count = 0;
       for (const value of iterator) {
-        expect(typeof value).assertEqual('string');
+        const valueType = Class.of(value).getName().split('.');
+        expect(valueType[valueType.length - 1]).assertEqual('String');
         count++;
       }
       expect(count).assertEqual(3);
@@ -724,7 +726,9 @@ export default function ArrayIteratorTest(): void {
       expect(iterator.next().value).assertEqual(2);
       expect(iterator.next().value).assertEqual(3);
       const last = iterator.next();
-      expect(last.done || last.value == 4).assertTrue();
+      expect(last.done).assertFalse();
+      expect(last.value).assertEqual(4);
+      expect(iterator.next().done).assertTrue();
     });
 
     /**
@@ -830,7 +834,7 @@ export default function ArrayIteratorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_ITERATOR_4000
      * @tc.name testArrayIterator040
-     * @tc.desc Verify iterator and for-loop can traverse the same number of elements
+     * @tc.desc Verify iterator and for-loop traverse the same ordered values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -843,14 +847,14 @@ export default function ArrayIteratorTest(): void {
 
       let iteratorCount = 0;
       for (const value of arr.$_iterator()) {
-        expect(value >= 0).assertTrue();
+        expect(value).assertEqual(iteratorCount);
         iteratorCount++;
       }
 
       let loopCount = 0;
       for (let i = 0; i < arr.length; i++) {
         const value = arr[i];
-        expect(value >= 0).assertTrue();
+        expect(value).assertEqual(i);
         loopCount++;
       }
       expect(iteratorCount).assertEqual(loopCount);
