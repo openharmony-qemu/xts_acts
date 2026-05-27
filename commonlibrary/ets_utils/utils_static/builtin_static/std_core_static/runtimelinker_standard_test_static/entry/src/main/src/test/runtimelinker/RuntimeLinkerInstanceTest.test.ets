@@ -42,6 +42,7 @@ export default function InstanceTest(): void {
       expect(linker instanceof BootRuntimeLinker).assertTrue();
     });
 
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0200
      * @tc.name testInstance002
@@ -103,5 +104,124 @@ export default function InstanceTest(): void {
       }
       useLinker(BootRuntimeLinker.instance);
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0600
+     * @tc.name testInstance006
+     * @tc.desc Verify inherited method findLoadedClass("std.core.String") returns valid Class
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let found: Class | undefined = linker.findLoadedClass("std.core.String");
+      expect(found !== undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0700
+     * @tc.name testInstance007
+     * @tc.desc Verify inherited method loadClass("std.core.String") returns valid Class instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let cls: Class | undefined = linker.loadClass("std.core.String");
+      expect(cls !== undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0800
+     * @tc.name testInstance008
+     * @tc.desc Verify typeof on BootRuntimeLinker instance returns 'object'
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let typeResult: string = typeof linker;
+      expect(typeResult === 'object').assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_0900
+     * @tc.name testInstance009
+     * @tc.desc Verify BootRuntimeLinker instance passes instanceof check against itself
+     *            after casting to Object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let obj: Object = linker;
+      let isBootLinker: boolean = obj instanceof BootRuntimeLinker;
+      expect(isBootLinker).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1000
+     * @tc.name testInstance010
+     * @tc.desc Verify BootRuntimeLinker instance passes instanceof check against parent RuntimeLinker
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let obj: Object = linker;
+      let isRuntimeLinker: boolean = obj instanceof RuntimeLinker;
+      expect(isRuntimeLinker).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1100
+     * @tc.name testInstance011
+     * @tc.desc Verify BootRuntimeLinker|undefined union type can hold undefined value
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let maybeLinker: BootRuntimeLinker | undefined = undefined;
+      expect(maybeLinker === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1200
+     * @tc.name testInstance012
+     * @tc.desc Verify loadClass throws LinkerClassNotFoundError for non-existent class name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      try {
+        linker.loadClass("com.nonexistent.FakeClass");
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof LinkerClassNotFoundError).assertTrue();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCE_1300
+     * @tc.name testInstance013
+     * @tc.desc Verify getType returns Type instance for valid type descriptor "std.core.String"
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstance013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker: BootRuntimeLinker = BootRuntimeLinker.instance;
+      let typeResult: Type | undefined = linker.getType("std.core.String");
+      expect(typeResult !== undefined).assertTrue();
+    });
+
   });
 }

@@ -76,11 +76,11 @@ export default function GetBootRuntimeLinkerTest(): void {
      * @tc.level Level 2
      */
     it('testGetBootRuntimeLinker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let testInAnotherModule = (): void => {
+      let callInLocalScope = (): void => {
         let linker: BootRuntimeLinker = getBootRuntimeLinker();
         expect(linker instanceof BootRuntimeLinker).assertTrue();
       }
-      testInAnotherModule();
+      callInLocalScope();
     });
 
     /**
@@ -98,17 +98,5 @@ export default function GetBootRuntimeLinkerTest(): void {
       expect(typedLinker instanceof BootRuntimeLinker).assertTrue();
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_BOOT_RUNTIME_LINKER_0500
-     * @tc.name testGetBootRuntimeLinker005
-     * @tc.desc Verify getBootRuntimeLinker() does not throw any exception during normal call
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetBootRuntimeLinker005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker: BootRuntimeLinker = getBootRuntimeLinker();
-      expect(linker instanceof BootRuntimeLinker).assertTrue();
-    });
   });
 }
