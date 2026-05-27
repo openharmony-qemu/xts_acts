@@ -43,5 +43,27 @@ napi_value ModularObject_2200(napi_env env, napi_callback_info info);
 napi_value ModularObject_2300(napi_env env, napi_callback_info info);
 napi_value ModularObject_2400(napi_env env, napi_callback_info info);
 napi_value ModularObject_2500(napi_env env, napi_callback_info info);
+napi_value ModularObject_2600(napi_env env, napi_callback_info info);
+napi_value ModularObject_2700(napi_env env, napi_callback_info info);
+napi_value ModularObject_2800(napi_env env, napi_callback_info info);
+napi_value ModularObject_2900(napi_env env, napi_callback_info info);
+napi_value ModularObject_3000(napi_env env, napi_callback_info info);
+napi_value ModularObject_3100(napi_env env, napi_callback_info info);
+napi_value ModularObject_3200(napi_env env, napi_callback_info info);
+napi_value ModularObject_3300(napi_env env, napi_callback_info info);
+napi_value ModularObject_3400(napi_env env, napi_callback_info info);
+napi_value ModularObject_3500(napi_env env, napi_callback_info info);
+napi_value ModularObject_3600(napi_env env, napi_callback_info info);
+napi_value ModularObject_3700(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0100(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0200(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0300(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0400(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0500(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0600(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0700(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0800(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_0900(napi_env env, napi_callback_info info);
+napi_value ModularObject_ErrCode_1000(napi_env env, napi_callback_info info);
 
 #endif //ACTS_MODULAR_OBJECT_TEST_H

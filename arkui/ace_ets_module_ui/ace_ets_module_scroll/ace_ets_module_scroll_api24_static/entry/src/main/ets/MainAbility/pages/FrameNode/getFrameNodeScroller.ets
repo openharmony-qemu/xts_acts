@@ -31,7 +31,6 @@ import {
   Edge,
   VerticalAlign,
 } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
 import { BuilderNode, typeNode, FrameNode, NodeContent, NodeController } from '@ohos.arkui.node'
 import { UIContext } from '@ohos.arkui.UIContext'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';

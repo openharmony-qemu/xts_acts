@@ -340,7 +340,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('RdbBatchInsertSync14800011_002',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): void => {
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, '%{public}s', "************* RdbBatchInsertSync14800011_002 start *************");
         let transaction = await rdbStore!.createTransaction();
         await createCorruptDb(context!, STORE_CONFIG);
@@ -366,7 +366,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('RdbBatchInsertWithConflictResolution14800011_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, '%{public}s',
           "************* RdbBatchInsertWithConflictResolution14800011_003 start *************");
         let transaction = await rdbStore!.createTransaction();
@@ -396,7 +396,7 @@ export default function RdbErrorCode14800011() {
      * @tc.level  LEVEL2
      */
     it('RdbBatchInsertWithConflictResolutionSync14800011_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      async (done: () => void): void => {
+      async (done: () => void): Promise<void> => {
         hilog.info(domain, TAG, '%{public}s',
           "************* RdbBatchInsertWithConflictResolutionSync14800011_001 start *************");
         let transaction = await rdbStore!.createTransaction();

@@ -16,17 +16,17 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000001,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000001,
         "KHR-Single-GLES32.subgroups.bu",
         "iltin_var.graphics.subgroupsize");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000002,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000002,
         "KHR-Single-GLES32.subgroups.builti",
         "n_var.graphics.subgroupinvocationid");

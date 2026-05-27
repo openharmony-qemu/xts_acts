@@ -33,6 +33,7 @@ export default function pullUpToCancelRefreshModifierTest() {
       if (!("pullUpToCancelRefreshModifier" == pages.name)) {
         console.info("get pullUpToCancelRefreshModifierTest state pages.name: " + JSON.stringify(pages.name));
         let result = await router.push(options);
+        await CommonFunc.sleep(2000);
         console.info("push pullUpToCancelRefreshModifierTest success: " + JSON.stringify(result));
       }
       done();

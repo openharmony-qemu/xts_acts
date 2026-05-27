@@ -19,7 +19,7 @@ import { State ,Link } from '@ohos.arkui.stateManagement'
 export struct NavRouterView {
   @State isActive: boolean = false
   @State dex: number = 0
-  @Link _markAnchor: Position = {x: 10, y:10};
+  public _markAnchor: Position = {x: 10, y:10};
   private componentKey: string = '';
 
   build() {

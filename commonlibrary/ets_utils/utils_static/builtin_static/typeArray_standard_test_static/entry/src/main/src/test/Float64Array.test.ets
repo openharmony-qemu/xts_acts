@@ -17,7 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 
-export default function Float64ArrayTest() {
+export default function Float64ArrayTest(): void {
   describe('Float64ArrayTest', (): void =>{
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

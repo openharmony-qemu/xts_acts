@@ -27,7 +27,7 @@ import {
   AnimateParam,
   Search,
   TextAlign,
-  Axis,
+
   NavBarPosition,
   FlexAlign,
   NavPathInfo,
@@ -60,7 +60,7 @@ import {
   TextOverflow,
   GestureEvent,
   FontWeight,
-  Axis,
+
   Margin,
   Swiper,
   ForEach,

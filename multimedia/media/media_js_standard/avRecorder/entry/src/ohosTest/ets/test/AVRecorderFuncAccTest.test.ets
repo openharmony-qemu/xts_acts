@@ -1865,6 +1865,139 @@ export default function AVRecorderFuncAccTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AAC_AUDIO_RECORDER_SETMETADATA_0300 end')
       done();
     })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest48(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0100 end')
+      done();
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest49(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0200 end')
+      done();
+    })   
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest50(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0300 end')
+      done();
+    })   
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest51(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0400 end')
+      done();
+    })   
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest52(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0500 end')
+      done();
+    })   
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest53(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0600 end')
+      done();
+    })   
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700
+     * @tc.desc   Recorder addWatermark
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700', Level.LEVEL0, async (done: Function) => {
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700 start')
+      let fileName: string = commonFun.resourceNameAac();
+      expect(fileName).not().assertNull();
+      fdObject = await commonFun.getFd(fileName);
+      fdPath = "fd://" + fdObject.fdNumber;
+      avConfig.url = fdPath;
+      await commonFun.avRecorderReliabilitTest54(avConfig, avRecorder, RECORDER_TIME, done);
+      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ADDWATERMARK_API_0700 end')
+      done();
+    })        
   })
 }
 

@@ -43,12 +43,32 @@ static napi_value AVCapabilityIsSupportedHEVC(napi_env env, napi_callback_info i
     int backParam = FAIL;
     OH_AVCapability *capability = nullptr;
     
-    bool checkParam = -1;
+    int32_t checkParam = 0;
     capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, IS_DECODER, SOFTWARE);
     OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
     if (capability != nullptr) {
         backParam = SUCCESS;
         OH_LOG_INFO(LOG_APP, "OH_AVCapability_IsSupported checkParam=%{public}d", checkParam);
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+static napi_value AVCapabilityIsSupportedHEVCEncoder(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int backParam = FAIL;
+    OH_AVCapability *capability = nullptr;
+    
+    int32_t checkParam = 0;
+    capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, IS_ENCODER, HARDWARE);
+    OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
+    if (capability != nullptr) {
+        backParam = SUCCESS;
+        OH_LOG_INFO(LOG_APP, "OH_AVCapability_IsSupported checkParam=%{public}d", checkParam);
+    }
+    if (checkParam != 0) {
+        OH_LOG_INFO(LOG_APP, "OH_AVCapability_IsSupported Success checkParam=%{public}d", checkParam);
+        backParam = SUCCESS;
     }
     napi_create_int32(env, backParam, &result);
     return result;
@@ -116,7 +136,7 @@ static napi_value AVCapabilityIsVideoSizeSupported(napi_env env, napi_callback_i
     napi_get_value_int32(env, args[PARAM_0], &width);
     napi_get_value_int32(env, args[PARAM_1], &height);
     
-    bool checkParam = -1;
+    int32_t checkParam = 0;
     capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, IS_DECODER, HARDWARE);
     OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
     if (capability != nullptr) {
@@ -146,7 +166,7 @@ static napi_value AVCapabilityIsVideoSizeSupportedEncoder(napi_env env, napi_cal
     napi_get_value_int32(env, args[PARAM_0], &width);
     napi_get_value_int32(env, args[PARAM_1], &height);
     
-    bool checkParam = -1;
+    int32_t checkParam = 0;
     capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, IS_ENCODER, HARDWARE);
     OH_LOG_INFO(LOG_APP, "OH_AVCodec_GetCapabilityByCategory capability=%{public}d", capability);
     if (capability != nullptr) {
@@ -167,6 +187,8 @@ static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"AVCapabilityIsSupportedHEVC", nullptr, AVCapabilityIsSupportedHEVC, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"AVCapabilityIsSupportedHEVCEncoder", nullptr, AVCapabilityIsSupportedHEVCEncoder, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"AVCapabilityIsSupportedH263", nullptr, AVCapabilityIsSupportedH263, nullptr, nullptr, nullptr,
             napi_default, nullptr},

@@ -16,201 +16,201 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000203,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000203,
         "dEQP-GLES3.functional.texture.f",
         "iltering.2d.formats.bgra_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000204,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000204,
         "dEQP-GLES3.functional.texture.f",
         "iltering.2d.formats.bgra_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000205,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000205,
         "dEQP-GLES3.functional.texture.filtering",
         ".2d.formats.bgra_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000206,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000206,
         "dEQP-GLES3.functional.texture.filterin",
         "g.2d.formats.bgra_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000207,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000207,
         "dEQP-GLES3.functional.texture.filterin",
         "g.2d.formats.bgra_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000208,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000208,
         "dEQP-GLES3.functional.texture.filterin",
         "g.2d.formats.bgra_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000209,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000209,
         "dEQP-GLES3.functional.texture.fi",
         "ltering.2d.formats.bgra8_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000210,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000210,
         "dEQP-GLES3.functional.texture.f",
         "iltering.2d.formats.bgra8_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000211,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000211,
         "dEQP-GLES3.functional.texture.filtering",
         ".2d.formats.bgra8_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000212,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000212,
         "dEQP-GLES3.functional.texture.filtering",
         ".2d.formats.bgra8_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000213,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000213,
         "dEQP-GLES3.functional.texture.filtering",
         ".2d.formats.bgra8_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000214,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000214,
         "dEQP-GLES3.functional.texture.filterin",
         "g.2d.formats.bgra8_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000215,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000215,
         "dEQP-GLES3.functional.texture.fi",
         "ltering.cube.formats.bgra_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000216,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000216,
         "dEQP-GLES3.functional.texture.fi",
         "ltering.cube.formats.bgra_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000217,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000217,
         "dEQP-GLES3.functional.texture.filtering.",
         "cube.formats.bgra_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000218,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000218,
         "dEQP-GLES3.functional.texture.filtering",
         ".cube.formats.bgra_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000219,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000219,
         "dEQP-GLES3.functional.texture.filtering",
         ".cube.formats.bgra_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000220,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000220,
         "dEQP-GLES3.functional.texture.filtering",
         ".cube.formats.bgra_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000221,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000221,
         "dEQP-GLES3.functional.texture.fil",
         "tering.cube.formats.bgra8_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000222,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000222,
         "dEQP-GLES3.functional.texture.fi",
         "ltering.cube.formats.bgra8_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000223,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000223,
         "dEQP-GLES3.functional.texture.filtering.",
         "cube.formats.bgra8_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000224,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000224,
         "dEQP-GLES3.functional.texture.filtering.",
         "cube.formats.bgra8_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000225,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000225,
         "dEQP-GLES3.functional.texture.filtering.",
         "cube.formats.bgra8_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000226,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000226,
         "dEQP-GLES3.functional.texture.filtering",
         ".cube.formats.bgra8_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000227,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000227,
         "dEQP-GLES3.functional.texture.filt",
         "ering.2d_array.formats.bgra_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000228,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000228,
         "dEQP-GLES3.functional.texture.filt",
         "ering.2d_array.formats.bgra_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000229,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000229,
         "dEQP-GLES3.functional.texture.filtering.2d",
         "_array.formats.bgra_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000230,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000230,
         "dEQP-GLES3.functional.texture.filtering.2",
         "d_array.formats.bgra_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000231,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000231,
         "dEQP-GLES3.functional.texture.filtering.2",
         "d_array.formats.bgra_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000232,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000232,
         "dEQP-GLES3.functional.texture.filtering.2",
         "d_array.formats.bgra_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000233,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000233,
         "dEQP-GLES3.functional.texture.filte",
         "ring.2d_array.formats.bgra8_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000234,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000234,
         "dEQP-GLES3.functional.texture.filt",
         "ering.2d_array.formats.bgra8_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000235,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000235,
         "dEQP-GLES3.functional.texture.filtering.2d",
         "_array.formats.bgra8_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000236,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000236,
         "dEQP-GLES3.functional.texture.filtering.2d",
         "_array.formats.bgra8_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000237,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000237,
         "dEQP-GLES3.functional.texture.filtering.2d",
         "_array.formats.bgra8_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000238,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000238,
         "dEQP-GLES3.functional.texture.filtering.2",
         "d_array.formats.bgra8_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000239,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000239,
         "dEQP-GLES3.functional.texture.f",
         "iltering.3d.formats.bgra_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000240,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000240,
         "dEQP-GLES3.functional.texture.f",
         "iltering.3d.formats.bgra_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000241,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000241,
         "dEQP-GLES3.functional.texture.filtering",
         ".3d.formats.bgra_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000242,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000242,
         "dEQP-GLES3.functional.texture.filterin",
         "g.3d.formats.bgra_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000243,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000243,
         "dEQP-GLES3.functional.texture.filterin",
         "g.3d.formats.bgra_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000244,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000244,
         "dEQP-GLES3.functional.texture.filterin",
         "g.3d.formats.bgra_linear_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000245,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000245,
         "dEQP-GLES3.functional.texture.fi",
         "ltering.3d.formats.bgra8_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000246,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000246,
         "dEQP-GLES3.functional.texture.f",
         "iltering.3d.formats.bgra8_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000247,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000247,
         "dEQP-GLES3.functional.texture.filtering",
         ".3d.formats.bgra8_nearest_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000248,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000248,
         "dEQP-GLES3.functional.texture.filtering",
         ".3d.formats.bgra8_linear_mipmap_nearest");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000249,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000249,
         "dEQP-GLES3.functional.texture.filtering",
         ".3d.formats.bgra8_nearest_mipmap_linear");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000250,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000250,
         "dEQP-GLES3.functional.texture.filterin",
         "g.3d.formats.bgra8_linear_mipmap_linear");

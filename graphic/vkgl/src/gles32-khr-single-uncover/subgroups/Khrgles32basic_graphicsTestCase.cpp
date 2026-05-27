@@ -16,29 +16,29 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles32BaseFunc.h"
-#include "../ActsKhrgles320001TestSuite.h"
+#include "../ActsGles32KhrSingleUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000045,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000045,
         "KHR-Single-GLES32.subgroups.",
         "basic.graphics.subgroupelect");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000046,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000046,
         "KHR-Single-GLES32.subgroups.b",
         "asic.graphics.subgroupbarrier");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000047,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000047,
         "KHR-Single-GLES32.subgroups.basi",
         "c.graphics.subgroupmemorybarrier");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000048,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000048,
         "KHR-Single-GLES32.subgroups.basic.g",
         "raphics.subgroupmemorybarrierbuffer");
 
-static SHRINK_HWTEST_F(ActsKhrgles320001TestSuite, TestCase_000049,
+static SHRINK_HWTEST_F(ActsGles32KhrSingleUncover0001TestSuite, TestCase_000049,
         "KHR-Single-GLES32.subgroups.basic.",
         "graphics.subgroupmemorybarrierimage");

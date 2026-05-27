@@ -150,7 +150,7 @@ struct Index {
         })
 
       Web({ src: 'www.huawei.com', controller: this.controller })
-        .key('web2')
+        .key('webapi9_web2')
         .webStandardFont("HarmonyOS-Sans-Condensed")
         .webSerifFont("HarmonyOS-Sans-Condensed")
         .webSansSerifFont("HarmonyOS-Sans-Condensed")

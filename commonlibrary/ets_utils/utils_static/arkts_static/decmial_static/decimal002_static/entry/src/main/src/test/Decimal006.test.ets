@@ -35,7 +35,7 @@ function test_sinh_001(n: string, pr: number, rm: int, expected: string) {
   expect(expected).assertEqual(Decimal.sinh(n).valueOf());
 }
 
-export default function DecimalTest006() {
+export default function DecimalTest006(): void {
   describe("DecimalTest006", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

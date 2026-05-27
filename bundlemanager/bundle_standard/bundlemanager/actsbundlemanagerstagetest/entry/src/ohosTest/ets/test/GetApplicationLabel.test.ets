@@ -60,6 +60,34 @@ export default function getApplicationLabel() {
       })
     })
 
-
-  })
-}
+  
+    /**
+     * @tc.name   SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500
+     * @tc.number SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500
+     * @tc.desc   Check the wrong type of appIndex (string instead of number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BMS_FRAMEWORK_GETAPPLICATIONLABEL_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
+      try {
+        await bundleManager.getApplicationLabel("ohos.acts.bundle.stage.test", 0).then(data => {
+          console.info("getApplicationLabelWithWrongAppIndexType success" + JSON.stringify(data))
+          expect(data).assertFail()
+          done()
+        }).catch((err: BusinessError) => {
+          console.info("getApplicationLabelWithWrongAppIndexType failed" + JSON.stringify(err) +  "==>" + err.message)
+          expect(err.code).assertEqual(201);
+          expect(err.message).assertEqual('BusinessError 201: Permission denied. An attempt was made to GetApplicationLabel forbidden by permission: ohos.permission.GET_BUNDLE_INFO_PRIVILEGED.')
+          done()
+        })
+      } catch (err) {
+        console.info("getApplicationLabelWithWrongAppIndexType fail" + JSON.stringify(err))
+        expect().assertFail();
+        done();
+      }
+    })
+ 
+ 
+   })
+ }

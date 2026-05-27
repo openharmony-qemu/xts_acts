@@ -276,7 +276,7 @@ export default function WindowPCTest() {
                         (subWin! as window.Window).recover().then(async () => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in calling recover.');
                             expect(false).assertTrue();
-                        }).catch((err: Error):Promise<void>  => {
+                        }).catch((err: Error): void  => {
                             hilog.error(0x0000, '[ANI]',msgStr + 'Failed to call recover. Cause: ' + JSON.stringify(err));
                             expect(err!.code).assertEqual(1300002);
                         });
@@ -288,7 +288,7 @@ export default function WindowPCTest() {
                     }
                     })().awaitSync()
                 })
-                .catch((err: Error):Promise<void> => {
+                .catch((err: Error): void => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done()
@@ -313,7 +313,7 @@ export default function WindowPCTest() {
                 promise.then(() => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in recovering the window.');
                     done();
-                }).catch((err: Error):Promise<void> => {
+                }).catch((err: Error): void => {
                     if (err!.code === 801 || err!.code === 1300001) {
                         hilog.info(0x0000, '[ANI]',msgStr + ' The current device type does not support calling recover or recover not support ')
                         done();
@@ -2630,7 +2630,7 @@ export default function WindowPCTest() {
                     console.info(caseName + ' Succeeded in setting window support modes');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
                     await terminateAbility(caseName);
                     if (err.code === 801) {
@@ -3004,14 +3004,15 @@ export default function WindowPCTest() {
         });
 
         /**
-         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_001
+         * @tc.number    SUB_WINDOW_PC_STATIC_ONWINDOWTITLEBUTTONRECTCHANGE_0001
          * @tc.name      testOnWindowTitleButtonRectChange001
          * @tc.desc      Test onWindowTitleButtonRectChange function.
          * @tc.size      MediumTest
          * @tc.type      Function
          * @tc.level     Level3
          */
-        it('testOnWindowTitleButtonRectChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): void => {
+        it('testOnWindowTitleButtonRectChange001',
+            TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             let caseName: string = 'testOnWindowTitleButtonRectChange001';
             let msgStr: string = 'jsUnittest ' + caseName + ' ';
             hilog.info(domain, tag, msgStr + 'begin');

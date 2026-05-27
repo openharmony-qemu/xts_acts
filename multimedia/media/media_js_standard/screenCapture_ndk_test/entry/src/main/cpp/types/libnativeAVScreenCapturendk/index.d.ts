@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+export const normalAVbufferTest: () => number;
 export const normalAVScreenCaptureTest: () => number;
 export const normalAVScreenCaptureTestStop: () => number;
 export const normalAVScreenRecordTest: () => number;
@@ -60,6 +61,10 @@ export const normalAVScreenCaptureStrategyForClosedMode: () => number;
 export const normalAVScreenCaptureSetPickerModeWindowOnly: () => number;
 export const normalAVScreenCaptureSetPickerModeScreenOnly: () => number;
 export const normalAVScreenCaptureSetPickerModeScreenAndWindow: () => number;
+export const normalAVScreenCaptureSetPickerModeAppOnly: () => number;
+export const normalAVScreenCaptureSetPickerModeWindowAndApp: () => number;
+export const normalAVScreenCaptureSetPickerModeScreenAndApp: () => number;
+export const normalAVScreenCaptureSetPickerModeScreenWindowAndApp: () => number;
 export const normalAVScreenCaptureSetPickerModeScreenAndWindow3: () => number;
 export const normalAVScreenCaptureExcludePickerWindows: () => number;
 export const normalAVScreenCaptureExcludePickerWindows2: () => number;

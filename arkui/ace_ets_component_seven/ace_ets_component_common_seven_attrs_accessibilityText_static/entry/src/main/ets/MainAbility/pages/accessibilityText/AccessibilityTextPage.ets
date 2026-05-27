@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,10 +15,8 @@
  */
 import { ListItemGroupView } from '../../view/markAnchor/ListItemGroupView';
 import { NavRouterView } from '../../view/markAnchor/NavRouterView';
-import { attrsManager } from '../../common/AttrsManager';
 import { RouterParams, SetV } from '../../common/Utils';
 import webview from '@ohos.web.webview';
-import router from '@ohos.router'
 import {
   DataReloadOperation,
   Flex,
@@ -39,14 +37,12 @@ import {
   Path,
   Rect,
   Shape,
-  Shape,
   ColumnSplit,
   Counter,
   Refresh,
   RelativeContainer,
   AlignRuleOption,
   Entry,
-  Select,
   Select,
   TextArea,
   TextClock,
@@ -57,9 +53,7 @@ import {
   Circle,
   Text,
   ImageAnimator,
-  ImageAnimator,
   Marquee,
-  Navigation,
   Menu,
   Radio,
   Rating,
@@ -69,7 +63,6 @@ import {
   TextAttribute,
   Blank,
   Checkbox,
-  CheckboxGroup,
   CheckboxGroup,
   DataPanel,
   DatePicker,
@@ -201,7 +194,6 @@ import {
   BlankAttribute,
   CalendarPickerAttribute,
   TabContent,
-  Column,
   AttributeModifier,
   AlphabetIndexerAttribute,
   ColumnOptions,
@@ -227,13 +219,13 @@ import {
 } from '@ohos.arkui.component'
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 import { attrsManager } from '../../common/AttrsManager';
 import router from '@ohos.router'
 import udmfType from '@ohos.data.uniformTypeDescriptor';
 
-export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
+class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: AlphabetIndexerAttribute): void {
@@ -241,7 +233,7 @@ export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexe
   }
 }
 
-export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
+class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: BadgeAttribute): void {
@@ -249,7 +241,7 @@ export class BadgeModifier implements AttributeModifier<BadgeAttribute> {
   }
 }
 
-export class BlankModifier implements AttributeModifier<BlankAttribute> {
+class BlankModifier implements AttributeModifier<BlankAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: BlankAttribute): void {
@@ -257,7 +249,7 @@ export class BlankModifier implements AttributeModifier<BlankAttribute> {
   }
 }
 
-export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
+class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ButtonAttribute): void {
@@ -265,7 +257,7 @@ export class ButtonModifier implements AttributeModifier<ButtonAttribute> {
   }
 }
 
-export class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
+class CalendarPickerModifier implements AttributeModifier<CalendarPickerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: CalendarPickerAttribute): void {
@@ -273,7 +265,7 @@ export class CalendarPickerModifier implements AttributeModifier<CalendarPickerA
   }
 }
 
-export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
+class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: CheckboxAttribute): void {
@@ -281,7 +273,7 @@ export class CheckboxModifier implements AttributeModifier<CheckboxAttribute> {
   }
 }
 
-export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
+class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: CheckboxGroupAttribute): void {
@@ -289,7 +281,7 @@ export class CheckboxGroupModifier implements AttributeModifier<CheckboxGroupAtt
   }
 }
 
-export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
+class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ColumnAttribute): void {
@@ -297,7 +289,7 @@ export class ColumnModifier implements AttributeModifier<ColumnAttribute> {
   }
 }
 
-export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
+class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ColumnSplitAttribute): void {
@@ -305,7 +297,7 @@ export class ColumnSplitModifier implements AttributeModifier<ColumnSplitAttribu
   }
 }
 
-export class CounterModifier implements AttributeModifier<CounterAttribute> {
+class CounterModifier implements AttributeModifier<CounterAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: CounterAttribute): void {
@@ -313,7 +305,7 @@ export class CounterModifier implements AttributeModifier<CounterAttribute> {
   }
 }
 
-export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
+class DataPanelModifier implements AttributeModifier<DataPanelAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: DataPanelAttribute): void {
@@ -321,7 +313,7 @@ export class DataPanelModifier implements AttributeModifier<DataPanelAttribute> 
   }
 }
 
-export class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
+class DatePickerModifier implements AttributeModifier<DatePickerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: DatePickerAttribute): void {
@@ -329,7 +321,7 @@ export class DatePickerModifier implements AttributeModifier<DatePickerAttribute
   }
 }
 
-export class DividerModifier implements AttributeModifier<DividerAttribute> {
+class DividerModifier implements AttributeModifier<DividerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: DividerAttribute): void {
@@ -337,7 +329,7 @@ export class DividerModifier implements AttributeModifier<DividerAttribute> {
   }
 }
 
-export class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
+class EffectComponentModifier implements AttributeModifier<EffectComponentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: EffectComponentAttribute): void {
@@ -345,7 +337,7 @@ export class EffectComponentModifier implements AttributeModifier<EffectComponen
   }
 }
 
-export class FlexModifier implements AttributeModifier<FlexAttribute> {
+class FlexModifier implements AttributeModifier<FlexAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: FlexAttribute): void {
@@ -353,7 +345,7 @@ export class FlexModifier implements AttributeModifier<FlexAttribute> {
   }
 }
 
-export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
+class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: FlowItemAttribute): void {
@@ -361,7 +353,7 @@ export class FlowItemModifier implements AttributeModifier<FlowItemAttribute> {
   }
 }
 
-export class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
+class FormComponentModifier implements AttributeModifier<FormComponentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: FormComponentAttribute): void {
@@ -369,7 +361,7 @@ export class FormComponentModifier implements AttributeModifier<FormComponentAtt
   }
 }
 
-export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
+class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: GaugeAttribute): void {
@@ -377,7 +369,7 @@ export class GaugeModifier implements AttributeModifier<GaugeAttribute> {
   }
 }
 
-export class GridModifier implements AttributeModifier<GridAttribute> {
+class GridModifier implements AttributeModifier<GridAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: GridAttribute): void {
@@ -385,7 +377,7 @@ export class GridModifier implements AttributeModifier<GridAttribute> {
   }
 }
 
-export class GridColModifier implements AttributeModifier<GridColAttribute> {
+class GridColModifier implements AttributeModifier<GridColAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: GridColAttribute): void {
@@ -393,7 +385,7 @@ export class GridColModifier implements AttributeModifier<GridColAttribute> {
   }
 }
 
-export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
+class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: GridItemAttribute): void {
@@ -401,7 +393,7 @@ export class GridItemModifier implements AttributeModifier<GridItemAttribute> {
   }
 }
 
-export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
+class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: GridRowAttribute): void {
@@ -409,7 +401,7 @@ export class GridRowModifier implements AttributeModifier<GridRowAttribute> {
   }
 }
 
-export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
+class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: HyperlinkAttribute): void {
@@ -417,7 +409,7 @@ export class HyperlinkModifier implements AttributeModifier<HyperlinkAttribute> 
   }
 }
 
-export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
+class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ImageAnimatorAttribute): void {
@@ -425,7 +417,7 @@ export class ImageAnimatorModifier implements AttributeModifier<ImageAnimatorAtt
   }
 }
 
-export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
+class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ImageSpanAttribute): void {
@@ -433,7 +425,7 @@ export class ImageSpanModifier implements AttributeModifier<ImageSpanAttribute> 
   }
 }
 
-export class ImageModifier implements AttributeModifier<ImageAttribute> {
+class ImageModifier implements AttributeModifier<ImageAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ImageAttribute): void {
@@ -441,7 +433,7 @@ export class ImageModifier implements AttributeModifier<ImageAttribute> {
   }
 }
 
-export class ListModifier implements AttributeModifier<ListAttribute> {
+class ListModifier implements AttributeModifier<ListAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ListAttribute): void {
@@ -449,7 +441,7 @@ export class ListModifier implements AttributeModifier<ListAttribute> {
   }
 }
 
-export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
+class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ListItemAttribute): void {
@@ -457,7 +449,7 @@ export class ListItemModifier implements AttributeModifier<ListItemAttribute> {
   }
 }
 
-export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
+class ListItemGroupModifier implements AttributeModifier<ListItemGroupAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ListItemGroupAttribute): void {
@@ -465,7 +457,7 @@ export class ListItemGroupModifier implements AttributeModifier<ListItemGroupAtt
   }
 }
 
-export class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
+class LoadingProgressModifier implements AttributeModifier<LoadingProgressAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: LoadingProgressAttribute): void {
@@ -473,7 +465,7 @@ export class LoadingProgressModifier implements AttributeModifier<LoadingProgres
   }
 }
 
-export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
+class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: MarqueeAttribute): void {
@@ -481,7 +473,7 @@ export class MarqueeModifier implements AttributeModifier<MarqueeAttribute> {
   }
 }
 
-export class MenuModifier implements AttributeModifier<MenuAttribute> {
+class MenuModifier implements AttributeModifier<MenuAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: MenuAttribute): void {
@@ -489,7 +481,7 @@ export class MenuModifier implements AttributeModifier<MenuAttribute> {
   }
 }
 
-export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
+class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: MenuItemAttribute): void {
@@ -497,7 +489,7 @@ export class MenuItemModifier implements AttributeModifier<MenuItemAttribute> {
   }
 }
 
-export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
+class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: MenuItemGroupAttribute): void {
@@ -505,7 +497,7 @@ export class MenuItemGroupModifier implements AttributeModifier<MenuItemGroupAtt
   }
 }
 
-export class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
+class NavDestinationModifier implements AttributeModifier<NavDestinationAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: NavDestinationAttribute): void {
@@ -513,7 +505,7 @@ export class NavDestinationModifier implements AttributeModifier<NavDestinationA
   }
 }
 
-export class NavigationModifier implements AttributeModifier<NavigationAttribute> {
+class NavigationModifier implements AttributeModifier<NavigationAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: NavigationAttribute): void {
@@ -521,7 +513,7 @@ export class NavigationModifier implements AttributeModifier<NavigationAttribute
   }
 }
 
-export class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
+class PatternLockModifier implements AttributeModifier<PatternLockAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: PatternLockAttribute): void {
@@ -529,7 +521,7 @@ export class PatternLockModifier implements AttributeModifier<PatternLockAttribu
   }
 }
 
-export class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
+class PluginComponentModifier implements AttributeModifier<PluginComponentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: PluginComponentAttribute): void {
@@ -537,7 +529,7 @@ export class PluginComponentModifier implements AttributeModifier<PluginComponen
   }
 }
 
-export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
+class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: QRCodeAttribute): void {
@@ -545,7 +537,7 @@ export class QRCodeModifier implements AttributeModifier<QRCodeAttribute> {
   }
 }
 
-export class RadioModifier implements AttributeModifier<RadioAttribute> {
+class RadioModifier implements AttributeModifier<RadioAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RadioAttribute): void {
@@ -553,7 +545,7 @@ export class RadioModifier implements AttributeModifier<RadioAttribute> {
   }
 }
 
-export class RatingModifier implements AttributeModifier<RatingAttribute> {
+class RatingModifier implements AttributeModifier<RatingAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RatingAttribute): void {
@@ -561,7 +553,7 @@ export class RatingModifier implements AttributeModifier<RatingAttribute> {
   }
 }
 
-export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
+class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RefreshAttribute): void {
@@ -569,7 +561,7 @@ export class RefreshModifier implements AttributeModifier<RefreshAttribute> {
   }
 }
 
-export class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
+class RelativeContainerModifier implements AttributeModifier<RelativeContainerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RelativeContainerAttribute): void {
@@ -577,7 +569,7 @@ export class RelativeContainerModifier implements AttributeModifier<RelativeCont
   }
 }
 
-export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
+class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RemoteWindowAttribute): void {
@@ -585,7 +577,7 @@ export class RemoteWindowModifier implements AttributeModifier<RemoteWindowAttri
   }
 }
 
-export class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
+class RichEditorModifier implements AttributeModifier<RichEditorAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RichEditorAttribute): void {
@@ -593,7 +585,7 @@ export class RichEditorModifier implements AttributeModifier<RichEditorAttribute
   }
 }
 
-export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
+class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RichTextAttribute): void {
@@ -601,7 +593,7 @@ export class RichTextModifier implements AttributeModifier<RichTextAttribute> {
   }
 }
 
-export class RowModifier implements AttributeModifier<RowAttribute> {
+class RowModifier implements AttributeModifier<RowAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RowAttribute): void {
@@ -609,7 +601,7 @@ export class RowModifier implements AttributeModifier<RowAttribute> {
   }
 }
 
-export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
+class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: RowSplitAttribute): void {
@@ -617,7 +609,7 @@ export class RowSplitModifier implements AttributeModifier<RowSplitAttribute> {
   }
 }
 
-export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
+class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ScrollAttribute): void {
@@ -625,7 +617,7 @@ export class ScrollModifier implements AttributeModifier<ScrollAttribute> {
   }
 }
 
-export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
+class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ScrollBarAttribute): void {
@@ -633,7 +625,7 @@ export class ScrollBarModifier implements AttributeModifier<ScrollBarAttribute> 
   }
 }
 
-export class SearchModifier implements AttributeModifier<SearchAttribute> {
+class SearchModifier implements AttributeModifier<SearchAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: SearchAttribute): void {
@@ -641,7 +633,7 @@ export class SearchModifier implements AttributeModifier<SearchAttribute> {
   }
 }
 
-export class SelectModifier implements AttributeModifier<SelectAttribute> {
+class SelectModifier implements AttributeModifier<SelectAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: SelectAttribute): void {
@@ -649,7 +641,7 @@ export class SelectModifier implements AttributeModifier<SelectAttribute> {
   }
 }
 
-export class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
+class SideBarContainerModifier implements AttributeModifier<SideBarContainerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: SideBarContainerAttribute): void {
@@ -657,7 +649,7 @@ export class SideBarContainerModifier implements AttributeModifier<SideBarContai
   }
 }
 
-export class SliderModifier implements AttributeModifier<SliderAttribute> {
+class SliderModifier implements AttributeModifier<SliderAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: SliderAttribute): void {
@@ -665,7 +657,7 @@ export class SliderModifier implements AttributeModifier<SliderAttribute> {
   }
 }
 
-export class StackModifier implements AttributeModifier<StackAttribute> {
+class StackModifier implements AttributeModifier<StackAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: StackAttribute): void {
@@ -673,7 +665,7 @@ export class StackModifier implements AttributeModifier<StackAttribute> {
   }
 }
 
-export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
+class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: SwiperAttribute): void {
@@ -681,7 +673,7 @@ export class SwiperModifier implements AttributeModifier<SwiperAttribute> {
   }
 }
 
-export class TabContentModifier implements AttributeModifier<TabContentAttribute> {
+class TabContentModifier implements AttributeModifier<TabContentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TabContentAttribute): void {
@@ -689,7 +681,7 @@ export class TabContentModifier implements AttributeModifier<TabContentAttribute
   }
 }
 
-export class TabsModifier implements AttributeModifier<TabsAttribute> {
+class TabsModifier implements AttributeModifier<TabsAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TabsAttribute): void {
@@ -697,7 +689,7 @@ export class TabsModifier implements AttributeModifier<TabsAttribute> {
   }
 }
 
-export class TextModifier implements AttributeModifier<TextAttribute> {
+class TextModifier implements AttributeModifier<TextAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextAttribute): void {
@@ -705,7 +697,7 @@ export class TextModifier implements AttributeModifier<TextAttribute> {
   }
 }
 
-export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
+class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextAreaAttribute): void {
@@ -713,7 +705,7 @@ export class TextAreaModifier implements AttributeModifier<TextAreaAttribute> {
   }
 }
 
-export class TextClockModifier implements AttributeModifier<TextClockAttribute> {
+class TextClockModifier implements AttributeModifier<TextClockAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextClockAttribute): void {
@@ -721,7 +713,7 @@ export class TextClockModifier implements AttributeModifier<TextClockAttribute> 
   }
 }
 
-export class TextInputModifier implements AttributeModifier<TextInputAttribute> {
+class TextInputModifier implements AttributeModifier<TextInputAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextInputAttribute): void {
@@ -729,7 +721,7 @@ export class TextInputModifier implements AttributeModifier<TextInputAttribute> 
   }
 }
 
-export class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
+class TextPickerModifier implements AttributeModifier<TextPickerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextPickerAttribute): void {
@@ -737,7 +729,7 @@ export class TextPickerModifier implements AttributeModifier<TextPickerAttribute
   }
 }
 
-export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
+class TextTimerModifier implements AttributeModifier<TextTimerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TextTimerAttribute): void {
@@ -745,7 +737,7 @@ export class TextTimerModifier implements AttributeModifier<TextTimerAttribute> 
   }
 }
 
-export class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
+class TimePickerModifier implements AttributeModifier<TimePickerAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: TimePickerAttribute): void {
@@ -753,7 +745,7 @@ export class TimePickerModifier implements AttributeModifier<TimePickerAttribute
   }
 }
 
-export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
+class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: ToggleAttribute): void {
@@ -761,7 +753,7 @@ export class ToggleModifier implements AttributeModifier<ToggleAttribute> {
   }
 }
 
-export class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
+class UIExtensionComponentModifier implements AttributeModifier<UIExtensionComponentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: UIExtensionComponentAttribute): void {
@@ -769,7 +761,7 @@ export class UIExtensionComponentModifier implements AttributeModifier<UIExtensi
   }
 }
 
-export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
+class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: WaterFlowAttribute): void {
@@ -777,7 +769,7 @@ export class WaterFlowModifier implements AttributeModifier<WaterFlowAttribute> 
   }
 }
 
-export class WebModifier implements AttributeModifier<WebAttribute> {
+class WebModifier implements AttributeModifier<WebAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: WebAttribute): void {
@@ -785,7 +777,7 @@ export class WebModifier implements AttributeModifier<WebAttribute> {
   }
 }
 
-export class XComponentModifier implements AttributeModifier<XComponentAttribute> {
+class XComponentModifier implements AttributeModifier<XComponentAttribute> {
   mAccessibilityText: string = ''
 
   applyNormalAttribute(instance: XComponentAttribute): void {

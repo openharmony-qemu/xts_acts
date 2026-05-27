@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Chip, ChipSize, PrefixIconOptions} from '@ohos.arkui.advanced.Chip';
 import {
   Entry,
   Component,

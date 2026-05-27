@@ -148,16 +148,16 @@ export default function GraphicImagePixelMapErrorCode() {
       })
 
     /**
-     * @tc.name   GraphicImagePixelMapErrorCode_Static_1700
-     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_1700
+     * @tc.name   GraphicImagePixelMapErrorCode_Static_0500
+     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_0500
      * @tc.desc   applyScale error code 7600301.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('GraphicImagePixelMapErrorCode_Static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('GraphicImagePixelMapErrorCode_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_1700 ';
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_0500 ';
         console.info(msgStr + 'begin');
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -182,16 +182,16 @@ export default function GraphicImagePixelMapErrorCode() {
       })
 
     /**
-     * @tc.name   GraphicImagePixelMapErrorCode_Static_1800
-     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_1800
+     * @tc.name   GraphicImagePixelMapErrorCode_Static_0600
+     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_0600
      * @tc.desc   applyScaleSync error code 7600301.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('GraphicImagePixelMapErrorCode_Static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    it('GraphicImagePixelMapErrorCode_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_1800 ';
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_0600 ';
         console.info(msgStr + 'begin');
         const color: ArrayBuffer = new ArrayBuffer(96);
         let opts: image.InitializationOptions = {
@@ -209,6 +209,72 @@ export default function GraphicImagePixelMapErrorCode() {
         } catch(error) {
           console.error(msgStr + 'failed', error.code);
           expect(error.code).assertEqual(7600301);
+          done();
+        } finally {
+          await pixelMap.release();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicImagePixelMapErrorCode_Static_0700
+     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_0700
+     * @tc.desc   applyScale error code 7600206.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicImagePixelMapErrorCode_Static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_0700 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.RGBA_8888
+        }
+        let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
+        try {
+          await pixelMap.applyScale(0, 1.0);
+          console.info(msgStr + 'failed, expected error');
+          expect().assertFail();
+          done();
+        } catch(error) {
+          console.info(msgStr + 'caught error', error.code);
+          expect(error.code === 7600206).assertTrue();
+          done();
+        } finally {
+          await pixelMap.release();
+        }
+      })
+
+    /**
+     * @tc.name   GraphicImagePixelMapErrorCode_Static_0800
+     * @tc.number SUB_GRAPHIC_image_GraphicImagePixelMapErrorCode_Static_0800
+     * @tc.desc   applyScale error code 7600206.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GraphicImagePixelMapErrorCode_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data GraphicImagePixelMapErrorCode_Static_0800 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          editable: true,
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.RGBA_8888
+        }
+        let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
+        try {
+          pixelMap.applyScaleSync(0, 1.0);
+          console.info(msgStr + 'failed, expected error');
+          expect().assertFail();
+          done();
+        } catch(error) {
+          console.info(msgStr + 'caught error', error.code);
+          expect(error.code === 7600206).assertTrue();
           done();
         } finally {
           await pixelMap.release();

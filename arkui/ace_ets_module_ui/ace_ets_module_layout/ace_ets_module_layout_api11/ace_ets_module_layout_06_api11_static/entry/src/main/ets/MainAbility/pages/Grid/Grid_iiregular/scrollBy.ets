@@ -32,7 +32,6 @@ import {
   OnScrollFrameBeginHandlerResult,
   Grid,
   ItemDragInfo,
-  ScrollState,
   GridItem,
   TextAlign,
   Margin,

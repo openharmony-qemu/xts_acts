@@ -71,7 +71,7 @@ export class PrintExtension extends PrintExtensionAbility {
 
 let printExtension = new PrintExtension();
 
-export default function printExtensionTest() {
+export default function printExtensionTest(): void {
   describe('printExtensionTest', (): void => {
 
     /**

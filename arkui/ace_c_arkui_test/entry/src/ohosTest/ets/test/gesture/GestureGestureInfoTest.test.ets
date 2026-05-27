@@ -53,8 +53,8 @@ async function rotation(id: string) {
   let point: PointerMatrix = PointerMatrix.create(2, 2);
   point.setPoint(0, 0, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(8)) });
   point.setPoint(0, 1, { x: Math.round(rect.left + vp2px(8)), y: Math.round(rect.top + vp2px(3)) });
-  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(10)), y: Math.round(rect.top + vp2px(5)) });
-  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(10)), y: Math.round(rect.top + vp2px(15)) });
+  point.setPoint(1, 0, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(5)) });
+  point.setPoint(1, 1, { x: Math.round(rect.left + vp2px(20)), y: Math.round(rect.top + vp2px(15)) });
   await driver.injectMultiPointerAction(point, 200);
 }
 

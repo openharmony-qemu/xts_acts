@@ -49,4 +49,5 @@ napi_value OHCreateColorSpaceFromNameDISPLAYP3SRGB(napi_env env, napi_callback_i
 napi_value OHCreateColorSpaceFromNameDISPLAYP3HLG(napi_env env, napi_callback_info info);
 napi_value OHCreateColorSpaceFromNameDISPLAYP3PQ(napi_env env, napi_callback_info info);
 napi_value OHCreateColorSpaceFromNameCUSTOM(napi_env env, napi_callback_info info);
+napi_value OHCreateColorSpaceFromNameADOBERGB(napi_env env, napi_callback_info info);
 #endif //GRAPHICS2DTESTAPI20_COLORSPACENAMETEST_H

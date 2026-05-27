@@ -44,7 +44,7 @@ struct link {
         }
       }
     }
-    .key('flex')
+    .key('Link_flex')
     .width('100%')
     .height('100%')
   }

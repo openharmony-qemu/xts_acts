@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,12 +23,13 @@ import addWatcherTest from "./AddWatcher.test";
 import addProcessorTest from "./AddProcessor.test";
 import addProcessorTestFromConfigTest from "./AddProcessorFromConfig.test";
 import configEventPolicyTest from "./ConfigEventPolicy.test";
-import configEventPolicyStrongTest from "./HiappeventConfigEventPolicy.test"
-import hiAppEventStrongTest from "./HiAppEventDFXEx.test"
-import Hiviewdfx_HiAppEventTest from "./HiAppEventStatic.test"
-import removeProcessorStrongTest from "./RemoveProcessorStatic.test"
-import removeWatcherStrongTest from "./RemoveWatcherStatic.test"
-import setEventConfigStrongTest from "./SetEventConfigStatic.test"
+import configureWriteTest from "./ConfigureWrite.test";
+import configEventPolicyStrongTest from "./HiappeventConfigEventPolicy.test";
+import hiAppEventStrongTest from "./HiAppEventDFXEx.test";
+import Hiviewdfx_HiAppEventTest from "./HiAppEventStatic.test";
+import removeProcessorStrongTest from "./RemoveProcessorStatic.test";
+import removeWatcherStrongTest from "./RemoveWatcherStatic.test";
+import setEventConfigStrongTest from "./SetEventConfigStatic.test";;
 
 export default function testsuite() {
     writeTest();
@@ -40,6 +42,7 @@ export default function testsuite() {
     addProcessorTest();
     addProcessorTestFromConfigTest();
     configEventPolicyTest();
+    configureWriteTest();
     configEventPolicyStrongTest();
     hiAppEventStrongTest();
     Hiviewdfx_HiAppEventTest();

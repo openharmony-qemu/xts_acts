@@ -13,10 +13,16 @@ import bundleManager from '@ohos.bundle.bundleManager';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 let gIRemoteObject: rpc.IRemoteObject | undefined;
+let gIRemoteObjectAsync: rpc.IRemoteObject | undefined;
+let gIRemoteObjectCallingInfo: rpc.IRemoteObject | undefined;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 let bundleNameRpc: string = "com.example.actsipctaiheservicetest.static";
 let abilityNameRpc: string = "ServiceAbility";
+let abilityNameRpcAsync: string = "ServiceAsyncAbility";
+let abilityNameRpcCallingInfo: string = "ServiceAsyncCallingInfoAbility";
+
 let connectId: long;
+let connectIds: long[] = [];
 let isDead: boolean = false;
 let testFlag: boolean = true;
 let strlen: int = 40960;
@@ -277,35 +283,57 @@ function sendMessageRequestCallback_Proxy_ReadAndWrite(err: BusinessError | null
   }
 }
 
-async function toConnectAbility() {
-  hilog.info(domain, tag, '%{public}s', " -----toConnectAbility-----");
-  let want: Want = {
-    bundleName: bundleNameRpc,
-    abilityName: abilityNameRpc
-  };
+function asyncCallback(err: BusinessError | null, result: rpc.RequestResult | undefined): void {
   try {
-    hilog.info(domain, tag, '%{public}s', '-----connectServiceExtensionAbility is begin-----');
-    let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
-    hilog.info(domain, tag, '%{public}s', 'connectServiceExtensionAbility, context: ' + context);
-    connectId = context.connectServiceExtensionAbility(want, {
-      onConnect: (elementName: bundleManager.ElementName, remote: rpc.IRemoteObject) =>  {
-        hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onConnect");
-        gIRemoteObject = remote;
-        hilog.info(domain, tag, '%{public}s', "ConnectOptions gIRemoteObject is " + gIRemoteObject);
-      },
-      onDisconnect: (elementName: bundleManager.ElementName) =>  {
-        hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onDisconnect");
-      },
-      onFailed: (code: int) => {
-        hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onFailed");
-      }
-    });
-    hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectId);
-  } catch (err) {
-    hilog.error(domain, tag, '%{public}s', "connectServiceExtensionAbility failed: " + err);
-  } finally {
-    hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectId);
+    if (result != null) {
+      hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback callback');
+      expect(result.errCode).assertEqual(0);
+            
+      let replyNum: int = result.reply.readInt();
+      let replyStr: string = result.reply.readString();
+      hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback callback replyNum: ' + replyNum + ', replyStr: ' + replyStr);
+            
+      expect(replyNum).assertEqual(50000);
+      expect(replyStr).assertEqual("async_callback_test");
+    }
+  } catch (error) {
+    hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback callback error: ' + error);
+    expect(error != null).assertTrue();
   }
+}
+
+async function toConnectAbility(bundleName: string, abilityName: string): Promise<rpc.IRemoteObject> {
+  return new Promise <rpc.IRemoteObject> (resolve => {
+    hilog.info(domain, tag, '%{public}s', " -----toConnectAbility-----");
+    let want: Want = {
+      bundleName: bundleName,
+      abilityName: abilityName
+    };
+    try {
+      hilog.info(domain, tag, '%{public}s', '-----connectServiceExtensionAbility is begin-----');
+      let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+      hilog.info(domain, tag, '%{public}s', 'connectServiceExtensionAbility, context: ' + context);
+      connectId = context.connectServiceExtensionAbility(want, {
+        onConnect: (elementName: bundleManager.ElementName, remote: rpc.IRemoteObject) =>  {
+          hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onConnect");
+          resolve(remote);
+          hilog.info(domain, tag, '%{public}s', "ConnectOptions remote is " + remote);
+        },
+        onDisconnect: (elementName: bundleManager.ElementName) =>  {
+          hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onDisconnect");
+        },
+        onFailed: (code: int) => {
+          hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onFailed");
+        }
+      });
+      hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectId);
+    } catch (err) {
+      hilog.error(domain, tag, '%{public}s', "connectServiceExtensionAbility failed: " + err);
+    } finally {
+      connectIds.push(connectId);
+      hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectIds);
+    }
+  })
 }
 
 async function disConnectAbility() {
@@ -314,15 +342,18 @@ async function disConnectAbility() {
     hilog.info(domain, tag, '%{public}s', '-----disconnectServiceExtensionAbility is begin-----');
     let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
     hilog.info(domain, tag, '%{public}s', 'disconnectServiceExtensionAbility, context: ' + context);
-    context.disconnectServiceExtensionAbility(connectId).then(() => {
-      hilog.info(domain, tag, '%{public}s', 'disconnectServiceExtensionAbility, done');
-    }).catch((err) => {
-      hilog.error(domain, tag, '%{public}s', "disconnectServiceExtensionAbility failed: " + err);
-    });
+    for (let i = 0; i < connectIds.length; i++) {
+      context.disconnectServiceExtensionAbility(connectIds[i]).then(() => {
+        hilog.info(domain, tag, '%{public}s', 'disconnectServiceExtensionAbility, done');
+      }).catch((err) => {
+        hilog.error(domain, tag, '%{public}s', "disconnectServiceExtensionAbility failed: " + err);
+      });
+    }
   } catch (err) {
     hilog.error(domain, tag, '%{public}s', "disConnectAbility failed: " + err);
   } finally {
-    hilog.info(domain, tag, '%{public}s', "disConnectAbility done  got id: " + connectId);
+    connectIds = []
+    hilog.info(domain, tag, '%{public}s', "disConnectAbility done  got id: " + connectIds);
   }
 }
 
@@ -337,7 +368,18 @@ export default function abilityTest() {
       try {
         await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsipctaihetest.static");
         await Utils.msSleep(6000);
-        await  toConnectAbility();
+        await toConnectAbility(bundleNameRpc, abilityNameRpc).then(data => {
+          gIRemoteObject = data;
+          hilog.info(domain, tag, '%{public}s', "toConnectAbility data is" + data);
+        })
+        await toConnectAbility(bundleNameRpc, abilityNameRpcAsync).then(data => {
+          gIRemoteObjectAsync = data;
+          hilog.info(domain, tag, '%{public}s', "toConnectAbility data is" + data);
+        })
+        await toConnectAbility(bundleNameRpc, abilityNameRpcCallingInfo).then(data => {
+          gIRemoteObjectCallingInfo = data;
+          hilog.info(domain, tag, '%{public}s', "toConnectAbility data is" + data);
+        })
         await Utils.msSleep(4000);
         hilog.info(domain, tag, '%{public}s', 'beforeAll gIRemoteObject is ' + gIRemoteObject);
       } catch (error) {
@@ -2943,6 +2985,254 @@ export default function abilityTest() {
     });
 
     /**
+     * @tc.name     SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100
+     * @tc.number   SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100
+     * @tc.desc     test async onRemoteMessageRequest with CallingInfo
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 --------------------');
+      const CODE_ASYNC_CALLINGINFO: int = 200;
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+      let option = new rpc.MessageOption(rpc.MessageOption.TF_SYNC);
+      
+      try {
+        data.writeInt(10000);
+        data.writeString("async_callinginfo_test");
+        
+        expect(gIRemoteObjectCallingInfo != undefined).assertTrue();
+        await gIRemoteObjectCallingInfo!.sendMessageRequest(CODE_ASYNC_CALLINGINFO, data, reply, option)
+          .then((ret: rpc.RequestResult) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 errCode: ' + ret.errCode);
+            expect(ret.errCode).assertEqual(0);
+            
+            let callerPid: int = reply.readInt();
+            let callerUid: int = reply.readInt();
+            hilog.info(domain, tag, '%{public}s', 'Received CallingInfo - PID: ' + callerPid + ', UID: ' + callerUid);
+            expect(callerPid > 0).assertTrue();
+            expect(callerUid > 0).assertTrue();
+          })
+          .catch((err: Error) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 err: ' + err);
+            expect(err == null).assertTrue();
+          })
+          .finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 reclaim done');
+          });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 error: ' + error);
+        expect(error == null).assertTrue();
+      }
+      
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_onRemoteMessageRequest_AsyncCallingInfo_0100 --------------------');
+    });
+
+    /**
+     * @tc.name     SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200
+     * @tc.number   SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200
+     * @tc.desc     test async onRemoteMessageRequest returns Promise without CallingInfo
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 --------------------');
+      const CODE_ASYNC_NO_CALLERINFO: int = 201;
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+      let option = new rpc.MessageOption(rpc.MessageOption.TF_SYNC);
+      
+      try {
+        data.writeInt(20000);
+        data.writeString("async_promise_no_callerinfo");
+        
+        expect(gIRemoteObjectAsync != undefined).assertTrue();
+        await gIRemoteObjectAsync!.sendMessageRequest(CODE_ASYNC_NO_CALLERINFO, data, reply, option)
+          .then((ret: rpc.RequestResult) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 errCode: ' + ret.errCode);
+            expect(ret.errCode).assertEqual(0);
+            
+            let replyNum: int = reply.readInt();
+            let replyStr: string = reply.readString();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 replyNum: ' + replyNum + ', replyStr: ' + replyStr);
+            
+            expect(replyNum).assertEqual(20000);
+            expect(replyStr).assertEqual("async_promise_no_callerinfo");
+          })
+          .catch((err: Error) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 err: ' + err);
+            expect(err == null).assertTrue();
+          })
+          .finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 reclaim done');
+          });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 error: ' + error);
+        expect(error == null).assertTrue();
+      }
+      
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_onRemoteMessageRequest_AsyncPromise_0200 --------------------');
+    });
+
+    /**
+     * @tc.name     SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300
+     * @tc.number   SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300
+     * @tc.desc     test async onRemoteMessageRequest with multiple parameters
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 --------------------');
+      const CODE_ASYNC_MULTI_PARAM: int = 202;
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+      let option = new rpc.MessageOption(rpc.MessageOption.TF_SYNC);
+      
+      try {
+        data.writeInt(30000);
+        data.writeInt(40000);
+        data.writeString("async_multi_param");
+        data.writeDouble(3.14159);
+        
+        expect(gIRemoteObjectAsync != undefined).assertTrue();
+        await gIRemoteObjectAsync!.sendMessageRequest(CODE_ASYNC_MULTI_PARAM, data, reply, option)
+          .then((ret: rpc.RequestResult) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 errCode: ' + ret.errCode);
+            expect(ret.errCode).assertEqual(0);
+            
+            let replySum: int = reply.readInt();
+            let replyStr: string = reply.readString();
+            let replyDbl: double = reply.readDouble();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 replySum: ' + replySum + ', replyStr: ' + replyStr + ', replyDbl: ' + replyDbl);
+            
+            expect(replySum).assertEqual(70000);
+            expect(replyStr).assertEqual("async_multi_param");
+            expect(replyDbl).assertEqual(3.14159);
+          })
+          .catch((err: Error) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 err: ' + err);
+            expect(err == null).assertTrue();
+          })
+          .finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 reclaim done');
+          });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 error: ' + error);
+        expect(error == null).assertTrue();
+      }
+      
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_onRemoteMessageRequest_AsyncPromise_0300 --------------------');
+    });
+
+    /**
+     * @tc.name     SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100
+     * @tc.number   SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100
+     * @tc.desc     test async onRemoteMessageRequest with callback mode
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 --------------------');
+      const CODE_ASYNC_CALLBACK: int = 203;
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+      let option = new rpc.MessageOption(rpc.MessageOption.TF_SYNC);
+
+      try {
+        data.writeInt(50000);
+        data.writeString("async_callback_test");
+        
+        expect(gIRemoteObjectAsync != undefined).assertTrue();
+        gIRemoteObjectAsync!.sendMessageRequest(CODE_ASYNC_CALLBACK, data, reply, option, asyncCallback);
+        await Utils.msSleep(3000);
+        
+        data.reclaim();
+        reply.reclaim();
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 reclaim done');
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 error: ' + error);
+        expect(error == null).assertTrue();
+      }
+      
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_onRemoteMessageRequest_AsyncCallback_0100 --------------------');
+    });
+
+    /**
+     * @tc.name     SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100
+     * @tc.number   SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100
+     * @tc.desc     test async onRemoteMessageRequest with long delay processing
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL2
+     */
+    it("SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 --------------------');
+      const CODE_ASYNC_LONG_DELAY: int = 204;
+      let data = rpc.MessageSequence.create();
+      let reply = rpc.MessageSequence.create();
+      let option = new rpc.MessageOption(rpc.MessageOption.TF_SYNC, 10);
+      
+      try {
+        data.writeInt(60000);
+        data.writeString("async_long_delay_test");
+        
+        expect(gIRemoteObjectAsync != undefined).assertTrue();
+        await gIRemoteObjectAsync!.sendMessageRequest(CODE_ASYNC_LONG_DELAY, data, reply, option)
+          .then((ret: rpc.RequestResult) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 errCode: ' + ret.errCode);
+            expect(ret.errCode).assertEqual(0);
+            
+            let replyNum: int = reply.readInt();
+            let replyStr: string = reply.readString();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 replyNum: ' + replyNum + ', replyStr: ' + replyStr);
+            
+            expect(replyNum).assertEqual(60000);
+            expect(replyStr).assertEqual("async_long_delay_test");
+          })
+          .catch((err: Error) => {
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 err: ' + err);
+            expect(err == null).assertTrue();
+          })
+          .finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 reclaim done');
+          });
+      } catch (error) {
+        error = error as BusinessError;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 error: ' + error);
+        expect(error == null).assertTrue();
+      }
+      
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_onRemoteMessageRequest_AsyncLongDelay_0100 --------------------');
+    });
+
+    /**
      * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
      * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
      * @tc.desc     test writeRemoteObject errCode
@@ -4201,6 +4491,66 @@ export default function abilityTest() {
       }
       done();
       hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100
+     * @tc.number SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100
+     * @tc.desc   test  registerDeathRecipient errCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 --------------------');
+      try {
+        let testboject = new TestRemoteObject("teststub");
+        let deathRecipient = new MyDeathRecipient();
+        testboject.registerDeathRecipient(deathRecipient, 0);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 error is: ' + err);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 error is: ' + err.code);
+        expect(err.code == 1900005).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse()
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100  done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_registerDeathRecipient_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name   SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100
+     * @tc.number SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100
+     * @tc.desc   test unregisterDeathRecipient errCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(500);
+      hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 --------------------');
+      try {
+        let testboject = new TestRemoteObject("teststub");
+        let deathRecipient = new MyDeathRecipient();
+        testboject.unregisterDeathRecipient(deathRecipient, 0);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 error is: ' + err);
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 errorcode is: ' + err.code);
+        expect(err.code == 1900005).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse()
+        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100  done');
+      }
+      done();
+      hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_unregisterDeathRecipient_ErrorCode_0100 --------------------');
     });
 
     /**
@@ -8363,7 +8713,7 @@ export default function abilityTest() {
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteDied_0100 error is: ' + error);
         expect(error == null).assertTrue();
       } finally {
-        await  toConnectAbility();
+        await  toConnectAbility(bundleNameRpc, abilityNameRpc);
         await Utils.msSleep(4000);
         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_onRemoteDied_0100 finally done');
       }

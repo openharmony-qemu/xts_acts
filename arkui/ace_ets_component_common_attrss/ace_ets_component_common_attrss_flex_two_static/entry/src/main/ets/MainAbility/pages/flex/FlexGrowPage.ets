@@ -19,15 +19,10 @@ import {
   Column,
   Component,
   Button,
-  Text,
-  Row,
-  Scroll,
-  Flex,
   FlexDirection,
   FlexAlign,
   TextAlign,
   FontWeight,
-  AlphabetIndexer,
   Checkbox,
   CheckboxGroup,
   DataPanel,
@@ -115,7 +110,6 @@ import {
   CommonMethod,
   applyStyles,
   BadgeParamWithString,
-  Badge,
   NavPathStack,
   Navigation
 } from '@ohos.arkui.component';

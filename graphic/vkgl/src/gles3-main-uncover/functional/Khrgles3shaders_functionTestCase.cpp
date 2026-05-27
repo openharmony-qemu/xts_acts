@@ -16,25 +16,25 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000189,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000189,
         "dEQP-GLES3.functional.shaders.func",
         "tion.local_variable_aliasing_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000190,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000190,
         "dEQP-GLES3.functional.shaders.funct",
         "ion.local_variable_aliasing_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000191,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000191,
         "dEQP-GLES3.functional.shaders.funct",
         "ion.global_variable_aliasing_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000192,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000192,
         "dEQP-GLES3.functional.shaders.functi",
         "on.global_variable_aliasing_fragment");

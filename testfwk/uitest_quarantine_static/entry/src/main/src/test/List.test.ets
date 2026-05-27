@@ -14,7 +14,9 @@
  */
 import uitestComponentTest from './UitestComponent.test';
 import uitestDriverTest from './UitestDriver.test';
-export default function testsuite() {
+import uitestApi26TestQuan from './UitestApi26Quan.test'
+export default function testsuite(): void {
+  uitestApi26TestQuan();
   uitestComponentTest();
   uitestDriverTest();
 }

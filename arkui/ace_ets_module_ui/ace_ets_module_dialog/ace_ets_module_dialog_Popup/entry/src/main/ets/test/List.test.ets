@@ -48,6 +48,7 @@ import SheetOptionsSystemMaterial from './popupSystemMaterial/SheetOptionsSystem
 import PopupCommonOptionsSystemMaterial from './popupSystemMaterial/PopupCommonOptionsSystemMaterial.test';
 import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystemMaterial.test';
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
+import PopupColorMode from './popup/PopupColorMode.test';
 
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
@@ -83,4 +84,5 @@ export default function testsuite() {
   PopupOptionsSystemMaterial();
   CustomPopupOptionsSystemMaterial();
   // TipsOptionsSystemMaterial();
+  PopupColorMode();
 }

@@ -42,6 +42,7 @@ export struct NavRouterView {
 
   build() {
     // NavRouter() {
+    Column() {
       Row() {
         Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
         Text(`NavRouter`)
@@ -69,5 +70,6 @@ export struct NavRouterView {
     // })
     // .position(this._position)
     // .key(this.componentKey)
+  }
   }
 }

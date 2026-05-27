@@ -116,7 +116,7 @@ export default function PreferencesInterfaceTest() {
      * @tc.level  LEVEL2
      */
     it('testPreferencesStorageType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         let isEnhance = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
         if (isEnhance) {
           const Options: data_preferences.Options = {
@@ -160,7 +160,7 @@ export default function PreferencesInterfaceTest() {
      * @tc.level  LEVEL2
      */
     it('testPreferencesStorageType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
-      (done: () => void): Promise<void> => {
+      (done: () => void): void => {
         let isEnhance = data_preferences.isStorageTypeSupported(data_preferences.StorageType.GSKV);
         console.info(TAG + '0800 isStorageTypeSupported success' + isEnhance);
         if (isEnhance) {

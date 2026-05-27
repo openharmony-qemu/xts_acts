@@ -25,4 +25,7 @@ export interface TestDate extends Record<string, string> {
 }
 
 export class MyArray extends Array {
+  public static of<T>(...values: T[]): Array<T> {
+    return Array.of(...values);
+  }
 }

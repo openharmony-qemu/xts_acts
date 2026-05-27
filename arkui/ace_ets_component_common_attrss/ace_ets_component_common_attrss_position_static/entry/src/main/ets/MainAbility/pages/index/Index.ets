@@ -33,7 +33,6 @@ import {
   FlexDirection,
   ItemAlign,
   FlexAlign,
-  FontWeight,
   ButtonType,
   ClickEvent,
   Margin,

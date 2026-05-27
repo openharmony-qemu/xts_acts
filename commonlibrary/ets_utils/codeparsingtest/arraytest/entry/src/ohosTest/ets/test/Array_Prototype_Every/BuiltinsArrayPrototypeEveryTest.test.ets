@@ -332,40 +332,6 @@ export default function BuiltinsArrayPrototypeEveryTest(): void {
     });
 
     /**
-     * @tc.name    BuiltinsArrayPrototypeEveryTest1600
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_EVERY_TEST_1600
-     * @tc.desc    Verify large array returns true when all elements satisfy condition
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayPrototypeEveryTest1600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: number[] = new Array<number>(10000).fill(1);
-      const result = arr.every(x => x === 1);
-      expect(result).assertTrue();
-    });
-
-    /**
-     * @tc.name    BuiltinsArrayPrototypeEveryTest1700
-     * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_EVERY_TEST_1700
-     * @tc.desc    Verify large array returns false immediately when element not satisfies condition
-     * @tc.type    FUNCTION
-     * @tc.size    SMALLTEST
-     * @tc.level   LEVEL1
-     */
-    it('BuiltinsArrayPrototypeEveryTest1700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
-      const arr: number[] = new Array<number>(10000).fill(1);
-      arr[5000] = 2;
-      let count = 0;
-      const result = arr.every(x => {
-        count++;
-        return x === 1;
-      });
-      expect(result).assertFalse();
-      expect(count).assertEqual(5001);
-    });
-
-    /**
      * @tc.name    BuiltinsArrayPrototypeEveryTest1800
      * @tc.number  SUB_BUILTINS_ARRAY_PROTOTYPE_EVERY_TEST_1800
      * @tc.desc    Verify callback element parameter

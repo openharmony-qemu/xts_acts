@@ -98,10 +98,10 @@ struct WebComponent {
                 console.info('emitwebViewWebViewOnPdfScrollEvent001*************')
                 console.log('result' + this.ScrollUrl)
                 if(canIUse('SystemCapability.Security.DiaService')) {
-                  Utils.emitEvent(this.ScrollUrl,300641)
+                  Utils.emitEvent('resource://rawfile/small.pdf',300641)
                   console.log('emitwebViewWebViewOnPdfScrollEvent001'+this.ScrollUrl)
                 } else {
-                  Utils.emitEvent(this.ScrollUrl,300641)
+                  Utils.emitEvent('resource://rawfile/small.pdf',300641)
                 }
                 break;
               }

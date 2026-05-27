@@ -16,41 +16,41 @@
 #include <climits>
 #include <gtest/gtest.h>
 #include "../Khrgles3BaseFunc.h"
-#include "../ActsKhrgles30001TestSuite.h"
+#include "../ActsGles3MainUncover0001TestSuite.h"
 #include "shrinkdefine.h"
 
 using namespace std;
 using namespace testing::ext;
 using namespace OHOS;
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000181,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000181,
         "dEQP-GLES3.functional.shaders.keywords",
         ".allowed_keywords.image1DShadow_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000182,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000182,
         "dEQP-GLES3.functional.shaders.keywords.",
         "allowed_keywords.image1DShadow_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000183,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000183,
         "dEQP-GLES3.functional.shaders.keywords",
         ".allowed_keywords.image2DShadow_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000184,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000184,
         "dEQP-GLES3.functional.shaders.keywords.",
         "allowed_keywords.image2DShadow_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000185,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000185,
         "dEQP-GLES3.functional.shaders.keywords.a",
         "llowed_keywords.image1DArrayShadow_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000186,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000186,
         "dEQP-GLES3.functional.shaders.keywords.al",
         "lowed_keywords.image1DArrayShadow_fragment");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000187,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000187,
         "dEQP-GLES3.functional.shaders.keywords.a",
         "llowed_keywords.image2DArrayShadow_vertex");
 
-static SHRINK_HWTEST_F(ActsKhrgles30001TestSuite, TestCase_000188,
+static SHRINK_HWTEST_F(ActsGles3MainUncover0001TestSuite, TestCase_000188,
         "dEQP-GLES3.functional.shaders.keywords.al",
         "lowed_keywords.image2DArrayShadow_fragment");

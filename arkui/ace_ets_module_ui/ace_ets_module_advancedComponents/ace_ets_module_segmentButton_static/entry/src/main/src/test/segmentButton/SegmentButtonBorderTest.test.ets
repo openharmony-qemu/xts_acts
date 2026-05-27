@@ -92,6 +92,7 @@ export default function SegmentButtonBorderTest() {
         .getArray("$children")[0]
         .getArray("$children")[1]
         .getArray("$children")[0]
+        .getArray("$children")[0]
       console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj))
       expect(obj.getElement('$attrs').getString('borderRadius')).assertEqual('14.00vp');
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -101,6 +102,7 @@ export default function SegmentButtonBorderTest() {
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[1]
+        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
@@ -138,6 +140,7 @@ export default function SegmentButtonBorderTest() {
         .getArray("$children")[0]
         .getArray("$children")[3]
         .getArray("$children")[0]
+        .getArray("$children")[0]
       console.log("SegmentButtonV2Test_static_0100", JSON.stringify(obj3))
       expect(obj3.getElement('$attrs').getString('borderRadius')).assertEqual('20.00vp');
       let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()))
@@ -147,6 +150,7 @@ export default function SegmentButtonBorderTest() {
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[3]
+        .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]
         .getArray("$children")[0]

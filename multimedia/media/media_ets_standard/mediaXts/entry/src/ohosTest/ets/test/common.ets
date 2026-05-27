@@ -33,7 +33,8 @@ export async function driveFn() {
   let driver = Driver.create();
   console.info(TAG, `driver is ${JSON.stringify(driver)}`);
   await sleep(SLEEP_TIME_500);
-  let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME_500);
+  let power = await driver?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), SLEEP_TIME_500) ||
+    await driver?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), SLEEP_TIME_500);
   await sleep(SLEEP_TIME_500);
   await power?.click();
   await sleep(SLEEP_TIME_500);

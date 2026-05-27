@@ -87,7 +87,7 @@ class BuiltinTestJsonReplacerTemp {
   }
 }
 
-export default function builtinsJsonTest() {
+export default function builtinsJsonTest(): void {
   describe('BuiltinsJSONTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

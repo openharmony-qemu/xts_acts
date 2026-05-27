@@ -14,9 +14,9 @@
  */
 
 import relationalStorePermissionTest from "./RelationalStorePermission.test";
-
+import CloudDataAutoSyncTrigger from "./CloudDataAutoSyncTriggerStatic.test";
 
 export default function testsuite() {
-
     relationalStorePermissionTest();
+    CloudDataAutoSyncTrigger();
 }

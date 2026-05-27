@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2024 HiHope Open Source Organization.
+* Copyright (C) 2024-2026 HiHope Open Source Organization.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -18,7 +18,7 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import buffer from '@ohos.buffer';
 
-export default function SetConstructorTest() {
+export default function SetConstructorTest(): void {
   describe('SetConstructorTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

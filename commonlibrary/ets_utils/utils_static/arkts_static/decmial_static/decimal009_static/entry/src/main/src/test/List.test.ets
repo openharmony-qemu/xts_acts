@@ -15,7 +15,7 @@
 
 import DecimalTest027 from './Decimal027.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
 
   DecimalTest027();
 

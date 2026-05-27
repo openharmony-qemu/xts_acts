@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 SwanLink (Jiangsu) Technology Development Co., LTD.
+* Copyright (c) 2024-2026 SwanLink (Jiangsu) Technology Development Co., LTD.
 * Licensed under the Apache License, Version 2.0 (the "License");
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -18,10 +18,17 @@ import urlTest2 from "./url/Url2.test";
 import urlTest3 from "./url/Emoji_Url.test.ets";
 import urlTest4 from "./url/Escape_Url.test.ets";
 import urlTest5 from './url/Url3.test';
-export default function testsuite() {
+
+import URL01Test from './url/URLTest01.test';
+import URL02Test from './url/URLTest02.test';
+
+export default function testsuite(): void {
     urlTest1();
     urlTest2();
     urlTest3();
     urlTest4();
     urlTest5();
+
+    URL01Test();
+    URL02Test();
 }

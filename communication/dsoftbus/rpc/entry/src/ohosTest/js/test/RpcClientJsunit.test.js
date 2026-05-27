@@ -20536,6 +20536,36 @@ export default function ActsRpcClientJsTest() {
             }
             console.info("---------------------end SUB_DSoftbus_IPC_API_NewAshmen_1600---------------------------");
         });
+
+        /**
+         * @tc.name   SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100
+         * @tc.number SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100
+         * @tc.desc   test attachLocalInterface ReturnValue
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function () {
+            console.info('-------------------- SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 start --------------------');
+            try {
+                let testRemoteObject = new TestRemoteObject("testObject");
+                let testInterface = testRemoteObject.getLocalInterface('testObject');
+                let descriptor = "testDescriptor_0100";
+                console.info('SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 calling attachLocalInterface with descriptor: ' + descriptor);
+                let returnValue = testRemoteObject.attachLocalInterface(testInterface, descriptor);
+              
+                console.info('SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 attachLocalInterface returned: ' + returnValue);
+                console.info('SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 return type: ' + typeof returnValue);
+              
+                expect(returnValue === undefined).assertTrue();
+                expect(typeof returnValue === 'undefined').assertTrue();
+              
+                console.info('SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 attachLocalInterface returned void successfully');
+            } catch (error) {
+                console.info('SUB_RPC_RemoteObject_attachLocalInterface_ReturnValue_0100 attachLocalInterface threw unexpected error: ' + error);
+                expect(error == null).assertTrue();
+            }
+        });
         console.info("-----------------------SUB_DSoftbus_IPC_API_MessageParce_Test is end-----------------------");
     });
 }

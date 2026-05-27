@@ -18,6 +18,8 @@
 #include "scroll/scrollWithMouseTest.cpp"
 #include "scroll/autoAdjustMarginTest.cpp"
 #include "list/listBackBehaviorTest.cpp"
+#include "inspectorLabel/InspectorLabelTest.cpp"
+#include "accessibilityFocusId/AccessibilityFocusIdTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -35,8 +37,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GestureInterceptErrorCode002", nullptr, GestureInterceptErrorCode002, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode003", nullptr, GestureInterceptErrorCode003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GestureInterceptErrorCode004", nullptr, GestureInterceptErrorCode004, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"GestureInterceptNullTest001", nullptr, GestureInterceptNullTest001, nullptr, nullptr, nullptr,
-            napi_default, nullptr},
+        {"GestureInterceptNullTest001", nullptr, GestureInterceptNullTest001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ScrollWithMouseTest_001", nullptr, ScrollWithMouseTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ScrollWithMouseTest_002", nullptr, ScrollWithMouseTest_002, nullptr, nullptr, nullptr,
@@ -54,12 +55,26 @@ static napi_value Init(napi_env env, napi_value exports)
         {"AutoAdjustMarginTest_004", nullptr, AutoAdjustMarginTest_004, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ListBackBehaviorTest_001", nullptr, ListBackBehaviorTest_001, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+         napi_default, nullptr},	 
         {"ListBackBehaviorTest_002", nullptr, ListBackBehaviorTest_002, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+         napi_default, nullptr},	 
         {"ListBackBehaviorTest_003", nullptr, ListBackBehaviorTest_003, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"ListBackBehaviorTest_004", nullptr, ListBackBehaviorTest_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"InspectorLabelTest_001", nullptr, InspectorLabelTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"InspectorLabelTest_002", nullptr, InspectorLabelTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"InspectorLabelTest_003", nullptr, InspectorLabelTest_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityNextFocusIdTest_001", nullptr, AccessibilityNextFocusIdTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityNextFocusIdTest_002", nullptr, AccessibilityNextFocusIdTest_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityDefaultFocusTest_001", nullptr, AccessibilityDefaultFocusTest_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"AccessibilityDefaultFocusTest_002", nullptr, AccessibilityDefaultFocusTest_002, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

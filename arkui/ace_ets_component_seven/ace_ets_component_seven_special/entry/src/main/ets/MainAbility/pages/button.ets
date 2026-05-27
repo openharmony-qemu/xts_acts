@@ -53,7 +53,7 @@ struct ButtonExample {
         .borderRadius(8)
         .backgroundColor(0x317aff)
         .width(90)
-        .key('button')
+        .key('button_button')
         .attributeModifier(this.buttonModifier)
 
       Button('Ok2', { type: this.buttonTypeValue, stateEffect: true })

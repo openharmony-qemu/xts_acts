@@ -62,7 +62,8 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async ():void => {
+    it('test_FileIO_Access_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Access_Sync_Static_000');
 
       try {
@@ -309,7 +310,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Access_Sync_Static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('');
         expect(false).assertTrue();
@@ -328,7 +329,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Access_Sync_Static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.EXIST);
         expect(false).assertTrue();
@@ -347,7 +348,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Access_Sync_Static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.READ);
         expect(false).assertTrue();
@@ -366,7 +367,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Access_Sync_Static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.WRITE);
         expect(false).assertTrue();
@@ -385,7 +386,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Access_Sync_Static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Access_Sync_Static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.READ_WRITE);
         expect(false).assertTrue();
@@ -1087,7 +1088,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.EXIST, fs.AccessFlagType.LOCAL);
         expect(false).assertTrue();
@@ -1106,7 +1107,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.READ, fs.AccessFlagType.LOCAL);
         expect(false).assertTrue();
@@ -1125,7 +1126,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.WRITE, fs.AccessFlagType.LOCAL);
         expect(false).assertTrue();
@@ -1144,7 +1145,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       try {
         let ret = fs.accessSync('', fs.AccessModeType.READ_WRITE, fs.AccessFlagType.LOCAL);
         expect(false).assertTrue();
@@ -1163,7 +1164,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Sync_Access_With_Flag_004');
 
       try {
@@ -1185,7 +1186,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Sync_Access_With_Flag_005');
 
       try {
@@ -1207,7 +1208,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Sync_Access_With_Flag_006');
 
       try {
@@ -1229,7 +1230,7 @@ export default function fileIOAccess() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('test_FileIO_Sync_Access_With_Flag_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): void => {
+    it('test_FileIO_Sync_Access_With_Flag_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Sync_Access_With_Flag_007');
 
       try {

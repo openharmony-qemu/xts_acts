@@ -2953,7 +2953,7 @@ export default function WindowPropertiesTest() {
             console.log(msgStr + "begin");
             let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
             for (let i = 0; i < 500; i++) {
-                let arr: Array<Long> = new Array < Long > (500);
+                let arr: Array<Long> = Array.create<Long>(500, 0);
                 for (let j = 0; j < 500; j++) {
                     if (i + j < 500) {
                         arr[j] = 0;
@@ -3013,7 +3013,7 @@ export default function WindowPropertiesTest() {
             console.log(msgStr + "begin");
             let windowMask: Array<Array<Long>> = new Array < Array < Long >> ();
             for (let i = 0; i < 500; i++) {
-                let arr: Array<Long> = new Array < Long > (500);
+                let arr: Array<Long> = Array.create<Long>(500, 0);
                 for (let j = 0; j < 500; j++) {
                     if (i + j < 500) {
                         arr[j] = 0;
@@ -3632,7 +3632,7 @@ export default function WindowPropertiesTest() {
                     console.info(caseName + 'Succeeded in calling setStartWindowBackgroundColor.');
                     expect(false).assertTrue();
                     done();
-                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                }).catch(async (err: Error):Promise<void> => {
                     console.error(caseName + 'Failed to call setStartWindowBackgroundColor. Cause: ' + JSON.stringify(err));
                     if (err.code === 801) {
                         expect(err.message !== null).assertTrue();

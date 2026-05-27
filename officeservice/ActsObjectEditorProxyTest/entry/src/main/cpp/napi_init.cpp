@@ -447,7 +447,8 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullOEid(napi_en
 
 static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullFormat(napi_env env, napi_callback_info info)
 {
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("test.oeid",
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid,
         "zh-CN", nullptr);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_NullFormat code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
@@ -462,6 +463,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullFormat(napi_
 
 static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale(napi_env env, napi_callback_info info)
 {
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
     ContentEmbed_Format *format = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale create code: %{public}d", code);
@@ -470,7 +472,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale(napi_
         napi_create_int32(env, code, &result);
         return result;
     }
-    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("test.oeid", nullptr, format);
+    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, nullptr, format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_NullLocale code: %{public}d", code);
     if (code == CE_PERMISSION_DENIED) {
         napi_value result;
@@ -494,7 +496,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid(napi_e
     }
     code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("", "zh-CN", format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid code: %{public}d", code);
-    if (code == CE_PERMISSION_DENIED) {
+    if (code == CE_ERR_PARAM_INVALID) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -506,6 +508,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid(napi_e
 
 static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale(napi_env env, napi_callback_info info)
 {
+    char oeid[] = "000209FF-BBBB-DDDD-CAAA-000000000046";
     ContentEmbed_Format *format = nullptr;
     ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale create code: %{public}d", code);
@@ -514,7 +517,7 @@ static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale(napi
         napi_create_int32(env, code, &result);
         return result;
     }
-    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale("OEID", "", format);
+    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(oeid, "", format);
     OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyLocale code: %{public}d", code);
     if (code == CE_PERMISSION_DENIED) {
         napi_value result;
@@ -568,34 +571,6 @@ static napi_value TestProxyGetOEidFromFormat_NullFormat(napi_env env, napi_callb
     ContentEmbed_ErrorCode code = OH_ContentEmbed_GetOEidFromFormat(nullptr, oeid);
     OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_NullFormat code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
-static napi_value TestProxyGetOEidFromFormat_Normal(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_Format *format = nullptr;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
-    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_Normal create code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    if (format == nullptr) {
-        napi_value result;
-        napi_create_int32(env, -1, &result);
-        return result;
-    }
-    char oeid[MAX_OEID_LENGTH] = {0};
-    code = OH_ContentEmbed_GetOEidFromFormat(format, oeid);
-    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_Normal get oeid code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -674,35 +649,6 @@ static napi_value TestProxyGetNameAndDescriptionFromFormat_NullDescription(napi_
     code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(format, name, nullptr);
     OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_NullDescription code: %{public}d", code);
     if (code == CE_ERR_DEVICE_NOT_SUPPORTED || code == CE_ERR_PARAM_INVALID) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    napi_value result;
-    napi_create_int32(env, -1, &result);
-    return result;
-}
-
-static napi_value TestProxyGetNameAndDescriptionFromFormat_Normal(napi_env env, napi_callback_info info)
-{
-    ContentEmbed_Format *format = nullptr;
-    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
-    OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_Normal create code: %{public}d", code);
-    if (code == CE_ERR_DEVICE_NOT_SUPPORTED) {
-        napi_value result;
-        napi_create_int32(env, code, &result);
-        return result;
-    }
-    if (format == nullptr) {
-        napi_value result;
-        napi_create_int32(env, -1, &result);
-        return result;
-    }
-    char name[MAX_NAME_LENGTH] = {0};
-    char description[MAX_DESCRIPTION_LENGTH] = {0};
-    code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(format, name, description);
-    OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_Normal get code: %{public}d", code);
-    if (code == CE_ERR_OK) {
         napi_value result;
         napi_create_int32(env, code, &result);
         return result;
@@ -1732,6 +1678,162 @@ static napi_value TestProxyGetDocument_Normal(napi_env env, napi_callback_info i
     return result;
 }
 
+static napi_value TestProxyGetOEidFromFormat_FormatNotInit(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_FormatNotInit create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char oeid[MAX_OEID_LENGTH] = {0};
+    code = OH_ContentEmbed_GetOEidFromFormat(format, oeid);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_FormatNotInit code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetNameAndDescriptionFromFormat_FormatNotInit(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetOEidFromFormat_FormatNotInit create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char name[MAX_NAME_LENGTH] = {0};
+    char description[MAX_DESCRIPTION_LENGTH] = {0};
+    code = OH_ContentEmbed_GetNameAndDescriptionFromFormat(format, name, description);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetNameAndDescriptionFromFormat_FormatNotInit code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetIconFromFormat_FormatNotInit(napi_env env, napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_FormatNotInit create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    OH_PixelmapNative *icon = nullptr;
+    code = OH_ContentEmbed_GetIconFromFormat(format, &icon);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetIconFromFormat_FormatNotInit code: %{public}d", code);
+    if (code == CE_ERR_PARAM_INVALID) {
+        napi_value result;
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_value result;
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    napi_value result;
+    OH_LOG_INFO(LOG_APP,
+        "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    const char* invalidOeids[] = {
+        "", "a", "ab", "abcd", "123", "0123456789abcdef0123456789abcdeg",
+        "0123456789abcdef0123456789abcdef0", "0123456789abcdef0123456789abcdef01",
+        "0123456789abcdef0123456789abcdef012", "0123456789abcdef0123456789abcdef0123",
+        "0123456789abcdef0123456789abcdef01234", "0123456789abcdef0123456789abcdef012345",
+        "0123456789abcdef0123456789abcdef0123456", "0123456789abcdef0123456789abcdef01234567",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567Xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxxXxxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxXxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxxXxxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxxxx", "012345678-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "0123456-xxxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxxx-xxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxx-xxxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxxx-xxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxx-xxxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxxx-xxxxxxxxxxxx",
+        "01234567-xxxx-xxxx-xxx-xxxxxxxxxxxx", "01234567-xxxx-xxxx-xxxx-xxxxxxxxxxx"};
+    for (size_t i = 0; i < sizeof(invalidOeids) / sizeof(invalidOeids[0]); i++) {
+        code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale((char*)invalidOeids[i], "zh-CN", format);
+        OH_LOG_INFO(LOG_APP,
+            "TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid case%{public}zu: %{public}d",
+            i+1, code);
+        if (code != CE_ERR_PARAM_INVALID) {
+            OH_LOG_ERROR(LOG_APP,
+                "TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid:%{public}s", invalidOeids[i]);
+            napi_create_int32(env, -1, &result);
+            return result;
+        }
+    }
+    napi_create_int32(env, CE_ERR_PARAM_INVALID, &result);
+    return result;
+}
+
+static napi_value TestProxyGetContentEmbedFormatByOEidAndLocale_SystemError(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_Format *format = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedFormat(&format);
+    napi_value result;
+    OH_LOG_INFO(LOG_APP,
+        "TestProxyGetContentEmbedFormatByOEidAndLocale_EmptyOEid create code: %{public}d", code);
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    char validOeid[] = "000209FF-0000-0000-C000-000000000046";
+    code = OH_ContentEmbed_GetContentEmbedFormatByOEidAndLocale(validOeid, "zh-CN", format);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedFormatByOEidAndLocale_SystemError code: %{public}d", code);
+    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
+static napi_value TestProxyGetContentEmbedInfo_SystemError(napi_env env,
+    napi_callback_info info)
+{
+    ContentEmbed_Info *infoObj = nullptr;
+    ContentEmbed_ErrorCode code = OH_ContentEmbed_CreateContentEmbedInfo(&infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_SystemError create code: %{public}d", code);
+    napi_value result;
+    if (code != CE_ERR_OK) {
+        napi_create_int32(env, -1, &result);
+        return result;
+    }
+    code = OH_ContentEmbed_GetContentEmbedInfo("", infoObj);
+    OH_LOG_INFO(LOG_APP, "TestProxyGetContentEmbedInfo_SystemError code: %{public}d", code);
+    if (code == CE_ERR_SYSTEM_ABNORMAL) {
+        napi_create_int32(env, code, &result);
+        return result;
+    }
+    napi_create_int32(env, -1, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1826,8 +1928,17 @@ static napi_value Init(napi_env env, napi_value exports)
         {"TestProxyGetOEidFromFormat_NullFormat", nullptr,
             TestProxyGetOEidFromFormat_NullFormat,
             nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetOEidFromFormat_Normal", nullptr,
-            TestProxyGetOEidFromFormat_Normal,
+        {"TestProxyGetOEidFromFormat_FormatNotInit", nullptr,
+            TestProxyGetOEidFromFormat_FormatNotInit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetNameAndDescriptionFromFormat_FormatNotInit", nullptr,
+            TestProxyGetNameAndDescriptionFromFormat_FormatNotInit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetIconFromFormat_FormatNotInit", nullptr,
+            TestProxyGetIconFromFormat_FormatNotInit,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid", nullptr,
+            TestProxyGetContentEmbedFormatByOEidAndLocale_OEIDFormatInvalid,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetNameAndDescriptionFromFormat_NullFormatNullNameNullDescription", nullptr,
             TestProxyGetNameAndDescriptionFromFormat_NullFormatNullNameNullDescription,
@@ -1840,9 +1951,6 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetNameAndDescriptionFromFormat_NullDescription", nullptr,
             TestProxyGetNameAndDescriptionFromFormat_NullDescription,
-            nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"TestProxyGetNameAndDescriptionFromFormat_Normal", nullptr,
-            TestProxyGetNameAndDescriptionFromFormat_Normal,
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestProxyGetIconFromFormat_NullFormatNullIcon", nullptr,
             TestProxyGetIconFromFormat_NullFormatNullIcon,

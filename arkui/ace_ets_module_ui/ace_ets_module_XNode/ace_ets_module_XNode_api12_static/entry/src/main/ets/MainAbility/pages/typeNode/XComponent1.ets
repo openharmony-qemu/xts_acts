@@ -23,7 +23,6 @@ import {
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
 // let para: Record<string> = {
 //   'XComponentType': 'Init',
