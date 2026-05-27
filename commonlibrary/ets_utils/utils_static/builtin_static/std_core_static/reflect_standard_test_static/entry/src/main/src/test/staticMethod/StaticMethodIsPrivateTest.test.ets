@@ -310,7 +310,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let cls: Class = Class.from<AllModifierPrivateClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
-      // 运行时实际: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       let isPrivate = method!.isPrivate();
       let isPublic = method!.isPublic();
       let notPrivateAndPublic = !isPrivate && isPublic;
@@ -359,7 +358,6 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isPrivate() 不抛异常
       let cls003 = Class.from<AllModifierPrivateClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
@@ -378,7 +376,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls17 = Class.from<DeprecatedPrivateClass>();
       let methods = cls17.getStaticMethods();
-      // Deprecated private methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
       let m = cls17.getStaticMethod('deprecatedMethod');
       expect(m === undefined).assertTrue();
@@ -413,14 +410,12 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 运行时实际: getStaticMethods() 只返回 public 方法
       let clsAbs20 = Class.from<AbstractClass020>();
       let clsFin20 = Class.from<FinalClass020>();
       let clsNor20 = Class.from<NormalClass020>();
       let m1Methods = clsAbs20.getStaticMethods();
       let m2Methods = clsFin20.getStaticMethods();
       let m3Methods = clsNor20.getStaticMethods();
-      // Private methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(m1Methods.length).assertEqual(0);
       expect(m2Methods.length).assertEqual(0);
       expect(m3Methods.length).assertEqual(0);
@@ -437,7 +432,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls021 = Class.from<FactoryPrivateClass>();
       let methods = cls021.getStaticMethods();
-      // Private factory methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
       let m = cls021.getStaticMethod('factoryMethod');
       expect(m === undefined).assertTrue();
@@ -454,7 +448,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls022 = Class.from<UtilityPrivateClass>();
       let methods = cls022.getStaticMethods();
-      // Private utility methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
       let m = cls022.getStaticMethod('utilityMethod');
       expect(m === undefined).assertTrue();
@@ -471,7 +464,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<FourModifierPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let privateCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -511,7 +503,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<FourMethodPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let privateMethods: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -533,7 +524,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<FiveMethodPrivateClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时实际: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
       let publicCount: int = 0;
       let privateCount: int = 0;

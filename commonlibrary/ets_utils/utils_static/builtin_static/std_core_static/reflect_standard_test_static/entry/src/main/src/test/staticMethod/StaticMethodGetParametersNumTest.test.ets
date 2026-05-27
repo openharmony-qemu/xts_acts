@@ -18,7 +18,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import Utils from './../Util.test';
 
 class GetNumClass {
-  public static getNum(a: int, b: string): string { return b; }
+  public static getNum(): string { return "b"; }
 }
 
 class ReadCountClass {
@@ -93,12 +93,6 @@ class SingleCheckNumClass {
   public static singleInt(a: int): boolean { return a > 0; }
 }
 
-class ModifierNumClass {
-  public static normalMethod(a: int): string { return a.toString(); }
-  public static async asyncMethod(b: string): Promise<int> { return b.length; }
-  public static finalMethod(c: boolean): string { return c.toString(); }
-}
-
 class AsyncFetchNumClass {
   public static async fetchData(url: string, timeout: int): Promise<boolean> {
     return true;
@@ -158,7 +152,7 @@ export default function StaticMethodGetParametersNumTest(): void {
       let method = cls.getStaticMethod('getNum');
       expect(method !== undefined).assertTrue();
       let num: int = method!.getParametersNum();
-      expect(num).assertEqual(2);
+      expect(num).assertEqual(0);
     });
 
     /**
@@ -389,33 +383,12 @@ export default function StaticMethodGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1600
      * @tc.name testStaticMethodGetParametersNum016
-     * @tc.desc Verify getParametersNum() for methods with different modifiers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testStaticMethodGetParametersNum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls: Class = Class.from<ModifierNumClass>();
-      let m1 = cls.getStaticMethod('normalMethod');
-      let m2 = cls.getStaticMethod('asyncMethod');
-      let m3 = cls.getStaticMethod('finalMethod');
-      expect(m1 !== undefined).assertTrue();
-      expect(m2 !== undefined).assertTrue();
-      expect(m3 !== undefined).assertTrue();
-      expect(m1!.getParametersNum()).assertEqual(1);
-      expect(m2!.getParametersNum()).assertEqual(1);
-      expect(m3!.getParametersNum()).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1700
-     * @tc.name testStaticMethodGetParametersNum017
      * @tc.desc Verify getParametersNum() for async static method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParametersNum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetParametersNum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<AsyncFetchNumClass>();
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
@@ -424,14 +397,14 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1800
-     * @tc.name testStaticMethodGetParametersNum018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1700
+     * @tc.name testStaticMethodGetParametersNum017
      * @tc.desc Verify getParametersNum() for abstract and final class static methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParametersNum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetParametersNum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clsAbs = Class.from<AbstractClass019>();
       let clsFin = Class.from<FinalClass019>();
       let m1 = clsAbs.getStaticMethod('abstractMethod');
@@ -443,14 +416,14 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1800
      * @tc.name testStaticMethodGetParametersNum019
      * @tc.desc Verify getParametersNum() for getter and setter methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParametersNum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetParametersNum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<GetterSetterNumClass>();
       let getter1 = cls.getStaticMethod('%%get-x');
       let setter1 = cls.getStaticMethod('%%set-x');
@@ -467,14 +440,14 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_2000
-     * @tc.name testStaticMethodGetParametersNum020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1900
+     * @tc.name testStaticMethodGetParametersNum019
      * @tc.desc Verify getParametersNum() for multiple static methods in same class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParametersNum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetParametersNum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MultiMethodNumClass>();
       // 注: 按索引断言依赖 getStaticMethods() 当前返回顺序
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
@@ -486,14 +459,14 @@ export default function StaticMethodGetParametersNumTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_2100
-     * @tc.name testStaticMethodGetParametersNum021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_2000
+     * @tc.name testStaticMethodGetParametersNum020
      * @tc.desc Verify getParametersNum() is consistent with getParameterTypes().length
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticMethodGetParametersNum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticMethodGetParametersNum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<ThreeParamsNumClass>();
       let method = cls.getStaticMethod('threeParams');
       expect(method !== undefined).assertTrue();

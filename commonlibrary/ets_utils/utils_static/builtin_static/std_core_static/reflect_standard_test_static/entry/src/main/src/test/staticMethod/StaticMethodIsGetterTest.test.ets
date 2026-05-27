@@ -252,8 +252,8 @@ export default function StaticMethodIsGetterTest(): void {
       let cls004 = Class.from<DataSetterOnlyClass>();
       let method = cls004.getStaticMethod('%%set-data');
       expect(method !== undefined).assertTrue();
-      expect(method!.isGetter()).assertFalse();
       expect(method!.isSetter()).assertTrue();
+      expect(method!.isGetter()).assertFalse();
     });
 
     /**
