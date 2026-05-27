@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, UINT32_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, UINT32_MAX_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 import Utils from '../Util.test';
 
 export default function BigIntAsIntNTest(): void {
@@ -149,7 +149,7 @@ export default function BigIntAsIntNTest(): void {
       expect(BigInt.asIntN(64, BigInt(LONG_MIN)).toString()).assertEqual(LONG_MIN_STR);
       expect(BigInt.asIntN(64, Utils.biStr(LONG_MAX_PLUS_ONE_STR)).toString()).assertEqual(LONG_MIN_STR);
       expect(BigInt.asIntN(64, Utils.biStr(ULONG_MAX_STR)).toString()).assertEqual('-1');
-      expect(BigInt.asIntN(64, Utils.biStr('18446744073709551616')).toString()).assertEqual('0');
+      expect(BigInt.asIntN(64, Utils.biStr(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual('0');
       expect(BigInt.asIntN(64, Utils.biStr(LONG_MIN_MINUS_ONE_STR)).toString()).assertEqual(LONG_MAX_STR);
     });
 

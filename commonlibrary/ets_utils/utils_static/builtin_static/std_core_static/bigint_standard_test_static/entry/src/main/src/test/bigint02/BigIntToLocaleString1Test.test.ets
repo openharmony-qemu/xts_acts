@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
 
 export default function BigIntToLocaleString1Test(): void {
   describe('BigInt.toLocaleString no-arg (mindmap toLocaleString_1)', () => {
@@ -66,7 +66,7 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Large0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9007199254740993').toLocaleString().length > 0).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toLocaleString().length > 0).assertTrue();
     });
 
     /**

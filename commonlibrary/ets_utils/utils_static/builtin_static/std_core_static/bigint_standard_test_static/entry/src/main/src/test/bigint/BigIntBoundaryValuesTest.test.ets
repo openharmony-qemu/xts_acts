@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, LONG_MAX_NEGATED, LONG_MAX_NEGATED_STR, LONG_EXTREMA_SPAN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, LONG_MAX_NEGATED, LONG_MAX_NEGATED_STR, LONG_EXTREMA_SPAN_STR, ULONG_MAX_STR, LONG_MAX_DOUBLED_STR, LONG_MIN_DOUBLED_STR, LONG_MAX_MINUS_ONE_NEGATED_STR } from '../BigIntTestLimits';
 
 export default function BigIntBoundaryValuesTest(): void {
   describe('BigInt boundary values (signed long extrema, zero, negatives)', () => {
@@ -56,8 +56,8 @@ export default function BigIntBoundaryValuesTest(): void {
 
       expect(max.operatorAdd(one).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(min.operatorSubtract(one).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
-      expect(max.operatorAdd(max).toString()).assertEqual('18446744073709551614');
-      expect(min.operatorAdd(min).toString()).assertEqual('-18446744073709551616');
+      expect(max.operatorAdd(max).toString()).assertEqual(LONG_MAX_DOUBLED_STR);
+      expect(min.operatorAdd(min).toString()).assertEqual(LONG_MIN_DOUBLED_STR);
       expect(max.operatorAdd(min).toString()).assertEqual('-1');
       expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
     });
@@ -226,7 +226,7 @@ export default function BigIntBoundaryValuesTest(): void {
       expect(minMinusOne.negative()).assertTrue();
       expect(negMax.operatorGreaterThan(min)).assertTrue();
       expect(minMinusOne.operatorLessThan(min)).assertTrue();
-      expect(negMax.operatorIncrement().toString()).assertEqual('-9223372036854775806');
+      expect(negMax.operatorIncrement().toString()).assertEqual(LONG_MAX_MINUS_ONE_NEGATED_STR);
     });
 
     /**

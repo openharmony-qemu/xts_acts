@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL } from '../BigIntTestLimits';
 
 export default function BigIntDoubleValueTest(): void {
   describe('BigInt.doubleValue (mindmap doubleValue)', () => {
@@ -42,9 +42,9 @@ export default function BigIntDoubleValueTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntDoubleValueSafeInteger0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('9007199254740991').doubleValue()).assertEqual(9007199254740991.0);
-      expect(BigInt('9007199254740992').doubleValue()).assertEqual(9007199254740992.0);
-      expect(BigInt('9007199254740993').doubleValue()).assertEqual(9007199254740993.0);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_VAL);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL);
     });
 
     /**

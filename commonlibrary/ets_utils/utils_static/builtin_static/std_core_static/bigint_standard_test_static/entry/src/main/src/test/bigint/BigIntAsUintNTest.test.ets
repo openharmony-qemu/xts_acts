@@ -80,7 +80,7 @@ export default function BigIntAsUintNTest(): void {
       expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual(UINT32_MAX_STR);
       expect(BigInt.asUintN(32, Utils.biStr('4294967296')).toString()).assertEqual('0');
       expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_STR)).toString()).assertEqual(ULONG_MAX_STR);
-      expect(BigInt.asUintN(64, Utils.biStr('18446744073709551616')).toString()).assertEqual('0');
+      expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual('0');
     });
 
     /**

@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorStringTest(): void {
   describe('BigInt string constructor (mindmap constructor_7)', () => {
@@ -30,7 +30,7 @@ export default function BigIntConstructorStringTest(): void {
     it('testBigIntConstructorStringDecimalPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('0').toString()).assertEqual('0');
       expect(BigInt('42').toString()).assertEqual('42');
-      expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
     });
 
     /**

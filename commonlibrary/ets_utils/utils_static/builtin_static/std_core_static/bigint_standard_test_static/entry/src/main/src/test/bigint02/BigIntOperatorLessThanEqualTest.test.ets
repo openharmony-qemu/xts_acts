@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorLessThanEqualTest(): void {
   describe('BigInt.operatorLessThanEqual (mindmap)', () => {
@@ -44,9 +44,8 @@ export default function BigIntOperatorLessThanEqualTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanEqualBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        const maxSafe = '9007199254740991';
-        expect(new BigInt(maxSafe).operatorLessThanEqual(new BigInt(maxSafe))).assertTrue();
-        expect(new BigInt('9007199254740990').operatorLessThanEqual(new BigInt(maxSafe))).assertTrue();
+        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThanEqual(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorLessThanEqual(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
     });
 
     /**

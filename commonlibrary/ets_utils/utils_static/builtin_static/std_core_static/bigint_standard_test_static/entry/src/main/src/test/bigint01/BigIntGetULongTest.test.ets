@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, ULONG_MAX_PLUS_TWO_STR } from '../BigIntTestLimits';
 
 import Utils from '../Util.test';
 
@@ -71,8 +71,8 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongOverflowWrap0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Utils.ulongRoundTrip(BigInt('18446744073709551616'))).assertEqual('0');
-      expect(Utils.ulongRoundTrip(BigInt('18446744073709551617'))).assertEqual('1');
+      expect(Utils.ulongRoundTrip(BigInt(ULONG_MAX_PLUS_ONE_STR))).assertEqual('0');
+      expect(Utils.ulongRoundTrip(BigInt(ULONG_MAX_PLUS_TWO_STR))).assertEqual('1');
     });
 
     /**

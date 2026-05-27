@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorBitwiseOrTest(): void {
   describe('BigInt.operatorBitwiseOr (mindmap operatorBitwiseOr)', () => {
@@ -123,7 +123,7 @@ export default function BigIntOperatorBitwiseOrTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(ULONG_MAX_STR).operatorBitwiseOr(BigInt('18446744073709551616')).toString()).assertEqual('36893488147419103231');
+      expect(BigInt(ULONG_MAX_STR).operatorBitwiseOr(BigInt(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual(POW2_65_MINUS_ONE_STR);
     });
 
     /**

@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {
@@ -68,8 +68,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleSafeInteger0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
-      expect(BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_STR);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR);
     });
 
     /**
@@ -98,8 +98,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleBeyondSafeInteger0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(9007199254740992.0).toString()).assertEqual('9007199254740992');
-      expect(BigInt(-9007199254740992.0).toString()).assertEqual('-9007199254740992');
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR);
     });
 
     /**

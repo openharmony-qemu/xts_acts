@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntConstructorCopyTest(): void {
   describe('BigInt copy constructor (mindmap constructor_9)', () => {
@@ -43,7 +43,7 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLargeString0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const original = BigInt('9007199254740993');
+      const original = BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
       const copied = BigInt(original);
 
       expect(copied.equals(original)).assertTrue();
@@ -117,7 +117,7 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyBeyondSafeInteger0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const beyondSafe = BigInt('9007199254740992');
+      const beyondSafe = BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR);
       const copiedBeyond = BigInt(beyondSafe);
 
       expect(copiedBeyond.equals(beyondSafe)).assertTrue();

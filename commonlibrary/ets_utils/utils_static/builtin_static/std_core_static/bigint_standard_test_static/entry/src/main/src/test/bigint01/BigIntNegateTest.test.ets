@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR } from '../BigIntTestLimits';
 
 export default function BigIntNegateTest(): void {
   describe('BigInt.negate (mindmap negate)', () => {
@@ -73,10 +73,8 @@ export default function BigIntNegateTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegateLongBounds0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991';
-
-      expect(BigInt(maxSafe).negate().toString()).assertEqual('-' + maxSafe);
-      expect(BigInt('-' + maxSafe).negate().toString()).assertEqual(maxSafe);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).negate().toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR).negate().toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_STR);
     });
 
     /**

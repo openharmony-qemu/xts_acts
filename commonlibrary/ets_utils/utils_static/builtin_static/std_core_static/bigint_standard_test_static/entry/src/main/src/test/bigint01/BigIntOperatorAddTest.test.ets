@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorAddTest(): void {
   describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
@@ -62,10 +62,8 @@ export default function BigIntOperatorAddTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxSafe = '9007199254740991';
-
-      expect(BigInt(maxSafe).operatorAdd(BigInt(maxSafe)).toString()).assertEqual('18014398509481982');
-      expect(BigInt(maxSafe).operatorAdd(BigInt('-' + maxSafe)).toString()).assertEqual('0');
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorAdd(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR)).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorAdd(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR)).toString()).assertEqual('0');
       expect(BigInt('999999999999999999999999999999').operatorAdd(BigInt(1)).toString()).assertEqual('1000000000000000000000000000000');
     });
 

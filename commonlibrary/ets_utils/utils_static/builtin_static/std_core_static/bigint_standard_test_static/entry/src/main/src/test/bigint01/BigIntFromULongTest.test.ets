@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, UINT32_MAX, UINT32_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, UINT32_MAX, UINT32_MAX_STR, ULONG_MAX_STR, LONG_MAX_DOUBLED_STR, INT_MIN_AS_ULONG_STR } from '../BigIntTestLimits';
 
 export default function BigIntFromULongTest(): void {
   describe('BigInt.fromULong (mindmap fromULong)', () => {
@@ -45,8 +45,8 @@ export default function BigIntFromULongTest(): void {
      */
     it('testBigIntFromULongUnsignedInterpretation0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(-1).toString()).assertEqual(ULONG_MAX_STR);
-      expect(BigInt.fromULong(-2).toString()).assertEqual('18446744073709551614');
-      expect(BigInt.fromULong(-2147483648).toString()).assertEqual('18446744071562067968');
+      expect(BigInt.fromULong(-2).toString()).assertEqual(LONG_MAX_DOUBLED_STR);
+      expect(BigInt.fromULong(-2147483648).toString()).assertEqual(INT_MIN_AS_ULONG_STR);
     });
 
     /**

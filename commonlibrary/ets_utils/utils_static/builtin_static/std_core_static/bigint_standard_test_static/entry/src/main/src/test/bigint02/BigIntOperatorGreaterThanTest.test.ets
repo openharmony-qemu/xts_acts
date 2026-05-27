@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MAX_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorGreaterThanTest(): void {
   describe('BigInt.operatorGreaterThan (mindmap)', () => {
@@ -46,9 +46,8 @@ export default function BigIntOperatorGreaterThanTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        const maxSafe = '9007199254740991';
-        expect(new BigInt(maxSafe).operatorGreaterThan(new BigInt('9007199254740990'))).assertTrue();
-        expect(new BigInt('9007199254740990').operatorGreaterThan(new BigInt(maxSafe))).assertFalse();
+        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorGreaterThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertTrue();
+        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorGreaterThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
     });
 
     /**
@@ -117,7 +116,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
 
       expect(max.operatorGreaterThan(min)).assertTrue();
       expect(min.operatorGreaterThan(max)).assertFalse();
-      expect(max.operatorGreaterThan(BigInt('9223372036854775806'))).assertTrue();
+      expect(max.operatorGreaterThan(BigInt(LONG_MAX_MINUS_ONE_STR))).assertTrue();
       expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorGreaterThan(max)).assertTrue();
     });
   });
