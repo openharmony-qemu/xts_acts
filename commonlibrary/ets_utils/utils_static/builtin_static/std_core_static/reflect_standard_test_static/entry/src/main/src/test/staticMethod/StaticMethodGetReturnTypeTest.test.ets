@@ -221,8 +221,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(m2 !== undefined).assertTrue();
       let rt1 = m1!.getReturnType();
       let rt2 = m2!.getReturnType();
-      let result = rt1.getName().includes('ObjectReturnTypesClass');
-      expect(result).assertTrue();
+      expect(rt1.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetReturnTypeTest.test.ObjectReturnTypesClass');
       expect(rt2.getName()).assertEqual('std.core.Map');
     });
 
@@ -291,8 +290,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
-      let result = returnType.getName().includes('Promise');
-      expect(result).assertTrue();
+      expect(returnType.getName()).assertEqual('std.core.Promise');
     });
 
     /**
@@ -406,8 +404,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let method = cls.getStaticMethod('chain');
       expect(method !== undefined).assertTrue();
       let rt = method!.getReturnType();
-      let result = rt.getName().includes('ThisReturnClass');
-      expect(result).assertTrue();
+      expect(rt.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetReturnTypeTest.test.ThisReturnClass');
     });
 
     /**
@@ -446,8 +443,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let rt2 = m2!.getReturnType();
       let rt3 = m3!.getReturnType();
       expect(rt1.getName()).assertEqual('std.core.String');
-      let result = rt2.getName().includes('Promise');
-      expect(result).assertTrue();
+      expect(rt2.getName()).assertEqual('std.core.Promise');
       expect(rt3.getName()).assertEqual('u1');
     });
 
@@ -467,10 +463,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(m2 !== undefined).assertTrue();
       let rt1: Class = m1!.getReturnType();
       let rt2: Class = m2!.getReturnType();
-      let hasPromise1 = rt1.getName().includes('Promise');
-      expect(hasPromise1).assertTrue();
-      let hasPromise2 = rt2.getName().includes('Promise');
-      expect(hasPromise2).assertTrue();
+      expect(rt1.getName()).assertEqual('std.core.Promise');
+      expect(rt2.getName()).assertEqual('std.core.Promise');
     });
 
     /**

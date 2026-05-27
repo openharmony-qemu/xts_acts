@@ -66,6 +66,7 @@ class DifferentReturnClass006 {
   public static fetchName(): string {
     return 'Alice';
   }
+
   public static fetchAge(): int {
     return 30;
   }

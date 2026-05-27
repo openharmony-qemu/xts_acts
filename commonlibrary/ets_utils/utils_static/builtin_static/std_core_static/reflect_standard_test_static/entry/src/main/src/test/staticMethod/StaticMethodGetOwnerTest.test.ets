@@ -178,8 +178,7 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(method !== undefined).assertTrue();
       let owner: Class = method!.getOwner();
       expect(owner !== null).assertTrue();
-      let result = owner.getName().includes('NameOwnerClass');
-      expect(result).assertTrue();
+      expect(owner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.NameOwnerClass');
     });
 
     /**
@@ -199,10 +198,8 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(methodB !== undefined).assertTrue();
       let ownerA = methodA!.getOwner();
       let ownerB = methodB!.getOwner();
-      let nameA = ownerA.getName().includes('ClassA003');
-      expect(nameA).assertTrue();
-      let nameB = ownerB.getName().includes('ClassB003');
-      expect(nameB).assertTrue();
+      expect(ownerA.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ClassA003');
+      expect(ownerB.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ClassB003');
     });
 
     /**
@@ -222,10 +219,8 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(childMethod !== undefined).assertTrue();
       let parentOwner = parentMethod!.getOwner();
       let childOwner = childMethod!.getOwner();
-      let parentName = parentOwner.getName().includes('ParentClass004');
-      expect(parentName).assertTrue();
-      let childName = childOwner.getName().includes('ChildClass004');
-      expect(childName).assertTrue();
+      expect(parentOwner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ParentClass004');
+      expect(childOwner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ChildClass004');
     });
 
     /**
@@ -243,10 +238,8 @@ export default function StaticMethodGetOwnerTest(): void {
       let m2 = cls2.getStaticMethod('specialOp');
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
-      let result = o1.getName().includes('_PrivateClass005');
-      expect(result).assertTrue();
-      let o2Name = o2.getName().includes('$SpecialClass005');
-      expect(o2Name).assertTrue();
+      expect(o1.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test._PrivateClass005');
+      expect(o2.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.$SpecialClass005');
     });
 
     /**
@@ -298,8 +291,7 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('staticMethod');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
-      let result = owner.getName().includes('GenericClass008');
-      expect(result).assertTrue();
+      expect(owner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.GenericClass008');
     });
 
     /**
@@ -315,8 +307,7 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('ownMethod');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
-      let result = owner.getName().includes('InterfaceOwnerClass');
-      expect(result).assertTrue();
+      expect(owner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.InterfaceOwnerClass');
     });
 
     /**
@@ -354,12 +345,9 @@ export default function StaticMethodGetOwnerTest(): void {
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
-      let o1Name = o1.getName().includes('ModifierOwnerClass');
-      expect(o1Name).assertTrue();
-      let o2Name = o2.getName().includes('ModifierOwnerClass');
-      expect(o2Name).assertTrue();
-      let o3Name = o3.getName().includes('ModifierOwnerClass');
-      expect(o3Name).assertTrue();
+      expect(o1.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ModifierOwnerClass');
+      expect(o2.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ModifierOwnerClass');
+      expect(o3.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.ModifierOwnerClass');
     });
 
     /**
@@ -375,8 +363,7 @@ export default function StaticMethodGetOwnerTest(): void {
       let method = cls.getStaticMethod('fetchData');
       expect(method !== undefined).assertTrue();
       let owner = method!.getOwner();
-      let result = owner.getName().includes('AsyncFetchOwnerClass');
-      expect(result).assertTrue();
+      expect(owner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.AsyncFetchOwnerClass');
     });
 
     /**
@@ -400,12 +387,9 @@ export default function StaticMethodGetOwnerTest(): void {
       let o1 = m1!.getOwner();
       let o2 = m2!.getOwner();
       let o3 = m3!.getOwner();
-      let absName = o1.getName().includes('AbstractClass013');
-      expect(absName).assertTrue();
-      let finName = o2.getName().includes('FinalClass013');
-      expect(finName).assertTrue();
-      let norName = o3.getName().includes('NormalClass013');
-      expect(norName).assertTrue();
+      expect(o1.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.AbstractClass013');
+      expect(o2.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.FinalClass013');
+      expect(o3.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.NormalClass013');
     });
 
     /**
@@ -424,10 +408,8 @@ export default function StaticMethodGetOwnerTest(): void {
       expect(setter !== undefined).assertTrue();
       let gOwner = getter!.getOwner();
       let sOwner = setter!.getOwner();
-      let getterName = gOwner.getName().includes('PropertyOwnerClass');
-      expect(getterName).assertTrue();
-      let setterName = sOwner.getName().includes('PropertyOwnerClass');
-      expect(setterName).assertTrue();
+      expect(gOwner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.PropertyOwnerClass');
+      expect(sOwner.getName()).assertEqual('entry.src.main.src.test.staticMethod.StaticMethodGetOwnerTest.test.PropertyOwnerClass');
     });
 
     /**
