@@ -420,6 +420,8 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
       expect(returnType !== null).assertTrue();
+      expect(returnType.getName()).assertEqual('std.core.String');
+
     });
 
     /**
