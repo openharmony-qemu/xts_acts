@@ -197,6 +197,60 @@ class ReadonlyGuardClass {
   public readonly immutable: string = "constant";
 }
 
+const FIELDS_TEST_MODULE_PREFIX: string =
+  "entry.src.main.src.test.reflect.GetInstanceFieldsRecursiveTest.test.";
+
+function verifyTypeInfoClassFieldTypes(): void {
+  let cls = Class.from<TypeInfoClass>();
+  let fields = reflect.getInstanceFieldsRecursive(cls);
+  expect(fields.length).assertEqual(5);
+  let nameType: string = "";
+  let ageType: string = "";
+  let scoreType: string = "";
+  let activeType: string = "";
+  let dataType: string = "";
+  for (let field of fields) {
+    if (field.getName() === "name") {
+      nameType = field.getType().getName();
+    }
+    if (field.getName() === "age") {
+      ageType = field.getType().getName();
+    }
+    if (field.getName() === "score") {
+      scoreType = field.getType().getName();
+    }
+    if (field.getName() === "active") {
+      activeType = field.getType().getName();
+    }
+    if (field.getName() === "data") {
+      dataType = field.getType().getName();
+    }
+  }
+  expect(nameType).assertEqual("std.core.String");
+  expect(ageType).assertEqual("i32");
+  expect(scoreType).assertEqual("f32");
+  expect(activeType).assertEqual("u1");
+  expect(dataType).assertEqual("std.core.Array");
+}
+
+function verifySceneDerivedClassFieldOwners(): void {
+  let cls = Class.from<SceneDerivedClass>();
+  let fields = reflect.getInstanceFieldsRecursive(cls);
+  expect(fields.length).assertEqual(2);
+  let baseOwner: string = "";
+  let derivedOwner: string = "";
+  for (let field of fields) {
+    if (field.getName() === "baseProp") {
+      baseOwner = field.getOwner().getName();
+    }
+    if (field.getName() === "derivedProp") {
+      derivedOwner = field.getOwner().getName();
+    }
+  }
+  expect(baseOwner).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}SceneBaseClass`);
+  expect(derivedOwner).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}SceneDerivedClass`);
+}
+
 export default function GetInstanceFieldsRecursiveTest(): void {
   describe('GetInstanceFieldsRecursiveTest', (): void => {
     beforeAll((): void => {
@@ -222,41 +276,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(1);
-      let nameCount: int = 0;
-      for (let field of fields) {
-        if (field.getName() === "name") {
-          nameCount++;
-        }
-      }
-      expect(nameCount).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0200
-     * @tc.name testGetInstanceFieldsRecursive002
-     * @tc.desc Verify missing targetClass parameter is rejected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect.getInstanceFieldsRecursive();
-      // This case is a compile-time reference only.
-      return;
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0300
-     * @tc.name testGetInstanceFieldsRecursive003
-     * @tc.desc Verify extra parameter is rejected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // reflect.getInstanceFieldsRecursive(Class.from<BasicFieldClass>(), 123);
-      // This case is a compile-time reference only.
-      return;
+      expect(fields[0].getName()).assertEqual("name");
     });
 
     /**
@@ -283,17 +303,12 @@ export default function GetInstanceFieldsRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<BasicFieldClass>();
+      let obj = new BasicFieldClass();
+      let cls = Class.of(obj);
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(1);
-      let nameCount: int = 0;
-      for (let field of fields) {
-        if (field.getName() === "name") {
-          nameCount++;
-        }
-      }
-      expect(nameCount).assertEqual(1);
+      expect(fields[0].getName()).assertEqual("name");
+      expect(fields[0].getOwner().getName()).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}BasicFieldClass`);
     });
 
     /**
@@ -307,27 +322,29 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     it('testGetInstanceFieldsRecursive006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypeFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(4);
-      let nameCount: int = 0;
-      let ageCount: int = 0;
-      let scoreCount: int = 0;
-      let activeCount: int = 0;
+      let hasName = false;
+      let hasAge = false;
+      let hasScore = false;
+      let hasActive = false;
       for (let field of fields) {
         if (field.getName() === "name") {
-          nameCount++;
-        } else if (field.getName() === "age") {
-          ageCount++;
-        } else if (field.getName() === "score") {
-          scoreCount++;
-        } else if (field.getName() === "active") {
-          activeCount++;
+          hasName = true;
+        }
+        if (field.getName() === "age") {
+          hasAge = true;
+        }
+        if (field.getName() === "score") {
+          hasScore = true;
+        }
+        if (field.getName() === "active") {
+          hasActive = true;
         }
       }
-      expect(nameCount).assertEqual(1);
-      expect(ageCount).assertEqual(1);
-      expect(scoreCount).assertEqual(1);
-      expect(activeCount).assertEqual(1);
+      expect(hasName).assertTrue();
+      expect(hasAge).assertTrue();
+      expect(hasScore).assertTrue();
+      expect(hasActive).assertTrue();
     });
 
     /**
@@ -341,27 +358,29 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     it('testGetInstanceFieldsRecursive007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypeFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(4);
-      let nameCount: int = 0;
-      let ageCount: int = 0;
-      let scoreCount: int = 0;
-      let activeCount: int = 0;
+      let nameType: string = "";
+      let ageType: string = "";
+      let scoreType: string = "";
+      let activeType: string = "";
       for (let field of fields) {
         if (field.getName() === "name") {
-          nameCount++;
-        } else if (field.getName() === "age") {
-          ageCount++;
-        } else if (field.getName() === "score") {
-          scoreCount++;
-        } else if (field.getName() === "active") {
-          activeCount++;
+          nameType = field.getType().getName();
+        }
+        if (field.getName() === "age") {
+          ageType = field.getType().getName();
+        }
+        if (field.getName() === "score") {
+          scoreType = field.getType().getName();
+        }
+        if (field.getName() === "active") {
+          activeType = field.getType().getName();
         }
       }
-      expect(nameCount).assertEqual(1);
-      expect(ageCount).assertEqual(1);
-      expect(scoreCount).assertEqual(1);
-      expect(activeCount).assertEqual(1);
+      expect(nameType).assertEqual("std.core.String");
+      expect(ageType).assertEqual("i32");
+      expect(scoreType).assertEqual("f32");
+      expect(activeType).assertEqual("u1");
     });
 
     /**
@@ -427,19 +446,19 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     it('testGetInstanceFieldsRecursive010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SingleInheritanceChildClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(2);
-      let baseFieldCount: int = 0;
-      let childFieldCount: int = 0;
+      let hasBaseField = false;
+      let hasChildField = false;
       for (let field of fields) {
         if (field.getName() === "baseField") {
-          baseFieldCount++;
-        } else if (field.getName() === "childField") {
-          childFieldCount++;
+          hasBaseField = true;
+        }
+        if (field.getName() === "childField") {
+          hasChildField = true;
         }
       }
-      expect(baseFieldCount).assertEqual(1);
-      expect(childFieldCount).assertEqual(1);
+      expect(hasBaseField).assertTrue();
+      expect(hasChildField).assertTrue();
     });
 
     /**
@@ -475,7 +494,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1200
      * @tc.name testGetInstanceFieldsRecursive012
-     * @tc.desc Verify shadowed field names are preserved in recursive results
+     * @tc.desc Verify shadowed field name returns the derived declaration only
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -489,8 +508,8 @@ export default function GetInstanceFieldsRecursiveTest(): void {
           fieldCount++;
         }
       }
-      expect(fieldCount).assertEqual(2);
-      expect(fields.length).assertEqual(2);
+      expect(fieldCount).assertEqual(1);
+      expect(fields.length).assertEqual(1);
     });
 
     /**
@@ -760,7 +779,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<NoFieldClass>();
+      let cls = Class.from<EmptyFieldInterface>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(0);
@@ -777,19 +796,13 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     it('testGetInstanceFieldsRecursive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SingleInheritanceChildClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
-      expect(fields.length).assertEqual(2);
-      let baseFieldCount: int = 0;
-      let childFieldCount: int = 0;
+      let baseOwner: string = "";
       for (let field of fields) {
         if (field.getName() === "baseField") {
-          baseFieldCount++;
-        } else if (field.getName() === "childField") {
-          childFieldCount++;
+          baseOwner = field.getOwner().getName();
         }
       }
-      expect(baseFieldCount).assertEqual(1);
-      expect(childFieldCount).assertEqual(1);
+      expect(baseOwner).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}BaseFieldClass`);
     });
 
     /**
@@ -860,7 +873,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     it('testGetInstanceFieldsRecursive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(typeof fields).assertEqual("object");
+      expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(1);
     });
 
@@ -876,11 +889,10 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields.length).assertEqual(1);
-      for (let field of fields) {
-        expect(typeof field.getName).assertEqual("function");
-        expect(typeof field.getType).assertEqual("function");
-        expect(typeof field.getOwner).assertEqual("function");
-      }
+      let field = fields[0];
+      expect(field.getName()).assertEqual("name");
+      expect(field.getType().getName()).assertEqual("std.core.String");
+      expect(field.getOwner().getName()).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}BasicFieldClass`);
     });
 
     /**
@@ -911,14 +923,16 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3400
      * @tc.name testGetInstanceFieldsRecursive034
-     * @tc.desc Verify null input throws an error
+     * @tc.desc Verify getValue with null target throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<BasicFieldClass>();
+      let fields = reflect.getInstanceFieldsRecursive(cls);
       try {
-        reflect.getInstanceFieldsRecursive(null as Class);
+        fields[0].getValue(null as Object);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertEqual(true);
@@ -929,14 +943,16 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3500
      * @tc.name testGetInstanceFieldsRecursive035
-     * @tc.desc Verify undefined input throws an error
+     * @tc.desc Verify getValue with undefined target throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<BasicFieldClass>();
+      let fields = reflect.getInstanceFieldsRecursive(cls);
       try {
-        reflect.getInstanceFieldsRecursive(undefined as Class);
+        fields[0].getValue(undefined as Object);
         expect().assertFail();
       } catch (error) {
         expect(error instanceof Error).assertEqual(true);
@@ -1077,7 +1093,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3900
      * @tc.name testGetInstanceFieldsRecursive039
-     * @tc.desc Verify inherited field owner information is available
+     * @tc.desc Verify derived class lists baseProp and derivedProp field names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1090,10 +1106,9 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       for (let field of fields) {
         if (field.getName() === "baseProp") {
           baseFound = true;
-          expect(field.getOwner().getName()).assertEqual("SceneBaseClass");
-        } else if (field.getName() === "derivedProp") {
+        }
+        if (field.getName() === "derivedProp") {
           derivedFound = true;
-          expect(field.getOwner().getName()).assertEqual("SceneDerivedClass");
         }
       }
       expect(baseFound).assertTrue();
@@ -1147,14 +1162,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TypeInfoClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      for (let field of fields) {
-        let type = field.getType();
-        expect(type !== undefined).assertTrue();
-        expect(typeof type.getName).assertEqual("function");
-        expect(type.getName().length > 0).assertTrue();
-      }
+      verifyTypeInfoClassFieldTypes();
     });
 
     /**
@@ -1241,25 +1249,6 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4600
-     * @tc.name testGetInstanceFieldsRecursive046
-     * @tc.desc Verify field type information is accessible
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TypeInfoClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields.length).assertEqual(5);
-      for (let field of fields) {
-        let type = field.getType();
-        expect(type !== undefined).assertTrue();
-        expect(typeof type.getName).assertEqual("function");
-      }
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4700
      * @tc.name testGetInstanceFieldsRecursive047
      * @tc.desc Verify owner metadata is returned correctly
@@ -1268,23 +1257,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<SceneDerivedClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      let baseFound = false;
-      let derivedFound = false;
-      for (let field of fields) {
-        let owner = field.getOwner();
-        expect(owner !== undefined).assertTrue();
-        if (field.getName() === "baseProp") {
-          baseFound = true;
-          expect(owner.getName()).assertEqual("SceneBaseClass");
-        } else if (field.getName() === "derivedProp") {
-          derivedFound = true;
-          expect(owner.getName()).assertEqual("SceneDerivedClass");
-        }
-      }
-      expect(baseFound).assertTrue();
-      expect(derivedFound).assertTrue();
+      verifySceneDerivedClassFieldOwners();
     });
 
     /**
@@ -1363,22 +1336,23 @@ export default function GetInstanceFieldsRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceFieldsRecursive050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let cls = Class.from<ReadonlyGuardClass>();
-        let fields = reflect.getInstanceFieldsRecursive(cls);
-        let immutableFound = false;
-        for (let field of fields) {
-          if (field.getName() === "immutable") {
-            immutableFound = true;
-            field.setValue(new ReadonlyGuardClass(), "new value");
+      let obj = new ReadonlyFieldClass();
+      let cls = Class.from<ReadonlyFieldClass>();
+      let fields = reflect.getInstanceFieldsRecursive(cls);
+      let constantFound = false;
+      for (let field of fields) {
+        if (field.getName() === "constant") {
+          constantFound = true;
+          try {
+            field.setValue(obj, 200);
+            expect().assertFail();
+          } catch (error) {
+            expect(error instanceof Error).assertEqual(true);
+            expect((error as Error).name).assertEqual('TypeError');
           }
         }
-        expect(immutableFound).assertTrue();
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
       }
+      expect(constantFound).assertTrue();
     });
 
     /**

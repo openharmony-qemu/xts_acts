@@ -50,6 +50,12 @@ interface Person004 {
   address: Address004;
 }
 
+interface EmptyOptionalInterface004 {
+  name?: string;
+  age?: int;
+  city?: string;
+}
+
 interface OptionalProps005 {
   name: string;
   age?: int;
@@ -146,15 +152,15 @@ interface Item039 {
 }
 
 export default function ClassIsLiteralInitializedInterfaceTest(): void {
-  describe('ClassIsLiteralInitializedInterfaceTest', () => {
-    beforeAll(() => {
+  describe('ClassIsLiteralInitializedInterfaceTest', (): void => {
+    beforeAll((): void => {
     });
     beforeEach(async () => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
@@ -171,30 +177,6 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0200
-     * @tc.name testClassIsLiteralInitializedInterface002
-     * @tc.desc Verify isLiteralInitializedInterface case 002: missing parameter placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0300
-     * @tc.name testClassIsLiteralInitializedInterface003
-     * @tc.desc Verify isLiteralInitializedInterface case 003: extra parameter placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0400
      * @tc.name testClassIsLiteralInitializedInterface004
      * @tc.desc Verify isLiteralInitializedInterface case 004: empty object literal
@@ -203,7 +185,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsLiteralInitializedInterface004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj: EmptyLiteralInterface001 = {};
+      let obj: EmptyOptionalInterface004 = {};
       expect(reflect.isLiteralInitializedInterface(obj)).assertEqual(true);
     });
 
@@ -329,25 +311,37 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1400
      * @tc.name testClassIsLiteralInitializedInterface014
-     * @tc.desc Verify isLiteralInitializedInterface case 014: null object
+     * @tc.desc Verify isLiteralInitializedInterface case 014: null cast throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsLiteralInitializedInterface014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isLiteralInitializedInterface(null as Object)).assertEqual(false);
+      try {
+        reflect.isLiteralInitializedInterface(null as Object);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1500
      * @tc.name testClassIsLiteralInitializedInterface015
-     * @tc.desc Verify isLiteralInitializedInterface case 015: undefined object
+     * @tc.desc Verify isLiteralInitializedInterface case 015: undefined cast throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsLiteralInitializedInterface015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isLiteralInitializedInterface(undefined as Object)).assertEqual(false);
+      try {
+        reflect.isLiteralInitializedInterface(undefined as Object);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
+      }
     });
 
     /**
@@ -449,8 +443,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
      */
     it('testClassIsLiteralInitializedInterface023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: SinglePropInterface002 = { name: 'Alice' };
-      let result = reflect.isLiteralInitializedInterface(obj);
-      expect(typeof result).assertEqual('boolean');
+      let result: boolean = reflect.isLiteralInitializedInterface(obj);
       expect(result).assertEqual(true);
     });
 
@@ -464,8 +457,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
      */
     it('testClassIsLiteralInitializedInterface024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new LiteralClass006();
-      let result = reflect.isLiteralInitializedInterface(obj);
-      expect(typeof result).assertEqual('boolean');
+      let result: boolean = reflect.isLiteralInitializedInterface(obj);
       expect(result).assertEqual(false);
     });
 
@@ -484,32 +476,6 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2600
-     * @tc.name testClassIsLiteralInitializedInterface026
-     * @tc.desc Verify isLiteralInitializedInterface case 026: null return false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = reflect.isLiteralInitializedInterface(null as Object);
-      expect(result).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2700
-     * @tc.name testClassIsLiteralInitializedInterface027
-     * @tc.desc Verify isLiteralInitializedInterface case 027: undefined return false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = reflect.isLiteralInitializedInterface(undefined as Object);
-      expect(result).assertEqual(false);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2800
      * @tc.name testClassIsLiteralInitializedInterface028
      * @tc.desc Verify isLiteralInitializedInterface case 028: return value type boolean
@@ -519,14 +485,14 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
      */
     it('testClassIsLiteralInitializedInterface028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: EmptyLiteralInterface001 = {};
-      let result = reflect.isLiteralInitializedInterface(obj);
-      expect(typeof result).assertEqual('boolean');
+      let result: boolean = reflect.isLiteralInitializedInterface(obj);
+      expect(result).assertEqual(true);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2900
      * @tc.name testClassIsLiteralInitializedInterface029
-     * @tc.desc Verify isLiteralInitializedInterface case 029: true or false boundary
+     * @tc.desc Verify isLiteralInitializedInterface case 029: literal true and class instance false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -536,8 +502,8 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
       let classObj = new LiteralClass006();
       let literalResult = reflect.isLiteralInitializedInterface(literalObj);
       let classResult = reflect.isLiteralInitializedInterface(classObj);
-      expect(literalResult === true || literalResult === false).assertTrue();
-      expect(classResult === true || classResult === false).assertTrue();
+      expect(literalResult).assertEqual(true);
+      expect(classResult).assertEqual(false);
     });
 
     /**
@@ -553,40 +519,6 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
         let obj: EmptyLiteralInterface001 = {};
         let result = reflect.isLiteralInitializedInterface(obj);
         expect(result).assertEqual(true);
-      } catch (error) {
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_3100
-     * @tc.name testClassIsLiteralInitializedInterface031
-     * @tc.desc Verify isLiteralInitializedInterface case 031: null no error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = reflect.isLiteralInitializedInterface(null as Object);
-        expect(result).assertEqual(false);
-      } catch (error) {
-        expect().assertFail();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_3200
-     * @tc.name testClassIsLiteralInitializedInterface032
-     * @tc.desc Verify isLiteralInitializedInterface case 032: undefined no error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsLiteralInitializedInterface032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let result = reflect.isLiteralInitializedInterface(undefined as Object);
-        expect(result).assertEqual(false);
       } catch (error) {
         expect().assertFail();
       }

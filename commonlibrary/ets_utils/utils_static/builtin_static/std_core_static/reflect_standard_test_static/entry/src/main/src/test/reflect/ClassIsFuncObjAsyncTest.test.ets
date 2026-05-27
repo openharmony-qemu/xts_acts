@@ -32,6 +32,10 @@ async function asyncDecl001(): Promise<void> {
   console.info('asyncDecl001');
 }
 
+async function asyncDecl004Dedicated(): Promise<void> {
+  console.info('asyncDecl004Dedicated');
+}
+
 let asyncArrow002 = async (): Promise<void> => {
   console.info('asyncArrow002');
 };
@@ -71,13 +75,13 @@ function syncNoParams011(): void {
 }
 
 function syncReturnsPromise012(): Promise<string> {
-  return new Promise<string>((resolve: (value: string | PromiseLike<string>) => void) => {
+  return new Promise<string>((resolve) => {
     resolve('result');
   });
 }
 
 function syncResolve013(): Promise<string> {
-  return new Promise<string>((resolve: (value: string | PromiseLike<string>) => void) => {
+  return new Promise<string>((resolve) => {
     resolve('result');
   });
 }
@@ -260,7 +264,7 @@ class Service034 {
 }
 
 function staticAsyncTarget035(): Promise<void> {
-  return new Promise<void>((resolve: (value: void | PromiseLike<void>) => void) => {
+  return new Promise<void>((resolve) => {
     resolve(undefined);
   });
 }
@@ -363,30 +367,6 @@ export default function ClassIsFuncObjAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0200
-     * @tc.name testClassIsFuncObjAsync002
-     * @tc.desc Verify isFuncObjAsync case 002: missing parameter placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFuncObjAsync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0300
-     * @tc.name testClassIsFuncObjAsync003
-     * @tc.desc Verify isFuncObjAsync case 003: extra parameter placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFuncObjAsync003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0400
      * @tc.name testClassIsFuncObjAsync004
      * @tc.desc Verify isFuncObjAsync case 004: async function declaration
@@ -395,7 +375,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl001)).assertEqual(true);
+      expect(reflect.isFuncObjAsync(asyncDecl004Dedicated)).assertEqual(true);
     });
 
     /**
@@ -459,18 +439,6 @@ export default function ClassIsFuncObjAsyncTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1000
-     * @tc.name testClassIsFuncObjAsync010
-     * @tc.desc Verify isFuncObjAsync case 010: async generator placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFuncObjAsync010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1100
      * @tc.name testClassIsFuncObjAsync011
      * @tc.desc Verify isFuncObjAsync case 011: sync function declaration
@@ -528,18 +496,6 @@ export default function ClassIsFuncObjAsyncTest(): void {
      */
     it('testClassIsFuncObjAsync015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(reflect.isFuncObjAsync(syncNoParams011)).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1600
-     * @tc.name testClassIsFuncObjAsync016
-     * @tc.desc Verify isFuncObjAsync case 016: sync generator placeholder
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testClassIsFuncObjAsync016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
     });
 
     /**
@@ -619,7 +575,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2300
      * @tc.name testClassIsFuncObjAsync023
-     * @tc.desc Verify isFuncObjAsync case 023: constructor placeholder
+     * @tc.desc Verify isFuncObjAsync case 023: constructor factory returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -632,7 +588,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2400
      * @tc.name testClassIsFuncObjAsync024
-     * @tc.desc Verify isFuncObjAsync case 024: getter placeholder
+     * @tc.desc Verify isFuncObjAsync case 024: property getter returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -646,7 +602,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2500
      * @tc.name testClassIsFuncObjAsync025
-     * @tc.desc Verify isFuncObjAsync case 025: setter placeholder
+     * @tc.desc Verify isFuncObjAsync case 025: property setter returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -659,7 +615,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2600
      * @tc.name testClassIsFuncObjAsync026
-     * @tc.desc Verify isFuncObjAsync case 026: private method placeholder
+     * @tc.desc Verify isFuncObjAsync case 026: public method on class with private method returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -776,25 +732,25 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3500
      * @tc.name testClassIsFuncObjAsync035
-     * @tc.desc Verify isFuncObjAsync case 035: builtin sync function placeholder
+     * @tc.desc Verify isFuncObjAsync case 035: console.info builtin returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(syncDecl007)).assertEqual(false);
+      expect(reflect.isFuncObjAsync(console.info)).assertEqual(false);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3600
      * @tc.name testClassIsFuncObjAsync036
-     * @tc.desc Verify isFuncObjAsync case 036: builtin async function placeholder
+     * @tc.desc Verify isFuncObjAsync case 036: nested async function innerAsync058 returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl001)).assertEqual(true);
+      expect(reflect.isFuncObjAsync(innerAsync058)).assertEqual(true);
     });
 
     /**
@@ -806,8 +762,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = reflect.isFuncObjAsync(asyncDecl001);
-      expect(typeof result).assertEqual('boolean');
+      let result: boolean = reflect.isFuncObjAsync(asyncDecl001);
       expect(result).assertEqual(true);
     });
 
@@ -820,8 +775,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let result = reflect.isFuncObjAsync(syncDecl007);
-      expect(typeof result).assertEqual('boolean');
+      let result: boolean = reflect.isFuncObjAsync(syncDecl007);
       expect(result).assertEqual(false);
     });
 
@@ -884,14 +838,16 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4300
      * @tc.name testClassIsFuncObjAsync043
-     * @tc.desc Verify isFuncObjAsync case 043: typeof always boolean
+     * @tc.desc Verify isFuncObjAsync case 043: return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(typeof reflect.isFuncObjAsync(asyncDecl001)).assertEqual('boolean');
-      expect(typeof reflect.isFuncObjAsync(syncDecl007)).assertEqual('boolean');
+      let asyncResult: boolean = reflect.isFuncObjAsync(asyncDecl001);
+      let syncResult: boolean = reflect.isFuncObjAsync(syncDecl007);
+      expect(asyncResult).assertEqual(true);
+      expect(syncResult).assertEqual(false);
     });
 
     /**
@@ -905,9 +861,8 @@ export default function ClassIsFuncObjAsyncTest(): void {
     it('testClassIsFuncObjAsync044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let r1 = reflect.isFuncObjAsync(asyncDecl001);
       let r2 = reflect.isFuncObjAsync(syncDecl007);
-      expect(r1 === true).assertTrue();
-      expect(r2 === false).assertTrue();
-      expect(r1 !== r2).assertTrue();
+      expect(r1).assertEqual(true);
+      expect(r2).assertEqual(false);
     });
 
     /**
@@ -999,85 +954,106 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5000
      * @tc.name testClassIsFuncObjAsync050
-     * @tc.desc Verify isFuncObjAsync case 050: null placeholder
+     * @tc.desc Verify isFuncObjAsync case 050: null Function throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
+      try {
+        reflect.isFuncObjAsync(null as Function);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5100
      * @tc.name testClassIsFuncObjAsync051
-     * @tc.desc Verify isFuncObjAsync case 051: undefined placeholder
+     * @tc.desc Verify isFuncObjAsync case 051: undefined Function throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
+      try {
+        reflect.isFuncObjAsync(undefined as Function);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5200
      * @tc.name testClassIsFuncObjAsync052
-     * @tc.desc Verify isFuncObjAsync case 052: non function placeholder
+     * @tc.desc Verify isFuncObjAsync case 052: int cast to Function throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(true).assertTrue();
+      try {
+        let invalidArg: int = 123;
+        reflect.isFuncObjAsync(invalidArg as Function);
+        expect().assertFail();
+      } catch (error) {
+        expect(error instanceof Error).assertEqual(true);
+        expect((error as Error).name).assertEqual('ClassCastError');
+      }
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5300
      * @tc.name testClassIsFuncObjAsync053
-     * @tc.desc Verify isFuncObjAsync case 053: async annotation relation
+     * @tc.desc Verify isFuncObjAsync case 053: async instance method returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl001)).assertEqual(true);
+      let obj = new AsyncMethodClass014();
+      expect(reflect.isFuncObjAsync(obj.asyncMethod)).assertEqual(true);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5400
      * @tc.name testClassIsFuncObjAsync054
-     * @tc.desc Verify isFuncObjAsync case 054: sync annotation relation
+     * @tc.desc Verify isFuncObjAsync case 054: sync instance method returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(syncDecl007)).assertEqual(false);
+      let obj = new SyncMethodClass015();
+      expect(reflect.isFuncObjAsync(obj.syncMethod)).assertEqual(false);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5500
      * @tc.name testClassIsFuncObjAsync055
-     * @tc.desc Verify isFuncObjAsync case 055: @Concurrent sync function placeholder
+     * @tc.desc Verify isFuncObjAsync case 055: syncNoParams011 returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(syncDecl007)).assertEqual(false);
+      expect(reflect.isFuncObjAsync(syncNoParams011)).assertEqual(false);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5600
      * @tc.name testClassIsFuncObjAsync056
-     * @tc.desc Verify isFuncObjAsync case 056: @Concurrent async function placeholder
+     * @tc.desc Verify isFuncObjAsync case 056: asyncNoParams006 returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl001)).assertEqual(true);
+      expect(reflect.isFuncObjAsync(asyncNoParams006)).assertEqual(true);
     });
 
     /**
@@ -1089,8 +1065,6 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let promiseResult = asyncWithReturn004();
-      expect(promiseResult !== undefined).assertTrue();
       expect(reflect.isFuncObjAsync(asyncWithReturn004)).assertEqual(true);
     });
 
@@ -1146,7 +1120,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_6200
      * @tc.name testClassIsFuncObjAsync062
-     * @tc.desc Verify isFuncObjAsync case 062: taskpool concurrent placeholder
+     * @tc.desc Verify isFuncObjAsync case 062: checkMixedAsync037 sync helper returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1210,7 +1184,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_6700
      * @tc.name testClassIsFuncObjAsync067
-     * @tc.desc Verify isFuncObjAsync case 067: abstract async method placeholder
+     * @tc.desc Verify isFuncObjAsync case 067: concrete abstract async method returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1290,7 +1264,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_7300
      * @tc.name testClassIsFuncObjAsync073
-     * @tc.desc Verify isFuncObjAsync case 073: function dispatch placeholder
+     * @tc.desc Verify isFuncObjAsync case 073: syncAdd036 false and asyncAdd036 true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
