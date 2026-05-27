@@ -1314,13 +1314,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
         let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
         let symKey: cryptoFramework.SymKey = syncSymEncAndDecUtils.createSymKeySync(algName);
-        let cipherData1: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData1: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher1.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let cipherPlainText1: cryptoFramework.DataBlob|null = decCipher1.doFinalSync(cipherData1.data);
 
-        let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData2: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
@@ -1354,13 +1354,13 @@ export default function SecurityCryptoFwSymEncryptAndDecryptTestUnit() {
         let paramSpec: cryptoFramework.GcmParamsSpec = syncSymEncAndDecUtils.genGcmOrCcmParamsSpec(dataIv, dataAad, dataTag, specAlgName);
         let data: cryptoFramework.DataBlob = await commonUtils.createData(dataLen);
         let symKey: cryptoFramework.SymKey = await syncSymEncAndDecUtils.createSymKeyPromise(algName);
-        let cipherData1: syncSymEncAndDecUtils.dataGcmOrCCMSpec = await syncSymEncAndDecUtils.gcmEncOrDecMessagePromise(encAlgName,
+        let cipherData1: syncSymEncAndDecUtils.dataGcmSpec = await syncSymEncAndDecUtils.gcmEncOrDecMessagePromise(encAlgName,
           true, symKey, 16, dataLen, data, paramSpec);
         let decCipher1: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         await decCipher1.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
         let cipherPlainText1: cryptoFramework.DataBlob|null = await decCipher1.doFinal(cipherData1.data);
 
-        let cipherData2: syncSymEncAndDecUtils.dataGcmOrCCMSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
+        let cipherData2: syncSymEncAndDecUtils.dataGcmSpec = syncSymEncAndDecUtils.gcmEncOrDecMessageSync(encAlgName,
           true, symKey, 32, dataLen, data, paramSpec);
         let decCipher2: cryptoFramework.Cipher = cryptoFramework.createCipher(encAlgName);
         decCipher2.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);

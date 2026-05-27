@@ -254,7 +254,7 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
 }
 
 function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
-                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): dataGcmOrCCMSpec {
+                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): dataGcmSpec {
   try {
     let cipherText1 = new Uint8Array();
     let cipher = cryptoFramework.createCipher(algName);
@@ -282,7 +282,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
       paramSpec.authTag = authTag1;
     }
 
-    return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
+    return {data:{data: cipherText1}, paramSpec} as dataGcmSpec;
   } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
@@ -290,7 +290,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
 }
 
 async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
-                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): Promise<dataGcmOrCCMSpec> {
+                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): Promise<dataGcmSpec> {
   try {
     let cipherText1 = new Uint8Array();
     let cipher = cryptoFramework.createCipher(algName);
@@ -317,7 +317,7 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
     }
     paramSpec.authTag = authTag1;
 
-    return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
+    return {data:{data: cipherText1}, paramSpec} as dataGcmSpec;
   } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
