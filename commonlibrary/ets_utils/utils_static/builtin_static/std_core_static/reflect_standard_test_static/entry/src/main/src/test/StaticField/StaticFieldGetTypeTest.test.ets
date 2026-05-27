@@ -1570,7 +1570,7 @@ export function StaticFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testStaticFieldGetType036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testStaticFieldGetType037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const cls1 = reflectMyClass036();
       let field1 = cls1.getStaticField("stringValue");
       let type1 = field1!.getType();
