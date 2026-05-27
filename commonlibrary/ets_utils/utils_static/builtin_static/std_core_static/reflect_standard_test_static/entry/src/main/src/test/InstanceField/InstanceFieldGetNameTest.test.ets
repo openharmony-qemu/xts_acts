@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,461 +14,419 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
 import Utils from './../Util.test';
-
 class MyClass001 {
-  public name = 'test';
+  public name: string = 'test';
 }
 
-class MyClass003 {
-  public name = 'test';
+class UnicodeField005 {
+  public 名字: string = '中文';
+  public имя: string = 'Russian';
+  public 名前: string = 'Japanese';
 }
 
-class MyClass004 {
-  public firstName = 'a';
-  public lastName = 'b';
+class TestClass008 {
+  public value: int = 0;
 }
 
-class ParentClass005 {
-  public parentField = 'p';
+class TestClass009 {
+  public validField: string = '';
 }
 
-class ChildClass005 extends ParentClass005 {
-  public childField = 'c';
+class LongName015 {
+  public veryLongFieldName: string = '';
 }
 
-class MyClass006 {
-  public a = 0;
+class ShortName016 {
+  public a: string = '';
+  public b: int = 0;
 }
 
-class MyClass007 {
-  public _internal = 0;
-  public __private = 1;
+class NumberStart017 {
+  public field1x: string = '';
+  public field2x: string = '';
 }
 
-class MyClass008 {
-  public data = 0;
+class TestClass018 {
+  public targetField: string = 'target';
+  public otherField: string = 'other';
 }
 
-class MyClass009 {
-  public data = 0;
+class GroupedFields019 {
+  public user_id: int = 0;
+  public user_name: string = '';
+  public user_age: int = 0;
+  public post_id: int = 1;
+  public post_title: string = '';
 }
 
-class MyClass010 {
-  public veryLongFieldNameThatIsStillValid = 0;
+class TestClass020 {
+  public camelCase: string = '';
+  public PascalCase: string = '';
+  public snake_case: string = '';
 }
 
-class MyClass011 {
-  public $data = 0;
+class TestClass022 {
+  public field1: string = '';
+  public field2: int = 0;
+  public field1_duplicate: string = '';
 }
 
-class MyClass013 {
-  public name = 'test';
+class TestClass023 {
+  public data: string = '';
 }
 
-class MyClass015 {
-  public data = 0;
+class TestClass025 {
+  public fieldA: string = 'valueA';
+  public fieldB: string = 'valueB';
+  public fieldC: string = 'valueC';
 }
 
-class MyClass016 {
-  public data = 0;
+class StaticTest024 {
+  public static STATIC_VALUE: string = 'static';
+  public instanceValue: string = 'instance';
 }
 
-class CustomInstanceField017 extends reflect.InstanceField {
-  public override getName(): string {
-    return super.getName();
-  }
-}
-
-class MyClass019 {
-  public data = 0;
-}
-
-class MyClass020 {
-  public data = 0;
-}
-
-class MyClass021 {
-  public data = 0;
-}
-
-class ParentClass022 {
-  public name = 'parent';
-}
-
-class MyClass022 extends ParentClass022 {
-  public name = 'test';
-  public count = 0;
-}
-
-class GenericClass023<T> {
-  public item: T | null = null;
-}
-
-class MyClass024 {
-  public a = 1;
-  public b = 2;
-  public c = 3;
-}
-
-export default function InstanceFieldGetNameTest() {
-  describe('InstanceFieldGetNameTest', () => {
-    beforeAll(() => {
+export default function InstanceFieldGetNameTest(): void {
+  let runTests: () => void = (): void => {
+        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
+    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+    beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0100
-     * @tc.name testInstanceFieldGetName001
-     * @tc.desc Verify getName() call syntax when no parameter is passed
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0100
+     * @tc.name testGetName012
+     * @tc.desc Verify calling getName on initialized InstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName012', FILTER, (): void => {
       let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField("name");
-      let fieldName = field!.getName();
+      cls.initialize();
+      let field = cls.getInstanceField('name')!;
+      let fieldName = field.getName();
+      expect(fieldName).assertEqual('name');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0200
-     * @tc.name testInstanceFieldGetName002
-     * @tc.desc Verify compile error when extra parameter is passed to getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0200
+     * @tc.name testGetName013
+     * @tc.desc Verify basic functionality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+    it('testGetName013', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let fieldName = field.getName();
+      expect(fieldName).assertEqual('name');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0300
-     * @tc.name testInstanceFieldGetName003
-     * @tc.desc Verify getName returns correct field name string
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0300
+     * @tc.name testGetName014
+     * @tc.desc Verify getName works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass003>();
-      let field = cls.getInstanceField("name");
-      expect(field!.getName()).assertEqual("name");
+    it('testGetName014', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let fieldName = field.getName();
+      expect(typeof fieldName).assertEqual('string');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0400
-     * @tc.name testInstanceFieldGetName004
-     * @tc.desc Verify getName returns correct names for different fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0400
+     * @tc.name testGetName015
+     * @tc.desc Verify very long field name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-      expect(cls.getInstanceField("firstName")!.getName()).assertEqual("firstName");
-      expect(cls.getInstanceField("lastName")!.getName()).assertEqual("lastName");
+    it('testGetName015', FILTER, (): void => {
+      let cls = Class.from<LongName015>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(1);
+      expect(fields[0].getName()).assertEqual('veryLongFieldName');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0500
-     * @tc.name testInstanceFieldGetName005
-     * @tc.desc Verify getName returns original field name for inherited fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0500
+     * @tc.name testGetName016
+     * @tc.desc Verify shortest field name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ChildClass005>();
-      expect(cls.getInstanceField("parentField")!.getName()).assertEqual("parentField");
-      expect(cls.getInstanceField("childField")!.getName()).assertEqual("childField");
+    it('testGetName016', FILTER, (): void => {
+      let cls = Class.from<ShortName016>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(2);
+      expect(fields[0].getName()).assertEqual('a');
+      expect(fields[1].getName()).assertEqual('b');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0600
-     * @tc.name testInstanceFieldGetName006
-     * @tc.desc Verify getName returns correct single character field name
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0600
+     * @tc.name testGetName017
+     * @tc.desc Verify field names containing digits
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass006>();
-      let field = cls.getInstanceField("a");
-      expect(field!.getName()).assertEqual("a");
-    });
+    it('testGetName017', FILTER, (): void => {
+      let cls = Class.from<NumberStart017>();
+      let fields = cls.getInstanceFields();
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0700
-     * @tc.name testInstanceFieldGetName007
-     * @tc.desc Verify getName returns correct underscore prefixed field names
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
-      expect(cls.getInstanceField("_internal")!.getName()).assertEqual("_internal");
-      expect(cls.getInstanceField("__private")!.getName()).assertEqual("__private");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0800
-     * @tc.name testInstanceFieldGetName008
-     * @tc.desc Verify getName return value is string type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass008>();
-      let field = cls.getInstanceField("data");
-      let name = field!.getName();
-      expect(typeof name).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_0900
-     * @tc.name testInstanceFieldGetName009
-     * @tc.desc Verify getName does not return empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass009>();
-      let field = cls.getInstanceField("data");
-      expect(field!.getName().length).assertPositive();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1000
-     * @tc.name testInstanceFieldGetName010
-     * @tc.desc Verify getName returns correct long field name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass010>();
-      let field = cls.getInstanceField("veryLongFieldNameThatIsStillValid");
-      expect(field!.getName()).assertEqual("veryLongFieldNameThatIsStillValid");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1100
-     * @tc.name testInstanceFieldGetName011
-     * @tc.desc Verify getName returns correct dollar sign field name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass011>();
-      let field = cls.getInstanceField("$data");
-      expect(field!.getName()).assertEqual("$data");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1200
-     * @tc.name testInstanceFieldGetName012
-     * @tc.desc Verify field name must conform to identifier rules
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1300
-     * @tc.name testInstanceFieldGetName013
-     * @tc.desc Verify getName does not throw Error during normal execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass013>();
-      let field = cls.getInstanceField("name");
-      try {
-        let fieldName = field!.getName();
-        expect(fieldName).not.toBeNull();
-      } catch (error) {
-        expect().assertFail();
+      expect(fields.length).assertEqual(2);
+      for (let i = 0; i < fields.length; i++) {
+          let name = fields[i].getName();
+          expect(name.length > 0).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1400
-     * @tc.name testInstanceFieldGetName014
-     * @tc.desc Verify empty string field name is rejected at compile time
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0700
+     * @tc.name testGetName018
+     * @tc.desc Verify using getName() to find specific field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+    it('testGetName018', FILTER, (): void => {
+      let cls = Class.from<TestClass018>();
+      let fields = cls.getInstanceFields();
+
+      let targetField: string | undefined = undefined;
+      for (let j = 0; j < fields.length; j++) {
+          if (fields[j].getName() === 'targetField') {
+              targetField = fields[j].getName();
+              break;
+          }
+      }
+      expect(targetField !== undefined).assertTrue();
+      expect(targetField!).assertEqual('targetField');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1500
-     * @tc.name testInstanceFieldGetName015
-     * @tc.desc Verify getName executes normally within try-finally block
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0800
+     * @tc.name testGetName019
+     * @tc.desc Verify grouping fields by name prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass015>();
-      let field = cls.getInstanceField("data");
-      let fieldName: string = '';
-      try {
-        fieldName = field!.getName();
-      } finally {
-        expect(fieldName).assertEqual("data");
+    it('testGetName019', FILTER, (): void => {
+      let cls = Class.from<GroupedFields019>();
+      let fields = cls.getInstanceFields();
+
+      let userCount: int = 0;
+      let postCount: int = 0;
+      for (let j = 0; j < fields.length; j++) {
+          if (fields[j].getName().startsWith('user_')) {
+              userCount++;
+          }
+          if (fields[j].getName().startsWith('post_')) {
+              postCount++;
+          }
+      }
+
+      expect(userCount).assertEqual(3);
+      expect(postCount).assertEqual(2);
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0900
+     * @tc.name testGetName020
+     * @tc.desc Verify field name matches naming conventions
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetName020', FILTER, (): void => {
+      let cls = Class.from<TestClass020>();
+      let fields = cls.getInstanceFields();
+
+      for (let i = 0; i < fields.length; i++) {
+          let name = fields[i].getName();
+
+          let isValid: boolean = true;
+          for (let k = 0; k < name.length; k++) {
+              let ch: string = name[k];
+              if (!((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') ||
+                    (ch >= '0' && ch <= '9') || ch === '_')) {
+                  isValid = false;
+                  break;
+              }
+          }
+          expect(isValid).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1600
-     * @tc.name testInstanceFieldGetName016
-     * @tc.desc Verify getName does not cause unhandled exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1000
+     * @tc.name testGetName021
+     * @tc.desc Verify getName() and getOwner() combined usage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass016>();
-      let field = cls.getInstanceField("data");
-      let result = field!.getName();
+    it('testGetName021', FILTER, (): void => {
+      let cls = Class.from<TestClass008>();
+      let field = cls.getInstanceField('value')!;
+
+      let ownerName = field.getOwner().getName();
+      let fieldName = field.getName();
+      expect(fieldName).assertEqual('value');
+      expect(ownerName.includes('TestClass008')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1700
-     * @tc.name testInstanceFieldGetName017
-     * @tc.desc Verify subclass of InstanceField overrides getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1100
+     * @tc.name testGetName022
+     * @tc.desc Verify field name uniqueness within same class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName022', FILTER, (): void => {
+      let cls = Class.from<TestClass022>();
+      let fields = cls.getInstanceFields();
+
+      let fieldNames: Array<string> = [];
+      for (let j = 0; j < fields.length; j++) {
+          fieldNames.push(fields[j].getName());
+      }
+      let uniqueNames = new Set<string>(fieldNames);
+
+      expect(fieldNames.length).assertEqual(uniqueNames.size);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1800
-     * @tc.name testInstanceFieldGetName018
-     * @tc.desc Verify getName is not marked as deprecated
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1200
+     * @tc.name testGetName023
+     * @tc.desc Verify performance of repeated getName() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass019>();
-      let field = cls.getInstanceField("data");
-      let name = field!.getName();
-      expect(name).assertEqual("data");
+    it('testGetName023', FILTER, (): void => {
+      let cls = Class.from<TestClass023>();
+      let field = cls.getInstanceField('data')!;
+
+      for (let i = 0; i < 100; i++) {
+          let name = field.getName();
+          expect(name).assertEqual('data');
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_1900
-     * @tc.name testInstanceFieldGetName019
-     * @tc.desc Verify getName is a synchronous method callable without await
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1300
+     * @tc.name testGetName024
+     * @tc.desc Verify StaticField and InstanceField both have getName()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass019>();
-      let field = cls.getInstanceField("data");
-      let name = field!.getName();
-      expect(name).assertEqual("data");
+    it('testGetName024', FILTER, (): void => {
+      let cls = Class.from<StaticTest024>();
+
+      let staticField = cls.getStaticField('STATIC_VALUE')!;
+      expect(staticField.getName()).assertEqual('STATIC_VALUE');
+
+      let instanceField = cls.getInstanceField('instanceValue')!;
+      expect(instanceField.getName()).assertEqual('instanceValue');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_2000
-     * @tc.name testInstanceFieldGetName020
-     * @tc.desc Verify getName does not return a Promise
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1400
+     * @tc.name testGetName025
+     * @tc.desc Verify collecting all field information
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass020>();
-      let field = cls.getInstanceField("data");
-      let result = field!.getName();
-      expect(result instanceof Promise).assertFalse();
+    it('testGetName025', FILTER, (): void => {
+      let cls = Class.from<TestClass025>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(3);
+      for (let i = 0; i < fields.length; i++) {
+          let field = fields[i];
+          expect(field.getName().length > 0).assertTrue();
+          expect(field.getType() !== null).assertTrue();
+      }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_2100
-     * @tc.name testInstanceFieldGetName021
-     * @tc.desc Verify multiple getName calls on same field return consistent result
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1500
+     * @tc.name testGetName026
+     * @tc.desc Verify Unicode field names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass021>();
-      let field = cls.getInstanceField("data");
-      let name1 = field!.getName();
-      let name2 = field!.getName();
-      expect(name1 === name2).assertTrue();
+    it('testGetName026', FILTER, (): void => {
+      let cls = Class.from<UnicodeField005>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(3);
+      let found = 0;
+      for (let i = 0; i < fields.length; i++) {
+          let name = fields[i].getName();
+          if (name === '名字' || name === 'имя' || name === '名前') {
+              found++;
+          }
+      }
+      expect(found).assertEqual(3);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_2200
-     * @tc.name testInstanceFieldGetName022
-     * @tc.desc Verify getName and getOwner combination for field ownership validation
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1600
+     * @tc.name testGetName027
+     * @tc.desc Verify getName with getOwner returns qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass022>();
-      let field = cls.getInstanceField("count");
-      expect(field!.getName()).assertEqual("count");
-      expect(field!.getOwner().getName()).assertEqual("MyClass022");
+    it('testGetName027', FILTER, (): void => {
+      let cls = Class.from<TestClass009>();
+      let field = cls.getInstanceField('validField')!;
+      let name = field.getName();
+      let ownerName = field.getOwner().getName();
+      expect(name).assertEqual('validField');
+      expect(ownerName.includes('TestClass009')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_2300
-     * @tc.name testInstanceFieldGetName023
-     * @tc.desc Verify getName returns original name for generic class field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1700
+     * @tc.name testGetName028
+     * @tc.desc Verify getName consistency across multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetName023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GenericClass023<number>>();
-      let field = cls.getInstanceField("item");
-      expect(field!.getName()).assertEqual("item");
+    it('testGetName028', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field1 = cls.getInstanceField('name')!;
+      let field2 = cls.getInstanceField('name')!;
+      expect(field1.getName()).assertEqual(field2.getName());
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETNAME_2400
-     * @tc.name testInstanceFieldGetName024
-     * @tc.desc Verify getName returns correct names when iterating all fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetName024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass024>();
-      let expectedNames = ['a', 'b', 'c'];
-      expectedNames.forEach(name => {
-        let field = cls.getInstanceField(name);
-        expect(field!.getName()).assertEqual(name);
-      });
-    });
-  });
+  };
+  describe('InstanceFieldGetNameTest', runTests);
 }

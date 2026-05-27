@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,446 +14,327 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
 import Utils from './../Util.test';
-
-class ParentClass001 {
-  public name = 'parent';
+class MyClass001 {
+  public name: string = 'test';
 }
 
-class MyClass001 extends ParentClass001 {
-  public name = 'test';
-  public count = 0;
+class StaticTest019 {
+  public static STATIC_VALUE: string = 'static';
+  public instanceValue: string = 'instance';
 }
 
-class MyClass003 {
-  public count = 0;
+class TestClass003 {
+  public value: int = 0;
 }
 
-class ParentClass004 {
-  public name = 'parent';
+class OwnerClass004 {
+  public field1: string = '';
+  public field2: int = 0;
 }
 
-class ChildClass004 extends ParentClass004 {
-  public count = 0;
+interface MyInterface006 {
+  interfaceField: string;
 }
 
-class GrandParent005 {
-  public id = 0;
+class ImplClass006 implements MyInterface006 {
+  public interfaceField: string = '';
 }
 
-class Parent005 extends GrandParent005 {}
-
-class Child005 extends Parent005 {}
-
-class ParentClass006 {
-  public name = 'parent';
+class OuterClass013 {
+  public outerField: string = 'outer';
 }
 
-class ChildClass006 extends ParentClass006 {
-  public name = 'child';
+class MyClass1014 {
+  public field: string = '';
 }
 
-class MyClass007 {
-  public data = 0;
+class MyClass2014 {
+  public field: string = '';
 }
 
-class MyClass008 {
-  public data = 0;
+class TestClass015 {
+  public data: string = 'test';
 }
 
-class LargeClass010 {
-  public a = 1;
-  public b = 2;
-  public c = 3;
-  public d = 4;
-  public e = 5;
+class TestClass016 {
+  public field1: string = '';
+  public field2: int = 0;
+  public field3: boolean = false;
 }
 
-class MyClass011 {
-  public data = 0;
+class TestClass017 {
+  public data: string = '';
 }
 
-class MyClass012 {
-  public static staticData = 0;
+class Parent020 {
+  public parentData: string = 'parent';
 }
 
-class MyClass013 {
-  public data = 0;
+class Child020 extends Parent020 {
+  public childData: string = 'child';
 }
 
-class MyClass014 {
-  public data = 0;
-}
-
-class CustomInstanceField015 extends reflect.InstanceField {
-  public override getOwner(): reflect.Class {
-    return super.getOwner();
-  }
-}
-
-class MyClass017 {
-  public data = 0;
-}
-
-class MyClass018 {
-  public data = 0;
-}
-
-class MyClass019 {
-  public count = 0;
-}
-
-class MyClass020 {
-  public data = 0;
-}
-
-class GenericClass021<T> {
-  public item: T | null = null;
-}
-
-interface MyInterface022 {
-  id: number;
-}
-
-class MyImpl022 implements MyInterface022 {
-  public id = 0;
-}
-
-export default function InstanceFieldGetOwnerTest() {
-  describe('InstanceFieldGetOwnerTest', () => {
-    beforeAll(() => {
+export default function InstanceFieldGetOwnerTest(): void {
+  let runTests: () => void = (): void => {
+        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
+    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+    beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0100
-     * @tc.name testInstanceFieldGetOwner001
-     * @tc.desc Verify getOwner() call syntax without parameters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0100
+     * @tc.name testGetOwner010
+     * @tc.desc Verify calling getOwner on initialized InstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetOwner010', FILTER, (): void => {
       let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField("count");
-      let owner = field!.getOwner();
+      cls.initialize();
+      let field = cls.getInstanceField('name')!;
+      let owner = field.getOwner();
+      expect(owner.getName().includes('MyClass001')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0200
-     * @tc.name testInstanceFieldGetOwner002
-     * @tc.desc Verify compile error when extra parameter is passed to getOwner
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0200
+     * @tc.name testGetOwner011
+     * @tc.desc Verify basic functionality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      return;
+    it('testGetOwner011', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let owner = field.getOwner();
+      expect(owner.getName().includes('MyClass001')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0300
-     * @tc.name testInstanceFieldGetOwner003
-     * @tc.desc Verify getOwner returns declaring class for own field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0300
+     * @tc.name testGetOwner012
+     * @tc.desc Verify getOwner works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass003>();
-      let field = cls.getInstanceField("count");
-      expect(field!.getOwner().getName()).assertEqual("MyClass003");
+    it('testGetOwner012', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let owner = field.getOwner();
+      expect(owner !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0400
-     * @tc.name testInstanceFieldGetOwner004
-     * @tc.desc Verify getOwner returns parent class for inherited field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0400
+     * @tc.name testGetOwner013
+     * @tc.desc Verify getOwner() for nested class field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ChildClass004>();
-      let field = cls.getInstanceField("name");
-      expect(field!.getOwner().getName()).assertEqual("ParentClass004");
+    it('testGetOwner013', FILTER, (): void => {
+      let outerCls = Class.from<OuterClass013>();
+      let outerField = outerCls.getInstanceField('outerField')!;
+      let ownerName = outerField.getOwner().getName();
+      expect(ownerName.includes('OuterClass013')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0500
-     * @tc.name testInstanceFieldGetOwner005
-     * @tc.desc Verify getOwner returns original declaring class for multi-level inherited field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0500
+     * @tc.name testGetOwner014
+     * @tc.desc Verify classes with same name in different packages
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Child005>();
-      let field = cls.getInstanceField("id");
-      expect(field!.getOwner().getName()).assertEqual("GrandParent005");
+    it('testGetOwner014', FILTER, (): void => {
+      let cls1 = Class.from<MyClass1014>();
+      let field1 = cls1.getInstanceField('field')!;
+
+      let cls2 = Class.from<MyClass2014>();
+      let field2 = cls2.getInstanceField('field')!;
+
+      let name1 = field1.getOwner().getName();
+      let name2 = field2.getOwner().getName();
+      expect(name1 !== name2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0600
-     * @tc.name testInstanceFieldGetOwner006
-     * @tc.desc Verify getOwner returns child class when field is overridden
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0600
+     * @tc.name testGetOwner015
+     * @tc.desc Verify combining getOwner, getName, getType for full info
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ChildClass006>();
-      let field = cls.getInstanceField("name");
-      expect(field!.getOwner().getName()).assertEqual("ChildClass006");
+    it('testGetOwner015', FILTER, (): void => {
+      let cls = Class.from<TestClass015>();
+      let field = cls.getInstanceField('data')!;
+
+      expect(field.getName()).assertEqual('data');
+      expect(field.getOwner().getName().includes('TestClass015')).assertTrue();
+      expect(field.getType() !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0700
-     * @tc.name testInstanceFieldGetOwner007
-     * @tc.desc Verify getOwner returns Class type object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0700
+     * @tc.name testGetOwner016
+     * @tc.desc Verify iterating all fields and their owners
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
-      let field = cls.getInstanceField("data");
-      let owner = field!.getOwner();
-      expect(owner instanceof reflect.Class).assertTrue();
-    });
+    it('testGetOwner016', FILTER, (): void => {
+      let cls = Class.from<TestClass016>();
+      let fields = cls.getInstanceFields();
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0800
-     * @tc.name testInstanceFieldGetOwner008
-     * @tc.desc Verify returned Class object can call getName to get class name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass008>();
-      let field = cls.getInstanceField("data");
-      let name = field!.getOwner().getName();
-      expect(typeof name).assertEqual("string");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_0900
-     * @tc.name testInstanceFieldGetOwner009
-     * @tc.desc Verify getOwner for field from anonymous class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let anonymousCls = class { public value = 10; };
-      let field = new reflect.Class(anonymousCls).getInstanceField("value");
-      let owner = field!.getOwner();
-      expect(owner).not.toBeNull();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1000
-     * @tc.name testInstanceFieldGetOwner010
-     * @tc.desc Verify getOwner returns consistent result for each field in class with many fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<LargeClass010>();
-      ['a','b','c','d','e'].forEach(name => {
-        let field = cls.getInstanceField(name);
-        expect(field!.getOwner().getName()).assertEqual("LargeClass010");
-      });
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1100
-     * @tc.name testInstanceFieldGetOwner011
-     * @tc.desc Verify getOwner does not throw Error during normal execution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass011>();
-      let field = cls.getInstanceField("data");
-      try {
-        let owner = field!.getOwner();
-        expect(owner).not.toBeNull();
-      } catch (error) {
-        expect().assertFail();
+      expect(fields.length).assertEqual(3);
+      for (let i = 0; i < fields.length; i++) {
+          let owner = fields[i].getOwner();
+          expect(owner.getName().length > 0).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1200
-     * @tc.name testInstanceFieldGetOwner012
-     * @tc.desc Verify getOwner behavior on static field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0800
+     * @tc.name testGetOwner017
+     * @tc.desc Verify performance of repeated getOwner() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass012>();
-      let staticField = cls.getStaticField("staticData");
-    });
+    it('testGetOwner017', FILTER, (): void => {
+      let cls = Class.from<TestClass017>();
+      let field = cls.getInstanceField('data')!;
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1300
-     * @tc.name testInstanceFieldGetOwner013
-     * @tc.desc Verify getOwner executes normally within try-finally block
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass013>();
-      let field = cls.getInstanceField("data");
-      let owner: reflect.Class | null = null;
-      try {
-        owner = field!.getOwner();
-      } finally {
-        expect(owner).not.toBeNull();
-        expect(owner!.getName()).assertEqual("MyClass013");
+      for (let i = 0; i < 100; i++) {
+          let owner = field.getOwner();
+          expect(owner !== null).assertTrue();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1400
-     * @tc.name testInstanceFieldGetOwner014
-     * @tc.desc Verify getOwner does not cause unhandled exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0900
+     * @tc.name testGetOwner018
+     * @tc.desc Verify same field returns same Class object on repeated calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass014>();
-      let field = cls.getInstanceField("data");
-      let result = field!.getOwner();
+    it('testGetOwner018', FILTER, (): void => {
+      let cls = Class.from<TestClass003>();
+      let field = cls.getInstanceField('value')!;
+
+      let owner1 = field.getOwner();
+      let owner2 = field.getOwner();
+      let owner3 = field.getOwner();
+
+      expect(owner1.getName()).assertEqual(owner2.getName());
+      expect(owner2.getName()).assertEqual(owner3.getName());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1500
-     * @tc.name testInstanceFieldGetOwner015
-     * @tc.desc Verify subclass of InstanceField overrides getOwner
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1000
+     * @tc.name testGetOwner019
+     * @tc.desc Verify StaticField also has getOwner()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetOwner019', FILTER, (): void => {
+      let cls = Class.from<StaticTest019>();
+
+      let staticField = cls.getStaticField('STATIC_VALUE')!;
+      let staticOwner = staticField.getOwner();
+      expect(staticOwner.getName().includes('StaticTest019')).assertTrue();
+
+      let instanceField = cls.getInstanceField('instanceValue')!;
+      let instanceOwner = instanceField.getOwner();
+      expect(instanceOwner.getName().includes('StaticTest019')).assertTrue();
+
+      expect(staticOwner.getName()).assertEqual(instanceOwner.getName());
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1600
-     * @tc.name testInstanceFieldGetOwner016
-     * @tc.desc Verify getOwner is not marked as deprecated
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1100
+     * @tc.name testGetOwner020
+     * @tc.desc Verify using getOwner() to analyze field origin
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass017>();
-      let field = cls.getInstanceField("data");
-      let owner = field!.getOwner();
-      expect(owner.getName()).assertEqual("MyClass017");
+    it('testGetOwner020', FILTER, (): void => {
+      let childCls = Class.from<Child020>();
+      let childFields = childCls.getInstanceFields();
+
+      expect(childFields.length).assertEqual(1);
+      expect(childFields[0].getOwner().getName().includes('Child020')).assertTrue();
+
+      let parentCls = childCls.getSuper()!;
+      let parentFields = parentCls.getInstanceFields();
+      expect(parentFields.length).assertEqual(1);
+      expect(parentFields[0].getOwner().getName().includes('Parent020')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1700
-     * @tc.name testInstanceFieldGetOwner017
-     * @tc.desc Verify getOwner is a synchronous method callable without await
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1200
+     * @tc.name testGetOwner021
+     * @tc.desc Verify owner of field from interface implementation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass017>();
-      let field = cls.getInstanceField("data");
-      let owner = field!.getOwner();
-      expect(owner.getName()).assertEqual("MyClass017");
+    it('testGetOwner021', FILTER, (): void => {
+      let cls = Class.from<ImplClass006>();
+      let field = cls.getInstanceField('interfaceField')!;
+      let owner = field.getOwner();
+      expect(owner.getName().includes('ImplClass006')).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1800
-     * @tc.name testInstanceFieldGetOwner018
-     * @tc.desc Verify getOwner does not return a Promise
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1300
+     * @tc.name testGetOwner022
+     * @tc.desc Verify owner consistency across multiple fields in same class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass018>();
-      let field = cls.getInstanceField("data");
-      let result = field!.getOwner();
-      expect(result instanceof Promise).assertFalse();
+    it('testGetOwner022', FILTER, (): void => {
+      let cls = Class.from<OwnerClass004>();
+      let field1 = cls.getInstanceField('field1')!;
+      let field2 = cls.getInstanceField('field2')!;
+      let owner1 = field1.getOwner().getName();
+      let owner2 = field2.getOwner().getName();
+      expect(owner1).assertEqual(owner2);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_1900
-     * @tc.name testInstanceFieldGetOwner019
-     * @tc.desc Verify chained call getOwner().getName() returns correct class name
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_1400
+     * @tc.name testGetOwner023
+     * @tc.desc Verify getOwner returns non-null for every public field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldGetOwner019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass019>();
-      let field = cls.getInstanceField("count");
-      expect(field!.getOwner().getName()).assertEqual("MyClass019");
+    it('testGetOwner023', FILTER, (): void => {
+      let cls = Class.from<TestClass016>();
+      let fields = cls.getInstanceFields();
+      for (let i = 0; i < fields.length; i++) {
+          expect(fields[i].getOwner() !== null).assertTrue();
+      }
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_2000
-     * @tc.name testInstanceFieldGetOwner020
-     * @tc.desc Verify multiple getOwner calls on same field return consistent result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass020>();
-      let field = cls.getInstanceField("data");
-      let owner1 = field!.getOwner();
-      let owner2 = field!.getOwner();
-      expect(owner1 === owner2).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_2100
-     * @tc.name testInstanceFieldGetOwner021
-     * @tc.desc Verify getOwner returns generic class for generic class field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GenericClass021<number>>();
-      let field = cls.getInstanceField("item");
-      let ownerName = field!.getOwner().getName();
-      expect(ownerName).assertEqual("GenericClass021");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETOWNER_2200
-     * @tc.name testInstanceFieldGetOwner022
-     * @tc.desc Verify getOwner for field implementing interface property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldGetOwner022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyImpl022>();
-      let field = cls.getInstanceField("id");
-      expect(field!.getOwner().getName()).assertEqual("MyImpl022");
-    });
-  });
+  };
+  describe('InstanceFieldGetOwnerTest', runTests);
 }

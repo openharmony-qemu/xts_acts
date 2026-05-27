@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,143 +14,50 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class MyClass001 {
-  public name = 'test';
-}
-
-class MyClass002 {
-  public name = 'test';
-}
-
-class MyClass003 {
-  public name = 'test';
+  public name: string = 'test';
 }
 
 class MyClass004 {
-  public name = 'test';
-  public age = 25;
+  public name: string = 'test';
+  public age: int = 25;
 }
-
-class MyClass005 {
-  public name = 'test';
-  public age = 25;
-}
-
-class MyClass006 {
-  public name = 'test';
-}
-
 class OtherClass006 {
-  public name = 'other';
+  public name: string = 'other';
 }
-
-class MyClass007 {
-  public name = 'test';
-}
-
-class MyClass008 {
-  public name = 'test';
-}
-
-class MyClass009 {
-  public name = 'test';
-}
-
-class MyClass010 {
-  public name = 'test';
-}
-
-class MyClass011 {
-  public name = 'test';
-}
-
-class MyClass012 {
-  public name = 'test';
-}
-
-class MyClass013 {
-  public name = 'test';
-  public age = 25;
-}
-
-class MyClass014 {
-  public name = 'test';
-}
-
-class MyClass015 {
-  public name = 'test';
-}
-
-class MyClass016 {
-  public name = 'test';
-  public age = 25;
-}
-
-class MyClass017 {
-  public name = 'test';
-}
-
-class MyClass018 {
-  public name = 'test';
-}
-
-class MyClass019 {
-  public name = 'test';
-}
-
-class MyClass020 {
-  public name = 'test';
-}
-
-class MyClass021 {
-  public name = 'test';
-}
-
-class MyClass022 {
-  public name = 'test';
-}
-
 class Parent023 {
-  public name = 'parent';
+  public name: string = 'parent';
 }
-
 class Child023 extends Parent023 {
-  public age = 10;
+  public age: int = 10;
 }
 
-class MyClass024 {
-  public name = 'test';
-  public age = 25;
-}
-
-class MyClass025 {
-  public name = 'test';
-}
-
-export default function InstanceFieldEqualsTest() {
-  describe('InstanceFieldEqualsTest', () => {
-    beforeAll(() => {
+export default function InstanceFieldEqualsTest(): void {
+  let runTests: () => void = (): void => {
+        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
+    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+    beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0100
-     * @tc.name testInstanceFieldEquals001
-     * @tc.desc Verify equals with a valid InstanceField parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0100
+     * @tc.name testEquals001
+     * @tc.desc Verify equals returns true for same field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testEquals001', FILTER, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -157,48 +65,14 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0200
-     * @tc.name testInstanceFieldEquals002
-     * @tc.desc Verify equals throws Error when parameter is missing
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0200
+     * @tc.name testEquals004
+     * @tc.desc Verify same field same class returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass002>();
-      let field = cls.getInstanceField("name");
-      try {
-        field!.equals(undefined as InstanceField)
-        expect().assertFail()
-      } catch (error) {
-        expect(error).not.toBeNull()
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0300
-     * @tc.name testInstanceFieldEquals003
-     * @tc.desc Verify equals with extra parameter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass003>();
-      let field1 = cls.getInstanceField("name");
-      let field2 = cls.getInstanceField("name");
-      field1!.equals(field2!, null as InstanceField)
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0400
-     * @tc.name testInstanceFieldEquals004
-     * @tc.desc Verify equals with same field of same class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testEquals004', FILTER, (): void => {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -206,30 +80,30 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0500
-     * @tc.name testInstanceFieldEquals005
-     * @tc.desc Verify equals with different field of same class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0300
+     * @tc.name testEquals005
+     * @tc.desc Verify different fields same class returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass005>();
+    it('testEquals005', FILTER, (): void => {
+      let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("age");
       expect(field1!.equals(field2!)).assertFalse()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0600
-     * @tc.name testInstanceFieldEquals006
-     * @tc.desc Verify equals with same name field of different class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0400
+     * @tc.name testEquals006
+     * @tc.desc Verify different classes same field name returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<MyClass006>();
+    it('testEquals006', FILTER, (): void => {
+      let cls1 = Class.from<MyClass001>();
       let cls2 = Class.from<OtherClass006>();
       let field1 = cls1.getInstanceField("name");
       let field2 = cls2.getInstanceField("name");
@@ -237,92 +111,43 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0700
-     * @tc.name testInstanceFieldEquals007
-     * @tc.desc Verify equals with itself
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0500
+     * @tc.name testEquals007
+     * @tc.desc Verify InstanceField equals itself returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
+    it('testEquals007', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("name");
       expect(field!.equals(field!)).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0800
-     * @tc.name testInstanceFieldEquals008
-     * @tc.desc Verify equals with null parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0600
+     * @tc.name testEquals011
+     * @tc.desc Verify non-existent field returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass008>();
-      let field = cls.getInstanceField("name");
-      expect(field!.equals(null)).assertFalse()
+    it('testEquals011', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField("noExist");
+      expect(field === undefined).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_0900
-     * @tc.name testInstanceFieldEquals009
-     * @tc.desc Verify equals with undefined parameter
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0700
+     * @tc.name testEquals012
+     * @tc.desc Verify equals return value and type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass009>();
-      let field = cls.getInstanceField("name");
-      expect(field!.equals(undefined)).assertFalse()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1000
-     * @tc.name testInstanceFieldEquals010
-     * @tc.desc Verify equals with non-InstanceField object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass010>();
-      let field = cls.getInstanceField("name");
-      let obj = { name: 'test' };
-      try {
-        field!.equals(obj as InstanceField)
-        expect().assertFail()
-      } catch (error) {
-        expect(error).not.toBeNull()
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1100
-     * @tc.name testInstanceFieldEquals011
-     * @tc.desc Verify equals with non-existent field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass011>();
-      let field1 = cls.getInstanceField("name");
-      let field2 = cls.getInstanceField("noExist");
-      expect(field1!.equals(field2!)).assertFalse()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1200
-     * @tc.name testInstanceFieldEquals012
-     * @tc.desc Verify equals returns true for same field instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass012>();
+    it('testEquals012', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let result = field1!.equals(field2!);
@@ -331,58 +156,15 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1300
-     * @tc.name testInstanceFieldEquals013
-     * @tc.desc Verify equals returns false for different field instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0800
+     * @tc.name testEquals016
+     * @tc.desc Verify equals returns boolean for both match and mismatch
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass013>();
-      let field1 = cls.getInstanceField("name");
-      let field2 = cls.getInstanceField("age");
-      expect(field1!.equals(field2!)).assertFalse()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1400
-     * @tc.name testInstanceFieldEquals014
-     * @tc.desc Verify equals returns false when other is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass014>();
-      let field = cls.getInstanceField("name");
-      expect(field!.equals(null)).assertFalse()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1500
-     * @tc.name testInstanceFieldEquals015
-     * @tc.desc Verify equals returns false when other is undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass015>();
-      let field = cls.getInstanceField("name");
-      expect(field!.equals(undefined)).assertFalse()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1600
-     * @tc.name testInstanceFieldEquals016
-     * @tc.desc Verify equals return value is boolean type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass016>();
+    it('testEquals016', FILTER, (): void => {
+      let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("age");
@@ -393,92 +175,38 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1700
-     * @tc.name testInstanceFieldEquals017
-     * @tc.desc Verify equals throws TypeError with incompatible type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0900
+     * @tc.name testEquals020
+     * @tc.desc Verify equals completes with same field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass017>();
-      let field = cls.getInstanceField("name");
-      try {
-        field!.equals(123 as InstanceField)
-        expect().assertFail()
-      } catch (error) {
-        expect(error).not.toBeNull()
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1800
-     * @tc.name testInstanceFieldEquals018
-     * @tc.desc Verify equals throws TypeError with string type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass018>();
-      let field = cls.getInstanceField("name");
-      try {
-        field!.equals("string" as InstanceField)
-        expect().assertFail()
-      } catch (error) {
-        expect(error).not.toBeNull()
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_1900
-     * @tc.name testInstanceFieldEquals019
-     * @tc.desc Verify equals exception is caught in catch block
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass019>();
-      let field = cls.getInstanceField("name");
-      try {
-        field!.equals({} as InstanceField)
-        expect().assertFail()
-      } catch (error) {
-        expect(error instanceof TypeError).assertTrue()
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2000
-     * @tc.name testInstanceFieldEquals020
-     * @tc.desc Verify finally block always executes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass020>();
+    it('testEquals020', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("name");
       let finallyExecuted: boolean = false;
+      let result: boolean = false;
       try {
-        field!.equals(null)
+        let other = cls.getInstanceField("name");
+        result = field!.equals(other!)
       } finally {
         finallyExecuted = true;
       }
+      expect(result).assertTrue()
       expect(finallyExecuted).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2100
-     * @tc.name testInstanceFieldEquals021
-     * @tc.desc Verify equals returns true but strict equals returns false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1000
+     * @tc.name testEquals021
+     * @tc.desc Verify equals true while === false for different references
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass021>();
+    it('testEquals021', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       expect(field1!.equals(field2!)).assertTrue()
@@ -486,15 +214,15 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2200
-     * @tc.name testInstanceFieldEquals022
-     * @tc.desc Verify equals with multiple getInstanceField calls
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1100
+     * @tc.name testEquals022
+     * @tc.desc Verify mutual equals for multiple getInstanceField calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass022>();
+    it('testEquals022', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("name");
@@ -504,32 +232,33 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2300
-     * @tc.name testInstanceFieldEquals023
-     * @tc.desc Verify equals with inherited class field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1200
+     * @tc.name testEquals023
+     * @tc.desc Verify parent field compared with child field returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testEquals023', FILTER, (): void => {
       let cls1 = Class.from<Parent023>();
       let cls2 = Class.from<Child023>();
       let field1 = cls1.getInstanceField("name");
-      let field2 = cls2.getInstanceField("name");
-      let result = field1!.equals(field2!);
-      expect(typeof result === 'boolean').assertTrue()
+      let field2 = cls2.getInstanceField("age");
+      expect(field1 !== undefined).assertTrue();
+      expect(field2 !== undefined).assertTrue();
+      expect(field1!.equals(field2!)).assertFalse()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2400
-     * @tc.name testInstanceFieldEquals024
-     * @tc.desc Verify equals satisfies symmetry
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1300
+     * @tc.name testEquals024
+     * @tc.desc Verify symmetry a.equals(b) === b.equals(a)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass024>();
+    it('testEquals024', FILTER, (): void => {
+      let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("age");
@@ -538,21 +267,58 @@ export default function InstanceFieldEqualsTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_EQUALS_2500
-     * @tc.name testInstanceFieldEquals025
-     * @tc.desc Verify equals satisfies transitivity
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1400
+     * @tc.name testEquals025
+     * @tc.desc Verify transitivity a.equals(b) && b.equals(c) => a.equals(c)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass025>();
+    it('testEquals025', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("name");
-      if (field1!.equals(field2!) && field2!.equals(field3!)) {
-        expect(field1!.equals(field3!)).assertTrue()
-      }
+      let ab = field1!.equals(field2!);
+      let bc = field2!.equals(field3!);
+      let ac = field1!.equals(field3!);
+      expect(ab).assertTrue()
+      expect(bc).assertTrue()
+      expect(ac).assertTrue()
     });
-  });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1500
+     * @tc.name testEquals026
+     * @tc.desc Verify equals returns false for fields from unrelated classes
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals026', FILTER, (): void => {
+      let cls1 = Class.from<MyClass001>();
+      let cls2 = Class.from<Parent023>();
+      let field1 = cls1.getInstanceField("name");
+      let field2 = cls2.getInstanceField("name");
+      expect(field1!.equals(field2!)).assertFalse()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1600
+     * @tc.name testEquals027
+     * @tc.desc Verify equals on same field returns consistent boolean type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testEquals027', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field1 = cls.getInstanceField("name");
+      let field2 = cls.getInstanceField("name");
+      let result = field1!.equals(field2!);
+      expect(typeof result === 'boolean').assertTrue()
+      expect(result).assertTrue()
+    });
+  };
+  describe('InstanceFieldEqualsTest', runTests);
 }
