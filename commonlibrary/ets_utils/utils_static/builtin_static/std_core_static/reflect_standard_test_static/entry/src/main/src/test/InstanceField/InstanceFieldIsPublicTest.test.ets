@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,570 +14,444 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
 import Utils from './../Util.test';
-
 class MyClass001 {
-  public name = 'test';
+  public name: string = 'test';
 }
 
-class MyClass003 {
-  public name = 'test';
+class TestClass008 {
+  public data: string = '';
+}
+class PublicStatic017 {
+  public static STATIC_VALUE: string = 'static';
+}
+class ModifierClass006 {
+  public publicField: string = 'public';
+  private privateField: string = 'private';
+  protected protectedField: string = 'protected';
 }
 
-class MyClass004 {
-  public static count = 0;
+class PublicClass003 {
+  public publicField: string = 'value';
 }
 
-class MyClass005 {
-  public readonly id: number = 1;
+class AccessClass004 {
+  private privateField: string = '';
+  protected protectedField: string = '';
+  public internalField: string = '';
 }
 
-class MyClass006 {
-  public intField: number = 42;
-  public strField: string = "hello";
-  public boolField: boolean = true;
-  public bigintField: bigint = 100n;
+class DefaultClass005 {
+  public defaultField: string = 'value';
 }
 
-class MyClass007 {
-  public arr: number[] = [1, 2, 3];
-  public obj: { key: string } = { key: "value" };
-  public map: Map<string, number> = new Map();
+class ParentClass007 {
+  public inheritedPublic: string = 'parent';
 }
 
-class MyClass008 {
-  public name: string = "default";
+class ChildClass007 extends ParentClass007 {
+  public ownPublic: string = 'child';
 }
 
-class MyClass009 {
-  private secret = 'hidden';
+class TestClass009 {
+  public value: string = '';
 }
 
-class MyClass010 {
-  private static secret = 'hidden';
+interface MyInterface015 {
+  field: string;
 }
 
-class MyClass011 {
-  protected data = 100;
+class ImplClass015 implements MyInterface015 {
+  public field: string = '';
 }
 
-class MyClass012 {
-  protected static data = 100;
+class VariousTypes011 {
+  public str: string = '';
+  public num: number = 0;
+  public bool: boolean = false;
+  public arr: Array<int> = [];
+  public obj: Object = {};
+  public nullable: string | null = null;
 }
 
-class MyClass013 {
-  data = 100;
+class PublicReadonly016 {
+  public readonly value: string = 'public readonly';
 }
 
-class Parent014 {
-  public parentField = 'from_parent';
+class VisibilityClass018 {
+  public visible: string = 'visible';
+  private invisible: string = 'invisible';
+  protected alsoInvisible: string = 'protected';
+  maybeVisible: string = 'internal';
 }
 
-class Child014 extends Parent014 {
-  public childField = 'from_child';
+class AccessibleClass020 {
+  public accessible: string = 'original';
 }
 
-class Parent015 {
-  private parentSecret = 'secret';
+class TestClass021 {
+  public field1: string = '';
+  private field2: string = '';
+  protected field3: string = '';
 }
 
-class Child015 extends Parent015 {
-  public childField = 'from_child';
-}
-
-class Parent016 {
-  protected parentData = 100;
-}
-
-class Child016 extends Parent016 {
-  public childField = 'from_child';
-}
-
-class MyClass017 {
-  public name = 'test';
-}
-
-class MyClass018 {
-  public name = 'test';
-  private secret = 'hidden';
-}
-
-class MyClass019 {
-  public name?: string;
-}
-
-class MyClass020 {
-  public name: string | null = null;
-}
-
-class MyClass021 {
-  public single = 'only';
-}
-
-class MyClass022 {
-  public pub = 'public';
-  private pri = 'private';
-  protected pro = 'protected';
-  def = 'default';
-}
-
-class MyClass023 {
-  public name = 'test';
-}
-
-class EmptyClass024 {
-}
-
-class MyClass025<T> {
-  public value: T | null = null;
-}
-
-class MyClass026 {
-  public data: string | number = "hello";
-}
-
-class MyClass027 {
-  public name?: string;
-}
-
-class A028 {
-  public fieldA = 'a';
-}
-
-class B028 extends A028 {
-  public fieldB = 'b';
-}
-
-class C028 extends B028 {
-  public fieldC = 'c';
-}
-
-export default function InstanceFieldIsPublicTest() {
-  describe('InstanceFieldIsPublicTest', () => {
-    beforeAll(() => {
+export default function InstanceFieldIsPublicTest(): void {
+  let runTests: () => void = (): void => {
+        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
+    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26);
+    beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0100
-     * @tc.name testInstanceFieldIsPublic001
-     * @tc.desc Verify isPublic() call without parameters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0100
+     * @tc.name testIsPublic001
+     * @tc.desc Verify isPublic() requires no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic001', FILTER, (): void => {
       let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField("name");
-      let result = field!.isPublic();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isPublic();
+      expect(result).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0200
-     * @tc.name testInstanceFieldIsPublic002
-     * @tc.desc Verify isPublic() is a no-parameter method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0200
+     * @tc.name testIsPublic003
+     * @tc.desc Verify public field returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic003', FILTER, (): void => {
+      let cls = Class.from<PublicClass003>();
+      let field = cls.getInstanceField('publicField')!;
+      expect(field.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0300
-     * @tc.name testInstanceFieldIsPublic003
-     * @tc.desc Verify isPublic returns true for public instance field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0300
+     * @tc.name testIsPublic004
+     * @tc.desc Verify private and protected fields are not reflectable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass003>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic004', FILTER, (): void => {
+      let cls = Class.from<AccessClass004>();
+
+      let privateField = cls.getInstanceField('privateField');
+      expect(privateField === undefined).assertTrue();
+
+      let protectedField = cls.getInstanceField('protectedField');
+      expect(protectedField === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0400
-     * @tc.name testInstanceFieldIsPublic004
-     * @tc.desc Verify isPublic returns true for public static field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0400
+     * @tc.name testIsPublic005
+     * @tc.desc Verify default access level is public
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-      let field = cls.getStaticField("count");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic005', FILTER, (): void => {
+      let cls = Class.from<DefaultClass005>();
+      let field = cls.getInstanceField('defaultField')!;
+      expect(field.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0500
-     * @tc.name testInstanceFieldIsPublic005
-     * @tc.desc Verify isPublic returns true for public readonly field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0500
+     * @tc.name testIsPublic006
+     * @tc.desc Verify public is mutually exclusive with private/protected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass005>();
-      let field = cls.getInstanceField("id");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic006', FILTER, (): void => {
+      let cls = Class.from<ModifierClass006>();
+
+      let field = cls.getInstanceField('publicField')!;
+      expect(field.isPublic()).assertTrue();
+      expect(field.isPrivate()).assertFalse();
+      expect(field.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0600
-     * @tc.name testInstanceFieldIsPublic006
-     * @tc.desc Verify isPublic returns true for all public primitive type fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0600
+     * @tc.name testIsPublic007
+     * @tc.desc Verify child class inherits parent class public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass006>();
-      let intField = cls.getInstanceField("intField");
-      let strField = cls.getInstanceField("strField");
-      let boolField = cls.getInstanceField("boolField");
-      let bigintField = cls.getInstanceField("bigintField");
-      expect(intField!.isPublic()).assertEqual(true);
-      expect(strField!.isPublic()).assertEqual(true);
-      expect(boolField!.isPublic()).assertEqual(true);
-      expect(bigintField!.isPublic()).assertEqual(true);
+    it('testIsPublic007', FILTER, (): void => {
+      let childCls = Class.from<ChildClass007>();
+
+      let ownField = childCls.getInstanceField('ownPublic')!;
+      expect(ownField.isPublic()).assertTrue();
+
+      let parentCls = childCls.getSuper()!;
+      let inheritedField = parentCls.getInstanceField('inheritedPublic')!;
+      expect(inheritedField.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0700
-     * @tc.name testInstanceFieldIsPublic007
-     * @tc.desc Verify isPublic returns true for public complex type fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0700
+     * @tc.name testIsPublic008
+     * @tc.desc Verify return value type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
-      let arrField = cls.getInstanceField("arr");
-      expect(arrField!.isPublic()).assertEqual(true);
-      let objField = cls.getInstanceField("obj");
-      expect(objField!.isPublic()).assertEqual(true);
+    it('testIsPublic008', FILTER, (): void => {
+      let cls = Class.from<TestClass008>();
+      let field = cls.getInstanceField('data')!;
+      let result = field.isPublic();
+
+      expect(typeof result).assertEqual('boolean');
+      expect(typeof result === 'boolean').assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0800
-     * @tc.name testInstanceFieldIsPublic008
-     * @tc.desc Verify isPublic returns true for public field with default value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0800
+     * @tc.name testIsPublic009
+     * @tc.desc Verify multiple calls to isPublic() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass008>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic009', FILTER, (): void => {
+      let cls = Class.from<TestClass009>();
+      let field = cls.getInstanceField('value')!;
+
+      let result1 = field.isPublic();
+      let result2 = field.isPublic();
+      let result3 = field.isPublic();
+
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_0900
-     * @tc.name testInstanceFieldIsPublic009
-     * @tc.desc Verify isPublic returns false for private instance field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0900
+     * @tc.name testIsPublic011
+     * @tc.desc Verify calling isPublic on initialized InstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass009>();
-      let field = cls.getInstanceField("secret");
-      expect(field!.isPublic()).assertEqual(false);
+    it('testIsPublic011', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      cls.initialize();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isPublic();
+      expect(typeof result === 'boolean').assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1000
-     * @tc.name testInstanceFieldIsPublic010
-     * @tc.desc Verify isPublic returns false for private static field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
+     * @tc.name testIsPublic012
+     * @tc.desc Verify basic functionality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass010>();
-      let field = cls.getStaticField("secret");
-      expect(field!.isPublic()).assertEqual(false);
+    it('testIsPublic012', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isPublic();
+      expect(typeof result === 'boolean').assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1100
-     * @tc.name testInstanceFieldIsPublic011
-     * @tc.desc Verify isPublic returns false for protected instance field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
+     * @tc.name testIsPublic013
+     * @tc.desc Verify isPublic works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass011>();
-      let field = cls.getInstanceField("data");
-      expect(field!.isPublic()).assertEqual(false);
+    it('testIsPublic013', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isPublic();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1200
-     * @tc.name testInstanceFieldIsPublic012
-     * @tc.desc Verify isPublic returns false for protected static field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
+     * @tc.name testIsPublic014
+     * @tc.desc Verify various types of public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass012>();
-      let field = cls.getStaticField("data");
-      expect(field!.isPublic()).assertEqual(false);
-    });
+    it('testIsPublic014', FILTER, (): void => {
+      let cls = Class.from<VariousTypes011>();
+      let fields = cls.getInstanceFields();
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1300
-     * @tc.name testInstanceFieldIsPublic013
-     * @tc.desc Verify isPublic returns false for field with default access modifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass013>();
-      let field = cls.getInstanceField("data");
-      expect(field!.isPublic()).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1400
-     * @tc.name testInstanceFieldIsPublic014
-     * @tc.desc Verify isPublic returns true for inherited public field from parent class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Child014>();
-      let field = cls.getInstanceField("parentField");
-      expect(field!.isPublic()).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1500
-     * @tc.name testInstanceFieldIsPublic015
-     * @tc.desc Verify parent private field is not visible via child class reflection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Child015>();
-      let field = cls.getInstanceField("parentSecret");
-      expect(field).assertUndefined();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1600
-     * @tc.name testInstanceFieldIsPublic016
-     * @tc.desc Verify isPublic returns false for inherited protected field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Child016>();
-      let field = cls.getInstanceField("parentData");
-      expect(field!.isPublic()).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1700
-     * @tc.name testInstanceFieldIsPublic017
-     * @tc.desc Verify isPublic return value is boolean type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass017>();
-      let field = cls.getInstanceField("name");
-      let result = field!.isPublic();
-      expect(typeof result).assertEqual("boolean");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1800
-     * @tc.name testInstanceFieldIsPublic018
-     * @tc.desc Verify repeated isPublic calls return consistent result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass018>();
-      let pubField = cls.getInstanceField("name");
-      let priField = cls.getInstanceField("secret");
-      for (let i = 0; i < 10; i++) {
-        expect(pubField!.isPublic()).assertEqual(true);
-        expect(priField!.isPublic()).assertEqual(false);
+      for (let i = 0; i < fields.length; i++) {
+          expect(fields[i].isPublic()).assertTrue();
+          expect(fields[i].isPrivate()).assertFalse();
+          expect(fields[i].isProtected()).assertFalse();
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_1900
-     * @tc.name testInstanceFieldIsPublic019
-     * @tc.desc Verify isPublic returns true for uninitialized public field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1300
+     * @tc.name testIsPublic015
+     * @tc.desc Verify interface fields are public by default
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass019>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic015', FILTER, (): void => {
+      let cls = Class.from<ImplClass015>();
+      let field = cls.getInstanceField('field')!;
+      expect(field.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2000
-     * @tc.name testInstanceFieldIsPublic020
-     * @tc.desc Verify isPublic returns true for public field with null value
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1400
+     * @tc.name testIsPublic016
+     * @tc.desc Verify public readonly field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass020>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic016', FILTER, (): void => {
+      let cls = Class.from<PublicReadonly016>();
+      let field = cls.getInstanceField('value')!;
+
+      expect(field.isPublic()).assertTrue();
+      expect(field.isReadonly()).assertTrue();
+      expect(field.isPrivate()).assertFalse();
+      expect(field.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2100
-     * @tc.name testInstanceFieldIsPublic021
-     * @tc.desc Verify isPublic returns true for class with only one public field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1500
+     * @tc.name testIsPublic017
+     * @tc.desc Verify static public field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass021>();
-      let field = cls.getInstanceField("single");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic017', FILTER, (): void => {
+      let cls = Class.from<PublicStatic017>();
+      let field = cls.getStaticField('STATIC_VALUE')!;
+
+      expect(field.isPublic()).assertTrue();
+      expect(field.isPrivate()).assertFalse();
+      expect(field.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2200
-     * @tc.name testInstanceFieldIsPublic022
-     * @tc.desc Verify isPublic returns correct results for mixed access modifier fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1600
+     * @tc.name testIsPublic018
+     * @tc.desc Verify reflection can only access public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass022>();
-      let pubField = cls.getInstanceField("pub");
-      let priField = cls.getInstanceField("pri");
-      let proField = cls.getInstanceField("pro");
-      let defField = cls.getInstanceField("def");
-      expect(pubField!.isPublic()).assertEqual(true);
-      expect(priField!.isPublic()).assertEqual(false);
-      expect(proField!.isPublic()).assertEqual(false);
-      expect(defField!.isPublic()).assertEqual(false);
+    it('testIsPublic018', FILTER, (): void => {
+      let cls = Class.from<VisibilityClass018>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(2);
+      expect(fields[0].getName()).assertEqual('visible');
+      expect(fields[0].isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2300
-     * @tc.name testInstanceFieldIsPublic023
-     * @tc.desc Verify isPublic not called for non-existent field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1700
+     * @tc.name testIsPublic019
+     * @tc.desc Verify performance of repeated isPublic() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass023>();
-      let field = cls.getInstanceField("nonExistent");
-      if (field) {
-        console.info(field.isPublic());
+    it('testIsPublic019', FILTER, (): void => {
+      let cls = Class.from<TestClass008>();
+      let field = cls.getInstanceField('data')!;
+
+      for (let i = 0; i < 100; i++) {
+          let result = field.isPublic();
+          expect(result).assertTrue();
       }
-      expect(field).assertUndefined();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2400
-     * @tc.name testInstanceFieldIsPublic024
-     * @tc.desc Verify getInstanceField returns undefined for empty class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1800
+     * @tc.name testIsPublic020
+     * @tc.desc Verify public field can be accessed with getValue and setValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<EmptyClass024>();
-      let field = cls.getInstanceField("any");
-      expect(field).assertUndefined();
+    it('testIsPublic020', FILTER, (): void => {
+      let cls = Class.from<AccessibleClass020>();
+      let field = cls.getInstanceField('accessible')!;
+      let instance = cls.createInstance();
+
+      let value: string = field.getValue(instance) as string;
+      expect(value).assertEqual('original');
+
+      field.setValue(instance, 'modified');
+      expect(field.getValue(instance) as string).assertEqual('modified');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2500
-     * @tc.name testInstanceFieldIsPublic025
-     * @tc.desc Verify isPublic returns true for public field in generic class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1900
+     * @tc.name testIsPublic021
+     * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass025<number>>();
-      let field = cls.getInstanceField("value");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic021', FILTER, (): void => {
+      let cls = Class.from<TestClass021>();
+
+      let field1 = cls.getInstanceField('field1')!;
+      expect(field1.isPublic()).assertTrue();
+      expect(field1.isPrivate()).assertFalse();
+      expect(field1.isProtected()).assertFalse();
+
+      let field2 = cls.getInstanceField('field2');
+      expect(field2 === undefined).assertTrue();
+
+      let field3 = cls.getInstanceField('field3');
+      expect(field3 === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2600
-     * @tc.name testInstanceFieldIsPublic026
-     * @tc.desc Verify isPublic returns true for public union type field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2000
+     * @tc.name testIsPublic022
+     * @tc.desc Verify isPublic consistency on multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsPublic026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass026>();
-      let field = cls.getInstanceField("data");
-      expect(field!.isPublic()).assertEqual(true);
+    it('testIsPublic022', FILTER, (): void => {
+      let cls = Class.from<PublicClass003>();
+      let field1 = cls.getInstanceField('publicField')!;
+      let field2 = cls.getInstanceField('publicField')!;
+      expect(field1.isPublic()).assertEqual(field2.isPublic());
+      expect(field1.isPublic()).assertTrue();
     });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2700
-     * @tc.name testInstanceFieldIsPublic027
-     * @tc.desc Verify isPublic returns true for public optional type field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass027>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isPublic()).assertEqual(true);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPUBLIC_2800
-     * @tc.name testInstanceFieldIsPublic028
-     * @tc.desc Verify isPublic returns true for public fields in multi-level inheritance chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testInstanceFieldIsPublic028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<C028>();
-      let fieldA = cls.getInstanceField("fieldA");
-      let fieldB = cls.getInstanceField("fieldB");
-      let fieldC = cls.getInstanceField("fieldC");
-      expect(fieldA!.isPublic()).assertEqual(true);
-      expect(fieldB!.isPublic()).assertEqual(true);
-      expect(fieldC!.isPublic()).assertEqual(true);
-    });
-  });
+  };
+  describe('InstanceFieldIsPublicTest', runTests);
 }

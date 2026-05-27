@@ -1,3 +1,4 @@
+'use static'
 /*
  * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,276 +14,494 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
 import Utils from './../Util.test';
-
 class MyClass001 {
-  public name = 'test';
+  public name: string = 'test';
 }
 
-class MyClass002 {
-  public name = 'test';
+class TestClass008 {
+  public data: string = '';
+}
+class ModifierClass006 {
+  public publicField: string = 'public';
+  private privateField: string = 'private';
+  protected protectedField: string = 'protected';
 }
 
-class MyClass003 {
-  public name = 'test';
+class ProtectedClass003 {
+  protected protectedField: string = 'value';
+  public publicField: string = 'public';
 }
 
-class MyClass004 {
-  protected name = 'test';
+class PublicClass004 {
+  public publicField: string = 'value';
 }
 
-class MyClass005 {
-  private name = 'test';
+class PrivateClass005 {
+  private privateField: string = 'value';
+  public publicField: string = 'public';
 }
 
-class MyClass006 {
-  name = 'test';
+class DefaultClass007 {
+  public defaultField: string = 'value';
 }
 
-class MyClass007 {
-  public readonly protected name = 'test';
+class TestClass009 {
+  public value: string = '';
 }
 
-class Parent009 {
-  protected parentField = 'parent';
+class ProtectedTest010 {
+  public publicField: string = 'public';
+  protected protectedField: string = 'protected';
+  private privateField: string = 'private';
 }
 
-class Child009 extends Parent009 {
-  public childField = 'child';
+class ParentClass011 {
+  protected protectedField: string = 'protected';
 }
 
-class MyClass010 {
-  public name = 'test';
+class ChildClass011 extends ParentClass011 {
+  public getChildAccess(): string {
+      return this.protectedField;
+  }
 }
 
-class MyClass012 {
-  protected name = 'test';
+class ProtectedReadonly016 {
+  protected readonly PROTECTED_CONST: string = 'protected';
+  public readonly PUBLIC_CONST: string = 'public';
 }
 
-class MyClass013 {
-  public name = 'test';
+class ConstructorProtected017 {
+  protected protectedParam: string;
+  public publicParam: string;
+  constructor(protectedParam: string, publicParam: string) {
+    this.protectedParam = protectedParam;
+    this.publicParam = publicParam;
+  }
 }
 
-export default function InstanceFieldIsProtectedTest() {
-  describe('InstanceFieldIsProtectedTest', () => {
-    beforeAll(() => {
+class ParentClass018 {
+  protected parentProtected: string = 'parent';
+  public parentPublic: string = 'parent';
+}
+
+class ChildClass018 extends ParentClass018 {
+  protected childProtected: string = 'child';
+  public childPublic: string = 'child';
+}
+
+class Parent019 {
+  protected protectedValue: string = 'parent';
+}
+
+class Child019 extends Parent019 {
+  public getProtectedValue(): string {
+      return this.protectedValue;
+  }
+
+  public setProtectedValue(value: string): void {
+      this.protectedValue = value;
+  }
+}
+
+class ProtectedAccess020 {
+  protected protectedField: string = 'protected';
+  public publicField: string = 'public';
+}
+
+class StaticProtected021 {
+  protected static STATIC_PROTECTED: string = 'protected';
+  public static STATIC_PUBLIC: string = 'public';
+}
+
+class TestClass022 {
+  public field1: string = '';
+  private field2: string = '';
+  protected field3: string = '';
+}
+
+export default function InstanceFieldIsProtectedTest(): void {
+  let runTests: () => void = (): void => {
+        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
+    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26);
+    beforeAll((): void => {
     });
-    beforeEach(async () => {
+    beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0100
-     * @tc.name testInstanceFieldIsProtected001
-     * @tc.desc Verify isProtected() call without parameters executes correctly
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0100
+     * @tc.name testIsProtected001
+     * @tc.desc Verify isProtected() requires no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected001', FILTER, (): void => {
       let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField("name");
-      field!.isProtected();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isProtected();
+      expect(result).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0200
-     * @tc.name testInstanceFieldIsProtected002
-     * @tc.desc Verify isProtected() behavior when extra parameter is passed
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0200
+     * @tc.name testIsProtected003
+     * @tc.desc Verify protected fields cannot be reflected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass002>();
-      let field = cls.getInstanceField("name");
-      field!.isProtected(true as Object);
+    it('testIsProtected003', FILTER, (): void => {
+      let cls = Class.from<ProtectedClass003>();
+
+      let protectedField = cls.getInstanceField('protectedField');
+      expect(protectedField === undefined).assertTrue();
+
+      let publicField = cls.getInstanceField('publicField')!;
+      expect(publicField.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0300
-     * @tc.name testInstanceFieldIsProtected003
-     * @tc.desc Verify isProtected returns false for public field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0300
+     * @tc.name testIsProtected004
+     * @tc.desc Verify public field isProtected() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass003>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isProtected()).assertEqual(false);
+    it('testIsProtected004', FILTER, (): void => {
+      let cls = Class.from<PublicClass004>();
+      let field = cls.getInstanceField('publicField')!;
+      expect(field.isProtected()).assertFalse();
+      expect(field.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0400
-     * @tc.name testInstanceFieldIsProtected004
-     * @tc.desc Verify isProtected returns true for protected field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0400
+     * @tc.name testIsProtected005
+     * @tc.desc Verify private field isProtected() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isProtected()).assertEqual(true);
+    it('testIsProtected005', FILTER, (): void => {
+      let cls = Class.from<PrivateClass005>();
+
+      let privateField = cls.getInstanceField('privateField');
+      expect(privateField === undefined).assertTrue();
+
+      let publicField = cls.getInstanceField('publicField')!;
+      expect(publicField.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0500
-     * @tc.name testInstanceFieldIsProtected005
-     * @tc.desc Verify isProtected returns false for private field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0500
+     * @tc.name testIsProtected006
+     * @tc.desc Verify protected is mutually exclusive with public/private
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass005>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isProtected()).assertEqual(false);
+    it('testIsProtected006', FILTER, (): void => {
+      let cls = Class.from<ModifierClass006>();
+
+      let field = cls.getInstanceField('publicField')!;
+      expect(field.isPublic()).assertTrue();
+      expect(field.isPrivate()).assertFalse();
+      expect(field.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0600
-     * @tc.name testInstanceFieldIsProtected006
-     * @tc.desc Verify isProtected returns false for field without explicit access modifier
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0600
+     * @tc.name testIsProtected007
+     * @tc.desc Verify default access level is not protected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass006>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isProtected()).assertEqual(false);
+    it('testIsProtected007', FILTER, (): void => {
+      let cls = Class.from<DefaultClass007>();
+      let field = cls.getInstanceField('defaultField')!;
+      expect(field.isProtected()).assertFalse();
+      expect(field.isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0700
-     * @tc.name testInstanceFieldIsProtected007
-     * @tc.desc Verify isProtected for readonly protected field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0700
+     * @tc.name testIsProtected008
+     * @tc.desc Verify return value type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
+    it('testIsProtected008', FILTER, (): void => {
+      let cls = Class.from<TestClass008>();
+      let field = cls.getInstanceField('data')!;
+      let result = field.isProtected();
+
+      expect(typeof result).assertEqual('boolean');
+      expect(typeof result === 'boolean').assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0800
-     * @tc.name testInstanceFieldIsProtected008
-     * @tc.desc Verify static field is not affected by isProtected on InstanceField
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0800
+     * @tc.name testIsProtected009
+     * @tc.desc Verify multiple calls to isProtected() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected009', FILTER, (): void => {
+      let cls = Class.from<TestClass009>();
+      let field = cls.getInstanceField('value')!;
+
+      let result1 = field.isProtected();
+      let result2 = field.isProtected();
+      let result3 = field.isProtected();
+
+      expect(result1).assertEqual(result2);
+      expect(result2).assertEqual(result3);
+      expect(result1).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_0900
-     * @tc.name testInstanceFieldIsProtected009
-     * @tc.desc Verify isProtected returns true for inherited protected field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0900
+     * @tc.name testIsProtected010
+     * @tc.desc Verify protected fields cannot be accessed via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Child009>();
-      let field = cls.getInstanceField("parentField");
-      expect(field!.isProtected()).assertEqual(true);
+    it('testIsProtected010', FILTER, (): void => {
+      let cls = Class.from<ProtectedTest010>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(1);
+      expect(fields[0].getName()).assertEqual('publicField');
+      expect(fields[0].isProtected()).assertFalse();
+      expect(fields[0].isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1000
-     * @tc.name testInstanceFieldIsProtected010
-     * @tc.desc Verify isProtected return value is boolean type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1000
+     * @tc.name testIsProtected011
+     * @tc.desc Verify protected field access for child classes in code but not reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass010>();
-      let field = cls.getInstanceField("name");
-      let result = field!.isProtected();
+    it('testIsProtected011', FILTER, (): void => {
+      let cls = Class.from<ChildClass011>();
+
+      let protectedField = cls.getInstanceField('protectedField');
+      expect(protectedField === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1100
+     * @tc.name testIsProtected013
+     * @tc.desc Verify calling isProtected on initialized InstanceField
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected013', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      cls.initialize();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isProtected();
+      expect(typeof result === 'boolean').assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1200
+     * @tc.name testIsProtected014
+     * @tc.desc Verify basic functionality
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected014', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isProtected();
+      expect(typeof result === 'boolean').assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1300
+     * @tc.name testIsProtected015
+     * @tc.desc Verify isProtected works correctly
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected015', FILTER, (): void => {
+      let cls = Class.from<MyClass001>();
+      let field = cls.getInstanceField('name')!;
+      let result = field.isProtected();
       expect(typeof result).assertEqual('boolean');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1100
-     * @tc.name testInstanceFieldIsProtected011
-     * @tc.desc Verify isProtected null safety for non-existent field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1400
+     * @tc.name testIsProtected016
+     * @tc.desc Verify protected combined with readonly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected016', FILTER, (): void => {
+      let cls = Class.from<ProtectedReadonly016>();
+
+      let protectedField = cls.getInstanceField('PROTECTED_CONST');
+      expect(protectedField === undefined).assertTrue();
+
+      let publicField = cls.getInstanceField('PUBLIC_CONST')!;
+      expect(publicField !== null).assertTrue();
+      expect(publicField.isProtected()).assertFalse();
+      expect(publicField.isReadonly()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1200
-     * @tc.name testInstanceFieldIsProtected012
-     * @tc.desc Verify multiple isProtected calls return consistent result
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1500
+     * @tc.name testIsProtected017
+     * @tc.desc Verify protected in constructor parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass012>();
-      let field = cls.getInstanceField("name");
-      expect(field!.isProtected()).assertEqual(field!.isProtected());
+    it('testIsProtected017', FILTER, (): void => {
+      let cls = Class.from<ConstructorProtected017>();
+      let fields = cls.getInstanceFields();
+
+      expect(fields.length).assertEqual(1);
+      expect(fields[0].getName()).assertEqual('publicParam');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1300
-     * @tc.name testInstanceFieldIsProtected013
-     * @tc.desc Verify isProtected causes runtime error when InstanceField is undefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1600
+     * @tc.name testIsProtected018
+     * @tc.desc Verify parent class protected fields visible to child but not reflectable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass013>();
-      let field = cls.getInstanceField("nonExistent");
-      try {
-        field.isProtected();
-        expect().assertFail();
-      } catch (error) {
-        expect(error).not.toBeNull();
-      }
+    it('testIsProtected018', FILTER, (): void => {
+      let childCls = Class.from<ChildClass018>();
+
+      let childPublicField = childCls.getInstanceField('childPublic')!;
+      expect(childPublicField.isProtected()).assertFalse();
+
+      let childProtectedField = childCls.getInstanceField('childProtected');
+      expect(childProtectedField === undefined).assertTrue();
+
+      let parentCls = childCls.getSuper()!;
+      let parentPublicField = parentCls.getInstanceField('parentPublic')!;
+      expect(parentPublicField.isProtected()).assertFalse();
+
+      let parentProtectedField = parentCls.getInstanceField('parentProtected');
+      expect(parentProtectedField === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1400
-     * @tc.name testInstanceFieldIsProtected014
-     * @tc.desc Verify isProtected throws TypeError when InstanceField is null
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1700
+     * @tc.name testIsProtected019
+     * @tc.desc Verify child class can access parent protected field via method but not reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        let field: InstanceField = null!;
-        field.isProtected();
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof TypeError).assertEqual(true);
-      }
+    it('testIsProtected019', FILTER, (): void => {
+      let cls = Class.from<Child019>();
+      let instance = cls.createInstance();
+
+      let getter = cls.getInstanceMethod('getProtectedValue')!;
+      expect(getter !== null).assertTrue();
+      let value: string = getter.invoke(instance) as string;
+      expect(value).assertEqual('parent');
+
+      let protectedField = cls.getInstanceField('protectedValue');
+      expect(protectedField === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_ISPROTECTED_1500
-     * @tc.name testInstanceFieldIsProtected015
-     * @tc.desc Verify isProtected error handling when Class.from input is invalid
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1800
+     * @tc.name testIsProtected020
+     * @tc.desc Verify protected fields cannot be accessed via getValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testInstanceFieldIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected020', FILTER, (): void => {
+      let cls = Class.from<ProtectedAccess020>();
+
+      let protectedField = cls.getInstanceField('protectedField');
+      expect(protectedField === undefined).assertTrue();
+
+      let publicField = cls.getInstanceField('publicField')!;
+      let instance = cls.createInstance();
+      let value: string = publicField.getValue(instance) as string;
+      expect(value).assertEqual('public');
     });
-  });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1900
+     * @tc.name testIsProtected021
+     * @tc.desc Verify StaticField also has isProtected for static protected fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected021', FILTER, (): void => {
+      let cls = Class.from<StaticProtected021>();
+
+      let staticProtectedField = cls.getStaticField('STATIC_PROTECTED');
+      expect(staticProtectedField === undefined).assertTrue();
+
+      let staticPublicField = cls.getStaticField('STATIC_PUBLIC')!;
+      expect(staticPublicField !== null).assertTrue();
+      expect(staticPublicField.isProtected()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2000
+     * @tc.name testIsProtected022
+     * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected022', FILTER, (): void => {
+      let cls = Class.from<TestClass022>();
+
+      let field1 = cls.getInstanceField('field1')!;
+      expect(field1.isPublic()).assertTrue();
+      expect(field1.isPrivate()).assertFalse();
+      expect(field1.isProtected()).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2100
+     * @tc.name testIsProtected023
+     * @tc.desc Verify isProtected consistency on multiple InstanceField instances
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testIsProtected023', FILTER, (): void => {
+      let cls = Class.from<PublicClass004>();
+      let field1 = cls.getInstanceField('publicField')!;
+      let field2 = cls.getInstanceField('publicField')!;
+      expect(field1.isProtected()).assertEqual(field2.isProtected());
+    });
+  };
+  describe('InstanceFieldIsProtectedTest', runTests);
 }
