@@ -563,7 +563,6 @@ static napi_value runFunc2Test(napi_env env, napi_callback_info info)
     napi_queue_async_work(env, context->work);
 
     return promise;
-
 }
 
 // 流程测试 - 25 个测试用例（异步版本）
