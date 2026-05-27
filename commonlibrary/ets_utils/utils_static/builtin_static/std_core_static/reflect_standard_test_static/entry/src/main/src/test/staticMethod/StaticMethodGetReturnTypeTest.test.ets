@@ -20,9 +20,8 @@ import Utils from './../Util.test';
 enum TestColor { Red, Green, Blue }
 
 class GetReturnTypeClass {
-  public static getMessage(): string {
-    return '';
-  }
+  public static getMessage(): void {
+   }
 }
 
 class BasicReturnTypesClass {
@@ -162,7 +161,7 @@ export default function StaticMethodGetReturnTypeTest(): void {
       let method = cls.getStaticMethod('getMessage');
       expect(method !== undefined).assertTrue();
       let returnType: Class = method!.getReturnType();
-      expect(returnType !== null).assertTrue();
+      expect(returnType.getName()).assertEqual("void");
     });
 
     /**

@@ -417,7 +417,7 @@ export default function StaticMethodGetParametersNumTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETERS_NUM_1800
-     * @tc.name testStaticMethodGetParametersNum019
+     * @tc.name testStaticMethodGetParametersNum018
      * @tc.desc Verify getParametersNum() for getter and setter methods
      * @tc.size MediumTest
      * @tc.type Function
