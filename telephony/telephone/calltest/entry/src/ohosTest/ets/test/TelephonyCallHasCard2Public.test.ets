@@ -1652,8 +1652,8 @@ export default function HasCard2PublicTest() {
       let caseName: string = "Telephony_Call_Call_MakeCall_0100";
       console.log(`==========> ${caseName} Test start ==========>`);
       let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if (simState == sim.SimState.SIM_STATE_NOT_PRESENT) {
+        console.info(`${caseName} failed, SIM_STATE_NOT_PRESENT`);
         console.info(`${caseName} test end`);
         done();
       } else {
@@ -1688,8 +1688,8 @@ export default function HasCard2PublicTest() {
       let caseName: string = "Telephony_Call_Call_MakeCall_0200";
       console.log(`==========> ${caseName} Test start ==========>`);
       let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if (simState == sim.SimState.SIM_STATE_NOT_PRESENT) {
+        console.info(`${caseName} failed, SIM_STATE_NOT_PRESENT`);
         console.info(`${caseName} test end`);
         done();
       } else {
@@ -1723,8 +1723,8 @@ export default function HasCard2PublicTest() {
       let caseName: string = "Telephony_Call_Call_MakeCall_0600";
       console.log(`==========> ${caseName} Test start ==========>`);
       let simState: sim.SimState = sim.getSimStateSync(0);
-      if (simState == sim.SimState.SIM_STATE_UNKNOWN) {
-        console.info(`${caseName} failed, SIM STATE IS UNKNOWN`);
+      if (simState == sim.SimState.SIM_STATE_NOT_PRESENT) {
+        console.info(`${caseName} failed, SIM_STATE_NOT_PRESENT`);
         console.info(`${caseName} test end`);
         done();
       } else {
