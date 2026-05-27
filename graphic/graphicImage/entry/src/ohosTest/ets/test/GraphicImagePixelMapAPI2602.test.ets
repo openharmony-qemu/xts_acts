@@ -1527,7 +1527,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.UNKNOWN
+          pixelFormat: image.PixelMapFormat.UNKNOWN,
+          srcPixelFormat: image.PixelMapFormat.UNKNOWN
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1557,7 +1558,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ARGB_8888
+          pixelFormat: image.PixelMapFormat.ARGB_8888,
+          srcPixelFormat: image.PixelMapFormat.ARGB_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1589,7 +1591,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGB_565
+          pixelFormat: image.PixelMapFormat.RGB_565,
+          srcPixelFormat: image.PixelMapFormat.RGB_565
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1621,7 +1624,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_8888
+          pixelFormat: image.PixelMapFormat.RGBA_8888,
+          srcPixelFormat: image.PixelMapFormat.RGBA_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1653,7 +1657,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.BGRA_8888
+          pixelFormat: image.PixelMapFormat.BGRA_8888,
+          srcPixelFormat: image.PixelMapFormat.BGRA_8888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1685,7 +1690,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGB_888
+          pixelFormat: image.PixelMapFormat.RGB_888,
+          srcPixelFormat: image.PixelMapFormat.RGB_888
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1717,7 +1723,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ALPHA_8
+          pixelFormat: image.PixelMapFormat.ALPHA_8,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_8
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1749,7 +1756,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_F16
+          pixelFormat: image.PixelMapFormat.RGBA_F16,
+          srcPixelFormat: image.PixelMapFormat.RGBA_F16
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1781,7 +1789,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.NV21
+          pixelFormat: image.PixelMapFormat.NV21,
+          srcPixelFormat: image.PixelMapFormat.NV21
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1813,7 +1822,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.NV12
+          pixelFormat: image.PixelMapFormat.NV12,
+          srcPixelFormat: image.PixelMapFormat.NV12
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1845,7 +1855,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.RGBA_1010102
+          pixelFormat: image.PixelMapFormat.RGBA_1010102,
+          srcPixelFormat: image.PixelMapFormat.RGBA_1010102
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1877,7 +1888,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.YCBCR_P010
+          pixelFormat: image.PixelMapFormat.YCBCR_P010,
+          srcPixelFormat: image.PixelMapFormat.YCBCR_P010
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1909,7 +1921,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.YCRCB_P010
+          pixelFormat: image.PixelMapFormat.YCRCB_P010,
+          srcPixelFormat: image.PixelMapFormat.YCRCB_P010
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1941,7 +1954,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ALPHA_U8
+          pixelFormat: image.PixelMapFormat.ALPHA_U8,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_U8
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -1973,7 +1987,8 @@ export default function GraphicImagePixelMapAPI2602() {
         console.info(msgStr + 'begin');
         let opts: image.InitializationOptions = {
           size: { height: 4, width: 6 },
-          pixelFormat: image.PixelMapFormat.ASTC_4x4
+          pixelFormat: image.PixelMapFormat.ASTC_4x4,
+          srcPixelFormat: image.PixelMapFormat.ASTC_4x4
         }
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
@@ -2221,7 +2236,9 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createEmptyPixelMap(opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + 'pixelMap enum ', pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertFalse();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
@@ -2562,7 +2579,9 @@ export default function GraphicImagePixelMapAPI2602() {
         try {
           let pixelMap = image.createPixelMapFromPixelsSync(buffer, opts);
           expect(pixelMap !== undefined).assertTrue();
+          console.info(msgStr + ' pixelMap enum ',pixelMap.isEditable, pixelMap.isStrideAlignment);
           expect(pixelMap.isEditable).assertTrue();
+          expect(pixelMap.isStrideAlignment).assertFalse();
           pixelMap.release();
           console.info(msgStr + 'success');
           console.info(msgStr + 'end');
@@ -2602,6 +2621,374 @@ export default function GraphicImagePixelMapAPI2602() {
         } catch(error) {
           console.error(msgStr + 'failed', error);
           expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_7800
+     * @tc.number SUB_GRAPHIC_image_createPixelMapFromPixels_7800
+     * @tc.desc   createPixelMapFromPixels ALPHA_F16 format success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_7800 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = await image.createPixelMapFromPixels(buffer, opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = await pixelMap.getImageInfo();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_7900
+     * @tc.number SUB_GRAPHIC_image_createPixelMapFromPixelsSync_7900
+     * @tc.desc   createPixelMapFromPixelsSync ALPHA_F16 format success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_7900 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createPixelMapFromPixelsSync(buffer, opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = await pixelMap.getImageInfo();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8000
+     * @tc.number SUB_GRAPHIC_image_createPixelMap_8000
+     * @tc.desc   createPixelMap ALPHA_F16 format Promise success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8000 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = await image.createPixelMap(buffer, opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = await pixelMap.getImageInfo();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8100
+     * @tc.number SUB_GRAPHIC_image_createPixelMapSync_8100
+     * @tc.desc   createPixelMapSync ALPHA_F16 format with colors success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8100 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createPixelMapSync(buffer, opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8200
+     * @tc.number SUB_GRAPHIC_image_createPixelMapSync_8200
+     * @tc.desc   createPixelMapSync ALPHA_F16 format without colors success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8200 ';
+        console.info(msgStr + 'begin');
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createPixelMapSync(opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8300
+     * @tc.number SUB_GRAPHIC_image_createPixelMapUsingAllocator_8300
+     * @tc.desc   createPixelMapUsingAllocator ALPHA_F16 format AUTO allocator success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8300 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = await image.createPixelMapUsingAllocator(buffer, opts, image.AllocatorType.AUTO);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8400
+     * @tc.number SUB_GRAPHIC_image_createPixelMapUsingAllocatorSync_8400
+     * @tc.desc   createPixelMapUsingAllocatorSync ALPHA_F16 format with colors AUTO allocator success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8400 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(buffer, opts, image.AllocatorType.AUTO);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8500
+     * @tc.number SUB_GRAPHIC_image_createPixelMapUsingAllocatorSync_8500
+     * @tc.desc   createPixelMapUsingAllocatorSync ALPHA_F16 format without colors AUTO allocator success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8500 ';
+        console.info(msgStr + 'begin');
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createPixelMapUsingAllocatorSync(opts, image.AllocatorType.AUTO);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8600
+     * @tc.number SUB_GRAPHIC_image_createEmptyPixelMap_8600
+     * @tc.desc   createEmptyPixelMap ALPHA_F16 format success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8600 ';
+        console.info(msgStr + 'begin');
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        try {
+          let pixelMap = image.createEmptyPixelMap(opts);
+          expect(pixelMap !== undefined).assertTrue();
+          let imgInfo: image.ImageInfo = pixelMap.getImageInfoSync();
+          expect(imgInfo.pixelFormat).assertEqual(image.PixelMapFormat.ALPHA_F16);
+          await pixelMap.release();
+          console.info(msgStr + 'success');
+          console.info(msgStr + 'end');
+          done();
+        } catch(error) {
+          console.error(msgStr + 'failed', error);
+          expect().assertFail();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8700
+     * @tc.number SUB_GRAPHIC_image_createPixelMap_8700
+     * @tc.desc   createPixelMap ALPHA_F16 format Promise success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8700 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(48);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        image.createPixelMap(buffer, opts, (error: BusinessError | null, pixelMap: image.PixelMap | undefined) => {
+          if(error) {
+            console.error(msgStr + `Failed to create pixelmap. code is ${error.code}`);
+            expect().assertFail();
+            done();
+          } else {
+            console.info(msgStr + 'success ', pixelMap?.isEditable, pixelMap?.isStrideAlignment);
+            expect(pixelMap?.isEditable).assertTrue();
+            expect(pixelMap?.isStrideAlignment).assertFalse();
+            pixelMap?.release();
+            done();
+          }
+        })
+      })
+
+    /**
+     * @tc.name   graphicImagePixelMapAPI2602_8800
+     * @tc.number SUB_GRAPHIC_image_convertPixelFormat_8800
+     * @tc.desc   createPixelMap ALPHA_F16 format Promise success test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('graphicImagePixelMapAPI2602_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        let msgStr: string = 'www data graphicImagePixelMapAPI2602_8800 ';
+        console.info(msgStr + 'begin');
+        let buffer: ArrayBuffer = new ArrayBuffer(96);
+        let opts: image.InitializationOptions = {
+          size: { height: 4, width: 6 },
+          pixelFormat: image.PixelMapFormat.ALPHA_F16,
+          srcPixelFormat: image.PixelMapFormat.ALPHA_F16
+        }
+        let pixelMap = image.createPixelMapSync(buffer, opts);
+        try {
+          await pixelMap.convertPixelFormat(image.PixelMapFormat.ALPHA_F16);
+          console.info(msgStr + 'end');
+          expect().assertFail();
+          done();
+        } catch(error) {
+          await pixelMap.release();
+          console.error(msgStr + 'failed', error);
+          expect(error).assertEqual(62980115);
           done();
         }
       })
