@@ -91,6 +91,78 @@ export default function BigIntOperatorDecrementTest(): void {
       expect((): void => {
         (null as Object as BigInt).operatorDecrement();
       }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (undefined as Object as BigInt).operatorDecrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        ('abc' as object as BigInt).operatorDecrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (123 as object as BigInt).operatorDecrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (true as object as BigInt).operatorDecrement();
+      }).assertThrowError('ClassCastError');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0600
+     * @tc.name testBigIntOperatorDecrementLongBounds0600
+     * @tc.desc Mindmap input: operatorDecrement at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
+
+      expect(max.operatorDecrement().toString()).assertEqual('9223372036854775806');
+      expect(min.operatorDecrement().toString()).assertEqual('-9223372036854775809');
+      expect(BigInt(1).operatorDecrement().toString()).assertEqual('0');
+      expect(BigInt(-1).operatorDecrement().toString()).assertEqual('-2');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0700
+     * @tc.name testBigIntOperatorDecrementBeyondLongRange0700
+     * @tc.desc Mindmap input: operatorDecrement with magnitudes beyond signed long maximum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775808').operatorDecrement().toString()).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775809').operatorDecrement().toString()).assertEqual('-9223372036854775810');
+      expect(BigInt('1000000000000000000000000000000').operatorDecrement().toString()).assertEqual('999999999999999999999999999999');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0800
+     * @tc.name testBigIntOperatorDecrementChained0800
+     * @tc.desc Mindmap return value: chained operatorDecrement subtracts two from receiver
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementChained0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(10).operatorDecrement().operatorDecrement().toString()).assertEqual('8');
+      expect(BigInt(0).operatorDecrement().operatorDecrement().toString()).assertEqual('-2');
+      expect(BigInt('-999999999999999999999999999999').operatorDecrement().operatorDecrement().toString()).assertEqual('-1000000000000000000000000000001');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DECREMENT_0900
+     * @tc.name testBigIntOperatorDecrementDoubleSafeInteger0900
+     * @tc.desc Mindmap boundary: operatorDecrement near double safe-integer magnitude (string operands)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDecrementDoubleSafeInteger0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9007199254740992').operatorDecrement().toString()).assertEqual('9007199254740991');
+      expect(BigInt('9007199254740991').operatorDecrement().toString()).assertEqual('9007199254740990');
+      expect(BigInt('-9007199254740991').operatorDecrement().toString()).assertEqual('-9007199254740992');
     });
   });
 }

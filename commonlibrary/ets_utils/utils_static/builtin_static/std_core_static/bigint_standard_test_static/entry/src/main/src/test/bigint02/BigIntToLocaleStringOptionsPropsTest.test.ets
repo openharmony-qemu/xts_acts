@@ -19,7 +19,7 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntToLocaleStringOptionsPropsTest(): void {
   describe('BigIntToLocaleStringOptions properties (mindmap)', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0100
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0100
      * @tc.name testBigIntToLocaleStringOptionsCompactRead0100
      * @tc.desc Mindmap input: read compactDisplay when set
      * @tc.size MediumTest
@@ -33,7 +33,7 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0200
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0200
      * @tc.name testBigIntToLocaleStringOptionsCompactWrite0200
      * @tc.desc Mindmap input: write compactDisplay short and long
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0300
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0300
      * @tc.name testBigIntToLocaleStringOptionsOptional0300
      * @tc.desc Mindmap input: optional compactDisplay unset
      * @tc.size MediumTest
@@ -65,7 +65,7 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0400
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0400
      * @tc.name testBigIntToLocaleStringOptionsNotation0400
      * @tc.desc Mindmap input: notation property read/write
      * @tc.size MediumTest
@@ -81,7 +81,7 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0500
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0500
      * @tc.name testBigIntToLocaleStringOptionsEmptyString0500
      * @tc.desc Mindmap boundary: empty compactDisplay string
      * @tc.size MediumTest
@@ -95,7 +95,7 @@ export default function BigIntToLocaleStringOptionsPropsTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_PROPS_0600
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_PROPS_0600
      * @tc.name testBigIntToLocaleStringOptionsCombined0600
      * @tc.desc Mindmap return value: combined options fields
      * @tc.size MediumTest

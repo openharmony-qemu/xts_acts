@@ -19,7 +19,7 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntToLocaleStringOptionsIfaceTest(): void {
   describe('BigInt.toLocaleString with options (mindmap toLocaleString_options_iface)', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0100
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0100
      * @tc.name testBigIntToLocaleStringOptionsIfaceLocaleAndOptions0100
      * @tc.desc Mindmap input: locales and BigIntToLocaleStringOptions
      * @tc.size MediumTest
@@ -34,7 +34,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0200
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0200
      * @tc.name testBigIntToLocaleStringOptionsIfaceStyle0200
      * @tc.desc Mindmap input: style option with locale
      * @tc.size MediumTest
@@ -49,7 +49,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0300
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0300
      * @tc.name testBigIntToLocaleStringOptionsIfaceOptionsOnly0300
      * @tc.desc Mindmap input: undefined locales with options
      * @tc.size MediumTest
@@ -64,7 +64,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0400
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0400
      * @tc.name testBigIntToLocaleStringOptionsIfaceLocaleOnly0400
      * @tc.desc Mindmap input: locale without options
      * @tc.size MediumTest
@@ -76,7 +76,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0500
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0500
      * @tc.name testBigIntToLocaleStringOptionsIfaceDefaultNoArg0500
      * @tc.desc Mindmap input: no-arg toLocaleString uses defaults
      * @tc.size MediumTest
@@ -88,7 +88,7 @@ export default function BigIntToLocaleStringOptionsIfaceTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPTIONS_IFACE_0600
+     * @tc.number SUB_BIGINT_STD_TOLOCALE_OPT_IFACE_0600
      * @tc.name testBigIntToLocaleStringOptionsIfaceBothUndefined0600
      * @tc.desc Mindmap input: explicit undefined locales and options
      * @tc.size MediumTest

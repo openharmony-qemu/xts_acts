@@ -105,5 +105,83 @@ export default function BigIntPerformanceTest(): void {
       expect(acc.toString().length).assertEqual(309);
       expect(acc.operatorGreaterThan(base)).assertTrue();
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_PERFORMANCE_0600
+     * @tc.name testBigIntPerformancePow4096Bits0600
+     * @tc.desc Verify 2^4096 pow completes with 1234-digit decimal result
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 3
+     */
+    it('testBigIntPerformancePow4096Bits0600', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+      const p4096 = BigInt(2).pow(BigInt(4096));
+      const p4095 = BigInt(2).pow(BigInt(4095));
+
+      expect(p4096.toString().length).assertEqual(1234);
+      expect(p4096.operatorGreaterThan(p4095)).assertTrue();
+      expect(p4096.operatorMultiply(BigInt(2)).equals(BigInt(2).pow(BigInt(4097)))).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_PERFORMANCE_0700
+     * @tc.name testBigIntPerformanceBatchSubtract0700
+     * @tc.desc Verify repeated subtract-one batch (64 steps) on 1024-bit base plus offset
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 3
+     */
+    it('testBigIntPerformanceBatchSubtract0700', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+      const base = BigInt(2).pow(BigInt(1024));
+      const one = BigInt(1);
+      const offset = BigInt(64);
+      let acc = base.operatorAdd(offset);
+      for (let i = 0; i < 64; i++) {
+        acc = acc.operatorSubtract(one);
+      }
+
+      expect(acc.equals(base)).assertTrue();
+      expect(acc.toString().length).assertEqual(309);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_PERFORMANCE_0800
+     * @tc.name testBigIntPerformanceBatchIncrement0800
+     * @tc.desc Verify repeated operatorIncrement batch (128 steps) on 1024-bit base
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 3
+     */
+    it('testBigIntPerformanceBatchIncrement0800', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+      const base = BigInt(2).pow(BigInt(1024));
+      const expected = base.operatorAdd(BigInt(128));
+      let acc = base;
+      for (let i = 0; i < 128; i++) {
+        acc = acc.operatorIncrement();
+      }
+
+      expect(acc.equals(expected)).assertTrue();
+      expect(acc.toString().length).assertEqual(309);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_PERFORMANCE_0900
+     * @tc.name testBigIntPerformanceBatchDecrement0900
+     * @tc.desc Verify repeated operatorDecrement batch (128 steps) on 1024-bit base plus offset
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 3
+     */
+    it('testBigIntPerformanceBatchDecrement0900', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+      const base = BigInt(2).pow(BigInt(1024));
+      const offset = BigInt(128);
+      let acc = base.operatorAdd(offset);
+      for (let i = 0; i < 128; i++) {
+        acc = acc.operatorDecrement();
+      }
+
+      expect(acc.equals(base)).assertTrue();
+      expect(acc.toString().length).assertEqual(309);
+    });
   });
 }

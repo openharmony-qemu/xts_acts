@@ -19,7 +19,7 @@ import { TestType, Size, Level } from '../../../../hypium/Constant';
 export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
   describe('BigInt.toStringAsPowerOfTwoRadix (mindmap)', () => {
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0100
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0100
      * @tc.name testBigIntToStringAsPowerOfTwoRadix0100
      * @tc.desc Verify valid power-of-two radix
      * @tc.size MediumTest
@@ -32,7 +32,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0200
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0200
      * @tc.name testBigIntToStringAsPowerOfTwoRadixNegative0200
      * @tc.desc Mindmap return value: negative value power-of-two radix
      * @tc.size MediumTest
@@ -44,7 +44,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0300
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0300
      * @tc.name testBigIntToStringAsPowerOfTwoRadixRadix40300
      * @tc.desc Mindmap return value: radix 4 and 8 power-of-two conversions
      * @tc.size MediumTest
@@ -57,7 +57,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0400
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0400
      * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidArg0400
      * @tc.desc Mindmap error handling: invalid power-of-two radix throws Error
      * @tc.size MediumTest
@@ -74,7 +74,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0500
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0500
      * @tc.name testBigIntToStringAsPowerOfTwoRadixInvalidArgRadix10500
      * @tc.desc Mindmap error handling: radix 1 and negative non-power radix throw Error
      * @tc.size MediumTest
@@ -94,7 +94,7 @@ export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_POT_RADIX_0600
+     * @tc.number SUB_BIGINT_STD_TOSTRING_POW2_RADIX_0600
      * @tc.name testBigIntToStringAsPowerOfTwoRadixLongBounds0600
      * @tc.desc Mindmap return value: long extrema in radix 16; -9223372036854775808 is two's complement without minus prefix
      * @tc.size MediumTest

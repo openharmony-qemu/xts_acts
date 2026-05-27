@@ -105,5 +105,65 @@ export default function BigIntOperatorIncrementTest(): void {
         (true as object as BigInt).operatorIncrement();
       }).assertThrowError('ClassCastError');
     });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0600
+     * @tc.name testBigIntOperatorIncrementLongBounds0600
+     * @tc.desc Mindmap input: operatorIncrement at signed long extrema
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
+
+      expect(max.operatorIncrement().toString()).assertEqual('9223372036854775808');
+      expect(min.operatorIncrement().toString()).assertEqual('-9223372036854775807');
+      expect(BigInt(-1).operatorIncrement().toString()).assertEqual('0');
+      expect(BigInt(0).operatorIncrement().toString()).assertEqual('1');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0700
+     * @tc.name testBigIntOperatorIncrementBeyondLongRange0700
+     * @tc.desc Mindmap input: operatorIncrement with magnitudes beyond signed long maximum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9223372036854775807').operatorIncrement().toString()).assertEqual('9223372036854775808');
+      expect(BigInt('-9223372036854775809').operatorIncrement().toString()).assertEqual('-9223372036854775808');
+      expect(BigInt('999999999999999999999999999998').operatorIncrement().toString()).assertEqual('999999999999999999999999999999');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0800
+     * @tc.name testBigIntOperatorIncrementChained0800
+     * @tc.desc Mindmap return value: chained operatorIncrement adds two to receiver
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementChained0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(10).operatorIncrement().operatorIncrement().toString()).assertEqual('12');
+      expect(BigInt(-2).operatorIncrement().operatorIncrement().toString()).assertEqual('0');
+      expect(BigInt('999999999999999999999999999998').operatorIncrement().operatorIncrement().toString()).assertEqual('1000000000000000000000000000000');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_INCREMENT_0900
+     * @tc.name testBigIntOperatorIncrementDoubleSafeInteger0900
+     * @tc.desc Mindmap boundary: operatorIncrement near double safe-integer magnitude (string operands)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorIncrementDoubleSafeInteger0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('9007199254740990').operatorIncrement().toString()).assertEqual('9007199254740991');
+      expect(BigInt('9007199254740991').operatorIncrement().toString()).assertEqual('9007199254740992');
+      expect(BigInt('-9007199254740992').operatorIncrement().toString()).assertEqual('-9007199254740991');
+    });
   });
 }
