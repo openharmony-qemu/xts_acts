@@ -17,8 +17,9 @@ group("std_core_static") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "reflect_standard_test_static:ActsReflectStaticMethodTest",
-      "enum_standard_test_static:ActsEnumStaticTest",
-    ]
+          "enum_standard_test_static:ActsEnumStaticTest",
+          "reflect_standard_test_static:ActsReflectStaticTest",
+
+]
   }
 }

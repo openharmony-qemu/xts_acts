@@ -3,9 +3,10 @@
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "shell-timeout": "180000",
         "bundle-name": "com.example.actsnotificationprioritytest",
-        "module-name": "entry_test"
+        "module-name": "entry_test",
+        "shell-timeout": "600000",
+        "testcase-timeout": 70000
     },
     "kits": [
         {
@@ -14,6 +15,13 @@
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
+        },
+        {
+            "type":"ShellKit",
+            "run-command":[
+                "anm setting -e com.example.actsnotificationprioritytest:0:1"
+            ],
+            "cleanup-apps":true
         }
-    ]
+    ] 
 }

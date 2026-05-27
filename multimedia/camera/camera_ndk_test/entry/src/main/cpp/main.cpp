@@ -121,6 +121,28 @@ static napi_value GetCameraHostType(napi_env env, napi_callback_info info)
     return jsValue;
 }
 
+static napi_value TestOHGetSensorPixelArraySizeWithoutCamera(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->TestOHGetSensorPixelArraySizeWithoutCamera();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->TestOHGetSensorPixelArraySizeWithoutCamera(), &jsValue);
+
+    return jsValue;
+}
+
+static napi_value TestOHGetSensorColorFilterArrangementWithoutCamera(napi_env env, napi_callback_info info)
+{
+    ndkCamera_->TestOHGetSensorColorFilterArrangementWithoutCamera();
+
+    napi_value jsValue = nullptr;
+
+    napi_create_int32(env, ndkCamera_->TestOHGetSensorColorFilterArrangementWithoutCamera(), &jsValue);
+
+    return jsValue;
+}
+
 static napi_value GetCameraHostNameErrorParameter(napi_env env, napi_callback_info info)
 {
     ndkCamera_->GetCameraHostNameErrorParameter();
@@ -1231,6 +1253,36 @@ static napi_value SessionSetZoomRatio(napi_env env, napi_callback_info info)
     double zoomRatio;
     napi_get_value_double(env, args[0], &zoomRatio);
     Camera_ErrorCode ret = ndkCamera_->SessionSetZoomRatio(zoomRatio);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionGetZoomPointInfos(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_ErrorCode ret = ndkCamera_->SessionGetZoomPointInfos(useCaseCode);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionDeleteZoomPointInfos(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t useCaseCode;
+    napi_get_value_int32(env, args[0], &useCaseCode);
+    Camera_ErrorCode ret = ndkCamera_->SessionDeleteZoomPointInfos(useCaseCode);
     napi_create_int32(env, ret, &result);
     return result;
 }
@@ -3878,6 +3930,10 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getCameraHostNameInspection", nullptr, GetCameraHostNameInspection, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getCameraHostName", nullptr, GetCameraHostName, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getCameraHostType", nullptr, GetCameraHostType, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testOHGetSensorPixelArraySizeWithoutCamera", nullptr, TestOHGetSensorPixelArraySizeWithoutCamera,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testOHGetSensorColorFilterArrangementWithoutCamera", nullptr,
+            TestOHGetSensorColorFilterArrangementWithoutCamera, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getWhiteBalanceTest", nullptr, GetWhiteBalanceTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getMacroStatusChangeTest", nullptr, GetMacroStatusChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getIsoInfoChangeTest", nullptr, GetIsoInfoChangeTest, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -3986,6 +4042,10 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "sessionGetZoomRatio", nullptr, SessionGetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionSetZoomRatio", nullptr, SessionSetZoomRatio, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "sessionGetZoomPointInfos", nullptr, SessionGetZoomPointInfos, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
+        { "sessionDeleteZoomPointInfos", nullptr, SessionDeleteZoomPointInfos, nullptr, nullptr, nullptr,
+            napi_default, nullptr },
         { "sessionIsVideoStabilizationModeSupported", nullptr, SessionIsVideoStabilizationModeSupported,
             nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionGetVideoStabilizationMode", nullptr, SessionGetVideoStabilizationMode, nullptr, nullptr, nullptr,

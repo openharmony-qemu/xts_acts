@@ -1,17 +1,17 @@
 {
-    "description": "reflect staticMethod test",
+    "description": "Reflect Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "800000",
-        "shell-timeout": "800000",
+        "test-timeout": "180000",
+        "shell-timeout": "180000",
         "testcase-timeout": "15000",
-        "bundle-name": "com.example.staticMethod",
+        "bundle-name": "reflect.standard.test.static",
         "module-name": "entry"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsReflectStaticMethodTest.hap"
+                "ActsReflectStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true

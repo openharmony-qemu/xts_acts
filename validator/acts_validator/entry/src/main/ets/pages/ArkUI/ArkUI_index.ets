@@ -171,6 +171,8 @@ struct IndexPage {
     { title: 'SmartGestureMonitor002', uri: 'pages/ArkUI/SmartGestureMonitor002' },
     { title: 'SmartGestureMonitor003', uri: 'pages/ArkUI/SmartGestureMonitor003' },
     { title: 'SmartGestureCallBack', uri: 'pages/ArkUI/SmartGestureCallBack' },
+    { title: 'selectMenuBackgroundBlurStyleOptions', uri: 'pages/ArkUI/selectMenuBackgroundBlurStyleOptions' },
+    { title: 'selectMenuBackgroundEffect', uri: 'pages/ArkUI/selectMenuBackgroundEffect' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

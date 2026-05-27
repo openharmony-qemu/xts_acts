@@ -127,6 +127,7 @@ export default function DisplayTest():void {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         hilog.info(domain, tag, 'DisplayTest start');
         let isPCMode: boolean = false;
+        let isFreeWindowMode: boolean = false;
         let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage | undefined;
         let win: window.Window;
@@ -163,12 +164,13 @@ export default function DisplayTest():void {
             let promiseSnapshot = windowClass.getWindowStateSnapshot();
             promiseSnapshot.then((data) => {
                 let str = JSON.parseJsonElement(data);
-                let isPcMode = str.getBoolean('isPcMode')
-                hilog.info(domain, tag, `beforeAll: Succeeded. data=${data}, isPcMode=${isPcMode}`);
-
+                isPCMode = str.getBoolean('isPcMode')
+                hilog.info(domain, tag, `beforeAll: Succeeded. data=${data}, isPcMode=${isPCMode}`);
             }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.error(domain, tag, `beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
             });
+            isFreeWindowMode = windowClass.isInFreeWindowMode();
+            hilog.info(domain, tag, `beforeAll: Succeeded. isFreeWindowMode=${isFreeWindowMode}`);
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT)
             await Utils.msSleep(300);
             let Orientation1 = display.getDefaultDisplaySync().orientation;
@@ -3793,7 +3795,7 @@ export default function DisplayTest():void {
             count++;
         };
         try {
-            if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+            if (isFreeWindowMode) {
                 let cap:string = displayClass.getDisplayCapability();
                 let curFoldStatus: display.FoldStatus = display.getFoldStatus();
                 hilog.info(0x0000, '[ANI]', msgStr + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -3825,7 +3827,7 @@ export default function DisplayTest():void {
                 windowClass!.recover();
                 displayClass.offAvailableAreaChange(callback);
                 done();
-            } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+            } else if (!isFreeWindowMode && isSupportRotate) {
                 displayClass.onAvailableAreaChange(callback);
                 await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
                 await Utils.msSleep(1000);
@@ -3843,11 +3845,11 @@ export default function DisplayTest():void {
         }
         catch (err) {
             hilog.error(0x0000, '[ANI]',msgStr + `Failed to on availableAreaChange. Code: ${err.code}, message: ${err.message}`);
-            if (err.code == 801) {
+            if (!isSyscapSessionManagerSupported) {
+                expect(err.code).assertEqual(801);
                 hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
                 done();
-            }
-            else {
+            } else {
                 expect().assertFail();
                 done();
             }
