@@ -55,7 +55,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const testBodyStr = 'sent to data body';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -99,7 +99,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -147,7 +147,7 @@ export default function HttpBodyParametersTest() {
       try {
         const binaryData: number[] = [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100];
         const binaryPayload: string = String.fromCharCode(...binaryData);
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -192,7 +192,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const testBodyStr: string = '';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -237,7 +237,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -283,7 +283,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const binaryPayload: Uint8Array = new Uint8Array(0);
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -329,7 +329,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const testBody: undefined = undefined;
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -375,7 +375,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const testqueryParamsStr = 'name=test&value=123';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
@@ -419,7 +419,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
@@ -468,7 +468,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
@@ -512,7 +512,7 @@ export default function HttpBodyParametersTest() {
       let httpRequest: http.HttpRequest | null = null;
       try {
         const testqueryParamsStr = '';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
@@ -555,7 +555,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
@@ -600,7 +600,7 @@ export default function HttpBodyParametersTest() {
       try {
         const testBodyStr = 'sent to data body';
         const testExtraDataStr = 'sent to data extra';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -646,7 +646,7 @@ export default function HttpBodyParametersTest() {
       console.info(`${caseName}---Start`);
       let httpRequest: http.HttpRequest | null = null;
       try {
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/post';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/post';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.POST,
@@ -703,7 +703,7 @@ export default function HttpBodyParametersTest() {
         const testQueryValueStr = 'true';
         const testQueryExtraStr = '123';
         const testExtraDataStr = 'sent to data';
-        const XTS_TEST_URL: string = 'http://146.56.217.118:8000/get';
+        const XTS_TEST_URL: string = 'https://httpbin.moyufangge.com/get';
         httpRequest = http.createHttp();
         let options: http.HttpRequestOptions = {
           method: http.RequestMethod.GET,
