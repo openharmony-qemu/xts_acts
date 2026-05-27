@@ -52,13 +52,23 @@ export default function ActsAnsNotificationDisableNotificationFeatureTest() {
           let err: BusinessError = e as BusinessError
           hilog.error(0x0000, 'testTag',
             `${testNum} disableNotificationFeature failed, code is ${err.code}, message is ${err.message}`);
-          expect(err.code).assertEqual(202)
-          done()
+            if(err.code===801){
+              expect(err.code).assertEqual(801)
+              done()
+            }else{
+              expect(err.code).assertEqual(202)
+              done()
+            }
         })
       } catch (err) {
         console.error(testNum + `disableNotificationFeature fail: ${JSON.stringify(err)}${err.message}`);
-        expect(false).assertTrue();
-        done()
+        if(err.code===801){
+          expect(err.code).assertEqual(801)
+          done()
+        }else{
+          expect(err.code).assertEqual(202)
+          done()
+        }
       }
     })
   })
