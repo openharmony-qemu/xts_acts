@@ -167,11 +167,11 @@ export default function ArrayFindLastTest(): void {
       const arr = new Array<number>(10, 20, 30, 20, 10);
       const first = arr.find((v: number): boolean => v == 20);
       const last = arr.findLast((v: number): boolean => v == 20);
+      expect(first != undefined).assertTrue();
+      expect(last != undefined).assertTrue();
       if (first != undefined && last != undefined) {
         expect(arr.indexOf(first)).assertEqual(1);
         expect(arr.lastIndexOf(last)).assertEqual(3);
-      } else {
-        expect(false).assertTrue();
       }
     });
 

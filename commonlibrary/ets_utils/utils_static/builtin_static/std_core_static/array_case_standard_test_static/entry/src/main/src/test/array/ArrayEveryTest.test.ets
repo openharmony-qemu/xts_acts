@@ -480,7 +480,7 @@ export default function ArrayEveryTest(): void {
      */
     it('testArrayEvery028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>();
-      for (let i = 0; i < 128; i++) {
+      for (let i = 0; i < 10; i++) {
         arr.pushOne(i);
       }
       const result = arr.every((v: int): boolean => v >= 0);

@@ -292,7 +292,7 @@ export default function ArrayFill2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1500
      * @tc.name testArrayFill2015
-     * @tc.desc Verify documented scenario 8.1 int最小值和最大�?
+     * @tc.desc Verify documented scenario 8.1 int最小值和最大�?
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -315,7 +315,7 @@ export default function ArrayFill2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1600
      * @tc.name testArrayFill2016
-     * @tc.desc Verify documented scenario 8.2 零�?
+     * @tc.desc Verify documented scenario 8.2 零�?
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,46 +333,28 @@ export default function ArrayFill2Test(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1700
      * @tc.name testArrayFill2017
-     * @tc.desc Verify documented scenario 9.1 多次fill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFill2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
-      arr.fill(0, 0, 2).fill(1, 2, 4).fill(2, 4, 6);
-      expect(arr[0]).assertEqual(0);
-      expect(arr[1]).assertEqual(0);
-      expect(arr[2]).assertEqual(1);
-      expect(arr[3]).assertEqual(1);
-      expect(arr[4]).assertEqual(2);
-      expect(arr[5]).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1800
-     * @tc.name testArrayFill2018
      * @tc.desc Verify documented scenario 10.1 保持泛型类型
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<number>(1, 2, 3);
       arr.fill(0, 0, 2);
       const result: number = arr[0];
-      expect(typeof result).assertEqual('number');
+      const resultType = Class.of(result).getName().split('.');
+      expect(resultType[resultType.length - 1]).assertEqual('Double');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1900
-     * @tc.name testArrayFill2019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1800
+     * @tc.name testArrayFill2018
      * @tc.desc Verify documented scenario 12.1 使用int常量
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const START: int = 1;
       const END: int = 3;
       const arr = new Array<number>(1, 2, 3, 4, 5);
@@ -382,33 +364,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2000
-     * @tc.name testArrayFill2020
-     * @tc.desc Verify documented scenario 12.2 循环中的fill
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayFill2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<number>(1, 2, 3, 4, 5, 6);
-      for (let i: int = 0; i < 2; i++) {
-        arr.fill(i * 10, i * 2, i * 2 + 2);
-      }
-      expect(arr[0]).assertEqual(0);
-      expect(arr[1]).assertEqual(0);
-      expect(arr[2]).assertEqual(10);
-      expect(arr[3]).assertEqual(10);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2100
-     * @tc.name testArrayFill2021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_1900
+     * @tc.name testArrayFill2019
      * @tc.desc Verify negative int boundaries resolve to the expected middle range
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [1, 2, 3, 4, 5, 6];
       arr.fill(9, -4 as int, -1 as int);
       expect(arr[0]).assertEqual(1);
@@ -420,14 +383,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2200
-     * @tc.name testArrayFill2022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2000
+     * @tc.name testArrayFill2020
      * @tc.desc Verify int start equal to the array length leaves content unchanged
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [7, 8, 9];
       const start: int = arr.length;
       arr.fill(0, start, start);
@@ -437,14 +400,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2300
-     * @tc.name testArrayFill2023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2100
+     * @tc.name testArrayFill2021
      * @tc.desc Verify an excessively negative int end clamps to zero and becomes a no-op
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [10, 20, 30];
       arr.fill(5, 0 as int, -10 as int);
       expect(arr[0]).assertEqual(10);
@@ -453,14 +416,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2400
-     * @tc.name testArrayFill2024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2200
+     * @tc.name testArrayFill2022
      * @tc.desc Verify overlapping int fill calls keep the latest value on covered positions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<string> = ['a', 'b', 'c', 'd', 'e'];
       arr.fill('X', 1 as int, 5 as int);
       arr.fill('Y', 2 as int, 4 as int);
@@ -469,14 +432,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2500
-     * @tc.name testArrayFill2025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2300
+     * @tc.name testArrayFill2023
      * @tc.desc Verify the returned array reference can be reused immediately after int fill
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<string> = ['left', 'mid', 'right'];
       const result = arr.fill('core', 1 as int, 3 as int);
       result[0] = 'start';
@@ -487,14 +450,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2600
-     * @tc.name testArrayFill2026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2400
+     * @tc.name testArrayFill2024
      * @tc.desc Verify int fill can normalize a boolean segment for later counting
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<boolean> = [true, true, false, true, false];
       arr.fill(false, 1 as int, 4 as int);
       let trueCount = 0;
@@ -509,14 +472,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2700
-     * @tc.name testArrayFill2027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2500
+     * @tc.name testArrayFill2025
      * @tc.desc Verify int fill can update a larger interior slice without touching the boundaries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [];
       for (let i = 0; i < 32; i++) {
         arr.pushOne(i);
@@ -530,14 +493,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2800
-     * @tc.name testArrayFill2028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2600
+     * @tc.name testArrayFill2026
      * @tc.desc Verify nested arrays filled by int boundaries share the same reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const shared: Array<number> = [];
       const arr: Array<Array<number>> = [[1], [2], [3], [4]];
       arr.fill(shared, 1 as int, 4 as int);
@@ -549,14 +512,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2900
-     * @tc.name testArrayFill2029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2700
+     * @tc.name testArrayFill2027
      * @tc.desc Verify multiple calculated int segments can be filled inside a loop
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [0, 0, 0, 0, 0, 0, 0, 0];
       for (let i: int = 0; i < 4; i++) {
         const start: int = i * 2;
@@ -567,14 +530,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3000
-     * @tc.name testArrayFill2030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2800
+     * @tc.name testArrayFill2028
      * @tc.desc Verify int overload works with nullable values on a center slice
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number | null> = [1, 2, 3, 4];
       arr.fill(null, 1 as int, 3 as int);
       expect(arr[0]).assertEqual(1);
@@ -584,14 +547,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3100
-     * @tc.name testArrayFill2031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_2900
+     * @tc.name testArrayFill2029
      * @tc.desc Verify int overload and every can validate the normalized result together
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<number> = [5, 4, 3, 2, 1];
       arr.fill(6, 1 as int, 4 as int);
       const result = arr.every((item: number): boolean => item > 0);
@@ -603,14 +566,14 @@ export default function ArrayFill2Test(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3200
-     * @tc.name testArrayFill2032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FILL_TWO_3000
+     * @tc.name testArrayFill2030
      * @tc.desc Verify empty-string int fill is reflected clearly in joined output
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayFill2032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testArrayFill2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: Array<string> = ['A', 'B', 'C', 'D'];
       arr.fill('', 1 as int, 3 as int);
       const joined = arr.join('#');

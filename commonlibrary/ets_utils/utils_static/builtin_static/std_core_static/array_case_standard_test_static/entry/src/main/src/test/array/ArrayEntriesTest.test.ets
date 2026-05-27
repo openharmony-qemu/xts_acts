@@ -69,8 +69,9 @@ export default function ArrayEntriesTest(): void {
     it('testArrayEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr = new Array<int>(1, 2, 3);
       const iterator = arr.entries();
+      const nextType = iterator.next;
       expect(iterator != null).assertTrue();
-      expect(typeof iterator.next).assertEqual('function');
+      expect(nextType.name).assertEqual('next');
     });
 
     /**
@@ -986,7 +987,8 @@ export default function ArrayEntriesTest(): void {
      */
     it('testArrayEntries042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const iterator = new Array<int>(1, 2, 3).entries();
-      expect(typeof iterator.next).assertEqual('function');
+      const nextType = iterator.next;
+      expect(nextType.name).assertEqual('next');
       let count = 0;
       for (const pair of iterator) {
         const entry = pair as [int, int];
