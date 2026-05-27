@@ -33,14 +33,14 @@ export default function AbilityDelegatorTest() {
     })
 
     /**
-     * @tc.name   GET_ARGUMENTS_0001
-     * @tc.number GET_ARGUMENTS_0001
+     * @tc.name   SUB_Ability_AbilityTools_GET_ARGUMENTS_0001
+     * @tc.number SUB_Ability_AbilityTools_GET_ARGUMENTS_0001
      * @tc.desc   test getArguments
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('GET_ARGUMENTS_0001', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('SUB_Ability_AbilityTools_GET_ARGUMENTS_0001', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       const abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       const abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
       let bundleName: string = abilityDelegatorArguments.bundleName;
