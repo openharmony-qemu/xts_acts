@@ -163,6 +163,7 @@
 #define PARAM_NEGATIVE_100 (-100)
 #define PARAM_NEGATIVE_5 (-5)
 #define COLUMN_WIDTH_AND_HEIGHT 210
+#define BUFFER_SIZE_10M (10 * 1024 * 1024)
 
 #define DECLARE_KEYCODE_EVENT(name)                                                                                    \
     static napi_value GetKeyCodeEvent##name(napi_env env, napi_callback_info info)                                     \

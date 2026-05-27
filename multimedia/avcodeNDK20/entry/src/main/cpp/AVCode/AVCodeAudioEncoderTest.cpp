@@ -76,7 +76,7 @@ napi_value AudioEncoderSetMaxInputBufferSize_10M(napi_env env, napi_callback_inf
     const char *mime = OH_AVCODEC_MIMETYPE_AUDIO_AAC;
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateDefaultAudioEncoderFormat();
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -274,7 +274,7 @@ napi_value AudioEncoderFLAC_SetMaxInputBufferSize(napi_env env, napi_callback_in
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_44100, PARAM_2, SAMPLE_S16LE, CH_LAYOUT_STEREO, PARAM_128000);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -345,7 +345,7 @@ napi_value AudioEncoderMP3_SetMaxInputBufferSize(napi_env env, napi_callback_inf
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_44100, PARAM_2, SAMPLE_S16LE, CH_LAYOUT_STEREO, PARAM_128000);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -416,7 +416,7 @@ napi_value AudioEncoderOPUS_SetMaxInputBufferSize(napi_env env, napi_callback_in
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_48000, PARAM_1, SAMPLE_S16LE, CH_LAYOUT_MONO, PARAM_128000);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -487,7 +487,7 @@ napi_value AudioEncoderAMRNB_SetMaxInputBufferSize(napi_env env, napi_callback_i
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_8000, PARAM_1, SAMPLE_S16LE, CH_LAYOUT_MONO, PARAM_12200);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -558,7 +558,7 @@ napi_value AudioEncoderAMRWB_SetMaxInputBufferSize(napi_env env, napi_callback_i
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_16000, PARAM_1, SAMPLE_S16LE, CH_LAYOUT_MONO, PARAM_23850);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);
@@ -629,7 +629,7 @@ napi_value AudioEncoderG711mu_SetMaxInputBufferSize(napi_env env, napi_callback_
     }
     OH_AVCodec *codec = OH_AudioCodec_CreateByMime(mime, true);
     OH_AVFormat *format = CreateAudioEncoderFormat(PARAM_8000, PARAM_1, SAMPLE_S16LE, CH_LAYOUT_MONO);
-    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, 10 * 1024 * 1024);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_MAX_INPUT_BUFFER_SIZE, BUFFER_SIZE_10M);
     int32_t ret = OH_AudioCodec_Configure(codec, format);
     OH_AVFormat_Destroy(format);
     OH_AudioCodec_Destroy(codec);

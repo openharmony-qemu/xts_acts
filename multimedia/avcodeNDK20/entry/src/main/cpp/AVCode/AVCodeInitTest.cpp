@@ -21,9 +21,6 @@
 #include <js_native_api_types.h>
 #include <napi/native_api.h>
 
-namespace {
-static const uint32_t MAX_NAME_LENGTH = 1024;
-}
 EXTERN_C_START
 
 static void InitPush1(std::vector<napi_property_descriptor> &desc)
@@ -600,8 +597,10 @@ static void InitPushAudioEncoderSettingKey(std::vector<napi_property_descriptor>
     desc.push_back(XL("AudioEncoderSetSampleConvert_Default", AudioEncoderSetSampleConvert_Default));
     desc.push_back(XL("AudioEncoderSetSampleConvert_Invalid2", AudioEncoderSetSampleConvert_Invalid2));
     desc.push_back(XL("AudioEncoderSetSampleConvert_Negative", AudioEncoderSetSampleConvert_Negative));
-    desc.push_back(XL("AudioEncoderSetSampleConvert_WithUnsupportedFormat", AudioEncoderSetSampleConvert_WithUnsupportedFormat));
-    desc.push_back(XL("AudioEncoderSetSampleConvert_WithSupportedFormat", AudioEncoderSetSampleConvert_WithSupportedFormat));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_WithUnsupportedFormat",
+                      AudioEncoderSetSampleConvert_WithUnsupportedFormat));
+    desc.push_back(XL("AudioEncoderSetSampleConvert_WithSupportedFormat",
+                      AudioEncoderSetSampleConvert_WithSupportedFormat));
     desc.push_back(XL("AudioEncoderFLAC_SetMaxInputBufferSize", AudioEncoderFLAC_SetMaxInputBufferSize));
     desc.push_back(XL("AudioEncoderFLAC_SetPTSMode", AudioEncoderFLAC_SetPTSMode));
     desc.push_back(XL("AudioEncoderFLAC_SetSampleConvert", AudioEncoderFLAC_SetSampleConvert));
