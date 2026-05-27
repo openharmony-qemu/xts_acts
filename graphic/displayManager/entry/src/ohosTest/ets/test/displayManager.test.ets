@@ -115,7 +115,7 @@ export default function displayTest() {
       let promiseSnapshot = windowClass.getWindowStateSnapshot();
       promiseSnapshot.then((data) => {
         let jsonObj: object = JSON.parse(data);
-        console.info(`beforeAll: Succeeded. data=${data}, isPcMode=${jsonObj["isPcMode"]}`);
+        console.info(`beforeAll: Succeeded. data=${data}, isPCMode=${jsonObj["isPcMode"]}`);
         isPCMode = jsonObj["isPcMode"];
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
@@ -4604,7 +4604,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
             console.info(caseName + ' Listening enabled. Data: ' + JSON.stringify(data));
             count++;
         };
-        if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+        if (isFreeWindowMode) {
           let cap: string = displayClass.getDisplayCapability();
           let curFoldStatus: display.FoldStatus = display.getFoldStatus();
           console.info(caseName + ` Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -4638,7 +4638,7 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
           expect(count).assertLarger(0);
           windowClass.recover();
           displayClass.off('availableAreaChange', callback);
-        } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+        } else if (!isFreeWindowMode && isSupportRotate) {
           displayClass.on('availableAreaChange', callback);
           await sleep(2000);
           await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
@@ -4655,12 +4655,14 @@ it('testIsCaptured_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, asy
         done();
       } catch (err) {
         console.log(caseName + ': fail:' + err + ' ' + err.code);
-        expect(false).assertTrue();
+        if (!isSyscapSessionManagerSupported) {
+          expect(err.code).assertEqual(801)
+        } else {
+          expect(false).assertTrue();
+        }
         done();
       }
     });
-
-
 
 
   })

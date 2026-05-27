@@ -20,6 +20,7 @@ group("std_core_static") {
       "bigint_standard_test_static:ActsBigintStandardTest",
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
+      "array_case_standard_test_static:ActsArrayCaseStaticTest",
     ]
   }
 }
