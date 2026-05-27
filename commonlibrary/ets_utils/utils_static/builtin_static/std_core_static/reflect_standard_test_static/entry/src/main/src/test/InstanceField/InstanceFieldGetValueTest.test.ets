@@ -919,3 +919,32 @@ export default function InstanceFieldGetValueTest() {
       let obj = new MyClass040();
       let cls = Class.from<MyClass040>();
       let field = cls.getInstanceField("name");
+      let value1 = field!.getValue(obj) as string;
+      let value2 = field!.getValue(obj) as string;
+      let value3 = field!.getValue(obj) as string;
+      expect(value1).assertEqual("test")
+      expect(value2).assertEqual("test")
+      expect(value3).assertEqual("test")
+      expect(value1).assertEqual(value2)
+      expect(value2).assertEqual(value3)
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_INSTANCEFIELD_GETVALUE_4100
+     * @tc.name testInstanceFieldGetValue041
+     * @tc.desc Verify getValue reads property with special character name
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testInstanceFieldGetValue041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj = new MyClass041() as Record<string, string>;
+      let cls = Class.from<MyClass041>();
+      let field = cls.getInstanceField("data-value");
+      if (field !== undefined) {
+        let value = field!.getValue(obj) as string;
+        expect(value).assertEqual("special")
+      }
+    });
+  });
+}
