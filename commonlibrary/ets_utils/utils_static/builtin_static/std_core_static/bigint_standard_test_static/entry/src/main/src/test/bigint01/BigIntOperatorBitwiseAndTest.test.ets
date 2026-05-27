@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseAndTest(): void {
   describe('BigInt.operatorBitwiseAnd (mindmap operatorBitwiseAnd)', () => {
@@ -133,7 +132,7 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseAndLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const mask = BigInt(ULONG_MAX_STR);
+      const mask = BigInt('18446744073709551615');
       const huge = BigInt('999999999999999999999999999999');
       expect(huge.operatorBitwiseAnd(mask).toString()).assertEqual('5076944270305263615');
     });
@@ -147,13 +146,13 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseAndLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
-      expect(max.operatorBitwiseAnd(max).toString()).assertEqual(LONG_MAX_STR);
+      expect(max.operatorBitwiseAnd(max).toString()).assertEqual('9223372036854775807');
       expect(min.operatorBitwiseAnd(max).toString()).assertEqual('0');
       expect(max.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
-      expect(min.operatorBitwiseAnd(min).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorBitwiseAnd(min).toString()).assertEqual('-9223372036854775808');
     });
 
     /**
@@ -166,7 +165,7 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      */
     it('testBigIntOperatorBitwiseAndNegativeOperands0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-8).operatorBitwiseAnd(BigInt(-3)).toString()).assertEqual('-8');
-      expect(BigInt(LONG_MIN_STR).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt('-9223372036854775808').operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual('-9223372036854775808');
     });
   });
 }

@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_NEGATED_STR, LONG_MAX_MINUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorDecrementTest(): void {
   describe('BigInt.operatorDecrement (mindmap operatorDecrement)', () => {
@@ -34,8 +33,8 @@ export default function BigIntOperatorDecrementTest(): void {
       expect(v2.operatorDecrement().toString()).assertEqual('0');
       const v3 = BigInt(0);
       expect(v3.operatorDecrement().toString()).assertEqual('-1');
-      expect(BigInt(LONG_MAX_STR).operatorDecrement().toString()).assertEqual(LONG_MAX_MINUS_ONE_STR);
-      expect(BigInt(LONG_MAX_NEGATED_STR).operatorDecrement().toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt('9223372036854775807').operatorDecrement().toString()).assertEqual('9223372036854775806');
+      expect(BigInt('-9223372036854775807').operatorDecrement().toString()).assertEqual('-9223372036854775808');
     });
 
     /**

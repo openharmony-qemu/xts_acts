@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntEquals2Test(): void {
   describe('BigInt.equals(other: Any) overload (mindmap equals_2)', () => {
@@ -71,8 +70,8 @@ export default function BigIntEquals2Test(): void {
       expect(a.equals(undefined)).assertFalse();
       expect(a.equals({})).assertFalse();
       expect(BigInt(0).equals(0)).assertFalse();
-      expect(BigInt(LONG_MAX).equals(LONG_MAX as object)).assertFalse();
-      expect(BigInt(LONG_MIN).equals(LONG_MIN_STR)).assertFalse();
+      expect(BigInt(9223372036854775807).equals(9223372036854775807 as object)).assertFalse();
+      expect(BigInt(-9223372036854775808).equals('-9223372036854775808')).assertFalse();
     });
 
     /**
@@ -136,14 +135,14 @@ export default function BigIntEquals2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntEqualsAnyLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
 
-      expect(max.equals(BigInt(LONG_MAX_STR))).assertTrue();
-      expect(min.equals(BigInt(LONG_MIN_STR))).assertTrue();
-      expect(max.equals(BigInt(LONG_MIN_STR))).assertFalse();
-      expect(min.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
-      expect(max.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
+      expect(max.equals(BigInt('9223372036854775807'))).assertTrue();
+      expect(min.equals(BigInt('-9223372036854775808'))).assertTrue();
+      expect(max.equals(BigInt('-9223372036854775808'))).assertFalse();
+      expect(min.equals(BigInt('9223372036854775808'))).assertFalse();
+      expect(max.equals(BigInt('9223372036854775808'))).assertFalse();
       expect(BigInt(0).equals(new BigInt())).assertTrue();
     });
   });

@@ -15,15 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
-  LOCALE_EN_US,
-  LOCALE_STRING_OPTS_NO_GROUPING,
-  LOCALE_STRING_VALUE_MILLION,
-  TO_STRING_SMALL_NEGATIVE
-} from '../BigIntTestLimits.test';
 
 export default function BigIntToLocaleString1Test(): void {
   describe('BigInt.toLocaleString no-arg (mindmap toLocaleString_1)', () => {
@@ -36,9 +27,9 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Default0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const value = BigInt(LOCALE_STRING_VALUE_MILLION);
+      const value = BigInt(1000000);
 
-      expect(value.toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('1000000');
+      expect(value.toLocaleString('en-US', { useGrouping: false })).assertEqual('1000000');
     });
 
     /**
@@ -50,7 +41,7 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Zero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(0).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('0');
+      expect(BigInt(0).toLocaleString('en-US', { useGrouping: false })).assertEqual('0');
     });
 
     /**
@@ -62,7 +53,7 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Negative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(TO_STRING_SMALL_NEGATIVE).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('-42');
+      expect(BigInt(-42).toLocaleString('en-US', { useGrouping: false })).assertEqual('-42');
     });
 
     /**
@@ -74,8 +65,8 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Large0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING))
-        .assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      expect(BigInt('9007199254740993').toLocaleString('en-US', { useGrouping: false }))
+        .assertEqual('9007199254740993');
     });
 
     /**
@@ -87,8 +78,8 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1LongBounds0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MIN_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual(LONG_MIN_STR);
+      expect(BigInt('9223372036854775807').toLocaleString('en-US', { useGrouping: false })).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775808').toLocaleString('en-US', { useGrouping: false })).assertEqual('-9223372036854775808');
     });
 
     /**
@@ -100,7 +91,7 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1ReturnType0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Class.of(BigInt(0).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING))).assertEqual(Class.from<string>());
+      expect(Class.of(BigInt(0).toLocaleString('en-US', { useGrouping: false }))).assertEqual(Class.from<string>());
     });
   });
 }

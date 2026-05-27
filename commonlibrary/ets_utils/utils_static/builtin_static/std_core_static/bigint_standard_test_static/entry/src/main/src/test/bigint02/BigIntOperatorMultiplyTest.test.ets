@@ -15,14 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  LONG_MAX_NEGATED_STR,
-  LONG_MAX_PLUS_ONE_SQUARED_STR,
-  ULONG_MAX_PLUS_ONE_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorMultiplyTest(): void {
   describe('BigInt.operatorMultiply (mindmap operatorMultiply)', () => {
@@ -115,14 +107,14 @@ export default function BigIntOperatorMultiplyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
       expect(max.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(min.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
-      expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_NEGATED_STR);
-      expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
+      expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
+      expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual('9223372036854775808');
+      expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual('9223372036854775807');
     });
 
     /**
@@ -134,10 +126,10 @@ export default function BigIntOperatorMultiplyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const plusOne = BigInt(LONG_MAX_STR).operatorAdd(BigInt(1));
+      const plusOne = BigInt('9223372036854775807').operatorAdd(BigInt(1));
 
-      expect(plusOne.operatorMultiply(BigInt(2)).toString()).assertEqual(ULONG_MAX_PLUS_ONE_STR);
-      expect(plusOne.operatorMultiply(plusOne).toString()).assertEqual(LONG_MAX_PLUS_ONE_SQUARED_STR);
+      expect(plusOne.operatorMultiply(BigInt(2)).toString()).assertEqual('18446744073709551616');
+      expect(plusOne.operatorMultiply(plusOne).toString()).assertEqual('85070591730234615865843651857942052864');
       expect(BigInt('-999999999999999999999999999999').operatorMultiply(BigInt(2)).toString()).assertEqual('-1999999999999999999999999999998');
     });
   });

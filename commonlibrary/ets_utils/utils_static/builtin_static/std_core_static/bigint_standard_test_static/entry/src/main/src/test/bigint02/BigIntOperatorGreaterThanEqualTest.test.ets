@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MAX_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorGreaterThanEqualTest(): void {
   describe('BigInt.operatorGreaterThanEqual (mindmap)', () => {
@@ -44,9 +43,9 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanEqualBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorGreaterThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorGreaterThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorGreaterThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertTrue();
+      expect(BigInt('9007199254740991').operatorGreaterThanEqual(BigInt('9007199254740991'))).assertTrue();
+      expect(BigInt('9007199254740990').operatorGreaterThanEqual(BigInt('9007199254740991'))).assertFalse();
+      expect(BigInt('9007199254740990').operatorGreaterThanEqual(BigInt('9007199254740990'))).assertTrue();
     });
 
     /**
@@ -110,15 +109,15 @@ export default function BigIntOperatorGreaterThanEqualTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanEqualLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
 
       expect(max.operatorGreaterThanEqual(max)).assertTrue();
       expect(min.operatorGreaterThanEqual(min)).assertTrue();
       expect(max.operatorGreaterThanEqual(min)).assertTrue();
       expect(min.operatorGreaterThanEqual(max)).assertFalse();
-      expect(max.operatorGreaterThanEqual(BigInt(LONG_MAX_MINUS_ONE_STR))).assertTrue();
-      expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorGreaterThanEqual(max)).assertTrue();
+      expect(max.operatorGreaterThanEqual(BigInt('9223372036854775806'))).assertTrue();
+      expect(BigInt('9223372036854775808').operatorGreaterThanEqual(max)).assertTrue();
     });
   });
 }

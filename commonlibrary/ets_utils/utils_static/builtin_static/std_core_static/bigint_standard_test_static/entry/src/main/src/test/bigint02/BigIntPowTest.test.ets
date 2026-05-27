@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntPowTest(): void {
   describe('BigInt.pow (mindmap pow)', () => {
@@ -60,7 +59,7 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(2).pow(new BigInt(64)).toString()).assertEqual(ULONG_MAX_PLUS_ONE_STR);
+        expect(new BigInt(2).pow(new BigInt(64)).toString()).assertEqual('18446744073709551616');
         expect(new BigInt(999999999).pow(new BigInt(2)).toString()).assertEqual('999999998000000001');
     });
 
@@ -117,13 +116,13 @@ export default function BigIntPowTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntPowLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(new BigInt(2).pow(new BigInt(63)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(new BigInt(2).pow(new BigInt(63)).toString()).assertEqual('9223372036854775808');
       expect(new BigInt(-1).pow(new BigInt(63)).toString()).assertEqual('-1');
       expect(new BigInt(0).pow(new BigInt(0)).toString()).assertEqual('1');
-      expect(new BigInt(LONG_MAX).pow(new BigInt(0)).toString()).assertEqual('1');
-      expect(new BigInt(LONG_MAX).pow(new BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
-      expect(new BigInt(LONG_MIN).pow(new BigInt(0)).toString()).assertEqual('1');
-      expect(new BigInt(LONG_MIN).pow(new BigInt(1)).toString()).assertEqual(LONG_MIN_STR);
+      expect(new BigInt(9223372036854775807).pow(new BigInt(0)).toString()).assertEqual('1');
+      expect(new BigInt(9223372036854775807).pow(new BigInt(1)).toString()).assertEqual('9223372036854775807');
+      expect(new BigInt(-9223372036854775808).pow(new BigInt(0)).toString()).assertEqual('1');
+      expect(new BigInt(-9223372036854775808).pow(new BigInt(1)).toString()).assertEqual('-9223372036854775808');
     });
   });
 }

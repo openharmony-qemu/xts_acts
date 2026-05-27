@@ -15,19 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX,
-  LONG_MIN,
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_NEGATED_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
-  DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR,
-  TO_STRING_SMALL_POSITIVE,
-  TO_STRING_MEDIUM_POSITIVE,
-  TO_STRING_SMALL_NEGATIVE,
-  SAMPLE_BYTE_MAGNITUDE
-} from '../BigIntTestLimits.test';
 
 export default function BigIntToString1Test(): void {
   describe('BigInt.toString no-arg (mindmap toString_1)', () => {
@@ -52,8 +39,8 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1Positive0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(TO_STRING_SMALL_POSITIVE).toString()).assertEqual('42');
-      expect(BigInt(TO_STRING_MEDIUM_POSITIVE).toString()).assertEqual('10000');
+      expect(BigInt(42).toString()).assertEqual('42');
+      expect(BigInt(10000).toString()).assertEqual('10000');
       expect(BigInt(1).toString()).assertEqual('1');
     });
 
@@ -67,10 +54,10 @@ export default function BigIntToString1Test(): void {
      */
     it('testBigIntToString1Negative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(-1).toString()).assertEqual('-1');
-      expect(BigInt(TO_STRING_SMALL_NEGATIVE).toString()).assertEqual('-42');
-      expect(BigInt(LONG_MIN).toString()).assertEqual(LONG_MIN_STR);
-      expect(BigInt(LONG_MAX_NEGATED_STR).toString()).assertEqual(LONG_MAX_NEGATED_STR);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR);
+      expect(BigInt(-42).toString()).assertEqual('-42');
+      expect(BigInt(-9223372036854775808).toString()).assertEqual('-9223372036854775808');
+      expect(BigInt('-9223372036854775807').toString()).assertEqual('-9223372036854775807');
+      expect(BigInt('-9007199254740991').toString()).assertEqual('-9007199254740991');
     });
 
     /**
@@ -82,7 +69,7 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1Large0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const huge = DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR;
+      const huge = '9007199254740993';
 
       expect(BigInt(huge).toString()).assertEqual(huge);
     });
@@ -96,8 +83,8 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1LongBounds0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MIN).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(9223372036854775807).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(-9223372036854775808).toString()).assertEqual('-9223372036854775808');
     });
 
     /**
@@ -109,7 +96,7 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1MatchesAsDecimal0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const v = BigInt(SAMPLE_BYTE_MAGNITUDE);
+      const v = BigInt(255);
 
       expect(v.toString()).assertEqual(v.toStringAsDecimal());
       expect(Class.of(v.toString())).assertEqual(Class.from<string>());

@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL } from '../BigIntTestLimits.test';
 
 export default function BigIntDoubleValueTest(): void {
   describe('BigInt.doubleValue (mindmap doubleValue)', () => {
@@ -42,9 +41,9 @@ export default function BigIntDoubleValueTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntDoubleValueSafeInteger0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_VAL);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).doubleValue()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL);
+      expect(BigInt('9007199254740991').doubleValue()).assertEqual(9007199254740991.0);
+      expect(BigInt('9007199254740992').doubleValue()).assertEqual(9007199254740992.0);
+      expect(BigInt('9007199254740993').doubleValue()).assertEqual(9007199254740993.0);
     });
 
     /**
@@ -107,8 +106,8 @@ export default function BigIntDoubleValueTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntDoubleValueLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX).doubleValue()).assertEqual(Long.toDouble(LONG_MAX));
-      expect(BigInt(LONG_MIN).doubleValue()).assertEqual(Long.toDouble(LONG_MIN));
+      expect(BigInt(9223372036854775807).doubleValue()).assertEqual(Long.toDouble(9223372036854775807));
+      expect(BigInt(-9223372036854775808).doubleValue()).assertEqual(Long.toDouble(-9223372036854775808));
       expect(BigInt(0).doubleValue()).assertEqual(0.0);
     });
   });

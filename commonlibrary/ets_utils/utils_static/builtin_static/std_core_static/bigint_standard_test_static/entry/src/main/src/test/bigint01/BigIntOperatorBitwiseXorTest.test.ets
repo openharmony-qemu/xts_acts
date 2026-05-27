@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseXorTest(): void {
   describe('BigInt.operatorBitwiseXor (mindmap operatorBitwiseXor)', () => {
@@ -124,8 +123,8 @@ export default function BigIntOperatorBitwiseXorTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseXorLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
       expect(max.operatorBitwiseXor(max).toString()).assertEqual('0');
       expect(min.operatorBitwiseXor(min).toString()).assertEqual('0');
@@ -135,16 +134,16 @@ export default function BigIntOperatorBitwiseXorTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_XOR_0800
      * @tc.name testBigIntOperatorBitwiseXorNegativeBoundary0800
-     * @tc.desc Mindmap boundary: operatorBitwiseXor at LONG_MIN and negative mask operands
+     * @tc.desc Mindmap boundary: operatorBitwiseXor at -9223372036854775808 and negative mask operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseXorNegativeBoundary0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const min = BigInt(LONG_MIN_STR);
+      const min = BigInt('-9223372036854775808');
 
-      expect(min.operatorBitwiseXor(BigInt(-1)).toString()).assertEqual(LONG_MAX_STR);
-      expect(min.operatorBitwiseXor(BigInt(0)).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorBitwiseXor(BigInt(-1)).toString()).assertEqual('9223372036854775807');
+      expect(min.operatorBitwiseXor(BigInt(0)).toString()).assertEqual('-9223372036854775808');
       expect(BigInt('-999999999999999999999999999999').operatorBitwiseXor(BigInt(-1)).toString()).assertEqual('999999999999999999999999999998');
     });
 
@@ -172,8 +171,8 @@ export default function BigIntOperatorBitwiseXorTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseXorUlongBoundary1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(ULONG_MAX_STR).operatorBitwiseXor(BigInt(1)).toString()).assertEqual('18446744073709551614');
-      expect(BigInt(ULONG_MAX_STR).operatorBitwiseXor(BigInt(ULONG_MAX_STR)).toString()).assertEqual('0');
+      expect(BigInt('18446744073709551615').operatorBitwiseXor(BigInt(1)).toString()).assertEqual('18446744073709551614');
+      expect(BigInt('18446744073709551615').operatorBitwiseXor(BigInt('18446744073709551615')).toString()).assertEqual('0');
     });
   });
 }

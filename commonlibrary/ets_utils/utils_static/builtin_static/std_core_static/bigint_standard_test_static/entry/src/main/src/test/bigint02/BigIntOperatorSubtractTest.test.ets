@@ -15,18 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_NEGATED_STR,
-  LONG_EXTREMA_SPAN_STR,
-  LONG_MAX_MINUS_ONE_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  LONG_MIN_MINUS_ONE_STR,
-  ULONG_MAX_PLUS_TWO_STR,
-  DOUBLE_MAX_SAFE_INTEGER_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorSubtractTest(): void {
   describe('BigInt.operatorSubtract (mindmap operatorSubtract)', () => {
@@ -118,14 +106,14 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorSubtractLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
-      expect(max.operatorSubtract(BigInt(1)).toString()).assertEqual(LONG_MAX_MINUS_ONE_STR);
-      expect(min.operatorSubtract(BigInt(-1)).toString()).assertEqual(LONG_MAX_NEGATED_STR);
+      expect(max.operatorSubtract(BigInt(1)).toString()).assertEqual('9223372036854775806');
+      expect(min.operatorSubtract(BigInt(-1)).toString()).assertEqual('-9223372036854775807');
       expect(max.operatorSubtract(max).toString()).assertEqual('0');
       expect(min.operatorSubtract(min).toString()).assertEqual('0');
-      expect(max.operatorSubtract(min).toString()).assertEqual(LONG_EXTREMA_SPAN_STR);
+      expect(max.operatorSubtract(min).toString()).assertEqual('18446744073709551615');
     });
 
     /**
@@ -137,9 +125,9 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorSubtractBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorSubtract(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MIN_MINUS_ONE_STR).operatorSubtract(BigInt(1)).toString()).assertEqual('-9223372036854775810');
-      expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorSubtract(BigInt(LONG_MIN_MINUS_ONE_STR)).toString()).assertEqual(ULONG_MAX_PLUS_TWO_STR);
+      expect(BigInt('9223372036854775808').operatorSubtract(BigInt(1)).toString()).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775809').operatorSubtract(BigInt(1)).toString()).assertEqual('-9223372036854775810');
+      expect(BigInt('9223372036854775808').operatorSubtract(BigInt('-9223372036854775809')).toString()).assertEqual('18446744073709551617');
     });
 
     /**
@@ -166,8 +154,8 @@ export default function BigIntOperatorSubtractTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorSubtractDoubleSafeInteger0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR).operatorSubtract(BigInt(1)).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_STR);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorSubtract(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR)).toString()).assertEqual('0');
+      expect(BigInt('9007199254740992').operatorSubtract(BigInt(1)).toString()).assertEqual('9007199254740991');
+      expect(BigInt('9007199254740991').operatorSubtract(BigInt('9007199254740991')).toString()).assertEqual('0');
     });
   });
 }

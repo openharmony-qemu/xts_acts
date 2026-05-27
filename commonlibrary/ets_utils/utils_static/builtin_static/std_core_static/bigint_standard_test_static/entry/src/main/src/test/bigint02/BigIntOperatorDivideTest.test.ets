@@ -15,13 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  DOUBLE_MAX_SAFE_INTEGER_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorDivideTest(): void {
   describe('BigInt.operatorDivide (mindmap operatorDivide)', () => {
@@ -122,12 +115,12 @@ export default function BigIntOperatorDivideTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorDivideLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
-      expect(max.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
-      expect(min.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MIN_STR);
-      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(max.operatorDivide(BigInt(1)).toString()).assertEqual('9223372036854775807');
+      expect(min.operatorDivide(BigInt(1)).toString()).assertEqual('-9223372036854775808');
+      expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual('9223372036854775808');
       expect(BigInt(0).operatorDivide(max).toString()).assertEqual('0');
     });
 
@@ -153,8 +146,8 @@ export default function BigIntOperatorDivideTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorDivideDoubleSafeInteger0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370495');
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR).operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370496');
+      expect(BigInt('9007199254740991').operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370495');
+      expect(BigInt('9007199254740992').operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370496');
     });
   });
 }

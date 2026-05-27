@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorAddTest(): void {
   describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
@@ -62,8 +61,8 @@ export default function BigIntOperatorAddTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorAdd(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR)).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorAdd(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR)).toString()).assertEqual('0');
+      expect(BigInt('9007199254740991').operatorAdd(BigInt('9007199254740991')).toString()).assertEqual('18014398509481982');
+      expect(BigInt('9007199254740991').operatorAdd(BigInt('-9007199254740991')).toString()).assertEqual('0');
       expect(BigInt('999999999999999999999999999999').operatorAdd(BigInt(1)).toString()).assertEqual('1000000000000000000000000000000');
     });
 
@@ -144,14 +143,14 @@ export default function BigIntOperatorAddTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
-      expect(max.operatorAdd(BigInt(1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
+      expect(max.operatorAdd(BigInt(1)).toString()).assertEqual('9223372036854775808');
+      expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual('-9223372036854775809');
       expect(max.operatorAdd(min).toString()).assertEqual('-1');
-      expect(BigInt(0).operatorAdd(max).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(0).operatorAdd(min).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(0).operatorAdd(max).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(0).operatorAdd(min).toString()).assertEqual('-9223372036854775808');
     });
   });
 }

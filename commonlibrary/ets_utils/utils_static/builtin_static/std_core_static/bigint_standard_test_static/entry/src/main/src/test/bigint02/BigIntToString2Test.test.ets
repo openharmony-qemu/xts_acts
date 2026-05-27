@@ -15,19 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX,
-  LONG_MIN,
-  LONG_MAX_RADIX16_STR,
-  LONG_MIN_RADIX16_STR,
-  SAMPLE_BYTE_MAGNITUDE,
-  SAMPLE_BYTE_RADIX16_STR,
-  SAMPLE_BYTE_RADIX16_NEGATED_STR,
-  SAMPLE_BYTE_RADIX2_STR,
-  SAMPLE_DECIMAL_MAGNITUDE,
-  SAMPLE_DECIMAL_RADIX2_STR,
-  SAMPLE_DECIMAL_RADIX8_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntToString2Test(): void {
   describe('BigInt.toString(radix int) (mindmap toString_2)', () => {
@@ -40,9 +27,9 @@ export default function BigIntToString2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString2RadixBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(SAMPLE_BYTE_MAGNITUDE).toString(16)).assertEqual(SAMPLE_BYTE_RADIX16_STR);
-      expect(BigInt(SAMPLE_DECIMAL_MAGNITUDE).toString(2)).assertEqual(SAMPLE_DECIMAL_RADIX2_STR);
-      expect(BigInt(SAMPLE_DECIMAL_MAGNITUDE).toString(8)).assertEqual(SAMPLE_DECIMAL_RADIX8_STR);
+      expect(BigInt(255).toString(16)).assertEqual('ff');
+      expect(BigInt(10).toString(2)).assertEqual('1010');
+      expect(BigInt(10).toString(8)).assertEqual('12');
     });
 
     /**
@@ -67,8 +54,8 @@ export default function BigIntToString2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString2Negative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(-SAMPLE_BYTE_MAGNITUDE).toString(16)).assertEqual(SAMPLE_BYTE_RADIX16_NEGATED_STR);
-      expect(BigInt(LONG_MIN).toString(16)).assertEqual('-' + LONG_MIN_RADIX16_STR);
+      expect(BigInt(-255).toString(16)).assertEqual('-ff');
+      expect(BigInt(-9223372036854775808).toString(16)).assertEqual('-' + '8000000000000000');
     });
 
     /**
@@ -80,7 +67,7 @@ export default function BigIntToString2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString2Radix20400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(SAMPLE_BYTE_MAGNITUDE).toString(2)).assertEqual(SAMPLE_BYTE_RADIX2_STR);
+      expect(BigInt(255).toString(2)).assertEqual('11111111');
     });
 
     /**
@@ -92,7 +79,7 @@ export default function BigIntToString2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString2ReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Class.of(BigInt(SAMPLE_DECIMAL_MAGNITUDE).toString(10))).assertEqual(Class.from<string>());
+      expect(Class.of(BigInt(10).toString(10))).assertEqual(Class.from<string>());
     });
 
     /**
@@ -105,10 +92,10 @@ export default function BigIntToString2Test(): void {
      */
     it('testBigIntToString2InvalidArgRadix0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
-        BigInt(SAMPLE_DECIMAL_MAGNITUDE).toString(1);
+        BigInt(10).toString(1);
       }).assertThrowError('RangeError');
       expect((): void => {
-        BigInt(SAMPLE_DECIMAL_MAGNITUDE).toString(37);
+        BigInt(10).toString(37);
       }).assertThrowError('RangeError');
     });
 
@@ -121,11 +108,11 @@ export default function BigIntToString2Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString2LongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
 
-      expect(max.toString(16)).assertEqual(LONG_MAX_RADIX16_STR);
-      expect(min.toString(16)).assertEqual('-' + LONG_MIN_RADIX16_STR);
+      expect(max.toString(16)).assertEqual('7fffffffffffffff');
+      expect(min.toString(16)).assertEqual('-' + '8000000000000000');
       expect(max.toString(2)).assertEqual(max.toStringAsBinary());
     });
   });

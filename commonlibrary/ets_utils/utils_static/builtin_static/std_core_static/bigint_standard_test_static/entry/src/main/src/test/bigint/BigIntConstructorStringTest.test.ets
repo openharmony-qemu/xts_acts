@@ -15,16 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  LONG_MIN_MINUS_ONE_STR,
-  ULONG_MAX_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
-  BIGINT_PARSE_INVALID_MSG,
-  BIGINT_NON_INTEGER_CONVERT_MSG
-} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorStringTest(): void {
   describe('BigInt string constructor (mindmap constructor_7)', () => {
@@ -39,7 +29,7 @@ export default function BigIntConstructorStringTest(): void {
     it('testBigIntConstructorStringDecimalPositive0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('0').toString()).assertEqual('0');
       expect(BigInt('42').toString()).assertEqual('42');
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      expect(BigInt('9007199254740993').toString()).assertEqual('9007199254740993');
     });
 
     /**
@@ -94,7 +84,7 @@ export default function BigIntConstructorStringTest(): void {
     it('testBigIntConstructorStringInvalidArgDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt('abc');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
     });
 
     /**
@@ -157,10 +147,10 @@ export default function BigIntConstructorStringTest(): void {
     it('testBigIntConstructorStringInvalidArgHex0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt('0xGG');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
       expect((): void => {
         BigInt('0b102');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
     });
 
     /**
@@ -174,16 +164,16 @@ export default function BigIntConstructorStringTest(): void {
     it('testBigIntConstructorStringInvalidArgMixedDecimal1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect((): void => {
         BigInt('12abc');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
       expect((): void => {
         BigInt('4 2');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
       expect((): void => {
         BigInt('+ 42');
-      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      }).assertThrow('BigInt.parseFromString(): provided string is invalid');
       expect((): void => {
         BigInt('1.5');
-      }).assertThrow(BIGINT_NON_INTEGER_CONVERT_MSG);
+      }).assertThrow("Can't convert number 1.5 to BigInt because it's not an integer");
     });
 
     /**
@@ -195,11 +185,11 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringLongBounds1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX_STR).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MIN_STR).toString()).assertEqual(LONG_MIN_STR);
-      expect(BigInt('+' + LONG_MAX_STR).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MAX_PLUS_ONE_STR).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(BigInt(LONG_MIN_MINUS_ONE_STR).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
+      expect(BigInt('9223372036854775807').toString()).assertEqual('9223372036854775807');
+      expect(BigInt('-9223372036854775808').toString()).assertEqual('-9223372036854775808');
+      expect(BigInt('+9223372036854775807').toString()).assertEqual('9223372036854775807');
+      expect(BigInt('9223372036854775808').toString()).assertEqual('9223372036854775808');
+      expect(BigInt('-9223372036854775809').toString()).assertEqual('-9223372036854775809');
     });
 
     /**
@@ -211,8 +201,8 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringULongMax1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(ULONG_MAX_STR).toString()).assertEqual(ULONG_MAX_STR);
-      expect(BigInt(ULONG_MAX_STR).equals(BigInt.fromULong(-1))).assertTrue();
+      expect(BigInt('18446744073709551615').toString()).assertEqual('18446744073709551615');
+      expect(BigInt('18446744073709551615').equals(BigInt.fromULong(-1))).assertTrue();
     });
   });
 }

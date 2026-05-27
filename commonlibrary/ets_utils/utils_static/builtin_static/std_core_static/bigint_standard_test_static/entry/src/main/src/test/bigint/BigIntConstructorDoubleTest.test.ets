@@ -15,21 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MIN_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  LONG_MAX_AS_DOUBLE,
-  LONG_MIN_AS_DOUBLE,
-  NUMBER_MAX_VALUE_STR,
-  DOUBLE_MAX_SAFE_INTEGER_VAL,
-  DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL,
-  DOUBLE_MAX_SAFE_INTEGER_STR,
-  DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {
@@ -82,8 +67,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleSafeInteger0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_STR);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR);
+      expect(BigInt(9007199254740991.0).toString()).assertEqual('9007199254740991');
+      expect(BigInt(-9007199254740991.0).toString()).assertEqual('-9007199254740991');
     });
 
     /**
@@ -112,8 +97,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleBeyondSafeInteger0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR);
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR);
+      expect(BigInt(9007199254740992.0).toString()).assertEqual('9007199254740992');
+      expect(BigInt(-9007199254740992.0).toString()).assertEqual('-9007199254740992');
     });
 
     /**
@@ -125,8 +110,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleMaxValue0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(Number.MAX_VALUE).toString()).assertEqual(NUMBER_MAX_VALUE_STR);
-      expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + NUMBER_MAX_VALUE_STR);
+      expect(BigInt(Number.MAX_VALUE).toString()).assertEqual('179769313486231570814527423731704356798070567525844996598917476803157260780'+ '028538760589558632766878171540458953514382464234321326889464182768467546703'+ '537516986049910576551282076245490090389328944075868508455133942304583236903'+ '222948165808559332123348274797826204144723168738177180919299881250404026184'+ '124858368');
+      expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + '179769313486231570814527423731704356798070567525844996598917476803157260780'+ '028538760589558632766878171540458953514382464234321326889464182768467546703'+ '537516986049910576551282076245490090389328944075868508455133942304583236903'+ '222948165808559332123348274797826204144723168738177180919299881250404026184'+ '124858368');
     });
 
     /**
@@ -188,14 +173,14 @@ export default function BigIntConstructorDoubleTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_DOUBLE_1200
      * @tc.name testBigIntConstructorDoubleLongBounds1200
-     * @tc.desc Verify double constructor at long extrema follows IEEE 754 rounding (LONG_MAX rounds up)
+     * @tc.desc Verify double constructor at long extrema follows IEEE 754 rounding (9223372036854775807 rounds up)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleLongBounds1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX_AS_DOUBLE).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(BigInt(LONG_MIN_AS_DOUBLE).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(9223372036854775808.0).toString()).assertEqual('9223372036854775808');
+      expect(BigInt(-9223372036854775808.0).toString()).assertEqual('-9223372036854775808');
     });
   });
 }

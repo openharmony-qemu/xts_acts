@@ -15,8 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, ULONG_MAX_PLUS_TWO_STR } from '../BigIntTestLimits.test';
-
 import Utils from '../Util.test';
 
 export default function BigIntGetULongTest(): void {
@@ -44,9 +42,9 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongNegativeAsUnsigned0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Utils.ulongRoundTrip(BigInt(-1))).assertEqual(ULONG_MAX_STR);
+      expect(Utils.ulongRoundTrip(BigInt(-1))).assertEqual('18446744073709551615');
       expect(Utils.ulongRoundTrip(BigInt(-42))).assertEqual('18446744073709551574');
-      expect(Utils.ulongRoundTrip(BigInt(LONG_MIN_STR))).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(Utils.ulongRoundTrip(BigInt('-9223372036854775808'))).assertEqual('9223372036854775808');
     });
 
     /**
@@ -58,8 +56,8 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongLargePositive0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Utils.ulongRoundTrip(BigInt(LONG_MAX_PLUS_ONE_STR))).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(Utils.ulongRoundTrip(BigInt(ULONG_MAX_STR))).assertEqual(ULONG_MAX_STR);
+      expect(Utils.ulongRoundTrip(BigInt('9223372036854775808'))).assertEqual('9223372036854775808');
+      expect(Utils.ulongRoundTrip(BigInt('18446744073709551615'))).assertEqual('18446744073709551615');
     });
 
     /**
@@ -71,8 +69,8 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongOverflowWrap0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(Utils.ulongRoundTrip(BigInt(ULONG_MAX_PLUS_ONE_STR))).assertEqual('0');
-      expect(Utils.ulongRoundTrip(BigInt(ULONG_MAX_PLUS_TWO_STR))).assertEqual('1');
+      expect(Utils.ulongRoundTrip(BigInt('18446744073709551616'))).assertEqual('0');
+      expect(Utils.ulongRoundTrip(BigInt('18446744073709551617'))).assertEqual('1');
     });
 
     /**
@@ -84,7 +82,7 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongFromULongSymmetry0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const original = BigInt(ULONG_MAX_STR);
+      const original = BigInt('18446744073709551615');
       const restored = BigInt.fromULong(original.getULong());
 
       expect(restored.equals(original)).assertTrue();
@@ -124,8 +122,8 @@ export default function BigIntGetULongTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntGetULongSignedLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX).getULong()).assertEqual(LONG_MAX);
-      expect(Utils.ulongRoundTrip(BigInt(LONG_MIN_STR))).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(9223372036854775807).getULong()).assertEqual(9223372036854775807);
+      expect(Utils.ulongRoundTrip(BigInt('-9223372036854775808'))).assertEqual('9223372036854775808');
     });
   });
 }

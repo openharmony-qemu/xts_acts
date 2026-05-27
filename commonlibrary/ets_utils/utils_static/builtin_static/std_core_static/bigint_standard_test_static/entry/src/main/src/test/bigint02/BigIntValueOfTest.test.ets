@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntValueOfTest(): void {
   describe('BigInt.valueOf (mindmap valueOf)', () => {
@@ -70,10 +69,10 @@ export default function BigIntValueOfTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntValueOfLarge0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const huge = BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      const huge = BigInt('9007199254740993');
 
       expect(huge.valueOf().equals(huge)).assertTrue();
-      expect(huge.valueOf().toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      expect(huge.valueOf().toString()).assertEqual('9007199254740993');
     });
 
     /**
@@ -100,12 +99,12 @@ export default function BigIntValueOfTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntValueOfLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
       const zero = BigInt(0);
 
-      expect(max.valueOf().toString()).assertEqual(LONG_MAX_STR);
-      expect(min.valueOf().toString()).assertEqual(LONG_MIN_STR);
+      expect(max.valueOf().toString()).assertEqual('9223372036854775807');
+      expect(min.valueOf().toString()).assertEqual('-9223372036854775808');
       expect(zero.valueOf().equals(zero)).assertTrue();
       expect(max.valueOf().equals(min)).assertFalse();
     });

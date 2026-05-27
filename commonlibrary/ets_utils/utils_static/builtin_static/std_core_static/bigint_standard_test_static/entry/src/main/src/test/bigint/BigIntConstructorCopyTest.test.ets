@@ -15,15 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX,
-  LONG_MIN,
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  ULONG_MAX_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR,
-  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR
-} from '../BigIntTestLimits.test';
 
 function assertBigIntCopyPreservesValue(source: BigInt): void {
   expect(BigInt(source).equals(source)).assertTrue();
@@ -54,58 +45,58 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLargeString0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      assertBigIntCopyPreservesValue(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR));
+      assertBigIntCopyPreservesValue(BigInt('9007199254740993'));
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0300
      * @tc.name testBigIntConstructorCopyLongMaxIntegral0300
-     * @tc.desc Mindmap input: copy LONG_MAX from long integral overload
+     * @tc.desc Mindmap input: copy 9223372036854775807 from long integral overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLongMaxIntegral0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      assertBigIntCopyPreservesValue(BigInt(LONG_MAX));
+      assertBigIntCopyPreservesValue(BigInt(9223372036854775807));
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0400
      * @tc.name testBigIntConstructorCopyLongMinString0400
-     * @tc.desc Mindmap input: copy LONG_MIN from decimal string overload
+     * @tc.desc Mindmap input: copy -9223372036854775808 from decimal string overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLongMinString0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      assertBigIntCopyPreservesValue(BigInt(LONG_MIN_STR));
+      assertBigIntCopyPreservesValue(BigInt('-9223372036854775808'));
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0500
      * @tc.name testBigIntConstructorCopyLongMinIntegral0500
-     * @tc.desc Mindmap input: copy LONG_MIN from long integral overload
+     * @tc.desc Mindmap input: copy -9223372036854775808 from long integral overload
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLongMinIntegral0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      assertBigIntCopyPreservesValue(BigInt(LONG_MIN));
+      assertBigIntCopyPreservesValue(BigInt(-9223372036854775808));
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_COPY_0600
      * @tc.name testBigIntConstructorCopyMaxLong0600
-     * @tc.desc Mindmap input: copy LONG_MAX string preserves decimal form
+     * @tc.desc Mindmap input: copy 9223372036854775807 string preserves decimal form
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyMaxLong0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxLong = BigInt(LONG_MAX_STR);
+      const maxLong = BigInt('9223372036854775807');
 
       assertBigIntCopyPreservesValue(maxLong);
-      expect(maxLong.toString()).assertEqual(LONG_MAX_STR);
+      expect(maxLong.toString()).assertEqual('9223372036854775807');
     });
 
     /**
@@ -117,7 +108,7 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyBeyondSafeInteger0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      assertBigIntCopyPreservesValue(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR));
+      assertBigIntCopyPreservesValue(BigInt('9007199254740992'));
     });
 
     /**
@@ -163,10 +154,10 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyLongMinULongMax1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const umax = BigInt(ULONG_MAX_STR);
+      const umax = BigInt('18446744073709551615');
 
       assertBigIntCopyPreservesValue(umax);
-      expect(BigInt(umax).toString()).assertEqual(ULONG_MAX_STR);
+      expect(BigInt(umax).toString()).assertEqual('18446744073709551615');
     });
 
     /**
@@ -178,13 +169,13 @@ export default function BigIntConstructorCopyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorCopyNested1100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const source = BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      const source = BigInt('9007199254740993');
       const once = BigInt(source);
       const twice = BigInt(once);
 
       expect(twice.equals(source)).assertTrue();
       expect(BigInt(twice).equals(once)).assertTrue();
-      expect(twice.toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      expect(twice.toString()).assertEqual('9007199254740993');
     });
   });
 }

@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntTypeAliasTest(): void {
   describe('bigint type alias (mindmap bigint)', () => {
@@ -65,12 +64,12 @@ export default function BigIntTypeAliasTest(): void {
       const fromByte: bigint = BigInt(127 as byte);
       const fromShort: bigint = BigInt(32767 as short);
       const fromInt: bigint = BigInt(2147483647);
-      const fromLong: bigint = BigInt(LONG_MAX);
+      const fromLong: bigint = BigInt(9223372036854775807);
 
       expect(fromByte.toString()).assertEqual('127');
       expect(fromShort.toString()).assertEqual('32767');
       expect(fromInt.toString()).assertEqual('2147483647');
-      expect(fromLong.toString()).assertEqual(LONG_MAX_STR);
+      expect(fromLong.toString()).assertEqual('9223372036854775807');
     });
 
     /**
@@ -82,11 +81,11 @@ export default function BigIntTypeAliasTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntTypeAliasStringBoolean0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const fromStr: bigint = BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      const fromStr: bigint = BigInt('9007199254740993');
       const fromTrue: bigint = BigInt(true);
       const fromFalse: bigint = BigInt(false);
 
-      expect(fromStr.toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
+      expect(fromStr.toString()).assertEqual('9007199254740993');
       expect(fromTrue.toString()).assertEqual('1');
       expect(fromFalse.toString()).assertEqual('0');
     });

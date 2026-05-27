@@ -15,15 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import {
-  LONG_MAX,
-  LONG_MIN,
-  LONG_MAX_STR,
-  LONG_MIN_STR,
-  LONG_MAX_PLUS_ONE_STR,
-  LONG_MIN_MINUS_ONE_STR,
-  LONG_MAX_TIMES_PLUS_ONE_STR
-} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorIntegralTest(): void {
   describe('BigInt integral constructor (mindmap constructor_2~5)', () => {
@@ -140,11 +131,11 @@ export default function BigIntConstructorIntegralTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorIntegralLongBoundary0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxLong: long = LONG_MAX;
-      const minLong: long = LONG_MIN;
+      const maxLong: long = 9223372036854775807;
+      const minLong: long = -9223372036854775808;
 
-      expect(BigInt(maxLong).toString()).assertEqual(LONG_MAX_STR);
-      expect(BigInt(minLong).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(maxLong).toString()).assertEqual('9223372036854775807');
+      expect(BigInt(minLong).toString()).assertEqual('-9223372036854775808');
     });
 
     /**
@@ -174,16 +165,16 @@ export default function BigIntConstructorIntegralTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorIntegralBeyondLongRange0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxLongValue = BigInt(LONG_MAX);
-      const minLongValue = BigInt(LONG_MIN);
+      const maxLongValue = BigInt(9223372036854775807);
+      const minLongValue = BigInt(-9223372036854775808);
 
-      expect(maxLongValue.toString()).assertEqual(LONG_MAX_STR);
-      expect(minLongValue.toString()).assertEqual(LONG_MIN_STR);
-      expect(maxLongValue.operatorAdd(BigInt(1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(minLongValue.operatorSubtract(BigInt(1)).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);
+      expect(maxLongValue.toString()).assertEqual('9223372036854775807');
+      expect(minLongValue.toString()).assertEqual('-9223372036854775808');
+      expect(maxLongValue.operatorAdd(BigInt(1)).toString()).assertEqual('9223372036854775808');
+      expect(minLongValue.operatorSubtract(BigInt(1)).toString()).assertEqual('-9223372036854775809');
       const plusOne = maxLongValue.operatorAdd(BigInt(1));
 
-      expect(maxLongValue.operatorMultiply(plusOne).toString()).assertEqual(LONG_MAX_TIMES_PLUS_ONE_STR);
+      expect(maxLongValue.operatorMultiply(plusOne).toString()).assertEqual('85070591730234615856620279821087277056');
     });
   });
 }

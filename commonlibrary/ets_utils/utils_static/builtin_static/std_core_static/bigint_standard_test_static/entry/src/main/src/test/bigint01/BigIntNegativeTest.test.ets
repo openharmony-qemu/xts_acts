@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_NEGATED, ULONG_MAX_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntNegativeTest(): void {
   describe('BigInt.negative (mindmap negative)', () => {
@@ -44,8 +43,8 @@ export default function BigIntNegativeTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntNegativeBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(LONG_MAX).negative()).assertFalse();
-      expect(BigInt(LONG_MIN).negative()).assertTrue();
+      expect(BigInt(9223372036854775807).negative()).assertFalse();
+      expect(BigInt(-9223372036854775808).negative()).assertTrue();
     });
 
     /**
@@ -103,10 +102,10 @@ export default function BigIntNegativeTest(): void {
      */
     it('testBigIntNegativeFromULong0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt.fromULong(0).negative()).assertFalse();
-      expect(BigInt.fromULong(LONG_MAX).negative()).assertFalse();
+      expect(BigInt.fromULong(9223372036854775807).negative()).assertFalse();
       expect(BigInt.fromULong(-1).negative()).assertFalse();
-      expect(BigInt(ULONG_MAX_STR).negative()).assertFalse();
-      expect(BigInt(LONG_MAX_NEGATED).negative()).assertTrue();
+      expect(BigInt('18446744073709551615').negative()).assertFalse();
+      expect(BigInt(-9223372036854775807).negative()).assertTrue();
     });
 
     /**

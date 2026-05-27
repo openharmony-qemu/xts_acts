@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseNotTest(): void {
   describe('BigInt.operatorBitwiseNot (mindmap operatorBitwiseNot)', () => {
@@ -98,11 +97,11 @@ export default function BigIntOperatorBitwiseNotTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseNotLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(9223372036854775807);
+      const min = BigInt(-9223372036854775808);
 
-      expect(max.operatorBitwiseNot().toString()).assertEqual(LONG_MIN_STR);
-      expect(min.operatorBitwiseNot().toString()).assertEqual(LONG_MAX_STR);
+      expect(max.operatorBitwiseNot().toString()).assertEqual('-9223372036854775808');
+      expect(min.operatorBitwiseNot().toString()).assertEqual('9223372036854775807');
       expect(BigInt(0).operatorBitwiseNot().toString()).assertEqual('-1');
     });
   });

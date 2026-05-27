@@ -15,7 +15,6 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseOrTest(): void {
   describe('BigInt.operatorBitwiseOr (mindmap operatorBitwiseOr)', () => {
@@ -124,7 +123,7 @@ export default function BigIntOperatorBitwiseOrTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(ULONG_MAX_STR).operatorBitwiseOr(BigInt(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual(POW2_65_MINUS_ONE_STR);
+      expect(BigInt('18446744073709551615').operatorBitwiseOr(BigInt('18446744073709551616')).toString()).assertEqual('36893488147419103231');
     });
 
     /**
@@ -136,10 +135,10 @@ export default function BigIntOperatorBitwiseOrTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX_STR);
-      const min = BigInt(LONG_MIN_STR);
+      const max = BigInt('9223372036854775807');
+      const min = BigInt('-9223372036854775808');
 
-      expect(max.operatorBitwiseOr(BigInt(0)).toString()).assertEqual(LONG_MAX_STR);
+      expect(max.operatorBitwiseOr(BigInt(0)).toString()).assertEqual('9223372036854775807');
       expect(min.operatorBitwiseOr(max).toString()).assertEqual('-1');
       expect(max.operatorBitwiseOr(min).toString()).assertEqual('-1');
     });
@@ -147,17 +146,17 @@ export default function BigIntOperatorBitwiseOrTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_BITWISE_OR_0900
      * @tc.name testBigIntOperatorBitwiseOrNegativeBoundary0900
-     * @tc.desc Mindmap boundary: operatorBitwiseOr at LONG_MIN and negative mask operands
+     * @tc.desc Mindmap boundary: operatorBitwiseOr at -9223372036854775808 and negative mask operands
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrNegativeBoundary0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const min = BigInt(LONG_MIN_STR);
+      const min = BigInt('-9223372036854775808');
 
-      expect(min.operatorBitwiseOr(BigInt(0)).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorBitwiseOr(BigInt(0)).toString()).assertEqual('-9223372036854775808');
       expect(min.operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
-      expect(min.operatorBitwiseOr(min).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorBitwiseOr(min).toString()).assertEqual('-9223372036854775808');
       expect(BigInt('-999999999999999999999999999999').operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
     });
   });
