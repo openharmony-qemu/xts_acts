@@ -18,7 +18,9 @@ group("std_core_static") {
   if (is_standard_system) {
     deps = [
         "enum_standard_test_static:ActsEnumStaticTest",
+        "reflect_standard_test_static:ActsReflectStaticTest",
         "runtimelinker_standard_test_static:ActsRuntimeLinkerStaticTest",
+        
     ]
   }
 }
