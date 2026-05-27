@@ -15,22 +15,38 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, UINT32_MAX_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX,
+  LONG_MIN,
+  LONG_MAX_STR,
+  LONG_MAX_PLUS_ONE_STR,
+  UINT32_MAX_STR,
+  UINT32_MAX_PLUS_ONE_STR,
+  ULONG_MAX_STR,
+  ULONG_MAX_PLUS_ONE_STR,
+  INT8_MAX,
+  INT8_MIN,
+  UINT8_MAX,
+  UINT8_OVERFLOW,
+  UINT16_MAX,
+  UINT16_OVERFLOW,
+  POW2_EXPONENT_100
+} from '../BigIntTestLimits';
 import Utils from '../Util.test';
 
 export default function BigIntAsUintNTest(): void {
   describe('BigInt.asUintN (mindmap asUintN)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_0100
-     * @tc.name testBigIntAsUintN8And32Bit0100
-     * @tc.desc Verify 8-bit and 32-bit unsigned truncation via BigInt.asUintN
+     * @tc.name testBigIntAsUintN8Bit0100
+     * @tc.desc Verify 8-bit unsigned truncation via BigInt.asUintN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintN8And32Bit0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asUintN(8, Utils.biInt(127)).toString()).assertEqual('127');
-      expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual(UINT32_MAX_STR);
+    it('testBigIntAsUintN8Bit0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt.asUintN(8, Utils.biInt(INT8_MAX)).toString()).assertEqual('127');
+      expect(BigInt.asUintN(8, Utils.biInt(UINT8_MAX)).toString()).assertEqual('255');
     });
 
     /**
@@ -58,12 +74,12 @@ export default function BigIntAsUintNTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsUintN8BitBoundary0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asUintN(8, Utils.biInt(255)).toString()).assertEqual('255');
-      expect(BigInt.asUintN(8, Utils.biInt(256)).toString()).assertEqual('0');
-      expect(BigInt.asUintN(8, Utils.biInt(257)).toString()).assertEqual('1');
+      expect(BigInt.asUintN(8, Utils.biInt(UINT8_MAX)).toString()).assertEqual('255');
+      expect(BigInt.asUintN(8, Utils.biInt(UINT8_OVERFLOW)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(8, Utils.biInt(UINT8_OVERFLOW + 1)).toString()).assertEqual('1');
       expect(BigInt.asUintN(8, Utils.biInt(-1)).toString()).assertEqual('255');
-      expect(BigInt.asUintN(8, Utils.biInt(-128)).toString()).assertEqual('128');
-      expect(BigInt.asUintN(8, Utils.biInt(-256)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(8, Utils.biInt(INT8_MIN)).toString()).assertEqual('128');
+      expect(BigInt.asUintN(8, Utils.biInt(-UINT8_OVERFLOW)).toString()).assertEqual('0');
     });
 
     /**
@@ -75,10 +91,10 @@ export default function BigIntAsUintNTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntAsUintNMultiWidthMax0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt.asUintN(16, Utils.biInt(65535)).toString()).assertEqual('65535');
-      expect(BigInt.asUintN(16, Utils.biInt(65536)).toString()).assertEqual('0');
+      expect(BigInt.asUintN(16, Utils.biInt(UINT16_MAX)).toString()).assertEqual('65535');
+      expect(BigInt.asUintN(16, Utils.biInt(UINT16_OVERFLOW)).toString()).assertEqual('0');
       expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_STR)).toString()).assertEqual(UINT32_MAX_STR);
-      expect(BigInt.asUintN(32, Utils.biStr('4294967296')).toString()).assertEqual('0');
+      expect(BigInt.asUintN(32, Utils.biStr(UINT32_MAX_PLUS_ONE_STR)).toString()).assertEqual('0');
       expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_STR)).toString()).assertEqual(ULONG_MAX_STR);
       expect(BigInt.asUintN(64, Utils.biStr(ULONG_MAX_PLUS_ONE_STR)).toString()).assertEqual('0');
     });
@@ -127,7 +143,9 @@ export default function BigIntAsUintNTest(): void {
 
       expect(u.toString()).assertEqual('200');
       expect(s.toString()).assertEqual('-56');
-      expect(BigInt.asUintN(8, Utils.biInt(127)).equals(BigInt.asIntN(8, Utils.biInt(127)))).assertTrue();
+      expect(BigInt.asUintN(8, Utils.biInt(INT8_MAX)).equals(BigInt.asIntN(8, Utils.biInt(INT8_MAX)))).assertTrue();
+      expect(BigInt.asUintN(16, Utils.biInt(-1)).toString()).assertEqual('65535');
+      expect(BigInt.asIntN(16, Utils.biInt(-1)).toString()).assertEqual('-1');
     });
 
     /**
@@ -140,8 +158,8 @@ export default function BigIntAsUintNTest(): void {
      */
     it('testBigIntAsUintNModEquivalence0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const masked = BigInt.asUintN(8, Utils.biInt(300));
-      const mod256 = Utils.biInt(300).operatorModule(Utils.biInt(256));
-      const alt = mod256.operatorLessThan(Utils.biInt(0)) ? mod256.operatorAdd(Utils.biInt(256)) : mod256;
+      const mod256 = Utils.biInt(300).operatorModule(Utils.biInt(UINT8_OVERFLOW));
+      const alt = mod256.operatorLessThan(Utils.biInt(0)) ? mod256.operatorAdd(Utils.biInt(UINT8_OVERFLOW)) : mod256;
 
       expect(masked.equals(alt)).assertTrue();
       expect(masked.toString()).assertEqual('44');
@@ -165,14 +183,14 @@ export default function BigIntAsUintNTest(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_ASUINTN_1000
-     * @tc.name testBigIntAsUintNLargeExponent1000
+     * @tc.name testBigIntAsUintNLargeBits1000
      * @tc.desc Verify 64-bit asUintN truncates 2^100 to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntAsUintNLargeExponent1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const p100 = Utils.biInt(2).pow(Utils.biInt(100));
+    it('testBigIntAsUintNLargeBits1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const p100 = Utils.biInt(2).pow(Utils.biInt(POW2_EXPONENT_100));
 
       expect(BigInt.asUintN(64, p100).toString()).assertEqual('0');
     });

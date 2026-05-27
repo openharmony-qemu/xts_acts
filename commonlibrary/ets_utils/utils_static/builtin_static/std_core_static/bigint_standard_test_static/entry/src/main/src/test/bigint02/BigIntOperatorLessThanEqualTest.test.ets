@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MAX_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorLessThanEqualTest(): void {
   describe('BigInt.operatorLessThanEqual (mindmap)', () => {
@@ -28,24 +28,25 @@ export default function BigIntOperatorLessThanEqualTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanEqualBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(10).operatorLessThanEqual(new BigInt(10))).assertTrue();
-        expect(new BigInt(5).operatorLessThanEqual(new BigInt(10))).assertTrue();
-        expect(new BigInt(10).operatorLessThanEqual(new BigInt(5))).assertFalse();
-        expect(new BigInt(-5).operatorLessThanEqual(new BigInt(-10))).assertFalse();
-        expect(new BigInt(0).operatorLessThanEqual(new BigInt(0))).assertTrue();
+      expect(BigInt(10).operatorLessThanEqual(BigInt(10))).assertTrue();
+      expect(BigInt(5).operatorLessThanEqual(BigInt(10))).assertTrue();
+      expect(BigInt(10).operatorLessThanEqual(BigInt(5))).assertFalse();
+      expect(BigInt(-5).operatorLessThanEqual(BigInt(-10))).assertFalse();
+      expect(BigInt(0).operatorLessThanEqual(BigInt(0))).assertTrue();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LTE_0200
      * @tc.name testBigIntOperatorLessThanEqualBoundary0200
-     * @tc.desc Mindmap input: operatorLessThanEqual near MAX_SAFE_INTEGER
+     * @tc.desc Mindmap input: operatorLessThanEqual near double safe-integer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanEqualBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThanEqual(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorLessThanEqual(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorLessThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThanEqual(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertFalse();
     });
 
     /**
@@ -116,6 +117,8 @@ export default function BigIntOperatorLessThanEqualTest(): void {
       expect(min.operatorLessThanEqual(min)).assertTrue();
       expect(min.operatorLessThanEqual(max)).assertTrue();
       expect(max.operatorLessThanEqual(min)).assertFalse();
+      expect(max.operatorLessThanEqual(BigInt(LONG_MAX_MINUS_ONE_STR))).assertFalse();
+      expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorLessThanEqual(max)).assertFalse();
     });
   });
 }

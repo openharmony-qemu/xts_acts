@@ -15,6 +15,24 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
+import {
+  PERF_BASE_TWO,
+  PERF_ONE,
+  PERF_POW2_EXP_512,
+  PERF_POW2_EXP_1023,
+  PERF_POW2_EXP_1024,
+  PERF_POW2_EXP_1025,
+  PERF_POW2_EXP_2047,
+  PERF_POW2_EXP_2048,
+  PERF_POW2_EXP_64,
+  PERF_BATCH_ADD_ONE_64,
+  PERF_BATCH_MULT_BY_TWO_64,
+  PERF_DEC_LEN_POW2_1024,
+  PERF_DEC_LEN_POW2_2048,
+  perfBatchAddOne,
+  perfBatchMultiplyByTwo,
+  perfPow2
+} from '../BigIntPerformanceLimits';
 
 export default function BigIntPerformanceTest(): void {
   describe('BigInt large-integer performance scenarios', () => {
@@ -27,12 +45,12 @@ export default function BigIntPerformanceTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformancePow1024Bits0100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const p1024 = BigInt(2).pow(BigInt(1024));
-      const p1023 = BigInt(2).pow(BigInt(1023));
+      const p1024 = perfPow2(PERF_POW2_EXP_1024);
+      const p1023 = perfPow2(PERF_POW2_EXP_1023);
 
-      expect(p1024.toString().length).assertEqual(309);
+      expect(p1024.toString().length).assertEqual(PERF_DEC_LEN_POW2_1024);
       expect(p1024.operatorGreaterThan(p1023)).assertTrue();
-      expect(p1024.operatorMultiply(BigInt(2)).equals(BigInt(2).pow(BigInt(1025)))).assertTrue();
+      expect(p1024.operatorMultiply(BigInt(PERF_BASE_TWO)).equals(perfPow2(PERF_POW2_EXP_1025))).assertTrue();
     });
 
     /**
@@ -44,10 +62,10 @@ export default function BigIntPerformanceTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformancePow2048Bits0200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const p2048 = BigInt(2).pow(BigInt(2048));
-      const p2047 = BigInt(2).pow(BigInt(2047));
+      const p2048 = perfPow2(PERF_POW2_EXP_2048);
+      const p2047 = perfPow2(PERF_POW2_EXP_2047);
 
-      expect(p2048.toString().length).assertEqual(617);
+      expect(p2048.toString().length).assertEqual(PERF_DEC_LEN_POW2_2048);
       expect(p2048.operatorGreaterThan(p2047)).assertTrue();
     });
 
@@ -60,8 +78,8 @@ export default function BigIntPerformanceTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceMultiply1024Bits0300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const expected = BigInt(2).pow(BigInt(1024));
-      const half = BigInt(2).pow(BigInt(512));
+      const expected = perfPow2(PERF_POW2_EXP_1024);
+      const half = perfPow2(PERF_POW2_EXP_512);
       const product = half.operatorMultiply(half);
 
       expect(product.equals(expected)).assertTrue();
@@ -76,12 +94,8 @@ export default function BigIntPerformanceTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceBatchMultiply0400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const expected = BigInt(2).pow(BigInt(64));
-      let acc = BigInt(1);
-      const two = BigInt(2);
-      for (let i = 0; i < 64; i++) {
-        acc = acc.operatorMultiply(two);
-      }
+      const expected = perfPow2(PERF_POW2_EXP_64);
+      const acc = perfBatchMultiplyByTwo(PERF_BATCH_MULT_BY_TWO_64);
 
       expect(acc.equals(expected)).assertTrue();
     });
@@ -95,14 +109,10 @@ export default function BigIntPerformanceTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceBatchAdd0500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const base = BigInt(2).pow(BigInt(1024));
-      const one = BigInt(1);
-      let acc = base;
-      for (let i = 0; i < 64; i++) {
-        acc = acc.operatorAdd(one);
-      }
+      const base = perfPow2(PERF_POW2_EXP_1024);
+      const acc = perfBatchAddOne(base, PERF_BATCH_ADD_ONE_64);
 
-      expect(acc.toString().length).assertEqual(309);
+      expect(acc.toString().length).assertEqual(PERF_DEC_LEN_POW2_1024);
       expect(acc.operatorGreaterThan(base)).assertTrue();
     });
   });

@@ -28,26 +28,27 @@ export default function BigIntOperatorGreaterThanTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(100).operatorGreaterThan(new BigInt(50))).assertTrue();
-        expect(new BigInt(5).operatorGreaterThan(new BigInt(3))).assertTrue();
-        expect(new BigInt(10).operatorGreaterThan(new BigInt(-10))).assertTrue();
-        expect(new BigInt(-3).operatorGreaterThan(new BigInt(-10))).assertTrue();
-        expect(new BigInt(-10).operatorGreaterThan(new BigInt(-3))).assertFalse();
-        expect(new BigInt(0).operatorGreaterThan(new BigInt(0))).assertFalse();
-        expect(new BigInt(42).operatorGreaterThan(new BigInt(42))).assertFalse();
+      expect(BigInt(100).operatorGreaterThan(BigInt(50))).assertTrue();
+      expect(BigInt(5).operatorGreaterThan(BigInt(3))).assertTrue();
+      expect(BigInt(10).operatorGreaterThan(BigInt(-10))).assertTrue();
+      expect(BigInt(-3).operatorGreaterThan(BigInt(-10))).assertTrue();
+      expect(BigInt(-10).operatorGreaterThan(BigInt(-3))).assertFalse();
+      expect(BigInt(0).operatorGreaterThan(BigInt(0))).assertFalse();
+      expect(BigInt(42).operatorGreaterThan(BigInt(42))).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_GT_0200
      * @tc.name testBigIntOperatorGreaterThanBoundary0200
-     * @tc.desc Mindmap input: operatorGreaterThan near MAX_SAFE_INTEGER
+     * @tc.desc Mindmap input: operatorGreaterThan near double safe-integer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorGreaterThanBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorGreaterThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertTrue();
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorGreaterThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorGreaterThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorGreaterThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorGreaterThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
     });
 
     /**
@@ -118,6 +119,7 @@ export default function BigIntOperatorGreaterThanTest(): void {
       expect(min.operatorGreaterThan(max)).assertFalse();
       expect(max.operatorGreaterThan(BigInt(LONG_MAX_MINUS_ONE_STR))).assertTrue();
       expect(BigInt(LONG_MAX_PLUS_ONE_STR).operatorGreaterThan(max)).assertTrue();
+      expect(min.operatorGreaterThan(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
     });
   });
 }

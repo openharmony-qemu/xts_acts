@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorBitwiseOrTest(): void {
   describe('BigInt.operatorBitwiseOr (mindmap operatorBitwiseOr)', () => {
@@ -55,9 +55,10 @@ export default function BigIntOperatorBitwiseOrTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrCommutative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const val = BigInt(99);
-      expect(val.operatorBitwiseOr(val).toString()).assertEqual('99');
-      expect(BigInt(12).operatorBitwiseOr(BigInt(10)).toString()).assertEqual('14');
+      const a = BigInt(12);
+      const b = BigInt(10);
+
+      expect(a.operatorBitwiseOr(b).toString()).assertEqual(b.operatorBitwiseOr(a).toString());
     });
 
     /**
@@ -135,12 +136,29 @@ export default function BigIntOperatorBitwiseOrTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseOrLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorBitwiseOr(BigInt(0)).toString()).assertEqual(LONG_MAX_STR);
       expect(min.operatorBitwiseOr(max).toString()).assertEqual('-1');
       expect(max.operatorBitwiseOr(min).toString()).assertEqual('-1');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_OR_0900
+     * @tc.name testBigIntOperatorBitwiseOrNegativeBoundary0900
+     * @tc.desc Mindmap boundary: operatorBitwiseOr at LONG_MIN and negative mask operands
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseOrNegativeBoundary0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const min = BigInt(LONG_MIN_STR);
+
+      expect(min.operatorBitwiseOr(BigInt(0)).toString()).assertEqual(LONG_MIN_STR);
+      expect(min.operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
+      expect(min.operatorBitwiseOr(min).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt('-999999999999999999999999999999').operatorBitwiseOr(BigInt(-1)).toString()).assertEqual('-1');
     });
   });
 }

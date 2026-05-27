@@ -15,7 +15,15 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX,
+  LONG_MIN,
+  LONG_MIN_STR,
+  LONG_MAX_NEGATED,
+  LONG_MAX_PLUS_ONE_STR,
+  LONG_MIN_MINUS_ONE_STR,
+  ULONG_MAX_PLUS_ONE_STR
+} from '../BigIntTestLimits';
 
 export default function BigIntGetLongTest(): void {
   describe('BigInt.getLong (mindmap getLong)', () => {
@@ -112,6 +120,21 @@ export default function BigIntGetLongTest(): void {
     it('testBigIntGetLongNoThrow0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(LONG_MAX_PLUS_ONE_STR).getLong()).assertEqual(LONG_MIN);
       expect(BigInt('-99999999999999999999999').getLong()).assertEqual(-200376420520689663);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_GETLONG_0800
+     * @tc.name testBigIntGetLongNegativeBoundary0800
+     * @tc.desc Mindmap boundary: getLong at LONG_MIN and one step below signed long minimum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntGetLongNegativeBoundary0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(LONG_MIN_STR).getLong()).assertEqual(LONG_MIN);
+      expect(BigInt(LONG_MIN_MINUS_ONE_STR).getLong()).assertEqual(LONG_MAX);
+      expect(BigInt('-18446744073709551616').getLong()).assertEqual(0);
+      expect(BigInt(LONG_MIN).operatorIncrement().getLong()).assertEqual(LONG_MAX_NEGATED);
     });
   });
 }

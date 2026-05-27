@@ -15,58 +15,67 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX_STR,
+  LONG_MIN_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
+  LOCALE_EN_US,
+  LOCALE_STRING_OPTS_NO_GROUPING,
+  LOCALE_STRING_VALUE_MILLION,
+  TO_STRING_SMALL_NEGATIVE
+} from '../BigIntTestLimits';
 
 export default function BigIntToLocaleString1Test(): void {
   describe('BigInt.toLocaleString no-arg (mindmap toLocaleString_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0100
      * @tc.name testBigIntToLocaleString1Default0100
-     * @tc.desc Mindmap input: default toLocaleString returns non-empty string
+     * @tc.desc Mindmap input: default toLocaleString formats million without grouping
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Default0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const s = BigInt(1000000).toLocaleString();
+      const value = BigInt(LOCALE_STRING_VALUE_MILLION);
 
-      expect(s.length > 0).assertTrue();
+      expect(value.toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('1000000');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0200
      * @tc.name testBigIntToLocaleString1Zero0200
-     * @tc.desc Mindmap return value: zero toLocaleString
+     * @tc.desc Mindmap return value: zero toLocaleString exact decimal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Zero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(0).toLocaleString().length > 0).assertTrue();
+      expect(BigInt(0).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('0');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0300
      * @tc.name testBigIntToLocaleString1Negative0300
-     * @tc.desc Mindmap return value: negative value toLocaleString
+     * @tc.desc Mindmap return value: negative value toLocaleString exact decimal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Negative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(-42).toLocaleString().length > 0).assertTrue();
+      expect(BigInt(TO_STRING_SMALL_NEGATIVE).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual('-42');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0400
      * @tc.name testBigIntToLocaleString1Large0400
-     * @tc.desc Mindmap return value: large magnitude toLocaleString
+     * @tc.desc Mindmap return value: large magnitude toLocaleString exact decimal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1Large0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toLocaleString().length > 0).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING))
+        .assertEqual(DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR);
     });
 
     /**
@@ -78,24 +87,20 @@ export default function BigIntToLocaleString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToLocaleString1LongBounds0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const opts: BigIntToLocaleStringOptions = { useGrouping: false };
-
-      expect(BigInt(LONG_MAX_STR).toLocaleString('en-US', opts)).assertEqual(LONG_MAX_STR);
-      expect(BigInt(LONG_MIN_STR).toLocaleString('en-US', opts)).assertEqual(LONG_MIN_STR);
+      expect(BigInt(LONG_MAX_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual(LONG_MAX_STR);
+      expect(BigInt(LONG_MIN_STR).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING)).assertEqual(LONG_MIN_STR);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOLOCALE_1_0600
-     * @tc.name testBigIntToLocaleString1ZeroExact0600
-     * @tc.desc Mindmap return value: zero formats as exact decimal string
+     * @tc.name testBigIntToLocaleString1ReturnType0600
+     * @tc.desc Mindmap return value: toLocaleString returns string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToLocaleString1ZeroExact0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const opts: BigIntToLocaleStringOptions = { useGrouping: false };
-
-      expect(BigInt(0).toLocaleString('en-US', opts)).assertEqual('0');
+    it('testBigIntToLocaleString1ReturnType0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(0).toLocaleString(LOCALE_EN_US, LOCALE_STRING_OPTS_NO_GROUPING))).assertEqual(Class.from<string>());
     });
   });
 }

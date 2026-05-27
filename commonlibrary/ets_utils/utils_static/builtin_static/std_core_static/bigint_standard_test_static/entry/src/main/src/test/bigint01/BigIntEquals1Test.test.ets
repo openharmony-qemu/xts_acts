@@ -33,7 +33,6 @@ export default function BigIntEquals1Test(): void {
       expect(BigInt(-42).equals(BigInt(-42))).assertTrue();
       expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
       expect(BigInt(42).equals(BigInt('42'))).assertTrue();
-      expect(BigInt(42).equals(BigInt(BigInt(42)))).assertTrue();
     });
 
     /**
@@ -98,10 +97,10 @@ export default function BigIntEquals1Test(): void {
       const a = BigInt(42);
 
       expect((): void => {
-        a.equals(null as BigInt);
+        a.equals(null as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
-        a.equals(undefined as BigInt);
+        a.equals(undefined as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
         a.equals('42' as object as BigInt);
@@ -119,14 +118,17 @@ export default function BigIntEquals1Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_EQUALS_BI_0600
-     * @tc.name testBigIntEqualsBigIntNormalNoThrow0600
-     * @tc.desc Mindmap return value: valid equals(to: BigInt) does not throw
+     * @tc.name testBigIntEqualsBigIntCopyConstructor0600
+     * @tc.desc Mindmap input: equals(to: BigInt) with copy-constructed operand
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntEqualsBigIntNormalNoThrow0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(42).equals(BigInt(42))).assertTrue();
+    it('testBigIntEqualsBigIntCopyConstructor0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const src = BigInt(42);
+
+      expect(src.equals(BigInt(src))).assertTrue();
+      expect(BigInt(0).equals(new BigInt())).assertTrue();
     });
 
     /**
@@ -145,6 +147,7 @@ export default function BigIntEquals1Test(): void {
       expect(min.equals(BigInt(LONG_MIN_STR))).assertTrue();
       expect(max.equals(min)).assertFalse();
       expect(max.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
+      expect(min.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
       expect(BigInt(0).equals(new BigInt())).assertTrue();
     });
   });

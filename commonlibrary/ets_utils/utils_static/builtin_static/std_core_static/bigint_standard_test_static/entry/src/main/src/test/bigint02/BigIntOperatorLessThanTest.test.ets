@@ -28,25 +28,26 @@ export default function BigIntOperatorLessThanTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanBasic0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(3).operatorLessThan(new BigInt(5))).assertTrue();
-        expect(new BigInt(-10).operatorLessThan(new BigInt(-3))).assertTrue();
-        expect(new BigInt(50).operatorLessThan(new BigInt(100))).assertTrue();
-        expect(new BigInt(5).operatorLessThan(new BigInt(3))).assertFalse();
-        expect(new BigInt(0).operatorLessThan(new BigInt(0))).assertFalse();
-        expect(new BigInt(42).operatorLessThan(new BigInt(42))).assertFalse();
+      expect(BigInt(3).operatorLessThan(BigInt(5))).assertTrue();
+      expect(BigInt(-10).operatorLessThan(BigInt(-3))).assertTrue();
+      expect(BigInt(50).operatorLessThan(BigInt(100))).assertTrue();
+      expect(BigInt(5).operatorLessThan(BigInt(3))).assertFalse();
+      expect(BigInt(0).operatorLessThan(BigInt(0))).assertFalse();
+      expect(BigInt(42).operatorLessThan(BigInt(42))).assertFalse();
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_LT_0200
      * @tc.name testBigIntOperatorLessThanBoundary0200
-     * @tc.desc Mindmap input: operatorLessThan near MAX_SAFE_INTEGER
+     * @tc.desc Mindmap input: operatorLessThan near double safe-integer boundary
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorLessThanBoundary0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertFalse();
-        expect(new BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorLessThan(new BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR))).assertFalse();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_MINUS_ONE_STR).operatorLessThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertTrue();
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorLessThan(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR))).assertFalse();
     });
 
     /**
@@ -117,6 +118,7 @@ export default function BigIntOperatorLessThanTest(): void {
       expect(max.operatorLessThan(min)).assertFalse();
       expect(BigInt(LONG_MIN_MINUS_ONE_STR).operatorLessThan(min)).assertTrue();
       expect(max.operatorLessThan(BigInt(LONG_MAX_PLUS_ONE_STR))).assertTrue();
+      expect(max.operatorLessThan(max)).assertFalse();
     });
   });
 }

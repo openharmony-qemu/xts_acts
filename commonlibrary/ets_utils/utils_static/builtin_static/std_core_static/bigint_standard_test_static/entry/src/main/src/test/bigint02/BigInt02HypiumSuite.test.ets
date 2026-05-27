@@ -25,7 +25,7 @@ import BigIntToLocaleString1Test from './BigIntToLocaleString1Test.test';
 import BigIntToLocaleString2Test from './BigIntToLocaleString2Test.test';
 import BigIntToLocaleStringOptionsPropsTest from './BigIntToLocaleStringOptionsPropsTest.test';
 import BigIntToLocaleStringOptionsIfaceTest from './BigIntToLocaleStringOptionsIfaceTest.test';
-import BigintTypeAliasTest from './BigintTypeAliasTest.test';
+import BigIntTypeAliasTest from './BigIntTypeAliasTest.test';
 
 export default function runBigInt02HypiumTests(): void {
   BigIntOperatorMultiplyTest();
@@ -51,5 +51,5 @@ export default function runBigInt02HypiumTests(): void {
   BigIntToLocaleString2Test();
   BigIntToLocaleStringOptionsPropsTest();
   BigIntToLocaleStringOptionsIfaceTest();
-  BigintTypeAliasTest();
+  BigIntTypeAliasTest();
 }

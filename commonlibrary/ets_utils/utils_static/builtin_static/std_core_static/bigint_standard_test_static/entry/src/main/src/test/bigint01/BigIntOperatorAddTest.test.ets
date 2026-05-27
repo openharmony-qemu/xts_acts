@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_DOUBLED_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorAddTest(): void {
   describe('BigInt.operatorAdd (mindmap operatorAdd)', () => {
@@ -98,6 +98,7 @@ export default function BigIntOperatorAddTest(): void {
     it('testBigIntOperatorAddReturnType0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const result = BigInt(10).operatorAdd(BigInt(5));
 
+      // Class.of expects Object; operand is BigInt at runtime.
       expect(Class.of(result as Object)).assertEqual(Class.from<BigInt>());
       expect(BigInt(1).operatorAdd(BigInt(2)).operatorAdd(BigInt(3)).toString()).assertEqual('6');
     });
@@ -113,18 +114,23 @@ export default function BigIntOperatorAddTest(): void {
     it('testBigIntOperatorAddInvalidArg0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
       expect((): void => {
+        // Intentional cast: null at runtime to exercise ClassCastError on operand.
         a.operatorAdd(null as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional cast: undefined at runtime to exercise ClassCastError on operand.
         a.operatorAdd(undefined as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt string with static BigInt operand type.
         a.operatorAdd('abc' as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt number with static BigInt operand type.
         a.operatorAdd(123 as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt boolean with static BigInt operand type.
         a.operatorAdd(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
@@ -138,8 +144,8 @@ export default function BigIntOperatorAddTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorAddLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorAdd(BigInt(1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(min.operatorAdd(BigInt(-1)).toString()).assertEqual(LONG_MIN_MINUS_ONE_STR);

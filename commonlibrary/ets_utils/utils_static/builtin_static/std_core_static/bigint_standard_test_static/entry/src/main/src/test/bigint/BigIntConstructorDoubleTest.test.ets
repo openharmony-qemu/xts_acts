@@ -15,7 +15,21 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_PLUS_ONE_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR } from '../BigIntTestLimits';
+import {
+  LONG_MIN_STR,
+  LONG_MAX_PLUS_ONE_STR,
+  LONG_MAX_AS_DOUBLE,
+  LONG_MIN_AS_DOUBLE,
+  NUMBER_MAX_VALUE_STR,
+  DOUBLE_MAX_SAFE_INTEGER_VAL,
+  DOUBLE_MAX_SAFE_INTEGER_NEGATED_VAL,
+  DOUBLE_MAX_SAFE_INTEGER_STR,
+  DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR
+} from '../BigIntTestLimits';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {
@@ -111,15 +125,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleMaxValue0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const maxStr =
-        '179769313486231570814527423731704356798070567525844996598917476803157260780' +
-        '028538760589558632766878171540458953514382464234321326889464182768467546703' +
-        '537516986049910576551282076245490090389328944075868508455133942304583236903' +
-        '222948165808559332123348274797826204144723168738177180919299881250404026184' +
-        '124858368';
-
-      expect(BigInt(Number.MAX_VALUE).toString()).assertEqual(maxStr);
-      expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + maxStr);
+      expect(BigInt(Number.MAX_VALUE).toString()).assertEqual(NUMBER_MAX_VALUE_STR);
+      expect(BigInt(-Number.MAX_VALUE).toString()).assertEqual('-' + NUMBER_MAX_VALUE_STR);
     });
 
     /**
@@ -187,8 +194,8 @@ export default function BigIntConstructorDoubleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorDoubleLongBounds1200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(Long.toDouble(LONG_MAX)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
-      expect(BigInt(Long.toDouble(LONG_MIN)).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(LONG_MAX_AS_DOUBLE).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
+      expect(BigInt(LONG_MIN_AS_DOUBLE).toString()).assertEqual(LONG_MIN_STR);
     });
   });
 }

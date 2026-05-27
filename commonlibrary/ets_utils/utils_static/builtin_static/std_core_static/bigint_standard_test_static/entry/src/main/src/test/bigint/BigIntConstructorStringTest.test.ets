@@ -15,7 +15,16 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR, LONG_MIN_MINUS_ONE_STR, ULONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX_STR,
+  LONG_MIN_STR,
+  LONG_MAX_PLUS_ONE_STR,
+  LONG_MIN_MINUS_ONE_STR,
+  ULONG_MAX_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
+  BIGINT_PARSE_INVALID_MSG,
+  BIGINT_NON_INTEGER_CONVERT_MSG
+} from '../BigIntTestLimits';
 
 export default function BigIntConstructorStringTest(): void {
   describe('BigInt string constructor (mindmap constructor_7)', () => {
@@ -61,13 +70,17 @@ export default function BigIntConstructorStringTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0400
      * @tc.name testBigIntConstructorStringEmptyString0400
-     * @tc.desc Verify empty string constructs BigInt zero (current runtime behavior)
+     * @tc.desc Verify empty decimal string parses as zero and equals BigInt(0)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringEmptyString0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt('').toString()).assertEqual('0');
+      const fromEmpty = BigInt('');
+
+      expect(fromEmpty.toString()).assertEqual('0');
+      expect(fromEmpty.equals(BigInt(0))).assertTrue();
+      expect(fromEmpty.negative()).assertFalse();
     });
 
     /**
@@ -79,11 +92,9 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringInvalidArgDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-
       expect((): void => {
         BigInt('abc');
-      }).assertThrow(invalidMsg);
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
     });
 
     /**
@@ -103,7 +114,7 @@ export default function BigIntConstructorStringTest(): void {
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_0700
      * @tc.name testBigIntConstructorStringWhitespace0700
-     * @tc.desc Verify whitespace-trimmed decimal strings construct BigInt (current runtime behavior)
+     * @tc.desc Verify ASCII whitespace trim for decimal strings, including whitespace-only as zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -112,6 +123,13 @@ export default function BigIntConstructorStringTest(): void {
       expect(BigInt(' 42').toString()).assertEqual('42');
       expect(BigInt('42 ').toString()).assertEqual('42');
       expect(BigInt(' 42 ').toString()).assertEqual('42');
+      expect(BigInt('\t42').toString()).assertEqual('42');
+      expect(BigInt('42\n').toString()).assertEqual('42');
+      expect(BigInt('\r\n42\r\n').toString()).assertEqual('42');
+      expect(BigInt(' \t 42 \n ').toString()).assertEqual('42');
+      expect(BigInt('   ').toString()).assertEqual('0');
+      expect(BigInt('\t\n').toString()).assertEqual('0');
+      expect(BigInt(' \t\n ').equals(BigInt(''))).assertTrue();
     });
 
     /**
@@ -137,34 +155,35 @@ export default function BigIntConstructorStringTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringInvalidArgHex0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-
       expect((): void => {
         BigInt('0xGG');
-      }).assertThrow(invalidMsg);
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
       expect((): void => {
         BigInt('0b102');
-      }).assertThrow(invalidMsg);
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_CONSTRUCTOR_STRING_1000
      * @tc.name testBigIntConstructorStringInvalidArgMixedDecimal1000
-     * @tc.desc Verify invalid decimal strings throw; dotted forms use non-integer number conversion (current runtime)
+     * @tc.desc Verify invalid decimal strings throw, including inner whitespace and dotted forms
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntConstructorStringInvalidArgMixedDecimal1000', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const invalidMsg = 'BigInt.parseFromString(): provided string is invalid';
-      const dottedDecimalMsg = "Can't convert number 1.5 to BigInt because it's not an integer";
-
       expect((): void => {
         BigInt('12abc');
-      }).assertThrow(invalidMsg);
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      expect((): void => {
+        BigInt('4 2');
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
+      expect((): void => {
+        BigInt('+ 42');
+      }).assertThrow(BIGINT_PARSE_INVALID_MSG);
       expect((): void => {
         BigInt('1.5');
-      }).assertThrow(dottedDecimalMsg);
+      }).assertThrow(BIGINT_NON_INTEGER_CONVERT_MSG);
     });
 
     /**

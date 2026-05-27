@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorModuleTest(): void {
   describe('BigInt.operatorModule (mindmap operatorModule)', () => {
@@ -31,18 +31,21 @@ export default function BigIntOperatorModuleTest(): void {
       expect(BigInt(12).operatorModule(BigInt(5)).toString()).assertEqual('2');
       expect(BigInt(20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
       expect(BigInt(-10).operatorModule(BigInt(3)).toString()).assertEqual('-1');
+      expect(BigInt(-7).operatorModule(BigInt(3)).toString()).assertEqual('-1');
+      expect(BigInt(7).operatorModule(BigInt(-3)).toString()).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0200
      * @tc.name testBigIntOperatorModuleZero0200
-     * @tc.desc Mindmap input: operatorModule zero cases
+     * @tc.desc Mindmap input: operatorModule zero dividend and zero remainder
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorModuleZero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(42).operatorModule(BigInt(10)).toString()).assertEqual('2');
+      expect(BigInt(0).operatorModule(BigInt(5)).toString()).assertEqual('0');
+      expect(BigInt(10).operatorModule(BigInt(10)).toString()).assertEqual('0');
     });
 
     /**
@@ -68,18 +71,23 @@ export default function BigIntOperatorModuleTest(): void {
     it('testBigIntOperatorModuleInvalidArg0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
       expect((): void => {
+        // Intentional cast: null at runtime to exercise ClassCastError on operand.
         a.operatorModule(null as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional cast: undefined at runtime to exercise ClassCastError on operand.
         a.operatorModule(undefined as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt string with static BigInt operand type.
         a.operatorModule('abc' as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt number with static BigInt operand type.
         a.operatorModule(123 as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt boolean with static BigInt operand type.
         a.operatorModule(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
@@ -107,13 +115,28 @@ export default function BigIntOperatorModuleTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorModuleLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorModule(BigInt(2)).toString()).assertEqual('1');
       expect(min.operatorModule(BigInt(2)).toString()).assertEqual('0');
       expect(BigInt(0).operatorModule(max).toString()).assertEqual('0');
       expect(min.operatorModule(max).toString()).assertEqual('-1');
+      expect(min.operatorModule(BigInt(-1)).toString()).assertEqual('0');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MODULE_0700
+     * @tc.name testBigIntOperatorModuleNegativeOperands0700
+     * @tc.desc Mindmap input: operatorModule with negative dividend and divisor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorModuleNegativeOperands0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-10).operatorModule(BigInt(-3)).toString()).assertEqual('-1');
+      expect(BigInt(-20).operatorModule(BigInt(-5)).toString()).assertEqual('0');
+      expect(BigInt('-999999999999999999999999999999').operatorModule(BigInt(-2)).toString()).assertEqual('-1');
     });
   });
 }

@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
 
 export default function BigIntOperatorBitwiseAndTest(): void {
   describe('BigInt.operatorBitwiseAnd (mindmap operatorBitwiseAnd)', () => {
@@ -31,6 +31,8 @@ export default function BigIntOperatorBitwiseAndTest(): void {
       expect(BigInt(12).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('4');
       expect(BigInt(0).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('0');
       expect(BigInt(-1).operatorBitwiseAnd(BigInt(7)).toString()).assertEqual('7');
+      expect(BigInt(-12).operatorBitwiseAnd(BigInt(5)).toString()).assertEqual('4');
+      // Two's-complement AND on negative operands: low bits of -3 and -5 both cover -7.
       expect(BigInt(-3).operatorBitwiseAnd(BigInt(-5)).toString()).assertEqual('-7');
     });
 
@@ -101,18 +103,23 @@ export default function BigIntOperatorBitwiseAndTest(): void {
     it('testBigIntOperatorBitwiseAndInvalidArg0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const left = BigInt(12);
       expect((): void => {
+        // Intentional cast: null at runtime to exercise ClassCastError on operand.
         left.operatorBitwiseAnd(null as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional cast: undefined at runtime to exercise ClassCastError on operand.
         left.operatorBitwiseAnd(undefined as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt string with static BigInt operand type.
         left.operatorBitwiseAnd('abc' as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt number with static BigInt operand type.
         left.operatorBitwiseAnd(123 as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt boolean with static BigInt operand type.
         left.operatorBitwiseAnd(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
@@ -140,12 +147,26 @@ export default function BigIntOperatorBitwiseAndTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorBitwiseAndLongBounds0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorBitwiseAnd(max).toString()).assertEqual(LONG_MAX_STR);
       expect(min.operatorBitwiseAnd(max).toString()).assertEqual('0');
       expect(max.operatorBitwiseAnd(BigInt(0)).toString()).assertEqual('0');
+      expect(min.operatorBitwiseAnd(min).toString()).assertEqual(LONG_MIN_STR);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_BITWISE_AND_0900
+     * @tc.name testBigIntOperatorBitwiseAndNegativeOperands0900
+     * @tc.desc Mindmap input: operatorBitwiseAnd with both operands negative
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorBitwiseAndNegativeOperands0900', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-8).operatorBitwiseAnd(BigInt(-3)).toString()).assertEqual('-8');
+      expect(BigInt(LONG_MIN_STR).operatorBitwiseAnd(BigInt(-1)).toString()).assertEqual(LONG_MIN_STR);
     });
   });
 }

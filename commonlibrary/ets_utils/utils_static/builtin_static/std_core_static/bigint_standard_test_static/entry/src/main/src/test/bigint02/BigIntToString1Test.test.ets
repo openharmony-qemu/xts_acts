@@ -15,22 +15,32 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX,
+  LONG_MIN,
+  LONG_MAX_STR,
+  LONG_MIN_STR,
+  LONG_MAX_NEGATED_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
+  DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR,
+  TO_STRING_SMALL_POSITIVE,
+  TO_STRING_MEDIUM_POSITIVE,
+  TO_STRING_SMALL_NEGATIVE,
+  SAMPLE_BYTE_MAGNITUDE
+} from '../BigIntTestLimits';
 
 export default function BigIntToString1Test(): void {
   describe('BigInt.toString no-arg (mindmap toString_1)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0100
      * @tc.name testBigIntToString1Zero0100
-     * @tc.desc Mindmap input and return value: no-arg toString for zero
+     * @tc.desc Mindmap return value: no-arg toString for zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntToString1Zero0100', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).toString()).assertEqual('0');
-      expect(BigInt(1).toString()).assertEqual('1');
-      expect(BigInt(-1).toString()).assertEqual('-1');
     });
 
     /**
@@ -42,49 +52,67 @@ export default function BigIntToString1Test(): void {
      * @tc.level Level 2
      */
     it('testBigIntToString1Positive0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      expect(BigInt(42).toString()).assertEqual('42');
-      expect(BigInt(10000).toString()).assertEqual('10000');
+      expect(BigInt(TO_STRING_SMALL_POSITIVE).toString()).assertEqual('42');
+      expect(BigInt(TO_STRING_MEDIUM_POSITIVE).toString()).assertEqual('10000');
+      expect(BigInt(1).toString()).assertEqual('1');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0300
-     * @tc.name testBigIntToString1Large0300
+     * @tc.name testBigIntToString1Negative0300
+     * @tc.desc Mindmap return value: negative decimal toString
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntToString1Negative0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(-1).toString()).assertEqual('-1');
+      expect(BigInt(TO_STRING_SMALL_NEGATIVE).toString()).assertEqual('-42');
+      expect(BigInt(LONG_MIN).toString()).assertEqual(LONG_MIN_STR);
+      expect(BigInt(LONG_MAX_NEGATED_STR).toString()).assertEqual(LONG_MAX_NEGATED_STR);
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR).toString()).assertEqual(DOUBLE_MAX_SAFE_INTEGER_NEGATED_STR);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0400
+     * @tc.name testBigIntToString1Large0400
      * @tc.desc Mindmap return value: large string magnitude toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1Large0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1Large0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const huge = DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR;
 
       expect(BigInt(huge).toString()).assertEqual(huge);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0400
-     * @tc.name testBigIntToString1LongBounds0400
+     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0500
+     * @tc.name testBigIntToString1LongBounds0500
      * @tc.desc Mindmap return value: signed long extrema toString
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1LongBounds0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+    it('testBigIntToString1LongBounds0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(LONG_MAX).toString()).assertEqual(LONG_MAX_STR);
       expect(BigInt(LONG_MIN).toString()).assertEqual(LONG_MIN_STR);
     });
 
     /**
-     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0500
-     * @tc.name testBigIntToString1MatchesAsDecimal0500
+     * @tc.number SUB_BIGINT_STD_TOSTRING_1_0600
+     * @tc.name testBigIntToString1MatchesAsDecimal0600
      * @tc.desc Mindmap return value: toString matches toStringAsDecimal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1MatchesAsDecimal0500', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const v = BigInt(255);
+    it('testBigIntToString1MatchesAsDecimal0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const v = BigInt(SAMPLE_BYTE_MAGNITUDE);
 
       expect(v.toString()).assertEqual(v.toStringAsDecimal());
+      expect(Class.of(v.toString())).assertEqual(Class.from<string>());
     });
   });
 }

@@ -15,7 +15,13 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX_STR,
+  LONG_MIN_STR,
+  LONG_MAX_PLUS_ONE_STR,
+  DOUBLE_MAX_SAFE_INTEGER_STR,
+  DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR
+} from '../BigIntTestLimits';
 
 export default function BigIntOperatorDivideTest(): void {
   describe('BigInt.operatorDivide (mindmap operatorDivide)', () => {
@@ -32,18 +38,21 @@ export default function BigIntOperatorDivideTest(): void {
       expect(BigInt(20).operatorDivide(BigInt(-5)).toString()).assertEqual('-4');
       expect(BigInt(-10).operatorDivide(BigInt(5)).toString()).assertEqual('-2');
       expect(BigInt(7).operatorDivide(BigInt(7)).toString()).assertEqual('1');
+      expect(BigInt(-7).operatorDivide(BigInt(3)).toString()).assertEqual('-2');
+      expect(BigInt(7).operatorDivide(BigInt(-3)).toString()).assertEqual('-2');
     });
 
     /**
      * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0200
      * @tc.name testBigIntOperatorDivideZero0200
-     * @tc.desc Mindmap input: operatorDivide zero cases
+     * @tc.desc Mindmap input: operatorDivide zero dividend
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testBigIntOperatorDivideZero0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt(0).operatorDivide(BigInt(5)).toString()).assertEqual('0');
+      expect(BigInt(0).operatorDivide(BigInt(-1)).toString()).assertEqual('0');
     });
 
     /**
@@ -69,18 +78,23 @@ export default function BigIntOperatorDivideTest(): void {
     it('testBigIntOperatorDivideInvalidArg0400', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const a = BigInt(10);
       expect((): void => {
+        // Intentional cast: null at runtime to exercise ClassCastError on operand.
         a.operatorDivide(null as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional cast: undefined at runtime to exercise ClassCastError on operand.
         a.operatorDivide(undefined as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt string with static BigInt operand type.
         a.operatorDivide('abc' as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt number with static BigInt operand type.
         a.operatorDivide(123 as object as BigInt);
       }).assertThrowError('ClassCastError');
       expect((): void => {
+        // Intentional double cast: non-BigInt boolean with static BigInt operand type.
         a.operatorDivide(true as object as BigInt);
       }).assertThrowError('ClassCastError');
     });
@@ -108,13 +122,39 @@ export default function BigIntOperatorDivideTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorDivideLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
       expect(min.operatorDivide(BigInt(1)).toString()).assertEqual(LONG_MIN_STR);
       expect(min.operatorDivide(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(BigInt(0).operatorDivide(max).toString()).assertEqual('0');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0700
+     * @tc.name testBigIntOperatorDivideLarge0700
+     * @tc.desc Mindmap input: operatorDivide on magnitudes beyond signed long range
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideLarge0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt('999999999999999999999999999999').operatorDivide(BigInt('999999999999999999999999999999')).toString()).assertEqual('1');
+      expect(BigInt('1000000000000000000000000000000').operatorDivide(BigInt('100000000000000000000000000000')).toString()).assertEqual('10');
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_DIVIDE_0800
+     * @tc.name testBigIntOperatorDivideDoubleSafeInteger0800
+     * @tc.desc Mindmap boundary: operatorDivide near double safe-integer magnitude (string operands)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorDivideDoubleSafeInteger0800', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_STR).operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370495');
+      expect(BigInt(DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR).operatorDivide(BigInt(2)).toString()).assertEqual('4503599627370496');
     });
   });
 }

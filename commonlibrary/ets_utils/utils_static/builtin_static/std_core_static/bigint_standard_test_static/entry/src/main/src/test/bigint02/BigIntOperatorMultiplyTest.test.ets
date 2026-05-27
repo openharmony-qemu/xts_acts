@@ -15,7 +15,14 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR } from '../BigIntTestLimits';
+import {
+  LONG_MAX_STR,
+  LONG_MIN_STR,
+  LONG_MAX_PLUS_ONE_STR,
+  LONG_MAX_NEGATED_STR,
+  LONG_MAX_PLUS_ONE_SQUARED_STR,
+  ULONG_MAX_PLUS_ONE_STR
+} from '../BigIntTestLimits';
 
 export default function BigIntOperatorMultiplyTest(): void {
   describe('BigInt.operatorMultiply (mindmap operatorMultiply)', () => {
@@ -57,6 +64,7 @@ export default function BigIntOperatorMultiplyTest(): void {
      */
     it('testBigIntOperatorMultiplyLarge0300', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       expect(BigInt('999999999').operatorMultiply(BigInt('999999999')).toString()).assertEqual('999999998000000001');
+      expect(BigInt('999999999999999999999999999999').operatorMultiply(BigInt('999999999999999999999999999999')).toString()).assertEqual('999999999999999999999999999998000000000000000000000000000001');
     });
 
     /**
@@ -107,14 +115,30 @@ export default function BigIntOperatorMultiplyTest(): void {
      * @tc.level Level 2
      */
     it('testBigIntOperatorMultiplyLongBounds0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const max = BigInt(LONG_MAX);
-      const min = BigInt(LONG_MIN);
+      const max = BigInt(LONG_MAX_STR);
+      const min = BigInt(LONG_MIN_STR);
 
       expect(max.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(min.operatorMultiply(BigInt(0)).toString()).assertEqual('0');
       expect(max.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_NEGATED_STR);
       expect(min.operatorMultiply(BigInt(-1)).toString()).assertEqual(LONG_MAX_PLUS_ONE_STR);
       expect(max.operatorMultiply(BigInt(1)).toString()).assertEqual(LONG_MAX_STR);
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_OPERATOR_MULTIPLY_0700
+     * @tc.name testBigIntOperatorMultiplyBeyondLongRange0700
+     * @tc.desc Mindmap input: operatorMultiply with magnitudes beyond signed long maximum
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testBigIntOperatorMultiplyBeyondLongRange0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      const plusOne = BigInt(LONG_MAX_STR).operatorAdd(BigInt(1));
+
+      expect(plusOne.operatorMultiply(BigInt(2)).toString()).assertEqual(ULONG_MAX_PLUS_ONE_STR);
+      expect(plusOne.operatorMultiply(plusOne).toString()).assertEqual(LONG_MAX_PLUS_ONE_SQUARED_STR);
+      expect(BigInt('-999999999999999999999999999999').operatorMultiply(BigInt(2)).toString()).assertEqual('-1999999999999999999999999999998');
     });
   });
 }

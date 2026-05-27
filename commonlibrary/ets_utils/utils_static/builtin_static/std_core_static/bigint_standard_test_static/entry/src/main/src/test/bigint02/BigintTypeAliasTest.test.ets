@@ -17,7 +17,7 @@ import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
 import { LONG_MAX, LONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
 
-export default function BigintTypeAliasTest(): void {
+export default function BigIntTypeAliasTest(): void {
   describe('bigint type alias (mindmap bigint)', () => {
     /**
      * @tc.number SUB_BIGINT_STD_BIGINT_ALIAS_0100

@@ -93,6 +93,18 @@ export default function BigIntOperatorIncrementTest(): void {
       expect((): void => {
         (null as Object as BigInt).operatorIncrement();
       }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (undefined as Object as BigInt).operatorIncrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        ('abc' as object as BigInt).operatorIncrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (123 as object as BigInt).operatorIncrement();
+      }).assertThrowError('ClassCastError');
+      expect((): void => {
+        (true as object as BigInt).operatorIncrement();
+      }).assertThrowError('ClassCastError');
     });
   });
 }

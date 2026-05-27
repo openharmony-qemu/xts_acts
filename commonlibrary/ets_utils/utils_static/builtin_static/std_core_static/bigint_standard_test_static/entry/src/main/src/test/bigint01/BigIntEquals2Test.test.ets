@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MAX_STR, LONG_MIN_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
 
 export default function BigIntEquals2Test(): void {
   describe('BigInt.equals(other: Any) overload (mindmap equals_2)', () => {
@@ -31,6 +31,7 @@ export default function BigIntEquals2Test(): void {
       expect(BigInt(42).equals(BigInt(42))).assertTrue();
       expect(BigInt(0).equals(BigInt(0))).assertTrue();
       expect(BigInt(-42).equals(BigInt(-42))).assertTrue();
+      expect(BigInt(42).equals(BigInt('42'))).assertTrue();
       const a = BigInt(42);
       expect(a.equals(a)).assertTrue();
       expect(BigInt('99999999999999999999').equals(BigInt('99999999999999999999'))).assertTrue();
@@ -70,6 +71,8 @@ export default function BigIntEquals2Test(): void {
       expect(a.equals(undefined)).assertFalse();
       expect(a.equals({})).assertFalse();
       expect(BigInt(0).equals(0)).assertFalse();
+      expect(BigInt(LONG_MAX).equals(LONG_MAX as object)).assertFalse();
+      expect(BigInt(LONG_MIN).equals(LONG_MIN_STR)).assertFalse();
     });
 
     /**
@@ -101,6 +104,9 @@ export default function BigIntEquals2Test(): void {
       const huge = '999999999999999999999999999999';
 
       expect(BigInt(huge).equals(BigInt(huge))).assertTrue();
+      expect(BigInt(huge).equals(BigInt('999999999999999999999999999998'))).assertFalse();
+      const neg = '-' + huge;
+      expect(BigInt(neg).equals(BigInt(neg))).assertTrue();
       expect(BigInt(huge).equals(BigInt('-' + huge))).assertFalse();
     });
 
@@ -118,6 +124,7 @@ export default function BigIntEquals2Test(): void {
       expect(a.equals(BigInt(42))).assertTrue();
       expect(a.equals(42)).assertFalse();
       expect(a.equals(null)).assertFalse();
+      expect(a.equals(BigInt('42'))).assertTrue();
     });
 
     /**
@@ -130,10 +137,14 @@ export default function BigIntEquals2Test(): void {
      */
     it('testBigIntEqualsAnyLongBounds0700', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const max = BigInt(LONG_MAX);
+      const min = BigInt(LONG_MIN);
 
       expect(max.equals(BigInt(LONG_MAX_STR))).assertTrue();
+      expect(min.equals(BigInt(LONG_MIN_STR))).assertTrue();
       expect(max.equals(BigInt(LONG_MIN_STR))).assertFalse();
-      expect(max.equals(LONG_MAX as object)).assertFalse();
+      expect(min.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
+      expect(max.equals(BigInt(LONG_MAX_PLUS_ONE_STR))).assertFalse();
+      expect(BigInt(0).equals(new BigInt())).assertTrue();
     });
   });
 }

@@ -15,9 +15,19 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-
-// Decimal digit count of 2^4096: floor(4096 * log10(2)) + 1 === 1234
-const DECIMAL_LENGTH_2_POW_4096: int = 1234;
+import {
+  PERF_FACTOR_FIVE,
+  PERF_POW2_EXP_1024,
+  PERF_POW2_EXP_2048,
+  PERF_POW2_EXP_4095,
+  PERF_POW2_EXP_4096,
+  PERF_BATCH_SUBTRACT_ONE_128,
+  PERF_POW2_EXP_512,
+  PERF_DEC_LEN_POW2_4095,
+  PERF_DEC_LEN_POW2_4096,
+  perfBatchSubtractOne,
+  perfPow2
+} from '../BigIntPerformanceLimits';
 
 export default function BigIntPerformanceLargeIntegerTest(): void {
   describe('BigInt ultra-large integer performance scenarios', () => {
@@ -30,10 +40,10 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargePow4096Bits0100', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const p4096 = BigInt(2).pow(BigInt(4096));
-      const p4095 = BigInt(2).pow(BigInt(4095));
+      const p4096 = perfPow2(PERF_POW2_EXP_4096);
+      const p4095 = perfPow2(PERF_POW2_EXP_4095);
 
-      expect(p4096.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
+      expect(p4096.toString().length).assertEqual(PERF_DEC_LEN_POW2_4096);
       expect(p4096.operatorGreaterThan(p4095)).assertTrue();
     });
 
@@ -46,12 +56,12 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargeMultiply4096Bits0200', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const expected = BigInt(2).pow(BigInt(4096));
-      const half = BigInt(2).pow(BigInt(2048));
+      const expected = perfPow2(PERF_POW2_EXP_4096);
+      const half = perfPow2(PERF_POW2_EXP_2048);
       const product = half.operatorMultiply(half);
 
       expect(product.equals(expected)).assertTrue();
-      expect(product.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
+      expect(product.toString().length).assertEqual(PERF_DEC_LEN_POW2_4096);
     });
 
     /**
@@ -63,14 +73,10 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargeSubtract4096Bits0300', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const base = BigInt(2).pow(BigInt(4096));
-      const one = BigInt(1);
-      let acc = base;
-      for (let i = 0; i < 128; i++) {
-        acc = acc.operatorSubtract(one);
-      }
+      const base = perfPow2(PERF_POW2_EXP_4096);
+      const acc = perfBatchSubtractOne(base, PERF_BATCH_SUBTRACT_ONE_128);
 
-      expect(acc.toString().length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
+      expect(acc.toString().length).assertEqual(PERF_DEC_LEN_POW2_4096);
       expect(acc.operatorLessThan(base)).assertTrue();
     });
 
@@ -83,8 +89,8 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargeDivideMod2048Bits0400', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const half = BigInt(2).pow(BigInt(2048));
-      const factor = BigInt(5);
+      const half = perfPow2(PERF_POW2_EXP_2048);
+      const factor = BigInt(PERF_FACTOR_FIVE);
       const product = half.operatorMultiply(factor);
       const quotient = product.operatorDivide(factor);
       const remainder = product.operatorModule(factor);
@@ -102,8 +108,8 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargeBitwise1024Bits0500', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const p1024 = BigInt(2).pow(BigInt(1024));
-      const p512 = BigInt(2).pow(BigInt(512));
+      const p1024 = perfPow2(PERF_POW2_EXP_1024);
+      const p512 = perfPow2(PERF_POW2_EXP_512);
       const combined = p1024.operatorBitwiseOr(p512);
       const masked = p1024.operatorBitwiseAnd(p512);
 
@@ -120,12 +126,29 @@ export default function BigIntPerformanceLargeIntegerTest(): void {
      * @tc.level Level 3
      */
     it('testBigIntPerformanceLargeToString4096Bits0600', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
-      const p4096 = BigInt(2).pow(BigInt(4096));
+      const p4096 = perfPow2(PERF_POW2_EXP_4096);
       const text = p4096.toString();
 
-      expect(text.length).assertEqual(DECIMAL_LENGTH_2_POW_4096);
+      expect(text.length).assertEqual(PERF_DEC_LEN_POW2_4096);
       expect(text.startsWith('1')).assertTrue();
       expect(text.endsWith('0')).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_BIGINT_STD_PERFORMANCE_LARGE_0700
+     * @tc.name testBigIntPerformanceLargePow4095Boundary0700
+     * @tc.desc Verify 2^4095 is one digit shorter than 2^4096 and strictly less
+     * @tc.size LargeTest
+     * @tc.type Performance
+     * @tc.level Level 3
+     */
+    it('testBigIntPerformanceLargePow4095Boundary0700', TestType.PERFORMANCE | Size.LARGETEST | Level.LEVEL3, () => {
+      const p4096 = perfPow2(PERF_POW2_EXP_4096);
+      const p4095 = perfPow2(PERF_POW2_EXP_4095);
+
+      expect(p4095.toString().length).assertEqual(PERF_DEC_LEN_POW2_4095);
+      expect(p4095.operatorLessThan(p4096)).assertTrue();
+      expect(p4095.operatorAdd(BigInt(1)).operatorLessThan(p4096)).assertTrue();
     });
   });
 }
