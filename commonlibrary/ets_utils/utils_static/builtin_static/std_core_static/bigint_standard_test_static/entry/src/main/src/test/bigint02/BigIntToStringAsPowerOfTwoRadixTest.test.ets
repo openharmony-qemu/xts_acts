@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MIN_RADIX16_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MIN_RADIX16_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntToStringAsPowerOfTwoRadixTest(): void {
   describe('BigInt.toStringAsPowerOfTwoRadix (mindmap)', () => {

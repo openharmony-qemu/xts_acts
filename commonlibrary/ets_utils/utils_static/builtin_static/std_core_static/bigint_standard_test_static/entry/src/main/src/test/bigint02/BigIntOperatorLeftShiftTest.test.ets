@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_STR, LONG_MIN_STR, LONG_MAX_PLUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorLeftShiftTest(): void {
   describe('BigInt.operatorLeftShift (mindmap operatorLeftShift)', () => {

@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN } from '../BigIntTestLimits.test';
 
 export default function BigIntToString3Test(): void {
   describe('BigInt.toString(radix double (mindmap toString_3)', () => {

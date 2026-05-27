@@ -31,7 +31,7 @@ import {
   UINT16_MAX,
   UINT16_OVERFLOW,
   POW2_EXPONENT_100
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 import Utils from '../Util.test';
 
 export default function BigIntAsUintNTest(): void {

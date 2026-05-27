@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MAX_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntTypeAliasTest(): void {
   describe('bigint type alias (mindmap bigint)', () => {

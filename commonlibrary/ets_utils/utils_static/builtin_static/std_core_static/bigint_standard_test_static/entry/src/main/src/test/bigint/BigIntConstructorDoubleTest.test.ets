@@ -29,7 +29,7 @@ import {
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_VAL,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_NEGATED_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorDoubleTest(): void {
   describe('BigInt double constructor (mindmap constructor_6)', () => {

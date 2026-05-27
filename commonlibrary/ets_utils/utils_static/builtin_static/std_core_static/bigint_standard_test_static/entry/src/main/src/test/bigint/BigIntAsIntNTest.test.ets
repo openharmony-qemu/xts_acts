@@ -34,7 +34,7 @@ import {
   INT32_MIN_STR,
   POW2_31_STR,
   POW2_EXPONENT_100
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 import Utils from '../Util.test';
 
 export default function BigIntAsIntNTest(): void {

@@ -23,7 +23,7 @@ import {
   LONG_MAX_PLUS_ONE_STR,
   LONG_MIN_MINUS_ONE_STR,
   LONG_MAX_TIMES_PLUS_ONE_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorIntegralTest(): void {
   describe('BigInt integral constructor (mindmap constructor_2~5)', () => {

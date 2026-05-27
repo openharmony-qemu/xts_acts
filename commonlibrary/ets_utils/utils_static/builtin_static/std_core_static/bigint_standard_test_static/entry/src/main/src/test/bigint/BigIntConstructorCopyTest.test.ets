@@ -23,7 +23,7 @@ import {
   ULONG_MAX_STR,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 function assertBigIntCopyPreservesValue(source: BigInt): void {
   expect(BigInt(source).equals(source)).assertTrue();

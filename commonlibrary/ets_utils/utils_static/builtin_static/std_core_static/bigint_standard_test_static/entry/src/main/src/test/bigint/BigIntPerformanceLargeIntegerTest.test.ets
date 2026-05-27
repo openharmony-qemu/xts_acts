@@ -27,7 +27,7 @@ import {
   PERF_DEC_LEN_POW2_4096,
   perfBatchSubtractOne,
   perfPow2
-} from '../BigIntPerformanceLimits';
+} from '../BigIntPerformanceLimits.test';
 
 export default function BigIntPerformanceLargeIntegerTest(): void {
   describe('BigInt ultra-large integer performance scenarios', () => {

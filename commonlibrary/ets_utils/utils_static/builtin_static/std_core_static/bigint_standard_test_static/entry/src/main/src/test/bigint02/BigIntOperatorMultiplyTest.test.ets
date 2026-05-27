@@ -22,7 +22,7 @@ import {
   LONG_MAX_NEGATED_STR,
   LONG_MAX_PLUS_ONE_SQUARED_STR,
   ULONG_MAX_PLUS_ONE_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorMultiplyTest(): void {
   describe('BigInt.operatorMultiply (mindmap operatorMultiply)', () => {

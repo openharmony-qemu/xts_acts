@@ -27,7 +27,7 @@ import {
   SAMPLE_DECIMAL_MAGNITUDE,
   SAMPLE_DECIMAL_RADIX2_STR,
   SAMPLE_DECIMAL_RADIX8_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntToString2Test(): void {
   describe('BigInt.toString(radix int) (mindmap toString_2)', () => {

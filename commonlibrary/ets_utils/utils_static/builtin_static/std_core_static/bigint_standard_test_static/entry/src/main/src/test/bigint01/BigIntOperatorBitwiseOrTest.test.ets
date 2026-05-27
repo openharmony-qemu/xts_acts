@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR, ULONG_MAX_PLUS_ONE_STR, POW2_65_MINUS_ONE_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseOrTest(): void {
   describe('BigInt.operatorBitwiseOr (mindmap operatorBitwiseOr)', () => {

@@ -32,7 +32,7 @@ import {
   perfBatchAddOne,
   perfBatchMultiplyByTwo,
   perfPow2
-} from '../BigIntPerformanceLimits';
+} from '../BigIntPerformanceLimits.test';
 
 export default function BigIntPerformanceTest(): void {
   describe('BigInt large-integer performance scenarios', () => {

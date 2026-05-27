@@ -27,7 +27,7 @@ import {
   TO_STRING_MEDIUM_POSITIVE,
   TO_STRING_SMALL_NEGATIVE,
   SAMPLE_BYTE_MAGNITUDE
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntToString1Test(): void {
   describe('BigInt.toString no-arg (mindmap toString_1)', () => {

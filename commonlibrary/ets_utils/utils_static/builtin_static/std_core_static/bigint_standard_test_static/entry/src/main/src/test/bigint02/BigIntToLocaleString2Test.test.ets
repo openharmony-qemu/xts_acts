@@ -28,7 +28,7 @@ import {
   LOCALE_STRING_VALUE_MILLION,
   LOCALE_STRING_VALUE_GROUPED,
   TO_STRING_SMALL_NEGATIVE
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntToLocaleString2Test(): void {
   describe('BigInt.toLocaleString(locales, options) (mindmap toLocaleString_2)', () => {

@@ -24,7 +24,7 @@ import {
   DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR,
   BIGINT_PARSE_INVALID_MSG,
   BIGINT_NON_INTEGER_CONVERT_MSG
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntConstructorStringTest(): void {
   describe('BigInt string constructor (mindmap constructor_7)', () => {

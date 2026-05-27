@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits';
+import { LONG_MAX_STR, LONG_MIN_STR, ULONG_MAX_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorBitwiseAndTest(): void {
   describe('BigInt.operatorBitwiseAnd (mindmap operatorBitwiseAnd)', () => {

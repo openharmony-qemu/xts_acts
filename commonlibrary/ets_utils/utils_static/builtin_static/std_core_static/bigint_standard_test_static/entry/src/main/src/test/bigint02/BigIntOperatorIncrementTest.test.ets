@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR, LONG_MAX_MINUS_ONE_NEGATED_STR } from '../BigIntTestLimits';
+import { LONG_MIN, LONG_MAX_STR, LONG_MAX_PLUS_ONE_STR, LONG_MAX_NEGATED_STR, LONG_MAX_MINUS_ONE_NEGATED_STR } from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorIncrementTest(): void {
   describe('BigInt.operatorIncrement (mindmap operatorIncrement)', () => {

@@ -26,7 +26,7 @@ import {
   ULONG_MAX_PLUS_TWO_STR,
   DOUBLE_MAX_SAFE_INTEGER_STR,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorSubtractTest(): void {
   describe('BigInt.operatorSubtract (mindmap operatorSubtract)', () => {

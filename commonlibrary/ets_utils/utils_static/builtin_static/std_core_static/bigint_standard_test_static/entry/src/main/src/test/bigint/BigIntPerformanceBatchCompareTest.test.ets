@@ -35,7 +35,7 @@ import {
   perfBatchMultiplyByTwo,
   perfBatchSquareFromTwo,
   perfPow2
-} from '../BigIntPerformanceLimits';
+} from '../BigIntPerformanceLimits.test';
 
 export default function BigIntPerformanceBatchCompareTest(): void {
   describe('BigInt batch operation and operation-type comparison scenarios', () => {

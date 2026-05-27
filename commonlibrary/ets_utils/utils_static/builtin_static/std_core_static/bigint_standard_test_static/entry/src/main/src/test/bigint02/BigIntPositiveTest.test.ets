@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, LONG_MAX_NEGATED } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, LONG_MAX_NEGATED } from '../BigIntTestLimits.test';
 
 export default function BigIntPositiveTest(): void {
   describe('BigInt.positive (mindmap positive)', () => {

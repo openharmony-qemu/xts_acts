@@ -23,7 +23,7 @@ import {
   LONG_MAX_PLUS_ONE_STR,
   LONG_MIN_MINUS_ONE_STR,
   ULONG_MAX_PLUS_ONE_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntGetLongTest(): void {
   describe('BigInt.getLong (mindmap getLong)', () => {

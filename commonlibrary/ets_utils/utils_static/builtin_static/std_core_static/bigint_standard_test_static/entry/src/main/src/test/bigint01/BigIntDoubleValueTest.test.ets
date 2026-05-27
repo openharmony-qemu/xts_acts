@@ -15,7 +15,7 @@
  */
 import { describe, it, expect } from '../../../../hypium/index';
 import { TestType, Size, Level } from '../../../../hypium/Constant';
-import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL } from '../BigIntTestLimits';
+import { LONG_MAX, LONG_MIN, DOUBLE_MAX_SAFE_INTEGER_STR, DOUBLE_MAX_SAFE_INTEGER_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_VAL, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_STR, DOUBLE_MAX_SAFE_INTEGER_PLUS_TWO_VAL } from '../BigIntTestLimits.test';
 
 export default function BigIntDoubleValueTest(): void {
   describe('BigInt.doubleValue (mindmap doubleValue)', () => {

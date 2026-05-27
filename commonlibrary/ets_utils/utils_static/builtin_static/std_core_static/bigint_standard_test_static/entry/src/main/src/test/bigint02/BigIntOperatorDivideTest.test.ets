@@ -21,7 +21,7 @@ import {
   LONG_MAX_PLUS_ONE_STR,
   DOUBLE_MAX_SAFE_INTEGER_STR,
   DOUBLE_MAX_SAFE_INTEGER_PLUS_ONE_STR
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntOperatorDivideTest(): void {
   describe('BigInt.operatorDivide (mindmap operatorDivide)', () => {

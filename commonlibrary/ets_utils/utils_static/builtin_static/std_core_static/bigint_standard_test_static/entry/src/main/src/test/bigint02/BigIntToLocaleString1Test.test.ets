@@ -23,7 +23,7 @@ import {
   LOCALE_STRING_OPTS_NO_GROUPING,
   LOCALE_STRING_VALUE_MILLION,
   TO_STRING_SMALL_NEGATIVE
-} from '../BigIntTestLimits';
+} from '../BigIntTestLimits.test';
 
 export default function BigIntToLocaleString1Test(): void {
   describe('BigInt.toLocaleString no-arg (mindmap toLocaleString_1)', () => {
