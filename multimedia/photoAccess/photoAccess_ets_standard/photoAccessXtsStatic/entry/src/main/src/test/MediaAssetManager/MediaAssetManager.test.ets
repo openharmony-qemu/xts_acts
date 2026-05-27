@@ -1472,10 +1472,10 @@ export default function MediaAssetManagerStaticTest(): void {
     it('SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let testNum = 'SUB_PHOTO_ACCESS_HELPER_AVAILABILITY_STATUS_STATIC_4000';
       try {
-        let available =  photoAccessHelper.AvailabilityStatus.AVAILABLE;
-        let unavailable =  photoAccessHelper.AvailabilityStatus.UNAVAILABLE;
-        expect(available).assertEqual(available);
-        expect(unavailable).assertEqual(unavailable);
+        let availables =  photoAccessHelper.AvailabilityStatus.AVAILABLE;
+        let unavailables =  photoAccessHelper.AvailabilityStatus.UNAVAILABLE;
+        expect(availables).assertEqual(available);
+        expect(unavailables).assertEqual(unavailable);
         done();
       }
       catch (error) {
