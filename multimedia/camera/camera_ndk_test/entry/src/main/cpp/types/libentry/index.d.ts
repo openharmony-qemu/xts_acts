@@ -198,6 +198,10 @@ export const getCameraHostName: () => number;
 
 export const getCameraHostType: () => number;
 
+export const testOHGetSensorPixelArraySizeWithoutCamera: () => number;
+
+export const testOHGetSensorColorFilterArrangementWithoutCamera: () => number;
+
 export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
@@ -373,6 +377,10 @@ export const sessionGetZoomRatioRange: () => zoomRatio // return ZoomRatioRange
 export const sessionGetZoomRatio: () => number; // return current ZoomRatio
 
 export const sessionSetZoomRatio: (a: number) => number;
+
+export const sessionGetZoomPointInfos: (a: number) => number;
+
+export const sessionDeleteZoomPointInfos: (a: number) => number;
 
 export const sessionIsVideoStabilizationModeSupported: (a: number) => boolean;
 
