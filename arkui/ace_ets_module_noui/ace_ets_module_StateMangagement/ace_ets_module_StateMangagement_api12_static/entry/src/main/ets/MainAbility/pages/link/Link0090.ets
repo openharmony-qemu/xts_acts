@@ -36,7 +36,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 
 @Component
 struct ChildLink0090 {
-  @Link arrValue: Array<number>= new Array<number>(1, 2, 3, 4)
+  @Link arrValue: Array<number>
 
   build() {
     List() {

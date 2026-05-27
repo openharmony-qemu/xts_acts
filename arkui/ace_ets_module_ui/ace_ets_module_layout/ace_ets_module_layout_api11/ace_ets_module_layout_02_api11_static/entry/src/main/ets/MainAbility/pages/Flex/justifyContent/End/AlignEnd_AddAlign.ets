@@ -25,7 +25,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   ScrollDirection,
   BarState,
   Color,
-  Flex,FlexOptions,Margin,FlexWrap,ItemAlign,FlexDirection,HorizontalAlign,Alignment,FlexAlign,Position,
+  Flex,FlexOptions,Margin,FlexWrap,ItemAlign,FlexDirection,HorizontalAlign,FlexAlign,Position,
   Alignment
 } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';

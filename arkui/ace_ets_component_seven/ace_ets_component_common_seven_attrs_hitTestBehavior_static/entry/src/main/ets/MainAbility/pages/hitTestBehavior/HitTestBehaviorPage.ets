@@ -41,7 +41,6 @@ import {
 	BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, BorderOptions, HitTestMode, AlignRuleOption
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { attrsManager } from '../../common/AttrsManager';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 export class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {

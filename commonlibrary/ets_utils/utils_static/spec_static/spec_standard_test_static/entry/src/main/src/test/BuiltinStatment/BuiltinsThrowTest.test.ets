@@ -61,7 +61,7 @@ export default function builtinsThrowTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    it('builtinsStatementThrow0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): Promise<void> => {
+    it('builtinsStatementThrow0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, (done: () => void): void => {
       try {
         throwDivisor(1, 0);
       } catch (error) {

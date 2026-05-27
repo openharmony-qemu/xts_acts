@@ -19,8 +19,8 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class DragStartModifier implements AttributeModifier<CommonAttribute> {
-  @State public change: boolean | undefined = true;
-  @State public count: Int = 0
+  public change: boolean | undefined = true;
+  public count: Int = 0
 
   applyNormalAttribute(instance: CommonAttribute): void {
     if (this.change) {

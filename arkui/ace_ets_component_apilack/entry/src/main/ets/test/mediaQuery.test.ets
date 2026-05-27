@@ -59,7 +59,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0001', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0001] component width strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -79,7 +79,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0002', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0002] component height strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -99,7 +99,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0003', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0003] component fontSize strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -119,7 +119,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0004', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0004] component opacity strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -139,7 +139,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0005', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0005] component align strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -159,7 +159,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0006', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0006 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0006] component fontColor strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -179,7 +179,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0007', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0007 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0007] component lineHeight strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -199,7 +199,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0009', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff009 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0009] component padding strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -219,7 +219,7 @@ export default function mediaQueryOffJsunit() {
     it('testmediaQueryOff0010', Level.LEVEL0, async () => {
       console.info('mediaQueryOff testmediaQueryOff0010 START');
       await Utils.sleep(2000);
-      let strJson = getInspectorByKey('offText');
+      let strJson = getInspectorByKey('mediaQuery_offText_01');
       console.info("[testmediaQueryOff0010] component textAlign strJson:" + strJson);
       let obj: Record<string, Object> = JSON.parse(strJson);
       expect(obj.$type).assertEqual('Text');
@@ -248,7 +248,7 @@ export default function mediaQueryOffJsunit() {
           console.info("onRequestPopupData_0012 get event state result is: " + JSON.stringify(eventData));
           expect(eventData.data?.STATUS).assertEqual(true);
         }
-        console.info("onSelect_0012 click result is: " + JSON.stringify(sendEventByKey('offText', 10, "")));
+        console.info("onSelect_0012 click result is: " + JSON.stringify(sendEventByKey('mediaQuery_offText_01', 10, "")));
         events_emitter.on(innerEventOne, callback1);
       } catch (err) {
         console.info("onRequestPopupData_0012 on events_emitter err : " + JSON.stringify(err));

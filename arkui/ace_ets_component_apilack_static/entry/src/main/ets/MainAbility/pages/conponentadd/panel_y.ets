@@ -108,7 +108,7 @@ struct PanelBackgroundMask {
         .padding(10)
         .textAlign(TextAlign.Center)
         .textOverflow({ overflow: TextOverflow.None })
-        .key("onHeightChangeText")
+        .key("panel_y_onHeightChangeText")
         .onClick((e: ClickEvent) => {
           // this.mode = PanelMode.Half
           // this.navBarPosition = PanelMode.Half
@@ -141,7 +141,7 @@ struct PanelBackgroundMask {
             }
           }
         })
-        .key("panel")
+        .key("panel_y_panel")
     }.width("100%").height("100%")
   }
 }

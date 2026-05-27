@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2024-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,7 +57,7 @@ function test_toNumber_005(n: string) {
   expect(1 / new Decimal(n).toNumber() === -Infinity).assertTrue();
 }
 
-export default function DecimalTest028() {
+export default function DecimalTest028(): void {
   describe("DecimalTest028", () => {
     beforeAll(() => {
       console.info("beforeAll: Prerequisites at the test suite level, which are executed before the test suite is executed.");

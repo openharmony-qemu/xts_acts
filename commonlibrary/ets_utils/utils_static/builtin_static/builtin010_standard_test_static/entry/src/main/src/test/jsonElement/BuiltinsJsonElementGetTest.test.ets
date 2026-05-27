@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,7 +22,7 @@ function init(size: number): string {
   ans += '{"a":1}]';
   return ans;
 }
-export default function builtinsJsonElementGetTest() {
+export default function builtinsJsonElementGetTest(): void {
   describe("builtinsJsonElement$_getTest", () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

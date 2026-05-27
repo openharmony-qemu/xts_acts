@@ -178,6 +178,7 @@ export default function imagePixelMapForThumbnail() {
   const UNSUPPORTED_MIMETYPE = 7700102;
   const INVALID_PARAMETER = 7700204;
   const DECODE_FAILED = 7700301;
+  const IMAGE_TO_LARGE = 7700103;
 
   describe('imagePixelMapForThumbnail', () => {
     beforeAll(async () => {
@@ -1426,6 +1427,138 @@ export default function imagePixelMapForThumbnail() {
         logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
         console.log(typeof error.code);
         expect(Number(error.code)).assertEqual(ERR_GENERATE_THUMBNAIL);
+      }
+      logger.log("Test finished successfully");
+      done();
+    })
+
+    /**
+    * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0600
+    * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0600
+    * @tc.desc      1. Use an image without thumbnail to decode thumbnail
+    *               2. Set generateThumbnailIfAbsent = true
+    *               3. Return error code:7700301 (DECODE_FAILED)
+    * @tc.size      MediumTest
+    * @tc.type      Functional
+    * @tc.level     Level 1
+    */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0600', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0600");
+      try {
+        logger.log("Start test: SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0600");
+        const filePath = getFilePath("empty_image.jpg");
+        let imageSource = image.createImageSource(filePath);
+        logger.log("ImageSource created, file: empty_image.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        logger.log("Creating thumbnail from imageSource");
+        await imageSource.createThumbnail(decodingOptions);
+        logger.log("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+      }
+      logger.log("Test finished successfully");
+      done();
+    })
+
+    /**
+    * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0700
+    * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0700
+    * @tc.desc      1. Use an image without thumbnail to decode thumbnail
+    *               2. Set generateThumbnailIfAbsent = true
+    *               3. Return error code:7700301 (DECODE_FAILED)
+    * @tc.size      MediumTest
+    * @tc.type      Functional
+    * @tc.level     Level 1
+    */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0700', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0700");
+      try {
+        logger.log("Start test: SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0700");
+        const filePath = getFilePath("empty_image.jpg");
+        let imageSource = image.createImageSource(filePath);
+        logger.log("ImageSource created, file: empty_image.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: true
+        };
+        logger.log("Creating thumbnail from imageSource");
+        await imageSource.createThumbnail(decodingOptions);
+        logger.log("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code.toString() === DECODE_FAILED.toString()).assertTrue();
+      }
+      logger.log("Test finished successfully");
+      done();
+    })
+
+    /**
+    * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0800
+    * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0800
+    * @tc.desc      1. Use an image without thumbnail to decode thumbnail
+    *               2. Set generateThumbnailIfAbsent = true
+    *               3. Return error code:7700103 (IMAGE_TO_LARGE)
+    * @tc.size      MediumTest
+    * @tc.type      Functional
+    * @tc.level     Level 1
+    */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0800', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0800");
+      try {
+        logger.log("Start test: SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_SYNC_PIXELMAP_ERROR_0800");
+        const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+        let imageSource = image.createImageSource(filePath);
+        logger.log("ImageSource created, file: jpeg_exif_thumbnail_too_large.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false
+        };
+        logger.log("Creating thumbnail from imageSource");
+        await imageSource.createThumbnail(decodingOptions);
+        logger.log("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
+      }
+      logger.log("Test finished successfully");
+      done();
+    })
+
+    /**
+    * @tc.number    SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0900
+    * @tc.name      SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0900
+    * @tc.desc      1. Use an image without thumbnail to decode thumbnail
+    *               2. Set generateThumbnailIfAbsent = true
+    *               3. Return error code:7700103 (IMAGE_TO_LARGE)
+    * @tc.size      MediumTest
+    * @tc.type      Functional
+    * @tc.level     Level 1
+    */
+    it('SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0900', Level.LEVEL0, async (done: Function) => {
+      let logger = new Logger("SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0900");
+      try {
+        logger.log("Start test: SUB_MULTIMEDIA_IMAGE_CREATE_THUMBNAIL_PIXELMAP_ERROR_0900");
+        const filePath = getFilePath("jpeg_exif_thumbnail_too_large.jpg");
+        let imageSource = image.createImageSource(filePath);
+        logger.log("ImageSource created, file: jpeg_exif_thumbnail_too_large.jpg");
+        let decodingOptions: image.DecodingOptionsForThumbnail = {
+          generateThumbnailIfAbsent: false
+        };
+        logger.log("Creating thumbnail from imageSource");
+        await imageSource.createThumbnail(decodingOptions);
+        logger.log("Thumbnail created unexpectedly");
+        expect().assertFail();
+      } catch (error) {
+        logger.log(`Error in createThumbnail: ${error.message}, code: ${error.code}`);
+        console.log(typeof error.code);
+        expect(error.code.toString() === IMAGE_TO_LARGE.toString()).assertTrue();
       }
       logger.log("Test finished successfully");
       done();

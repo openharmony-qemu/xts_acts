@@ -234,6 +234,8 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
       // test the clicking event of checkboxGroup
       let driver = Driver.create();
       await driver.delayMs(waitUiReadyMs);
+      AppStorage.get<MessageManager<string | boolean>>("messageManager")!.notify({ name: 'selectAll', value:false })
+      await CommonFunc.sleep(2000);
       let checkGoup = await driver.findComponent(ON.id('allck'));
       await (checkGoup?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);

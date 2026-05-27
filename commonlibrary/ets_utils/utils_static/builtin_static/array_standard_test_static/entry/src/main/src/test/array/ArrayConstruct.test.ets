@@ -106,7 +106,7 @@ interface GeneratedObjectLiteralInterface_10 {
   details: GeneratedObjectLiteralInterface_9;
 }
 
-export default function ArrayConstructTest() {
+export default function ArrayConstructTest(): void {
   describe('ArrayConstructTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

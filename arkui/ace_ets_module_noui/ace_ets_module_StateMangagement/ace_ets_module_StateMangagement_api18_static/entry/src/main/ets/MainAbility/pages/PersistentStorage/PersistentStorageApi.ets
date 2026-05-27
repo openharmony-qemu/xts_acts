@@ -38,28 +38,35 @@ struct PersistentStorageApi {
     Column() {
       Text(`persistPropValue: ${this.persistPropKey}`)
         .id('text_persist_prop')
+        .height('5%')
  
       Text(`persistPropsValue1: ${this.persistPropsKey1}`)
         .id('text_persist_props_1')
+        .height('5%')
  
       Text(`persistPropsValue2: ${this.persistPropsKey2}`)
         .id('text_persist_props_2')
+        .height('5%')
  
       Text(`deletePropValue: ${this.deletePropKey}`)
         .id('text_delete_prop')
+        .height('5%')
  
       Text(`keysResult: ${this.keysResult}`)
         .id('text_keys_result')
+        .height('5%')
  
       Row() {
         Button('Increase')
           .id('button_increase')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             this.persistPropKey += 1;
           })
  
         Button('Delete')
           .id('button_delete')
+          .height('5%')
           .onClick((e: ClickEvent) => {
             PersistentStorage.deleteProp('deletePropKey');
           })
@@ -67,6 +74,7 @@ struct PersistentStorageApi {
  
       Button('GetKeys')
         .id('button_get_keys')
+        .height('5%')
         .onClick((e: ClickEvent) => {
           let keys = PersistentStorage.keys();
           this.keysResult = keys.join(',');

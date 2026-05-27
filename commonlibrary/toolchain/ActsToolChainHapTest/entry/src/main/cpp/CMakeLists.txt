@@ -49,6 +49,7 @@ add_library(
      src/functional/fdopen.cpp
      src/functional/fcntl.cpp
      src/functional/fopencookie_test.cpp
+     src/functional/fscanf.cpp
      src/functional/inet_pton.cpp
      src/functional/pthread_cond.cpp
      src/functional/pthread_mutex.cpp
@@ -77,6 +78,7 @@ add_library(
     src/functional/tls_init.cpp
     src/functional/atexit_dlclose.cpp
     src/functional/dlclose_reset.cpp
+    src/functionalext/fortify/fcntl_ext.cpp
     src/functionalext/fortify/poll.cpp
     src/functionalext/info/application_target_sdk_version_test.cpp
     src/functionalext/info/device_api_version.cpp
@@ -86,9 +88,12 @@ add_library(
     src/functionalext/supplement/conf/get_nprocs.cpp
     src/functionalext/supplement/conf/get_phys_pages.cpp
     src/functionalext/supplement/ctype/__ctype_get_mb_cur_max.cpp
+    src/functionalext/supplement/ctype/tolower.cpp
+    src/functionalext/supplement/ctype/toupper.cpp
     src/functionalext/supplement/exit/at_quick_exit.cpp
     src/functionalext/supplement/exit/atexit.cpp
     src/functionalext/supplement/exit/a_cxa_atexit.cpp
+    src/functionalext/supplement/exit/a_cxa_finalize.cpp
     src/functionalext/supplement/exit/double_exit.cpp
     src/functionalext/supplement/fenv/__flt_rounds.cpp
     src/functionalext/supplement/legacy/ftw.cpp
@@ -114,6 +119,7 @@ add_library(
     src/functionalext/supplement/linux/fremovexattr.cpp
     src/functionalext/supplement/linux/fsetxattr.cpp
     src/functionalext/supplement/linux/getdents.cpp
+    src/functionalext/supplement/linux/getprocpid.cpp
     src/functionalext/supplement/linux/name_to_handle_at.cpp
     src/functionalext/supplement/linux/process_vm.cpp
     src/functionalext/supplement/linux/readahead.cpp
@@ -124,6 +130,7 @@ add_library(
     src/functionalext/supplement/math/__signbitf.cpp
     src/functionalext/supplement/math/__signbitl.cpp
     src/functionalext/supplement/misc/issetugid.cpp
+    src/functionalext/supplement/misc/nftw.cpp
     src/functionalext/supplement/misc/setpriority.cpp
     src/functionalext/supplement/multibyte/c16rtomb.cpp
     src/functionalext/supplement/multibyte/c32rtomb.cpp
@@ -146,6 +153,7 @@ add_library(
     src/functionalext/supplement/stdio/__fbufsize.cpp
     src/functionalext/supplement/stdio/__flbf.cpp
     src/functionalext/supplement/stdio/clearerr.cpp
+    src/functionalext/supplement/stdio/fopen.cpp
     src/functionalext/supplement/stdlib/abs.cpp
     src/functionalext/supplement/stdlib/atof.cpp
     src/functionalext/supplement/stdlib/atoi.cpp
@@ -179,6 +187,9 @@ add_library(
     src/functionalext/supplement/time/wcsftime.cpp
     src/functionalext/supplement/unistd/alarm.cpp
     src/functionalext/supplement/unistd/chdir.cpp
+    src/functionalext/supplement/unistd/lseek.cpp
+    src/functionalext/supplement/unistd/pread.cpp
+    src/functionalext/supplement/unistd/preadv.cpp
     src/functionalext/supplement/unistd/ctermid.cpp
     src/functionalext/supplement/unistd/gethostname.cpp
     src/functionalext/supplement/unistd/setpgrp.cpp
@@ -434,6 +445,7 @@ add_library(
     src/functionalext/queue/sys_queue.cpp
     src/functionalext/sched/sched_getparam.cpp
     src/functionalext/sched/sched_scheduler.cpp
+    src/functionalext/string/strcpy_test.cpp
     src/functionalext/string/strlen_test.cpp
     src/functionalext/symver/reloc_symver.cpp
     src/functionalext/symver/dlsym.cpp
@@ -497,6 +509,7 @@ add_library(
     src/functionalext/supplement/dirent/readdir.cpp
     src/functionalext/supplement/dirent/alphasort.cpp
     src/functionalext/supplement/dirent/fdopendir.cpp
+    src/functionalext/supplement/dirent/dirfd.cpp
     src/functionalext/supplement/dirent/opendir.cpp
     src/functionalext/supplement/dirent/rewinddir.cpp
     src/functionalext/supplement/dirent/seekdir.cpp
@@ -629,6 +642,7 @@ add_library(
     src/functionalext/supplement/passwd/getgrnam.cpp
     src/functionalext/supplement/passwd/getgrnam_r.cpp
     src/functionalext/supplement/passwd/getgrouplist.cpp
+    src/functionalext/supplement/passwd/getspnam.cpp
     src/functionalext/supplement/passwd/setgrent.cpp
     src/functionalext/supplement/passwd/setpwent.cpp
     src/functionalext/supplement/prng/lcong48.cpp
@@ -1048,6 +1062,7 @@ add_library(
     src/functionalext/supplement/math/functionalext_pow10.cpp
     src/functionalext/ldso_debug/ldso_debug_test.cpp
     src/functionalext/ldso_debug/ldso_memleak_check.cpp
+    src/functionalext/ldso_randomization/ldso_randomization_test.cpp
     src/functionalext/supplement/legacy/daemon.cpp
     src/functionalext/supplement/legacy/futimes.cpp
     src/functionalext/supplement/mman/mmap.cpp
@@ -1058,6 +1073,8 @@ add_library(
     src/functionalext/legacy/ulimit.cpp
     src/functionalext/sched/sched_setparam.cpp
     src/functionalext/supplement/fenv/feupdateenv.cpp
+    src/functionalext/supplement/ldso/a_gnu_Unwind_Find_exidx.cpp
+    src/functionalext/supplement/ldso/dladdr.cpp
     src/functionalext/supplement/ldso/dl_iterate_phdr.cpp
     src/functionalext/supplement/manual/env/a_stack_chk_fail.cpp
     src/functionalext/supplement/process/posix_spawn_file_actions_addopen.cpp
@@ -1221,3 +1238,98 @@ add_custom_command(TARGET LdsoDebugTestLib8 POST_BUILD
         ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libldso_debug_test_lib_10.so
     COMMENT "Removing libldso_debug_test_lib_10.so to simulate missing dependency"
 )
+
+
+# dlopen_ns test libraries
+add_library(DlopenNsDso SHARED lib/dlopen_ns_dso.c)
+set_target_properties(DlopenNsDso PROPERTIES OUTPUT_NAME "dlopen_ns_dso")
+target_compile_options(DlopenNsDso PRIVATE -fPIC -DSHARED -Wall)
+
+# Create copies for different namespaces
+add_custom_command(TARGET DlopenNsDso POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libdlopen_ns_dso.so
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libdlopen_ns_dso_ndk.so
+    COMMAND ${CMAKE_COMMAND} -E copy
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libdlopen_ns_dso.so
+        ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/libdlopen_ns_dso_sys.so
+    COMMENT "Creating dlopen_ns test library copies for different namespaces"
+)
+
+# dlns_dlsym test libraries - 用于测试命名空间继承和符号查找
+# libC - 基础库，无依赖
+add_library(DlnsDlsymDepC SHARED lib/dlns_dlsym_dep_c.c)
+set_target_properties(DlnsDlsymDepC PROPERTIES OUTPUT_NAME "dlns_dlsym_dep_c")
+target_compile_options(DlnsDlsymDepC PRIVATE -fPIC -DSHARED -Wall)
+
+# libB - 依赖 libC
+add_library(DlnsDlsymDepB SHARED lib/dlns_dlsym_dep_b.c)
+set_target_properties(DlnsDlsymDepB PROPERTIES OUTPUT_NAME "dlns_dlsym_dep_b")
+target_compile_options(DlnsDlsymDepB PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlnsDlsymDepB PRIVATE DlnsDlsymDepC)
+
+# libA - 依赖 libB（间接依赖 libC）
+add_library(DlnsDlsymDepA SHARED lib/dlns_dlsym_dep_a.c)
+set_target_properties(DlnsDlsymDepA PROPERTIES OUTPUT_NAME "dlns_dlsym_dep_a")
+target_compile_options(DlnsDlsymDepA PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(DlnsDlsymDepA PRIVATE DlnsDlsymDepB)
+
+# ldso_randomization test libraries - 用于测试动态库地址随机化
+# libE - 基础库，无依赖
+add_library(LdsoRandomizationDepE SHARED lib/ldso_randomization_dep_e.c)
+set_target_properties(LdsoRandomizationDepE PROPERTIES OUTPUT_NAME "ldso_randomization_dep_e")
+target_compile_options(LdsoRandomizationDepE PRIVATE -fPIC -DSHARED -Wall)
+
+# libD - 基础库，无依赖
+add_library(LdsoRandomizationDepD SHARED lib/ldso_randomization_dep_d.c)
+set_target_properties(LdsoRandomizationDepD PROPERTIES OUTPUT_NAME "ldso_randomization_dep_d")
+target_compile_options(LdsoRandomizationDepD PRIVATE -fPIC -DSHARED -Wall)
+
+# libC - 基础库，无依赖
+add_library(LdsoRandomizationDepC SHARED lib/ldso_randomization_dep_c.c)
+set_target_properties(LdsoRandomizationDepC PROPERTIES OUTPUT_NAME "ldso_randomization_dep_c")
+target_compile_options(LdsoRandomizationDepC PRIVATE -fPIC -DSHARED -Wall)
+
+# libB - 依赖 libD 和 libE
+add_library(LdsoRandomizationDepB SHARED lib/ldso_randomization_dep_b.c)
+set_target_properties(LdsoRandomizationDepB PROPERTIES OUTPUT_NAME "ldso_randomization_dep_b")
+target_compile_options(LdsoRandomizationDepB PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(LdsoRandomizationDepB PRIVATE LdsoRandomizationDepD LdsoRandomizationDepE)
+
+# libA - 依赖 libB 和 libC
+add_library(LdsoRandomizationDepA SHARED lib/ldso_randomization_dep_a.c)
+set_target_properties(LdsoRandomizationDepA PROPERTIES OUTPUT_NAME "ldso_randomization_dep_a")
+target_compile_options(LdsoRandomizationDepA PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(LdsoRandomizationDepA PRIVATE LdsoRandomizationDepB LdsoRandomizationDepC)
+
+# lib - 基础库，无依赖
+add_library(LdsoRandomizationDep SHARED lib/ldso_randomization_dep.c)
+set_target_properties(LdsoRandomizationDep PROPERTIES OUTPUT_NAME "ldso_randomization_dep")
+target_compile_options(LdsoRandomizationDep PRIVATE -fPIC -DSHARED -Wall)
+
+# ldso_reloc_diff_version test libraries - 用于测试不同版本符号重定位
+# libA - 基础库，使用 A.map.txt 版本脚本
+add_library(LdsoRelocDiffVersionA SHARED
+    lib/ldso_relocation_diff_version_test_Aso.c)
+set_target_properties(LdsoRelocDiffVersionA PROPERTIES OUTPUT_NAME "ldso_relocation_diff_version_test_Aso")
+target_compile_options(LdsoRelocDiffVersionA PRIVATE -fPIC -DSHARED -Wall)
+target_link_options(LdsoRelocDiffVersionA PRIVATE
+    -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/A.map.txt)
+
+# libB - 基础库，使用 B.map.txt 版本脚本
+add_library(LdsoRelocDiffVersionB SHARED
+    lib/ldso_relocation_diff_version_test_Bso.c
+    lib/ldso_relocation_diff_version_test_Bso_2.c)
+set_target_properties(LdsoRelocDiffVersionB PROPERTIES OUTPUT_NAME "ldso_relocation_diff_version_test_Bso")
+target_compile_options(LdsoRelocDiffVersionB PRIVATE -fPIC -DSHARED -Wall)
+target_link_options(LdsoRelocDiffVersionB PRIVATE
+    -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/B.map.txt)
+
+# libC - 依赖 A 和 B，使用 B.map.txt 版本脚本
+add_library(LdsoRelocDiffVersionC SHARED
+    lib/ldso_relocation_diff_version_test_Cso.c)
+set_target_properties(LdsoRelocDiffVersionC PROPERTIES OUTPUT_NAME "ldso_relocation_diff_version_test_Cso")
+target_compile_options(LdsoRelocDiffVersionC PRIVATE -fPIC -DSHARED -Wall)
+target_link_libraries(LdsoRelocDiffVersionC PRIVATE LdsoRelocDiffVersionA LdsoRelocDiffVersionB)
+target_link_options(LdsoRelocDiffVersionC PRIVATE
+    -Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/lib/B.map.txt)

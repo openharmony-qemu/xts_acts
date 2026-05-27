@@ -5130,8 +5130,8 @@ export default function abilityTest() {
                 console.log("XX SET_GET_CONFIG_3400 failed", err.code);
                 expect(err.code).assertEqual(24700201);
                 mediaKeySystem.destroy();
-                done();
             }
+            done();
         })
         /**
          * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_3500

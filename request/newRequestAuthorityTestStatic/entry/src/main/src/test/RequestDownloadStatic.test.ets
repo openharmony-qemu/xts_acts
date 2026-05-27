@@ -720,7 +720,7 @@ export default function RequestDownloadStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 create success');
-        let on_progressCallback = async (pro: request.agent.Progress): void => {
+        let on_progressCallback = (pro: request.agent.Progress): void => {
           try {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.state: " + pro.state);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0040 pro.index: " + pro.index);
@@ -762,11 +762,11 @@ export default function RequestDownloadStaticTest() {
         hilog.info(domain, tag, '====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 create success');
         let flag = false
         let flag1 = false
-        let on_progressCallback = async (pro: request.agent.Progress): void => {
+        let on_progressCallback = (pro: request.agent.Progress): void => {
           flag = true
           hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 pro.state: " + pro.state);
         }
-        let on_progressCallback1 = async (pro: request.agent.Progress): void => {
+        let on_progressCallback1 = (pro: request.agent.Progress): void => {
           try {
             flag1 = true
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_On_Download_Progress_Static_0030 on_progressCallback1");
@@ -851,7 +851,8 @@ export default function RequestDownloadStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 create success");
-        let on_completedCallback = async (pro: request.agent.Progress): void => {
+        let on_completedCallback = (pro: request.agent.Progress): void => {
+          async (pro: request.agent.Progress): Promise<void> => {
           try {
             let task: request.agent.Task = await request.agent.create(baseContext!, config);
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0200 task.start twice");
@@ -870,6 +871,7 @@ export default function RequestDownloadStaticTest() {
               done();
             }
           }
+        }(pro)
         }
         task.onCompleted(on_completedCallback);
         await task.start();
@@ -900,7 +902,8 @@ export default function RequestDownloadStaticTest() {
       try {
         let task: request.agent.Task = await request.agent.create(baseContext!, config);
         hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 create success");
-        let on_completedCallback = async (pro: request.agent.Progress): void => {
+        let on_completedCallback = (pro: request.agent.Progress): void => {
+          async (pro: request.agent.Progress): Promise<void> => {
           try {
             hilog.info(domain, tag, "====>SUB_Misc_REQUEST_Download_overwrite_Static_0300 task.start twice");
             await task.start();
@@ -918,6 +921,7 @@ export default function RequestDownloadStaticTest() {
               done();
             }
           }
+        }(pro)
         }
         task.onCompleted(on_completedCallback);
         await task.start();

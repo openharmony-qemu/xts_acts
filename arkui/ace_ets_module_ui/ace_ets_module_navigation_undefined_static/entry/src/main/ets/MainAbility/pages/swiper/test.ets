@@ -47,7 +47,7 @@ struct SwiperExample {
           this.isUndefined == true ? this.isUndefined = false : this.isUndefined = true
           this.isUndefined == true ? this.buttonText = 'true' : this.buttonText = 'false'
         })
-      List() {
+      Column() {
         Text('indicator').fontSize(20).margin(15).width('90%')
         Swiper(this.swiperController, () => {
           ForEach(['1', '2', '3', '4'], (item: string) => {

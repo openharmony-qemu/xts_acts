@@ -22,7 +22,7 @@ export async function sleep(time: int): Promise<int> {
   });
 }
 
-export default function BuiltinsAsIntNTest() {
+export default function BuiltinsAsIntNTest(): void {
   describe('BuiltinsAsIntNTest', () => {
     // All BigInt.asIntN(number, bigint) cases were removed from this file.
     beforeAll(() => {

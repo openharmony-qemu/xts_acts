@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+  
 import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
@@ -27,6 +27,7 @@ export default class StartAbility extends UIAbility {
       hilog.info(domain, launchParam.launchReason.toString(), '%{public}s', 'Ability onCreate');
     }
     AppStorage.setOrCreate('bundleName',want.bundleName);
+    AppStorage.setOrCreate('contextTest', this.context);
   }
 
   public onDestroy(): void {
@@ -34,8 +35,8 @@ export default class StartAbility extends UIAbility {
   }
 
   public onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+    AppStorage.setOrCreate('windowStageStartTest', windowStage);
 
     windowStage.loadContent('testability/pages/First/index', (err) => {
       if (err.code) {
@@ -43,22 +44,18 @@ export default class StartAbility extends UIAbility {
         return;
       }
       hilog.info(domain, 'testTag', 'Succeeded in loading the content.');
-      
     });
   }
 
   public onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   public onForeground(): void {
-    // Ability has brought to foreground
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   public onBackground(): void {
-    // Ability has back to background
     hilog.info(domain, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

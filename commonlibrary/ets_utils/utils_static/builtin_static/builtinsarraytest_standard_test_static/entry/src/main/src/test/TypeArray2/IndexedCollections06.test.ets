@@ -136,7 +136,7 @@ class ArrayLike50 {
   }
 }
 
-export default function IndexedCollections06Test() {
+export default function IndexedCollections06Test(): void {
   describe('IndexedCollections06Test', () => {
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.

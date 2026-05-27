@@ -82,12 +82,14 @@ export function sleep(ms: number): Promise<string> {
 export async function driveFn() {
   let dr = Driver.create();
   await sleep(COMMON_WAIT_DURATION);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION) ||
+    await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   while (power) {
     await sleep(COMMON_WAIT_DURATION);
     await power?.click();
     await sleep(COMMON_WAIT_DURATION);
-    power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
+    power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION) ||
+      await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), COMMON_WAIT_DURATION);
   }
 }
 export function fetchOption(testName: string, key: string, value: string | number): photoAccessHelper.FetchOptions {

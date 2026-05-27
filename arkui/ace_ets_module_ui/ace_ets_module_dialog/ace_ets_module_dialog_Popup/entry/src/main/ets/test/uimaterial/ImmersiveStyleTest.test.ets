@@ -65,7 +65,7 @@ export default function ImmersiveStyleTest() {
       let strJson = getInspectorByKey('ultra_thin');
       console.info('ImmersiveStyleTest_0100 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0100 END');
       done();
@@ -94,7 +94,7 @@ export default function ImmersiveStyleTest() {
       let strJson = getInspectorByKey('thin');
       console.info('ImmersiveStyleTest_0200 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0200 END');
       done();
@@ -123,7 +123,7 @@ export default function ImmersiveStyleTest() {
       let strJson = getInspectorByKey('regular');
       console.info('ImmersiveStyleTest_0300 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0300 END');
       done();
@@ -152,7 +152,7 @@ export default function ImmersiveStyleTest() {
       let strJson = getInspectorByKey('thick');
       console.info('ImmersiveStyleTest_0400 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0400 END');
       done();
@@ -181,7 +181,7 @@ export default function ImmersiveStyleTest() {
       let strJson = getInspectorByKey('ultra_thick');
       console.info('ImmersiveStyleTest_0500 strJson: ' + strJson);
       let obj: ESObject = JSON.parse(strJson);
-      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.NONE');
+      expect(obj.$attrs.systemMaterial.material.type).assertEqual('MaterialType.IMMERSIVE');
 
       console.info('ImmersiveStyleTest_0500 END');
       done();

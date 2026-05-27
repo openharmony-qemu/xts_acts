@@ -30,8 +30,12 @@ export default function AudioEnumTest() {
       setTimeout(async () => {
         let driver: Driver = await Driver.create();
         let text = await driver.findComponent(ON.text('允许'));
+        let text2 = await driver.findComponent(ON.text('始终允许'));
         if (text) {
           await text.click()
+        }
+        if (text2) {
+          await text2.click()
         }
       }, 2000)
       atManager.requestPermissionsFromUser(getContext(), permissions).then((data: PermissionRequestResult) => {

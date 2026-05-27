@@ -21,9 +21,9 @@ import { State, Observed } from '@ohos.arkui.stateManagement'
 
 @Observed
 export class MyModifier1 implements AttributeModifier<ImageAttribute> {
-  @State public isOnDragEndUndefined: boolean = true;
-  @State public isOnDropUndefined: boolean = true;
-  @State public message: string = 'Hello World';
+  public isOnDragEndUndefined: boolean = true;
+  public isOnDropUndefined: boolean = true;
+  public message: string = 'Hello World';
 
   applyNormalAttribute(instance: ImageAttribute): void {
     instance
@@ -40,10 +40,10 @@ export class MyModifier1 implements AttributeModifier<ImageAttribute> {
 
 @Observed
 export class MyModifier2 implements AttributeModifier<ImageAttribute> {
-  @State public isOnDragEnterUndefined: boolean = true;
-  @State public isOnDragLeaveUndefined: boolean = true;
-  @State public isOnDragMoveUndefined: boolean = true;
-  @State public message: string = 'Hello World';
+  public isOnDragEnterUndefined: boolean = true;
+  public isOnDragLeaveUndefined: boolean = true;
+  public isOnDragMoveUndefined: boolean = true;
+  public message: string = 'Hello World';
 
   applyNormalAttribute(instance: ImageAttribute): void {
     instance

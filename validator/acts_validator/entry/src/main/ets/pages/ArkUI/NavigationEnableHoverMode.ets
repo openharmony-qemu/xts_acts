@@ -22,7 +22,7 @@ import promptAction from '@ohos.promptAction';
 struct NavigationEnableHoverMode {
   @State name: string = 'NavigationEnableHoverMode';
   @State stepTips: string = '单屏折叠设备测试时\n操作步骤：\n1、设备处于展开态，打开demo \n2、手动折叠设备屏幕（折叠呈90°）' +
-    '\n' + '预期结果：\n1、展开态打开demo，MainTitle悬浮在上屏的上方\n2、折叠后，MainTitle悬浮在下屏的上方位置' +
+    '\n' + '预期结果：\n1、展开态打开demo，MainTitle悬浮在上屏\n2、折叠后，MainTitle悬浮在下屏' +
     '\n3、非单屏折叠设备，直接按照失败处理走豁免';
   @State isVue: boolean = false;
   @State intervalNum: number = 0;
@@ -137,37 +137,39 @@ struct NavigationEnableHoverMode {
       Text('适用单屏折叠形态设备进行该测试').fontColor(Color.Green).fontSize('16fp')
       Column() {
         Navigation() {
-          Column().height('70%')
-          Row() {
-            this.PassBtn($r('app.string.btn_fullscreen'), true);
-            Button() {
-              Image($r('app.media.ic_public_help'))
-                .width('20vp')
-                .height('20vp')
-            }
-            .width('30%')
-            .height('30vp')
-            .backgroundColor(Color.Grey)
-            .onClick(() => {
-              AlertDialog.show(
-                {
-                  title: '操作提示',
-                  message: this.stepTips,
-                  confirm: {
-                    value: 'OK',
-                    action: () => {
+          Stack(){
+            Column().height('80%')
+            Row() {
+              this.PassBtn($r('app.string.btn_fullscreen'), true);
+              Button() {
+                Image($r('app.media.ic_public_help'))
+                  .width('20vp')
+                  .height('20vp')
+              }
+              .width('30%')
+              .height('30vp')
+              .backgroundColor(Color.Grey)
+              .onClick(() => {
+                AlertDialog.show(
+                  {
+                    title: '操作提示',
+                    message: this.stepTips,
+                    confirm: {
+                      value: 'OK',
+                      action: () => {
+                      }
                     }
                   }
-                }
-              )
-            })
+                )
+              })
 
-            this.FailBtn($r('app.string.btn_fullscreen'), true);
+              this.FailBtn($r('app.string.btn_fullscreen'), true);
+            }
+            .height('10%')
+            .width('100%')
+            .justifyContent(FlexAlign.SpaceEvenly)
+            .backgroundColor(Color.Black)
           }
-          .height('10%')
-          .width('100%')
-          .justifyContent(FlexAlign.SpaceEvenly)
-          .backgroundColor(Color.Black)
         }
         .title('MainTitle', { enableHoverMode: true })
         .titleMode(NavigationTitleMode.Full)
@@ -176,7 +178,7 @@ struct NavigationEnableHoverMode {
         .backgroundColor(Color.White)
       }
       .width('100%')
-      .height('70%')
+      .height('100%')
       .backgroundColor('#F1F3F5')
     }
   }

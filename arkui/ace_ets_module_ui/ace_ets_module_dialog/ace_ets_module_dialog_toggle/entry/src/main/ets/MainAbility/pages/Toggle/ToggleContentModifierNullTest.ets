@@ -25,34 +25,33 @@ struct ToggleContentModifierNullTest {
     Row() {
       Column() {
         Text('Toggle contentModifier Null/Undefined Test Page')
-          .fontSize(20)
+          .fontSize(10)
           .fontWeight(FontWeight.Bold)
-          .margin({ bottom: 20 })
+
 
         Text('Test Result: ' + this.testResult)
-          .fontSize(16)
-          .margin({ bottom: 10 })
+          .fontSize(10)
+
           .id('contentModifier_test_result')
 
         Text('Last Error: ' + this.lastError)
-          .fontSize(14)
+          .fontSize(10)
           .fontColor(Color.Red)
-          .margin({ bottom: 20 })
+
           .id('contentModifier_last_error')
 
-        Divider().margin({ bottom: 20 })
 
         // ========== contentModifier null 测试 ==========
         Text('=== contentModifier Null Test ===')
-          .fontSize(16)
+          .fontSize(10)
           .fontWeight(FontWeight.Medium)
-          .margin({ bottom: 10 })
+
 
         Button('Test contentModifier with null')
           .id('btn_contentModifier_null')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               Toggle({ type: ToggleType.Switch, isOn: false })
@@ -71,15 +70,15 @@ struct ToggleContentModifierNullTest {
 
         // ========== contentModifier undefined 测试 ==========
         Text('=== contentModifier Undefined Test ===')
-          .fontSize(16)
+          .fontSize(10)
           .fontWeight(FontWeight.Medium)
-          .margin({ top: 20, bottom: 10 })
+
 
         Button('Test contentModifier with undefined')
           .id('btn_contentModifier_undefined')
           .width('80%')
           .height('5%')
-          .margin({ bottom: 10 })
+
           .onClick(() => {
             try {
               Toggle({ type: ToggleType.Switch, isOn: false })
@@ -98,7 +97,7 @@ struct ToggleContentModifierNullTest {
       }
       .width('100%')
       .height('100%')
-      .padding(20)
+
     }
     .height('100%')
   }

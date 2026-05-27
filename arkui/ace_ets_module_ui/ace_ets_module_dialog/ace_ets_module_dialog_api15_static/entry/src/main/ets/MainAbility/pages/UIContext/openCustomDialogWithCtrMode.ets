@@ -71,7 +71,6 @@ import { BuilderNode, FrameNode } from '@ohos.arkui.node';
 import { ImmersiveMode, LevelMode } from '@ohos.promptAction';
 import { LengthMetrics, ComponentContent } from '@ohos.arkui.node';
 import { Callback, BusinessError } from '@ohos.base';
-import { Router } from '@ohos.arkui.UIContext';
 import promptAction from '@ohos.promptAction';
 
 let router1 = new Router()

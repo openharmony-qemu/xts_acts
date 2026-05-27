@@ -179,5 +179,63 @@ export default function MultimodalEventClientTest() {
       }
       console.info(`${caseName} exit`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_InputEventClient_0500
+     * @tc.number SUB_MMI_Input_Api_InputEventClient_0500
+     * @tc.desc   Test createTouchController Button event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_MMI_Input_Api_InputEventClient_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let caseName = "SUB_MMI_Input_Api_InputEventClient_0500";
+      console.info(`${caseName} enter`);
+      try {
+        inputEventClient.createTouchController()
+          .then((touchController: inputEventClient.TouchController) => {
+            touchController.touchDown({
+              id:0,
+              displayId:0,
+              displayX:100,
+              displayY:100
+            });
+            return touchController;
+          })
+          .then((touchController: inputEventClient.TouchController) => {
+            touchController.touchMove({
+              id:0,
+              displayId:0,
+              displayX:200,
+              displayY:200
+            });
+            return touchController;
+          })
+          .then((touchController: inputEventClient.TouchController) => {
+            touchController.touchUp({
+              id:0,
+              displayId:0,
+              displayX:200,
+              displayY:200
+            });
+            return touchController;
+          })
+          .catch((error: BusinessError) => {
+            console.info(`${caseName} Failed1. Code: ${error.code}, message: ${error.message}.`);
+            expect().assertFail();
+          });
+        expect().assertFail();
+        done();
+      } catch (error) {
+        console.info(`${caseName} Failed2. Code: ${error.code}, message: ${error.message}.`);
+        if (error.code === 801) {
+          expect(error.code).assertEqual(801);
+        } else {
+          expect(error.code).assertEqual(201);
+        }
+        done();
+      }
+      console.info(`${caseName} exit`);
+    }); 
   });
 }

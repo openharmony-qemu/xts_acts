@@ -106,7 +106,7 @@ export default function globalJsunit() {
     it('testglobal_sendMouseEvent0003', Level.LEVEL0, async () => {
       console.info('testglobal_sendMouseEvent0003 START');
       await Utils.sleep(2000);
-      let rect: RectValue = Utils.getComponentRect('ListItem');
+      let rect: RectValue = Utils.getComponentRect('global_ListItem');
       let mouseEvent: MouseEvent = {
         button: 0,
         action: 3,

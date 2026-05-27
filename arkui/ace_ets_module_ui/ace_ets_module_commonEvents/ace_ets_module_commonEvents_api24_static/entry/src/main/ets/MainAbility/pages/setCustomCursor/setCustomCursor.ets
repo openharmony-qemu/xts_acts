@@ -71,7 +71,7 @@ struct CustomCursorExample {
         return;
       }
 
-      const fileData: Uint8Array = await resourceMgr.getRawFileContent('wjy.jpg');
+      const fileData: Uint8Array = await resourceMgr.getRawFileContent('cursor.png');
       const buffer = fileData.buffer.slice(0);
 
       const imageSource = image.createImageSource(buffer);

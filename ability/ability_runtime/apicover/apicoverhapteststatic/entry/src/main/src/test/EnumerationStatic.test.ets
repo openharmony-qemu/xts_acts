@@ -316,6 +316,19 @@ export default function EnumerationStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_2250
+     * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_2250
+     * @tc.desc   Test abilityConstant WindowMode.WINDOW_MODE_SPLIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityBase_AbilityConstant_Static_2250', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      expect('105').assertEqual(abilityConstant.WindowMode.WINDOW_MODE_SPLIT + '');
+      done();
+    })
+
+    /**
      * @tc.name   SUB_Ability_AbilityBase_AbilityConstant_Static_2300
      * @tc.number SUB_Ability_AbilityBase_AbilityConstant_Static_2300
      * @tc.desc   Test abilityConstant StateType.CONTINUATION.

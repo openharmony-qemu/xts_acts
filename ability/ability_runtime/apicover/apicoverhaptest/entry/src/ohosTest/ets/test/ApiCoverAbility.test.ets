@@ -537,6 +537,7 @@ export default function ApiCoverTest() {
         windowTop: 100,
         windowWidth: 100,
         windowHeight: 100,
+        splitRatio: window.SplitRatioPreference.PRIMARY_DOMINANT
       }
       let startWant: Want = {
         deviceId: "",
@@ -545,6 +546,7 @@ export default function ApiCoverTest() {
       }
       expect(0).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND);
       expect(1).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_BACKGROUND);
+      expect(1).assertEqual(window.SplitRatioPreference.PRIMARY_DOMINANT);
       console.info("SUB_AA_Test_InsightIntent_0100:" + insightIntent.ExecuteMode.UI_EXTENSION_ABILITY);
       // expect(2).assertEqual(insightIntent.ExecuteMode.UI_EXTENSION_ABILITY)
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(startWant, startOp, (err, data) => {
@@ -578,7 +580,8 @@ export default function ApiCoverTest() {
         windowWidth: 100,
         windowHeight: 100,
         windowFocused: true,
-        windowCreateParams: windowParam
+        windowCreateParams: windowParam,
+        splitRatio: window.SplitRatioPreference.EQUAL
       }
       let startWant: Want = {
         deviceId: "",
@@ -587,6 +590,7 @@ export default function ApiCoverTest() {
       }
       expect(0).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND);
       expect(1).assertEqual(insightIntent.ExecuteMode.UI_ABILITY_BACKGROUND);
+      expect(0).assertEqual(window.SplitRatioPreference.EQUAL);
       console.info("SUB_AA_Test_StartOptions_0100:" + insightIntent.ExecuteMode.UI_EXTENSION_ABILITY);
       // expect(2).assertEqual(insightIntent.ExecuteMode.UI_EXTENSION_ABILITY)
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(startWant, startOp, (err, data) => {
@@ -1337,7 +1341,7 @@ export default function ApiCoverTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_GetElementName_0100', Level.LEVEL0, async (done: Function) => {
-      
+
       let stageContext: common.AbilityStageContext = AppStorage.get<common.AbilityStageContext>("stageContext")!;
       let deviceId: string | undefined = stageContext.launchElement?.deviceId;
       let uri: string | undefined = stageContext.launchElement?.uri;

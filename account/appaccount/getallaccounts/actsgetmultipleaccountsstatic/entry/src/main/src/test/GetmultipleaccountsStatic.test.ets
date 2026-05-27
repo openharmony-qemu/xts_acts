@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -26,7 +26,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 let tag: string = 'testTag';
 let gContext: common.UIAbilityContext;
 
-export default function ActsGetMultipleAccountsStatic() {
+export default function ActsGetMultipleAccountsStatic(): void {
   describe('ActsGetMultipleAccountsStatic', () => {
     let accountManager: account.AppAccountManager = account.createAppAccountManager();
     hilog.info(0x0000, tag, "====>AppAccountManager create finish====");

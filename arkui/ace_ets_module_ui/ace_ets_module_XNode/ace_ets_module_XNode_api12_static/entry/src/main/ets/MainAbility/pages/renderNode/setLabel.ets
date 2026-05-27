@@ -22,7 +22,6 @@ import {
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import {  RenderNode, FrameNode, NodeController } from '@ohos.arkui.node';
-import { UIContext } from '@ohos.arkui.UIContext';
 
 let para: Record<string,string> = { 'renderNode_label': 'start' };
 let storage: LocalStorage = new LocalStorage(para);

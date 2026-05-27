@@ -191,7 +191,7 @@ interface Obj118 { val: number; }
 
 interface Obj119 { val: number; }
 
-export default function ArrayPushTest() {
+export default function ArrayPushTest(): void {
   describe('ArrayPushTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

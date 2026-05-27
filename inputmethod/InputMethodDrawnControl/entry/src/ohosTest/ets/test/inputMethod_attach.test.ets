@@ -1028,7 +1028,7 @@ export default function inputMethodTest() {
       };
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         }
       };
       try {
@@ -1057,7 +1057,7 @@ export default function inputMethodTest() {
       };
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         }
       };
       try {
@@ -1445,7 +1445,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1500';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         }
       };
       try {
@@ -1471,7 +1471,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_1600';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         }
       };
       try {
@@ -1861,7 +1861,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_3100';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         }
       };
       try {
@@ -1887,7 +1887,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_AttachPromise_3200';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         }
       };
       try {
@@ -2463,7 +2463,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_attachWithUIContextPromise_1900';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.NUMBER_DECIMAL, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: true
         }
       };
       let uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;
@@ -2494,7 +2494,7 @@ export default function inputMethodTest() {
       const CASE_NAME = '====>Sub_InputMethod_IMF_attachWithUIContextPromise_2000';
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
-          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE
+          textInputType: inputMethod.TextInputType.ONE_TIME_CODE, enterKeyType: inputMethod.EnterKeyType.NEWLINE, consumeKeyEvents: false
         }
       };
       let uiContext = AppStorage.get<UIContext>("uiContext") as UIContext;

@@ -26,7 +26,6 @@ import {
   CanvasRenderingContext2D,
   ImageBitmap,
   CanvasPattern,
-  Path2D,
   Matrix2D,
   Scroll,
   CanvasPattern,

@@ -160,6 +160,9 @@ export default function DeviceInfoTest() {
                 "5.0.0(100)",   // 括号内超过 99
                 "5.0.0(a)",     // 括号内非数字
                 "5.0.0()",      // 括号内为空
+                // 4. 异常参数
+                undefined,      // 参数为undefined
+                null,           // 参数为null
             ];
             for (const v of invalids) {
                 console.info(`Test invalid: apiAvailable("${v}")`);

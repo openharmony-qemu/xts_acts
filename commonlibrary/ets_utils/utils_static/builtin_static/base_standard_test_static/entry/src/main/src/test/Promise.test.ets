@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
 import Utils from './Util.test';
 
-export default function promiseTest() {
+export default function promiseTest(): void {
 
   describe('PromiseTest', (): void => {
     afterEach(async (): Promise<void> => {

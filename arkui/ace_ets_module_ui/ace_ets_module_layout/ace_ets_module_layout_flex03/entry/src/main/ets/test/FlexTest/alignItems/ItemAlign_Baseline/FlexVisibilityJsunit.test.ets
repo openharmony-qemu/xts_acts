@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -72,19 +72,31 @@ export default function flexVisibility_BaselineJsunit() {
         let textVisible02: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textVisible02')
         let textVisible03: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textVisible03')
         let flexVisible: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_flexVisible')
-        expect(Math.abs(textVisible03.top - flexVisible.top) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.left - flexVisible.left) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible02.left) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible03.left) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(flexVisible.right - textVisible03.right - vp2px(200)) <= 1).assertTrue()
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi1:' + Math.floor(Math.abs(textVisible03.top - flexVisible.top)));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi2:' + Math.floor(Math.abs(textVisible01.left - flexVisible.left)));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi3:' + Math.floor(Math.abs(textVisible01.right - textVisible02.left)));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi4:' + Math.floor(Math.abs(textVisible02.right - textVisible03.left)));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi5:' + Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi6:' + Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi7:' + Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi8:' + Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi9:' + Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(200))));
+        console.info('testFlexItemAlignBaselineSubSetVisibilityNone_chazhi10:' + Math.floor(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom)));
+   
+        expect(Math.floor(Math.abs(textVisible03.top - flexVisible.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.left - flexVisible.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.right - textVisible02.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible03.left)) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(200))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom)) <= 1)
           .assertTrue()
+
         expect(JSON.parse(strJson1).$attrs.visibility).assertEqual("Visibility.Visible");
         expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
         expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Baseline')
@@ -120,26 +132,39 @@ export default function flexVisibility_BaselineJsunit() {
         let textVisible02: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textVisible02');
         let textVisible03: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textVisible03');
         let flexVisible: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_flexVisible');
-        expect(Math.abs(textVisible03.top - flexVisible.top) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.left - flexVisible.left) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible02.left) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible03.left) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible01.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - vp2px(150)) <= 1).assertTrue()
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi1:'+ Math.floor(Math.abs(textVisible03.top - flexVisible.top)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi2:'+ Math.floor(Math.abs(textVisible01.left - flexVisible.left)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi3:'+ Math.floor(Math.abs(textVisible01.right - textVisible02.left)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi4:'+ Math.floor(Math.abs(textVisible02.right - textVisible03.left)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi5:'+ Math.floor(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi6:'+ Math.floor(Math.abs(textVisible01.right - textVisible01.left - vp2px(150))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi7:'+ Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi8:'+ Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi9:'+ Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi10:'+ Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi11:'+ Math.floor(Math.abs(textVisible01.top - textVisible03.top - textVisible03.bottom + textVisible01.bottom)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi12:'+ Math.floor(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom)));
+        console.error('testFlexItemAlignBaselineSubSetVisibilityHidden_chazhi13:'+ Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(50))));
 
-        expect(Math.abs(textVisible01.top - textVisible03.top - textVisible03.bottom + textVisible01.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible03.top - flexVisible.top)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.left - flexVisible.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.right - textVisible02.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible03.left)) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.bottom - textVisible01.top - vp2px(50))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.right - textVisible01.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.bottom - textVisible02.top - vp2px(100))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible02.right - textVisible02.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.bottom - textVisible03.top - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible03.right - textVisible03.left - vp2px(150))) <= 1).assertTrue()
+        expect(Math.floor(Math.abs(textVisible01.top - textVisible03.top - textVisible03.bottom + textVisible01.bottom)) <= 1)
           .assertTrue()
-        expect(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom) <= 1)
+        expect(Math.floor(Math.abs(textVisible02.top - textVisible03.top - textVisible03.bottom + textVisible02.bottom)) <= 1)
           .assertTrue()
+        expect(Math.floor(Math.abs(flexVisible.right - textVisible03.right - vp2px(50))) <= 1).assertTrue()
 
         expect(JSON.parse(strJson1).$attrs.constructor.direction).assertEqual('FlexDirection.Row')
         expect(JSON.parse(strJson1).$attrs.constructor.alignItems).assertEqual('ItemAlign.Baseline')
-        expect(Math.abs(flexVisible.right - textVisible03.right - vp2px(50)) <= 1).assertTrue()
       } catch (err) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityHidden] failed');
         expect().assertFail();

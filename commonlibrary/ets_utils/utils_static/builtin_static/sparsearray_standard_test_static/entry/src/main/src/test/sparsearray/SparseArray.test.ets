@@ -24,7 +24,7 @@ function createLargeSparseArray(): SparseArray<int> {
   return sa;
 }
 
-export default function SparseArrayTest() {
+export default function SparseArrayTest(): void {
   describe('SparseArrayTest', () => {
     beforeAll(() => {
     });

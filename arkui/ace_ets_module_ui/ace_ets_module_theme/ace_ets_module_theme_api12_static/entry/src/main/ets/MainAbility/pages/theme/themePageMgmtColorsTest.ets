@@ -19,7 +19,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, 
   Flex, FlexDirection, ItemAlign, FlexAlign,
-  Text, Button, FontWeight, ClickEvent, Margin, Color, Toggle,WithTheme, Toggle, ToggleType,
+  Text, Button, FontWeight, ClickEvent, Margin, Color, WithTheme, Toggle, ToggleType,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 

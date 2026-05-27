@@ -1,27 +1,27 @@
 {
-    "description": "spec Tests",
+    "description": "Reflect Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
         "testcase-timeout": "15000",
-	"bundle-name": "reflect.standard.test.static",
+        "bundle-name": "reflect.standard.test.static",
         "module-name": "entry"
     },
     "kits": [
-    {
-        "test-file-name": [
-            "ActsreFlectStandardStaticTest.hap"
-        ],
-        "type": "AppInstallKit",
-        "cleanup-apps": true
-    },
-    {
-        "type": "ShellKit",
-        "run-command": [
-            "power-shell wakeup",
-            "power-shell setmode 602"
-        ]
-    }
-	]
+        {
+            "test-file-name": [
+                "ActsReflectStaticTest.hap"
+            ],
+            "type": "AppInstallKit",
+            "cleanup-apps": true
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "power-shell wakeup",
+                "power-shell setmode 602"
+            ]
+        }
+    ]
 }

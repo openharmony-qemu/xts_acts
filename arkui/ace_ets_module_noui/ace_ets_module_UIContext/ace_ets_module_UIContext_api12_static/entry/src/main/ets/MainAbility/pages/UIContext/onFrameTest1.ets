@@ -21,7 +21,6 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, 
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from '@ohos.arkui.UIContext';
 
 class MyFrameCallback extends FrameCallback {
   private tag: string;

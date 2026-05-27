@@ -85,7 +85,7 @@ struct ChildProvide {
 
 @Component
 struct ChildLink3 {
-  @Link counterVal: ClassA3 = new ClassA3(3, new SubClass4(8)) ;
+  @Link counterVal: ClassA3;
 
   build() {
     Column() {
@@ -114,7 +114,7 @@ struct ChildProp {
 
 @Component
 struct PropObjectLink3 {
-  @ObjectLink class_A: ClassA3 = new ClassA3(3, new SubClass4(8));
+  @ObjectLink class_A: ClassA3;
 
   build() {
     Column() {
@@ -133,7 +133,7 @@ struct PropObjectLink3 {
 
 @Component
 struct ObjectLinkLink {
-  @ObjectLink class_A: ClassA3 = new ClassA3(3, new SubClass4(8));
+  @ObjectLink class_A: ClassA3;
 
   build() {
     Column() {
@@ -146,7 +146,7 @@ struct ObjectLinkLink {
 
 @Component
 struct PropObjectLinkProp {
-  @ObjectLink class_A: ClassA3 = new ClassA3(3, new SubClass4(8));
+  @ObjectLink class_A: ClassA3;
 
   build() {
     Column() {
