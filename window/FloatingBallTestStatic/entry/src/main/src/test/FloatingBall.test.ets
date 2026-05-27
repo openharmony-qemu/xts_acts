@@ -991,6 +991,8 @@ export default function FloatingBallTest(): void {
         content: 'content',
         icon:pixelMapIcon as image.PixelMap,
         backgroundColor:'#008EF5',
+        titleColor: '#008EF5',
+        contentColor: '#008EF5'
       };
       try {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
