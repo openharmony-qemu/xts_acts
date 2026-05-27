@@ -310,6 +310,10 @@ int VIDEO_HW_ENCODE_ROI_FUNC_010()
     vEncSample->roiInfo = "123456789123,123456789123-123456789-12345678912=-8";
     vEncSample->outDir = OUT_DIR;
     vEncSample->surfInput = true;
+<<<<<<< HEAD
+=======
+    vEncSample->enableRoi = true;
+>>>>>>> a0b57b98bd9 (bug修复)
     vEncSample->defaultBitrateMode = SQR;
     vEncSample->DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     vEncSample->inpDir = INP_DIR_1080_30;
