@@ -55,6 +55,21 @@ import ConstructorIsNativeTest from './constructor/ConstructorIsNativeTest.test'
 import ConstructorIsPrivateTest from './constructor/ConstructorIsPrivateTest.test';
 import ConstructorIsProtectedTest from './constructor/ConstructorIsProtectedTest.test';
 import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test';
+import StaticMethodEqualsTest from "./staticMethod/StaticMethodEqualsTest.test";
+import StaticMethodGetNameTest from "./staticMethod/StaticMethodGetNameTest.test";
+import StaticMethodGetOwnerTest from "./staticMethod/StaticMethodGetOwnerTest.test";
+import StaticMethodGetParameterTypeTest from "./staticMethod/StaticMethodGetParameterTypeTest.test";
+import StaticMethodGetParameterTypesTest from "./staticMethod/StaticMethodGetParameterTypesTest.test";
+import StaticMethodGetParametersNumTest from "./staticMethod/StaticMethodGetParametersNumTest.test";
+import StaticMethodGetReturnTypeTest from "./staticMethod/StaticMethodGetReturnTypeTest.test";
+import StaticMethodInvokeTest from "./staticMethod/StaticMethodInvokeTest.test";
+import StaticMethodIsAsyncTest from "./staticMethod/StaticMethodIsAsyncTest.test";
+import StaticMethodIsGetterTest from "./staticMethod/StaticMethodIsGetterTest.test";
+import StaticMethodIsPrivateTest from "./staticMethod/StaticMethodIsPrivateTest.test";
+import StaticMethodIsProtectedTest from "./staticMethod/StaticMethodIsProtectedTest.test";
+import StaticMethodIsPublicTest from "./staticMethod/StaticMethodIsPublicTest.test";
+import StaticMethodIsSetterTest from "./staticMethod/StaticMethodIsSetterTest.test";
+
 
 export default function testsuite(): void {
   ClassCreateInstanceTest();
@@ -100,6 +115,21 @@ export default function testsuite(): void {
   ConstructorIsPrivateTest();
   ConstructorIsProtectedTest();
   ConstructorIsPublicTest();
+  
+  StaticMethodEqualsTest();
+  StaticMethodGetNameTest();
+  StaticMethodGetOwnerTest();
+  StaticMethodGetParameterTypeTest();
+  StaticMethodGetParameterTypesTest();
+  StaticMethodGetParametersNumTest();
+  StaticMethodGetReturnTypeTest();
+  StaticMethodInvokeTest();
+  StaticMethodIsAsyncTest();
+  StaticMethodIsGetterTest();
+  StaticMethodIsPrivateTest();
+  StaticMethodIsProtectedTest();
+  StaticMethodIsPublicTest();
+  StaticMethodIsSetterTest();
 
 }
 
