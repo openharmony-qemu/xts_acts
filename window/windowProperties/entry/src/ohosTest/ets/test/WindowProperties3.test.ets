@@ -889,6 +889,7 @@ export default function windowPropertiesTest3() {
           } else {
             expect().assertFail();
             done();
+          }
         }
       }
     });
