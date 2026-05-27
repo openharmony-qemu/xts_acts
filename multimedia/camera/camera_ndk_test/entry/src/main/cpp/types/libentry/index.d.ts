@@ -198,6 +198,10 @@ export const getCameraHostName: () => number;
 
 export const getCameraHostType: () => number;
 
+export const testOHGetSensorPixelArraySizeWithoutCamera: () => number;
+
+export const testOHGetSensorColorFilterArrangementWithoutCamera: () => number;
+
 export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
