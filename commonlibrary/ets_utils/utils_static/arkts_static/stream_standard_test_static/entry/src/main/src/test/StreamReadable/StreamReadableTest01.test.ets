@@ -660,8 +660,8 @@ export default function StreamReadable01Test(): void {
         try {
         const readableStream = new stream.Readable();
         expect(readableStream instanceof stream.Readable).assertTrue();
-        } catch (err) {
-          expect(err.code).assertEqual(undefined);
+      } catch (err) {
+        expect(err.code).assertEqual(undefined);
         }
       }
     });
@@ -709,7 +709,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertTrue();
+        expect(readableStream instanceof stream.Readable).assertTrue();
         expect(typeof readableStream.read).assertEqual('function');
         expect(typeof readableStream.pipe).assertEqual('function');
       } catch (err) {

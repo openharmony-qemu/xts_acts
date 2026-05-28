@@ -129,8 +129,7 @@ export default function StreamWritable05Test(): void {
         writable.on('cl!ose', callback);
         expect(writable).not().assertUndefined();
       } catch (err) {
-        const actualError = err as ApiError;
-        expect(actualError.code).assertEqual(401);
+        expect(err.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -156,8 +155,7 @@ export default function StreamWritable05Test(): void {
         writable.on('123', callback);
         expect(writable).not().assertUndefined();
       } catch (err) {
-        const actualError = err as ApiError;
-        expect(actualError.code).assertEqual(401);
+        expect(err.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -183,8 +181,7 @@ export default function StreamWritable05Test(): void {
         writable.on('close ', callback);
         expect(writable).not().assertUndefined();
       } catch (err) {
-        const actualError = err as ApiError;
-        expect(actualError.code).assertEqual(401);
+        expect(err.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
@@ -210,8 +207,7 @@ export default function StreamWritable05Test(): void {
         writable.on('CLOSE', callback);
         expect(writable).not().assertUndefined();
       } catch (err) {
-        const actualError = err as ApiError;
-        expect(actualError.code).assertEqual(401);
+        expect(err.code).assertEqual(401);
       }
 
       expect(writable.writable).assertTrue();
