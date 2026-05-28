@@ -436,11 +436,10 @@ export default function LinkedListTest06(): void {
       const TAG = 'testLinkedList06Chapter0017';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<string>()
-      // ArkTS-Sta: undefined not compatible with LinkedList<string>
-      // const test = undefined
-      // newLinkedList.add(test)
-      // expect(newLinkedList.getLastIndexOf(test)).assertEqual(0)
+      const newLinkedList = new LinkedList<string | undefined>()
+      const test: string | undefined = undefined
+      newLinkedList.add(test)
+      expect(newLinkedList.getLastIndexOf(test)).assertEqual(0)
     });
 
     /**
@@ -455,11 +454,10 @@ export default function LinkedListTest06(): void {
       const TAG = 'testLinkedList06Chapter0018';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<string>()
-      // ArkTS-Sta: null not compatible with LinkedList<string>
-      // const test = null
-      // newLinkedList.add(test)
-      // expect(newLinkedList.getLastIndexOf(test)).assertEqual(0)
+      const newLinkedList = new LinkedList<string | null>()
+      const test: string | null = null
+      newLinkedList.add(test)
+      expect(newLinkedList.getLastIndexOf(test)).assertEqual(0)
     });
 
     /**
@@ -794,11 +792,10 @@ export default function LinkedListTest06(): void {
       const TAG = 'testLinkedList06Chapter0031';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<number>()
-      // ArkTS-Sta: undefined not compatible with LinkedList<number>
-      // let text = undefined
-      // newLinkedList.add(text)
-      // expect(newLinkedList.getLastIndexOf(text)).assertEqual(0)
+      const newLinkedList = new LinkedList<number | undefined>()
+      let text: number | undefined = undefined
+      newLinkedList.add(text)
+      expect(newLinkedList.getLastIndexOf(text)).assertEqual(0)
     });
 
     /**
