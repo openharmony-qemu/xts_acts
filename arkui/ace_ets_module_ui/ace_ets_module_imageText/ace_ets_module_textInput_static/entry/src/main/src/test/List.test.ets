@@ -16,7 +16,11 @@
 import TextInputAttributeTest from './TextInputTest/TextInputAttribute.test';
 import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.test';
 import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
+import TextInputShaderStyleTest from './TextInputApi26Test/TextInputShaderStyle.test';
 
 export default function testsuite() {
   TextInputAttributeTest();
+  TextInputOnWillCopyTest();
+  TextInputOnWillCutTest();
+  TextInputShaderStyleTest();
 }

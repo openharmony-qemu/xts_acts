@@ -17,9 +17,11 @@
 import SearchStyleTest from './SearchStyleTest/SearchStyle.test';
 import SearchOnWillCopyTest from './SearchApi26Test/SearchOnWillCopy.test';
 import SearchOnWillCutTest from './SearchApi26Test/SearchOnWillCut.test';
+import SearchShaderStyleTest from './SearchApi26Test/SearchShaderStyle.test';
 
 export default function testsuite() {
   SearchStyleTest();
   SearchOnWillCopyTest();
- 	SearchOnWillCutTest();
+  SearchOnWillCutTest();
+  SearchShaderStyleTest();
 }

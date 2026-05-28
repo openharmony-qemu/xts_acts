@@ -16,7 +16,9 @@
 import TextAreaAttributeTest from './TextAreaTest/TextAreaAttribute.test';
 import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
 import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
+import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.test';
 
 export default function testsuite() {
-  TextAreaAttributeTest();  
+  TextAreaAttributeTest();
+  TextAreaShaderStyleTest();
 }
