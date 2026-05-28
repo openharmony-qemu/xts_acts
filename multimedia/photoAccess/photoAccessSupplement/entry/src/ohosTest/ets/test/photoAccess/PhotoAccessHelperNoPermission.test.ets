@@ -397,7 +397,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(err.code).assertEqual('23800151');
+        expect(Number(err.code)).assertEqual(23800151);
         done();
       }
     })
@@ -447,7 +447,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(err.code).assertEqual('23800151');
+        expect(Number(err.code)).assertEqual(23800151);
         done();
       }
     })
