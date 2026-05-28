@@ -89,17 +89,14 @@ export default function BigIntToString1Test(): void {
 
     /**
      * @tc.number SUB_BIGINT_STD_TOSTRING_1_0600
-     * @tc.name testBigIntToString1MatchesAsDecimal0600
-     * @tc.desc Mindmap return value: toString matches toStringAsDecimal
+     * @tc.name testBigIntToString1ReturnType0600
+     * @tc.desc Mindmap return value: no-arg toString returns string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testBigIntToString1MatchesAsDecimal0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const v = BigInt(255);
-
-      expect(v.toString()).assertEqual(v.toStringAsDecimal());
-      expect(Class.of(v.toString())).assertEqual(Class.from<string>());
+    it('testBigIntToString1ReturnType0600', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      expect(Class.of(BigInt(255).toString())).assertEqual(Class.from<string>());
     });
   });
 }

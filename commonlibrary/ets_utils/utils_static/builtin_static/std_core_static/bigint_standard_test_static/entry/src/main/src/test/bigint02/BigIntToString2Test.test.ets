@@ -113,7 +113,7 @@ export default function BigIntToString2Test(): void {
 
       expect(max.toString(16)).assertEqual('7fffffffffffffff');
       expect(min.toString(16)).assertEqual('-' + '8000000000000000');
-      expect(max.toString(2)).assertEqual(max.toStringAsBinary());
+      expect(max.toString(2)).assertEqual('111111111111111111111111111111111111111111111111111111111111111');
     });
   });
 }
