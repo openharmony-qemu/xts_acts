@@ -23,8 +23,7 @@ import createIncrementalSourceTest from "./testStatic/image/image/createIncremen
 import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
 import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
 import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
-import imagePixelMapForThumbnailStaticTest from "./testStatic/image/imageSource/ImagePixelmapForThumbnailTest.test";
-import ImageSourceTest from "./testStatic/image/imageSource/ImageSource.test";
+import ImageSourceTest from "./image/imageSource/ImageSource.test";
 
 
 
@@ -52,7 +51,6 @@ export default function testsuite(): void {
   imagePackerPackToDataFromPixelmapSequenceStaticSuppTest();
   imagePackerPackToFileFromPixelmapSequenceSUppStaticTest();
   ImagePackerReleaseStaticSuppTest();
-  imagePixelMapForThumbnailStaticTest()
   ImageSourceTest();
 }
 
