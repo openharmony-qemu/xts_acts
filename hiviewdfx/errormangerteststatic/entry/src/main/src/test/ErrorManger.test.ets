@@ -851,7 +851,7 @@ export default function ErrormangerTest() {
                 console.info("test_setDefaultFreezeObserver_0500: task end");
             } catch (error) {
                 console.error('test_setDefaultFreezeObserver_0500', `error: ${error.code}`);
-                expect(code === 16000205).assertTrue();
+                expect(error.code === 16000205).assertTrue();
             }
         })
 
