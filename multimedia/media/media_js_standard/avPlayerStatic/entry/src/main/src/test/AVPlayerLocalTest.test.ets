@@ -2966,7 +2966,7 @@ export default function AVPlayerLocalTest() {
        * @tc.type   FUNCTION
        * @tc.level  Level0
        */
-      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         try {
           if (fileDescriptor) {
             testGetPlaybackSpeed(fileDescriptor!, 2.0, done);
