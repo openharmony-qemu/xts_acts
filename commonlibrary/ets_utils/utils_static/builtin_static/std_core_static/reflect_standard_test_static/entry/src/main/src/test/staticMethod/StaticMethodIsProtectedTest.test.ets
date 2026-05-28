@@ -21,16 +21,8 @@ class GuardedAClass {
    protected static guardedA(): string { return 'a'; }
 }
 
-class GuardedBClass {
-   protected static guardedB(): int { return 1; }
-}
-
 class PublicOnlyProtClass {
    public static publicMethod(): string { return 'public'; }
-}
-
-class PrivateOnlyProtClass {
-   private static privateMethod(): string { return 'priv'; }
 }
 
 class ProtectedAsyncClass {
@@ -47,14 +39,6 @@ abstract class AbstractClass007 {
 
 final class FinalClass008 {
    protected static protectedMethod(): int { return 0; }
-}
-
-class RestrictedAClass {
-   protected static restrictedA(): boolean { return true; }
-}
-
-class RestrictedBClass {
-   protected static restrictedB(): float { return 1.0; }
 }
 
 class AllModifierProtClass {
@@ -81,18 +65,6 @@ class ChildClass014 extends ParentClass014 {
   protected static childProtected(): int { return 0; }
 }
 
-class InternalBProtClass {
-  protected static internalB(): string { return 'x'; }
-}
-
-class ProtectedFinalAltClass {
-  protected static protectedFinalMethod(): int { return 0; }
-}
-
-class ProtectedAsyncAltClass {
-  protected static async protectedAsyncMethod(): Promise<int> { return 42; }
-}
-
 @interface deprecated {
   fromVersion: string
 }
@@ -100,10 +72,6 @@ class ProtectedAsyncAltClass {
 class DeprecatedProtectedClass {
   @deprecated("5.0")
   protected static deprecatedMethod(): string { return 'dep'; }
-}
-
-class FetchDataProtectedClass {
-  protected static async fetchData(): Promise<boolean> { return true; }
 }
 
 class DualAsyncProtectedClass {
@@ -136,10 +104,6 @@ class FourModifierProtClass {
   private static privateMethod(): string { return 'priv'; }
   protected static protectedMethod(): string { return 'prot'; }
   protected static anotherProtected(): int { return 0; }
-}
-
-class LastGuardedClass {
-  protected static lastGuarded(): boolean { return false; }
 }
 
 class FourMethodProtClass {

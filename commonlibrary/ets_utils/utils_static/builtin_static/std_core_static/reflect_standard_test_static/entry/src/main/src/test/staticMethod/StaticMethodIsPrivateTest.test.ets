@@ -21,10 +21,6 @@ class HiddenAClass {
   private static hiddenA(): string { return 'a'; }
 }
 
-class HiddenBClass {
-  private static hiddenB(): int { return 1; }
-}
-
 class PublicOnlyClass {
   public static publicMethod(): string { return 'public'; }
 }
@@ -49,14 +45,6 @@ final class FinalClass008 {
   private static privateMethod(): int { return 0; }
 }
 
-class SecretAClass {
-  private static secretA(): boolean { return true; }
-}
-
-class SecretBClass {
-  private static secretB(): float { return 1.0; }
-}
-
 class AllModifierPrivateClass {
   public static publicMethod(): string { return 'pub'; }
   private static privateMethod(): string { return 'priv'; }
@@ -73,18 +61,6 @@ class DefaultPrivateClass {
   static defaultMethod(): string { return 'default'; }
 }
 
-class InternalAClass {
-  private static internalA(): string { return 'x'; }
-}
-
-class PrivateFinalAltClass {
-  private static privateFinalMethod(): int { return 0; }
-}
-
-class PrivateAsyncAltClass {
-  private static async privateAsyncMethod(): Promise<int> { return 42; }
-}
-
 @interface deprecated {
   fromVersion: string
 }
@@ -92,10 +68,6 @@ class PrivateAsyncAltClass {
 class DeprecatedPrivateClass {
   @deprecated("5.0")
   private static deprecatedMethod(): string { return 'dep'; }
-}
-
-class FetchDataPrivateClass {
-  private static async fetchData(): Promise<boolean> { return true; }
 }
 
 class DualAsyncPrivateClass {
@@ -128,10 +100,6 @@ class FourModifierPrivateClass {
   private static privateMethod(): string { return 'priv'; }
   protected static protectedMethod(): string { return 'prot'; }
   private static anotherPrivate(): int { return 0; }
-}
-
-class LastPrivateClass {
-  private static lastPrivate(): boolean { return false; }
 }
 
 class FourMethodPrivateClass {
