@@ -36,6 +36,14 @@ function isDeviceTablet(): boolean {
   return deviceType === 'tablet';
 }
 
+function isDevicewearable(): boolean {
+  return deviceType === 'wearable';
+}
+
+function isDeviceSupportDoubleClick(): boolean {
+  return isDevicewearable();
+}
+
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
 }
@@ -2559,5 +2567,60 @@ export default function settingUiJsunit() {
       expect(code).assertEqual(0);
       done();
     });
+
+    /**
+     * @tc.name   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_static_0100
+     * @tc.number SUB_Applications_Settings_openDoubleClickSettingsPage_valid_static_0100
+     * @tc.desc   SUB_Applications_Settings_openDoubleClickSettingsPage_valid_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_openDoubleClickSettingsPage_valid_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openDoubleClickSettingsPage(abilityContext!);
+      } catch (err) {
+        console.error("[openDoubleClickSettingsPage_valid_static] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+      }
+      expect(code).assertEqual(0);
+      done();
+    }); 
+
+    /**
+     * @tc.name   SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
+     * @tc.number SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
+     * @tc.desc   SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Applications_Settings_isDoubleClickAppForSelf_false_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isDeviceSupportDoubleClick()) {
+        done();
+        return;
+      }
+      let re = false;
+      let code = 0;
+      try {
+        re = await settings.isDoubleClickAppForSelf();
+        expect(re).assertEqual(false);
+      } catch (err) {
+        console.error("[isDoubleClickAppForSelf_false_static] error = " + err);
+        if ((err as BusinessError).code) {
+          code = (err as BusinessError).code;
+        }
+        expect(code).assertEqual(0);
+      }
+      done();
+    }); 
+
   })
 }
