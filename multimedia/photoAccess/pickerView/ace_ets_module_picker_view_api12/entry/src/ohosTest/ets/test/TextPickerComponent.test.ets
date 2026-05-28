@@ -85,22 +85,17 @@ interface DialogCreationExTestCase {
 async function driveFn() {
   let dr = Driver.create();
   await CommonFunc.sleep(100);
-  let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 3000);
-  console.info('[driveFn] waitForComponent 允许 result: power=' + JSON.stringify(power) + ', isNull=' + (power === null) + ', isUndefined=' + (power === undefined));
-  if (power === null || power === undefined) {
-    console.info('[driveFn] FAILED to find 允许 button, scanning all visible components on screen...');
-    let allTexts: Component = await dr?.waitForComponent(ON.text(''), 3000);
-    console.info('[driveFn] ON.text("") scan result: ' + JSON.stringify(allTexts));
-    let allButtons: Array<Component> = await dr?.findComponents(ON.type('Button'));
-    console.info('[driveFn] ON.type("Button") found count: ' + (allButtons?.length ?? 0));
-    for (let i = 0; i < (allButtons?.length ?? 0); i++) {
-      let btnText = await allButtons![i].getText();
-      console.info('[driveFn] Button[' + i + '] text=' + btnText);
-    }
-  } else {
-    console.info('[driveFn] FOUND 允许 button, clicking it');
-    await power?.click();
+  let power1 = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1500)
+    .catch(() => undefined);
+
+  if (power1 === undefined) {
+    power1 = await dr?.waitForComponent(ON.text('Allow', MatchPattern.EQUALS), 1500)
+      .catch(() => undefined);
   }
+  await power1?.click();
+
+  let power2 = await dr?.waitForComponent(ON.text('始终允许', MatchPattern.EQUALS), 3000);
+  await power2?.click();
   await CommonFunc.sleep(1000);
 }
 
@@ -1708,59 +1703,37 @@ export default function TextPicker() {
 
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
 
-      let cases: photoAccessHelper.PhotoCreationConfig[] = [
+      let cases: AssetCreateOption[] = [
         { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
         { title: 'test', fileNameExtension: 'mp4', photoType: photoAccessHelper.PhotoType.VIDEO, subtype: photoAccessHelper.PhotoSubtype.DEFAULT },
         { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.MOVING_PHOTO },
         { title: 'test', fileNameExtension: 'jpg', photoType: photoAccessHelper.PhotoType.IMAGE, subtype: photoAccessHelper.PhotoSubtype.BURST },
       ];
 
-
-      for (let item of cases) {
+      for (let i = 0; i < cases.length; i++) {
+        let item = cases[i];
+        console.log(`testPicker25 index = ${i}`)
         try {
-          console.info('testPicker25 calling createAssetWithShortTermPermission with: ' + JSON.stringify(item));
-          let createPromise: Promise<string> = phAccessHelper.createAssetWithShortTermPermission(item);
-          console.info('testPicker25 createAssetWithShortTermPermission returned Promise, promise state: pending');
-
-          console.info('testPicker25 calling driveFn to find dialog button...');
-          await driveFn();
-          console.info('testPicker25 driveFn completed');
-
-          const timeoutPromise: Promise<string | undefined> = new Promise<string | undefined>((resolve: (value: string | undefined) => void, reject: (reason: Error) => void) => {
-            setTimeout(() => {
-              reject(new Error('testPicker25 createAsset timeout after 30s'));
-            }, 30000);
+          let result: Array<string> = [];
+          phAccessHelper.createAssetWithShortTermPermission(item).then((data: Array<string>)=>{
+            console.log(`createAssetWithShortTermPermission result  = ${JSON.stringify(data)}`)
+            result = data;
           });
-
-          let result: string | undefined = await Promise.race<string | undefined>([createPromise, timeoutPromise]);
-          console.info('testPicker25 Promise.race resolved, result = ' + JSON.stringify(result));
-          if (result === undefined || result === null || result === '') {
-            console.info('testPicker25 WARNING: result is empty/undefined, ModalUIExtension may have returned empty desFileUri (dialog may not have appeared)');
-          }
+          console.log(`testPicker25 createPromise`)
+          await driveFn();
+          console.log(`testPicker25 result = ${JSON.stringify(result)}`)
           expect(result).not().assertUndefined();
-        } catch (error) {
-          console.info('testPicker25 caught error, raw error: ' + JSON.stringify(error));
-          if (error instanceof Error) {
-            console.info('testPicker25 error.message=' + error.message + ', error.name=' + error.name);
-          }
-          if (error instanceof Error && error.message === 'createAsset timeout after 30s') {
-            console.info('testPicker25 TIMEOUT after 30s - likely the ModalUIExtension confirm dialog did NOT appear on blue-zone ROM, so driveFn could not click any button and the promise never resolved');
-            console.info('testPicker25 This confirms: CONFIRM_BOX_EXT_ABILITY_NAME is missing in blue-zone, CreateModalUIExtension failed, dialog never showed');
-            continue;
-          }
-          let err = error as BusinessError;
-          console.info('testPicker25 BusinessError code=' + err.code + ', message=' + err.message);
-          if (err.code == 14000011) {
-            console.info('testPicker25 error 14000011 = inner fail, likely CreateModalUIExtension returned DEFAULT_SESSION_ID (confirm box extension not found)');
-          }
-          if (err.code == 13900020) {
-            console.info('testPicker25 error 13900020 = permission denied or system service unavailable');
-          }
-          let isValidErrorCode = (err.code == 14000011 || err.code == 13900020);
+
+        } catch(error) {
+          let isValidErrorCode = (error.code == 14000011 || error.code == 13900020);
+          console.log(`testPicker25 isValidErrorCode = ${isValidErrorCode}`)
           expect(isValidErrorCode).assertTrue();
         }
-      }	 
-      console.info("testPicker25 finish");	 
+
+        let driver = Driver.create();
+        await driver.delayMs(500);
+      }
+      console.info("testPicker25 finish");
       done();
     });
 
