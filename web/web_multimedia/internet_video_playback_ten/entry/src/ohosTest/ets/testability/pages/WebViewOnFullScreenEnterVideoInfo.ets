@@ -16,11 +16,13 @@ import events_emitter from '@ohos.events.emitter';
 import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webViewOnFullScreenEnterInfo {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   handler: FullScreenExitHandler = new FullScreenExitHandler();
   @State str: string = "emitOnFullScreenEnterInfo";
   @State javaScriptAccess: boolean = true;
@@ -42,6 +44,10 @@ struct webViewOnFullScreenEnterInfo {
   }
   onPageHide() {
     events_emitter.off(300410)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
       if (eventData != null) {
@@ -86,7 +92,7 @@ struct webViewOnFullScreenEnterInfo {
                 }
               })
           }
-          Web({ src: $rawfile('webViewFullScreenTest.html'), controller: this.controller })
+          Web({ src: this.mServer.getAssetUrl('webViewFullScreenTest.html'), controller: this.controller })
                 .key("TestwebViewOnFullScreenEnterInfo")
                 .javaScriptAccess(this.javaScriptAccess)
                 .fileAccess(this.fileAccess)

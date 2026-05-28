@@ -19,6 +19,7 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 111780;
 
@@ -27,6 +28,7 @@ const EVENT_ID_SET_EMIT_KEY = 111780;
 struct webViewContMessageError {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   ports: web_webview.WebMessagePort[] | null = null;
   msgPort: web_webview.WebMessagePort[] | null= null;
   @State sendFromEts: string = 'Send this message from ets to HTML';
@@ -73,6 +75,10 @@ struct webViewContMessageError {
     let abilityDelegatorArguments =  AbilityDelegatorRegistry.getArguments()
     console.info('start run testcase!!!')
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -234,7 +240,7 @@ struct webViewContMessageError {
         })
       }
 
-      Web({ src: $rawfile('indexEdit.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexEdit.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)

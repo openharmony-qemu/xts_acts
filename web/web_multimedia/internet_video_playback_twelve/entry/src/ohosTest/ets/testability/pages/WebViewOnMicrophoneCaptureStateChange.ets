@@ -19,12 +19,14 @@ import webView from '@ohos.web.webview';
 import { ON,Driver } from '@kit.TestKit';
 import business_error, { BusinessError } from '@ohos.base';
 import { abilityAccessCtrl, PermissionRequestResult, common } from '@kit.AbilityKit';
+import { XtsTestServer } from 'library';
 const driver = Driver.create();
 
 @Entry
 @Component
 struct webViewController {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   uiContext: UIContext = this.getUIContext();
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -43,6 +45,10 @@ struct webViewController {
 
   onPageHide() {
     events_emitter.off(300752)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -132,7 +138,7 @@ struct webViewController {
         })
       }
 
-      Web({ src: $rawfile('microphone.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('microphone.html'), controller: this.controller })
         .onPermissionRequest((event) => {
           if (event) {
             this.uiContext.showAlertDialog({

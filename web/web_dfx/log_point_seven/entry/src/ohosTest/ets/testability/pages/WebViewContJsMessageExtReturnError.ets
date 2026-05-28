@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils.test';
 import web_webview from '@ohos.web.webview';
+import { XtsTestServer } from 'library';
 
 
 const EVENT_ID_SET_EMIT_KEY = 111670;
@@ -24,6 +25,7 @@ const EVENT_ID_SET_EMIT_KEY = 111670;
 @Component
 struct webViewContJsMessageExtReturnError {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State userAgent: string = "Mozilla/5.0 (Window NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)" +
     " CHrome/105.0.0.0 Safari/537.36 Edg/105.0.1343.27";
@@ -61,7 +63,9 @@ struct webViewContJsMessageExtReturnError {
     }
   }
 
-
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
 
   build() {
     Column() {
@@ -72,7 +76,7 @@ struct webViewContJsMessageExtReturnError {
           this.isReceive = -1;
           switch (this.str) {
             case "emitJsMessageExtGetStringError": {
-              this.controller.loadUrl($rawfile('testMessageExt.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('testMessageExt.html'));
               await Utils.waitForExist(()=>this.isPageEnd, 'webViewContJsMessageExtReturnErrorIsPageEnd', 1, 1000);
               this.isPageEnd = -1;
               try {
@@ -107,7 +111,7 @@ struct webViewContJsMessageExtReturnError {
             case "emitJsMessageExtGetNumberError": {
               this.errorTestCode = 0;
               this.errorMsg = 'failed';
-              this.controller.loadUrl($rawfile('testMessageExt.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('testMessageExt.html'));
               await Utils.waitForExist(()=>this.isPageEnd, 'webViewContJsMessageExtReturnErrorIsPageEnd', 1, 1000);
               this.isPageEnd = -1;
               try {
@@ -142,7 +146,7 @@ struct webViewContJsMessageExtReturnError {
             case "emitJsMessageExtGetBooleanError": {
               this.errorTestCode = 0;
               this.errorMsg = 'failed';
-              this.controller.loadUrl($rawfile('testMessageExt.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('testMessageExt.html'));
               await Utils.waitForExist(()=>this.isPageEnd, 'webViewContJsMessageExtReturnErrorIsPageEnd', 1, 1000);
               this.isPageEnd = -1;
               try {
@@ -178,7 +182,7 @@ struct webViewContJsMessageExtReturnError {
             case "emitJsMessageExtGetArrayBufferError": {
               this.errorTestCode = 0;
               this.errorMsg = 'failed';
-              this.controller.loadUrl($rawfile('testMessageExt.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('testMessageExt.html'));
               await Utils.waitForExist(()=>this.isPageEnd, 'webViewContJsMessageExtReturnErrorIsPageEnd', 1, 1000);
               this.isPageEnd = -1;
               try {
@@ -213,7 +217,7 @@ struct webViewContJsMessageExtReturnError {
             case "emitJsMessageExtGetArrayError": {
               this.errorTestCode = 0;
               this.errorMsg = 'failed';
-              this.controller.loadUrl($rawfile('testMessageExt.html'));
+              this.controller.loadUrl(this.mServer.getAssetUrl('testMessageExt.html'));
               await Utils.waitForExist(()=>this.isPageEnd, 'webViewContJsMessageExtReturnErrorIsPageEnd', 1, 1000);
               this.isPageEnd = -1;
               try {
@@ -249,7 +253,7 @@ struct webViewContJsMessageExtReturnError {
         })
       }
 
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
         .domStorageAccess(this.domStorageAccess)

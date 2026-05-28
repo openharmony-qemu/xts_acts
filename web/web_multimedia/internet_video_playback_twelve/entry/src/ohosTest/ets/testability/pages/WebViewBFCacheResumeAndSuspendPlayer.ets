@@ -22,7 +22,7 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
 import { waitForExist } from '../../test/WaitTest.test';
-import { Constants } from '../../test/Constants.test';
+import { XtsTestServer } from 'library';
 
 let isResume = false
 let isSuspend = false
@@ -825,6 +825,7 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer?: webview.NativeMediaPlayerBridge
   nodeController?: MyNodeController
   nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
@@ -910,6 +911,10 @@ struct WebComponent {
     events_emitter.off(137450)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -944,7 +949,7 @@ struct WebComponent {
           switch (this.emitKey) {
             case 'emitWebviewBFCacheResumePlayer': {
               this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
+              this.controller.loadUrl(this.mServer.getAssetUrl('single_video_1.html'))
               await waitForExist(() => this.isComplete, this.emitKey, 0);
 
               console.info('exec button play ==>' + this.emitKey)
@@ -956,7 +961,7 @@ struct WebComponent {
               } else {
                 console.info('exec load example url ==>' + this.emitKey)
                 this.isComplete = -1;
-                this.controller.loadUrl(Constants.EXAMPLE_URL)
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await waitForExist(() => this.isComplete, this.emitKey, 0);
 
                 this.isComplete = -1;
@@ -972,7 +977,7 @@ struct WebComponent {
             }
             case 'emitWebviewBFCacheSuspendPlayer': {
               this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
+              this.controller.loadUrl(this.mServer.getAssetUrl('single_video_1.html'))
               await waitForExist(() => this.isComplete, this.emitKey, 0);
 
               console.info('exec button play ==>' + this.emitKey)
@@ -984,7 +989,7 @@ struct WebComponent {
               } else {
                 console.info('exec load example url ==>' + this.emitKey)
                 this.isComplete = -1;
-                this.controller.loadUrl(Constants.EXAMPLE_URL)
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await waitForExist(() => this.isComplete, this.emitKey, 0);
                 
                 if (isSuspend === false) {
@@ -998,7 +1003,7 @@ struct WebComponent {
       }
 
       Stack() {
-        Web({ src: 'www.example.com', controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
           .enableNativeMediaPlayer({ enable: true, shouldOverlay: this.isShouldOverlay })
           .onPageBegin(async (event: PageBeginParam) => {
             console.info('enter onPageBegin, url:' + event.url);
@@ -1029,11 +1034,11 @@ struct WebComponent {
           .onInterceptRequest((event) => {
             if (event) {
               console.log('url:' + event.request.getRequestUrl());
-              if (event.request.getRequestUrl() != 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
+              if (event.request.getRequestUrl().indexOf('single_video_1.html') <= -1) {
                 return null
               }
             }
-            if (event.request.getRequestUrl() == 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
+            if (event.request.getRequestUrl().indexOf('single_video_1.html') > -1) {
               this.responseWeb.setResponseData(this.webData);
             }
             this.responseWeb.setResponseEncoding('utf-8');

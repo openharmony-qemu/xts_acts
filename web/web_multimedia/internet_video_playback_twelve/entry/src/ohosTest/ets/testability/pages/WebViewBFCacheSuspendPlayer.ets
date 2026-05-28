@@ -24,7 +24,7 @@ import JSON from '@ohos.util.json';
 import { Driver, ON } from '@ohos.UiTest';
 import Want from '@ohos.app.ability.Want';
 import { waitForExist } from '../../test/WaitTest.test';
-import { Constants } from '../../test/Constants.test';
+import { XtsTestServer } from 'library';
 
 let isPlaying: Boolean = false
 let haveCallBack: Boolean = false
@@ -729,6 +729,7 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer?: webview.NativeMediaPlayerBridge
   nodeController?: MyNodeController
   nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
@@ -801,7 +802,7 @@ struct WebComponent {
           }
 
           function handleClick() {
-              window.location.href = 'https://www.example.com';
+              window.location.href = 'about:blank';
           }
 
           function handleBack() {
@@ -826,7 +827,7 @@ struct WebComponent {
       <body>
       <h1>HTML5 Video Events and API</h1>
 
-      <a href="https://www.example.com">搜索链接</a>
+      <a href="about:blank">搜索链接</a>
 
       <video controls onplay="handlePlay(0);" onended="handleEnded(0);" id="video" autoplay muted>
           <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
@@ -898,7 +899,7 @@ struct WebComponent {
               return 'play';
           }
           function handleClick() {
-              window.location.href = 'https://www.example.com';
+              window.location.href = 'about:blank';
           }
       </script>
 
@@ -907,7 +908,7 @@ struct WebComponent {
       <body>
       <h1>HTML5 Video Events and API</h1>
 
-      <a href="https://www.example.com">搜索链接</a>
+      <a href="about:blank">搜索链接</a>
 
       <video id='video0' muted controls onplay="handlePlay(0);" onended="handleEnded(0);">
           <source src="https://www.w3cschool.cn/statics/demosource/movie.mp4" type='video/mp4'>
@@ -969,6 +970,10 @@ struct WebComponent {
     events_emitter.off(137500)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -1026,7 +1031,7 @@ struct WebComponent {
           switch (this.emitKey) {
             case 'emitWebviewBFCacheSuspendPlayerZero': {
               this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
+              this.controller.loadUrl(this.mServer.getAssetUrl('single_video_1.html'))
               await waitForExist(() => this.isComplete, this.emitKey, 0);
 
               console.info('exec button play ==>' + this.emitKey)
@@ -1038,14 +1043,14 @@ struct WebComponent {
               } else {
                 console.info('exec load example url ==>' + this.emitKey)
                 this.isComplete = -1;
-                this.controller.loadUrl(Constants.EXAMPLE_URL)
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'))
                 await waitForExist(() => this.isComplete, this.emitKey, 0);
               }
               break;
             }
             case 'emitWebviewBFCacheSuspendPlayerOne': {
               this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/single_video_1.html')
+              this.controller.loadUrl(this.mServer.getAssetUrl('single_video_1.html'))
               await waitForExist(() => this.isComplete, this.emitKey, 0);
 
               console.info('exec button play ==>' + this.emitKey)
@@ -1062,7 +1067,7 @@ struct WebComponent {
             }
             case 'emitWebviewBFCacheSuspendPlayerTwo': {
               this.isComplete = -1;
-              this.controller.loadUrl('http://114.115.208.239:8070/colombo_test/multi_video.html')
+              this.controller.loadUrl(this.mServer.getAssetUrl('multi_video.html'))
               await waitForExist(() => this.isComplete, this.emitKey, 0);
               this.controller.runJavaScript('playById("video0")')
               this.controller.runJavaScript('playById("video1")')
@@ -1088,7 +1093,7 @@ struct WebComponent {
       }
 
       Stack() {
-        Web({ src: 'www.example.com', controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
           .enableNativeMediaPlayer({ enable: true, shouldOverlay: this.isShouldOverlay })
           .onPageBegin(async (event: PageBeginParam) => {
             console.info('enter onPageBegin, url:' + event.url);
@@ -1113,9 +1118,9 @@ struct WebComponent {
             if (event) {
               console.log('url:' + event.request.getRequestUrl());
               let request = event.request.getRequestUrl()
-              if (request == 'http://114.115.208.239:8070/colombo_test/single_video_1.html') {
+              if (request.indexOf('single_video_1.html') > -1) {
                 this.responseWeb.setResponseData(this.singleWebData);
-              } else if (request == 'http://114.115.208.239:8070/colombo_test/multi_video.html') {
+              } else if (request.indexOf('multi_video.html') > -1) {
                 this.responseWeb.setResponseData(this.multiWebData);
               } else {
                 return null
