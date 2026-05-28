@@ -64,13 +64,18 @@ interface dataSpec {
   paramSpec: cryptoFramework.IvParamsSpec
 }
 
-interface dataGcmOrCCMSpec {
+interface dataGcmSpec {
   data: cryptoFramework.DataBlob|null;
-  paramSpec: cryptoFramework.GcmParamsSpec|cryptoFramework.CcmParamsSpec
+  paramSpec: cryptoFramework.GcmParamsSpec
 }
 
-function tagEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, data: cryptoFramework.DataBlob,
-                                   paramsSpec: cryptoFramework.GcmParamsSpec|cryptoFramework.CcmParamsSpec): dataGcmOrCCMSpec {
+interface dataCcmSpec {
+  data: cryptoFramework.DataBlob|null;
+  paramSpec: cryptoFramework.CcmParamsSpec
+}
+
+function tagGcmEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob, paramsSpec: cryptoFramework.GcmParamsSpec): dataGcmSpec {
   try {
     let cipher = cryptoFramework.createCipher(algName);
     if (isEnc) {
@@ -87,11 +92,36 @@ function tagEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: c
         paramsSpec.authTag = authTag;
       }
     }
-    return {data:updateOutput, paramSpec:paramsSpec} as dataGcmOrCCMSpec;
+    return {data:updateOutput, paramSpec:paramsSpec} as dataGcmSpec;
   } catch (error) {
     console.error(`“${error}“, error code: ${error.code}`);
     throw error as Error;
   }
+}
+
+function tagCcmEncryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey,
+  data: cryptoFramework.DataBlob,paramsSpec: cryptoFramework.CcmParamsSpec): dataCcmSpec {
+    try {
+      let cipher = cryptoFramework.createCipher(algName);
+      if (isEnc) {
+        cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramsSpec);
+      } else {
+        cipher.initSync(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramsSpec);
+      }
+      let updateOutput = cipher.updateSync(data);
+      if (isEnc) {
+        let authTag = cipher.doFinalSync(null);
+        if (authTag === null) {
+          throw new Error("[TEST] Tag Error");
+        } else {
+          paramsSpec.authTag = authTag;
+        }
+      }
+      return {data:updateOutput, paramSpec:paramsSpec} as dataCcmSpec;
+    } catch (error) {
+      console.error(`“${error}“, error code: ${error.code}`);
+      throw error as Error;
+    }
 }
 
 function encryptDecryptMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, data: cryptoFramework.DataBlob,
@@ -224,7 +254,7 @@ function encryptDecryptAsymOAaepMessageSync(algName: string, keyPair: cryptoFram
 }
 
 function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
-                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): dataGcmOrCCMSpec {
+                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): dataGcmSpec {
   try {
     let cipherText1 = new Uint8Array();
     let cipher = cryptoFramework.createCipher(algName);
@@ -252,7 +282,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
       paramSpec.authTag = authTag1;
     }
 
-    return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
+    return {data:{data: cipherText1}, paramSpec} as dataGcmSpec;
   } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
@@ -260,7 +290,7 @@ function gcmEncOrDecMessageSync(algName: string, isEnc: boolean, symKey: cryptoF
 }
 
 async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: number,
-                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): Promise<dataGcmOrCCMSpec> {
+                                data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.GcmParamsSpec): Promise<dataGcmSpec> {
   try {
     let cipherText1 = new Uint8Array();
     let cipher = cryptoFramework.createCipher(algName);
@@ -287,7 +317,7 @@ async function gcmEncOrDecMessagePromise(algName: string, isEnc: boolean, symKey
     }
     paramSpec.authTag = authTag1;
 
-    return {data:{data: cipherText1}, paramSpec} as dataGcmOrCCMSpec;
+    return {data:{data: cipherText1}, paramSpec} as dataGcmSpec;
   } catch (error) {
     console.error('sync error, ' + error.code + " errorMsg " + error.message);
     throw error as Error;
@@ -731,6 +761,48 @@ async function aeadCipherWithUpdateCallback(cipher: cryptoFramework.Cipher, isEn
   return {data: mergeText};
 }
 
+async function aeadEncOrDecPromise(algName: string, isEnc: boolean, symKey: cryptoFramework.SymKey, blockSize: int, dataLen: int,
+  data: cryptoFramework.DataBlob, paramSpec: cryptoFramework.AeadParamsSpec): Promise<cryptoFramework.DataBlob> {
+  try {
+    let cipherText1 = new Uint8Array();
+    let cipher = cryptoFramework.createCipher(algName);
+    if (isEnc) {
+      await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, paramSpec);
+    } else {
+      await cipher.init(cryptoFramework.CryptoMode.DECRYPT_MODE, symKey, paramSpec);
+    }
+    let remainingNumber: int = dataLen % blockSize;
+    let business: int = (dataLen - remainingNumber) / blockSize;
+    for(let dataSize = 0; dataSize < business; dataSize++) {
+      let tmp = data.data.subarray(blockSize * dataSize, blockSize * (dataSize + 1));
+      let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+      let encryptCipher: cryptoFramework.DataBlob|null = await cipher.update(doFinalText);
+      if (encryptCipher === null) {
+        throw new Error("[TEST] Update Failed.");
+      }
+      let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
+      mergeText.set(cipherText1);
+      mergeText.set(encryptCipher.data, cipherText1.length);
+      cipherText1 = mergeText;
+    }
+    let tmp = data.data.subarray(blockSize * business, blockSize * (business + 1));
+    let doFinalText: cryptoFramework.DataBlob = { data:tmp };
+    let encryptCipher: cryptoFramework.DataBlob|null = await cipher.doFinal(doFinalText);
+    if (encryptCipher === null) {
+      return {data: cipherText1};
+    }
+    let mergeText = new Uint8Array(cipherText1.length + encryptCipher.data.length);
+    mergeText.set(cipherText1);
+    mergeText.set(encryptCipher.data, cipherText1.length);
+    cipherText1 = mergeText;
+
+    return {data: cipherText1};
+  } catch (error) {
+    console.error('aeadEncOrDecPromise, ' + error.code + " errorMsg " + error.message);
+    throw error as Error;
+  }
+}
+
 export {
   genGcmOrCcmParamsSpec,
   genCcmParamsSpec,
@@ -743,9 +815,11 @@ export {
   gcmEncOrDecNullSync,
   createAsymKeySync,
   encryptDecryptMessageSync,
-  tagEncryptDecryptMessageSync,
+  tagGcmEncryptDecryptMessageSync,
+  tagCcmEncryptDecryptMessageSync,
   dataSpec,
-  dataGcmOrCCMSpec,
+  dataGcmSpec,
+  dataCcmSpec,
   encryptDecryptAsymMessageSync,
   encryptDecryptAsymOAaepMessageSync,
   gcmEncOrDecMessageSync,
@@ -770,6 +844,7 @@ export {
   MODE_CFB128_CIPHER_SEPC,
   MODE_GCM_CIPHER_SEPC,
   MODE_CCM_CIPHER_SEPC,
+  sm4GcmVector,
   SM4_GCM_VECTOR,
   WEAK_SYM_CIPHER,
   WEAK_MODE_CIPHER,
@@ -784,5 +859,6 @@ export {
   updateCallback,
   finalCallback,
   aeadCipherWithUpdateCallback,
-  aeadCipherCallback
+  aeadCipherCallback,
+  aeadEncOrDecPromise
 }
