@@ -87,7 +87,7 @@ export default function InstanceFieldGetTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0200
      * @tc.name testGetType019
-     * @tc.desc Verify types with circular references
+     * @tc.desc Verify getType() on self-referencing field returns non-null type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

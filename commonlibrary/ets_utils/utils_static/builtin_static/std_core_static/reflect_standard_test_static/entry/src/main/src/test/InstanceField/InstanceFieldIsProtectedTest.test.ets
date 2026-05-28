@@ -325,7 +325,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1200
      * @tc.name testIsProtected017
      * @tc.desc Verify protected in constructor parameters
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1300
      * @tc.name testIsProtected018
      * @tc.desc Verify parent class protected fields visible to child but not reflectable
      * @tc.size MediumTest
@@ -366,7 +366,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1400
      * @tc.name testIsProtected019
      * @tc.desc Verify child class can access parent protected field via method but not reflection
      * @tc.size MediumTest
@@ -387,7 +387,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1500
      * @tc.name testIsProtected020
      * @tc.desc Verify protected fields cannot be accessed via getValue
      * @tc.size MediumTest
@@ -407,7 +407,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1600
      * @tc.name testIsProtected021
      * @tc.desc Verify StaticField also has isProtected for static protected fields
      * @tc.size MediumTest
@@ -426,7 +426,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1700
      * @tc.name testIsProtected022
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
@@ -443,7 +443,7 @@ export default function InstanceFieldIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_2100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1800
      * @tc.name testIsProtected023
      * @tc.desc Verify isProtected consistency on multiple InstanceField instances
      * @tc.size MediumTest

@@ -138,7 +138,7 @@ export default function InstanceFieldGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0400
      * @tc.name testGetOwner013
-     * @tc.desc Verify getOwner() for nested class field
+     * @tc.desc Verify getOwner() returns correct class name for a top-level class field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -153,7 +153,7 @@ export default function InstanceFieldGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0500
      * @tc.name testGetOwner014
-     * @tc.desc Verify classes with same name in different packages
+     * @tc.desc Verify classes with different names produce different owner names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -242,6 +242,7 @@ export default function InstanceFieldGetOwnerTest(): void {
 
       expect(owner1.getName()).assertEqual(owner2.getName());
       expect(owner2.getName()).assertEqual(owner3.getName());
+      expect(owner1 === owner2).assertTrue();
     });
 
     /**

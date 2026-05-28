@@ -42,7 +42,7 @@ export default function InstanceFieldEqualsTest(): void {
   describe('InstanceFieldEqualsTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -178,7 +178,7 @@ export default function InstanceFieldEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_0900
      * @tc.name testEquals020
-     * @tc.desc Verify equals completes with same field
+     * @tc.desc Verify equals works correctly inside try-finally blocks
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -235,7 +235,7 @@ export default function InstanceFieldEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1200
      * @tc.name testEquals023
-     * @tc.desc Verify parent and child class field comparison returns false
+     * @tc.desc Verify fields with different names and different classes are not equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

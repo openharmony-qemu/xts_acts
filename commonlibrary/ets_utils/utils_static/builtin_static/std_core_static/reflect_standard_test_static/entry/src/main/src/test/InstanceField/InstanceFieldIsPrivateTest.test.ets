@@ -165,7 +165,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0400
      * @tc.name testIsPrivate005
-     * @tc.desc Verify protected fields cannot be reflected
+     * @tc.desc Verify protected fields are not reflectable via getInstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,7 +300,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1200
      * @tc.name testIsPrivate017
      * @tc.desc Verify private in constructor parameters
      * @tc.size MediumTest
@@ -316,7 +316,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1300
      * @tc.name testIsPrivate018
      * @tc.desc Verify parent class private fields invisible to child
      * @tc.size MediumTest
@@ -341,7 +341,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1400
      * @tc.name testIsPrivate019
      * @tc.desc Verify private fields cannot be accessed via getValue
      * @tc.size MediumTest
@@ -361,7 +361,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1500
      * @tc.name testIsPrivate020
      * @tc.desc Verify StaticField also has isPrivate for static private fields
      * @tc.size MediumTest
@@ -380,7 +380,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1600
      * @tc.name testIsPrivate021
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
@@ -397,7 +397,7 @@ export default function InstanceFieldIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1700
      * @tc.name testIsPrivate022
      * @tc.desc Verify isPrivate consistency on multiple InstanceField instances
      * @tc.size MediumTest

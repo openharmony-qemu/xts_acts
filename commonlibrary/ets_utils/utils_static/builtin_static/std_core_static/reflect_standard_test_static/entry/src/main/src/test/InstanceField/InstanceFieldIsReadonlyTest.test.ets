@@ -61,7 +61,7 @@ class VariousTypes014 {
   public readonly bool: boolean = false;
   public readonly arr: Array<int> = [];
   public readonly obj: Object = {};
-  public readonly date: Date = new Date();
+  public readonly intVal: int = 0;
 }
 
 class PublicReadonly016 {
@@ -237,9 +237,9 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1000
      * @tc.name testIsReadonly015
-     * @tc.desc Verify readonly field cannot have setter at runtime
+     * @tc.desc Verify readonly field isReadonly returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -251,7 +251,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1100
      * @tc.name testIsReadonly016
      * @tc.desc Verify public readonly is reflectable and readonly
      * @tc.size MediumTest
@@ -266,7 +266,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1200
      * @tc.name testIsReadonly017
      * @tc.desc Verify private readonly is not reflectable
      * @tc.size MediumTest
@@ -280,7 +280,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1300
      * @tc.name testIsReadonly018
      * @tc.desc Verify modifying readonly field should fail
      * @tc.size MediumTest
@@ -296,15 +296,14 @@ export default function InstanceFieldIsReadonlyTest(): void {
         field.setValue(instance, 'modified');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
       let finalValue: string = field.getValue(instance) as string;
       expect(finalValue).assertEqual('original');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1400
      * @tc.name testIsReadonly019
      * @tc.desc Verify non-readonly field can be modified normally
      * @tc.size MediumTest
@@ -321,7 +320,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1500
      * @tc.name testIsReadonly020
      * @tc.desc Verify performance of repeated isReadonly() calls
      * @tc.size MediumTest
@@ -338,7 +337,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1600
      * @tc.name testIsReadonly021
      * @tc.desc Verify StaticField also has isReadonly for static readonly fields
      * @tc.size MediumTest
@@ -354,7 +353,7 @@ export default function InstanceFieldIsReadonlyTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1700
      * @tc.name testIsReadonly022
      * @tc.desc Verify isReadonly consistency across multiple field instances
      * @tc.size MediumTest

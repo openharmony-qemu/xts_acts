@@ -46,7 +46,7 @@ class AccessClass004 {
 }
 
 class DefaultClass005 {
-  public defaultField: string = 'value';
+  public accessibleField: string = 'value';
 }
 
 class ParentClass007 {
@@ -168,7 +168,7 @@ export default function InstanceFieldIsPublicTest(): void {
      */
     it('testIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DefaultClass005>();
-      let field = cls.getInstanceField('defaultField')!;
+      let field = cls.getInstanceField('accessibleField')!;
       expect(field.isPublic()).assertTrue();
     });
 
@@ -265,7 +265,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
      * @tc.name testIsPublic015
      * @tc.desc Verify interface fields are public by default
      * @tc.size MediumTest
@@ -279,7 +279,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
      * @tc.name testIsPublic016
      * @tc.desc Verify public readonly field
      * @tc.size MediumTest
@@ -297,7 +297,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1500
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
      * @tc.name testIsPublic017
      * @tc.desc Verify static public field
      * @tc.size MediumTest
@@ -314,7 +314,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1300
      * @tc.name testIsPublic018
      * @tc.desc Verify reflection can only access public fields
      * @tc.size MediumTest
@@ -328,10 +328,12 @@ export default function InstanceFieldIsPublicTest(): void {
       expect(fields.length).assertEqual(2);
       expect(fields[0].getName()).assertEqual('visible');
       expect(fields[0].isPublic()).assertTrue();
+      expect(fields[1].getName()).assertEqual('maybeVisible');
+      expect(fields[1].isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1700
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1400
      * @tc.name testIsPublic019
      * @tc.desc Verify performance of repeated isPublic() calls
      * @tc.size MediumTest
@@ -349,7 +351,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1800
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1500
      * @tc.name testIsPublic020
      * @tc.desc Verify public field can be accessed with getValue and setValue
      * @tc.size MediumTest
@@ -369,7 +371,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1600
      * @tc.name testIsPublic021
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
@@ -392,7 +394,7 @@ export default function InstanceFieldIsPublicTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_2000
+     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1700
      * @tc.name testIsPublic022
      * @tc.desc Verify isPublic consistency on multiple InstanceField instances
      * @tc.size MediumTest

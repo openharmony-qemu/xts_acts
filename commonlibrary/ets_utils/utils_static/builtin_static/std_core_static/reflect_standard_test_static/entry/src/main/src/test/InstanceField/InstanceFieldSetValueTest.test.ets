@@ -221,8 +221,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance2, 'value');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -242,8 +241,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, 'string');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -282,7 +280,7 @@ export default function InstanceFieldSetValueTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0800
      * @tc.name testSetValue014
-     * @tc.desc Verify different types of values
+     * @tc.desc Verify setValue for string, boolean, and array field types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -292,6 +290,7 @@ export default function InstanceFieldSetValueTest(): void {
       let instance = cls.createInstance();
       cls.getInstanceField('strField')!.setValue(instance, 'test');
       cls.getInstanceField('boolField')!.setValue(instance, true);
+      cls.getInstanceField('arrField')!.setValue(instance, [1, 2, 3]);
       expect(cls.getInstanceField('strField')!.getValue(instance) as string).assertEqual('test');
       expect(cls.getInstanceField('boolField')!.getValue(instance) as boolean).assertEqual(true);
     });
@@ -393,8 +392,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, 'modified');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -777,8 +775,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, true);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -798,8 +795,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, null);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -838,8 +834,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, 42);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -859,8 +854,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, 42);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e instanceof TypeError).assertTrue();
       }
     });
 
@@ -880,8 +874,7 @@ export default function InstanceFieldSetValueTest(): void {
         field.setValue(instance, undefined);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('NullPointerError');
+        expect(e instanceof NullPointerError).assertTrue();
       }
     });
 

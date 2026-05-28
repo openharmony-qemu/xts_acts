@@ -189,7 +189,7 @@ export default function InstanceFieldGetValueTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0600
      * @tc.name testGetValue030
-     * @tc.desc Verify using getValue to implement object serialization
+     * @tc.desc Verify reading default values from multiple fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -312,6 +312,8 @@ export default function InstanceFieldGetValueTest(): void {
       let v2 = field.getValue(instance2) as Node026;
       expect(v1 !== null).assertTrue();
       expect(v2 !== null).assertTrue();
+      expect(v1 === instance2).assertTrue();
+      expect(v2 === instance1).assertTrue();
     });
 
   });

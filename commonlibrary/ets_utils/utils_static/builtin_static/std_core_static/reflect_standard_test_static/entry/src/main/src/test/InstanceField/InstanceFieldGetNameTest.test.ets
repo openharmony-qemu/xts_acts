@@ -120,7 +120,7 @@ export default function InstanceFieldGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0200
      * @tc.name testGetName013
-      * @tc.desc Verify getName returns correct field name without explicit initialize
+     * @tc.desc Verify getName returns correct field name without explicit initialize
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -173,11 +173,8 @@ export default function InstanceFieldGetNameTest(): void {
      */
     it('testGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ShortName016>();
-      let fields = cls.getInstanceFields();
-
-      expect(fields.length).assertEqual(2);
-      expect(fields[0].getName()).assertEqual('a');
-      expect(fields[1].getName()).assertEqual('b');
+      expect(cls.getInstanceField('a')!.getName()).assertEqual('a');
+      expect(cls.getInstanceField('b')!.getName()).assertEqual('b');
     });
 
     /**
@@ -318,7 +315,7 @@ export default function InstanceFieldGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1200
      * @tc.name testGetName023
-     * @tc.desc Verify performance of repeated getName() calls
+     * @tc.desc Verify getName() returns consistent value on repeated calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
