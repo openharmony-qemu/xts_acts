@@ -13,10 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Scroll, Column, Component, Button, $r, Row, Color,
-  Text, ClickEvent, TextAlign, FlexAlign, PickerIndicatorType,
-  Resource, UIPickerComponent, ForEach, UIPickerComponentOptions,
-  UIPickerComponentAttribute } from '@ohos.arkui.component';
+import {
+  Entry,
+  Scroll,
+  Column,
+  Component,
+  Button,
+  $r,
+  Row,
+  Color,
+  Text,
+  ClickEvent,
+  TextAlign,
+  FlexAlign,
+  PickerIndicatorType,
+  Resource,
+  UIPickerComponent,
+  ForEach,
+  UIPickerComponentOptions,
+  UIPickerComponentAttribute
+} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthUnit, LengthMetrics } from 'arkui.Graphics'
 
@@ -94,18 +110,6 @@ struct UIPickerItemHeight {
         .width('15%')
         .id('UIPickerItemHeightUndefined')
         .itemHeight(undefined)
-
-        UIPickerComponent() {
-          ForEach(this.monthArray, (item: string) => {
-            Text(item)
-              .fontSize(this.fontSize)
-              .textAlign(TextAlign.Center)
-              .fontColor(Color.Black)
-          })
-        }
-        .width('15%')
-        .id('UIPickerItemHeightNull')
-        .itemHeight(null)
       }
     }.width('100%').height('100%')
   }

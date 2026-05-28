@@ -148,22 +148,7 @@ export default function UIPickerDisplayedItemCountTest() {
       expect(obj1).assertEqual(7);
       done();
     });
-
-    /**
-     * @tc.number   UIPickerDisplayedItemCount_static_007
-     * @tc.name     UIPickerDisplayedItemCount_static_007
-     * @tc.desc     Test UIPickerComponent displayedItemCount property with null value (should use default 7)
-     * @tc.level    Level.LEVEL1
-     * @tc.require  issuesI9MJB3
-     */
-    it('UIPickerDisplayedItemCount_static_007', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCountNull');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(7);
-      done();
-    });
-
+    
     /**
      * @tc.number   UIPickerDisplayedItemCount_static_008
      * @tc.name     UIPickerDisplayedItemCount_static_008

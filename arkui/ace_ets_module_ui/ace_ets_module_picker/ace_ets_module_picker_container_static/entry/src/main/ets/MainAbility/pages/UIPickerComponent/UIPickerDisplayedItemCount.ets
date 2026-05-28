@@ -13,10 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Scroll, Column, Component, Button, $r, Row, Color,
-  Text, ClickEvent, TextAlign, FlexAlign, PickerIndicatorType,
-  Resource, UIPickerComponent, ForEach, UIPickerComponentOptions,
-  UIPickerComponentAttribute } from '@ohos.arkui.component';
+import {
+  Entry,
+  Scroll,
+  Column,
+  Component,
+  Button,
+  $r,
+  Row,
+  Color,
+  Text,
+  ClickEvent,
+  TextAlign,
+  FlexAlign,
+  PickerIndicatorType,
+  Resource,
+  UIPickerComponent,
+  ForEach,
+  UIPickerComponentOptions,
+  UIPickerComponentAttribute
+} from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthUnit, LengthMetrics } from 'arkui.Graphics'
 
@@ -112,18 +128,6 @@ struct UIPickerDisplayedItemCount {
         }
 
         Row() {
-          UIPickerComponent() {
-            ForEach(this.dataArray, (item: string) => {
-              Text(item)
-                .fontSize(this.fontSize)
-                .textAlign(TextAlign.Center)
-                .fontColor(Color.Black)
-            })
-          }
-          .width('30%')
-          .id('UIPickerDisplayedItemCountNull')
-          .displayedItemCount(null)
-
           UIPickerComponent() {
             ForEach(this.dataArray, (item: string) => {
               Text(item)

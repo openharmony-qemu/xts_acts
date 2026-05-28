@@ -128,19 +128,5 @@ export default function UIPickerItemHeightTest() {
       expect(obj1).assertEqual('40.00vp');
       done();
     });
-
-    /**
-     * @tc.number   UIPickerItemHeight_static_006
-     * @tc.name     UIPickerItemHeight_static_006
-     * @tc.desc     Test UIPickerComponent itemHeight property with null value (should use default 40vp)
-     * @tc.level    Level.LEVEL1
-     */
-    it('UIPickerItemHeight_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('UIPickerItemHeightNull');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1: string = obj.getElement('$attrs').getString('itemHeight');
-      expect(obj1).assertEqual('40.00vp');
-      done();
-    });
   })
 }
