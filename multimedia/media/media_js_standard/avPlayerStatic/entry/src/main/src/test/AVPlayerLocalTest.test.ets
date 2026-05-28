@@ -1300,7 +1300,7 @@ function OnOffStartRenderFrame(avPlayer: media.AVPlayer | null, done: () => void
 }
 
 function OnOffAvailableBitrates(avPlayer: media.AVPlayer | null, done: () => void) {
-  avPlayer!.onAvailableBitrates((bitrates: Array) => {
+  avPlayer!.onAvailableBitrates((bitrates: Array<int>) => {
   });
   avPlayer!.offAvailableBitrates();
   done();
@@ -2933,7 +2933,7 @@ export default function AVPlayerLocalTest() {
         let avPlayer = await media.createAVPlayer();
         try {
           avPlayer?.onError((err: BusinessError) => {
-            console.error(case error called, errMessage is ${err!!.message});
+            console.error(`case error called, errMessage is ${err!!.message}`);
             console.log("averrorcode = ",err!!.code)
             expect().assertFail()
           });
