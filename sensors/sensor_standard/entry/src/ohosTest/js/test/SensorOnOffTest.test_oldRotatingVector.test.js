@@ -92,6 +92,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
                 setTimeout(() => {
@@ -121,6 +125,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, { 'interval': 100000000 });
@@ -162,6 +170,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, onSensorCallback, { 'interval': 100000000 }, 5);
                 }
@@ -187,6 +199,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
@@ -226,6 +242,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, onceSensorCallback, 5);
@@ -258,6 +278,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                    try {
@@ -299,6 +323,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, onSensorCallback);
                 setTimeout(() => {
@@ -334,6 +362,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 try {
                     sensor.off(1000000, onSensorCallback);
@@ -367,6 +399,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback2);
@@ -399,6 +435,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback);
@@ -442,6 +482,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, { 'interval': 100000000 });
                 sensor.once(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback2);
@@ -474,6 +518,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, { 'interval': 100000000 });
@@ -517,6 +565,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, { 'interval': 100000000 });
                 sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback2, { 'interval': 100000000 });
@@ -549,6 +601,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest014 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -588,6 +644,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest015 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
@@ -631,6 +691,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest016 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, null);
@@ -673,6 +737,10 @@ describe("SensorJsTest_sensor_20", function () {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest017 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
                     sensor.on(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR, callback, { 'interval': null });
@@ -708,6 +776,10 @@ describe("SensorJsTest_sensor_20", function () {
            sensor.getSingleSensor(sensor.SensorType.SENSOR_TYPE_ID_ROTATION_VECTOR,(error, data) => {
                 if (error) {
                     console.info('RotatingVector_SensorJsTest018 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     expect(typeof(data)).assertEqual("object");
