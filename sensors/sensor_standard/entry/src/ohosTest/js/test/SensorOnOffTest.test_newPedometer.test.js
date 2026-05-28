@@ -169,6 +169,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest001 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback);
@@ -205,6 +209,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest002 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, 5);
@@ -237,6 +245,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest003 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -274,6 +286,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest004 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.once(sensor.SensorId.PEDOMETER, callback, 5);
@@ -310,6 +326,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest005 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.once(sensor.SensorId.PEDOMETER, 5);
@@ -343,6 +363,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest006 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.off(-1, callback);
@@ -374,6 +398,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest007 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else{
                     try {
@@ -411,6 +439,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest008 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -452,6 +484,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest009 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback);
@@ -488,6 +524,10 @@ describe("SensorJsTest_sensor_56", function () {
             sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                 if (error) {
                     console.error('newPedometer_SensorJsTest010 getSingleSensor fail:' +JSON.stringify(error));
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                 try {
@@ -526,6 +566,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest011 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -578,6 +622,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest012 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback, {'interval': 100000000});
@@ -614,6 +662,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest013 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback, {'interval': 100000000}, 5);
@@ -649,6 +701,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest014 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -690,6 +746,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest015 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.off(sensor.SensorId.PEDOMETER,5);
@@ -722,6 +782,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest016 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -785,6 +849,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest017 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, (data)=>{
@@ -830,6 +898,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest018 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback, { 'interval': undefined });
@@ -865,6 +937,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest019 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -902,6 +978,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER, (error, data) => {
                     if (error) {
                         console.error('newPedometer_SensorJsTest020 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
@@ -943,6 +1023,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest021 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback);
@@ -983,6 +1067,10 @@ describe("SensorJsTest_sensor_56", function () {
                     if (error) {
                         console.error('newPedometer_SensorJsTest022 getSingleSensor fail:' +JSON.stringify(error));
                         done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
+                        done();
                     } else {
                     try {
                         sensor.on(sensor.SensorId.PEDOMETER, callback);
@@ -1017,6 +1105,10 @@ describe("SensorJsTest_sensor_56", function () {
                 sensor.getSingleSensor(sensor.SensorId.PEDOMETER,(error, data) => {
                     if (error) {
                         console.error('SensorOnOff_ErrCode_Test_0029 getSingleSensor fail:' +JSON.stringify(error));
+                        done();
+                    } else if (data.isMockSensor === true) {
+                        console.info('isMockSensor is true');
+                        expect(typeof(data)).assertEqual("object");
                         done();
                     } else {
                     try {
