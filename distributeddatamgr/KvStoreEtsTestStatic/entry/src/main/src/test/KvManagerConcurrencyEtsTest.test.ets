@@ -293,7 +293,7 @@ export default function KvManagerConcurrencyEtsTest() {
 
     /**
      * @tc.name   TestConcurrencyPutStringValueSuccess_0100
-     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvPromiseEtsApiConcurrencyTest_0100
+     * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStorePromiseEtsApiConcurrencyTest_0100
      * @tc.desc   Test Js Api SingleKvStore.Put(String) testcase 001
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

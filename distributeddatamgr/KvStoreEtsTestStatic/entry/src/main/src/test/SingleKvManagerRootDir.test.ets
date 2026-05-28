@@ -125,7 +125,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_GetKVStore_0100
          * @tc.name TestRootDirDefaultPathSuccess_0100
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -173,7 +173,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_GetKVStore_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_GetKVStore_0200
          * @tc.name TestRootDirCustomPathSuccess_0200
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1227,7 +1227,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0100
          * @tc.name TestBackupExDefaultPathSuccess_0100
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1300,7 +1300,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0200
          * @tc.name TestBackupExCustomPathSuccess_0200
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1373,7 +1373,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0300
          * @tc.name TestBackupExWithDataRestoreSuccess_0300
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1498,7 +1498,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0400
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0400
          * @tc.name TestBackupExEmptyPathError_0400
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1576,7 +1576,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0500
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0500
          * @tc.name TestBackupExSpacePathError_0500
          * @tc.type: FUNC
          * @tc.size: MediumTest
@@ -1654,7 +1654,7 @@ export default function SingleKvManagerRootDir() {
         });
 
         /**
-         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKv_rootDir_backupEx_0600
+         * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvStore_rootDir_backupEx_0600
          * @tc.name TestBackupExNoPermissionPathError_0600
          * @tc.type: FUNC
          * @tc.size: MediumTest
