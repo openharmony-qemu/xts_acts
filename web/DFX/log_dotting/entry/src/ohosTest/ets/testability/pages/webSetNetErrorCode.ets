@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import { XtsTestServer } from 'library'
 const EVENT_ID_SET_EIMIT_KEY = 104000;
 
 @Entry
@@ -24,7 +25,8 @@ const EVENT_ID_SET_EIMIT_KEY = 104000;
 struct webSetNetErrorCode {
   controller: webview.WebviewController = new webview.WebviewController();
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler();
-  srcUrl: string = 'https://www.example.com/';
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
+  srcUrl: string = this.mServer.getAssetUrl('index.html');
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
   @State emitKey: string = '';
@@ -39,6 +41,10 @@ struct webSetNetErrorCode {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_EIMIT_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

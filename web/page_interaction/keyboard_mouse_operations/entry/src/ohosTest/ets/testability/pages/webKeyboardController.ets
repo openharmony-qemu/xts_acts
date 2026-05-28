@@ -21,6 +21,7 @@ import { cameraPicker, camera } from '@kit.CameraKit';
 import { inputMethodEngine } from '@kit.IMEKit';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { XtsTestServer } from 'library';
 
 let mContext = getContext(this) as common.Context;
 
@@ -44,6 +45,7 @@ const EVENT_ID_SET_SUITE_KEY = 175101;
 @Component
 struct WebHitTestTypeEnumTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   webKeyboardController: WebKeyboardController = new WebKeyboardController()
   inputAttributeMap: Map<string, number> = new Map([
@@ -111,6 +113,10 @@ struct WebHitTestTypeEnumTest {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -143,7 +149,7 @@ struct WebHitTestTypeEnumTest {
 
 
 
-        Web({ src: $rawfile('index.html'), controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
           .layoutMode(this.mode)
           .onInterceptKeyboardAttach((KeyboardCallbackInfo) => {
             // option初始化，默认使用系统默认键盘

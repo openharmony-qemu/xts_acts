@@ -16,6 +16,7 @@
 import webView from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 175001;
 
@@ -23,6 +24,7 @@ const EVENT_ID_SET_SUITE_KEY = 175001;
 @Component
 struct WebHitTestTypeEnumTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -37,6 +39,10 @@ struct WebHitTestTypeEnumTest {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -126,7 +132,7 @@ struct WebHitTestTypeEnumTest {
             }
           })
 
-        Web({ src: $rawfile('hitType.html'), controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('hitType.html'), controller: this.controller })
           .key('WebHitTestTypeEnumTestWebView')
           .javaScriptAccess(true)
           .horizontalScrollBarAccess(true)

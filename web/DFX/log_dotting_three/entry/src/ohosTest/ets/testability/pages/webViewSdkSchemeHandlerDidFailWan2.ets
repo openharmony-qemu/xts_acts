@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview'
 import Utils from '../../test/Utils'
 import business_error from '@ohos.base'
 import { WebNetErrorList } from '@ohos.web.netErrorList'
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 117000;
 
@@ -24,6 +25,7 @@ const EVENT_ID_SET_EMIT_KEY = 117000;
 @Component
 struct webViewSdkSchemeHandler {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   schemeHandler: webview.WebSchemeHandler = new webview.WebSchemeHandler()
   httpBodyStream: webview.WebHttpBodyStream | null = null
   @State emitKey: string = '';
@@ -61,6 +63,10 @@ struct webViewSdkSchemeHandler {
     }
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
@@ -81,7 +87,7 @@ struct webViewSdkSchemeHandler {
               1000);
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
-            this.controller.loadUrl($rawfile('sdkSchemeHandler.html'))
+            this.controller.loadUrl(this.mServer.getAssetUrl('sdkSchemeHandler.html'))
           })
       }
 

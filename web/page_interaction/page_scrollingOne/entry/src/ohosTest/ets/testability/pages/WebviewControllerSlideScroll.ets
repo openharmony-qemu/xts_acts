@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_SUITE_KEY = 154017;
 
@@ -24,6 +25,7 @@ const EVENT_ID_SET_SUITE_KEY = 154017;
 @Component
 struct WebviewControllerSlideScroll {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
@@ -38,6 +40,10 @@ struct WebviewControllerSlideScroll {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -99,7 +105,7 @@ struct WebviewControllerSlideScroll {
           }
         })
       }
-      Web({ src: 'www.example.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('text.html'), controller: this.controller })
         .databaseAccess(true)
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);

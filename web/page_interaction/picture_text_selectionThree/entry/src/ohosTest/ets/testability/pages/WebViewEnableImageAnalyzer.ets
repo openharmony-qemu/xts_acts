@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils.test';
 import { waitForExist} from '../../test/WaitTest.test';
 import { pasteboard } from '@kit.BasicServicesKit';
+import { XtsTestServer } from 'library';
 const EVENT_ID_SET_SUITE_KEY = 183004;
 const TAG = 'ContextMenu';
 
@@ -24,6 +25,7 @@ const TAG = 'ContextMenu';
 @Entry
 @Component
 struct WebComponent {
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
   @State isReceive: number = -1;
   @State str:string = ''
@@ -45,6 +47,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(EVENT_ID_SET_SUITE_KEY)
+  }
+
+  aboutToDisappear() {
+    this.webController.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -79,7 +85,7 @@ struct WebComponent {
         }
       })
 
-      Web({ src: "https://news.cctv.com/2024/07/26/ARTIFhpkAcJhY8BTmarjj7QD240726.shtml", controller: this.webController })
+      Web({ src: this.mServer.getAssetUrl('image.html'), controller: this.webController })
         .onContextMenuShow((event) => {
           if (event) {
             this.result = event.result;

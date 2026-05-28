@@ -16,6 +16,7 @@ import { webview } from '@kit.ArkWeb';
 import { waitForExist } from '../../test/WaitTest.test';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -29,6 +30,7 @@ struct WebComponent {
   }
 
   @State webviewController: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State flag: Boolean = true
   @State setWebDestroyModeArr: String[] = ['webview.WebDestroyMode.FAST_MODE', 'webview.WebDestroyMode.NORMAL_MODE']
   @State emitKey: string = '';
@@ -46,6 +48,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(138550)
+  }
+
+  aboutToDisappear() {
+    this.webviewController.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -82,7 +88,7 @@ struct WebComponent {
       }
 
       Row() {
-        Web({ src: 'www.example.com', controller: this.webviewController })
+        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.webviewController })
           .onPageEnd((event) => {
             console.log('onPageEnd url：' + event.url);
             this.isPageEnd = 0;

@@ -17,6 +17,7 @@ import webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import business_error from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 class TestClass {
   constructor() {
@@ -43,9 +44,18 @@ interface MyWebOptions {
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State emitKey: string = '';
-  webOptions: MyWebOptions = { src: 'www.example.com', controller: this.controller, sharedRenderProcessToken: '111' }
-  webOptions2: MyWebOptions = { src: 'www.gitee.com', controller: this.controller, sharedRenderProcessToken: '111' }
+  webOptions: MyWebOptions = {
+    src: this.mServer.getAssetUrl('index.html'),
+    controller: this.controller,
+    sharedRenderProcessToken: '111',
+  }
+  webOptions2: MyWebOptions = {
+    src: this.mServer.getAssetUrl('second.html'),
+    controller: this.controller,
+    sharedRenderProcessToken: '111',
+  }
   @State testObj: TestClass = new TestClass();
   @State isPageEnd1: number = -1;
   @State isPageEnd2: number = -1;
@@ -61,6 +71,10 @@ struct WebComponent {
 
   onPageHide() {
     events_emitter.off(138350)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

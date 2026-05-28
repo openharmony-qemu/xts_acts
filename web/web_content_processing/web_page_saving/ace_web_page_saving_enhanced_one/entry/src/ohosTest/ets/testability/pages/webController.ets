@@ -17,11 +17,13 @@ import Utils from '../../test/Utils';
 import { JsProxyObject } from '../../test/Interfaces';
 import business_error, { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webController {
   controller: WebController = new WebController()
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitUserAgent"
   @State loadedResource: string = ""
   @State progress: string = ""
@@ -74,6 +76,10 @@ struct webController {
     events_emitter.off(132000)
   }
 
+  aboutToDisappear() {
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -118,7 +124,7 @@ struct webController {
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
 
                 this.isPageEnd = -1;
-                this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
+                this.controller.loadUrl({ url: this.mServer.getAssetUrl("domApi.html") });
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
 
                 this.controller.runJavaScript({ script: "getDomResult()", callback: (res) => {
@@ -141,7 +147,7 @@ struct webController {
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
 
                 this.isPageEnd = -1;
-                this.controller.loadUrl({ url: "resource://rawfile/domApi.html" });
+                this.controller.loadUrl({ url: this.mServer.getAssetUrl("domApi.html") });
                 await waitForExist(()=>this.isPageEnd, this.str, 0);
 
                 this.controller.runJavaScript({ script: "getDomResult()", callback: (res) => {
@@ -178,7 +184,7 @@ struct webController {
           console.info("TextInput click")
         })
 
-      Web({ src: $rawfile('webPart1index.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('webPart1index.html'), controller: this.controller })
         .visibility(this.webVisibility)
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

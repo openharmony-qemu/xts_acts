@@ -21,11 +21,13 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebInitTest {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = ''
   @State arrid: number = 0;
   @State isPageEnd: number = -1;
@@ -41,6 +43,10 @@ struct WebInitTest {
 
   onPageHide() {
     events_emitter.off(138450)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -79,7 +85,7 @@ struct WebInitTest {
             }
           })
 
-        Web({ src: $rawfile('index.html'), controller: this.controller })
+        Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
           .height('50%')
           .width('100%')
           .javaScriptAccess(true)
