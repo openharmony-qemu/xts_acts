@@ -6,7 +6,14 @@ import { systemDateTime } from '@kit.BasicServicesKit';
 
 
 const TAG = "PhotoNoPermissionTest";
-
+interface ErrorCodeType{
+  No_Permission: string;
+  Invalid_Parm: string;
+}
+const ErrorCode: ErrorCodeType = {
+  No_Permission: '201',
+  Invalid_Parm: '23800151'
+}
 
 export default function PhotoNoPermissionSupp() {
   describe('PhotoNoPermissionSupp', () => {
@@ -41,7 +48,7 @@ export default function PhotoNoPermissionSupp() {
         })
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -72,7 +79,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -126,7 +133,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -155,7 +162,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -184,7 +191,7 @@ export default function PhotoNoPermissionSupp() {
         });
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -237,7 +244,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -262,7 +269,7 @@ export default function PhotoNoPermissionSupp() {
         phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           fetchOptions, async (err, fetchResult) => {
             console.error(TAG, testName, err.code)
-            expect(err.code).assertEqual('201');
+            expect(err.code).assertEqual(ErrorCode.No_Permission);
             done();
           });
       } catch (error) {
@@ -287,7 +294,7 @@ export default function PhotoNoPermissionSupp() {
         phAccessHelper.getAlbums(photoAccessHelper.AlbumType.USER, photoAccessHelper.AlbumSubtype.USER_GENERIC,
           async (err, fetchResult) => {
             console.error(TAG, testName, err.code)
-            expect(err.code).assertEqual('201');
+            expect(err.code).assertEqual(ErrorCode.No_Permission);
             done();
           });
       } catch (error) {
@@ -320,7 +327,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -346,7 +353,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -371,7 +378,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(Number(error.code)).assertEqual(201);
+        expect(err.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -397,7 +404,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(Number(err.code)).assertEqual(23800151);
+        expect(err.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -422,7 +429,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(Number(err.code)).assertEqual(201);
+        expect(err.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -447,7 +454,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(Number(err.code)).assertEqual(23800151);
+        expect(err.code).assertEqual(ErrorCode.Invalid_Parm);
         done();
       }
     })
@@ -475,7 +482,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -502,7 +509,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -535,7 +542,7 @@ export default function PhotoNoPermissionSupp() {
         });
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -567,7 +574,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -596,7 +603,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
@@ -623,7 +630,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(Number(error.code)).assertEqual(201);
+        expect(error.code).assertEqual(ErrorCode.No_Permission);
         done();
       }
     })
