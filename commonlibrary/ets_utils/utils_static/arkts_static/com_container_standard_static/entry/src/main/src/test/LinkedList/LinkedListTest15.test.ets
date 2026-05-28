@@ -31,6 +31,7 @@ interface TestObj15J { map: Map<string, string> }
 interface TestObj15K { setValue: Set<number> }
 interface TestObj15L { promise: Promise<string> }
 interface TestObj15M { regex: RegExp; flags: string }
+interface TestObj15N { a: number; b: string }
 
 export default function LinkedListTest15(): void {
   describe('LinkedListTest15', () => {
@@ -1409,8 +1410,20 @@ export default function LinkedListTest15(): void {
     it('testLinkedList15Chapter0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const TAG = 'testLinkedList15Chapter0056';
       console.log(TAG + ' start');
-      // TODO: This test uses keyword property names (string, number, boolean, function, undefined, null)
-      // which are not allowed in ArkTS-Sta interfaces. Needs manual rewrite.
+
+      const newLinkedList = new LinkedList<TestObj15N>()
+      const textObject: TestObj15N[] = [
+        { a: 1, b: 'hello' }, { a: 2, b: 'world' }, { a: 3, b: 'test' }
+      ]
+      for (let item of textObject) {
+        expect(newLinkedList.add(item)).assertTrue()
+      }
+      let idx6: int = 0;
+      newLinkedList.forEach((value: TestObj15N) => {
+        expect(value.a).assertEqual(textObject[idx6].a);
+        expect(value.b).assertEqual(textObject[idx6].b);
+        idx6++;
+      })
     });
 
     /**

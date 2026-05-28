@@ -540,8 +540,7 @@ export default function LinkedListTest07(): void {
 
       const newLinkedList = new LinkedList<string>()
       // ArkTS-Sta: undefined not compatible with LinkedList<string>
-      // const test = undefined
-      // expect(newLinkedList.getIndexOf(test)).assertEqual(-1)
+      expect(newLinkedList.getIndexOf("nonexistent")).assertEqual(-1)
     });
 
     /**
@@ -558,9 +557,7 @@ export default function LinkedListTest07(): void {
 
       const newLinkedList = new LinkedList<string>()
       // ArkTS-Sta: null not compatible with LinkedList<string>
-      // const test = null
-      // newLinkedList.add(test)
-      // expect(newLinkedList.getIndexOf(test)).assertEqual(0)
+      expect(newLinkedList.getIndexOf("nonexistent")).assertEqual(-1)
     });
 
     /**
@@ -889,8 +886,7 @@ export default function LinkedListTest07(): void {
 
       const newLinkedList = new LinkedList<number>()
       // ArkTS-Sta: undefined not compatible with LinkedList<number>
-      // let text = undefined
-      // expect(newLinkedList.getIndexOf(text)).assertEqual(-1)
+      expect(newLinkedList.getIndexOf(0)).assertEqual(-1)
     });
 
     /**

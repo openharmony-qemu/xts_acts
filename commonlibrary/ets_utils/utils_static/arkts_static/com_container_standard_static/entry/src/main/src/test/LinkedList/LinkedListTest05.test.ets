@@ -389,7 +389,10 @@ export default function LinkedListTest05(): void {
       const TAG = 'testLinkedList05Chapter0012';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<string>()
+      const newLinkedList = new LinkedList<string | undefined>()
+      const test: string | undefined = undefined
+      newLinkedList.add(test)
+      expect(newLinkedList.get(0)).assertEqual(undefined)
     });
 
     /**
@@ -404,7 +407,10 @@ export default function LinkedListTest05(): void {
       const TAG = 'testLinkedList05Chapter0013';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<string>()
+      const newLinkedList = new LinkedList<string | null>()
+      const test: string | null = null
+      newLinkedList.add(test)
+      expect(newLinkedList.get(0)).assertEqual(null)
     });
 
     /**
@@ -750,7 +756,10 @@ export default function LinkedListTest05(): void {
       const TAG = 'testLinkedList05Chapter0026';
       console.log(TAG + ' start');
 
-      const newLinkedList = new LinkedList<number>()
+      const newLinkedList = new LinkedList<number | undefined>()
+      const test: number | undefined = undefined
+      newLinkedList.add(test)
+      expect(newLinkedList.get(0)).assertEqual(undefined)
     });
 
     /**
