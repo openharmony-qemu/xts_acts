@@ -24,7 +24,7 @@ struct ChipGroupSystemMaterial {
     IconGroupSuffix({
       items: [{
         icon: {
-          src: $r('sys.media.AI_phone'),
+          src: $r('app.media.icon'),
         },
         action: () => {
           this.getUIContext().getPromptAction().showToast({
@@ -43,7 +43,7 @@ struct ChipGroupSystemMaterial {
     IconGroupSuffix({
       items: [{
         icon: {
-          src: $r('sys.media.AI_phone'),
+          src: $r('app.media.icon'),
         },
         action: () => {
           this.getUIContext().getPromptAction().showToast({
@@ -62,7 +62,7 @@ struct ChipGroupSystemMaterial {
     IconGroupSuffix({
       items: [{
         icon: {
-          src: $r('sys.media.AI_phone'),
+          src: $r('app.media.icon'),
         },
         action: () => {
           this.getUIContext().getPromptAction().showToast({
