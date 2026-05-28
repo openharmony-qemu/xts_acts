@@ -565,10 +565,9 @@ struct Index {
                   console.error('startAbilityForResult001 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260401);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult001 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260401);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult001 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260401);
               }
               break;
             }
@@ -589,10 +588,9 @@ struct Index {
                   console.error('startAbilityForResult002 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260402);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult002 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260402);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult002 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260402);
               }
               break;
             }
@@ -611,10 +609,9 @@ struct Index {
                   console.error('startAbilityForResult003 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260403);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult003 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260403);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult003 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260403);
               }
               break;
             }
@@ -630,10 +627,9 @@ struct Index {
                   console.error('startAbilityForResult004 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260404);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult004 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260404);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult004 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260404);
               }
               break;
             }
@@ -649,10 +645,9 @@ struct Index {
                   console.error('startAbilityForResult005 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260405);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult005 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260405);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult005 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260405);
               }
               break;
             }
@@ -673,10 +668,9 @@ struct Index {
                   console.error('startAbilityForResult006 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260406);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult006 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260406);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult006 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260406);
               }
               break;
             }
@@ -697,10 +691,9 @@ struct Index {
                   console.error('startAbilityForResult007 error code: ' + err.code);
                   Utils.emitEvent(err.code, 20260407);
                 });
-              } catch (err) {
-                let error = err as BusinessError;
-                console.error('startAbilityForResult007 catch code: ' + error.code);
-                Utils.emitEvent(error.code, 20260407);
+              } catch (err: BusinessError) {
+                console.error('startAbilityForResult007 catch code: ' + err.code);
+                Utils.emitEvent(err.code, 20260407);
               }
               break;
             }

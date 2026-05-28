@@ -68,10 +68,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(201);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -111,10 +110,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(201);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -150,10 +148,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(16000001);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(16000001);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(16000001);
           done();
         }
       });
@@ -185,10 +182,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(401);
           done();
         }
       });
@@ -220,10 +216,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(401);
           done();
         }
       });
@@ -261,10 +256,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(401);
           done();
         }
       });
@@ -302,10 +296,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(401);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(401);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(401);
           done();
         }
       });
@@ -346,10 +339,9 @@ export default function startAbilityForResultPermissionTest() {
             expect(err.code).assertEqual(201);
             done();
           });
-        } catch (err) {
-          let error = err as BusinessError;
-          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
-          expect(error.code).assertEqual(201);
+        } catch (err: BusinessError) {
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${err.code}`);
+          expect(err.code).assertEqual(201);
           done();
         }
       });
