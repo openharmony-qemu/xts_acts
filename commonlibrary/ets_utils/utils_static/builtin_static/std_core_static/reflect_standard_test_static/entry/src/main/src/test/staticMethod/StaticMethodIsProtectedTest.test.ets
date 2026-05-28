@@ -151,7 +151,6 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<GuardedAClass>();
       let methods = cls.getStaticMethods();
-      // Protected methods are not accessible via reflection; isProtected() cannot be called directly
       expect(methods.length).assertEqual(0);
       let m = cls.getStaticMethod('guardedA');
       expect(m === undefined).assertTrue();
@@ -246,7 +245,6 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isProtected() 返回 boolean 类型
       let cls: Class = Class.from<PublicOnlyProtClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
@@ -268,7 +266,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let cls: Class = Class.from<AllModifierProtClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
-      // 运行时: getStaticMethods() 只返回 public 方法，用 public 方法验证互斥关系
       let isProtected = method!.isProtected();
       let isPublic = method!.isPublic();
       let notProtectedAndPublic = !isProtected && isPublic;
@@ -303,7 +300,6 @@ export default function StaticMethodIsProtectedTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method !== undefined).assertTrue();
       let isProtected: boolean = method!.isProtected();
-      // classes.md:835 — 无显式修饰符默认 public，此处应为 false
       expect(isProtected).assertFalse();
     });
 
@@ -333,7 +329,6 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isProtected() 不抛异常
       let cls003 = Class.from<AllModifierProtClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
@@ -425,7 +420,6 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<FourModifierProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let protectedCount: int = 0;
       for (let i: int = 0; i < methods.length; i++) {
@@ -445,7 +439,6 @@ export default function StaticMethodIsProtectedTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isProtected 与其他属性检查的组合
       let cls003 = Class.from<PublicOnlyProtClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
@@ -465,7 +458,6 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<FourMethodProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(1);
       let protectedMethods: Array<reflect.StaticMethod> = [];
       for (let i: int = 0; i < methods.length; i++) {
@@ -487,7 +479,6 @@ export default function StaticMethodIsProtectedTest(): void {
     it('testStaticMethodIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<SixMethodProtClass>();
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
-      // 运行时: getStaticMethods() 只返回 public 方法
       expect(methods.length).assertEqual(2);
       let publicCount: int = 0;
       let privateCount: int = 0;

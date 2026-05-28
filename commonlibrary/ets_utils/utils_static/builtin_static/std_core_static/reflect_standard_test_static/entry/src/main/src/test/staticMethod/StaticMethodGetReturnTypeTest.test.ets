@@ -307,7 +307,6 @@ export default function StaticMethodGetReturnTypeTest(): void {
       expect(m1 !== undefined).assertTrue();
       expect(m2 !== undefined).assertTrue();
       // spec/types.md:1725: T|undefined is a nullish union type, isUnion() should return true.
-      // Known divergence: at runtime isUnion() returns false for int|undefined.
       let isUnion1 = m1!.getReturnType().isUnion();
       expect(isUnion1).assertTrue();
       let isUnion2 = m2!.getReturnType().isUnion();

@@ -454,7 +454,6 @@ export default function StaticMethodEqualsTest(): void {
     it('testStaticMethodEquals018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MultiMethodClass011>();
       let cls2 = Class.from<MultiMethodClass011>();
-      // 注: 按索引比较依赖 getStaticMethods() 当前返回顺序
       let methods1 = cls1.getStaticMethods();
       let methods2 = cls2.getStaticMethods();
       expect(methods1.length).assertEqual(methods2.length);

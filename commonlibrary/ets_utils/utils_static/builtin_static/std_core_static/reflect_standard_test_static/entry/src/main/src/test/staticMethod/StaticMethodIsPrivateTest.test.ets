@@ -140,7 +140,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<HiddenAClass>();
       let methods = cls.getStaticMethods();
-      // Private methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
       let m = cls.getStaticMethod('hiddenA');
       expect(m === undefined).assertTrue();
@@ -190,7 +189,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls5 = Class.from<PrivateAsyncClassOnly>();
       let methods = cls5.getStaticMethods();
-      // Private async methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
       let m = cls5.getStaticMethod('privateAsyncMethod');
       expect(m === undefined).assertTrue();
@@ -207,7 +205,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls6 = Class.from<PrivateFinalClassOnly>();
       let methods = cls6.getStaticMethods();
-      // Private final methods are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
       let m = cls6.getStaticMethod('privateFinalMethod');
       expect(m === undefined).assertTrue();
@@ -224,7 +221,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls7 = Class.from<AbstractClass007>();
       let methods = cls7.getStaticMethods();
-      // Private methods in abstract class are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
       let m = cls7.getStaticMethod('privateMethod');
       expect(m === undefined).assertTrue();
@@ -241,7 +237,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls8 = Class.from<FinalClass008>();
       let methods = cls8.getStaticMethods();
-      // Private methods in final class are not accessible via reflection at runtime
       expect(methods.length).assertEqual(0);
       let m = cls8.getStaticMethod('privateMethod');
       expect(m === undefined).assertTrue();
@@ -295,7 +290,6 @@ export default function StaticMethodIsPrivateTest(): void {
     it('testStaticMethodIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<ThreePrivateMethodClass>();
       let methods = cls.getStaticMethods();
-      // Multiple private methods are not accessible via reflection; isPrivate() cannot be called directly
       expect(methods.length).assertEqual(0);
     });
 
@@ -312,7 +306,6 @@ export default function StaticMethodIsPrivateTest(): void {
       let method = cls.getStaticMethod('defaultMethod');
       expect(method !== undefined).assertTrue();
       let isPrivate: boolean = method!.isPrivate();
-      // classes.md:835 — 无显式修饰符默认 public，此处应为 false
       expect(isPrivate).assertFalse();
     });
 
@@ -450,7 +443,6 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isPrivate 与其他属性检查的组合
       let cls003 = Class.from<PublicOnlyClass>();
       let method = cls003.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();

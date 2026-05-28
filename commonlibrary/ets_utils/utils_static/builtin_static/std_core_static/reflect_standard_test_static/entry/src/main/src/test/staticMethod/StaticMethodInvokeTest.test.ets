@@ -819,7 +819,6 @@ export default function StaticMethodInvokeTest(): void {
      */
     it('testStaticMethodInvoke036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<OverloadClass>();
-      // arkts-sta-reflect.md:880 — Error is thrown when signature is omitted and multiple overloads exist
       try {
         cls.getStaticMethod('echo');
         expect().assertFail();

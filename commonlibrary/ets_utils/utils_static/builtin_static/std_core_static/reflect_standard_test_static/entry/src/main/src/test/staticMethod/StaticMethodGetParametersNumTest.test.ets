@@ -449,7 +449,6 @@ export default function StaticMethodGetParametersNumTest(): void {
      */
     it('testStaticMethodGetParametersNum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls: Class = Class.from<MultiMethodNumClass>();
-      // 注: 按索引断言依赖 getStaticMethods() 当前返回顺序
       let methods: FixedArray<reflect.StaticMethod> = cls.getStaticMethods();
       let expectedLengths: FixedArray<int> = [0, 1, 2, 3];
       for (let i: int = 0; i < methods.length; i++) {
