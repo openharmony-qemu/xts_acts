@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class MyClass001 {
@@ -25,20 +25,21 @@ class MyClass004 {
   public name: string = 'test';
   public age: int = 25;
 }
+
 class OtherClass006 {
   public name: string = 'other';
 }
+
 class Parent023 {
   public name: string = 'parent';
 }
+
 class Child023 extends Parent023 {
   public age: int = 10;
 }
 
 export default function InstanceFieldEqualsTest(): void {
-  let runTests: () => void = (): void => {
-        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
-    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+  describe('InstanceFieldEqualsTest', (): void => {
     beforeAll((): void => {
     });
     beforeEach(async (): Promise<void> => {
@@ -57,7 +58,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals001', FILTER, (): void => {
+    it('testEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -72,7 +73,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals004', FILTER, (): void => {
+    it('testEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -87,7 +88,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals005', FILTER, (): void => {
+    it('testEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("age");
@@ -102,7 +103,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals006', FILTER, (): void => {
+    it('testEquals006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass001>();
       let cls2 = Class.from<OtherClass006>();
       let field1 = cls1.getInstanceField("name");
@@ -118,7 +119,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals007', FILTER, (): void => {
+    it('testEquals007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("name");
       expect(field!.equals(field!)).assertTrue()
@@ -132,7 +133,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals011', FILTER, (): void => {
+    it('testEquals011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("noExist");
       expect(field === undefined).assertTrue()
@@ -146,13 +147,13 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals012', FILTER, (): void => {
+    it('testEquals012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let result = field1!.equals(field2!);
       expect(result).assertTrue()
-      expect(typeof result === 'boolean').assertTrue()
+      expect(typeof result).assertEqual('boolean')
     });
 
     /**
@@ -163,15 +164,15 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals016', FILTER, (): void => {
+    it('testEquals016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("age");
       let result1: boolean = field1!.equals(field2!);
       let result2: boolean = field1!.equals(field3!);
-      expect(typeof result1 === 'boolean').assertTrue()
-      expect(typeof result2 === 'boolean').assertTrue()
+      expect(typeof result1).assertEqual('boolean')
+      expect(typeof result2).assertEqual('boolean')
     });
 
     /**
@@ -182,7 +183,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals020', FILTER, (): void => {
+    it('testEquals020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("name");
       let finallyExecuted: boolean = false;
@@ -205,7 +206,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals021', FILTER, (): void => {
+    it('testEquals021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -221,7 +222,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals022', FILTER, (): void => {
+    it('testEquals022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -234,12 +235,12 @@ export default function InstanceFieldEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_EQUALS_1200
      * @tc.name testEquals023
-     * @tc.desc Verify parent field compared with child field returns false
+     * @tc.desc Verify parent and child class field comparison returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals023', FILTER, (): void => {
+    it('testEquals023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Parent023>();
       let cls2 = Class.from<Child023>();
       let field1 = cls1.getInstanceField("name");
@@ -257,7 +258,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals024', FILTER, (): void => {
+    it('testEquals024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -274,7 +275,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals025', FILTER, (): void => {
+    it('testEquals025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
@@ -295,7 +296,7 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals026', FILTER, (): void => {
+    it('testEquals026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass001>();
       let cls2 = Class.from<Parent023>();
       let field1 = cls1.getInstanceField("name");
@@ -311,14 +312,14 @@ export default function InstanceFieldEqualsTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testEquals027', FILTER, (): void => {
+    it('testEquals027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let result = field1!.equals(field2!);
-      expect(typeof result === 'boolean').assertTrue()
+      expect(typeof result).assertEqual('boolean')
       expect(result).assertTrue()
     });
-  };
-  describe('InstanceFieldEqualsTest', runTests);
+
+  });
 }

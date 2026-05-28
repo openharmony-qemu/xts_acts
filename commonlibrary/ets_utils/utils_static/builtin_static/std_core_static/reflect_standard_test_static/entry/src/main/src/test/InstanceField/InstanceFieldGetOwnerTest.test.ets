@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
+
 class MyClass001 {
   public name: string = 'test';
 }
@@ -77,12 +78,10 @@ class Child020 extends Parent020 {
 }
 
 export default function InstanceFieldGetOwnerTest(): void {
-  let runTests: () => void = (): void => {
-        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
-    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+  describe('InstanceFieldGetOwnerTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -98,7 +97,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner010', FILTER, (): void => {
+    it('testGetOwner010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       cls.initialize();
       let field = cls.getInstanceField('name')!;
@@ -109,12 +108,12 @@ export default function InstanceFieldGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0200
      * @tc.name testGetOwner011
-     * @tc.desc Verify basic functionality
+     * @tc.desc Verify getOwner returns correct class owner
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner011', FILTER, (): void => {
+    it('testGetOwner011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let owner = field.getOwner();
@@ -124,12 +123,12 @@ export default function InstanceFieldGetOwnerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_OWNER_0300
      * @tc.name testGetOwner012
-     * @tc.desc Verify getOwner works correctly
+     * @tc.desc Verify getOwner returns non-null Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner012', FILTER, (): void => {
+    it('testGetOwner012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let owner = field.getOwner();
@@ -144,7 +143,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner013', FILTER, (): void => {
+    it('testGetOwner013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let outerCls = Class.from<OuterClass013>();
       let outerField = outerCls.getInstanceField('outerField')!;
       let ownerName = outerField.getOwner().getName();
@@ -159,7 +158,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner014', FILTER, (): void => {
+    it('testGetOwner014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<MyClass1014>();
       let field1 = cls1.getInstanceField('field')!;
 
@@ -179,7 +178,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner015', FILTER, (): void => {
+    it('testGetOwner015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass015>();
       let field = cls.getInstanceField('data')!;
 
@@ -196,14 +195,14 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner016', FILTER, (): void => {
+    it('testGetOwner016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let fields = cls.getInstanceFields();
 
       expect(fields.length).assertEqual(3);
       for (let i = 0; i < fields.length; i++) {
-          let owner = fields[i].getOwner();
-          expect(owner.getName().length > 0).assertTrue();
+        let owner = fields[i].getOwner();
+        expect(owner.getName().length > 0).assertTrue();
       }
     });
 
@@ -215,13 +214,13 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner017', FILTER, (): void => {
+    it('testGetOwner017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass017>();
       let field = cls.getInstanceField('data')!;
 
       for (let i = 0; i < 100; i++) {
-          let owner = field.getOwner();
-          expect(owner !== null).assertTrue();
+        let owner = field.getOwner();
+        expect(owner !== null).assertTrue();
       }
     });
 
@@ -233,7 +232,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner018', FILTER, (): void => {
+    it('testGetOwner018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass003>();
       let field = cls.getInstanceField('value')!;
 
@@ -253,7 +252,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner019', FILTER, (): void => {
+    it('testGetOwner019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest019>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
@@ -275,7 +274,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner020', FILTER, (): void => {
+    it('testGetOwner020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<Child020>();
       let childFields = childCls.getInstanceFields();
 
@@ -296,7 +295,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner021', FILTER, (): void => {
+    it('testGetOwner021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ImplClass006>();
       let field = cls.getInstanceField('interfaceField')!;
       let owner = field.getOwner();
@@ -311,7 +310,7 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner022', FILTER, (): void => {
+    it('testGetOwner022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OwnerClass004>();
       let field1 = cls.getInstanceField('field1')!;
       let field2 = cls.getInstanceField('field2')!;
@@ -328,13 +327,13 @@ export default function InstanceFieldGetOwnerTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetOwner023', FILTER, (): void => {
+    it('testGetOwner023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let fields = cls.getInstanceFields();
       for (let i = 0; i < fields.length; i++) {
-          expect(fields[i].getOwner() !== null).assertTrue();
+        expect(fields[i].getOwner() !== null).assertTrue();
       }
     });
-  };
-  describe('InstanceFieldGetOwnerTest', runTests);
+
+  });
 }

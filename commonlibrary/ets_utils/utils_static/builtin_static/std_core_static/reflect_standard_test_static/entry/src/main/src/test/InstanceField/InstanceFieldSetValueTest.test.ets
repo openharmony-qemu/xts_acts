@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
+
 class MyClass001 {
   public name: string = 'test';
 }
@@ -86,8 +87,8 @@ class ReadonlyClass022 {
 }
 
 class PrivateClass025 {
-  private privateField: string = 'private';
   public publicField: string = 'public';
+  private privateField: string = 'private';
 }
 
 class TestClass028 {
@@ -144,12 +145,10 @@ class UnionClass042 {
 }
 
 export default function InstanceFieldSetValueTest(): void {
-  let runTests: () => void = (): void => {
-        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
-    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26);
+  describe('InstanceFieldSetValueTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -165,7 +164,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue001', FILTER, (): void => {
+    it('testSetValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('name')!;
@@ -181,7 +180,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue005', FILTER, (): void => {
+    it('testSetValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -197,7 +196,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue006', FILTER, (): void => {
+    it('testSetValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass006>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -213,19 +212,18 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue009', FILTER, (): void => {
+    it('testSetValue009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Class1009>();
       let field = cls1.getInstanceField('field')!;
       let cls2 = Class.from<Class2009>();
       let instance2 = cls2.createInstance();
-      let threw = false;
       try {
-          field.setValue(instance2, 'value');
+        field.setValue(instance2, 'value');
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -236,18 +234,17 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue011', FILTER, (): void => {
+    it('testSetValue011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass011>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('intField')!;
-      let threw = false;
       try {
-          field.setValue(instance, 'string');
+        field.setValue(instance, 'string');
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -258,7 +255,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue012', FILTER, (): void => {
+    it('testSetValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NullableClass012>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('nullableField')!;
@@ -274,7 +271,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue013', FILTER, (): void => {
+    it('testSetValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OptionalClass013>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('optionalField')!;
@@ -290,7 +287,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue014', FILTER, (): void => {
+    it('testSetValue014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypesClass014>();
       let instance = cls.createInstance();
       cls.getInstanceField('strField')!.setValue(instance, 'test');
@@ -307,7 +304,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue016', FILTER, (): void => {
+    it('testSetValue016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -324,7 +321,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue018', FILTER, (): void => {
+    it('testSetValue018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NullableClass018>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -340,7 +337,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue019', FILTER, (): void => {
+    it('testSetValue019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass019>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -356,7 +353,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue020', FILTER, (): void => {
+    it('testSetValue020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass020>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -372,7 +369,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue021', FILTER, (): void => {
+    it('testSetValue021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass021>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('flag')!;
@@ -388,18 +385,17 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue022', FILTER, (): void => {
+    it('testSetValue022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyClass022>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('readonlyField')!;
-      let threw = false;
       try {
-          field.setValue(instance, 'modified');
+        field.setValue(instance, 'modified');
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -410,7 +406,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue025', FILTER, (): void => {
+    it('testSetValue025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateClass025>();
       let privateField = cls.getInstanceField('privateField');
       expect(privateField === undefined).assertTrue();
@@ -424,7 +420,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue026', FILTER, (): void => {
+    it('testSetValue026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let instance = cls.createInstance();
@@ -432,7 +428,7 @@ export default function InstanceFieldSetValueTest(): void {
       expect(field.getValue(instance) as string).assertEqual('value');
     });
 
-/**
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1700
      * @tc.name testSetValue028
      * @tc.desc Verify setting large numeric value
@@ -440,7 +436,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue028', FILTER, (): void => {
+    it('testSetValue028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass028>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('largeNumber')!;
@@ -460,7 +456,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue029', FILTER, (): void => {
+    it('testSetValue029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass029>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('signedValue')!;
@@ -477,7 +473,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue030', FILTER, (): void => {
+    it('testSetValue030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass030>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('textField')!;
@@ -497,7 +493,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue031', FILTER, (): void => {
+    it('testSetValue031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('arrField')!;
@@ -518,7 +514,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue032', FILTER, (): void => {
+    it('testSetValue032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OuterClass032>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('objField')!;
@@ -540,7 +536,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue033', FILTER, (): void => {
+    it('testSetValue033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass006>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -562,14 +558,14 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue034', FILTER, (): void => {
+    it('testSetValue034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
 
       for (let i = 1; i <= 100; i++) {
-          field.setValue(instance, i);
-          expect(field.getValue(instance) as int).assertEqual(i);
+        field.setValue(instance, i);
+        expect(field.getValue(instance) as int).assertEqual(i);
       }
     });
 
@@ -581,7 +577,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue035', FILTER, (): void => {
+    it('testSetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -600,13 +596,13 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue036', FILTER, (): void => {
+    it('testSetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass036>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
 
       for (let i = 0; i < 100; i++) {
-          field.setValue(instance, `value${i}`);
+        field.setValue(instance, `value${i}`);
       }
 
       expect(field.getValue(instance) as string).assertEqual('value99');
@@ -620,7 +616,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue037', FILTER, (): void => {
+    it('testSetValue037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Person037>();
       let instance = cls.createInstance();
 
@@ -641,7 +637,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue038', FILTER, (): void => {
+    it('testSetValue038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceCls = Class.from<Source038>();
       let targetCls = Class.from<Source038>();
 
@@ -666,7 +662,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue039', FILTER, (): void => {
+    it('testSetValue039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
 
@@ -690,7 +686,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue040', FILTER, (): void => {
+    it('testSetValue040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest040>();
       let staticField = cls.getStaticField('STATIC_VALUE')!;
       let originalValue: string = staticField.getValue() as string;
@@ -716,7 +712,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue041', FILTER, (): void => {
+    it('testSetValue041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intCls = Class.from<GenericClass041<int>>();
       let intInstance = intCls.createInstance();
       let intField = intCls.getInstanceField('data')!;
@@ -740,7 +736,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue042', FILTER, (): void => {
+    it('testSetValue042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UnionClass042>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('stringOrNumber')!;
@@ -757,7 +753,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue043', FILTER, (): void => {
+    it('testSetValue043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('name')!;
@@ -773,18 +769,17 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue044', FILTER, (): void => {
+    it('testSetValue044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass011>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('intField')!;
-      let threw = false;
       try {
-          field.setValue(instance, true);
+        field.setValue(instance, true);
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -795,18 +790,17 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue045', FILTER, (): void => {
+    it('testSetValue045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
-      let threw = false;
       try {
-          field.setValue(instance, null);
+        field.setValue(instance, null);
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -817,7 +811,7 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue046', FILTER, (): void => {
+    it('testSetValue046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('arrField')!;
@@ -836,18 +830,17 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue047', FILTER, (): void => {
+    it('testSetValue047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('field1')!;
-      let threw = false;
       try {
-          field.setValue(instance, 42);
+        field.setValue(instance, 42);
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
@@ -858,41 +851,39 @@ export default function InstanceFieldSetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue048', FILTER, (): void => {
+    it('testSetValue048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('field3')!;
-      let threw = false;
       try {
-          field.setValue(instance, 42);
+        field.setValue(instance, 42);
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('TypeError');
       }
-      expect(threw).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3800
      * @tc.name testSetValue049
-     * @tc.desc Verify passing undefined to non-optional field throws TypeError
+     * @tc.desc Verify passing undefined to int field throws NullPointerError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue049', FILTER, (): void => {
+    it('testSetValue049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
-      let threw = false;
       try {
-          field.setValue(instance, undefined);
+        field.setValue(instance, undefined);
+        expect().assertFail();
       } catch (e) {
-          threw = true;
-          expect(e instanceof TypeError).assertTrue();
+        expect(e instanceof Error).assertEqual(true);
+        expect((e as Error).name).assertEqual('NullPointerError');
       }
-      expect(threw).assertTrue();
     });
-  };
-  describe('InstanceFieldSetValueTest', runTests);
+
+  });
 }

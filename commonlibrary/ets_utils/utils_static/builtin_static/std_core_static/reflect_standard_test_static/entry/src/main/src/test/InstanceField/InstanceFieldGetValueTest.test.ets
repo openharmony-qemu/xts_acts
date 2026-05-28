@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
+
 class MyClass001 {
   public name: string = 'test';
 }
@@ -24,8 +25,6 @@ class StaticTest032 {
   public static STATIC_VALUE: string = 'static';
   public instanceValue: string = 'instance';
 }
-
-// ===== Shared class definitions (from both files, deduplicated) =====
 
 class TestClass004 {
   public value: int = 42;
@@ -69,12 +68,10 @@ class ArrayField025 {
 }
 
 export default function InstanceFieldGetValueTest(): void {
-  let runTests: () => void = (): void => {
-        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
-    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26);
+  describe('InstanceFieldGetValueTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
@@ -90,14 +87,14 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue025', FILTER, (): void => {
+    it('testGetValue025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayField025>();
       let instance = cls.createInstance();
 
       let field = cls.getInstanceField('data')!;
       let arr: Array<int> = field.getValue(instance) as Array<int>;
       for (let i = 0; i < 100; i++) {
-          arr.push(i);
+        arr.push(i);
       }
       field.setValue(instance, arr);
 
@@ -113,7 +110,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue026', FILTER, (): void => {
+    it('testGetValue026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node026>();
       let instance: Node026 = cls.createInstance() as Node026;
       let field = cls.getInstanceField('next')!;
@@ -134,7 +131,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue027', FILTER, (): void => {
+    it('testGetValue027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass027>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -156,7 +153,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue028', FILTER, (): void => {
+    it('testGetValue028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Person028>();
       let instance = cls.createInstance();
 
@@ -178,14 +175,14 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue029', FILTER, (): void => {
+    it('testGetValue029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass019>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
 
       for (let i = 0; i < 100; i++) {
-          let value: string = field.getValue(instance) as string;
-          expect(value).assertEqual('test');
+        let value: string = field.getValue(instance) as string;
+        expect(value).assertEqual('test');
       }
     });
 
@@ -197,7 +194,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue030', FILTER, (): void => {
+    it('testGetValue030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Serializable030>();
       let instance = cls.createInstance();
 
@@ -217,7 +214,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue031', FILTER, (): void => {
+    it('testGetValue031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance1 = cls.createInstance();
       let instance2 = cls.createInstance();
@@ -237,7 +234,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue032', FILTER, (): void => {
+    it('testGetValue032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest032>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
@@ -258,7 +255,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue033', FILTER, (): void => {
+    it('testGetValue033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field1 = cls.getInstanceField('name')!;
@@ -274,7 +271,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue034', FILTER, (): void => {
+    it('testGetValue034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass004>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -289,7 +286,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue035', FILTER, (): void => {
+    it('testGetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -304,7 +301,7 @@ export default function InstanceFieldGetValueTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue036', FILTER, (): void => {
+    it('testGetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node026>();
       let instance1: Node026 = cls.createInstance() as Node026;
       let instance2: Node026 = cls.createInstance() as Node026;
@@ -316,6 +313,6 @@ export default function InstanceFieldGetValueTest(): void {
       expect(v1 !== null).assertTrue();
       expect(v2 !== null).assertTrue();
     });
-  };
-  describe('InstanceFieldGetValueTest', runTests);
+
+  });
 }

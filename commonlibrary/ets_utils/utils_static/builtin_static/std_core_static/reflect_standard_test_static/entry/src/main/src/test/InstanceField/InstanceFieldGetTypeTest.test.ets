@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from '../../../../hypium/index';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import Utils from './../Util.test';
+
 class MyClass001 {
   public name: string = 'test';
 }
@@ -54,19 +55,18 @@ class TestClass023 {
 }
 
 export default function InstanceFieldGetTypeTest(): void {
-  let runTests: () => void = (): void => {
-        // FILTER: bit0=FUNCTION bit17=MEDIUMTEST bit26=LEVEL2
-    const FILTER: int = 0B1 | (0B1 << 17) | (0B1 << 26)
+  describe('InstanceFieldGetTypeTest', (): void => {
     beforeAll((): void => {
     });
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async () => {
       await Utils.msSleep(30);
     });
     afterEach((): void => {
     });
     afterAll((): void => {
     });
-/**
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0100
      * @tc.name testGetType018
      * @tc.desc Verify nested complex types
@@ -74,13 +74,13 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType018', FILTER, (): void => {
+    it('testGetType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexTypes018>();
       let fields = cls.getInstanceFields();
 
       for (let i = 0; i < fields.length; i++) {
-          let fieldType = fields[i].getType();
-          expect(fieldType !== null).assertTrue();
+        let fieldType = fields[i].getType();
+        expect(fieldType !== null).assertTrue();
       }
     });
 
@@ -92,7 +92,7 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType019', FILTER, (): void => {
+    it('testGetType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node019>();
       let nextField = cls.getInstanceField('next')!;
       let nextType = nextField.getType();
@@ -108,13 +108,13 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType020', FILTER, (): void => {
+    it('testGetType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypes020>();
       let fields = cls.getInstanceFields();
 
       for (let i = 0; i < fields.length; i++) {
-          let fieldType = fields[i].getType();
-          expect(fieldType !== null).assertTrue();
+        let fieldType = fields[i].getType();
+        expect(fieldType !== null).assertTrue();
       }
     });
 
@@ -126,7 +126,7 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType021', FILTER, (): void => {
+    it('testGetType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConversionClass021>();
       let field = cls.getInstanceField('value')!;
       let fieldType = field.getType();
@@ -142,13 +142,13 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType022', FILTER, (): void => {
+    it('testGetType022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass022>();
       let field = cls.getInstanceField('data')!;
 
       for (let i = 0; i < 100; i++) {
-          let fieldType = field.getType();
-          expect(fieldType !== null).assertTrue();
+        let fieldType = field.getType();
+        expect(fieldType !== null).assertTrue();
       }
     });
 
@@ -160,7 +160,7 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType023', FILTER, (): void => {
+    it('testGetType023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field = cls.getInstanceField('value')!;
 
@@ -180,18 +180,18 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType024', FILTER, (): void => {
+    it('testGetType024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTypes024>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
       let staticFieldType = staticField.getType();
       expect(staticFieldType !== null).assertTrue();
-      expect(staticFieldType.getName().includes('String')).assertTrue();
+      expect(staticFieldType.getName()).assertEqual('std.core.String');
 
       let instanceField = cls.getInstanceField('instanceValue')!;
       let instanceFieldType = instanceField.getType();
       expect(instanceFieldType !== null).assertTrue();
-      expect(instanceFieldType.getName().includes('String')).assertTrue();
+      expect(instanceFieldType.getName()).assertEqual('std.core.String');
     });
 
     /**
@@ -202,7 +202,7 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType025', FILTER, (): void => {
+    it('testGetType025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field = cls.getInstanceField('value')!;
 
@@ -221,13 +221,13 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType026', FILTER, (): void => {
+    it('testGetType026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypes020>();
       let intField = cls.getInstanceField('intField')!;
       let strField = cls.getInstanceField('stringField')!;
 
-      expect(intField.getType().getName().includes('Int')).assertTrue();
-      expect(strField.getType().getName().includes('String')).assertTrue();
+      expect(intField.getType().getName()).assertEqual('i32');
+      expect(strField.getType().getName()).assertEqual('std.core.String');
     });
 
     /**
@@ -238,13 +238,13 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType027', FILTER, (): void => {
+    it('testGetType027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexTypes018>();
       let fields = cls.getInstanceFields();
 
       for (let i = 0; i < fields.length; i++) {
-          let typeName = fields[i].getType().getName();
-          expect(typeName.length > 0).assertTrue();
+        let typeName = fields[i].getType().getName();
+        expect(typeName.length > 0).assertTrue();
       }
     });
 
@@ -256,12 +256,12 @@ export default function InstanceFieldGetTypeTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType028', FILTER, (): void => {
+    it('testGetType028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field1 = cls.getInstanceField('value')!;
       let field2 = cls.getInstanceField('value')!;
       expect(field1.getType().getName()).assertEqual(field2.getType().getName());
     });
-  };
-  describe('InstanceFieldGetTypeTest', runTests);
+
+  });
 }
