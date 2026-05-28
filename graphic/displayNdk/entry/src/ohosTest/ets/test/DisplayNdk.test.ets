@@ -44,19 +44,37 @@ export default function DisplayNdkTest() {
     let deviceType: string = deviceInfo.deviceType;
     console.info(`deviceType: ${deviceType}`);
     let isPCMode: boolean = false;
-    let isSupportFreeWindowMode: boolean = false;
+    let isFreeWindowMode = false;
+    let isSupportRotate = false;
+    let isSyscapSessionManagerSupported = false;
     beforeAll(async () => {
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
       let mainWindowClass:window.Window = windowStage!.getMainWindowSync();
       let promise2 = mainWindowClass!.getWindowStateSnapshot();
       promise2.then((data) => {
         let jsonObj: object = JSON.parse(data);
-        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]},isSupportFreeWindowMode=${jsonObj["isSupportFreeWindowMode"]}`);
+        console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]}`);
         isPCMode = jsonObj["isPcMode"];
-        isSupportFreeWindowMode = jsonObj["isSupportFreeWindowMode"];
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
+      isFreeWindowMode = mainWindowClass!.isInFreeWindowMode();
+      isSyscapSessionManagerSupported = canIUse("SystemCapability.Window.SessionManager");
+      console.info('beforeAll: canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(isSyscapSessionManagerSupported));
+      await mainWindowClass!.setPreferredOrientation(window.Orientation.PORTRAIT);
+      await sleep(300);
+      let Orientation1 = display.getDefaultDisplaySync().orientation;
+      await mainWindowClass!.setPreferredOrientation(window.Orientation.LANDSCAPE);
+      await sleep(300);
+      let Orientation2 = display.getDefaultDisplaySync().orientation;
+      if (Orientation1 != Orientation2) {
+        isSupportRotate = true;
+      } else {
+        isSupportRotate = false;
+      }
+      await mainWindowClass!.setPreferredOrientation(window.Orientation.PORTRAIT);
+      await sleep(300);
+      console.log(`beforeAll isSupportRotate: ${JSON.stringify(isSupportRotate)},Orientation1: ${JSON.stringify(Orientation1)},Orientation2: ${JSON.stringify(Orientation2)}`);
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -1214,8 +1232,12 @@ export default function DisplayNdkTest() {
           console.log(`${caseName} result: ${JSON.stringify(result)}`);
           let count:number = 0;
           let windowClass = windowStage.getMainWindowSync();
+          if (!isSyscapSessionManagerSupported) {
+            expect(result).assertEqual(801)
+            done();
+          }
           expect(result).assertEqual(0);
-          if (deviceType === '2in1' || (deviceType === 'tablet' && isPCMode)) {
+          if (isFreeWindowMode) {
             let cap:string = displayClass.getDisplayCapability();
             let curFoldStatus: display.FoldStatus = display.getFoldStatus();
             console.info(caseName + `Succeeded in obtaining fold status. Data: ${curFoldStatus}`);
@@ -1247,7 +1269,7 @@ export default function DisplayNdkTest() {
             expect(count).assertLarger(0);
             windowClass!.recover();
             done()
-          } else if (deviceType === 'phone' || (deviceType === 'tablet' && !isPCMode)) {
+          } else if (!isFreeWindowMode && isSupportRotate) {
             await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
             await sleep(1000);
             await windowClass.setPreferredOrientation(window.Orientation.LANDSCAPE);
@@ -1263,10 +1285,14 @@ export default function DisplayNdkTest() {
           }
           done()
         } catch (err) {
-          console.log(caseName + ': fail:'+ err + ' '+err.code);
-          expect(false).assertTrue();
+          console.log(caseName + ': fail:' + err + ' ' + err.code);
+          if (!isSyscapSessionManagerSupported) {
+            expect(err.code).assertEqual(801)
+          } else {
+            expect(false).assertTrue();
+          }
           done();
-        }
+          }
       })
 
   })
