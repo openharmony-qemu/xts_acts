@@ -14,15 +14,15 @@ export default function PhotoNoPermissionSupp() {
     let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
 
     /**
-     * @tc.number    SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback AbsAlbum-getAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_CALLBACK_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -41,20 +41,20 @@ export default function PhotoNoPermissionSupp() {
         })
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise AbsAlbum-getAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_ABS_ALBUM__GET_ASSETS_NO_PERMISSION_PROMISE_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -72,20 +72,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback getAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_CALLBACK_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -104,15 +104,15 @@ export default function PhotoNoPermissionSupp() {
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise getAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -126,20 +126,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_0010
      * @tc.desc      Testing GetBurstAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_001'
+    it("SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_BURST_ASSETS_NO_PERMISSION_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -155,20 +155,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback CreateAsset-options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -184,20 +184,20 @@ export default function PhotoNoPermissionSupp() {
         });
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_002
-     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_002
+     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0020
+     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0020
      * @tc.desc      callback CreateAsset- no options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_002", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_002'
+    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0020", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_CALLBACK_0020'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -215,15 +215,15 @@ export default function PhotoNoPermissionSupp() {
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise CreateAsset- options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_CREATE_ASSET_NO_PERMISSION_PROMISE_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -237,20 +237,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback getAlbums-options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -272,15 +272,15 @@ export default function PhotoNoPermissionSupp() {
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_002
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_002
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0020
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0020
      * @tc.desc      callback getAlbums-no options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_002", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_002'
+    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0020", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_CALLBACK_0020'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -297,15 +297,15 @@ export default function PhotoNoPermissionSupp() {
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise getAlbums-options-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_GET_ALBUMS_NO_PERMISSION_PROMISE_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -320,20 +320,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise applyChanges-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_APPLY_CHANGES_NO_PERMISSION_PROMISE_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -346,20 +346,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback on_photoChange-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ON_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -377,15 +377,15 @@ export default function PhotoNoPermissionSupp() {
     })
 
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback off_photoChange-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_OFF_PHOTO_CHANGE_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -402,15 +402,15 @@ export default function PhotoNoPermissionSupp() {
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback on_photoAlbumChange-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ON_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -422,20 +422,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(err.code).assertEqual('201');
+        expect(Number(err.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback off_photoAlbumChange-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_OFF_PHOTO_ALBUM_CHANGE_NO_PERMISSION_CALLBACK_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = photoAccessHelper.getPhotoAccessHelper(context);
       try {
@@ -453,15 +453,15 @@ export default function PhotoNoPermissionSupp() {
     })
 
     /**
-     * @tc.number    SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise deleteAssets-no permission-通过PhotoAsset对象删除媒体文件
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOptions: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -475,20 +475,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_002
-     * @tc.name      SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_002
+     * @tc.number    SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0020
+     * @tc.name      SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0020
      * @tc.desc      promise deleteAssets-no permission-通过uri删除媒体文件
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_002", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_002'
+    it("SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0020", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_MEDIA_ASSET_DELETE_ASSETS_NO_PERMISSION_PROMISE_0020'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOptions: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -502,21 +502,21 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
 
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_0010
      * @tc.desc      callback commitModify-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_001'
+    it("SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_CALLBACK_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: ['title'],
@@ -535,21 +535,21 @@ export default function PhotoNoPermissionSupp() {
         });
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
 
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise commitModify-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_COMMIT_MODIFY_NO_PERMISSION_PROMISE_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: ['title'],
@@ -567,21 +567,21 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
 
     /**
-     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_001
-     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_001
+     * @tc.number    SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_0010
+     * @tc.name      SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_0010
      * @tc.desc      promise clone-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_001'
+    it("SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_PHOTO_ASSET_CLONE_NO_PERMISSION_0010'
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
       let fetchOption: photoAccessHelper.FetchOptions = {
         fetchColumns: [],
@@ -596,20 +596,20 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
     /**
-     * @tc.number    SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001
-     * @tc.name      SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001
+     * @tc.number    SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010
+     * @tc.name      SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010
      * @tc.desc      promise sendable-getAssets-no permission
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
      */
-    it("SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001", Level.LEVEL0, async (done: Function) => {
-      const testName = 'SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_001'
+    it("SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010", Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTMEDIA_SENDABLE_PHOTO_GET_ASSETS_NO_PERMISSION_PROMISE_0010'
       let context: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
       let phAccessHelper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
       let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
@@ -623,7 +623,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (error) {
         console.error(TAG, testName, error.message, error.code);
-        expect(error.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
