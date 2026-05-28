@@ -1036,26 +1036,30 @@ static napi_value CheckHidebugStoragePressureCritical(napi_env env, napi_callbac
 }
 
 // 内存监听回调函数
-static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
-    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallback1, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
-        fd, tag, mayReportToOEM, arg);
+static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallback1, fd=%{public}d, tag=%{public}d,
+        mayReportToOEM=%{public}d, arg=%{public}s", fd, tag, mayReportToOEM, arg);
     return true;
 }
 
-static bool memDumpListenerCallback2(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
-    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallback2, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
-        fd, tag, mayReportToOEM, arg);
+static bool memDumpListenerCallback2(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallback2, fd=%{public}d, tag=%{public}d,
+        mayReportToOEM=%{public}d, arg=%{public}s", fd, tag, mayReportToOEM, arg);
     return true;
 }
 
-static bool memDumpListenerCallbackFalse(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
-    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallbackFalse, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
-        fd, tag, mayReportToOEM, arg);
+static bool memDumpListenerCallbackFalse(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
+    OH_LOG_INFO(LOG_APP, "testTag memDumpListenerCallbackFalse, fd=%{public}d, tag=%{public}d,
+        mayReportToOEM=%{public}d, arg=%{public}s", fd, tag, mayReportToOEM, arg);
     return false;
 }
 
 // 测试注册内存监听器
-napi_value TestHiDebugRegisterMemDumpListener1(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener1(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app1", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1064,7 +1068,8 @@ napi_value TestHiDebugRegisterMemDumpListener1(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener2(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener2(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app2", memDumpListenerCallback2);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1073,7 +1078,8 @@ napi_value TestHiDebugRegisterMemDumpListener2(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener3(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener3(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app3", memDumpListenerCallbackFalse);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1082,7 +1088,8 @@ napi_value TestHiDebugRegisterMemDumpListener3(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener4(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener4(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener(NULL, memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1091,7 +1098,8 @@ napi_value TestHiDebugRegisterMemDumpListener4(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener5(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener5(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("test_app4", NULL);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1100,7 +1108,8 @@ napi_value TestHiDebugRegisterMemDumpListener5(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener6(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener6(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1109,7 +1118,8 @@ napi_value TestHiDebugRegisterMemDumpListener6(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener7(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener7(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_dup", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag first register res is %{public}d", code1);
@@ -1120,7 +1130,8 @@ napi_value TestHiDebugRegisterMemDumpListener7(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener8(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener8(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     char longName[257] = {0};
     memset(longName, 'a', 256);
@@ -1131,7 +1142,8 @@ napi_value TestHiDebugRegisterMemDumpListener8(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener9(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener9(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("a", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1140,7 +1152,8 @@ napi_value TestHiDebugRegisterMemDumpListener9(napi_env env, napi_callback_info 
     return result;
 }
 
-napi_value TestHiDebugRegisterMemDumpListener10(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugRegisterMemDumpListener10(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_RegisterMemDumpListener("测试应用", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1150,7 +1163,8 @@ napi_value TestHiDebugRegisterMemDumpListener10(napi_env env, napi_callback_info
 }
 
 // OH_HiDebug_MemListenerType 枚举测试
-napi_value TestHiDebugMemListenerType1(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugMemListenerType1(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     OH_HiDebug_MemListenerType type = OH_HIDEBUG_DO_NOTHING;
     OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_DO_NOTHING value is %{public}d", type);
@@ -1159,7 +1173,8 @@ napi_value TestHiDebugMemListenerType1(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestHiDebugMemListenerType2(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugMemListenerType2(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     OH_HiDebug_MemListenerType type = OH_HIDEBUG_RUNNING_GC;
     OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_RUNNING_GC value is %{public}d", type);
@@ -1168,7 +1183,8 @@ napi_value TestHiDebugMemListenerType2(napi_env env, napi_callback_info info) {
     return result;
 }
 
-napi_value TestHiDebugMemListenerType3(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugMemListenerType3(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     OH_HiDebug_MemListenerType type = OH_HIDEBUG_DUMP_SNAPSHOT;
     OH_LOG_INFO(LOG_APP, "testTag OH_HIDEBUG_DUMP_SNAPSHOT value is %{public}d", type);
@@ -1178,7 +1194,8 @@ napi_value TestHiDebugMemListenerType3(napi_env env, napi_callback_info info) {
 }
 
 // 测试注销内存监听器
-napi_value TestHiDebugUnregisterMemDumpListener1(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener1(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_unregister1", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code1);
@@ -1189,7 +1206,8 @@ napi_value TestHiDebugUnregisterMemDumpListener1(napi_env env, napi_callback_inf
     return result;
 }
 
-napi_value TestHiDebugUnregisterMemDumpListener2(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener2(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener("test_unregister2");
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1198,7 +1216,8 @@ napi_value TestHiDebugUnregisterMemDumpListener2(napi_env env, napi_callback_inf
     return result;
 }
 
-napi_value TestHiDebugUnregisterMemDumpListener3(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener3(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener(NULL);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1207,7 +1226,8 @@ napi_value TestHiDebugUnregisterMemDumpListener3(napi_env env, napi_callback_inf
     return result;
 }
 
-napi_value TestHiDebugUnregisterMemDumpListener4(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener4(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener("");
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1216,7 +1236,8 @@ napi_value TestHiDebugUnregisterMemDumpListener4(napi_env env, napi_callback_inf
     return result;
 }
 
-napi_value TestHiDebugUnregisterMemDumpListener5(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener5(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code = OH_HiDebug_UnregisterMemDumpListener(nullptr);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code);
@@ -1224,7 +1245,8 @@ napi_value TestHiDebugUnregisterMemDumpListener5(napi_env env, napi_callback_inf
     napi_create_int32(env, code, &result);
     return result;
 }
-napi_value TestHiDebugUnregisterMemDumpListener6(napi_env env, napi_callback_info info) {
+napi_value TestHiDebugUnregisterMemDumpListener6(napi_env env, napi_callback_info info)
+{
     OH_LOG_INFO(LOG_APP, "testTag start");
     HiDebug_ErrorCode code1 = OH_HiDebug_RegisterMemDumpListener("test_unregister3", memDumpListenerCallback1);
     OH_LOG_INFO(LOG_APP, "testTag res is %{public}d", code1);
