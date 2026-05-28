@@ -205,9 +205,9 @@ export default function AVPlayerMediaSource() {
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let header: Record<string, string> = {
         "User-Agent": "User-Agent-Value"
-      }
+      };
       try{
-        let mediaSource = meida.createMediaSourceWithUrl("http://xxx", header);
+        let mediaSource = media.createMediaSourceWithUrl("http://xxx", header);
         if(!mediaSource){
           console.error("Failed to create media source");
           expect().assertFail();
@@ -216,7 +216,7 @@ export default function AVPlayerMediaSource() {
         let enable = true;
         mediaSource!!.enableofflineCache(enable);
       }catch(err){
-        console.info('case media.createMediaSourceWithUr error code is' + err.code);
+        console.info('case media.createMediaSourceWithUr error code is' + err.code)
         expect(err.code == 0).assertTrue();
       }
       done();
@@ -232,19 +232,19 @@ export default function AVPlayerMediaSource() {
     it('SUB_MULTIMEDIA_PLAYER_MEDIASOURCE_FUNCTION_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void) => {
       let header: Record<string, string> = {
         "User-Agent": "User-Agent-Value"
-      }
+      };
       try{
-        let mediaSource = meida.createMediaSourceWithUrl("http://xxx", header);
+        let mediaSource = media.createMediaSourceWithUrl("http://xxx", header);
         if(!mediaSource){
           console.error("Failed to create media source");
           expect().assertFail();
           done();
         }
-        console.error('createMediaSourceWithUrl is Undefined');
+        console.info(' createMediaSourceWithUrl is Undefined')
         let enable = false;
         mediaSource!!.enableofflineCache(enable);
       }catch(err){
-        console.info('case media.createMediaSourceWithUr error code is' + err.code);
+        console.info('case media.createMediaSourceWithUr error code is' + err.code)
         expect(err.code == 0).assertTrue();
       }
       done();
