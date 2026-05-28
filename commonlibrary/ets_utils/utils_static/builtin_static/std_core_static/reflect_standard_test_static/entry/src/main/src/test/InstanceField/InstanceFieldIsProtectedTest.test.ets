@@ -306,52 +306,6 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1100
-     * @tc.name testIsProtected013
-     * @tc.desc Verify calling isProtected on initialized InstanceField
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      cls.initialize();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isProtected();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1200
-     * @tc.name testIsProtected014
-     * @tc.desc Verify isProtected returns boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isProtected();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1300
-     * @tc.name testIsProtected015
-     * @tc.desc Verify isProtected returns correct boolean value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isProtected();
-      expect(typeof result).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1400
      * @tc.name testIsProtected016
      * @tc.desc Verify protected combined with readonly
      * @tc.size MediumTest

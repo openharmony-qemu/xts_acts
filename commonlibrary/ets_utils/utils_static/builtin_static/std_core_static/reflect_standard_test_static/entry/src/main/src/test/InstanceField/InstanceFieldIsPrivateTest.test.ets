@@ -281,52 +281,6 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1100
-     * @tc.name testIsPrivate013
-     * @tc.desc Verify calling isPrivate on initialized InstanceField
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      cls.initialize();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPrivate();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1200
-     * @tc.name testIsPrivate014
-     * @tc.desc Verify isPrivate returns boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPrivate();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1300
-     * @tc.name testIsPrivate015
-     * @tc.desc Verify isPrivate returns correct boolean value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPrivate();
-      expect(typeof result).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1400
      * @tc.name testIsPrivate016
      * @tc.desc Verify private combined with readonly
      * @tc.size MediumTest

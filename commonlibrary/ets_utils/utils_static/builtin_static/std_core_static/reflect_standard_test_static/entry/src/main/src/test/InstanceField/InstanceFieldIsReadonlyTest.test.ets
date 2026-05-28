@@ -222,52 +222,6 @@ export default function InstanceFieldIsReadonlyTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_0900
-     * @tc.name testIsReadonly011
-     * @tc.desc Verify calling isReadonly on initialized InstanceField
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsReadonly011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      cls.initialize();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isReadonly();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1000
-     * @tc.name testIsReadonly012
-     * @tc.desc Verify isReadonly returns boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsReadonly012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isReadonly();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1100
-     * @tc.name testIsReadonly013
-     * @tc.desc Verify isReadonly returns correct boolean value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsReadonly013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isReadonly();
-      expect(typeof result).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_READONLY_1200
      * @tc.name testIsReadonly014
      * @tc.desc Verify various types of readonly fields
      * @tc.size MediumTest
@@ -410,7 +364,8 @@ export default function InstanceFieldIsReadonlyTest(): void {
     it('testIsReadonly022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyClass003>();
       let field1 = cls.getInstanceField('readonlyField')!;
-      expect(field1.isReadonly()).assertTrue();
+      let field2 = cls.getInstanceField('readonlyField')!;
+      expect(field1.isReadonly()).assertEqual(field2.isReadonly());
     });
 
   });

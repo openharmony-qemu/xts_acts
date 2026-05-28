@@ -120,7 +120,7 @@ export default function InstanceFieldGetNameTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0200
      * @tc.name testGetName013
-     * @tc.desc Verify getName returns correct field name
+      * @tc.desc Verify getName returns correct field name without explicit initialize
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

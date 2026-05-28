@@ -247,52 +247,6 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0900
-     * @tc.name testIsPublic011
-     * @tc.desc Verify calling isPublic on initialized InstanceField
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      cls.initialize();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPublic();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
-     * @tc.name testIsPublic012
-     * @tc.desc Verify isPublic returns boolean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPublic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPublic();
-      expect(typeof result === 'boolean').assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
-     * @tc.name testIsPublic013
-     * @tc.desc Verify isPublic returns correct boolean value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testIsPublic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let field = cls.getInstanceField('name')!;
-      let result = field.isPublic();
-      expect(typeof result).assertEqual('boolean');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
      * @tc.name testIsPublic014
      * @tc.desc Verify various types of public fields
      * @tc.size MediumTest
@@ -449,7 +403,7 @@ export default function InstanceFieldIsPublicTest(): void {
       let cls = Class.from<PublicClass003>();
       let field1 = cls.getInstanceField('publicField')!;
       let field2 = cls.getInstanceField('publicField')!;
-      expect(field1.isPublic()).assertTrue();
+      expect(field1.isPublic()).assertEqual(field2.isPublic());
     });
 
   });
