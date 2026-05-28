@@ -47,7 +47,7 @@ export default function BigIntTypeAliasTest(): void {
      */
     it('testBigIntTypeAliasCopy0200', TestType.STANDARD | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const original: bigint = BigInt(999);
-      const copied: bigint = BigInt(original as BigInt);
+      const copied: bigint = BigInt(original);
 
       expect(copied.equals(999n)).assertTrue();
     });
@@ -105,7 +105,7 @@ export default function BigIntTypeAliasTest(): void {
       const sum: bigint = a.operatorAdd(20n);
 
       expect(sum.toString()).assertEqual('30');
-      expect(Class.of(a as Object)).assertEqual(Class.from<BigInt>());
+      expect(Class.of(a)).assertEqual(Class.from<BigInt>());
     });
 
     /**
