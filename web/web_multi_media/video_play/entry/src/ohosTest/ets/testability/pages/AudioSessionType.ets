@@ -17,11 +17,13 @@ import { webview } from '@kit.ArkWeb';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist} from '../../test/WaitTest.test';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebMediaOption {
   controller: webview.WebviewController = new webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State options: WebMediaOptions = {resumeInterval: -1, audioExclusive: true}
   @State options2: WebMediaOptions = {resumeInterval: -1, audioExclusive: true, audioSessionType: AudioSessionType.AMBIENT}
   @State message: string = 'Hello World';
@@ -54,6 +56,13 @@ struct WebMediaOption {
     }
   }
 
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
+
   build() {
     Column() {
 
@@ -78,7 +87,7 @@ struct WebMediaOption {
       Text('ResumeInterval is -1')
       Text('被打断后无限制时长尝试恢复')
       Text('AudioSessionType is AUTO')
-      Web({ src: $rawfile('audio4.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('audio4.html'), controller: this.controller })
         .mediaOptions(this.options)
         .javaScriptAccess(true)
         .zoomAccess(true)
@@ -92,7 +101,7 @@ struct WebMediaOption {
         .cacheMode(CacheMode.None)
         .mixedMode(MixedMode.All)
       Text('AudioSessionType is AMBIENT')
-      Web({ src: $rawfile('audio4.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('audio4.html'), controller: this.controller })
         .mediaOptions(this.options2)
         .javaScriptAccess(true)
         .zoomAccess(true)

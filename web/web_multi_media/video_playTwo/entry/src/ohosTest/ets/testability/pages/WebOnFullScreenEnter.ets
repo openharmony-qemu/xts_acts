@@ -18,11 +18,13 @@ import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
 import { ON,Driver } from '@kit.TestKit';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebOnFullScreenEnter {
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   handler?: FullScreenExitHandler
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
@@ -60,6 +62,13 @@ struct WebOnFullScreenEnter {
     }
   }
 
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
+
   build() {
     Column() {
       Row() {
@@ -92,7 +101,7 @@ struct WebOnFullScreenEnter {
         })
       }
 
-      Web({ src: $rawfile('webFullScreenTest.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('webFullScreenTest.html'), controller: this.controller })
         .key('OnFullScreenEnterTestWeb')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

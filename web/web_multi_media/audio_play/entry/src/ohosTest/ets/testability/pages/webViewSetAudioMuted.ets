@@ -21,11 +21,13 @@ import Utils from '../../test/Utils';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import web_webview from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webViewSetAudioMuted {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitSetAudioMuted";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -62,6 +64,13 @@ struct webViewSetAudioMuted {
       }
     }
   }
+
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
 
   build() {
     Column() {
@@ -118,7 +127,7 @@ struct webViewSetAudioMuted {
         })
       }
 
-      Web({ src: $rawfile('audioTest.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('audioTest.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
         .imageAccess(this.imageAccess)
