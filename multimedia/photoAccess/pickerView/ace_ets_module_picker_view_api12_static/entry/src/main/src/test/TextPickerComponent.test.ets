@@ -2067,14 +2067,14 @@ export default function TextPicker(): void {
     });
 
     /**
-     * @tc.number   testPicker_static_36
-     * @tc.name     testPicker_static_36
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0036
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0036
      * @tc.desc     Testing FilterOperator.NOT_EQUAL_TO
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level0
      */
-    it('testPicker_static_36', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_PHOTO_PICKER_TEST_0036', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isExecutePicker) {
         done();
         return;
@@ -2091,30 +2091,30 @@ export default function TextPicker(): void {
       try {
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('testPicker_static_36, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          console.info('SUB_PHOTO_PICKER_TEST_0036, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
             JSON.stringify(PhotoSelectResult));
           expect(PhotoSelectResult).not().assertNull();
         })
       } catch (e) {
         let err = e as BusinessError;
         expect().assertFail();
-        console.error(`testPicker_static_36, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+        console.error(`SUB_PHOTO_PICKER_TEST_0036, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
-      console.info('testPicker_static_36 finish');
+      console.info('SUB_PHOTO_PICKER_TEST_0036 finish');
       await Utils.msSleep(2000);
       await driver.pressBack();
       done();
     });
 
     /**
-     * @tc.number   testPicker_static_37
-     * @tc.name     testPicker_static_37
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0037
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0037
      * @tc.desc     Testing FilterOperator.MORE_THAN_OR_EQUAL_TO
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level0
      */
-    it('testPicker_static_37', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_PHOTO_PICKER_TEST_0037', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isExecutePicker) {
         done();
         return;
@@ -2131,30 +2131,30 @@ export default function TextPicker(): void {
       try {
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('testPicker_static_37, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          console.info('SUB_PHOTO_PICKER_TEST_0037, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
             JSON.stringify(PhotoSelectResult));
           expect(PhotoSelectResult).not().assertNull();
         })
       } catch (e) {
         let err = e as BusinessError;
         expect().assertFail();
-        console.error(`testPicker_static_37, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+        console.error(`SUB_PHOTO_PICKER_TEST_0037, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
-      console.info('testPicker_static_37 finish');
+      console.info('SUB_PHOTO_PICKER_TEST_0037 finish');
       await Utils.msSleep(2000);
       await driver.pressBack();
       done();
     });
 
     /**
-     * @tc.number   testPicker_static_38
-     * @tc.name     testPicker_static_38
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0038
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0038
      * @tc.desc     Testing FilterOperator.LESS_THAN_OR_EQUAL_TO
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level0
      */
-    it('testPicker_static_38', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_PHOTO_PICKER_TEST_0038', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isExecutePicker) {
         done();
         return;
@@ -2171,30 +2171,30 @@ export default function TextPicker(): void {
       try {
         let photoPicker = new photoAccessHelper.PhotoViewPicker();
         photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('testPicker_static_38, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
+          console.info('SUB_PHOTO_PICKER_TEST_0038, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
             JSON.stringify(PhotoSelectResult));
           expect(PhotoSelectResult).not().assertNull();
         })
       } catch (e) {
         let err = e as BusinessError;
         expect().assertFail();
-        console.error(`testPicker_static_38, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
+        console.error(`SUB_PHOTO_PICKER_TEST_0038, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
       }
-      console.info('testPicker_static_38 finish');
+      console.info('SUB_PHOTO_PICKER_TEST_0038 finish');
       await Utils.msSleep(2000);
       await driver.pressBack();
       done();
     });
 
     /**
-     * @tc.number   testPicker_static_39
-     * @tc.name     testPicker_static_39
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0039
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0039
      * @tc.desc     Testing PhotoPickerComponent singleLineConfig
      * @tc.size     MediumTest
      * @tc.type     Function
      * @tc.level    Level0
      */
-    it('testPicker_static_39', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_PHOTO_PICKER_TEST_0039', Level.LEVEL0, async (done: () => void): Promise<void> => {
       if (!isExecutePicker) {
         done();
         return;
@@ -2219,11 +2219,11 @@ export default function TextPicker(): void {
       }
       await routeToUrl(options);
       let strJson: string = inspector.getInspectorByKey('PhotoPickerComponent');
-      console.info('testPicker_static_39 JSON.parse(strJson) is' + strJson);
+      console.info('SUB_PHOTO_PICKER_TEST_0039 JSON.parse(strJson) is' + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('visibility') == 'Visibility.Visible').assertTrue();
       routerInstance.back();
-      console.info('testPicker_static_39 finish');
+      console.info('SUB_PHOTO_PICKER_TEST_0039 finish');
       done();
     });
   })
