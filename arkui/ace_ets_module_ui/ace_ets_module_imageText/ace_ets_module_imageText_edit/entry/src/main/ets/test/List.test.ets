@@ -75,6 +75,7 @@ import TextAreaStyleTest from './TextAreaTest/TextAreaStyle.test';
 import TextAreaOnWillCopyTest from './TextAreaApi26Test/TextAreaOnWillCopy.test';
 import TextAreaOnWillCutTest from './TextAreaApi26Test/TextAreaOnWillCut.test';
 import TextAreaStrokeJoinStyleTest from './TextAreaApi26Test/TextAreaStrokeJoinStyle.test';
+import TextAreaShaderStyleTest from './TextAreaApi26Test/TextAreaShaderStyle.test';
 
 import TextInputOnEditChangeJsunitTest from './TextInputTest/TextInputOnEditChangeJsunitTest.test';
 import textInputApi11 from './TextInputApi11Test/textInputApi11.test'
@@ -132,6 +133,7 @@ import TextInputControllerMethodsNullTest from './TextInputTest/TextInputControl
 import TextInputOnWillCopyTest from './TextInputApi26Test/TextInputOnWillCopy.test';
 import TextInputOnWillCutTest from './TextInputApi26Test/TextInputOnWillCut.test';
 import TextInputStrokeJoinStyleTest from './TextInputApi26Test/TextInputStrokeJoinStyle.test';
+import TextInputShaderStyleTest from './TextInputApi26Test/TextInputShaderStyle.test';
 
 import TextAreaCompressLeadingPunctuation from './TextAreaTest/TextAreaCompressLeadingPunctuation.test';
 import TextAreaCompressLeadingPunctuationModifier from './TextAreaTest/TextAreaCompressLeadingPunctuationModifier.test';
@@ -302,7 +304,9 @@ export default function testsuite() {
   TextAreaOnWillCopyTest();           // Api26
   TextAreaOnWillCutTest();
   TextAreaStrokeJoinStyleTest();
+  TextAreaShaderStyleTest();
   TextInputOnWillCopyTest();
   TextInputOnWillCutTest();
   TextInputStrokeJoinStyleTest();
+  TextInputShaderStyleTest();
 }
