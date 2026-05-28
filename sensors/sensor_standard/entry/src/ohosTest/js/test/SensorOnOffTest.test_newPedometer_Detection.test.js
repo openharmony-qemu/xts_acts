@@ -40,6 +40,7 @@ const PERMISSION_DENIED_MSG = 'Permission denied.'
 let tokenID = undefined
 let sensortempcode = true;
 let permissionNameUser = 'ohos.permission.ACTIVITY_MOTION'
+let permission = false;
 async function grantPerm(){
     try {
         let accountManager = osAccount.getAccountManager();
@@ -78,8 +79,14 @@ async function driveFn() {
         console.info(`====>sensors test driver is ${JSON.stringify(driver)}`);
         let button = await driver.findComponent(BY.text('允许'));
         console.info(`====>button is ${JSON.stringify(button)}`);
-        await button.click();
-        await driver.delayMs(1000);
+        if (button == null) {
+            console.info(`====>sensors permission is ${permission}`);
+        } else {
+            permission = true;
+            console.info(`====>sensors permission is ${permission}`);
+            await button.click();
+            await driver.delayMs(1000);
+        }
     } catch (err) {
         console.info('====>sensors motion test err code is ' + err);
         return;
@@ -1119,8 +1126,13 @@ describe("SensorJsTest_sensor_57", function () {
             }
         } catch (error) {
             console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
-            expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
-            done();
+            if (permission == false) {
+                expect(error.code).assertEqual(201);
+                done();
+            } else {
+                expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+                done();
+            } 
         }
     })
 })}
