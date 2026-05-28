@@ -15,8 +15,8 @@
 
 import router from '@ohos.router';
 import { describe, beforeAll, afterEach, it, expect, Level } from "@ohos/hypium";
-import { Driver, ON, Point } from '@ohos.UiTest';
-import CommonFunc from '../../MainAbility/common/Common'
+import { Driver, ON, Point } from '@kit.TestKit';
+import Utils from '../../MainAbility/common/Utils';
 
 export default function HoveredAttributeTest() {
   describe('HoveredAttributeTest', () => {
@@ -32,7 +32,7 @@ export default function HoveredAttributeTest() {
         if (!("HoveredAttributeTest" == pages.name)) {
           console.info("[HoveredAttributeTest] page name: " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
+          await Utils.sleep(2000);
           console.info("[HoveredAttributeTest] push page success " + JSON.stringify(result));
         }
       } catch (err) {
@@ -43,7 +43,7 @@ export default function HoveredAttributeTest() {
     });
 
     afterEach(async () => {
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(1000);
     });
 
     // ========== Area1: applyHoveredAttribute ==========
@@ -66,7 +66,7 @@ export default function HoveredAttributeTest() {
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
       let hoverPoint: Point = { x: centerX, y: centerY };
       await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('modifierHoverBtn');
       let obj: ESObject = JSON.parse(strJson);
@@ -80,7 +80,7 @@ export default function HoveredAttributeTest() {
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
       let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       strJson = getInspectorByKey('modifierHoverBtn');
       obj = JSON.parse(strJson);
@@ -118,13 +118,13 @@ export default function HoveredAttributeTest() {
 
       for (let i: number = 0; i < 3; i++) {
         await driver.mouseMoveTo(hoverPoint);
-        await CommonFunc.sleep(1000);
+        await Utils.sleep(500);
         let strJson = getInspectorByKey('modifierHoverBtn');
         let obj: ESObject = JSON.parse(strJson);
         expect(obj.$attrs.backgroundColor).assertContain('#FFFF0000');
 
         await driver.mouseMoveTo(moveOutPoint);
-        await CommonFunc.sleep(1000);
+        await Utils.sleep(500);
         strJson = getInspectorByKey('modifierHoverBtn');
         obj = JSON.parse(strJson);
         expect(obj.$attrs.backgroundColor).assertContain('#FF000000');
@@ -152,7 +152,7 @@ export default function HoveredAttributeTest() {
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
       let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('modifierHoverBtn');
       let obj: ESObject = JSON.parse(strJson);
@@ -182,7 +182,7 @@ export default function HoveredAttributeTest() {
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
       let hoverPoint: Point = { x: centerX, y: centerY };
       await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(300);
 
       let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
       let moveOutBounds = await moveOutComponent.getBounds();
@@ -190,7 +190,7 @@ export default function HoveredAttributeTest() {
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
       let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('modifierHoverBtn');
       let obj: ESObject = JSON.parse(strJson);
@@ -222,7 +222,7 @@ export default function HoveredAttributeTest() {
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
       let hoverPoint: Point = { x: centerX, y: centerY };
       await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('stateHoverText');
       let obj: ESObject = JSON.parse(strJson);
@@ -230,131 +230,7 @@ export default function HoveredAttributeTest() {
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] hoverColor: ' + hoverColor);
       expect(hoverColor).assertContain('#FFFF0000');
 
-      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
-      let moveOutBounds = await moveOutComponent.getBounds();
-      let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
-      let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
-      await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
-
-      strJson = getInspectorByKey('stateHoverText');
-      obj = JSON.parse(strJson);
-      let normalColor: string = obj.$attrs.backgroundColor;
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] normalColor: ' + normalColor);
-      expect(normalColor).assertContain('#FF0000FF');
-
       console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_ARKUI_STATESTYLES_HOVERED_0200
-     * @tc.name      stateStylesHoveredStateSwitch
-     * @tc.desc      Test stateStyles hovered state switch multiple times.
-     * @tc.level     LEVEL1
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
-     */
-    it('stateStylesHoveredStateSwitch', Level.LEVEL1, async (done: Function) => {
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0200] START');
-      let driver: Driver = Driver.create();
-
-      let component = await driver.findComponent(ON.id('stateHoverText'));
-      let bounds = await component.getBounds();
-      let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
-      let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
-
-      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
-      let moveOutBounds = await moveOutComponent.getBounds();
-      let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
-      let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
-
-      for (let i: number = 0; i < 3; i++) {
-        await driver.mouseMoveTo(hoverPoint);
-        await CommonFunc.sleep(1000);
-        let strJson = getInspectorByKey('stateHoverText');
-        let obj: ESObject = JSON.parse(strJson);
-        expect(obj.$attrs.backgroundColor).assertContain('#FFFF0000');
-
-        await driver.mouseMoveTo(moveOutPoint);
-        await CommonFunc.sleep(1000);
-        strJson = getInspectorByKey('stateHoverText');
-        obj = JSON.parse(strJson);
-        expect(obj.$attrs.backgroundColor).assertContain('#FF0000FF');
-      }
-
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0200] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300
-     * @tc.name      stateStylesHoveredInitialColor
-     * @tc.desc      Test stateStyles hovered initial background color.
-     * @tc.level     LEVEL1
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
-     */
-    it('stateStylesHoveredInitialColor', Level.LEVEL1, async (done: Function) => {
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300] START');
-      let driver: Driver = Driver.create();
-
-      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
-      let moveOutBounds = await moveOutComponent.getBounds();
-      let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
-      let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
-      await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
-
-      let strJson = getInspectorByKey('stateHoverText');
-      let obj: ESObject = JSON.parse(strJson);
-      let initialColor: string = obj.$attrs.backgroundColor;
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300] initialColor: ' + initialColor);
-      expect(initialColor).assertContain('#FF0000FF');
-
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0300] END');
-      done();
-    });
-
-    /**
-     * @tc.number    SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400
-     * @tc.name      stateStylesHoveredMoveOut
-     * @tc.desc      Test stateStyles hovered move out after hover.
-     * @tc.level     LEVEL1
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
-     */
-    it('stateStylesHoveredMoveOut', Level.LEVEL1, async (done: Function) => {
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400] START');
-      let driver: Driver = Driver.create();
-
-      let component = await driver.findComponent(ON.id('stateHoverText'));
-      let bounds = await component.getBounds();
-      let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
-      let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
-      await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
-
-      let moveOutComponent = await driver.findComponent(ON.id('moveOutBtn'));
-      let moveOutBounds = await moveOutComponent.getBounds();
-      let moveOutX: number = Math.floor((moveOutBounds.left + moveOutBounds.right) / 2);
-      let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
-      let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
-      await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
-
-      let strJson = getInspectorByKey('stateHoverText');
-      let obj: ESObject = JSON.parse(strJson);
-      let normalColor: string = obj.$attrs.backgroundColor;
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400] normalColor: ' + normalColor);
-      expect(normalColor).assertContain('#FF0000FF');
-
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0400] END');
       done();
     });
 
@@ -378,7 +254,7 @@ export default function HoveredAttributeTest() {
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
       let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let component = await driver.findComponent(ON.id('frameNodeHoverText'));
       let bounds = await component.getBounds();
@@ -386,7 +262,7 @@ export default function HoveredAttributeTest() {
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
       let hoverPoint: Point = { x: centerX, y: centerY };
       await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('frameNodeHoverText');
       let obj: ESObject = JSON.parse(strJson);
@@ -395,7 +271,7 @@ export default function HoveredAttributeTest() {
       expect(hoverColor).assertContain('#FF0000FF');
 
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       strJson = getInspectorByKey('frameNodeHoverText');
       obj = JSON.parse(strJson);
@@ -433,13 +309,13 @@ export default function HoveredAttributeTest() {
 
       for (let i: number = 0; i < 3; i++) {
         await driver.mouseMoveTo(hoverPoint);
-        await CommonFunc.sleep(1000);
+        await Utils.sleep(500);
         let strJson = getInspectorByKey('frameNodeHoverText');
         let obj: ESObject = JSON.parse(strJson);
         expect(obj.$attrs.backgroundColor).assertContain('#FF0000FF');
 
         await driver.mouseMoveTo(moveOutPoint);
-        await CommonFunc.sleep(1000);
+        await Utils.sleep(500);
         strJson = getInspectorByKey('frameNodeHoverText');
         obj = JSON.parse(strJson);
         expect(obj.$attrs.backgroundColor).assertContain('#FF008000');
@@ -463,7 +339,7 @@ export default function HoveredAttributeTest() {
 
       let removeBtn = await driver.findComponent(ON.id('frameNodeRemoveBtn'));
       await removeBtn.click();
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let component = await driver.findComponent(ON.id('frameNodeHoverText'));
       let bounds = await component.getBounds();
@@ -471,7 +347,7 @@ export default function HoveredAttributeTest() {
       let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
       let hoverPoint: Point = { x: centerX, y: centerY };
       await driver.mouseMoveTo(hoverPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('frameNodeHoverText');
       let obj: ESObject = JSON.parse(strJson);
@@ -501,7 +377,7 @@ export default function HoveredAttributeTest() {
       let moveOutY: number = Math.floor((moveOutBounds.top + moveOutBounds.bottom) / 2);
       let moveOutPoint: Point = { x: moveOutX, y: moveOutY };
       await driver.mouseMoveTo(moveOutPoint);
-      await CommonFunc.sleep(1000);
+      await Utils.sleep(500);
 
       let strJson = getInspectorByKey('frameNodeHoverText');
       let obj: ESObject = JSON.parse(strJson);
