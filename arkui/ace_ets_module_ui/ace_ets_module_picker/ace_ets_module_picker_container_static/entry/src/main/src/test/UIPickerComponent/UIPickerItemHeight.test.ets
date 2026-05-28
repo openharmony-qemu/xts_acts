@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 import { describe, beforeEach, it, expect, Level, beforeAll, Size, afterEach, TestType } from '../../../../hypium/index';
-import { Color } from '@ohos.arkui.component'
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
 import { Driver, ON, MouseButton, Component } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector';
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -60,7 +53,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   UIPickerItemHeight_static_001
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_001
      * @tc.name     UIPickerItemHeight_static_001
      * @tc.desc     Test UIPickerComponent itemHeight property with value 40vp
      * @tc.level    Level.LEVEL1
@@ -74,7 +67,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   UIPickerItemHeight_static_002
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_002
      * @tc.name     UIPickerItemHeight_static_002
      * @tc.desc     Test UIPickerComponent itemHeight property with value 64vp
      * @tc.level    Level.LEVEL1
@@ -88,7 +81,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   UIPickerItemHeight_static_003
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_003
      * @tc.name     UIPickerItemHeight_static_003
      * @tc.desc     Test UIPickerComponent itemHeight property with value 30vp (less than minimum 40vp, should use default 40vp)
      * @tc.level    Level.LEVEL1
@@ -102,7 +95,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   UIPickerItemHeight_static_004
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_004
      * @tc.name     UIPickerItemHeight_static_004
      * @tc.desc     Test UIPickerComponent itemHeight property with value 70vp (greater than maximum 64vp, should use default 40vp)
      * @tc.level    Level.LEVEL1
@@ -116,7 +109,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   UIPickerItemHeight_static_005
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_005
      * @tc.name     UIPickerItemHeight_static_005
      * @tc.desc     Test UIPickerComponent itemHeight property with undefined value (should use default 40vp)
      * @tc.level    Level.LEVEL1

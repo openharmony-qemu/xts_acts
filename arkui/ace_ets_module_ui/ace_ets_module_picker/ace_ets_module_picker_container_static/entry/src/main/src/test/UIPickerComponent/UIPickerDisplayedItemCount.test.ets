@@ -60,7 +60,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_001
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_001
      * @tc.name     UIPickerDisplayedItemCount_static_001
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 2 (even number, should convert to 3)
      * @tc.level    Level.LEVEL1
@@ -75,7 +75,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_002
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_002
      * @tc.name     UIPickerDisplayedItemCount_static_002
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 3 (odd number in range)
      * @tc.level    Level.LEVEL1
@@ -90,7 +90,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_003
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_003
      * @tc.name     UIPickerDisplayedItemCount_static_003
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 5 (odd number in range)
      * @tc.level    Level.LEVEL1
@@ -105,7 +105,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_004
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_004
      * @tc.name     UIPickerDisplayedItemCount_static_004
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 8 (even number, should convert to 9)
      * @tc.level    Level.LEVEL1
@@ -120,7 +120,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_005
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_005
      * @tc.name     UIPickerDisplayedItemCount_static_005
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 9 (max boundary)
      * @tc.level    Level.LEVEL1
@@ -135,7 +135,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_006
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_006
      * @tc.name     UIPickerDisplayedItemCount_static_006
      * @tc.desc     Test UIPickerComponent displayedItemCount property with undefined value (should use default 7)
      * @tc.level    Level.LEVEL1
@@ -148,9 +148,9 @@ export default function UIPickerDisplayedItemCountTest() {
       expect(obj1).assertEqual(7);
       done();
     });
-    
+
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_008
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_008
      * @tc.name     UIPickerDisplayedItemCount_static_008
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 1 (below min range, should use default 7)
      * @tc.level    Level.LEVEL1
@@ -165,7 +165,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_009
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_009
      * @tc.name     UIPickerDisplayedItemCount_static_009
      * @tc.desc     Test UIPickerComponent displayedItemCount property with value 10 (above max range, should use default 7)
      * @tc.level    Level.LEVEL1
@@ -180,7 +180,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_010
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_010
      * @tc.name     UIPickerDisplayedItemCount_static_010
      * @tc.desc     Test UIPickerComponent displayedItemCount property with decimal value 4.5 (should floor to 4, then convert to 5)
      * @tc.level    Level.LEVEL1
@@ -195,7 +195,7 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   UIPickerDisplayedItemCount_static_011
+     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_011
      * @tc.name     UIPickerDisplayedItemCount_static_011
      * @tc.desc     Test UIPickerComponent displayedItemCount property with negative value -1 (out of range, should use default 7)
      * @tc.level    Level.LEVEL1
