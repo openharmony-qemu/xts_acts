@@ -631,7 +631,8 @@ export default function webViewController() {
     /**
      * @tc.name   testStartAbilityForResultStatic001
      * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0100
-     * @tc.desc   test WebNativeMessagingExtensionContext startAbilityForResult
+     * @tc.desc   test startAbilityForResult(want): directly call context.startAbilityForResult
+     *            to launch rely EntryAbility, verify AbilityResult.resultCode == 0.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -641,7 +642,151 @@ export default function webViewController() {
         await Utils.msSleep(1000);
         Utils.emitEvent('emitStartAbilityForResultStatic001', 10);
         await Utils.msSleep(1000);
-        Utils.registerEvent('testStartAbilityForResultStatic001', 201, 20260401, done);
+        Utils.registerEvent('testStartAbilityForResultStatic001', 0, 20260401, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic002
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0200
+     * @tc.desc   test startAbilityForResult(want, options): call with StartOptions parameter,
+     *            verify error code 201 (Permission denied).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStartAbilityForResultStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic002', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic002', 201, 20260402, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic003
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0300
+     * @tc.desc   test startAbilityForResult with non-existent ability:
+     *            verify BusinessError.code = 16000001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testStartAbilityForResultStatic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic003', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic003', 16000001, 20260403, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic004
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0400
+     * @tc.desc   test startAbilityForResult with null want parameter:
+     *            verify BusinessError.code = 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testStartAbilityForResultStatic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic004', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic004', 401, 20260404, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic005
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0500
+     * @tc.desc   test startAbilityForResult with undefined want parameter:
+     *            verify BusinessError.code = 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testStartAbilityForResultStatic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic005', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic005', 401, 20260405, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic006
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0600
+     * @tc.desc   test startAbilityForResult(want, options) with null options parameter:
+     *            verify the API handles null options gracefully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testStartAbilityForResultStatic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic006', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic006', 401, 20260406, done);
+        let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
+        await Utils.msSleep(2000);
+        if (keyButton) {
+          await keyButton.click();
+          console.info('keyButton.click');
+        }
+        await Utils.msSleep(6000);
+      })
+
+    /**
+     * @tc.name   testStartAbilityForResultStatic007
+     * @tc.number SUB_WEB_WEBNATIVEMESSAGING_STARTABILITYFORRESULT_0700
+     * @tc.desc   test startAbilityForResult(want, options) with undefined options parameter:
+     *            verify the API handles undefined options gracefully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testStartAbilityForResultStatic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        await Utils.msSleep(1000);
+        Utils.emitEvent('emitStartAbilityForResultStatic007', 10);
+        await Utils.msSleep(1000);
+        Utils.registerEvent('testStartAbilityForResultStatic007', 401, 20260407, done);
         let keyButton = await driver.findComponent(ON.id('WebViewNavigationPolicyButton'));
         await Utils.msSleep(2000);
         if (keyButton) {

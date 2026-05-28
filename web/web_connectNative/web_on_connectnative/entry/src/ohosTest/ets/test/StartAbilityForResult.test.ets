@@ -156,5 +156,199 @@ export default function startAbilityForResultTest() {
           done();
         }
       });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400
+     * @tc.desc   Test startAbilityForResult with null want parameter:
+     *            verify BusinessError.code = 401 (Parameter error).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0400';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let nullWant: Want = null as Want;
+
+        try {
+          await context.startAbilityForResult(nullWant).then((data: common.AbilityResult) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500
+     * @tc.desc   Test startAbilityForResult with undefined want parameter:
+     *            verify BusinessError.code = 401 (Parameter error).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0500';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let undefinedWant: Want = undefined as Want;
+
+        try {
+          await context.startAbilityForResult(undefinedWant).then((data: common.AbilityResult) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} unexpected success: ${JSON.stringify(data)}`);
+            expect().assertFail();
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} caught error: ${err.code}`);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600
+     * @tc.desc   Test startAbilityForResult(want, options) with null options parameter:
+     *            verify the API handles null options gracefully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0600';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerely',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+        let nullOptions: StartOptions = null as StartOptions;
+
+        try {
+          await context.startAbilityForResult(want, nullOptions).then((data: common.AbilityResult) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+            expect(data.resultCode).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700
+     * @tc.desc   Test startAbilityForResult(want, options) with undefined options parameter:
+     *            verify the API handles undefined options gracefully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0700';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerely',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+        let undefinedOptions: StartOptions = undefined as StartOptions;
+
+        try {
+          await context.startAbilityForResult(want, undefinedOptions).then((data: common.AbilityResult) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+            expect(data.resultCode).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(401);
+            done();
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800
+     * @tc.number SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800
+     * @tc.desc   Test startAbilityForResult(want, options) to construct error 201:
+     *            call with want targeting an ability that requires additional permission,
+     *            verify the API returns error code 201 (Permission denied).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800', Level.LEVEL2,
+      async (done: Function) => {
+        await sleep(2000);
+        const tcNumber = 'SUB_WEB_WebNativeMessagingExtensionContext_StartAbilityForResult_0800';
+        hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
+
+        let want: Want = {
+          bundleName: 'com.acts.context.webonconnectnativerely',
+          abilityName: 'EntryAbility',
+          parameters: { 'callType': 'forResult' }
+        };
+        let options: StartOptions = {
+          displayId: 0,
+          windowFocused: true
+        };
+
+        try {
+          await context.startAbilityForResult(want, options).then((data: common.AbilityResult) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult success: ${JSON.stringify(data)}`);
+            expect(data.resultCode).assertEqual(0);
+            done();
+          }).catch((err: BusinessError) => {
+            hilog.info(0x0000, 'testTag', `${tcNumber} startAbilityForResult error: ${JSON.stringify(err)}`);
+            expect(err.code).assertEqual(201);
+            done();
+          });
+        } catch (err) {
+          let error = err as BusinessError;
+          hilog.info(0x0000, 'testTag', `${tcNumber} catch error code: ${error.code}`);
+          expect(error.code).assertEqual(201);
+          done();
+        }
+      });
   });
 }
