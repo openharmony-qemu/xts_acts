@@ -563,7 +563,7 @@ napi_value AudioRendererSetMarkPositionInvalidParam(napi_env env, napi_callback_
     }
     return nullptr;
 }
-bool g_flag = false
+bool g_flag = false;
 static void AudioRendererOnMarkReachedCb(OH_AudioRenderer* renderer, uint32_t samplePos, void* userData)
 {
     g_flag = true;
