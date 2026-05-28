@@ -2292,7 +2292,7 @@ export default function windowRotationTest() {
 
 /**
  * @tc.name   testExecutionResult_enum
- * @tc.number SUB_BASIC_WMS_testExecutionResult_enum
+ * @tc.number SUB_BASIC_WMS_testExecutionResult_enum_0100
  * @tc.desc   枚举调用覆盖
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
