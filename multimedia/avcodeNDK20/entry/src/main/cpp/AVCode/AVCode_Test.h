@@ -508,5 +508,39 @@ napi_value OH_AVCencInfo_SetSubsampleInfoTest(napi_env env, napi_callback_info i
 napi_value OH_AVCencInfo_SetModeTest(napi_env env, napi_callback_info info);
 napi_value OH_AVCencInfo_SetAVBufferTest(napi_env env, napi_callback_info info);
 
+
+// Audio encoder setting key tests (API 26.0.0)
+napi_value AudioEncoderSetMaxInputBufferSize_Zero(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetMaxInputBufferSize_10M(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetPTSMode_Default(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetPTSMode_ZeroStart(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetPTSMode_FirstInputStart(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetPTSMode_InvalidValue3(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetPTSMode_Negative(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_Enable(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_Disable(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_Default(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_Invalid2(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_Negative(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_WithUnsupportedFormat(napi_env env, napi_callback_info info);
+napi_value AudioEncoderSetSampleConvert_WithSupportedFormat(napi_env env, napi_callback_info info);
+napi_value AudioEncoderFLAC_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderFLAC_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderFLAC_SetSampleConvert(napi_env env, napi_callback_info info);
+napi_value AudioEncoderMP3_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderMP3_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderMP3_SetSampleConvert(napi_env env, napi_callback_info info);
+napi_value AudioEncoderOPUS_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderOPUS_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderOPUS_SetSampleConvert(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRNB_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRNB_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRNB_SetSampleConvert(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRWB_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRWB_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderAMRWB_SetSampleConvert(napi_env env, napi_callback_info info);
+napi_value AudioEncoderG711mu_SetMaxInputBufferSize(napi_env env, napi_callback_info info);
+napi_value AudioEncoderG711mu_SetPTSMode(napi_env env, napi_callback_info info);
+napi_value AudioEncoderG711mu_SetSampleConvert(napi_env env, napi_callback_info info);
 #endif
     
