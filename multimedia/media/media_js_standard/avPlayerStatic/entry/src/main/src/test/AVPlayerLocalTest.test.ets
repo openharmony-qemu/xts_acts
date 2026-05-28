@@ -2695,7 +2695,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_75_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  LEVEL0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2716,7 +2716,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_00_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2737,7 +2737,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_125_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2758,7 +2758,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_75_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2779,7 +2779,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_2_0_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2800,7 +2800,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_5_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2821,7 +2821,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_1_5_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2841,7 +2841,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_3_0_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2861,7 +2861,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_25_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2881,7 +2881,7 @@ export default function AVPlayerLocalTest() {
        * @tc.desc   Test getPlaybackSpeed interface, verify return value after setSpeed
        *            test avPlayer  getPlaybackSpeed, set speed SPEED_FORWARD_0_125_X
        * @tc.size   MediumTest
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_OHAVPLAYER_STATIC_GETPLAYBACKSPEED_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2901,7 +2901,7 @@ export default function AVPlayerLocalTest() {
        * @tc.number SUB_MULTIMEDIA_AVPLAYER_STATIC_SETLOUDNESS001
        * @tc.desc   test OH_AVPlayer_SetLoudnessGain
        * @tc.size   MEDIUMTEST
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_AVPLAYER_STATIC_SETLOUDNESS001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2972,7 +2972,7 @@ export default function AVPlayerLocalTest() {
        * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100
        * @tc.desc   Http playback control test
        * @tc.size   MEDIUMTEST
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -2987,7 +2987,7 @@ export default function AVPlayerLocalTest() {
        * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100
        * @tc.desc   Http playback control test
        * @tc.size   MEDIUMTEST
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
@@ -3002,7 +3002,7 @@ export default function AVPlayerLocalTest() {
        * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100
        * @tc.desc   Http playback control test
        * @tc.size   MEDIUMTEST
-       * @tc.type   Function
+       * @tc.type   FUNCTION
        * @tc.level  Level0
        */
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
