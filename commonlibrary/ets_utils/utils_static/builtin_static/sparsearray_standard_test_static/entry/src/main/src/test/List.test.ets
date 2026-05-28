@@ -15,6 +15,6 @@
 
 import SparseArrayTest from './sparsearray/SparseArray.test';
 
-export default function testsuite() {
+export default function testsuite(): void {
     SparseArrayTest();
 }

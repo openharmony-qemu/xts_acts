@@ -322,5 +322,54 @@ export default function saveCompCustomizeTest() {
       let driver = Driver.create();
       await clickSecComponent(TCNAME, expectText, driver);
     });
+
+    /**
+     * @tc.name   Test_Security_Button_CustomSave_Nopermission_0500
+     * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_CustomSave_Nopermission_0500
+     * @tc.desc   Nopermission Test SaveComponent attr SymbolIconColor set Array<ResourceColor> ineffective and Authorization is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Test_Security_Button_CustomSave_Nopermission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+      const TCNAME = 'Test_Security_Button_CustomSave_Nopermission_0500';
+      console.info(`====>${TCNAME} START====`);
+      let customIcon: Resource = $r('app.media.icon');
+      let customText: string = '保存控件05';
+      let expectText: string = '下载';
+      try {
+        let eventData: events_emitter.EventData = {
+          data: {
+            'cuIcon': customIcon,
+            'cuText': customText,
+            'symbolIconColor': new Array<ResourceColor>(0xff00ff00, 0xffff00ff),
+            'symbolRenderingStrategy': SymbolRenderingStrategy.MULTIPLE_OPACITY,
+            'symbolFontWeight': FontWeight.Bold
+          }
+        }
+        let InnerEvent:events_emitter.InnerEvent = {
+          eventId: 1,
+          priority: events_emitter.EventPriority.LOW
+        }
+        console.info(`====>${TCNAME} start to publish emit====`);
+        events_emitter.emit(InnerEvent, eventData);
+      } catch (err) {
+        console.error(`====>${TCNAME} change component data error: ` + err.message);
+      }
+      await Utils.sleep(1000);
+      let strJson = getInspectorByKey('keyCustomSave');
+      let obj : ESObject = JSON.parse(strJson);
+      expect(obj.$attrs.iconBorderRadius.topLeft).assertEqual(undefined);
+      expect(obj.$attrs.iconBorderRadius.topRight).assertEqual(undefined);
+      expect(obj.$attrs.iconBorderRadius.bottomLeft).assertEqual(undefined);
+      expect(obj.$attrs.iconBorderRadius.bottomRight).assertEqual(undefined);
+      expect(obj.$attrs.symbolIconColor).assertEqual(undefined);
+      expect(obj.$attrs.SymbolRenderingStrategy).assertEqual(undefined);
+      expect(obj.$attrs.SymbolFontWeight).assertEqual(undefined);
+      await Utils.sleep(1000);
+      sucCallback(TCNAME, done);
+      let driver = Driver.create();
+      await clickSecComponent(TCNAME, expectText, driver);
+    });
   })
 }

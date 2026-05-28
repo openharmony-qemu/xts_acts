@@ -2982,11 +2982,11 @@ export default function geolocationTest_geo7() {
                 expect(true).assertEqual(result != null);
             }).catch(error => {
                 console.info('[lbs_js] null test_GetCurrentLocation_0200 promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(401);
+                expect(error.code).assertEqual(3301200);
             })
         } catch (error) {
             console.info("[lbs_js] null test_GetCurrentLocation_0200 promise try err." + JSON.stringify(error));
-            expect(Number(error.code)).assertEqual(401);
+            expect(Number(error.code)).assertEqual(3301200);
         }
         try {
             await geolocationm.getCurrentLocation(undefined).then((result) => {
@@ -2994,11 +2994,11 @@ export default function geolocationTest_geo7() {
                 expect(true).assertEqual(result != null);
             }).catch(error => {
                 console.info('[lbs_js] undefined test_GetCurrentLocation_0200 promise err:' + JSON.stringify(error));
-                expect(error.code).assertEqual(401);
+                expect(error.code).assertEqual(3301200);
             })
         } catch (error) {
             console.info("[lbs_js] undefined test_GetCurrentLocation_0200 promise try err." + JSON.stringify(error));
-            expect(Number(error.code)).assertEqual(401);
+            expect(Number(error.code)).assertEqual(3301200);
         }
         await sleep(1000);
         done();

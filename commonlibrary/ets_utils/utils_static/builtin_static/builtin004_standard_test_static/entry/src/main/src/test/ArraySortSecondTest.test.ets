@@ -15,7 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '../../../hypium/index';
 
-export default function Array_Sort_Second_Test_static() {
+export default function Array_Sort_Second_Test_static(): void {
   describe('Array_Sort_Second_Test_static', ():void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(():void => {

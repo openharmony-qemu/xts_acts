@@ -20,6 +20,9 @@ import ImageCreateImageCreatorTestSupp from "./testStatic/image/image/createImag
 import createImagePackerTest from "./testStatic/image/image/createImagePacker.test";
 import createImageReceiverPackerTest from "./testStatic/image/image/createImageReceiver.test";
 import createImageSourceTest from "./testStatic/image/image/createImageSource.test";
+import createIncrementalSourceTest from "./testStatic/image/image/createIncrementalSource.test";
+import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
+import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
 
 
 export default function testsuite(): void {
@@ -39,6 +42,9 @@ export default function testsuite(): void {
   createImagePackerTest();
   createImageReceiverPackerTest();
   createImageSourceTest();
+  createIncrementalSourceTest();
+  createPixelMapTest();
+  createPixelMapSyncTest();
   createUnpremultipliedPixelMapSyncTest();
   imagePackerPackToDataFromPixelmapSequenceStaticSuppTest();
   imagePackerPackToFileFromPixelmapSequenceSUppStaticTest();

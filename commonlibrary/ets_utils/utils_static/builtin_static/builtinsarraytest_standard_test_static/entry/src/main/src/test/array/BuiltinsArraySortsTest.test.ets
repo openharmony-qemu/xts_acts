@@ -23,7 +23,7 @@ function customStringify(arr: NumberObj[]): string {
   return '[' + arr.map(item => `{a:${item.a}}`).join(',') + ']';
 }
 
-export default function builtinsArraySortTest() {
+export default function builtinsArraySortTest(): void {
   describe('builtinsArraySortTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

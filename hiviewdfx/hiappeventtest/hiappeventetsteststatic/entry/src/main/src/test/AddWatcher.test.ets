@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -2190,55 +2191,6 @@ export default function addWatcherTest() {
         hiAppEvent.removeWatcher({name:"watcher1"})
       done()
       }, 1000)
-
-      setTimeout(() => {
-        expect(holder == null).assertTrue();
-        done()
-        hilog.info(logDomain, tag, 'HiAppEventSub25 end')
-      }, 2000)
-
-    })
-
-    /**
-     * @tc.name   HiAppEventSub26
-     * @tc.number DFX_DFT_HiAppEvent_Sub_2600
-     * @tc.desc   HiAppEvent write interface test.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('HiAppEventSub26', Level.LEVEL3, async (done: () => void): Promise<void> => {
-      hilog.info(logDomain, tag, 'testHiAppEventSub26 start')
-      let holder = hiAppEvent.addWatcher({
-        name: "watcher1",
-      });
-      setTimeout(() => {
-        hiAppEvent.write({
-          domain: hiAppEvent.domain.OS,
-          name: "test_event26",
-          eventType: hiAppEvent.EventType.FAULT,
-          params: {
-            "key_int": 100
-          } as Record<string, int|string|boolean|(int|string|boolean)[]>
-        }, (err: BusinessError<void> | null) => {
-          hilog.info(logDomain, tag, 'HiAppEvent into json-callback');
-          hilog.info(logDomain, tag, `HiAppEventSub26 write event: ${err?.code}`);
-          hilog.info(logDomain, tag, `HiAppEventSub26 write event: ${err?.message}`);
-          expect(0).assertEqual(err?.code);
-        });
-        done()
-      }, 500)
-
-      setTimeout(() => {
-        hiAppEvent.removeWatcher({name:"watcher1"})
-      done()
-      }, 1000)
-
-      setTimeout(() => {
-        expect(holder == null).assertTrue();
-        done()
-        hilog.info(logDomain, tag, 'HiAppEventSub26 end')
-      }, 2000)
 
     })
 

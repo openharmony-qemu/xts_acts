@@ -41,14 +41,14 @@ export default function shouldRecognizerParallelWith(): void{
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info('get getCurrentLocalPositionstate pages:' + JSON.stringify(pages));
-        if (!('getCurrentLocalPosition' == pages.name)) {
-          console.info('get getCurrentLocalPosition state pages.name:' + JSON.stringify(pages.name));
+        console.info('get shouldRecognizerParallelWith pages:' + JSON.stringify(pages));
+        if (!('shouldRecognizerParallelWith' == pages.name)) {
+          console.info('get shouldRecognizerParallelWith state pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error('push getCurrentLocalPosition page error:' + err);
+        console.error('push shouldRecognizerParallelWith page error:' + err);
       }
     });
 

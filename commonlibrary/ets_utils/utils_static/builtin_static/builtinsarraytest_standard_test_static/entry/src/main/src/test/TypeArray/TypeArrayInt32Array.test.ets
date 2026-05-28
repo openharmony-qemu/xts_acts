@@ -51,7 +51,7 @@ interface GeneratedTypeLiteralInterface_6 {
   outliers: number[];
 }
 
-export default function typeArrayInt32ArrayTest() {
+export default function typeArrayInt32ArrayTest(): void {
   describe('TypeArrayInt32ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

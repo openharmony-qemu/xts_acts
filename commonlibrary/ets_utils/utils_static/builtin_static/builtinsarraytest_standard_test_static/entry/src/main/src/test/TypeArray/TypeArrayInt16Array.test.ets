@@ -30,7 +30,7 @@ interface GeneratedTypeLiteralInterface_1 {
   keySchedule: Int16Array;
 }
 
-export default function typeArrayInt16ArrayTest() {
+export default function typeArrayInt16ArrayTest(): void {
   describe('TypeArrayInt16ArrayTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {

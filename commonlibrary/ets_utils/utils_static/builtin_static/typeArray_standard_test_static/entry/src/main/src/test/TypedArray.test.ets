@@ -16,7 +16,7 @@ import {
 } from "../../../hypium/index";
 import Utils from './Util.test';
 
-export default function typedArray() {
+export default function typedArray(): void {
   describe('typedArrayTest', (): void => {
     afterEach(async (): Promise<void> => {
       await Utils.msSleep(20);

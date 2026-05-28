@@ -930,7 +930,7 @@ static napi_value TestFrameMetricsGetInputHandlingDurationOK(napi_env env, napi_
     int32_t resultCode = OH_WindowManager_FrameMetrics_GetInputHandlingDuration(g_currentMetrics, &duration);
     
     napi_value return_duration;
-    napi_create_int64(env, duration, &return_duration);
+    napi_create_bigint_uint64(env, duration, &return_duration);
     napi_set_named_property(env, result, "duration", return_duration);
     
     napi_value return_code;
@@ -951,7 +951,7 @@ static napi_value TestFrameMetricsGetLayoutMeasureDurationOK(napi_env env, napi_
     int32_t resultCode = OH_WindowManager_FrameMetrics_GetLayoutMeasureDuration(g_currentMetrics, &duration);
     
     napi_value return_duration;
-    napi_create_int64(env, duration, &return_duration);
+    napi_create_bigint_uint64(env, duration, &return_duration);
     napi_set_named_property(env, result, "duration", return_duration);
     
     napi_value return_code;
@@ -972,7 +972,7 @@ static napi_value TestFrameMetricsGetVsyncTimestampOK(napi_env env, napi_callbac
     int32_t resultCode = OH_WindowManager_FrameMetrics_GetVsyncTimestamp(g_currentMetrics, &timestamp);
     
     napi_value return_timestamp;
-    napi_create_int64(env, timestamp, &return_timestamp);
+    napi_create_bigint_uint64(env, timestamp, &return_timestamp);
     napi_set_named_property(env, result, "timestamp", return_timestamp);
     
     napi_value return_code;

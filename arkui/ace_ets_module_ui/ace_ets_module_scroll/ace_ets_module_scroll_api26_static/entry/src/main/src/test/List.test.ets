@@ -22,6 +22,7 @@ import RefreshRefreshOffsetTest from './Refresh/RefreshRefreshOffset.test'
 import ScrollScrollBarWidthTest from './Scroll/ScrollScrollBarWidth.test'
 import WaterFlowScrollBarWidthTest from './WaterFlow/WaterFlowScrollBarWidth.test'
 import backPressBehaviorList from './List/backPressBehaviorList.test'
+import stickyFooterGroup from './ListItemGroup/stickyFooterGroup.test'
 import headerFooterStyle from './ListItemGroup/headerFooterStyle.test'
 import ArcAlphabetIndexer from './ArcAlpTest/ArcAlp.test'
 import arcSwiperDotIndicator from './ArcSwiperTest/arcSwiperDotIndicator.test'
@@ -40,6 +41,7 @@ export default function testsuite() {
   ScrollScrollBarWidthTest();
   WaterFlowScrollBarWidthTest();
   backPressBehaviorList();
+  stickyFooterGroup();
   headerFooterStyle();
   ArcAlphabetIndexer();
   arcSwiperDotIndicator();

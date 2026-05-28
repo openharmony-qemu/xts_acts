@@ -438,6 +438,23 @@ Camera_ErrorCode NDKCamera::GetCameraHostType(void)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::TestOHGetSensorPixelArraySizeWithoutCamera(void)
+{
+    uint32_t pixelWidth = 0;
+    uint32_t pixelHeight = 0;
+    Camera_ErrorCode ret = OH_CameraDevice_GetSensorPixelArraySize(nullptr, &pixelWidth, &pixelHeight);
+
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::TestOHGetSensorColorFilterArrangementWithoutCamera(void)
+{
+    OH_Camera_SensorColorFilterArrangement sensorCFA;
+    Camera_ErrorCode ret = OH_CameraDevice_GetSensorColorFilterArrangement(nullptr, &sensorCFA);
+
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::GetSupportedOutputCapability(void)
 {
     if (cameraManager_ == nullptr) {
@@ -1588,6 +1605,38 @@ Camera_ErrorCode NDKCamera::SessionSetZoomRatio(float zoom)
         LOG("OH_CaptureSession_SetZoomRatio failed. %d ", ret);
     }
     return ret;
+}
+
+Camera_ErrorCode NDKCamera::SessionGetZoomPointInfos(int useCaseCode)
+{
+    LOG("SessionGetZoomPointInfos begin.");
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomPointInfoSize_, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(nullptr, &zoomPointInfoSize_, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, nullptr, &zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER3_ERROR) {
+        ret_ = OH_CaptureSession_GetZoomPointInfos(captureSession_, &zoomPointInfoSize_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_GetZoomPointInfos failed. %d", ret_);
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::SessionDeleteZoomPointInfos(int useCaseCode)
+{
+    LOG("SessionDeleteZoomPointInfos begin.");
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CaptureSession_DeleteZoomPointInfos(captureSession_, zoomPointInfo_);
+    } else if (useCaseCode == PARAMETER1_ERROR) {
+        ret_ = OH_CaptureSession_DeleteZoomPointInfos(captureSession_, nullptr);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CaptureSession_DeleteZoomPointInfos failed. %d", ret_);
+    }
+    return ret_;
 }
 
 Camera_ErrorCode NDKCamera::SessionIsVideoStabilizationModeSupported(uint32_t mode)

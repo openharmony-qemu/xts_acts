@@ -326,7 +326,6 @@ export default function cameraPhotoSessionTest() {
 
     afterAll(async (): Promise<void> => {
       console.info('afterAll case');
-      await releaseCameraSessionInstance();
       await Utils.msSleep(1000);
     })
 
