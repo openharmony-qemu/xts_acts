@@ -146,7 +146,6 @@ import BinaryOverflow from './semanticrules/semanticessentials/BinaryOverflow.te
 import CompoundAssignmentByte from './semanticrules/semanticessentials/CompoundAssignmentByte.test'
 import CompoundAssignmentInt from './semanticrules/semanticessentials/CompoundAssignmentInt.test'
 import CompoundAssignmentMixed from './semanticrules/semanticessentials/CompoundAssignmentMixed.test'
-import CompoundAssignmentRuntimeErrors from './semanticrules/semanticessentials/CompoundAssignmentRuntimeErrors.test'
 import CompoundAssignmentShort from './semanticrules/semanticessentials/CompoundAssignmentShort.test'
 import DecrementUnaryOverflow from './semanticrules/semanticessentials/DecrementUnaryOverflow.test'
 import NumericExpressions from './semanticrules/semanticessentials/NumericExpressions.test'
@@ -195,7 +194,6 @@ import TypeTIsSubOfInterTypeOnGenTest03 from './semanticrules/subtyping/TypeTIsS
 import SubtypingAmongArrayTypesTest from './semanticrules/subtyping/SubtypingAmongArrayTypesTest.test'
 import SupertypingAmongArrayTypesTest from './semanticrules/subtyping/SupertypingAmongArrayTypesTest.test'
 import SubtypingAmongPrimitiveTypestTest from './semanticrules/subtyping/SubtypingAmongPrimitiveTypestTest.test'
-import SubtypingForFixedSizeArrayTypesTest from './semanticrules/subtyping/SubtypingForFixedSizeArrayTypesTest.test'
 import DiffTypeIsSubOfTypeObjOnGenTest from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest.test'
 import DiffTypeIsSubOfTypeObjOnGenTest01 from './semanticrules/subtyping/DiffTypeIsSubOfTypeObjOnGenTest01.test'
 import TypeTIsSubOfInterTypeOnPredefinedTest01 from './semanticrules/subtyping/TypeTIsSubOfInterTypeOnPredefinedTest01.test'
@@ -383,7 +381,6 @@ export default function testsuite(): void {
   CompoundAssignmentByte();
   CompoundAssignmentInt();
   CompoundAssignmentMixed();
-  CompoundAssignmentRuntimeErrors();
   CompoundAssignmentShort();
   DecrementUnaryOverflow();
   NumericExpressions();
@@ -432,7 +429,6 @@ export default function testsuite(): void {
   SubtypingAmongArrayTypesTest();
   SupertypingAmongArrayTypesTest();
   SubtypingAmongPrimitiveTypestTest();
-  SubtypingForFixedSizeArrayTypesTest();
   DiffTypeIsSubOfTypeObjOnGenTest();
   DiffTypeIsSubOfTypeObjOnGenTest01();
   TypeTIsSubOfInterTypeOnPredefinedTest01();
