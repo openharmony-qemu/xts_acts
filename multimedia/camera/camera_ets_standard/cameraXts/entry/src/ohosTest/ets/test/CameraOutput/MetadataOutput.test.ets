@@ -223,7 +223,7 @@ async function getMetadataSession(testName: string, sceneMode: camera.SceneMode,
 }
 
 export default function MetadataOutputTest() {
-  describe('PhotoOutputTest', () => {
+  describe('MetadataOutputTest', () => {
     beforeAll(async () => {
       console.info(TAG, 'beforeAll case.');
       getCameraManager();
