@@ -801,7 +801,6 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
       const result: string = bigIntValue.toString(2);
 
       expect(result).assertEqual("11111111");
-      expect(bigIntValue.toString(2)).assertEqual(bigIntValue.toStringAsBinary());
     });
 
     /**
@@ -991,32 +990,32 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6000
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6000
-     * @tc.desc  Test toStringAsBinary() with positive value - returns binary string without leading zeros
+     * @tc.name  bigIntToStringRadixBinaryTest6000
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6000
+     * @tc.desc  Test toString(2) with positive value - returns binary string without leading zeros
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(10);
-      const result: string = bigIntValue.toStringAsBinary();
+      const result: string = bigIntValue.toString(2);
 
       expect(result).assertEqual("1010");
       expect(result).assertEqual(bigIntValue.toString(2));
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6100
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6100
-     * @tc.desc  Test toStringAsBinary() with negative value - returns two's complement representation
+     * @tc.name  bigIntToStringRadixBinaryTest6100
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6100
+     * @tc.desc  Test toString(2) with negative value - returns two's complement representation
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(-1);
-      const result: string = bigIntValue.toStringAsBinary();
+      const result: string = bigIntValue.toString(2);
 
       expect(result).assertInstanceOf('string');
       expect(result.length).assertLarger(0);
@@ -1024,32 +1023,32 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6200
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6200
-     * @tc.desc  Test toStringAsBinary() with small positive value - avoid zero due to implementation defect
+     * @tc.name  bigIntToStringRadixBinaryTest6200
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6200
+     * @tc.desc  Test toString(2) with small positive value
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(1);
-      const result: string = bigIntValue.toStringAsBinary();
+      const result: string = bigIntValue.toString(2);
 
       expect(result).assertEqual("1");
       expect(result).assertEqual(bigIntValue.toString(2));
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6300
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6300
-     * @tc.desc  Test toStringAsBinary() with large value spanning multiple 32-bit words
+     * @tc.name  bigIntToStringRadixBinaryTest6300
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6300
+     * @tc.desc  Test toString(2) with large value spanning multiple 32-bit words
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt("1099511627776");
-      const result: string = bigIntValue.toStringAsBinary();
+      const result: string = bigIntValue.toString(2);
 
       expect(result).assertInstanceOf('string');
       expect(result).assertEqual("10000000000000000000000000000000000000000");
@@ -1057,14 +1056,14 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6400
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6400
-     * @tc.desc  Test toStringAsBinary() consistency - matches toString(2) for positive values
+     * @tc.name  bigIntToStringRadixBinaryTest6400
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6400
+     * @tc.desc  Test toString(2) consistency - matches toString(2) for positive values
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const values: BigInt[] = [
         new BigInt(1),
         new BigInt(255),
@@ -1076,7 +1075,7 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
 
       for (let i = 0; i < values.length; i++) {
         const val = values[i];
-        const binaryResult: string = val.toStringAsBinary();
+        const binaryResult: string = val.toString(2);
         const toStringResult: string = val.toString(2);
 
         expect(binaryResult).assertEqual(toStringResult);
@@ -1084,38 +1083,38 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6500
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6500
-     * @tc.desc  Test toStringAsBinary() with power of two values (single bit set)
+     * @tc.name  bigIntToStringRadixBinaryTest6500
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6500
+     * @tc.desc  Test toString(2) with power of two values (single bit set)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const one: BigInt = new BigInt(1);
       const two: BigInt = new BigInt(2);
       const one28: BigInt = new BigInt(128);
       const two56: BigInt = new BigInt(256);
       const two31: BigInt = new BigInt(2147483648);
 
-      expect(one.toStringAsBinary()).assertEqual("1");
-      expect(two.toStringAsBinary()).assertEqual("10");
-      expect(one28.toStringAsBinary()).assertEqual("10000000");
-      expect(two56.toStringAsBinary()).assertEqual("100000000");
-      expect(two31.toStringAsBinary()).assertEqual("10000000000000000000000000000000");
+      expect(one.toString(2)).assertEqual("1");
+      expect(two.toString(2)).assertEqual("10");
+      expect(one28.toString(2)).assertEqual("10000000");
+      expect(two56.toString(2)).assertEqual("100000000");
+      expect(two31.toString(2)).assertEqual("10000000000000000000000000000000");
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6600
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6600
-     * @tc.desc  Test toStringAsBinary() with 32-bit all ones (0xFFFFFFFF = 4294967295)
+     * @tc.name  bigIntToStringRadixBinaryTest6600
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6600
+     * @tc.desc  Test toString(2) with 32-bit all ones (0xFFFFFFFF = 4294967295)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const maxUint32: BigInt = new BigInt(4294967295);
-      const result: string = maxUint32.toStringAsBinary();
+      const result: string = maxUint32.toString(2);
 
       expect(result).assertEqual("11111111111111111111111111111111");
       expect(result.length).assertEqual(32);
@@ -1123,16 +1122,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6700
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6700
-     * @tc.desc  Test toStringAsBinary() with value 2^64 (crossing 64-bit boundary)
+     * @tc.name  bigIntToStringRadixBinaryTest6700
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6700
+     * @tc.desc  Test toString(2) with value 2^64 (crossing 64-bit boundary)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const twoTo64: BigInt = new BigInt("18446744073709551616");
-      const result: string = twoTo64.toStringAsBinary();
+      const result: string = twoTo64.toString(2);
 
       expect(result).assertEqual("1" + "0".repeat(64));
       expect(result.length).assertEqual(65);
@@ -1140,16 +1139,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsBinaryTest6800
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASBINARY_TEST_6800
-     * @tc.desc  Test toStringAsBinary() consistency with parse - verify binary string can be reconstructed
+     * @tc.name  bigIntToStringRadixBinaryTest6800
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_RADIX_BINARY_TEST_6800
+     * @tc.desc  Test toString(2) consistency with parse - verify binary string can be reconstructed
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsBinaryTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringRadixBinaryTest6800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const original: BigInt = new BigInt(123456789);
-      const binaryStr: string = original.toStringAsBinary();
+      const binaryStr: string = original.toString(2);
 
       const reconstructed: BigInt = new BigInt(parseInt(binaryStr, 2).toInt());
       expect(reconstructed.equals(original)).assertTrue();
@@ -1157,16 +1156,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest6900
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_6900
-     * @tc.desc  Test toStringAsDecimal() with positive value - returns decimal string representation
+     * @tc.name  bigIntToStringDecimalTest6900
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_6900
+     * @tc.desc  Test toString() with positive value - returns decimal string representation
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest6900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(12345);
-      const result: string = bigIntValue.toStringAsDecimal();
+      const result: string = bigIntValue.toString();
 
       expect(result).assertInstanceOf('string');
       expect(result).assertEqual("12345");
@@ -1174,72 +1173,72 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7000
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7000
-     * @tc.desc  Test toStringAsDecimal() with negative value - current implementation returns absolute value without sign (DEFECT: missing negative sign)
+     * @tc.name  bigIntToStringDecimalTest7000
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7000
+     * @tc.desc  Test toString() with negative value - preserves negative sign
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(-9876);
-      const result: string = bigIntValue.toStringAsDecimal();
+      const result: string = bigIntValue.toString();
 
       expect(result).assertInstanceOf('string');
-      expect(result).assertEqual("9876");
+      expect(result).assertEqual("-9876");
 
       const positiveValue: BigInt = new BigInt(9876);
-      expect(result).assertEqual(positiveValue.toStringAsDecimal());
+      expect(result).assertEqual(positiveValue.negate().toString());
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7100
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7100
-     * @tc.desc  Test toStringAsDecimal() with zero - current implementation returns empty string (DEFECT: should return "0")
+     * @tc.name  bigIntToStringDecimalTest7100
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7100
+     * @tc.desc  Test toString() with zero - returns "0"
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const fromInt: BigInt = new BigInt(0);
       const fromString: BigInt = new BigInt("0");
       const fromBool: BigInt = new BigInt(false);
       const defaultCtor: BigInt = new BigInt();
 
-      expect(fromInt.toStringAsDecimal()).assertEqual("");
-      expect(fromString.toStringAsDecimal()).assertEqual("");
-      expect(fromBool.toStringAsDecimal()).assertEqual("");
-      expect(defaultCtor.toStringAsDecimal()).assertEqual("");
+      expect(fromInt.toString()).assertEqual("0");
+      expect(fromString.toString()).assertEqual("0");
+      expect(fromBool.toString()).assertEqual("0");
+      expect(defaultCtor.toString()).assertEqual("0");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7200
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7200
-     * @tc.desc  Test toStringAsDecimal() with boundary values (1 and -1) - verify sign handling defect
+     * @tc.name  bigIntToStringDecimalTest7200
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7200
+     * @tc.desc  Test toString() with boundary values (1 and -1)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const one: BigInt = new BigInt(1);
       const minusOne: BigInt = new BigInt(-1);
 
-      expect(one.toStringAsDecimal()).assertEqual("1");
-      expect(minusOne.toStringAsDecimal()).assertEqual("1");
+      expect(one.toString()).assertEqual("1");
+      expect(minusOne.toString()).assertEqual("-1");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7300
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7300
-     * @tc.desc  Test toStringAsDecimal() with huge number beyond Number.MAX_SAFE_INTEGER - precise decimal representation
+     * @tc.name  bigIntToStringDecimalTest7300
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7300
+     * @tc.desc  Test toString() with huge number beyond Number.MAX_SAFE_INTEGER - precise decimal representation
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const hugeStr: string = "123456789012345678901234567890";
       const bigIntValue: BigInt = new BigInt(hugeStr);
-      const result: string = bigIntValue.toStringAsDecimal();
+      const result: string = bigIntValue.toString();
 
       expect(result).assertInstanceOf('string');
       expect(result).assertEqual(hugeStr);
@@ -1247,117 +1246,115 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7400
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7400
-     * @tc.desc  Test toStringAsDecimal() with Long boundary values - sign lost for negative (DEFECT)
+     * @tc.name  bigIntToStringDecimalTest7400
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7400
+     * @tc.desc  Test toString() with Long boundary values
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const maxLong: BigInt = new BigInt(9223372036854775807 as long);
       const minLong: BigInt = new BigInt(-9223372036854775808 as long);
 
-      expect(maxLong.toStringAsDecimal()).assertEqual("9223372036854775807");
-      expect(minLong.toStringAsDecimal()).assertEqual("9223372036854775808");
+      expect(maxLong.toString()).assertEqual("9223372036854775807");
+      expect(minLong.toString()).assertEqual("-9223372036854775808");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7500
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7500
-     * @tc.desc  Test toStringAsDecimal() consistency with different construction paths - all return absolute values for negatives
+     * @tc.name  bigIntToStringDecimalTest7500
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7500
+     * @tc.desc  Test toString() consistency with different construction paths
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const fromInt: BigInt = new BigInt(65535);
       const fromString: BigInt = new BigInt("65535");
       const fromLong: BigInt = new BigInt(65535 as long);
       const fromDouble: BigInt = new BigInt(65535.0);
 
-      expect(fromInt.toStringAsDecimal()).assertEqual("65535");
-      expect(fromString.toStringAsDecimal()).assertEqual("65535");
-      expect(fromLong.toStringAsDecimal()).assertEqual("65535");
-      expect(fromDouble.toStringAsDecimal()).assertEqual("65535");
+      expect(fromInt.toString()).assertEqual("65535");
+      expect(fromString.toString()).assertEqual("65535");
+      expect(fromLong.toString()).assertEqual("65535");
+      expect(fromDouble.toString()).assertEqual("65535");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7600
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7600
-     * @tc.desc  Test toStringAsDecimal() with powers of 10 - verify digit length correctness
+     * @tc.name  bigIntToStringDecimalTest7600
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7600
+     * @tc.desc  Test toString() with powers of 10 - verify digit length correctness
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const ten: BigInt = new BigInt(10);
       const hundred: BigInt = new BigInt(100);
       const thousand: BigInt = new BigInt(1000);
       const million: BigInt = new BigInt(1000000);
       const billion: BigInt = new BigInt(1000000000);
 
-      expect(ten.toStringAsDecimal()).assertEqual("10");
-      expect(hundred.toStringAsDecimal()).assertEqual("100");
-      expect(thousand.toStringAsDecimal()).assertEqual("1000");
-      expect(million.toStringAsDecimal()).assertEqual("1000000");
-      expect(billion.toStringAsDecimal()).assertEqual("1000000000");
-      expect(ten.toStringAsDecimal().length).assertEqual(2);
-      expect(hundred.toStringAsDecimal().length).assertEqual(3);
-      expect(billion.toStringAsDecimal().length).assertEqual(10);
+      expect(ten.toString()).assertEqual("10");
+      expect(hundred.toString()).assertEqual("100");
+      expect(thousand.toString()).assertEqual("1000");
+      expect(million.toString()).assertEqual("1000000");
+      expect(billion.toString()).assertEqual("1000000000");
+      expect(ten.toString().length).assertEqual(2);
+      expect(hundred.toString().length).assertEqual(3);
+      expect(billion.toString().length).assertEqual(10);
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7700
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7700
-     * @tc.desc  Test toStringAsDecimal() roundtrip - for positive values only (negative loses sign, zero returns empty)
+     * @tc.name  bigIntToStringDecimalTest7700
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7700
+     * @tc.desc  Test toString() roundtrip - preserves sign
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const original: BigInt = new BigInt(9876543210);
-      const decimalStr: string = original.toStringAsDecimal();
+      const decimalStr: string = original.toString();
       const parsed: BigInt = new BigInt(decimalStr);
 
       expect(decimalStr).assertEqual("9876543210");
       expect(parsed.equals(original)).assertTrue();
 
       const negOriginal: BigInt = new BigInt(-123456789);
-      const negDecimalStr: string = negOriginal.toStringAsDecimal();
+      const negDecimalStr: string = negOriginal.toString();
       const negParsed: BigInt = new BigInt(negDecimalStr);
-      const expectedPositive: BigInt = new BigInt(123456789);
 
-      expect(negDecimalStr).assertEqual("123456789");
-      expect(negParsed.equals(expectedPositive)).assertTrue();
-      expect(negParsed.equals(negOriginal)).assertFalse();
+      expect(negDecimalStr).assertEqual("-123456789");
+      expect(negParsed.equals(negOriginal)).assertTrue();
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7800
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7800
-     * @tc.desc  Test toStringAsDecimal() with extremely large number (2^128) - verify no precision loss
+     * @tc.name  bigIntToStringDecimalTest7800
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7800
+     * @tc.desc  Test toString() with extremely large number (2^128) - verify no precision loss
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const twoTo128: BigInt = new BigInt("340282366920938463463374607431768211456");
-      const result: string = twoTo128.toStringAsDecimal();
+      const result: string = twoTo128.toString();
 
       expect(result).assertEqual("340282366920938463463374607431768211456");
       expect(result.length).assertEqual(39);
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest7900
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_7900
-     * @tc.desc  Test toStringAsDecimal() comparison with toString() - toString() preserves sign, toStringAsDecimal() does not (DEFECT)
+     * @tc.name  bigIntToStringDecimalTest7900
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_7900
+     * @tc.desc  Test toString() comparison across zero, positive, and negative values
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest7900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const zero: BigInt = new BigInt(0);
       const one: BigInt = new BigInt(1);
       const minusOne: BigInt = new BigInt(-1);
@@ -1366,100 +1363,96 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
       const negHuge: BigInt = new BigInt(-99999);
       const posHuge: BigInt = new BigInt("999999999999999999999999999999");
 
-      expect(zero.toStringAsDecimal()).assertEqual("");
       expect(zero.toString()).assertEqual("0");
 
-      expect(minusOne.toStringAsDecimal()).assertEqual("1");
       expect(minusOne.toString()).assertEqual("-1");
-      expect(negLarge.toStringAsDecimal()).assertEqual("255");
       expect(negLarge.toString()).assertEqual("-255");
-      expect(negHuge.toStringAsDecimal()).assertEqual("99999");
       expect(negHuge.toString()).assertEqual("-99999");
 
-      expect(one.toStringAsDecimal()).assertEqual(one.toString());
-      expect(posLarge.toStringAsDecimal()).assertEqual(posLarge.toString());
-      expect(posHuge.toStringAsDecimal()).assertEqual(posHuge.toString());
+      expect(one.toString()).assertEqual("1");
+      expect(posLarge.toString()).assertEqual("255");
+      expect(posHuge.toString()).assertEqual("999999999999999999999999999999");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest8000
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_8000
-     * @tc.desc  Test toStringAsDecimal() with byte boundary values - negative values lose sign (DEFECT)
+     * @tc.name  bigIntToStringDecimalTest8000
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_8000
+     * @tc.desc  Test toString() with byte boundary values
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest8000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minByte: BigInt = new BigInt(-128);
       const maxByte: BigInt = new BigInt(127);
       const overflowNeg: BigInt = new BigInt(-129);
       const overflowPos: BigInt = new BigInt(128);
 
-      expect(minByte.toStringAsDecimal()).assertEqual("128");
-      expect(maxByte.toStringAsDecimal()).assertEqual("127");
-      expect(overflowNeg.toStringAsDecimal()).assertEqual("129");
-      expect(overflowPos.toStringAsDecimal()).assertEqual("128");
+      expect(minByte.toString()).assertEqual("-128");
+      expect(maxByte.toString()).assertEqual("127");
+      expect(overflowNeg.toString()).assertEqual("-129");
+      expect(overflowPos.toString()).assertEqual("128");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest8100
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_8100
-     * @tc.desc  Test toStringAsDecimal() with short boundary values (-32768, 32767) - sign lost for negative
+     * @tc.name  bigIntToStringDecimalTest8100
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_8100
+     * @tc.desc  Test toString() with short boundary values (-32768, 32767)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest8100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minShort: BigInt = new BigInt(-32768);
       const maxShort: BigInt = new BigInt(32767);
 
-      expect(minShort.toStringAsDecimal()).assertEqual("32768");
-      expect(maxShort.toStringAsDecimal()).assertEqual("32767");
+      expect(minShort.toString()).assertEqual("-32768");
+      expect(maxShort.toString()).assertEqual("32767");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest8200
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_8200
-     * @tc.desc  Test toStringAsDecimal() with int boundary values (-2147483648, 2147483647) - sign lost for negative
+     * @tc.name  bigIntToStringDecimalTest8200
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_8200
+     * @tc.desc  Test toString() with int boundary values (-2147483648, 2147483647)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest8200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const minInt: BigInt = new BigInt(-2147483648);
       const maxInt: BigInt = new BigInt(2147483647);
 
-      expect(minInt.toStringAsDecimal()).assertEqual("2147483648");
-      expect(maxInt.toStringAsDecimal()).assertEqual("2147483647");
+      expect(minInt.toString()).assertEqual("-2147483648");
+      expect(maxInt.toString()).assertEqual("2147483647");
     });
 
     /**
-     * @tc.name  bigIntToStringAsDecimalTest8300
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASDECIMAL_TEST_8300
-     * @tc.desc  Test toStringAsDecimal() with large finite values - verify precision handling
+     * @tc.name  bigIntToStringDecimalTest8300
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_DECIMAL_TEST_8300
+     * @tc.desc  Test toString() with large finite values - verify precision handling
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsDecimalTest8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringDecimalTest8300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const largeFinite: BigInt = new BigInt("179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
 
-      expect(largeFinite.toStringAsDecimal()).assertInstanceOf('string');
-      expect(largeFinite.toStringAsDecimal().length).assertLarger(0);
-      expect(largeFinite.toStringAsDecimal()).assertEqual("179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
+      expect(largeFinite.toString()).assertInstanceOf('string');
+      expect(largeFinite.toString().length).assertLarger(0);
+      expect(largeFinite.toString()).assertEqual("179769313486231570000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000");
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8400
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8400
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with binary (radix=2) - returns same as toString(2)
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8400
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8400
+     * @tc.desc  Test toString(radix: int) with binary (radix=2) - returns same as toString(2)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(255);
-      const result: string = bigIntValue.toStringAsPowerOfTwoRadix(2);
+      const result: string = bigIntValue.toString(2);
       const expected: string = bigIntValue.toString(2);
 
       expect(result).assertInstanceOf('string');
@@ -1468,16 +1461,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8500
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8500
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with octal (radix=8) - positive value
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8500
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8500
+     * @tc.desc  Test toString(radix: int) with octal (radix=8) - positive value
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(64);
-      const result: string = bigIntValue.toStringAsPowerOfTwoRadix(8);
+      const result: string = bigIntValue.toString(8);
       const expected: string = bigIntValue.toString(8);
 
       expect(result).assertEqual("100");
@@ -1485,38 +1478,36 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8600
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8600
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with hexadecimal (radix=16) - returns absolute value for negative (DEFECT: no negative sign)
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8600
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8600
+     * @tc.desc  Test toString(radix: int) with hexadecimal (radix=16) - preserves negative sign
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const positive: BigInt = new BigInt(255);
       const negative: BigInt = new BigInt(-255);
       const medium: BigInt = new BigInt(4096);
 
-      expect(positive.toStringAsPowerOfTwoRadix(16)).assertEqual("ff");
-      expect(positive.toStringAsPowerOfTwoRadix(16)).assertEqual(positive.toString(16));
+      expect(positive.toString(16)).assertEqual("ff");
 
-      expect(negative.toStringAsPowerOfTwoRadix(16)).assertEqual("ff");
       expect(negative.toString(16)).assertEqual("-ff");
 
-      expect(medium.toStringAsPowerOfTwoRadix(16)).assertEqual("1000");
+      expect(medium.toString(16)).assertEqual("1000");
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8700
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8700
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with radix=4 (2^2) - valid power of two
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8700
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8700
+     * @tc.desc  Test toString(radix: int) with radix=4 (2^2) - valid power of two
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(255);
-      const result: string = bigIntValue.toStringAsPowerOfTwoRadix(4);
+      const result: string = bigIntValue.toString(4);
       const expected: string = bigIntValue.toString(4);
 
       expect(result).assertEqual("3333");
@@ -1524,16 +1515,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8800
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8800
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with radix=32 (2^5) - valid power of two
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8800
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8800
+     * @tc.desc  Test toString(radix: int) with radix=32 (2^5) - valid power of two
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(1023);
-      const result: string = bigIntValue.toStringAsPowerOfTwoRadix(32);
+      const result: string = bigIntValue.toString(32);
       const expected: string = bigIntValue.toString(32);
 
       expect(result).assertEqual("vv");
@@ -1541,21 +1532,21 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest8900
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_8900
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with value 1 - avoid zero due to implementation defect
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest8900
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_8900
+     * @tc.desc  Test toString(radix: int) with value 1
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest8900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const one: BigInt = new BigInt(1);
 
-      const result2: string = one.toStringAsPowerOfTwoRadix(2);
-      const result4: string = one.toStringAsPowerOfTwoRadix(4);
-      const result8: string = one.toStringAsPowerOfTwoRadix(8);
-      const result16: string = one.toStringAsPowerOfTwoRadix(16);
-      const result32: string = one.toStringAsPowerOfTwoRadix(32);
+      const result2: string = one.toString(2);
+      const result4: string = one.toString(4);
+      const result8: string = one.toString(8);
+      const result16: string = one.toString(16);
+      const result32: string = one.toString(32);
 
       expect(result2).assertEqual("1");
       expect(result4).assertEqual("1");
@@ -1565,35 +1556,35 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9000
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9000
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with value 1 - returns "1" for valid radix
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9000
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9000
+     * @tc.desc  Test toString(radix: int) with value 1 - returns "1" for valid radix
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9000', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const one: BigInt = new BigInt(1);
 
-      expect(one.toStringAsPowerOfTwoRadix(2)).assertEqual("1");
-      expect(one.toStringAsPowerOfTwoRadix(4)).assertEqual("1");
-      expect(one.toStringAsPowerOfTwoRadix(8)).assertEqual("1");
-      expect(one.toStringAsPowerOfTwoRadix(16)).assertEqual("1");
+      expect(one.toString(2)).assertEqual("1");
+      expect(one.toString(4)).assertEqual("1");
+      expect(one.toString(8)).assertEqual("1");
+      expect(one.toString(16)).assertEqual("1");
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9100
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9100
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with huge number spanning multiple chunks
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9100
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9100
+     * @tc.desc  Test toString(radix: int) with huge number spanning multiple chunks
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const huge: BigInt = new BigInt("18446744073709551616");
-      const resultHex: string = huge.toStringAsPowerOfTwoRadix(16);
-      const resultOct: string = huge.toStringAsPowerOfTwoRadix(8);
-      const resultBin: string = huge.toStringAsPowerOfTwoRadix(2);
+      const resultHex: string = huge.toString(16);
+      const resultOct: string = huge.toString(8);
+      const resultBin: string = huge.toString(2);
       const expectedHex: string = huge.toString(16);
       const expectedOct: string = huge.toString(8);
       const expectedBin: string = huge.toString(2);
@@ -1607,20 +1598,20 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9200
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9200
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) consistency with toString() for all valid power-of-two radixes
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9200
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9200
+     * @tc.desc  Test toString(radix: int) consistency with toString() for all valid power-of-two radixes
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testValue: BigInt = new BigInt("123456789012345");
-      const radix2: string = testValue.toStringAsPowerOfTwoRadix(2);
-      const radix4: string = testValue.toStringAsPowerOfTwoRadix(4);
-      const radix8: string = testValue.toStringAsPowerOfTwoRadix(8);
-      const radix16: string = testValue.toStringAsPowerOfTwoRadix(16);
-      const radix32: string = testValue.toStringAsPowerOfTwoRadix(32);
+      const radix2: string = testValue.toString(2);
+      const radix4: string = testValue.toString(4);
+      const radix8: string = testValue.toString(8);
+      const radix16: string = testValue.toString(16);
+      const radix32: string = testValue.toString(32);
 
       expect(radix2).assertEqual(testValue.toString(2));
       expect(radix4).assertEqual(testValue.toString(4));
@@ -1630,42 +1621,42 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9300
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9300
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with power-of-two values (single bit set) in hex
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9300
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9300
+     * @tc.desc  Test toString(radix: int) with power-of-two values (single bit set) in hex
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const two: BigInt = new BigInt(2);
       const one28: BigInt = new BigInt(128);
       const two56: BigInt = new BigInt(256);
       const two31: BigInt = new BigInt(2147483648);
 
-      expect(two.toStringAsPowerOfTwoRadix(16)).assertEqual("2");
-      expect(one28.toStringAsPowerOfTwoRadix(16)).assertEqual("80");
-      expect(two56.toStringAsPowerOfTwoRadix(16)).assertEqual("100");
-      expect(two31.toStringAsPowerOfTwoRadix(16)).assertEqual("80000000");
+      expect(two.toString(16)).assertEqual("2");
+      expect(one28.toString(16)).assertEqual("80");
+      expect(two56.toString(16)).assertEqual("100");
+      expect(two31.toString(16)).assertEqual("80000000");
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9400
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9400
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with negative value - returns absolute value without sign (DEFECT)
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9400
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9400
+     * @tc.desc  Test toString(radix: int) with negative value - preserves negative sign
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const negValue: BigInt = new BigInt(-255);
-      const result16: string = negValue.toStringAsPowerOfTwoRadix(16);
-      const result2: string = negValue.toStringAsPowerOfTwoRadix(2);
-      const result8: string = negValue.toStringAsPowerOfTwoRadix(8);
+      const result16: string = negValue.toString(16);
+      const result2: string = negValue.toString(2);
+      const result8: string = negValue.toString(8);
 
-      expect(result16).assertEqual("ff");
-      expect(result2).assertEqual("11111111");
-      expect(result8).assertEqual("377");
+      expect(result16).assertEqual("-ff");
+      expect(result2).assertEqual("-11111111");
+      expect(result8).assertEqual("-377");
 
       expect(negValue.toString(16)).assertEqual("-ff");
       expect(negValue.toString(2)).assertEqual("-11111111");
@@ -1673,16 +1664,16 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9500
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9500
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with radix=32 - valid max power-of-two within 2-36 range
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9500
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9500
+     * @tc.desc  Test toString(radix: int) with radix=32 - valid max power-of-two within 2-36 range
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const bigIntValue: BigInt = new BigInt(4095);
-      const result: string = bigIntValue.toStringAsPowerOfTwoRadix(32);
+      const result: string = bigIntValue.toString(32);
       const expected: string = bigIntValue.toString(32);
 
       expect(result).assertEqual("3vv");
@@ -1690,33 +1681,33 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9600
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9600
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with value requiring chunk padding (not aligned to chunk boundary)
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9600
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9600
+     * @tc.desc  Test toString(radix: int) with value requiring chunk padding (not aligned to chunk boundary)
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const value: BigInt = new BigInt(5);
-      const resultBin: string = value.toStringAsPowerOfTwoRadix(2);
-      const resultHex: string = value.toStringAsPowerOfTwoRadix(16);
+      const resultBin: string = value.toString(2);
+      const resultHex: string = value.toString(16);
 
       expect(resultBin).assertEqual("101");
       expect(resultHex).assertEqual("5");
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9700
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9700
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) with 2^128 in hex - very large power of two
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9700
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9700
+     * @tc.desc  Test toString(radix: int) with 2^128 in hex - very large power of two
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const twoTo128: BigInt = new BigInt("340282366920938463463374607431768211456");
-      const result: string = twoTo128.toStringAsPowerOfTwoRadix(16);
+      const result: string = twoTo128.toString(16);
       const expected: string = twoTo128.toString(16);
 
       expect(result).assertEqual("100000000000000000000000000000000");
@@ -1725,18 +1716,18 @@ export default function BuiltinsBigIntStringAndComparisonTest(): void {
     });
 
     /**
-     * @tc.name  bigIntToStringAsPowerOfTwoRadixTest9800
-     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRINGASPOWEROFTWORADIX_TEST_9800
-     * @tc.desc  Test toStringAsPowerOfTwoRadix(radix: int) returns string type for all valid inputs
+     * @tc.name  bigIntToStringPowerOfTwoRadixTest9800
+     * @tc.number  SUB_BUILTINS_BIGINT_TOSTRING_POWER_OF_TWO_RADIX_TEST_9800
+     * @tc.desc  Test toString(radix: int) returns string type for all valid inputs
      * @tc.type  FUNCTION
      * @tc.size  SMALLTEST
      * @tc.level LEVEL0
      */
-    it('bigIntToStringAsPowerOfTwoRadixTest9800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
+    it('bigIntToStringPowerOfTwoRadixTest9800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       const testValue: BigInt = new BigInt(12345);
-      const result2: string = testValue.toStringAsPowerOfTwoRadix(2);
-      const result16: string = testValue.toStringAsPowerOfTwoRadix(16);
-      const result32: string = testValue.toStringAsPowerOfTwoRadix(32);
+      const result2: string = testValue.toString(2);
+      const result16: string = testValue.toString(16);
+      const result32: string = testValue.toString(32);
 
       expect(result2).assertInstanceOf('string');
       expect(result16).assertInstanceOf('string');

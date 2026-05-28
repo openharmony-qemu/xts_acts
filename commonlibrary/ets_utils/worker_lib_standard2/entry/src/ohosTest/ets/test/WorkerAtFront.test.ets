@@ -482,5 +482,87 @@ export default function WorkerAtFrontTest() {
       }
       console.info(`${caseName} test end`);
     })
+
+    /**
+     * @tc.name   workerAtFrontTestClass012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_WORKERATFRONT_1200
+     * @tc.desc   postMessageAtFront transfer is undefined test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('workerAtFrontTestClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'workerAtFrontTestClass012';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker("../workers/workerAtFront_005.ets");
+        let isTerminate: boolean = false;
+        let flag: boolean = false;
+        workerInstance.onexit = (): void => {
+          console.info(`${caseName}: workerInstance.onexit`);
+          isTerminate = true;
+        }
+        workerInstance.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance.onmessage: ${JSON.stringify(e.data)}`);
+          flag = true;
+          expect(e.data.code).assertEqual(401);
+        }
+        workerInstance.postMessage('testTransferUndefined');
+        while (!flag) {
+          await asyncSleep(100);
+        }
+        workerInstance.terminate();
+        while (!isTerminate) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    })
+
+    /**
+     * @tc.name   workerAtFrontTestClass013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_WORKERATFRONT_1300
+     * @tc.desc   postMessageAtFront transfer is arrayBuffer test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('workerAtFrontTestClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'workerAtFrontTestClass013';
+      console.info(`${caseName} test start`);
+      try {
+        const workerInstance: worker.ThreadWorker = new worker.ThreadWorker("../workers/workerAtFront_005.ets");
+        let isTerminate: boolean = false;
+        let flag: boolean = false;
+        workerInstance.onexit = (): void => {
+          console.info(`${caseName}: workerInstance.onexit`);
+          isTerminate = true;
+        }
+        workerInstance.onmessage = (e: MessageEvents): void => {
+          console.info(`${caseName}: workerInstance.onmessage: ${JSON.stringify(e.data)}`);
+          flag = true;
+          expect(e.data).assertInstanceOf('ArrayBuffer');
+        }
+        workerInstance.postMessage('testTransferArrayBuffer');
+        while (!flag) {
+          await asyncSleep(100);
+        }
+        workerInstance.terminate();
+        while (!isTerminate) {
+          await asyncSleep(100);
+        }
+        done();
+      } catch (error) {
+        console.info(`${caseName}: catch error: code => ${error.code} message => ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} test end`);
+    })
   })
 }
