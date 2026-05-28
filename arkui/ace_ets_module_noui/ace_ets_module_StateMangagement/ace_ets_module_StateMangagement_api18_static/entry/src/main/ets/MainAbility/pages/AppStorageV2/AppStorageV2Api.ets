@@ -36,42 +36,40 @@ import {
 
 @ObservedV2
 export class Message1 {
-  @Trace userID: number;
-  userName: string;
+  @Trace public userID: number;
 
   constructor(userID?: number, userName?: string) {
     this.userID = userID ?? 1;
-    this.userName = userName ?? 'Jack';
   }
 }
 
 @ObservedV2
 export class Message2 {
-  @Trace userName: string;
+  @Trace public userName: string;
 
   constructor(userName?: string) {
     this.userName = userName ?? 'Jack';
   }
 }
 
-const IMessageType1 = Class.from<Message1>();
+const iMessageType1 = Class.from<Message1>();
 
-const IMessageType2 = Class.from<Message2>();
+const iMessageType2 = Class.from<Message2>();
 
-const as2: Message2 | undefined = AppStorageV2.connect<Message2>(IMessageType2, () => new Message2());
+const as2: Message2 | undefined = AppStorageV2.connect<Message2>(iMessageType2, () => new Message2());
 
 // ttype为SampleClass的Class的对象已经在AppStorageV2中，将该对象返回给as3
-const Message3: Message2 = AppStorageV2.connect<Message2>(IMessageType2)!;
+const message3: Message2 = AppStorageV2.connect<Message2>(iMessageType2)!;
 
-let message2 = AppStorageV2.connect<Message1>(IMessageType1, '',() => {return new Message1()});
+let message2 = AppStorageV2.connect<Message1>(iMessageType1, '',() => {return new Message1()});
 
 @Entry
 @ComponentV2
 struct AppStorageV2Api {
   // 使用connect在AppStorageV2中创建一个ttype为Message的Class的对象
   // 修改connect的返回值即可同步回AppStorageV2
-  @Local message1: Message1 = AppStorageV2.connect<Message1>(IMessageType1, () => new Message1())!;
-  @Local message4: Message1 = AppStorageV2.connect<Message1>(IMessageType1)!;
+  @Local message1: Message1 = AppStorageV2.connect<Message1>(iMessageType1, () => new Message1())!;
+  @Local message4: Message1 = AppStorageV2.connect<Message1>(iMessageType1)!;
 
 
 
@@ -85,7 +83,7 @@ struct AppStorageV2Api {
           this.message1.userID += 1;
         })
       // 修改非@Trace装饰的类属性，UI不会同步刷新，但修改的类属性已同步回AppStorageV2
-      Button('Index userName: '+Message3.userName)
+      Button('Index userName: '+message3.userName)
         .id('AppStorageV2_connect2')
         .height('5%')
 
@@ -98,7 +96,7 @@ struct AppStorageV2Api {
         .id('AppStorageV2_remove')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          AppStorageV2.remove(IMessageType1);
+          AppStorageV2.remove(iMessageType1);
         })
 
       // connect ttype IMessageType, 会从AppStorageV2中添加ttype为Message的Class的对象
@@ -106,7 +104,7 @@ struct AppStorageV2Api {
         .id('AppStorageV2_connect3')
         .height('5%')
         .onClick((e: ClickEvent) => {
-          this.message1 = AppStorageV2.connect<Message1>(IMessageType1, () => new Message1(5))!;
+          this.message1 = AppStorageV2.connect<Message1>(iMessageType1, () => new Message1(5))!;
         })
 
       Button('connect underfined: '+message2)

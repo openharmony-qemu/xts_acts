@@ -221,6 +221,14 @@ export default function AppStorageV2Api() {
       done();
     });
 
+    /**
+     * @tc.name   SUB_ARKUI_API_AppStorageV2Api_remove_0200
+     * @tc.number SUB_ARKUI_API_AppStorageV2Api_remove_0200
+     * @tc.desc   Test AppStorageV2 connect function to re-connect after remove
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_ARKUI_API_AppStorageV2Api_remove_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ARKUI_API_AppStorageV2Api_remove_0200 start');
       let driver = Driver.create();
