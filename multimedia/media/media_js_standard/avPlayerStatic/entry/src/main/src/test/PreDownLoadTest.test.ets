@@ -58,7 +58,7 @@ interface PreDownConfig {
   loadingError?: number
 }
 
-async funciton getAVPlayerRequest(testName: string, callback: (request: media.MediaSourceLoadingRequest) => void){
+async function getAVPlayerRequest(testName: string, url: string, callBack: (request: media.MediaSourceLoadingRequest) => void) {
   let avPlayer = await media.createAVPlayer()
   let headers: Record<string, string> = {"User-Agent": "User-Agent-Value"};
   let mediaSource1 : media.mediaSource | undefined = media.createMediaSourceWithUrl(url, headers);
@@ -76,7 +76,7 @@ async funciton getAVPlayerRequest(testName: string, callback: (request: media.Me
   };
   let SourceCallbackCount: number = 0
 
-  let sourceCallback: media.SourceOpenCallback = (request: media.MediaSourceLoadingRequest) => {
+  let sourceOpenCallback: media.SourceOpenCallback = (request: media.MediaSourceLoadingRequest) => {
     SourceCallbackCount++
     console.log(TAG, testName, `Opening resource: ${request.url}`);
     uuid += 1;
@@ -86,21 +86,21 @@ async funciton getAVPlayerRequest(testName: string, callback: (request: media.Me
   };
 
   let sourceReadCallback: media.SourceReadCallback = (uuid: long, requestedOffset: long, requestedLength: long) => {
-    SourceReadCallback++
-    console.log(TAG, `Reading resource handle ${uuid}, offset: ${requestedOffset}, length: ${requestedLength}`);
+    SourceCallbackCount++
+    console.log(TAG, `Reading resource with handle ${uuid}, offset: ${requestedOffset}, length: ${requestedLength}`);
     avPlayer!!.release()
   };
 
   let sourceCloseCallback: media.sourceCloseCallback = (uuid: long) => {
     SourceCallbackCount++
     console.log(TAG, `Closing resource with handle ${uuid}`);
-    request1.remove(uuid);
+    requests1.remove(uuid);
   };
 
   let resourceLoader: media.MediaSourceLoader = {
     open: sourceOpenCallback,
-    open: sourceReadCallback,
-    open: sourceCloseCallback
+    read: sourceReadCallback,
+    close: sourceCloseCallback
   };
 
   mediaSource1!!.setMediaResourceLoaderDelegate(resourceLoader);
@@ -117,7 +117,7 @@ async funciton getAVPlayerRequest(testName: string, callback: (request: media.Me
       console.info(TAG, `avPlayer enter prepared state`)
     }
     if(state == "released"){
-      console.info(TAG, avPlayer enter released state)
+      console.info(TAG, `avPlayer enter released state`)
     }
   })
   avPlayer!!.setMediaSource(mediaSource1 as media.MediaSource, playStrategy)
