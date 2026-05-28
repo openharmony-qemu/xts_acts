@@ -905,7 +905,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3100
      * @tc.name testGetInstanceFieldsRecursive031
-     * @tc.desc Verify field accessibility and readonly metadata
+     * @tc.desc Verify field access modifiers and isReadonly flag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1225,7 +1225,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4200
      * @tc.name testGetInstanceFieldsRecursive042
-     * @tc.desc Verify public field metadata reports isPublic correctly
+     * @tc.desc Verify isPublic, isPrivate, and isProtected on public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1242,7 +1242,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4300
      * @tc.name testGetInstanceFieldsRecursive043
-     * @tc.desc Verify readonly metadata reports isReadonly correctly
+     * @tc.desc Verify isReadonly returns true for readonly fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1263,7 +1263,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4400
      * @tc.name testGetInstanceFieldsRecursive044
-     * @tc.desc Verify owner metadata is returned correctly
+     * @tc.desc Verify getOwner returns the declaring class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
