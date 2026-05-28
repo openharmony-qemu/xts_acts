@@ -1891,7 +1891,7 @@ async function testMetricsListening(src: media.AVFileDescriptor,
 
 async function testSetLoudness(src: media.AVFileDescriptor, done: () => void, LoudnessGain: double){
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
-  console.info(case media err: ${err})
+  console.info(`case media err: ${err}`)
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
@@ -1971,22 +1971,21 @@ function setAVPlayerCb(avPlayer: media.AVPlayer | null, speed: number, done: () 
   })
 }
 
-function setLoudness(avPlayer: media.AVPlayer | null, done: () = >void, LoudnessGain: number) {
-  avPlayer ? .onStateChange((state: media.AVPlayerState) = >{
+function setLoudness(avPlayer: media.AVPlayer | null, done: () =>void, LoudnessGain: number) {
+  avPlayer?.onStateChange((state: media.AVPlayerState) =>{
       switch (state) {
       case INITIALIZED:
           if (!avPlayer) {
-              console.info(avPlayer is null);
+              console.info('avPlayer is null');
               break;
           }
-          console.info(
-      case INITIALIZED);
+          console.info(case INITIALIZED);
           expect(avPlayer !! .state).assertEqual(INITIALIZED);
           avPlayer !! .audioRendererInfo = {
               usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
               rendererFlags: 0
           }
-          avPlayer !! .prepare((err) = >{
+          avPlayer !! .prepare((err) =>{
               console.info('case prepare called' + err);
               if (err != null) {
                   console.error(
@@ -2001,8 +2000,8 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: () = >void, Loudness
           });
           break;
       case PREPARED:
-          avPlayer ? .setLoudnessGain(LoudnessGain);
-          avPlayer ? .release();
+          avPlayer?.setLoudnessGain(LoudnessGain);
+          avPlayer?.release();
           break;
       case RELEASED:
           avPlayer = null;
@@ -2010,7 +2009,7 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: () = >void, Loudness
           break;
       case ERROR:
           expect().assertFail();
-          avPlayer ? .release().then(() = >{}).
+          avPlayer?.release().then(() =>{}).
           catch(mediaTestBase.catchCallback);
           avPlayer = null;
           break;
@@ -2571,7 +2570,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-      it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+      it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
         try {
           if (fileDescriptor) {
             testSetLoudness(fileDescriptor ! , done, 0.0);
@@ -2592,7 +2591,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, -90.0);
@@ -2613,7 +2612,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, 24.0);
@@ -2634,7 +2633,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, -40.0);
@@ -2655,7 +2654,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, 10.8);
@@ -2676,7 +2675,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, -90.1);
@@ -2697,7 +2696,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size   MEDIUMTEST
        * @tc.level  LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, -100.4);
@@ -2718,7 +2717,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, 24.1);
@@ -2739,7 +2738,7 @@ export default function AVPlayerLocalTest() {
        * @tc.size    MEDIUMTEST
        * @tc.level   LEVEL0
        */
-       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () = >void) = >{
+       it('SUB_MULTIMEDIA_MEDIA_VIDEO_SET_LOUDNESS_ON_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: () =>void) =>{
          try {
            if (fileDescriptor) {
              testSetLoudness(fileDescriptor ! , done, 60.2);
