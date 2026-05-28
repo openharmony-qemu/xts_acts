@@ -190,6 +190,55 @@ export default function AppStorageV2Api() {
       let strJsonNew = inspector.getInspectorByKey('AppStorageV2_connect_underfined');
       expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('label')).assertEqual('connect underfined: undefined');
 
+      console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0400 end');
+
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_API_AppStorageV2Api_connect_0500
+     * @tc.number SUB_ARKUI_API_AppStorageV2Api_connect_0500
+     * @tc.desc   Test AppStorageV2 connect function to re-connect after remove
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ARKUI_API_AppStorageV2Api_connect_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0500 start');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let Btn = await driver.findComponent(ON.id('AppStorageV2_connect4'));
+      await CommonFunc.sleep(1000);
+      await (Btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+
+      let strJsonNew = inspector.getInspectorByKey('AppStorageV2_connect4');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('label')).assertEqual('connect defaultCreator false:4');
+
+      console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0500 end');
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_ARKUI_API_AppStorageV2Api_remove_0200
+     * @tc.number SUB_ARKUI_API_AppStorageV2Api_remove_0200
+     * @tc.desc   Test AppStorageV2 connect function to re-connect after remove
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_ARKUI_API_AppStorageV2Api_remove_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ARKUI_API_AppStorageV2Api_remove_0200 start');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+
+      let Btn = await driver.findComponent(ON.id('AppStorageV2_remove2'));
+      await CommonFunc.sleep(1000);
+      await (Btn?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
       // 删除创建的值
       AppStorageV2.remove(Class.from<Message1>())
       AppStorageV2.remove(Class.from<Message2>())
@@ -198,7 +247,7 @@ export default function AppStorageV2Api() {
       let keys: Array<string> = AppStorageV2.keys();
       expect(keys.length).assertEqual(0);
 
-      console.info('SUB_ARKUI_API_AppStorageV2Api_connect_0400 end');
+      console.info('SUB_ARKUI_API_AppStorageV2Api_remove_0200 end');
 
       done();
     });

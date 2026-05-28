@@ -69,6 +69,7 @@ struct AppStorageV2Api {
   // 使用connect在AppStorageV2中创建一个ttype为Message的Class的对象
   // 修改connect的返回值即可同步回AppStorageV2
   @Local message1: Message1 = AppStorageV2.connect<Message1>(iMessageType1, () => new Message1())!;
+  @Local message4: Message1 = AppStorageV2.connect<Message1>(iMessageType1)!;
 
 
 
@@ -109,6 +110,20 @@ struct AppStorageV2Api {
       Button('connect underfined: '+message2)
         .id('AppStorageV2_connect_underfined')
         .height('5%')
+
+      Button(`connect defaultCreator false:${this.message4.userID}`)
+        .id('AppStorageV2_connect4')
+        .height('5%')
+        .onClick((e: ClickEvent) => {
+          this.message4.userID += 2;
+        })
+
+      Button('remove为空:')
+        .id('AppStorageV2_remove2')
+        .height('5%')
+        .onClick((e: ClickEvent) => {
+          AppStorageV2.remove('');
+        })
 
 
       Divider()
