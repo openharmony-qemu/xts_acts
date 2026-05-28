@@ -1534,7 +1534,7 @@ export default function MediaAssetManagerStaticTest(): void {
       }
       catch (error) {
         console.error(TAG,`${testNum} failed; error:`,JSON.stringify(error.code),error.message,JSON.stringify(error.message));
-        expect(Number(error.code)).assertEqual(13900020);
+        expect(error.code).assertEqual(13900020);
         done();
       }
     });
