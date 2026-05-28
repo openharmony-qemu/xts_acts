@@ -362,7 +362,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const readableStream: stream.Readable = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -376,7 +376,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
 
       const readableStream: stream.Readable = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -393,9 +393,9 @@ export default function StreamReadable01Test(): void {
       const readableStream2: stream.Readable = new stream.Readable();
       const readableStream3: stream.Readable = new stream.Readable();
 
-      expect(true).assertTrue();
-      expect(true).assertTrue();
-      expect(true).assertTrue();
+      expect(readableStream1 != null).assertTrue();
+      expect(readableStream2 != null).assertTrue();
+      expect(readableStream3 != null).assertTrue();
     });
 
     /**
@@ -424,11 +424,11 @@ export default function StreamReadable01Test(): void {
 
       {
         const readableStream1: stream.Readable = new stream.Readable();
-        expect(true).assertTrue();
+        expect(readableStream1 != null).assertTrue();
       }
 
       const readableStream2: stream.Readable = createReadable();
-      expect(true).assertTrue();
+      expect(readableStream2 != null).assertTrue();
     });
 
     /**
@@ -441,7 +441,7 @@ export default function StreamReadable01Test(): void {
      */
     it("testStreamReadable01Chapter0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const readableStream = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -457,7 +457,7 @@ export default function StreamReadable01Test(): void {
       let errCaught = false;
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertTrue();
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         errCaught = true;
         expect(err.code).assertEqual(401);
@@ -474,7 +474,7 @@ export default function StreamReadable01Test(): void {
      */
     it("testStreamReadable01Chapter0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const readableStream = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -490,7 +490,7 @@ export default function StreamReadable01Test(): void {
       let errCaught = false;
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertTrue();
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         errCaught = true;
         expect(err.code).assertEqual(401);
@@ -510,7 +510,7 @@ export default function StreamReadable01Test(): void {
       let errCaught = false;
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertTrue();
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         errCaught = true;
         expect(err.code).assertEqual(401);
@@ -527,7 +527,7 @@ export default function StreamReadable01Test(): void {
      */
     it("testStreamReadable01Chapter0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const readableStream = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -541,7 +541,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
@@ -557,7 +557,7 @@ export default function StreamReadable01Test(): void {
      */
     it("testStreamReadable01Chapter0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const readableStream = new stream.Readable();
-      expect(true).assertTrue();
+      expect(readableStream != null).assertTrue();
     });
 
     /**
@@ -571,7 +571,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
@@ -588,7 +588,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
@@ -605,7 +605,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
@@ -622,7 +622,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }
@@ -639,7 +639,7 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
+        expect(readableStream != null).assertTrue();
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }

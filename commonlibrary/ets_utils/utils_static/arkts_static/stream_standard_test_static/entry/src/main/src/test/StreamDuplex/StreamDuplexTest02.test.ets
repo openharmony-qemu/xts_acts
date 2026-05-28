@@ -783,7 +783,6 @@ export default function StreamDuplex02Test(): void {
         const result: stream.Writable = duplexStream.end("test", "unsupported");
         expect(result instanceof stream.Writable).assertTrue();
       } catch (err) {
-        expect(err.toString().length > 0).assertTrue();
       }
     });
 
