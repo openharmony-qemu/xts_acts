@@ -30,7 +30,7 @@ import {
   Color,
   NavDestination
 } from '@ohos.arkui.component';
-import { StoragePropRef, Link, PropRef } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
