@@ -102,7 +102,7 @@ class A15 implements II15 {}
 class B15 implements III15 {}
 
 function foo16() {  // infer std::Array
-  return new Array<int>(2);
+  return [2] as Array<int>;
 }
 
 enum ENM17 {Red, Blue}  // infer enum

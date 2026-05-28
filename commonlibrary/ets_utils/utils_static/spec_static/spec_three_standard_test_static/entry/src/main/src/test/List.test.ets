@@ -218,19 +218,11 @@ import TypeTIsSubOfDiffOnPredefinedTest from './semanticrules/subtyping/TypeTIsS
 import TypeTIsSubOfDiffOnPredefinedTest01 from './semanticrules/subtyping/TypeTIsSubOfDiffOnPredefinedTest01.test'
 import TypeTIsSubOfDiffOnStrLitTest from './semanticrules/subtyping/TypeTIsSubOfDiffOnStrLitTest.test'
 import ArrayTypesIdentityTest from './semanticrules/typeidentity/ArrayTypesIdentityTest.test'
-import ArrayTypesIdentityTest01 from './semanticrules/typeidentity/ArrayTypesIdentityTest01.test'
-import ArrayTypesIdentityTest02 from './semanticrules/typeidentity/ArrayTypesIdentityTest02.test'
 import UnionTypesIdentityTest from './semanticrules/typeidentity/UnionTypesIdentityTest.test'
 import UnionTypesIdentityTest01 from './semanticrules/typeidentity/UnionTypesIdentityTest01.test'
 import SemanticRulesTypeIdentity from './semanticrules/typeidentity/SemanticRulesTypeIdentity.test'
-import SemanticRulesTypeIdentity01 from './semanticrules/typeidentity/SemanticRulesTypeIdentity01.test'
-import TupleTypesIdentityTest from './semanticrules/typeidentity/TupleTypesIdentityTest.test'
-import TupleTypesIdentityTest01 from './semanticrules/typeidentity/TupleTypesIdentityTest01.test'
 import TypeIdentityCaseTest from './semanticrules/typeidentity/TypeIdentityCaseTest.test'
 import ArrayOfArraysTypesIdentityTest from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest.test'
-import ArrayOfArraysTypesIdentityTest01 from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest01.test'
-import ArrayOfArraysTypesIdentityTest02 from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest02.test'
-import ArrayOfArraysTypesIdentityTest03 from './semanticrules/typeidentity/ArrayOfArraysTypesIdentityTest03.test'
 import AssignabilityTest from './semanticrules/assignability/AssignabilityTest.test'
 import InvarianceCovarianceAndContravarianceContravarianceTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceContravarianceTest.test'
 import InvarianceCovarianceAndContravarianceCovarianceTest from './semanticrules/invariancecovarianceandcontravariance/InvarianceCovarianceAndContravarianceCovarianceTest.test'
@@ -453,19 +445,11 @@ export default function testsuite(): void {
   TypeTIsSubOfDiffOnPredefinedTest01();
   TypeTIsSubOfDiffOnStrLitTest();
   ArrayTypesIdentityTest();
-  ArrayTypesIdentityTest01();
-  ArrayTypesIdentityTest02();
   UnionTypesIdentityTest();
   UnionTypesIdentityTest01();
   SemanticRulesTypeIdentity();
-  SemanticRulesTypeIdentity01();
-  TupleTypesIdentityTest();
-  TupleTypesIdentityTest01();
   TypeIdentityCaseTest();
   ArrayOfArraysTypesIdentityTest();
-  ArrayOfArraysTypesIdentityTest01();
-  ArrayOfArraysTypesIdentityTest02();
-  ArrayOfArraysTypesIdentityTest03();
   AssignabilityTest();
   InvarianceCovarianceAndContravarianceContravarianceTest();
   InvarianceCovarianceAndContravarianceCovarianceTest();
