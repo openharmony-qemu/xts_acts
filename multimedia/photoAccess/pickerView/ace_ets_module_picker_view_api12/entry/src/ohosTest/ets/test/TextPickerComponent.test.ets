@@ -1714,9 +1714,9 @@ export default function TextPicker() {
         let item = cases[i];
         console.log(`testPicker25 index = ${i}`)
         try {
-          let result: Array<string> = [];
-          phAccessHelper.createAssetWithShortTermPermission(item).then((data: Array<string>)=>{
-            console.log(`createAssetWithShortTermPermission result  = ${JSON.stringify(data)}`)
+          let result: string = '';
+          phAccessHelper.createAssetWithShortTermPermission(item).then((data: string)=>{
+            console.log(`createAssetWithShortTermPermission result  = ${data}`)
             result = data;
           });
           console.log(`testPicker25 createPromise`)
