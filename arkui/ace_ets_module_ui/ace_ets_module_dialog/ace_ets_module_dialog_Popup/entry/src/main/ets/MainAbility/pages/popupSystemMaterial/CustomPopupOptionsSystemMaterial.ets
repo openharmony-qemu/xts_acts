@@ -13,7 +13,6 @@
  * limitations under the License.
  */
 import { uiMaterial } from '@kit.ArkUI';
-import { hdsMaterial } from '@kit.UIDesignKit';
 
 @Entry
 @Component
@@ -24,8 +23,6 @@ struct CustomPopupOptionsSystemMaterial {
   @State isShowPopupImmersiveThick: boolean = false;
   @State isShowPopupImmersiveUltraThin: boolean = false;
   @State isShowPopupNone: boolean = false;
-
-  isSystemMaterialSupport: boolean = hdsMaterial.isSystemMaterialSupported();  // 判断当前设备是否支持材质
 
   @Builder
   customPopupBuilder(closeCallback: () => void) {
@@ -46,7 +43,6 @@ struct CustomPopupOptionsSystemMaterial {
 
   build() {
     Column({ space: 5 }) {
-      Text(this.isSystemMaterialSupport.toString()).id('hasM')
       Row({ space: 5 }) {
         Button('undefined')
           .id('undefined')

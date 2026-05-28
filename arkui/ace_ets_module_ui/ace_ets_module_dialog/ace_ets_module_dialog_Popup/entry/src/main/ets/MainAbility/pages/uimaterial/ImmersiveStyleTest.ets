@@ -13,15 +13,12 @@
  * limitations under the License.
  */
 import { uiMaterial } from '@kit.ArkUI';
-import { hdsMaterial } from '@kit.UIDesignKit';
 
 @Entry
 @Component
 struct ImmersiveStyleTest {
-  isSystemMaterialSupport: boolean = hdsMaterial.isSystemMaterialSupported();  // 判断当前设备是否支持材质
   build() {
     Column({ space: 10 }) {
-      Text(this.isSystemMaterialSupport.toString()).id('hasM')
       Text('ImmersiveStyle Test')
         .fontSize(20)
         .fontWeight(FontWeight.Bold)
