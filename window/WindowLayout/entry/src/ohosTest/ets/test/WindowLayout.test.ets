@@ -830,22 +830,12 @@ export default function windowLayoutTest() {
         let blank = await driver.findComponent(ON.id('startMoving'))
         await sleep(1000)
         let point = await blank.getBoundsCenter();
+        console.info(`${message} point = ${JSON.stringify(point.x)},y = ${JSON.stringify(point.y)}`)
         await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
-        let text = await driver.findComponent(ON.id('startMovingText'));
+        let rectNow = windowClass.getWindowPorperties().windowRect
         await sleep(1000)
-        let textDragged = await text.getText()
-        console.info(`${message} textDragged = ${JSON.stringify(textDragged)}`)
-        if (textDragged == 'startMoving success') {
-          let windowPointDragged = windowClass.getWindowProperties().windowRect
-          console.info(`${message} windowPoint = ${JSON.stringify(windowPointDragged)}`)
-          expect(windowPointDragged.left).assertEqual(windowPoint.left + 100)
-          expect(windowPointDragged.top).assertEqual(windowPoint.top + 100)
-        } else if (textDragged == 'startMoving 801') {
-          console.info(`${message}textDragged ${JSON.stringify(textDragged)}`)
-        } else {
-          console.error(`${message} Error`);
-          expect(true).assertFalse()
-        }
+        expect(rectNow.left).assertEqual(windowPoint.left + 100)
+        expect(rectNow.top).assertEqual(windowPoint.top + 100)
         await windowClass.destroyWindow()
         done();
       }).catch(async (err: BusinessError) => {
