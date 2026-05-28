@@ -400,7 +400,6 @@ export default function StaticMethodGetParameterTypeTest(): void {
       expect(paramType!.isFinal() !== null).assertTrue();
     });
 
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_GET_PARAMETER_TYPE_1500
      * @tc.name testStaticMethodGetParameterType015

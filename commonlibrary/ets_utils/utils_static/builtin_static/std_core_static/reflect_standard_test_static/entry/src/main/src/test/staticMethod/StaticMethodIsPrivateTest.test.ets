@@ -288,7 +288,6 @@ export default function StaticMethodIsPrivateTest(): void {
      * @tc.level Level 2
      */
     it('testStaticMethodIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      // 使用 public 方法验证 isPrivate() 返回 boolean 类型
       let cls: Class = Class.from<PublicOnlyClass>();
       let method = cls.getStaticMethod('publicMethod');
       expect(method !== undefined).assertTrue();
