@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, BuilderNode, NodeRenderType, FrameNode } from "@ohos.arkui.node";
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Observed
 declare class Params{
   elementId: string
@@ -138,6 +139,7 @@ function TextInputBuilder(params:Params) {
 @Component
 struct WebEmbedVisibilityChange  {
   browserTabController: WebviewController = new webView.WebviewController()
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private nodeControllerMap: Map<string, MyNodeController> = new Map();
   @State componentIdArr: Array<string> = [];
   @State posMap: Map<string, Position | undefined> = new Map();
@@ -167,6 +169,10 @@ struct WebEmbedVisibilityChange  {
     events_emitter.off(153510)
   }
 
+  aboutToDisappear() {
+    this.browserTabController.loadUrl(this.mServer.getShutdownUrl());
+  }
+
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
@@ -191,7 +197,7 @@ struct WebEmbedVisibilityChange  {
                 this.userAgentPC = this.browserTabController.getUserAgent();
                 if ((this.userAgentPC).includes("Phone")) {
                   this.isComplete = -1;
-                  this.browserTabController.loadUrl('https://www.baidu.com');
+                  this.browserTabController.loadUrl(this.mServer.getAssetUrl('index.html'));
                   await waitForExist(() => this.isComplete, this.str, 0);
                   this.browserTabController.loadUrl($rawfile('Embed.html'))
                   break;

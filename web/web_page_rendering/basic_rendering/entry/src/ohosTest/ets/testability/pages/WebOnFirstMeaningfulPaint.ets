@@ -17,6 +17,7 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { BusinessError } from '@ohos.base';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct WebOnFirstMeaningfulPaint {
@@ -25,6 +26,7 @@ struct WebOnFirstMeaningfulPaint {
   @State isReceive: number = -1;
   @State isComplete: number = -1;
   controller: webView.WebviewController = new webView.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
@@ -36,6 +38,10 @@ struct WebOnFirstMeaningfulPaint {
 
   onPageHide() {
     events_emitter.off(151990)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
@@ -80,7 +86,7 @@ struct WebOnFirstMeaningfulPaint {
               this.text = [0, 0]
               try {
                 this.isComplete = -1;
-                this.controller.loadUrl('https://www.iana.org/help/example-domains');
+                this.controller.loadUrl(this.mServer.getAssetUrl('index.html'));
                 await waitForExist(() => this.isComplete, this.str, 0);
                 if (this.text[0] != 0 && this.text[1] != 0) {
                   value = true;

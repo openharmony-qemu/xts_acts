@@ -20,10 +20,12 @@ import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview'
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webviewTerminateRenderProcess {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State userAgentPC:string = '';
   @State isComplete: number = -1;
@@ -39,6 +41,10 @@ struct webviewTerminateRenderProcess {
   }
   onPageHide() {
     events_emitter.off(152130)
+  }
+
+  aboutToDisappear() {
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnSslError page valueChangeCallBack");
@@ -154,7 +160,7 @@ struct webviewTerminateRenderProcess {
         })
       }
 
-      Web({ src: 'https://wrong.host.badssl.com', controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexdemo.html'), controller: this.controller })
 
       .onOverScroll((event) => {
           console.info('x = ' + event.xOffset)
