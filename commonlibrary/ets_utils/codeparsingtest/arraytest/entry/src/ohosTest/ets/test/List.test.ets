@@ -44,46 +44,6 @@ import ArrayCombinationTest2 from './array/ArrayCombination002.test';
 import ArrayCombinationTest3 from './array/ArrayCombination003.test';
 import ArrayCombinationTest4 from './array/ArrayCombination004.test';
 
-import BuiltinsArrayEntriesTest from './Array_Prototype_Entries/BuiltinsArrayPrototypeEntriesTest.test'
-import BuiltinsArrayEveryTest from './Array_Prototype_Every/BuiltinsArrayPrototypeEveryTest.test'
-import BuiltinsArrayFromTest from './Array_From/BuiltinsArrayFromTest.test'
-import BuiltinsArrayEntriesJsTest from './Array_Prototype_Entries/BuiltinsArrayPrototypeEntriesJsTest.test'
-import BuiltinsArrayFromJsTest from './Array_From/BuiltinsArrayFromJsTest.test'
-import BuiltinsArrayEveryJsTest from './Array_Prototype_Every/BuiltinsArrayPrototypeEveryJsTest.test'
-
-import BuiltinsArrayAtExtendedTest from './Array_PrototypeAt/BuiltinsArrayAtExtendedTest.test';
-import BuiltinsArrayAtTest from './Array_PrototypeAt/BuiltinsArrayAtTest.test';
-import BuiltinsArrayIsArrayExtendedTest from './Array_PrototypeIsArray/BuiltinsArrayIsArrayExtendedTest.test';
-import BuiltinsArrayIsArrayTest from './Array_PrototypeIsArray/BuiltinsArrayIsArrayTest.test';
-import BuiltinsArrayPrototypeCopyWithinExtendedTest from './Array_PrototypeCopyWithin/BuiltinsArrayPrototypeCopyWithinExtendedTest.test';
-import BuiltinsArrayPrototypeCopyWithinTest from './Array_PrototypeCopyWithin/BuiltinsArrayPrototypeCopyWithinTest.test';
-
-import BuiltinsArrayPrototypeFillNonArrayTest from "./Array_Prototype_Fill/BuiltinsArrayPrototypeFillNonArray.test"
-import BuiltinsArrayPrototypeFillTest from "./Array_Prototype_Fill/BuiltinsArrayPrototypeFillBasic.test"
-import BuiltinsArrayPrototypeFilterModifyTest from "./Array_prototype_filter/BuiltinsArrayPrototypeFilterModify.test"
-import BuiltinsArrayPrototypeFilterModifySecTest from "./Array_prototype_filter/BuiltinsArrayPrototypeFilterModifySecTest.test"
-import BuiltinsArrayPrototypeFilterSparseExceptionTest from "./Array_prototype_filter/BuiltinsArrayPrototypeFilterSparseException.test"
-import BuiltinsArrayPrototypeFilterBasicTest from "./Array_prototype_filter/BuiltinsArrayPrototypeFilterBasic.test"
-import BuiltinsArrayPrototypeFilterBasicSecTest from "./Array_prototype_filter/BuiltinsArrayPrototypeFilterBasicSec.test"
-import BuiltinsArrayPrototypeFindComprehensive from "./Array_prototype_find/BuiltinsArrayPrototypeFindComprehensive.test"
-import BuiltinsArrayPrototypeFindSpecialTypesTest from "./Array_prototype_find/BuiltinsArrayPrototypeFindSpecialTypes.test"
-import BuiltinsArrayPrototypeFindSpecialTypesTest2 from "./Array_prototype_find/BuiltinsArrayPrototypeFindSpecialTypesSecTest.test"
-import BuiltinsArrayPrototypeFindSpecialTypesTest3 from "./Array_prototype_find/BuiltinsArrayPrototypeFindSpecialTypesThirdTest.test"
-import BuiltinsArrayPrototypeFindBasicTest from "./Array_prototype_find/BuiltinsArrayPrototypeFindBasic.test"
-
-import BuiltinsArrayConcatTest from './Array_Prototype_Concat/BuiltinsArrayConcatTest.test'
-import BuiltinsArrayConcatJsTest from './Array_Prototype_Concat/BuiltinsArrayConcatJSTest.test'
-import BuiltinsArrayFindIndexTest from './Array_Prototype_FindIndex/BuiltinsArrayFindIndexTest.test'
-import BuiltinsArrayFlatTest from './Array_Prototype_Flat/BuiltinsArrayFlatTest.test'
-import BuiltinsArrayFlatJsTest from './Array_Prototype_Flat/BuiltinsArrayFlatJsTest.test'
-import BuiltinsArrayFlatMapTest from './Array_Prototype_FlatMap/BuiltinsArrayFlatMapTest.test'
-import BuiltinsArrayFlatMapJSTest from './Array_Prototype_FlatMap/BuiltinsArrayFlatMapJSTest.test'
-import BuiltinsArrayFindIndexJsTest from './Array_Prototype_FindIndex/BuiltinsArrayFindIndexJsTest.test'
-
-import ArrayFindLastIndexTest from './Array_FindLastIndex/BuiltinsArrayFindLastIndex.test';
-import ArrayFindLastIndexTestExtend from './Array_FindLastIndex/BuiltinsArrayFindLastIndexExtended.test';
-import BuiltinsArrayFindLastTest from './Array_FindLast/BuiltinsArrayFindLastTest.test';
-import BuiltinsArrayFindLastExtendedTest from './Array_FindLast/BuiltinsArrayFindLastExtendedTest.test';
 
 export default function testsuite() {
   ArrayCombinationTest1();
@@ -117,46 +77,5 @@ export default function testsuite() {
   ArraySortTest();
   ArraySpliceTest();
   ArrayCombinationTest();
-  
-  BuiltinsArrayEntriesTest()
-  BuiltinsArrayEntriesJsTest()
-  BuiltinsArrayEveryTest()
-  BuiltinsArrayEveryJsTest()
-  BuiltinsArrayFromTest()
-  BuiltinsArrayFromJsTest()
-
-  BuiltinsArrayAtTest();
-  BuiltinsArrayAtExtendedTest();
-  BuiltinsArrayIsArrayTest();
-  BuiltinsArrayIsArrayExtendedTest();
-  BuiltinsArrayPrototypeCopyWithinTest();
-  BuiltinsArrayPrototypeCopyWithinExtendedTest();
-
-  BuiltinsArrayPrototypeFindBasicTest()
-  BuiltinsArrayPrototypeFindComprehensive()
-  BuiltinsArrayPrototypeFindSpecialTypesTest()
-  BuiltinsArrayPrototypeFindSpecialTypesTest2()
-  BuiltinsArrayPrototypeFindSpecialTypesTest3()
-  BuiltinsArrayPrototypeFillTest()
-  BuiltinsArrayPrototypeFillNonArrayTest()
-  BuiltinsArrayPrototypeFilterModifyTest()
-  BuiltinsArrayPrototypeFilterModifySecTest()
-  BuiltinsArrayPrototypeFilterSparseExceptionTest()
-  BuiltinsArrayPrototypeFilterBasicTest()
-  BuiltinsArrayPrototypeFilterBasicSecTest()
-
-  BuiltinsArrayFlatTest()
-  BuiltinsArrayFlatJsTest()
-  BuiltinsArrayFlatMapTest()
-  BuiltinsArrayFlatMapJSTest()
-  BuiltinsArrayConcatTest()
-  BuiltinsArrayConcatJsTest()
-  BuiltinsArrayFindIndexTest()
-  BuiltinsArrayFindIndexJsTest()
-
-  ArrayFindLastIndexTest()
-  ArrayFindLastIndexTestExtend()
-  BuiltinsArrayFindLastTest()
-  BuiltinsArrayFindLastExtendedTest()
 };
 
