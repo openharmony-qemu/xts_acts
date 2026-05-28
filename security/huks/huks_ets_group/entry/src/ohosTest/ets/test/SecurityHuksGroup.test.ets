@@ -14,9 +14,9 @@
  */
 import { beforeAll, describe, Level, Size, TestType, it, expect } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import { GetAesGenerateOptions, GetEccGenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { SetParam, SetInData, MergeOptions, CheckSoftware } from './utils/huks/HuksOptionsUtils';
-import { StringToUint8Array } from './utils/common/CommonUtils';
+import { GetAesGenerateOptions, GetEccGenerateOptions, GetMlDsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { SetParam, SetInData, MergeOptions, CheckSoftware, GetParam } from './utils/huks/HuksOptionsUtils';
+import { StringToUint8Array, Uint8ArrayToString } from './utils/common/CommonUtils';
 import { Logger } from './utils/common/Logger';
 import { GetAesImportData } from './utils/huks/ImportKeyUtils';
 import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
@@ -33,8 +33,9 @@ import {
 import { BuildSignVerifyData, GetSha256SignOptions, SignVerify } from './utils/huks/SignVerifyUtils';
 import { BuildCipherData, Cipher, GetCbcPkcs7Options } from './utils/huks/CipherUtils';
 import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
-import { HuksMaxGroupId, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
+import { HuksDefaultKeyVersion, HuksDefaultOsPatchLevel, HuksDefaultOsVersion, HuksMaxGroupId, HuksMinGroupId } from './utils/huks/HuksCommonUtils';
 import { CheckWifiInfo } from './utils/common/NetworkUtils';
+import { GetAccessGroupOptions } from './utils/huks/AccessControlUtils';
 
 export default function abilityTest() {
   let useSoftware: boolean = true;
@@ -53,8 +54,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0100";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
         } catch (err) {
@@ -74,8 +74,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_0200";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
         } catch (err) {
@@ -101,12 +100,10 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
           SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
@@ -187,7 +184,6 @@ export default function abilityTest() {
         SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
-
           let res = await huks.exportKeyItem(testNumber, genKeyOptions);
           expect(res.outData).not().assertNull();
         } catch (err) {
@@ -401,14 +397,12 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        if(!useSoftware){
+        if (!useSoftware) {
           await CheckWifiInfo();
         }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
-        let attestOptions =
-          SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.anonAttestKeyItem(testNumber, attestOptions);
@@ -430,8 +424,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1800";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.getKeyItemProperties(testNumber, genKeyOptions);
@@ -453,8 +446,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1900";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.hasKeyItem(testNumber, genKeyOptions);
@@ -476,8 +468,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_1910', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_1910";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.isKeyItemExist(testNumber, genKeyOptions);
@@ -499,8 +490,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2000";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.listAliases(genKeyOptions);
@@ -522,8 +512,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2100";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           await huks.deleteKeyItem(testNumber, genKeyOptions);
@@ -544,8 +533,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
         } catch (err) {
@@ -565,8 +553,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_2400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
         } catch (err) {
@@ -592,12 +579,10 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
           SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
@@ -722,14 +707,12 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        if(!useSoftware){
+        if (!useSoftware) {
           await CheckWifiInfo();
         }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3300";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
-        let attestOptions =
-          SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.anonAttestKeyItem(testNumber, attestOptions);
@@ -751,8 +734,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3400";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.getKeyItemProperties(testNumber, genKeyOptions);
@@ -774,8 +756,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3500";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.hasKeyItem(testNumber, genKeyOptions);
@@ -797,8 +778,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3510";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.isKeyItemExist(testNumber, genKeyOptions);
@@ -820,8 +800,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3600";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           let res = await huks.listAliases(genKeyOptions);
@@ -843,8 +822,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMaxGroupId));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMaxGroupId));
         try {
           await huks.generateKeyItem(testNumber, genKeyOptions);
           await huks.deleteKeyItem(testNumber, genKeyOptions);
@@ -865,8 +843,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3800";
-        let genGroupKeyOptions =
-          SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
           expect(null).assertFail();
@@ -887,8 +864,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_3900";
-        let genGroupKeyOptions =
-          SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
           expect(null).assertFail();
@@ -915,12 +891,10 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
           SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
@@ -1046,12 +1020,11 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        if(!useSoftware){
+        if (!useSoftware) {
           await CheckWifiInfo();
         }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4800";
-        let attestOptions =
-          SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.anonAttestKeyItem(testNumber, attestOptions);
           expect(null).assertFail();
@@ -1072,8 +1045,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_4900";
-        let genKeyOptions =
-          SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.getKeyItemProperties(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1094,8 +1066,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5000";
-        let genKeyOptions =
-          SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1116,8 +1087,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5010";
-        let genKeyOptions =
-          SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.isKeyItemExist(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1138,8 +1108,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5100";
-        let genKeyOptions =
-          SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.listAliases(genKeyOptions);
           expect(null).assertFail();
@@ -1160,8 +1129,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5200";
-        let genKeyOptions =
-          SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(""));
         try {
           await huks.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1182,8 +1150,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
           expect(null).assertFail();
@@ -1204,8 +1171,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_5400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
           expect(null).assertFail();
@@ -1232,16 +1198,13 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
-          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-            StringToUint8Array("group_not_exist"));
+          SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
           await huks.importWrappedKeyItem(testNumber, deviceAKeyPairAlias, importWrappedKeyOption);
           expect(null).assertFail();
         } catch (err) {
@@ -1364,12 +1327,11 @@ export default function abilityTest() {
      */
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
-        if(!useSoftware){
+        if (!useSoftware) {
           await CheckWifiInfo();
         }
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6300";
-        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let attestOptions = SetParam(GetAttestKeyOptions(), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.anonAttestKeyItem(testNumber, attestOptions);
           expect(null).assertFail();
@@ -1390,8 +1352,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6400";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.getKeyItemProperties(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1412,8 +1373,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6500";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.hasKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1434,8 +1394,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6510', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6510";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.isKeyItemExist(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1456,8 +1415,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6600";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.listAliases(genKeyOptions);
           expect(null).assertFail();
@@ -1478,8 +1436,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_6700";
-        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array("group_not_exist"));
+        let genKeyOptions = SetParam(GetEccGenerateOptions(256), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array("group_not_exist"));
         try {
           await huks.deleteKeyItem(testNumber, genKeyOptions);
           expect(null).assertFail();
@@ -1500,8 +1457,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8300";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
@@ -1524,8 +1480,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8400";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
@@ -1554,12 +1509,10 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, false);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
@@ -1645,8 +1598,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_8900";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
         try {
           await huks.generateKeyItem(testNumber, genGroupKeyOptions);
@@ -1668,8 +1620,7 @@ export default function abilityTest() {
     it('SUB_Security_HUKS_AccessControl_Group_API23_Func_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async () => {
         let testNumber: string = "SUB_Security_HUKS_AccessControl_Group_API23_Func_9000";
-        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP,
-          StringToUint8Array(HuksMinGroupId));
+        let genGroupKeyOptions = SetParam(GetAesGenerateOptions(128), huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         SetParam(genGroupKeyOptions, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
         try {
           await huks.importKeyItem(testNumber, SetInData(genGroupKeyOptions, GetAesImportData(128)));
@@ -1697,12 +1648,10 @@ export default function abilityTest() {
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_UNWRAP);
         SetParam(genKeyPairOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         await huks.generateKeyItem(deviceAKeyPairAlias, genKeyPairOptions);
-        let deviceAPubKeyData =
-          (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
+        let deviceAPubKeyData = (await huks.exportKeyItem(deviceAKeyPairAlias, genKeyPairOptions)).outData as Uint8Array;
         let wrappedKeyData = await BuildWrappedKeyData(deviceAPubKeyData);
         let importWrappedKeyOption = GetAesGenerateOptions(wrappedKeySize);
-        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE,
-          huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
+        SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_ECDH_AES_256_GCM_NOPADDING);
         SetParam(importWrappedKeyOption, huks.HuksTag.HUKS_TAG_KEY_OVERRIDE, true);
         importWrappedKeyOption.inData = wrappedKeyData;
         try {
@@ -1814,24 +1763,18 @@ export default function abilityTest() {
         SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP, StringToUint8Array(HuksMinGroupId));
         let cipherData = BuildCipherData([16]);
         try {
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
+          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
+          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_DE);
           await huks.generateKeyItem(testNumber + "_de", genKeyOptions);
           let res1 = await Cipher(testNumber + "_de", cipherOptions, cipherData);
           expect(res1).assertEqual(true);
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
+          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
+          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
           await huks.generateKeyItem(testNumber + "_ce", genKeyOptions);
           let res2 = await Cipher(testNumber + "_ce", cipherOptions, cipherData);
           expect(res2).assertEqual(true);
-          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
-          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL,
-            huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
+          SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
+          SetParam(cipherOptions, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL, huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_ECE);
           await huks.generateKeyItem(testNumber + "_ece", genKeyOptions);
           let res3 = await Cipher(testNumber + "_ece", cipherOptions, cipherData);
           expect(res3).assertEqual(true);
@@ -1840,5 +1783,56 @@ export default function abilityTest() {
           expect(null).assertFail();
         }
       })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400
+     * @tc.number SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400
+     * @tc.desc   Generate ML-DSA 44 key with group id, verify key properties, export and delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_SignVerify_MLDSA_API26_Func_0400";
+
+      let generateKeyOptions = MergeOptions(GetMlDsaGenerateOptions(44), GetAccessGroupOptions("group01"));
+      let baseKeyOptions = GetAccessGroupOptions("group01");
+
+      try {
+        await huks.generateKeyItem(testNumber, generateKeyOptions);
+        let isKeyExistRes = await huks.isKeyItemExist(testNumber, baseKeyOptions);
+        expect(isKeyExistRes).assertEqual(true);
+        let getKeyPropertiesRes = await huks.getKeyItemProperties(testNumber, baseKeyOptions);
+        let keyProperties = getKeyPropertiesRes.properties as huks.HuksParam[];
+        Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(getKeyPropertiesRes.properties)}`);
+        expect(getKeyPropertiesRes.properties?.length).assertEqual(12);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_ALGORITHM)).assertEqual(huks.HuksKeyAlg.HUKS_ALG_ML_DSA);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_SIZE)).assertEqual(44);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PURPOSE))
+          .assertEqual(huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_AUTH_STORAGE_LEVEL)).assertEqual(huks.HuksAuthStorageLevel.HUKS_AUTH_STORAGE_LEVEL_CE);
+
+        let data1 = GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP) as Uint8Array;
+        let data2 = GetParam(keyProperties, 1342177804) as Uint8Array;
+        Logger.error(`${testNumber} getKeyProperties ${JSON.stringify(new Uint8Array([99, 99]))}`);
+        Logger.error(`${testNumber} getKeyProperties ${Uint8ArrayToString(new Uint8Array(data1))}`);
+        Logger.error(`${testNumber} getKeyProperties ${Uint8ArrayToString(new Uint8Array(data2))}`);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_PROCESS_NAME)).not().assertNull();
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_ACCESS_GROUP)).not().assertNull();
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_USER_ID)).assertLarger(99);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_VERSION)).assertEqual(HuksDefaultKeyVersion);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_OS_VERSION)).assertEqual(HuksDefaultOsVersion);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_OS_PATCHLEVEL)).assertEqual(HuksDefaultOsPatchLevel);
+        expect(GetParam(keyProperties, huks.HuksTag.HUKS_TAG_KEY_FLAG)).assertEqual(huks.HuksKeyFlag.HUKS_KEY_FLAG_GENERATE_KEY);
+        let exportKeyRes = await huks.exportKeyItem(testNumber, baseKeyOptions);
+        expect(exportKeyRes.outData?.length).assertLarger(0);
+        await huks.deleteKeyItem(testNumber, baseKeyOptions);
+        let hasKeyRes = await huks.hasKeyItem(testNumber, baseKeyOptions);
+        expect(hasKeyRes).assertEqual(false);
+      } catch (err) {
+        Logger.error(`${testNumber} catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
   })
 }

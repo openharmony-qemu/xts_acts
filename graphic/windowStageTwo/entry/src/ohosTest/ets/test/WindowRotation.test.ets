@@ -2289,5 +2289,37 @@ export default function windowRotationTest() {
     });
 
 
+
+/**
+ * @tc.name   testExecutionResult_enum
+ * @tc.number SUB_BASIC_WMS_testExecutionResult_enum_0100
+ * @tc.desc   枚举调用覆盖
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+it('testExecutionResult_enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+  let caseName: string = 'testExecutionResult_enum';
+  let msgStr: string = 'jsUnittest ' + caseName + ' ';
+  console.log(msgStr + 'begin');
+
+  let mainWin: window.Window = windowStage.getMainWindowSync();
+  console.log(msgStr + 'windowStage.getMainWindow :' + JSON.stringify(mainWin));
+  try {
+    expect(!!mainWin).assertTrue();
+    expect(window.OrientationExecutionResult.ORIENTATION_APPLIED).assertEqual(0);
+    expect(window.OrientationExecutionResult.ORIENTATION_IGNORED).assertEqual(1);
+    expect(window.OrientationExecutionResult.ORIENTATION_PENDING).assertEqual(2);
+    done();
+  } catch(exception) {
+    console.error(caseName + 'Failed, cause:  ' + JSON.stringify(exception))
+    expect().assertFail()
+    done()
+  }
+});
+
+
+
+
   })
 }
