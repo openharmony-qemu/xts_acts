@@ -1060,6 +1060,22 @@ export default function windowNdk() {
     })
 
     /**
+     * @tc.name   test_setBackgroundColor_empty
+     * @tc.number SUB_WINDOW_SETWINDOWBACKGROUNDCOLOR_FUNCTION_1000
+     * @tc.desc   test_setBackgroundColor_empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_setBackgroundColor_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName = "test_setBackgroundColor_empty";
+      let result = windowNdkTest.setBackgroundColor(windowId, '');
+      console.info(`${caseName}: setBackgroundColor result: ${JSON.stringify(result)}`);
+      expect(result).assertEqual(401);
+      done();
+    })
+
+    /**
      * @tc.name   test_SetBrightness_401
      * @tc.number SUB_BASIC_WMS_WINDOW_MANAGER_NDK_3300
      * @tc.desc   test_SetBrightness_401

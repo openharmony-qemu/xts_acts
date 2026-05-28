@@ -204,6 +204,8 @@
     "pages/ArkUI/SmartGestureMonitor001",
     "pages/ArkUI/SmartGestureMonitor002",
     "pages/ArkUI/SmartGestureMonitor003",
-    "pages/ArkUI/SmartGestureCallBack"
+    "pages/ArkUI/SmartGestureCallBack",
+    "pages/ArkUI/selectMenuBackgroundBlurStyleOptions",
+    "pages/ArkUI/selectMenuBackgroundEffect"
   ]
 }
