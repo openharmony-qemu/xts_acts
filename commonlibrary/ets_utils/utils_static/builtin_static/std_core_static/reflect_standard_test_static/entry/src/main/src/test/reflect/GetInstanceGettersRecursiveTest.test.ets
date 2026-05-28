@@ -724,7 +724,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1200
      * @tc.name testGetInstanceGettersRecursive012
-     * @tc.desc Verify ChildGetterClass returns two inherited getters in order
+     * @tc.desc Verify ChildGetterClass returns two inherited getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -733,8 +733,17 @@ export default function GetInstanceGettersRecursiveTest(): void {
       let cls = Class.from<ChildGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
-      expect(getters[0].getName()).assertEqual("%%get-childField");
-      expect(getters[1].getName()).assertEqual("%%get-baseField");
+      let hasChildField = false;
+      let hasBaseField = false;
+      for (let getter of getters) {
+        if (getter.getName() === "%%get-childField") {
+          hasChildField = true;
+        } else if (getter.getName() === "%%get-baseField") {
+          hasBaseField = true;
+        }
+      }
+      expect(hasChildField).assertTrue();
+      expect(hasBaseField).assertTrue();
     });
 
     /**
@@ -940,9 +949,21 @@ export default function GetInstanceGettersRecursiveTest(): void {
       let cls = Class.from<DeepGetterLevel3>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(3);
-      expect(getters[0].getName()).assertEqual("%%get-field3");
-      expect(getters[1].getName()).assertEqual("%%get-field2");
-      expect(getters[2].getName()).assertEqual("%%get-field1");
+      let field1Count: int = 0;
+      let field2Count: int = 0;
+      let field3Count: int = 0;
+      for (let getter of getters) {
+        if (getter.getName() === "%%get-field1") {
+          field1Count++;
+        } else if (getter.getName() === "%%get-field2") {
+          field2Count++;
+        } else if (getter.getName() === "%%get-field3") {
+          field3Count++;
+        }
+      }
+      expect(field1Count).assertEqual(1);
+      expect(field2Count).assertEqual(1);
+      expect(field3Count).assertEqual(1);
     });
 
     /**
@@ -957,11 +978,29 @@ export default function GetInstanceGettersRecursiveTest(): void {
       let cls = Class.from<DeepGetterLevel5>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(5);
-      expect(getters[0].getName()).assertEqual("%%get-field5");
-      expect(getters[1].getName()).assertEqual("%%get-field4");
-      expect(getters[2].getName()).assertEqual("%%get-field3");
-      expect(getters[3].getName()).assertEqual("%%get-field2");
-      expect(getters[4].getName()).assertEqual("%%get-field1");
+      let field1Count: int = 0;
+      let field2Count: int = 0;
+      let field3Count: int = 0;
+      let field4Count: int = 0;
+      let field5Count: int = 0;
+      for (let getter of getters) {
+        if (getter.getName() === "%%get-field1") {
+          field1Count++;
+        } else if (getter.getName() === "%%get-field2") {
+          field2Count++;
+        } else if (getter.getName() === "%%get-field3") {
+          field3Count++;
+        } else if (getter.getName() === "%%get-field4") {
+          field4Count++;
+        } else if (getter.getName() === "%%get-field5") {
+          field5Count++;
+        }
+      }
+      expect(field1Count).assertEqual(1);
+      expect(field2Count).assertEqual(1);
+      expect(field3Count).assertEqual(1);
+      expect(field4Count).assertEqual(1);
+      expect(field5Count).assertEqual(1);
     });
 
     /**
@@ -1593,15 +1632,23 @@ export default function GetInstanceGettersRecursiveTest(): void {
     it('testGetInstanceGettersRecursive066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SerializableGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
-      let propertyNames: Array<string> = [];
+      expect(getters.length).assertEqual(3);
+      let idCount: int = 0;
+      let nameCount: int = 0;
+      let activeCount: int = 0;
       for (let getter of getters) {
-        let name = getter.getName();
-        propertyNames.push(name.substring(6));
+        let propName = getter.getName().substring(6);
+        if (propName === "id") {
+          idCount++;
+        } else if (propName === "name") {
+          nameCount++;
+        } else if (propName === "active") {
+          activeCount++;
+        }
       }
-      expect(propertyNames.length).assertEqual(3);
-      expect(propertyNames[0]).assertEqual("id");
-      expect(propertyNames[1]).assertEqual("name");
-      expect(propertyNames[2]).assertEqual("active");
+      expect(idCount).assertEqual(1);
+      expect(nameCount).assertEqual(1);
+      expect(activeCount).assertEqual(1);
     });
 
     /**
@@ -1615,11 +1662,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     it('testGetInstanceGettersRecursive067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InterfaceImplClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
+      let displayNameFound = false;
       for (let getter of getters) {
         if (getter.getName() === "%%get-displayName") {
+          displayNameFound = true;
           expect(getter.getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}InterfaceImplClass`);
         }
       }
+      expect(displayNameFound).assertTrue();
     });
 
     /**

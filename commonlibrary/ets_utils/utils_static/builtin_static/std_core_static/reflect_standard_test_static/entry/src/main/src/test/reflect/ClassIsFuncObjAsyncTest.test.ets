@@ -351,14 +351,14 @@ class FunctionCollector040 {
 
 export default function ClassIsFuncObjAsyncTest(): void {
   describe('ClassIsFuncObjAsyncTest', (): void => {
-    beforeAll(() => {
+    beforeAll((): void => {
     });
     beforeEach(async () => {
       await Utils.msSleep(30);
     });
-    afterEach(() => {
+    afterEach((): void => {
     });
-    afterAll(() => {
+    afterAll((): void => {
     });
 
     /**
@@ -1219,7 +1219,8 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(genericSync028<int>)).assertEqual(false);
+      let syncFn = (value: int): int => genericSync028<int>(value);
+      expect(reflect.isFuncObjAsync(syncFn)).assertEqual(false);
     });
 
     /**
@@ -1231,7 +1232,8 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(genericAsync029<int>)).assertEqual(true);
+      let asyncFn = async (value: int): Promise<int> => genericAsync029<int>(value);
+      expect(reflect.isFuncObjAsync(asyncFn)).assertEqual(true);
     });
 
     /**

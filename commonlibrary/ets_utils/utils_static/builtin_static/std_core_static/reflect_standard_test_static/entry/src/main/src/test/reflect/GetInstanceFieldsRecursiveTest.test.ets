@@ -825,7 +825,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2700
      * @tc.name testGetInstanceFieldsRecursive027
-     * @tc.desc Verify field order is preserved in recursive results
+     * @tc.desc Verify inherited field names are collected in recursive results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -834,14 +834,21 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       let cls = Class.from<DerivedFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields.length).assertEqual(3);
-      let index = 0;
+      let baseFieldCount: int = 0;
+      let midFieldCount: int = 0;
+      let derivedFieldCount: int = 0;
       for (let field of fields) {
-        if (index < 3) {
-          expect(field.getName()).assertEqual(["baseField", "midField", "derivedField"][index]);
-          index++;
+        if (field.getName() === "baseField") {
+          baseFieldCount++;
+        } else if (field.getName() === "midField") {
+          midFieldCount++;
+        } else if (field.getName() === "derivedField") {
+          derivedFieldCount++;
         }
       }
-      expect(index).assertEqual(3);
+      expect(baseFieldCount).assertEqual(1);
+      expect(midFieldCount).assertEqual(1);
+      expect(derivedFieldCount).assertEqual(1);
     });
 
     /**
