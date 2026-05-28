@@ -371,7 +371,7 @@ export default function PhotoNoPermissionSupp() {
         done();
       } catch (err) {
         console.error(TAG, testName + 'failed. code:' + err.code + ' message:' + err.message);
-        expect(err.code).assertEqual('201');
+        expect(Number(error.code)).assertEqual(201);
         done();
       }
     })
