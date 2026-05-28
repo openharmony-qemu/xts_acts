@@ -712,12 +712,12 @@ it('testsetImageForRecent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
                     done()
                 }).catch((err: BusinessError) => {
                     console.error(caseName +` Failed to set image for recent. Cause code: ${err.code}, message: ${err.message}`);
-                    expect(false).assertTrue();
+                    expect(exception.code).assertEqual(1300016);
                     done();
                 });
             } catch (exception) {
                 console.error(caseName +` Failed to set image for recent mjb. errcode : ${exception.code}, errmessage : ${exception.message}`);
-                expect(exception.code).assertEqual(1300016);
+                expect(false).assertTrue();
                 done()
             }
         })
