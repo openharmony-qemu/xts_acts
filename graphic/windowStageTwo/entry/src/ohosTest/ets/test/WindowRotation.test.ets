@@ -2272,7 +2272,7 @@ export default function windowRotationTest() {
         } catch (err) {
           console.error(`${caseName} Failed to create or destroy window. Cause code:${err.code}, message: ${err.message}`);
 
-          if (!canIUse) {
+          if (!canIUseRes) {
             expect(err.code).assertEqual(801);
             done();
           } else {
