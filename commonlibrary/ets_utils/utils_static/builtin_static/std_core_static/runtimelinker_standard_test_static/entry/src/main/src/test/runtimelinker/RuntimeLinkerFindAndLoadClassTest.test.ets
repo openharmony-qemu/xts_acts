@@ -39,8 +39,6 @@ export default function FindAndLoadClassTest(): void {
     afterAll(() => {
     });
 
-    // ========== 1. Basic Call & clsName Parameter Tests ==========
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_0100
      * @tc.name testFindAndLoadClass001
@@ -150,48 +148,28 @@ export default function FindAndLoadClassTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_0800
      * @tc.name testFindAndLoadClass008
-     * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
-     *            XSS injection string clsName is handled safely
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = undefined;
-      try {
-        cls = linker.findAndLoadClass("<script>alert(1)</script>", false);
-      } catch (e) {
-        // XSS-like class name may throw, both outcomes are valid
-      }
-      expect(cls === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_0900
-     * @tc.name testFindAndLoadClass009
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            special characters clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("!@#$%^&*()", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1000
-     * @tc.name testFindAndLoadClass010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_0900
+     * @tc.name testFindAndLoadClass009
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            very long string clsName (1000+ chars) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let longName: string = "std.core.";
       for (let i: int = 0; i < 1000; i++) {
@@ -202,30 +180,30 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1100
-     * @tc.name testFindAndLoadClass011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1000
+     * @tc.name testFindAndLoadClass010
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            isolated surrogate character in clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("\udc04", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1200
-     * @tc.name testFindAndLoadClass012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1100
+     * @tc.name testFindAndLoadClass011
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            clsName passed from a string variable with normal type inference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let className: string = "std.core.String";
       let cls: Class | undefined = linker.findAndLoadClass(className, false);
@@ -233,15 +211,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1300
-     * @tc.name testFindAndLoadClass013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1200
+     * @tc.name testFindAndLoadClass012
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            path traversal pattern "../" clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = undefined;
       try {
@@ -253,60 +231,60 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1400
-     * @tc.name testFindAndLoadClass014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1300
+     * @tc.name testFindAndLoadClass013
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            numeric string clsName "123" returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("123", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1500
-     * @tc.name testFindAndLoadClass015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1400
+     * @tc.name testFindAndLoadClass014
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            init=true returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", true);
       expect(cls !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1600
-     * @tc.name testFindAndLoadClass016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1500
+     * @tc.name testFindAndLoadClass015
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            init=false returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       expect(cls !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1700
-     * @tc.name testFindAndLoadClass017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1600
+     * @tc.name testFindAndLoadClass016
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            init=true and init=false for same class returns identical Class reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let clsWithInit: Class | undefined = linker.findAndLoadClass("std.core.String", true);
       let clsNoInit: Class | undefined = linker.findAndLoadClass("std.core.String", false);
@@ -316,15 +294,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1800
-     * @tc.name testFindAndLoadClass018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1700
+     * @tc.name testFindAndLoadClass017
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            init passed from a boolean variable works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let shouldInit: boolean = true;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", shouldInit);
@@ -332,30 +310,30 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1900
-     * @tc.name testFindAndLoadClass019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1800
+     * @tc.name testFindAndLoadClass018
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            init=true for a non-existent class returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("com.nonexistent.FakeClass", true);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2000
-     * @tc.name testFindAndLoadClass020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_1900
+     * @tc.name testFindAndLoadClass019
      * @tc.desc Verify returned Class instance via getBootRuntimeLinker()
      *            can call getName() and return the correct class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -365,15 +343,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2100
-     * @tc.name testFindAndLoadClass021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2000
+     * @tc.name testFindAndLoadClass020
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance
      *            for same class called twice returns identical Class reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls1: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       let cls2: Class | undefined = linker.findAndLoadClass("std.core.String", false);
@@ -383,34 +361,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2200
-     * @tc.name testFindAndLoadClass022
-     * @tc.desc Verify return type via getBootRuntimeLinker() is
-     *            Class|undefined union requiring null check before use;
-     *            type narrowed to Class after !== undefined guard
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
-      if (cls !== undefined) {
-        let name: string = cls.getName();
-        expect(name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2300
-     * @tc.name testFindAndLoadClass023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2100
+     * @tc.name testFindAndLoadClass021
      * @tc.desc Verify typeof on Class instance returned via
      *            BootRuntimeLinker.instance returns 'object'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -419,15 +378,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2400
-     * @tc.name testFindAndLoadClass024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2200
+     * @tc.name testFindAndLoadClass022
      * @tc.desc Verify typeof on undefined return value from
      *            findAndLoadClass via getBootRuntimeLinker() returns 'undefined'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("com.nonexistent.Class", false);
       if (cls === undefined) {
@@ -437,15 +396,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2500
-     * @tc.name testFindAndLoadClass025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2300
+     * @tc.name testFindAndLoadClass023
      * @tc.desc Verify Class.getLinker() on Class loaded via
      *            BootRuntimeLinker.instance returns a BootRuntimeLinker instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -455,33 +414,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2600
-     * @tc.name testFindAndLoadClass026
-     * @tc.desc Verify Class.initialize() on Class loaded via
-     *            getBootRuntimeLinker() with init=true does not throw
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", true);
-      if (cls !== undefined) {
-        cls.initialize();
-        expect(cls.getName().length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2700
-     * @tc.name testFindAndLoadClass027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2400
+     * @tc.name testFindAndLoadClass024
      * @tc.desc Verify Class.isSubtypeOf() on Class loaded via
      *            BootRuntimeLinker.instance returns boolean for a related class pair
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let stringCls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       let objectCls: Class | undefined = linker.findAndLoadClass("std.core.Object", false);
@@ -492,8 +433,8 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2800
-     * @tc.name testFindAndLoadClass028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2500
+     * @tc.name testFindAndLoadClass025
      * @tc.desc Verify behavior when passing class name with embedded null byte "\x00"
      *            via getBootRuntimeLinker().
      *            WARNING: This test passes "\x00" to a native method (findAndLoadClass).
@@ -505,7 +446,7 @@ export default function FindAndLoadClassTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       try {
         let cls: Class | undefined = linker.findAndLoadClass("\x00", false);
@@ -516,47 +457,92 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2900
-     * @tc.name testFindAndLoadClass029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2600
+     * @tc.name testFindAndLoadClass026
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            valid class name "std.core.Double" from a different type domain
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("std.core.Double", false);
       expect(cls !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3000
-     * @tc.name testFindAndLoadClass030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2700
+     * @tc.name testFindAndLoadClass027
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            non-existent class name returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("com.nonexistent.FakeClass", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3100
-     * @tc.name testFindAndLoadClass031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2800
+     * @tc.name testFindAndLoadClass028
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            empty string clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("", false);
+      expect(cls === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_2900
+     * @tc.name testFindAndLoadClass029
+     * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
+     *            whitespace-only string clsName returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker = getBootRuntimeLinker();
+      let cls: Class | undefined = linker.findAndLoadClass("   ", false);
+      expect(cls === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3000
+     * @tc.name testFindAndLoadClass030
+     * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
+     *            zero-width space string clsName returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker = BootRuntimeLinker.instance;
+      let cls: Class | undefined = linker.findAndLoadClass("​", false);
+      expect(cls === undefined).assertTrue();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3100
+     * @tc.name testFindAndLoadClass031
+     * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
+     *            Unicode Chinese string clsName returns undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testFindAndLoadClass031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let linker = getBootRuntimeLinker();
+      let cls: Class | undefined = linker.findAndLoadClass("测试类名中文", false);
       expect(cls === undefined).assertTrue();
     });
 
@@ -564,14 +550,14 @@ export default function FindAndLoadClassTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3200
      * @tc.name testFindAndLoadClass032
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
-     *            whitespace-only string clsName returns undefined
+     *            special characters clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testFindAndLoadClass032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("   ", false);
+      let cls: Class | undefined = linker.findAndLoadClass("!@#$%^&*()", false);
       expect(cls === undefined).assertTrue();
     });
 
@@ -579,77 +565,12 @@ export default function FindAndLoadClassTest(): void {
      * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3300
      * @tc.name testFindAndLoadClass033
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
-     *            zero-width space string clsName returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = BootRuntimeLinker.instance;
-      let cls: Class | undefined = linker.findAndLoadClass("​", false);
-      expect(cls === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3400
-     * @tc.name testFindAndLoadClass034
-     * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
-     *            Unicode Chinese string clsName returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("测试类名中文", false);
-      expect(cls === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3500
-     * @tc.name testFindAndLoadClass035
-     * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
-     *            XSS injection string clsName is handled safely
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = BootRuntimeLinker.instance;
-      let cls: Class | undefined = undefined;
-      try {
-        cls = linker.findAndLoadClass("<script>alert(1)</script>", false);
-      } catch (e) {
-        // XSS-like class name may throw, both outcomes are valid
-      }
-      expect(cls === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3600
-     * @tc.name testFindAndLoadClass036
-     * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
-     *            special characters clsName returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = getBootRuntimeLinker();
-      let cls: Class | undefined = linker.findAndLoadClass("!@#$%^&*()", false);
-      expect(cls === undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3700
-     * @tc.name testFindAndLoadClass037
-     * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            very long string clsName (1000+ chars) returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let longName: string = "std.core.";
       for (let i: int = 0; i < 1000; i++) {
@@ -660,30 +581,30 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3800
-     * @tc.name testFindAndLoadClass038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3400
+     * @tc.name testFindAndLoadClass034
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            isolated surrogate character in clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("\udc04", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3900
-     * @tc.name testFindAndLoadClass039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3500
+     * @tc.name testFindAndLoadClass035
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            clsName passed from a string variable with normal type inference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let className: string = "std.core.String";
       let cls: Class | undefined = linker.findAndLoadClass(className, false);
@@ -691,15 +612,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4000
-     * @tc.name testFindAndLoadClass040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3600
+     * @tc.name testFindAndLoadClass036
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            path traversal pattern "../" clsName returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = undefined;
       try {
@@ -711,45 +632,45 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4100
-     * @tc.name testFindAndLoadClass041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3700
+     * @tc.name testFindAndLoadClass037
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            numeric string clsName "123" returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("123", false);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4200
-     * @tc.name testFindAndLoadClass042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3800
+     * @tc.name testFindAndLoadClass038
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            init=true returns valid Class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", true);
       expect(cls !== undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4300
-     * @tc.name testFindAndLoadClass043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_3900
+     * @tc.name testFindAndLoadClass039
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            init=true and init=false for same class returns identical Class reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let clsWithInit: Class | undefined = linker.findAndLoadClass("std.core.String", true);
       let clsNoInit: Class | undefined = linker.findAndLoadClass("std.core.String", false);
@@ -759,15 +680,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4400
-     * @tc.name testFindAndLoadClass044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4000
+     * @tc.name testFindAndLoadClass040
      * @tc.desc Verify findAndLoadClass via BootRuntimeLinker.instance with
      *            init passed from a boolean variable works correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let shouldInit: boolean = true;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", shouldInit);
@@ -775,30 +696,30 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4500
-     * @tc.name testFindAndLoadClass045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4100
+     * @tc.name testFindAndLoadClass041
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker() with
      *            init=true for a non-existent class returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("com.nonexistent.FakeClass", true);
       expect(cls === undefined).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4600
-     * @tc.name testFindAndLoadClass046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4200
+     * @tc.name testFindAndLoadClass042
      * @tc.desc Verify returned Class instance via BootRuntimeLinker.instance
      *            can call getName() and return the correct class name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -808,15 +729,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4700
-     * @tc.name testFindAndLoadClass047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4300
+     * @tc.name testFindAndLoadClass043
      * @tc.desc Verify findAndLoadClass via getBootRuntimeLinker()
      *            for same class called twice returns identical Class reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls1: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       let cls2: Class | undefined = linker.findAndLoadClass("std.core.String", false);
@@ -826,34 +747,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4800
-     * @tc.name testFindAndLoadClass048
-     * @tc.desc Verify return type via BootRuntimeLinker.instance is
-     *            Class|undefined union requiring null check before use;
-     *            type narrowed to Class after !== undefined guard
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = BootRuntimeLinker.instance;
-      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
-      if (cls !== undefined) {
-        let name: string = cls.getName();
-        expect(name.length > 0).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4900
-     * @tc.name testFindAndLoadClass049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4400
+     * @tc.name testFindAndLoadClass044
      * @tc.desc Verify typeof on Class instance returned via
      *            getBootRuntimeLinker() returns 'object'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -862,15 +764,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_5000
-     * @tc.name testFindAndLoadClass050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4500
+     * @tc.name testFindAndLoadClass045
      * @tc.desc Verify typeof on undefined return value from
      *            findAndLoadClass via BootRuntimeLinker.instance returns 'undefined'
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       let cls: Class | undefined = linker.findAndLoadClass("com.nonexistent.Class", false);
       if (cls === undefined) {
@@ -880,15 +782,15 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_5100
-     * @tc.name testFindAndLoadClass051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4600
+     * @tc.name testFindAndLoadClass046
      * @tc.desc Verify Class.getLinker() on Class loaded via
      *            getBootRuntimeLinker() returns a BootRuntimeLinker instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let cls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       if (cls !== undefined) {
@@ -897,34 +799,17 @@ export default function FindAndLoadClassTest(): void {
       }
     });
 
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_5200
-     * @tc.name testFindAndLoadClass052
-     * @tc.desc Verify Class.initialize() on Class loaded via
-     *            BootRuntimeLinker.instance with init=true does not throw
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testFindAndLoadClass052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let linker = BootRuntimeLinker.instance;
-      let cls: Class | undefined = linker.findAndLoadClass("std.core.String", true);
-      if (cls !== undefined) {
-        cls.initialize();
-        expect(cls.getName().length > 0).assertTrue();
-      }
-    });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_5300
-     * @tc.name testFindAndLoadClass053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4700
+     * @tc.name testFindAndLoadClass047
      * @tc.desc Verify Class.isSubtypeOf() on Class loaded via
      *            getBootRuntimeLinker() returns boolean for a related class pair
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = getBootRuntimeLinker();
       let stringCls: Class | undefined = linker.findAndLoadClass("std.core.String", false);
       let objectCls: Class | undefined = linker.findAndLoadClass("std.core.Object", false);
@@ -935,8 +820,8 @@ export default function FindAndLoadClassTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_5400
-     * @tc.name testFindAndLoadClass054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_FIND_AND_LOAD_CLASS_4800
+     * @tc.name testFindAndLoadClass048
      * @tc.desc Verify behavior when passing class name with embedded null byte "\x00"
      *            via BootRuntimeLinker.instance.
      *            WARNING: This test passes "\x00" to a native method (findAndLoadClass).
@@ -948,7 +833,7 @@ export default function FindAndLoadClassTest(): void {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testFindAndLoadClass054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testFindAndLoadClass048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let linker = BootRuntimeLinker.instance;
       try {
         let cls: Class | undefined = linker.findAndLoadClass("\x00", false);
