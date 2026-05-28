@@ -241,8 +241,7 @@ export default function ConstructorIsPublicTest(): void {
       let cls = Class.from<MyClass001>();
       let constructors = cls.getConstructors();
       let isPublic = constructors[0].isPublic();
-      expect(typeof isPublic).assertEqual("boolean");
-      expect(isPublic === true || isPublic === false).assertTrue();
+      expect(isPublic).assertTrue();
     });
 
     /**
@@ -256,7 +255,7 @@ export default function ConstructorIsPublicTest(): void {
     it('testConstructorIsPublic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let isPublic = ctor.isPublic();
-      expect(isPublic === true || isPublic === false).assertTrue();
+      expect(isPublic).assertTrue();
     });
 
     /**

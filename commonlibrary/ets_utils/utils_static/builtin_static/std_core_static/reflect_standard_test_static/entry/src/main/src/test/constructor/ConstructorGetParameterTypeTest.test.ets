@@ -350,7 +350,6 @@ export default function ConstructorGetParameterTypeTest(): void {
     it('testConstructorGetParameterType016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let paramType = ctorMyClass001().getParameterType(0);
       if (paramType !== undefined) {
-        expect(typeof paramType).assertEqual("object");
         expect(paramType.getName()).assertEqual("std.core.String");
       }
     });

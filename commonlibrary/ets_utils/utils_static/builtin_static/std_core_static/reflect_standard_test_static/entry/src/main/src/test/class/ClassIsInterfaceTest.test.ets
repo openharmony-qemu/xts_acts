@@ -471,8 +471,7 @@ export default function ClassIsInterfaceTest(): void {
     it('testClassIsInterface022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayLike<int>>();
       let result = cls.isInterface();
-      expect(typeof result).assertEqual("boolean");
-      expect(result === true || result === false).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**

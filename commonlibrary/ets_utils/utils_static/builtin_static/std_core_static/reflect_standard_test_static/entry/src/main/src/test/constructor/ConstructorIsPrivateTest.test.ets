@@ -255,7 +255,7 @@ export default function ConstructorIsPrivateTest(): void {
       expect(constructors.length).assertLarger(0);
       let isPrivate = constructors[0].isPrivate();
       expect(typeof isPrivate).assertEqual("boolean");
-      expect(isPrivate === true || isPrivate === false).assertTrue();
+      expect(isPrivate).assertFalse();
     });
 
     /**
@@ -269,7 +269,7 @@ export default function ConstructorIsPrivateTest(): void {
     it('testConstructorIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let isPrivate = ctor.isPrivate();
-      expect(isPrivate === true || isPrivate === false).assertTrue();
+      expect(isPrivate).assertFalse();
     });
 
     /**

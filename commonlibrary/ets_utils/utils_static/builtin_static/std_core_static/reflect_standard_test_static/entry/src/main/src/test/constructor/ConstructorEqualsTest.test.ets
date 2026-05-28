@@ -221,7 +221,6 @@ export default function ConstructorEqualsTest(): void {
       let ctor2 = asCtorList(cls)[0];
       let result = ctor1.equals(ctor2);
       expect(result).assertTrue();
-      expect(typeof result).assertEqual("boolean");
     });
 
     /**
@@ -307,8 +306,7 @@ export default function ConstructorEqualsTest(): void {
       let ctor1 = asCtorList(cls)[0];
       let ctor2 = asCtorList(cls)[0];
       let result = ctor1.equals(ctor2);
-      expect(typeof result).assertEqual("boolean");
-      expect(result === true || result === false).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**
@@ -324,7 +322,7 @@ export default function ConstructorEqualsTest(): void {
       let ctor1 = asCtorList(cls)[0];
       let ctor2 = asCtorList(cls)[0];
       let result = ctor1.equals(ctor2);
-      expect(result === true || result === false).assertTrue();
+      expect(result).assertTrue();
     });
 
     /**

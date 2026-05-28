@@ -227,7 +227,7 @@ export default function ConstructorIsNativeTest(): void {
       let constructors = cls.getConstructors();
       let isNative = constructors[0].isNative();
       expect(typeof isNative).assertEqual("boolean");
-      expect(isNative === true || isNative === false).assertTrue();
+      expect(isNative).assertFalse();
     });
 
     /**
@@ -241,7 +241,7 @@ export default function ConstructorIsNativeTest(): void {
     it('testConstructorIsNative010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass001>().getConstructors()[0];
       let isNative = ctor.isNative();
-      expect(isNative === true || isNative === false).assertTrue();
+      expect(isNative).assertFalse();
     });
 
     /**

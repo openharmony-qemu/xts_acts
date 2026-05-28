@@ -224,7 +224,6 @@ export default function ConstructorGetOwnerTest(): void {
       let cls = Class.from<MyClass001>();
       let constructors = cls.getConstructors();
       let owner = constructors[0].getOwner();
-      expect(typeof owner).assertEqual("object");
       expect(owner.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorGetOwnerTest.test.MyClass001");
     });
 

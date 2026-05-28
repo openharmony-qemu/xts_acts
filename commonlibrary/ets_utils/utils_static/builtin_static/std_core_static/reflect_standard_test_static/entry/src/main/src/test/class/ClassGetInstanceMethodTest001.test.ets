@@ -1238,10 +1238,8 @@ export default function ClassGetInstanceMethodTest001(): void {
         cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message !== null).assertTrue();
-        expect(typeof (error as Error).message).assertEqual('string');
+        expect(error.name).assertEqual('Error');
+        expect(typeof error.message).assertEqual('string');
       }
     });
 

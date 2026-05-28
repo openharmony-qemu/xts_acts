@@ -255,8 +255,7 @@ export default function ConstructorIsProtectedTest(): void {
       let constructors = cls.getConstructors();
       expect(constructors.length).assertLarger(0);
       let isProtected = constructors[0].isProtected();
-      expect(typeof isProtected).assertEqual("boolean");
-      expect(isProtected === true || isProtected === false).assertTrue();
+      expect(isProtected).assertFalse();
     });
 
     /**
@@ -270,7 +269,7 @@ export default function ConstructorIsProtectedTest(): void {
     it('testConstructorIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let isProtected = ctor.isProtected();
-      expect(isProtected === true || isProtected === false).assertTrue();
+      expect(isProtected).assertFalse();
     });
 
     /**

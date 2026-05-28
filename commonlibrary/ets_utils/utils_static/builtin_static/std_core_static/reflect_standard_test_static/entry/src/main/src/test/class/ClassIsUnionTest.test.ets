@@ -90,7 +90,7 @@ export default function ClassIsUnionTest(): void {
       let obj: int | string = 42;
       let cls = Class.ofAny(obj);
       expect(cls !== undefined).assertTrue();
-      expect(typeof cls!.isUnion()).assertEqual("boolean");
+      expect(cls!.isUnion()).assertFalse();
     });
 
     /**
