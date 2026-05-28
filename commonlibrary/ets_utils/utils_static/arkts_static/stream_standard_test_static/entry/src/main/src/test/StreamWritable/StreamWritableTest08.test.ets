@@ -353,6 +353,7 @@ export default function StreamWritable08Test(): void {
      */
     it('testStreamWritable08Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const writableStream = new TestWritableCh03();
+      expect(writableStream instanceof TestWritableCh03).assertTrue()
       writableStream.uncork();
       writableStream.end();
     });

@@ -923,6 +923,7 @@ export default function StreamWritable01Test(): void {
     it('testStreamWritable01Chapter0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let writableStream = new stream.Writable()
 
+      expect(writableStream instanceof stream.Writable).assertTrue()
     })
 
     /**
@@ -966,6 +967,8 @@ export default function StreamWritable01Test(): void {
      */
     it('testStreamWritable01Chapter0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let writableStream = new stream.Writable()
+      expect(writableStream instanceof stream.Writable).assertTrue()
+      expect(typeof writableStream.write === 'function').assertTrue()
     })
 
     /**

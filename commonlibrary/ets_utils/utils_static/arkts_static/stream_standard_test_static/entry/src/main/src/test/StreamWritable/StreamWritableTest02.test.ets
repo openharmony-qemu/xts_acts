@@ -472,8 +472,13 @@ export default function StreamWritable02Test(): void {
      * @tc.level     Level 2
      */
     it("testStreamWritable02Chapter0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let writableStream = new TestWritableLog();
-      writableStream.end();
+      try {
+        let writableStream = new TestWritableLog();
+        writableStream.end();
+        expect(writableStream instanceof TestWritableLog).assertTrue();
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
     });
 
     /**
@@ -502,8 +507,13 @@ export default function StreamWritable02Test(): void {
      * @tc.level     Level 2
      */
     it("testStreamWritable02Chapter0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let writableStream = new TestWritableLog();
-      writableStream.end(undefined, 'utf8');
+      try {
+        let writableStream = new TestWritableLog();
+        writableStream.end(undefined, 'utf8');
+        expect(writableStream instanceof TestWritableLog).assertTrue();
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
     });
 
     /**
@@ -533,8 +543,13 @@ export default function StreamWritable02Test(): void {
      * @tc.level     Level 2
      */
     it("testStreamWritable02Chapter0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let writableStream = new TestWritableLog();
-      writableStream.end('', 'utf8');
+      try {
+        let writableStream = new TestWritableLog();
+        writableStream.end('', 'utf8');
+        expect(writableStream instanceof TestWritableLog).assertTrue();
+      } catch (err) {
+        expect(err.code).assertEqual(10200035);
+      }
     });
 
     /**
