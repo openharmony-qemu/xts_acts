@@ -470,7 +470,9 @@ struct MyComponent {
 
     aboutToDisappear() {
 
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
+      if (this.params?.webTab) {
+        this.params.webTab.controller.loadUrl(this.params.webTab.mServer.getShutdownUrl());
+      }
 
     }
 

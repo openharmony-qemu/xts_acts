@@ -50,7 +50,7 @@ struct webOnFirstContThree {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
   }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContThree page valueChangeCallBack");

@@ -73,7 +73,7 @@ struct Index {
   }
 
   aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
+    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {
