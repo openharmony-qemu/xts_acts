@@ -832,8 +832,9 @@ export default function windowLayoutTest() {
         let point = await blank.getBoundsCenter();
         console.info(`${message} point = ${JSON.stringify(point.x)},y = ${JSON.stringify(point.y)}`)
         await driver.drag(point.x, point.y, point.x + 100, point.y + 100, 200);
-        let rectNow = windowClass.getWindowPorperties().windowRect
         await sleep(1000)
+        let rectNow = windowClass.getWindowProperties().windowRect
+        console.info(`${message} rectNow = ${JSON.stringify(rectNow.x)},y = ${JSON.stringify(rectNow.y)}`)
         expect(rectNow.left).assertEqual(windowPoint.left + 100)
         expect(rectNow.top).assertEqual(windowPoint.top + 100)
         await windowClass.destroyWindow()
