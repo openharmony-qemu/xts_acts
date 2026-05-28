@@ -779,11 +779,14 @@ export default function StreamTest_01(): void {
      */
     it('Writablewritetest0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const writable = new InvalidChunkWritable();
+      let errorCaught = false;
       try {
         const invalidChunk = '12345';
         (writable.write as WriteSignature)(invalidChunk, 'utf8', () => {});
       } catch (err) {
-              }
+        errorCaught = true;
+      }
+      expect(errorCaught).assertTrue();
     });
 
     /**
@@ -796,15 +799,19 @@ export default function StreamTest_01(): void {
      */
     it('Writablewritetest0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const writable = new NullChunkWritable();
+      let errorCount = 0;
       try {
         (writable.write as InvalidChunkSignature)(null, 'gbk', () => {});
       } catch (err) {
-              }
+        errorCount++;
+      }
       try {
         (writable.write as (chunk: undefined, encoding: string, callback: () => void) => void)(undefined, 'utf8', (
         ) => {});
       } catch (err) {
-              }
+        errorCount++;
+      }
+      expect(errorCount).assertLarger(0);
     });
 
     /**
@@ -854,10 +861,13 @@ export default function StreamTest_01(): void {
      */
     it('Writablewritetest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const writable = new UnsupportedEncodingWritable();
+      let errorCaught = false;
       try {
         writable.write('test', 'ascii', () => {});
       } catch (err) {
-              }
+        errorCaught = true;
+      }
+      expect(errorCaught).assertTrue();
 
     });
 

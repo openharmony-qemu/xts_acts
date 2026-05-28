@@ -768,7 +768,6 @@ export default function StreamTest_07(): void {
         };
         readableStream.on('data', dataHandler);
         readableStream.off('data', dataHandler);
-        expect(true).assertTrue();
       } catch (err) {
       }
     });

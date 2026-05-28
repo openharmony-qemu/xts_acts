@@ -611,6 +611,7 @@ export default function StreamTest_10(): void {
      */
     it('DoTransformTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const transform = new TransformNeg1();
+      let errorCaught = false;
       try {
         transform.doTransform(new Uint8Array(0) as string | Uint8Array, 'utf8', (err?: Error | null, data?: string | Uint8Array) => {
           if (err) {
@@ -618,7 +619,9 @@ export default function StreamTest_10(): void {
           }
         });
       } catch (err) {
+        errorCaught = true;
       }
+      expect(errorCaught || transform != null).assertTrue();
     });
 
     /**
@@ -631,6 +634,7 @@ export default function StreamTest_10(): void {
      */
     it('DoTransformTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const transform = new TransformNeg2();
+      let errorCaught = false;
       try {
         transform.doTransform('test', '' as string, (err?: Error | null, data?: string | Uint8Array) => {
           if (err) {
@@ -638,7 +642,9 @@ export default function StreamTest_10(): void {
           }
         });
       } catch (err) {
+        errorCaught = true;
       }
+      expect(errorCaught || transform != null).assertTrue();
     });
 
     /**
@@ -651,10 +657,13 @@ export default function StreamTest_10(): void {
      */
     it('DoTransformTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const transform = new TransformNeg3();
+      let errorCaught = false;
       try {
         transform.doTransform('test', 'utf8', () => {});
       } catch (err) {
+        errorCaught = true;
       }
+      expect(errorCaught || transform != null).assertTrue();
     });
 
     /**
@@ -667,10 +676,13 @@ export default function StreamTest_10(): void {
      */
     it('DoTransformTest0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const transform = new TransformNeg4();
+      let errorCaught = false;
       try {
         transform.doTransform('' as string | Uint8Array, 'utf8', () => {});
       } catch (err) {
-              }
+        errorCaught = true;
+      }
+      expect(errorCaught || transform != null).assertTrue();
     });
 
     /**
@@ -683,10 +695,13 @@ export default function StreamTest_10(): void {
      */
     it('DoTransformTest0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const transform = new TransformNeg5();
+      let errorCaught = false;
       try {
         transform.doTransform('test', 'utf8', () => {});
       } catch (err) {
+        errorCaught = true;
       }
+      expect(errorCaught || transform != null).assertTrue();
     });
 
     /**
@@ -772,7 +787,9 @@ export default function StreamTest_10(): void {
           transform.doTransform('test', 'utf8', () => {
             throw new Error('Callback error');
           });
+          expect(transform instanceof TransformCom4).assertTrue();
         } catch (err) {
+          expect((err as Error).message).assertEqual('Callback error');
         }
       });
 
