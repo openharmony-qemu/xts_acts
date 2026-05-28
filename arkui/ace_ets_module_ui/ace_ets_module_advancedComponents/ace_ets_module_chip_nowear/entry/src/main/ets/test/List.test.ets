@@ -34,6 +34,7 @@ import endSpaceTest from './ChipGroupTest/endSpaceTest.test'
 import itemSpaceTest from './ChipGroupTest/itemSpaceTest.test'
 import localizedLabelMarginTest from './chip/localizedLabelMarginTest';
 import ChipGroupIconItemOptionsTest from './ChipGroupTest/ChipGroupIconItemOptionsTest.test';
+import ChipGroupSystemMaterialTest from './ChipGroupTest/ChipGroupSystemMaterialTest.test';
 import ChipGroupSymbolItemOptionsTest from './ChipGroupTest/ChipGroupSymbolItemOptionsTest.test';
 export default function testsuite() {
   chipDirectionTest();
@@ -55,5 +56,6 @@ export default function testsuite() {
   ChipFontSize();
   ChipFontScale();
   ChipCloseOptions();
+  ChipGroupSystemMaterialTest();
   ChipBackgroundSystemMaterialTest();
 }
