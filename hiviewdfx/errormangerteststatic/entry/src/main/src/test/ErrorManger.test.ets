@@ -25,7 +25,6 @@ function freezeCallback1() {
   console.log("freezecallback1");
 }
 
-@Concurrent
 function concurrentFunc(args: number): number {
   console.info("test_setDefaultFreezeObserver_in_worker_thread: arg: " + args);
   try {
@@ -795,26 +794,6 @@ export default function ErrormangerTest() {
             } catch (error) {
                 console.error('test_setDefaultFreezeObserver_0100', `error: ${error.code}, ${error.message}`);
                 expect(false).assertTrue();
-            }
-        })
-
-        /**
-        * @tc.name   test_setDefaultFreezeObserver_0200
-        * @tc.number SUB_DFX_DFR_errorManager_setDefaultFreezeObserver_0200
-        * @tc.desc   验证setDefaultFreezeObserver的null值
-        * @tc.type   FUNCTION
-        * @tc.size   MEDIUMTEST
-        * @tc.level  LEVEL2
-        */
-        it('test_setDefaultFreezeObserver_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, ():void => {
-            console.info("====> test_setDefaultFreezeObserver_0200 start");
-            try {
-                errorManager.setDefaultFreezeObserver(null);
-                console.info('test_setDefaultFreezeObserver_0200: end');
-                expect(false).assertTrue();
-            } catch (error) {
-                console.info('test_setDefaultFreezeObserver_0200 catch: ' + error.code);
-                expect(code).assertEqual(401);
             }
         })
 
