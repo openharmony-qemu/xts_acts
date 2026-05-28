@@ -53,7 +53,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_001
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_0010
      * @tc.name     UIPickerItemHeight_static_001
      * @tc.desc     Test UIPickerComponent itemHeight property with value 40vp
      * @tc.level    Level.LEVEL1
@@ -67,7 +67,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_002
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_0020
      * @tc.name     UIPickerItemHeight_static_002
      * @tc.desc     Test UIPickerComponent itemHeight property with value 64vp
      * @tc.level    Level.LEVEL1
@@ -81,7 +81,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_003
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_0030
      * @tc.name     UIPickerItemHeight_static_003
      * @tc.desc     Test UIPickerComponent itemHeight property with value 30vp (less than minimum 40vp, should use default 40vp)
      * @tc.level    Level.LEVEL1
@@ -95,7 +95,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_004
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_0040
      * @tc.name     UIPickerItemHeight_static_004
      * @tc.desc     Test UIPickerComponent itemHeight property with value 70vp (greater than maximum 64vp, should use default 40vp)
      * @tc.level    Level.LEVEL1
@@ -109,7 +109,7 @@ export default function UIPickerItemHeightTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_005
+     * @tc.number   SUB_ARKUI_UIPICKER_ITEMHEIGHT_STATIC_0050
      * @tc.name     UIPickerItemHeight_static_005
      * @tc.desc     Test UIPickerComponent itemHeight property with undefined value (should use default 40vp)
      * @tc.level    Level.LEVEL1
