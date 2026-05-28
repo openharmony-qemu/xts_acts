@@ -7020,21 +7020,19 @@ export default function windowLayoutTest() {
             if (!isSyscapSessionManagerSupported) {
               console.info(`${caseName} Capability not supported, skip test.Cause code: ${err.code}, message: ${err.message}`);
               expect(err.code).assertEqual(801)
+            }else if(exception.code == 1300016){
+              console.info(`${caseName} param range fail.Cause code: ${exception.code}, message: ${exception.message}`);
+              expect(exception.code).assertEqual(1300016)
             }else {
-              console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
-              expect().assertFail();
-            }
+                console.error(`${caseName} Failed to maximize window. Cause code: ${err.code}, message: ${err.message}`);
+                expect().assertFail();
+              }
             done();
           });
         } catch (exception) {
-          if(exception.code == 401){
-            console.info(`${caseName} param range fail.Cause code: ${exception.code}, message: ${exception.message}`);
-            expect(exception.code).assertEqual(401)
-          }else{
-            console.info(`${caseName} Succeeded in catching error  Cause code: ${exception.code}, message: ${exception.message}`);
-            expect().assertFail();
-          }
-            done();
+          console.info(`${caseName} Succeeded in catching error  Cause code: ${exception.code}, message: ${exception.message}`);
+          expect().assertFail();
+          done();
         }
       });
 
@@ -7780,7 +7778,10 @@ export default function windowLayoutTest() {
           if (!isFreeWindowMode) {
             console.info(`${caseName} Capability not supported or Invalid parameter range..Cause code: ${err.code}, message: ${err.message}`);
             expect(err.code === 801).assertTrue()
-          } else {
+          } else if(exception.code == 1300016){
+            console.info(`${caseName} param range fail .Cause code: ${exception.code}, message: ${exception.message}`);
+            expect(exception.code).assertEqual(1300016)
+          }else {
             console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
           }
@@ -7791,9 +7792,6 @@ export default function windowLayoutTest() {
         if (exception.code == 801){
           console.info(`${caseName} Capability not supported1, skip test.Cause code: ${exception.code}, message: ${exception.message}`);
           expect(exception.code).assertEqual(801)
-        }else if(exception.code == 401){
-          console.info(`${caseName} param range fail .Cause code: ${exception.code}, message: ${exception.message}`);
-          expect(exception.code).assertEqual(401)
         }else {
           console.error(`${caseName} Failed to recover window or getmainwindow. Cause code: ${exception.code}, message: ${exception.message}`);
           expect().assertFail();
