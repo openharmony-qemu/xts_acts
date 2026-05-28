@@ -14,7 +14,7 @@
  */
 import { image } from '@kit.ImageKit';
 import fs from '@ohos.file.fs';
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../hypium';
+import { afterAll, afterEach, beforeAll, beforeEach, describe, expect,Hypium, it, Level} from '../../../../../../hypium';
 import { common } from '@kit.AbilityKit';
 
 const TAG = 'xts_static_ImageMetadataTest'
@@ -208,6 +208,44 @@ export default function ImageMetadataTestStatic(): void {
       }
     })
 
+    /**
+     * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100
+     * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100
+     * @tc.desc      jfifMetadata PropertyKey 覆盖
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     Level 1
+     */
+    it('SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      const testName = "SUB_MEDIA_IMAGE_HEIFS_METADATA_heifsMetadata_PropertyKey_STATIC_0100";
+      let filePath = await getFilePath("C027.heic");
+      let result: boolean = true;
+      let filePathFir = await getFilePath("test.jpeg");
+      let isSupportHEIFDecode: boolean = image.createImageSource(filePathFir)!.supportedFormats.includes("image/heic");
+      if (!isSupportHEIFDecode) {
+        console.info(TAG,testName,` device is not support decode heif!`);
+        expect(result).assertTrue();
+        done();
+        return;
+      }
+      try {
+        const imageSourceObj: image.ImageSource | undefined = image.createImageSource(filePath);
+        console.info(TAG, testName, `imageSourceObj success`, imageSourceObj!);
+        const imageMetadata = await imageSourceObj!.readImageMetadata();
+        expect(imageMetadata.heifsMetadata!!=undefined).assertTrue();
+        console.info(TAG, testName, `imageSourceObj readImageMetadata success,jfifMetadata!.densityUnit`,JSON.stringify(imageMetadata.heifsMetadata!.heifsCanvasHeight));
+        // expect(imageMetadata.heifsMetadata!.heifsCanvasHeight).assertEqual(1);
+        console.info(TAG, testName, `imageSourceObj readImageMetadata success,jfifMetadata!.xDensity`,JSON.stringify(imageMetadata.heifsMetadata!.heifsCanvasWidth));
+        // expect(imageMetadata.heifsMetadata!.heifsCanvasWidth).assertEqual(72);
+        console.info(TAG, testName, `imageSourceObj readImageMetadata success,jfifMetadata!.yDensity`,JSON.stringify(imageMetadata.heifsMetadata!.heifsUnclampedDelayTime));
+        // expect(imageMetadata.heifsMetadata!.heifsUnclampedDelayTime).assertEqual(72);
+        done();
+      } catch (error) {
+        console.error(TAG, testName, `Failed, code is ${error.code}, message is ${error.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
 
     /**
      * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_jfifMetadata_PropertyKey_STATIC_0100
@@ -306,7 +344,7 @@ export default function ImageMetadataTestStatic(): void {
         done();
       }
     })
-   
+
     /**
      * @tc.number    SUB_MEDIA_IMAGE_HEIFS_METADATA_avisMetadata_PropertyKey_STATIC_0100
      * @tc.name      SUB_MEDIA_IMAGE_HEIFS_METADATA_avisMetadata_PropertyKey_STATIC_0100
@@ -1747,8 +1785,9 @@ export default function ImageMetadataTestStatic(): void {
       console.info(TAG, testName, `imageSourceObj createImageSource success`, imageSourceApi!);
       try {
         const exifValue: image.ImageMetadata = await imageSourceApi!.readImageMetadataByType();
-        console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.tiffMetadata}`);
+        console.info(TAG,testName,` tiff metadata readImageMetadataByType result is: ${exifValue.tiffMetadata}, ${exifValue.tiffMetadata?.copyright}`);
         expect(exifValue.tiffMetadata!=undefined).assertTrue();
+        expect(exifValue.tiffMetadata!.copyright).assertUndefined();
       } catch (error) {
         console.info(TAG, testName,`Error in : ${error.message}, code: ${error.code}`);
         expect().assertFail();
