@@ -14,6 +14,7 @@
  */
 
 import { uiMaterial } from '@kit.ArkUI';
+import { hdsMaterial } from '@kit.UIDesignKit';
 
 @Entry
 @Component
@@ -25,6 +26,8 @@ struct SheetOptionsSystemMaterial {
   @State isShowSheetImmersiveUltraThin: boolean = false;
   @State isShowSheetNone: boolean = false;
   // isNewMaterialSupported = hdsMaterial.getSystemMaterialTypes().length > 0;
+
+  isSystemMaterialSupport: boolean = hdsMaterial.isSystemMaterialSupported();  // 判断当前设备是否支持材质
 
   @Builder
   sheetBuilder() {
@@ -49,6 +52,7 @@ struct SheetOptionsSystemMaterial {
 
   build() {
     Column({ space: 5 }) {
+      Text(this.isSystemMaterialSupport.toString()).id('hasM')
       Row({ space: 5 }) {
         Button('undefined')
           .id('undefined')

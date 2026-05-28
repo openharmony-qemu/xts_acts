@@ -50,6 +50,17 @@ import PopupOptionsSystemMaterial from './popupSystemMaterial/PopupOptionsSystem
 import TipsOptionsSystemMaterial from './popupSystemMaterial/TipsOptionsSystemMaterial.test';
 import PopupColorMode from './popup/PopupColorMode.test';
 
+// ImmersiveStyleTest 
+// ImmersiveOptionsMaterialColorTest 
+//   ImmersiveOptionsColorInvertTest 
+//   ImmersiveOptionsApplyShadowTest 
+//  
+//  SheetOptionsSystemMaterial
+//  PopupCommonOptionsSystemMaterial
+//  
+//  PopupOptionsSystemMaterial
+//  CustomPopupOptionsSystemMaterial
+
 export default function testsuite() {
   showActionMenuNullAndUndefinedTest();
   showActionMenuCallbackNullAndUndefinedTest();

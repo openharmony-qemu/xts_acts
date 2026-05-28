@@ -14,6 +14,7 @@
  */
 
 import { uiMaterial, ComponentContent } from '@kit.ArkUI';
+import { hdsMaterial } from '@kit.UIDesignKit';
 
 interface PopupParam {
   closeFunc?: () => void;
@@ -45,8 +46,11 @@ struct PopupCommonOptionsSystemMaterial {
   contentImmersiveUltraThin: ComponentContent<PopupParam> | null = null;
   contentNone: ComponentContent<PopupParam> | null = null;
 
+  isSystemMaterialSupport: boolean = hdsMaterial.isSystemMaterialSupported();  // 判断当前设备是否支持材质
+
   build() {
     Column({ space: 5 }) {
+      Text(this.isSystemMaterialSupport.toString()).id('hasM')
       Row({ space: 5 }) {
         Button('undefined')
           .id('undefined')
