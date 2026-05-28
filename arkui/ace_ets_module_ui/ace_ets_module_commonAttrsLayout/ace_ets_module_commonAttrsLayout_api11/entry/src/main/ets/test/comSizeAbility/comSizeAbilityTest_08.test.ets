@@ -65,7 +65,8 @@ export default function comSizeAbilityTest_08() {
     it('comSizeAbilityTestJsunit_23', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_23 START')
       await CommonFunc.sleep(1000);
-      let modePosition: componentUtils.ComponentInfo = componentUtils.getRectangleById("Navigation_Size");
+      let modePosition: componentUtils.ComponentInfo =
+        componentUtils.getRectangleById('comSizeAbilityTest_08' + '_Navigation_Size_02');
       let modePosition1: componentUtils.ComponentInfo = componentUtils.getRectangleById("Navigation_Father");
       let Size = modePosition.size
       let SizeWidth = Size.width

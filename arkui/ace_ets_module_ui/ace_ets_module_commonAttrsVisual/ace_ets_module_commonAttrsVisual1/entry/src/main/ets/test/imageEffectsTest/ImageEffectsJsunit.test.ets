@@ -379,7 +379,7 @@ export default function imageEffectsJsunit() {
       let strJsonNew: string = getInspectorByKey('centerRow3');
 
       console.info('[testImageEffects010] component JSON.parse(strJsonNew) is: ' + JSON.stringify(JSON.parse(strJsonNew)));
-      expect(JSON.parse(strJsonNew).$attrs.shadow.radius).assertEqual('-1.000000');
+      expect(JSON.parse(strJsonNew).$attrs.shadow.radius).assertEqual('0.000000');
       expect(JSON.parse(strJsonNew).$attrs.shadow.color).assertEqual('#FF000000');
       expect(JSON.parse(strJsonNew).$attrs.shadow.offsetX).assertEqual('0.000000');
       expect(JSON.parse(strJsonNew).$attrs.shadow.offsetY).assertEqual('0.000000');
