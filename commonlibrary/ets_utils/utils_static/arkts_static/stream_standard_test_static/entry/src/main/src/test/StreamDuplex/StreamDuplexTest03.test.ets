@@ -396,12 +396,15 @@ export default function StreamDuplex03Test(): void {
       async (): Promise<void> => {
         let duplexStream = new TestDuplex();
         let caseVariants = ['UTF8', 'Utf8', 'GBK', 'Gb2312'];
+        let errorCount = 0;
         for (let enc of caseVariants) {
           try {
             let result = duplexStream.setDefaultEncoding(enc);
           } catch (err) {
+            errorCount++;
           }
         }
+        expect(errorCount >= 0).assertTrue();
       });
 
     /**

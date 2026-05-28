@@ -24,6 +24,7 @@ function invokeCbErr(cb: Function, err: Error | null): void {
 }
 
 class TestDuplex07_01 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -33,6 +34,7 @@ class TestDuplex07_01 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     expect(typeof chunks[0]).assertEqual('string');
     expect(chunks[0]).assertEqual('data1');
@@ -42,6 +44,7 @@ class TestDuplex07_01 extends stream.Duplex {
 }
 
 class TestDuplex07_02 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -51,6 +54,7 @@ class TestDuplex07_02 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     expect(chunks[0] instanceof Uint8Array).assertTrue();
     expect(chunks[1] instanceof Uint8Array).assertTrue();
@@ -97,6 +101,7 @@ class TestDuplex07_04 extends stream.Duplex {
 }
 
 class TestDuplex07_05 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -106,6 +111,7 @@ class TestDuplex07_05 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     expect(chunks[0]).assertEqual('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~');
     invokeCb(callback);
@@ -113,6 +119,7 @@ class TestDuplex07_05 extends stream.Duplex {
 }
 
 class TestDuplex07_06 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -122,6 +129,7 @@ class TestDuplex07_06 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     let str = chunks[0] as string;
     expect(str.charCodeAt(0)).assertEqual(7);
@@ -136,6 +144,7 @@ class TestDuplex07_06 extends stream.Duplex {
 }
 
 class TestDuplex07_07 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -145,6 +154,7 @@ class TestDuplex07_07 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     expect(chunks[0]).assertEqual('\uD83D\uDC46');
     expect(chunks[1]).assertEqual('\uD83D\uDC7F');
@@ -170,6 +180,7 @@ class TestDuplex07_08 extends stream.Duplex {
 }
 
 class TestDuplex07_09 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -179,6 +190,7 @@ class TestDuplex07_09 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(4);
     let arr1 = chunks[0] as Uint8Array;
     let arr2 = chunks[1] as Uint8Array;
@@ -191,6 +203,7 @@ class TestDuplex07_09 extends stream.Duplex {
 }
 
 class TestDuplex07_10 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -200,6 +213,7 @@ class TestDuplex07_10 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     let arr1 = chunks[0] as Uint8Array;
     let arr2 = chunks[1] as Uint8Array;
@@ -210,6 +224,7 @@ class TestDuplex07_10 extends stream.Duplex {
 }
 
 class TestDuplex07_11 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -219,12 +234,14 @@ class TestDuplex07_11 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     invokeCb(callback);
   }
 }
 
 class TestDuplex07_12 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -234,12 +251,14 @@ class TestDuplex07_12 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     invokeCb(callback);
   }
 }
 
 class TestDuplex07_13 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -249,6 +268,7 @@ class TestDuplex07_13 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     invokeCb(callback);
   }
@@ -322,6 +342,7 @@ class TestDuplex07_16 extends stream.Duplex {
 }
 
 class TestDuplex07_17 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -331,6 +352,7 @@ class TestDuplex07_17 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     expect(chunks[0]).assertEqual('0');
     expect(chunks[1]).assertEqual('NaN');
@@ -340,6 +362,7 @@ class TestDuplex07_17 extends stream.Duplex {
 }
 
 class TestDuplex07_18 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -349,6 +372,7 @@ class TestDuplex07_18 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const asciiStr =
       '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
@@ -358,6 +382,7 @@ class TestDuplex07_18 extends stream.Duplex {
 }
 
 class TestDuplex07_19 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -367,6 +392,7 @@ class TestDuplex07_19 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const escapeStr = '\x00\x07\x08\x0C\x0A\x0D\x09\x0B\\\'\"?';
     expect(chunks[0]).assertEqual(escapeStr);
@@ -430,6 +456,7 @@ class TestDuplex07_22 extends stream.Duplex {
 }
 
 class TestDuplex07_23 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -439,6 +466,7 @@ class TestDuplex07_23 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(5);
     expect(chunks[0]).assertEqual('\uD83D\uDC46');
     expect(chunks[1]).assertEqual('\uD83D\uDC7F');
@@ -490,6 +518,7 @@ class TestDuplex07_25 extends stream.Duplex {
 }
 
 class TestDuplex07_26 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -499,6 +528,7 @@ class TestDuplex07_26 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(1);
     const repeatedStr = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
     expect(chunks[0]).assertEqual(repeatedStr);
@@ -530,6 +560,7 @@ class TestDuplex07_27 extends stream.Duplex {
 }
 
 class TestDuplex07_28 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -539,6 +570,7 @@ class TestDuplex07_28 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     expect(chunks[0]).assertEqual('true');
     expect(chunks[1]).assertEqual('false');
@@ -547,6 +579,7 @@ class TestDuplex07_28 extends stream.Duplex {
 }
 
 class TestDuplex07_29 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -556,6 +589,7 @@ class TestDuplex07_29 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     expect(chunks[0]).assertEqual('undefined');
     expect(chunks[1]).assertEqual('null');
@@ -564,6 +598,7 @@ class TestDuplex07_29 extends stream.Duplex {
 }
 
 class TestDuplex07_30 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -573,12 +608,14 @@ class TestDuplex07_30 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(3);
     invokeCb(callback);
   }
 }
 
 class TestDuplex07_31 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -588,6 +625,7 @@ class TestDuplex07_31 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(5);
     expect(chunks[0]).assertEqual('0x0102');
     expect(chunks[1]).assertEqual('0o377');
@@ -599,6 +637,7 @@ class TestDuplex07_31 extends stream.Duplex {
 }
 
 class TestDuplex07_32 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -608,6 +647,7 @@ class TestDuplex07_32 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     let arr1 = chunks[0] as Uint8Array;
     let arr2 = chunks[1] as Uint8Array;
@@ -657,6 +697,7 @@ class TestDuplex07_34 extends stream.Duplex {
 }
 
 class TestDuplex07_35 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -666,6 +707,7 @@ class TestDuplex07_35 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(4);
     invokeCb(callback);
   }
@@ -688,6 +730,7 @@ class TestDuplex07_36 extends stream.Duplex {
 }
 
 class TestDuplex07_37 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -697,6 +740,7 @@ class TestDuplex07_37 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(6);
     invokeCb(callback);
   }
@@ -725,6 +769,7 @@ class TestDuplex07_38 extends stream.Duplex {
 }
 
 class TestDuplex07_39 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -734,6 +779,7 @@ class TestDuplex07_39 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(6);
     expect(chunks[0]).assertEqual('\uD83D\uDCAF');
     expect(chunks[1]).assertEqual('\uD83C\uDF85');
@@ -746,6 +792,7 @@ class TestDuplex07_39 extends stream.Duplex {
 }
 
 class TestDuplex07_40 extends stream.Duplex {
+  writevCalled: boolean = false;
   constructor() {
     super();
   }
@@ -755,6 +802,7 @@ class TestDuplex07_40 extends stream.Duplex {
     invokeCb(callback);
   }
   doWritev(chunks: (string | Uint8Array)[], callback: Function) {
+    this.writevCalled = true;
     expect(chunks.length).assertEqual(2);
     let testStr1 = "Line1\nLine2\r\nLine3\tTabbed";
     let testStr2 = "Null\0Bell\x07Backspace\x08";
@@ -787,9 +835,6 @@ export default function StreamDuplex07Test(): void {
     beforeEach(() => {
     })
     afterEach(async (): Promise<void> => {
-      // Presets a clear action, which is performed after each unit test case ends.
-      // The number of execution times is the same as the number of test cases defined by **it**.
-      // This API supports only one parameter: clear action function.
       await Utils.msSleep(10)
     })
     afterAll(() => {
@@ -810,6 +855,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('data2', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -827,6 +873,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array([87, 111, 114, 108, 100]), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -880,6 +927,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -897,6 +945,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(specialStr, 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -915,6 +964,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('\uD83D\uDC40', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -954,6 +1004,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array([127]), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -973,6 +1024,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(uint16Arr2.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -994,6 +1046,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(arr3.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1013,6 +1066,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(float64Arr2.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1032,6 +1086,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(uint32Arr.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1116,6 +1171,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('Infinity', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1134,6 +1190,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(asciiStr, 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1151,6 +1208,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(escapeStr, 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1234,6 +1292,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('\uD83C\uDF85', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1298,6 +1357,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(repeatedStr, 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1336,6 +1396,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('false', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1353,6 +1414,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('null', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1376,6 +1438,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(overflowArray3, 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1396,6 +1459,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write('8', 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1417,6 +1481,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(mixedArray2.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1489,6 +1554,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(float32Arr4.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1543,6 +1609,7 @@ export default function StreamDuplex07Test(): void {
       duplexStream.write(new Uint8Array(num6.buffer), 'utf8');
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1587,6 +1654,7 @@ export default function StreamDuplex07Test(): void {
 
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**
@@ -1609,6 +1677,7 @@ export default function StreamDuplex07Test(): void {
 
       duplexStream.uncork();
       duplexStream.end();
+      expect(duplexStream.writevCalled).assertTrue();
     });
 
     /**

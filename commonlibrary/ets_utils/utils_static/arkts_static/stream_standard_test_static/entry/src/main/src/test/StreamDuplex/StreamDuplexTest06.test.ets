@@ -1062,6 +1062,9 @@ export default function StreamDuplex06Test(): void {
     it('testStreamDuplex06Chapter0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let duplexStream = new TestDuplex06O();
       duplexStream.write('test', 'utf8');
+      setTimeout(() => {
+        expect(duplexStream.writeCompleted).assertTrue();
+      }, 50);
     });
 
     /**
