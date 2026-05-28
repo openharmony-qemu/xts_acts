@@ -21,6 +21,7 @@ import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.ar
 import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
+import { XtsTestServer } from 'library';
 
 let isPlaying: Boolean = false
 let isError: Boolean = false
@@ -562,6 +563,13 @@ struct MyComponent {
         this.videoHeightPercent = scaledVideoHeight / this.viewHeight * 100;
     }
 
+    aboutToDisappear() {
+
+      this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+    }
+
+
     build() {
         Column() {
             Stack() {
@@ -718,6 +726,7 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
     controller: WebviewController = new webview.WebviewController();
+    mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
     nativePlayer? : webview.NativeMediaPlayerBridge
     nodeController?: MyNodeController
     nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
@@ -817,7 +826,7 @@ struct WebComponent {
                     this.isShouldOverlay = true
                     this.isCallback = false
                     this.isPageEnd = -1;
-                    this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'))
+                    this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayRate.html'))
                     await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                     if (Utils.isPC(this.controller) ) {
                         Utils.emitEvent(true, 361010)
@@ -830,7 +839,7 @@ struct WebComponent {
                     switch (this.emitKey) {
                       case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveNothing': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayReadyState.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -851,7 +860,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveCurrentData': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayReadyState.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -872,7 +881,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveFutureData': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayReadyState.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -893,7 +902,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerHandleReadyStateHaveEnoughData': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayReadyState.html'));
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayReadyState.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -914,7 +923,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerHandleVideoSizeChange': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerSetPlayRate.html'));
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerSetPlayRate.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -946,7 +955,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerSeek500': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        this.controller.loadUrl(this.mServer.getAssetUrl('multi_source_video_seek.html'))
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -978,7 +987,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerSeekNegative1': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        this.controller.loadUrl(this.mServer.getAssetUrl('multi_source_video_seek.html'))
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -1007,7 +1016,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerBufferedEndTime': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandlerPreloadAuto.html'))
+                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandlerPreloadAuto.html'))
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);
@@ -1020,7 +1029,7 @@ struct WebComponent {
                       }
                       case 'emitWebViewNativeMediaPlayerSeek20': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl($rawfile('multi_source_video_seek.html'))
+                        this.controller.loadUrl(this.mServer.getAssetUrl('multi_source_video_seek.html'))
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);

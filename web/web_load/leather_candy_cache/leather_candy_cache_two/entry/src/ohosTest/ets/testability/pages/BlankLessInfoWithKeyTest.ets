@@ -24,6 +24,7 @@ import { JsProxyObject } from '../../test/Interfaces';
 // import { BusinessError } from '@ohos.base';
 import webview from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
+import { XtsTestServer } from 'library';
 import testNapi from 'libentry.so'
 
 @Entry
@@ -31,6 +32,7 @@ import testNapi from 'libentry.so'
 struct blankLessInfoWithKeyTest {
   @State webTag: string = 'WebTag';
   controller: webView.WebviewController = new webView.WebviewController(this.webTag);
+  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   newController: webView.WebviewController = new webView.WebviewController();
   message: webView.WebMessageExt = new webView.WebMessageExt();
   @State str: string = ''
@@ -73,6 +75,13 @@ struct blankLessInfoWithKeyTest {
     }
   }
 
+  aboutToDisappear() {
+
+    this.controller.loadUrl(this.mServer.getShutdownUrl());
+
+  }
+
+
   build() {
     Column() {
       Row() {
@@ -87,7 +96,7 @@ struct blankLessInfoWithKeyTest {
               let key = 'blankLessInfoWithKey';
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl($rawfile('indexPhoto.html'))
+                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoOne = this.controller.getBlanklessInfoWithKey(key);
@@ -99,7 +108,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl($rawfile('indexPhoto.html'))
+                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoTwo = this.controller.getBlanklessInfoWithKey(key);
@@ -111,7 +120,7 @@ struct blankLessInfoWithKeyTest {
                 }
 
                 this.isPageEnd = -1
-                this.controller.loadUrl($rawfile('indexPhoto.html'))
+                this.controller.loadUrl(this.mServer.getAssetUrl('indexPhoto.html'))
                 await waitForExist(() => this.isPageEnd, this.str, 0);
                 console.log(msg, 'first loadUrl finish');
                 let infoThree = this.controller.getBlanklessInfoWithKey(key);
@@ -553,7 +562,7 @@ struct blankLessInfoWithKeyTest {
         })
       }
 
-      Web({ src: $rawfile('indexPhoto.html'), controller: this.controller })
+      Web({ src: this.mServer.getAssetUrl('indexPhoto.html'), controller: this.controller })
         .javaScriptAccess(this.javaScriptAccess)
         .onLoadIntercept((event) => {
           this.isPageEnd = 0
