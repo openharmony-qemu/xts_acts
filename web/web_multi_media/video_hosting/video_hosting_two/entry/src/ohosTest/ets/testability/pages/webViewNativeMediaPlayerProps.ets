@@ -523,9 +523,9 @@ struct MyComponent {
     }
     
     aboutToDisappear() {
-    
-      this.controller.loadUrl(this.mServer.getShutdownUrl());
-    
+      if (this.params?.web_tab) {
+        this.params.web_tab.controller.loadUrl(this.params.web_tab.mServer.getShutdownUrl());
+      }
     }
 
     
@@ -702,7 +702,7 @@ struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
   mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer? : webview.NativeMediaPlayerBridge
-  page_url: Resource = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
+  page_url: string = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
   node_controller?: MyNodeController
   // 日志列表
   @State messageList: Array<string> =[]
