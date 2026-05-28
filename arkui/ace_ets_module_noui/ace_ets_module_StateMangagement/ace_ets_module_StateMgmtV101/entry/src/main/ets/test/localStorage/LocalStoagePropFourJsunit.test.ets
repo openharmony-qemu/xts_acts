@@ -93,7 +93,7 @@ export default function LocalStoagePropFourJsunit() {
       expect(obj1.$attrs.content).assertEqual('localstorage:1,storProp1:1');
 
       let driver = await UiDriver.create()
-      let button_changeInitialValue = await driver.findComponent(BY.key('LocalStoagePropFour_button_changeInitialValue'));
+      let button_changeInitialValue = await driver.findComponent(BY.key('LocalStoagePropFour' + '_button_changeInitialValue'));
       await button_changeInitialValue.click();
       await CommonFunc.sleep(1000);
 
@@ -103,7 +103,7 @@ export default function LocalStoagePropFourJsunit() {
       expect(obj2.$attrs.content).assertEqual('localstorage:1,storProp1:11');
 
 
-      let button_changeLocalStorageValue = await driver.findComponent(BY.key('LocalStoagePropFour_button_changeLocalStorageValue'));
+      let button_changeLocalStorageValue = await driver.findComponent(BY.key('LocalStoagePropFour' + '_button_changeLocalStorageValue'));
       await button_changeLocalStorageValue.click();
       await CommonFunc.sleep(1000);
 
