@@ -143,10 +143,10 @@ class OverrideBaseClass {
 }
 
 class OverrideDerivedClass extends OverrideBaseClass {
-  private _value: string = 'derived';
+  private _derivedValue: string = 'derived';
 
   public override get value(): string {
-    return this._value;
+    return this._derivedValue;
   }
 }
 
@@ -533,7 +533,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0100
      * @tc.name testGetInstanceGettersRecursive001
      * @tc.desc Verify required targetClass parameter
      * @tc.size MediumTest
@@ -549,14 +549,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0004
-     * @tc.name testGetInstanceGettersRecursive004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0200
+     * @tc.name testGetInstanceGettersRecursive002
      * @tc.desc Verify Class.from<T>() returns getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -565,14 +565,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0005
-     * @tc.name testGetInstanceGettersRecursive005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0300
+     * @tc.name testGetInstanceGettersRecursive003
      * @tc.desc Verify Class.of(obj) returns getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new BasicGetterClass();
       let cls = Class.of(obj);
       let getters = reflect.getInstanceGettersRecursive(cls);
@@ -581,30 +581,34 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0006
-     * @tc.name testGetInstanceGettersRecursive006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0400
+     * @tc.name testGetInstanceGettersRecursive004
      * @tc.desc Verify Class.ofAny(obj) returns getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Any = new BasicGetterClass();
       let cls = Class.ofAny(obj);
-      let getters = reflect.getInstanceGettersRecursive(cls!);
+      if (cls === undefined) {
+        expect().assertFail();
+        return;
+      }
+      let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
       expect(getters[0].getName()).assertEqual("%%get-name");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0007
-     * @tc.name testGetInstanceGettersRecursive007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0500
+     * @tc.name testGetInstanceGettersRecursive005
      * @tc.desc Verify primitive type class returns empty result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -612,28 +616,29 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0008
-     * @tc.name testGetInstanceGettersRecursive008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0600
+     * @tc.name testGetInstanceGettersRecursive006
      * @tc.desc Verify Class.PRIMITIVE_INT returns empty result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.PRIMITIVE_INT;
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0009
-     * @tc.name testGetInstanceGettersRecursive009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0700
+     * @tc.name testGetInstanceGettersRecursive007
      * @tc.desc Verify null Class argument throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 预期 compile-time warning：nullish cast 至非 nullish 类型，运行时抛 ClassCastError
       try {
         reflect.getInstanceGettersRecursive(null as Class);
         expect().assertFail();
@@ -643,14 +648,15 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0010
-     * @tc.name testGetInstanceGettersRecursive010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0800
+     * @tc.name testGetInstanceGettersRecursive008
      * @tc.desc Verify undefined Class argument throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 预期 compile-time warning：nullish cast 至非 nullish 类型，运行时抛 ClassCastError
       try {
         reflect.getInstanceGettersRecursive(undefined as Class);
         expect().assertFail();
@@ -660,14 +666,15 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0011
-     * @tc.name testGetInstanceGettersRecursive011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0900
+     * @tc.name testGetInstanceGettersRecursive009
      * @tc.desc Verify non-Class object is rejected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 预期 compile-time warning：非 Class 实例 cast，运行时抛 ClassCastError
       try {
         reflect.getInstanceGettersRecursive((new BasicGetterClass()) as Class);
         expect().assertFail();
@@ -677,14 +684,15 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0012
-     * @tc.name testGetInstanceGettersRecursive012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1000
+     * @tc.name testGetInstanceGettersRecursive010
      * @tc.desc Verify number value is rejected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 预期 compile-time warning：非 Class 类型 cast，运行时抛 ClassCastError
       try {
         let invalidArg: int = 123;
         reflect.getInstanceGettersRecursive(invalidArg as Class);
@@ -695,14 +703,15 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0013
-     * @tc.name testGetInstanceGettersRecursive013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1100
+     * @tc.name testGetInstanceGettersRecursive011
      * @tc.desc Verify string value is rejected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      // 预期 compile-time warning：非 Class 类型 cast，运行时抛 ClassCastError
       try {
         let invalidArg: string = "MyClass";
         reflect.getInstanceGettersRecursive(invalidArg as Class);
@@ -713,14 +722,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0014
-     * @tc.name testGetInstanceGettersRecursive014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1200
+     * @tc.name testGetInstanceGettersRecursive012
      * @tc.desc Verify ChildGetterClass returns two inherited getters in order
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -729,14 +738,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0015
-     * @tc.name testGetInstanceGettersRecursive015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1300
+     * @tc.name testGetInstanceGettersRecursive013
      * @tc.desc Verify empty array result for class without getter
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -744,14 +753,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0016
-     * @tc.name testGetInstanceGettersRecursive016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1400
+     * @tc.name testGetInstanceGettersRecursive014
      * @tc.desc Verify parent getters are included
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyGetterHierarchyClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -760,14 +769,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0017
-     * @tc.name testGetInstanceGettersRecursive017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1500
+     * @tc.name testGetInstanceGettersRecursive015
      * @tc.desc Verify repeated calls return independent arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters1 = reflect.getInstanceGettersRecursive(cls);
       let getters2 = reflect.getInstanceGettersRecursive(cls);
@@ -776,14 +785,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0018
-     * @tc.name testGetInstanceGettersRecursive018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1600
+     * @tc.name testGetInstanceGettersRecursive016
      * @tc.desc Verify getter order is preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ParentGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -792,28 +801,28 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0019
-     * @tc.name testGetInstanceGettersRecursive019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1700
+     * @tc.name testGetInstanceGettersRecursive017
      * @tc.desc Verify return value is an object array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
-      expect(getters instanceof Array).assertTrue();
+      expect(typeof getters).assertEqual("object");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0020
-     * @tc.name testGetInstanceGettersRecursive020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1800
+     * @tc.name testGetInstanceGettersRecursive018
      * @tc.desc Verify array elements expose getter metadata methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -823,18 +832,20 @@ export default function GetInstanceGettersRecursiveTest(): void {
       expect(getter.getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}BasicGetterClass`);
       expect(getter.getParameterTypes().length).assertEqual(0);
       expect(getter.isGetter()).assertTrue();
-      expect((getter.invoke(new BasicGetterClass()) as string)).assertEqual("");
+      let invokeResult = getter.invoke(new BasicGetterClass());
+      expect(invokeResult instanceof string).assertTrue();
+      expect(invokeResult as string).assertEqual("");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0021
-     * @tc.name testGetInstanceGettersRecursive021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1900
+     * @tc.name testGetInstanceGettersRecursive019
      * @tc.desc Verify getter names use the %%get- prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -842,14 +853,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0022
-     * @tc.name testGetInstanceGettersRecursive022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2000
+     * @tc.name testGetInstanceGettersRecursive020
      * @tc.desc Verify isGetter returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -857,14 +868,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0024
-     * @tc.name testGetInstanceGettersRecursive024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2100
+     * @tc.name testGetInstanceGettersRecursive021
      * @tc.desc Verify only parent getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BaseGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -872,14 +883,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0025
-     * @tc.name testGetInstanceGettersRecursive025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2200
+     * @tc.name testGetInstanceGettersRecursive022
      * @tc.desc Verify only child getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildOnlyGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -887,14 +898,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0026
-     * @tc.name testGetInstanceGettersRecursive026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2300
+     * @tc.name testGetInstanceGettersRecursive023
      * @tc.desc Verify classes without getters return empty arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OnlySetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -902,14 +913,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0027
-     * @tc.name testGetInstanceGettersRecursive027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2400
+     * @tc.name testGetInstanceGettersRecursive024
      * @tc.desc Verify three-level inheritance getters are collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ParentGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -918,14 +929,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0028
-     * @tc.name testGetInstanceGettersRecursive028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2500
+     * @tc.name testGetInstanceGettersRecursive025
      * @tc.desc Verify middle layer without getter is skipped
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DeepGetterLevel3>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(3);
@@ -935,14 +946,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0029
-     * @tc.name testGetInstanceGettersRecursive029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2600
+     * @tc.name testGetInstanceGettersRecursive026
      * @tc.desc Verify deep inheritance chain getters are collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DeepGetterLevel5>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(5);
@@ -954,14 +965,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0030
-     * @tc.name testGetInstanceGettersRecursive030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2700
+     * @tc.name testGetInstanceGettersRecursive027
      * @tc.desc Verify overriding getter returns base and derived entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OverrideDerivedClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -970,14 +981,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0031
-     * @tc.name testGetInstanceGettersRecursive031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2800
+     * @tc.name testGetInstanceGettersRecursive028
      * @tc.desc Verify covariant override returns base and derived getter entries
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OverrideDerivedClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -986,14 +997,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0032
-     * @tc.name testGetInstanceGettersRecursive032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2900
+     * @tc.name testGetInstanceGettersRecursive029
      * @tc.desc Verify parent getter owner metadata is preserved
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GrandParentGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1001,14 +1012,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0033
-     * @tc.name testGetInstanceGettersRecursive033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3000
+     * @tc.name testGetInstanceGettersRecursive030
      * @tc.desc Verify only public getters are returned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1017,14 +1028,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0034
-     * @tc.name testGetInstanceGettersRecursive034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3100
+     * @tc.name testGetInstanceGettersRecursive031
      * @tc.desc Verify protected getters are not returned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1032,14 +1043,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0035
-     * @tc.name testGetInstanceGettersRecursive035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3200
+     * @tc.name testGetInstanceGettersRecursive032
      * @tc.desc Verify private getters are not returned
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1047,14 +1058,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0036
-     * @tc.name testGetInstanceGettersRecursive036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3300
+     * @tc.name testGetInstanceGettersRecursive033
      * @tc.desc Verify getters and ordinary methods are separated
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedMethodClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1063,14 +1074,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0037
-     * @tc.name testGetInstanceGettersRecursive037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3400
+     * @tc.name testGetInstanceGettersRecursive034
      * @tc.desc Verify getter and setter coexist as one getter entry
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GetterSetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1079,14 +1090,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0038
-     * @tc.name testGetInstanceGettersRecursive038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3500
+     * @tc.name testGetInstanceGettersRecursive035
      * @tc.desc Verify setter-only property yields empty result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OnlySetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1094,14 +1105,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0039
-     * @tc.name testGetInstanceGettersRecursive039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3600
+     * @tc.name testGetInstanceGettersRecursive036
      * @tc.desc Verify interface properties are exposed as instance getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyInterface>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1120,14 +1131,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0040
-     * @tc.name testGetInstanceGettersRecursive040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3700
+     * @tc.name testGetInstanceGettersRecursive037
      * @tc.desc Verify abstract class getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractGetterImpl>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -1141,14 +1152,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0041
-     * @tc.name testGetInstanceGettersRecursive041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3800
+     * @tc.name testGetInstanceGettersRecursive038
      * @tc.desc Verify abstract getter can be reflected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractGetterImpl>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -1158,14 +1169,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0042
-     * @tc.name testGetInstanceGettersRecursive042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3900
+     * @tc.name testGetInstanceGettersRecursive039
      * @tc.desc Verify generic class getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericGetterClass<string>>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1173,14 +1184,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0043
-     * @tc.name testGetInstanceGettersRecursive043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4000
+     * @tc.name testGetInstanceGettersRecursive040
      * @tc.desc Verify multiple generic parameter getters are collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PairGetterClass<string, int>>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -1189,14 +1200,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0044
-     * @tc.name testGetInstanceGettersRecursive044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4100
+     * @tc.name testGetInstanceGettersRecursive041
      * @tc.desc Verify final class getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1204,14 +1215,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0045
-     * @tc.name testGetInstanceGettersRecursive045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4200
+     * @tc.name testGetInstanceGettersRecursive042
      * @tc.desc Verify enum types have no getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Color>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1219,14 +1230,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0046
-     * @tc.name testGetInstanceGettersRecursive046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4300
+     * @tc.name testGetInstanceGettersRecursive043
      * @tc.desc Verify implementing class getter is collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InterfaceImplClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(3);
@@ -1240,14 +1251,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0047
-     * @tc.name testGetInstanceGettersRecursive047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4400
+     * @tc.name testGetInstanceGettersRecursive044
      * @tc.desc Verify union type class has no getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<int | string>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1255,28 +1266,28 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0048
-     * @tc.name testGetInstanceGettersRecursive048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4500
+     * @tc.name testGetInstanceGettersRecursive045
      * @tc.desc Verify Array type Class metadata name and isFixedArray
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Array<int>>();
       expect(cls.getName()).assertEqual("std.core.Array");
       expect(cls.isFixedArray()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0049
-     * @tc.name testGetInstanceGettersRecursive049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4600
+     * @tc.name testGetInstanceGettersRecursive046
      * @tc.desc Verify fixed-size array type class has no instance getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FixedArray<int>>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters instanceof Array).assertTrue();
@@ -1284,42 +1295,42 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0050
-     * @tc.name testGetInstanceGettersRecursive050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4700
+     * @tc.name testGetInstanceGettersRecursive047
      * @tc.desc Verify Map type Class metadata name and isInterface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Map<string, int>>();
       expect(cls.getName()).assertEqual("std.core.Map");
       expect(cls.isInterface()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0051
-     * @tc.name testGetInstanceGettersRecursive051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4800
+     * @tc.name testGetInstanceGettersRecursive048
      * @tc.desc Verify Set type Class metadata name and isEnum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Set<string>>();
       expect(cls.getName()).assertEqual("std.core.Set");
       expect(cls.isEnum()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0052
-     * @tc.name testGetInstanceGettersRecursive052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4900
+     * @tc.name testGetInstanceGettersRecursive049
      * @tc.desc Verify string getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StringGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1327,14 +1338,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0053
-     * @tc.name testGetInstanceGettersRecursive053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5000
+     * @tc.name testGetInstanceGettersRecursive050
      * @tc.desc Verify int getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<IntGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1342,14 +1353,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0054
-     * @tc.name testGetInstanceGettersRecursive054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5100
+     * @tc.name testGetInstanceGettersRecursive051
      * @tc.desc Verify boolean getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BooleanGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1357,14 +1368,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0055
-     * @tc.name testGetInstanceGettersRecursive055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5200
+     * @tc.name testGetInstanceGettersRecursive052
      * @tc.desc Verify float getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FloatGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1372,14 +1383,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0056
-     * @tc.name testGetInstanceGettersRecursive056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5300
+     * @tc.name testGetInstanceGettersRecursive053
      * @tc.desc Verify Array getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1388,14 +1399,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0057
-     * @tc.name testGetInstanceGettersRecursive057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5400
+     * @tc.name testGetInstanceGettersRecursive054
      * @tc.desc Verify custom type getter return type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CustomTypeGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1403,54 +1414,54 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0058
-     * @tc.name testGetInstanceGettersRecursive058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5500
+     * @tc.name testGetInstanceGettersRecursive055
      * @tc.desc Verify getter parameter count is zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters[0].getParametersNum()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0059
-     * @tc.name testGetInstanceGettersRecursive059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5600
+     * @tc.name testGetInstanceGettersRecursive056
      * @tc.desc Verify getter parameter types are empty
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters[0].getParameterTypes().length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0060
-     * @tc.name testGetInstanceGettersRecursive060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5700
+     * @tc.name testGetInstanceGettersRecursive057
      * @tc.desc Verify many getters are collected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       verifyManyGettersClassGetterNames();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0061
-     * @tc.name testGetInstanceGettersRecursive061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5800
+     * @tc.name testGetInstanceGettersRecursive058
      * @tc.desc Verify final getter is marked final
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalMethodClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1458,14 +1469,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0062
-     * @tc.name testGetInstanceGettersRecursive062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5900
+     * @tc.name testGetInstanceGettersRecursive059
      * @tc.desc Verify static getters are excluded
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1473,14 +1484,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0063
-     * @tc.name testGetInstanceGettersRecursive063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6000
+     * @tc.name testGetInstanceGettersRecursive060
      * @tc.desc Verify computed getter has no backing field requirement
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComputedGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(1);
@@ -1488,31 +1499,32 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0064
-     * @tc.name testGetInstanceGettersRecursive064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6100
+     * @tc.name testGetInstanceGettersRecursive061
      * @tc.desc Verify invoke reads getter value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new InvokeGetterClass();
       let cls = Class.from<InvokeGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters[0].getName()).assertEqual("%%get-name");
-      let result = getters[0].invoke(obj) as string;
-      expect(result).assertEqual("Alice");
+      let invokeResult = getters[0].invoke(obj);
+      expect(invokeResult instanceof string).assertTrue();
+      expect(invokeResult as string).assertEqual("Alice");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0065
-     * @tc.name testGetInstanceGettersRecursive065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6200
+     * @tc.name testGetInstanceGettersRecursive062
      * @tc.desc Verify incompatible invoke throws an error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         reflect.getInstanceGettersRecursive(Class.from<InvokeGetterClass>())[0].invoke(new InvokeOtherClass());
         expect().assertFail();
@@ -1522,31 +1534,32 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0066
-     * @tc.name testGetInstanceGettersRecursive066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6300
+     * @tc.name testGetInstanceGettersRecursive063
      * @tc.desc Verify invoke does not require explicit args
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new InvokeGetterClass();
       let cls = Class.from<InvokeGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters[0].getParameterTypes().length).assertEqual(0);
-      let result = getters[0].invoke(obj) as string;
-      expect(result).assertEqual("Alice");
+      let invokeResult = getters[0].invoke(obj);
+      expect(invokeResult instanceof string).assertTrue();
+      expect(invokeResult as string).assertEqual("Alice");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0067
-     * @tc.name testGetInstanceGettersRecursive067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6400
+     * @tc.name testGetInstanceGettersRecursive064
      * @tc.desc Verify same getter instances are equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let getters1 = reflect.getInstanceGettersRecursive(cls);
       let getters2 = reflect.getInstanceGettersRecursive(cls);
@@ -1555,14 +1568,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0068
-     * @tc.name testGetInstanceGettersRecursive068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6500
+     * @tc.name testGetInstanceGettersRecursive065
      * @tc.desc Verify different getters are not equal
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DynamicGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       expect(getters.length).assertEqual(2);
@@ -1570,14 +1583,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0071
-     * @tc.name testGetInstanceGettersRecursive071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6600
+     * @tc.name testGetInstanceGettersRecursive066
      * @tc.desc Verify property names can be serialized from getters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SerializableGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       let propertyNames: Array<string> = [];
@@ -1592,14 +1605,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0072
-     * @tc.name testGetInstanceGettersRecursive072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6700
+     * @tc.name testGetInstanceGettersRecursive067
      * @tc.desc Verify getter owner metadata is correct
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<InterfaceImplClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
       for (let getter of getters) {
@@ -1610,36 +1623,45 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0073
-     * @tc.name testGetInstanceGettersRecursive073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6800
+     * @tc.name testGetInstanceGettersRecursive068
      * @tc.desc Verify all getters can be invoked dynamically
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new DynamicGetterClass();
       let cls = Class.of(obj);
       let getters = reflect.getInstanceGettersRecursive(cls);
-      let result = new Map<string, Any>();
+      let nameFound = false;
+      let ageFound = false;
       for (let getter of getters) {
         let name = getter.getName();
         let value = getter.invoke(obj);
-        result.set(name, value);
+        if (name === "%%get-name") {
+          nameFound = true;
+          expect(value instanceof string).assertTrue();
+          expect(value as string).assertEqual("Alice");
+        } else if (name === "%%get-age") {
+          ageFound = true;
+          expect(value instanceof int).assertTrue();
+          expect(value as int).assertEqual(30);
+        }
       }
-      expect(result.get("%%get-name") as string).assertEqual("Alice");
-      expect(result.get("%%get-age") as int).assertEqual(30);
+      expect(nameFound).assertTrue();
+      expect(ageFound).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0074
-     * @tc.name testGetInstanceGettersRecursive074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6900
+     * @tc.name testGetInstanceGettersRecursive069
      * @tc.desc Verify getters and fields are collected separately
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicGetterClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       let getters = reflect.getInstanceGettersRecursive(cls);
@@ -1649,14 +1671,14 @@ export default function GetInstanceGettersRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0075
-     * @tc.name testGetInstanceGettersRecursive075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_7000
+     * @tc.name testGetInstanceGettersRecursive070
      * @tc.desc Verify getter-based serialization collects readable properties
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceGettersRecursive075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceGettersRecursive070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new SerializableGetterClass();
       let cls = Class.from<SerializableGetterClass>();
       let getters = reflect.getInstanceGettersRecursive(cls);
