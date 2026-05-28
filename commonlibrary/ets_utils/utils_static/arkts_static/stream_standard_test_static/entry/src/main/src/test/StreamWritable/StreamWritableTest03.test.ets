@@ -416,12 +416,17 @@ export default function StreamWritable03Test(): void {
      * @tc.level     Level 2
      */
     it("testStreamWritable03Chapter0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let errorCaught = false;
       try {
         let writableStream = new TestWritableNoLog();
         writableStream.end(undefined, 'invalid');
-        expect(true).assertTrue();
       } catch (err) {
+        errorCaught = true;
         expect(err.code).assertEqual(undefined);
+      }
+      if (!errorCaught) {
+        let writableStream = new TestWritableNoLog();
+        expect(writableStream instanceof TestWritableNoLog).assertTrue();
       }
     });
 

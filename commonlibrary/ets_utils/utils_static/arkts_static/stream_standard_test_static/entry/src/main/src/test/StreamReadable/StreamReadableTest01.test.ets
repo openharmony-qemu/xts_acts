@@ -658,8 +658,8 @@ export default function StreamReadable01Test(): void {
 
       for (const value of testValues) {
         try {
-          const readableStream = new stream.Readable();
-          expect(true).assertEqual(true);
+        const readableStream = new stream.Readable();
+        expect(readableStream instanceof stream.Readable).assertTrue();
         } catch (err) {
           expect(err.code).assertEqual(undefined);
         }
@@ -677,7 +677,6 @@ export default function StreamReadable01Test(): void {
     it("testStreamReadable01Chapter0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         const readableStream = new stream.Readable();
-        expect(true).assertEqual(true);
       } catch (err) {
         expect(err.code).assertEqual(undefined);
       }

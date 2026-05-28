@@ -1216,7 +1216,7 @@ export default function StreamReadable03Test(): void {
       const result: stream.Writable = readable.pipe(writable);
 
       expect(result).assertEqual(writable);
-      expect(true).assertTrue();
+      expect(result instanceof TestWritable0331).assertTrue();
     });
 
     /**

@@ -659,7 +659,7 @@ export default function StreamTest_01(): void {
         missingWriter.write('data', 'utf8');
         expect().assertFail()
       } catch (err) {
-        expect(err.code).assertEqual(10200035)
+        expect(err.code).assertEqual(10200035);
       }
     });
 
@@ -962,7 +962,7 @@ export default function StreamTest_01(): void {
           }
         });
       } catch (err) {
-        expect((err as Error).message).assertContain('base64');
+        expect(err.toString()).assertContain('base64');
       }
       expect(encodingValidated).assertEqual(false);
     });
@@ -1001,7 +1001,7 @@ export default function StreamTest_01(): void {
         (writable.end as InvalidEndSignature)('123', 'utf-8', () => {});
         throw new Error('Chunk weibaocuo');
       } catch (err) {
-        expect((err as BusinessError).code).assertEqual(10200035);
+        expect(err.code).assertEqual(10200035);
       }
 
     });
@@ -1025,7 +1025,7 @@ export default function StreamTest_01(): void {
           }
         });
       } catch (err) {
-        expect((err as BusinessError).message).assertContain('invalid_encoding');
+        expect(err.toString()).assertContain('invalid_encoding');
       }
 
     });
@@ -1048,7 +1048,7 @@ export default function StreamTest_01(): void {
         });
         expect().assertFail()
       } catch (err) {
-        expect((err as BusinessError).code).assertEqual(10200035);
+        expect(err.code).assertEqual(10200035);
       }
 
     });
@@ -1075,7 +1075,7 @@ export default function StreamTest_01(): void {
         }
         expect().assertFail()
       } catch (err) {
-        expect((err as BusinessError).code).assertEqual(10200035);
+        expect(err.code).assertEqual(10200035);
       }
 
     });
@@ -1140,7 +1140,7 @@ export default function StreamTest_01(): void {
           }
         });
       } catch (err) {
-        expect((err as Error).message).assertContain('123');
+        expect(err.toString()).assertContain('123');
       }
     });
 

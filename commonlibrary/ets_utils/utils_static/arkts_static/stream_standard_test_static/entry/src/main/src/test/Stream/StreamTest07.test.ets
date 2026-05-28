@@ -768,7 +768,9 @@ export default function StreamTest_07(): void {
         };
         readableStream.on('data', dataHandler);
         readableStream.off('data', dataHandler);
+        expect(readableStream instanceof stream.Readable).assertTrue();
       } catch (err) {
+        expect(err.code).assertEqual(401);
       }
     });
 

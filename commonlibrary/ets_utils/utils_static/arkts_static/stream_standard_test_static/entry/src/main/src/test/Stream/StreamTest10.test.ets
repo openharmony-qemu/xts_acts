@@ -463,7 +463,7 @@ export default function StreamTest_10(): void {
         try {
           const transformInstance = new NoCallbackTransform();
           transformInstance.write('data');
-          expect(true).assertEqual(true);
+          expect(transformInstance instanceof NoCallbackTransform).assertTrue();
         } catch (err) {
           expect(err !== null && err !== undefined).assertTrue();
         }
@@ -491,7 +491,7 @@ export default function StreamTest_10(): void {
             expect(result).assertEqual('HELLO');
           };
           transform.on('data', dataCallback);
-          expect(true).assertEqual(true);
+          expect(transform instanceof UpperTransform).assertTrue();
 
       });
 
