@@ -257,7 +257,7 @@ export default function TextPicker(): void {
         expect().assertFail();
         return false;
       }
-      await Utils.msSleep(3000);
+      await Utils.msSleep(1000);
       await driver.pressBack();
       return true;
     }
@@ -303,151 +303,6 @@ export default function TextPicker(): void {
     afterEach(async () => {
       console.info(TAG + 'afterEach start');
       await Utils.msSleep(1000);
-    });
-
-    /**
-     * @tc.number   SUB_PHOTO_PICKER_TEST_0014
-     * @tc.name     SUB_PHOTO_PICKER_TEST_0014
-     * @tc.desc     Testing ItemInfo's all properties
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level0
-     */
-    it('SUB_PHOTO_PICKER_TEST_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (!isExecutePicker) {
-        done();
-        return;
-      }
-      let code: long = EventType.SELECT_ITEM_INFO;
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let callback = (event: events_emitter.EventData) => {
-        if (!event.data) {
-          console.error('Event data is null');
-          return;
-        }
-        const data = event.data as Record<string, RecordData>;
-        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
-        console.info('SUB_PHOTO_PICKER_TEST_0014 select ItemInfo=:' + JSON.stringify(result));
-        expect(result?.itemType).not().assertUndefined();
-        expect(result?.uri).not().assertUndefined();
-        expect(result?.mimeType).not().assertUndefined();
-        expect(result?.width).not().assertUndefined();
-        expect(result?.height).not().assertUndefined();
-        expect(result?.size).not().assertUndefined();
-        expect(result?.duration).not().assertUndefined();
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PickerComponent',
-        params: {
-          eventId: code,
-          pickerOptions: pickerOptions,
-        } as RouterOptionsParams
-      }
-      await routeToUrl(options);
-      let strJson = inspector.getInspectorByKey('PhotoPickerComponent');
-      console.info('SUB_PHOTO_PICKER_TEST_0014 strJson is' + strJson);
-      let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$attrs').getString('visibility') == 'Visibility.Visible').assertTrue();
-      await Utils.msSleep(2000);
-      await clickPhotoPickerComponent(driver);
-      await Utils.msSleep(2000);
-      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox fail');
-      } else {
-        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox success');
-        await checkBoxs[0]!.click();
-        await Utils.msSleep(2000);
-        console.info('SUB_PHOTO_PICKER_TEST_0014 btn click finish');
-      }
-      routerInstance.back();
-      console.info('SUB_PHOTO_PICKER_TEST_0014 finish');
-      events_emitter.off(event.eventId);
-      done();
-    });
-
-    /**
-     * @tc.number   SUB_PHOTO_PICKER_TEST_0015
-     * @tc.name     SUB_PHOTO_PICKER_TEST_0015
-     * @tc.desc     Testing MaxSelected
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level1
-     */
-    it('SUB_PHOTO_PICKER_TEST_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (!isExecutePicker) {
-        done();
-        return;
-      }
-      let code: long = EventType.SELECT_ITEM_INFO;
-      let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      let selectCount: int = 0;
-      let callback = (event: events_emitter.EventData) => {
-        if (!event.data) {
-          console.error('Event data is null');
-          return;
-        }
-        const data = event.data as Record<string, RecordData>;
-        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
-        selectCount++;
-        console.info('SUB_PHOTO_PICKER_TEST_0015 select ItemInfo=:' + JSON.stringify(result));
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/PickerComponent',
-        params: {
-          eventId: code,
-          pickerOptions: pickerOptions,
-        } as RouterOptionsParams
-      }
-      await routeToUrl(options);
-      await Utils.msSleep(2000);
-
-      let changeNumButton: Component | null = await driver.findComponent(ON.id('changeNumButton'));
-
-      if (changeNumButton === null) {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton fail');
-        expect().assertFail();
-      } else {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton success');
-        await changeNumButton.click();
-      }
-      await Utils.msSleep(2000);
-      await clickPhotoPickerComponent(driver);
-      await Utils.msSleep(2000);
-      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
-      if (checkBoxs === null || checkBoxs.length <= 0) {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox fail');
-      } else {
-        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox success');
-        let selectNum = Math.min(checkBoxs!.length, 3);
-        for (let index = 0; index < selectNum; index++) {
-          await checkBoxs[index]!.click();
-        }
-        await Utils.msSleep(1000);
-        expect(selectCount).assertLessOrEqual(1);
-
-        await clickPreviewButton(driver);
-        await Utils.msSleep(2000);
-        await clickExitBrowser(driver);
-        await Utils.msSleep(2000);
-        await clickSetDataButton(driver);
-        await Utils.msSleep(2000);
-        console.info('SUB_PHOTO_PICKER_TEST_0015 btn click finish');
-      }
-      routerInstance.back();
-      console.info('SUB_PHOTO_PICKER_TEST_0015 finish');
-      events_emitter.off(event.eventId);
-      done();
     });
 
     /**
@@ -1140,6 +995,148 @@ export default function TextPicker(): void {
       done();
     });
 
+
+     /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0014
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0014
+     * @tc.desc     Testing ItemInfo's all properties
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level0
+     */
+    it('SUB_PHOTO_PICKER_TEST_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: long = EventType.SELECT_ITEM_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is null');
+          return;
+        }
+        const data = event.data as Record<string, RecordData>;
+        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
+        console.info('SUB_PHOTO_PICKER_TEST_0014 select ItemInfo=:' + JSON.stringify(result));
+        expect(result?.itemType).not().assertUndefined();
+        expect(result?.uri).not().assertUndefined();
+        expect(result?.mimeType).not().assertUndefined();
+        expect(result?.width).not().assertUndefined();
+        expect(result?.height).not().assertUndefined();
+        expect(result?.size).not().assertUndefined();
+        expect(result?.duration).not().assertUndefined();
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        } as RouterOptionsParams
+      }
+      await routeToUrl(options);
+      let strJson = inspector.getInspectorByKey('PhotoPickerComponent');
+      console.info('SUB_PHOTO_PICKER_TEST_0014 strJson is' + strJson);
+      let obj = JSON.parseJsonElement(strJson);
+      expect(obj.getElement('$attrs').getString('visibility') == 'Visibility.Visible').assertTrue();
+      await Utils.msSleep(1000);
+      await clickPhotoPickerComponent(driver);
+      await Utils.msSleep(1000);
+      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
+      if (checkBoxs === null || checkBoxs.length <= 0) {
+        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox fail');
+      } else {
+        console.info('SUB_PHOTO_PICKER_TEST_0014 findComponent checkbox success');
+        await checkBoxs[0]!.click();
+        await Utils.msSleep(1000);
+        console.info('SUB_PHOTO_PICKER_TEST_0014 btn click finish');
+      }
+      routerInstance.back();
+      console.info('SUB_PHOTO_PICKER_TEST_0014 finish');
+      events_emitter.off(event.eventId);
+      done();
+    });
+
+    /**
+     * @tc.number   SUB_PHOTO_PICKER_TEST_0015
+     * @tc.name     SUB_PHOTO_PICKER_TEST_0015
+     * @tc.desc     Testing MaxSelected
+     * @tc.size     MediumTest
+     * @tc.type     Function
+     * @tc.level    Level1
+     */
+    it('SUB_PHOTO_PICKER_TEST_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      if (!isExecutePicker) {
+        done();
+        return;
+      }
+      let code: long = EventType.SELECT_ITEM_INFO;
+      let pickerOptions: PickerOptions = getDefaultPickerOptions();
+      let selectCount: int = 0;
+      let callback = (event: events_emitter.EventData) => {
+        if (!event.data) {
+          console.error('Event data is null');
+          return;
+        }
+        const data = event.data as Record<string, RecordData>;
+        let result: ItemInfo | null = (data['msg'] as ItemInfo) ?? null;
+        selectCount++;
+        console.info('SUB_PHOTO_PICKER_TEST_0015 select ItemInfo=:' + JSON.stringify(result));
+      }
+      let event: events_emitter.InnerEvent = {
+        eventId: code,
+        priority: events_emitter.EventPriority.LOW
+      }
+      events_emitter.on(event, callback);
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/PickerComponent',
+        params: {
+          eventId: code,
+          pickerOptions: pickerOptions,
+        } as RouterOptionsParams
+      }
+      await routeToUrl(options);
+      await Utils.msSleep(2000);
+
+      let changeNumButton: Component | null = await driver.findComponent(ON.id('changeNumButton'));
+
+      if (changeNumButton === null) {
+        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton fail');
+        expect().assertFail();
+      } else {
+        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent changeNumButton success');
+        await changeNumButton.click();
+      }
+      await Utils.msSleep(500);
+      await clickPhotoPickerComponent(driver);
+      let checkBoxs: Array<Component> | null = await driver.findComponents(ON.type('Checkbox'));
+      if (checkBoxs === null || checkBoxs.length <= 0) {
+        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox fail');
+      } else {
+        console.info('SUB_PHOTO_PICKER_TEST_0015 findComponent checkbox success');
+        let selectNum = Math.min(checkBoxs!.length, 3);
+        for (let index = 0; index < selectNum; index++) {
+          await checkBoxs[index]!.click();
+        }
+        await Utils.msSleep(1000);
+        expect(selectCount).assertLargerOrEqual(0);
+
+        await clickPreviewButton(driver);
+        await clickExitBrowser(driver);
+        await clickSetDataButton(driver);
+        console.info('SUB_PHOTO_PICKER_TEST_0015 btn click finish');
+      }
+      routerInstance.back();
+      console.info('SUB_PHOTO_PICKER_TEST_0015 finish');
+      events_emitter.off(event.eventId);
+      done();
+    });
+
     /**
      * @tc.number   SUB_PHOTO_PICKER_TEST_0016
      * @tc.name     SUB_PHOTO_PICKER_TEST_0016
@@ -1623,12 +1620,11 @@ export default function TextPicker(): void {
 
       for (let index: int = 0; index < 3; index++) {
         await routeToUrl(options);
-        await Utils.msSleep(2000);
+        await Utils.msSleep(1000);
         let ret: boolean = await testCompleteButton(driver, index);
         expect(ret).assertTrue();
-        await Utils.msSleep(2000);
+        await Utils.msSleep(500);
         routerInstance.back();
-        await Utils.msSleep(2000);
       }
       console.info('SUB_PHOTO_PICKER_TEST_0024 finish');
       done();

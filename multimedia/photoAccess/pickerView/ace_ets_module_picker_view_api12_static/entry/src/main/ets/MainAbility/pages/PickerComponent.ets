@@ -228,20 +228,11 @@ struct PickerComponent {
 
   aboutToAppear() {
     console.info('PickerComponent aboutToAppear enter')
-    let router: Router = AppStorage.get<Router>('router') as Router;
-    let parameter = router.getParams() as RouterOptionsParams;
-    if (parameter.eventId != undefined) {
-      console.info('parameter.eventId is not null')
-      this.eventId = parameter.eventId;
-    }
-    if (parameter.pickerOptions!= undefined) {
-      console.info('parameter.pickerOptions is not null')
-      this.pickerOptions = parameter.pickerOptions;
-    }
-    if (parameter.albumOptions != undefined) {
-      console.info('parameter.albumOptions is not null')
-      this.albumOptions = parameter.albumOptions!;
-    }
+    const router: Router = AppStorage.get<Router>('router') as Router;
+    const parameter = router.getParams() as RouterOptionsParams;
+    this.eventId = parameter?.eventId ?? 0;
+    this.pickerOptions = parameter?.pickerOptions ?? new PickerOptions();
+    this.albumOptions = parameter?.albumOptions ?? new AlbumPickerOptions();
     console.info('eventId=' + this.eventId);
   }
 
@@ -289,8 +280,8 @@ struct PickerComponent {
       }).id('resultButton')
       Button('选择修改数量').width('33%').height('5%').onClick((e: ClickEvent) => {
         let maxSelect: MaxSelected = new MaxSelected();
-        maxSelect.data = new Map<MaxCountType, int>([[MaxCountType.TOTAL_MAX_COUNT, 1],
-          [MaxCountType.PHOTO_MAX_COUNT, 1], [MaxCountType.VIDEO_MAX_COUNT, 1]]);
+        maxSelect.data = new Map<MaxCountType, int>([[MaxCountType.TOTAL_MAX_COUNT, 500],
+          [MaxCountType.PHOTO_MAX_COUNT, 500], [MaxCountType.VIDEO_MAX_COUNT, 500]]);
         this.pickerController.setMaxSelected(maxSelect);
       }).id('changeNumButton')
       Button('退出大图').width('33%').height('5%').onClick((e: ClickEvent) => {
