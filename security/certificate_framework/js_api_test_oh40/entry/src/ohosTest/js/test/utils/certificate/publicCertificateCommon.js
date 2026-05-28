@@ -32,6 +32,7 @@ function certificateEnumTypeTest() {
   expect(cert.CertResult.ERR_KEYUSAGE_NO_DIGITAL_SIGNATURE).assertEqual(
     19030007
   );
+  expect(cert.CertResult.ERR_CRL_SIGNATURE_FAILURE).assertEqual(19030018);
 
   expect(cert.EncodingFormat.FORMAT_DER).assertEqual(0);
   expect(cert.EncodingFormat.FORMAT_PEM).assertEqual(1);
