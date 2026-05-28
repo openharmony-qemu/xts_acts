@@ -849,5 +849,95 @@ export default function StaticMethodInvokeTest(): void {
       expect(result1).assertEqual(result2);
     });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_3800
+     * @tc.name testStaticMethodInvoke038
+     * @tc.desc Verify invoke() with empty array on method with required param throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<GreetingClass>();
+      let method = cls.getStaticMethod('greet');
+      expect(method !== undefined).assertTrue();
+      try {
+        method!.invoke([]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_3900
+     * @tc.name testStaticMethodInvoke039
+     * @tc.desc Verify invoke() with excess arguments on multi-param method throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<TwoArgClass>();
+      let method = cls.getStaticMethod('combine');
+      expect(method !== undefined).assertTrue();
+      try {
+        method!.invoke([1, 2, 3]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_4000
+     * @tc.name testStaticMethodInvoke040
+     * @tc.desc Verify invoke() with wrong argument type on async method throws TypeError
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls: Class = Class.from<FetchWithParamClass>();
+      let method = cls.getStaticMethod('request');
+      expect(method !== undefined).assertTrue();
+      try {
+        method!.invoke([42]);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('TypeError');
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_STATICMETHOD_INVOKE_4100
+     * @tc.name testStaticMethodInvoke041
+     * @tc.desc Verify invoke() return value type via Class.of() for int, string, boolean, array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testStaticMethodInvoke041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clsInt: Class = Class.from<IntReturnClass>();
+      let resultInt = clsInt.getStaticMethod('getNumber')!.invoke();
+      let intType = Class.of(resultInt as Object).getName();
+      expect(intType).assertEqual('std.core.Int');
+
+      let clsStr: Class = Class.from<StringReturnClass>();
+      let resultStr = clsStr.getStaticMethod('getMessage')!.invoke();
+      let strType = Class.of(resultStr as Object).getName();
+      expect(strType).assertEqual('std.core.String');
+
+      let clsBool: Class = Class.from<BasicReturnClass>();
+      let resultBool = clsBool.getStaticMethod('getFlag')!.invoke();
+      let boolType = Class.of(resultBool as Object).getName();
+      expect(boolType).assertEqual('std.core.Boolean');
+
+      let clsArr: Class = Class.from<ComplexReturnClass>();
+      let resultArr = clsArr.getStaticMethod('makeList')!.invoke();
+      let arrType = Class.of(resultArr as Object).getName();
+      expect(arrType).assertEqual('std.core.Array');
+    });
+
   });
 }
