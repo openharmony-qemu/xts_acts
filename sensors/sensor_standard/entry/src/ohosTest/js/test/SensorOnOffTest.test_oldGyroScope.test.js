@@ -279,7 +279,7 @@ describe("SensorJsTest_sensor_5", function () {
                     console.info('isMockSensor is true');
                     expect(typeof(data)).assertEqual("object");
                     done();
-                }  {
+                } else {
                 try {
                     sensor.off(string, "");
                 } catch (error) {

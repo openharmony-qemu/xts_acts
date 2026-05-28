@@ -281,7 +281,7 @@ describe("SensorJsTest_sensor_25", function () {
                     console.info('isMockSensor is true');
                     expect(typeof(data)).assertEqual("object");
                     done();
-                } else {
+               } else {
                    sensor.subscribeAccelerometer({
                        interval: 'xxx',
                        success: function (data) {
