@@ -716,12 +716,12 @@ export default function PreDownLoadTest() {
       try {
         let header:Record<string, string> = {
           'Transfer-Encoding':'xxx',
-          'Location' : 'xxx';
-          'Content-Type' : 'xxx';
-          'Content-Range' : 'xxx';
-          'Content-Encode' : 'xxx';
-          'Accept-Ranges' : 'xxx';
-          'Content-length' : 'xxx';
+          'Location' : 'xxx',
+          'Content-Type' : 'xxx',
+          'Content-Range' : 'xxx',
+          'Content-Encode' : 'xxx',
+          'Accept-Ranges' : 'xxx',
+          'Content-length' : 'xxx'
         };
         await getAVPlayerRequest(testName, url_1a1v_m3u8, (request: media.MediaSourceLoadingRequest) => {
           request.respondHeader(1, header, '');
