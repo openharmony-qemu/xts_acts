@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 
-import { Context, } from '@kit.ArkUI';
-import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll,Hypium } from '../../../../../hypium';
+import { Context } from '@kit.AbilityKit';
+import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll,Hypium } from '../../../../../../hypium';
 import { image } from '@kit.ImageKit';
 import { fileIo as fs } from '@kit.CoreFileKit';
 
