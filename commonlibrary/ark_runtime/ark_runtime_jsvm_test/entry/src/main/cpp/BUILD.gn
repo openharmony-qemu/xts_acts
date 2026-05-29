@@ -32,6 +32,7 @@ config("config") {
     "-DTEST_DEFINE_CLASS_WITH_OPTIONS",
     "-DTEST_TRIGGER_EXCEPTIONS",
     "-DTEST_TRIGGER_GC",
+    "-DTEST_THRESHOLD",
   ]
 }
 

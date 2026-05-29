@@ -73,6 +73,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest002 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'game',
@@ -113,6 +117,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest002 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -155,6 +163,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest003 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'normal',
@@ -195,6 +207,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest004 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -251,6 +267,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest005 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'xxx',
@@ -290,6 +310,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest006 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'normal',
@@ -328,6 +352,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest008 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -372,6 +400,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest008 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'game',
@@ -409,6 +441,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest009 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -449,6 +485,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest010 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'normal',
@@ -487,6 +527,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest011 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -538,6 +582,10 @@ describe("SensorJsTest_sensor_29", function () {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest012 error');
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     sensor.subscribeGyroscope({
                         interval: 'xxx',
@@ -575,6 +623,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest013 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({
@@ -614,6 +666,10 @@ describe("SensorJsTest_sensor_29", function () {
            sensor.getSingleSensor(GyroscopeId ,(error, data) => {
                 if (error) {
                     console.info('subscribeGyroscope_SensorJsTest014 error');
+                    done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
                     done();
                 } else {
                     sensor.subscribeGyroscope({

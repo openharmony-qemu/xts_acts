@@ -21,6 +21,7 @@
     "MainAbility/pages/chip/localizedLabelMargin",
     "MainAbility/pages/ChipGroup/ChipGroupIconItemOptionsPage",
     "MainAbility/pages/ChipGroup/ChipGroupSymbolItemOptionsPage",
+    "MainAbility/pages/ChipGroup/ChipGroupSystemMaterial",
     "MainAbility/pages/chip/ChipBackgroundSystemMaterial"
   ]
 }
