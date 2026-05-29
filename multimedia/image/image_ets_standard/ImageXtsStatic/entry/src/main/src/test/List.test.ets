@@ -24,7 +24,9 @@ import createPixelMapTest from "./testStatic/image/image/createPixelMap.test";
 import createPixelMapSyncTest from "./testStatic/image/image/createPixelMapSync.test";
 import ImageMetadataTestStatic from "./testStatic/image/imageSource/ImageMetadata.test";
 import ImageSourceTest from "./image/imageSource/ImageSource.test";
-
+import CreatePixelMapSupp from "./testStatic/image/iamgeSource/createPixelMap.test";
+import createPremultipliedPixelMapTest from "./testStatic/image/image/createPremultipliedPixelMap.test";
+import ImageSourceGetImagePropertyTest from "./testStatic/image/iamgeSource/getImageProperty.test";
 
 
 export default function testsuite(): void {
@@ -47,11 +49,15 @@ export default function testsuite(): void {
   createIncrementalSourceTest();
   createPixelMapTest();
   createPixelMapSyncTest();
+  createPremultipliedPixelMapTest();
   createUnpremultipliedPixelMapSyncTest();
   imagePackerPackToDataFromPixelmapSequenceStaticSuppTest();
   imagePackerPackToFileFromPixelmapSequenceSUppStaticTest();
   ImagePackerReleaseStaticSuppTest();
   ImageSourceTest();
+  CreatePixelMapSupp();
+  ImageSourceGetImagePropertyTest();
 }
+
 
 

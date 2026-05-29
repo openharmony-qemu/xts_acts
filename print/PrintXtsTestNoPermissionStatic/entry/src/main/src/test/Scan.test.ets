@@ -388,5 +388,71 @@ export default function scanTest() {
         expect(error.code).assertEqual(201);
       }
     })
+
+      /**
+       * @tc.name   SUB_Oh_Scan_OnDeviceSync_2400
+       * @tc.number SUB_Oh_Scan_OnDeviceSync_2400
+       * @tc.desc   check onScanDeviceSync with callback without permission
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+       it('SUB_Oh_Scan_OnDeviceSync_2400', Level.LEVEL0, () => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_OnDeviceSync_2400 start');
+         try {
+           let syncCallback = (device: scan.ScannerSyncDevice) => {
+             hilog.info(domain, tag, 'scan sync device: %{public}s', JSON.stringify(device));
+           };
+           scan.onScanDeviceSync(syncCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_2400 success');
+         } catch (err) {
+           let error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Scan_OnDeviceSync_2400 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+         }
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Scan_OffDeviceSync_2500
+       * @tc.number SUB_Oh_Scan_OffDeviceSync_2500
+       * @tc.desc   check offScanDeviceSync without callback without permission
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+       it('SUB_Oh_Scan_OffDeviceSync_2500', Level.LEVEL0, () => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_OffDeviceSync_2500 start');
+         try {
+           scan.offScanDeviceSync();
+           hilog.info(domain, tag, 'SUB_Oh_Scan_OffDeviceSync_2500 success');
+         } catch (err) {
+           let error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Scan_OffDeviceSync_2500 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+         }
+       })
+  
+      /**
+       * @tc.name   SUB_Oh_Scan_OffDeviceSyncCb_2600
+       * @tc.number SUB_Oh_Scan_OffDeviceSyncCb_2600
+       * @tc.desc   check offScanDeviceSync with callback without permission
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
+       it('SUB_Oh_Scan_OffDeviceSyncCb_2600', Level.LEVEL0, () => {
+         hilog.info(domain, tag, '%{public}s', 'SUB_Oh_Scan_OffDeviceSyncCb_2600 start');
+         try {
+           let syncCallback = (device: scan.ScannerSyncDevice) => {
+             hilog.info(domain, tag, 'scan sync device: %{public}s', JSON.stringify(device));
+           };
+           scan.offScanDeviceSync(syncCallback);
+           hilog.info(domain, tag, 'SUB_Oh_Scan_OffDeviceSyncCb_2600 success');
+         } catch (err) {
+           let error = err as BusinessError;
+           hilog.error(domain, tag, 'SUB_Oh_Scan_OffDeviceSyncCb_2600 error, code: %{public}d', error.code);
+           expect(error.code).assertEqual(201);
+         }
+       })
   })
 }

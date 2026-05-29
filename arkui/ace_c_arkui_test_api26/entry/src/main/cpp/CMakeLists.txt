@@ -38,6 +38,7 @@ add_library(nativerender SHARED
 
 add_library(nativefunc SHARED
     NapiFuncInitTest.cpp
+    hovered/HoveredTest.cpp
 )
 
 find_library(
