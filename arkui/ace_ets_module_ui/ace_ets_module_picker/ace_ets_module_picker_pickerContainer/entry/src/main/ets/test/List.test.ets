@@ -23,6 +23,8 @@ import pickerOnChangeTest from './picker/pickerOnChangeTest.test';
 import pickerOnChangeModifierTest from './picker/pickerOnChangeModifierTest.test';
 import pickerOnScrollStopTest from './picker/pickerOnScrollStopTest.test';
 import pickerOnScrollStopModifierTest from './picker/pickerOnScrollStopModifierTest.test';
+import UIPickerComponentItemHeightTest from './picker/UIPickerComponentItemHeightTest.test';
+import UIPickerComponentDisplayedItemCountTest from './picker/UIPickerComponentDisplayedItemCountTest.test';
 
 export default function testsuite() {
     pickerIndicatorTest();
@@ -35,4 +37,6 @@ export default function testsuite() {
     pickerOnChangeModifierTest();
     pickerOnScrollStopTest();
     pickerOnScrollStopModifierTest();
+    UIPickerComponentItemHeightTest();
+    UIPickerComponentDisplayedItemCountTest();
 }
