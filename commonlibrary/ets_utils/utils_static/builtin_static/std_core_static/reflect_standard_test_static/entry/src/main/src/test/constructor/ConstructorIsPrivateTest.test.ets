@@ -177,7 +177,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0500
      * @tc.name testConstructorIsPrivate005
-     * @tc.desc Verify ConstructorIsPrivate case 005: private parameters constructor return true
+     * @tc.desc Verify ConstructorIsPrivate case 005: private constructor class has no accessible constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

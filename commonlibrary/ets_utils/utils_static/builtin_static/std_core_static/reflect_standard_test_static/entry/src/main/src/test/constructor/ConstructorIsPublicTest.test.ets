@@ -236,6 +236,8 @@ export default function ConstructorIsPublicTest(): void {
       let constructors = Class.from<MyClass012>().getConstructors();
       expect(constructors.length).assertEqual(1);
       expect(constructors[0].isPublic()).assertTrue();
+      expect(constructors[0].isPrivate()).assertFalse();
+      expect(constructors[0].isProtected()).assertFalse();
     });
 
     /**

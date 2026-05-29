@@ -492,7 +492,7 @@ export default function ClassGetConstructorsTest(): void {
     */
     it('testClassGetConstructors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
-      let constructors = constructorsToArray(cls);
+      let constructors = cls.getConstructors();
       expect(constructors.length).assertEqual(1);
     });
 
@@ -597,7 +597,7 @@ export default function ClassGetConstructorsTest(): void {
     */
     it('testClassGetConstructors009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass010>();
-      let constructors = constructorsToArray(cls);
+      let constructors = cls.getConstructors();
       expect(constructors.length).assertEqual(1);
     });
 

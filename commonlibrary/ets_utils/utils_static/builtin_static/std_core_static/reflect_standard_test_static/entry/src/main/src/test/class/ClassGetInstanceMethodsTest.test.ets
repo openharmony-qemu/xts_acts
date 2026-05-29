@@ -558,7 +558,8 @@ export default function ClassGetInstanceMethodsTest(): void {
       let cls = Class.from<ExternalClass>();
       let methods = cls.getInstanceMethods();
 
-      expect(methods.length).assertLargerOrEqual(0);
+      expect(methods.length).assertEqual(1);
+      expect(methods[0].getName()).assertEqual("extMethod");
     });
 
     /**
@@ -664,7 +665,8 @@ export default function ClassGetInstanceMethodsTest(): void {
     it('testClassGetInstanceMethods007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
       let methods = cls.getInstanceMethods();
-      expect(methods.length).assertLargerOrEqual(0);
+      expect(methods.length).assertLarger(0);
+      expect(methods[0].getName().length).assertLarger(0);
     });
 
   });

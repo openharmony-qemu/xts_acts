@@ -321,7 +321,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0100
      * @tc.name testClassIsFuncObjAsync001
-     * @tc.desc Verify isFuncObjAsync case 001: required parameter
+     * @tc.desc Verify isFuncObjAsync case 001: async function declaration without parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,13 +333,13 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0200
      * @tc.name testClassIsFuncObjAsync002
-     * @tc.desc Verify isFuncObjAsync case 002: async function declaration
+     * @tc.desc Verify isFuncObjAsync case 002: async function declaration with parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl002Dedicated)).assertEqual(true);
+      expect(reflect.isFuncObjAsync(asyncWithParams005)).assertEqual(true);
     });
 
     /**

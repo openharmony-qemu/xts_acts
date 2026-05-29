@@ -274,7 +274,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1200
      * @tc.name testConstructorGetParameterType012
-     * @tc.desc Verify ConstructorGetParameterType case 012: no parameters constructor return undefined
+     * @tc.desc Verify ConstructorGetParameterType case 012: no parameters constructor throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -292,7 +292,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1300
      * @tc.name testConstructorGetParameterType013
-     * @tc.desc Verify ConstructorGetParameterType case 013: when return undefined
+     * @tc.desc Verify ConstructorGetParameterType case 013: out-of-range index throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

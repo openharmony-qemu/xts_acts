@@ -1779,7 +1779,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_1000
      * @tc.name testClassFrom100
-     * @tc.desc Verify ClassFrom case 100: Class object performance
+     * @tc.desc Verify ClassFrom case 100: Class.from createInstance returns valid instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

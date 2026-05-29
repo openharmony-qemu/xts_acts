@@ -111,7 +111,7 @@ enum TestEnum034 { A, B }
 
 abstract class AbstractClass035 { }
 
-class FinalClass036 { }
+final class FinalClass036 { }
 
 class MyClass040 implements MyInterface040 { }
 
@@ -643,7 +643,7 @@ export default function ClassIsInterfaceTest(): void {
     */
     it('testClassIsInterface034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass036>();
-      expect(cls.isFinal()).assertFalse();
+      expect(cls.isFinal()).assertTrue();
       expect(cls.isInterface()).assertFalse();
     });
 
@@ -669,9 +669,9 @@ export default function ClassIsInterfaceTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsInterface036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyInterface003>();
-      expect(cls.isInterface()).assertTrue();
-      expect(cls.isUnion()).assertFalse();
+      let cls = Class.from<int | string>();
+      expect(cls.isUnion()).assertTrue();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**

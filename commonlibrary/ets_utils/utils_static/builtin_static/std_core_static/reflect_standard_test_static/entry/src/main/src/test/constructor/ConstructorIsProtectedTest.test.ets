@@ -122,7 +122,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0100
      * @tc.name testConstructorIsProtected001
-     * @tc.desc Verify ConstructorIsProtected case 001: protectedconstructor return true
+     * @tc.desc Verify ConstructorIsProtected case 001: protected class has no accessible constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -179,7 +179,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0500
      * @tc.name testConstructorIsProtected005
-     * @tc.desc Verify ConstructorIsProtected case 005: protected parameters constructor return true
+     * @tc.desc Verify ConstructorIsProtected case 005: protected constructor class has no accessible constructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

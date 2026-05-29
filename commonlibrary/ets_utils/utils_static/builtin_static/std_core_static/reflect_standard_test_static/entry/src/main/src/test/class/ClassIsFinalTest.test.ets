@@ -604,7 +604,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2400
      * @tc.name testClassIsFinal024
-     * @tc.desc Verify ClassIsFinal case 024: get final isFinal
+     * @tc.desc Verify ClassIsFinal case 024: final derived class isFinal true and base isFinal false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -619,7 +619,7 @@ export default function ClassIsFinalTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISFINAL_2500
      * @tc.name testClassIsFinal025
-     * @tc.desc Verify ClassIsFinal case 025: get final isFinal
+     * @tc.desc Verify ClassIsFinal case 025: non-final derived and base both isFinal false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

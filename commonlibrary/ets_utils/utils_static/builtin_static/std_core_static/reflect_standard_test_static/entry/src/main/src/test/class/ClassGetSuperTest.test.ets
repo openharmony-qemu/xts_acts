@@ -107,6 +107,8 @@ class GenericParent017<T> {
   public value: T | undefined = undefined
 }
 
+class GenericChild017 extends GenericParent017<int> {}
+
 enum TestEnum019 {
   VALUE1,
   VALUE2
@@ -483,17 +485,16 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1400
      * @tc.name testClassGetSuper014
-     * @tc.desc Verify ClassGetSuper case 014: array type
+     * @tc.desc Verify ClassGetSuper case 014: FixedArray type getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrClass = Class.from<Array<int>>()
+      let arrClass = Class.from<FixedArray<int>>()
       let arrSuper = arrClass.getSuper()
       expect(arrSuper !== null).assertTrue()
       expect(arrSuper!.getName()).assertEqual("std.core.Object")
-      console.info(arrSuper!.getName())
     });
 
     /**
@@ -515,16 +516,16 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1600
      * @tc.name testClassGetSuper016
-     * @tc.desc Verify ClassGetSuper case 016: inheritance getSuper returns parent Class
+     * @tc.desc Verify ClassGetSuper case 016: generic class getSuper returns parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<ChildClass005>()
+      let clazz = Class.from<GenericChild017>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
-      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.ParentClass005")
+      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.GenericParent017")
     });
 
     /**

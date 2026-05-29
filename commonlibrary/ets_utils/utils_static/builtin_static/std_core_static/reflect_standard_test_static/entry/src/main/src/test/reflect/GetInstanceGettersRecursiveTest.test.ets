@@ -134,6 +134,26 @@ class DeepGetterLevel5 extends DeepGetterLevel4 {
   }
 }
 
+class SkipMiddleGetterL1 {
+  private _field1: string = '';
+
+  public get field1(): string {
+    return this._field1;
+  }
+}
+
+class SkipMiddleGetterL2 extends SkipMiddleGetterL1 {
+  private _field2: string = '';
+}
+
+class SkipMiddleGetterL3 extends SkipMiddleGetterL2 {
+  private _field3: string = '';
+
+  public get field3(): string {
+    return this._field3;
+  }
+}
+
 class OverrideBaseClass {
   private _value: Object = new Object();
 
@@ -934,9 +954,9 @@ export default function GetInstanceGettersRecursiveTest(): void {
      * @tc.level Level 2
      */
     it('testGetInstanceGettersRecursive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<DeepGetterLevel3>();
+      let cls = Class.from<SkipMiddleGetterL3>();
       let getters = reflect.getInstanceGettersRecursive(cls);
-      expect(getters.length).assertEqual(3);
+      expect(getters.length).assertEqual(2);
       let field1Count: int = 0;
       let field2Count: int = 0;
       let field3Count: int = 0;
@@ -950,7 +970,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
         }
       }
       expect(field1Count).assertEqual(1);
-      expect(field2Count).assertEqual(1);
+      expect(field2Count).assertEqual(0);
       expect(field3Count).assertEqual(1);
     });
 
@@ -1005,6 +1025,8 @@ export default function GetInstanceGettersRecursiveTest(): void {
       expect(getters.length).assertEqual(2);
       expect(getters[0].getName()).assertEqual("%%get-value");
       expect(getters[1].getName()).assertEqual("%%get-value");
+      expect(getters[0].getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}OverrideDerivedClass`);
+      expect(getters[1].getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}OverrideBaseClass`);
     });
 
     /**
@@ -1021,6 +1043,8 @@ export default function GetInstanceGettersRecursiveTest(): void {
       expect(getters.length).assertEqual(2);
       expect(getters[0].getReturnType().getName()).assertEqual("std.core.String");
       expect(getters[1].getReturnType().getName()).assertEqual("std.core.Object");
+      expect(getters[0].getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}OverrideDerivedClass`);
+      expect(getters[1].getOwner().getName()).assertEqual(`${GETTERS_TEST_MODULE_PREFIX}OverrideBaseClass`);
     });
 
     /**

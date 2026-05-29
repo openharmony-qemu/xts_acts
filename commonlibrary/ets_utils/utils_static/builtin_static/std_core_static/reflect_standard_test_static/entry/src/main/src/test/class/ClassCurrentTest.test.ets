@@ -1065,7 +1065,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3800
      * @tc.name testClassCurrent038
-     * @tc.desc Verify ClassCurrent case 038: verify current() call performance
+     * @tc.desc Verify ClassCurrent case 038: verify current() call completes without error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1079,7 +1079,7 @@ export default function ClassCurrentTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_CURRENT_3900
      * @tc.name testClassCurrent039
-     * @tc.desc Verify ClassCurrent case 039: current() and of() from() performance
+     * @tc.desc Verify ClassCurrent case 039: current() of() from() calls complete without error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

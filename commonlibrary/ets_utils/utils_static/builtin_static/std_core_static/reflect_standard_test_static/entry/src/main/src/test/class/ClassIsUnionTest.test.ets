@@ -65,9 +65,8 @@ export default function ClassIsUnionTest(): void {
     */
     it('testClassIsUnion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: int | string = 42;
-      let cls = Class.ofAny(obj);
-      expect(cls !== undefined).assertTrue();
-      expect(cls!.isUnion()).assertFalse();
+      let cls = Class.of(obj);
+      expect(cls.isUnion()).assertFalse();
     });
 
     /**
@@ -205,7 +204,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_1200
      * @tc.name testClassIsUnion012
-     * @tc.desc Verify ClassIsUnion case 012: null or undefined type return true
+     * @tc.desc Verify ClassIsUnion case 012: T|null union type isUnion returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -218,7 +217,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_1300
      * @tc.name testClassIsUnion013
-     * @tc.desc Verify ClassIsUnion case 013: undefined type return true
+     * @tc.desc Verify ClassIsUnion case 013: T|undefined nullish type isUnion returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -231,7 +230,7 @@ export default function ClassIsUnionTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISUNION_1400
      * @tc.name testClassIsUnion014
-     * @tc.desc Verify ClassIsUnion case 014: parameters type T undefined return true
+     * @tc.desc Verify ClassIsUnion case 014: T|undefined nullish type isUnion returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

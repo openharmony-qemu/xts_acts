@@ -337,13 +337,12 @@ export default function ConstructorEqualsTest(): void {
      * @tc.level Level 2
     */
     it('testConstructorEquals015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass001>();
-      let ctor1 = asCtorList(cls)[0];
-      let ctor2 = asCtorList(cls)[0];
-      let ctor3 = asCtorList(cls)[0];
-      if (ctor1.equals(ctor2) && ctor2.equals(ctor3)) {
-        expect(ctor1.equals(ctor3)).assertTrue();
-      }
+      let ctor1 = asCtorList(Class.from<MyClass001>())[0];
+      let ctor2 = asCtorList(Class.from<MyClass001>())[0];
+      let ctor3 = asCtorList(Class.from<MyClass001>())[0];
+      expect(ctor1.equals(ctor2)).assertTrue();
+      expect(ctor2.equals(ctor3)).assertTrue();
+      expect(ctor1.equals(ctor3)).assertTrue();
     });
 
     /**
@@ -403,8 +402,9 @@ export default function ConstructorEqualsTest(): void {
      * @tc.level Level 2
     */
     it('testConstructorEquals019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let constructors = asCtorList(Class.from<MyClass021>());
-      expect(constructors.length).assertLarger(0);
+      let ctor1 = asCtorList(Class.from<NoArgCtor003>())[0];
+      let ctor2 = asCtorList(Class.from<IntCtor003>())[0];
+      expect(ctor1.equals(ctor2)).assertFalse();
     });
 
     /**

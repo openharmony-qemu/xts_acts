@@ -45,17 +45,26 @@ class StaticCaller007 {
 }
 
 class ConstructorCaller008 {
+  public callerName: string = "";
+
   public constructor() {
+    let callerClass = Class.ofCaller();
+    this.callerName = callerClass ? callerClass.getName() : "unknown";
   }
 }
 
 class PropertyCaller009 {
-  private _value: string = ''
+  private _value: string = '';
+  public lastCallerName: string = '';
+
   public get value(): string {
-    return this._value
+    let callerClass = Class.ofCaller();
+    this.lastCallerName = callerClass ? callerClass.getName() : "";
+    return this._value;
   }
+
   public set value(val: string) {
-    this._value = val
+    this._value = val;
   }
 }
 
@@ -139,9 +148,12 @@ class Service018 {
 }
 
 class Logger018 {
+  public static lastCallerName: string = "";
+
   public static log(message: string): void {
     let callerClass = Class.ofCaller()
-    let className = callerClass ? callerClass.getName() : "unknown"
+    Logger018.lastCallerName = callerClass ? callerClass.getName() : "unknown"
+    let className = Logger018.lastCallerName
     console.info(`[${className}] ${message}`)
   }
 }
@@ -182,6 +194,7 @@ class TracedClass020 {
 
 class Tracer020 {
   private static depth: int = 0
+  public static lastCallerName: string = ""
 
   public static popDepth(): void {
     Tracer020.depth--
@@ -189,12 +202,13 @@ class Tracer020 {
 
   public static trace(methodName: string): void {
     let callerClass = Class.ofCaller()
+    Tracer020.lastCallerName = callerClass ? callerClass.getName() : "?"
     let count: int = Tracer020.depth
     let indent = ""
     for (let i = 0; i < count; i++) {
       indent = indent + "  "
     }
-    let className = callerClass ? callerClass.getName() : "?"
+    let className = Tracer020.lastCallerName
     console.info(`${indent}${className}.${methodName}`)
     Tracer020.depth++
   }
@@ -232,10 +246,15 @@ class Injector021 {
 }
 
 class PerformanceTest022 {
+  public lastCallerName: string = ""
+
   public runManyTimes(): void {
     let startTime = Date.now()
     for (let i = 0; i < 10000; i++) {
       let callerClass = Class.ofCaller()
+      if (callerClass) {
+        this.lastCallerName = callerClass.getName()
+      }
     }
     let endTime = Date.now()
     console.info(`Time: ${endTime - startTime}ms`)
@@ -442,8 +461,11 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfCaller002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<CallerClass004>();
-      expect(cls.isUnion()).assertFalse();
+      let obj = new AnonymousCaller016();
+      let result = obj.testAnonymous();
+      expect(result !== undefined && result !== null).assertTrue();
+      expect(result!.getName().indexOf("lambda") >= 0).assertEqual(true);
+      expect(result!.getName().indexOf(OFCALLER_MODULE) >= 0).assertEqual(true);
     });
 
     /**
@@ -500,8 +522,7 @@ export default function ClassOfCallerTest(): void {
     */
     it('testClassOfCaller006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConstructorCaller008();
-      expect(obj !== null).assertTrue();
-      expect(Class.from<ConstructorCaller008>().getName()).assertEqual("entry.src.main.src.test.class.ClassOfCallerTest.test.ConstructorCaller008");
+      expect(obj.callerName).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -516,6 +537,7 @@ export default function ClassOfCallerTest(): void {
       let obj = new PropertyCaller009();
       obj.value = "test";
       expect(obj.value).assertEqual("test");
+      expect(obj.lastCallerName).assertEqual(OFCALLER_HARNESS);
     });
 
     /**
@@ -613,9 +635,10 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfCaller014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      Logger018.lastCallerName = "";
       let service = new Service018();
       service.doWork();
-      expect(Class.from<Service018>().getName()).assertEqual("entry.src.main.src.test.class.ClassOfCallerTest.test.Service018");
+      expect(Logger018.lastCallerName).assertEqual(`${OFCALLER_MODULE}.Service018`);
     });
 
     /**
@@ -643,9 +666,10 @@ export default function ClassOfCallerTest(): void {
      * @tc.level Level 2
     */
     it('testClassOfCaller016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      Tracer020.lastCallerName = "";
       let t = new TracedClass020();
       t.methodA();
-      expect(Class.from<TracedClass020>().getName()).assertEqual("entry.src.main.src.test.class.ClassOfCallerTest.test.TracedClass020");
+      expect(Tracer020.lastCallerName).assertEqual(`${OFCALLER_MODULE}.TracedClass020`);
     });
 
     /**
@@ -673,7 +697,7 @@ export default function ClassOfCallerTest(): void {
     it('testClassOfCaller018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let p = new PerformanceTest022();
       p.runManyTimes();
-      expect(Class.from<PerformanceTest022>().getName()).assertEqual("entry.src.main.src.test.class.ClassOfCallerTest.test.PerformanceTest022");
+      expect(p.lastCallerName).assertEqual(OFCALLER_HARNESS);
     });
 
     /**

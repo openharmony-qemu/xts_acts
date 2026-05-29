@@ -557,9 +557,9 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new MyClass004();
-      let cls = Class.of(obj);
-      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass004");
+      let boxedStr: Object = "hello" as Object;
+      let cls = Class.of(boxedStr);
+      expect(cls.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -571,10 +571,10 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new Map<int, string>();
-      let cls = Class.of(obj);
+      let boxedBool: Object = true as Object;
+      let cls = Class.of(boxedBool);
       expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromBooleanFqn());
     });
 
     /**
@@ -586,9 +586,10 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new ChildClass009();
-      let cls = Class.of(obj);
-      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ChildClass009");
+      let nanVal: double = 0.0 / 0.0;
+      let boxedNaN: Object = nanVal as Object;
+      let cls = Class.of(boxedNaN);
+      expect(cls.getName()).assertEqual(Utils.scalarClassFromDoubleFqn());
     });
 
     /**

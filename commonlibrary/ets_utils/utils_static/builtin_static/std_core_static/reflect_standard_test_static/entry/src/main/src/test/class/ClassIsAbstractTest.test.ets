@@ -801,7 +801,10 @@ export default function ClassIsAbstractTest(): void {
     */
     it('testClassIsAbstract037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Factory039>();
-      expect(cls.isAbstract()).assertTrue();
+      let result1 = cls.isAbstract();
+      let result2 = cls.isAbstract();
+      expect(result1).assertEqual(result2);
+      expect(result1).assertTrue();
     });
 
     /**
