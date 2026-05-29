@@ -183,7 +183,7 @@ public:
         void *&virAddr);
     void InputEnableRepeatSleep();
     int32_t ReadFrameData(uint8_t *dst, int32_t &readFileIndex, OHNativeWindowBuffer *ohNativeWindowBuffer);
-    void AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeWindowBuffer *ohNativeWindowBuffer)
+    void AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeWindowBuffer *ohNativeWindowBuffer);
     int32_t HandleParamSwitch(int32_t inputframeCount, bool &isParamSetSurface);
     int32_t QueryInputBuffer(uint32_t index, int64_t timeoutUs);
     int32_t QueryOutputBuffer(uint32_t index, int64_t timeoutUs);

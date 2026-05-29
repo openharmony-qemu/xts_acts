@@ -179,7 +179,7 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
     VEncAPI11Sample *sample = static_cast<VEncAPI11Sample *>(userData);
-    if (!parameter && !sample) {
+    if (!parameter || !sample) {
         if (codec) {
             OH_VideoEncoder_PushInputParameter(codec, index);
         }
@@ -188,7 +188,6 @@ static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *para
     if (sample->frameCount % sample->ltrParam.ltrInterval == 0) {
         OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_MARK_LTR, 1);
     }
-    
     if (!sample->ltrParam.enableUseLtr) {
         sample->frameCount++;
         OH_VideoEncoder_PushInputParameter(codec, index);
@@ -205,13 +204,9 @@ static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *para
         }
     }
     if (sample->frameCount > g_useLtrIndex) {
-        if (!sample->ltrParam.useLtrOnce) {
+        if (!sample->ltrParam.useLtrOnce || !g_useLtrOnce) {
             OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, g_useLtrIndex);
-        } else {
-            if (!g_useLtrOnce) {
-                OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, g_useLtrIndex);
-                g_useLtrOnce = true;
-            }
+            g_useLtrOnce = true;
         }
     } else if (sample->frameCount == g_useLtrIndex && sample->frameCount > 0) {
         int32_t sampleInterval = sample->ltrParam.ltrInterval;
