@@ -71,6 +71,8 @@ const PARAM_EDM_MIC_DISABLE = "persist.edm.mic_disable";
 
 const TEST_BUNDLENAME: string = "com.test.bundlename";
 
+const SYSTEM_CORE_PERMISSION_DOWNLOAD: string = 'ohos.permission.DOWNLOAD_SESSION_MANAGER';
+
 const ENTINFO2: adminManager.EnterpriseInfo = {
   name: "company2",
   description: "edm demo2"
@@ -334,5 +336,5 @@ export {
   TEST_PERMISSION_LIST_1, TEST_PERMISSION_1, TEST_INVALID_APP_INSTANCE, APP_IDS_AND_IDENTIFIER_1,
   OTHER_WANT, NOT_EXIST_WANT, MARKET_APPS, ERROR_MARKET_APPS, BLUETOOTH_STATE, WIFI_STATE,
   getBluetoothState, setBluetoothState, getWifiState, setWifiState, getErrorCode, getInvalidPixelMap,
-  INVALID_PIXEL_MAP
+  INVALID_PIXEL_MAP, SYSTEM_CORE_PERMISSION_DOWNLOAD, TEST_REAL_APP_ID_1
 }

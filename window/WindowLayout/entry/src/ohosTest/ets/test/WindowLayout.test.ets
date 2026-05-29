@@ -6714,7 +6714,7 @@ export default function windowLayoutTest() {
             await subWindow.destroyWindow();
             console.info(`${caseName} destroyWindow `);
             let maximizeOptions: window.MaximizeOptions = {
-              maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE,
+              maximizePresentation: window.MaximizePresentation.FOLLOW_APP_IMMERSIVE_SETTING,
           };
             subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
               await sleep(200)
@@ -6774,7 +6774,7 @@ export default function windowLayoutTest() {
             await subWindow.showWindow();
             console.info(`${caseName} show page `);
             let maximizeOptions: window.MaximizeOptions = {
-              maximizePresentation: window.MaximizePresentation.EXIT_IMMERSIVE
+              maximizePresentation: window.MaximizePresentation.ENTER_IMMERSIVE_DISABLE_TITLE_AND_DOCK_HOVER
             };
             subWindow.maximizeWithOptions(maximizeOptions).then(async ()=>{
               await sleep(200)

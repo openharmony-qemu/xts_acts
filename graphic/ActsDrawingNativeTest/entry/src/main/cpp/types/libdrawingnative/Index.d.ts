@@ -406,6 +406,9 @@ export const DrawingFontMeasureSingleChaWithFeatures: (caseName: number) => numb
 // Font Features related functions
 export const DrawingFontFeatures: (caseName: number) => number;
 
+// Font GetTextPathWithFallback related functions
+export const DrawingFontGetTextPathWithFallback: (caseName: number) => number;
+
 // GpuContext related functions
 export const DrawingGpuContext: (caseName: number) => number;
 

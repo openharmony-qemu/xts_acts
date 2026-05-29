@@ -1608,5 +1608,44 @@ export default function DrawingNativeFontTest() {
       const result = libDrawingNative.DrawingFontFeatures(2);
       expect(result).assertEqual(0);
     })
+
+    /**
+     * @tc.name   testFontGetTextPathWithFallbackNomal
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetTextPathWithFallback_0100
+     * @tc.desc   test for testFontGetTextPathWithFallbackNomal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
+     */
+    it('testFontGetTextPathWithFallbackNomal', Level.LEVEL0, () => {
+      const result = libDrawingNative.DrawingFontGetTextPathWithFallback(0);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontGetTextPathWithFallbackNull
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetTextPathWithFallback_0200
+     * @tc.desc   test for testFontGetTextPathWithFallbackNull
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontGetTextPathWithFallbackNull', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontGetTextPathWithFallback(1);
+      expect(result).assertEqual(0);
+    })
+
+    /**
+     * @tc.name   testFontGetTextPathWithFallbackMultipleCalls
+     * @tc.number SUB_GRAPHIC_GRAPHIC_2D_DrawingFontGetTextPathWithFallback_0300
+     * @tc.desc   test for testFontGetTextPathWithFallbackMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
+     */
+    it('testFontGetTextPathWithFallbackMultipleCalls', Level.LEVEL3, () => {
+      const result = libDrawingNative.DrawingFontGetTextPathWithFallback(2);
+      expect(result).assertEqual(0);
+    })
   })
 }

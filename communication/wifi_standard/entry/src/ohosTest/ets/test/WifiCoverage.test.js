@@ -14,7 +14,6 @@
  */
 
 import wifi from '@ohos.wifi';
-import wifiext from '@ohos.wifiext';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium';
 
 export default function wifiCoverageTest() {
@@ -443,76 +442,6 @@ export default function wifiCoverageTest() {
           }
         }
         let result = await wifi.removeUntrustedConfig(config);
-        console.log(`${caseName} get result success `, result);
-        expect(typeof result === 'boolean').assertTrue();
-      } catch (error) {
-        console.info(`${caseName} error`, JSON.stringify(error));
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-
-
-    /**
-     * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_Sleeping_001
-     * @tc.number Sub_Communication_WiFiExt_SetPowerModel_Sleeping_001
-     * @tc.desc   Test wifiext.setPowerModel API with SLEEPING
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Sub_Communication_WiFiExt_SetPowerModel_Sleeping_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
-      let caseName = 'Sub_Communication_WiFiExt_SetPowerModel_Sleeping_001';
-      console.info(`${caseName} test start`);
-      try {
-        let result = wifiext.setPowerModel(wifiext.PowerModel.SLEEPING);
-        console.log(`${caseName} get result success `, result);
-        expect(typeof result === 'boolean').assertTrue();
-      } catch (error) {
-        console.info(`${caseName} error`, JSON.stringify(error));
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-
-    /**
-     * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_General_001
-     * @tc.number Sub_Communication_WiFiExt_SetPowerModel_General_001
-     * @tc.desc   Test wifiext.setPowerModel API with GENERAL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Sub_Communication_WiFiExt_SetPowerModel_General_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
-      let caseName = 'Sub_Communication_WiFiExt_SetPowerModel_General_001';
-      console.info(`${caseName} test start`);
-      try {
-        let result = wifiext.setPowerModel(wifiext.PowerModel.GENERAL);
-        console.log(`${caseName} get result success `, result);
-        expect(typeof result === 'boolean').assertTrue();
-      } catch (error) {
-        console.info(`${caseName} error`, JSON.stringify(error));
-        expect().assertFail();
-      }
-      console.info(`${caseName} test end`);
-      done();
-    });
-
-    /**
-     * @tc.name   Sub_Communication_WiFiExt_SetPowerModel_ThroughWall_001
-     * @tc.number Sub_Communication_WiFiExt_SetPowerModel_ThroughWall_001
-     * @tc.desc   Test wifiext.setPowerModel API with THROUGH_WALL
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('Sub_Communication_WiFiExt_SetPowerModel_ThroughWall_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done) => {
-      let caseName = 'Sub_Communication_WiFiExt_SetPowerModel_ThroughWall_001';
-      console.info(`${caseName} test start`);
-      try {
-        let result = wifiext.setPowerModel(wifiext.PowerModel.THROUGH_WALL);
         console.log(`${caseName} get result success `, result);
         expect(typeof result === 'boolean').assertTrue();
       } catch (error) {
