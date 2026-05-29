@@ -89,15 +89,15 @@ export default function createPremultipliedPixelMapTest(): void {
     });
 
     /**
-     * @tc.name   createPremultipliedPixelMap_callback_001
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_001
+     * @tc.name   SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0100
+     * @tc.number SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0100
      * @tc.desc   createPremultipliedPixelMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createPremultipliedPixelMap_callback_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'createPremultipliedPixelMap_callback_001';
+    it('SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0100', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0100';
       const color: ArrayBuffer = new ArrayBuffer(16);
       let optsForUnpre: image.InitializationOptions = {
         editable: true,
@@ -121,15 +121,15 @@ export default function createPremultipliedPixelMapTest(): void {
     })
 
     /**
-     * @tc.name   createPremultipliedPixelMap_callback_002
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_002
+     * @tc.name   SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0200
+     * @tc.number SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0200
      * @tc.desc   createPremultipliedPixelMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createPremultipliedPixelMap_callback_002', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'createPremultipliedPixelMap_callback_002';
+    it('SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0200', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0200';
       const color: ArrayBuffer = new ArrayBuffer(16);
       let optsForUnpre: image.InitializationOptions = {
         editable: false,
@@ -153,15 +153,15 @@ export default function createPremultipliedPixelMapTest(): void {
     })
 
     /**
-     * @tc.name   createPremultipliedPixelMap_callback_005
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_005
+     * @tc.name   SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0300
+     * @tc.number SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0300
      * @tc.desc   createPremultipliedPixelMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createPremultipliedPixelMap_callback_005', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'createPremultipliedPixelMap_callback_005';
+    it('SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0300', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0300';
       const color: ArrayBuffer = new ArrayBuffer(1000 * 1000 * 4);
       let optsForUnpre: image.InitializationOptions = {
         editable: true,
@@ -185,15 +185,15 @@ export default function createPremultipliedPixelMapTest(): void {
     })
 
     /**
-     * @tc.name   createPremultipliedPixelMap_promise_001
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_006
+     * @tc.name   SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0400
+     * @tc.number SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0400
      * @tc.desc   createPremultipliedPixelMap
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createPremultipliedPixelMap_promise_001', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'createPremultipliedPixelMap_promise_001';
+    it('SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0400', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0400';
       const color: ArrayBuffer = new ArrayBuffer(16);
       let optsForUnpre: image.InitializationOptions = {
         editable: true,
@@ -217,15 +217,15 @@ export default function createPremultipliedPixelMapTest(): void {
     })
 
     /**
-     * @tc.name   createPremultipliedPixelMap_promise_003
-     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_008
+     * @tc.name   SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0500
+     * @tc.number SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0500
      * @tc.desc   getAssets
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('createPremultipliedPixelMap_promise_003', Level.LEVEL0, async (done: () => void) => {
-      const testName = 'createPremultipliedPixelMap_promise_003';
+    it('SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0500', Level.LEVEL0, async (done: () => void) => {
+      const testName = 'SUB_MEDIA_IMAGE_createPremultipliedPixelMap_static_0500';
       const color: ArrayBuffer = new ArrayBuffer(16);
       let optsForUnpre: image.InitializationOptions = {
         editable: false,
