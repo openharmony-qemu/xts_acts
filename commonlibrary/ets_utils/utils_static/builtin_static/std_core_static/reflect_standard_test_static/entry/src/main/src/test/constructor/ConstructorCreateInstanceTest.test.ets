@@ -328,8 +328,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance(["string instead of int"]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -347,8 +346,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -366,8 +364,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1, 2]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -528,8 +525,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance(["string"]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -547,8 +543,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance([1]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('TypeError');
+        expect(error.name).assertEqual('TypeError');
       }
     });
 
@@ -566,8 +561,7 @@ export default function ConstructorCreateInstanceTest(): void {
         ctor.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 

@@ -321,47 +321,36 @@ export default function ClassOfTest(): void {
       expect(cls !== null).assertTrue();
     });
 
+    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0200
      * @tc.name testClassOf002
-     * @tc.desc Verify ClassOf case 002: of() requires an instance argument
+     * @tc.desc Verify ClassOf case 002: Class.of with extra parameters throws or assertFail
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOf002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.of(new Map<int, string>()) !== null).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0300
-     * @tc.name testClassOf003
-     * @tc.desc Verify ClassOf case 003: Class.of with extra parameters throws or assertFail
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let obj = new Map<int, string>();
         looseClassOf().of(obj, "extra" as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('Class.of expects 1 argument') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('Class.of expects 1 argument') >= 0).assertEqual(true);
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0400
-     * @tc.name testClassOf004
-     * @tc.desc Verify ClassOf case 004: instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0300
+     * @tc.name testClassOf003
+     * @tc.desc Verify ClassOf case 003: instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass004();
       let clsOf = Class.of(obj);
       let clsFrom = Class.from<MyClass004>();
@@ -369,70 +358,70 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0500
-     * @tc.name testClassOf005
-     * @tc.desc Verify ClassOf case 005: Mapobject
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0400
+     * @tc.name testClassOf004
+     * @tc.desc Verify ClassOf case 004: Mapobject
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("std.core.Map");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0600
-     * @tc.name testClassOf006
-     * @tc.desc Verify ClassOf case 006: Arrayobject
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0500
+     * @tc.name testClassOf005
+     * @tc.desc Verify ClassOf case 005: Arrayobject
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Array<int>();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("std.core.Array");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0700
-     * @tc.name testClassOf007
-     * @tc.desc Verify ClassOf case 007: Setobject
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0600
+     * @tc.name testClassOf006
+     * @tc.desc Verify ClassOf case 006: Setobject
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Set<string>();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("std.core.Set");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0800
-     * @tc.name testClassOf008
-     * @tc.desc Verify ClassOf case 008: FixedArrayobject
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0700
+     * @tc.name testClassOf007
+     * @tc.desc Verify ClassOf case 007: FixedArrayobject
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: FixedArray<int> = [1, 2, 3];
       let cls = Class.of(obj);
       expect(cls.isFixedArray()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0900
-     * @tc.name testClassOf009
-     * @tc.desc Verify ClassOf case 009: instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0800
+     * @tc.name testClassOf008
+     * @tc.desc Verify ClassOf case 008: instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ChildClass009();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ChildClass009");
@@ -442,14 +431,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1000
-     * @tc.name testClassOf010
-     * @tc.desc Verify ClassOf case 010: interface instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0900
+     * @tc.name testClassOf009
+     * @tc.desc Verify ClassOf case 009: interface instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass010();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass010");
@@ -457,68 +446,68 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1100
-     * @tc.name testClassOf011
-     * @tc.desc Verify ClassOf case 011: object interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1000
+     * @tc.name testClassOf010
+     * @tc.desc Verify ClassOf case 010: object interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: MyInterface011 = { name: "Alice", age: 30 };
       let cls = Class.of(obj);
       expect(reflect.isLiteralInitializedInterface(obj)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1200
-     * @tc.name testClassOf012
-     * @tc.desc Verify ClassOf case 012: generic instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1100
+     * @tc.name testClassOf011
+     * @tc.desc Verify ClassOf case 011: generic instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new GenericClass012<int>();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.GenericClass012");
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1200
+     * @tc.name testClassOf012
+     * @tc.desc Verify ClassOf case 012: null
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassOf012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.of(null);
+      expect(cls !== null).assertTrue();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1300
      * @tc.name testClassOf013
-     * @tc.desc Verify ClassOf case 013: null
+     * @tc.desc Verify ClassOf case 013: Class.of(null) is not undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOf013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
-      expect(cls !== null).assertTrue();
+      expect(cls !== undefined).assertTrue();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1400
      * @tc.name testClassOf014
-     * @tc.desc Verify ClassOf case 014: Class.of(null) is not undefined
+     * @tc.desc Verify ClassOf case 014: Class.of on Array instance and null both return non-null Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOf014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.of(null);
-      expect(cls !== undefined).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1500
-     * @tc.name testClassOf015
-     * @tc.desc Verify ClassOf case 015: Class.of on Array instance and null both return non-null Class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Array<int>();
       let cls1 = Class.of(obj);
       expect(cls1 !== null).assertTrue();
@@ -528,32 +517,31 @@ export default function ClassOfTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1500
+     * @tc.name testClassOf015
+     * @tc.desc Verify ClassOf case 015: undefined
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassOf015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      try {
+        Class.of(undefined as Object);
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual('ClassCastError');
+      }
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1600
      * @tc.name testClassOf016
-     * @tc.desc Verify ClassOf case 016: undefined
+     * @tc.desc Verify ClassOf case 016: number
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOf016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      try {
-        Class.of(undefined as Object);
-        expect().assertFail();
-      } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
-      }
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1700
-     * @tc.name testClassOf017
-     * @tc.desc Verify ClassOf case 017: number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxedInt: Object = 42 as Object;
       let cls = Class.of(boxedInt);
       expect(cls !== null).assertTrue();
@@ -561,28 +549,28 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1800
-     * @tc.name testClassOf018
-     * @tc.desc Verify ClassOf case 018: string
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1700
+     * @tc.name testClassOf017
+     * @tc.desc Verify ClassOf case 017: string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass004();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass004");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1900
-     * @tc.name testClassOf019
-     * @tc.desc Verify ClassOf case 019: boolean
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1800
+     * @tc.name testClassOf018
+     * @tc.desc Verify ClassOf case 018: boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls = Class.of(obj);
       expect(cls !== null).assertTrue();
@@ -590,42 +578,42 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2000
-     * @tc.name testClassOf020
-     * @tc.desc Verify ClassOf case 020: NaN
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1900
+     * @tc.name testClassOf019
+     * @tc.desc Verify ClassOf case 019: NaN
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ChildClass009();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ChildClass009");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2100
-     * @tc.name testClassOf021
-     * @tc.desc Verify ClassOf case 021: Infinity
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2000
+     * @tc.name testClassOf020
+     * @tc.desc Verify ClassOf case 020: Infinity
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass010();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass010");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2200
-     * @tc.name testClassOf022
-     * @tc.desc Verify ClassOf case 022: return Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2100
+     * @tc.name testClassOf021
+     * @tc.desc Verify ClassOf case 021: return Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls: Class = Class.of(obj);
       expect(typeof cls.getName).assertEqual("function");
@@ -633,14 +621,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2300
-     * @tc.name testClassOf023
-     * @tc.desc Verify ClassOf case 023: return Class method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2200
+     * @tc.name testClassOf022
+     * @tc.desc Verify ClassOf case 022: return Class method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
       let cls = Class.of(obj);
       expect(typeof cls.getName).assertEqual("function");
@@ -648,28 +636,28 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2400
-     * @tc.name testClassOf024
-     * @tc.desc Verify ClassOf case 024: return Class object call getName
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2300
+     * @tc.name testClassOf023
+     * @tc.desc Verify ClassOf case 023: return Class object call getName
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new TestClass024();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.TestClass024");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2500
-     * @tc.name testClassOf025
-     * @tc.desc Verify ClassOf case 025: return Class object get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2400
+     * @tc.name testClassOf024
+     * @tc.desc Verify ClassOf case 024: return Class object get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ChildClass025();
       let cls = Class.of(obj);
       let superCls = cls.getSuper();
@@ -678,9 +666,23 @@ export default function ClassOfTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2500
+     * @tc.name testClassOf025
+     * @tc.desc Verify ClassOf case 025: return Class object is type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassOf025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj = new MyClass();
+      let cls = Class.of(obj);
+      expect(cls.isPrimitive()).assertFalse();
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2600
      * @tc.name testClassOf026
-     * @tc.desc Verify ClassOf case 026: return Class object is type
+     * @tc.desc Verify ClassOf case 026: return Class object is interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,32 +690,18 @@ export default function ClassOfTest(): void {
     it('testClassOf026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
       let cls = Class.of(obj);
-      expect(cls.isPrimitive()).assertFalse();
+      expect(cls.isInterface()).assertFalse();
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2700
      * @tc.name testClassOf027
-     * @tc.desc Verify ClassOf case 027: return Class object is interface
+     * @tc.desc Verify ClassOf case 027: object call ofreturn same Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassOf027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new MyClass();
-      let cls = Class.of(obj);
-      expect(cls.isInterface()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2800
-     * @tc.name testClassOf028
-     * @tc.desc Verify ClassOf case 028: object call ofreturn same Class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls1 = Class.of(obj);
       let cls2 = Class.of(obj);
@@ -721,14 +709,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2900
-     * @tc.name testClassOf029
-     * @tc.desc Verify ClassOf case 029: different instance return same Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2800
+     * @tc.name testClassOf028
+     * @tc.desc Verify ClassOf case 028: different instance return same Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1 = new Map<int, string>();
       let obj2 = new Map<int, string>();
       let cls1 = Class.of(obj1);
@@ -737,42 +725,42 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3000
-     * @tc.name testClassOf030
-     * @tc.desc Verify ClassOf case 030: Object nulltype
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2900
+     * @tc.name testClassOf029
+     * @tc.desc Verify ClassOf case 029: Object nulltype
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(null);
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.Null");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3100
-     * @tc.name testClassOf031
-     * @tc.desc Verify ClassOf case 031: object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3000
+     * @tc.name testClassOf030
+     * @tc.desc Verify ClassOf case 030: object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3200
-     * @tc.name testClassOf032
-     * @tc.desc Verify ClassOf case 032: of instance from type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3100
+     * @tc.name testClassOf031
+     * @tc.desc Verify ClassOf case 031: of instance from type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls1 = Class.of(obj);
       let cls2 = Class.from<Map<int, string>>();
@@ -780,14 +768,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3300
-     * @tc.name testClassOf033
-     * @tc.desc Verify ClassOf case 033: of Object null ofAny Any
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3200
+     * @tc.name testClassOf032
+     * @tc.desc Verify ClassOf case 032: of Object null ofAny Any
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls1 = Class.of(obj);
       let cls2 = Class.ofAny(obj);
@@ -795,28 +783,28 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3400
-     * @tc.name testClassOf034
-     * @tc.desc Verify ClassOf case 034: of null ofAny null
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3300
+     * @tc.name testClassOf033
+     * @tc.desc Verify ClassOf case 033: of null ofAny null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.of(null);
       let cls2 = Class.ofAny(null);
       expect(cls1 === cls2).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3500
-     * @tc.name testClassOf035
-     * @tc.desc Verify ClassOf case 035: Class.of typed variable compiles and returns Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3400
+     * @tc.name testClassOf034
+     * @tc.desc Verify ClassOf case 034: Class.of typed variable compiles and returns Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let cls: Class = Class.of(obj);
       expect(cls !== null).assertTrue();
@@ -824,14 +812,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3600
-     * @tc.name testClassOf036
-     * @tc.desc Verify ClassOf case 036: Object null type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3500
+     * @tc.name testClassOf035
+     * @tc.desc Verify ClassOf case 035: Object null type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1: Object | null = new Map<int, string>();
       let cls1 = Class.of(obj1);
       let obj2: Object | null = null;
@@ -842,42 +830,42 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3700
-     * @tc.name testClassOf037
-     * @tc.desc Verify ClassOf case 037: get generic Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3600
+     * @tc.name testClassOf036
+     * @tc.desc Verify ClassOf case 036: get generic Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new GenericClass037<int, string>();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.GenericClass037");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3800
-     * @tc.name testClassOf038
-     * @tc.desc Verify ClassOf case 038: generic interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3700
+     * @tc.name testClassOf037
+     * @tc.desc Verify ClassOf case 037: generic interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ImplClass038();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ImplClass038");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3900
-     * @tc.name testClassOf039
-     * @tc.desc Verify ClassOf case 039: different generic parameters Map
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3800
+     * @tc.name testClassOf038
+     * @tc.desc Verify ClassOf case 038: different generic parameters Map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map1 = new Map<int, string>();
       let cls1 = Class.of(map1);
 
@@ -892,14 +880,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4000
-     * @tc.name testClassOf040
-     * @tc.desc Verify ClassOf case 040: different type Array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3900
+     * @tc.name testClassOf039
+     * @tc.desc Verify ClassOf case 039: different type Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr1 = new Array<int>();
       let cls1 = Class.of(arr1);
 
@@ -914,14 +902,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4100
-     * @tc.name testClassOf041
-     * @tc.desc Verify ClassOf case 041: different type Set
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4000
+     * @tc.name testClassOf040
+     * @tc.desc Verify ClassOf case 040: different type Set
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set1 = new Set<int>();
       let cls1 = Class.of(set1);
 
@@ -929,6 +917,24 @@ export default function ClassOfTest(): void {
       let cls2 = Class.of(set2);
       expect(cls1.getName()).assertEqual("std.core.Set");
       expect(cls2.getName()).assertEqual("std.core.Set");
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4100
+     * @tc.name testClassOf041
+     * @tc.desc Verify ClassOf case 041: array
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassOf041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: FixedArray<int> = [1, 2, 3];
+      let cls = Class.of(arr);
+      expect(cls.isFixedArray()).assertTrue();
+
+      let componentType = cls.getFixedArrayComponentType();
+      expect(componentType !== null).assertTrue();
+      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
     });
 
     /**
@@ -940,64 +946,46 @@ export default function ClassOfTest(): void {
      * @tc.level Level 2
     */
     it('testClassOf042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arr: FixedArray<int> = [1, 2, 3];
-      let cls = Class.of(arr);
-      expect(cls.isFixedArray()).assertTrue();
-
-      let componentType = cls.getFixedArrayComponentType();
-      expect(componentType !== null).assertTrue();
-      expect(componentType!.getName()).assertEqual(Utils.scalarReflectI32Fqn());
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4300
-     * @tc.name testClassOf043
-     * @tc.desc Verify ClassOf case 043: array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr = new Array<int>();
       let cls = Class.of(arr);
       expect(cls.isFixedArray()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4400
-     * @tc.name testClassOf044
-     * @tc.desc Verify ClassOf case 044: type Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4300
+     * @tc.name testClassOf043
+     * @tc.desc Verify ClassOf case 043: type Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(TestEnum044.VALUE1);
       expect(cls.isEnum()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4500
-     * @tc.name testClassOf045
-     * @tc.desc Verify ClassOf case 045: is object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4400
+     * @tc.name testClassOf044
+     * @tc.desc Verify ClassOf case 044: is object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.of(myFunction045);
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4600
-     * @tc.name testClassOf046
-     * @tc.desc Verify ClassOf case 046: Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4500
+     * @tc.name testClassOf045
+     * @tc.desc Verify ClassOf case 045: Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let asyncFunction = async (): Promise<string> => {
         return "test";
       };
@@ -1006,14 +994,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4700
-     * @tc.name testClassOf047
-     * @tc.desc Verify ClassOf case 047: inheritance Classget
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4600
+     * @tc.name testClassOf046
+     * @tc.desc Verify ClassOf case 046: inheritance Classget
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Child047();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.Child047");
@@ -1026,14 +1014,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4800
-     * @tc.name testClassOf048
-     * @tc.desc Verify ClassOf case 048: multiple interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4700
+     * @tc.name testClassOf047
+     * @tc.desc Verify ClassOf case 047: multiple interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MultiInterfaceClass048();
       let cls = Class.of(obj);
       let interfaces = Utils.fixedArrayToArray(cls.getInterfaces());
@@ -1041,70 +1029,70 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4900
-     * @tc.name testClassOf049
-     * @tc.desc Verify ClassOf case 049: scenario Classget
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4800
+     * @tc.name testClassOf048
+     * @tc.desc Verify ClassOf case 048: scenario Classget
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Parent049 = new Child049();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.Child049");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5000
-     * @tc.name testClassOf050
-     * @tc.desc Verify ClassOf case 050: interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4900
+     * @tc.name testClassOf049
+     * @tc.desc Verify ClassOf case 049: interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: MyInterface050 = new ImplClass1050();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ImplClass1050");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5100
-     * @tc.name testClassOf051
-     * @tc.desc Verify ClassOf case 051: empty instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5000
+     * @tc.name testClassOf050
+     * @tc.desc Verify ClassOf case 050: empty instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new EmptyClass051();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.EmptyClass051");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5200
-     * @tc.name testClassOf052
-     * @tc.desc Verify ClassOf case 052: LargeClass052 instance with 100 fields
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5100
+     * @tc.name testClassOf051
+     * @tc.desc Verify ClassOf case 051: LargeClass052 instance with 100 fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new LargeClass052();
       let cls = Class.of(obj);
       expect(cls !== null).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5300
-     * @tc.name testClassOf053
-     * @tc.desc Verify ClassOf case 053: call initialize object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5200
+     * @tc.name testClassOf052
+     * @tc.desc Verify ClassOf case 052: call initialize object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass053();
       let cls = Class.of(obj);
       cls.initialize();
@@ -1112,42 +1100,42 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5400
-     * @tc.name testClassOf054
-     * @tc.desc Verify ClassOf case 054: final Classget
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5300
+     * @tc.name testClassOf053
+     * @tc.desc Verify ClassOf case 053: final Classget
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new FinalClass054();
       let cls = Class.of(obj);
       expect(cls.isFinal()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5500
-     * @tc.name testClassOf055
-     * @tc.desc Verify ClassOf case 055: abstract class instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5400
+     * @tc.name testClassOf054
+     * @tc.desc Verify ClassOf case 054: abstract class instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ConcreteClass055();
       let cls = Class.of(obj);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.ConcreteClass055");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5600
-     * @tc.name testClassOf056
-     * @tc.desc Verify ClassOf case 056: call ofmethod performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5500
+     * @tc.name testClassOf055
+     * @tc.desc Verify ClassOf case 055: call ofmethod performance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let startTime = Date.now();
       for (let i = 0; i < 10000; i++) {
@@ -1159,14 +1147,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5700
-     * @tc.name testClassOf057
-     * @tc.desc Verify ClassOf case 057: different object call of
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5600
+     * @tc.name testClassOf056
+     * @tc.desc Verify ClassOf case 056: different object call of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objects = new Array<Object>();
       for (let i = 0; i < 1000; i++) {
         objects.push(new Map<int, string>());
@@ -1180,14 +1168,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5800
-     * @tc.name testClassOf058
-     * @tc.desc Verify ClassOf case 058: get Class object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5700
+     * @tc.name testClassOf057
+     * @tc.desc Verify ClassOf case 057: get Class object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
       let clsOf = Class.of(obj);
       let clsFrom = Class.from<MyClass>();
@@ -1195,14 +1183,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5900
-     * @tc.name testClassOf059
-     * @tc.desc Verify ClassOf case 059: type Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5800
+     * @tc.name testClassOf058
+     * @tc.desc Verify ClassOf case 058: type Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj1 = new MyClass();
       let obj2 = new MyClass();
       let cls1 = Class.of(obj1);
@@ -1211,14 +1199,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6000
-     * @tc.name testClassOf060
-     * @tc.desc Verify ClassOf case 060: scenario ofcall
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5900
+     * @tc.name testClassOf059
+     * @tc.desc Verify ClassOf case 059: scenario ofcall
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let clsOf = Class.of(obj);
       let clsFrom = Class.from<Map<int, string>>();
@@ -1226,14 +1214,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6100
-     * @tc.name testClassOf061
-     * @tc.desc Verify ClassOf case 061: multiple get object Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6000
+     * @tc.name testClassOf060
+     * @tc.desc Verify ClassOf case 060: multiple get object Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sharedObj = new Array<int>();
       for (let i = 0; i < 10; i++) {
         let cls = Class.of(sharedObj);
@@ -1242,41 +1230,41 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6200
-     * @tc.name testClassOf062
-     * @tc.desc Verify ClassOf case 062: using Class.of type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6100
+     * @tc.name testClassOf061
+     * @tc.desc Verify ClassOf case 061: using Class.of type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let map = new Map<int, string>();
       expect(isMap062(map)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6300
-     * @tc.name testClassOf063
-     * @tc.desc Verify ClassOf case 063: verify object is type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6200
+     * @tc.name testClassOf062
+     * @tc.desc Verify ClassOf case 062: verify object is type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Array<int>();
       let arrClass = Class.from<Array<int>>();
       expect(checkType063(obj, arrClass)).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6400
-     * @tc.name testClassOf064
-     * @tc.desc Verify ClassOf case 064: using Class.ofget type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6300
+     * @tc.name testClassOf063
+     * @tc.desc Verify ClassOf case 063: using Class.ofget type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let service = new Service064();
       let container = new Container064();
       container.register(service);
@@ -1284,28 +1272,28 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6500
-     * @tc.name testClassOf065
-     * @tc.desc Verify ClassOf case 065: Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6400
+     * @tc.name testClassOf064
+     * @tc.desc Verify ClassOf case 064: Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let data = new Data065();
       serialize065(data);
       expect(Class.of(data).getName()).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.Data065");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6600
-     * @tc.name testClassOf066
-     * @tc.desc Verify ClassOf case 066: verify Class.of in different API is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6500
+     * @tc.name testClassOf065
+     * @tc.desc Verify ClassOf case 065: verify Class.of in different API is
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new Map<int, string>();
       let clsOf = Class.of(obj);
       let clsFrom = Class.from<Map<int, string>>();
@@ -1314,28 +1302,28 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6700
-     * @tc.name testClassOf067
-     * @tc.desc Verify ClassOf case 067: using Class.of
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6600
+     * @tc.name testClassOf066
+     * @tc.desc Verify ClassOf case 066: using Class.of
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new MyClass();
       let className = legacyFunction067(obj);
       expect(className).assertEqual("entry.src.main.src.test.class.ClassOfTest.test.MyClass");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6800
-     * @tc.name testClassOf068
-     * @tc.desc Verify ClassOf case 068: boxed primitive via Object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6700
+     * @tc.name testClassOf067
+     * @tc.desc Verify ClassOf case 067: boxed primitive via Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boxedInt: Object = 123 as Object;
       let cls = Class.of(boxedInt);
       expect(cls !== null).assertTrue();
@@ -1343,14 +1331,14 @@ export default function ClassOfTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6900
-     * @tc.name testClassOf069
-     * @tc.desc Verify ClassOf case 069: safeGetClass069(null) matches Class.of(null)
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6800
+     * @tc.name testClassOf068
+     * @tc.desc Verify ClassOf case 068: safeGetClass069(null) matches Class.of(null)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassOf069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassOf068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let direct = Class.of(null);
       expect(direct !== null).assertTrue();
       let result = safeGetClass069(null);
