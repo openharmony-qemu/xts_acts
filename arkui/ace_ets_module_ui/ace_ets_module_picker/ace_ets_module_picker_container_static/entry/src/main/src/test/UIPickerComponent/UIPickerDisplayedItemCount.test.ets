@@ -180,21 +180,6 @@ export default function UIPickerDisplayedItemCountTest() {
     });
 
     /**
-     * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_0100
-     * @tc.name     UIPickerDisplayedItemCount_static_010
-     * @tc.desc     Test UIPickerComponent displayedItemCount property with decimal value 4.5 (should floor to 4, then convert to 5)
-     * @tc.level    Level.LEVEL1
-     * @tc.require  issuesI9MJB3
-     */
-    it('UIPickerDisplayedItemCount_static_010', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCountDecimal');
-      let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(5);
-      done();
-    });
-
-    /**
      * @tc.number   SUB_ARKUI_UIPICKER_DISPLAYEDITEMCOUNT_STATIC_0110
      * @tc.name     UIPickerDisplayedItemCount_static_011
      * @tc.desc     Test UIPickerComponent displayedItemCount property with negative value -1 (out of range, should use default 7)

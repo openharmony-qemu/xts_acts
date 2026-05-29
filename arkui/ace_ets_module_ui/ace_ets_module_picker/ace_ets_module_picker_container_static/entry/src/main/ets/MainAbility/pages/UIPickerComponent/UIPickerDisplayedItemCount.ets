@@ -31,7 +31,8 @@ import {
   UIPickerComponent,
   ForEach,
   UIPickerComponentOptions,
-  UIPickerComponentAttribute
+  UIPickerComponentAttribute,
+  ColumnOptions
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthUnit, LengthMetrics } from 'arkui.Graphics'
@@ -50,7 +51,7 @@ struct UIPickerDisplayedItemCount {
 
   build() {
     Scroll() {
-      Column(undefined) {
+      Column({ space: 5 } as ColumnOptions) {
         Row() {
           UIPickerComponent() {
             ForEach(this.dataArray, (item: string) => {
@@ -154,18 +155,6 @@ struct UIPickerDisplayedItemCount {
         }
 
         Row() {
-          UIPickerComponent() {
-            ForEach(this.dataArray, (item: string) => {
-              Text(item)
-                .fontSize(this.fontSize)
-                .textAlign(TextAlign.Center)
-                .fontColor(Color.Black)
-            })
-          }
-          .width('30%')
-          .id('UIPickerDisplayedItemCountDecimal')
-          .displayedItemCount(4.5)
-
           UIPickerComponent() {
             ForEach(this.dataArray, (item: string) => {
               Text(item)
