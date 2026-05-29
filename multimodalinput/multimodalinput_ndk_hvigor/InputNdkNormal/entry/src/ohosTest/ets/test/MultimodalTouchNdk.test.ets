@@ -1011,5 +1011,29 @@ export default function MultimodalTouchNdkTest() {
       }
       console.info(`${caseName} end to test`);
     });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_BindInputDeviceToDisplay_0100
+     * @tc.number SUB_MMI_Input_Api_BindInputDeviceToDisplay_0100
+     * @tc.desc   Test OH_Input_BindInputDeviceToDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MMI_Input_Api_BindInputDeviceToDisplay_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_BindInputDeviceToDisplay_0100';
+      console.info(`${caseName} start to test`);
+      try {
+        let data = touch.BindInputDeviceToDisplay();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        expect(data == 1).assertTrue();
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+      console.info(`${caseName} end to test`);
+    });    
   });
 }

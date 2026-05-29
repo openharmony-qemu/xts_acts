@@ -34,7 +34,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createAsyKeyGenerator("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0100 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -54,7 +54,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createSymKeyGenerator("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
         }
         done();
@@ -74,7 +74,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createMac("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -94,7 +94,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createMd("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -114,7 +114,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createCipher("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0500 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.NOT_SUPPORT);
         }
         done();
@@ -134,7 +134,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createSign("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0600 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -154,7 +154,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createVerify("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -174,7 +174,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createKeyAgreement("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -194,7 +194,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createKdf("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_0900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_0900 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -215,7 +215,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.priKey.getEncodedDer("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1000 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -236,7 +236,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.priKey.getEncodedPem("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1100 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -261,7 +261,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.priKey.getEncodedPem("", config);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -282,7 +282,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.pubKey.getEncodedDer("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -303,7 +303,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.pubKey.getEncodedPem("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -324,7 +324,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await generator.convertPemKey(RSA_3072_PUBLIC_KEY_PEM, RSA_3072_PRIVATE_KEY_PEM, "");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1500 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -345,7 +345,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           generator.convertPemKeySync(RSA_3072_PUBLIC_KEY_PEM, RSA_3072_PRIVATE_KEY_PEM, "");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1600 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -370,7 +370,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS8", config);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -395,7 +395,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           keyPair.priKey.getEncodedPem("PKCS8", config);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -415,7 +415,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec("");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_1900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_1900 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -436,7 +436,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.ECCKeyUtil.convertPoint("", encodedPoint);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2000 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -461,7 +461,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.ECCKeyUtil.getEncodedPoint("", point, "UNCOMPRESSED");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2100 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -486,7 +486,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.ECCKeyUtil.getEncodedPoint("NID_X9_62_prime256v1", point, "");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -509,7 +509,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createMac(macSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -533,7 +533,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createMac(hmacSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -557,7 +557,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createMac(cmacSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2500 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -584,7 +584,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf("PBKDF2|SHA256");
           await kdf.generateSecret(pbkdf2Spec);
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2600 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -612,7 +612,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await kdf.generateSecret(hkdfSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -646,7 +646,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await kdf.generateSecret(scryptSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -673,7 +673,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await kdf.generateSecret(x963KdfSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_2900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_2900 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -699,7 +699,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(spec, "");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3000 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -722,7 +722,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.SM2CryptoUtil.getCipherTextSpec(cipherText, "");
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3100 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_CRYPTO_OPERATION); // mode 为空字符串使用默认模式
         }
         done();
@@ -749,7 +749,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -778,7 +778,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -807,7 +807,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ccmParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -836,7 +836,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305ParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3500 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -863,7 +863,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ivParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3600 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -892,7 +892,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -921,7 +921,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, ccmParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -950,7 +950,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cipher.initSync(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, poly1305ParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_3900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_3900 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -972,7 +972,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           cryptoFramework.createAsyKeyGeneratorBySpec(eccCommonParamsSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4000 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -999,7 +999,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf("PBKDF2|SHA256");
           kdf.generateSecretSync(pbkdf2Spec);
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4100 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4100 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1027,7 +1027,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           kdf.generateSecretSync(hkdfSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4200 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4200 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -1061,7 +1061,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           kdf.generateSecretSync(scryptSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4300 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4300 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
         }
         done();
@@ -1088,7 +1088,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           kdf.generateSecretSync(x963KdfSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4400 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4400 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.ERR_PARAMETER_CHECK_FAILED);
         }
         done();
@@ -1115,7 +1115,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           let kdf: cryptoFramework.Kdf = cryptoFramework.createKdf("PBKDF2|SHA256");
           kdf.generateSecret(pbkdf2Spec, (error, secret) => {});
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4500 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4500 ${error}`);
           expect(null).assertFail();
         }
         done();
@@ -1142,7 +1142,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
           await hkdfCallback("HKDF|SHA256", hkdfSpec);
           expect(null).assertFail();
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4600 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4600 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           done();
         }
@@ -1177,7 +1177,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
             }
           });
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4700 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4700 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           done();
         }
@@ -1213,7 +1213,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
             }
           });
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4800 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4800 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           done();
         }
@@ -1249,7 +1249,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
             }
           });
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_4900 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_4900 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           done();
         }
@@ -1285,7 +1285,7 @@ export default function SecurityCryptoFwReinforcementTestUnit() {
             }
           });
         } catch (error) {
-          console.error(`[XTS] Reinforcement_Func_5000 ${error}, error code: ${error.code}`);
+          console.error(`[XTS] Reinforcement_Func_5000 ${error}`);
           expect((error as BusinessError).code).assertEqual(cryptoFramework.Result.INVALID_PARAMS);
           done();
         }

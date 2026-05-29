@@ -84,6 +84,7 @@ public:
     bool modeEnableRun = false;
     bool enablePTSBasedRateControl = false;
     bool maxbframesEnable = false;
+    uint32_t inCount = 0;
     uint32_t defaultBitrateMode = CBR;
     OH_AVPixelFormat DEFAULT_PIX_FMT = AV_PIXEL_FORMAT_NV12;
     uint32_t defaultKeyFrameInterval = 1000;
@@ -128,8 +129,6 @@ public:
     int32_t GetBframes(OH_AVFormat *format);
     int32_t InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer, OH_NativeBuffer *&nativeBuffer, uint8_t *&dst);
     struct EncoderConfig {
-        std::string inputDir = "";      // 输入目录
-        std::string outputDir = "";     // 输出目录
         uint32_t width = 0;             // 视频宽度（默认值）
         uint32_t height = 0;            // 视频高度（默认值）
         uint32_t bitrateMode = 0;       // 码率模式（默认值）
@@ -153,6 +152,7 @@ public:
     bool readMultiFiles = false;
     bool configMain10 = false;
     bool isParamSet = false;
+    bool enableRoi = false;
     uint32_t frameCount1 = 0;
 private:
     std::atomic<bool> isRunning_ { false };

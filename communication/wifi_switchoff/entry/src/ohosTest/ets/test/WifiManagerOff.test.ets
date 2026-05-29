@@ -35,6 +35,7 @@ async function tryToDisableWifi() {
     if (wifiManager.isWifiActive()) {
       console.info('[wifi_js] wifi turn on:' + JSON.stringify(wifiManager.isWifiActive()));
       wifiManager.disableWifi();
+      await sleep(3000);
     } else {
       console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
     }
@@ -51,6 +52,7 @@ async function tryToEnableWifi() {
     } else {
       console.info('[wifi_js] wifi turn off:' + JSON.stringify(wifiManager.isWifiActive()));
       wifiManager.enableWifi();
+      await sleep(3000);
     }
   } catch (error) {
     console.error('[wifi_js] switch error.code:' + JSON.stringify(error.code) + 'error.message:' +

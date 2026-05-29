@@ -287,6 +287,20 @@ static void executeProcAsyncTest(napi_env env, void* data)
     }
 }
 
+// 异步执行函数 (在工作线程中执行)
+static void executeAsyncFunc2Test(napi_env env, void* data)
+{
+    AsyncTestContext* context = static_cast<AsyncTestContext*>(data);
+
+    // 使用函数映射表执行测试
+    if (context->testCase >= 0 && context->testCase < static_cast<int>(func2TestFunctions.size())
+        && func2TestFunctions[context->testCase] != nullptr) {
+        context->result = func2TestFunctions[context->testCase]();
+    } else {
+        context->result = -1;
+    }
+}
+
 // 异步完成回调 (在主线程中执行)
 static void completeAsyncTest(napi_env env, napi_status status, void* data)
 {
@@ -499,35 +513,56 @@ static napi_value runFunc2Test(napi_env env, napi_callback_info info)
     napi_value args[1];
     napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     if (status != napi_ok || argc < 1) {
-        return createResultValue(env, -1);
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Invalid arguments", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
     napi_valuetype valuetype;
     napi_typeof(env, args[0], &valuetype);
     if (valuetype != napi_number) {
-        napi_throw_type_error(env, nullptr, "Argument must be a number");
-        return createResultValue(env, -1);
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Argument must be a number", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
     int32_t testCase = -1;
     status = napi_get_value_int32(env, args[0], &testCase);
-    if (status != napi_ok) {
-        return createResultValue(env, -1);
+    if (status != napi_ok || testCase < 0 || testCase >= static_cast<int>(func2TestFunctions.size()) ||
+        func2TestFunctions[testCase] == nullptr) {
+        napi_value promise;
+        napi_deferred deferred;
+        napi_create_promise(env, &deferred, &promise);
+        napi_value error;
+        napi_create_string_utf8(env, "Invalid test case number", NAPI_AUTO_LENGTH, &error);
+        napi_reject_deferred(env, deferred, error);
+        return promise;
     }
 
-    // 使用函数映射表执行测试
-    int result = -1;
-    if (testCase >= 0 && testCase < static_cast<int>(func2TestFunctions.size())
-        && func2TestFunctions[testCase] != nullptr) {
-        result = func2TestFunctions[testCase]();
-    } else {
-        napi_throw_type_error(env, nullptr, "Invalid test case number");
-        CleanupResources();
-        return createResultValue(env, -1);
-    }
+    AsyncTestContext* context = new AsyncTestContext();
+    context->env = env;
+    context->testCase = testCase;
+    context->result = -1;
 
-    CleanupResources();
-    return createResultValue(env, result);
+    napi_value promise;
+    napi_create_promise(env, &context->deferred, &promise);
+
+    napi_value resourceName;
+    napi_create_string_utf8(env, "Func2TestAsync", NAPI_AUTO_LENGTH, &resourceName);
+
+    napi_create_async_work(env, nullptr, resourceName, executeAsyncFunc2Test, completeAsyncTest, context,
+                           &context->work);
+    napi_queue_async_work(env, context->work);
+
+    return promise;
 }
 
 // 流程测试 - 25 个测试用例（异步版本）
