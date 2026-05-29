@@ -861,12 +861,15 @@ export default function ClassIsEnumTest(): void {
     it('testClassIsEnum042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestEnum043>();
       let startTime = Date.now();
+      let result = false;
       for (let i = 0; i < 10000; i++) {
-        cls.isEnum();
+        result = cls.isEnum();
       }
       let endTime = Date.now();
       console.info(`10000 calls took ${endTime - startTime}ms`);
       console.info(`isEnum 10000 calls: ${endTime - startTime}ms`);
+      expect(result).assertEqual(true);
+      expect(endTime - startTime).assertLarger(0);
     });
 
     /**

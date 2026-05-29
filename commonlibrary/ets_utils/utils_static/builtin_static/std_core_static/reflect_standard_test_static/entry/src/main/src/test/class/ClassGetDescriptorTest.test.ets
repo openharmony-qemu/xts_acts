@@ -745,12 +745,15 @@ export default function ClassGetDescriptorTest(): void {
       let cls = Class.from<Set<string>>();
 
       let startTime = Date.now();
+      let descriptor = '';
       for (let i = 0; i < 1000; i++) {
-        cls.getDescriptor();
+        descriptor = cls.getDescriptor();
       }
       let endTime = Date.now();
 
       console.info(`getDescriptor 1000 calls: ${endTime - startTime}ms`);
+      expect(isValidStdDescriptor038(descriptor)).assertTrue();
+      expect(endTime - startTime).assertLarger(0);
     });
 
     /**
