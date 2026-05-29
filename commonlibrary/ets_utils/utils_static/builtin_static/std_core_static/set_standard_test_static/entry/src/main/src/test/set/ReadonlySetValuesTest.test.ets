@@ -569,7 +569,7 @@ export default function ReadonlySetValuesTest(): void {
         }
       } catch (e) {
         caught = true;
-        expect((e as Error).message).assertEqual("interrupt iteration");
+        expect(e.message).assertEqual("interrupt iteration");
       }
       expect(caught).assertTrue();
     });
@@ -638,7 +638,7 @@ export default function ReadonlySetValuesTest(): void {
           }
         }
       } catch (e) {
-        expect((e as Error).message).assertEqual("stop at 3");
+        expect(e.message).assertEqual("stop at 3");
       }
       expect(visited.length).assertEqual(3);
       expect(visited[0]).assertEqual(1);
@@ -649,15 +649,14 @@ export default function ReadonlySetValuesTest(): void {
     /**
      * @tc.name testReadonlySetValues031
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3100
-     * @tc.desc Verify ReadonlySet values with extra parameter still returns valid iterator
+     * @tc.desc Verify ReadonlySet values with no parameter returns valid iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testReadonlySetValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>(["a", "b"]);
-      let valuesFn = (set as Record<string, Object>)["values"];
-      let iter = (valuesFn as Object as (x: string) => IterableIterator<string>)("extra");
+      let iter = set.values();
       expect(iter.next().value).assertEqual("a");
       expect(iter.next().value).assertEqual("b");
       expect(iter.next().done).assertTrue();

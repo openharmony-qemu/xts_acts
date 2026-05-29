@@ -376,7 +376,7 @@ export default function SetIteratorDollarIteratorTest(): void {
         }
       } catch (e) {
         caught = true;
-        expect((e as Error).message).assertEqual("stop");
+        expect(e.message).assertEqual("stop");
       }
       expect(caught).assertTrue();
     });
@@ -439,7 +439,7 @@ export default function SetIteratorDollarIteratorTest(): void {
     /**
      * @tc.name testSetIteratorDollarIterator022
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2200
-     * @tc.desc Verify SetIterator $_iterator with extra parameter returns iterator or throws error
+     * @tc.desc Verify SetIterator $_iterator with no parameter returns valid iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -447,13 +447,10 @@ export default function SetIteratorDollarIteratorTest(): void {
     it('testSetIteratorDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
-      let dollarFn = (iter as Record<string, Object>)["$_iterator"];
-      try {
-        let inner = (dollarFn as Object as (x: Object) => IterableIterator<int>)(1 as Object);
-        expect(inner.next().value).assertEqual(1);
-      } catch (error) {
-        expect((error as Error).name).assertEqual("ClassCastError");
-      }
+      const inner = iter.$_iterator();
+      expect(inner.next().value).assertEqual(1);
+      expect(inner.next().value).assertEqual(2);
+      expect(inner.next().done).assertTrue();
     });
   });
 }

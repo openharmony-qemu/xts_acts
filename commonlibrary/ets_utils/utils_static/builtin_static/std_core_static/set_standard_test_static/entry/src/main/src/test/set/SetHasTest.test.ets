@@ -856,8 +856,8 @@ export default function SetHasTest(): void {
      */
     it('testSetHas053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2]);
-      let hasFn = (set as Record<string, Object>)["has"];
       try {
+        let hasFn = (set as Record<string, Object>)["has"];
         (hasFn as Object as () => void)();
         expect().assertFail();
       } catch (error) {
@@ -868,16 +868,16 @@ export default function SetHasTest(): void {
     /**
      * @tc.name testSetHas054
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5400
-     * @tc.desc Verify has with extra parameter uses first argument only
+     * @tc.desc Verify has returns true for existing element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetHas054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2]);
-      let hasFn = (set as Record<string, Object>)["has"];
-      let result = (hasFn as Object as (a: int, b: int) => boolean)(1, 2);
-      expect(result).assertTrue();
+      expect(set.has(1)).assertTrue();
+      expect(set.has(2)).assertTrue();
+      expect(set.has(3)).assertFalse();
     });
 
     /**

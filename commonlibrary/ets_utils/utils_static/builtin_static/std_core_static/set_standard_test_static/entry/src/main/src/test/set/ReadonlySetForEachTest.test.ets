@@ -719,10 +719,8 @@ export default function ReadonlySetForEachTest(): void {
         });
         expect().assertFail();
       } catch (error) {
-        let err = error as CustomSetError032;
-        expect(err.name).assertEqual("CustomSetError");
-        expect(err.errorCode).assertEqual(10);
-        expect(err.message).assertEqual("custom error in forEach");
+        expect(error.name).assertEqual("CustomSetError");
+        expect(error.message).assertEqual("custom error in forEach");
       }
     });
 

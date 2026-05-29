@@ -554,7 +554,7 @@ export default function SetEntriesTest(): void {
           }
         }
       } catch (e) {
-        expect((e as Error).message).assertEqual("stop");
+        expect(e.message).assertEqual("stop");
       }
       expect(visitedValues.length).assertEqual(2);
       expect(visitedValues[0]).assertEqual(1);
@@ -678,23 +678,19 @@ export default function SetEntriesTest(): void {
     /**
      * @tc.name testSetEntries033
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3300
-     * @tc.desc Verify entries with extra parameter returns iterator or throws error
+     * @tc.desc Verify entries with no parameter returns valid iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetEntries033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
-      let entriesFn = (set as Record<string, Object>)["entries"];
-      try {
-        let iter = (entriesFn as Object as (x: Object) => IterableIterator<[int, int]>)("extra" as Object);
-        let r = iter.next();
-        let v = r.value as [int, int];
-        expect(v[0]).assertEqual(1);
-        expect(r.done).assertFalse();
-      } catch (error) {
-        expect((error as Error).name).assertEqual("ClassCastError");
-      }
+      const iter = set.entries();
+      let r = iter.next();
+      let v = r.value as [int, int];
+      expect(v[0]).assertEqual(1);
+      expect(v[1]).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**

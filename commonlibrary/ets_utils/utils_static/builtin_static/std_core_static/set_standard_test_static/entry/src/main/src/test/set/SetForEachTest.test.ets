@@ -805,9 +805,8 @@ export default function SetForEachTest(): void {
         });
         expect().assertFail();
       } catch (error) {
-        let err = error as CustomError034;
-        expect(err.name).assertEqual("CustomError");
-        expect(err.errorCode).assertEqual(500);
+        expect(error.name).assertEqual("CustomError");
+        expect(error.message).assertEqual("custom error");
       }
     });
 

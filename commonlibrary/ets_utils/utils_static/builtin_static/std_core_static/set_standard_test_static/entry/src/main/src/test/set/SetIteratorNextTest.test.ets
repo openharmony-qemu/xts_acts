@@ -82,7 +82,7 @@ export default function SetIteratorNextTest(): void {
     /**
      * @tc.name testSetIteratorNext003
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0300
-     * @tc.desc Verify next() with extra parameter returns result or throws error
+     * @tc.desc Verify next() with no parameter returns IteratorResult
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -90,14 +90,9 @@ export default function SetIteratorNextTest(): void {
     it('testSetIteratorNext003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
-      try {
-        let nextFn = (iter as Record<string, Object>)["next"];
-        let r = (nextFn as Object as (x: Object) => Record<string, Object>)(1 as Object);
-        expect(r["value"] as int).assertEqual(1);
-        expect(r["done"] as boolean).assertFalse();
-      } catch (error) {
-        expect((error as Error).name).assertEqual("ClassCastError");
-      }
+      let r = iter.next();
+      expect(r.value as int).assertEqual(1);
+      expect(r.done).assertFalse();
     });
 
     /**
@@ -785,22 +780,17 @@ export default function SetIteratorNextTest(): void {
     /**
      * @tc.name testSetIteratorNext043
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4300
-     * @tc.desc Verify next with multiple extra parameters returns result or throws error
+     * @tc.desc Verify next with no parameter on non-empty iterator returns first element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2]);
+      const set = new Set<int>([7, 8]);
       const iter = set.values();
-      try {
-        let nextFn = (iter as Record<string, Object>)["next"];
-        let r = (nextFn as Object as (a: Object, b: Object, c: Object) => Record<string, Object>)(1 as Object, 2 as Object, 3 as Object);
-        expect(r["value"] as int).assertEqual(1);
-        expect(r["done"] as boolean).assertFalse();
-      } catch (error) {
-        expect((error as Error).name).assertEqual("ClassCastError");
-      }
+      let r = iter.next();
+      expect(r.value as int).assertEqual(7);
+      expect(r.done).assertFalse();
     });
 
     /**

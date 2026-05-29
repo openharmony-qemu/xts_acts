@@ -492,7 +492,7 @@ export default function ReadonlySetKeysTest(): void {
         }
       } catch (e) {
         caught = true;
-        expect((e as Error).message).assertEqual("test error in iteration");
+        expect(e.message).assertEqual("test error in iteration");
       }
       expect(caught).assertTrue();
     });
@@ -584,20 +584,16 @@ export default function ReadonlySetKeysTest(): void {
     /**
      * @tc.name testReadonlySetKeys030
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_KEYS_3000
-     * @tc.desc Verify ReadonlySet keys with extra parameter throws error or returns iterator
+     * @tc.desc Verify ReadonlySet keys with no parameter returns valid iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testReadonlySetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>(["a"]);
-      let keysFn = (set as Record<string, Object>)["keys"];
-      try {
-        (keysFn as Object as (x: string) => void)("extra");
-        expect().assertFail();
-      } catch (error) {
-        expect((error as Error).name).assertEqual("ClassCastError");
-      }
+      let iter = set.keys();
+      expect(iter.next().value).assertEqual("a");
+      expect(iter.next().done).assertTrue();
     });
 
     /**

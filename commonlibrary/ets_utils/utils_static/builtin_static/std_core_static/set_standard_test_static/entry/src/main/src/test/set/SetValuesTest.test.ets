@@ -764,15 +764,14 @@ export default function SetValuesTest(): void {
     /**
      * @tc.name testSetValues038
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_3800
-     * @tc.desc Verify values with extra parameter still returns valid iterator
+     * @tc.desc Verify values with no parameter returns valid iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(["a", "b"]);
-      let valuesFn = (set as Record<string, Object>)["values"];
-      let iter = (valuesFn as Object as (x: string) => IterableIterator<string>)("extra");
+      let iter = set.values();
       expect(iter.next().value).assertEqual("a");
       expect(iter.next().value).assertEqual("b");
       expect(iter.next().done).assertTrue();

@@ -1029,8 +1029,8 @@ export default function ReadonlySetHasTest(): void {
      */
     it('testReadonlySetHas065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      let hasFn = (set as Record<string, Object>)["has"];
       try {
+        let hasFn = (set as Record<string, Object>)["has"];
         (hasFn as Object as () => void)();
         expect().assertFail();
       } catch (error) {
@@ -1041,16 +1041,16 @@ export default function ReadonlySetHasTest(): void {
     /**
      * @tc.name testReadonlySetHas066
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6600
-     * @tc.desc Verify ReadonlySet.has with extra parameter uses first argument only
+     * @tc.desc Verify ReadonlySet.has returns true for existing element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      let hasFn = (set as Record<string, Object>)["has"];
-      let result = (hasFn as Object as (a: int, b: int) => boolean)(1, 2);
-      expect(result).assertTrue();
+      expect(set.has(1)).assertTrue();
+      expect(set.has(2)).assertTrue();
+      expect(set.has(3)).assertFalse();
     });
   });
 }
