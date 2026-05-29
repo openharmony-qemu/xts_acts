@@ -81,13 +81,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0100
-     * @tc.name testGetValue025
+     * @tc.name testGetValue0100
      * @tc.desc Verify reading array field after multiple appends
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ArrayField025>();
       let instance = cls.createInstance();
 
@@ -104,13 +104,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0200
-     * @tc.name testGetValue026
+     * @tc.name testGetValue0200
      * @tc.desc Verify field value with circular reference
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node026>();
       let instance: Node026 = cls.createInstance() as Node026;
       let field = cls.getInstanceField('next')!;
@@ -125,13 +125,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0300
-     * @tc.name testGetValue027
+     * @tc.name testGetValue0300
      * @tc.desc Verify getValue used in combination with setValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass027>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -147,13 +147,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0400
-     * @tc.name testGetValue028
+     * @tc.name testGetValue0400
      * @tc.desc Verify reading multiple field values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Person028>();
       let instance = cls.createInstance();
 
@@ -169,13 +169,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0500
-     * @tc.name testGetValue029
+     * @tc.name testGetValue0500
      * @tc.desc Verify performance of repeated getValue() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass019>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -188,13 +188,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0600
-     * @tc.name testGetValue030
+     * @tc.name testGetValue0600
      * @tc.desc Verify reading default values from multiple fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Serializable030>();
       let instance = cls.createInstance();
 
@@ -208,13 +208,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0700
-     * @tc.name testGetValue031
+     * @tc.name testGetValue0700
      * @tc.desc Verify comparing field values of two instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance1 = cls.createInstance();
       let instance2 = cls.createInstance();
@@ -228,13 +228,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0800
-     * @tc.name testGetValue032
+     * @tc.name testGetValue0800
      * @tc.desc Verify StaticField.getValue compared with InstanceField.getValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest032>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
@@ -249,13 +249,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_0900
-     * @tc.name testGetValue033
+     * @tc.name testGetValue0900
      * @tc.desc Verify getValue consistency across multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field1 = cls.getInstanceField('name')!;
@@ -265,13 +265,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1000
-     * @tc.name testGetValue034
+     * @tc.name testGetValue1000
      * @tc.desc Verify getValue returns correct default for unmodified field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass004>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -280,13 +280,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1100
-     * @tc.name testGetValue035
+     * @tc.name testGetValue1100
      * @tc.desc Verify getValue on string field returns string type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -295,13 +295,13 @@ export default function InstanceFieldGetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_VALUE_1200
-     * @tc.name testGetValue036
+     * @tc.name testGetValue1200
      * @tc.desc Verify setValue with circular reference via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetValue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node026>();
       let instance1: Node026 = cls.createInstance() as Node026;
       let instance2: Node026 = cls.createInstance() as Node026;

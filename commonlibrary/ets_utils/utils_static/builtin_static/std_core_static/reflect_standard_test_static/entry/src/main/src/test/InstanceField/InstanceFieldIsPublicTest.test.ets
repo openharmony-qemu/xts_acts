@@ -113,13 +113,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0100
-     * @tc.name testIsPublic001
+     * @tc.name testIsPublic0100
      * @tc.desc Verify isPublic() requires no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let result = field.isPublic();
@@ -128,13 +128,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0200
-     * @tc.name testIsPublic003
+     * @tc.name testIsPublic0200
      * @tc.desc Verify public field returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass003>();
       let field = cls.getInstanceField('publicField')!;
       expect(field.isPublic()).assertTrue();
@@ -142,13 +142,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0300
-     * @tc.name testIsPublic004
+     * @tc.name testIsPublic0300
      * @tc.desc Verify private and protected fields are not reflectable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AccessClass004>();
 
       let privateField = cls.getInstanceField('privateField');
@@ -160,13 +160,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0400
-     * @tc.name testIsPublic005
+     * @tc.name testIsPublic0400
      * @tc.desc Verify default access level is public
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DefaultClass005>();
       let field = cls.getInstanceField('accessibleField')!;
       expect(field.isPublic()).assertTrue();
@@ -174,13 +174,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0500
-     * @tc.name testIsPublic006
+     * @tc.name testIsPublic0500
      * @tc.desc Verify public is mutually exclusive with private/protected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass006>();
 
       let field = cls.getInstanceField('publicField')!;
@@ -191,13 +191,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0600
-     * @tc.name testIsPublic007
+     * @tc.name testIsPublic0600
      * @tc.desc Verify child class inherits parent class public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass007>();
 
       let ownField = childCls.getInstanceField('ownPublic')!;
@@ -210,13 +210,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0700
-     * @tc.name testIsPublic008
+     * @tc.name testIsPublic0700
      * @tc.desc Verify return value type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let field = cls.getInstanceField('data')!;
       let result = field.isPublic();
@@ -226,13 +226,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0800
-     * @tc.name testIsPublic009
+     * @tc.name testIsPublic0800
      * @tc.desc Verify multiple calls to isPublic() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass009>();
       let field = cls.getInstanceField('value')!;
 
@@ -247,13 +247,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_0900
-     * @tc.name testIsPublic014
+     * @tc.name testIsPublic0900
      * @tc.desc Verify various types of public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<VariousTypes011>();
       let fields = cls.getInstanceFields();
 
@@ -266,13 +266,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1000
-     * @tc.name testIsPublic015
+     * @tc.name testIsPublic1000
      * @tc.desc Verify interface fields are public by default
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ImplClass015>();
       let field = cls.getInstanceField('field')!;
       expect(field.isPublic()).assertTrue();
@@ -280,13 +280,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1100
-     * @tc.name testIsPublic016
+     * @tc.name testIsPublic1100
      * @tc.desc Verify public readonly field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicReadonly016>();
       let field = cls.getInstanceField('value')!;
 
@@ -298,13 +298,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1200
-     * @tc.name testIsPublic017
+     * @tc.name testIsPublic1200
      * @tc.desc Verify static public field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicStatic017>();
       let field = cls.getStaticField('STATIC_VALUE')!;
 
@@ -315,13 +315,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1300
-     * @tc.name testIsPublic018
+     * @tc.name testIsPublic1300
      * @tc.desc Verify reflection can only access public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<VisibilityClass018>();
       let fields = cls.getInstanceFields();
 
@@ -334,13 +334,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1400
-     * @tc.name testIsPublic019
+     * @tc.name testIsPublic1400
      * @tc.desc Verify performance of repeated isPublic() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let field = cls.getInstanceField('data')!;
 
@@ -352,13 +352,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1500
-     * @tc.name testIsPublic020
+     * @tc.name testIsPublic1500
      * @tc.desc Verify public field can be accessed with getValue and setValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AccessibleClass020>();
       let field = cls.getInstanceField('accessible')!;
       let instance = cls.createInstance();
@@ -372,13 +372,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1600
-     * @tc.name testIsPublic021
+     * @tc.name testIsPublic1600
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass021>();
 
       let field1 = cls.getInstanceField('field1')!;
@@ -395,13 +395,13 @@ export default function InstanceFieldIsPublicTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PUBLIC_1700
-     * @tc.name testIsPublic022
+     * @tc.name testIsPublic1700
      * @tc.desc Verify isPublic consistency on multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPublic022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPublic1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass003>();
       let field1 = cls.getInstanceField('publicField')!;
       let field2 = cls.getInstanceField('publicField')!;

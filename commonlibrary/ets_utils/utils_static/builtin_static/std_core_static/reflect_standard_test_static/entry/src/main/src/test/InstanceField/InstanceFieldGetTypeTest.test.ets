@@ -68,13 +68,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0100
-     * @tc.name testGetType018
+     * @tc.name testGetType0100
      * @tc.desc Verify nested complex types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexTypes018>();
       let fields = cls.getInstanceFields();
 
@@ -86,13 +86,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0200
-     * @tc.name testGetType019
+     * @tc.name testGetType0200
      * @tc.desc Verify getType() on self-referencing field returns non-null type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Node019>();
       let nextField = cls.getInstanceField('next')!;
       let nextType = nextField.getType();
@@ -102,13 +102,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0300
-     * @tc.name testGetType020
+     * @tc.name testGetType0300
      * @tc.desc Verify using getType() for type checking
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypes020>();
       let fields = cls.getInstanceFields();
 
@@ -120,13 +120,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0400
-     * @tc.name testGetType021
+     * @tc.name testGetType0400
      * @tc.desc Verify converting for Object type field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConversionClass021>();
       let field = cls.getInstanceField('value')!;
       let fieldType = field.getType();
@@ -136,13 +136,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0500
-     * @tc.name testGetType022
+     * @tc.name testGetType0500
      * @tc.desc Verify performance of repeated getType() calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass022>();
       let field = cls.getInstanceField('data')!;
 
@@ -154,13 +154,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0600
-     * @tc.name testGetType023
+     * @tc.name testGetType0600
      * @tc.desc Verify same field returns same Class object on repeated calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field = cls.getInstanceField('value')!;
 
@@ -174,13 +174,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0700
-     * @tc.name testGetType024
+     * @tc.name testGetType0700
      * @tc.desc Verify StaticField also has getType()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTypes024>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
@@ -196,13 +196,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0800
-     * @tc.name testGetType025
+     * @tc.name testGetType0800
      * @tc.desc Verify field type vs owning class with getType and getOwner
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field = cls.getInstanceField('value')!;
 
@@ -215,13 +215,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_0900
-     * @tc.name testGetType026
+     * @tc.name testGetType0900
      * @tc.desc Verify primitive type name strings
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedTypes020>();
       let intField = cls.getInstanceField('intField')!;
       let strField = cls.getInstanceField('stringField')!;
@@ -232,13 +232,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1000
-     * @tc.name testGetType027
+     * @tc.name testGetType1000
      * @tc.desc Verify array and union type names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexTypes018>();
       let fields = cls.getInstanceFields();
 
@@ -250,13 +250,13 @@ export default function InstanceFieldGetTypeTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_TYPE_1100
-     * @tc.name testGetType028
+     * @tc.name testGetType1100
      * @tc.desc Verify getType returns consistent results across field instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetType028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetType1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field1 = cls.getInstanceField('value')!;
       let field2 = cls.getInstanceField('value')!;

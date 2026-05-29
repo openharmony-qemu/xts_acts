@@ -103,13 +103,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0100
-     * @tc.name testGetName012
+     * @tc.name testGetName0100
      * @tc.desc Verify calling getName on initialized InstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       cls.initialize();
       let field = cls.getInstanceField('name')!;
@@ -119,13 +119,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0200
-     * @tc.name testGetName013
+     * @tc.name testGetName0200
      * @tc.desc Verify getName returns correct field name without explicit initialize
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let fieldName = field.getName();
@@ -134,13 +134,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0300
-     * @tc.name testGetName014
+     * @tc.name testGetName0300
      * @tc.desc Verify getName returns string type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let fieldName = field.getName();
@@ -149,13 +149,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0400
-     * @tc.name testGetName015
+     * @tc.name testGetName0400
      * @tc.desc Verify very long field name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LongName015>();
       let fields = cls.getInstanceFields();
 
@@ -165,13 +165,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0500
-     * @tc.name testGetName016
+     * @tc.name testGetName0500
      * @tc.desc Verify shortest field name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ShortName016>();
       expect(cls.getInstanceField('a')!.getName()).assertEqual('a');
       expect(cls.getInstanceField('b')!.getName()).assertEqual('b');
@@ -179,13 +179,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0600
-     * @tc.name testGetName017
+     * @tc.name testGetName0600
      * @tc.desc Verify field names length is greater than zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NumberStart017>();
       let fields = cls.getInstanceFields();
 
@@ -198,13 +198,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0700
-     * @tc.name testGetName018
+     * @tc.name testGetName0700
      * @tc.desc Verify using getName() to find specific field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass018>();
       let fields = cls.getInstanceFields();
 
@@ -221,13 +221,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0800
-     * @tc.name testGetName019
+     * @tc.name testGetName0800
      * @tc.desc Verify grouping fields by name prefix
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GroupedFields019>();
       let fields = cls.getInstanceFields();
 
@@ -248,13 +248,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_0900
-     * @tc.name testGetName020
+     * @tc.name testGetName0900
      * @tc.desc Verify field name matches naming conventions
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass020>();
       let fields = cls.getInstanceFields();
 
@@ -275,13 +275,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1000
-     * @tc.name testGetName021
+     * @tc.name testGetName1000
      * @tc.desc Verify getName() and getOwner() combined usage
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let field = cls.getInstanceField('value')!;
 
@@ -293,13 +293,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1100
-     * @tc.name testGetName022
+     * @tc.name testGetName1100
      * @tc.desc Verify field name uniqueness within same class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass022>();
       let fields = cls.getInstanceFields();
 
@@ -314,13 +314,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1200
-     * @tc.name testGetName023
+     * @tc.name testGetName1200
      * @tc.desc Verify getName() returns consistent value on repeated calls
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass023>();
       let field = cls.getInstanceField('data')!;
 
@@ -332,13 +332,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1300
-     * @tc.name testGetName024
+     * @tc.name testGetName1300
      * @tc.desc Verify StaticField and InstanceField both have getName()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest024>();
 
       let staticField = cls.getStaticField('STATIC_VALUE')!;
@@ -350,13 +350,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1400
-     * @tc.name testGetName025
+     * @tc.name testGetName1400
      * @tc.desc Verify collecting all field information
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass025>();
       let fields = cls.getInstanceFields();
 
@@ -370,13 +370,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1500
-     * @tc.name testGetName026
+     * @tc.name testGetName1500
      * @tc.desc Verify Unicode field names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UnicodeField005>();
       let fields = cls.getInstanceFields();
 
@@ -393,13 +393,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1600
-     * @tc.name testGetName027
+     * @tc.name testGetName1600
      * @tc.desc Verify getName with getOwner returns qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass009>();
       let field = cls.getInstanceField('validField')!;
       let name = field.getName();
@@ -410,13 +410,13 @@ export default function InstanceFieldGetNameTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_NAME_1700
-     * @tc.name testGetName028
+     * @tc.name testGetName1700
      * @tc.desc Verify getName consistency across multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetName028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetName1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField('name')!;
       let field2 = cls.getInstanceField('name')!;

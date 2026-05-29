@@ -117,13 +117,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0100
-     * @tc.name testIsPrivate001
+     * @tc.name testIsPrivate0100
      * @tc.desc Verify isPrivate() requires no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let result = field.isPrivate();
@@ -132,13 +132,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0200
-     * @tc.name testIsPrivate003
+     * @tc.name testIsPrivate0200
      * @tc.desc Verify private field cannot be reflected and returns undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateClass003>();
 
       let privateField = cls.getInstanceField('privateField');
@@ -150,13 +150,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0300
-     * @tc.name testIsPrivate004
+     * @tc.name testIsPrivate0300
      * @tc.desc Verify public field isPrivate() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass004>();
       let field = cls.getInstanceField('publicField')!;
       expect(field.isPrivate()).assertFalse();
@@ -164,13 +164,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0400
-     * @tc.name testIsPrivate005
+     * @tc.name testIsPrivate0400
      * @tc.desc Verify protected fields are not reflectable via getInstanceField
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedClass005>();
 
       let protectedField = cls.getInstanceField('protectedField');
@@ -179,13 +179,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0500
-     * @tc.name testIsPrivate006
+     * @tc.name testIsPrivate0500
      * @tc.desc Verify private is mutually exclusive with public/protected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass006>();
 
       let field = cls.getInstanceField('publicField')!;
@@ -196,13 +196,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0600
-     * @tc.name testIsPrivate007
+     * @tc.name testIsPrivate0600
      * @tc.desc Verify default access level is not private
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DefaultClass007>();
       let field = cls.getInstanceField('defaultField')!;
       expect(field.isPrivate()).assertFalse();
@@ -211,13 +211,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0700
-     * @tc.name testIsPrivate008
+     * @tc.name testIsPrivate0700
      * @tc.desc Verify return value type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let field = cls.getInstanceField('data')!;
       let result = field.isPrivate();
@@ -227,13 +227,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0800
-     * @tc.name testIsPrivate009
+     * @tc.name testIsPrivate0800
      * @tc.desc Verify multiple calls to isPrivate() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass009>();
       let field = cls.getInstanceField('value')!;
 
@@ -248,13 +248,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_0900
-     * @tc.name testIsPrivate010
+     * @tc.name testIsPrivate0900
      * @tc.desc Verify private fields cannot be accessed via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateTest010>();
       let fields = cls.getInstanceFields();
 
@@ -265,13 +265,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1000
-     * @tc.name testIsPrivate011
+     * @tc.name testIsPrivate1000
      * @tc.desc Verify isPrivate() returns correctly for InstanceField object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass011>();
       let field = cls.getInstanceField('field')!;
 
@@ -281,13 +281,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1100
-     * @tc.name testIsPrivate016
+     * @tc.name testIsPrivate1100
      * @tc.desc Verify private combined with readonly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateReadonly016>();
 
       let privateField = cls.getInstanceField('PRIVATE_CONST');
@@ -301,13 +301,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1200
-     * @tc.name testIsPrivate017
+     * @tc.name testIsPrivate1200
      * @tc.desc Verify private in constructor parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstructorPrivate017>();
       let fields = cls.getInstanceFields();
 
@@ -317,13 +317,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1300
-     * @tc.name testIsPrivate018
+     * @tc.name testIsPrivate1300
      * @tc.desc Verify parent class private fields invisible to child
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass018>();
 
       let childPublicField = childCls.getInstanceField('childPublic')!;
@@ -342,13 +342,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1400
-     * @tc.name testIsPrivate019
+     * @tc.name testIsPrivate1400
      * @tc.desc Verify private fields cannot be accessed via getValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateAccess019>();
 
       let privateField = cls.getInstanceField('privateField');
@@ -362,13 +362,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1500
-     * @tc.name testIsPrivate020
+     * @tc.name testIsPrivate1500
      * @tc.desc Verify StaticField also has isPrivate for static private fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticPrivate020>();
 
       let staticPrivateField = cls.getStaticField('STATIC_PRIVATE');
@@ -381,13 +381,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1600
-     * @tc.name testIsPrivate021
+     * @tc.name testIsPrivate1600
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass021>();
 
       let field1 = cls.getInstanceField('field1')!;
@@ -398,13 +398,13 @@ export default function InstanceFieldIsPrivateTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PRIVATE_1700
-     * @tc.name testIsPrivate022
+     * @tc.name testIsPrivate1700
      * @tc.desc Verify isPrivate consistency on multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsPrivate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsPrivate1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass004>();
       let field1 = cls.getInstanceField('publicField')!;
       let field2 = cls.getInstanceField('publicField')!;

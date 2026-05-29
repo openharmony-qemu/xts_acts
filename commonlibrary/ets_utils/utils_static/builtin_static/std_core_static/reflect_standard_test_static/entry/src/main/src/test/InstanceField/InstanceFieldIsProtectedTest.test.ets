@@ -138,13 +138,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0100
-     * @tc.name testIsProtected001
+     * @tc.name testIsProtected0100
      * @tc.desc Verify isProtected() requires no parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let result = field.isProtected();
@@ -153,13 +153,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0200
-     * @tc.name testIsProtected003
+     * @tc.name testIsProtected0200
      * @tc.desc Verify protected fields cannot be reflected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedClass003>();
 
       let protectedField = cls.getInstanceField('protectedField');
@@ -171,13 +171,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0300
-     * @tc.name testIsProtected004
+     * @tc.name testIsProtected0300
      * @tc.desc Verify public field isProtected() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass004>();
       let field = cls.getInstanceField('publicField')!;
       expect(field.isProtected()).assertFalse();
@@ -186,13 +186,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0400
-     * @tc.name testIsProtected005
+     * @tc.name testIsProtected0400
      * @tc.desc Verify private field isProtected() returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateClass005>();
 
       let privateField = cls.getInstanceField('privateField');
@@ -204,13 +204,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0500
-     * @tc.name testIsProtected006
+     * @tc.name testIsProtected0500
      * @tc.desc Verify protected is mutually exclusive with public/private
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass006>();
 
       let field = cls.getInstanceField('publicField')!;
@@ -221,13 +221,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0600
-     * @tc.name testIsProtected007
+     * @tc.name testIsProtected0600
      * @tc.desc Verify default access level is not protected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DefaultClass007>();
       let field = cls.getInstanceField('defaultField')!;
       expect(field.isProtected()).assertFalse();
@@ -236,13 +236,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0700
-     * @tc.name testIsProtected008
+     * @tc.name testIsProtected0700
      * @tc.desc Verify return value type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let field = cls.getInstanceField('data')!;
       let result = field.isProtected();
@@ -252,13 +252,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0800
-     * @tc.name testIsProtected009
+     * @tc.name testIsProtected0800
      * @tc.desc Verify multiple calls to isProtected() return same value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass009>();
       let field = cls.getInstanceField('value')!;
 
@@ -273,13 +273,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_0900
-     * @tc.name testIsProtected010
+     * @tc.name testIsProtected0900
      * @tc.desc Verify protected fields cannot be accessed via reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedTest010>();
       let fields = cls.getInstanceFields();
 
@@ -291,13 +291,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1000
-     * @tc.name testIsProtected011
+     * @tc.name testIsProtected1000
      * @tc.desc Verify protected field access for child classes in code but not reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass011>();
 
       let protectedField = cls.getInstanceField('protectedField');
@@ -306,13 +306,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1100
-     * @tc.name testIsProtected016
+     * @tc.name testIsProtected1100
      * @tc.desc Verify protected combined with readonly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedReadonly016>();
 
       let protectedField = cls.getInstanceField('PROTECTED_CONST');
@@ -326,13 +326,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1200
-     * @tc.name testIsProtected017
+     * @tc.name testIsProtected1200
      * @tc.desc Verify protected in constructor parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ConstructorProtected017>();
       let fields = cls.getInstanceFields();
 
@@ -342,13 +342,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1300
-     * @tc.name testIsProtected018
+     * @tc.name testIsProtected1300
      * @tc.desc Verify parent class protected fields visible to child but not reflectable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass018>();
 
       let childPublicField = childCls.getInstanceField('childPublic')!;
@@ -367,13 +367,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1400
-     * @tc.name testIsProtected019
+     * @tc.name testIsProtected1400
      * @tc.desc Verify child class can access parent protected field via method but not reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Child019>();
       let instance = cls.createInstance();
 
@@ -388,13 +388,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1500
-     * @tc.name testIsProtected020
+     * @tc.name testIsProtected1500
      * @tc.desc Verify protected fields cannot be accessed via getValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ProtectedAccess020>();
 
       let protectedField = cls.getInstanceField('protectedField');
@@ -408,13 +408,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1600
-     * @tc.name testIsProtected021
+     * @tc.name testIsProtected1600
      * @tc.desc Verify StaticField also has isProtected for static protected fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticProtected021>();
 
       let staticProtectedField = cls.getStaticField('STATIC_PROTECTED');
@@ -427,13 +427,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1700
-     * @tc.name testIsProtected022
+     * @tc.name testIsProtected1700
      * @tc.desc Verify consistency of isPublic, isPrivate, isProtected results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass022>();
 
       let field1 = cls.getInstanceField('field1')!;
@@ -444,13 +444,13 @@ export default function InstanceFieldIsProtectedTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROTECTED_1800
-     * @tc.name testIsProtected023
+     * @tc.name testIsProtected1800
      * @tc.desc Verify isProtected consistency on multiple InstanceField instances
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testIsProtected023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testIsProtected1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicClass004>();
       let field1 = cls.getInstanceField('publicField')!;
       let field2 = cls.getInstanceField('publicField')!;

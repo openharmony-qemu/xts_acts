@@ -158,13 +158,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0100
-     * @tc.name testSetValue001
+     * @tc.name testSetValue0100
      * @tc.desc Verify setValue with valid instance and value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('name')!;
@@ -174,13 +174,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0200
-     * @tc.name testSetValue005
+     * @tc.name testSetValue0200
      * @tc.desc Verify passing valid object instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -190,13 +190,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0300
-     * @tc.name testSetValue006
+     * @tc.name testSetValue0300
      * @tc.desc Verify setting field value on correct class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass006>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -206,13 +206,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0400
-     * @tc.name testSetValue009
+     * @tc.name testSetValue0400
      * @tc.desc Verify passing instance of wrong type throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Class1009>();
       let field = cls1.getInstanceField('field')!;
       let cls2 = Class.from<Class2009>();
@@ -227,13 +227,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0500
-     * @tc.name testSetValue011
+     * @tc.name testSetValue0500
      * @tc.desc Verify passing mismatched type value throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass011>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('intField')!;
@@ -247,13 +247,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0600
-     * @tc.name testSetValue012
+     * @tc.name testSetValue0600
      * @tc.desc Verify passing null as field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NullableClass012>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('nullableField')!;
@@ -263,13 +263,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0700
-     * @tc.name testSetValue013
+     * @tc.name testSetValue0700
      * @tc.desc Verify passing undefined as field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OptionalClass013>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('optionalField')!;
@@ -279,13 +279,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0800
-     * @tc.name testSetValue014
+     * @tc.name testSetValue0800
      * @tc.desc Verify setValue for string, boolean, and array field types
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypesClass014>();
       let instance = cls.createInstance();
       cls.getInstanceField('strField')!.setValue(instance, 'test');
@@ -297,13 +297,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_0900
-     * @tc.name testSetValue016
+     * @tc.name testSetValue0900
      * @tc.desc Verify value changes after setValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -314,13 +314,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1000
-     * @tc.name testSetValue018
+     * @tc.name testSetValue1000
      * @tc.desc Verify setting null on nullable field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NullableClass018>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -330,13 +330,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1100
-     * @tc.name testSetValue019
+     * @tc.name testSetValue1100
      * @tc.desc Verify setting numeric field to zero
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass019>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -346,13 +346,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1200
-     * @tc.name testSetValue020
+     * @tc.name testSetValue1200
      * @tc.desc Verify setting string field to empty string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass020>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -362,13 +362,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1300
-     * @tc.name testSetValue021
+     * @tc.name testSetValue1300
      * @tc.desc Verify setting boolean field to false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass021>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('flag')!;
@@ -378,13 +378,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1400
-     * @tc.name testSetValue022
+     * @tc.name testSetValue1400
      * @tc.desc Verify setValue on readonly field throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyClass022>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('readonlyField')!;
@@ -398,13 +398,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1500
-     * @tc.name testSetValue025
+     * @tc.name testSetValue1500
      * @tc.desc Verify private field is not reflectable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PrivateClass025>();
       let privateField = cls.getInstanceField('privateField');
       expect(privateField === undefined).assertTrue();
@@ -412,13 +412,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1600
-     * @tc.name testSetValue026
+     * @tc.name testSetValue1600
      * @tc.desc Verify setValue basic functionality
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name')!;
       let instance = cls.createInstance();
@@ -428,13 +428,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1700
-     * @tc.name testSetValue028
+     * @tc.name testSetValue1700
      * @tc.desc Verify setting large numeric value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass028>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('largeNumber')!;
@@ -448,13 +448,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1800
-     * @tc.name testSetValue029
+     * @tc.name testSetValue1800
      * @tc.desc Verify setting negative value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass029>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('signedValue')!;
@@ -465,13 +465,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_1900
-     * @tc.name testSetValue030
+     * @tc.name testSetValue1900
      * @tc.desc Verify setting very long string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass030>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('textField')!;
@@ -485,13 +485,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2000
-     * @tc.name testSetValue031
+     * @tc.name testSetValue2000
      * @tc.desc Verify setting array type field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('arrField')!;
@@ -506,13 +506,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2100
-     * @tc.name testSetValue032
+     * @tc.name testSetValue2100
      * @tc.desc Verify setting object type field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OuterClass032>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('objField')!;
@@ -528,13 +528,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2200
-     * @tc.name testSetValue033
+     * @tc.name testSetValue2200
      * @tc.desc Verify getValue can read new value after setValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass006>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -550,13 +550,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2300
-     * @tc.name testSetValue034
+     * @tc.name testSetValue2300
      * @tc.desc Verify multiple setValue updates field value
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass016>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('counter')!;
@@ -569,13 +569,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2400
-     * @tc.name testSetValue035
+     * @tc.name testSetValue2400
      * @tc.desc Verify round-trip of setValue and getValue with getValue
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -588,13 +588,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2500
-     * @tc.name testSetValue036
+     * @tc.name testSetValue2500
      * @tc.desc Verify last setValue overwrites previous values
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass036>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('data')!;
@@ -608,13 +608,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2600
-     * @tc.name testSetValue037
+     * @tc.name testSetValue2600
      * @tc.desc Verify using setValue to initialize object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Person037>();
       let instance = cls.createInstance();
 
@@ -629,13 +629,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2700
-     * @tc.name testSetValue038
+     * @tc.name testSetValue2700
      * @tc.desc Verify using setValue to copy objects
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let sourceCls = Class.from<Source038>();
       let targetCls = Class.from<Source038>();
 
@@ -654,13 +654,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2800
-     * @tc.name testSetValue039
+     * @tc.name testSetValue2800
      * @tc.desc Verify batch updating fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
 
@@ -678,13 +678,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_2900
-     * @tc.name testSetValue040
+     * @tc.name testSetValue2900
      * @tc.desc Verify StaticField.setValue for static fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<StaticTest040>();
       let staticField = cls.getStaticField('STATIC_VALUE')!;
       let originalValue: string = staticField.getValue() as string;
@@ -704,13 +704,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3000
-     * @tc.name testSetValue041
+     * @tc.name testSetValue3000
      * @tc.desc Verify setValue for generic field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let intCls = Class.from<GenericClass041<int>>();
       let intInstance = intCls.createInstance();
       let intField = intCls.getInstanceField('data')!;
@@ -728,13 +728,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3100
-     * @tc.name testSetValue042
+     * @tc.name testSetValue3100
      * @tc.desc Verify setValue for union type field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UnionClass042>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('stringOrNumber')!;
@@ -745,13 +745,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3200
-     * @tc.name testSetValue043
+     * @tc.name testSetValue3200
      * @tc.desc Verify setValue string to string field roundtrip
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('name')!;
@@ -761,13 +761,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3300
-     * @tc.name testSetValue044
+     * @tc.name testSetValue3300
      * @tc.desc Verify passing boolean to int field throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass011>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('intField')!;
@@ -781,13 +781,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3400
-     * @tc.name testSetValue045
+     * @tc.name testSetValue3400
      * @tc.desc Verify passing null to non-nullable field throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
@@ -801,13 +801,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3500
-     * @tc.name testSetValue046
+     * @tc.name testSetValue3500
      * @tc.desc Verify setValue stores reference for array type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass031>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('arrField')!;
@@ -820,13 +820,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3600
-     * @tc.name testSetValue047
+     * @tc.name testSetValue3600
      * @tc.desc Verify passing int to string field throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('field1')!;
@@ -840,13 +840,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3700
-     * @tc.name testSetValue048
+     * @tc.name testSetValue3700
      * @tc.desc Verify passing int to boolean field throws TypeError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass039>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('field3')!;
@@ -860,13 +860,13 @@ export default function InstanceFieldSetValueTest(): void {
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUE_3800
-     * @tc.name testSetValue049
+     * @tc.name testSetValue3800
      * @tc.desc Verify passing undefined to int field throws NullPointerError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testSetValue049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetValue3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass005>();
       let instance = cls.createInstance();
       let field = cls.getInstanceField('value')!;
