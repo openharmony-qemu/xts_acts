@@ -61,7 +61,7 @@ interface PreDownConfig {
 async function getAVPlayerRequest(testName: string, url: string, callBack: (request: media.MediaSourceLoadingRequest) => void) {
   let avPlayer = await media.createAVPlayer()
   let headers: Record<string, string> = {"User-Agent": "User-Agent-Value"};
-  let mediaSource1 : media.mediaSource | undefined = media.createMediaSourceWithUrl(url, headers);
+  let mediaSource1 : media.MediaSource | undefined = media.createMediaSourceWithUrl(url, headers);
   let uuid: int = 1;
   let requests1: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap<number, media.MediaSourceLoadingRequest>(); //uuid:request
 
@@ -81,7 +81,7 @@ async function getAVPlayerRequest(testName: string, url: string, callBack: (requ
     console.log(TAG, testName, `Opening resource: ${request.url}`);
     uuid += 1;
     requests1.set(uuid, request);
-    callback(request);
+    callBack(request);
     return uuid;
   };
 
