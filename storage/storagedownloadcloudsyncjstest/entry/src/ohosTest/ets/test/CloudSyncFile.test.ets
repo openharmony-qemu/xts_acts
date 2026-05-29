@@ -376,5 +376,65 @@ describe('cloud_file_test', () => {
      done();
    });
 
+   /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_001
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0100
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_001', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_001 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_002
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0200
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_002', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_002 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_003
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_TEST_0300
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_003', Level.LEVEL3, async (done: Function) => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        let size = await fileCache.getCachedTotalSize();
+        expect(size == 0).assertTrue();
+        await fileCache.cleanFileCache()
+      } catch (err) {
+        console.error('test_CloudFileCache_getCachedTotalSize_003 has failed for ' + err.message + ', code: ' + err.code);
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }

@@ -75,6 +75,16 @@ import StaticMethodIsPrivateTest from "./staticMethod/StaticMethodIsPrivateTest.
 import StaticMethodIsProtectedTest from "./staticMethod/StaticMethodIsProtectedTest.test";
 import StaticMethodIsPublicTest from "./staticMethod/StaticMethodIsPublicTest.test";
 import StaticMethodIsSetterTest from "./staticMethod/StaticMethodIsSetterTest.test";
+import InstanceFieldSetValueTest from "./InstanceField/InstanceFieldSetValueTest.test";
+import InstanceFieldGetValueTest from "./InstanceField/InstanceFieldGetValueTest.test";
+import InstanceFieldIsReadonlyTest from "./InstanceField/InstanceFieldIsReadonlyTest.test";
+import InstanceFieldIsPublicTest from "./InstanceField/InstanceFieldIsPublicTest.test";
+import InstanceFieldIsPrivateTest from "./InstanceField/InstanceFieldIsPrivateTest.test";
+import InstanceFieldIsProtectedTest from "./InstanceField/InstanceFieldIsProtectedTest.test";
+import InstanceFieldEqualsTest from "./InstanceField/InstanceFieldEqualsTest.test";
+import InstanceFieldGetNameTest from "./InstanceField/InstanceFieldGetNameTest.test";
+import InstanceFieldGetOwnerTest from "./InstanceField/InstanceFieldGetOwnerTest.test";
+import InstanceFieldGetTypeTest from "./InstanceField/InstanceFieldGetTypeTest.test";
 
 
 
@@ -142,5 +152,16 @@ export default function testsuite(): void {
   ClassIsLiteralInitializedInterfaceTest();
   GetInstanceFieldsRecursiveTest();
   GetInstanceGettersRecursiveTest();
-}
 
+  InstanceFieldSetValueTest();
+  InstanceFieldGetValueTest();
+  InstanceFieldIsReadonlyTest();
+  InstanceFieldIsPublicTest();
+  InstanceFieldIsPrivateTest();
+  InstanceFieldIsProtectedTest();
+  InstanceFieldEqualsTest();
+  InstanceFieldGetNameTest();
+  InstanceFieldGetOwnerTest();
+  InstanceFieldGetTypeTest();
+
+}
