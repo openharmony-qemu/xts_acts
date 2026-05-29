@@ -65,6 +65,7 @@ export default function SegmentButtonBorderTest() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
         .$children[1]
         .$children[0]
         .$children[0]
@@ -114,6 +115,7 @@ export default function SegmentButtonBorderTest() {
       let driver: Driver = Driver.create();
       await CommonFunc.sleep(1000);
       let obj3: ESObject = JSON.parse(JSON.stringify(getInspectorTree()))
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]

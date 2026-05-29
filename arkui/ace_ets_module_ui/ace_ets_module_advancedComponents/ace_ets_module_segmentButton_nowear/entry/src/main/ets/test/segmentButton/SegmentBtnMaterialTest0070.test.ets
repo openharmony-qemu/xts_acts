@@ -75,10 +75,12 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj1 is: " + JSON.stringify(obj));
       expect(obj1.$attrs.systemMaterial == null).assertTrue()
       let obj2: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -88,11 +90,13 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[3]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj3 is: " + JSON.stringify(obj3));
       expect(obj3.$attrs.systemMaterial == null).assertTrue()
       let obj4: ESObject = JSON.parse(JSON.stringify(obj))
         .$children[3]
         .$children[1]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj4 is: " + JSON.stringify(obj4));
       expect(obj4.$attrs.systemMaterial == null).assertTrue()
@@ -109,11 +113,13 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj6 is: " + JSON.stringify(obj6));
       expect(JSON.stringify(obj6.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj7: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -124,12 +130,14 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[3]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj8 is: " + JSON.stringify(obj8));
       expect(JSON.stringify(obj8.$attrs.systemMaterial))
         .assertEqual('{"material":{"type":"MaterialType.SEMI_TRANSPARENT"}}');
       let obj9: ESObject = JSON.parse(JSON.stringify(obj5))
         .$children[3]
         .$children[1]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj9 is: " + JSON.stringify(obj9));
       expect(JSON.stringify(obj9.$attrs.systemMaterial))
@@ -145,10 +153,12 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[0]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj11 is: " + JSON.stringify(obj11));
       expect(obj11.$attrs.systemMaterial == null).assertTrue()
       let obj12: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[2]
+        .$children[0]
         .$children[0]
         .$children[0]
         .$children[0]
@@ -158,11 +168,13 @@ export default function SegmentBtnMaterialTest0070() {
         .$children[3]
         .$children[0]
         .$children[0]
+        .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj13 is: " + JSON.stringify(obj13));
       expect(obj13.$attrs.systemMaterial == null).assertTrue()
       let obj14: ESObject = JSON.parse(JSON.stringify(obj10))
         .$children[3]
         .$children[1]
+        .$children[0]
         .$children[0]
       console.info("[SegmentBtnMaterialTest0070_001] component obj14 is: " + JSON.stringify(obj14));
       expect(obj14.$attrs.systemMaterial == null).assertTrue()
