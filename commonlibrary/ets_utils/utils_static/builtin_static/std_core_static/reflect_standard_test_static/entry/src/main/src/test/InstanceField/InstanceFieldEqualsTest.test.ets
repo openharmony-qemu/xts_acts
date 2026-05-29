@@ -62,7 +62,7 @@ export default function InstanceFieldEqualsTest(): void {
       let cls = Class.from<MyClass004>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("age");
-      expect(field1!.equals(field2!)).assertFalse()
+      expect(field1!.equals(field2!)).assertFalse();
     });
 
     /**
@@ -78,7 +78,7 @@ export default function InstanceFieldEqualsTest(): void {
       let cls2 = Class.from<OtherClass006>();
       let field1 = cls1.getInstanceField("name");
       let field2 = cls2.getInstanceField("name");
-      expect(field1!.equals(field2!)).assertFalse()
+      expect(field1!.equals(field2!)).assertFalse();
     });
 
     /**
@@ -92,7 +92,7 @@ export default function InstanceFieldEqualsTest(): void {
     it('testEquals0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("name");
-      expect(field!.equals(field!)).assertTrue()
+      expect(field!.equals(field!)).assertTrue();
     });
 
     /**
@@ -106,7 +106,7 @@ export default function InstanceFieldEqualsTest(): void {
     it('testEquals0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField("noExist");
-      expect(field === undefined).assertTrue()
+      expect(field === undefined).assertTrue();
     });
 
     /**
@@ -122,8 +122,8 @@ export default function InstanceFieldEqualsTest(): void {
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let result = field1!.equals(field2!);
-      expect(result).assertTrue()
-      expect(typeof result).assertEqual('boolean')
+      expect(result).assertTrue();
+      expect(typeof result).assertEqual('boolean');
     });
 
     /**
@@ -141,8 +141,8 @@ export default function InstanceFieldEqualsTest(): void {
       let field3 = cls.getInstanceField("age");
       let result1: boolean = field1!.equals(field2!);
       let result2: boolean = field1!.equals(field3!);
-      expect(typeof result1).assertEqual('boolean')
-      expect(typeof result2).assertEqual('boolean')
+      expect(typeof result1).assertEqual('boolean');
+      expect(typeof result2).assertEqual('boolean');
     });
 
     /**
@@ -164,8 +164,8 @@ export default function InstanceFieldEqualsTest(): void {
       } finally {
         finallyExecuted = true;
       }
-      expect(result).assertTrue()
-      expect(finallyExecuted).assertTrue()
+      expect(result).assertTrue();
+      expect(finallyExecuted).assertTrue();
     });
 
     /**
@@ -180,8 +180,8 @@ export default function InstanceFieldEqualsTest(): void {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
-      expect(field1!.equals(field2!)).assertTrue()
-      expect(field1! === field2!).assertFalse()
+      expect(field1!.equals(field2!)).assertTrue();
+      expect(field1! === field2!).assertFalse();
     });
 
     /**
@@ -197,9 +197,9 @@ export default function InstanceFieldEqualsTest(): void {
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("name");
-      expect(field1!.equals(field2!)).assertTrue()
-      expect(field2!.equals(field3!)).assertTrue()
-      expect(field1!.equals(field3!)).assertTrue()
+      expect(field1!.equals(field2!)).assertTrue();
+      expect(field2!.equals(field3!)).assertTrue();
+      expect(field1!.equals(field3!)).assertTrue();
     });
 
     /**
@@ -217,7 +217,7 @@ export default function InstanceFieldEqualsTest(): void {
       let field2 = cls2.getInstanceField("age");
       expect(field1 !== undefined).assertTrue();
       expect(field2 !== undefined).assertTrue();
-      expect(field1!.equals(field2!)).assertFalse()
+      expect(field1!.equals(field2!)).assertFalse();
     });
 
     /**
@@ -233,8 +233,8 @@ export default function InstanceFieldEqualsTest(): void {
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let field3 = cls.getInstanceField("age");
-      expect(field1!.equals(field2!)).assertEqual(field2!.equals(field1!))
-      expect(field1!.equals(field3!)).assertEqual(field3!.equals(field1!))
+      expect(field1!.equals(field2!)).assertEqual(field2!.equals(field1!));
+      expect(field1!.equals(field3!)).assertEqual(field3!.equals(field1!));
     });
 
     /**
@@ -253,9 +253,9 @@ export default function InstanceFieldEqualsTest(): void {
       let ab = field1!.equals(field2!);
       let bc = field2!.equals(field3!);
       let ac = field1!.equals(field3!);
-      expect(ab).assertTrue()
-      expect(bc).assertTrue()
-      expect(ac).assertTrue()
+      expect(ab).assertTrue();
+      expect(bc).assertTrue();
+      expect(ac).assertTrue();
     });
 
     /**
@@ -271,7 +271,7 @@ export default function InstanceFieldEqualsTest(): void {
       let cls2 = Class.from<Parent023>();
       let field1 = cls1.getInstanceField("name");
       let field2 = cls2.getInstanceField("name");
-      expect(field1!.equals(field2!)).assertFalse()
+      expect(field1!.equals(field2!)).assertFalse();
     });
 
     /**
@@ -287,8 +287,8 @@ export default function InstanceFieldEqualsTest(): void {
       let field1 = cls.getInstanceField("name");
       let field2 = cls.getInstanceField("name");
       let result = field1!.equals(field2!);
-      expect(typeof result).assertEqual('boolean')
-      expect(result).assertTrue()
+      expect(typeof result).assertEqual('boolean');
+      expect(result).assertTrue();
     });
 
   });
