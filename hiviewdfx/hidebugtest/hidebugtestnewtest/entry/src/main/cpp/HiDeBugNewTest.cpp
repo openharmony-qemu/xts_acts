@@ -1036,19 +1036,23 @@ static napi_value CheckHidebugStoragePressureCritical(napi_env env, napi_callbac
 }
 
 // 内存监听回调函数
-static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
+static bool memDumpListenerCallback1(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
     OH_LOG_INFO(LOG_APP, "testTag Callback1, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
         fd, tag, mayReportToOEM, arg);
     return true;
 }
 
-static bool memDumpListenerCallback2(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
+static bool memDumpListenerCallback2(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg)
+{
     OH_LOG_INFO(LOG_APP, "testTag Callback2, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
         fd, tag, mayReportToOEM, arg);
     return true;
 }
 
-static bool memDumpListenerCallbackFalse(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM, const char* arg) {
+static bool memDumpListenerCallbackFalse(int32_t fd, OH_HiDebug_MemListenerType tag, bool mayReportToOEM,
+                                         const char* arg)
+{
     OH_LOG_INFO(LOG_APP, "testTag False, fd=%{public}d, tag=%{public}d, mayReportToOEM=%{public}d, arg=%{public}s",
         fd, tag, mayReportToOEM, arg);
     return false;
