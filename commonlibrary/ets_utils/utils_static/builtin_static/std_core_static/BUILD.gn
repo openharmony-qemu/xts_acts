@@ -22,7 +22,7 @@ group("std_core_static") {
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
       "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
-	  "set_standard_test_static:ActsSetTest",
+      "set_standard_test_static:ActsSetTest",
     ]
   }
 }
