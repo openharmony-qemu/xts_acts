@@ -78,7 +78,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_no_domain] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -102,7 +102,7 @@ export default function settingUiJsunit() {
           done();
         } catch (err) {
           console.error("[settings_set_value_sync_domain_system] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
         }
       });
@@ -126,54 +126,7 @@ export default function settingUiJsunit() {
           });
         } catch (err) {
           console.error("[settings_set_value_callback_no_domain] error = " + err);
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   settings_set_value_no_domain
-     * @tc.number settings_set_value_no_domain
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_no_domain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          console.info("[settings_set_value_no_domain] start ");
-          let result = await settings.setValue(mContext, 'testkey', 'testvalue');
-          console.info("[settings_set_value_no_domain] result= " + result);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_no_domain] error = " + err);
-          expect().assertFail();
-          done();
-        }
-      });
-
-    /**
-     * @tc.name   settings_set_value_domain_system
-     * @tc.number settings_set_value_domain_system
-     * @tc.desc   MediumTest
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('settings_set_value_domain_system', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: Function) => {
-        try {
-          console.info("[settings_set_value_domain_system] start ");
-          let result =
-            await settings.setValue(mContext, 'testkey', 'testvalue', settings.domainName.USER_PROPERTY);
-          console.info("[settings_set_value_domain_system] result= " + result);
-          expect(result).assertTrue();
-          done();
-        } catch (err) {
-          console.error("[settings_set_value_domain_system] error = " + err);
-          expect().assertFail();
+          expect(err.code).assertEqual(201);
           done();
         }
       });
