@@ -374,7 +374,6 @@ export default function SetSizeTest(): void {
       expect(set.size).assertEqual(2);
     });
 
-
     /**
      * @tc.name testSetSize021
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2100

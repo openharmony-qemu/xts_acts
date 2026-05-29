@@ -674,6 +674,7 @@ export default function SetAddTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
+
     /**
      * @tc.name testSetAdd041
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4100
@@ -743,21 +744,6 @@ export default function SetAddTest(): void {
       set.add(42);
       set.add("dup");
       expect(set.size).assertEqual(2);
-    });
-
-    /**
-     * @tc.name testSetAdd045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4500
-     * @tc.desc Verify add with single parameter adds element correctly
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetAdd045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      set.add(1);
-      expect(set.size).assertEqual(1);
-      expect(set.has(1)).assertTrue();
     });
   });
 }

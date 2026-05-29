@@ -723,7 +723,6 @@ export default function SetConstructor1Test(): void {
       }
     });
 
-
     /**
      * @tc.name testSetConstructor1045
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4500

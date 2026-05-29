@@ -763,6 +763,7 @@ export default function SetForEachTest(): void {
       expect(numCount).assertEqual(2);
       expect(strCount).assertEqual(1);
     });
+
     /**
      * @tc.name testSetForEach038
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_3800
@@ -926,7 +927,6 @@ export default function SetForEachTest(): void {
       }
       expect(visited.length).assertEqual(1);
     });
-
 
     /**
      * @tc.name testSetForEach046

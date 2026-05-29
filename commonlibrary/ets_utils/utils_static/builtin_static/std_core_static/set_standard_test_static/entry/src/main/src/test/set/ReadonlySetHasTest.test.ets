@@ -870,6 +870,7 @@ export default function ReadonlySetHasTest(): void {
       expect(r1 === r2).assertTrue();
       expect(r2 === r3).assertTrue();
     });
+
     /**
      * @tc.name testReadonlySetHas057
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5700
@@ -889,7 +890,6 @@ export default function ReadonlySetHasTest(): void {
       }
       expect(catchExecuted).assertTrue();
     });
-
 
     /**
      * @tc.name testReadonlySetHas058
@@ -914,7 +914,6 @@ export default function ReadonlySetHasTest(): void {
       expect(catchFlag).assertTrue();
       expect(finallyFlag).assertTrue();
     });
-
 
     /**
      * @tc.name testReadonlySetHas059
@@ -1036,21 +1035,6 @@ export default function ReadonlySetHasTest(): void {
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
       }
-    });
-
-    /**
-     * @tc.name testReadonlySetHas066
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6600
-     * @tc.desc Verify ReadonlySet.has returns true for existing element
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testReadonlySetHas066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      expect(set.has(1)).assertTrue();
-      expect(set.has(2)).assertTrue();
-      expect(set.has(3)).assertFalse();
     });
   });
 }

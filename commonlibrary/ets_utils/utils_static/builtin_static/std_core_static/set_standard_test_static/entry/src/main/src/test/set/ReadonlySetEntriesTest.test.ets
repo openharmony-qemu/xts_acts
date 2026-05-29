@@ -629,30 +629,12 @@ export default function ReadonlySetEntriesTest(): void {
     /**
      * @tc.name testReadonlySetEntries035
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3500
-     * @tc.desc Verify ReadonlySet entries with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testReadonlySetEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      const iter = set.entries();
-      let r = iter.next();
-      let v = r.value as [int, int];
-      expect(v[0]).assertEqual(1);
-      expect(v[1]).assertEqual(1);
-      expect(r.done).assertFalse();
-    });
-
-    /**
-     * @tc.name testReadonlySetEntries036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3600
      * @tc.desc Verify ReadonlySet<string | number> entries() iterates union type pairs
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string | number> = new Set<string | number>();
       (set as Set<string | number>).add("a");
       (set as Set<string | number>).add(1);
@@ -676,14 +658,14 @@ export default function ReadonlySetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetEntries037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3700
+     * @tc.name testReadonlySetEntries036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3600
      * @tc.desc Verify break in for-of ReadonlySet entries() exits traversal early
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
       const result: int[] = [];
       for (const entry of set.entries()) {
@@ -698,14 +680,14 @@ export default function ReadonlySetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetEntries038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3800
+     * @tc.name testReadonlySetEntries037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3700
      * @tc.desc Verify continue in for-of ReadonlySet entries() skips specific elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetEntries038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4]);
       const result: int[] = [];
       for (const entry of set.entries()) {
@@ -720,14 +702,14 @@ export default function ReadonlySetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetEntries039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3900
+     * @tc.name testReadonlySetEntries038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3800
      * @tc.desc Verify throw in for-of ReadonlySet entries() stops iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetEntries039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetEntries038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const visited: int[] = [];
       try {
@@ -746,14 +728,14 @@ export default function ReadonlySetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetEntries040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_4000
+     * @tc.name testReadonlySetEntries039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3900
      * @tc.desc Verify ReadonlySet entries() iterates Set<number> with NaN element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetEntries040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetEntries039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<number> = new Set<number>([Number.NaN, 42]);
       const iter = set.entries();
       let r1 = iter.next();

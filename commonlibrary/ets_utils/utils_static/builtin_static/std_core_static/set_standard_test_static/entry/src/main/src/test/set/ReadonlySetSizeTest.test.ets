@@ -298,7 +298,6 @@ export default function ReadonlySetSizeTest(): void {
       expect(set.size).assertEqual(originalSize);
     });
 
-
     /**
      * @tc.name testReadonlySetSize018
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_SIZE_1800

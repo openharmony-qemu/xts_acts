@@ -416,6 +416,7 @@ export default function SetKeysTest(): void {
       expect(result.value).assertEqual("x");
       expect(result.done).assertFalse();
     });
+
     /**
      * @tc.name testSetKeys020
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2000
@@ -491,6 +492,7 @@ export default function SetKeysTest(): void {
       let r = iter.next();
       expect(r.done).assertTrue();
     });
+
     /**
      * @tc.name testSetKeys024
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2400
@@ -608,6 +610,7 @@ export default function SetKeysTest(): void {
       expect(keys[1]).assertEqual("recovered");
       expect(keys[2]).assertEqual("c");
     });
+
     /**
      * @tc.name testSetKeys029
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2900
@@ -634,21 +637,6 @@ export default function SetKeysTest(): void {
       }
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.name testSetKeys030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3000
-     * @tc.desc Verify keys with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>(["a"]);
-      let iter = set.keys();
-      expect(iter.next().value).assertEqual("a");
-      expect(iter.next().done).assertTrue();
     });
   });
 }

@@ -584,7 +584,6 @@ export default function SetConstructor4Test(): void {
       }
     });
 
-
     /**
      * @tc.name testSetConstructor4037
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3700

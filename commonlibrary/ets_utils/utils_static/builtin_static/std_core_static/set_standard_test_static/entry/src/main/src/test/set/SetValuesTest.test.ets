@@ -100,6 +100,7 @@ export default function SetValuesTest(): void {
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(42);
     });
+
     /**
      * @tc.name testSetValues004
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_0400
@@ -471,6 +472,7 @@ export default function SetValuesTest(): void {
       expect(iter.next().value).assertEqual("z");
       expect(iter.next().done).assertTrue();
     });
+
     /**
      * @tc.name testSetValues024
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_2400
@@ -759,22 +761,6 @@ export default function SetValuesTest(): void {
       }
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
-    });
-
-    /**
-     * @tc.name testSetValues038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_3800
-     * @tc.desc Verify values with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>(["a", "b"]);
-      let iter = set.values();
-      expect(iter.next().value).assertEqual("a");
-      expect(iter.next().value).assertEqual("b");
-      expect(iter.next().done).assertTrue();
     });
   });
 }

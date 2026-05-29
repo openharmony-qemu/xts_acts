@@ -86,6 +86,7 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(self.next().value).assertEqual(2);
       expect(self.next().done).assertTrue();
     });
+
     /**
      * @tc.name testSetIteratorDollarIterator004
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_0400
@@ -105,6 +106,7 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(result.length).assertEqual(2);
       expect(result[0]).assertEqual("a");
     });
+
     /**
      * @tc.name testSetIteratorDollarIterator005
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_0500
@@ -218,7 +220,6 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(s1 === s2).assertTrue();
     });
 
-
     /**
      * @tc.name testSetIteratorDollarIterator011
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_1100
@@ -235,6 +236,7 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(inner.next().done).assertTrue();
       expect(inner.next().done).assertTrue();
     });
+
     /**
      * @tc.name testSetIteratorDollarIterator012
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_1200
@@ -381,7 +383,6 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(caught).assertTrue();
     });
 
-
     /**
      * @tc.name testSetIteratorDollarIterator019
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_1900
@@ -433,23 +434,6 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(v[1]).assertEqual(10);
       v = inner.next().value as [int, int];
       expect(v[0]).assertEqual(20);
-      expect(inner.next().done).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetIteratorDollarIterator022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2200
-     * @tc.desc Verify SetIterator $_iterator with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIteratorDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2]);
-      const iter = set.values();
-      const inner = iter.$_iterator();
-      expect(inner.next().value).assertEqual(1);
-      expect(inner.next().value).assertEqual(2);
       expect(inner.next().done).assertTrue();
     });
   });

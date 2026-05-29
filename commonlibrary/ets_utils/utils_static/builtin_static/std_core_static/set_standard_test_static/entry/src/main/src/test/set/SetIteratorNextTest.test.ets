@@ -82,28 +82,12 @@ export default function SetIteratorNextTest(): void {
     /**
      * @tc.name testSetIteratorNext003
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0300
-     * @tc.desc Verify next() with no parameter returns IteratorResult
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIteratorNext003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2]);
-      const iter = set.values();
-      let r = iter.next();
-      expect(r.value as int).assertEqual(1);
-      expect(r.done).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetIteratorNext004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0400
      * @tc.desc Verify next() returns object with value and done properties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([100]);
       const iter = set.values();
       const result = iter.next();
@@ -112,14 +96,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0500
+     * @tc.name testSetIteratorNext004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0400
      * @tc.desc Verify consecutive next() calls traverse all elements in insertion order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(10);
@@ -129,14 +113,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0600
+     * @tc.name testSetIteratorNext005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0500
      * @tc.desc Verify values() iterator next() returns element values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["a", "b", "c"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("a");
@@ -146,14 +130,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0700
+     * @tc.name testSetIteratorNext006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0600
      * @tc.desc Verify keys() iterator next() returns key values same as elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([5, 10, 15]);
       const iter = set.keys();
       expect(iter.next().value).assertEqual(5);
@@ -163,14 +147,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0800
+     * @tc.name testSetIteratorNext007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0700
      * @tc.desc Verify entries() iterator next() returns [key,key] array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       const r1 = iter.next();
@@ -185,14 +169,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0900
+     * @tc.name testSetIteratorNext008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0800
      * @tc.desc Verify empty Set iterator first next() returns done=true value=undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const result = iter.next();
@@ -201,14 +185,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1000
+     * @tc.name testSetIteratorNext009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0900
      * @tc.desc Verify single-element Set next() returns element then done=true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["only"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("only");
@@ -217,14 +201,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1100
+     * @tc.name testSetIteratorNext010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1000
      * @tc.desc Verify Set with 0 value next() correctly returns value 0
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([0]);
       const iter = set.values();
       const result = iter.next();
@@ -233,14 +217,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1200
+     * @tc.name testSetIteratorNext011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1100
      * @tc.desc Verify Set with empty string next() correctly returns empty string
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>([""]);
       const iter = set.values();
       const result = iter.next();
@@ -249,14 +233,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1300
+     * @tc.name testSetIteratorNext012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1200
      * @tc.desc Verify Set with false value next() correctly returns false
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<boolean>([false, true]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(false);
@@ -265,14 +249,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1400
+     * @tc.name testSetIteratorNext013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1300
      * @tc.desc Verify Set with null value next() correctly returns null
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<Object | null>([null, new Object()]);
       const iter = set.values();
       const r1 = iter.next();
@@ -281,14 +265,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1500
+     * @tc.name testSetIteratorNext014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1400
      * @tc.desc Verify next() return value includes value and done as boolean
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([42]);
       const iter = set.values();
       const result = iter.next();
@@ -298,14 +282,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1600
+     * @tc.name testSetIteratorNext015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1500
      * @tc.desc Verify Set<int> iterator next() returns int type value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const r = iter.next();
@@ -315,14 +299,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1700
+     * @tc.name testSetIteratorNext016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1600
      * @tc.desc Verify next() done property is always boolean type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       let r1 = iter.next();
@@ -334,14 +318,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1800
+     * @tc.name testSetIteratorNext017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1700
      * @tc.desc Verify entries() iterator next() returns two-element array
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["x"]);
       const iter = set.entries();
       const result = iter.next();
@@ -352,14 +336,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1900
+     * @tc.name testSetIteratorNext018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1800
      * @tc.desc Verify exhausted iterator next() returns done=true value=undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       iter.next();
@@ -370,14 +354,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2000
+     * @tc.name testSetIteratorNext019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_1900
      * @tc.desc Verify after exhaustion multiple next() calls return done=true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([99]);
       const iter = set.values();
       iter.next();
@@ -391,14 +375,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2100
+     * @tc.name testSetIteratorNext020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2000
      * @tc.desc Verify large Set next() correctly traverses all elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: int[] = [];
       for (let i = 0; i < 1000; i++) {
         arr.push(i);
@@ -415,14 +399,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2200
+     * @tc.name testSetIteratorNext021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2100
      * @tc.desc Verify Set<string> iterator next() returns string type value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["hello", "world"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("hello");
@@ -431,14 +415,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2300
+     * @tc.name testSetIteratorNext022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2200
      * @tc.desc Verify Set<number> iterator next() returns numeric value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([1.5, 2.7, 3.9]);
       const iter = set.values();
       let v1: number = iter.next().value as number;
@@ -449,14 +433,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2400
+     * @tc.name testSetIteratorNext023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2300
      * @tc.desc Verify Set<Object> iterator next() returns object reference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1 = new Obj038(1);
       const obj2 = new Obj038(2);
       const set = new Set<Object>([obj1, obj2]);
@@ -467,14 +451,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2500
+     * @tc.name testSetIteratorNext024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2400
      * @tc.desc Verify Set<boolean> iterator next() returns boolean type value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<boolean>([true, false]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(true);
@@ -483,14 +467,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2600
+     * @tc.name testSetIteratorNext025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2500
      * @tc.desc Verify deduplicated Set next() returns only unique values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 2, 3, 3, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -500,14 +484,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2700
+     * @tc.name testSetIteratorNext026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2600
      * @tc.desc Verify multiple values() iterators next() perform independently
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -518,14 +502,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2800
+     * @tc.name testSetIteratorNext027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2700
      * @tc.desc Verify one iterator traversal does not affect another start position
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -535,14 +519,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2900
+     * @tc.name testSetIteratorNext028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2800
      * @tc.desc Verify exhausted iterator subsequent next() always returns done=true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
@@ -555,14 +539,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3000
+     * @tc.name testSetIteratorNext029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_2900
      * @tc.desc Verify keys() and values() iterators next() values are identical
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([5, 10, 15]);
       const ki = set.keys();
       const vi = set.values();
@@ -571,14 +555,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3100
+     * @tc.name testSetIteratorNext030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3000
      * @tc.desc Verify next() returns in insertion order not value order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(30);
       set.add(10);
@@ -589,14 +573,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3200
+     * @tc.name testSetIteratorNext031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3100
      * @tc.desc Verify next() traversal does not modify original Set content or size
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const sizeBefore = set.size;
       const iter = set.values();
@@ -608,14 +592,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3300
+     * @tc.name testSetIteratorNext032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3200
      * @tc.desc Verify exhausted iterator next() safely returns done without exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
@@ -626,14 +610,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3400
+     * @tc.name testSetIteratorNext033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3300
      * @tc.desc Verify empty Set iterator next() safely returns done without exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const r = iter.next();
@@ -642,14 +626,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3500
+     * @tc.name testSetIteratorNext034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3400
      * @tc.desc Verify empty Set iterator multiple next() safely returns done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       const iter = set.values();
       for (let i = 0; i < 10; i++) {
@@ -660,14 +644,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3600
+     * @tc.name testSetIteratorNext035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3500
      * @tc.desc Verify adding element during iteration iterator behavior validated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -677,14 +661,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3700
+     * @tc.name testSetIteratorNext036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3600
      * @tc.desc Verify deleting unvisited element during iteration next() skips it
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -694,14 +678,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3800
+     * @tc.name testSetIteratorNext037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3700
      * @tc.desc Verify deleting visited element during iteration next() unaffected
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       iter.next();
@@ -712,14 +696,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3900
+     * @tc.name testSetIteratorNext038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3800
      * @tc.desc Verify clearing Set during iteration next() behavior validated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -729,14 +713,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4000
+     * @tc.name testSetIteratorNext039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_3900
      * @tc.desc Verify after exhaustion value is undefined accessed without exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
@@ -746,14 +730,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4100
+     * @tc.name testSetIteratorNext040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4000
      * @tc.desc Verify typeof next() result done property is boolean
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([42]);
       const iter = set.values();
       const result = iter.next();
@@ -762,14 +746,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4200
+     * @tc.name testSetIteratorNext041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4100
      * @tc.desc Verify next() returns non-null IteratorResult with valid done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const result = iter.next();
@@ -778,30 +762,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4300
-     * @tc.desc Verify next with no parameter on non-empty iterator returns first element
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIteratorNext043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([7, 8]);
-      const iter = set.values();
-      let r = iter.next();
-      expect(r.value as int).assertEqual(7);
-      expect(r.done).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetIteratorNext044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4400
+     * @tc.name testSetIteratorNext042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4200
      * @tc.desc Verify next() on values iterator returns NaN element correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([Number.NaN, 42]);
       const iter = set.values();
       const r1 = iter.next();
@@ -813,14 +781,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4500
+     * @tc.name testSetIteratorNext043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4300
      * @tc.desc Verify next() on values iterator returns Infinity elements correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]);
       const iter = set.values();
       const r1 = iter.next();
@@ -831,14 +799,14 @@ export default function SetIteratorNextTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorNext046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4600
+     * @tc.name testSetIteratorNext044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4400
      * @tc.desc Verify next() on union type Set values iterator returns both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIteratorNext046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string | number>(["a", 1, "b"]);
       const iter = set.values();
       expect(iter.next().value as string).assertEqual("a");

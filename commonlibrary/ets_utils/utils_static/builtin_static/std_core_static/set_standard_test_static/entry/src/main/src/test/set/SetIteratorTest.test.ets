@@ -63,6 +63,7 @@ export default function SetIteratorTest(): void {
       const iter = set.$_iterator();
       expect(iter.next().value).assertEqual("a");
     });
+
     /**
      * @tc.name testSetIterator002
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_0200
@@ -83,6 +84,7 @@ export default function SetIteratorTest(): void {
       expect(result[0]).assertEqual("a");
       expect(result[1]).assertEqual("b");
     });
+
     /**
      * @tc.name testSetIterator003
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_0300
@@ -108,6 +110,7 @@ export default function SetIteratorTest(): void {
         expect(iterResult[i]).assertEqual(valsResult[i]);
       }
     });
+
     /**
      * @tc.name testSetIterator004
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_0400
@@ -358,6 +361,7 @@ export default function SetIteratorTest(): void {
       expect(result.value).assertEqual("x");
       expect(result.done).assertFalse();
     });
+
     /**
      * @tc.name testSetIterator017
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1700
@@ -387,6 +391,7 @@ export default function SetIteratorTest(): void {
       expect(result[4]).assertEqual(1);
       expect(result[5]).assertEqual(2);
     });
+
     /**
      * @tc.name testSetIterator018
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1800
@@ -556,22 +561,6 @@ export default function SetIteratorTest(): void {
         }
       }
       expect(set.size).assertEqual(0);
-    });
-
-    /**
-     * @tc.name testSetIterator025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2500
-     * @tc.desc Verify Set $_iterator with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<string>(["a", "b"]);
-      let iter = set.$_iterator();
-      expect(iter.next().value).assertEqual("a");
-      expect(iter.next().value).assertEqual("b");
-      expect(iter.next().done).assertTrue();
     });
   });
 }

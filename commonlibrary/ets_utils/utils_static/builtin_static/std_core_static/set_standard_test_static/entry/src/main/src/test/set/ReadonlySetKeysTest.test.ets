@@ -584,27 +584,12 @@ export default function ReadonlySetKeysTest(): void {
     /**
      * @tc.name testReadonlySetKeys030
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_KEYS_3000
-     * @tc.desc Verify ReadonlySet keys with no parameter returns valid iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testReadonlySetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<string> = new Set<string>(["a"]);
-      let iter = set.keys();
-      expect(iter.next().value).assertEqual("a");
-      expect(iter.next().done).assertTrue();
-    });
-
-    /**
-     * @tc.name testReadonlySetKeys031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_KEYS_3100
      * @tc.desc Verify ReadonlySet<string | number> keys() iterates union type elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetKeys031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string | number> = new Set<string | number>();
       (set as Set<string | number>).add("a");
       (set as Set<string | number>).add(1);

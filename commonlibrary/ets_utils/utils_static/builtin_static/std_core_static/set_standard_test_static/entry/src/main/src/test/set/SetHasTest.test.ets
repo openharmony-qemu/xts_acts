@@ -868,54 +868,39 @@ export default function SetHasTest(): void {
     /**
      * @tc.name testSetHas054
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5400
-     * @tc.desc Verify has returns true for existing element
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetHas054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
-      expect(set.has(1)).assertTrue();
-      expect(set.has(2)).assertTrue();
-      expect(set.has(3)).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetHas055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5500
      * @tc.desc Verify has returns true for Number.MIN_VALUE element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetHas055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetHas054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>([Number.MIN_VALUE]);
       expect(set.has(Number.MIN_VALUE)).assertTrue();
     });
 
     /**
-     * @tc.name testSetHas056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5600
+     * @tc.name testSetHas055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5500
      * @tc.desc Verify has returns true for emoji string element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetHas056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetHas055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(["😀", "🔥"]);
       expect(set.has("😀")).assertTrue();
       expect(set.has("🔥")).assertTrue();
     });
 
     /**
-     * @tc.name testSetHas057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5700
+     * @tc.name testSetHas056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5600
      * @tc.desc Verify has returns true for scientific notation number element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetHas057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetHas056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>([1.23e5]);
       expect(set.has(1.23e5)).assertTrue();
     });

@@ -162,7 +162,6 @@ export default function SetConstructor3Test(): void {
       expect(set.size).assertEqual(1);
     });
 
-
     /**
      * @tc.name testSetConstructor3008
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_0800
@@ -220,7 +219,6 @@ export default function SetConstructor3Test(): void {
       expect(set.size).assertEqual(4);
     });
 
-
     /**
      * @tc.name testSetConstructor3012
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_1200
@@ -246,7 +244,6 @@ export default function SetConstructor3Test(): void {
       let set = new Set<string | undefined>([undefined, undefined, "a", undefined]);
       expect(set.size).assertEqual(2);
     });
-
 
     /**
      * @tc.name testSetConstructor3014
@@ -456,7 +453,6 @@ export default function SetConstructor3Test(): void {
       expect(set.size).assertEqual(1);
     });
 
-
     /**
      * @tc.name testSetConstructor3027
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_2700
@@ -488,7 +484,6 @@ export default function SetConstructor3Test(): void {
         expect(value instanceof Obj045).assertTrue();
       });
     });
-
 
     /**
      * @tc.name testSetConstructor3029
@@ -556,7 +551,6 @@ export default function SetConstructor3Test(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
-
 
     /**
      * @tc.name testSetConstructor3033
