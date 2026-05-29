@@ -38,6 +38,7 @@
     "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObserved",
     "MainAbility/pages/stateVariableDeepListen/SVDeepListenMakeObservedFalse",
     "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedAndObjectlink",
-    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedBuiltIn"
+    "MainAbility/pages/stateVariableDeepListen/SVDeepListenObservedBuiltIn",
+    "MainAbility/pages/AppStorageV2/AppStorageV2Api"
   ]
 }

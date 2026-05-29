@@ -21,6 +21,7 @@ group("std_core_static") {
       "enum_standard_test_static:ActsEnumStaticTest",
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
+      "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
     ]
   }
 }

@@ -2208,7 +2208,7 @@ static napi_value OhHiappEventSetEventCreateWatcher(napi_env env, napi_callback_
     }
 
     case 6: {
-        returnValue = OH_HiAppEvent_CreateWatcher("younottheonly");
+        returnValue = OH_HiAppEvent_CreateWatcher("");
         OH_HiAppEvent_DestroyWatcher(returnValue);
         break;
     }
@@ -2408,7 +2408,7 @@ static napi_value OhHiAppEventSetAppEventFilter11(napi_env env, napi_callback_in
 {
     napi_value ret;
     g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
-    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b0100, {}, 1);
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b0100, {}, 0);
     OH_HiAppEvent_DestroyWatcher(g_watcher);
     napi_create_int32(env, code, &ret);
     return ret;
@@ -2418,7 +2418,7 @@ static napi_value OhHiAppEventSetAppEventFilter12(napi_env env, napi_callback_in
 {
     napi_value ret;
     g_watcher = OH_HiAppEvent_CreateWatcher("testWatcher");
-    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "testDomain", 0b1111, {}, 2);
+    int32_t code = OH_HiAppEvent_SetAppEventFilter(g_watcher, "", 0b1111, {}, 0);
     OH_HiAppEvent_DestroyWatcher(g_watcher);
     napi_create_int32(env, code, &ret);
     return ret;

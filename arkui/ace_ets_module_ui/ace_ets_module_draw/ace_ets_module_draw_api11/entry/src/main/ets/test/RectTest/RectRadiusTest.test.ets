@@ -56,14 +56,21 @@ export default function RectRadiusTest() {
       console.info('[testRectRadiusTest_0010] START');
       await Utils.sleep(1000);
 
-      let strJson = getInspectorByKey('RectRadius_2');
+      let strJson = getInspectorByKey('RectRadius_1');
       let obj : ESObject = JSON.parse(strJson);
       console.info('[testRectRadiusTest_0010] Rect obj is: ' + obj);
       console.info('[testRectRadiusTest_0010] Rect obj.$type is: ' + obj.$type);
       console.info('[testRectRadiusTest_0010] Rect obj.$attrs.radius is: ' + obj.$attrs.radius);
 
       expect(obj.$type).assertEqual('Rect');
-      expect(obj.$attrs.radius).assertEqual(true);
+      expect(px2vp(obj.$attrs.radius[0][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[0][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[1][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[1][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[2][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[2][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[3][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[3][1])).assertEqual(20);
 
       console.info('[testRectRadiusTest_0010] END');
       done();
@@ -88,7 +95,14 @@ export default function RectRadiusTest() {
       console.info('[testRectRadiusTest_0020] Rect obj.$attrs.radius is: ' + obj.$attrs.radius);
 
       expect(obj.$type).assertEqual('Rect');
-      expect(obj.$attrs.radius).assertEqual(true);
+      expect(px2vp(obj.$attrs.radius[0][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[0][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[1][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[1][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[2][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[2][1])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[3][0])).assertEqual(20);
+      expect(px2vp(obj.$attrs.radius[3][1])).assertEqual(20);
 
       console.info('[testRectRadiusTest_0020] END');
       done();

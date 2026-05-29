@@ -32,12 +32,12 @@ import {
   Color,
   ListItemGroupOptions
 } from '@ohos.arkui.component';
-import { StoragePropRef,State} from '@ohos.arkui.stateManagement';
+import { StoragePropRef,Link,PropRef } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 export struct ListItemGroupView {
-  @State _markAnchor: Position = { x: 0, y: 0 } as Position;
+  @PropRef _markAnchor!: Position;
   private componentKey: string = '';
   private parentWidth: number = 100;
   private parentHeight: number = 600;

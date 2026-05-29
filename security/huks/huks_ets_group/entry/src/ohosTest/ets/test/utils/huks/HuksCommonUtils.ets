@@ -17,6 +17,12 @@ export const HuksMinAliasLength = 1;
 
 export const HuksMaxAliasLength = 128;
 
+export const HuksDefaultKeyVersion = 3;
+
+export const HuksDefaultOsVersion = 1;
+
+export const HuksDefaultOsPatchLevel = 1;
+
 export const HuksMinGroupId = "group".padEnd(7, "01");
 
 export const HuksMaxGroupId = "group".padEnd(127, "1234567890_.");

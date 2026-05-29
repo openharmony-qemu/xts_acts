@@ -71,7 +71,8 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
             }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code)
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message)
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -97,13 +98,15 @@ export default function dataTest() {
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err.code);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err.message);
                     ExpectFail();
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
             }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code)
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message)
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -127,7 +130,8 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
             }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code)
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message)
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -156,7 +160,8 @@ export default function dataTest() {
                     done();
                 });
             }catch(err){
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err))
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code)
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message)
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -185,7 +190,8 @@ export default function dataTest() {
                     done();
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -211,13 +217,15 @@ export default function dataTest() {
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err.code);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err.message);
                     ExpectTrue(err.code === 8300001);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     done();
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -243,13 +251,15 @@ export default function dataTest() {
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err.code);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err.message);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     ExpectFail();
                     done();
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -270,7 +280,8 @@ export default function dataTest() {
             try{
                 data.getDefaultCellularDataSlotId((err: BusinessError<void>|null, data: int|undefined) => {
                     if (err?.code !== 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err?.code);
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err?.message);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         ExpectFail();
                         done();
@@ -282,7 +293,8 @@ export default function dataTest() {
                     }
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
                 done();
@@ -308,13 +320,15 @@ export default function dataTest() {
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err.code);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err.message);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     ExpectFail();
                     done();
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
                 done();
@@ -335,7 +349,8 @@ export default function dataTest() {
             try{
                 data.getCellularDataFlowType((err: BusinessError<void>|null, flowType: data.DataFlowType|undefined) => {
                     if (err?.code !== 0) {
-                        hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err?.code);
+                        hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err?.message);
                         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                         ExpectFail();
                         done();
@@ -347,7 +362,8 @@ export default function dataTest() {
                     }
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
                 done();
@@ -372,7 +388,8 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -397,7 +414,8 @@ export default function dataTest() {
                 ExpectFail();
                 done();
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectTrue(err.code === 8300001);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -422,7 +440,8 @@ export default function dataTest() {
                 hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                 done();
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 ExpectFail();
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 done();
@@ -448,13 +467,15 @@ export default function dataTest() {
                     done();
                 }).catch((error: Error) => {
                     let err = error as BusinessError;
-                    hilog.info(domain, tag, '%{public}s', caseName +'  get error is '+JSON.stringify(err));
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.code is '+ err.code);
+                    hilog.info(domain, tag, '%{public}s', caseName +'  get err.message is '+ err.message);
                     hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
                     ExpectFail();
                     done();
                 });
             } catch(err) {
-                hilog.info(domain, tag, '%{public}s', caseName+ ' catch error in '+ JSON.stringify(err));
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.code in '+ err.code);
+                hilog.info(domain, tag, '%{public}s', caseName+ ' catch err.message in '+ err.message);
                 hilog.info(domain, tag, '%{public}s', caseName+ ' end');
                 ExpectFail();
                 done();
