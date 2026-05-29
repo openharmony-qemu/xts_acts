@@ -55,6 +55,8 @@ int32_t g_picWidth;
 int32_t g_picHeight;
 int32_t g_keyWidth;
 int32_t g_keyHeight;
+static bool g_useLtrOnce = false;
+static int32_t g_useLtrIndex = 0;
 
 void clearIntqueue(std::queue<uint32_t> &q)
 {
@@ -63,19 +65,56 @@ void clearIntqueue(std::queue<uint32_t> &q)
 }
 } // namespace
 
+void OHOS::Media::ResetLtrStaticState() {
+    g_useLtrOnce = false;
+    g_useLtrIndex = 0;
+}
+
 VEncAPI11Sample::~VEncAPI11Sample()
 {
+    isRunning_.store(false);
+    if (venc_ != nullptr) {
+        OH_VideoEncoder_Stop(venc_);
+    }
+    if (vencPrimary != nullptr) {
+        OH_VideoEncoder_Stop(vencPrimary);
+    }
+    if (vencSecondary != nullptr) {
+        OH_VideoEncoder_Stop(vencSecondary);
+    }
+    if (signal_ != nullptr) {
+        signal_->inCond_.notify_all();
+        signal_->outCond_.notify_all();
+    }
+    if (inputLoop_ != nullptr && inputLoop_->joinable()) {
+        inputLoop_->join();
+        inputLoop_ = nullptr;
+    }
+    if (outputLoop_ != nullptr && outputLoop_->joinable()) {
+        outputLoop_->join();
+        outputLoop_ = nullptr;
+    }
     if (SURF_INPUT && nativeWindow) {
         OH_NativeWindow_DestroyNativeWindow(nativeWindow);
         nativeWindow = nullptr;
     }
+    
     abnormalIndexValue = false;
-    Release();
+    if (venc_ != nullptr) {
+        OH_VideoEncoder_Destroy(venc_);
+        venc_ = nullptr;
+    }
     if (vencPrimary != nullptr) {
-        (void)OH_VideoEncoder_Destroy(vencPrimary);
+        OH_VideoEncoder_Destroy(vencPrimary);
+        vencPrimary = nullptr;
     }
     if (vencSecondary != nullptr) {
-        (void)OH_VideoEncoder_Destroy(vencSecondary);
+        OH_VideoEncoder_Destroy(vencSecondary);
+        vencSecondary = nullptr;
+    }
+    if (signal_ != nullptr) {
+        delete signal_;
+        signal_ = nullptr;
     }
 }
 
@@ -139,43 +178,46 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
-    static bool useLtrOnce = false;
-    if (!parameter || !userData) {
+    VEncAPI11Sample *sample = static_cast<VEncAPI11Sample *>(userData);
+    if (!parameter && !sample) {
+        if (codec) {
+            OH_VideoEncoder_PushInputParameter(codec, index);
+        }
         return;
     }
-    if (enc_sample->frameCount % enc_sample->ltrParam.ltrInterval == 0) {
+    if (sample->frameCount % sample->ltrParam.ltrInterval == 0) {
         OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_MARK_LTR, 1);
     }
-    if (!enc_sample->ltrParam.enableUseLtr) {
-        enc_sample->frameCount++;
+    
+    if (!sample->ltrParam.enableUseLtr) {
+        sample->frameCount++;
         OH_VideoEncoder_PushInputParameter(codec, index);
         return;
     }
-    static int32_t useLtrIndex = 0;
-    if (enc_sample->ltrParam.useLtrIndex == 0) {
-        useLtrIndex = LTR_INTERVAL;
-    } else if (enc_sample->ltrParam.useBadLtr) {
-        useLtrIndex = BADPOC;
+    if (sample->ltrParam.useLtrIndex == 0) {
+        g_useLtrIndex = LTR_INTERVAL;
+    } else if (sample->ltrParam.useBadLtr) {
+        g_useLtrIndex = BADPOC;
     } else {
-        uint32_t interval = enc_sample->ltrParam.ltrInterval;
-        if (interval > 0 && enc_sample->frameCount > 0 && (enc_sample->frameCount % interval == 0)) {
-            useLtrIndex = enc_sample->frameCount / interval * interval;
+        uint32_t interval = sample->ltrParam.ltrInterval;
+        if (interval > 0 && sample->frameCount > 0 && (sample->frameCount % interval == 0)) {
+            g_useLtrIndex = sample->frameCount / interval * interval;
         }
     }
-    if (enc_sample->frameCount > useLtrIndex) {
-        if (!enc_sample->ltrParam.useLtrOnce) {
-            OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, useLtrIndex);
+    if (sample->frameCount > g_useLtrIndex) {
+        if (!sample->ltrParam.useLtrOnce) {
+            OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, g_useLtrIndex);
         } else {
-            if (!useLtrOnce) {
-                OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, useLtrIndex);
-                useLtrOnce = true;
+            if (!g_useLtrOnce) {
+                OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, g_useLtrIndex);
+                g_useLtrOnce = true;
             }
         }
-    } else if (enc_sample->frameCount == useLtrIndex && enc_sample->frameCount > 0) {
-        int32_t sampleInterval = enc_sample->ltrParam.ltrInterval;
-        OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, useLtrIndex - sampleInterval);
+    } else if (sample->frameCount == g_useLtrIndex && sample->frameCount > 0) {
+        int32_t sampleInterval = sample->ltrParam.ltrInterval;
+        OH_AVFormat_SetIntValue(parameter, OH_MD_KEY_VIDEO_ENCODER_PER_FRAME_USE_LTR, g_useLtrIndex - sampleInterval);
     }
-    enc_sample->frameCount++;
+    sample->frameCount++;
     OH_VideoEncoder_PushInputParameter(codec, index);
 }
 
@@ -850,13 +892,23 @@ int32_t VEncAPI11Sample::HandleParamSwitch(int32_t inputframeCount, bool &isPara
     return 0;
 }
 
+void VEncAPI11Sample::AbortNativeBuffer(OH_NativeBuffer *nativeBuffer, OHNativeWindowBuffer *ohNativeWindowBuffer)
+{
+    if (nativeBuffer != nullptr) {
+        OH_NativeBuffer_Unmap(nativeBuffer);
+    }
+    if (nativeWindow != nullptr && ohNativeWindowBuffer != nullptr) {
+        OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, ohNativeWindowBuffer);
+    }
+}
+
 void VEncAPI11Sample::InputFuncSurface()
 {
     int32_t readFileIndex = 0;
     int32_t inputframeCount = 0;
     bool isParamSetSurface = false;
     while (isRunning_.load()) {
-        OHNativeWindowBuffer *ohNativeWindowBuffer;
+        OHNativeWindowBuffer *ohNativeWindowBuffer = nullptr;
         OH_NativeBuffer *nativeBuffer = nullptr;
         uint8_t *dst = nullptr;
         int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
@@ -866,13 +918,25 @@ void VEncAPI11Sample::InputFuncSurface()
             continue;
         }
         err = ReadFrameData(dst, readFileIndex, ohNativeWindowBuffer);
-        if (err == LOOP_END) {
+        if (!isRunning_.load()) {
+            AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
             break;
-        } else if (err == FILE_END) {
+        }
+        if (err == FILE_END) {
+            AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
             continue;
+        }
+        if (err == LOOP_END) {
+            AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
+            break;
+        }
+        if (!isRunning_.load()) {
+            AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
+            break;
         }
         err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
         if (err != 0) {
+            AbortNativeBuffer(nativeBuffer, ohNativeWindowBuffer);
             break;
         }
         if (HandleParamSwitch(inputframeCount, isParamSetSurface) != 0) {
@@ -882,6 +946,57 @@ void VEncAPI11Sample::InputFuncSurface()
         if (sleepOnFPS) {
             usleep(FRAME_INTERVAL);
         }
+        InputEnableRepeatSleep();
+    }
+}
+
+void VEncAPI11Sample::InputFuncSurface()
+{
+    int32_t readFileIndex = 0;
+    int32_t inputframeCount = 0;
+    bool isParamSetSurface = false;
+    auto CleanBuffer = [this](OHNativeWindowBuffer *buf, OH_NativeBuffer *natBuf) {
+        if (natBuf) OH_NativeBuffer_Unmap(natBuf);
+        OH_NativeWindow_NativeWindowAbortBuffer(this->nativeWindow, buf);
+    };
+    while (isRunning_.load()) {
+        OHNativeWindowBuffer *ohNativeWindowBuffer = nullptr;
+        OH_NativeBuffer *nativeBuffer = nullptr;
+        uint8_t *dst = nullptr;
+        int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
+        if (err == 0) {
+            break;
+        } else if (err == -1) {
+        continue;
+        }
+            
+        err = ReadFrameData(dst, readFileIndex, ohNativeWindowBuffer);
+        if (!isRunning_.load()) { 
+            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
+            break; 
+        }
+        if (err == FILE_END) {
+            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
+            continue;
+        }
+        if (err == LOOP_END) {
+            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
+            break;
+        }
+        if (!isRunning_.load()) {
+            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
+            break;
+        }
+        err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
+        if (err != 0) {
+            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
+            break;
+        }
+        if (HandleParamSwitch(inputframeCount, isParamSetSurface) != 0) {
+            break;
+        }
+        inputframeCount++;
+        if (sleepOnFPS) usleep(FRAME_INTERVAL);
         InputEnableRepeatSleep();
     }
 }
