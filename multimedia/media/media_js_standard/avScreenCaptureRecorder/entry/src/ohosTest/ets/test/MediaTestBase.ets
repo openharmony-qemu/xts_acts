@@ -21,6 +21,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import { abilityAccessCtrl, Permissions } from '@kit.AbilityKit';
 import media from '@ohos.multimedia.media';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
+import {image} from '@kit.ImageKit';
 
 const delegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -327,11 +328,11 @@ export default class MediaTestBase {
         if (this.isTestSucceeded()) {
           await avScreenCaptureRecorder?.presentPicker().then(() => {
             console.info('avScreenCaptureRecorder presentPicker success');
-            await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+            this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
           }).catch((err: BusinessError) => {
             console.error('avScreenCaptureRecorder presentPicker failed, error: ' + err.code);
             if (err.code == 5400102) {
-              await this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
+              this.toNextStep(avScreenCaptureRecorder, avConfig, recorderTime, steps, done);
             } else {
               console.error('avScreenCaptureRecorder init failed, error: ' + err.message);
               expect().assertFail()
@@ -786,8 +787,8 @@ export default class MediaTestBase {
   }
 
   async initAVScreenCaptureRecorder(done: Function) {
-    this.outputName = mediaTestBthisase.resourceName();
-    this.outputFdObject = mediaTestBase.getFd(this.outputName);
+    this.outputName = this.resourceName();
+    this.outputFdObject = this.getFd(this.outputName);
 
     let avConfig: media.AVScreenCaptureRecordConfig = {
     fd: this.outputFdObject.fd,
@@ -818,7 +819,7 @@ export default class MediaTestBase {
     }).catch((err: BusinessError) => {
       console.error('avScreenCaptureRecorder start failed, error: ' + err.message);
       expect().assertFail();
-      doen();
+      done();
     });
   }
 
@@ -828,7 +829,7 @@ export default class MediaTestBase {
     }).catch((err: BusinessError) => {
       console.error('avScreenCaptureRecorder stop failed, error: ' + err.message);
       expect().assertFail();
-      doen();
+      done();
     });
   }
 
@@ -840,7 +841,7 @@ export default class MediaTestBase {
       console.error('avScreenCaptureRecorder release failed, error: ' + err.message);
       this.closeFd(this.outputFdObject.fd);
       expect().assertFail();
-      doen();
+      done();
       });
     this.closeFd(this.outputFdObject.fd);
   }
@@ -887,7 +888,7 @@ export default class MediaTestBase {
         bufferArr[i + 2] = 122;
         bufferArr[i + 3] = 255;
       }
-      let opts: image.InitializationOptions = {editable: true, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
+      let opts: image.InitializationOptions = {editable: false, pixelFormat: image.PixelMapFormat.RGBA_8888, size: {height: 512, width: 512}};
       let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
  
       let waterConfig: media.WatermarkConfiguration = {

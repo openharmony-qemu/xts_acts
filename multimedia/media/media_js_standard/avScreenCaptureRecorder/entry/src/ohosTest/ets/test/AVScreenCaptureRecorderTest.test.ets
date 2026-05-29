@@ -1276,7 +1276,7 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 start')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 start')
       let mySteps = new Array(
         // create
         mediaTestBase.CREATE_EVENT,
@@ -1314,7 +1314,7 @@ export default function AVScreenCaptureRecorderTest() {
 
       await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
       expect(mediaTestBase.isTestSucceeded()).assertTrue();
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0100 end')
       done();
     })
 
@@ -1327,14 +1327,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0200', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0200 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await startAVScreenCaptureRecorder(done);
-      await handleWaterMarkErrorState(doen);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0200 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0200 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterMarkErrorState(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0200 end')
       done();
     })   
 
@@ -1347,14 +1347,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0300', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0300 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await handleWaterMarkOutRange();
-      await startAVScreenCaptureRecorder(done);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0300 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0300 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterMarkOutRange();
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0300 end')
       done();
     })   
     /**
@@ -1366,14 +1366,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0400', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0400 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await handleWaterErrorValue1(done);
-      await startAVScreenCaptureRecorder(done);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0400 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0400 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterErrorValue1(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0400 end')
       done();
     })   
     /**
@@ -1385,14 +1385,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0500', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0500 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await handleWaterErrorValue2(done);
-      await startAVScreenCaptureRecorder(done);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0500 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0500 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterErrorValue2(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0500 end')
       done();
     })   
     /**
@@ -1404,14 +1404,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0600', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0600 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await handleWaterErrorValue3(done);
-      await startAVScreenCaptureRecorder(done);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0600 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0600 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterErrorValue3(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0600 end')
       done();
     })   
     /**
@@ -1423,14 +1423,14 @@ export default function AVScreenCaptureRecorderTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700', Level.LEVEL0, async (done: Function) => {
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700 start')
-      await createAVScreenCaptureRecorder(done);
-      await initAVScreenCaptureRecorder(done);
-      await handleWaterErrorValue4(done);
-      await startAVScreenCaptureRecorder(done);
-      await stopAVScreenCaptureRecorder(done);
-      await releaseAVScreenCaptureRecorder(done);
-      console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700 end')
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700 start')
+      await mediaTestBase.createAVScreenCaptureRecorder(done);
+      await mediaTestBase.initAVScreenCaptureRecorder(done);
+      await mediaTestBase.handleWaterErrorValue4(done);
+      await mediaTestBase.startAVScreenCaptureRecorder(done);
+      await mediaTestBase.stopAVScreenCaptureRecorder(done);
+      await mediaTestBase.releaseAVScreenCaptureRecorder(done);
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_ADDWATERMARK_0700 end')
       done();
     })        
   })
