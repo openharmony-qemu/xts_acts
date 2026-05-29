@@ -3018,9 +3018,13 @@ export default function windowLayoutTest() {
         expect().assertFail();
         done();
       } catch (err) {
+        if(!isSyscapSessionManagerSupported){
+          console.error(`${caseName} device not supported, err: ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(801);
+          done()
+        }
         console.error(`${caseName} failed main window, err: ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(1300004);
-        
       }
       // dilog窗
       let config: window.Configuration = {
@@ -3066,6 +3070,7 @@ export default function windowLayoutTest() {
           }else{
             console.error(`${caseName} Failed float window1. Cause code: ${err.code}, message: ${err.message}`);
             await subWindowClass?.destroyWindow();
+            expect(err.code).assertEqual(1300002);
             done();
           }
         });

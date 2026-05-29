@@ -88,10 +88,10 @@ export default function windowNdk() {
         isNavigationVisible = systemUiVisible[1] === '1';
         isTypeFloatNavigationVisible = systemUiVisible[2] === '1';
         isNavigationIndicatorVisible = systemUiVisible[3] === '1';
+        console.info(`beforeAll: systemUiVisible=${systemUiVisible}`);
       }).catch((err: BusinessError) => {
         console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
       });
-      console.info(`beforeAll: systemUiVisible=${systemUiVisible}`);
     })
     beforeEach(() => {
       console.log(`${Tag}:beforeEach start... `);
@@ -450,7 +450,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible){
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         expect(flag).assertEqual(true)
         done()
@@ -482,7 +482,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible){
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
@@ -516,7 +516,7 @@ export default function windowNdk() {
       console.info(`${caseName}: result: ${result}`);
       expect(result).assertEqual(0);
       await sleep(1000);
-      if(isStatusBarVisible){
+      if(isStatusBarVisible && !isFreeWindowMode){
         WindowClass.off('avoidAreaChange')
         windowNdkTest.setWindowStatusBarEnabled(windowId, true, false);
         await sleep(500)
