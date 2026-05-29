@@ -1485,5 +1485,59 @@ export default function MediaAssetManagerStaticTest(): void {
       }
     });
 
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100
+     * @tc.desc      checkPhotoUrisReadPermission-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4100';
+      let testContext: Context = Hypium.get('Context') as Context;
+      let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let uris: string[] = [
+          testContext.filesDir + '/test_mov_1.mp4'
+        ];
+        let permissionMap: Map<string, photoAccessHelper.MediaAssetPermissionState> = await helper!.checkPhotoUrisReadPermission(uris);
+        expect(permissionMap != undefined).assertTrue();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error:`,JSON.stringify(error.code));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200
+     * @tc.name      SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200
+     * @tc.desc      checkPhotoUrisReadPermission-success
+     * @tc.size      MEDIUM
+     * @tc.type      Function
+     * @tc.level     LEVEL0
+     */
+    it('SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let testNum = 'SUB_PHOTO_ACCESS_HELPER_CHECK_PHOTO_URIS_READ_PERMISSION_STATIC_4200';
+      let testContext: Context = Hypium.get('Context') as Context;
+      let helper: photoAccessHelper.PhotoAccessHelper|null = photoAccessHelper.getPhotoAccessHelper(testContext);
+      try {
+        let uris: string[] = [
+          ''
+        ];
+        let permissionMap: Map<string, photoAccessHelper.MediaAssetPermissionState> = await helper!.checkPhotoUrisReadPermission(uris);
+        expect().assertFail();
+        done();
+      }
+      catch (error) {
+        console.error(TAG,`${testNum} failed; error:`,JSON.stringify(error.code),error.message,JSON.stringify(error.message));
+        expect(error.code).assertEqual(13900020);
+        done();
+      }
+    });
+
   })
 }

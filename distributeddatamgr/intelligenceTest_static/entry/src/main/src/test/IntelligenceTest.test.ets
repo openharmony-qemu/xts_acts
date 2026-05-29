@@ -1,3 +1,18 @@
+'use static'
+/*
+* Copyright (c) 2026 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "../../../hypium";
 import intelligence from '@ohos.data.intelligence';
 import { BusinessError } from "@ohos.base";
@@ -22,11 +37,13 @@ let currentDeviceIsPc = false;
 
 export default function intelligenceTest() {
     let currentDeviceIsPc = false;
+    let currentDeviceIsPhoneOrTablet = false;
     describe('intelligenceTest', () => {
         beforeAll(async () => {
             console.info(TAG + "beforeAll");
             let deviceTypeInfo = deviceInfo.deviceType;
             currentDeviceIsPc = deviceTypeInfo === '2in1' ? true : false;
+            currentDeviceIsPhoneOrTablet = deviceTypeInfo === 'phone' || deviceTypeInfo === 'tablet' ? true : false;
             console.info(TAG + "the value of the deviceType is : " + deviceInfo.deviceType + " " + currentDeviceIsPc);
         })
         beforeEach(async () => {
@@ -104,6 +121,23 @@ export default function intelligenceTest() {
                         expect(ret).assertEqual(true);
                         done();
                     })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result" + data);
+                        let ret = false;
+                        if (data != null) {
+                            ret = true;
+                        }
+                        expect(ret).assertEqual(true);
+                        done();
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data:intelligence.TextEmbedding) => {
@@ -174,6 +208,29 @@ export default function intelligenceTest() {
                                 done();
                             })
                     })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result:" + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "get loadMldel result 0400:");
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 0400:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data) => {
@@ -215,6 +272,29 @@ export default function intelligenceTest() {
                     expect().assertFail();
                     done();
                 }
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result:" + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "loadModel success result 0500:" );
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 0500:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data) => {
@@ -255,6 +335,28 @@ export default function intelligenceTest() {
                                 expect(error.code).assertEqual(31300000);
                                 done();
                             })
+                    })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result:" + data);
+                        data.releaseModel()
+                            .then(() => {
+                                console.info(TAG + "releaseModel result 0600:");
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
                     })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
@@ -299,6 +401,30 @@ export default function intelligenceTest() {
                                 done();
                             })
                     })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get intelligenceApiTest0700 result:" + data);
+                        data.getEmbedding('123')
+                            .then((loadData) => {
+                                console.info(TAG + "700 getEmbedding result:" + loadData);
+                                let dataSize:number = loadData.length;
+                                let ret = dataSize > 0;
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data) => {
@@ -337,6 +463,29 @@ export default function intelligenceTest() {
                                 expect(ret).assertEqual(true);
                                 done();
                             })
+                    })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then(async (data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "intelligenceApiTest0800 get result:" + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "loadModel success result 0800:" );
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 0800:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
                     })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
@@ -377,6 +526,29 @@ export default function intelligenceTest() {
                                 expect(ret).assertEqual(true);
                                 done();
                             })
+                    })
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then(async (data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "intelligenceApiTest0900 get result: " + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "loadModel success result 0900:" );
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 0900:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
                     })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
@@ -647,6 +819,29 @@ export default function intelligenceTest() {
                     expect().assertFail();
                     done();
                 }
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result:" + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "loadModel success result 3100:" );
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 3100:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data:intelligence.TextEmbedding) => {
@@ -700,6 +895,29 @@ export default function intelligenceTest() {
                     expect().assertFail();
                     done();
                 }
+            } else if (currentDeviceIsPhoneOrTablet) {
+                intelligence.getTextEmbeddingModel(textConfig)
+                    .then((data:intelligence.TextEmbedding) => {
+                        console.info(TAG + "get result:" + data);
+                        data.loadModel()
+                            .then(() => {
+                                console.info(TAG + "loadModel success result 3200:" );
+                                expect().assertFail();
+                                done();
+                            })
+                            .catch((err) => {
+                                let error: BusinessError = err as BusinessError;
+                                console.info(TAG + "loadModel result 3200:" + error.code);
+                                expect(error.code).assertEqual(31300000);
+                                done();
+                            })
+                    })
+                    .catch((err) => {
+                        let error: BusinessError = err as BusinessError;
+                        console.info(TAG + "getTextEmbeddingModel failed:" + error.code);
+                        expect().assertFail();
+                        done();
+                    })
             } else {
                 intelligence.getTextEmbeddingModel(textConfig)
                     .then((data:intelligence.TextEmbedding) => {
