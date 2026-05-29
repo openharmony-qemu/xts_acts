@@ -755,7 +755,7 @@ export default function SetValuesTest(): void {
     /**
      * @tc.name testSetValues039
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_3900
-     * @tc.desc Verify Set<string | number> values() iterates elements of both types
+     * @tc.desc Verify Set<string | number> values() iterates union type elements of both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

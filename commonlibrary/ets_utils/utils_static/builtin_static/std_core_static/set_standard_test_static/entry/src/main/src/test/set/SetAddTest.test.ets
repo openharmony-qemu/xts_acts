@@ -674,38 +674,15 @@ export default function SetAddTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
-
     /**
      * @tc.name testSetAdd041
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4100
-     * @tc.desc Verify normal add in try block does not throw exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetAdd041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      let executed: boolean = false;
-      try {
-        set.add(10);
-        expect(set.size).assertEqual(1);
-        executed = true;
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(executed).assertTrue();
-    });
-
-
-    /**
-     * @tc.name testSetAdd042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4200
      * @tc.desc Verify add duplicate element does not change size and returns this
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetAdd042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetAdd041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>();
       set.add(1);
       let sizeBefore: int = set.size;
@@ -716,14 +693,14 @@ export default function SetAddTest(): void {
     });
 
     /**
-     * @tc.name testSetAdd043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4300
-     * @tc.desc Verify Set<string | number> add elements of different types
+     * @tc.name testSetAdd042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4200
+     * @tc.desc Verify Set<string | number> add union type elements of different types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetAdd043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetAdd042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number>();
       set.add("hello");
       set.add(42);
@@ -735,14 +712,14 @@ export default function SetAddTest(): void {
     });
 
     /**
-     * @tc.name testSetAdd044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4400
+     * @tc.name testSetAdd043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4300
      * @tc.desc Verify chained add with Set<string | number | boolean> union type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetAdd044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetAdd043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number | boolean>();
       set.add("a").add(1).add(true);
       expect(set.size).assertEqual(3);
@@ -752,14 +729,14 @@ export default function SetAddTest(): void {
     });
 
     /**
-     * @tc.name testSetAdd045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4500
+     * @tc.name testSetAdd044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4400
      * @tc.desc Verify union type Set deduplicates repeated elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetAdd045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetAdd044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number>();
       set.add("dup");
       set.add(42);

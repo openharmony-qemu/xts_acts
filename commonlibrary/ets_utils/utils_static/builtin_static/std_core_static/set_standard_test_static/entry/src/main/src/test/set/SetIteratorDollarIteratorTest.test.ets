@@ -203,7 +203,7 @@ export default function SetIteratorDollarIteratorTest(): void {
     /**
      * @tc.name testSetIteratorDollarIterator010
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_1000
-     * @tc.desc Verify single-element Set dollar_iterator returns only one value
+     * @tc.desc Verify SetIterator $_iterator() from values() on single-element Set returns one value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

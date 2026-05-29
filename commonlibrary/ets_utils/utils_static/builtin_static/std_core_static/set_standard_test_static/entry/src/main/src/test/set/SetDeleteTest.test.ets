@@ -634,59 +634,5 @@ export default function SetDeleteTest(): void {
       let result = set.delete("d");
       expect(result).assertTrue();
     });
-
-    /**
-     * @tc.name testSetDelete039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_3900
-     * @tc.desc Verify delete of nonexistent element does not throw exception, returns false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetDelete039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      let throwError:boolean = false;
-      try {
-        let result = set.delete(999);
-        expect(result).assertFalse();
-      } catch (error) {
-        throwError = true;
-      }
-      expect(throwError).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetDelete040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4000
-     * @tc.desc Verify delete from empty Set does not throw exception, returns false
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetDelete040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      let result = set.delete(1);
-      expect(result).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetDelete041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4100
-     * @tc.desc Verify normal delete in try-catch does not throw exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetDelete041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      let threw: boolean = false;
-      try {
-        let result: boolean = set.delete(2);
-        expect(result).assertTrue();
-      } catch (error) {
-        threw = true;
-      }
-      expect(threw).assertFalse();
-    });
   });
 }

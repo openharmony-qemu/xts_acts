@@ -870,37 +870,15 @@ export default function ReadonlySetHasTest(): void {
       expect(r1 === r2).assertTrue();
       expect(r2 === r3).assertTrue();
     });
-
     /**
      * @tc.name testReadonlySetHas057
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5700
-     * @tc.desc Verify has() with valid parameter does not throw exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testReadonlySetHas057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      let executed: boolean = false;
-      try {
-        let result: boolean = set.has(2);
-        expect(result).assertTrue();
-        executed = true;
-      } catch (error) {
-        expect().assertFail();
-      }
-      expect(executed).assertTrue();
-    });
-
-    /**
-     * @tc.name testReadonlySetHas058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5800
      * @tc.desc Verify has() with null parameter catches Error object with instanceof check
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       let catchExecuted: boolean = false;
       try {
@@ -914,14 +892,14 @@ export default function ReadonlySetHasTest(): void {
 
 
     /**
-     * @tc.name testReadonlySetHas059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5900
+     * @tc.name testReadonlySetHas058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5800
      * @tc.desc Verify has() with type mismatch enters catch block
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       let catchFlag: boolean = false;
       let finallyFlag: boolean = false;
@@ -939,14 +917,14 @@ export default function ReadonlySetHasTest(): void {
 
 
     /**
-     * @tc.name testReadonlySetHas060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6000
+     * @tc.name testReadonlySetHas059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_5900
      * @tc.desc Verify has() with mismatched generic type catches Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       try {
         let obj: Object = Error("non-int object");
@@ -958,14 +936,14 @@ export default function ReadonlySetHasTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetHas061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6100
+     * @tc.name testReadonlySetHas060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6000
      * @tc.desc Verify has() with string value for int generic catches Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       try {
         set.has("string" as Object as int);
@@ -976,14 +954,14 @@ export default function ReadonlySetHasTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetHas062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6200
+     * @tc.name testReadonlySetHas061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6100
      * @tc.desc Verify has() with object value for int generic catches Error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       try {
         let obj: Object = new Object();
@@ -995,14 +973,14 @@ export default function ReadonlySetHasTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetHas063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6300
+     * @tc.name testReadonlySetHas062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6200
      * @tc.desc Verify ReadonlySet.has reflects new element after underlying Set add
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mutableSet: Set<int> = new Set<int>([1, 2, 3]);
       const view: ReadonlySet<int> = mutableSet;
       expect(view.has(1)).assertTrue();
@@ -1011,14 +989,14 @@ export default function ReadonlySetHasTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetHas064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6400
+     * @tc.name testReadonlySetHas063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6300
      * @tc.desc Verify ReadonlySet.has reflects deletion after underlying Set delete
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mutableSet: Set<int> = new Set<int>([1, 2, 3]);
       const view: ReadonlySet<int> = mutableSet;
       mutableSet.delete(2);
@@ -1026,14 +1004,14 @@ export default function ReadonlySetHasTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetHas065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6500
+     * @tc.name testReadonlySetHas064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6400
      * @tc.desc Verify ReadonlySet.has returns false for all after underlying Set clear
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetHas065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetHas064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mutableSet: Set<int> = new Set<int>([1, 2, 3]);
       const view: ReadonlySet<int> = mutableSet;
       mutableSet.clear();

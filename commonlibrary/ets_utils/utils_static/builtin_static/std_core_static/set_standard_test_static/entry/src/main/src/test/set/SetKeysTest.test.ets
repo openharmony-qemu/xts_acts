@@ -646,39 +646,15 @@ export default function SetKeysTest(): void {
       expect(keys[1]).assertEqual("recovered");
       expect(keys[2]).assertEqual("c");
     });
-
     /**
      * @tc.name testSetKeys031
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3100
-     * @tc.desc Verify normal keys() call in try block does not throw exception
+     * @tc.desc Verify Set<string | number> keys() iterates union type elements of both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetKeys031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>();
-      set.add("a");
-      let threw = false;
-      try {
-        let iter = set.keys();
-        let r = iter.next();
-        expect(r.value).assertEqual("a");
-      } catch (error) {
-        threw = true;
-      }
-      expect(threw).assertFalse();
-    });
-
-
-    /**
-     * @tc.name testSetKeys032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3200
-     * @tc.desc Verify Set<string | number> keys() iterates elements of both types
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetKeys032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number>();
       set.add("a");
       set.add(1);

@@ -209,7 +209,7 @@ export default function SetIteratorTest(): void {
     /**
      * @tc.name testSetIterator010
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_1000
-     * @tc.desc Verify single-element Set dollar_iterator returns only one value
+     * @tc.desc Verify Set $_iterator() on single-element Set returns only one value
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -456,37 +456,15 @@ export default function SetIteratorTest(): void {
       expect(iter.next().done).assertTrue();
       expect(iter.next().done).assertTrue();
     });
-
     /**
      * @tc.name testSetIterator023
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2300
-     * @tc.desc Verify $_iterator() invocation does not throw exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<string>();
-      set.add("a");
-      let threw = false;
-      try {
-        const iter = set.$_iterator();
-        expect(iter.next().value).assertEqual("a");
-      } catch (error) {
-        threw = true;
-      }
-      expect(threw).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetIterator024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2400
      * @tc.desc Verify iterator supports nested for-of
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(1);
       set.add(2);
@@ -509,14 +487,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2500
+     * @tc.name testSetIterator024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2400
      * @tc.desc Verify next() after iteration complete returns done true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       const iter = set.$_iterator();
@@ -525,14 +503,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2600
+     * @tc.name testSetIterator025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2500
      * @tc.desc Verify empty Set iterator next() always returns done true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       const iter = set.$_iterator();
       for (let i = 0; i < 5; i++) {
@@ -541,14 +519,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2700
+     * @tc.name testSetIterator026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2600
      * @tc.desc Verify Error thrown in for-of loop caught externally
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -565,14 +543,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2800
+     * @tc.name testSetIterator027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2700
      * @tc.desc Verify inner try-catch in loop continues traversal after exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -594,14 +572,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2900
+     * @tc.name testSetIterator028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2800
      * @tc.desc Verify break in for-of interrupts traversal early
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(10);
       set.add(20);
@@ -617,14 +595,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3000
+     * @tc.name testSetIterator029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2900
      * @tc.desc Verify continue in for-of skips specific values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(1);
       set.add(2);
@@ -643,14 +621,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3100
+     * @tc.name testSetIterator030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3000
      * @tc.desc Verify add during for-of iteration over dollar_iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -662,14 +640,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3200
+     * @tc.name testSetIterator031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3100
      * @tc.desc Verify delete during for-of iteration over dollar_iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -682,14 +660,14 @@ export default function SetIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIterator033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3300
+     * @tc.name testSetIterator032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3200
      * @tc.desc Verify clear during for-of iteration over dollar_iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetIterator033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIterator032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       set.add("a");
       set.add("b");

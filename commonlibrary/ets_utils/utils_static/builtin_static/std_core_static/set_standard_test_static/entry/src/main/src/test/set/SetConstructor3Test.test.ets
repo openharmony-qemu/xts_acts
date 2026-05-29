@@ -111,7 +111,7 @@ export default function SetConstructor3Test(): void {
     /**
      * @tc.name testSetConstructor3004
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_0400
-     * @tc.desc Verify constructor with single-element array
+     * @tc.desc Verify array constructor with single-element number array creates one-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -493,7 +493,7 @@ export default function SetConstructor3Test(): void {
     /**
      * @tc.name testSetConstructor3029
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_2900
-     * @tc.desc Verify constructor with union type generic passing multiple element types
+     * @tc.desc Verify array constructor with union type Set<string | number | boolean> combining three element types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -561,7 +561,7 @@ export default function SetConstructor3Test(): void {
     /**
      * @tc.name testSetConstructor3033
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_3300
-     * @tc.desc Verify caught error object has Error properties
+     * @tc.desc Verify array constructor type mismatch caught error has ClassCastError name
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2

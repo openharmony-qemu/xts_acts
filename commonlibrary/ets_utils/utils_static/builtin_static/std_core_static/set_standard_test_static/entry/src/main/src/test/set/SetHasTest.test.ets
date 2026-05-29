@@ -812,36 +812,15 @@ export default function SetHasTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
-
     /**
      * @tc.name testSetHas052
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5200
-     * @tc.desc Verify normal has in try-catch does not throw exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetHas052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      let catchCalled: boolean = false;
-      try {
-        let result = set.has(1);
-        expect(result).assertEqual(true);
-      } catch (error) {
-        catchCalled = true;
-      }
-      expect(catchCalled).assertFalse();
-    });
-
-    /**
-     * @tc.name testSetHas053
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5300
      * @tc.desc Verify catch correctly captures Error object in exception scenario
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetHas053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetHas052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Overloaded method cannot be used as value in ARKTS cast expressions
       let set = new Set<int>([1, 2]);
       try {

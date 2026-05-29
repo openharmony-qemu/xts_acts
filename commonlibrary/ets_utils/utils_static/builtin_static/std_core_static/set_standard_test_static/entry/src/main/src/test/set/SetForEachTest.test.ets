@@ -763,38 +763,15 @@ export default function SetForEachTest(): void {
       expect(numCount).assertEqual(2);
       expect(strCount).assertEqual(1);
     });
-
     /**
      * @tc.name testSetForEach038
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_3800
-     * @tc.desc Verify forEach callback throws Error interrupts traversal
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetForEach038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      try {
-        set.forEach((k: int, v: int, s: Set<int>): void => {
-          if (k === 2) {
-            throw new Error("stop iteration");
-          }
-        });
-        expect().assertFail();
-      } catch (error) {
-        expect(error.message).assertEqual("stop iteration");
-      }
-    });
-
-    /**
-     * @tc.name testSetForEach039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_3900
      * @tc.desc Verify remaining elements not triggered after Error is thrown in callback
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3, 4]);
       let visited: int[] = [];
       try {
@@ -813,14 +790,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4000
+     * @tc.name testSetForEach039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_3900
      * @tc.desc Verify callback throws custom Error subclass instance
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([10, 20]);
       try {
         set.forEach((k: int, v: int, s: Set<int>): void => {
@@ -835,14 +812,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4100
+     * @tc.name testSetForEach040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4000
      * @tc.desc Verify forEach with string callbackfn throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1]);
       try {
         let fn = (set as Record<string, Object>)["forEach"];
@@ -854,14 +831,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4200
+     * @tc.name testSetForEach041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4100
      * @tc.desc Verify forEach with number callbackfn throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1]);
       try {
         let fn = (set as Record<string, Object>)["forEach"];
@@ -873,14 +850,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4300
+     * @tc.name testSetForEach042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4200
      * @tc.desc Verify forEach with boolean callbackfn throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1]);
       try {
         let fn = (set as Record<string, Object>)["forEach"];
@@ -892,14 +869,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4400
+     * @tc.name testSetForEach043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4300
      * @tc.desc Verify forEach with array callbackfn throws ClassCastError
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // 改用new Array()替代
       let set = new Set<int>([1]);
       try {
@@ -912,14 +889,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4500
+     * @tc.name testSetForEach044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4400
      * @tc.desc Verify normal forEach invocation does not throw exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       let count = 0;
       set.forEach((k: int, v: int, s: Set<int>): void => {
@@ -929,14 +906,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4600
+     * @tc.name testSetForEach045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4500
      * @tc.desc Verify try-catch wraps forEach catches callback exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       let visited: int[] = [];
       try {
@@ -953,14 +930,14 @@ export default function SetForEachTest(): void {
 
 
     /**
-     * @tc.name testSetForEach047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4700
+     * @tc.name testSetForEach046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4600
      * @tc.desc Verify caught error object is Error type
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1]);
       try {
         let fn = (set as Record<string, Object>)["forEach"];
@@ -972,14 +949,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach048
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4800
+     * @tc.name testSetForEach047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4700
      * @tc.desc Verify inner try-catch in callback does not affect outer traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       let visited: int[] = [];
       set.forEach((k: int, v: int, s: Set<int>): void => {
@@ -999,14 +976,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4900
+     * @tc.name testSetForEach048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4800
      * @tc.desc Verify forEach callback adds element to Set during iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       let result: int[] = [];
       set.forEach((k: int, v: int, s: Set<int>): void => {
@@ -1020,14 +997,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach050
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5000
+     * @tc.name testSetForEach049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_4900
      * @tc.desc Verify forEach callback deletes element from Set during iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       set.forEach((k: int, v: int, s: Set<int>): void => {
         if (k === 1) {
@@ -1041,14 +1018,14 @@ export default function SetForEachTest(): void {
     });
 
     /**
-     * @tc.name testSetForEach051
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5100
+     * @tc.name testSetForEach050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5000
      * @tc.desc Verify forEach callback clears Set during iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetForEach051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetForEach050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       set.forEach((k: int, v: int, s: Set<int>): void => {
         if (k === 1) {

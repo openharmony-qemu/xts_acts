@@ -434,7 +434,7 @@ export default function SetConstructor1Test(): void {
     /**
      * @tc.name testSetConstructor1026
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_2600
-     * @tc.desc Verify constructor with single-element array
+     * @tc.desc Verify Iterable constructor with single-element string array creates one-element Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -619,7 +619,7 @@ export default function SetConstructor1Test(): void {
     /**
      * @tc.name testSetConstructor1038
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_3800
-     * @tc.desc Verify constructor with union type generic passing multiple element types
+     * @tc.desc Verify Iterable constructor with union type Set<string | number> combining string and number elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -727,7 +727,7 @@ export default function SetConstructor1Test(): void {
     /**
      * @tc.name testSetConstructor1045
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4500
-     * @tc.desc Verify caught error object has Error properties
+     * @tc.desc Verify Iterable constructor type mismatch caught error has ClassCastError name
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
