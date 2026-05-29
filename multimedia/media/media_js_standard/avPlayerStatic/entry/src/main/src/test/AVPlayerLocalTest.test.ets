@@ -1070,26 +1070,6 @@ function OffSeiMessageReceived(avPlayer: media.AVPlayer | null, done: () => void
   done();
 }
 
-function OffSeiMessageReceived02(avplayer:media.AVPlayer | null, done: () => void) {
-  let surfaceID: string = globalThis.value;
-  let pauseCount = 0
-  avplayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-    console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-  });
-  avPlayer!.offSeiMessageReceived([]);
-  done();
-}
-
-function OffSeiMessageReceived03(avplayer:media.AVPlayer | null, done: () => void) {
-  let surfaceID: string = globalThis.value;
-  let pauseCount = 0
-  avplayer!.onSeiMessageReceived([5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-    console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-  });
-  avPlayer!.offSeiMessageReceived([5]);
-  done();
-}
-
 async function testOffSeiMessageReceived(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined,
   done: () => void) {
   console.info(`case media source: ${src}`)
