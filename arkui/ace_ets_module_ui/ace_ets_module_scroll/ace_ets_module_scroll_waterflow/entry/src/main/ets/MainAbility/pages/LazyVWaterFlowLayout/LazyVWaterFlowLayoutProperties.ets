@@ -70,7 +70,7 @@ struct LazyVWaterFlowLayoutProperties {
               })
             }
             .id('lazyVWaterFlow_columnsTemplate_itemFillPolicy')
-            .columnsTemplate(ItemFillPolicy.BREAKPOINT_DEFAULT)
+            .columnsTemplate({ fillType: PresetFillType.BREAKPOINT_DEFAULT } as ItemFillPolicy)
             .width('30%')
           }
           .height('15%')
