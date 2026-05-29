@@ -707,7 +707,7 @@ struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
   mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer? : webview.NativeMediaPlayerBridge
-  pageUrl: Resource = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
+  pageUrl: string = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
   node_controller?: MyNodeController
   nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
   mediaInfo?: webview.MediaInfo
