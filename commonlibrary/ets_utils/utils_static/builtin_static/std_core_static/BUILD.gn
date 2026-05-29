@@ -22,6 +22,19 @@ group("std_core_static") {
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
       "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
+	  "error_standard_test_static:ActsErrorBufferStaticTest",
+	  "errorhandler_standard_test_static:ActsErrorhandlerBufferStaticTest",
+	  "errors_standard_test_static:ActsErrorsBufferStaticTest",
+	  "expection_standard_test_static:ActsExpectionBufferStaticTest",
+	  "feild_standard_test_static:ActsFeildBufferStaticTest",
+	  "float_standard_test_static:ActsFloatBufferStaticTest",
+	  "functions_standard_test_static:ActsFunctionsBufferStaticTest",
+	  "global_standard_test_static:ActsGlobalBufferStaticTest",
+	  "intl_standard_test_static:ActsIntlBufferStaticTest",
+	  "iterator_standard_test_static:ActsIntlBufferStaticTest",
+	  "method_standard_test_static:ActsIntlBufferStaticTest",
+	  "object_standard_test_static:ActsIntlBufferStaticTest",
+	  
     ]
   }
 }

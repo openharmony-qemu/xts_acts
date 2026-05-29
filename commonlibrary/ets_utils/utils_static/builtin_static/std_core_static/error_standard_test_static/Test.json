@@ -1,16 +1,16 @@
 {
-    "description": "Enum Tests",
+    "description": "Error Tests",
     "driver": {
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
-        "bundle-name": "enum.standard.test.static",
+        "bundle-name": "error.standard.test.static",
         "module-name": "entry",
         "shell-timeout": "600000",
         "testcase-timeout": "180000"
     },
     "kits": [{
         "test-file-name": [
-            "ActsEnumStaticTest.hap"
+            "ActsErrorCaseStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
