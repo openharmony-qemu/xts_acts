@@ -50,7 +50,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_Layout_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_Layout_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_Layout_0100: arrowPosition=" + objNew.$attrs.arrowPosition)
       expect(objNew.$attrs.arrowPosition == 'ArrowPosition.END').assertTrue();
@@ -67,7 +67,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_Space_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_Space_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_Space_0100: space=" + objNew.$attrs.space);
       expect(objNew.$attrs.space).assertEqual('50.00vp');
@@ -84,7 +84,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_selected_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selected_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_selected_0100: space=" + objNew.$attrs.selected);
       expect(objNew.$attrs.selected).assertEqual("1");
@@ -101,7 +101,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_value_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_value_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_value_0100: space=" + objNew.$attrs.value);
       expect(objNew.$attrs.value).assertEqual("Test");
@@ -118,7 +118,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_font_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_font_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_font_0100: space=" + objNew.$attrs.font.size);
       expect(JSON.parse(objNew.$attrs.font).size).assertEqual('30.00fp');
@@ -135,7 +135,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_fontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_fontColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_fontColor_0100: space=" + objNew.$attrs.fontColor);
       expect(objNew.$attrs.fontColor).assertEqual('#FFCCCCCC');
@@ -152,7 +152,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_selectedOptionFont_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionFont_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_selectedOptionFont_0100: space=" + objNew.$attrs.selectedOptionFont.size);
       expect(JSON.parse(objNew.$attrs.selectedOptionFont).size).assertEqual('40.00fp');
@@ -169,7 +169,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_selectedOptionFontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionFontColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       expect(objNew.$attrs.selectedOptionFontColor).assertEqual('#FF000000');
       done();
@@ -185,7 +185,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_selectedOptionFontColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionFontColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       expect(objNew.$attrs.menuAlign.alignType).assertEqual('MenuAlignType.Start');
       done();
@@ -201,7 +201,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_selectedOptionBgColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100: space=" + objNew.$attrs.selectedOptionBgColor);
       expect(objNew.$attrs.selectedOptionBgColor).assertEqual('#FFCCCCCC');
@@ -218,7 +218,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_optionBgColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionBgColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_optionBgColor_0100: space=" + objNew.$attrs.optionBgColor);
       expect(objNew.$attrs.optionBgColor).assertEqual('#FFFFFFFF');
@@ -235,7 +235,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_optionFont_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionFont_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_optionFont_0100: space=" + objNew.$attrs.optionFont.size);
       expect(JSON.parse(objNew.$attrs.optionFont).size).assertEqual('30.00fp');
@@ -252,7 +252,7 @@ export default function SelectJsunit02() {
      */
     it('ArkUI_Stage_Select_optionFontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionFontColor_0100 start");
-      let strJson = getInspectorByKey('selectTest');
+      let strJson = getInspectorByKey('select2' + '_selectTest');
       let objNew: ESObject = JSON.parse(strJson);
       console.info("ArkUI_Stage_Select_optionFontColor_0100: space=" + objNew.$attrs.optionFontColor);
       expect(objNew.$attrs.optionFontColor).assertEqual('#FF000000');

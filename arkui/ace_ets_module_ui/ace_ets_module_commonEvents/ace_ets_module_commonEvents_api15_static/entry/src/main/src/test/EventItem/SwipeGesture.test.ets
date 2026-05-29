@@ -88,7 +88,7 @@ it('SwipeGesture1_static_0100', Level.LEVEL0, async (done: () => void): Promise<
         Math.round(AppStorage.get<number>("winLeft")! + 500).toInt(), Math.round(top + 500).toInt(), 600 as Int)
 
       await CommonFunc.sleep(5000);
-      let strJson = inspector.getInspectorByKey('value');
+      let strJson = inspector.getInspectorByKey('SwipeGesture' + '_value');
       await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info('[SwipeGesture1_static_0100] component obj is: ' + JSON.stringify(obj));

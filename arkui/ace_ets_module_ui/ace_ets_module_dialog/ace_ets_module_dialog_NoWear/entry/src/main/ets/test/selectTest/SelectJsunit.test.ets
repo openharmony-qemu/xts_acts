@@ -54,7 +54,7 @@ export default function SelectJsunit() {
       // Get the information of the Select component
       console.info('[SelectJsunit_0100] START');
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('select');
+      let strJson = getInspectorByKey('SelectPage' + '_select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0100] component obj is: " + JSON.stringify(obj));
       console.info("[SelectJsunit_0100] selected: " + JSON.stringify(obj.$attrs.selected));
@@ -78,7 +78,7 @@ export default function SelectJsunit() {
       expect(obj.$attrs.optionFont).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
       expect(obj.$attrs.optionFontColor).assertEqual('#FFFF0000');
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('indexValue');
+      let strJson1 = getInspectorByKey('SelectPage' + '_indexValue');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:0');
@@ -118,7 +118,7 @@ export default function SelectJsunit() {
       await CommonFunc.sleep(500);
 
       // Get the propoties value of the select component
-      let strJson = getInspectorByKey('select');
+      let strJson = getInspectorByKey('SelectPage' + '_select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0200] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.selected).assertEqual('2');
@@ -155,7 +155,7 @@ export default function SelectJsunit() {
 
       // Verify the click function of the select component
       let driver = await UiDriver.create()
-      let textComponent1 = await driver.findComponent(BY.key('select'));
+      let textComponent1 = await driver.findComponent(BY.key('SelectPage' + '_select'));
       await textComponent1.click()
       await CommonFunc.sleep(1000);
 
@@ -163,12 +163,12 @@ export default function SelectJsunit() {
       let textMenuComponent = await driver.findComponent(BY.text('bbb'));
       await textMenuComponent.click()
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('indexValue');
+      let strJson1 = getInspectorByKey('SelectPage' + '_indexValue');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SelectJsunit_0300] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:1');
 
-      let strJson = getInspectorByKey('select');
+      let strJson = getInspectorByKey('SelectPage' + '_select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0300] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.value).assertEqual('bbb');

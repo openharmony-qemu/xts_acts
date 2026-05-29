@@ -88,8 +88,8 @@ export default function enableEdgeAutoScroll() {
       async (done: () => void): Promise<void> => {
         console.info('DenableEdgeAutoScroll_true_static_0010 START');
         let driver = Driver.create()
-        let image = await driver.findComponent(ON.id('image'));
-        let Column = await driver.findComponent(ON.id('Text'));
+        let image = await driver.findComponent(ON.id('enableEdgeAutoScroll_true' + '_image'));
+        let Column = await driver.findComponent(ON.id('enableEdgeAutoScroll_true' + '_Text'));
         await (image?.dragTo(Column!) as Promise<void>);
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('text_true');

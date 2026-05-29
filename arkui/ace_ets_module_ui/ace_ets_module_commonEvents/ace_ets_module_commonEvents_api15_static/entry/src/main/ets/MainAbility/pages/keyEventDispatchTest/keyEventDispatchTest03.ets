@@ -30,7 +30,7 @@ struct KeyEventExample3 {
 build() {
     Column() {
       Row() {
-        Text(this.modifierStatePress).key('modifierStatePress')
+        Text(this.modifierStatePress).key('keyEventDispatchTest03_modifierStatePress')
       }
       Button('KeyEvent')
         .onKeyEvent(((event:KeyEvent):boolean=> {

@@ -62,7 +62,7 @@ export default function RollAngle() {
       await CommonFunc.sleep(3000);
 
       // test the child component response
-      let strJson = getInspectorByKey('text');
+      let strJson = getInspectorByKey('RollAngle' + '_text');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[RollAngle_0100] strJson is: ' + JSON.stringify(obj));
       console.info('[RollAngle_0100] RollAngle obj is: ' + JSON.stringify(obj.$attrs));

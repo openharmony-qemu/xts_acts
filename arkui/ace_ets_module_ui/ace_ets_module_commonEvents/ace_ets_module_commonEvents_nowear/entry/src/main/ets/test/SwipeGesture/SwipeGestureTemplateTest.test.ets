@@ -57,7 +57,7 @@ export default function SwipeGestureTemplateTest() {
     it('SwipeGestureTemplateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeGestureTemplateTest_0010 START');
       await CommonFunc.sleep(1000);
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('SwipeGestureTemplate_Click');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('SwipeGestureTemplate' + '_Click');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('SwipeGestureTemplateTest_0010 areaObj1',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -73,11 +73,11 @@ export default function SwipeGestureTemplateTest() {
       await driver.swipe(Math.round(areaObj1.left + areaWidth1 * 0.2),Math.round(areaObj1.top + areaHeight1/2),Math.round(areaObj1.left + areaWidth1 * 0.8),Math.round(areaObj1.top + areaHeight1/2),speed)
       let timeAfter:number = Date.now();
       await CommonFunc.sleep(3000);
-      let text1 = getInspectorByKey('SwipeGestureTemplate_Text01');
+      let text1 = getInspectorByKey('SwipeGestureTemplate' + '_Text01');
       let obj1: ESObject = JSON.parse(text1);
       let time1:number = Number(obj1.$attrs.content)
       console.log('SwipeGestureTemplateTest_0010 obj1 $attrs content',obj1.$attrs.content,time1)
-      let text2 = getInspectorByKey('SwipeGestureTemplate_Text02');
+      let text2 = getInspectorByKey('SwipeGestureTemplate' + '_Text02');
       let obj2: ESObject = JSON.parse(text2);
       let time2:number = Number(obj2.$attrs.content)
       console.log('SwipeGestureTemplateTest_0010 obj2 $attrs content',obj2.$attrs.content,time2)

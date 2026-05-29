@@ -82,7 +82,7 @@ export default function SelectJsunit01() {
       await CommonFunc.sleep(2000);
 
       // Get the propoties value of the select component
-      let strJson = getInspectorByKey('select');
+      let strJson = getInspectorByKey('SelectPage1' + '_select');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectJsunit_0010] component obj is: " + JSON.stringify(obj));
       expect(obj.$attrs.selected).assertEqual('0');
@@ -96,7 +96,7 @@ export default function SelectJsunit01() {
       expect(obj.$attrs.optionFont).assertEqual('{"size":"16.00fp","weight":"400","family":"","style":"FontStyle.Normal"}');
       expect(obj.$attrs.optionFontColor).assertEqual('#FFFF0000');
       await CommonFunc.sleep(1000);
-      let strJson1 = getInspectorByKey('indexValue');
+      let strJson1 = getInspectorByKey('SelectPage1' + '_indexValue');
       let obj1: ESObject = JSON.parse(strJson1);
       console.info("[SelectJsunit_0010] component obj1 is: " + JSON.stringify(obj1));
       expect(obj1.$attrs.content).assertEqual('indexValue:0');

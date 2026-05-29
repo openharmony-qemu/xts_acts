@@ -57,7 +57,7 @@ export default function tapGestureEventTest() {
       let Column = await driver.findComponent(ON.id('TapGesture1'));
       await Column.click();
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('value');
+      let strJson = getInspectorByKey('TapGesture' + '_value');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TapGesture1_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[TapGesture1_0100] title: ' + JSON.stringify(obj.$attrs.content));

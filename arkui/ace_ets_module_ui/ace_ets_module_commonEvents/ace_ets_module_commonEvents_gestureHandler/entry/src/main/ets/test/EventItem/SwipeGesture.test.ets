@@ -59,7 +59,7 @@ export default function swipeGestureEventTest() {
       let left = colum.left
       await driver.swipe(Math.round(globalThis.winLeft + 100), Math.round(top + 100), Math.round(globalThis.winLeft + 500), Math.round(top + 500), 600)
       await CommonFunc.sleep(1000);
-      let strJson = getInspectorByKey('value');
+      let strJson = getInspectorByKey('SwipeGesture' + '_value');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[SwipeGesture1_0100] component obj is: ' + JSON.stringify(obj));
       console.info('[SwipeGesture1_0100] title: ' + JSON.stringify(obj.$attrs.content));

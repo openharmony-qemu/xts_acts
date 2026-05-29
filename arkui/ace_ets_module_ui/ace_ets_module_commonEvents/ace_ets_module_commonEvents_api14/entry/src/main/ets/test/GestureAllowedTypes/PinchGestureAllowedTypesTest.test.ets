@@ -60,7 +60,7 @@ export default function PinchGestureAllowedTypesTest() {
       let windowOffsetX:number = globalThis.winLeft
       let windowOffsetY:number = globalThis.winTop
       console.log('PinchGestureAllowedTypesTest_0010 windowOffsetX and windowOffsetY',windowOffsetX, windowOffsetY)
-      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchGestureAllowedTypes_Text');
+      let areaObj1 = CommonFunc.getComponentRectOnScreen('PinchGestureAllowedTypes' + '_Text');
       let areaHeight1 = areaObj1.bottom - areaObj1.top
       let areaWidth1 = areaObj1.right - areaObj1.left
       console.log('PinchGestureAllowedTypesTest_0010 areaObj1 start',areaObj1.left,areaObj1.top,areaObj1.right,areaObj1.bottom)
@@ -79,7 +79,7 @@ export default function PinchGestureAllowedTypesTest() {
       pointers.setPoint(1,1,{x: Math.round(areaObj1.right - areaWidth1 * 0.7),y: Math.round(areaObj1.top + areaHeight1 * 0.5) });
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text1 = getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text1 = getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj1: ESObject = JSON.parse(text1);
       console.log('PinchGestureAllowedTypesTest_0010 obj1 $attrs content',obj1.$attrs.content,obj1)
       expect(obj1.$attrs.content).assertEqual('allowed types success');
@@ -88,7 +88,7 @@ export default function PinchGestureAllowedTypesTest() {
       let button1 = await driver.findComponent(ON.id('Mouse_Type'));
       await button1.click();
       await CommonFunc.sleep(3000);
-      let text2 = getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text2 = getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj2: ESObject = JSON.parse(text2);
       console.log('PinchGestureAllowedTypesTest_0010 obj2 $attrs content',obj2.$attrs.content,obj2)
       expect(obj2.$attrs.content).assertEqual('allowed types default');
@@ -97,7 +97,7 @@ export default function PinchGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text3 = getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text3 = getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj3: ESObject = JSON.parse(text3);
       console.log('PinchGestureAllowedTypesTest_0010 obj3 $attrs content',obj3.$attrs.content,obj3)
       expect(obj3.$attrs.content).assertEqual('allowed types default');
@@ -107,7 +107,7 @@ export default function PinchGestureAllowedTypesTest() {
       let button3 = await driver.findComponent(ON.id('Invalid_type'));
       await button3.click();
       await CommonFunc.sleep(3000);
-      let text9 = getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text9 = getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj9: ESObject = JSON.parse(text9);
       console.log('PinchGestureAllowedTypesTest_0010 obj9 $attrs content',obj9.$attrs.content,obj9)
       expect(obj9.$attrs.content).assertEqual('allowed types default');
@@ -116,7 +116,7 @@ export default function PinchGestureAllowedTypesTest() {
       await CommonFunc.sleep(1000);
       await driver.injectMultiPointerAction(pointers);
       await CommonFunc.sleep(4000);
-      let text10 = getInspectorByKey('PinchGestureAllowedTypes_result');
+      let text10 = getInspectorByKey('PinchGestureAllowedTypes' + '_result');
       let obj10: ESObject = JSON.parse(text10);
       console.log('PinchGestureAllowedTypesTest_0010 obj10 $attrs content',obj10.$attrs.content,obj10)
       expect(obj10.$attrs.content).assertEqual('allowed types success');

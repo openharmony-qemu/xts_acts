@@ -22,7 +22,7 @@ struct ActionSheetExampleB {
   @State actionSheetFlag4: string = 'false';
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center}) {
-      Button('ActionSheet生命周期').key('ActionSheet')
+      Button('ActionSheet生命周期').key('ActionSheetLife_ActionSheet')
         .onClick(() => {
           ActionSheet.show({
             title:    'ActionSheet生命周期',

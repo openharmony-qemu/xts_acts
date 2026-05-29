@@ -43,7 +43,7 @@ struct RollAngleExample {
               '\n rollAngle:' + event.rollAngle;
           }
         })
-      Text(this.text).key('text')
+      Text(this.text).key('RollAngle_text')
     }.width('100%')
   }
 }
