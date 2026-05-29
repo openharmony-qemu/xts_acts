@@ -1097,7 +1097,7 @@ async function testOffSeiMessageReceived02(src: string | media.AVFileDescriptor,
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      OffSeiMessageReceived02(avPlayer!, done)
+      testOffSeiMessageReceived02(avPlayer!, done)
       setSource(avPlayer!, src);
     }
     if (err!!.code != 0) {
@@ -1116,7 +1116,7 @@ async function testOffSeiMessageReceived03(src: string | media.AVFileDescriptor,
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      OffSeiMessageReceived03(avPlayer!, done)
+      testOffSeiMessageReceived03(avPlayer!, done)
       setSource(avPlayer!, src);
     }
     if (err!!.code != 0) {
@@ -1880,23 +1880,6 @@ async function testSetLoudness(src: media.AVFileDescriptor, done: () => void, Lo
     }
     if (err!!.code != 0) {
       console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
-      expect().assertFail();
-      done();
-    }
-  })
-}
-
-async function testGetPlaybackSpeed(src: string | media.AVFileDescriptor, Speed: number, done: () => void) {
-  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
-    console.info(`case media err: ${err}`)
-    if (typeof (video) !== 'undefined') {
-      console.info('case createAVPlayer success');
-      avPlayer = video;
-      setAVPlayerCb(avPlayer!, speed, done);
-      setSource(avPlayer!!, src);
-    }
-    if (err != null) {
-      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
       expect().assertFail();
       done();
     }
@@ -2736,7 +2719,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_VOLUMECHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffVolumeChange(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2751,7 +2734,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SEEKDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffSeekDone(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2766,7 +2749,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_SPEEDDONE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffSpeedDone(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2781,7 +2764,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_TIMEUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffTimeUpdate(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2796,7 +2779,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_DURATIONUPDATE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffDurationUpdate(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2811,7 +2794,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_STARTRENDERFRAME_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffStartRenderFrame(fileDescriptor!, avPlayer, done);
         }
       })
@@ -2826,7 +2809,7 @@ export default function AVPlayerLocalTest() {
        */
       it('SUB_MULTIMEDIA_PLAYER_ON_OFF_AVAILABLEBITRATES_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
-          expect(fileDescriptor).not().assertnull();
+          expect(fileDescriptor).not().assertNull();
           testOnOffAvailableBitrates(fileDescriptor!, avPlayer, done);
         }
       })
@@ -3049,7 +3032,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_METRICSEVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffMetricsEvent(fileDescriptor!, avplayer, done);
+          testOnOffMetricsEvent(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -3064,7 +3047,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SEEKDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffSeekDone(fileDescriptor!, avplayer, done);
+          testOnOffSeekDone(fileDescriptor!, avPlayer, done);
         }
       })
 
@@ -3079,7 +3062,7 @@ export default function AVPlayerLocalTest() {
       it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ON_OFF_SPEEDDONE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
         if (fileDescriptor) {
           expect(fileDescriptor).not().assertNull();
-          testOnOffSeekDone(fileDescriptor!, avplayer, done);
+          testOnOffSeekDone(fileDescriptor!, avPlayer, done);
         }
       })
 
