@@ -20,7 +20,6 @@ import Utils from '../../test/Utils';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist} from '../../test/WaitTest.test';
 import { Driver, MouseButton } from '@ohos.UiTest';
-import { XtsTestServer } from 'library';
 
 @Observed
 declare class Params {
@@ -101,13 +100,12 @@ class MyNodeController extends NodeController {
 struct WebComponent {
   @Prop params: Params
   browserTabController: WebviewController = new webview.WebviewController()
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State bkColor: Color = Color.Red
   @State index: Boolean = false
 
   build() {
     Column() {
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.browserTabController })
+      Web({ src: 'https://map.baidu.com/', controller: this.browserTabController })
         .domStorageAccess(true)//开启数据库存储权限
         .databaseAccess(true)//图片加载相关权限
         .imageAccess(true)
@@ -142,7 +140,6 @@ function WebBuilder(params: Params) {
 @Component
 struct WebIndex {
   browserTabController: WebviewController = new webview.WebviewController()
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   private nodeControllerMap: Map<string, MyNodeController> = new Map();
   @State componentIdArr: Array<string> = []
   @State isGetPermission:boolean = false;
@@ -172,10 +169,6 @@ struct WebIndex {
   }
   onPageHide() {	
     events_emitter.off(153530)
-  }
-
-  aboutToDisappear() {
-    this.browserTabController.loadUrl(this.mServer.getShutdownUrl());
   }
 
   private valueChangeCallBack = (eventData: events_emitter.EventData) => {

@@ -21,7 +21,6 @@ import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.ar
 import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
-import { XtsTestServer } from 'library';
 
 let isPlaying: Boolean = false
 let isError: Boolean = false
@@ -463,15 +462,6 @@ struct MyComponent {
         this.videoHeightPercent = scaledVideoHeight / this.viewHeight * 100;
     }
 
-    aboutToDisappear() {
-
-      if (this.params?.webTab) {
-        this.params.webTab.controller.loadUrl(this.params.webTab.mServer.getShutdownUrl());
-      }
-
-    }
-
-
     build() {
         Column() {
             Stack() {
@@ -582,7 +572,6 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
     controller: WebviewController = new webview.WebviewController();
-    mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
     nativePlayer? : webview.NativeMediaPlayerBridge
     nodeController?: MyNodeController
     nativeMediaPlayerHandlerImpl?: NativeMediaPlayerHandlerImpl
@@ -678,7 +667,7 @@ struct WebComponent {
                     this.isShouldOverlay = true
                     this.isCallback = false
                     this.isPageEnd = -1;
-                    this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandler.html'))
+                    this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
                     await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                     if (Utils.isPC(this.controller) ) {
                         Utils.emitEvent(true, 361710)
@@ -687,7 +676,7 @@ struct WebComponent {
                     switch (this.emitKey) {
                       case 'emitWebViewNativeMediaPlayerSetPlaybackRateWithUndefined': {
                         this.isPageEnd = -1;
-                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandler.html'));
+                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'));
                         await Utils.waitForExist(()=>this.isPageEnd, 'webMediaPlayerHandlerIsPageEnd', 1, 1000);
                         this.controller.runJavaScript('buttonPlay()', (error, result) => {
                             console.error(`The buttonPlay() return error is: ${error}`);

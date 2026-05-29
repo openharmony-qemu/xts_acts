@@ -19,7 +19,6 @@ import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import { waitForExist } from '../../test/WaitTest.test';
 import { Driver, ON } from '@ohos.UiTest';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -27,7 +26,6 @@ struct WebViewControllerVideoMedia {
   @State str: string = ""
   @State userAgentPC:string = "";
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State backStateArr:string[] = ['MediaPlaybackState.NONE','MediaPlaybackState.PLAYING','MediaPlaybackState.PAUSED','MediaPlaybackState.STOPPED']
   @State isPageEnd: number = -1;
   @State isReceive: number = -1;
@@ -56,13 +54,6 @@ struct WebViewControllerVideoMedia {
     }
   }
 
-  aboutToDisappear() {
-
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-
-  }
-
-
   build() {
     Column() {
       Row() {
@@ -80,7 +71,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132270)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -112,7 +103,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[0], 132280)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -142,7 +133,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132290)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -176,7 +167,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132300)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -210,7 +201,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132310)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -244,7 +235,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132320)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video2.html'))
+                  this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -278,7 +269,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132330)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video2.html'))
+                  this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -313,7 +304,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132340)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video3.html'))
+                  this.controller.loadUrl($rawfile("video3.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -347,7 +338,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[1], 132350)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -381,7 +372,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[0], 132360)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -411,7 +402,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[1], 132370)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -443,7 +434,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132380)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -477,7 +468,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[3], 132390)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -511,7 +502,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[1], 132400)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video2.html'))
+                  this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -546,7 +537,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[1], 132410)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video3.html'))
+                  this.controller.loadUrl($rawfile("video3.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -582,7 +573,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132420)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -614,7 +605,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132430)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -644,7 +635,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132440)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -678,7 +669,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132450)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -712,7 +703,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132460)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video1.html'))
+                  this.controller.loadUrl($rawfile("video1.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -746,7 +737,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132470)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video2.html'))
+                  this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -779,7 +770,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132480)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video2.html'))
+                  this.controller.loadUrl($rawfile("video2.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -814,7 +805,7 @@ struct WebViewControllerVideoMedia {
                   Utils.emitEvent(this.backStateArr[2], 132490)
                 } else {
                   this.isPageEnd = -1;
-                  this.controller.loadUrl(this.mServer.getAssetUrl('video3.html'))
+                  this.controller.loadUrl($rawfile("video3.html"))
                   await waitForExist(() => this.isPageEnd, this.str, 0);
 
                   let driver = Driver.create();
@@ -844,7 +835,7 @@ struct WebViewControllerVideoMedia {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('video1.html'), controller: this.controller })
+      Web({ src: $rawfile("video1.html"), controller: this.controller })
         .onPageEnd((event) => {
           console.log('web pageEnd==>' + event.url);
           this.isPageEnd = 0;
