@@ -83,7 +83,7 @@ napi_value KeyEventGetTypeTest::KeyEventGetTypeTest_001(napi_env env, napi_callb
 
     ArkUI_AttributeItem id_item = {};
     id_item.string = "KeyEventGetType";
-    ArkUI_AttributeItem textId = {.string = "onClick"};
+    ArkUI_AttributeItem textId = {.string = "onClick_type"};
     nodeAPI->setAttribute(button, NODE_ID, &textId);
     nodeAPI->addChild(column, button);
 
