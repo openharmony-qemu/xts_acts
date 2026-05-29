@@ -1891,7 +1891,7 @@ async function testMetricsListening(src: media.AVFileDescriptor,
 
 async function testGetPlaybackSpeed(src: string | media.AVFileDescriptor, speed: number, done: () => void){
   media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
-    console.info(case media err: ${err})
+    console.info(`case media err: ${err}`)
     if (typeof (video) !== 'undefined') {
       console.info('case createAVPlayer success');
       avPlayer = video;
@@ -1899,7 +1899,7 @@ async function testGetPlaybackSpeed(src: string | media.AVFileDescriptor, speed:
       setSource(avPlayer!!, src);
     }
     if (err != null) {
-      console.error(case createAVPlayer error, errMessage is ${err.message});
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
       expect().assertFail();
       done();
     }
