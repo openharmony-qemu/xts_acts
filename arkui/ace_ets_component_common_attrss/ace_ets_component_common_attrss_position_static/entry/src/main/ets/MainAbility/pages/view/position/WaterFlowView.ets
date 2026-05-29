@@ -37,12 +37,12 @@ import { Link, State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 export struct WaterFlowView {
-  private _position: Position = { x: 0, y: 0 } as Position;
+  @Link _position!: Position;
   private componentKey: string = '';
   @State minSize: Double = 50
   @State maxSize: Double = 100
   @State fontSize: Double = 24
-  @State colors: int[] = [0xFFC0CB, 0xDA70D6, 0x6B8E23, 0x6A5ACD, 0x00FFFF, 0x00FF7F] as int[]
+  @State colors: string[] = ['0xFFC0CB', '0xDA70D6', '0x6B8E23', '0x6A5ACD', '0x00FFFF', '0x00FF7F'] as string[]
   scroller: Scroller = new Scroller()
   private itemWidthArray: Double[] = [] as Double[]
   private itemHeightArray: Double[] = [] as Double[]
@@ -86,7 +86,7 @@ export struct WaterFlowView {
         }
         .width(this.itemWidthArray[item])
         .height(this.itemHeightArray[item])
-        .backgroundColor(this.colors[item % 5] as int)
+        .backgroundColor(this.colors[item % 5] as string)
       }, (item: int) => String(item))
     }
     .columnsTemplate('1fr 1fr 1fr 1fr')
@@ -104,7 +104,7 @@ export struct WaterFlowView {
     .onReachEnd(() => {
       console.info('onReachEnd')
     })
-    .backgroundColor(0xFAEEE0)
+    .backgroundColor('0xFAEEE0')
     .width('100%')
     .height('80%')
     .layoutDirection(FlexDirection.Column)

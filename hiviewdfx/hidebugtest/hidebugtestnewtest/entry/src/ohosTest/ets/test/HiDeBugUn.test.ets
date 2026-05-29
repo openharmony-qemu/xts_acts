@@ -121,7 +121,7 @@ export default function HidebugTest() {
     it("HidebugTest_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0018 start");
       try{
-        hidebug.dumpHeapData(null);
+        await hidebug.dumpHeapData(null);
         console.info("====> HidebugTest_0018 dumpHeapData null end");
         done();
       }catch(err){
@@ -142,7 +142,7 @@ export default function HidebugTest() {
     it("HidebugTest_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("HidebugTest_0019 start");
       try{
-        hidebug.dumpHeapData("");
+        await hidebug.dumpHeapData("");
         console.info("====> HidebugTest_0019 dumpHeapData empty end");
         done();
       }catch(err){

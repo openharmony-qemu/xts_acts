@@ -28,6 +28,7 @@ import SecurityHuksAccessControlUserAuthTest from './SecurityHuksAccessControlUs
 import SecurityHuksApiTest from './SecurityHuksApiCoverEnum.test';
 import SecurityHuksKeyGenerateOverrideTest from './SecurityHuksKeyGenerateOverride.test';
 import SecurityHuksSignVerifySM2Test from './SecurityHuksSignVerifySM2.test';
+import SecurityHuksSignVerifyMlDsaTest from './SecurityHuksSignVerifyMlDsa.test';
 import SecurityHuksGroupAPI23Test from './SecurityHuksAccessControlGroup.test';
 import SecurityHuksApiCoverInterfaceErrorCodeCallback from './SecurityHuksApiCoverInterfaceErrorCodeCallback.test';
 import SecurityHuksApiCoverInterfaceErrorCode from './SecurityHuksApiCoverInterfaceErrorCode.test';
@@ -51,6 +52,7 @@ export default function testsuite() {
   SecurityHuksApiTest();
   SecurityHuksKeyGenerateOverrideTest();
   SecurityHuksSignVerifySM2Test();
+  SecurityHuksSignVerifyMlDsaTest();
   SecurityHuksGroupAPI23Test();
   SecurityHuksApiCoverInterfaceErrorCodeCallback();
   SecurityHuksApiCoverInterfaceErrorCode();

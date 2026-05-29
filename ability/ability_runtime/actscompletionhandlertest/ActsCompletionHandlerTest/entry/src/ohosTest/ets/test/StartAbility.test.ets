@@ -48,8 +48,9 @@ let openDialog = async (dialogKey: string, text: string) => {
         await moreButtons[moreButtons.length -1].click();
         hilog.info(DOMAIN, LOG_TAG, '更多打开方式 clicked');
       }
-      await sleep(500);
+      await sleep(1000);
     }
+    hilog.info(DOMAIN, LOG_TAG, 'findComponents: start');
     let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
     hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
@@ -65,6 +66,7 @@ let openDialog = async (dialogKey: string, text: string) => {
 }
 
 let closeDialog = async (dialogKey: string) => {
+  hilog.info(DOMAIN, LOG_TAG, 'closeDialog start waitForComponent');
   let allowed = await driver.waitForComponent(ON.text(dialogKey, MatchPattern.CONTAINS), DELAY_TIME);
   hilog.info(DOMAIN, LOG_TAG, 'needAllow: %{public}s', JSON.stringify(allowed));
   if (allowed) {
@@ -215,7 +217,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
           await allowOpen();
         } catch (e) {
@@ -282,7 +284,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
           await disallowOpen();
         } catch (e) {
@@ -355,7 +357,8 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 isNeedOpen ' + isOpen);
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
+        hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 start openDialog');
         try {
           await openDialog('选择打开方式', 'CompletionHandlerRely');
         } catch (e) {
@@ -429,8 +432,9 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       }
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 isNeedOpen ' + isOpen);
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
+          hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 start closeDialog');
           await closeDialog('选择打开方式');
         } catch (e) {
           hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 closeDialog failed, ${JSON.stringify(e)}`);
@@ -489,7 +493,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         hilog.error(DOMAIN, LOG_TAG, '%{public}s', `SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 startAbility failed, ${JSON.stringify(e)}`);
       }
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
           await openDialog('暂无可用打开方式', '知道了');
         } catch (e) {
@@ -560,7 +564,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
         done();
       }
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
           await allowOpen();
         } catch (e) {
@@ -634,7 +638,7 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       }
       
       if(isOpen){
-        await sleep(500);
+        await sleep(1000);
         try {
           await disallowOpen();
         } catch (e) {
