@@ -24,8 +24,7 @@ function expectAbsentInstanceMethod(cls: Class, name: string): void {
   try {
     method = cls.getInstanceMethod(name);
   } catch (error) {
-    expect(error instanceof Error).assertEqual(true);
-    expect((error as Error).name).assertEqual('Error');
+    expect(error.name).assertEqual('Error');
     return;
   }
   expect(method === undefined || method === null).assertTrue();
@@ -289,8 +288,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod(null as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -308,8 +306,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod(undefined as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -327,8 +324,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod(123 as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -346,8 +342,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod({} as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -366,8 +361,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod(badArg);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -525,8 +519,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod('test', null as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -558,8 +551,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod('test', ['string' as Object]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -577,8 +569,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod('test', Class.from<string>() as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -659,9 +650,8 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('signature') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('signature') >= 0).assertEqual(true);
       }
     });
 
@@ -1199,9 +1189,8 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('signature') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('signature') >= 0).assertEqual(true);
       }
     });
 
@@ -1219,8 +1208,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1272,8 +1260,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod('test', 'invalid' as Object);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1291,8 +1278,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = looseReflect(cls as Object).getInstanceMethod('test', ['string' as Object, 123 as Object]);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1310,8 +1296,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         let method = cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1329,9 +1314,8 @@ export default function ClassGetInstanceMethodTest001(): void {
         cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).stack !== null).assertTrue();
+        expect(error.name).assertEqual('Error');
+        expect(error.stack !== null).assertTrue();
       }
     });
 
@@ -1350,8 +1334,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         cls.getInstanceMethod('test');
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       } finally {
         finallyExecuted = true;
       }

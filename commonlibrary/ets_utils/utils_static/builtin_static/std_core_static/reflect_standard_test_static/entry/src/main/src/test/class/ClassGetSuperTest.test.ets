@@ -299,18 +299,33 @@ export default function ClassGetSuperTest(): void {
       expect(superClazz!.getName()).assertEqual("std.core.Object")
     });
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0200
+     * @tc.name testClassGetSuper002
+     * @tc.desc Verify ClassGetSuper case 002: inheritance std.core.Object
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetSuper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clazz = Class.of(new MyClass003())
+      let superClazz = clazz.getSuper()
+      expect(superClazz !== null).assertTrue()
+      expect(superClazz!.getName()).assertEqual("std.core.Object")
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0300
      * @tc.name testClassGetSuper003
-     * @tc.desc Verify ClassGetSuper case 003: inheritance std.core.Object
+     * @tc.desc Verify ClassGetSuper case 003: inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.of(new MyClass003())
-      let superClazz = clazz.getSuper()
+      let childClazz = Class.from<ChildClass004>()
+      let superClazz = childClazz.getSuper()
       expect(superClazz !== null).assertTrue()
-      expect(superClazz!.getName()).assertEqual("std.core.Object")
+      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.ParentClass004")
     });
 
     /**
@@ -322,21 +337,6 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetSuper004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let childClazz = Class.from<ChildClass004>()
-      let superClazz = childClazz.getSuper()
-      expect(superClazz !== null).assertTrue()
-      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.ParentClass004")
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0500
-     * @tc.name testClassGetSuper005
-     * @tc.desc Verify ClassGetSuper case 005: inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetSuper005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass005>()
       let parentClazz = childClazz.getSuper()
       let grandClazz = parentClazz!.getSuper()
@@ -345,14 +345,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0600
-     * @tc.name testClassGetSuper006
-     * @tc.desc Verify ClassGetSuper case 006: final
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0500
+     * @tc.name testClassGetSuper005
+     * @tc.desc Verify ClassGetSuper case 005: final
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<FinalChild006>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
@@ -360,14 +360,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0700
-     * @tc.name testClassGetSuper007
-     * @tc.desc Verify ClassGetSuper case 007: abstract inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0600
+     * @tc.name testClassGetSuper006
+     * @tc.desc Verify ClassGetSuper case 006: abstract inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass007>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
@@ -375,14 +375,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0800
-     * @tc.name testClassGetSuper008
-     * @tc.desc Verify ClassGetSuper case 008: Object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0700
+     * @tc.name testClassGetSuper007
+     * @tc.desc Verify ClassGetSuper case 007: Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<TestClass008>()
       let superClazz = clazz.getSuper()
       let rootSuper = superClazz!.getSuper()
@@ -390,14 +390,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0900
-     * @tc.name testClassGetSuper009
-     * @tc.desc Verify ClassGetSuper case 009: interface not inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0800
+     * @tc.name testClassGetSuper008
+     * @tc.desc Verify ClassGetSuper case 008: interface not inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass009>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
@@ -405,28 +405,28 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1000
-     * @tc.name testClassGetSuper010
-     * @tc.desc Verify ClassGetSuper case 010: multiple interface not get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_0900
+     * @tc.name testClassGetSuper009
+     * @tc.desc Verify ClassGetSuper case 009: multiple interface not get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass010>()
       let superClazz = clazz.getSuper()
       expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.ParentClass010")
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1100
-     * @tc.name testClassGetSuper011
-     * @tc.desc Verify ClassGetSuper case 011: getSuperreturn type is Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1000
+     * @tc.name testClassGetSuper010
+     * @tc.desc Verify ClassGetSuper case 010: getSuperreturn type is Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass011>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
@@ -437,28 +437,28 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1200
-     * @tc.name testClassGetSuper012
-     * @tc.desc Verify ClassGetSuper case 012: return type is Class undefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1100
+     * @tc.name testClassGetSuper011
+     * @tc.desc Verify ClassGetSuper case 011: return type is Class undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<Object>()
       let superClazz = clazz.getSuper()
       expect(Utils.isAbsentReflectOptional(superClazz)).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1300
-     * @tc.name testClassGetSuper013
-     * @tc.desc Verify ClassGetSuper case 013: return Class object call method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1200
+     * @tc.name testClassGetSuper012
+     * @tc.desc Verify ClassGetSuper case 012: return Class object call method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass013>()
       let parentClazz = childClazz.getSuper()
       let fields = asInstanceFieldArraySuper(parentClazz!.getInstanceFields())
@@ -467,19 +467,34 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1400
-     * @tc.name testClassGetSuper014
-     * @tc.desc Verify ClassGetSuper case 014: primitive and string Class getSuper
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1300
+     * @tc.name testClassGetSuper013
+     * @tc.desc Verify ClassGetSuper case 013: primitive and string Class getSuper
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boolClass = Class.PRIMITIVE_BOOLEAN
       let intClass = Class.PRIMITIVE_INT
       let stringClass = Class.from<string>()
       let boolSuper = boolClass.getSuper()
       expect(boolSuper !== null).assertTrue()
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1400
+     * @tc.name testClassGetSuper014
+     * @tc.desc Verify ClassGetSuper case 014: array type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetSuper014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arrClass = Class.from<Array<int>>()
+      let arrSuper = arrClass.getSuper()
+      expect(arrSuper !== null).assertTrue()
+      console.info(arrSuper!.getName())
     });
 
     /**
@@ -491,21 +506,6 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetSuper015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrClass = Class.from<Array<int>>()
-      let arrSuper = arrClass.getSuper()
-      expect(arrSuper !== null).assertTrue()
-      console.info(arrSuper!.getName())
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1600
-     * @tc.name testClassGetSuper016
-     * @tc.desc Verify ClassGetSuper case 016: array type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetSuper016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let fixedArr: FixedArray<int> = [1, 2, 3]
       let clazz = Class.of(fixedArr)
       let superClazz = clazz.getSuper()
@@ -514,14 +514,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1700
-     * @tc.name testClassGetSuper017
-     * @tc.desc Verify ClassGetSuper case 017: generic type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1600
+     * @tc.name testClassGetSuper016
+     * @tc.desc Verify ClassGetSuper case 016: generic type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass005>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
@@ -529,14 +529,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1800
-     * @tc.name testClassGetSuper018
-     * @tc.desc Verify ClassGetSuper case 018: type Class
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1700
+     * @tc.name testClassGetSuper017
+     * @tc.desc Verify ClassGetSuper case 017: type Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let unionClass = Class.from<int | string>()
       let isUnion = unionClass.isUnion()
       expect(isUnion).assertTrue()
@@ -545,14 +545,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1900
-     * @tc.name testClassGetSuper019
-     * @tc.desc Verify ClassGetSuper case 019: enum Class getSuper non-null
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1800
+     * @tc.name testClassGetSuper018
+     * @tc.desc Verify ClassGetSuper case 018: enum Class getSuper non-null
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let enumClass = Class.from<TestEnum019>()
       let enumSuper = enumClass.getSuper()
       expect(enumSuper !== null).assertTrue()
@@ -560,14 +560,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2000
-     * @tc.name testClassGetSuper020
-     * @tc.desc Verify ClassGetSuper case 020: getSupernot throw exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1900
+     * @tc.name testClassGetSuper019
+     * @tc.desc Verify ClassGetSuper case 019: getSupernot throw exception
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass020>();
       let superClazz = clazz.getSuper();
       expect(clazz.isUnion()).assertFalse();
@@ -575,15 +575,29 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2000
+     * @tc.name testClassGetSuper020
+     * @tc.desc Verify ClassGetSuper case 020: getSuper
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetSuper020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clazz = Class.from<MyClass021>()
+      let superClazz = clazz.getSuper()
+      expect(superClazz !== null).assertTrue()
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2100
      * @tc.name testClassGetSuper021
-     * @tc.desc Verify ClassGetSuper case 021: getSuper
+     * @tc.desc Verify ClassGetSuper case 021: runtime
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<MyClass021>()
+      let clazz = Class.from<DynamicClass022>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
     });
@@ -591,13 +605,13 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2200
      * @tc.name testClassGetSuper022
-     * @tc.desc Verify ClassGetSuper case 022: runtime
+     * @tc.desc Verify ClassGetSuper case 022: final get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<DynamicClass022>()
+      let clazz = Class.from<FinalClass023>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
     });
@@ -605,13 +619,13 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2300
      * @tc.name testClassGetSuper023
-     * @tc.desc Verify ClassGetSuper case 023: final get
+     * @tc.desc Verify ClassGetSuper case 023: abstract get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<FinalClass023>()
+      let clazz = Class.from<AbstractClass024>()
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
     });
@@ -619,31 +633,31 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2400
      * @tc.name testClassGetSuper024
-     * @tc.desc Verify ClassGetSuper case 024: abstract get
+     * @tc.desc Verify ClassGetSuper case 024: abstract class inheritance abstract class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<AbstractClass024>()
-      let superClazz = clazz.getSuper()
-      expect(superClazz !== null).assertTrue()
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2500
-     * @tc.name testClassGetSuper025
-     * @tc.desc Verify ClassGetSuper case 025: abstract class inheritance abstract class
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetSuper025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ConcreteClass025>()
       let super1 = clazz.getSuper()
       let super2 = super1!.getSuper()
       expect(super1!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.AbstractChild025")
       expect(super2!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.AbstractParent025")
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2500
+     * @tc.name testClassGetSuper025
+     * @tc.desc Verify ClassGetSuper case 025: inheritance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetSuper025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let clazz = Class.from<Child026>()
+      let superClazz = clazz.getSuper()
+      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.Parent1026")
     });
 
     /**
@@ -655,20 +669,6 @@ export default function ClassGetSuperTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetSuper026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let clazz = Class.from<Child026>()
-      let superClazz = clazz.getSuper()
-      expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.Parent1026")
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2700
-     * @tc.name testClassGetSuper027
-     * @tc.desc Verify ClassGetSuper case 027: inheritance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetSuper027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<Level5027>()
       let current = clazz
       let expectedNames = ["entry.src.main.src.test.class.ClassGetSuperTest.test.Level4027", "entry.src.main.src.test.class.ClassGetSuperTest.test.Level3027", "entry.src.main.src.test.class.ClassGetSuperTest.test.Level2027", "entry.src.main.src.test.class.ClassGetSuperTest.test.Level1027", "std.core.Object"]
@@ -679,14 +679,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2800
-     * @tc.name testClassGetSuper028
-     * @tc.desc Verify ClassGetSuper case 028: inheritance interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2700
+     * @tc.name testClassGetSuper027
+     * @tc.desc Verify ClassGetSuper case 027: inheritance interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<ChildClass028>()
       let superClazz = clazz.getSuper()
       expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.ParentClass028")
@@ -695,14 +695,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2900
-     * @tc.name testClassGetSuper029
-     * @tc.desc Verify ClassGetSuper case 029: inheritance multiple interface
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2800
+     * @tc.name testClassGetSuper028
+     * @tc.desc Verify ClassGetSuper case 028: inheritance multiple interface
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<DerivedClass029>()
       let superClazz = clazz.getSuper()
       expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.BaseClass029")
@@ -711,14 +711,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3000
-     * @tc.name testClassGetSuper030
-     * @tc.desc Verify ClassGetSuper case 030: getSuper and isSubtypeOf
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_2900
+     * @tc.name testClassGetSuper029
+     * @tc.desc Verify ClassGetSuper case 029: getSuper and isSubtypeOf
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass030>()
       let parentClazz = childClazz.getSuper()
       expect(parentClazz !== null).assertTrue()
@@ -726,14 +726,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3100
-     * @tc.name testClassGetSuper031
-     * @tc.desc Verify ClassGetSuper case 031: get name
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3000
+     * @tc.name testClassGetSuper030
+     * @tc.desc Verify ClassGetSuper case 030: get name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass031>()
       let superClazz = childClazz.getSuper()
       let parentName = superClazz!.getName()
@@ -741,14 +741,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3200
-     * @tc.name testClassGetSuper032
-     * @tc.desc Verify ClassGetSuper case 032: via get method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3100
+     * @tc.name testClassGetSuper031
+     * @tc.desc Verify ClassGetSuper case 031: via get method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childClazz = Class.from<ChildClass032>()
       let parentClazz = childClazz.getSuper()
       let parentMethods = asInstanceMethodArraySuper(parentClazz!.getInstanceMethods())
@@ -757,14 +757,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3300
-     * @tc.name testClassGetSuper033
-     * @tc.desc Verify ClassGetSuper case 033: call getSuperreturn same
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3200
+     * @tc.name testClassGetSuper032
+     * @tc.desc Verify ClassGetSuper case 032: call getSuperreturn same
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let clazz = Class.from<MyClass033>()
       let super1 = clazz.getSuper()
       let super2 = clazz.getSuper()
@@ -775,14 +775,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3400
-     * @tc.name testClassGetSuper034
-     * @tc.desc Verify ClassGetSuper case 034: performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3300
+     * @tc.name testClassGetSuper033
+     * @tc.desc Verify ClassGetSuper case 033: performance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let classes: Array<Object> = new Array<Object>()
       for (let i = 0; i < 1000; i++) {
         classes.push(Class.from<TestClass034>())
@@ -798,14 +798,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3500
-     * @tc.name testClassGetSuper035
-     * @tc.desc Verify ClassGetSuper case 035: via getSuper inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3400
+     * @tc.name testClassGetSuper034
+     * @tc.desc Verify ClassGetSuper case 034: via getSuper inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let serviceClazz = Class.from<UserService035>()
       let current: Class | undefined = serviceClazz
       let depth = 0
@@ -818,28 +818,28 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3600
-     * @tc.name testClassGetSuper036
-     * @tc.desc Verify ClassGetSuper case 036: via getSuper inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3500
+     * @tc.name testClassGetSuper035
+     * @tc.desc Verify ClassGetSuper case 035: via getSuper inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let modelClazz = Class.from<UserModel036>()
       let superClazz = modelClazz.getSuper()
       expect(superClazz!.getName()).assertEqual("entry.src.main.src.test.class.ClassGetSuperTest.test.BaseModel036")
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3700
-     * @tc.name testClassGetSuper037
-     * @tc.desc Verify ClassGetSuper case 037: via getSuper inheritance object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3600
+     * @tc.name testClassGetSuper036
+     * @tc.desc Verify ClassGetSuper case 036: via getSuper inheritance object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let child = new Child037()
       let clazz = Class.of(child)
       let current: Class | undefined = clazz
@@ -861,28 +861,28 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3800
-     * @tc.name testClassGetSuper038
-     * @tc.desc Verify ClassGetSuper case 038: getSuper
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3700
+     * @tc.name testClassGetSuper037
+     * @tc.desc Verify ClassGetSuper case 037: getSuper
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let objClazz = Class.from<Object>()
       let objSuper = objClazz.getSuper()
       expect(Utils.isAbsentReflectOptional(objSuper)).assertTrue()
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3900
-     * @tc.name testClassGetSuper039
-     * @tc.desc Verify ClassGetSuper case 039: Array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3800
+     * @tc.name testClassGetSuper038
+     * @tc.desc Verify ClassGetSuper case 038: Array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arrClazz = Class.from<Array<int>>()
       let arrSuper = arrClazz.getSuper()
       expect(arrSuper !== null).assertTrue()
@@ -890,14 +890,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4000
-     * @tc.name testClassGetSuper040
-     * @tc.desc Verify ClassGetSuper case 040: Map
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3900
+     * @tc.name testClassGetSuper039
+     * @tc.desc Verify ClassGetSuper case 039: Map
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let mapClazz = Class.from<Map<string, int>>()
       let mapSuper = mapClazz.getSuper()
       expect(mapSuper !== null).assertTrue()
@@ -905,14 +905,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4100
-     * @tc.name testClassGetSuper041
-     * @tc.desc Verify ClassGetSuper case 041: void type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4000
+     * @tc.name testClassGetSuper040
+     * @tc.desc Verify ClassGetSuper case 040: void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let voidClazz = Class.PRIMITIVE_VOID
       let voidSuper = voidClazz.getSuper()
       expect(voidClazz.getName()).assertEqual("void")
@@ -920,14 +920,14 @@ export default function ClassGetSuperTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4200
-     * @tc.name testClassGetSuper042
-     * @tc.desc Verify ClassGetSuper case 042: Promise
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4100
+     * @tc.name testClassGetSuper041
+     * @tc.desc Verify ClassGetSuper case 041: Promise
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetSuper042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetSuper041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let promiseClazz = Class.from<Promise<string>>()
       let promiseSuper = promiseClazz.getSuper()
       expect(promiseSuper !== null).assertTrue()

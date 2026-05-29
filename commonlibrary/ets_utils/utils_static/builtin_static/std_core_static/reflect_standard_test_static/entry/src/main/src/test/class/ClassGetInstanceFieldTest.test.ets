@@ -148,8 +148,7 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField();
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -167,8 +166,7 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField('name', 'extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -265,8 +263,7 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(null as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -284,8 +281,7 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = cls.getInstanceField(undefined as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -303,8 +299,7 @@ export default function ClassGetInstanceFieldTest(): void {
         let field = looseReflect(cls as Object).getInstanceField(123 as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -473,14 +468,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
-     * @tc.name testClassGetInstanceField021
-     * @tc.desc Verify ClassGetInstanceField case 021: return InstanceField getType()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2000
+     * @tc.name testClassGetInstanceField020
+     * @tc.desc Verify ClassGetInstanceField case 020: return InstanceField getType()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TypedClass021>();
 
       let strField = cls.getInstanceField('strField');
@@ -497,33 +492,32 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2200
-     * @tc.name testClassGetInstanceField022
-     * @tc.desc Verify ClassGetInstanceField case 022: string type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
+     * @tc.name testClassGetInstanceField021
+     * @tc.desc Verify ClassGetInstanceField case 021: string type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       try {
         let field = looseReflect(cls as Object).getInstanceField(true as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2300
-     * @tc.name testClassGetInstanceField023
-     * @tc.desc Verify ClassGetInstanceField case 023: Class call
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2200
+     * @tc.name testClassGetInstanceField022
+     * @tc.desc Verify ClassGetInstanceField case 022: Class call
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       cls.initialize();
       let field = cls.getInstanceField('name');
@@ -532,14 +526,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2400
-     * @tc.name testClassGetInstanceField024
-     * @tc.desc Verify ClassGetInstanceField case 024: method is when
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2300
+     * @tc.name testClassGetInstanceField023
+     * @tc.desc Verify ClassGetInstanceField case 023: method is when
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField('name');
       let field2 = cls.getInstanceField('name');
@@ -549,14 +543,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2500
-     * @tc.name testClassGetInstanceField025
-     * @tc.desc Verify ClassGetInstanceField case 025: getInstanceField method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2400
+     * @tc.name testClassGetInstanceField024
+     * @tc.desc Verify ClassGetInstanceField case 024: getInstanceField method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field = cls.getInstanceField('name');
       expect(field !== null).assertTrue();
@@ -565,14 +559,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2600
-     * @tc.name testClassGetInstanceField026
-     * @tc.desc Verify ClassGetInstanceField case 026: field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2500
+     * @tc.name testClassGetInstanceField025
+     * @tc.desc Verify ClassGetInstanceField case 025: field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<LongName026>();
       let longName = 'a'.repeat(1000);
       let field = cls.getInstanceField(longName);
@@ -580,14 +574,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2700
-     * @tc.name testClassGetInstanceField027
-     * @tc.desc Verify ClassGetInstanceField case 027: JavaScript is field
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2600
+     * @tc.name testClassGetInstanceField026
+     * @tc.desc Verify ClassGetInstanceField case 026: JavaScript is field
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<KeywordName027>();
       let field1 = cls.getInstanceField('kwClass');
       let field2 = cls.getInstanceField('kwFunction');
@@ -599,14 +593,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2800
-     * @tc.name testClassGetInstanceField028
-     * @tc.desc Verify ClassGetInstanceField case 028: readonly public
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2700
+     * @tc.name testClassGetInstanceField027
+     * @tc.desc Verify ClassGetInstanceField case 027: readonly public
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ModifierClass028>();
 
       let field1 = cls.getInstanceField('readonlyPublic');
@@ -619,14 +613,14 @@ export default function ClassGetInstanceFieldTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2900
-     * @tc.name testClassGetInstanceField029
-     * @tc.desc Verify ClassGetInstanceField case 029: field return same object
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2800
+     * @tc.name testClassGetInstanceField028
+     * @tc.desc Verify ClassGetInstanceField case 028: field return same object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceField029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceField028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass001>();
       let field1 = cls.getInstanceField('name');
       let field2 = cls.getInstanceField('name');

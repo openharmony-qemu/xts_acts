@@ -575,8 +575,7 @@ export default function ClassGetLinkerTest(): void {
         linker.loadClass('non.existent.Class')
         expect().assertFail()
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('LinkerClassNotFoundError');
+        expect(error.name).assertEqual('LinkerClassNotFoundError');
       }
     });
 

@@ -181,8 +181,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = looseReflect(cls as Object).getStaticField();
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -200,8 +199,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = looseReflect(cls as Object).getStaticField('name', 'extra');
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -298,8 +296,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = cls.getStaticField(null as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -317,8 +314,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = cls.getStaticField(undefined as string);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -336,8 +332,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = looseReflect(cls as Object).getStaticField(123 as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -597,8 +592,7 @@ export default function ClassGetStaticFieldTest(): void {
         let field = looseReflect(cls as Object).getStaticField(true as Object);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('ClassCastError');
+        expect(e.name).assertEqual('ClassCastError');
       }
     });
 
@@ -735,8 +729,7 @@ export default function ClassGetStaticFieldTest(): void {
         field!.setValue(200);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 

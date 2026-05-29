@@ -44,8 +44,7 @@ export default function ClassGetInstanceMethodTest002(): void {
         let method = cls.getInstanceMethod('test', [Class.from<Map<string, Map<int, Array<string>>>>()]);
         expect(method !== null && method !== undefined).assertTrue();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -307,9 +306,8 @@ export default function ClassGetInstanceMethodTest002(): void {
         method!.invoke(new MyClass096());
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('Always throws') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('Always throws') >= 0).assertEqual(true);
       }
     });
 

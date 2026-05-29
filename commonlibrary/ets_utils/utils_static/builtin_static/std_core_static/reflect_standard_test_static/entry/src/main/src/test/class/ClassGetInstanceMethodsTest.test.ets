@@ -532,14 +532,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6100
-     * @tc.name testClassGetInstanceMethods061
-     * @tc.desc Verify ClassGetInstanceMethods case 061: method in different API is
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0100
+     * @tc.name testClassGetInstanceMethods001
+     * @tc.desc Verify ClassGetInstanceMethods case 001: method in different API is
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CompatClass061>();
       let methods = cls.getInstanceMethods();
 
@@ -547,14 +547,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6200
-     * @tc.name testClassGetInstanceMethods062
-     * @tc.desc Verify ClassGetInstanceMethods case 062: get method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0200
+     * @tc.name testClassGetInstanceMethods002
+     * @tc.desc Verify ClassGetInstanceMethods case 002: get method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ExternalClass>();
       let methods = cls.getInstanceMethods();
 
@@ -562,14 +562,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6300
-     * @tc.name testClassGetInstanceMethods063
-     * @tc.desc Verify ClassGetInstanceMethods case 063: getInstanceMethods on class with one method
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0300
+     * @tc.name testClassGetInstanceMethods003
+     * @tc.desc Verify ClassGetInstanceMethods case 003: getInstanceMethods on class with one method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ChildClass063>();
       let methods = cls.getInstanceMethods();
 
@@ -588,14 +588,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6400
-     * @tc.name testClassGetInstanceMethods064
-     * @tc.desc Verify ClassGetInstanceMethods case 064: generic inheritance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0400
+     * @tc.name testClassGetInstanceMethods004
+     * @tc.desc Verify ClassGetInstanceMethods case 004: generic inheritance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass064<int>>();
       let methods = cls.getInstanceMethods();
 
@@ -603,14 +603,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6500
-     * @tc.name testClassGetInstanceMethods065
-     * @tc.desc Verify ClassGetInstanceMethods case 065: type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0500
+     * @tc.name testClassGetInstanceMethods005
+     * @tc.desc Verify ClassGetInstanceMethods case 005: type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CompleteClass065>();
       let methods = cls.getInstanceMethods();
 
@@ -618,14 +618,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6600
-     * @tc.name testClassGetInstanceMethods066
-     * @tc.desc Verify ClassGetInstanceMethods case 066: getInstanceMethods includes inherited methods
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0600
+     * @tc.name testClassGetInstanceMethods006
+     * @tc.desc Verify ClassGetInstanceMethods case 006: getInstanceMethods includes inherited methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass066>();
       let methods = cls.getInstanceMethods();
 
@@ -654,14 +654,14 @@ export default function ClassGetInstanceMethodsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_6700
-     * @tc.name testClassGetInstanceMethods067
-     * @tc.desc Verify ClassGetInstanceMethods case 067: getInstanceMethods()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEMETHODS_0700
+     * @tc.name testClassGetInstanceMethods007
+     * @tc.desc Verify ClassGetInstanceMethods case 007: getInstanceMethods()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetInstanceMethods067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetInstanceMethods007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Object>();
       let methods = cls.getInstanceMethods();
       expect(methods.length).assertLargerOrEqual(0);

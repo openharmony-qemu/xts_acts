@@ -1228,8 +1228,7 @@ export default function runClassInitializeTest(): void {
         looseReflect(cls as Object).initialize("invalid" as string);
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -1332,8 +1331,7 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('NullPointerError');
+        expect(error.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1351,8 +1349,7 @@ export default function runClassInitializeTest(): void {
         cls!.initialize();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('NullPointerError');
+        expect(error.name).assertEqual('NullPointerError');
       }
     });
 
@@ -1384,9 +1381,8 @@ export default function runClassInitializeTest(): void {
         let _ = InitCycleA012.marker;
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message.indexOf('Circular static initialization') >= 0).assertEqual(true);
+        expect(error.name).assertEqual('Error');
+        expect(error.message.indexOf('Circular static initialization') >= 0).assertEqual(true);
       }
     });
 
@@ -1403,8 +1399,7 @@ export default function runClassInitializeTest(): void {
       try {
         cls.initialize();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
         return;
       }
       expect(MyClass013.largeArray.length).assertLarger(0);
