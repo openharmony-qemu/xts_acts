@@ -19,7 +19,7 @@
   },
   "author": "",
   "modelVersion": "6.0.0",
-  "name": "com.acts.usb.normal",
+  "name": "com.acts.busmanager.serial.function",
   "description": "Please describe the basic information.",
   "main": "",
   "version": "1.0.0",
