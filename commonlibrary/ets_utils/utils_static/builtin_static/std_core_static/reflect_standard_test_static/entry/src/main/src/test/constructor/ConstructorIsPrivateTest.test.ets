@@ -113,56 +113,33 @@ export default function ConstructorIsPrivateTest(): void {
     afterAll(() => {
     });
 
+    
+
+    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0100
      * @tc.name testConstructorIsPrivate001
-     * @tc.desc Verify ConstructorIsPrivate case 001: isPrivate()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorIsPrivate case 001: privateconstructor return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testConstructorIsPrivate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-      let constructors = cls.getConstructors();
-      let isPrivate = constructors[0].isPrivate();
-      expect(isPrivate).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0200
-     * @tc.name testConstructorIsPrivate002
-     * @tc.desc Verify ConstructorIsPrivate case 002: parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass004>().getConstructors()[0].isPrivate()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0300
-     * @tc.name testConstructorIsPrivate003
-     * @tc.desc Verify ConstructorIsPrivate case 003: privateconstructor return true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass003>().getConstructors().length).assertEqual(0);
       expect(Class.from<MyClass003>().getName()).assertEqual(
         "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass003");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0400
-     * @tc.name testConstructorIsPrivate004
-     * @tc.desc Verify ConstructorIsPrivate case 004: publicconstructor return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0200
+     * @tc.name testConstructorIsPrivate002
+     * @tc.desc Verify ConstructorIsPrivate case 002: publicconstructor return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass012>();
       let constructors = cls.getConstructors();
       let isPrivate = constructors[0].isPrivate();
@@ -171,55 +148,55 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0500
-     * @tc.name testConstructorIsPrivate005
-     * @tc.desc Verify ConstructorIsPrivate case 005: protectedconstructor return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0300
+     * @tc.name testConstructorIsPrivate003
+     * @tc.desc Verify ConstructorIsPrivate case 003: protectedconstructor return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass005>().getConstructors().length).assertEqual(0);
       expect(Class.from<MyClass006>().getConstructors()[0].isPrivate()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0600
-     * @tc.name testConstructorIsPrivate006
-     * @tc.desc Verify ConstructorIsPrivate case 006: modifier constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0400
+     * @tc.name testConstructorIsPrivate004
+     * @tc.desc Verify ConstructorIsPrivate case 004: modifier constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
       let isPrivate = ctorRef.isPrivate();
       expect(isPrivate).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0700
-     * @tc.name testConstructorIsPrivate007
-     * @tc.desc Verify ConstructorIsPrivate case 007: private parameters constructor return true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0500
+     * @tc.name testConstructorIsPrivate005
+     * @tc.desc Verify ConstructorIsPrivate case 005: private parameters constructor return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass007>().getConstructors().length).assertEqual(0);
       expect(Class.from<MyClass007>().getName()).assertEqual(
         "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass007");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0800
-     * @tc.name testConstructorIsPrivate008
-     * @tc.desc Verify ConstructorIsPrivate case 008: abstract class privateconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0600
+     * @tc.name testConstructorIsPrivate006
+     * @tc.desc Verify ConstructorIsPrivate case 006: abstract class privateconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass008>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.getName()).assertEqual(
@@ -227,14 +204,14 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0900
-     * @tc.name testConstructorIsPrivate009
-     * @tc.desc Verify ConstructorIsPrivate case 009: final privateconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0700
+     * @tc.name testConstructorIsPrivate007
+     * @tc.desc Verify ConstructorIsPrivate case 007: final privateconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass009>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.getName()).assertEqual(
@@ -242,14 +219,14 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1000
-     * @tc.name testConstructorIsPrivate010
-     * @tc.desc Verify ConstructorIsPrivate case 010: verify return type is boolean
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0800
+     * @tc.name testConstructorIsPrivate008
+     * @tc.desc Verify ConstructorIsPrivate case 008: verify return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let constructors = cls.getConstructors();
       expect(constructors.length).assertLarger(0);
@@ -259,28 +236,14 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1100
-     * @tc.name testConstructorIsPrivate011
-     * @tc.desc Verify ConstructorIsPrivate case 011: verify return true or false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0900
+     * @tc.name testConstructorIsPrivate009
+     * @tc.desc Verify ConstructorIsPrivate case 009: isPrivate and isPublic isProtected
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctor = Class.from<MyClass004>().getConstructors()[0];
-      let isPrivate = ctor.isPrivate();
-      expect(isPrivate).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1200
-     * @tc.name testConstructorIsPrivate012
-     * @tc.desc Verify ConstructorIsPrivate case 012: isPrivate and isPublic isProtected
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let modifierCount = 0;
       if (ctor.isPrivate()) {
@@ -298,54 +261,53 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1300
-     * @tc.name testConstructorIsPrivate013
-     * @tc.desc Verify ConstructorIsPrivate case 013: generic privateconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1000
+     * @tc.name testConstructorIsPrivate010
+     * @tc.desc Verify ConstructorIsPrivate case 010: generic privateconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass013<int>>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.GenericClass013");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1400
-     * @tc.name testConstructorIsPrivate014
-     * @tc.desc Verify ConstructorIsPrivate case 014: privateconstructor should
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1100
+     * @tc.name testConstructorIsPrivate011
+     * @tc.desc Verify ConstructorIsPrivate case 011: privateconstructor should
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<Singleton014>().getConstructors().length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1500
-     * @tc.name testConstructorIsPrivate015
-     * @tc.desc Verify ConstructorIsPrivate case 015: isPrivate()method not throw exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1200
+     * @tc.name testConstructorIsPrivate012
+     * @tc.desc Verify ConstructorIsPrivate case 012: isPrivate() returns false for public constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
-      ctor.isPrivate();
-      expect(true).assertTrue();
+      expect(ctor.isPrivate()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1600
-     * @tc.name testConstructorIsPrivate016
-     * @tc.desc Verify ConstructorIsPrivate case 016: privateconstructor and
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1300
+     * @tc.name testConstructorIsPrivate013
+     * @tc.desc Verify ConstructorIsPrivate case 013: privateconstructor and
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass004>().getConstructors()[0];
       expect(ctorRef.isPrivate()).assertFalse();
       expect(ctorRef.getName()).assertEqual("constructor");
@@ -353,42 +315,42 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1700
-     * @tc.name testConstructorIsPrivate017
-     * @tc.desc Verify ConstructorIsPrivate case 017: verify different type constructor isPrivate()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1400
+     * @tc.name testConstructorIsPrivate014
+     * @tc.desc Verify ConstructorIsPrivate case 014: verify different type constructor isPrivate()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<AbstractClass017>().getConstructors().length).assertEqual(0);
       expect(Class.from<FinalClass017>().getConstructors().length).assertEqual(0);
       expect(Class.from<NormalClass017>().getConstructors().length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1800
-     * @tc.name testConstructorIsPrivate018
-     * @tc.desc Verify ConstructorIsPrivate case 018: verify different constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1500
+     * @tc.name testConstructorIsPrivate015
+     * @tc.desc Verify ConstructorIsPrivate case 015: verify different constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass018>().getConstructors().length).assertEqual(0);
       expect(Class.from<MyClass018>().getName()).assertEqual(
         "entry.src.main.src.test.constructor.ConstructorIsPrivateTest.test.MyClass018");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1900
-     * @tc.name testConstructorIsPrivate019
-     * @tc.desc Verify ConstructorIsPrivate case 019: verify isPrivate() and constructor property
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1600
+     * @tc.name testConstructorIsPrivate016
+     * @tc.desc Verify ConstructorIsPrivate case 016: verify isPrivate() and constructor property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass019>().getConstructors().length).assertEqual(0);
       let visibleCtor = Class.from<MyClass004>().getConstructors()[0];
       expect(visibleCtor.isPrivate()).assertFalse();
@@ -398,14 +360,14 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_2000
-     * @tc.name testConstructorIsPrivate020
-     * @tc.desc Verify ConstructorIsPrivate case 020: from constructor privateconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1700
+     * @tc.name testConstructorIsPrivate017
+     * @tc.desc Verify ConstructorIsPrivate case 017: from constructor privateconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass020>().getConstructors().length).assertEqual(0);
       let constructors = Class.from<MyClass021>().getConstructors();
       let nonPrivateCount = 0;
@@ -418,14 +380,14 @@ export default function ConstructorIsPrivateTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_2100
-     * @tc.name testConstructorIsPrivate021
-     * @tc.desc Verify ConstructorIsPrivate case 021: constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1800
+     * @tc.name testConstructorIsPrivate018
+     * @tc.desc Verify ConstructorIsPrivate case 018: constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsPrivate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsPrivate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass021>().getConstructors();
       let publicCount = 0;
       let privateCount = 0;

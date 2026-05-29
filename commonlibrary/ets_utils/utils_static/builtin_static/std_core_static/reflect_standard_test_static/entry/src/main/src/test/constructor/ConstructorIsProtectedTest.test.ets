@@ -115,56 +115,33 @@ export default function ConstructorIsProtectedTest(): void {
     afterAll(() => {
     });
 
+    
+
+    
+
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0100
      * @tc.name testConstructorIsProtected001
-     * @tc.desc Verify ConstructorIsProtected case 001: isProtected()method no parameters verify empty parameters call
+     * @tc.desc Verify ConstructorIsProtected case 001: protectedconstructor return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testConstructorIsProtected001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass004>();
-      let constructors = cls.getConstructors();
-      let isProtected = constructors[0].isProtected();
-      expect(isProtected).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0200
-     * @tc.name testConstructorIsProtected002
-     * @tc.desc Verify ConstructorIsProtected case 002: parameters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(Class.from<MyClass004>().getConstructors()[0].isProtected()).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0300
-     * @tc.name testConstructorIsProtected003
-     * @tc.desc Verify ConstructorIsProtected case 003: protectedconstructor return true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.isAbstract()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0400
-     * @tc.name testConstructorIsProtected004
-     * @tc.desc Verify ConstructorIsProtected case 004: publicconstructor return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0200
+     * @tc.name testConstructorIsProtected002
+     * @tc.desc Verify ConstructorIsProtected case 002: publicconstructor return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass012>();
       let constructors = cls.getConstructors();
       let isProtected = constructors[0].isProtected();
@@ -173,41 +150,41 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0500
-     * @tc.name testConstructorIsProtected005
-     * @tc.desc Verify ConstructorIsProtected case 005: privateconstructor return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0300
+     * @tc.name testConstructorIsProtected003
+     * @tc.desc Verify ConstructorIsProtected case 003: privateconstructor return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass005>().getConstructors().length).assertEqual(0);
       expect(Class.from<MyClass006>().getConstructors()[0].isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0600
-     * @tc.name testConstructorIsProtected006
-     * @tc.desc Verify ConstructorIsProtected case 006: modifier constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0400
+     * @tc.name testConstructorIsProtected004
+     * @tc.desc Verify ConstructorIsProtected case 004: modifier constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass006>().getConstructors()[0];
       let isProtected = ctorRef.isProtected();
       expect(isProtected).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0700
-     * @tc.name testConstructorIsProtected007
-     * @tc.desc Verify ConstructorIsProtected case 007: protected parameters constructor return true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0500
+     * @tc.name testConstructorIsProtected005
+     * @tc.desc Verify ConstructorIsProtected case 005: protected parameters constructor return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass007>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.getName()).assertEqual(
@@ -215,72 +192,59 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0800
-     * @tc.name testConstructorIsProtected008
-     * @tc.desc Verify ConstructorIsProtected case 008: abstract class protectedconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0600
+     * @tc.name testConstructorIsProtected006
+     * @tc.desc Verify ConstructorIsProtected case 006: abstract class protectedconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass008>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.isAbstract()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0900
-     * @tc.name testConstructorIsProtected009
-     * @tc.desc Verify ConstructorIsProtected case 009: final protectedconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0700
+     * @tc.name testConstructorIsProtected007
+     * @tc.desc Verify ConstructorIsProtected case 007: final protectedconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass009>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.isFinal()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1000
-     * @tc.name testConstructorIsProtected010
-     * @tc.desc Verify ConstructorIsProtected case 010: verify return type is boolean
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0800
+     * @tc.name testConstructorIsProtected008
+     * @tc.desc Verify ConstructorIsProtected case 008: verify return type is boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass004>();
       let constructors = cls.getConstructors();
       expect(constructors.length).assertLarger(0);
       let isProtected = constructors[0].isProtected();
+      expect(typeof isProtected).assertEqual("boolean");
       expect(isProtected).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1100
-     * @tc.name testConstructorIsProtected011
-     * @tc.desc Verify ConstructorIsProtected case 011: verify return true or false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0900
+     * @tc.name testConstructorIsProtected009
+     * @tc.desc Verify ConstructorIsProtected case 009: isProtected and isPublic isPrivate
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let ctor = Class.from<MyClass004>().getConstructors()[0];
-      let isProtected = ctor.isProtected();
-      expect(isProtected).assertFalse();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1200
-     * @tc.name testConstructorIsProtected012
-     * @tc.desc Verify ConstructorIsProtected case 012: isProtected and isPublic isPrivate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testConstructorIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
       let modifierCount = 0;
       if (ctor.isPrivate()) {
@@ -298,55 +262,54 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1300
-     * @tc.name testConstructorIsProtected013
-     * @tc.desc Verify ConstructorIsProtected case 013: generic protectedconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1000
+     * @tc.name testConstructorIsProtected010
+     * @tc.desc Verify ConstructorIsProtected case 010: generic protectedconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GenericClass013<int>>();
       expect(cls.getConstructors().length).assertEqual(0);
       expect(cls.getName()).assertEqual("entry.src.main.src.test.constructor.ConstructorIsProtectedTest.test.GenericClass013");
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1400
-     * @tc.name testConstructorIsProtected014
-     * @tc.desc Verify ConstructorIsProtected case 014: protectedconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1100
+     * @tc.name testConstructorIsProtected011
+     * @tc.desc Verify ConstructorIsProtected case 011: protectedconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<ParentClass014>().getConstructors().length).assertEqual(0);
       expect(Class.from<ChildClass014>().getConstructors().length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1500
-     * @tc.name testConstructorIsProtected015
-     * @tc.desc Verify ConstructorIsProtected case 015: isProtected()method not throw exception
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1200
+     * @tc.name testConstructorIsProtected012
+     * @tc.desc Verify ConstructorIsProtected case 012: isProtected() returns false for public constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctor = Class.from<MyClass004>().getConstructors()[0];
-      ctor.isProtected();
-      expect(true).assertTrue();
+      expect(ctor.isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1600
-     * @tc.name testConstructorIsProtected016
-     * @tc.desc Verify ConstructorIsProtected case 016: protectedconstructor and
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1300
+     * @tc.name testConstructorIsProtected013
+     * @tc.desc Verify ConstructorIsProtected case 013: protectedconstructor and
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let ctorRef = Class.from<MyClass004>().getConstructors()[0];
       expect(ctorRef.isProtected()).assertFalse();
       expect(ctorRef.getName()).assertEqual("constructor");
@@ -354,14 +317,14 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1700
-     * @tc.name testConstructorIsProtected017
-     * @tc.desc Verify ConstructorIsProtected case 017: verify different type constructor isProtected()
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1400
+     * @tc.name testConstructorIsProtected014
+     * @tc.desc Verify ConstructorIsProtected case 014: verify different type constructor isProtected()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c1 = Class.from<AbstractClass017>().getConstructors();
       let c2 = Class.from<FinalClass017>().getConstructors();
       let c3 = Class.from<NormalClass017>().getConstructors();
@@ -371,27 +334,27 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1800
-     * @tc.name testConstructorIsProtected018
-     * @tc.desc Verify ConstructorIsProtected case 018: verify different constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1500
+     * @tc.name testConstructorIsProtected015
+     * @tc.desc Verify ConstructorIsProtected case 015: verify different constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass018>().getConstructors();
       expect(constructors.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1900
-     * @tc.name testConstructorIsProtected019
-     * @tc.desc Verify ConstructorIsProtected case 019: verify isProtected() and constructor property
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1600
+     * @tc.name testConstructorIsProtected016
+     * @tc.desc Verify ConstructorIsProtected case 016: verify isProtected() and constructor property
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass019>().getConstructors().length).assertEqual(0);
       let visibleCtor = Class.from<MyClass004>().getConstructors()[0];
       expect(visibleCtor.isProtected()).assertFalse();
@@ -401,14 +364,14 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_2000
-     * @tc.name testConstructorIsProtected020
-     * @tc.desc Verify ConstructorIsProtected case 020: from constructor protectedconstructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1700
+     * @tc.name testConstructorIsProtected017
+     * @tc.desc Verify ConstructorIsProtected case 017: from constructor protectedconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       expect(Class.from<MyClass020>().getConstructors().length).assertEqual(0);
       let constructors = Class.from<MyClass021>().getConstructors();
       let nonProtectedCount = 0;
@@ -421,14 +384,14 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_2100
-     * @tc.name testConstructorIsProtected021
-     * @tc.desc Verify ConstructorIsProtected case 021: constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1800
+     * @tc.name testConstructorIsProtected018
+     * @tc.desc Verify ConstructorIsProtected case 018: constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass022>().getConstructors();
       let publicCount = 0;
       let privateCount = 0;
@@ -448,14 +411,14 @@ export default function ConstructorIsProtectedTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_2200
-     * @tc.name testConstructorIsProtected022
-     * @tc.desc Verify ConstructorIsProtected case 022: constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1900
+     * @tc.name testConstructorIsProtected019
+     * @tc.desc Verify ConstructorIsProtected case 019: constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testConstructorIsProtected022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testConstructorIsProtected019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let constructors = Class.from<MyClass022>().getConstructors();
       for (let i = 0; i < constructors.length; i++) {
         let ctorRef = constructors[i];

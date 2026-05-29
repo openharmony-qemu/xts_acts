@@ -758,42 +758,12 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2300
      * @tc.name testGetInstanceFieldsRecursive023
-     * @tc.desc Verify non-empty arrays are returned for classes with fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<BasicFieldClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
-      expect(fields.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2400
-     * @tc.name testGetInstanceFieldsRecursive024
-     * @tc.desc Verify empty arrays are returned for classes without fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<EmptyFieldInterface>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields instanceof Array).assertTrue();
-      expect(fields.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2500
-     * @tc.name testGetInstanceFieldsRecursive025
      * @tc.desc Verify parent class fields are included in the result
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SingleInheritanceChildClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       let baseOwner: string = "";
@@ -806,14 +776,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2600
-     * @tc.name testGetInstanceFieldsRecursive026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2400
+     * @tc.name testGetInstanceFieldsRecursive024
      * @tc.desc Verify repeated calls return independent arrays
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields1 = reflect.getInstanceFieldsRecursive(cls);
       let fields2 = reflect.getInstanceFieldsRecursive(cls);
@@ -823,43 +793,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2700
-     * @tc.name testGetInstanceFieldsRecursive027
-     * @tc.desc Verify inherited field names are collected in recursive results
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<DerivedFieldClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      expect(fields.length).assertEqual(3);
-      let baseFieldCount: int = 0;
-      let midFieldCount: int = 0;
-      let derivedFieldCount: int = 0;
-      for (let field of fields) {
-        if (field.getName() === "baseField") {
-          baseFieldCount++;
-        } else if (field.getName() === "midField") {
-          midFieldCount++;
-        } else if (field.getName() === "derivedField") {
-          derivedFieldCount++;
-        }
-      }
-      expect(baseFieldCount).assertEqual(1);
-      expect(midFieldCount).assertEqual(1);
-      expect(derivedFieldCount).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2800
-     * @tc.name testGetInstanceFieldsRecursive028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2500
+     * @tc.name testGetInstanceFieldsRecursive025
      * @tc.desc Verify getters are not included in instance field results
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<GetterSeparatedClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       let getters = reflect.getInstanceGettersRecursive(cls);
@@ -870,14 +811,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2900
-     * @tc.name testGetInstanceFieldsRecursive029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2600
+     * @tc.name testGetInstanceFieldsRecursive026
      * @tc.desc Verify returned value is an object array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(typeof fields).assertEqual("object");
@@ -885,14 +826,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3000
-     * @tc.name testGetInstanceFieldsRecursive030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2700
+     * @tc.name testGetInstanceFieldsRecursive027
      * @tc.desc Verify array elements expose field metadata methods
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields.length).assertEqual(1);
@@ -903,14 +844,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3100
-     * @tc.name testGetInstanceFieldsRecursive031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2800
+     * @tc.name testGetInstanceFieldsRecursive028
      * @tc.desc Verify field access modifiers and isReadonly flag
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ReadonlyFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields.length).assertEqual(2);
@@ -928,14 +869,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3200
-     * @tc.name testGetInstanceFieldsRecursive032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2900
+     * @tc.name testGetInstanceFieldsRecursive029
      * @tc.desc Verify getValue with null target throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       // 预期 compile-time warning：nullish cast 至非 nullish 类型，运行时抛 ClassCastError
@@ -948,14 +889,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3300
-     * @tc.name testGetInstanceFieldsRecursive033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3000
+     * @tc.name testGetInstanceFieldsRecursive030
      * @tc.desc Verify getValue with undefined target throws ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       // 预期 compile-time warning：nullish cast 至非 nullish 类型，运行时抛 ClassCastError
@@ -968,14 +909,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3400
-     * @tc.name testGetInstanceFieldsRecursive034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3100
+     * @tc.name testGetInstanceFieldsRecursive031
      * @tc.desc Verify deep inheritance chains are collected recursively
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<DeepLevel5>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
@@ -1006,14 +947,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3500
-     * @tc.name testGetInstanceFieldsRecursive035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3200
+     * @tc.name testGetInstanceFieldsRecursive032
      * @tc.desc Verify classes with many fields are processed correctly
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ManyFieldsClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
@@ -1064,14 +1005,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3600
-     * @tc.name testGetInstanceFieldsRecursive036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3300
+     * @tc.name testGetInstanceFieldsRecursive033
      * @tc.desc Verify reflection can collect all user fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SceneUser>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
@@ -1098,14 +1039,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3700
-     * @tc.name testGetInstanceFieldsRecursive037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3400
+     * @tc.name testGetInstanceFieldsRecursive034
      * @tc.desc Verify derived class lists baseProp and derivedProp field names
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<SceneDerivedClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       let baseFound = false;
@@ -1123,14 +1064,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3800
-     * @tc.name testGetInstanceFieldsRecursive038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3500
+     * @tc.name testGetInstanceFieldsRecursive035
      * @tc.desc Verify fields can be read and written through reflection
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new DynamicClass();
       let cls = Class.from<DynamicClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
@@ -1167,26 +1108,26 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3900
-     * @tc.name testGetInstanceFieldsRecursive039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3600
+     * @tc.name testGetInstanceFieldsRecursive036
      * @tc.desc Verify field type metadata can be queried
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       verifyTypeInfoClassFieldTypes();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4000
-     * @tc.name testGetInstanceFieldsRecursive040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3700
+     * @tc.name testGetInstanceFieldsRecursive037
      * @tc.desc Verify readonly fields are protected from mutation
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ReadonlyGuardClass();
       let cls = Class.from<ReadonlyGuardClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
@@ -1207,14 +1148,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4100
-     * @tc.name testGetInstanceFieldsRecursive041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3800
+     * @tc.name testGetInstanceFieldsRecursive038
      * @tc.desc Verify repeated field lookup remains stable
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       for (let i = 0; i < 20; i++) {
         let fields = reflect.getInstanceFieldsRecursive(cls);
@@ -1223,14 +1164,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4200
-     * @tc.name testGetInstanceFieldsRecursive042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3900
+     * @tc.name testGetInstanceFieldsRecursive039
      * @tc.desc Verify isPublic, isPrivate, and isProtected on public fields
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields.length).assertEqual(1);
@@ -1240,120 +1181,26 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4300
-     * @tc.name testGetInstanceFieldsRecursive043
-     * @tc.desc Verify isReadonly returns true for readonly fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ReadonlyFieldClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      let constantFound = false;
-      for (let field of fields) {
-        if (field.getName() === "constant") {
-          constantFound = true;
-          expect(field.isReadonly()).assertTrue();
-        }
-      }
-      expect(constantFound).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4400
-     * @tc.name testGetInstanceFieldsRecursive044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4000
+     * @tc.name testGetInstanceFieldsRecursive040
      * @tc.desc Verify getOwner returns the declaring class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       verifySceneDerivedClassFieldOwners();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4500
-     * @tc.name testGetInstanceFieldsRecursive045
-     * @tc.desc Verify getValue reads field values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new DynamicClass();
-      let cls = Class.from<DynamicClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      let nameFound = false;
-      let ageFound = false;
-      let cityFound = false;
-      for (let field of fields) {
-        if (field.getName() === "name") {
-          nameFound = true;
-          let fieldValue = field.getValue(obj);
-          expect(fieldValue instanceof string).assertTrue();
-          expect(fieldValue as string).assertEqual("Alice");
-        } else if (field.getName() === "age") {
-          ageFound = true;
-          let fieldValue = field.getValue(obj);
-          expect(fieldValue instanceof int).assertTrue();
-          expect(fieldValue as int).assertEqual(30);
-        } else if (field.getName() === "city") {
-          cityFound = true;
-          let fieldValue = field.getValue(obj);
-          expect(fieldValue instanceof string).assertTrue();
-          expect(fieldValue as string).assertEqual("Beijing");
-        }
-      }
-      expect(nameFound).assertTrue();
-      expect(ageFound).assertTrue();
-      expect(cityFound).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4600
-     * @tc.name testGetInstanceFieldsRecursive046
-     * @tc.desc Verify setValue updates field values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testGetInstanceFieldsRecursive046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let obj = new DynamicClass();
-      let cls = Class.from<DynamicClass>();
-      let fields = reflect.getInstanceFieldsRecursive(cls);
-      let nameFound = false;
-      let ageFound = false;
-      let cityFound = false;
-      for (let field of fields) {
-        if (field.getName() === "name") {
-          nameFound = true;
-          field.setValue(obj, "Bob");
-        } else if (field.getName() === "age") {
-          ageFound = true;
-          field.setValue(obj, 35);
-        } else if (field.getName() === "city") {
-          cityFound = true;
-          field.setValue(obj, "Shanghai");
-        }
-      }
-      expect(nameFound).assertTrue();
-      expect(ageFound).assertTrue();
-      expect(cityFound).assertTrue();
-      expect(obj.name).assertEqual("Bob");
-      expect(obj.age).assertEqual(35);
-      expect(obj.city).assertEqual("Shanghai");
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4700
-     * @tc.name testGetInstanceFieldsRecursive047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4100
+     * @tc.name testGetInstanceFieldsRecursive041
      * @tc.desc Verify readonly field mutation throws an error
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj = new ReadonlyFieldClass();
       let cls = Class.from<ReadonlyFieldClass>();
       let fields = reflect.getInstanceFieldsRecursive(cls);
@@ -1373,14 +1220,14 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4800
-     * @tc.name testGetInstanceFieldsRecursive048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4200
+     * @tc.name testGetInstanceFieldsRecursive042
      * @tc.desc Verify field metadata objects support equals
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testGetInstanceFieldsRecursive048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testGetInstanceFieldsRecursive042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<BasicFieldClass>();
       let fields1 = reflect.getInstanceFieldsRecursive(cls);
       let fields2 = reflect.getInstanceFieldsRecursive(cls);
