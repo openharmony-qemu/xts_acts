@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../hypium/index";
-import settings from '@ohos.settings'
+import settings from '@ohos.settings';
 import common from '@ohos.app.ability.common';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
@@ -46,6 +47,38 @@ function isDeviceSupportDoubleClick(): boolean {
 
 function isDeviceSupportInputMethod(): boolean {
   return isDevicePhone() || isDeviceTablet();
+}
+
+function isDevicePC(): boolean {
+  return deviceType === '2in1';
+}
+
+function isDeviceSupportBiometrics(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function getBoolSystemParam(key: string, def: boolean): boolean {
+  let defStr = def ? 'true' : 'false';
+  try {
+    return systemParameterEnhance.getSync(key, defStr) === 'true';
+  } catch (err) {
+    console.error(`getSystemParam failed, code:${err?.code}, msg:${err?.message}`);
+    return def;
+  }
+}
+
+function isDeviceSupportNfc(): boolean {
+  return (isDevicePhone() || isDeviceTablet()) &&
+    getBoolSystemParam('const.SystemCapability.Communication.NFC.Core', false) &&
+    !getBoolSystemParam('const.nfc.not_support', false);
+}
+
+function isDeviceSupportAboutDevice(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
+}
+
+function isDeviceSupportAppDetail(): boolean {
+  return isDevicePhone() || isDeviceTablet() || isDevicePC();
 }
 
 export default function settingUiJsunit() {
@@ -2499,7 +2532,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('SUB_Applications_Settings_openBiometricsSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportBiometrics()) {
         done();
         return;
       }
@@ -2525,7 +2558,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('SUB_Applications_Settings_openNfcSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportNfc()) {
         done();
         return;
       }
@@ -2551,7 +2584,7 @@ export default function settingUiJsunit() {
      * @tc.level  LEVEL0
      */
     it('SUB_Applications_Settings_openAboutDeviceSettingsPage_valid_param_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      if (!isDeviceSupportInputMethod()) {
+      if (!isDeviceSupportAboutDevice()) {
         done();
         return;
       }
@@ -2622,5 +2655,111 @@ export default function settingUiJsunit() {
       done();
     }); 
 
+    /**
+ 	    * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0100
+ 	    * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0100
+ 	    * @tc.desc   MediumTest
+ 	    * @tc.type   FUNCTION
+ 	    * @tc.size   MEDIUMTEST
+ 	    * @tc.level  LEVEL0
+ 	    */
+    it('SUB_Applications_Settings_openAppDetailSettingsPage_invalid_bundleName_empty_0100',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!, '', 0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_invalid_bundleName_empty] error = " + err);
+        code = err?.code;
+      }
+      expect(code).assertEqual(16900010);
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0200
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0200
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_appIndex_undefined_0200',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!, 'com.example', undefined);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_appIndex_undefined] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0300
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0300
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0300',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!, 'com.example');
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
+
+  /**
+   * @tc.name   SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0400
+   * @tc.number SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0400
+   * @tc.desc   MediumTest
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
+  it('SUB_Applications_Settings_openAppDetailSettingsPage_valid_param_0400',
+    TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+    async (done: () => void) => {
+      if (!isDeviceSupportAppDetail()) {
+        done();
+        return;
+      }
+      let code = 0;
+      try {
+        settings.openAppDetailSettingsPage(abilityContext!, 'com.example', 0);
+        expect(code).assertEqual(0);
+      } catch (err) {
+        console.error("[openAppDetailSettingsPage_valid_param] error = " + err);
+        code = err?.code;
+        expect(code).assertEqual(16900020);
+      }
+      done();
+    });
   })
 }
