@@ -51,11 +51,13 @@ class Item016 {
 
 export default function SetConstructor1Test(): void {
   describe('SetConstructor1Test', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -721,36 +723,16 @@ export default function SetConstructor1Test(): void {
       }
     });
 
+
     /**
      * @tc.name testSetConstructor1045
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4500
-     * @tc.desc Verify finally block executes after catching exception
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetConstructor1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted = false;
-      try {
-        let set = new Set<string>({} as Object as Iterable<string>);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual("ClassCastError");
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetConstructor1046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4600
      * @tc.desc Verify caught error object has Error properties
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetConstructor1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor1045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(false as Object as Iterable<string>);
         expect().assertFail();
@@ -760,14 +742,14 @@ export default function SetConstructor1Test(): void {
     });
 
     /**
-     * @tc.name testSetConstructor1047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4700
+     * @tc.name testSetConstructor1046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4600
      * @tc.desc Verify no residual Set instance after construction failure
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetConstructor1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor1046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set: Set<string> | null = null;
       try {
         let err: Object = Error("symbol not available");

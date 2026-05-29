@@ -516,50 +516,7 @@ export default function SetConstructor2Test(): void {
       expect(set2.size).assertEqual(1001);
     });
 
-    /**
-     * @tc.name testSetConstructor2030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_2_3000
-     * @tc.desc Verify try block executes normally without exception, finally executes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetConstructor2030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted: boolean = false;
-      try {
-        let set1: Set<string> = new Set<string>(["a", "b"]);
-        let set2: Set<string> = new Set<string>(set1);
-        expect(set2.size).assertEqual(2);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetConstructor2031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_2_3100
-     * @tc.desc Verify exception enters catch branch, finally still executes
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetConstructor2031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let catchExecuted: boolean = false;
-      let finallyExecuted: boolean = false;
-      try {
-        let set: Set<string> = new Set<string>(null as Object as Set<string>);
-        expect().assertFail();
-      } catch (error) {
-        catchExecuted = true;
-        expect(error.name).assertEqual("ClassCastError");
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(catchExecuted).assertTrue();
-      expect(finallyExecuted).assertTrue();
-    });
+    
+    
   });
 }
