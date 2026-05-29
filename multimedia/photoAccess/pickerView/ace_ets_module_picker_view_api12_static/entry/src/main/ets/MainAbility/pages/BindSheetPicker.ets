@@ -18,6 +18,9 @@ import { BusinessError } from '@ohos.base';
 import { Entry, Component, Column, Button, Margin, ClickEvent } from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Context from 'application.Context';
+import { RouterSelectOptionsParams } from '../common/Common';
+import { Router } from '@ohos.arkui.UIContext';
+
 const topMargin: number = 20;
 
 @Entry
@@ -44,8 +47,9 @@ struct BindSheetPicker {
 
   aboutToAppear() {
     this.initPhotoAccessHelper();
-    this.photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
-    this.photoSelectOptions.maxSelectNumber = 3;
+    const router: Router = AppStorage.get<Router>('router') as Router;
+    const parameter = router.getParams() as RouterSelectOptionsParams;
+    this.photoSelectOptions = parameter?.photoSelectOptions;
   }
 
   build() {

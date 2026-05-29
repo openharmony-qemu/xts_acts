@@ -52,7 +52,7 @@ import inspector from '@ohos.arkui.inspector'
 import Context from 'application.Context';
 import { canIUse } from '@internal.full.global'
 import { BusinessError } from '@kit.BasicServicesKit';
-import { RouterOptionsParams, RouterRecentPhotoOptions } from '../../ets/MainAbility/common/Common'
+import { RouterOptionsParams, RouterRecentPhotoOptions, RouterSelectOptionsParams } from '../../ets/MainAbility/common/Common'
 import { RecordData } from '@ohos.base'
 
 const TAG: string = 'TestPickerTest: '
@@ -91,6 +91,22 @@ export default function TextPicker(): void {
       } catch (err) {
         console.error(TAG + 'testPicker page error:' + err);
       }
+    }
+
+    const routerToSheetPage() = async (pickerSelectOptions: phAccessHelper.PhotoSelectOptions): Promise<void> => {
+      const options: router.RouterOptions = {
+         url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          pickerSelectOptions: pickerSelectOptions,
+        } as RouterSelectOptionsParams
+      }
+      await routeToUrl(options);
+    }
+
+    const clickSelectPhotoButton = async (buttonId: string = 'select photo'): Promise<void> => {
+      const button: Component | null = await driver.findComponent(ON.id(buttonId));
+      await button?.click();
+      await Utils.msSleep(500);
     }
 
     let getDefaultPickerOptions = (): PickerOptions => {
@@ -1614,8 +1630,17 @@ export default function TextPicker(): void {
         done();
         return;
       }
-      let options: router.RouterOptions = {
+
+      const photoSelectOptions: photoAccessHelper.PhotoSelectOptions = new photoAccessHelper.PhotoSelectOptions();
+
+      photoSelectOptions.MIMEType = photoAccessHelper.PhotoViewMIMETypes.IMAGE_TYPE;
+      photoSelectOptions.maxSelectNumber = 3;
+
+      const options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
+        params: {
+          photoSelectOptions: 
+        } as RouterSelectOptionsParams
       }
 
       for (let index: int = 0; index < 3; index++) {
@@ -1923,21 +1948,12 @@ export default function TextPicker(): void {
         videoDuration: 1,
         extraVideoDuration: 10000
       }
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0032, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0032, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0032 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -1964,21 +1980,11 @@ export default function TextPicker(): void {
         extraFileSize: 1000000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0033, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0033, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0033 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -2004,21 +2010,11 @@ export default function TextPicker(): void {
         fileSize: 100000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0034, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0034, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0034 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -2044,21 +2040,11 @@ export default function TextPicker(): void {
         fileSize: 10000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0035, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0035, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0035 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -2084,21 +2070,11 @@ export default function TextPicker(): void {
         fileSize: 10000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0036, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0036, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0036 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -2124,21 +2100,11 @@ export default function TextPicker(): void {
         fileSize: 1000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0037, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0037, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0037 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 
@@ -2164,21 +2130,11 @@ export default function TextPicker(): void {
         fileSize: 100000
       }
 
-      try {
-        let photoPicker = new photoAccessHelper.PhotoViewPicker();
-        photoPicker.select(photoSelectOptions).then((PhotoSelectResult: photoAccessHelper.PhotoSelectResult) => {
-          console.info('SUB_PHOTO_PICKER_TEST_0038, PhotoViewPicker.select successfully, PhotoSelectResult uri: ' +
-            JSON.stringify(PhotoSelectResult));
-          expect(PhotoSelectResult).not().assertNull();
-        })
-      } catch (e) {
-        let err = e as BusinessError;
-        expect().assertFail();
-        console.error(`SUB_PHOTO_PICKER_TEST_0038, PhotoViewPicker.select failed with err: ${err.code}, ${err.message}`);
-      }
+      await routerToSheetPage(photoSelectOptions);
+      await clickSelectPhotoButton();
       console.info('SUB_PHOTO_PICKER_TEST_0038 finish');
       await Utils.msSleep(2000);
-      await driver.pressBack();
+      routerInstance.back();
       done();
     });
 

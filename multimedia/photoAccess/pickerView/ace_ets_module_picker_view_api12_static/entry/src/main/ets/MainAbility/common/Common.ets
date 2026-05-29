@@ -16,6 +16,7 @@
 import { PickerOptions } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerOptions } from '@ohos.file.AlbumPickerComponent';
 import { RecentPhotoOptions } from '@ohos.file.RecentPhotoComponent';
+import photoAccessHelper from '@ohos.file.photoAccessHelper';
 
 export enum EventType {
   PHOTO_PICKER_INFO = 10001,
@@ -30,6 +31,10 @@ export interface RouterOptionsParams {
   eventId: Long;
   pickerOptions: PickerOptions;
   albumOptions?: AlbumPickerOptions;
+}
+
+export interface RouterSelectOptionsParams {
+  photoSelectOptions: photoAccessHelper.PhotoSelectOptions;
 }
 
 export interface RouterRecentPhotoOptions {
