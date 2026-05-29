@@ -66,7 +66,7 @@ async function getAVPlayerRequest(testName: string, url: string, callBack: (requ
   let requests1: HashMap<number, media.MediaSourceLoadingRequest> = new HashMap<number, media.MediaSourceLoadingRequest>(); //uuid:request
 
 
-  let playStrategy: media.playbackStrategy = {
+  let playStrategy: media.PlaybackStrategy = {
     preferredWidth: 1,
     preferredHeight: 2,
     preferredBufferDuration: 3,
@@ -91,7 +91,7 @@ async function getAVPlayerRequest(testName: string, url: string, callBack: (requ
     avPlayer!!.release()
   };
 
-  let sourceCloseCallback: media.sourceCloseCallback = (uuid: long) => {
+  let sourceCloseCallback: media.SourceCloseCallback = (uuid: long) => {
     SourceCallbackCount++
     console.log(TAG, `Closing resource with handle ${uuid}`);
     requests1.remove(uuid);
