@@ -69,8 +69,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount2');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(3);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('3');
       done();
     });
 
@@ -84,8 +84,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount3');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(3);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('3');
       done();
     });
 
@@ -99,8 +99,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount5');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(5);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('5');
       done();
     });
 
@@ -114,8 +114,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_004', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount8');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(9);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('9');
       done();
     });
 
@@ -129,8 +129,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_005', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount9');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(9);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('9');
       done();
     });
 
@@ -144,8 +144,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_006', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCountUndefined');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(7);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('7');
       done();
     });
 
@@ -159,8 +159,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_008', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount1');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(7);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('7');
       done();
     });
 
@@ -174,8 +174,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_009', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCount10');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(7);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('7');
       done();
     });
 
@@ -189,8 +189,8 @@ export default function UIPickerDisplayedItemCountTest() {
     it('UIPickerDisplayedItemCount_static_011', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('UIPickerDisplayedItemCountNegative');
       let obj = JSON.parseJsonElement(strJson);
-      let obj1: number = obj.getElement('$attrs').getNumber('displayedItemCount');
-      expect(obj1).assertEqual(7);
+      let obj1: string = obj.getElement('$attrs').getString('displayedItemCount');
+      expect(obj1).assertEqual('7');
       done();
     });
   })
