@@ -301,7 +301,7 @@ function checkCompatibility068(implClass: Class, apiClass: Class): boolean {
   return implClass.isSubtypeOf(apiClass);
 }
 
-/** spec/semantics.md：未在子类型章节描述的 PRIMITIVE 互查应为 false；number≡double 为 Type Identity 例外 */
+/** spec/semantics.md：未在子类型章节描述�?PRIMITIVE 互查应为 false；number≡double �?Type Identity 例外 */
 function expectDistinctPrimitiveSubtypeOfSpec024(fromKind: string, toKind: string): boolean {
   if ((fromKind === 'double' && toKind === 'number') || (fromKind === 'number' && toKind === 'double')) {
     return true;
@@ -447,8 +447,7 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(null as Class);
         expect(result).assertFalse();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -466,8 +465,7 @@ export default function ClassIsSubtypeOfTest(): void {
         let result = cls.isSubtypeOf(undefined as Class);
         expect(result).assertFalse();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
