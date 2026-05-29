@@ -13,16 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function SetIteratorDollarIteratorTest(): void {
   describe('SetIteratorDollarIteratorTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -35,7 +48,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const result = iter.$_iterator();
@@ -50,7 +63,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.$_iterator().next().value).assertEqual(1);
@@ -64,7 +77,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const self = iter.$_iterator();
@@ -82,7 +95,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -100,7 +113,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["a", "b"]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -120,7 +133,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -140,7 +153,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -159,7 +172,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -176,7 +189,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -195,7 +208,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["only"]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -215,7 +228,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["hello", "world", "arkts"]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -235,7 +248,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["", " "]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -255,7 +268,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([0, -1, 3.14]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -277,7 +290,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -292,7 +305,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       const s1 = iter.$_iterator();
@@ -309,7 +322,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -326,7 +339,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -343,7 +356,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -360,7 +373,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -382,7 +395,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3, 4, 5]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -404,7 +417,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       //   inner1.next()两次后位置在3，inner2.next()返回3
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
@@ -424,7 +437,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const inner1 = iter.$_iterator();
@@ -442,7 +455,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -463,7 +476,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -480,7 +493,7 @@ export default function SetIteratorDollarIteratorTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       let caught = false;
@@ -502,57 +515,12 @@ export default function SetIteratorDollarIteratorTest(): void {
     /**
      * @tc.name testSetIteratorDollarIterator026
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2600
-     * @tc.desc Verify inner try-catch in dollar_iterator continues traversal
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testSetIteratorDollarIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2]);
-      const iter = set.values();
-      const inner = iter.$_iterator();
-      let count = 0;
-      let finallyExecuted = false;
-      try {
-        for (const v of inner) {
-          count++;
-        }
-      } catch (e) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(count).assertEqual(2);
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetIteratorDollarIterator027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2700
-     * @tc.desc Verify dollar_iterator in try-catch-finally executes normally
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testSetIteratorDollarIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1]);
-      const iter = set.values();
-      const inner = iter.$_iterator();
-      inner.next();
-      let r = inner.next();
-      expect(r.done).assertTrue();
-      expect(inner.next().done).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetIteratorDollarIterator028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2800
      * @tc.desc Verify exhausted dollar_iterator next() safe destructuring
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -562,14 +530,14 @@ export default function SetIteratorDollarIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorDollarIterator029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2900
+     * @tc.name testSetIteratorDollarIterator027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2700
      * @tc.desc Verify dollar_iterator done=true value access validation
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       const inner = iter.$_iterator();
@@ -582,14 +550,14 @@ export default function SetIteratorDollarIteratorTest(): void {
     });
 
     /**
-     * @tc.name testSetIteratorDollarIterator030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_3000
+     * @tc.name testSetIteratorDollarIterator028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2800
      * @tc.desc Verify dollar_iterator next() returns correct value and done structure
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorDollarIterator030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorDollarIterator028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       const inner = iter.$_iterator();

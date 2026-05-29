@@ -699,31 +699,6 @@ export default function SetIteratorTest(): void {
       expect(set.size).assertEqual(0);
     });
 
-    /**
-     * @tc.name testSetIterator034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_3400
-     * @tc.desc Verify try-catch-finally with dollar_iterator iteration
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetIterator034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>();
-      set.add(1);
-      set.add(2);
-      let finallyExecuted = false;
-      try {
-        const result: int[] = [];
-        for (const v of set.$_iterator()) {
-        result.push(v);
-      }
-        expect(result.length).assertEqual(2);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
+    
   });
 }

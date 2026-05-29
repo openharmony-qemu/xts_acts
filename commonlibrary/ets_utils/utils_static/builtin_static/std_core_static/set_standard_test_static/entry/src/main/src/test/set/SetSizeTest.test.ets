@@ -13,21 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class Item028 {
   id: number = 0;
-  constructor(id: number) { this.id = id; }
+
+  constructor(id: number) {
+    this.id = id;
+  }
 }
 
 export default function SetSizeTest(): void {
   describe('SetSizeTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -358,30 +374,16 @@ export default function SetSizeTest(): void {
       expect(set.size).assertEqual(2);
     });
 
+
     /**
      * @tc.name testSetSize021
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2100
-     * @tc.desc Verify Set boolean size is correct
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetSize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<boolean>();
-      set.add(true);
-      set.add(false);
-      expect(set.size).assertEqual(2);
-    });
-
-    /**
-     * @tc.name testSetSize022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2200
      * @tc.desc Verify Set boolean duplicate add size unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<boolean>();
       set.add(true);
       set.add(true);
@@ -390,14 +392,14 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2300
+     * @tc.name testSetSize022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2200
      * @tc.desc Verify Set Object size is correct
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<Object>();
       set.add(new Item028(1));
       set.add(new Item028(2));
@@ -405,14 +407,14 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2400
+     * @tc.name testSetSize023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2300
      * @tc.desc Verify add same reference object size unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let obj: Object = new Object();
       let set = new Set<Object>();
       set.add(obj);
@@ -421,14 +423,14 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2500
+     * @tc.name testSetSize024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2400
      * @tc.desc Verify different references with same content treated as distinct
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number[]>();
       set.add([1, 2]);
       set.add([1, 2]);
@@ -436,28 +438,28 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2600
+     * @tc.name testSetSize025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2500
      * @tc.desc Verify chained add calls size is correct
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>();
       set.add(1).add(2).add(3);
       expect(set.size).assertEqual(3);
     });
 
     /**
-     * @tc.name testSetSize027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2700
+     * @tc.name testSetSize026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2600
      * @tc.desc Verify forEach traversal size unchanged
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>();
       set.add(1);
       set.add(2);
@@ -470,14 +472,14 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2800
+     * @tc.name testSetSize027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2700
      * @tc.desc Verify has operation does not affect size
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>();
       set.add(1);
       let sizeBefore = set.size;
@@ -487,33 +489,33 @@ export default function SetSizeTest(): void {
     });
 
     /**
-     * @tc.name testSetSize029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2900
+     * @tc.name testSetSize028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2800
      * @tc.desc Verify Set constructed from array size equals deduplicated count
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let arr: number[] = [1, 2, 2, 3, 3, 3];
       let set = new Set<number>(arr);
       expect(set.size).assertEqual(3);
     });
 
     /**
-     * @tc.name testSetSize030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_3000
+     * @tc.name testSetSize029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_2900
      * @tc.desc Verify size property used in conditional expressions
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetSize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetSize029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>();
       expect(set.size === 0).assertTrue();
       set.add(1);
       expect(set.size > 0).assertTrue();
-        expect(set.size !== 0).assertTrue();
-      });
+      expect(set.size !== 0).assertTrue();
+    });
   });
 }

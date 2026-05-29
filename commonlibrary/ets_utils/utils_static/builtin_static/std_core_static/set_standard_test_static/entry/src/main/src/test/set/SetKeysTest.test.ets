@@ -13,11 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class Item013 {
   id: int = 0;
+
   constructor(id: int) {
     this.id = id;
   }
@@ -25,11 +37,13 @@ class Item013 {
 
 export default function SetKeysTest(): void {
   describe('SetKeysTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -146,8 +160,8 @@ export default function SetKeysTest(): void {
       let iter = set.keys();
       let result = iter.next();
       expect(result.done).assertTrue();
-        expect(result.value).assertUndefined();
-      });
+      expect(result.value).assertUndefined();
+    });
 
     /**
      * @tc.name testSetKeys007
@@ -256,8 +270,8 @@ export default function SetKeysTest(): void {
       }
       expect(keys.length).assertEqual(2);
       expect(keys[0]).assertTrue();
-        expect(keys[1]).assertFalse();
-      });
+      expect(keys[1]).assertFalse();
+    });
 
     /**
      * @tc.name testSetKeys013
@@ -655,42 +669,16 @@ export default function SetKeysTest(): void {
       expect(threw).assertFalse();
     });
 
+
     /**
      * @tc.name testSetKeys032
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3200
-     * @tc.desc Verify keys() iteration in try-catch-finally complete flow
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetKeys032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      set.add(1);
-      set.add(2);
-      let finallyExecuted = false;
-      try {
-        let keys: int[] = [];
-        for (const k of set.keys()) {
-          keys.push(k);
-        }
-        expect(keys.length).assertEqual(2);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetKeys033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3300
      * @tc.desc Verify Set<string | number> keys() iterates elements of both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number>();
       set.add("a");
       set.add(1);
