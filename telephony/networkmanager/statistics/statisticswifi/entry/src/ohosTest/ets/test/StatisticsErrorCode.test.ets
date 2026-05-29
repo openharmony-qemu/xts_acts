@@ -184,8 +184,7 @@ export default function StatisticsErrorCodeTest() {
         statistics.getUidRxBytes(uid).then((stats: number) => {
           console.log(`${caseName} get stats success`,JSON.stringify(stats));
           ExpectFail();
-        })
-          .catch((err:BusinessError)=>{
+        }).catch((err:BusinessError)=>{
             console.log(`${caseName} err in`,JSON.stringify(err));
             ExpectTrue(err.code === 201);
           })
@@ -244,8 +243,7 @@ export default function StatisticsErrorCodeTest() {
         statistics.getUidTxBytes(uid).then((stats: number) => {
           console.log(`${caseName} get stats success`,JSON.stringify(stats));
           ExpectFail();
-        })
-          .catch((err:BusinessError)=>{
+        }).catch((err:BusinessError)=>{
             console.log(`${caseName} err in`,JSON.stringify(err));
             ExpectTrue(err.code === 201);
           })
