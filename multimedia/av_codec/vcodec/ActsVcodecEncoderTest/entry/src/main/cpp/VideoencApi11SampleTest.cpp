@@ -65,7 +65,8 @@ void clearIntqueue(std::queue<uint32_t> &q)
 }
 } // namespace
 
-void OHOS::Media::ResetLtrStaticState() {
+void OHOS::Media::ResetLtrStaticState()
+{
     g_useLtrOnce = false;
     g_useLtrIndex = 0;
 }
