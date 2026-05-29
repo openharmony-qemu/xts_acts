@@ -173,6 +173,7 @@
  constexpr size_t FONT_COUNT_TEXT_HANDLER_COUNT = 4;
  constexpr size_t FONT_TEXT_TO_GLYPHS_HANDLER_COUNT = 5;
  constexpr size_t FONT_GET_WIDTHS_HANDLER_COUNT = 5;
+ constexpr size_t FONT_GET_TEXT_PATH_WITH_FALLBACK_HANDLER_COUNT = 3;
  constexpr size_t FONT_SET_LINEAR_TEXT_HANDLER_COUNT = 4;
  constexpr size_t FONT_SET_TEXT_SKEW_X_HANDLER_COUNT = 6;
  constexpr size_t FONT_SET_FAKE_BOLD_TEXT_HANDLER_COUNT = 4;
@@ -398,6 +399,7 @@ napi_value DrawingFontSetTextSize(napi_env env, napi_callback_info info);
 napi_value DrawingFontCountText(napi_env env, napi_callback_info info);
 napi_value DrawingFontTextToGlyphs(napi_env env, napi_callback_info info);
 napi_value DrawingFontGetWidths(napi_env env, napi_callback_info info);
+napi_value DrawingFontGetTextPathWithFallback(napi_env env, napi_callback_info info);
 napi_value DrawingFontSetLinearText(napi_env env, napi_callback_info info);
 napi_value DrawingFontSetTextSkewX(napi_env env, napi_callback_info info);
 napi_value DrawingFontSetFakeBoldText(napi_env env, napi_callback_info info);

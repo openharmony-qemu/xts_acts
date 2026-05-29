@@ -14,12 +14,14 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import huks from '@ohos.security.huks';
-import { GenParam } from './utils/huks/HuksOptionsUtils';
+import { GenParam, MergeOptions, SetParam } from './utils/huks/HuksOptionsUtils';
 import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
-import { Cipher, CipherData } from './utils/huks/CipherUtils';
-import { GetDesImportData, GetRsaImportData } from './utils/huks/ImportKeyUtils';
+import { BuildCipherData, Cipher, CipherData, DoCipher, GetEcbNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils';
+import { GetAesImportData, GetDesImportData, GetRsaImportData, GetImportPubKeyOptions, GetImportKeyPairOptions } from './utils/huks/ImportKeyUtils';
 import { SignVerify, SignVerifyData } from './utils/huks/SignVerifyUtils';
 import { Logger } from './utils/common/Logger';
+import { GetAesGenerateOptions, GetSm2GenerateOptions, GetSm4GenerateOptions, GetEccGenerateOptions, GetDsaGenerateOptions, GetDhGenerateOptions, GetEd25519GenerateOptions, GetRsaGenerateOptions } from './utils/huks/GenerateKeyUtils';
+import { BuildSm2WrappedKeyData, GetSm2RawKeyPairData, GetRsaKeyPairData, GetEccRawKeyPairData, GetDhRawKeyPairData, GetEd25519RawKeyPairData } from './utils/huks/ImportWrappedKeyUtils';
 
 
 export default function SecurityHuksImportTest() {
@@ -27,13 +29,13 @@ export default function SecurityHuksImportTest() {
   describe('SecurityHuksImportTest', () => {
 
     /**
-     * @tc.name   SUB_Security_HUKS_Import_API16_Func_0100
-     * @tc.number SUB_Security_HUKS_Import_API16_Func_0100
-     * @tc.desc   import key, encrypt, decrypt
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+         * @tc.name   SUB_Security_HUKS_Import_API16_Func_0100
+         * @tc.number SUB_Security_HUKS_Import_API16_Func_0100
+         * @tc.desc   import key, encrypt, decrypt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
     it('SUB_Security_HUKS_Import_API16_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Import_API16_Func_0100";
       let keySize = 1032;
@@ -414,13 +416,13 @@ export default function SecurityHuksImportTest() {
     })
 
     /**
-     * @tc.name   SUB_Security_HUKS_Import_API16_Func_1100
-     * @tc.number SUB_Security_HUKS_Import_API16_Func_1100
-     * @tc.desc   import key, encrypt, decrypt
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
+         * @tc.name   SUB_Security_HUKS_Import_API16_Func_1100
+         * @tc.number SUB_Security_HUKS_Import_API16_Func_1100
+         * @tc.desc   import key, encrypt, decrypt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
     it('SUB_Security_HUKS_Import_API16_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = "SUB_Security_HUKS_Import_API16_Func_1100";
       let keySize = 64;
@@ -465,6 +467,359 @@ export default function SecurityHuksImportTest() {
         expect(null).assertFail();
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(401);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0100
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0100
+     * @tc.desc   SM2-SM4 digital envelope secure import AES128 key,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0100";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 128;
+      let plainKeyData = GetAesImportData(plainKeySize);
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = GetAesGenerateOptions(plainKeySize);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0200
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0200
+     * @tc.desc   SM2-SM4 digital envelope secure import AES256 key, verify key exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0200";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let plainKeyData = GetAesImportData(plainKeySize);
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = GetAesGenerateOptions(plainKeySize);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0300
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0300
+     * @tc.desc   SM2-SM4 digital envelope secure import SM2 key pair, verify key exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0300";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let plainKeyData = GetSm2RawKeyPairData(plainKeySize).priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetSm2GenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, GetSm2RawKeyPairData(plainKeySize).pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0400
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0400
+     * @tc.desc   SM2-SM4 digital envelope secure import SM2 key pair with sign/verify purpose, verify key exists
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0400";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let plainKeyData = GetSm2RawKeyPairData(plainKeySize).priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetSm2GenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, GetSm2RawKeyPairData(plainKeySize).pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0500
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0500
+     * @tc.desc   SM2-SM4 digital envelope secure import RSA2048 key pair for encryption/decryption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0500";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 2048;
+      let keyPairData = GetRsaKeyPairData(plainKeySize);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetRsaGenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0600
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0600
+     * @tc.desc   SM2-SM4 digital envelope secure import ECC256 key pair for key agreement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0600";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let keyPairData = GetEccRawKeyPairData(plainKeySize);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetEccGenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_AGREE);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0700
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0700
+     * @tc.desc   SM2-SM4 digital envelope secure import DSA1024 key pair, expect failure with error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0700";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 1024;
+      let keyPairData = GetRsaKeyPairData(2048);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetDsaGenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        Logger.error(testNumber + ': DSA import should fail but succeeded');
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch expected error ${JSON.stringify(err)}`);
+        expect(err.code).assertEqual(12000003);
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0800
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0800
+     * @tc.desc   SM2-SM4 digital envelope secure import DH2048 key pair for key agreement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0800";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 2048;
+      let keyPairData = GetDhRawKeyPairData(plainKeySize);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetDhGenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_0900
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_0900
+     * @tc.desc   SM2-SM4 digital envelope secure import ED25519 key pair for sign/verify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_0900";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let keyPairData = GetEd25519RawKeyPairData(plainKeySize);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetEd25519GenerateOptions(plainKeySize), GetImportKeyPairOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+        expect(await huks.hasKeyItem(keyAlias, importWrappedKeyOptions)).assertEqual(true);
+      } catch (err) {
+        Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+        expect(null).assertFail();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_Security_HUKS_ImportKey_API23_Func_1000
+     * @tc.number SUB_Security_HUKS_ImportKey_API23_Func_1000
+     * @tc.desc   SM2-SM4 digital envelope secure import SM2 public key, expect fail with error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level   LEVEL2
+     */
+    it('SUB_Security_HUKS_ImportKey_API23_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ImportKey_API23_Func_1000";
+      let keyAlias: string = testNumber;
+      let sourceKeyAlias: string = testNumber + "SourceKeyAlias";
+
+      let plainKeySize: number = 256;
+      let keyPairData = GetSm2RawKeyPairData(plainKeySize);
+      let plainKeyData = keyPairData.priKey;
+      let genKeyOptions: huks.HuksOptions = GetSm2GenerateOptions(256);
+      SetParam(genKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_SIGN | huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_VERIFY);
+      let importWrappedKeyOptions: huks.HuksOptions = MergeOptions(GetSm2GenerateOptions(plainKeySize), GetImportPubKeyOptions());
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_ENCRYPT);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_UNWRAP_ALGORITHM_SUITE, huks.HuksUnwrapSuite.HUKS_UNWRAP_SUITE_SM2_SM4_ECB_NOPADDING);
+      SetParam(importWrappedKeyOptions, huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA, keyPairData.pubKey);
+
+      await huks.generateKeyItem(sourceKeyAlias, genKeyOptions);
+      let deviceAPubKeyData = (await huks.exportKeyItem(sourceKeyAlias, genKeyOptions)).outData as Uint8Array;
+      importWrappedKeyOptions.inData = await BuildSm2WrappedKeyData(deviceAPubKeyData, plainKeyData);
+
+      try {
+        await huks.importWrappedKeyItem(keyAlias, sourceKeyAlias, importWrappedKeyOptions);
+
+        let options = MergeOptions(GetSm2GenerateOptions(256), GetSm3NoPaddingOptions())
+        let cipherData = await DoCipher(keyAlias, options, BuildCipherData([64]));
+        SetParam(options, huks.HuksTag.HUKS_TAG_PURPOSE, huks.HuksKeyPurpose.HUKS_KEY_PURPOSE_DECRYPT);
+        cipherData = await DoCipher(keyAlias, options, cipherData);
+        expect(null).assertFail();
+      } catch (err) {
+        Logger.error(testNumber + `: catch expected error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(401);
       }
     })

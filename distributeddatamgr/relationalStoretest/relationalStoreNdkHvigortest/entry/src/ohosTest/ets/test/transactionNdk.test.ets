@@ -18,6 +18,7 @@ import testrdb from 'libtransaction.so';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level, Size, TestType } from "@ohos/hypium";
 import deviceInfo from '@ohos.deviceInfo';
+import taskpool from '@ohos.taskpool';
 
 let TAG = '[transaction_test]';
 
@@ -356,10 +357,10 @@ export default function transactionNdktest() {
       if (!isValidDeviceType) {
         done();
       }
-      let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0200();
-      console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0200 res=" + res );
-      expect(res).assertEqual(0);
-      done();
+      const task = new taskpool.Task(SetSemanticIndex_Param_0200)
+      const resCode = await taskpool.execute(task)
+      expect(resCode).assertEqual(0)
+      done()
     });
 
     /**
@@ -374,11 +375,27 @@ export default function transactionNdktest() {
       if (!isValidDeviceType) {
         done();
       }
-      let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0300();
-      console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0300 res=" + res );
-      expect(res).assertEqual(0);
-      done();
+      const task = new taskpool.Task(SetSemanticIndex_Param_0300)
+      const resCode = await taskpool.execute(task)
+      expect(resCode).assertEqual(0)
+      done()
     });
 
   })
+}
+
+@Concurrent
+async function SetSemanticIndex_Param_0200() {
+  let TAG = '[transaction_test]';
+  let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0200();
+  console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0200 res=" + res );
+  return res;  
+}
+
+@Concurrent
+async function SetSemanticIndex_Param_0300() {
+  let TAG = '[transaction_test]';
+  let res = testrdb.OH_Rdb_SetSemanticIndex_Param_0300();
+  console.info(TAG + "OH_Rdb_SetSemanticIndex_Param_0300 res=" + res );
+  return res;  
 }

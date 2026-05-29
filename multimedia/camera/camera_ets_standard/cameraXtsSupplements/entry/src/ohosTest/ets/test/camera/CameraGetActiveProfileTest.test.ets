@@ -1145,7 +1145,7 @@ export default function CameraGetActiveProfileTest() {
     /**
      * @tc.name   SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001
      * @tc.number SUB_CAMERA_MANAGER_GET_CAMERA_DEVICES_000001
-     * @tc.desc   getCameraDevices position CAMERA_POSITION_FOLD_INNER Camera service fatal error
+     * @tc.desc   getCameraDevices position CAMERA_POSITION_FOLD_INNER
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
@@ -1161,8 +1161,9 @@ export default function CameraGetActiveProfileTest() {
           let types = camera.CameraType.CAMERA_TYPE_DEFAULT;
           console.info(TAG, testName, 'type');
           let device = mCameraManager.getCameraDevices(position, [types], connectType)
-          console.info(TAG, testName, 'device');
-          expect().assertFail()
+          console.info(TAG, testName, 'device',device);
+          //这条用例在折叠屏上可以通过，正确获得device对象，在非折叠屏上报7400201；
+          expect(device != null).assertTrue();
         }
         done();
       } catch (error) {
@@ -1190,8 +1191,9 @@ export default function CameraGetActiveProfileTest() {
           let types = camera.CameraType.CAMERA_TYPE_TRUE_DEPTH;
           console.info(TAG, testName, 'type');
           let device = mCameraManager.getCameraDevices(position, [], connectType)
-          console.info(TAG, testName, 'device');
-          expect().assertFail()
+          console.info(TAG, testName, 'device',device);
+          //这条用例在折叠屏上可以通过，正确获得device对象，在非折叠屏上报7400201；
+          expect(device != null).assertTrue();
         }
         done();
       } catch (error) {
