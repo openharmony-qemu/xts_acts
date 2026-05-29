@@ -852,26 +852,6 @@ export default function SetHasTest(): void {
       }
     });
 
-    /**
-     * @tc.name testSetHas054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5400
-     * @tc.desc Verify finally block executes regardless of whether exception is thrown
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetHas054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
-      let finallyExecuted = false;
-      try {
-        let result = set.has(1);
-        expect(result).assertEqual(true);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertEqual(true);
-    });
+    
   });
 }

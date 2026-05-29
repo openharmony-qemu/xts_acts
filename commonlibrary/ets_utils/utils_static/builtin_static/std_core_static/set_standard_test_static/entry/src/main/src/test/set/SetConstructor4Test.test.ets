@@ -13,16 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function SetConstructor4Test(): void {
   describe('SetConstructor4Test', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -35,7 +48,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       expect(set.size).assertEqual(0);
     });
@@ -48,7 +61,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       set.add("a");
       set.add("b");
@@ -64,7 +77,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(1);
       expect(set.size).assertEqual(0);
       set.add("a");
@@ -79,7 +92,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(10);
       expect(set.size).assertEqual(0);
     });
@@ -92,7 +105,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       set.add("a");
       expect(set.has("a")).assertTrue();
@@ -106,7 +119,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(100);
       expect(set.size).assertEqual(0);
     });
@@ -119,7 +132,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(10000);
       expect(set.size).assertEqual(0);
     });
@@ -132,7 +145,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(0);
       expect(set.size).assertEqual(0);
     });
@@ -145,7 +158,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(-1);
       expect(set.size).assertEqual(0);
     });
@@ -158,7 +171,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(2147483647);
       expect(set.size).assertEqual(0);
     });
@@ -171,7 +184,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(-2147483648);
       expect(set.size).assertEqual(0);
     });
@@ -184,7 +197,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(0x10);
       expect(set.size).assertEqual(0);
     });
@@ -197,7 +210,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(0o10);
       expect(set.size).assertEqual(0);
     });
@@ -210,7 +223,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(0b1010);
       expect(set.size).assertEqual(0);
     });
@@ -223,7 +236,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(null as Object as int);
         expect().assertFail();
@@ -240,7 +253,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(undefined as Object as int);
         expect().assertFail();
@@ -257,7 +270,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>("32" as Object as int);
         expect().assertFail();
@@ -274,7 +287,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>("" as Object as int);
         expect().assertFail();
@@ -291,7 +304,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(Number.NaN as Object as int);
         expect().assertFail();
@@ -308,7 +321,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Set<string>(3.14 as Object as int);
         expect().assertFail();
@@ -325,7 +338,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(true as Object as int);
         expect().assertFail();
@@ -342,7 +355,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(false as Object as int);
         expect().assertFail();
@@ -359,7 +372,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let obj: Object = Error("non-int object");
         let set = new Set<string>(obj as Object as int);
@@ -377,7 +390,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>([32] as Object as int);
         expect().assertFail();
@@ -394,7 +407,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(Number.MAX_VALUE as Object as int);
         expect().assertFail();
@@ -411,7 +424,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         new Set<string>(Number.MIN_VALUE as Object as int);
         expect().assertFail();
@@ -428,7 +441,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(Number.POSITIVE_INFINITY as Object as int);
         expect().assertFail();
@@ -445,7 +458,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>(Number.NEGATIVE_INFINITY as Object as int);
         expect().assertFail();
@@ -462,7 +475,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>(32);
       expect(set.size).assertEqual(0);
     });
@@ -475,7 +488,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let setStr = new Set<string>(16);
       let setNum = new Set<number>(16);
       let setBool = new Set<boolean>(16);
@@ -492,7 +505,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(-10);
       expect(set.size).assertEqual(0);
     });
@@ -505,7 +518,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set: Set<string> = new Set<string>(32);
       expect(set instanceof Set).assertTrue();
     });
@@ -518,7 +531,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       expect(set instanceof Array).assertFalse();
       expect(set instanceof Map).assertFalse();
@@ -532,7 +545,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       let count: int = 0;
       set.forEach((value: string, key: string): void => {
@@ -549,7 +562,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       expect(set.has("a")).assertFalse();
     });
@@ -562,7 +575,7 @@ export default function SetConstructor4Test(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       try {
         let set = new Set<string>("abc" as Object as int);
         expect().assertFail();
@@ -571,71 +584,16 @@ export default function SetConstructor4Test(): void {
       }
     });
 
+
     /**
      * @tc.name testSetConstructor4037
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3700
-     * @tc.desc Verify finally block executes in try-catch-finally normal case
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testSetConstructor4037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted = false;
-      try {
-        let set = new Set<string>(32);
-        expect(set.size).assertEqual(0);
-      } catch (error) {
-        expect().assertFail();
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetConstructor4038
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3800
-     * @tc.desc Verify finally block still executes in exception case
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testSetConstructor4038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let finallyExecuted = false;
-      try {
-        let set = new Set<string>(null as Object as int);
-        expect().assertFail();
-      } catch (error) {
-        expect(error.name).assertEqual("ClassCastError");
-      } finally {
-        finallyExecuted = true;
-      }
-      expect(finallyExecuted).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetConstructor4039
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3900
-     * @tc.desc Verify constructor marked as deprecated, still usable in current version
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testSetConstructor4039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>(32);
-      set.add("test");
-      expect(set.has("test")).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetConstructor4040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_4000
      * @tc.desc Verify specified bucket count and default bucket count Set behave consistently
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set1 = new Set<string>(32);
       let set2 = new Set<string>();
       set1.add("a");
@@ -646,14 +604,14 @@ export default function SetConstructor4Test(): void {
     });
 
     /**
-     * @tc.name testSetConstructor4041
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_4100
+     * @tc.name testSetConstructor4038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3800
      * @tc.desc Verify larger bucket count Set performs normally with large data
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<number>(1024);
       for (let i = 0; i < 1000; i++) {
         set.add(i);
@@ -664,14 +622,14 @@ export default function SetConstructor4Test(): void {
     });
 
     /**
-     * @tc.name testSetConstructor4042
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_4200
+     * @tc.name testSetConstructor4039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_3900
      * @tc.desc Verify continuous add/has/delete operations work after construction
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       set.add("a");
       set.add("b");
@@ -683,14 +641,14 @@ export default function SetConstructor4Test(): void {
     });
 
     /**
-     * @tc.name testSetConstructor4043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_4300
+     * @tc.name testSetConstructor4040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_4_4000
      * @tc.desc Verify clear operation works normally after construction
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetConstructor4043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetConstructor4040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>(32);
       set.add("a");
       set.add("b");
