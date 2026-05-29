@@ -93,11 +93,11 @@ export default function TextPicker(): void {
       }
     }
 
-    const routerToSheetPage = async (pickerSelectOptions: phAccessHelper.PhotoSelectOptions): Promise<void> => {
+    const routerToSheetPage = async (photoSelectOptions: photoAccessHelper.PhotoSelectOptions): Promise<void> => {
       const options: router.RouterOptions = {
          url: 'MainAbility/pages/BindSheetPicker',
         params: {
-          pickerSelectOptions: pickerSelectOptions,
+          photoSelectOptions: photoSelectOptions,
         } as RouterSelectOptionsParams
       }
       await routeToUrl(options);
@@ -1639,7 +1639,7 @@ export default function TextPicker(): void {
       const options: router.RouterOptions = {
         url: 'MainAbility/pages/BindSheetPicker',
         params: {
-          photoSelectOptions: 
+          photoSelectOptions: photoSelectOptions
         } as RouterSelectOptionsParams
       }
 
