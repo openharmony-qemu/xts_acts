@@ -13,11 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class MyObj021 {
   id: int = 0;
+
   constructor(id: int) {
     this.id = id;
   }
@@ -25,6 +37,7 @@ class MyObj021 {
 
 class MyObj022 {
   id: int = 0;
+
   constructor(id: int) {
     this.id = id;
   }
@@ -32,11 +45,13 @@ class MyObj022 {
 
 export default function SetDeleteTest(): void {
   describe('SetDeleteTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -160,7 +175,7 @@ export default function SetDeleteTest(): void {
       let result = set.delete(2147483647);
       expect(result).assertTrue();
 
-      let set2  = new Set<int>([-2147483648, 0, 1]);
+      let set2 = new Set<int>([-2147483648, 0, 1]);
       let result2 = set2.delete(-2147483648);
       expect(result2).assertTrue();
 
@@ -519,7 +534,7 @@ export default function SetDeleteTest(): void {
     it('testSetDelete031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<int>([1, 2, 3]);
       let result = set.delete(999);
-      expect(result===false).assertTrue();
+      expect(result === false).assertTrue();
     });
 
     /**

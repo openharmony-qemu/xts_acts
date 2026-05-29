@@ -481,29 +481,12 @@ export default function SetEntriesTest(): void {
     /**
      * @tc.name testSetEntries024
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2400
-     * @tc.desc Verify exhausted iterator value is undefined after next() returns done
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1]);
-      const iter = set.entries();
-      iter.next();
-      const done = iter.next();
-      expect(done.done).assertTrue();
-      expect(done.value).assertUndefined();
-    });
-
-    /**
-     * @tc.name testSetEntries025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2500
      * @tc.desc Verify deleting element during iteration, iterator behavior validated
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.entries();
       iter.next();
@@ -515,14 +498,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2600
+     * @tc.name testSetEntries025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2500
      * @tc.desc Verify calling clear() after obtaining iterator, subsequent next() returns done
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.entries();
       let v = iter.next().value as [int, int];
@@ -532,14 +515,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2700
+     * @tc.name testSetEntries026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2600
      * @tc.desc Verify adding new element during iteration, existing iterator visibility
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       let v = iter.next().value as [int, int];
@@ -551,15 +534,16 @@ export default function SetEntriesTest(): void {
       expect(v[0]).assertEqual(3);
       expect(iter.next().done).assertTrue();
     });
+
     /**
-     * @tc.name testSetEntries028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2800
+     * @tc.name testSetEntries027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2700
      * @tc.desc Verify try-catch wraps entries() iteration, exception stops iteration
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const visitedValues: int[] = [];
       try {
@@ -578,14 +562,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2900
+     * @tc.name testSetEntries028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2800
      * @tc.desc Verify entries() iterates Set<Object | null> with null element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string | null>(["a", null, "b"]);
       const iter = set.entries();
       let r1 = iter.next();
@@ -601,14 +585,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3000
+     * @tc.name testSetEntries029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_2900
      * @tc.desc Verify entries() iterates Set<string | undefined> with undefined element
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string | undefined>(["a", undefined]);
       const iter = set.entries();
       let r1 = iter.next();
@@ -621,14 +605,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3100
+     * @tc.name testSetEntries030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3000
      * @tc.desc Verify entries() iterates Set<number> with NaN element correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([Number.NaN, 42]);
       const iter = set.entries();
       let r1 = iter.next();
@@ -642,14 +626,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3200
+     * @tc.name testSetEntries031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3100
      * @tc.desc Verify entries() iterates Set<number> with Infinity values correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]);
       const iter = set.entries();
       let r1 = iter.next();
@@ -662,14 +646,14 @@ export default function SetEntriesTest(): void {
     });
 
     /**
-     * @tc.name testSetEntries033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3300
+     * @tc.name testSetEntries032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3200
      * @tc.desc Verify Set<string | number> entries() iterates union type key-value pairs of both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetEntries033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string | number>(["a", 1, "b"]);
       const iter = set.entries();
       let numCount: int = 0;

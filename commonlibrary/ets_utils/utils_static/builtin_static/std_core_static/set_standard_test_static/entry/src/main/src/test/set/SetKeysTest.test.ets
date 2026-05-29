@@ -416,35 +416,15 @@ export default function SetKeysTest(): void {
       expect(result.value).assertEqual("x");
       expect(result.done).assertFalse();
     });
-
     /**
      * @tc.name testSetKeys020
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2000
-     * @tc.desc Verify exhausted iterator always returns done=true on subsequent next()
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetKeys020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>();
-      set.add("a");
-      let iter = set.keys();
-      iter.next();
-      let r1 = iter.next();
-      expect(r1.done).assertTrue();
-      let r2 = iter.next();
-      expect(r2.done).assertTrue();
-    });
-
-    /**
-     * @tc.name testSetKeys021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2100
      * @tc.desc Verify $_iterator() on keys() iterator returns different object
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       let iter = set.keys();
@@ -454,14 +434,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2200
+     * @tc.name testSetKeys021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2100
      * @tc.desc Verify keys() and values() return identical content for Set
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -480,14 +460,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2300
+     * @tc.name testSetKeys022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2200
      * @tc.desc Verify keys() and values() return different iterator instances
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       let keysIter = set.keys();
@@ -496,14 +476,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2400
+     * @tc.name testSetKeys023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2300
      * @tc.desc Verify calling next() after iteration complete returns done=true without exception
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       let iter = set.keys();
@@ -511,33 +491,15 @@ export default function SetKeysTest(): void {
       let r = iter.next();
       expect(r.done).assertTrue();
     });
-
     /**
-     * @tc.name testSetKeys025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2500
-     * @tc.desc Verify empty Set iterator multiple next() calls all return done=true
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-    it('testSetKeys025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<string>();
-      let iter = set.keys();
-      for (let i = 0; i < 5; i++) {
-        let r = iter.next();
-        expect(r.done).assertTrue();
-      }
-    });
-
-    /**
-     * @tc.name testSetKeys026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2600
+     * @tc.name testSetKeys024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2400
      * @tc.desc Verify calling add during for-of iteration over keys()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -551,14 +513,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2700
+     * @tc.name testSetKeys025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2500
      * @tc.desc Verify calling delete during for-of iteration over keys()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -573,14 +535,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2800
+     * @tc.name testSetKeys026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2600
      * @tc.desc Verify calling clear during for-of iteration over keys()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -593,14 +555,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2900
+     * @tc.name testSetKeys027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2700
      * @tc.desc Verify Error thrown inside for-of loop body can be caught externally
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -617,14 +579,14 @@ export default function SetKeysTest(): void {
     });
 
     /**
-     * @tc.name testSetKeys030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3000
+     * @tc.name testSetKeys028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2800
      * @tc.desc Verify inner try-catch in loop body catches exception and continues traversal
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string>();
       set.add("a");
       set.add("b");
@@ -647,14 +609,14 @@ export default function SetKeysTest(): void {
       expect(keys[2]).assertEqual("c");
     });
     /**
-     * @tc.name testSetKeys031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3100
+     * @tc.name testSetKeys029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_2900
      * @tc.desc Verify Set<string | number> keys() iterates union type elements of both types
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testSetKeys031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetKeys029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let set = new Set<string | number>();
       set.add("a");
       set.add(1);

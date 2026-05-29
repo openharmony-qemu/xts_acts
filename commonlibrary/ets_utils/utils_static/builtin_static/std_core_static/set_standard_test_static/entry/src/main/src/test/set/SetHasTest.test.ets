@@ -13,7 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 const LONG_STR = "a".repeat(10000);
@@ -21,6 +32,7 @@ const LONG_STR = "a".repeat(10000);
 class Person {
   name: string = "";
   age: number = 0;
+
   constructor(name: string, age: number) {
     this.name = name;
     this.age = age;
@@ -29,11 +41,13 @@ class Person {
 
 export default function SetHasTest(): void {
   describe('SetHasTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -812,6 +826,7 @@ export default function SetHasTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
+
     /**
      * @tc.name testSetHas052
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5200
@@ -830,7 +845,5 @@ export default function SetHasTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
-
-    
   });
 }
