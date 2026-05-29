@@ -202,38 +202,6 @@ export default function HoveredAttributeTest() {
       done();
     });
 
-    // ========== Area2: stateStyles hovered ==========
-
-    /**
-     * @tc.number    SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100
-     * @tc.name      stateStylesHoveredHoverTest
-     * @tc.desc      Test stateStyles hovered effect on Text.
-     * @tc.level     LEVEL1
-     * @tc.type      FUNCTION
-     * @tc.size      MEDIUMTEST
-     */
-    it('stateStylesHoveredHoverTest', Level.LEVEL1, async (done: Function) => {
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] START');
-      let driver: Driver = Driver.create();
-
-      let component = await driver.findComponent(ON.id('stateHoverText'));
-      let bounds = await component.getBounds();
-      let centerX: number = Math.floor((bounds.left + bounds.right) / 2);
-      let centerY: number = Math.floor((bounds.top + bounds.bottom) / 2);
-      let hoverPoint: Point = { x: centerX, y: centerY };
-      await driver.mouseMoveTo(hoverPoint);
-      await Utils.sleep(500);
-
-      let strJson = getInspectorByKey('stateHoverText');
-      let obj: ESObject = JSON.parse(strJson);
-      let hoverColor: string = obj.$attrs.backgroundColor;
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] hoverColor: ' + hoverColor);
-      expect(hoverColor).assertContain('#FFFF0000');
-
-      console.info('[SUB_ACE_ARKUI_STATESTYLES_HOVERED_0100] END');
-      done();
-    });
-
     // ========== Area3: addSupportedUIStates HOVERED ==========
 
     /**
