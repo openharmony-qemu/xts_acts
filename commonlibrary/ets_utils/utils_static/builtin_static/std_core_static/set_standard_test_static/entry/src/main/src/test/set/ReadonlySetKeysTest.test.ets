@@ -580,5 +580,52 @@ export default function ReadonlySetKeysTest(): void {
       expect(result[1]).assertEqual(6);
       expect(result[2]).assertEqual(7);
     });
+
+    /**
+     * @tc.name testReadonlySetKeys030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_KEYS_3000
+     * @tc.desc Verify ReadonlySet keys with extra parameter throws error or returns iterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<string> = new Set<string>(["a"]);
+      let keysFn = (set as Record<string, Object>)["keys"];
+      try {
+        (keysFn as Object as (x: string) => void)("extra");
+        expect().assertFail();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.name testReadonlySetKeys031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_KEYS_3100
+     * @tc.desc Verify ReadonlySet<string | number> keys() iterates union type elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetKeys031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<string | number> = new Set<string | number>();
+      (set as Set<string | number>).add("a");
+      (set as Set<string | number>).add(1);
+      (set as Set<string | number>).add("b");
+      let numCount: int = 0;
+      let strCount: int = 0;
+      for (const k of set.keys()) {
+        let t: string = typeof k;
+        if (t === "number") {
+          numCount++;
+        }
+        if (t === "string") {
+          strCount++;
+        }
+      }
+      expect(numCount).assertEqual(1);
+      expect(strCount).assertEqual(2);
+    });
   });
 }

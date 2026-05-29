@@ -725,5 +725,33 @@ export default function ReadonlySetForEachTest(): void {
         expect(err.message).assertEqual("custom error in forEach");
       }
     });
+
+    /**
+     * @tc.name testReadonlySetForEach036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_FOR_EACH_3600
+     * @tc.desc Verify ReadonlySet union type forEach handles different element types
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetForEach036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<number | string> = new Set<number | string>();
+      (set as Set<number | string>).add(1);
+      (set as Set<number | string>).add("two");
+      (set as Set<number | string>).add(3);
+      let numCount: int = 0;
+      let strCount: int = 0;
+      set.forEach((v: number | string): void => {
+        let t: string = typeof v;
+        if (t === "number") {
+          numCount++;
+        }
+        if (t === "string") {
+          strCount++;
+        }
+      });
+      expect(numCount).assertEqual(2);
+      expect(strCount).assertEqual(1);
+    });
   });
 }

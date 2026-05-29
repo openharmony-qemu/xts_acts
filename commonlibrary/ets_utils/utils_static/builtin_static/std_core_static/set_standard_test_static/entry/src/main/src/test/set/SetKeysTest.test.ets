@@ -635,5 +635,24 @@ export default function SetKeysTest(): void {
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetKeys030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3000
+     * @tc.desc Verify keys with extra parameter throws error or returns iterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<string>(["a"]);
+      let keysFn = (set as Record<string, Object>)["keys"];
+      try {
+        (keysFn as Object as (x: string) => void)("extra");
+        expect().assertFail();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
   });
 }

@@ -619,5 +619,41 @@ export default function SetConstructor3Test(): void {
       }
       expect(errorCount).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetConstructor3036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_3600
+     * @tc.desc Verify array constructor deduplicates duplicate int elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetConstructor3036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 2, 3, 3, 3]);
+      expect(set.size).assertEqual(3);
+      expect(set.has(1)).assertTrue();
+      expect(set.has(2)).assertTrue();
+      expect(set.has(3)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetConstructor3037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_3700
+     * @tc.desc Verify array constructor with 10000 elements creates Set of correct size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetConstructor3037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: int[] = [];
+      for (let i = 0; i < 10000; i++) {
+        arr.push(i);
+      }
+      let set = new Set<int>(arr);
+      expect(set.size).assertEqual(10000);
+      expect(set.has(0)).assertTrue();
+      expect(set.has(9999)).assertTrue();
+      expect(set.has(10000)).assertFalse();
+    });
   });
 }

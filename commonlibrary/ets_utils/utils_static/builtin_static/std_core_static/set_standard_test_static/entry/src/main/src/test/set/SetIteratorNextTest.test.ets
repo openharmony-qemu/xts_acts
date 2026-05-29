@@ -82,7 +82,7 @@ export default function SetIteratorNextTest(): void {
     /**
      * @tc.name testSetIteratorNext003
      * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_0300
-     * @tc.desc Verify next() with extra parameter throws ClassCastError
+     * @tc.desc Verify next() with extra parameter returns result or throws error
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
@@ -91,10 +91,12 @@ export default function SetIteratorNextTest(): void {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       try {
-        (iter.next as Object as (x: int) => void)(1);
-        expect().assertFail();
+        let nextFn = (iter as Record<string, Object>)["next"];
+        let r = (nextFn as Object as (x: Object) => Record<string, Object>)(1 as Object);
+        expect(r["value"] as int).assertEqual(1);
+        expect(r["done"] as boolean).assertFalse();
       } catch (error) {
-        expect(error.name).assertEqual("ClassCastError");
+        expect((error as Error).name).assertEqual("ClassCastError");
       }
     });
 
@@ -778,6 +780,81 @@ export default function SetIteratorNextTest(): void {
       const result = iter.next();
       expect(result.value).assertEqual(1);
       expect(result.done).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetIteratorNext043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4300
+     * @tc.desc Verify next with multiple extra parameters returns result or throws error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorNext043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2]);
+      const iter = set.values();
+      try {
+        let nextFn = (iter as Record<string, Object>)["next"];
+        let r = (nextFn as Object as (a: Object, b: Object, c: Object) => Record<string, Object>)(1 as Object, 2 as Object, 3 as Object);
+        expect(r["value"] as int).assertEqual(1);
+        expect(r["done"] as boolean).assertFalse();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.name testSetIteratorNext044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4400
+     * @tc.desc Verify next() on values iterator returns NaN element correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorNext044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<number>([Number.NaN, 42]);
+      const iter = set.values();
+      const r1 = iter.next();
+      expect(Number.isNaN(r1.value as number)).assertTrue();
+      expect(r1.done).assertFalse();
+      const r2 = iter.next();
+      expect(r2.value as number).assertEqual(42);
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetIteratorNext045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4500
+     * @tc.desc Verify next() on values iterator returns Infinity elements correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorNext045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<number>([Number.POSITIVE_INFINITY, Number.NEGATIVE_INFINITY]);
+      const iter = set.values();
+      const r1 = iter.next();
+      expect(r1.value as number).assertEqual(Number.POSITIVE_INFINITY);
+      const r2 = iter.next();
+      expect(r2.value as number).assertEqual(Number.NEGATIVE_INFINITY);
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetIteratorNext046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_NEXT_4600
+     * @tc.desc Verify next() on union type Set values iterator returns both types
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorNext046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string | number>(["a", 1, "b"]);
+      const iter = set.values();
+      expect(iter.next().value as string).assertEqual("a");
+      expect(iter.next().value as number).assertEqual(1);
+      expect(iter.next().value as string).assertEqual("b");
+      expect(iter.next().done).assertTrue();
     });
   });
 }

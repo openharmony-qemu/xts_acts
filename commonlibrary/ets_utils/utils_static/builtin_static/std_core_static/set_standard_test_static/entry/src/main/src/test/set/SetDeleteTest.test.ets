@@ -649,5 +649,22 @@ export default function SetDeleteTest(): void {
       let result = set.delete("d");
       expect(result).assertTrue();
     });
+
+    /**
+     * @tc.name testSetDelete039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_3900
+     * @tc.desc Verify delete with extra parameter deletes first argument only
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      let result = (set.delete as Object as (a: int, b: int) => boolean)(2, 999);
+      expect(result).assertTrue();
+      expect(set.size).assertEqual(2);
+      expect(set.has(2)).assertFalse();
+      expect(set.has(3)).assertTrue();
+    });
   });
 }

@@ -625,5 +625,149 @@ export default function ReadonlySetEntriesTest(): void {
       expect(t).assertEqual("function");
       expect(iter.next().done).assertFalse();
     });
+
+    /**
+     * @tc.name testReadonlySetEntries035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3500
+     * @tc.desc Verify ReadonlySet entries with extra parameter returns iterator or throws error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<int> = new Set<int>([1, 2]);
+      let entriesFn = (set as Record<string, Object>)["entries"];
+      try {
+        let iter = (entriesFn as Object as (x: Object) => IterableIterator<[int, int]>)("extra" as Object);
+        let r = iter.next();
+        let v = r.value as [int, int];
+        expect(v[0]).assertEqual(1);
+        expect(r.done).assertFalse();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3600
+     * @tc.desc Verify ReadonlySet<string | number> entries() iterates union type pairs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<string | number> = new Set<string | number>();
+      (set as Set<string | number>).add("a");
+      (set as Set<string | number>).add(1);
+      const iter = set.entries();
+      let numCount: int = 0;
+      let strCount: int = 0;
+      let r = iter.next();
+      while (!r.done) {
+        let v = r.value as [string | number, string | number];
+        let t: string = typeof v[0];
+        if (t === "number") {
+          numCount++;
+        }
+        if (t === "string") {
+          strCount++;
+        }
+        r = iter.next();
+      }
+      expect(numCount).assertEqual(1);
+      expect(strCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3700
+     * @tc.desc Verify break in for-of ReadonlySet entries() exits traversal early
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
+      const result: int[] = [];
+      for (const entry of set.entries()) {
+        result.push(entry[0]);
+        if (entry[0] === 20) {
+          break;
+        }
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(10);
+      expect(result[1]).assertEqual(20);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3800
+     * @tc.desc Verify continue in for-of ReadonlySet entries() skips specific elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4]);
+      const result: int[] = [];
+      for (const entry of set.entries()) {
+        if (entry[0] % 2 === 0) {
+          continue;
+        }
+        result.push(entry[0]);
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_3900
+     * @tc.desc Verify throw in for-of ReadonlySet entries() stops iteration
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const visited: int[] = [];
+      try {
+        for (const entry of set.entries()) {
+          visited.push(entry[0]);
+          if (entry[0] === 2) {
+            throw new Error("stop");
+          }
+        }
+      } catch (e) {
+        expect((e as Error).message).assertEqual("stop");
+      }
+      expect(visited.length).assertEqual(2);
+      expect(visited[0]).assertEqual(1);
+      expect(visited[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testReadonlySetEntries040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETENTRIES_4000
+     * @tc.desc Verify ReadonlySet entries() iterates Set<number> with NaN element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetEntries040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<number> = new Set<number>([Number.NaN, 42]);
+      const iter = set.entries();
+      let r1 = iter.next();
+      let v1 = r1.value as [number, number];
+      expect(Number.isNaN(v1[0])).assertTrue();
+      expect(Number.isNaN(v1[1])).assertTrue();
+      let r2 = iter.next();
+      let v2 = r2.value as [number, number];
+      expect(v2[0]).assertEqual(42);
+      expect(iter.next().done).assertTrue();
+    });
   });
 }

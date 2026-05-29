@@ -1034,5 +1034,28 @@ export default function SetForEachTest(): void {
       });
       expect(set.size).assertEqual(0);
     });
+
+    /**
+     * @tc.name testSetForEach051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5100
+     * @tc.desc Verify two consecutive forEach traversals produce identical order
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetForEach051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([5, 3, 1, 4, 2]);
+      let result1: int[] = [];
+      let result2: int[] = [];
+      set.forEach((v: int): void => {
+        result1.push(v);
+      });
+      set.forEach((v: int): void => {
+        result2.push(v);
+      });
+      for (let i = 0; i < result1.length; i++) {
+        expect(result1[i]).assertEqual(result2[i]);
+      }
+    });
   });
 }

@@ -398,5 +398,62 @@ export default function SetIteratorDollarIteratorTest(): void {
       expect(inner.next().done).assertFalse();
       expect(inner.next().done).assertTrue();
     });
+
+    /**
+     * @tc.name testSetIteratorDollarIterator020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2000
+     * @tc.desc Verify SetIterator $_iterator from keys() iterator returns valid iterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorDollarIterator020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2]);
+      const iter = set.keys();
+      const inner = iter.$_iterator();
+      expect(inner.next().value).assertEqual(1);
+      expect(inner.next().value).assertEqual(2);
+      expect(inner.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetIteratorDollarIterator021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2100
+     * @tc.desc Verify SetIterator $_iterator from entries() iterator returns [k,k] pairs
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorDollarIterator021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([10, 20]);
+      const iter = set.entries();
+      const inner = iter.$_iterator();
+      let v = inner.next().value as [int, int];
+      expect(v[0]).assertEqual(10);
+      expect(v[1]).assertEqual(10);
+      v = inner.next().value as [int, int];
+      expect(v[0]).assertEqual(20);
+      expect(inner.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetIteratorDollarIterator022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SETITERATOR_DOLLARITERATOR_2200
+     * @tc.desc Verify SetIterator $_iterator with extra parameter returns iterator or throws error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIteratorDollarIterator022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2]);
+      const iter = set.values();
+      let dollarFn = (iter as Record<string, Object>)["$_iterator"];
+      try {
+        let inner = (dollarFn as Object as (x: Object) => IterableIterator<int>)(1 as Object);
+        expect(inner.next().value).assertEqual(1);
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
   });
 }

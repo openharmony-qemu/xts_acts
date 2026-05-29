@@ -517,5 +517,25 @@ export default function SetSizeTest(): void {
       expect(set.size > 0).assertTrue();
       expect(set.size !== 0).assertTrue();
     });
+
+    /**
+     * @tc.name testSetSize030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_SIZE_3000
+     * @tc.desc Verify size property is read-only and cannot be modified via cast
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetSize030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      let originalSize: int = set.size;
+      try {
+        (set as Record<string, Object>)["size"] = 100;
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual("ClassCastError");
+      }
+      expect(set.size).assertEqual(originalSize);
+    });
   });
 }

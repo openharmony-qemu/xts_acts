@@ -744,5 +744,21 @@ export default function SetAddTest(): void {
       set.add("dup");
       expect(set.size).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetAdd045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4500
+     * @tc.desc Verify add with extra parameter only applies first argument
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>();
+      (set.add as Object as (a: int, b: int) => void)(1, 2);
+      expect(set.size).assertEqual(1);
+      expect(set.has(1)).assertTrue();
+      expect(set.has(2)).assertFalse();
+    });
   });
 }

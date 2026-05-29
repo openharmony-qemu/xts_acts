@@ -645,5 +645,70 @@ export default function ReadonlySetValuesTest(): void {
       expect(visited[1]).assertEqual(2);
       expect(visited[2]).assertEqual(3);
     });
+
+    /**
+     * @tc.name testReadonlySetValues031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3100
+     * @tc.desc Verify ReadonlySet values with extra parameter still returns valid iterator
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<string> = new Set<string>(["a", "b"]);
+      let valuesFn = (set as Record<string, Object>)["values"];
+      let iter = (valuesFn as Object as (x: string) => IterableIterator<string>)("extra");
+      expect(iter.next().value).assertEqual("a");
+      expect(iter.next().value).assertEqual("b");
+      expect(iter.next().done).assertTrue();
+    });
+
+    /**
+     * @tc.name testReadonlySetValues032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3200
+     * @tc.desc Verify ReadonlySet<string | number> values() iterates union type elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<string | number> = new Set<string | number>();
+      (set as Set<string | number>).add("x");
+      (set as Set<string | number>).add(42);
+      let numCount: int = 0;
+      let strCount: int = 0;
+      for (const v of set.values()) {
+        let t: string = typeof v;
+        if (t === "number") {
+          numCount++;
+        }
+        if (t === "string") {
+          strCount++;
+        }
+      }
+      expect(numCount).assertEqual(1);
+      expect(strCount).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testReadonlySetValues033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3300
+     * @tc.desc Verify break in for-of values() then manual next() resumes from next element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4]);
+      const iter = set.values();
+      for (const v of iter) {
+        if (v === 2) {
+          break;
+        }
+      }
+      const r = iter.next();
+      expect(r.value as int).assertEqual(3);
+      expect(r.done).assertFalse();
+    });
   });
 }

@@ -845,5 +845,79 @@ export default function SetHasTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
+
+    /**
+     * @tc.name testSetHas053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5300
+     * @tc.desc Verify has without parameter throws ClassCastError
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2]);
+      let hasFn = (set as Record<string, Object>)["has"];
+      try {
+        (hasFn as Object as () => void)();
+        expect().assertFail();
+      } catch (error) {
+        expect(error.name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.name testSetHas054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5400
+     * @tc.desc Verify has with extra parameter uses first argument only
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2]);
+      let hasFn = (set as Record<string, Object>)["has"];
+      let result = (hasFn as Object as (a: int, b: int) => boolean)(1, 2);
+      expect(result).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetHas055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5500
+     * @tc.desc Verify has returns true for Number.MIN_VALUE element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<number>([Number.MIN_VALUE]);
+      expect(set.has(Number.MIN_VALUE)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetHas056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5600
+     * @tc.desc Verify has returns true for emoji string element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<string>(["😀", "🔥"]);
+      expect(set.has("😀")).assertTrue();
+      expect(set.has("🔥")).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetHas057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5700
+     * @tc.desc Verify has returns true for scientific notation number element
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<number>([1.23e5]);
+      expect(set.has(1.23e5)).assertTrue();
+    });
   });
 }

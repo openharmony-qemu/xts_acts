@@ -674,5 +674,72 @@ export default function SetEntriesTest(): void {
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetEntries033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3300
+     * @tc.desc Verify entries with extra parameter returns iterator or throws error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetEntries033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2]);
+      let entriesFn = (set as Record<string, Object>)["entries"];
+      try {
+        let iter = (entriesFn as Object as (x: Object) => IterableIterator<[int, int]>)("extra" as Object);
+        let r = iter.next();
+        let v = r.value as [int, int];
+        expect(v[0]).assertEqual(1);
+        expect(r.done).assertFalse();
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
+
+    /**
+     * @tc.name testSetEntries034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3400
+     * @tc.desc Verify break in for-of entries() exits traversal early
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetEntries034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([10, 20, 30]);
+      const result: int[] = [];
+      for (const entry of set.entries()) {
+        result.push(entry[0]);
+        if (entry[0] === 20) {
+          break;
+        }
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(10);
+      expect(result[1]).assertEqual(20);
+    });
+
+    /**
+     * @tc.name testSetEntries035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ENTRIES_3500
+     * @tc.desc Verify continue in for-of entries() skips specific elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetEntries035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<int>([1, 2, 3, 4, 5]);
+      const result: int[] = [];
+      for (const entry of set.entries()) {
+        if (entry[0] % 2 === 0) {
+          continue;
+        }
+        result.push(entry[0]);
+      }
+      expect(result.length).assertEqual(3);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(3);
+      expect(result[2]).assertEqual(5);
+    });
   });
 }

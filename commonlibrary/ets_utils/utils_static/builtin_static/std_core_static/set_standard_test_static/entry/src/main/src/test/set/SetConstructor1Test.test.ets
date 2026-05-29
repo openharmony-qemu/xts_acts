@@ -760,5 +760,21 @@ export default function SetConstructor1Test(): void {
       }
       expect(set).assertNull();
     });
+
+    /**
+     * @tc.name testSetConstructor1047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_1_4700
+     * @tc.desc Verify constructor with FixedArray<int> initializes Set with all elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetConstructor1047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr: FixedArray<int> = [1, 2, 3];
+      let set = new Set<int>(arr);
+      expect(set.size).assertEqual(3);
+      expect(set.has(2)).assertTrue();
+      expect(set.has(4)).assertFalse();
+    });
   });
 }

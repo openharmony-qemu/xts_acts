@@ -497,5 +497,61 @@ export default function SetClearTest(): void {
       expect(set.size).assertEqual(0);
       expect(set.has(p1)).assertFalse();
     });
+
+    /**
+     * @tc.name testSetClear028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CLEAR_2800
+     * @tc.desc Verify clear with one extra parameter still clears all elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetClear028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      (set.clear as Object as (x: int) => void)(1);
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testSetClear029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CLEAR_2900
+     * @tc.desc Verify clear with multiple extra parameters still clears all elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetClear029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      (set.clear as Object as (a: int, b: string, c: boolean) => void)(1, "extra", true);
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testSetClear030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CLEAR_3000
+     * @tc.desc Verify clear with null extra parameter still clears all elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetClear030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      (set.clear as Object as (x: Object | null) => void)(null);
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testSetClear031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CLEAR_3100
+     * @tc.desc Verify clear with undefined extra parameter still clears all elements
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetClear031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<int>([1, 2, 3]);
+      (set.clear as Object as (x: Object | undefined) => void)(undefined);
+      expect(set.size).assertEqual(0);
+    });
   });
 }

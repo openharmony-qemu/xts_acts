@@ -557,5 +557,24 @@ export default function SetIteratorTest(): void {
       }
       expect(set.size).assertEqual(0);
     });
+
+    /**
+     * @tc.name testSetIterator025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2500
+     * @tc.desc Verify Set $_iterator with extra parameter returns iterator or throws error
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const set = new Set<string>(["a", "b"]);
+      let iterFn = (set as Record<string, Object>)["$_iterator"];
+      try {
+        let iter = (iterFn as Object as (x: Object) => IterableIterator<string>)("extra" as Object);
+        expect(iter.next().value).assertEqual("a");
+      } catch (error) {
+        expect((error as Error).name).assertEqual("ClassCastError");
+      }
+    });
   });
 }
