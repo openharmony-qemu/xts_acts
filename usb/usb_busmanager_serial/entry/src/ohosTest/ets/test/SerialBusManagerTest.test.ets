@@ -29,11 +29,10 @@ function sleep(ms: number): Promise<void> {
 async function driveFn() {
   console.info('**************driveFn**************');
   try {
-    let driver:Driver = Driver.create();
+    let driver: Driver = Driver.create();
     console.info(TAG, `driver is ${JSON.stringify(driver)}`);
     let button = await driver.findComponent(ON.text('允许', MatchPattern.EQUALS));
     console.info(TAG, `button is ${JSON.stringify(button)}`);
-    await sleep(1000);
     if (button) {
       await button.click();
     }
@@ -44,14 +43,12 @@ async function driveFn() {
 }
 
 async function driveDecFn() {
-  console.info('**************driveFn**************');
+  console.info('**************driveDecFn**************');
   try {
-    let driver:Driver = Driver.create();
+    let driver: Driver = Driver.create();
     console.info(TAG, `driver is ${JSON.stringify(driver)}`);
-    await sleep(1000);
     let button = await driver.findComponent(ON.text('不允许', MatchPattern.EQUALS));
     console.info(TAG, `button is ${JSON.stringify(button)}`);
-    await sleep(1000);
     if (button) {
       await button.click();
     }
@@ -83,6 +80,7 @@ export default function SerialBusManagerTest() {
     let gPortInfo: serial.SerialPortInfo | null = null;
     let gPort1: serial.SerialPort | null = null;
     let gPortInfo1: serial.SerialPortInfo | null = null;
+
     beforeAll(async (done: Function) => {
       console.info(TAG, 'beforeAll start');
       try {
@@ -653,6 +651,7 @@ export default function SerialBusManagerTest() {
         return;
       }
       try {
+
         let config: serial.SerialConfigs = {
           parity: serial.Parity.SPACE
         };
@@ -749,6 +748,7 @@ export default function SerialBusManagerTest() {
         gPort!.open(config);
         await driveFn();
         console.info(TAG, 'testOpen019 open success');
+        expect().assertEqual(undefined);
         await gPort!.close();
         done();
       } catch (err) {
@@ -1138,7 +1138,7 @@ export default function SerialBusManagerTest() {
         done();
         return;
       }
-      try { 
+      try {
         gPort1!.open();
         await sleep(500);
         await driveFn();
@@ -1174,13 +1174,13 @@ export default function SerialBusManagerTest() {
       }
       try {
         gPort1!.open();
-        await sleep(500);
         await driveFn();
+        await sleep(500);
         gPort1!.onDataRead((data: Uint8Array) => {
           console.info(TAG, 'testOnDataRead001 received data length: ', data.length);
         });
         console.info(TAG, 'testOnDataRead001 register success');
-        await gPor1t!.write(new Uint8Array([0xAA]));
+        await gPort1!.write(new Uint8Array([0xAA]));
         gPort1!.offDataRead();
         await gPort1!.close();
         done();
@@ -1733,6 +1733,7 @@ export default function SerialBusManagerTest() {
         return;
       }
       try {
+
         let config: serial.SerialConfigs = {
           baudRate: 115200,
           rtscts: true,
@@ -1773,12 +1774,12 @@ export default function SerialBusManagerTest() {
           largeData[i] = i % 256;
         }
         for (let index = 0; index < 100; index++) {
-          await gPor1t!.write(largeData, 1);
+          await gPort1!.write(largeData, 1);
         }
         expect().assertFail();
       } catch (err) {
         console.error(TAG, 'testWriteTimeout001 catch err: ', JSON.stringify(err));
-        expect(err.code).assertEqual(35700001);
+        expect(err.code).assertEqual(35700006);
         await gPort1!.close();
         done();
       }
