@@ -20,18 +20,19 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { Router } from '@ohos.arkui.UIContext';
 
 
-aboutToAppear() {
-  try {
-    let router: Router = this.getUIContext().getRouter();
-    AppStorage.setOrCreate<Router>('router', router);
-  } catch (error) {
-    console.error('AccessibilityTest aboutToAppear error: ' + error);
-  }
-}
-
 @Entry
 @Component
 struct AccessibilityTest {
+  
+  aboutToAppear() {
+    try {
+      let router: Router = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router);
+    } catch (error) {
+      console.error('AccessibilityTest aboutToAppear error: ' + error);
+    }
+  }
+
   build() {
     Scroll() {
       Column({ space: 10 } as ColumnOptions) {
