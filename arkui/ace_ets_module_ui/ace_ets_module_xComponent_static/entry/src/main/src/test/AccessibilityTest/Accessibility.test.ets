@@ -39,11 +39,17 @@ export default function AccessibilityTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info('AccessibilityTest beforeEach start');
-      let options: router.RouterOptions = { url: PAGE };
+      let options: router.RouterOptions = {
+        url: PAGE,
+      };
       try {
         const routerInstance = AppStorage.get<Router>('router') as Router;
         routerInstance.clear();
-        routerInstance.replaceUrl(options);
+        let pages = routerInstance.getState();
+        console.info('AccessibilityTest state pages: ' + JSON.stringify(pages));
+        if (pages.name !== 'AccessibilityTest') {
+          routerInstance.replaceUrl(options);
+        }
         await CommonFunc.sleep(SLEEP_TIME);
       } catch (err) {
         console.error('AccessibilityTest replaceUrl error: ' + err);
