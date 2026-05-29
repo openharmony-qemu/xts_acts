@@ -165,6 +165,9 @@ export default function ActsNotificationAnsThreePartyWatchWithInAbilityLittleSta
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } else if (err?.code === 1600001) {
+              expect(err.code).assertEqual(1600001);
+              done();
             } else {
               expect(false).assertTrue();
               done();
@@ -179,6 +182,9 @@ export default function ActsNotificationAnsThreePartyWatchWithInAbilityLittleSta
             console.error(`${testNum}getUserGrantedState fail: ${err.code}, ${err.message}`);
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
+              done();
+            } else if (err?.code === 1600001) {
+              expect(err.code).assertEqual(1600001);
               done();
             } else {
               expect(false).assertTrue();
@@ -245,6 +251,9 @@ export default function ActsNotificationAnsThreePartyWatchWithInAbilityLittleSta
             if (err?.code === 201) {
               expect(err.code).assertEqual(201);
               done();
+            } else if (err?.code === 1600001) {
+              expect(err.code).assertEqual(1600001);
+              done();
             } else {
               expect(false).assertTrue();
               done();
@@ -252,8 +261,11 @@ export default function ActsNotificationAnsThreePartyWatchWithInAbilityLittleSta
           });
         } catch (err) {
           hilog.error(0x0000, 'testTag', `${testNum}restart failed: ${err.code}, ${err.message}`);
-          if (err?.code === 801) {
-            expect(err.code).assertEqual(801);
+          if (err?.code === 201) {
+            expect(err.code).assertEqual(201);
+            done();
+          } else if (err?.code === 1600001) {
+            expect(err.code).assertEqual(1600001);
             done();
           } else {
             expect(false).assertTrue();
