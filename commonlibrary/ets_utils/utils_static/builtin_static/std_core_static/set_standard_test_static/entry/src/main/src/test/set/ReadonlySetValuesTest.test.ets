@@ -13,7 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 const LONG_STR = "a".repeat(10000);
@@ -32,11 +43,13 @@ class Obj020 {
 
 export default function ReadonlySetValuesTest(): void {
   describe('ReadonlySetValuesTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -49,7 +62,7 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -63,7 +76,7 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const iter = set.values();
       let iterExists: boolean = iter != null;
@@ -71,35 +84,15 @@ export default function ReadonlySetValuesTest(): void {
       let t: string = typeof iter.next;
       expect(t).assertEqual("function");
     });
-
     /**
      * @tc.name testReadonlySetValues003
      * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0300
-     * @tc.desc Verify values() returns elements in insertion order
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testReadonlySetValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([30, 10, 20]);
-      const values: int[] = [];
-      for (const v of set.values()) {
-        values.push(v);
-      }
-      expect(values[0]).assertEqual(30);
-      expect(values[1]).assertEqual(10);
-      expect(values[2]).assertEqual(20);
-    });
-
-    /**
-     * @tc.name testReadonlySetValues004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0400
      * @tc.desc Verify values() iterator next() traverses all elements then done is true
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(10);
@@ -109,14 +102,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues005
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0500
+     * @tc.name testReadonlySetValues004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0400
      * @tc.desc Verify iterator traverses all values in insertion order via for-of
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const result: int[] = [];
       for (const v of set.values()) {
@@ -128,14 +121,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0600
+     * @tc.name testReadonlySetValues005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0500
      * @tc.desc Verify single-element Set values() returns single-element iterator
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([100]);
       const iter = set.values();
       const first = iter.next();
@@ -147,38 +140,15 @@ export default function ReadonlySetValuesTest(): void {
       expect(second.done).assertTrue();
       expect(second.value).assertUndefined();
     });
-
     /**
-     * @tc.name testReadonlySetValues007
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0700
-     * @tc.desc Verify multiple add calls values() returns in insertion order
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testReadonlySetValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>();
-      set.add(30);
-      set.add(10);
-      set.add(20);
-      const values: int[] = [];
-      for (const v of set.values()) {
-        values.push(v);
-      }
-      expect(values[0]).assertEqual(30);
-      expect(values[1]).assertEqual(10);
-      expect(values[2]).assertEqual(20);
-    });
-
-    /**
-     * @tc.name testReadonlySetValues008
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0800
+     * @tc.name testReadonlySetValues006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0600
      * @tc.desc Verify empty Set values() returns empty iterator with no loop execution
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>();
       let count = 0;
       for (const v of set.values()) {
@@ -188,14 +158,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0900
+     * @tc.name testReadonlySetValues007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0700
      * @tc.desc Verify empty Set values() iterator next() returns done=true value=undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>();
       const iter = set.values();
       const result = iter.next();
@@ -204,14 +174,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues010
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1000
+     * @tc.name testReadonlySetValues008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0800
      * @tc.desc Verify Set with undefined value values() iterates correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<Object | undefined> = new Set<Object | undefined>([1 as Object, undefined]);
       const iter = set.values();
       let count = 0;
@@ -222,14 +192,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1100
+     * @tc.name testReadonlySetValues009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_0900
      * @tc.desc Verify Set with null value values() iterates correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<Object | null> = new Set<Object | null>([1 as Object, null]);
       const iter = set.values();
       let count = 0;
@@ -240,14 +210,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues012
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1200
+     * @tc.name testReadonlySetValues010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1000
      * @tc.desc Verify Set with empty string values() iterates correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>([""]);
       const result: string[] = [];
       for (const v of set.values()) {
@@ -258,14 +228,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues013
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1300
+     * @tc.name testReadonlySetValues011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1100
      * @tc.desc Verify Set with NaN values() iterates correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<number> = new Set<number>([Number.NaN, 1, 2]);
       const result: number[] = [];
       for (const v of set.values()) {
@@ -277,14 +247,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues014
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1400
+     * @tc.name testReadonlySetValues012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1200
      * @tc.desc Verify Set with 0 and -0 treated as same value in values()
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<number> = new Set<number>([0, -0]);
       const result: number[] = [];
       for (const v of set.values()) {
@@ -295,14 +265,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues015
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1500
+     * @tc.name testReadonlySetValues013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1300
      * @tc.desc Verify values() traverses floating point number elements correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<number> = new Set<number>([1.5, 2.7, 3.9]);
       const result: number[] = [];
       for (const v of set.values()) {
@@ -313,14 +283,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues016
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1600
+     * @tc.name testReadonlySetValues014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1400
      * @tc.desc Verify ReadonlySet values() with Object type elements iterates correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1 = new Obj018(1);
       const obj2 = new Obj018(2);
       const set: ReadonlySet<Object> = new Set<Object>([obj1, obj2]);
@@ -331,14 +301,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues017
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1700
+     * @tc.name testReadonlySetValues015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1500
      * @tc.desc Verify Set<string> values() returns string type elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>(["hello", "world"]);
       let stringCount: int = 0;
       let totalCount: int = 0;
@@ -354,14 +324,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues018
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1800
+     * @tc.name testReadonlySetValues016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1600
      * @tc.desc Verify each values() call returns independent iterator restarting from beginning
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -371,14 +341,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues019
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1900
+     * @tc.name testReadonlySetValues017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1700
      * @tc.desc Verify Set<boolean> values() returns boolean type elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<boolean> = new Set<boolean>([true, false]);
       const iter = set.values();
       const result: boolean[] = [];
@@ -391,16 +361,18 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues020
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2000
+     * @tc.name testReadonlySetValues018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1800
      * @tc.desc Verify Set<Object> values() returns Object type elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj1 = new Obj020(); obj1.name = "a";
-      const obj2 = new Obj020(); obj2.name = "b";
+    it('testReadonlySetValues018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1 = new Obj020();
+      obj1.name = "a";
+      const obj2 = new Obj020();
+      obj2.name = "b";
       const set: ReadonlySet<Object> = new Set<Object>([obj1, obj2]);
       const result: Obj020[] = [];
       for (const v of set.values()) {
@@ -412,14 +384,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues021
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2100
+     * @tc.name testReadonlySetValues019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_1900
      * @tc.desc Verify large Set values() traverses all values correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: int[] = [];
       for (let i = 0; i < 1000; i++) {
         arr.push(i);
@@ -433,14 +405,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues022
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2200
+     * @tc.name testReadonlySetValues020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2000
      * @tc.desc Verify Set with Number.MAX_VALUE values() returns correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<number> = new Set<number>([1, Number.MAX_VALUE, 3.14]);
       const iter = set.values();
       const result: number[] = [];
@@ -454,14 +426,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues023
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2300
+     * @tc.name testReadonlySetValues021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2100
      * @tc.desc Verify Set with positive and negative numbers values() in insertion order
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([-5, 3, -2, 0, 4]);
       const result: int[] = [];
       for (const v of set.values()) {
@@ -476,14 +448,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues024
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2400
+     * @tc.name testReadonlySetValues022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2200
      * @tc.desc Verify Set with Unicode strings values() returns correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>(["你好", "こんにちは", "안녕하세요"]);
       const result: string[] = [];
       for (const v of set.values()) {
@@ -496,14 +468,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues025
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2500
+     * @tc.name testReadonlySetValues023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2300
      * @tc.desc Verify Set with very long string values() returns correctly
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<string> = new Set<string>([LONG_STR]);
       const result: string[] = [];
       for (const v of set.values()) {
@@ -512,35 +484,15 @@ export default function ReadonlySetValuesTest(): void {
       expect(result.length).assertEqual(1);
       expect(result[0]).assertEqual(LONG_STR);
     });
-
     /**
-     * @tc.name testReadonlySetValues026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2600
-     * @tc.desc Verify each values() call returns new independent iterator
-     * @tc.type FUNCTION
-     * @tc.size MEDIUMTEST
-     * @tc.level LEVEL2
-     */
-      it('testReadonlySetValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      const iter1 = set.values();
-      const iter2 = set.values();
-      expect(iter1 !== iter2).assertTrue();
-      let r1 = iter1.next();
-      expect(r1.value).assertEqual(1);
-      let r2 = iter2.next();
-      expect(r2.value).assertEqual(1);
-    });
-
-    /**
-     * @tc.name testReadonlySetValues027
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2700
+     * @tc.name testReadonlySetValues024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2400
      * @tc.desc Verify two iterators traverse independently without interference
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -553,14 +505,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues028
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2800
+     * @tc.name testReadonlySetValues025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2500
      * @tc.desc Verify using next() to access iterator elements one by one
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       const iter = set.values();
       let r1 = iter.next();
@@ -574,14 +526,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues029
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2900
+     * @tc.name testReadonlySetValues026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2600
      * @tc.desc Verify exhausted iterator next() always returns done=true value=undefined
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testReadonlySetValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4]);
       const iter = set.values();
       iter.next();
@@ -599,14 +551,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues030
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3000
+     * @tc.name testReadonlySetValues027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2700
      * @tc.desc Verify throw Error in for-of values() caught by outer try-catch
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
       let caught: boolean = false;
       try {
@@ -623,14 +575,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues031
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3100
+     * @tc.name testReadonlySetValues028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2800
      * @tc.desc Verify break in for-of values() exits traversal early
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetValues031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
       const result: int[] = [];
       for (const v of set.values()) {
@@ -645,14 +597,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues032
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3200
+     * @tc.name testReadonlySetValues029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_2900
      * @tc.desc Verify continue in for-of values() skips specific elements
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetValues032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4, 5]);
       const result: int[] = [];
       for (const v of set.values()) {
@@ -668,14 +620,14 @@ export default function ReadonlySetValuesTest(): void {
     });
 
     /**
-     * @tc.name testReadonlySetValues033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3300
+     * @tc.name testReadonlySetValues030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSETVALUES_3000
      * @tc.desc Verify throw stops iteration and only visited elements recorded
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-    it('testReadonlySetValues033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testReadonlySetValues030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4]);
       const visited: int[] = [];
       try {

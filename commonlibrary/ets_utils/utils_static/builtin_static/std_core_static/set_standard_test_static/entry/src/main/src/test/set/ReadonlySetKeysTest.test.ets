@@ -13,16 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 export default function ReadonlySetKeysTest(): void {
   describe('ReadonlySetKeysTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
