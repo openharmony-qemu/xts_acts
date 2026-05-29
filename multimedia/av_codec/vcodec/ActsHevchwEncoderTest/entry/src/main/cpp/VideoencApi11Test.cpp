@@ -51,7 +51,6 @@ constexpr uint32_t TWO = 2;
 constexpr uint32_t THREE = 3;
 constexpr uint32_t FOUR = 4;
 constexpr uint32_t FIVE = 5;
-constexpr uint32_t SIX = 6;
 OH_NativeImage* cNativeImage = {};
 OH_NativeImage* pNativeImage = {};
 VEncAPI11Sample* g_encSample = nullptr;
@@ -73,6 +72,10 @@ VEncAPI11Sample::~VEncAPI11Sample()
         OH_NativeWindow_DestroyNativeWindow(nativeWindow);
         nativeWindow = nullptr;
     }
+    if (g_encSample == this) {
+        g_encSample = nullptr;
+    }
+    roiInfo = nullptr;
     Release();
 }
 
@@ -101,16 +104,18 @@ static void onEncInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBu
         cout << "g_encSample or roiInfo is null" << endl;
         return;
     }
-    OH_AVFormat *parameter = OH_AVFormat_Create();
-    if (parameter == nullptr) {
-        cout << "Failed to create OH_AVFormat!" << endl;
-        return;
+    if (g_encSample->enableRoi) {
+        OH_AVFormat *parameter = OH_AVFormat_Create();
+        if (parameter == nullptr) {
+            cout << "Failed to create OH_AVFormat!" << endl;
+            return;
+        }
+        bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
+        cout << "ret = " << ret << endl;
+        cout << "roiInfo = " << g_encSample->roiInfo << endl;
+        OH_AVBuffer_SetParameter(buffer, parameter);
+        OH_AVFormat_Destroy(parameter);
     }
-    bool ret = OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    cout << "ret = " << ret << endl;
-    cout << "roiInfo = " << g_encSample->roiInfo << endl;
-    OH_AVBuffer_SetParameter(buffer, parameter);
-    OH_AVFormat_Destroy(parameter);
     signal->inIdxQueue_.push(index);
     signal->inBufferQueue_.push(buffer);
     signal->inCond_.notify_all();
@@ -127,15 +132,19 @@ static void onEncOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVB
 
 static void onEncInputParam(OH_AVCodec *codec, uint32_t index, OH_AVFormat *parameter, void *userData)
 {
-    if (g_encSample == nullptr || g_encSample->roiInfo == nullptr) {
-        cout << "g_encSample or roiInfo is null" << endl;
-        return;
+    OH_LOG_INFO(LOG_APP, "=== onEncInputParam START, index=%{public}u ===", index);
+    
+    VEncAPI11Sample *sample = static_cast<VEncAPI11Sample *>(userData);
+    OH_LOG_INFO(LOG_APP, "sample=%{public}p, enableRoi=%{public}d", sample, sample ? sample->enableRoi : false);
+    
+    if (sample && sample->enableRoi && sample->roiInfo && parameter) {
+        OH_LOG_INFO(LOG_APP, "Setting ROI: %{public}s", sample->roiInfo);
+        OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, sample->roiInfo);
     }
-    OH_AVFormat_SetStringValue(parameter, OH_MD_KEY_VIDEO_ENCODER_ROI_PARAMS, g_encSample->roiInfo);
-    if (!parameter || !userData) {
-        return;
-    }
-    OH_VideoEncoder_PushInputParameter(codec, index);
+    
+    OH_LOG_INFO(LOG_APP, "Calling PushInputParameter...");
+    int32_t err = OH_VideoEncoder_PushInputParameter(codec, index);
+    OH_LOG_INFO(LOG_APP, "PushInputParameter result=%{public}d ===", err);
 }
 
 int64_t VEncAPI11Sample::GetSystemTimeUs()
@@ -489,39 +498,47 @@ void VEncAPI11Sample::InputFuncSurface()
         OH_NativeBuffer *nativeBuffer = nullptr;
         uint8_t *dst = nullptr;
         int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
+        OH_LOG_INFO(LOG_APP, "InitBuffer result=%{public}d", err);
         if (err == 0) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned 0, breaking loop");
             g_flagValue = false;
             break;
         } else if (err == -1) {
+            OH_LOG_INFO(LOG_APP, "InitBuffer returned -1, continuing");
             continue;
         }
+        OH_LOG_INFO(LOG_APP, "Reading frame data...");
         if (!ReadOneFrameYUV420SP(dst)) {
-            err = OH_VideoEncoder_NotifyEndOfStream(venc_);
-            if (err != 0) {
-                cout << "OH_VideoEncoder_NotifyEndOfStream failed" << endl;
-            }
+            OH_LOG_INFO(LOG_APP, "EOF reached, notifying EOS");
+            OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, ohNativeWindowBuffer);
+            OH_VideoEncoder_NotifyEndOfStream(venc_);
             g_flagValue = false;
             break;
         }
+        OH_LOG_INFO(LOG_APP, "Flushing buffer...");
         err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
+        OH_LOG_INFO(LOG_APP, "FlushSurf result=%{public}d", err);
         if (err != 0) {
+            OH_LOG_INFO(LOG_APP, "FlushSurf failed, breaking loop");
             g_flagValue = false;
             break;
         }
         if (inputframeCount == FIVE && !isParamSetSurface && enableParameter) {
+            OH_LOG_INFO(LOG_APP, "Setting parameter at frame 5");
             int32_t paramResult = SetParameter();
             if (paramResult != 0) {
-                cout << "set param failed, error:" << paramResult << endl;
+                OH_LOG_INFO(LOG_APP, "SetParameter failed, error=%{public}d", paramResult);
                 errCount = errCount + 1;
                 break;
             }
             isParamSetSurface = true;
+            OH_LOG_INFO(LOG_APP, "SetParameter success");
         }
         inputframeCount++;
-        if (sleepOnFPS) {
-            usleep(FRAME_INTERVAL);
-        }
+        OH_LOG_INFO(LOG_APP, "Frame flushed, count=%{public}d", inputframeCount);
+        usleep(FRAME_INTERVAL);
     }
+    OH_LOG_INFO(LOG_APP, "=== InputFuncSurface EXITED, total frames=%{public}d ===", inputframeCount);
 }
 
 int32_t VEncAPI11Sample::InitBuffer(OHNativeWindowBuffer *&ohNativeWindowBuffer,
@@ -957,26 +974,18 @@ int32_t VEncAPI11Sample::LoadTimeStampData(std::string filePath, EncoderConfig &
     while (getline(file, temp)) {
         switch (num) {
             case ZERO:
-                trim(temp);
-                config.inputDir = temp;
-                break;
-            case ONE:
-                trim(temp);
-                config.outputDir = temp;
-                break;
-            case TWO:
                 config.width = stoi(temp);
                 break;
-            case THREE:
+            case ONE:
                 config.height = stoi(temp);
                 break;
-            case FOUR:
+            case TWO:
                 config.bitrateMode = stoi(temp);
                 break;
-            case FIVE:
+            case THREE:
                 config.bitRate = stoi(temp);
                 break;
-            case SIX:
+            case FOUR:
                 config.surfaceMode = stoi(temp) == 1;
                 break;
             default:
