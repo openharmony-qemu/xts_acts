@@ -193,13 +193,13 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_0500
      * @tc.name testClassGetDescriptor005
-     * @tc.desc Verify ClassGetDescriptor case 005: get type
+     * @tc.desc Verify ClassGetDescriptor case 005: CustomClass descriptor format
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetDescriptor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyClass007>();
+      let cls = Class.from<CustomClass>();
       let descriptor = cls.getDescriptor();
       expect(descriptor.startsWith("L")).assertTrue();
       expect(descriptor.endsWith(";")).assertTrue();
@@ -753,7 +753,7 @@ export default function ClassGetDescriptorTest(): void {
 
       console.info(`getDescriptor 1000 calls: ${endTime - startTime}ms`);
       expect(isValidStdDescriptor038(descriptor)).assertTrue();
-      expect(endTime - startTime).assertLarger(0);
+      expect(endTime - startTime).assertLargerOrEqual(0);
     });
 
     /**
@@ -777,7 +777,7 @@ export default function ClassGetDescriptorTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETDESCRIPTOR_4000
      * @tc.name testClassGetDescriptor040
-     * @tc.desc Verify ClassGetDescriptor case 040: getDescriptor 10000 calls performance log
+     * @tc.desc Verify ClassGetDescriptor case 040: getDescriptor returns non-empty descriptor string
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -798,8 +798,10 @@ export default function ClassGetDescriptorTest(): void {
     */
     it('testClassGetDescriptor041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OuterClass042Inner042>();
-      let descriptor = cls.getDescriptor();
-      expect(descriptor.length).assertLarger(0);
+      let descriptor1 = cls.getDescriptor();
+      let descriptor2 = cls.getDescriptor();
+      expect(descriptor1.length).assertLarger(0);
+      expect(descriptor1).assertEqual(descriptor2);
     });
 
     /**

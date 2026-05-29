@@ -1077,6 +1077,13 @@ export default function ClassGetConstructorsTest(): void {
       let cls = Class.from<InitFailClass043>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
+      try {
+        constructors[0].createInstance();
+        expect().assertFail();
+      } catch (e) {
+        expect(e.name).assertEqual('Error');
+        expect(e.message).assertEqual('Initialization failed');
+      }
     });
 
     /**

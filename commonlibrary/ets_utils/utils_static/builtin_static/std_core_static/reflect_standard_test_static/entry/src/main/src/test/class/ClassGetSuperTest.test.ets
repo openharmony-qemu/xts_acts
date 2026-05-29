@@ -469,15 +469,13 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1300
      * @tc.name testClassGetSuper013
-     * @tc.desc Verify ClassGetSuper case 013: primitive and string Class getSuper
+     * @tc.desc Verify ClassGetSuper case 013: boolean primitive Class getSuper
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let boolClass = Class.PRIMITIVE_BOOLEAN
-      let intClass = Class.PRIMITIVE_INT
-      let stringClass = Class.from<string>()
       let boolSuper = boolClass.getSuper()
       expect(boolSuper !== null).assertTrue()
     });
@@ -494,13 +492,14 @@ export default function ClassGetSuperTest(): void {
       let arrClass = Class.from<Array<int>>()
       let arrSuper = arrClass.getSuper()
       expect(arrSuper !== null).assertTrue()
+      expect(arrSuper!.getName()).assertEqual("std.core.Object")
       console.info(arrSuper!.getName())
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1500
      * @tc.name testClassGetSuper015
-     * @tc.desc Verify ClassGetSuper case 015: array type
+     * @tc.desc Verify ClassGetSuper case 015: FixedArray instance getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,13 +509,13 @@ export default function ClassGetSuperTest(): void {
       let clazz = Class.of(fixedArr)
       let superClazz = clazz.getSuper()
       expect(superClazz !== null).assertTrue()
-      console.info(superClazz!.getName())
+      expect(superClazz!.getName()).assertEqual("std.core.Object")
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1600
      * @tc.name testClassGetSuper016
-     * @tc.desc Verify ClassGetSuper case 016: generic type
+     * @tc.desc Verify ClassGetSuper case 016: inheritance getSuper returns parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -531,7 +530,7 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1700
      * @tc.name testClassGetSuper017
-     * @tc.desc Verify ClassGetSuper case 017: type Class
+     * @tc.desc Verify ClassGetSuper case 017: union type getSuper returns absent
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -541,13 +540,13 @@ export default function ClassGetSuperTest(): void {
       let isUnion = unionClass.isUnion()
       expect(isUnion).assertTrue()
       let unionSuper = unionClass.getSuper()
-      console.info(unionSuper)
+      expect(Utils.isAbsentReflectOptional(unionSuper)).assertTrue()
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_1800
      * @tc.name testClassGetSuper018
-     * @tc.desc Verify ClassGetSuper case 018: enum Class getSuper non-null
+     * @tc.desc Verify ClassGetSuper case 018: enum Class getSuper returns BaseEnum
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -556,7 +555,7 @@ export default function ClassGetSuperTest(): void {
       let enumClass = Class.from<TestEnum019>()
       let enumSuper = enumClass.getSuper()
       expect(enumSuper !== null).assertTrue()
-      console.info(enumSuper!.getName())
+      expect(enumSuper!.getName()).assertEqual("std.core.BaseEnum")
     });
 
     /**
@@ -877,22 +876,22 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3800
      * @tc.name testClassGetSuper038
-     * @tc.desc Verify ClassGetSuper case 038: Array
+     * @tc.desc Verify ClassGetSuper case 038: Set type getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetSuper038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrClazz = Class.from<Array<int>>()
-      let arrSuper = arrClazz.getSuper()
-      expect(arrSuper !== null).assertTrue()
-      console.info("Array的父类: " + arrSuper!.getName())
+      let setClazz = Class.from<Set<int>>()
+      let setSuper = setClazz.getSuper()
+      expect(setSuper !== null).assertTrue()
+      expect(setSuper!.getName()).assertEqual("std.core.Object")
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_3900
      * @tc.name testClassGetSuper039
-     * @tc.desc Verify ClassGetSuper case 039: Map
+     * @tc.desc Verify ClassGetSuper case 039: Map type getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -901,7 +900,7 @@ export default function ClassGetSuperTest(): void {
       let mapClazz = Class.from<Map<string, int>>()
       let mapSuper = mapClazz.getSuper()
       expect(mapSuper !== null).assertTrue()
-      console.info("Map的父类: " + mapSuper!.getName())
+      expect(mapSuper!.getName()).assertEqual("std.core.Object")
     });
 
     /**
@@ -922,7 +921,7 @@ export default function ClassGetSuperTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETSUPER_4100
      * @tc.name testClassGetSuper041
-     * @tc.desc Verify ClassGetSuper case 041: Promise
+     * @tc.desc Verify ClassGetSuper case 041: Promise type getSuper returns Object
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -931,7 +930,7 @@ export default function ClassGetSuperTest(): void {
       let promiseClazz = Class.from<Promise<string>>()
       let promiseSuper = promiseClazz.getSuper()
       expect(promiseSuper !== null).assertTrue()
-      console.info("Promise的父类: " + promiseSuper!.getName())
+      expect(promiseSuper!.getName()).assertEqual("std.core.Object")
     });
 
   });

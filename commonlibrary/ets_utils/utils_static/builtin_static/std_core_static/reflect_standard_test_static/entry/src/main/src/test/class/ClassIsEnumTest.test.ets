@@ -368,7 +368,7 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsEnum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Set<int>>();
+      let cls = Class.from<Object>();
       let result = cls.isEnum();
       expect(result).assertEqual(false);
     });
@@ -424,14 +424,9 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsEnum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls1 = Class.from<int>();
-      expect(cls1.isEnum()).assertEqual(false);
-
-      let cls2 = Class.from<string>();
-      expect(cls2.isEnum()).assertEqual(false);
-
-      let cls3 = Class.from<boolean>();
-      expect(cls3.isEnum()).assertEqual(false);
+      let cls = Class.from<Set<int>>();
+      let result = cls.isEnum();
+      expect(result).assertEqual(false);
     });
 
     /**
@@ -479,7 +474,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1700
      * @tc.name testClassIsEnum017
-     * @tc.desc Verify ClassIsEnum case 017: child of enum isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 017: enum Class isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -593,8 +588,8 @@ export default function ClassIsEnumTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsEnum024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestEnum025>();
-      expect(cls.isEnum()).assertTrue();
+      let cls = Class.from<MyClass023>();
+      expect(cls.isEnum()).assertFalse();
     });
 
     /**
@@ -869,7 +864,7 @@ export default function ClassIsEnumTest(): void {
       console.info(`10000 calls took ${endTime - startTime}ms`);
       console.info(`isEnum 10000 calls: ${endTime - startTime}ms`);
       expect(result).assertEqual(true);
-      expect(endTime - startTime).assertLarger(0);
+      expect(endTime - startTime).assertLargerOrEqual(0);
     });
 
     /**

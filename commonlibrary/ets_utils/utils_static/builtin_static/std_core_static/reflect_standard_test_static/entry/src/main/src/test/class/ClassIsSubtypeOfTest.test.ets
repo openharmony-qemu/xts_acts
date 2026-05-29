@@ -500,7 +500,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_0900
      * @tc.name testClassIsSubtypeOf009
-     * @tc.desc Verify ClassIsSubtypeOf case 009: Class object call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 009: child Class isSubtypeOf parent returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -515,7 +515,7 @@ export default function ClassIsSubtypeOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISSUBTYPEOF_1000
      * @tc.name testClassIsSubtypeOf010
-     * @tc.desc Verify ClassIsSubtypeOf case 010: Class object call isSubtypeOf
+     * @tc.desc Verify ClassIsSubtypeOf case 010: parent Class isSubtypeOf child returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

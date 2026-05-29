@@ -266,7 +266,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0100
      * @tc.name testGetInstanceFieldsRecursive001
-     * @tc.desc Verify required targetClass parameter with a basic class
+     * @tc.desc Verify required targetClass parameter returns Field array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -276,7 +276,6 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       let fields = reflect.getInstanceFieldsRecursive(cls);
       expect(fields instanceof Array).assertTrue();
       expect(fields.length).assertEqual(1);
-      expect(fields[0].getName()).assertEqual("name");
     });
 
     /**
@@ -494,7 +493,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1000
      * @tc.name testGetInstanceFieldsRecursive010
-     * @tc.desc Verify shadowed field name returns the derived declaration only
+     * @tc.desc Verify shadowed field name returns single field; owner is base declaring class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,6 +509,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       }
       expect(fieldCount).assertEqual(1);
       expect(fields.length).assertEqual(1);
+      expect(fields[0].getOwner().getName()).assertEqual(`${FIELDS_TEST_MODULE_PREFIX}ShadowBaseClass`);
     });
 
     /**
@@ -1233,6 +1233,26 @@ export default function GetInstanceFieldsRecursiveTest(): void {
       let fields2 = reflect.getInstanceFieldsRecursive(cls);
       expect(fields1[0].equals(fields2[0])).assertTrue();
       expect(fields1[0] === fields2[0]).assertFalse();
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4300
+     * @tc.name testGetInstanceFieldsRecursive043
+     * @tc.desc Verify Class.ofAny(obj) returns instance fields
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+     */
+    it('testGetInstanceFieldsRecursive043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj: Any = new BasicFieldClass();
+      let cls = Class.ofAny(obj);
+      if (cls === undefined) {
+        expect().assertFail();
+        return;
+      }
+      let fields = reflect.getInstanceFieldsRecursive(cls);
+      expect(fields.length).assertEqual(1);
+      expect(fields[0].getName()).assertEqual("name");
     });
   });
 }

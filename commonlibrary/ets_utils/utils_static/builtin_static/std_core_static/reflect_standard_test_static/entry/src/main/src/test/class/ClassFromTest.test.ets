@@ -475,7 +475,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0110
      * @tc.name testClassFrom011
-     * @tc.desc Verify ClassFrom case 011: generic T is string type
+     * @tc.desc Verify ClassFrom case 011: generic T is string and String type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -484,6 +484,10 @@ export default function ClassFromTest(): void {
       let cls = Class.from<string>();
       expect(cls !== null).assertTrue();
       expect(cls.getName()).assertEqual("std.core.String");
+
+      let clsString = Class.from<String>();
+      expect(clsString !== null).assertTrue();
+      expect(clsString.getName()).assertEqual("std.core.String");
     });
 
     /**
@@ -587,15 +591,15 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0190
      * @tc.name testClassFrom019
-     * @tc.desc Verify ClassFrom case 019: generic T is HashSet<int>type
+     * @tc.desc Verify ClassFrom case 019: generic T is Set<string> type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassFrom019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Map<string, int>>();
+      let cls = Class.from<Set<string>>();
       expect(cls !== null).assertTrue();
-      expect(cls.getName()).assertEqual("std.core.Map");
+      expect(cls.getName()).assertEqual("std.core.Set");
     });
 
     /**
@@ -629,7 +633,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0220
      * @tc.name testClassFrom022
-     * @tc.desc Verify ClassFrom case 022: generic T is generic
+     * @tc.desc Verify ClassFrom case 022: generic T is single-type-parameter generic class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -643,7 +647,7 @@ export default function ClassFromTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_FROM_0230
      * @tc.name testClassFrom023
-     * @tc.desc Verify ClassFrom case 023: generic T is generic
+     * @tc.desc Verify ClassFrom case 023: generic T is multi-generic type parameters class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

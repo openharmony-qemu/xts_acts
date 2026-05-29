@@ -1227,6 +1227,7 @@ export default function ClassGetInstanceMethodTest001(): void {
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual('Error');
+        expect(error.message !== null).assertTrue();
         expect(typeof error.message).assertEqual('string');
       }
     });

@@ -39,8 +39,8 @@ async function asyncDecl001(): Promise<void> {
   console.info('asyncDecl001');
 }
 
-async function asyncDecl004Dedicated(): Promise<void> {
-  console.info('asyncDecl004Dedicated');
+async function asyncDecl002Dedicated(): Promise<void> {
+  console.info('asyncDecl002Dedicated');
 }
 
 let asyncArrow002 = async (): Promise<void> => {
@@ -339,7 +339,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
      * @tc.level Level 2
      */
     it('testClassIsFuncObjAsync002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      expect(reflect.isFuncObjAsync(asyncDecl004Dedicated)).assertEqual(true);
+      expect(reflect.isFuncObjAsync(asyncDecl002Dedicated)).assertEqual(true);
     });
 
     /**

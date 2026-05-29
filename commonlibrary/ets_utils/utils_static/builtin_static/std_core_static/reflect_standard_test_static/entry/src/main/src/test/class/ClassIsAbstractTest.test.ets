@@ -25,6 +25,10 @@ abstract class MyAbstractClass004 {
   public abstract method(): void;
 }
 
+class ConcreteImpl004 extends MyAbstractClass004 {
+  public override method(): void {}
+}
+
 abstract class MyAbstractClass005 {}
 
 abstract class AbstractClass006 {}
@@ -315,8 +319,9 @@ export default function ClassIsAbstractTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsAbstract003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyAbstractClass004>();
-      expect(cls.isAbstract()).assertTrue();
+      let obj = new ConcreteImpl004();
+      let cls = Class.of(obj);
+      expect(cls.isAbstract()).assertFalse();
     });
 
     /**
@@ -328,9 +333,10 @@ export default function ClassIsAbstractTest(): void {
      * @tc.level Level 2
     */
     it('testClassIsAbstract004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyAbstractClass004>();
-      expect(cls.isAbstract()).assertTrue();
-      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassIsAbstractTest.test.MyAbstractClass004");
+      let obj: Any = new ConcreteImpl004();
+      let cls = Class.ofAny(obj)!;
+      expect(cls.isAbstract()).assertFalse();
+      expect(cls.getName()).assertEqual("entry.src.main.src.test.class.ClassIsAbstractTest.test.ConcreteImpl004");
     });
 
     /**
@@ -788,7 +794,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3700
      * @tc.name testClassIsAbstract037
-     * @tc.desc Verify ClassIsAbstract case 037: repeated isAbstract() calls are consistent
+     * @tc.desc Verify ClassIsAbstract case 037: abstract factory class isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

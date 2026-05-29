@@ -494,7 +494,7 @@ export default function ClassGetInstanceFieldTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETINSTANCEFIELD_2100
      * @tc.name testClassGetInstanceField021
-     * @tc.desc Verify ClassGetInstanceField case 021: string type
+     * @tc.desc Verify ClassGetInstanceField case 021: boolean as Object causes ClassCastError
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
