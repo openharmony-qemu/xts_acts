@@ -1,6 +1,6 @@
 {
   "app": {
-    "bundleName": "enum.standard.test.static",
+    "bundleName": "float.standard.test.static",
     "vendor": "example",
     "versionCode": 1000000,
     "versionName": "1.0.0",
