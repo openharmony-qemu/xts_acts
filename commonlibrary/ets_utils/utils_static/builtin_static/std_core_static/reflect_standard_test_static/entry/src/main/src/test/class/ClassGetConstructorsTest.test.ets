@@ -483,43 +483,57 @@ export default function ClassGetConstructorsTest(): void {
       expect(constructors !== null).assertTrue();
     });
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0300
-     * @tc.name testClassGetConstructors003
-     * @tc.desc Verify ClassGetConstructors case 003: return FixedArray<reflect.Constructor>type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0200
+     * @tc.name testClassGetConstructors002
+     * @tc.desc Verify ClassGetConstructors case 002: return FixedArray<reflect.Constructor>type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MyClass003>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0400
-     * @tc.name testClassGetConstructors004
-     * @tc.desc Verify ClassGetConstructors case 004: publicconstructor when return empty array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0300
+     * @tc.name testClassGetConstructors003
+     * @tc.desc Verify ClassGetConstructors case 003: publicconstructor when return empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AllPrivateConstructors004>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0400
+     * @tc.name testClassGetConstructors004
+     * @tc.desc Verify ClassGetConstructors case 004: publicconstructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<SingleConstructor005>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0500
      * @tc.name testClassGetConstructors005
-     * @tc.desc Verify ClassGetConstructors case 005: publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 005: multiple publicconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<SingleConstructor005>();
+      let cls = Class.from<MultipleConstructors006>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -527,26 +541,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0600
      * @tc.name testClassGetConstructors006
-     * @tc.desc Verify ClassGetConstructors case 006: multiple publicconstructor
+     * @tc.desc Verify ClassGetConstructors case 006: return Constructorobject method
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MultipleConstructors006>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0700
-     * @tc.name testClassGetConstructors007
-     * @tc.desc Verify ClassGetConstructors case 007: return Constructorobject method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass007>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -557,14 +557,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0800
-     * @tc.name testClassGetConstructors008
-     * @tc.desc Verify ClassGetConstructors case 008: constructor name should is constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0700
+     * @tc.name testClassGetConstructors007
+     * @tc.desc Verify ClassGetConstructors case 007: constructor name should is constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass008>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -574,29 +574,43 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0900
-     * @tc.name testClassGetConstructors009
-     * @tc.desc Verify ClassGetConstructors case 009: return should is void type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0800
+     * @tc.name testClassGetConstructors008
+     * @tc.desc Verify ClassGetConstructors case 008: return should is void type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass009>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getReturnType().getName()).assertEqual('void');
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_0900
+     * @tc.name testClassGetConstructors009
+     * @tc.desc Verify ClassGetConstructors case 009: return array should is FixedArray type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TestClass010>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1000
      * @tc.name testClassGetConstructors010
-     * @tc.desc Verify ClassGetConstructors case 010: return array should is FixedArray type
+     * @tc.desc Verify ClassGetConstructors case 010: constructor get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass010>();
+      let cls = Class.from<NormalClass011>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -604,26 +618,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1100
      * @tc.name testClassGetConstructors011
-     * @tc.desc Verify ClassGetConstructors case 011: constructor get
+     * @tc.desc Verify ClassGetConstructors case 011: abstract class publicconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<NormalClass011>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1200
-     * @tc.name testClassGetConstructors012
-     * @tc.desc Verify ClassGetConstructors case 012: abstract class publicconstructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AbstractClass012>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -631,14 +631,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1300
-     * @tc.name testClassGetConstructors013
-     * @tc.desc Verify ClassGetConstructors case 013: final constructor get
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1200
+     * @tc.name testClassGetConstructors012
+     * @tc.desc Verify ClassGetConstructors case 012: final constructor get
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<FinalClass013>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -646,15 +646,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1300
+     * @tc.name testClassGetConstructors013
+     * @tc.desc Verify ClassGetConstructors case 013: interface constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MyInterface014>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1400
      * @tc.name testClassGetConstructors014
-     * @tc.desc Verify ClassGetConstructors case 014: interface constructor
+     * @tc.desc Verify ClassGetConstructors case 014: type constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MyInterface014>();
+      let cls = Class.from<TestEnum015>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
@@ -662,13 +676,13 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1500
      * @tc.name testClassGetConstructors015
-     * @tc.desc Verify ClassGetConstructors case 015: type constructor
+     * @tc.desc Verify ClassGetConstructors case 015: type Class object constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestEnum015>();
+      let cls = Class.PRIMITIVE_INT;
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
@@ -676,26 +690,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1600
      * @tc.name testClassGetConstructors016
-     * @tc.desc Verify ClassGetConstructors case 016: type Class object constructor
+     * @tc.desc Verify ClassGetConstructors case 016: getConstructors return constructor not
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.PRIMITIVE_INT;
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1700
-     * @tc.name testClassGetConstructors017
-     * @tc.desc Verify ClassGetConstructors case 017: getConstructors return constructor not
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let childCls = Class.from<ChildClass017>();
       let constructors = constructorsToArray(childCls);
       expect(constructors.length).assertEqual(1);
@@ -703,15 +703,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1700
+     * @tc.name testClassGetConstructors017
+     * @tc.desc Verify ClassGetConstructors case 017: inheritance return constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let childCls = Class.from<Child018>();
+      let constructors = constructorsToArray(childCls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1800
      * @tc.name testClassGetConstructors018
-     * @tc.desc Verify ClassGetConstructors case 018: inheritance return constructor
+     * @tc.desc Verify ClassGetConstructors case 018: constructor when return constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let childCls = Class.from<Child018>();
+      let childCls = Class.from<Child019>();
       let constructors = constructorsToArray(childCls);
       expect(constructors.length).assertEqual(1);
     });
@@ -719,26 +733,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_1900
      * @tc.name testClassGetConstructors019
-     * @tc.desc Verify ClassGetConstructors case 019: constructor when return constructor
+     * @tc.desc Verify ClassGetConstructors case 019: publicconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let childCls = Class.from<Child019>();
-      let constructors = constructorsToArray(childCls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2000
-     * @tc.name testClassGetConstructors020
-     * @tc.desc Verify ClassGetConstructors case 020: publicconstructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicConstructor020>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -746,14 +746,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2100
-     * @tc.name testClassGetConstructors021
-     * @tc.desc Verify ClassGetConstructors case 021: publicconstructor return
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2000
+     * @tc.name testClassGetConstructors020
+     * @tc.desc Verify ClassGetConstructors case 020: publicconstructor return
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiplePublic021>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -763,28 +763,28 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2200
-     * @tc.name testClassGetConstructors022
-     * @tc.desc Verify ClassGetConstructors case 022: privateconstructor not return empty array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2100
+     * @tc.name testClassGetConstructors021
+     * @tc.desc Verify ClassGetConstructors case 021: privateconstructor not return empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OnlyPrivate022>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2300
-     * @tc.name testClassGetConstructors023
-     * @tc.desc Verify ClassGetConstructors case 023: return publicconstructor private
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2200
+     * @tc.name testClassGetConstructors022
+     * @tc.desc Verify ClassGetConstructors case 022: return publicconstructor private
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedAccess023>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -792,15 +792,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2300
+     * @tc.name testClassGetConstructors023
+     * @tc.desc Verify ClassGetConstructors case 023: multiple privateconstructor not return
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<AllPrivate024>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(0);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2400
      * @tc.name testClassGetConstructors024
-     * @tc.desc Verify ClassGetConstructors case 024: multiple privateconstructor not return
+     * @tc.desc Verify ClassGetConstructors case 024: protectedconstructor not
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<AllPrivate024>();
+      let cls = Class.from<ProtectedConstructor025>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
@@ -808,40 +822,26 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2500
      * @tc.name testClassGetConstructors025
-     * @tc.desc Verify ClassGetConstructors case 025: protectedconstructor not
+     * @tc.desc Verify ClassGetConstructors case 025: return publicconstructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ProtectedConstructor025>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2600
-     * @tc.name testClassGetConstructors026
-     * @tc.desc Verify ClassGetConstructors case 026: return publicconstructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MixedProtected026>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2700
-     * @tc.name testClassGetConstructors027
-     * @tc.desc Verify ClassGetConstructors case 027: different parameters constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2600
+     * @tc.name testClassGetConstructors026
+     * @tc.desc Verify ClassGetConstructors case 026: different parameters constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OverloadByCount027>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -849,15 +849,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2700
+     * @tc.name testClassGetConstructors027
+     * @tc.desc Verify ClassGetConstructors case 027: 3 different parameters
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<MultipleOverloads028>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2800
      * @tc.name testClassGetConstructors028
-     * @tc.desc Verify ClassGetConstructors case 028: 3 different parameters
+     * @tc.desc Verify ClassGetConstructors case 028: parameters same type different
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MultipleOverloads028>();
+      let cls = Class.from<OverloadByType029>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -865,13 +879,13 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_2900
      * @tc.name testClassGetConstructors029
-     * @tc.desc Verify ClassGetConstructors case 029: parameters same type different
+     * @tc.desc Verify ClassGetConstructors case 029: multiple parameters type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OverloadByType029>();
+      let cls = Class.from<MixedTypes030>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -879,13 +893,13 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3000
      * @tc.name testClassGetConstructors030
-     * @tc.desc Verify ClassGetConstructors case 030: multiple parameters type
+     * @tc.desc Verify ClassGetConstructors case 030: parameters constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<MixedTypes030>();
+      let cls = Class.from<OptionalParams031>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -893,26 +907,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3100
      * @tc.name testClassGetConstructors031
-     * @tc.desc Verify ClassGetConstructors case 031: parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 031: multiple parameters constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<OptionalParams031>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3200
-     * @tc.name testClassGetConstructors032
-     * @tc.desc Verify ClassGetConstructors case 032: multiple parameters constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultipleOptional032>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -920,15 +920,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3200
+     * @tc.name testClassGetConstructors032
+     * @tc.desc Verify ClassGetConstructors case 032: using ... parameters constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<VarArgsConstructor033>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3300
      * @tc.name testClassGetConstructors033
-     * @tc.desc Verify ClassGetConstructors case 033: using ... parameters constructor
+     * @tc.desc Verify ClassGetConstructors case 033: constructor when return constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<VarArgsConstructor033>();
+      let cls = Class.from<NoExplicitConstructor034>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -936,27 +950,27 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3400
      * @tc.name testClassGetConstructors034
-     * @tc.desc Verify ClassGetConstructors case 034: constructor when return constructor
+     * @tc.desc Verify ClassGetConstructors case 034: constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<NoExplicitConstructor034>();
+      let cls = Class.from<Singleton035>();
       let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
+      expect(constructors.length).assertEqual(0);
     });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3500
      * @tc.name testClassGetConstructors035
-     * @tc.desc Verify ClassGetConstructors case 035: constructor
+     * @tc.desc Verify ClassGetConstructors case 035: protectedconstructor instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<Singleton035>();
+      let cls = Class.from<ProtectedOnly036>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(0);
     });
@@ -964,26 +978,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3600
      * @tc.name testClassGetConstructors036
-     * @tc.desc Verify ClassGetConstructors case 036: protectedconstructor instance
+     * @tc.desc Verify ClassGetConstructors case 036: constructor parameters is type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ProtectedOnly036>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3700
-     * @tc.name testClassGetConstructors037
-     * @tc.desc Verify ClassGetConstructors case 037: constructor parameters is type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ComplexParams037>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -991,15 +991,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3700
+     * @tc.name testClassGetConstructors037
+     * @tc.desc Verify ClassGetConstructors case 037: generic constructor
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<GenericClass038<int>>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3800
      * @tc.name testClassGetConstructors038
-     * @tc.desc Verify ClassGetConstructors case 038: generic constructor
+     * @tc.desc Verify ClassGetConstructors case 038: parameters type is type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<GenericClass038<int>>();
+      let cls = Class.from<UnionParamConstructor039>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -1007,13 +1021,13 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_3900
      * @tc.name testClassGetConstructors039
-     * @tc.desc Verify ClassGetConstructors case 039: parameters type is type
+     * @tc.desc Verify ClassGetConstructors case 039: constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<UnionParamConstructor039>();
+      let cls = Class.from<ManyOverloads040>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -1021,26 +1035,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4000
      * @tc.name testClassGetConstructors040
-     * @tc.desc Verify ClassGetConstructors case 040: constructor
+     * @tc.desc Verify ClassGetConstructors case 040: return array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ManyOverloads040>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4100
-     * @tc.name testClassGetConstructors041
-     * @tc.desc Verify ClassGetConstructors case 041: return array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass041>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -1052,15 +1052,29 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4100
+     * @tc.name testClassGetConstructors041
+     * @tc.desc Verify ClassGetConstructors case 041: when call getConstructors
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<UninitializedClass042>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4200
      * @tc.name testClassGetConstructors042
-     * @tc.desc Verify ClassGetConstructors case 042: when call getConstructors
+     * @tc.desc Verify ClassGetConstructors case 042: constructor throw exception when
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<UninitializedClass042>();
+      let cls = Class.from<InitFailClass043>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
@@ -1068,26 +1082,12 @@ export default function ClassGetConstructorsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4300
      * @tc.name testClassGetConstructors043
-     * @tc.desc Verify ClassGetConstructors case 043: constructor throw exception when
+     * @tc.desc Verify ClassGetConstructors case 043: constructor getName()return constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<InitFailClass043>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4400
-     * @tc.name testClassGetConstructors044
-     * @tc.desc Verify ClassGetConstructors case 044: constructor getName()return constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass044>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -1097,28 +1097,28 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4500
-     * @tc.name testClassGetConstructors045
-     * @tc.desc Verify ClassGetConstructors case 045: getOwner()return constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4400
+     * @tc.name testClassGetConstructors044
+     * @tc.desc Verify ClassGetConstructors case 044: getOwner()return constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass045>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getOwner()).assertEqual(cls);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4600
-     * @tc.name testClassGetConstructors046
-     * @tc.desc Verify ClassGetConstructors case 046: different constructor different owner
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4500
+     * @tc.name testClassGetConstructors045
+     * @tc.desc Verify ClassGetConstructors case 045: different constructor different owner
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls1 = Class.from<Child1046>();
       let cls2 = Class.from<Child2046>();
       let ctor1 = constructorsToArray(cls1)[0];
@@ -1129,42 +1129,42 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4700
-     * @tc.name testClassGetConstructors047
-     * @tc.desc Verify ClassGetConstructors case 047: constructor return type is void
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4600
+     * @tc.name testClassGetConstructors046
+     * @tc.desc Verify ClassGetConstructors case 046: constructor return type is void
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass047>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getReturnType().getName()).assertEqual('void');
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4800
-     * @tc.name testClassGetConstructors048
-     * @tc.desc Verify ClassGetConstructors case 048: return empty array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4700
+     * @tc.name testClassGetConstructors047
+     * @tc.desc Verify ClassGetConstructors case 047: return empty array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoParams048>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4900
-     * @tc.name testClassGetConstructors049
-     * @tc.desc Verify ClassGetConstructors case 049: return type array
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4800
+     * @tc.name testClassGetConstructors048
+     * @tc.desc Verify ClassGetConstructors case 048: return type array
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OneParam049>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(1);
@@ -1172,14 +1172,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5000
-     * @tc.name testClassGetConstructors050
-     * @tc.desc Verify ClassGetConstructors case 050: return multiple parameters type
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_4900
+     * @tc.name testClassGetConstructors049
+     * @tc.desc Verify ClassGetConstructors case 049: return multiple parameters type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiParams050>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(3);
@@ -1189,17 +1189,33 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5000
+     * @tc.name testClassGetConstructors050
+     * @tc.desc Verify ClassGetConstructors case 050: parameters type is array object type
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<ComplexTypes051>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors[0].getParametersNum()).assertEqual(3);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5100
      * @tc.name testClassGetConstructors051
-     * @tc.desc Verify ClassGetConstructors case 051: parameters type is array object type
+     * @tc.desc Verify ClassGetConstructors case 051: get parameters type
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<ComplexTypes051>();
+      let cls = Class.from<TestClass052>();
       let constructors = constructorsToArray(cls);
-      expect(constructors[0].getParametersNum()).assertEqual(3);
+      let paramType = constructors[0].getParameterType(0);
+      expect(paramType !== null).assertTrue();
+      expect(paramType!.getName()).assertEqual('i32');
     });
 
     /**
@@ -1211,22 +1227,6 @@ export default function ClassGetConstructorsTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetConstructors052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass052>();
-      let constructors = constructorsToArray(cls);
-      let paramType = constructors[0].getParameterType(0);
-      expect(paramType !== null).assertTrue();
-      expect(paramType!.getName()).assertEqual('i32');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5300
-     * @tc.name testClassGetConstructors053
-     * @tc.desc Verify ClassGetConstructors case 053: get parameters type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass053>();
       let constructors = constructorsToArray(cls);
       let paramType = constructors[0].getParameterType(1);
@@ -1235,110 +1235,108 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5400
-     * @tc.name testClassGetConstructors054
-     * @tc.desc Verify ClassGetConstructors case 054: when return undefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5300
+     * @tc.name testClassGetConstructors053
+     * @tc.desc Verify ClassGetConstructors case 053: when return undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass054>();
       let constructors = constructorsToArray(cls);
       try {
         constructors[0].getParameterType(10);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5500
-     * @tc.name testClassGetConstructors055
-     * @tc.desc Verify ClassGetConstructors case 055: return undefined
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5400
+     * @tc.name testClassGetConstructors054
+     * @tc.desc Verify ClassGetConstructors case 054: return undefined
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass055>();
       let constructors = constructorsToArray(cls);
       try {
         constructors[0].getParameterType(-1);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof Error).assertEqual(true);
-        expect((e as Error).name).assertEqual('TypeError');
+        expect(e.name).assertEqual('TypeError');
       }
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5600
-     * @tc.name testClassGetConstructors056
-     * @tc.desc Verify ClassGetConstructors case 056: return 0
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5500
+     * @tc.name testClassGetConstructors055
+     * @tc.desc Verify ClassGetConstructors case 055: return 0
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<NoParams056>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(0);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5700
-     * @tc.name testClassGetConstructors057
-     * @tc.desc Verify ClassGetConstructors case 057: return 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5600
+     * @tc.name testClassGetConstructors056
+     * @tc.desc Verify ClassGetConstructors case 056: return 1
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OneParam057>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5800
-     * @tc.name testClassGetConstructors058
-     * @tc.desc Verify ClassGetConstructors case 058: return parameters
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5700
+     * @tc.name testClassGetConstructors057
+     * @tc.desc Verify ClassGetConstructors case 057: return parameters
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<MultiParams058>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].getParametersNum()).assertEqual(4);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5900
-     * @tc.name testClassGetConstructors059
-     * @tc.desc Verify ClassGetConstructors case 059: publicconstructor isPublic()return true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5800
+     * @tc.name testClassGetConstructors058
+     * @tc.desc Verify ClassGetConstructors case 058: publicconstructor isPublic()return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicCtor059>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].isPublic()).assertTrue();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6000
-     * @tc.name testClassGetConstructors060
-     * @tc.desc Verify ClassGetConstructors case 060: verify return constructor public
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_5900
+     * @tc.name testClassGetConstructors059
+     * @tc.desc Verify ClassGetConstructors case 059: verify return constructor public
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<AllPublic060>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -1348,60 +1346,75 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6100
-     * @tc.name testClassGetConstructors061
-     * @tc.desc Verify ClassGetConstructors case 061: publicconstructor isPrivate()return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6000
+     * @tc.name testClassGetConstructors060
+     * @tc.desc Verify ClassGetConstructors case 060: publicconstructor isPrivate()return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicCtor061>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].isPrivate()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6200
-     * @tc.name testClassGetConstructors062
-     * @tc.desc Verify ClassGetConstructors case 062: publicconstructor isProtected()return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6100
+     * @tc.name testClassGetConstructors061
+     * @tc.desc Verify ClassGetConstructors case 061: publicconstructor isProtected()return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<PublicCtor062>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].isProtected()).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6300
-     * @tc.name testClassGetConstructors063
-     * @tc.desc Verify ClassGetConstructors case 063: constructor isNative()return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6200
+     * @tc.name testClassGetConstructors062
+     * @tc.desc Verify ClassGetConstructors case 062: constructor isNative()return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<UserDefined063>();
       let constructors = constructorsToArray(cls);
       expect(constructors[0].isNative()).assertFalse();
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6300
+     * @tc.name testClassGetConstructors063
+     * @tc.desc Verify ClassGetConstructors case 063: using constructor instance
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TestClass064>();
+      let constructors = constructorsToArray(cls);
+      let instance = constructors[0].createInstance() as TestClass064;
+      expect(instance.name).assertEqual('default');
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6400
      * @tc.name testClassGetConstructors064
-     * @tc.desc Verify ClassGetConstructors case 064: using constructor instance
+     * @tc.desc Verify ClassGetConstructors case 064: using parameters constructor instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass064>();
+      let cls = Class.from<TestClass065>();
       let constructors = constructorsToArray(cls);
-      let instance = constructors[0].createInstance() as TestClass064;
-      expect(instance.name).assertEqual('default');
+      let instance = constructors[0].createInstance(['test']) as TestClass065;
+      expect(instance.name).assertEqual('test');
     });
 
     /**
@@ -1413,21 +1426,6 @@ export default function ClassGetConstructorsTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetConstructors065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass065>();
-      let constructors = constructorsToArray(cls);
-      let instance = constructors[0].createInstance(['test']) as TestClass065;
-      expect(instance.name).assertEqual('test');
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6600
-     * @tc.name testClassGetConstructors066
-     * @tc.desc Verify ClassGetConstructors case 066: using parameters constructor instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass066>();
       let constructors = constructorsToArray(cls);
       let instance = constructors[0].createInstance(['Alice', 30]) as TestClass066;
@@ -1436,14 +1434,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6700
-     * @tc.name testClassGetConstructors067
-     * @tc.desc Verify ClassGetConstructors case 067: using constructor instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6600
+     * @tc.name testClassGetConstructors066
+     * @tc.desc Verify ClassGetConstructors case 066: using constructor instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<OverloadedClass067>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertLarger(0);
@@ -1461,14 +1459,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6800
-     * @tc.name testClassGetConstructors068
-     * @tc.desc Verify ClassGetConstructors case 068: get constructor equalsshould return true
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6700
+     * @tc.name testClassGetConstructors067
+     * @tc.desc Verify ClassGetConstructors case 067: get constructor equalsshould return true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass068>();
       let constructors1 = constructorsToArray(cls);
       let constructors2 = constructorsToArray(cls);
@@ -1476,28 +1474,28 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6900
-     * @tc.name testClassGetConstructors069
-     * @tc.desc Verify ClassGetConstructors case 069: different constructor equalsshould return false
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6800
+     * @tc.name testClassGetConstructors068
+     * @tc.desc Verify ClassGetConstructors case 068: different constructor equalsshould return false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let c69 = constructorsToArray(Class.from<TestClass069>())[0];
       let c70 = constructorsToArray(Class.from<TestClass070>())[0];
       expect(c69.equals(c70)).assertFalse();
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7000
-     * @tc.name testClassGetConstructors070
-     * @tc.desc Verify ClassGetConstructors case 070: equalsreturn true not
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_6900
+     * @tc.name testClassGetConstructors069
+     * @tc.desc Verify ClassGetConstructors case 069: equalsreturn true not
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass070>();
       let constructors1 = constructorsToArray(cls);
       let constructors2 = constructorsToArray(cls);
@@ -1506,14 +1504,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7100
-     * @tc.name testClassGetConstructors071
-     * @tc.desc Verify ClassGetConstructors case 071: get constructor performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7000
+     * @tc.name testClassGetConstructors070
+     * @tc.desc Verify ClassGetConstructors case 070: get constructor performance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<ManyConstructors071>();
       let startTime = Date.now();
       let constructors = constructorsToArray(cls);
@@ -1524,14 +1522,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7200
-     * @tc.name testClassGetConstructors072
-     * @tc.desc Verify ClassGetConstructors case 072: call getConstructors performance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7100
+     * @tc.name testClassGetConstructors071
+     * @tc.desc Verify ClassGetConstructors case 071: call getConstructors performance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass072>();
       let startTime = Date.now();
       let constructors: Array<reflect.Constructor> = new Array<reflect.Constructor>();
@@ -1545,14 +1543,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7300
-     * @tc.name testClassGetConstructors073
-     * @tc.desc Verify ClassGetConstructors case 073: multiple when call getConstructors
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7200
+     * @tc.name testClassGetConstructors072
+     * @tc.desc Verify ClassGetConstructors case 072: multiple when call getConstructors
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<TestClass073>();
       let results: Array<int> = new Array<int>();
       for (let i = 0; i < 10; i++) {
@@ -1565,17 +1563,31 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7300
+     * @tc.name testClassGetConstructors073
+     * @tc.desc Verify ClassGetConstructors case 073: verify in API
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 2
+    */
+    it('testClassGetConstructors073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let cls = Class.from<TestClass074>();
+      let constructors = constructorsToArray(cls);
+      expect(constructors.length).assertEqual(1);
+    });
+
+    /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7400
      * @tc.name testClassGetConstructors074
-     * @tc.desc Verify ClassGetConstructors case 074: verify in API
+     * @tc.desc Verify ClassGetConstructors case 074: get constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
     it('testClassGetConstructors074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let cls = Class.from<TestClass074>();
-      let constructors = constructorsToArray(cls);
-      expect(constructors.length).assertEqual(1);
+      let arrayCls = Class.from<Array<int>>();
+      let constructors = constructorsToArray(arrayCls);
+      expect(constructors.length).assertLargerOrEqual(0);
     });
 
     /**
@@ -1587,34 +1599,20 @@ export default function ClassGetConstructorsTest(): void {
      * @tc.level Level 2
     */
     it('testClassGetConstructors075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let arrayCls = Class.from<Array<int>>();
-      let constructors = constructorsToArray(arrayCls);
-      expect(constructors.length).assertLargerOrEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7600
-     * @tc.name testClassGetConstructors076
-     * @tc.desc Verify ClassGetConstructors case 076: get constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-    */
-    it('testClassGetConstructors076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<CustomClass076>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7700
-     * @tc.name testClassGetConstructors077
-     * @tc.desc Verify ClassGetConstructors case 077: parameters constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7600
+     * @tc.name testClassGetConstructors076
+     * @tc.desc Verify ClassGetConstructors case 076: parameters constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Service077>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertEqual(1);
@@ -1622,14 +1620,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7800
-     * @tc.name testClassGetConstructors078
-     * @tc.desc Verify ClassGetConstructors case 078: type constructor
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7700
+     * @tc.name testClassGetConstructors077
+     * @tc.desc Verify ClassGetConstructors case 077: type constructor
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let cls = Class.from<Serializable078>();
       let constructors = constructorsToArray(cls);
       expect(constructors.length).assertLarger(0);
@@ -1647,14 +1645,14 @@ export default function ClassGetConstructorsTest(): void {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7900
-     * @tc.name testClassGetConstructors079
-     * @tc.desc Verify ClassGetConstructors case 079: using different type instance
+     * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_GETCONSTRUCTORS_7800
+     * @tc.name testClassGetConstructors078
+     * @tc.desc Verify ClassGetConstructors case 078: using different type instance
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
     */
-    it('testClassGetConstructors079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testClassGetConstructors078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let product1 = Factory079.createInstance<Product079>(Class.from<Product079>());
       let product2 = Factory079.createInstance<Product079>(Class.from<Product079>(), 123);
       expect(product1.id).assertEqual(0);

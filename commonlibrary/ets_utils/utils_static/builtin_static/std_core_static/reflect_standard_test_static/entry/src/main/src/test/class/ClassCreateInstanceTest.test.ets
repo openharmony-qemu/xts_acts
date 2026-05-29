@@ -479,8 +479,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = looseReflect(cls as Object).createInstance(['extra']) as MyClass002;
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
@@ -699,8 +698,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -718,8 +716,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -737,8 +734,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -756,8 +752,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -775,8 +770,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -794,8 +788,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -813,8 +806,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -832,8 +824,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -851,8 +842,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -870,9 +860,8 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
-        expect((error as Error).message).assertEqual('constructor error');
+        expect(error.name).assertEqual('Error');
+        expect(error.message).assertEqual('constructor error');
       }
     });
 
@@ -909,8 +898,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -928,8 +916,7 @@ export default function ClassCreateInstanceTest(): void {
         cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -947,8 +934,7 @@ export default function ClassCreateInstanceTest(): void {
         cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -995,8 +981,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1014,8 +999,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1033,8 +1017,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1052,8 +1035,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1071,8 +1053,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1090,8 +1071,7 @@ export default function ClassCreateInstanceTest(): void {
         let obj = cls.createInstance();
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('Error');
+        expect(error.name).assertEqual('Error');
       }
     });
 
@@ -1367,8 +1347,7 @@ export default function ClassCreateInstanceTest(): void {
         let asB: ClassB054 = instance as ClassB054;
         expect().assertFail();
       } catch (error) {
-        expect(error instanceof Error).assertEqual(true);
-        expect((error as Error).name).assertEqual('ClassCastError');
+        expect(error.name).assertEqual('ClassCastError');
       }
     });
 
