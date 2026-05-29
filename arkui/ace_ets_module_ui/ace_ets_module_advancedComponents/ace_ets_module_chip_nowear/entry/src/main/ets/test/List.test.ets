@@ -47,7 +47,7 @@ import ChipV2FontScale from './chipV2/ChipV2FontScale.test';
 import ChipV2FontSize from './chipV2/ChipV2FontSize.test';
 import ChipV2OnClick from './chipV2/ChipV2OnClick.test';
 import ChipV2OnClose from './chipV2/ChipV2OnClose.test';
-import ChipV2OnClose2 from './chipV2/ChipV2Close2.test';
+import ChipV2OnClose2 from './chipV2/ChipV2OnClose2.test';
 import ChipV2Padding from './chipV2/ChipV2Padding.test';
 import ChipV2Page from './chipV2/ChipV2Page.test';
 import ChipV2localizedLabelMargin from './chipV2/ChipV2localizedLabelMargin.test';
