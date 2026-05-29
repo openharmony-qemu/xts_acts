@@ -950,57 +950,6 @@ void VEncAPI11Sample::InputFuncSurface()
     }
 }
 
-void VEncAPI11Sample::InputFuncSurface()
-{
-    int32_t readFileIndex = 0;
-    int32_t inputframeCount = 0;
-    bool isParamSetSurface = false;
-    auto CleanBuffer = [this](OHNativeWindowBuffer *buf, OH_NativeBuffer *natBuf) {
-        if (natBuf) OH_NativeBuffer_Unmap(natBuf);
-        OH_NativeWindow_NativeWindowAbortBuffer(this->nativeWindow, buf);
-    };
-    while (isRunning_.load()) {
-        OHNativeWindowBuffer *ohNativeWindowBuffer = nullptr;
-        OH_NativeBuffer *nativeBuffer = nullptr;
-        uint8_t *dst = nullptr;
-        int err = InitBuffer(ohNativeWindowBuffer, nativeBuffer, dst);
-        if (err == 0) {
-            break;
-        } else if (err == -1) {
-        continue;
-        }
-            
-        err = ReadFrameData(dst, readFileIndex, ohNativeWindowBuffer);
-        if (!isRunning_.load()) { 
-            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
-            break; 
-        }
-        if (err == FILE_END) {
-            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
-            continue;
-        }
-        if (err == LOOP_END) {
-            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
-            break;
-        }
-        if (!isRunning_.load()) {
-            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
-            break;
-        }
-        err = FlushSurf(ohNativeWindowBuffer, nativeBuffer);
-        if (err != 0) {
-            CleanBuffer(ohNativeWindowBuffer, nativeBuffer);
-            break;
-        }
-        if (HandleParamSwitch(inputframeCount, isParamSetSurface) != 0) {
-            break;
-        }
-        inputframeCount++;
-        if (sleepOnFPS) usleep(FRAME_INTERVAL);
-        InputEnableRepeatSleep();
-    }
-}
-
 void VEncAPI11Sample::InputEnableRepeatSleep()
 {
     inCount = inCount + 1;
