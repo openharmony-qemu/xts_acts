@@ -48,8 +48,6 @@ export default function SetValuesTest(): void {
       expect(iter.next().value).assertEqual("a");
     });
 
-
-
     /**
      * @tc.name testSetValues002
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_0200

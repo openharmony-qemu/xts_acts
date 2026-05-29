@@ -171,7 +171,7 @@ export default function SetIteratorTest(): void {
       const second = iter.next();
       expect(second.done).assertTrue();
       expect(second.value).assertUndefined();
-      });
+    });
 
     /**
      * @tc.name testSetIterator008

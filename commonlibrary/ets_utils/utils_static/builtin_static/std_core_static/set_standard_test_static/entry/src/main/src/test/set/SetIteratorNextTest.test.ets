@@ -13,18 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
-class Obj038 { id: int = 0; constructor(id: int) { this.id = id; } }
+class Obj038 {
+  id: int = 0;
+
+  constructor(id: int) {
+    this.id = id;
+  }
+}
 
 export default function SetIteratorNextTest(): void {
   describe('SetIteratorNextTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -37,7 +56,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const result = iter.next();
@@ -53,7 +72,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -68,7 +87,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       try {
@@ -87,7 +106,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([100]);
       const iter = set.values();
       const result = iter.next();
@@ -103,7 +122,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(10);
@@ -120,7 +139,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["a", "b", "c"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("a");
@@ -137,7 +156,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([5, 10, 15]);
       const iter = set.keys();
       expect(iter.next().value).assertEqual(5);
@@ -154,7 +173,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       const r1 = iter.next();
@@ -176,7 +195,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const result = iter.next();
@@ -192,7 +211,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["only"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("only");
@@ -208,7 +227,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([0]);
       const iter = set.values();
       const result = iter.next();
@@ -224,7 +243,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>([""]);
       const iter = set.values();
       const result = iter.next();
@@ -240,7 +259,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<boolean>([false, true]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(false);
@@ -256,13 +275,13 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<Object | null>([null, new Object()]);
       const iter = set.values();
       const r1 = iter.next();
       expect(r1.value).assertNull();
-        expect(r1.done).assertFalse();
-      });
+      expect(r1.done).assertFalse();
+    });
 
     /**
      * @tc.name testSetIteratorNext015
@@ -272,7 +291,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([42]);
       const iter = set.values();
       const result = iter.next();
@@ -289,7 +308,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       const r = iter.next();
@@ -306,7 +325,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       let r1 = iter.next();
@@ -325,7 +344,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["x"]);
       const iter = set.entries();
       const result = iter.next();
@@ -343,7 +362,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       iter.next();
@@ -361,7 +380,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([99]);
       const iter = set.values();
       iter.next();
@@ -382,7 +401,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arr: int[] = [];
       for (let i = 0; i < 1000; i++) {
         arr.push(i);
@@ -406,7 +425,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["hello", "world"]);
       const iter = set.values();
       expect(iter.next().value).assertEqual("hello");
@@ -422,7 +441,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([1.5, 2.7, 3.9]);
       const iter = set.values();
       let v1: number = iter.next().value as number;
@@ -440,7 +459,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const obj1 = new Obj038(1);
       const obj2 = new Obj038(2);
       const set = new Set<Object>([obj1, obj2]);
@@ -458,7 +477,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<boolean>([true, false]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(true);
@@ -474,7 +493,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 2, 3, 3, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -491,7 +510,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -509,7 +528,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter1 = set.values();
       const iter2 = set.values();
@@ -526,7 +545,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
@@ -546,7 +565,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([5, 10, 15]);
       const ki = set.keys();
       const vi = set.values();
@@ -562,7 +581,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(30);
       set.add(10);
@@ -580,7 +599,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const sizeBefore = set.size;
       const iter = set.values();
@@ -599,7 +618,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
@@ -617,7 +636,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.values();
       const r = iter.next();
@@ -633,7 +652,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>();
       const iter = set.values();
       for (let i = 0; i < 10; i++) {
@@ -651,7 +670,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -668,7 +687,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -685,7 +704,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       iter.next();
@@ -703,7 +722,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
@@ -720,14 +739,14 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.values();
       iter.next();
       const r = iter.next();
       expect(r.done).assertTrue();
-        expect(r.value).assertUndefined();
-      });
+      expect(r.value).assertUndefined();
+    });
 
     /**
      * @tc.name testSetIteratorNext041
@@ -737,7 +756,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([42]);
       const iter = set.values();
       const result = iter.next();
@@ -753,7 +772,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetIteratorNext042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetIteratorNext042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.values();
       const result = iter.next();

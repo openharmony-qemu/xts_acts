@@ -13,21 +13,37 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '../../../../hypium/index';
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../../hypium/index';
 import Utils from './../Util.test';
 
 class Item025 {
   id: int = 0;
-  constructor(id: int) { this.id = id; }
+
+  constructor(id: int) {
+    this.id = id;
+  }
 }
 
 export default function SetEntriesTest(): void {
   describe('SetEntriesTest', (): void => {
-    beforeAll((): void => { });
+    beforeAll((): void => {
+    });
     beforeEach(async (): Promise<void> => {
       await Utils.msSleep(30);
     });
-    afterEach((): void => { });
+    afterEach((): void => {
+    });
     afterAll(async (): Promise<void> => {
       await Utils.releaseAfterEachTest();
     });
@@ -40,7 +56,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.entries();
       const r1 = iter.next();
@@ -56,7 +72,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       const r1 = iter.next();
@@ -72,7 +88,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.entries();
       const result = iter.next();
@@ -89,7 +105,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       const r1 = iter.next();
@@ -112,7 +128,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       set.add(10);
       set.add(20);
@@ -134,7 +150,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       let count = 0;
       for (const entry of set.entries()) {
@@ -152,7 +168,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       const iter = set.entries();
       const result = iter.next();
@@ -168,7 +184,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       let count = 0;
       for (const _ of set.entries()) {
@@ -185,7 +201,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([42]);
       const iter = set.entries();
       const r = iter.next();
@@ -204,7 +220,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.entries();
       let typeNext: string = typeof iter.next;
@@ -219,7 +235,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["hello"]);
       const iter = set.entries();
       const r = iter.next();
@@ -237,7 +253,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.entries();
       const r = iter.next();
@@ -253,7 +269,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["a", "b", "c"]);
       for (const entry of set.entries()) {
         expect(entry[0]).assertEqual(entry[1]);
@@ -268,7 +284,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([1.5, 2.7, 3.14]);
       const iter = set.entries();
       let r = iter.next();
@@ -287,7 +303,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>();
       for (let i = 0; i < 1000; i++) {
         set.add(i);
@@ -313,7 +329,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<string>(["foo", "bar"]);
       const iter = set.entries();
       let v = iter.next().value as [string, string];
@@ -331,7 +347,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<number>([0, -1, 1.5, Number.MAX_VALUE]);
       const iter = set.entries();
       let v = iter.next().value as [number, number];
@@ -353,7 +369,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<boolean>([true, false]);
       const iter = set.entries();
       let v = iter.next().value as [boolean, boolean];
@@ -371,7 +387,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const item1 = new Item025(1);
       const item2 = new Item025(2);
       const set = new Set<Item025>([item1, item2]);
@@ -391,7 +407,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter1 = set.entries();
       const iter2 = set.entries();
@@ -410,7 +426,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([10, 20, 30]);
       const iter = set.entries();
       let v = iter.next().value as [int, int];
@@ -430,7 +446,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.entries();
       iter.next();
@@ -439,7 +455,7 @@ export default function SetEntriesTest(): void {
       const again = iter.next();
       expect(again.done).assertTrue();
       expect(again.value).assertUndefined();
-      });
+    });
 
     /**
      * @tc.name testSetEntries023
@@ -449,7 +465,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       set.add(3);
@@ -470,14 +486,14 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1]);
       const iter = set.entries();
       iter.next();
       const done = iter.next();
       expect(done.done).assertTrue();
       expect(done.value).assertUndefined();
-      });
+    });
 
     /**
      * @tc.name testSetEntries025
@@ -487,7 +503,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.entries();
       iter.next();
@@ -506,7 +522,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const iter = set.entries();
       let v = iter.next().value as [int, int];
@@ -523,7 +539,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2]);
       const iter = set.entries();
       let v = iter.next().value as [int, int];
@@ -544,7 +560,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       let errorThrown = false;
       try {
@@ -568,7 +584,7 @@ export default function SetEntriesTest(): void {
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
-      it('testSetEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    it('testSetEntries029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const set = new Set<int>([1, 2, 3]);
       const visitedValues: int[] = [];
       try {
