@@ -1097,7 +1097,7 @@ async function testOffSeiMessageReceived02(src: string | media.AVFileDescriptor,
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      testOffSeiMessageReceived02(avPlayer!, done)
+      OffSeiMessageReceived02(avPlayer!, done)
       setSource(avPlayer!, src);
     }
     if (err!!.code != 0) {
@@ -1116,7 +1116,7 @@ async function testOffSeiMessageReceived03(src: string | media.AVFileDescriptor,
     if (video) {
       console.info('case createAVPlayer success');
       avPlayer = video;
-      testOffSeiMessageReceived03(avPlayer!, done)
+      OffSeiMessageReceived03(avPlayer!, done)
       setSource(avPlayer!, src);
     }
     if (err!!.code != 0) {
@@ -1867,6 +1867,23 @@ async function testMetricsListening(src: media.AVFileDescriptor,
       done();
     }
   });
+}
+
+async function testGetPlaybackSpeed(src: string | media.AVFileDescriptor, speed: number, done: () => void){
+  media.createAVPlayer((err: BusinessError | null, video: media.AVPlayer | undefined) => {
+    console.info(case media err: ${err})
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      setAVPlayerCb(avPlayer!, speed, done);
+      setSource(avPlayer!!, src);
+    }
+    if (err != null) {
+      console.error(case createAVPlayer error, errMessage is ${err.message});
+      expect().assertFail();
+      done();
+    }
+  })
 }
 
 async function testSetLoudness(src: media.AVFileDescriptor, done: () => void, LoudnessGain: double){
