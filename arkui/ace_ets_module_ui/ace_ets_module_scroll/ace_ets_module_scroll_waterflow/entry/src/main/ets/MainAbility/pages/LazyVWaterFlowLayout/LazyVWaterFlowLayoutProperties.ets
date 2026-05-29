@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 import { LengthMetrics, LazyVWaterFlowLayout, LazyVWaterFlowLayoutAttribute } from '@kit.ArkUI';
-
+ 
 @Entry
 @Component
 struct LazyVWaterFlowLayoutProperties {
+
   build() {
     Column() {
       Text('columnsTemplate 属性测试')
@@ -38,7 +39,19 @@ struct LazyVWaterFlowLayoutProperties {
             }
             .id('lazyVWaterFlow_columnsTemplate_default')
             .width('30%')
-
+            .onVisibleIndexesChange((start: number, end: number) => {
+              AppStorage.setOrCreate('LazyVWaterFlowLayout_onVisible', 'success');
+              console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
+              // 滚动监听：即将触底时提前加载更多数据
+              if (end + 20 >= this.arr.totalCount()) {
+                // 添加100个新数据到数据源
+                let currentCount = this.arr.totalCount();
+                for (let i = currentCount; i < currentCount + 100; i++) {
+                  this.arr.pushData(i);
+                }
+              }
+            })
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -55,7 +68,7 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_columnsTemplate_string')
             .columnsTemplate('1fr 1fr')
             .width('30%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -74,7 +87,7 @@ struct LazyVWaterFlowLayoutProperties {
             .width('30%')
           }
           .height('15%')
-
+ 
           Row(){
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
@@ -92,7 +105,7 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_columnsTemplate_string2')
             .columnsTemplate('repeat(auto-fill, 100vp)')
             .width('30%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -109,7 +122,7 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_columnsTemplate_undefined')
             .columnsTemplate(undefined)
             .width('30%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -126,9 +139,10 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_columnsTemplate_null')
             .columnsTemplate(null)
             .width('30%')
+            .onVisibleIndexesChange(null)
           }
           .height('15%')
-
+ 
           Text('columnsGap 属性测试')
           Row(){
             LazyVWaterFlowLayout() {
@@ -147,7 +161,8 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_columnsGap_default')
             .columnsTemplate('1fr 1fr')
             .width('30%')
-
+            .onVisibleIndexesChange(undefined)
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -165,7 +180,7 @@ struct LazyVWaterFlowLayoutProperties {
             .columnsTemplate('1fr 1fr')
             .columnsGap(LengthMetrics.vp(10))
             .width('30%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -185,7 +200,7 @@ struct LazyVWaterFlowLayoutProperties {
             .width('30%')
           }
           .height('15%')
-
+ 
           Row(){
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
@@ -204,7 +219,7 @@ struct LazyVWaterFlowLayoutProperties {
             .columnsTemplate('1fr 1fr')
             .columnsGap(undefined)
             .width('40%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -224,7 +239,7 @@ struct LazyVWaterFlowLayoutProperties {
             .width('40%')
           }
           .height('15%')
-
+ 
           Text('rowsGap 属性测试')
           Row(){
             LazyVWaterFlowLayout() {
@@ -243,7 +258,10 @@ struct LazyVWaterFlowLayoutProperties {
             .id('lazyVWaterFlow_rowsGap_default')
             .columnsTemplate('1fr 1fr')
             .width('30%')
-
+            .onVisibleIndexesChange((start: number, end: number) => {
+              console.info('LazyVWaterFlowLayout visible indexes: start: ' + start + ', end: ' + end);
+            })
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -261,7 +279,7 @@ struct LazyVWaterFlowLayoutProperties {
             .columnsTemplate('1fr 1fr')
             .rowsGap(LengthMetrics.vp(10))
             .width('30%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -281,7 +299,7 @@ struct LazyVWaterFlowLayoutProperties {
             .width('30%')
           }
           .height('15%')
-
+ 
           Row(){
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
@@ -300,7 +318,7 @@ struct LazyVWaterFlowLayoutProperties {
             .columnsTemplate('1fr 1fr')
             .rowsGap(undefined)
             .width('40%')
-
+ 
             LazyVWaterFlowLayout() {
               ForEach([1, 2, 3, 4, 5], (item: number) => {
                 Column() {
@@ -320,7 +338,7 @@ struct LazyVWaterFlowLayoutProperties {
             .width('40%')
           }
           .height('15%')
-
+ 
         }
       }
       .height('100%')

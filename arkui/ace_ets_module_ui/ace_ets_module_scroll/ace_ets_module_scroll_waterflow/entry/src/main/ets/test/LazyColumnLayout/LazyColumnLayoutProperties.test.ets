@@ -56,6 +56,12 @@ export default function LazyColumnLayoutProperties() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyColumnSpace_0100] space: " + JSON.stringify(obj.$attrs.space));
       expect(obj.$attrs.space).assertEqual('0.00vp');
+
+      let result: string | undefined = AppStorage.get("LazyColumnLayout_onVisible");
+      console.info('[lazyColumnSpace_0100] result: ' + JSON.stringify(result));
+      expect(result).assertEqual("success");
+      await CommonFunc.sleep(500);
+      AppStorage.delete('LazyColumnLayout_onVisible')
       console.info('[lazyColumnSpace_0100] END');
       done();
     });

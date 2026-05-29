@@ -56,6 +56,12 @@ export default function LazyVWaterFlowLayoutProperties() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[lazyVWaterFlowColumnsTemplate_0100] columnsTemplate: " + JSON.stringify(obj.$attrs.columnsTemplate));
       expect(obj.$attrs.columnsTemplate).assertEqual('1fr');
+
+      let result: string | undefined = AppStorage.get("LazyVWaterFlowLayout_onVisible");
+      console.info('[lazyVWaterFlowColumnsTemplate_0100] result: ' + JSON.stringify(result));
+      expect(result).assertEqual("success");
+      await CommonFunc.sleep(500);
+      AppStorage.delete('LazyVWaterFlowLayout_onVisible')
       console.info('[lazyVWaterFlowColumnsTemplate_0100] END');
       done();
     });

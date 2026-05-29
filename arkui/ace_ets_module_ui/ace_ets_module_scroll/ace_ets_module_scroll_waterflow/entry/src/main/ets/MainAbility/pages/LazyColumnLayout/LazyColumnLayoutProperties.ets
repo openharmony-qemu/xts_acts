@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { LengthMetrics, LazyColumnLayout } from '@kit.ArkUI';
-
+ 
 @Entry
 @Component
 struct LazyColumnLayoutProperties {
@@ -39,7 +39,11 @@ struct LazyColumnLayoutProperties {
             }
             .id('lazyColumn_space_default')
             .width('30%')
-
+            .onVisibleIndexesChange((start: number, end: number) => {
+              AppStorage.setOrCreate('LazyColumnLayout_onVisible', 'success');
+              console.info('LazyColumnLayout visible indexes: start: ' + start + ', end: ' + end);
+            })
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3, 4], (item: number) => {
                 Column() {
@@ -56,7 +60,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_space_vp')
             .space(LengthMetrics.vp(10))
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3, 4], (item: number) => {
                 Column() {
@@ -75,7 +79,7 @@ struct LazyColumnLayoutProperties {
             .width('30%')
           }
           .height('20%')
-
+ 
           Row(){
             LazyColumnLayout() {
               ForEach([1, 2, 3, 4], (item: number) => {
@@ -93,7 +97,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_space_negative')
             .space(LengthMetrics.vp(-10))
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3, 4], (item: number) => {
                 Column() {
@@ -110,7 +114,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_space_undefined')
             .space(undefined)
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3, 4], (item: number) => {
                 Column() {
@@ -127,9 +131,10 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_space_null')
             .space(null)
             .width('30%')
+            .onVisibleIndexesChange(null)
           }
           .height('20%')
-
+ 
           Text('alignItems 属性测试')
           Row(){
             LazyColumnLayout() {
@@ -147,7 +152,8 @@ struct LazyColumnLayoutProperties {
             }
             .id('lazyColumn_alignItems_default')
             .width('30%')
-
+            .onVisibleIndexesChange(undefined)
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3], (item: number) => {
                 Column() {
@@ -164,7 +170,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_alignItems_start')
             .alignItems(HorizontalAlign.Start)
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3], (item: number) => {
                 Column() {
@@ -183,7 +189,7 @@ struct LazyColumnLayoutProperties {
             .width('30%')
           }
           .height('20%')
-
+ 
           Row(){
             LazyColumnLayout() {
               ForEach([1, 2, 3], (item: number) => {
@@ -201,7 +207,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_alignItems_end')
             .alignItems(HorizontalAlign.End)
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3], (item: number) => {
                 Column() {
@@ -218,7 +224,7 @@ struct LazyColumnLayoutProperties {
             .id('lazyColumn_alignItems_undefined')
             .alignItems(undefined)
             .width('30%')
-
+ 
             LazyColumnLayout() {
               ForEach([1, 2, 3], (item: number) => {
                 Column() {
@@ -237,7 +243,7 @@ struct LazyColumnLayoutProperties {
             .width('30%')
           }
           .height('20%')
-
+ 
         }
       }
       .height('100%')
