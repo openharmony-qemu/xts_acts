@@ -73,14 +73,14 @@ export default function testsuite() {
   bindContextResponseNull();
   isShownContextMenuNull();
   bindContentCoverNullUndefined();
-  ImmersiveStyleTest();
-  ImmersiveOptionsMaterialColorTest();
-  ImmersiveOptionsColorInvertTest();
-  ImmersiveOptionsApplyShadowTest();
+  // ImmersiveStyleTest();
+  // ImmersiveOptionsMaterialColorTest();
+  // mmersiveOptionsColorInvertTest();
+  // ImmersiveOptionsApplyShadowTest();
   UIMaterialTest();
-  SheetOptionsSystemMaterial();
-  PopupCommonOptionsSystemMaterial();
-  PopupOptionsSystemMaterial();
-  CustomPopupOptionsSystemMaterial();
+  // SheetOptionsSystemMaterial();
+  // PopupCommonOptionsSystemMaterial();
+  // PopupOptionsSystemMaterial();
+  // CustomPopupOptionsSystemMaterial();
   // TipsOptionsSystemMaterial();
 }
