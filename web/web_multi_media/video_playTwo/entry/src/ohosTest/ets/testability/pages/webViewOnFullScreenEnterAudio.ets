@@ -17,13 +17,11 @@ import web_webview from '@ohos.web.webview';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct webViewOnFullScreenEnterInfoAudio {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   handler: FullScreenExitHandler = new FullScreenExitHandler();
   @State str: string = '';
   @State javaScriptAccess: boolean = true;
@@ -59,13 +57,6 @@ struct webViewOnFullScreenEnterInfoAudio {
       }
   }
   
-  aboutToDisappear() {
-  
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-  
-  }
-
-  
   build() {
       Column() {
           Row() {
@@ -98,7 +89,7 @@ struct webViewOnFullScreenEnterInfoAudio {
                   }
               })
           }
-          Web({ src: this.mServer.getAssetUrl('fullScreenAudioTest.html'), controller: this.controller })
+          Web({ src: $rawfile('fullScreenAudioTest.html'), controller: this.controller })
                 .key('TestwebViewOnFullScreenEnterAudioInfo')
                 .javaScriptAccess(this.javaScriptAccess)
                 .fileAccess(this.fileAccess)

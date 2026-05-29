@@ -23,7 +23,6 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils.test';
 import JSON from '@ohos.util.json';
 import connection from '@ohos.net.connection';
-import { XtsTestServer } from 'library';
 let isCreateNativeMediaPlayerCallback: Boolean = false
 let isMediaPlaybackStatePlaying: Boolean = false
 let isMediaTypeVideo: Boolean = false
@@ -468,15 +467,6 @@ struct MyComponent {
         console.log('[BrowserShell] onSizeChanged(' + width + ',' + height + '), video_height_percent[' + this.video_height_percent + ']')
     }
     
-    aboutToDisappear() {
-    
-      if (this.params?.web_tab) {
-        this.params.web_tab.controller.loadUrl(this.params.web_tab.mServer.getShutdownUrl());
-      }
-    
-    }
-
-    
     build() {
         Column() {
             Stack() {
@@ -639,9 +629,8 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer? : webview.NativeMediaPlayerBridge
-  page_url: string = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
+  page_url: Resource = $rawfile('nativeMediaPlayerHandler.html')
   node_controller?: MyNodeController
   // 日志列表
   @State messageList: Array<string> =[]

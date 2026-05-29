@@ -17,7 +17,6 @@
 import Utils from '../../test/Utils.test';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
@@ -25,7 +24,6 @@ struct WebViewControllerVideoMedia {
   @State str: string = ""
   @State userAgentPC:string = "";
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State RectWidth:number = 0
   @State RectHeight:number = 0
   onPageShow() {
@@ -50,13 +48,6 @@ struct WebViewControllerVideoMedia {
     }
   }
 
-  aboutToDisappear() {
-
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-
-  }
-
-
   build() {
     Column() {
       Row() {
@@ -78,7 +69,7 @@ struct WebViewControllerVideoMedia {
 
 
 
-      Web({ src: this.mServer.getAssetUrl('scrollByTo.html'), controller: this.controller })
+      Web({ src: $rawfile('scrollByTo.html'), controller: this.controller })
         .enableNativeMediaPlayer({enable: true, shouldOverlay: false})
         .onPageBegin((event) => {
           this.controller.onCreateNativeMediaPlayer((handler: webView.NativeMediaPlayerHandler, mediaInfo: webView.MediaInfo) => {

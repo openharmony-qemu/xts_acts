@@ -19,14 +19,12 @@ import Utils from '../../test/Utils';
 import { Driver, MouseButton, UiWindow, ON, On  } from '@ohos.UiTest';
 import web_webview from '@ohos.web.webview';
 import business_error from '@ohos.base'
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebSiteIsolationMode {
   @State webviewcontroller: web_webview.WebviewController = new web_webview.WebviewController();
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State result:number = 0;
   @State emitKey: string = '';
   @State isReceive: number = -1;
@@ -49,10 +47,6 @@ struct WebSiteIsolationMode {
         this.isReceive = 0;
       }
     }
-  }
-
-  aboutToDisappear() {
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
   }
 
   build() {
@@ -122,7 +116,7 @@ struct WebSiteIsolationMode {
           }
         })
       }
-      Web({ src: this.mServer.getAssetUrl('index.html'), controller: this.controller })
+      Web({ src: 'https://www.w3school.com.cn/tiy/t.asp?f=tags_iframe', controller: this.controller })
         .javaScriptAccess(true)
         .fileAccess(true)
         .onlineImageAccess(true)

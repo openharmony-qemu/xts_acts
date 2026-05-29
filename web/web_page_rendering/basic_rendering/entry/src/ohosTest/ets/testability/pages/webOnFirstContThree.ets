@@ -19,12 +19,10 @@ import { Hypium } from '@ohos/hypium';
 import testsuite from '../../test/List.test';
 import Utils from '../../test/Utils';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 @Entry
 @Component
 struct webOnFirstContThree {
   controller: WebController = new WebController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "emitLoadUrlOnfirstcontentfulpaintWebc";
   @State firstId: number = 151800;
   @State firstcontentfulpaint: boolean = false;
@@ -48,10 +46,6 @@ struct webOnFirstContThree {
   onPageHide() {
     events_emitter.off(151790)
   }
-
-  aboutToDisappear() {
-    this.controller.loadUrl({ url: this.mServer.getShutdownUrl() });
-  }
   private valueChangeCallBack = (eventData: ESObject) => {
     console.info("webOnFirstContThree page valueChangeCallBack");
     if (eventData != null) {
@@ -73,7 +67,7 @@ struct webOnFirstContThree {
               try {
                 this.isComplete = -1;
                 this.controller.clearHistory();
-                this.controller.loadUrl({ url: this.mServer.getAssetUrl('index.html') });
+                this.controller.loadUrl({ url: "https://m.weibo.cn" });
                 await waitForExist(() => this.isComplete, this.str, 0);
                 console.log("action of emitLoadUrlOnfirstcontentfulpaintWebc is loadUrl");
               } catch (error) {

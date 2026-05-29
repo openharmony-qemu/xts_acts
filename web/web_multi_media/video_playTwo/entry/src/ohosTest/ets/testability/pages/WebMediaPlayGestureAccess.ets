@@ -17,13 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebMediaPlayGestureAccess {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -61,13 +59,6 @@ struct WebMediaPlayGestureAccess {
       }
     }
   }
-
-  aboutToDisappear() {
-
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-
-  }
-
 
   build() {
     Column() {
@@ -179,7 +170,7 @@ struct WebMediaPlayGestureAccess {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('audioTest.html'), controller: this.controller })
+      Web({ src: $rawfile('audioTest.html'), controller: this.controller })
         .key('MediaPlayGestureAccessWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

@@ -22,7 +22,6 @@ import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.ar
 import { UIContext } from '@ohos.arkui.UIContext';
 import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
-import { XtsTestServer } from 'library';
 
 const EVENT_ID_SET_EMIT_KEY = 363000;
 
@@ -333,15 +332,6 @@ struct MyComponent {
         console.log('[BrowserShell] onSizeChanged(' + width + ',' + height + '), video_height_percent[' + this.video_height_percent + ']')
     }
     
-    aboutToDisappear() {
-    
-      if (this.params?.web_tab) {
-        this.params.web_tab.controller.loadUrl(this.params.web_tab.mServer.getShutdownUrl());
-      }
-    
-    }
-
-    
     build() {
         Column() {
             Stack() {
@@ -514,9 +504,8 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer? : webview.NativeMediaPlayerBridge
-  page_url: string = this.mServer.getAssetUrl('nativeMediaUpdateRect.html')
+  page_url: Resource = $rawfile('nativeMediaUpdateRect.html')
   node_controller?: MyNodeController
   // 日志列表
   @State messageList: Array<string> =[]

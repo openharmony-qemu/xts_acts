@@ -17,13 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import web_webview from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebMediaOption {
   controller: web_webview.WebviewController = new web_webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController();
   @State str: string = "";
   @State javaScriptAccess: boolean = true;
@@ -63,13 +61,6 @@ struct WebMediaOption {
       }
     }
   }
-
-  aboutToDisappear() {
-
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-
-  }
-
 
   build() {
     Column() {
@@ -244,7 +235,7 @@ struct WebMediaOption {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('videoTest.html'), controller: this.controller })
+      Web({ src: $rawfile('videoTest.html'), controller: this.controller })
         .height('30%')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
@@ -263,7 +254,7 @@ struct WebMediaOption {
           console.log("onPageEnd1******")
           this.isPageEnd = 0;
         })
-      Web({ src: this.mServer.getAssetUrl('audioTest.html'), controller: this.controllerTwo })
+      Web({ src: $rawfile('audioTest.html'), controller: this.controllerTwo })
         .height('30%')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

@@ -17,13 +17,11 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import { waitForExist } from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 
 @Entry
 @Component
 struct WebOnAudioStateChanged {
   controller: webView.WebviewController = new webView.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   @State str: string = "";
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
@@ -58,13 +56,6 @@ struct WebOnAudioStateChanged {
       }
     }
   }
-
-  aboutToDisappear() {
-
-    this.controller.loadUrl(this.mServer.getShutdownUrl());
-
-  }
-
 
   build() {
     Column() {
@@ -154,7 +145,7 @@ struct WebOnAudioStateChanged {
         })
       }
 
-      Web({ src: this.mServer.getAssetUrl('audioTest2.html'), controller: this.controller })
+      Web({ src: $rawfile('audioTest2.html'), controller: this.controller })
         .key('OnAudioStateChangedWebView')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

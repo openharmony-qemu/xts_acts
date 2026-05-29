@@ -24,7 +24,6 @@ import Utils from '../../test/Utils';
 import JSON from '@ohos.util.json';
 import connection from '@ohos.net.connection';
 import {waitForExist} from '../../test/WaitTest.test';
-import { XtsTestServer } from 'library';
 let isCreateNativeMediaPlayerCallback: Boolean = false
 let isMediaPlaybackStatePlaying: Boolean = false
 let isMediaTypeVideo: Boolean = false
@@ -522,13 +521,6 @@ struct MyComponent {
         console.log('[BrowserShell] onSizeChanged(' + width + ',' + height + '), video_height_percent[' + this.video_height_percent + ']')
     }
     
-    aboutToDisappear() {
-      if (this.params?.web_tab) {
-        this.params.web_tab.controller.loadUrl(this.params.web_tab.mServer.getShutdownUrl());
-      }
-    }
-
-    
     build() {
         Column() {
             Stack() {
@@ -700,9 +692,8 @@ interface PageBeginParam {
 @Component
 struct WebComponent {
   controller: WebviewController = new webview.WebviewController();
-  mServer: XtsTestServer = new XtsTestServer(getContext(this), false);
   nativePlayer? : webview.NativeMediaPlayerBridge
-  page_url: string = this.mServer.getAssetUrl('nativeMediaPlayerHandler.html')
+  page_url: Resource = $rawfile('nativeMediaPlayerHandler.html')
   node_controller?: MyNodeController
   // 日志列表
   @State messageList: Array<string> =[]
@@ -781,7 +772,7 @@ struct WebComponent {
                 switch (this.emitKey) {
                     case "emitWebViewNativeMediaPlayerNetworkError": {
                         try {
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaError.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
                             Utils.emitEvent(true,300020)
                         } catch (error) {
@@ -800,7 +791,7 @@ struct WebComponent {
                     }
                     case "emitWebViewNativeMediaPlayerFORMATERROR": {
                         try {
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaError.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
                             Utils.emitEvent(true,300030)
                         } catch (error) {
@@ -810,7 +801,7 @@ struct WebComponent {
                     }
                     case "emitWebViewNativeMediaPlayerDecodeERROR": {
                         try {
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaError.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaError.html'))
                             await Utils.sleep(1500)
                             Utils.emitEvent(true,300040)
                         } catch (error) {
@@ -831,7 +822,7 @@ struct WebComponent {
                     case "emitWebViewNativeMediaPlayerNetworkStateIDLE":
                     case "emitWebViewNativeMediaPlayerNetworkStateNETWORKERROR":{
                         this.isPageEnd = -1;
-                        this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandler.html'))
+                        this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
                         await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                         Utils.emitEvent(true,300060)
                         Utils.emitEvent(true,300070)
@@ -847,7 +838,7 @@ struct WebComponent {
                     case "emitWebViewNativeMediaPlayerPreloadMetaData":{
                         try {
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandler.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
                             await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                             console.log("isPreloadMeta" + isPreloadMeta)
                             Utils.emitEvent(isPreloadMeta,300110)
@@ -877,7 +868,7 @@ struct WebComponent {
                     case "emitWebViewNativeMediaPlayerProps2": {
                         try {
                             this.isPageEnd = -1;
-                            this.controller.loadUrl(this.mServer.getAssetUrl('nativeMediaPlayerHandler.html'))
+                            this.controller.loadUrl($rawfile('nativeMediaPlayerHandler.html'))
                             await waitForExist(() => this.isPageEnd, this.emitKey, 0);
                             if(!isPreloadMeta) {
                                 Utils.emitEvent(true, 300090)
