@@ -1899,7 +1899,7 @@ async function testSetLoudness(src: media.AVFileDescriptor, done: () => void, Lo
       setSource(avPlayer!, src);
     }
     if (err!!.code != 0) {
-      console.error(case createAVPlayer error, errMessage is ${err!!.message});
+      console.error(`case createAVPlayer error, errMessage is ${err!!.message}`);
       expect().assertFail();
       done();
     }
@@ -1976,10 +1976,10 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: () =>void, LoudnessG
       switch (state) {
       case INITIALIZED:
           if (!avPlayer) {
-              console.info('avPlayer is null');
+              console.info(`avPlayer is null`);
               break;
           }
-          console.info(case INITIALIZED);
+          console.info(`case INITIALIZED`);
           expect(avPlayer !! .state).assertEqual(INITIALIZED);
           avPlayer !! .audioRendererInfo = {
               usage: audio.StreamUsage.STREAM_USAGE_MOVIE,
@@ -1988,10 +1988,7 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: () =>void, LoudnessG
           avPlayer !! .prepare((err) =>{
               console.info('case prepare called' + err);
               if (err != null) {
-                  console.error(
-              case prepare error, errMessage is $ {
-                      err !! .message
-                  });
+                  console.error(`case prepare error, errMessage is ${err!!.message}`);
                   expect().assertFail();
                   done();
               } else if (avPlayer) {
@@ -2009,8 +2006,8 @@ function setLoudness(avPlayer: media.AVPlayer | null, done: () =>void, LoudnessG
           break;
       case ERROR:
           expect().assertFail();
-          avPlayer?.release().then(() =>{}).
-          catch(mediaTestBase.catchCallback);
+          avPlayer?.release().then(() =>{
+          }).catch(mediaTestBase.catchCallback);
           avPlayer = null;
           break;
       default:
@@ -2576,9 +2573,7 @@ export default function AVPlayerLocalTest() {
             testSetLoudness(fileDescriptor ! , done, 0.0);
           }
         } catch(error) {
-          console.error(Test exception: $ {
-          JSON.stringify(error)
-        });
+          console.error(`Test exception: ${JSON.stringify(error)}`);
           expect().assertFail();
           done();
         }
@@ -2597,9 +2592,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, -90.0);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect().assertFail();
            done();
          }
@@ -2618,9 +2611,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, 24.0);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect().assertFail();
            done();
          }
@@ -2639,9 +2630,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, -40.0);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect().assertFail();
            done();
          }
@@ -2660,9 +2649,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, 10.8);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect().assertFail();
            done();
          }
@@ -2681,9 +2668,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, -90.1);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect(error.code).assertEqual(5400108);
            done();
          }
@@ -2702,9 +2687,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, -100.4);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect(error.code).assertEqual(5400108);
            done();
          }
@@ -2723,9 +2706,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, 24.1);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect(error.code).assertEqual(5400108);
            done();
          }
@@ -2744,9 +2725,7 @@ export default function AVPlayerLocalTest() {
              testSetLoudness(fileDescriptor ! , done, 60.2);
            }
          } catch(error) {
-           console.error(Test exception: $ {
-             JSON.stringify(error)
-           });
+           console.error(`Test exception: ${JSON.stringify(error)}`);
            expect(error.code).assertEqual(5400108);
            done();
          }
