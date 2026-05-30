@@ -31,6 +31,7 @@
     "MainAbility/pages/shouldRecognizerParallelWith/shouldRecognizerParallelWith",
     "MainAbility/pages/orphanCharOptimization/orphanCharOptimization",
     "MainAbility/pages/orphanCharOptimization/orphanCharOptimization_undefined",
+    "MainAbility/pages/hoveredAttribute/HoveredAttributeTestPage",
     "MainAbility/pages/enableEventPassthrough/EnableEventPassthroughPage"
   ]
 }

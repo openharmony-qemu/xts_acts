@@ -208,5 +208,66 @@ export default function changeDatetest() {
         expect(e.code === 401).assertTrue();
       }
     });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_static_001
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_STATIC_TEST_0100
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache();
+        let size = await fileCache.getCachedTotalSize()
+        expect(size == 0).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_001 has failed for ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_static_002
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_STATIC_TEST_0200
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        let size = await fileCache.getCachedTotalSize()
+        expect(size == 0).assertTrue();
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_002 has failed for ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   test_CloudFileCache_getCachedTotalSize_static_003
+     * @tc.number SUB_STORAGE_CLOUDFILECACHE_GETCACHEDTOTALSIZE_STATIC_TEST_0300
+     * @tc.desc   function of getCachedTotalSize, normal test without bundleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('test_CloudFileCache_getCachedTotalSize_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
+      try {
+        let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+        let size = await fileCache.getCachedTotalSize()
+        expect(size == 0).assertTrue();
+        await fileCache.cleanFileCache()
+      } catch (e) {
+        hilog.info(domain, tag, '%{public}s', 'test_CloudFileCache_getCachedTotalSize_static_003 has failed for ' + JSON.stringify(e));
+        expect(false).assertTrue();
+      }
+      done();
+    });
   });
 }
