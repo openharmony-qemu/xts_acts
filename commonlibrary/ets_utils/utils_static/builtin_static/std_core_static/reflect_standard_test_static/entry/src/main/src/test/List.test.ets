@@ -11,8 +11,18 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
+ */
 
+import {StaticFieldEqualsTest} from "./StaticField/StaticFieldEqualsTest.test";
+import {StaticFieldGetNameTest} from "./StaticField/StaticFieldGetNameTest.test";
+import {StaticFieldGetOwnerTest} from "./StaticField/StaticFieldGetOwnerTest.test";
+import {StaticFieldGetTypeTest} from "./StaticField/StaticFieldGetTypeTest.test";
+import {StaticFieldGetValueTest} from "./StaticField/StaticFieldGetValueTest.test";
+import {StaticFieldIsPrivateTest} from "./StaticField/StaticFieldIsPrivateTest.test";
+import {StaticFieldIsProtectedTest} from "./StaticField/StaticFieldIsProtectedTest.test";
+import {StaticFieldIsPublicTest} from "./StaticField/StaticFieldIsPublicTest.test";
+import {StaticFieldIsReadonlyTest} from "./StaticField/StaticFieldIsReadonlyTest.test";
+import {StaticFieldSetValueTest} from "./StaticField/StaticFieldSetValueTest.test";
 import ClassCreateInstanceTest from './class/ClassCreateInstanceTest.test';
 import ClassCurrentTest from './class/ClassCurrentTest.test';
 import ClassFromTest from './class/ClassFromTest.test';
@@ -81,6 +91,7 @@ import InstanceFieldGetOwnerTest from "./InstanceField/InstanceFieldGetOwnerTest
 import InstanceFieldGetTypeTest from "./InstanceField/InstanceFieldGetTypeTest.test";
 
 
+
 export default function testsuite(): void {
   ClassCreateInstanceTest();
   ClassCurrentTest();
@@ -112,7 +123,6 @@ export default function testsuite(): void {
   ClassOfAnyTest();
   ClassOfCallerTest();
   ClassOfTest();
-
   ConstructorCreateInstanceTest();
   ConstructorEqualsTest();
   ConstructorGetNameTest();
@@ -125,7 +135,16 @@ export default function testsuite(): void {
   ConstructorIsPrivateTest();
   ConstructorIsProtectedTest();
   ConstructorIsPublicTest();
-  
+  StaticFieldEqualsTest();
+  StaticFieldGetNameTest();
+  StaticFieldGetOwnerTest();
+  StaticFieldGetTypeTest();
+  StaticFieldGetValueTest();
+  StaticFieldIsPrivateTest();
+  StaticFieldIsProtectedTest();
+  StaticFieldIsPublicTest();
+  StaticFieldIsReadonlyTest();
+  StaticFieldSetValueTest();
   StaticMethodEqualsTest();
   StaticMethodGetNameTest();
   StaticMethodGetOwnerTest();
