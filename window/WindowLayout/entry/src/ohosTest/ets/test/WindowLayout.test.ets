@@ -7780,12 +7780,12 @@ export default function windowLayoutTest() {
           done();
         }).catch(async (err: BusinessError) => {
           await terminateAbility(caseName);
-          if (!isFreeWindowMode) {
-            console.info(`${caseName} Capability not supported or Invalid parameter range..Cause code: ${err.code}, message: ${err.message}`);
-            expect(err.code === 801).assertTrue()
-          } else if(err.code == 1300016){
+          if(err.code == 1300016){
             console.info(`${caseName} param range fail .Cause code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(1300016)
+          }else if (!isFreeWindowMode) {
+            console.info(`${caseName} Capability not supported or Invalid parameter range..Cause code: ${err.code}, message: ${err.message}`);
+            expect(err.code === 801).assertTrue()
           }else {
             console.error(`${caseName} Failed to recover window. Cause code: ${err.code}, message: ${err.message}`);
             expect().assertFail();
