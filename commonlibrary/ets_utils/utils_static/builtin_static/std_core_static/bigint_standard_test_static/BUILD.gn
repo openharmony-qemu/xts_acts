@@ -17,7 +17,7 @@ ohos_js_app_static_suite("ActsBigintStandardTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsBigintStandardHapTest"
+  hap_name = "ActsBigintStandardHapTestAdapt001StaticTest"
   part_name = "ets_utils"
   subsystem_name = "commonlibrary"
 }

@@ -25,7 +25,7 @@ import hilog from '@ohos.hilog';
 import { NativeEmbedParamStatus } from '@ohos.arkui.component'
 
 export default function WebOnNativeEmbedObjectParamChange() {
-  describe('ActsAceWebOnNativeEmbedObjectParamChange', ():void => {
+  describe('ActsAceWebOnNativeEmbedObjectParamChangeAdapt001', ():void => {
     beforeAll(async (): Promise<void> => {
       console.log('App start')
       await Utils.msSleep(2000)

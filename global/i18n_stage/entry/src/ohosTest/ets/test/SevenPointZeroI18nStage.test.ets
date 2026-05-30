@@ -342,7 +342,7 @@ export default function SevenPointZeroI18nStageTest() {
         expect(false).assertTrue();
       } catch (e) {
         console.log('test_SymbolDateTimeFormat_0600 catch error:', e.code + e.message);
-        expect(Number(e.code) === 890001).assertTrue();
+        expect(e.code === 8900001).assertTrue();
       }
     })
 
