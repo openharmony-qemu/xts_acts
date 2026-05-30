@@ -22,19 +22,19 @@ group("std_core_static") {
       "reflect_standard_test_static:ActsReflectStaticTest",
       "array_case_standard_test_static:ActsArrayCaseStaticTest",
       "array_buffer_standard_test_static:ActsArrayBufferStaticTest",
-	  "error_standard_test_static:ActsErrorCaseStaticTest",
-	  "errorhandler_standard_test_static:ActsErrorHandlerStaticTest",
-	  "errors_standard_test_static:ActsErrorsStaticTest",
-	  "expection_standard_test_static:ActsExpectionStaticTest",
-	  "feild_standard_test_static:ActsFeildStaticTest",
-	  "float_standard_test_static:ActsFloatStaticTest",
-	  "functions_standard_test_static:ActsFunctionsStaticTest",
-	  "global_standard_test_static:ActsGlobalStaticTest",
-	  "intl_standard_test_static:ActsIntlStaticTest",
-	  "iterator_standard_test_static:ActsIteratorStaticTest",
-	  "method_standard_test_static:ActsMethodStaticTest",
-	  "object_standard_test_static:ActsObjectStaticTest",
-	  
+      "error_standard_test_static:ActsErrorCaseStaticTest",
+      "errorhandler_standard_test_static:ActsErrorHandlerStaticTest",
+      "errors_standard_test_static:ActsErrorsStaticTest",
+      "expection_standard_test_static:ActsExpectionStaticTest",
+      "feild_standard_test_static:ActsFeildStaticTest",
+      "float_standard_test_static:ActsFloatStaticTest",
+      "functions_standard_test_static:ActsFunctionsStaticTest",
+      "global_standard_test_static:ActsGlobalStaticTest",
+      "intl_standard_test_static:ActsIntlStaticTest",
+      "iterator_standard_test_static:ActsIteratorStaticTest",
+      "method_standard_test_static:ActsMethodStaticTest",
+      "object_standard_test_static:ActsObjectStaticTest",
+
     ]
   }
 }
