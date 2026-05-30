@@ -28,12 +28,12 @@ import SetIteratorTest from "./set/SetIteratorTest.test";
 import SetKeysTest from "./set/SetKeysTest.test";
 import SetSizeTest from "./set/SetSizeTest.test";
 import SetValuesTest from "./set/SetValuesTest.test";
-import ReadonlySetEntriesTest from "./set/ReadonlySetEntriesTest.test";
-import ReadonlySetForEachTest from "./set/ReadonlySetForEachTest.test";
-import ReadonlySetHasTest from "./set/ReadonlySetHasTest.test";
-import ReadonlySetKeysTest from "./set/ReadonlySetKeysTest.test";
-import ReadonlySetSizeTest from "./set/ReadonlySetSizeTest.test";
-import ReadonlySetValuesTest from "./set/ReadonlySetValuesTest.test";
+import ReadonlySetEntriesTest from "./readonlySet/ReadonlySetEntriesTest.test";
+import ReadonlySetForEachTest from "./readonlySet/ReadonlySetForEachTest.test";
+import ReadonlySetHasTest from "./readonlySet/ReadonlySetHasTest.test";
+import ReadonlySetKeysTest from "./readonlySet/ReadonlySetKeysTest.test";
+import ReadonlySetSizeTest from "./readonlySet/ReadonlySetSizeTest.test";
+import ReadonlySetValuesTest from "./readonlySet/ReadonlySetValuesTest.test";
 import SetIteratorDollarIteratorTest from "./set/SetIteratorDollarIteratorTest.test";
 import SetIteratorNextTest from "./set/SetIteratorNextTest.test";
 
