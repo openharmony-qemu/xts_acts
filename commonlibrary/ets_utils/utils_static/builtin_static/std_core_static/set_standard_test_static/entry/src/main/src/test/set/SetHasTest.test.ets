@@ -949,5 +949,37 @@ export default function SetHasTest(): void {
       p1.age = 999;
       expect(set.has(p1)).assertTrue();
     });
+
+    /**
+     * @tc.name testSetHas060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_6000
+     * @tc.desc Verify has returns true for Person instance and null in Set of Person pipe null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1 = new Person("Alice", 30);
+      let set = new Set<Person | null>([p1, null]);
+      expect(set.has(p1)).assertTrue();
+      expect(set.has(null)).assertTrue();
+      let p2 = new Person("Bob", 25);
+      expect(set.has(p2)).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetHas061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_6100
+     * @tc.desc Verify has undefined and Person in Set of Person pipe undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1 = new Person("Alice", 30);
+      let set = new Set<Person | undefined>([p1, undefined]);
+      expect(set.has(p1)).assertTrue();
+      expect(set.has(undefined)).assertTrue();
+    });
   });
 }

@@ -752,6 +752,43 @@ export default function SetDeleteTest(): void {
       expect(set.has(obj3)).assertTrue();
       expect(set.size).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetDelete045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4500
+     * @tc.desc Verify delete MyObj021 instance and null independently from Set of MyObj021 pipe null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let set = new Set<MyObj021 | null>([obj1, null]);
+      let r1 = set.delete(obj1);
+      expect(r1).assertTrue();
+      expect(set.size).assertEqual(1);
+      expect(set.has(obj1)).assertFalse();
+      expect(set.has(null)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetDelete046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4600
+     * @tc.desc Verify delete MyObj021 instance and undefined independently from Set of MyObj021 pipe undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let set = new Set<MyObj021 | undefined>([obj1, undefined]);
+      let r1 = set.delete(undefined);
+      expect(r1).assertTrue();
+      expect(set.size).assertEqual(1);
+      expect(set.has(undefined)).assertFalse();
+      expect(set.has(obj1)).assertTrue();
+    });
   });
 }
+
 

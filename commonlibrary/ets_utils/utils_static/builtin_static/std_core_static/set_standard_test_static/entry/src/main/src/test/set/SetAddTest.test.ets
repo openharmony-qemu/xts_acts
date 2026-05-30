@@ -854,5 +854,80 @@ export default function SetAddTest(): void {
       expect(set.size).assertEqual(1);
       expect(set.has(obj)).assertTrue();
     });
+
+    /**
+     * @tc.name testSetAdd052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5200
+     * @tc.desc Verify add Item017 instance and null to Set of Item017 pipe null
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017 | null>();
+      let item = new Item017(1);
+      set.add(item);
+      set.add(null);
+      expect(set.size).assertEqual(2);
+      expect(set.has(item)).assertTrue();
+      expect(set.has(null)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5300
+     * @tc.desc Verify add Item017 instance and undefined to Set of Item017 pipe undefined
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017 | undefined>();
+      let item = new Item017(1);
+      set.add(item);
+      set.add(undefined);
+      expect(set.size).assertEqual(2);
+      expect(set.has(item)).assertTrue();
+      expect(set.has(undefined)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5400
+     * @tc.desc Verify add Item017 null and undefined all three types to Set at once
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017 | null | undefined>();
+      let item = new Item017(1);
+      set.add(item);
+      set.add(null);
+      set.add(undefined);
+      expect(set.size).assertEqual(3);
+      set.add(null);
+      set.add(undefined);
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testSetAdd055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5500
+     * @tc.desc Verify delete from Set of Item017 pipe null removes null correctly
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017 | null>();
+      let item = new Item017(1);
+      set.add(item);
+      set.add(null);
+      set.delete(null);
+      expect(set.size).assertEqual(1);
+      expect(set.has(null)).assertFalse();
+      expect(set.has(item)).assertTrue();
+    });
   });
 }
