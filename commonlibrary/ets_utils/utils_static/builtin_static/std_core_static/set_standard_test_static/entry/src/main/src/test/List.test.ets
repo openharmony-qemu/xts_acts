@@ -24,7 +24,7 @@ import SetDeleteTest from "./set/SetDeleteTest.test";
 import SetEntriesTest from "./set/SetEntriesTest.test";
 import SetForEachTest from "./set/SetForEachTest.test";
 import SetHasTest from "./set/SetHasTest.test";
-import SetIteratorTest from "./set/SetIteratorTest.test";
+import SetIteratorTest from "./setIterator/SetIteratorTest.test";
 import SetKeysTest from "./set/SetKeysTest.test";
 import SetSizeTest from "./set/SetSizeTest.test";
 import SetValuesTest from "./set/SetValuesTest.test";
@@ -34,8 +34,8 @@ import ReadonlySetHasTest from "./readonlySet/ReadonlySetHasTest.test";
 import ReadonlySetKeysTest from "./readonlySet/ReadonlySetKeysTest.test";
 import ReadonlySetSizeTest from "./readonlySet/ReadonlySetSizeTest.test";
 import ReadonlySetValuesTest from "./readonlySet/ReadonlySetValuesTest.test";
-import SetIteratorDollarIteratorTest from "./set/SetIteratorDollarIteratorTest.test";
-import SetIteratorNextTest from "./set/SetIteratorNextTest.test";
+import SetIteratorDollarIteratorTest from "./setIterator/SetIteratorDollarIteratorTest.test";
+import SetIteratorNextTest from "./setIterator/SetIteratorNextTest.test";
 
 
 export default function testsuite(): void {
