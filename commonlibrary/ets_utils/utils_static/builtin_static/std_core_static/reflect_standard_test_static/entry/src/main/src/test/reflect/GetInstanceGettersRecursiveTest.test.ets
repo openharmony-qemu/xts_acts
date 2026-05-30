@@ -555,7 +555,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0100
      * @tc.name testGetInstanceGettersRecursive001
-     * @tc.desc Verify required targetClass parameter
+     * @tc.desc Verify GetInstanceGettersRecursive case 001: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -571,7 +571,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0200
      * @tc.name testGetInstanceGettersRecursive002
-     * @tc.desc Verify Class.from<T>() returns getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 002: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -587,7 +587,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0300
      * @tc.name testGetInstanceGettersRecursive003
-     * @tc.desc Verify Class.of(obj) returns getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 003: Class.of(instance), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -603,7 +603,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0400
      * @tc.name testGetInstanceGettersRecursive004
-     * @tc.desc Verify Class.ofAny(obj) returns getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 004: getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -623,7 +623,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0500
      * @tc.name testGetInstanceGettersRecursive005
-     * @tc.desc Verify primitive type class returns empty result
+     * @tc.desc Verify GetInstanceGettersRecursive case 005: Class.from<int>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -638,7 +638,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0600
      * @tc.name testGetInstanceGettersRecursive006
-     * @tc.desc Verify Class.PRIMITIVE_INT returns empty result
+     * @tc.desc Verify GetInstanceGettersRecursive case 006: getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -652,7 +652,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0700
      * @tc.name testGetInstanceGettersRecursive007
-     * @tc.desc Verify null Class argument throws ClassCastError
+     * @tc.desc Verify GetInstanceGettersRecursive case 007: invalid input throws ClassCastError, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -670,7 +670,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0800
      * @tc.name testGetInstanceGettersRecursive008
-     * @tc.desc Verify undefined Class argument throws ClassCastError
+     * @tc.desc Verify GetInstanceGettersRecursive case 008: invalid input throws ClassCastError, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_0900
      * @tc.name testGetInstanceGettersRecursive009
-     * @tc.desc Verify non-Class object is rejected
+     * @tc.desc Verify GetInstanceGettersRecursive case 009: invalid input throws ClassCastError, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -706,7 +706,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1000
      * @tc.name testGetInstanceGettersRecursive010
-     * @tc.desc Verify number value is rejected
+     * @tc.desc Verify GetInstanceGettersRecursive case 010: invalid input throws ClassCastError, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -725,7 +725,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1100
      * @tc.name testGetInstanceGettersRecursive011
-     * @tc.desc Verify string value is rejected
+     * @tc.desc Verify GetInstanceGettersRecursive case 011: invalid input throws ClassCastError, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -744,7 +744,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1200
      * @tc.name testGetInstanceGettersRecursive012
-     * @tc.desc Verify ChildGetterClass returns two inherited getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 012: Class.from<ChildGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -769,7 +769,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1300
      * @tc.name testGetInstanceGettersRecursive013
-     * @tc.desc Verify empty array result for class without getter
+     * @tc.desc Verify GetInstanceGettersRecursive case 013: Class.from<NoGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -784,7 +784,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1400
      * @tc.name testGetInstanceGettersRecursive014
-     * @tc.desc Verify parent getters are included
+     * @tc.desc Verify GetInstanceGettersRecursive case 014: Class.from<MyGetterHierarchyClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -800,7 +800,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1500
      * @tc.name testGetInstanceGettersRecursive015
-     * @tc.desc Verify repeated calls return independent arrays
+     * @tc.desc Verify GetInstanceGettersRecursive case 015: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -816,7 +816,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1600
      * @tc.name testGetInstanceGettersRecursive016
-     * @tc.desc Verify getter order is preserved
+     * @tc.desc Verify GetInstanceGettersRecursive case 016: Class.from<ParentGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -832,7 +832,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1700
      * @tc.name testGetInstanceGettersRecursive017
-     * @tc.desc Verify return value is an object array
+     * @tc.desc Verify GetInstanceGettersRecursive case 017: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -846,7 +846,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1800
      * @tc.name testGetInstanceGettersRecursive018
-     * @tc.desc Verify array elements expose getter metadata methods
+     * @tc.desc Verify GetInstanceGettersRecursive case 018: Class.from<BasicGetterClass>(), getName returns "%%get-name", getInstanceGettersRecursive result verified, invoke behavior verified, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -871,7 +871,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_1900
      * @tc.name testGetInstanceGettersRecursive019
-     * @tc.desc Verify isGetter returns true
+     * @tc.desc Verify GetInstanceGettersRecursive case 019: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -886,7 +886,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2000
      * @tc.name testGetInstanceGettersRecursive020
-     * @tc.desc Verify only parent getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 020: Class.from<BaseGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -901,7 +901,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2100
      * @tc.name testGetInstanceGettersRecursive021
-     * @tc.desc Verify only child getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 021: Class.from<ChildOnlyGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -916,7 +916,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2200
      * @tc.name testGetInstanceGettersRecursive022
-     * @tc.desc Verify classes without getters return empty arrays
+     * @tc.desc Verify GetInstanceGettersRecursive case 022: Class.from<OnlySetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -931,7 +931,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2300
      * @tc.name testGetInstanceGettersRecursive023
-     * @tc.desc Verify three-level inheritance getters are collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 023: Class.from<DeepGetterLevel3>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -948,7 +948,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2400
      * @tc.name testGetInstanceGettersRecursive024
-     * @tc.desc Verify middle layer without getter is skipped
+     * @tc.desc Verify GetInstanceGettersRecursive case 024: Class.from<SkipMiddleGetterL3>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -977,7 +977,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2500
      * @tc.name testGetInstanceGettersRecursive025
-     * @tc.desc Verify deep inheritance chain getters are collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 025: Class.from<DeepGetterLevel5>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1014,7 +1014,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2600
      * @tc.name testGetInstanceGettersRecursive026
-     * @tc.desc Verify overriding getter returns base and derived entries
+     * @tc.desc Verify GetInstanceGettersRecursive case 026: Class.from<OverrideDerivedClass>(), getInstanceGettersRecursive result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1032,7 +1032,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2700
      * @tc.name testGetInstanceGettersRecursive027
-     * @tc.desc Verify covariant override returns base and derived getter entries
+     * @tc.desc Verify GetInstanceGettersRecursive case 027: Class.from<OverrideDerivedClass>(), getInstanceGettersRecursive result verified, return type verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1050,7 +1050,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2800
      * @tc.name testGetInstanceGettersRecursive028
-     * @tc.desc Verify parent getter owner metadata is preserved
+     * @tc.desc Verify GetInstanceGettersRecursive case 028: Class.from<GrandParentGetterClass>(), getInstanceGettersRecursive result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1065,7 +1065,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_2900
      * @tc.name testGetInstanceGettersRecursive029
-     * @tc.desc Verify only public getters are returned
+     * @tc.desc Verify GetInstanceGettersRecursive case 029: Class.from<PublicGetterClass>(), getInstanceGettersRecursive result verified, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1081,7 +1081,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3000
      * @tc.name testGetInstanceGettersRecursive030
-     * @tc.desc Verify protected getters are not returned
+     * @tc.desc Verify GetInstanceGettersRecursive case 030: Class.from<ProtectedGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1096,7 +1096,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3100
      * @tc.name testGetInstanceGettersRecursive031
-     * @tc.desc Verify private getters are not returned
+     * @tc.desc Verify GetInstanceGettersRecursive case 031: Class.from<PrivateGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1111,7 +1111,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3200
      * @tc.name testGetInstanceGettersRecursive032
-     * @tc.desc Verify getters and ordinary methods are separated
+     * @tc.desc Verify GetInstanceGettersRecursive case 032: Class.from<MixedMethodClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1127,7 +1127,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3300
      * @tc.name testGetInstanceGettersRecursive033
-     * @tc.desc Verify getter and setter coexist as one getter entry
+     * @tc.desc Verify GetInstanceGettersRecursive case 033: Class.from<GetterSetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1143,7 +1143,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3400
      * @tc.name testGetInstanceGettersRecursive034
-     * @tc.desc Verify interface properties are exposed as instance getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 034: Class.from<MyInterface>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1169,7 +1169,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3500
      * @tc.name testGetInstanceGettersRecursive035
-     * @tc.desc Verify abstract class getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 035: Class.from<AbstractGetterImpl>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1190,7 +1190,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3600
      * @tc.name testGetInstanceGettersRecursive036
-     * @tc.desc Verify abstract getter can be reflected
+     * @tc.desc Verify GetInstanceGettersRecursive case 036: Class.from<AbstractGetterImpl>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1207,7 +1207,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3700
      * @tc.name testGetInstanceGettersRecursive037
-     * @tc.desc Verify generic class getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 037: Class.from<GenericGetterClass<string>>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1222,7 +1222,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3800
      * @tc.name testGetInstanceGettersRecursive038
-     * @tc.desc Verify multiple generic parameter getters are collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 038: Class.from<PairGetterClass<string, int>>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1238,7 +1238,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_3900
      * @tc.name testGetInstanceGettersRecursive039
-     * @tc.desc Verify final class getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 039: Class.from<FinalGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1253,7 +1253,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4000
      * @tc.name testGetInstanceGettersRecursive040
-     * @tc.desc Verify enum types have no getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 040: Class.from<Color>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1268,7 +1268,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4100
      * @tc.name testGetInstanceGettersRecursive041
-     * @tc.desc Verify implementing class getter is collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 041: Class.from<InterfaceImplClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1289,7 +1289,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4200
      * @tc.name testGetInstanceGettersRecursive042
-     * @tc.desc Verify union type class has no getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 042: Class.from<int | string>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1304,7 +1304,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4300
      * @tc.name testGetInstanceGettersRecursive043
-     * @tc.desc Verify Array type has built-in instance getters and Class metadata
+     * @tc.desc Verify GetInstanceGettersRecursive case 043: Class.from<Array<int>>(), isFixedArray returns false, getName returns "std.core.Array", getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1322,7 +1322,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4400
      * @tc.name testGetInstanceGettersRecursive044
-     * @tc.desc Verify fixed-size array type class has no instance getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 044: Class.from<FixedArray<int>>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1337,7 +1337,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4500
      * @tc.name testGetInstanceGettersRecursive045
-     * @tc.desc Verify Map type has built-in instance getters and Class metadata
+     * @tc.desc Verify GetInstanceGettersRecursive case 045: Class.from<Map<string, int>>(), isInterface returns false, getName returns "std.core.Map", getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1355,7 +1355,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4600
      * @tc.name testGetInstanceGettersRecursive046
-     * @tc.desc Verify Set type has built-in instance getters and Class metadata
+     * @tc.desc Verify GetInstanceGettersRecursive case 046: Class.from<Set<string>>(), isEnum returns false, getName returns "std.core.Set", getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1373,7 +1373,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4700
      * @tc.name testGetInstanceGettersRecursive047
-     * @tc.desc Verify string getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 047: Class.from<StringGetterClass>(), getInstanceGettersRecursive result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1388,7 +1388,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4800
      * @tc.name testGetInstanceGettersRecursive048
-     * @tc.desc Verify int getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 048: Class.from<IntGetterClass>(), getInstanceGettersRecursive result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1403,7 +1403,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_4900
      * @tc.name testGetInstanceGettersRecursive049
-     * @tc.desc Verify boolean getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 049: Class.from<BooleanGetterClass>(), getInstanceGettersRecursive result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1418,7 +1418,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5000
      * @tc.name testGetInstanceGettersRecursive050
-     * @tc.desc Verify float getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 050: Class.from<FloatGetterClass>(), getInstanceGettersRecursive result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1433,7 +1433,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5100
      * @tc.name testGetInstanceGettersRecursive051
-     * @tc.desc Verify Array getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 051: Class.from<ArrayGetterClass>(), getInstanceGettersRecursive result verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1449,7 +1449,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5200
      * @tc.name testGetInstanceGettersRecursive052
-     * @tc.desc Verify custom type getter return type
+     * @tc.desc Verify GetInstanceGettersRecursive case 052: Class.from<CustomTypeGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1464,7 +1464,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5300
      * @tc.name testGetInstanceGettersRecursive053
-     * @tc.desc Verify getter parameter count is zero
+     * @tc.desc Verify GetInstanceGettersRecursive case 053: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1478,7 +1478,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5400
      * @tc.name testGetInstanceGettersRecursive054
-     * @tc.desc Verify getter parameter types are empty
+     * @tc.desc Verify GetInstanceGettersRecursive case 054: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1492,7 +1492,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5500
      * @tc.name testGetInstanceGettersRecursive055
-     * @tc.desc Verify many getters are collected
+     * @tc.desc Verify GetInstanceGettersRecursive case 055: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1504,7 +1504,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5600
      * @tc.name testGetInstanceGettersRecursive056
-     * @tc.desc Verify final getter is marked final
+     * @tc.desc Verify GetInstanceGettersRecursive case 056: Class.from<FinalMethodClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1519,7 +1519,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5700
      * @tc.name testGetInstanceGettersRecursive057
-     * @tc.desc Verify static getters are excluded
+     * @tc.desc Verify GetInstanceGettersRecursive case 057: Class.from<StaticGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1534,7 +1534,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5800
      * @tc.name testGetInstanceGettersRecursive058
-     * @tc.desc Verify computed getter has no backing field requirement
+     * @tc.desc Verify GetInstanceGettersRecursive case 058: Class.from<ComputedGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1549,7 +1549,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_5900
      * @tc.name testGetInstanceGettersRecursive059
-     * @tc.desc Verify invoke reads getter value
+     * @tc.desc Verify GetInstanceGettersRecursive case 059: Class.from<InvokeGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1567,7 +1567,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6000
      * @tc.name testGetInstanceGettersRecursive060
-     * @tc.desc Verify incompatible invoke throws an error
+     * @tc.desc Verify GetInstanceGettersRecursive case 060: invalid input throws TypeError, Class.from<InvokeGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1584,7 +1584,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6100
      * @tc.name testGetInstanceGettersRecursive061
-     * @tc.desc Verify invoke does not require explicit args
+     * @tc.desc Verify GetInstanceGettersRecursive case 061: Class.from<InvokeGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1602,7 +1602,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6200
      * @tc.name testGetInstanceGettersRecursive062
-     * @tc.desc Verify same getter instances are equal
+     * @tc.desc Verify GetInstanceGettersRecursive case 062: Class.from<BasicGetterClass>(), getInstanceGettersRecursive result verified, equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1618,7 +1618,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6300
      * @tc.name testGetInstanceGettersRecursive063
-     * @tc.desc Verify different getters are not equal
+     * @tc.desc Verify GetInstanceGettersRecursive case 063: Class.from<DynamicGetterClass>(), getInstanceGettersRecursive result verified, equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1633,7 +1633,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6400
      * @tc.name testGetInstanceGettersRecursive064
-     * @tc.desc Verify property names can be serialized from getters
+     * @tc.desc Verify GetInstanceGettersRecursive case 064: Class.from<SerializableGetterClass>(), getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1663,7 +1663,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6500
      * @tc.name testGetInstanceGettersRecursive065
-     * @tc.desc Verify getter owner metadata is correct
+     * @tc.desc Verify GetInstanceGettersRecursive case 065: Class.from<InterfaceImplClass>(), getInstanceGettersRecursive result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1684,7 +1684,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6600
      * @tc.name testGetInstanceGettersRecursive066
-     * @tc.desc Verify all getters can be invoked dynamically
+     * @tc.desc Verify GetInstanceGettersRecursive case 066: Class.of(instance), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1715,7 +1715,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6700
      * @tc.name testGetInstanceGettersRecursive067
-     * @tc.desc Verify getters and fields are collected separately
+     * @tc.desc Verify GetInstanceGettersRecursive case 067: Class.from<BasicGetterClass>(), instance fields result verified, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1732,7 +1732,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6800
      * @tc.name testGetInstanceGettersRecursive068
-     * @tc.desc Verify getter-based serialization collects readable properties
+     * @tc.desc Verify GetInstanceGettersRecursive case 068: Class.from<SerializableGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1756,7 +1756,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_6900
      * @tc.name testGetInstanceGettersRecursive069
-     * @tc.desc Verify invoke with null target throws ClassCastError
+     * @tc.desc Verify GetInstanceGettersRecursive case 069: invalid input throws ClassCastError, Class.from<InvokeGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1775,7 +1775,7 @@ export default function GetInstanceGettersRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_GETTERS_RECURSIVE_7000
      * @tc.name testGetInstanceGettersRecursive070
-     * @tc.desc Verify invoke with undefined target throws ClassCastError
+     * @tc.desc Verify GetInstanceGettersRecursive case 070: invalid input throws ClassCastError, Class.from<InvokeGetterClass>(), getInstanceGettersRecursive result verified, invoke behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

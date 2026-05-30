@@ -170,7 +170,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0100
      * @tc.name testClassIsLiteralInitializedInterface001
-     * @tc.desc Verify isLiteralInitializedInterface case 001: empty interface object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 001: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,7 +183,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0200
      * @tc.name testClassIsLiteralInitializedInterface002
-     * @tc.desc Verify isLiteralInitializedInterface case 002: optional property interface literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 002: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -196,7 +196,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0300
      * @tc.name testClassIsLiteralInitializedInterface003
-     * @tc.desc Verify isLiteralInitializedInterface case 003: single property object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 003: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -209,7 +209,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0400
      * @tc.name testClassIsLiteralInitializedInterface004
-     * @tc.desc Verify isLiteralInitializedInterface case 004: multi property object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 004: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -222,7 +222,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0500
      * @tc.name testClassIsLiteralInitializedInterface005
-     * @tc.desc Verify isLiteralInitializedInterface case 005: nested object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 005: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -235,7 +235,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0600
      * @tc.name testClassIsLiteralInitializedInterface006
-     * @tc.desc Verify isLiteralInitializedInterface case 006: optional property object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 006: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -250,7 +250,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0700
      * @tc.name testClassIsLiteralInitializedInterface007
-     * @tc.desc Verify isLiteralInitializedInterface case 007: class literal initialization
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 007: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -263,7 +263,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0800
      * @tc.name testClassIsLiteralInitializedInterface008
-     * @tc.desc Verify isLiteralInitializedInterface case 008: implemented interface class literal initialization
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 008: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -276,7 +276,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_0900
      * @tc.name testClassIsLiteralInitializedInterface009
-     * @tc.desc Verify isLiteralInitializedInterface case 009: new instance as interface
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 009: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -289,7 +289,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1000
      * @tc.name testClassIsLiteralInitializedInterface010
-     * @tc.desc Verify isLiteralInitializedInterface case 010: new class instance
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 010: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +302,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1100
      * @tc.name testClassIsLiteralInitializedInterface011
-     * @tc.desc Verify isLiteralInitializedInterface case 011: constructor instance with arguments
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 011: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -315,7 +315,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1200
      * @tc.name testClassIsLiteralInitializedInterface012
-     * @tc.desc Verify isLiteralInitializedInterface case 012: null cast throws ClassCastError
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 012: invalid input throws ClassCastError, isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1300
      * @tc.name testClassIsLiteralInitializedInterface013
-     * @tc.desc Verify isLiteralInitializedInterface case 013: undefined cast throws ClassCastError
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 013: invalid input throws ClassCastError, isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -351,7 +351,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1400
      * @tc.name testClassIsLiteralInitializedInterface014
-     * @tc.desc Verify isLiteralInitializedInterface case 014: array object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 014: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -364,7 +364,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1500
      * @tc.name testClassIsLiteralInitializedInterface015
-     * @tc.desc Verify isLiteralInitializedInterface case 015: function object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 015: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -378,7 +378,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1600
      * @tc.name testClassIsLiteralInitializedInterface016
-     * @tc.desc Verify isLiteralInitializedInterface case 016: Map object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 016: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +391,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1700
      * @tc.name testClassIsLiteralInitializedInterface017
-     * @tc.desc Verify isLiteralInitializedInterface case 017: Set object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 017: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -404,7 +404,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1800
      * @tc.name testClassIsLiteralInitializedInterface018
-     * @tc.desc Verify isLiteralInitializedInterface case 018: number object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 018: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +416,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_1900
      * @tc.name testClassIsLiteralInitializedInterface019
-     * @tc.desc Verify isLiteralInitializedInterface case 019: string object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 019: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -428,7 +428,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2000
      * @tc.name testClassIsLiteralInitializedInterface020
-     * @tc.desc Verify isLiteralInitializedInterface case 020: boolean object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 020: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -440,7 +440,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2100
      * @tc.name testClassIsLiteralInitializedInterface021
-     * @tc.desc Verify isLiteralInitializedInterface case 021: return type boolean with true
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 021: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -454,7 +454,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2200
      * @tc.name testClassIsLiteralInitializedInterface022
-     * @tc.desc Verify isLiteralInitializedInterface case 022: return type boolean with false
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 022: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,7 +468,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2300
      * @tc.name testClassIsLiteralInitializedInterface023
-     * @tc.desc Verify isLiteralInitializedInterface case 023: return value type boolean
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 023: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -482,7 +482,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2400
      * @tc.name testClassIsLiteralInitializedInterface024
-     * @tc.desc Verify isLiteralInitializedInterface case 024: literal true and class instance false
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 024: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -499,7 +499,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2500
      * @tc.name testClassIsLiteralInitializedInterface025
-     * @tc.desc Verify isLiteralInitializedInterface case 025: repeated calls on same object
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 025: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -515,7 +515,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2600
      * @tc.name testClassIsLiteralInitializedInterface026
-     * @tc.desc Verify isLiteralInitializedInterface case 026: derived interface object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 026: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -528,7 +528,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2700
      * @tc.name testClassIsLiteralInitializedInterface027
-     * @tc.desc Verify isLiteralInitializedInterface case 027: derived interface class instance
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 027: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -541,7 +541,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2800
      * @tc.name testClassIsLiteralInitializedInterface028
-     * @tc.desc Verify isLiteralInitializedInterface case 028: union interface object literal
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 028: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -554,7 +554,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_2900
      * @tc.name testClassIsLiteralInitializedInterface029
-     * @tc.desc Verify isLiteralInitializedInterface case 029: service scenario
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 029: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -567,7 +567,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_3000
      * @tc.name testClassIsLiteralInitializedInterface030
-     * @tc.desc Verify isLiteralInitializedInterface case 030: config scenario
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 030: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -581,7 +581,7 @@ export default function ClassIsLiteralInitializedInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_LITERAL_INITIALIZED_INTERFACE_3100
      * @tc.name testClassIsLiteralInitializedInterface031
-     * @tc.desc Verify isLiteralInitializedInterface case 031: bulk object detection
+     * @tc.desc Verify ClassIsLiteralInitializedInterface case 031: isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

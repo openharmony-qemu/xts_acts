@@ -266,7 +266,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0100
      * @tc.name testGetInstanceFieldsRecursive001
-     * @tc.desc Verify required targetClass parameter returns Field array
+     * @tc.desc Verify GetInstanceFieldsRecursive case 001: Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -281,7 +281,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0200
      * @tc.name testGetInstanceFieldsRecursive002
-     * @tc.desc Verify empty result for a class without instance fields
+     * @tc.desc Verify GetInstanceFieldsRecursive case 002: Class.from<NoFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -296,7 +296,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0300
      * @tc.name testGetInstanceFieldsRecursive003
-     * @tc.desc Verify single public instance field is returned
+     * @tc.desc Verify GetInstanceFieldsRecursive case 003: Class.of(instance), instance fields result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -313,7 +313,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0400
      * @tc.name testGetInstanceFieldsRecursive004
-     * @tc.desc Verify multiple public fields are returned
+     * @tc.desc Verify GetInstanceFieldsRecursive case 004: Class.from<MixedTypeFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0500
      * @tc.name testGetInstanceFieldsRecursive005
-     * @tc.desc Verify fields with different data types are returned
+     * @tc.desc Verify GetInstanceFieldsRecursive case 005: Class.from<MixedTypeFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -385,7 +385,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0600
      * @tc.name testGetInstanceFieldsRecursive006
-     * @tc.desc Verify fields with default values are returned
+     * @tc.desc Verify GetInstanceFieldsRecursive case 006: Class.from<DefaultValueFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -415,7 +415,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0700
      * @tc.name testGetInstanceFieldsRecursive007
-     * @tc.desc Verify readonly fields are present in recursive results
+     * @tc.desc Verify GetInstanceFieldsRecursive case 007: Class.from<ReadonlyFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -437,7 +437,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0800
      * @tc.name testGetInstanceFieldsRecursive008
-     * @tc.desc Verify inherited fields are collected recursively
+     * @tc.desc Verify GetInstanceFieldsRecursive case 008: Class.from<SingleInheritanceChildClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -463,7 +463,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_0900
      * @tc.name testGetInstanceFieldsRecursive009
-     * @tc.desc Verify multi-level inheritance fields are collected recursively
+     * @tc.desc Verify GetInstanceFieldsRecursive case 009: Class.from<DerivedFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -493,7 +493,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1000
      * @tc.name testGetInstanceFieldsRecursive010
-     * @tc.desc Verify shadowed field name returns single field; owner is base declaring class
+     * @tc.desc Verify GetInstanceFieldsRecursive case 010: Class.from<ShadowDerivedClass>(), instance fields result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -515,7 +515,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1100
      * @tc.name testGetInstanceFieldsRecursive011
-     * @tc.desc Verify only public fields are returned
+     * @tc.desc Verify GetInstanceFieldsRecursive case 011: Class.from<MixedAccessClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -537,7 +537,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1200
      * @tc.name testGetInstanceFieldsRecursive012
-     * @tc.desc Verify private fields are excluded from results
+     * @tc.desc Verify GetInstanceFieldsRecursive case 012: Class.from<PrivateFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -559,7 +559,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1300
      * @tc.name testGetInstanceFieldsRecursive013
-     * @tc.desc Verify protected fields are excluded from results
+     * @tc.desc Verify GetInstanceFieldsRecursive case 013: Class.from<ProtectedFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -581,7 +581,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1400
      * @tc.name testGetInstanceFieldsRecursive014
-     * @tc.desc Verify interface types have no instance fields
+     * @tc.desc Verify GetInstanceFieldsRecursive case 014: Class.from<EmptyFieldInterface>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +596,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1500
      * @tc.name testGetInstanceFieldsRecursive015
-     * @tc.desc Verify generic class fields are returned recursively
+     * @tc.desc Verify GetInstanceFieldsRecursive case 015: Class.from<GenericFieldClass<string>>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -622,7 +622,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1600
      * @tc.name testGetInstanceFieldsRecursive016
-     * @tc.desc Verify abstract class fields are returned recursively
+     * @tc.desc Verify GetInstanceFieldsRecursive case 016: Class.from<AbstractFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -644,7 +644,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1700
      * @tc.name testGetInstanceFieldsRecursive017
-     * @tc.desc Verify static fields are not returned by instance field recursion
+     * @tc.desc Verify GetInstanceFieldsRecursive case 017: Class.from<StaticFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -666,7 +666,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1800
      * @tc.name testGetInstanceFieldsRecursive018
-     * @tc.desc Verify null argument is rejected
+     * @tc.desc Verify GetInstanceFieldsRecursive case 018: invalid input throws ClassCastError, instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -684,7 +684,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_1900
      * @tc.name testGetInstanceFieldsRecursive019
-     * @tc.desc Verify undefined argument is rejected
+     * @tc.desc Verify GetInstanceFieldsRecursive case 019: invalid input throws ClassCastError, instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -702,7 +702,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2000
      * @tc.name testGetInstanceFieldsRecursive020
-     * @tc.desc Verify non-Class object is rejected
+     * @tc.desc Verify GetInstanceFieldsRecursive case 020: invalid input throws ClassCastError, instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -720,7 +720,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2100
      * @tc.name testGetInstanceFieldsRecursive021
-     * @tc.desc Verify number argument is rejected
+     * @tc.desc Verify GetInstanceFieldsRecursive case 021: invalid input throws ClassCastError, instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -739,7 +739,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2200
      * @tc.name testGetInstanceFieldsRecursive022
-     * @tc.desc Verify string argument is rejected
+     * @tc.desc Verify GetInstanceFieldsRecursive case 022: invalid input throws ClassCastError, instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -758,7 +758,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2300
      * @tc.name testGetInstanceFieldsRecursive023
-     * @tc.desc Verify parent class fields are included in the result
+     * @tc.desc Verify GetInstanceFieldsRecursive case 023: Class.from<SingleInheritanceChildClass>(), instance fields result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -778,7 +778,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2400
      * @tc.name testGetInstanceFieldsRecursive024
-     * @tc.desc Verify repeated calls return independent arrays
+     * @tc.desc Verify GetInstanceFieldsRecursive case 024: Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -795,7 +795,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2500
      * @tc.name testGetInstanceFieldsRecursive025
-     * @tc.desc Verify getters are not included in instance field results
+     * @tc.desc Verify GetInstanceFieldsRecursive case 025: Class.from<GetterSeparatedClass>(), instance fields result verified, getInstanceGettersRecursive result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -813,7 +813,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2600
      * @tc.name testGetInstanceFieldsRecursive026
-     * @tc.desc Verify returned value is an object array
+     * @tc.desc Verify GetInstanceFieldsRecursive case 026: Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -828,7 +828,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2700
      * @tc.name testGetInstanceFieldsRecursive027
-     * @tc.desc Verify array elements expose field metadata methods
+     * @tc.desc Verify GetInstanceFieldsRecursive case 027: Class.from<BasicFieldClass>(), getName returns "name", instance fields result verified, owner Class verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -846,7 +846,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2800
      * @tc.name testGetInstanceFieldsRecursive028
-     * @tc.desc Verify field access modifiers and isReadonly flag
+     * @tc.desc Verify GetInstanceFieldsRecursive case 028: Class.from<ReadonlyFieldClass>(), instance fields result verified, isPrivate flag verified, isProtected flag verified, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -871,7 +871,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_2900
      * @tc.name testGetInstanceFieldsRecursive029
-     * @tc.desc Verify getValue with null target throws ClassCastError
+     * @tc.desc Verify GetInstanceFieldsRecursive case 029: invalid input throws ClassCastError, Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -891,7 +891,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3000
      * @tc.name testGetInstanceFieldsRecursive030
-     * @tc.desc Verify getValue with undefined target throws ClassCastError
+     * @tc.desc Verify GetInstanceFieldsRecursive case 030: invalid input throws ClassCastError, Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -911,7 +911,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3100
      * @tc.name testGetInstanceFieldsRecursive031
-     * @tc.desc Verify deep inheritance chains are collected recursively
+     * @tc.desc Verify GetInstanceFieldsRecursive case 031: Class.from<DeepLevel5>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -949,7 +949,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3200
      * @tc.name testGetInstanceFieldsRecursive032
-     * @tc.desc Verify classes with many fields are processed correctly
+     * @tc.desc Verify GetInstanceFieldsRecursive case 032: Class.from<ManyFieldsClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1007,7 +1007,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3300
      * @tc.name testGetInstanceFieldsRecursive033
-     * @tc.desc Verify reflection can collect all user fields
+     * @tc.desc Verify GetInstanceFieldsRecursive case 033: Class.from<SceneUser>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1041,7 +1041,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3400
      * @tc.name testGetInstanceFieldsRecursive034
-     * @tc.desc Verify derived class lists baseProp and derivedProp field names
+     * @tc.desc Verify GetInstanceFieldsRecursive case 034: Class.from<SceneDerivedClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1066,7 +1066,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3500
      * @tc.name testGetInstanceFieldsRecursive035
-     * @tc.desc Verify fields can be read and written through reflection
+     * @tc.desc Verify GetInstanceFieldsRecursive case 035: Class.from<DynamicClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1110,7 +1110,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3600
      * @tc.name testGetInstanceFieldsRecursive036
-     * @tc.desc Verify field type metadata can be queried
+     * @tc.desc Verify GetInstanceFieldsRecursive case 036: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1122,7 +1122,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3700
      * @tc.name testGetInstanceFieldsRecursive037
-     * @tc.desc Verify readonly fields are protected from mutation
+     * @tc.desc Verify GetInstanceFieldsRecursive case 037: invalid input throws TypeError, Class.from<ReadonlyGuardClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1150,7 +1150,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3800
      * @tc.name testGetInstanceFieldsRecursive038
-     * @tc.desc Verify repeated field lookup remains stable
+     * @tc.desc Verify GetInstanceFieldsRecursive case 038: Class.from<BasicFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1166,7 +1166,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_3900
      * @tc.name testGetInstanceFieldsRecursive039
-     * @tc.desc Verify isPublic, isPrivate, and isProtected on public fields
+     * @tc.desc Verify GetInstanceFieldsRecursive case 039: Class.from<BasicFieldClass>(), instance fields result verified, isPrivate flag verified, isProtected flag verified, isPublic flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1183,7 +1183,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4000
      * @tc.name testGetInstanceFieldsRecursive040
-     * @tc.desc Verify getOwner returns the declaring class
+     * @tc.desc Verify GetInstanceFieldsRecursive case 040: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1195,7 +1195,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4100
      * @tc.name testGetInstanceFieldsRecursive041
-     * @tc.desc Verify readonly field mutation throws an error
+     * @tc.desc Verify GetInstanceFieldsRecursive case 041: invalid input throws TypeError, Class.from<ReadonlyFieldClass>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1222,7 +1222,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4200
      * @tc.name testGetInstanceFieldsRecursive042
-     * @tc.desc Verify field metadata objects support equals
+     * @tc.desc Verify GetInstanceFieldsRecursive case 042: Class.from<BasicFieldClass>(), instance fields result verified, equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1238,7 +1238,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4300
      * @tc.name testGetInstanceFieldsRecursive043
-     * @tc.desc Verify Class.ofAny(obj) returns instance fields
+     * @tc.desc Verify GetInstanceFieldsRecursive case 043: instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1258,7 +1258,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4400
      * @tc.name testGetInstanceFieldsRecursive044
-     * @tc.desc Verify primitive type class returns empty result
+     * @tc.desc Verify GetInstanceFieldsRecursive case 044: Class.from<int>(), instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1273,7 +1273,7 @@ export default function GetInstanceFieldsRecursiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_GET_INSTANCE_FIELDS_RECURSIVE_4500
      * @tc.name testGetInstanceFieldsRecursive045
-     * @tc.desc Verify Class.PRIMITIVE_INT returns empty result
+     * @tc.desc Verify GetInstanceFieldsRecursive case 045: instance fields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
