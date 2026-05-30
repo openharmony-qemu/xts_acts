@@ -220,6 +220,7 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache();
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
       } catch (e) {
@@ -240,6 +241,7 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
       } catch (e) {
@@ -260,6 +262,7 @@ export default function changeDatetest() {
     it('test_CloudFileCache_getCachedTotalSize_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       try {
         let fileCache = new cloudSync.CloudFileCache('com.ohos.demo');
+		await fileCache.cleanFileCache();
         let size = await fileCache.getCachedTotalSize()
         expect(size == 0).assertTrue();
         await fileCache.cleanFileCache()
