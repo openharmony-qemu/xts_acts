@@ -65,7 +65,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       let result = set.delete(2);
       expect(result).assertTrue();
     });
@@ -406,7 +406,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3, 4, 5]);
+      let set = new Set<long>([1, 2, 3, 4, 5]);
       let r1 = set.delete(1);
       expect(r1).assertTrue();
       let r2 = set.delete(5);
@@ -440,7 +440,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
+      let set = new Set<long>();
       let result = set.delete(1);
       expect(result).assertFalse();
       expect(set.size).assertEqual(0);
@@ -455,10 +455,10 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      let result1 = set.delete(2);
+      let set = new Set<double>([1.0, 2.0, 3.0]);
+      let result1 = set.delete(2.0);
       expect(result1).assertTrue();
-      let result2 = set.delete(2);
+      let result2 = set.delete(2.0);
       expect(result2).assertFalse();
     });
 
@@ -471,8 +471,8 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([42]);
-      let result = set.delete(42);
+      let set = new Set<double>([42.0]);
+      let result = set.delete(42.0);
       expect(result).assertTrue();
       expect(set.size).assertEqual(0);
     });
@@ -486,11 +486,11 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
-      set.delete(1);
-      set.add(1);
+      let set = new Set<double>([1.0, 2.0]);
+      set.delete(1.0);
+      set.add(1.0);
       expect(set.size).assertEqual(2);
-      expect(set.has(1)).assertTrue();
+      expect(set.has(1.0)).assertTrue();
       expect(set.has(2)).assertTrue();
     });
 
@@ -503,7 +503,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       let result = set.delete(2);
       let type: string = typeof result;
       expect(type).assertEqual("boolean");
@@ -546,7 +546,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       let oldSize = set.size;
       let result = set.delete(2);
       expect(result).assertTrue();
@@ -562,9 +562,9 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      set.delete(2);
-      expect(set.has(2)).assertFalse();
+      let set = new Set<float>([1.0, 2.0, 3.0]);
+      set.delete(2.0);
+      expect(set.has(2.0)).assertFalse();
     });
 
     /**
@@ -591,10 +591,10 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       set.delete(2);
-      let arr: int[] = [];
-      set.forEach((value: int): void => {
+      let arr: long[] = [];
+      set.forEach((value: long): void => {
         arr.push(value);
       });
       expect(arr.indexOf(2)).assertEqual(-1);
@@ -610,7 +610,7 @@ export default function SetDeleteTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetDelete036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3, 4]);
+      let set = new Set<long>([1, 2, 3, 4]);
       expect(set.delete(1)).assertTrue();
       expect(set.delete(3)).assertTrue();
       expect(set.size).assertEqual(2);

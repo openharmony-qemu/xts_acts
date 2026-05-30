@@ -63,7 +63,7 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
     });
@@ -94,7 +94,7 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
+      const set: ReadonlySet<long> = new Set<long>([10, 20, 30]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(10);
       expect(iter.next().value).assertEqual(20);
@@ -111,8 +111,8 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      const result: int[] = [];
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
+      const result: long[] = [];
       for (const v of set.values()) {
         result.push(v);
       }
@@ -130,12 +130,12 @@ export default function ReadonlySetValuesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([100]);
+      const set: ReadonlySet<double> = new Set<double>([100.0]);
       const iter = set.values();
       const first = iter.next();
       let type: string = typeof first.done;
       expect(type).assertEqual("boolean");
-      expect(first.value).assertEqual(100);
+      expect(first.value).assertEqual(100.0);
       expect(first.done).assertFalse();
       const second = iter.next();
       expect(second.done).assertTrue();

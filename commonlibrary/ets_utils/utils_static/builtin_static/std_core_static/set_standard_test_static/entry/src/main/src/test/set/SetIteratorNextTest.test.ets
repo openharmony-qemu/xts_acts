@@ -57,7 +57,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2]);
+      const set = new Set<long>([1, 2]);
       const iter = set.values();
       const result = iter.next();
       expect(result.done).assertFalse();
@@ -104,7 +104,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([10, 20, 30]);
+      const set = new Set<long>([10, 20, 30]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(10);
       expect(iter.next().value).assertEqual(20);
@@ -138,11 +138,11 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([5, 10, 15]);
+      const set = new Set<double>([5.0, 10.0, 15.0]);
       const iter = set.keys();
-      expect(iter.next().value).assertEqual(5);
-      expect(iter.next().value).assertEqual(10);
-      expect(iter.next().value).assertEqual(15);
+      expect(iter.next().value).assertEqual(5.0);
+      expect(iter.next().value).assertEqual(10.0);
+      expect(iter.next().value).assertEqual(15.0);
       expect(iter.next().done).assertTrue();
     });
 
@@ -177,7 +177,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>();
+      const set = new Set<float>();
       const iter = set.values();
       const result = iter.next();
       expect(result.done).assertTrue();
@@ -547,7 +547,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([5, 10, 15]);
+      const set = new Set<long>([5, 10, 15]);
       const ki = set.keys();
       const vi = set.values();
       expect(ki.next().value).assertEqual(vi.next().value);
@@ -652,7 +652,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<long>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
       set.add(4);
@@ -669,7 +669,7 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<long>([1, 2, 3]);
       const iter = set.values();
       expect(iter.next().value).assertEqual(1);
       set.delete(2);
@@ -686,12 +686,12 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<double>([1.0, 2.0, 3.0]);
       const iter = set.values();
       iter.next();
-      set.delete(1);
-      expect(iter.next().value).assertEqual(2);
-      expect(iter.next().value).assertEqual(3);
+      set.delete(1.0);
+      expect(iter.next().value).assertEqual(2.0);
+      expect(iter.next().value).assertEqual(3.0);
       expect(iter.next().done).assertTrue();
     });
 
@@ -704,9 +704,9 @@ export default function SetIteratorNextTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIteratorNext038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<float>([1.0, 2.0, 3.0]);
       const iter = set.values();
-      expect(iter.next().value).assertEqual(1);
+      expect(iter.next().value).assertEqual(1.0);
       set.clear();
       const r = iter.next();
       expect(r.done).assertTrue();

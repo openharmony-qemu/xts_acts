@@ -59,7 +59,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       set.clear();
       expect(set.size).assertEqual(0);
     });
@@ -73,7 +73,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<float>([1.0, 2.0, 3.0]);
       expect(set.size).assertEqual(3);
       set.clear();
       expect(set.size).assertEqual(0);
@@ -306,7 +306,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       set.clear();
       expect(set.size).assertEqual(0);
       expect(set.size).assertEqual(0);
@@ -360,7 +360,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       set.clear();
       expect(set.size).assertEqual(0);
       set.clear();
@@ -376,7 +376,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       for (let i = 0; i < 100; i++) {
         set.clear();
       }
@@ -392,7 +392,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3, 4, 5]);
+      let set = new Set<float>([1.0, 2.0, 3.0, 4.0, 5.0]);
       let iter = set.values();
       set.clear();
       let count = 0;
@@ -411,7 +411,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<double>([1.0, 2.0, 3.0]);
       let cleared = false;
       for (let val of set) {
         if (!cleared) {
@@ -431,7 +431,7 @@ export default function SetClearTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetClear023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       set.delete(1);
       expect(set.size).assertEqual(2);
       set.clear();

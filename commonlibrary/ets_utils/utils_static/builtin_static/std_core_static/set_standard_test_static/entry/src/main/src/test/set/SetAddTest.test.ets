@@ -92,7 +92,7 @@ export default function SetAddTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetAdd003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
+      let set = new Set<long>();
       set.add(1);
       expect(set.size).assertEqual(1);
       expect(set.has(1)).assertTrue();
@@ -107,9 +107,9 @@ export default function SetAddTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetAdd004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      set.add(100);
-      expect(set.has(100)).assertTrue();
+      let set = new Set<double>();
+      set.add(1.0);
+      expect(set.has(1.0)).assertTrue();
       expect(set.size).assertEqual(1);
     });
 
@@ -137,9 +137,9 @@ export default function SetAddTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetAdd006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
-      set.add(-1);
-      expect(set.has(-1)).assertTrue();
+      let set = new Set<float>();
+      set.add(1.0);
+      expect(set.has(1.0)).assertTrue();
       expect(set.size).assertEqual(1);
     });
 
@@ -438,7 +438,7 @@ export default function SetAddTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetAdd026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
+      let set = new Set<long>();
       set.add(42);
       set.add(42);
       expect(set.size).assertEqual(1);

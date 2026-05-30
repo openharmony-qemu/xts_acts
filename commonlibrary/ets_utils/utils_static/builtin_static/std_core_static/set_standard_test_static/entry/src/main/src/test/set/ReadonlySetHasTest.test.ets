@@ -66,7 +66,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       expect(set.has(2)).assertTrue();
     });
 
@@ -79,9 +79,9 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<float> = new Set<float>([1.0, 2.0, 3.0]);
       let sizeBefore: int = set.size;
-      let result: boolean = set.has(2);
+      let result: boolean = set.has(2.0);
       expect(result).assertTrue();
       expect(set.size).assertEqual(sizeBefore);
     });
@@ -95,8 +95,8 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>();
-      expect(set.has(1)).assertFalse();
+      const set: ReadonlySet<double> = new Set<double>();
+      expect(set.has(1.0)).assertFalse();
     });
 
     /**
@@ -108,7 +108,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       expect(set.has(1)).assertTrue();
       expect(set.has(2)).assertTrue();
       expect(set.has(3)).assertTrue();
@@ -123,7 +123,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       expect(set.has(100)).assertFalse();
       expect(set.has(-1)).assertFalse();
       expect(set.has(999)).assertFalse();
@@ -138,7 +138,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([2147483647]);
+      const set: ReadonlySet<long> = new Set<long>([2147483647]);
       expect(set.has(2147483647)).assertTrue();
     });
 
@@ -151,7 +151,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([-2147483648]);
+      const set: ReadonlySet<long> = new Set<long>([-2147483648]);
       expect(set.has(-2147483648)).assertTrue();
     });
 
@@ -164,9 +164,9 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([0]);
+      const set: ReadonlySet<long> = new Set<long>([0]);
       expect(set.has(0)).assertTrue();
-      const set2: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set2: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       expect(set2.has(0)).assertFalse();
     });
 
@@ -179,7 +179,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([-1, -100, -999]);
+      const set: ReadonlySet<long> = new Set<long>([-1, -100, -999]);
       expect(set.has(-1)).assertTrue();
       expect(set.has(-100)).assertTrue();
     });
@@ -193,7 +193,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([0x10, 0xFF]);
+      const set: ReadonlySet<long> = new Set<long>([0x10, 0xFF]);
       expect(set.has(0x10)).assertTrue();
       expect(set.has(0xFF)).assertTrue();
     });
@@ -207,9 +207,9 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       try {
-        set.has(null as Object as int);
+        set.has(null as Object as long);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -225,9 +225,9 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       try {
-        set.has(undefined as Object as int);
+        set.has(undefined as Object as long);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -243,9 +243,9 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       try {
-        set.has("abc" as Object as int);
+        set.has("abc" as Object as long);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -631,7 +631,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<short> = new Set<short>([1, 2, 3]);
       let result: boolean = set.has(2);
       expect(result).assertTrue();
     });
@@ -645,7 +645,7 @@ export default function ReadonlySetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetHas041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<short> = new Set<short>([1, 2, 3]);
       let result: boolean = set.has(5);
       expect(result).assertFalse();
     });

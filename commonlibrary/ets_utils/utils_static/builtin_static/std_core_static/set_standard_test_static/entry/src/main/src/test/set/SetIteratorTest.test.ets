@@ -172,13 +172,13 @@ export default function SetIteratorTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetIterator007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>();
+      const set = new Set<long>();
       set.add(42);
       const iter = set.$_iterator();
       const result = iter.next();
       expect(result.value).assertEqual(42);
       let type: string = typeof result.value;
-      expect(type).assertEqual("int");
+      expect(type).assertEqual("long");
     });
 
     /**

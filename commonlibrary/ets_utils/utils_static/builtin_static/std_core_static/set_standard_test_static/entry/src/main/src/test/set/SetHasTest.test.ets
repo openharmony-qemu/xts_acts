@@ -61,7 +61,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       let result = set.has(2);
       expect(result).assertEqual(true);
     });
@@ -75,7 +75,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
+      let set = new Set<long>([1, 2]);
       set.has(1);
       set.has(2);
       set.has(999);
@@ -91,8 +91,8 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
-      let result = set.has(1);
+      let set = new Set<float>([1.0, 2.0]);
+      let result = set.has(1.0);
       expect(result).assertEqual(true);
     });
 
@@ -105,7 +105,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<long>([1, 2, 3]);
       let result = set.has(999);
       expect(result).assertEqual(false);
     });
@@ -147,8 +147,8 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([0, 1, 2]);
-      let result = set.has(0);
+      let set = new Set<double>([0.0, 1.0, 2.0]);
+      let result = set.has(0.0);
       expect(result).assertEqual(true);
     });
 
@@ -161,7 +161,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([-1, -100, -999]);
+      let set = new Set<long>([-1, -100, -999]);
       let result = set.has(-1);
       expect(result).assertEqual(true);
     });
@@ -175,7 +175,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([0x10, 0xFF]);
+      let set = new Set<long>([0x10, 0xFF]);
       let result = set.has(0x10);
       expect(result).assertEqual(true);
     });
@@ -464,9 +464,9 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       try {
-        let result = set.has(null as Object as int);
+        let result = set.has(null as Object as short);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -482,9 +482,9 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       try {
-        let result = set.has(undefined as Object as int);
+        let result = set.has(undefined as Object as short);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -500,9 +500,9 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       try {
-        let result = set.has("abc" as Object as int);
+        let result = set.has("abc" as Object as short);
         expect().assertFail();
       } catch (error) {
         expect(error.name).assertEqual("ClassCastError");
@@ -518,7 +518,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       let result = set.has(1);
       expect(result).assertEqual(true);
     });
@@ -532,7 +532,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       let result = set.has(100);
       expect(result).assertEqual(false);
     });
@@ -546,7 +546,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([10, 20, 30, 40, 50]);
+      let set = new Set<short>([10, 20, 30, 40, 50]);
       let result = set.has(30);
       expect(result).assertEqual(true);
     });
@@ -560,7 +560,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([42]);
+      let set = new Set<short>([42]);
       let result = set.has(42);
       expect(result).assertEqual(true);
     });
@@ -574,7 +574,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
+      let set = new Set<byte>();
       let result = set.has(1);
       expect(result).assertEqual(false);
     });
@@ -635,7 +635,7 @@ export default function SetHasTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetHas040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       set.delete(2);
       expect(set.has(1)).assertEqual(true);
       expect(set.has(3)).assertEqual(true);

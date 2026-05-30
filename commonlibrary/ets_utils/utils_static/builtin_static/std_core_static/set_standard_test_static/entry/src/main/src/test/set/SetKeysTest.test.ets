@@ -219,19 +219,19 @@ export default function SetKeysTest(): void {
     /**
      * @tc.name testSetKeys010
      * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_1000
-     * @tc.desc Verify Set<int> keys() returns iterator with int type values
+     * @tc.desc Verify Set<long> keys() returns iterator with long type values
      * @tc.type FUNCTION
      * @tc.size MEDIUMTEST
      * @tc.level LEVEL2
      */
     it('testSetKeys010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>();
+      let set = new Set<long>();
       set.add(42);
       let iter = set.keys();
       let result = iter.next();
       expect(result.value).assertEqual(42);
       let type: string = typeof result.value;
-      expect(type).assertEqual("int");
+      expect(type).assertEqual("long");
     });
 
     /**

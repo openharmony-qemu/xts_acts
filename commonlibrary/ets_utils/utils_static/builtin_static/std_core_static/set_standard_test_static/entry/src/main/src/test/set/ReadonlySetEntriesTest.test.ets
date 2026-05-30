@@ -49,9 +49,9 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       const iter = set.entries();
-      let v = iter.next().value as [int, int];
+      let v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(1);
     });
 
@@ -64,8 +64,8 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      let v = set.entries().next().value as [int, int];
+      const set: ReadonlySet<long> = new Set<long>([1, 2]);
+      let v = set.entries().next().value as [long, long];
       expect(v[0]).assertEqual(1);
 
     });
@@ -115,14 +115,14 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
+      const set: ReadonlySet<long> = new Set<long>([10, 20, 30]);
       const iter = set.entries();
-      let v = iter.next().value as [int, int];
+      let v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(10);
       expect(v[1]).assertEqual(10);
-      v = iter.next().value as [int, int];
+      v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(20);
-      v = iter.next().value as [int, int];
+      v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(30);
       expect(iter.next().done).assertTrue();
     });
@@ -136,9 +136,9 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       let count: int = 0;
-      let values: int[] = [];
+      let values: long[] = [];
       for (const entry of set.entries()) {
         values.push(entry[0]);
         count++;
@@ -174,15 +174,15 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([5, 3, 8, 1]);
+      const set: ReadonlySet<long> = new Set<long>([5, 3, 8, 1]);
       const iter = set.entries();
-      let v = iter.next().value as [int, int];
+      let v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(5);
-      v = iter.next().value as [int, int];
+      v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(3);
-      v = iter.next().value as [int, int];
+      v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(8);
-      v = iter.next().value as [int, int];
+      v = iter.next().value as [long, long];
       expect(v[0]).assertEqual(1);
     });
 
@@ -195,7 +195,7 @@ export default function ReadonlySetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>();
+      const set: ReadonlySet<double> = new Set<double>();
       const iter = set.entries();
       let result = iter.next();
       expect(result.done).assertTrue();

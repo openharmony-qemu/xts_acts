@@ -59,9 +59,9 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      const result: int[] = [];
-      set.forEach((v1: int, v2: int, s: ReadonlySet<int>): void => {
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
+      const result: long[] = [];
+      set.forEach((v1: long, v2: long, s: ReadonlySet<long>): void => {
         result.push(v1);
       });
       expect(result.length).assertEqual(3);
@@ -79,7 +79,7 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       try {
         let fn = (set as Record<string, Object>)["forEach"];
         (fn as Object as () => void)();
@@ -157,9 +157,9 @@ export default function ReadonlySetForEachTest(): void {
      */
     it('testReadonlySetForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       // Nested function declarations not supported in ARKTS
-      const set: ReadonlySet<int> = new Set<int>([10, 20, 30]);
-      const result: int[] = [];
-      set.forEach((value: int, value2: int, s: ReadonlySet<int>): void => {
+      const set: ReadonlySet<long> = new Set<long>([10, 20, 30]);
+      const result: long[] = [];
+      set.forEach((value: long, value2: long, s: ReadonlySet<long>): void => {
         result.push(value);
       });
       expect(result.length).assertEqual(3);
@@ -177,8 +177,8 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      set.forEach((value: int, value2: int, s: ReadonlySet<int>): void => {
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
+      set.forEach((value: long, value2: long, s: ReadonlySet<long>): void => {
         expect(value).assertEqual(value2);
       });
     });
@@ -335,9 +335,9 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4, 5]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3, 4, 5]);
       let callCount: int = 0;
-      set.forEach((v: int): void => {
+      set.forEach((v: long): void => {
         callCount++;
       });
       expect(callCount).assertEqual(5);
@@ -352,9 +352,9 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const intSet: ReadonlySet<int> = new Set<int>([1, 2, 3]);
-      let intSum: int = 0;
-      intSet.forEach((v: int): void => {
+      const intSet: ReadonlySet<long> = new Set<long>([1, 2, 3]);
+      let intSum: long = 0;
+      intSet.forEach((v: long): void => {
         intSum += v;
       });
       expect(intSum).assertEqual(6);
@@ -369,9 +369,9 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([42]);
+      const set: ReadonlySet<long> = new Set<long>([42]);
       let count: int = 0;
-      set.forEach((v: int): void => {
+      set.forEach((v: long): void => {
         count++;
         expect(v).assertEqual(42);
       });
@@ -387,9 +387,9 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const emptySet: ReadonlySet<int> = new Set<int>();
+      const emptySet: ReadonlySet<double> = new Set<double>();
       let called: boolean = false;
-      emptySet.forEach((v: int): void => {
+      emptySet.forEach((v: double): void => {
         called = true;
       });
       expect(called).assertFalse();
@@ -441,13 +441,13 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([5, 3, 1, 4, 2]);
-      const result1: int[] = [];
-      const result2: int[] = [];
-      set.forEach((v: int): void => {
+      const set: ReadonlySet<long> = new Set<long>([5, 3, 1, 4, 2]);
+      const result1: long[] = [];
+      const result2: long[] = [];
+      set.forEach((v: long): void => {
         result1.push(v);
       });
-      set.forEach((v: int): void => {
+      set.forEach((v: long): void => {
         result2.push(v);
       });
       for (let i = 0; i < result1.length; i++) {
@@ -479,8 +479,8 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([100, 200]);
-      set.forEach((value: int, value2: int, s: ReadonlySet<int>): void => {
+      const set: ReadonlySet<long> = new Set<long>([100, 200]);
+      set.forEach((value: long, value2: long, s: ReadonlySet<long>): void => {
         expect(s.size).assertEqual(2);
       });
     });
@@ -494,8 +494,8 @@ export default function ReadonlySetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetForEach025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2]);
-      const returnValue = set.forEach((v: int): void => {
+      const set: ReadonlySet<double> = new Set<double>([1.0, 2.0]);
+      const returnValue = set.forEach((v: double): void => {
       });
       expect(returnValue).assertUndefined();
     });

@@ -54,7 +54,7 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>();
+      const set: ReadonlySet<long> = new Set<long>();
       expect(set.size).assertEqual(0);
     });
 
@@ -67,7 +67,7 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([10]);
+      const set: ReadonlySet<float> = new Set<float>([10.0]);
       expect(set.size).assertEqual(1);
     });
 
@@ -80,7 +80,7 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3, 4, 5]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3, 4, 5]);
       expect(set.size).assertEqual(5);
     });
 
@@ -110,7 +110,7 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<long> = new Set<long>([1, 2, 3]);
       expect(set.size).assertEqual(3);
     });
 
@@ -164,7 +164,7 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set: ReadonlySet<int> = new Set<int>([1, 2, 3]);
+      const set: ReadonlySet<double> = new Set<double>([1.0, 2.0, 3.0]);
       expect(set.size).assertEqual(3);
       expect(set.size).assertEqual(3);
       expect(set.size).assertEqual(3);
@@ -210,9 +210,9 @@ export default function ReadonlySetSizeTest(): void {
      * @tc.level LEVEL2
      */
     it('testReadonlySetSize012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const emptySet: ReadonlySet<int> = new Set<int>();
+      const emptySet: ReadonlySet<long> = new Set<long>();
       expect(emptySet.size).assertEqual(0);
-      const set: ReadonlySet<int> = new Set<int>([1]);
+      const set: ReadonlySet<long> = new Set<long>([1]);
       expect(set.size).assertEqual(1);
     });
 

@@ -67,9 +67,9 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      let result: int[] = [];
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<long>([1, 2, 3]);
+      let result: long[] = [];
+      set.forEach((k: long, v: long, s: Set<long>): void => {
         result.push(k);
       });
       expect(result.length).assertEqual(3);
@@ -144,9 +144,9 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2]);
+      let set = new Set<long>([1, 2]);
       let count = 0;
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      set.forEach((k: long, v: long, s: Set<long>): void => {
         count++;
       });
       expect(count).assertEqual(2);
@@ -161,12 +161,12 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([10, 20, 30]);
-      let sum = 0;
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<float>([10.0, 20.0, 30.0]);
+      let sum = 0.0;
+      set.forEach((k: float, v: float, s: Set<float>): void => {
         sum += k;
       });
-      expect(sum).assertEqual(60);
+      expect(sum).assertEqual(60.0);
     });
 
     /**
@@ -197,7 +197,7 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
+      let set = new Set<short>([1, 2, 3]);
       let count = 0;
       set.forEach((): void => {
         count++;
@@ -267,8 +267,8 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3]);
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<float>([1.0, 2.0, 3.0]);
+      set.forEach((k: float, v: float, s: Set<float>): void => {
         expect(s === set).assertTrue();
       });
     });
@@ -393,9 +393,9 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3, 4, 5]);
-      let result: int[] = [];
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<long>([1, 2, 3, 4, 5]);
+      let result: long[] = [];
+      set.forEach((k: long, v: long, s: Set<long>): void => {
         result.push(k);
       });
       expect(result.length).assertEqual(5);
@@ -462,15 +462,15 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([42]);
+      let set = new Set<double>([42.0]);
       let count = 0;
-      let receivedK: int = 0;
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let receivedK: double = 0.0;
+      set.forEach((k: double, v: double, s: Set<double>): void => {
         count++;
         receivedK = k;
       });
       expect(count).assertEqual(1);
-      expect(receivedK).assertEqual(42);
+      expect(receivedK).assertEqual(42.0);
     });
 
     /**
@@ -549,9 +549,9 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([0, 1, -1]);
-      let result: int[] = [];
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<long>([0, 1, -1]);
+      let result: long[] = [];
+      set.forEach((k: long, v: long, s: Set<long>): void => {
         result.push(k);
       });
       expect(result.length).assertEqual(3);
@@ -653,9 +653,9 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([100, 200, 300]);
-      let sum = 0;
-      set.forEach((k: int, v: int, s: Set<int>): void => {
+      let set = new Set<long>([100, 200, 300]);
+      let sum: long = 0;
+      set.forEach((k: long, v: long, s: Set<long>): void => {
         sum += k;
       });
       expect(sum).assertEqual(600);
@@ -773,10 +773,10 @@ export default function SetForEachTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetForEach038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      let set = new Set<int>([1, 2, 3, 4]);
-      let visited: int[] = [];
+      let set = new Set<long>([1, 2, 3, 4]);
+      let visited: long[] = [];
       try {
-        set.forEach((k: int, v: int, s: Set<int>): void => {
+        set.forEach((k: long, v: long, s: Set<long>): void => {
           visited.push(k);
           if (k === 2) {
             throw new Error("break");

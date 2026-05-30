@@ -57,10 +57,10 @@ export default function SetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetEntries001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<long>([1, 2, 3]);
       const iter = set.entries();
       const r1 = iter.next();
-      let v = r1.value as [int, int];
+      let v = r1.value as [long, long];
       expect(v[0]).assertEqual(1);
     });
 
@@ -151,7 +151,7 @@ export default function SetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetEntries006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([1, 2, 3]);
+      const set = new Set<long>([1, 2, 3]);
       let count = 0;
       for (const entry of set.entries()) {
         expect(entry[0]).assertEqual(entry[1]);
@@ -169,7 +169,7 @@ export default function SetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetEntries007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>();
+      const set = new Set<double>();
       const iter = set.entries();
       const result = iter.next();
       expect(result.done).assertTrue();
@@ -185,7 +185,7 @@ export default function SetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetEntries008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>();
+      const set = new Set<long>();
       let count = 0;
       for (const _ of set.entries()) {
         count++;
@@ -202,12 +202,12 @@ export default function SetEntriesTest(): void {
      * @tc.level LEVEL2
      */
     it('testSetEntries009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const set = new Set<int>([42]);
+      const set = new Set<double>([42.0]);
       const iter = set.entries();
       const r = iter.next();
-      let v = r.value as [int, int];
-      expect(v[0]).assertEqual(42);
-      expect(v[1]).assertEqual(42);
+      let v = r.value as [double, double];
+      expect(v[0]).assertEqual(42.0);
+      expect(v[1]).assertEqual(42.0);
       expect(r.done).assertFalse();
       expect(iter.next().done).assertTrue();
     });
