@@ -121,7 +121,7 @@ export default function settingUiJsunit() {
           console.info("[settings_set_value_callback_no_domain] start ");
           settings.setValue(mContext, 'testkey', 'testvalue', (result) => {
             console.info("[settings_set_value_callback_no_domain] result= " + result);
-            expect(err.code).assertEqual(201);
+            expect(result?.code).assertEqual(201);
             done();
           });
         } catch (err) {
