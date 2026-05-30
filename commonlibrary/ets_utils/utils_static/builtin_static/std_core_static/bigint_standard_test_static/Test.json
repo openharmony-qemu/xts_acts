@@ -10,7 +10,7 @@
     },
     "kits": [{
         "test-file-name": [
-            "ActsBigintStandardHapTestAdapt001StaticTest.hap"
+            "ActsBigintStandardStaticTest.hap"
         ],
         "type": "AppInstallKit",
         "cleanup-apps": true
