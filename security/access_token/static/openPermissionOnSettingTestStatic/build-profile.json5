@@ -21,7 +21,6 @@
         "name": "default",
         "signingConfig": "default",
         "compatibleSdkVersion": 16,
-        "targetSdkVersion": 16,
         "compileSdkVersion": 26,
         "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",

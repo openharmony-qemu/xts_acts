@@ -8217,6 +8217,7 @@ export default function windowPropertiesTest() {
                 let properties3 = subWindowClass!.getWindowProperties();
                 console.info(caseName + 'Succeeded in obtaining the window properties3. Data: ' + JSON.stringify(properties3));
                 expect(properties3.type).assertEqual(window.WindowType.TYPE_FLOAT);
+                expect(properties3.windowType).assertEqual(window.WindowType.TYPE_FLOAT);
                 expect(properties3.windowRect.left).assertLargerOrEqual(0);
                 expect(properties3.windowRect.top).assertLargerOrEqual(0);
                 expect(properties3.windowRect.width).assertLarger(0);

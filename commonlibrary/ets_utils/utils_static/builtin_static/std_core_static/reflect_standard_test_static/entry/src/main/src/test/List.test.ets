@@ -55,6 +55,31 @@ import ConstructorIsNativeTest from './constructor/ConstructorIsNativeTest.test'
 import ConstructorIsPrivateTest from './constructor/ConstructorIsPrivateTest.test';
 import ConstructorIsProtectedTest from './constructor/ConstructorIsProtectedTest.test';
 import ConstructorIsPublicTest from './constructor/ConstructorIsPublicTest.test';
+import StaticMethodEqualsTest from "./staticMethod/StaticMethodEqualsTest.test";
+import StaticMethodGetNameTest from "./staticMethod/StaticMethodGetNameTest.test";
+import StaticMethodGetOwnerTest from "./staticMethod/StaticMethodGetOwnerTest.test";
+import StaticMethodGetParameterTypeTest from "./staticMethod/StaticMethodGetParameterTypeTest.test";
+import StaticMethodGetParameterTypesTest from "./staticMethod/StaticMethodGetParameterTypesTest.test";
+import StaticMethodGetParametersNumTest from "./staticMethod/StaticMethodGetParametersNumTest.test";
+import StaticMethodGetReturnTypeTest from "./staticMethod/StaticMethodGetReturnTypeTest.test";
+import StaticMethodInvokeTest from "./staticMethod/StaticMethodInvokeTest.test";
+import StaticMethodIsAsyncTest from "./staticMethod/StaticMethodIsAsyncTest.test";
+import StaticMethodIsGetterTest from "./staticMethod/StaticMethodIsGetterTest.test";
+import StaticMethodIsPrivateTest from "./staticMethod/StaticMethodIsPrivateTest.test";
+import StaticMethodIsProtectedTest from "./staticMethod/StaticMethodIsProtectedTest.test";
+import StaticMethodIsPublicTest from "./staticMethod/StaticMethodIsPublicTest.test";
+import StaticMethodIsSetterTest from "./staticMethod/StaticMethodIsSetterTest.test";
+import InstanceFieldSetValueTest from "./InstanceField/InstanceFieldSetValueTest.test";
+import InstanceFieldGetValueTest from "./InstanceField/InstanceFieldGetValueTest.test";
+import InstanceFieldIsReadonlyTest from "./InstanceField/InstanceFieldIsReadonlyTest.test";
+import InstanceFieldIsPublicTest from "./InstanceField/InstanceFieldIsPublicTest.test";
+import InstanceFieldIsPrivateTest from "./InstanceField/InstanceFieldIsPrivateTest.test";
+import InstanceFieldIsProtectedTest from "./InstanceField/InstanceFieldIsProtectedTest.test";
+import InstanceFieldEqualsTest from "./InstanceField/InstanceFieldEqualsTest.test";
+import InstanceFieldGetNameTest from "./InstanceField/InstanceFieldGetNameTest.test";
+import InstanceFieldGetOwnerTest from "./InstanceField/InstanceFieldGetOwnerTest.test";
+import InstanceFieldGetTypeTest from "./InstanceField/InstanceFieldGetTypeTest.test";
+
 
 export default function testsuite(): void {
   ClassCreateInstanceTest();
@@ -100,6 +125,31 @@ export default function testsuite(): void {
   ConstructorIsPrivateTest();
   ConstructorIsProtectedTest();
   ConstructorIsPublicTest();
+  
+  StaticMethodEqualsTest();
+  StaticMethodGetNameTest();
+  StaticMethodGetOwnerTest();
+  StaticMethodGetParameterTypeTest();
+  StaticMethodGetParameterTypesTest();
+  StaticMethodGetParametersNumTest();
+  StaticMethodGetReturnTypeTest();
+  StaticMethodInvokeTest();
+  StaticMethodIsAsyncTest();
+  StaticMethodIsGetterTest();
+  StaticMethodIsPrivateTest();
+  StaticMethodIsProtectedTest();
+  StaticMethodIsPublicTest();
+  StaticMethodIsSetterTest();
+
+  InstanceFieldSetValueTest();
+  InstanceFieldGetValueTest();
+  InstanceFieldIsReadonlyTest();
+  InstanceFieldIsPublicTest();
+  InstanceFieldIsPrivateTest();
+  InstanceFieldIsProtectedTest();
+  InstanceFieldEqualsTest();
+  InstanceFieldGetNameTest();
+  InstanceFieldGetOwnerTest();
+  InstanceFieldGetTypeTest();
 
 }
-

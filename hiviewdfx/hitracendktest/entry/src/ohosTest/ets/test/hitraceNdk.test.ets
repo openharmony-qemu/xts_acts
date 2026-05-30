@@ -198,5 +198,22 @@ export default function hitraceNdkTest() {
         done();
     });
 
+    /**
+     * @tc.name   SUB_DFX_DFT_Hitrace_IsinValidstatic_0500
+     * @tc.number SUB_DFX_DFT_Hitrace_IsinValidstatic_0500
+     * @tc.desc   SUB_DFX_DFT_Hitrace_IsinValidstatic_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DFX_DFT_Hitrace_IsinValidstatic_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      hiTraceChain.clearId()
+      let traceId = hiTraceChain.begin("business", hiTraceChain.HiTraceFlag.DEFAULT);
+      let result = hitracendk.OHHiTraceCountTraceNull()
+      expect(result).assertEqual(0);
+      hiTraceChain.end(traceId);
+      done();
+    });
+
   })
 }

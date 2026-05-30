@@ -572,5 +572,25 @@ export default function bluetoothProfilesTest() {
             done();
         })
 
+        /**
+         * @tc.number  SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATE_ADD_0100
+         * @tc.name    SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATE_ADD_0100
+         * @tc.desc    Test getConnectionStateTest API functionality
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size    MEDIUMTEST
+         */
+        it("SUB_COMMUNICATION_BLUETOOTHBLE_PROFILECONNECTIONSTATE_ADD_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let state : baseProfile.ProfileConnectionState = a2dpProfile!.getConnectionState("");
+                hilog.info(domain, tag, "the connection state:" + state);
+                expect().assertFail();
+            } catch (err) {
+                hilog.info(domain, tag, "get error:" + JSON.stringify(err));
+                hilog.info(domain, tag, "getConnectionState get errCode:" + err.code + ",errMessage:" + err.message);
+                expect(Number(err.code)).assertEqual(401);
+            }
+            done();
+        })
     })
 }

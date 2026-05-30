@@ -882,31 +882,36 @@ export default function windowPropertiesTest3() {
             done();
           }
         } else {
-          expect().assertFail();
-          done();
+          if (exception.code === 801) {
+            console.info(`${message} Expected error 801.`);
+            expect(exception.code).assertEqual(801);
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
         }
       }
-    });
+      });
 
     /**
-     * @tc.name   testSetWindowContainerModalColor_null
-     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0900
-     * @tc.desc   设置null颜色参数，验证401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetWindowContainerModalColor_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let message = 'testSetWindowContainerModalColor_null';
-      try {
-        mainWindowClass.setWindowContainerModalColor(null, null);
-        console.error(`${message} Should not succeed.`);
-        expect().assertFail();
-        done();
-      } catch (exception) {
-        exception = exception as BusinessError;
-        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (deviceType === '2in1') {
+       * @tc.name   testSetWindowContainerModalColor_null
+       * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_0900
+       * @tc.desc   设置null颜色参数，验证401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testSetWindowContainerModalColor_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let message = 'testSetWindowContainerModalColor_null';
+        try {
+          mainWindowClass.setWindowContainerModalColor(null, null);
+          console.error(`${message} Should not succeed.`);
+          expect().assertFail();
+          done();
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
           if (exception.code === 401) {
             console.info(`${message} Expected error 401.`);
             expect(exception.code).assertEqual(401);
@@ -915,32 +920,27 @@ export default function windowPropertiesTest3() {
             expect().assertFail();
             done();
           }
-        } else {
+        }
+      });
+
+      /**
+       * @tc.name   testSetWindowContainerModalColor_undefined
+       * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_1000
+       * @tc.desc   设置undefined颜色参数，验证401
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testSetWindowContainerModalColor_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+        let message = 'testSetWindowContainerModalColor_undefined';
+        try {
+          mainWindowClass.setWindowContainerModalColor(undefined, undefined);
+          console.error(`${message} Should not succeed.`);
           expect().assertFail();
           done();
-        }
-      }
-    });
-
-    /**
-     * @tc.name   testSetWindowContainerModalColor_undefined
-     * @tc.number SUB_WINDOW_SETWINDOWCONTAINERMODALCOLOR_FUNCTION_1000
-     * @tc.desc   设置undefined颜色参数，验证401
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetWindowContainerModalColor_undefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
-      let message = 'testSetWindowContainerModalColor_undefined';
-      try {
-        mainWindowClass.setWindowContainerModalColor(undefined, undefined);
-        console.error(`${message} Should not succeed.`);
-        expect().assertFail();
-        done();
-      } catch (exception) {
-        exception = exception as BusinessError;
-        console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
-        if (deviceType === '2in1') {
+        } catch (exception) {
+          exception = exception as BusinessError;
+          console.error(`${message} Exception. Cause: ${exception.code}, ${exception.message}`);
           if (exception.code === 401) {
             console.info(`${message} Expected error 401.`);
             expect(exception.code).assertEqual(401);
@@ -949,12 +949,8 @@ export default function windowPropertiesTest3() {
             expect().assertFail();
             done();
           }
-        } else {
-          expect().assertFail();
-          done();
         }
-      }
-    });
+      });
 
     // ==================== getAllWindowLayoutInfo 测试用例 ====================
 

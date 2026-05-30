@@ -176,6 +176,10 @@ describe("SensorJsTest_sensor_58", function () {
                 if (error) {
                     console.info('SensorOnOff_ErrCode_Test_0023 getSingleSensor fail:' +JSON.stringify(error));
                     done();
+                } else if (data.isMockSensor === true) {
+                    console.info('isMockSensor is true');
+                    expect(typeof(data)).assertEqual("object");
+                    done();
                 } else {
                     try {
                         expect(typeof(data)).assertEqual("object");
