@@ -29,7 +29,7 @@ group("std_core_static") {
       "feild_standard_test_static:ActsFeildStaticTest",
       "float_standard_test_static:ActsFloatStaticTest",
       "functions_standard_test_static:ActsFunctionsStaticTest",
-      "global_standard_test_static:ActsBuiltinGlobalStaticTest",
+      "global_builtin_standard_test_static:ActsBuiltinGlobalStaticTest",
       "intl_standard_test_static:ActsIntlStaticTest",
       "iterator_standard_test_static:ActsIteratorStaticTest",
       "method_standard_test_static:ActsMethodStaticTest",
