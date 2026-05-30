@@ -1036,5 +1036,22 @@ export default function ReadonlySetHasTest(): void {
         expect(error.name).assertEqual("ClassCastError");
       }
     });
+
+    /**
+     * @tc.name testReadonlySetHas066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_READONLYSET_HAS_6600
+     * @tc.desc Verify ReadonlySet.has still returns true after mutating field of stored Person object
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testReadonlySetHas066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1: Person = new Person("Alice", 30);
+      let mutableSet: Set<Person> = new Set<Person>([p1]);
+      const view: ReadonlySet<Person> = mutableSet;
+      p1.name = "ChangedName";
+      p1.age = 999;
+      expect(view.has(p1)).assertTrue();
+    });
   });
 }

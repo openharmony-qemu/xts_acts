@@ -762,5 +762,28 @@ export default function SetValuesTest(): void {
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetValues038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_VALUES_3800
+     * @tc.desc Verify values() iterates Obj023 references in insertion order for Set of Obj023
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetValues038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj1 = new Obj023("a");
+      const obj2 = new Obj023("b");
+      const set = new Set<Obj023>([obj1, obj2]);
+      let result: Obj023[] = [];
+      for (const v of set.values()) {
+        result.push(v);
+      }
+      expect(result.length).assertEqual(2);
+      expect(result[0] === obj1).assertTrue();
+      expect(result[1] === obj2).assertTrue();
+      expect(result[0].name).assertEqual("a");
+      expect(result[1].name).assertEqual("b");
+    });
   });
 }

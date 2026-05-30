@@ -638,5 +638,23 @@ export default function SetKeysTest(): void {
       expect(numCount).assertEqual(1);
       expect(strCount).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetKeys030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_KEYS_3000
+     * @tc.desc Verify keys() returns iterator of Item013 type for Set of Item013
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetKeys030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj = new Item013(1);
+      let set = new Set<Item013>([obj]);
+      let iter = set.keys();
+      let result = iter.next();
+      expect(result.value === obj).assertTrue();
+      let item = result.value as Item013;
+      expect(item.id).assertEqual(1);
+    });
   });
 }

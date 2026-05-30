@@ -1056,5 +1056,81 @@ export default function SetForEachTest(): void {
         expect(result1[i]).assertEqual(result2[i]);
       }
     });
+
+    /**
+     * @tc.name testSetForEach052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5200
+     * @tc.desc Verify forEach callback parameter type is Item039 on Set of Item039 without downcast
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetForEach052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new Item039(1);
+      let obj2 = new Item039(2);
+      let set = new Set<Item039>([obj1, obj2]);
+      let result: int[] = [];
+      set.forEach((k: Item039, v: Item039, s: Set<Item039>): void => {
+        result.push(k.id);
+      });
+      expect(result.length).assertEqual(2);
+      expect(result[0]).assertEqual(1);
+      expect(result[1]).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetForEach053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5300
+     * @tc.desc Verify forEach callback k equals v for Set of Item039 custom class
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetForEach053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item039>([new Item039(10), new Item039(20)]);
+      set.forEach((k: Item039, v: Item039, s: Set<Item039>): void => {
+        expect(k).assertEqual(v);
+      });
+    });
+
+    /**
+     * @tc.name testSetForEach054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5400
+     * @tc.desc Verify third forEach parameter equals the Set instance for Set of Item039
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetForEach054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item039>([new Item039(1), new Item039(2)]);
+      set.forEach((k: Item039, v: Item039, s: Set<Item039>): void => {
+        expect(s === set).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.name testSetForEach055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_FOR_EACH_5500
+     * @tc.desc Verify forEach traverses all Item039 elements in insertion order on Set of Item039
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetForEach055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item039>();
+      let a = new Item039(3);
+      let b = new Item039(1);
+      let c = new Item039(2);
+      set.add(a);
+      set.add(b);
+      set.add(c);
+      let order: int[] = [];
+      set.forEach((k: Item039, v: Item039): void => {
+        order.push(k.id);
+      });
+      expect(order[0]).assertEqual(3);
+      expect(order[1]).assertEqual(1);
+      expect(order[2]).assertEqual(2);
+    });
   });
 }

@@ -649,5 +649,37 @@ export default function SetConstructor3Test(): void {
       expect(set.has(9999)).assertTrue();
       expect(set.has(10000)).assertFalse();
     });
+
+    /**
+     * @tc.name testSetConstructor3038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_3800
+     * @tc.desc Verify constructor with Item007 array initializes Set of Item007
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetConstructor3038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let item1 = new Item007(1);
+      let item2 = new Item007(2);
+      let set = new Set<Item007>([item1, item2]);
+      expect(set.size).assertEqual(2);
+      expect(set.has(item1)).assertTrue();
+      expect(set.has(item2)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetConstructor3039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_CONSTRUCTOR_3_3900
+     * @tc.desc Verify constructor with duplicate Ref014 references deduplication in Set of Ref014
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetConstructor3039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let r = new Ref014(1);
+      let set = new Set<Ref014>([r, r, r]);
+      expect(set.size).assertEqual(1);
+      expect(set.has(r)).assertTrue();
+    });
   });
 }

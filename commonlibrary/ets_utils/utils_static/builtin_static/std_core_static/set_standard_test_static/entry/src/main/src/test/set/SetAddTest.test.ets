@@ -745,5 +745,114 @@ export default function SetAddTest(): void {
       set.add("dup");
       expect(set.size).assertEqual(2);
     });
+
+    /**
+     * @tc.name testSetAdd045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4500
+     * @tc.desc Verify add with custom class instance to Set of Item017 strongly typed
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let item = new Item017(1);
+      let set = new Set<Item017>();
+      set.add(item);
+      expect(set.size).assertEqual(1);
+      expect(set.has(item)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4600
+     * @tc.desc Verify duplicate add of same custom class reference to Set of Item017 does not increase size
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let item = new Item017(1);
+      let set = new Set<Item017>();
+      set.add(item);
+      set.add(item);
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetAdd047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4700
+     * @tc.desc Verify add of different custom class instances with same field values treated as distinct in Set of Item017
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017>();
+      set.add(new Item017(1));
+      set.add(new Item017(1));
+      expect(set.size).assertEqual(2);
+    });
+
+    /**
+     * @tc.name testSetAdd048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4800
+     * @tc.desc Verify add return value is this for Set of Item017 custom class typed
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017>();
+      let item = new Item017(1);
+      let returned = set.add(item);
+      expect(returned === set).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_4900
+     * @tc.desc Verify chained add with custom class instances on Set of Item017
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017>();
+      set.add(new Item017(1)).add(new Item017(2)).add(new Item017(3));
+      expect(set.size).assertEqual(3);
+    });
+
+    /**
+     * @tc.name testSetAdd050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5000
+     * @tc.desc Verify has returns true for existing instance and false for different instance with same fields in Set of Item017
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Item017>();
+      let item = new Item017(1);
+      set.add(item);
+      expect(set.has(item)).assertTrue();
+      expect(set.has(new Item017(1))).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetAdd051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5100
+     * @tc.desc Verify Set of Item017 reuses Object-based add for backward verification
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<Object>();
+      let obj = new Item017(100);
+      set.add(obj);
+      set.add(obj);
+      expect(set.size).assertEqual(1);
+      expect(set.has(obj)).assertTrue();
+    });
   });
 }

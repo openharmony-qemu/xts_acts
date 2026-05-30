@@ -666,5 +666,92 @@ export default function SetDeleteTest(): void {
       expect(set.has(2)).assertFalse();
       expect(set.has(3)).assertTrue();
     });
+
+    /**
+     * @tc.name testSetDelete040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4000
+     * @tc.desc Verify delete existing custom class instance from Set of MyObj021 returns true
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let obj2 = new MyObj021(2);
+      let set = new Set<MyObj021>([obj1, obj2]);
+      let result = set.delete(obj1);
+      expect(result).assertTrue();
+      expect(set.size).assertEqual(1);
+      expect(set.has(obj1)).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetDelete041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4100
+     * @tc.desc Verify delete nonexistent custom class instance from Set of MyObj021 returns false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let set = new Set<MyObj021>([obj1]);
+      let result = set.delete(new MyObj021(99));
+      expect(result).assertFalse();
+      expect(set.size).assertEqual(1);
+    });
+
+    /**
+     * @tc.name testSetDelete042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4200
+     * @tc.desc Verify delete from empty Set of MyObj021 returns false
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let set = new Set<MyObj021>();
+      let result = set.delete(new MyObj021(1));
+      expect(result).assertFalse();
+      expect(set.size).assertEqual(0);
+    });
+
+    /**
+     * @tc.name testSetDelete043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4300
+     * @tc.desc Verify delete then re-add same custom class instance to Set of MyObj021
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let obj2 = new MyObj021(2);
+      let set = new Set<MyObj021>([obj1, obj2]);
+      set.delete(obj1);
+      set.add(obj1);
+      expect(set.size).assertEqual(2);
+      expect(set.has(obj1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetDelete044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DELETE_4400
+     * @tc.desc Verify other elements unaffected after deleting one custom class instance from Set of MyObj021
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetDelete044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let obj1 = new MyObj021(1);
+      let obj2 = new MyObj021(2);
+      let obj3 = new MyObj021(3);
+      let set = new Set<MyObj021>([obj1, obj2, obj3]);
+      set.delete(obj2);
+      expect(set.has(obj1)).assertTrue();
+      expect(set.has(obj3)).assertTrue();
+      expect(set.size).assertEqual(2);
+    });
   });
 }
+

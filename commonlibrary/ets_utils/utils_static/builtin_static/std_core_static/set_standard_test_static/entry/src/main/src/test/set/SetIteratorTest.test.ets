@@ -562,5 +562,22 @@ export default function SetIteratorTest(): void {
       }
       expect(set.size).assertEqual(0);
     });
+
+    /**
+     * @tc.name testSetIterator025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_DOLLAR_ITERATOR_2500
+     * @tc.desc Verify $_iterator() on Set of Item020 returns iterator of correct type
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetIterator025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      const obj = new Item020(1);
+      const set = new Set<Item020>([obj]);
+      const iter = set.$_iterator();
+      const result = iter.next();
+      expect(result.value === obj).assertTrue();
+      expect(result.value instanceof Item020).assertTrue();
+    });
   });
 }

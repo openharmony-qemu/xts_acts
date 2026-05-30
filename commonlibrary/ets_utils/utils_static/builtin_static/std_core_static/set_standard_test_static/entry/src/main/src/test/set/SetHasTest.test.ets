@@ -904,5 +904,50 @@ export default function SetHasTest(): void {
       let set = new Set<number>([1.23e5]);
       expect(set.has(1.23e5)).assertTrue();
     });
+
+    /**
+     * @tc.name testSetHas057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5700
+     * @tc.desc Verify has returns true for existing custom class instance in Set of Person
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1 = new Person("Alice", 30);
+      let set = new Set<Person>([p1]);
+      expect(set.has(p1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetHas058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5800
+     * @tc.desc Verify has returns false for different instance with same property values in Set of Person
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1 = new Person("Alice", 30);
+      let p2 = new Person("Alice", 30);
+      let set = new Set<Person>([p1]);
+      expect(set.has(p2)).assertFalse();
+    });
+
+    /**
+     * @tc.name testSetHas059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_HAS_5900
+     * @tc.desc Verify has still returns true after mutating field of stored Person object via reference identity
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetHas059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let p1 = new Person("Alice", 30);
+      let set = new Set<Person>([p1]);
+      p1.name = "ChangedName";
+      p1.age = 999;
+      expect(set.has(p1)).assertTrue();
+    });
   });
 }
