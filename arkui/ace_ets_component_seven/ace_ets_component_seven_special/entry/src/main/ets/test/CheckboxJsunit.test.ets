@@ -60,7 +60,7 @@ export default function checkboxJsunit() {
           expect(JSON.parse(obj.$attrs.mark).size).assertEqual('50.00vp');
           console.info('ArkUX_Stage_Checkbox_0100 END ');
         } catch (err) {
-          
+          expect(false).assertEqual(true);
           console.info('ArkUX_Stage_Checkbox_0100 ERR  ' + JSON.stringify(err));
         }
         done();

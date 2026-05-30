@@ -60,7 +60,7 @@ export default function checkBoxGroupTest() {
         expect(markObj.strokeColor).assertEqual('#FFFF00FF');
         console.info('ArkUX_Stage_CheckboxGroup_1000 END ');
       } catch (err) {
-        
+        expect(false).assertEqual(true);
         console.info('ArkUX_Stage_CheckboxGroup_1000 ERR  ' + JSON.stringify(err));
       }
       done();
