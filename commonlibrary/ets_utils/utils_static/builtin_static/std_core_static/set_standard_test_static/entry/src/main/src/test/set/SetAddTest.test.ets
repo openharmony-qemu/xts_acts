@@ -929,5 +929,52 @@ export default function SetAddTest(): void {
       expect(set.has(null)).assertFalse();
       expect(set.has(item)).assertTrue();
     });
+	
+	 /**
+     * @tc.name testSetAdd056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5600
+     * @tc.desc Verify add array type element to Set of int array
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1: int[] = [1, 2];
+      let arr2: int[] = [3, 4];
+      let set = new Set<int[]>([arr1, arr2]);
+      expect(set.size).assertEqual(2);
+      expect(set.has(arr1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5700
+     * @tc.desc Verify add string array type element to Set
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1: string[] = ["a", "b"];
+      let arr2: string[] = ["c", "d"];
+      let set = new Set<string[]>([arr1, arr2]);
+      expect(set.size).assertEqual(2);
+      expect(set.has(arr1)).assertTrue();
+    });
+
+    /**
+     * @tc.name testSetAdd058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_ADD_5800
+     * @tc.desc Verify add boolean array type element to Set
+     * @tc.type FUNCTION
+     * @tc.size MEDIUMTEST
+     * @tc.level LEVEL2
+     */
+    it('testSetAdd058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+      let arr1: boolean[] = [true, false];
+      let arr2: boolean[] = [false, true];
+      let set = new Set<boolean[]>([arr1, arr2]);
+      expect(set.size).assertEqual(2);
+    });
   });
 }
