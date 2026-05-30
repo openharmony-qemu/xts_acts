@@ -114,7 +114,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0100
      * @tc.name testConstructorIsPublic001
-     * @tc.desc Verify ConstructorIsPublic case 001: publicconstructor return true
+     * @tc.desc Verify ConstructorIsPublic case 001: Class.from<MyClass003>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -130,7 +130,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0200
      * @tc.name testConstructorIsPublic002
-     * @tc.desc Verify ConstructorIsPublic case 002: privateconstructor return false
+     * @tc.desc Verify ConstructorIsPublic case 002: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -142,7 +142,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0300
      * @tc.name testConstructorIsPublic003
-     * @tc.desc Verify ConstructorIsPublic case 003: protectedconstructor return false
+     * @tc.desc Verify ConstructorIsPublic case 003: Class.from<MyClass005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -155,7 +155,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0400
      * @tc.name testConstructorIsPublic004
-     * @tc.desc Verify ConstructorIsPublic case 004: modifier constructor
+     * @tc.desc Verify ConstructorIsPublic case 004: Class.from<MyClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -169,7 +169,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0500
      * @tc.name testConstructorIsPublic005
-     * @tc.desc Verify ConstructorIsPublic case 005: public parameters constructor return true
+     * @tc.desc Verify ConstructorIsPublic case 005: Class.from<MyClass007>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,7 +183,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0600
      * @tc.name testConstructorIsPublic006
-     * @tc.desc Verify ConstructorIsPublic case 006: abstract class publicconstructor
+     * @tc.desc Verify ConstructorIsPublic case 006: Class.from<AbstractClass008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -196,7 +196,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0700
      * @tc.name testConstructorIsPublic007
-     * @tc.desc Verify ConstructorIsPublic case 007: final publicconstructor
+     * @tc.desc Verify ConstructorIsPublic case 007: Class.from<FinalClass009>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -209,7 +209,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0800
      * @tc.name testConstructorIsPublic008
-     * @tc.desc Verify ConstructorIsPublic case 008: verify return type is boolean
+     * @tc.desc Verify ConstructorIsPublic case 008: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -227,7 +227,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_0900
      * @tc.name testConstructorIsPublic009
-     * @tc.desc Verify ConstructorIsPublic case 009: isPublic isPrivate isProtected
+     * @tc.desc Verify ConstructorIsPublic case 009: Class.from<MyClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -243,7 +243,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1000
      * @tc.name testConstructorIsPublic010
-     * @tc.desc Verify ConstructorIsPublic case 010: generic publicconstructor
+     * @tc.desc Verify ConstructorIsPublic case 010: Class.from<GenericClass013<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -256,7 +256,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1100
      * @tc.name testConstructorIsPublic011
-     * @tc.desc Verify ConstructorIsPublic case 011: publicconstructor
+     * @tc.desc Verify ConstructorIsPublic case 011: Class.from<ParentClass014>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -271,7 +271,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1200
      * @tc.name testConstructorIsPublic012
-     * @tc.desc Verify ConstructorIsPublic case 012: isPublic() returns true for public constructor
+     * @tc.desc Verify ConstructorIsPublic case 012: Class.from<MyClass001>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -284,7 +284,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1300
      * @tc.name testConstructorIsPublic013
-     * @tc.desc Verify ConstructorIsPublic case 013: publicconstructor and
+     * @tc.desc Verify ConstructorIsPublic case 013: Class.from<MyClass016>(), getName returns "constructor", constructor getName returns constructor, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -299,7 +299,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1400
      * @tc.name testConstructorIsPublic014
-     * @tc.desc Verify ConstructorIsPublic case 014: verify different type constructor isPublic()
+     * @tc.desc Verify ConstructorIsPublic case 014: Class.from<AbstractClass017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -316,7 +316,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1500
      * @tc.name testConstructorIsPublic015
-     * @tc.desc Verify ConstructorIsPublic case 015: verify different constructor
+     * @tc.desc Verify ConstructorIsPublic case 015: Class.from<MyClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -335,7 +335,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1600
      * @tc.name testConstructorIsPublic016
-     * @tc.desc Verify ConstructorIsPublic case 016: verify isPublic() and constructor property
+     * @tc.desc Verify ConstructorIsPublic case 016: Class.from<MyClass019>(), isNative flag verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -352,7 +352,7 @@ export default function ConstructorIsPublicTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPUBLIC_1700
      * @tc.name testConstructorIsPublic017
-     * @tc.desc Verify ConstructorIsPublic case 017: from constructor publicconstructor
+     * @tc.desc Verify ConstructorIsPublic case 017: Class.from<MyClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

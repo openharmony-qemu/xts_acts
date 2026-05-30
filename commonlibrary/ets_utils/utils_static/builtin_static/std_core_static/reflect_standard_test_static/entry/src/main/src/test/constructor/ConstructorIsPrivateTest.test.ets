@@ -120,7 +120,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0100
      * @tc.name testConstructorIsPrivate001
-     * @tc.desc Verify ConstructorIsPrivate case 001: private class has no accessible constructors
+     * @tc.desc Verify ConstructorIsPrivate case 001: Class.from<MyClass003>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -134,7 +134,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0200
      * @tc.name testConstructorIsPrivate002
-     * @tc.desc Verify ConstructorIsPrivate case 002: publicconstructor return false
+     * @tc.desc Verify ConstructorIsPrivate case 002: Class.from<MyClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -150,7 +150,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0300
      * @tc.name testConstructorIsPrivate003
-     * @tc.desc Verify ConstructorIsPrivate case 003: protectedconstructor return false
+     * @tc.desc Verify ConstructorIsPrivate case 003: Class.from<MyClass005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -163,7 +163,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0400
      * @tc.name testConstructorIsPrivate004
-     * @tc.desc Verify ConstructorIsPrivate case 004: modifier constructor
+     * @tc.desc Verify ConstructorIsPrivate case 004: Class.from<MyClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -177,7 +177,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0500
      * @tc.name testConstructorIsPrivate005
-     * @tc.desc Verify ConstructorIsPrivate case 005: private constructor class has no accessible constructors
+     * @tc.desc Verify ConstructorIsPrivate case 005: Class.from<MyClass007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -191,7 +191,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0600
      * @tc.name testConstructorIsPrivate006
-     * @tc.desc Verify ConstructorIsPrivate case 006: abstract class privateconstructor
+     * @tc.desc Verify ConstructorIsPrivate case 006: Class.from<AbstractClass008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -206,7 +206,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0700
      * @tc.name testConstructorIsPrivate007
-     * @tc.desc Verify ConstructorIsPrivate case 007: final privateconstructor
+     * @tc.desc Verify ConstructorIsPrivate case 007: Class.from<FinalClass009>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -221,7 +221,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0800
      * @tc.name testConstructorIsPrivate008
-     * @tc.desc Verify ConstructorIsPrivate case 008: verify return type is boolean
+     * @tc.desc Verify ConstructorIsPrivate case 008: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -238,7 +238,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_0900
      * @tc.name testConstructorIsPrivate009
-     * @tc.desc Verify ConstructorIsPrivate case 009: isPrivate and isPublic isProtected
+     * @tc.desc Verify ConstructorIsPrivate case 009: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -263,7 +263,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1000
      * @tc.name testConstructorIsPrivate010
-     * @tc.desc Verify ConstructorIsPrivate case 010: generic privateconstructor
+     * @tc.desc Verify ConstructorIsPrivate case 010: Class.from<GenericClass013<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -277,7 +277,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1100
      * @tc.name testConstructorIsPrivate011
-     * @tc.desc Verify ConstructorIsPrivate case 011: privateconstructor should
+     * @tc.desc Verify ConstructorIsPrivate case 011: Class.from<Singleton014>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -289,7 +289,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1200
      * @tc.name testConstructorIsPrivate012
-     * @tc.desc Verify ConstructorIsPrivate case 012: isPrivate() returns false for public constructor
+     * @tc.desc Verify ConstructorIsPrivate case 012: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +302,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1300
      * @tc.name testConstructorIsPrivate013
-     * @tc.desc Verify ConstructorIsPrivate case 013: privateconstructor and
+     * @tc.desc Verify ConstructorIsPrivate case 013: Class.from<MyClass004>(), getName returns "constructor", constructor getName returns constructor, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -317,7 +317,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1400
      * @tc.name testConstructorIsPrivate014
-     * @tc.desc Verify ConstructorIsPrivate case 014: verify different type constructor isPrivate()
+     * @tc.desc Verify ConstructorIsPrivate case 014: Class.from<AbstractClass017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -331,7 +331,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1500
      * @tc.name testConstructorIsPrivate015
-     * @tc.desc Verify ConstructorIsPrivate case 015: verify different constructor
+     * @tc.desc Verify ConstructorIsPrivate case 015: Class.from<MyClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -345,7 +345,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1600
      * @tc.name testConstructorIsPrivate016
-     * @tc.desc Verify ConstructorIsPrivate case 016: verify isPrivate() and constructor property
+     * @tc.desc Verify ConstructorIsPrivate case 016: Class.from<MyClass019>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -362,7 +362,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1700
      * @tc.name testConstructorIsPrivate017
-     * @tc.desc Verify ConstructorIsPrivate case 017: from constructor privateconstructor
+     * @tc.desc Verify ConstructorIsPrivate case 017: Class.from<MyClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -382,7 +382,7 @@ export default function ConstructorIsPrivateTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPRIVATE_1800
      * @tc.name testConstructorIsPrivate018
-     * @tc.desc Verify ConstructorIsPrivate case 018: constructor
+     * @tc.desc Verify ConstructorIsPrivate case 018: Class.from<MyClass021>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

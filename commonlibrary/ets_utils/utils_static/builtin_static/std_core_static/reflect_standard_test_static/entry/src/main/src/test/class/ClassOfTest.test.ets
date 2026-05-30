@@ -310,7 +310,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0100
      * @tc.name testClassOf001
-     * @tc.desc Verify ClassOf case 001: parameters obj
+     * @tc.desc Verify ClassOf case 001: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -321,12 +321,10 @@ export default function ClassOfTest(): void {
       expect(cls !== null).assertTrue();
     });
 
-    
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0200
      * @tc.name testClassOf002
-     * @tc.desc Verify ClassOf case 002: Class.of with extra parameters throws or assertFail
+     * @tc.desc Verify ClassOf case 002: extra Class.of argument throws Error, Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -346,7 +344,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0300
      * @tc.name testClassOf003
-     * @tc.desc Verify ClassOf case 003: instance
+     * @tc.desc Verify ClassOf case 003: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -361,7 +359,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0400
      * @tc.name testClassOf004
-     * @tc.desc Verify ClassOf case 004: Mapobject
+     * @tc.desc Verify ClassOf case 004: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -375,7 +373,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0500
      * @tc.name testClassOf005
-     * @tc.desc Verify ClassOf case 005: Arrayobject
+     * @tc.desc Verify ClassOf case 005: Class.of(instance), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -389,7 +387,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0600
      * @tc.name testClassOf006
-     * @tc.desc Verify ClassOf case 006: Setobject
+     * @tc.desc Verify ClassOf case 006: Class.of(instance), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -403,7 +401,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0700
      * @tc.name testClassOf007
-     * @tc.desc Verify ClassOf case 007: FixedArrayobject
+     * @tc.desc Verify ClassOf case 007: Class.of(instance), isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -417,7 +415,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0800
      * @tc.name testClassOf008
-     * @tc.desc Verify ClassOf case 008: instance
+     * @tc.desc Verify ClassOf case 008: Class.of(instance), getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -434,7 +432,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_0900
      * @tc.name testClassOf009
-     * @tc.desc Verify ClassOf case 009: interface instance
+     * @tc.desc Verify ClassOf case 009: Class.of(instance), isInterface returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -449,7 +447,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1000
      * @tc.name testClassOf010
-     * @tc.desc Verify ClassOf case 010: object interface
+     * @tc.desc Verify ClassOf case 010: Class.of(instance), isLiteralInitializedInterface result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -463,7 +461,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1100
      * @tc.name testClassOf011
-     * @tc.desc Verify ClassOf case 011: generic instance
+     * @tc.desc Verify ClassOf case 011: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,7 +475,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1200
      * @tc.name testClassOf012
-     * @tc.desc Verify ClassOf case 012: null
+     * @tc.desc Verify ClassOf case 012: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -490,7 +488,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1300
      * @tc.name testClassOf013
-     * @tc.desc Verify ClassOf case 013: Class.of(null) is not undefined
+     * @tc.desc Verify ClassOf case 013: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -503,7 +501,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1400
      * @tc.name testClassOf014
-     * @tc.desc Verify ClassOf case 014: Class.of on Array instance and null both return non-null Class
+     * @tc.desc Verify ClassOf case 014: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +518,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1500
      * @tc.name testClassOf015
-     * @tc.desc Verify ClassOf case 015: undefined
+     * @tc.desc Verify ClassOf case 015: invalid input throws ClassCastError, Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -537,7 +535,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1600
      * @tc.name testClassOf016
-     * @tc.desc Verify ClassOf case 016: number
+     * @tc.desc Verify ClassOf case 016: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -552,7 +550,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1700
      * @tc.name testClassOf017
-     * @tc.desc Verify ClassOf case 017: string
+     * @tc.desc Verify ClassOf case 017: Class.of(instance), getName returns "std.core.String"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -566,7 +564,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1800
      * @tc.name testClassOf018
-     * @tc.desc Verify ClassOf case 018: boolean
+     * @tc.desc Verify ClassOf case 018: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -581,7 +579,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_1900
      * @tc.name testClassOf019
-     * @tc.desc Verify ClassOf case 019: NaN
+     * @tc.desc Verify ClassOf case 019: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +594,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2000
      * @tc.name testClassOf020
-     * @tc.desc Verify ClassOf case 020: Infinity
+     * @tc.desc Verify ClassOf case 020: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -611,7 +609,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2100
      * @tc.name testClassOf021
-     * @tc.desc Verify ClassOf case 021: return Class object
+     * @tc.desc Verify ClassOf case 021: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -626,7 +624,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2200
      * @tc.name testClassOf022
-     * @tc.desc Verify ClassOf case 022: return Class method
+     * @tc.desc Verify ClassOf case 022: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -641,7 +639,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2300
      * @tc.name testClassOf023
-     * @tc.desc Verify ClassOf case 023: return Class object call getName
+     * @tc.desc Verify ClassOf case 023: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -655,7 +653,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2400
      * @tc.name testClassOf024
-     * @tc.desc Verify ClassOf case 024: return Class object get
+     * @tc.desc Verify ClassOf case 024: Class.of(instance), getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -671,7 +669,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2500
      * @tc.name testClassOf025
-     * @tc.desc Verify ClassOf case 025: return Class object is type
+     * @tc.desc Verify ClassOf case 025: Class.of(instance), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -685,7 +683,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2600
      * @tc.name testClassOf026
-     * @tc.desc Verify ClassOf case 026: return Class object is interface
+     * @tc.desc Verify ClassOf case 026: Class.of(instance), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -699,7 +697,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2700
      * @tc.name testClassOf027
-     * @tc.desc Verify ClassOf case 027: object call ofreturn same Class
+     * @tc.desc Verify ClassOf case 027: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -714,7 +712,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2800
      * @tc.name testClassOf028
-     * @tc.desc Verify ClassOf case 028: different instance return same Class
+     * @tc.desc Verify ClassOf case 028: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -730,7 +728,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_2900
      * @tc.name testClassOf029
-     * @tc.desc Verify ClassOf case 029: Object nulltype
+     * @tc.desc Verify ClassOf case 029: Class.of(instance), getName returns "std.core.Null"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -744,7 +742,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3000
      * @tc.name testClassOf030
-     * @tc.desc Verify ClassOf case 030: object
+     * @tc.desc Verify ClassOf case 030: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -758,7 +756,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3100
      * @tc.name testClassOf031
-     * @tc.desc Verify ClassOf case 031: of instance from type
+     * @tc.desc Verify ClassOf case 031: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -773,7 +771,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3200
      * @tc.name testClassOf032
-     * @tc.desc Verify ClassOf case 032: of Object null ofAny Any
+     * @tc.desc Verify ClassOf case 032: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -788,7 +786,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3300
      * @tc.name testClassOf033
-     * @tc.desc Verify ClassOf case 033: of null ofAny null
+     * @tc.desc Verify ClassOf case 033: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -802,7 +800,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3400
      * @tc.name testClassOf034
-     * @tc.desc Verify ClassOf case 034: Class.of typed variable compiles and returns Class
+     * @tc.desc Verify ClassOf case 034: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -817,7 +815,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3500
      * @tc.name testClassOf035
-     * @tc.desc Verify ClassOf case 035: Object null type
+     * @tc.desc Verify ClassOf case 035: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -835,7 +833,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3600
      * @tc.name testClassOf036
-     * @tc.desc Verify ClassOf case 036: get generic Class
+     * @tc.desc Verify ClassOf case 036: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +847,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3700
      * @tc.name testClassOf037
-     * @tc.desc Verify ClassOf case 037: generic interface
+     * @tc.desc Verify ClassOf case 037: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -863,7 +861,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3800
      * @tc.name testClassOf038
-     * @tc.desc Verify ClassOf case 038: different generic parameters Map
+     * @tc.desc Verify ClassOf case 038: Class.of(instance), getName returns "std.core.Map"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -885,7 +883,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_3900
      * @tc.name testClassOf039
-     * @tc.desc Verify ClassOf case 039: different type Array
+     * @tc.desc Verify ClassOf case 039: Class.of(instance), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -907,7 +905,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4000
      * @tc.name testClassOf040
-     * @tc.desc Verify ClassOf case 040: different type Set
+     * @tc.desc Verify ClassOf case 040: Class.of(instance), getName returns "std.core.Set"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -925,7 +923,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4100
      * @tc.name testClassOf041
-     * @tc.desc Verify ClassOf case 041: array
+     * @tc.desc Verify ClassOf case 041: Class.of(instance), isFixedArray returns true, getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -943,7 +941,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4200
      * @tc.name testClassOf042
-     * @tc.desc Verify ClassOf case 042: array
+     * @tc.desc Verify ClassOf case 042: Class.of(instance), isFixedArray returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -957,7 +955,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4300
      * @tc.name testClassOf043
-     * @tc.desc Verify ClassOf case 043: type Class
+     * @tc.desc Verify ClassOf case 043: Class.of(instance), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -970,7 +968,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4400
      * @tc.name testClassOf044
-     * @tc.desc Verify ClassOf case 044: is object
+     * @tc.desc Verify ClassOf case 044: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -983,7 +981,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4500
      * @tc.name testClassOf045
-     * @tc.desc Verify ClassOf case 045: Class
+     * @tc.desc Verify ClassOf case 045: Class.of(instance), isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -999,7 +997,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4600
      * @tc.name testClassOf046
-     * @tc.desc Verify ClassOf case 046: inheritance Classget
+     * @tc.desc Verify ClassOf case 046: Class.of(instance), getSuper returns expected parent Class, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1019,7 +1017,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4700
      * @tc.name testClassOf047
-     * @tc.desc Verify ClassOf case 047: multiple interface
+     * @tc.desc Verify ClassOf case 047: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1034,7 +1032,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4800
      * @tc.name testClassOf048
-     * @tc.desc Verify ClassOf case 048: scenario Classget
+     * @tc.desc Verify ClassOf case 048: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1048,7 +1046,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_4900
      * @tc.name testClassOf049
-     * @tc.desc Verify ClassOf case 049: interface
+     * @tc.desc Verify ClassOf case 049: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1062,7 +1060,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5000
      * @tc.name testClassOf050
-     * @tc.desc Verify ClassOf case 050: empty instance
+     * @tc.desc Verify ClassOf case 050: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1076,7 +1074,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5100
      * @tc.name testClassOf051
-     * @tc.desc Verify ClassOf case 051: LargeClass052 instance with 100 fields
+     * @tc.desc Verify ClassOf case 051: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1090,7 +1088,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5200
      * @tc.name testClassOf052
-     * @tc.desc Verify ClassOf case 052: call initialize object
+     * @tc.desc Verify ClassOf case 052: Class.of(instance), getName returns expected qualified name, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1105,7 +1103,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5300
      * @tc.name testClassOf053
-     * @tc.desc Verify ClassOf case 053: final Classget
+     * @tc.desc Verify ClassOf case 053: Class.of(instance), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1119,7 +1117,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5400
      * @tc.name testClassOf054
-     * @tc.desc Verify ClassOf case 054: abstract class instance
+     * @tc.desc Verify ClassOf case 054: Class.of(instance), getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1133,7 +1131,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5500
      * @tc.name testClassOf055
-     * @tc.desc Verify ClassOf case 055: call ofmethod performance
+     * @tc.desc Verify ClassOf case 055: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1152,7 +1150,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5600
      * @tc.name testClassOf056
-     * @tc.desc Verify ClassOf case 056: different object call of
+     * @tc.desc Verify ClassOf case 056: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1173,7 +1171,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5700
      * @tc.name testClassOf057
-     * @tc.desc Verify ClassOf case 057: get Class object
+     * @tc.desc Verify ClassOf case 057: Class.from<MyClass>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1188,7 +1186,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5800
      * @tc.name testClassOf058
-     * @tc.desc Verify ClassOf case 058: type Class
+     * @tc.desc Verify ClassOf case 058: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1204,7 +1202,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_5900
      * @tc.name testClassOf059
-     * @tc.desc Verify ClassOf case 059: scenario ofcall
+     * @tc.desc Verify ClassOf case 059: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1219,7 +1217,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6000
      * @tc.name testClassOf060
-     * @tc.desc Verify ClassOf case 060: multiple get object Class
+     * @tc.desc Verify ClassOf case 060: Class.of(instance), getName returns "std.core.Array"
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1235,7 +1233,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6100
      * @tc.name testClassOf061
-     * @tc.desc Verify ClassOf case 061: using Class.of type
+     * @tc.desc Verify ClassOf case 061: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1248,7 +1246,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6200
      * @tc.name testClassOf062
-     * @tc.desc Verify ClassOf case 062: verify object is type
+     * @tc.desc Verify ClassOf case 062: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1262,7 +1260,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6300
      * @tc.name testClassOf063
-     * @tc.desc Verify ClassOf case 063: using Class.ofget type
+     * @tc.desc Verify ClassOf case 063: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1277,7 +1275,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6400
      * @tc.name testClassOf064
-     * @tc.desc Verify ClassOf case 064: Class
+     * @tc.desc Verify ClassOf case 064: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1291,7 +1289,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6500
      * @tc.name testClassOf065
-     * @tc.desc Verify ClassOf case 065: verify Class.of in different API is
+     * @tc.desc Verify ClassOf case 065: Class.from<Map<int, string>>(), isUnion returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1307,7 +1305,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6600
      * @tc.name testClassOf066
-     * @tc.desc Verify ClassOf case 066: using Class.of
+     * @tc.desc Verify ClassOf case 066: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1321,7 +1319,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6700
      * @tc.name testClassOf067
-     * @tc.desc Verify ClassOf case 067: boxed primitive via Object
+     * @tc.desc Verify ClassOf case 067: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1336,7 +1334,7 @@ export default function ClassOfTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OF_6800
      * @tc.name testClassOf068
-     * @tc.desc Verify ClassOf case 068: safeGetClass069(null) matches Class.of(null)
+     * @tc.desc Verify ClassOf case 068: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

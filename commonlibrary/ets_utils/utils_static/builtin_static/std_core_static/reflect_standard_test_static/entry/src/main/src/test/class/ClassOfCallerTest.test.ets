@@ -439,7 +439,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0100
      * @tc.name testClassOfCaller001
-     * @tc.desc Verify ClassOfCaller case 001: ofCaller() in top-level it() returns Class (non-null, stable getName)
+     * @tc.desc Verify ClassOfCaller case 001: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -455,7 +455,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0200
      * @tc.name testClassOfCaller002
-     * @tc.desc Verify ClassOfCaller case 002: ofCaller() with no arguments in nested call
+     * @tc.desc Verify ClassOfCaller case 002: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -471,7 +471,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0300
      * @tc.name testClassOfCaller003
-     * @tc.desc Verify ClassOfCaller case 003: from method call when return Class object
+     * @tc.desc Verify ClassOfCaller case 003: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -486,7 +486,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0400
      * @tc.name testClassOfCaller004
-     * @tc.desc Verify ClassOfCaller case 004: call get call
+     * @tc.desc Verify ClassOfCaller case 004: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -501,7 +501,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0500
      * @tc.name testClassOfCaller005
-     * @tc.desc Verify ClassOfCaller case 005: from static method get call
+     * @tc.desc Verify ClassOfCaller case 005: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -515,7 +515,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0600
      * @tc.name testClassOfCaller006
-     * @tc.desc Verify ClassOfCaller case 006: from constructor get call
+     * @tc.desc Verify ClassOfCaller case 006: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -528,7 +528,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0700
      * @tc.name testClassOfCaller007
-     * @tc.desc Verify ClassOfCaller case 007: from property get call
+     * @tc.desc Verify ClassOfCaller case 007: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -543,7 +543,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0800
      * @tc.name testClassOfCaller008
-     * @tc.desc Verify ClassOfCaller case 008: return Class object call method
+     * @tc.desc Verify ClassOfCaller case 008: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -556,7 +556,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_0900
      * @tc.name testClassOfCaller009
-     * @tc.desc Verify ClassOfCaller case 009: in inheritance call
+     * @tc.desc Verify ClassOfCaller case 009: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -572,7 +572,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1000
      * @tc.name testClassOfCaller010
-     * @tc.desc Verify ClassOfCaller case 010: interface get call
+     * @tc.desc Verify ClassOfCaller case 010: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -586,7 +586,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1100
      * @tc.name testClassOfCaller011
-     * @tc.desc Verify ClassOfCaller case 011: in get call
+     * @tc.desc Verify ClassOfCaller case 011: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -599,7 +599,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1200
      * @tc.name testClassOfCaller012
-     * @tc.desc Verify ClassOfCaller case 012: in get call
+     * @tc.desc Verify ClassOfCaller case 012: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -614,7 +614,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1300
      * @tc.name testClassOfCaller013
-     * @tc.desc Verify ClassOfCaller case 013: is parameters when call
+     * @tc.desc Verify ClassOfCaller case 013: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -629,7 +629,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1400
      * @tc.name testClassOfCaller014
-     * @tc.desc Verify ClassOfCaller case 014: using ofCaller method call
+     * @tc.desc Verify ClassOfCaller case 014: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -644,7 +644,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1500
      * @tc.name testClassOfCaller015
-     * @tc.desc Verify ClassOfCaller case 015: verify method call
+     * @tc.desc Verify ClassOfCaller case 015: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -660,7 +660,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1600
      * @tc.name testClassOfCaller016
-     * @tc.desc Verify ClassOfCaller case 016: method call
+     * @tc.desc Verify ClassOfCaller case 016: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -675,7 +675,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1700
      * @tc.name testClassOfCaller017
-     * @tc.desc Verify ClassOfCaller case 017: call type different
+     * @tc.desc Verify ClassOfCaller case 017: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -689,7 +689,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1800
      * @tc.name testClassOfCaller018
-     * @tc.desc Verify ClassOfCaller case 018: in call ofCaller
+     * @tc.desc Verify ClassOfCaller case 018: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -703,7 +703,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_1900
      * @tc.name testClassOfCaller019
-     * @tc.desc Verify ClassOfCaller case 019: in TaskPool or Worker call ofCaller
+     * @tc.desc Verify ClassOfCaller case 019: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -715,7 +715,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2000
      * @tc.name testClassOfCaller020
-     * @tc.desc Verify ClassOfCaller case 020: in generic get call
+     * @tc.desc Verify ClassOfCaller case 020: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -729,7 +729,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2100
      * @tc.name testClassOfCaller021
-     * @tc.desc Verify ClassOfCaller case 021: in using ofCaller
+     * @tc.desc Verify ClassOfCaller case 021: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -742,7 +742,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2200
      * @tc.name testClassOfCaller022
-     * @tc.desc Verify ClassOfCaller case 022: in get call
+     * @tc.desc Verify ClassOfCaller case 022: Class.from<VersionTest029>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -756,7 +756,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2300
      * @tc.name testClassOfCaller023
-     * @tc.desc Verify ClassOfCaller case 023: get call when using
+     * @tc.desc Verify ClassOfCaller case 023: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -770,7 +770,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2400
      * @tc.name testClassOfCaller024
-     * @tc.desc Verify ClassOfCaller case 024: using
+     * @tc.desc Verify ClassOfCaller case 024: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -783,7 +783,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2500
      * @tc.name testClassOfCaller025
-     * @tc.desc Verify ClassOfCaller case 025: verify in different API is
+     * @tc.desc Verify ClassOfCaller case 025: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -795,7 +795,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2600
      * @tc.name testClassOfCaller026
-     * @tc.desc Verify ClassOfCaller case 026: from different call ofCaller
+     * @tc.desc Verify ClassOfCaller case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -810,7 +810,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2700
      * @tc.name testClassOfCaller027
-     * @tc.desc Verify ClassOfCaller case 027: in call get call
+     * @tc.desc Verify ClassOfCaller case 027: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -824,7 +824,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2800
      * @tc.name testClassOfCaller028
-     * @tc.desc Verify ClassOfCaller case 028: in method get call
+     * @tc.desc Verify ClassOfCaller case 028: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -838,7 +838,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_2900
      * @tc.name testClassOfCaller029
-     * @tc.desc Verify ClassOfCaller case 029: verify
+     * @tc.desc Verify ClassOfCaller case 029: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -851,7 +851,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_3000
      * @tc.name testClassOfCaller030
-     * @tc.desc Verify ClassOfCaller case 030: multiple different call method
+     * @tc.desc Verify ClassOfCaller case 030: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -864,7 +864,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_3100
      * @tc.name testClassOfCaller031
-     * @tc.desc Verify ClassOfCaller case 031: using Class.from() string
+     * @tc.desc Verify ClassOfCaller case 031: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -878,7 +878,7 @@ export default function ClassOfCallerTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFCALLER_3200
      * @tc.name testClassOfCaller032
-     * @tc.desc Verify ClassOfCaller case 032: ofCaller call
+     * @tc.desc Verify ClassOfCaller case 032: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

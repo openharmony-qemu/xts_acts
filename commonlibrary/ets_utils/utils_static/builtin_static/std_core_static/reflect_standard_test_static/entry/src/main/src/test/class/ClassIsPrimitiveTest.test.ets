@@ -117,7 +117,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0100
      * @tc.name testClassIsPrimitive001
-     * @tc.desc Verify ClassIsPrimitive case 001: using Class.from<T>()get Class object call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 001: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -136,7 +136,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0200
      * @tc.name testClassIsPrimitive002
-     * @tc.desc Verify ClassIsPrimitive case 002: using Class.of(obj)get Class object call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 002: Class.of(instance), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,7 +154,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0300
      * @tc.name testClassIsPrimitive003
-     * @tc.desc Verify ClassIsPrimitive case 003: using Class static type property call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 003: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -175,7 +175,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0400
      * @tc.name testClassIsPrimitive004
-     * @tc.desc Verify ClassIsPrimitive case 004: using Class.ofAny(obj)get Class object call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 004: isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -189,7 +189,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0500
      * @tc.name testClassIsPrimitive005
-     * @tc.desc Verify ClassIsPrimitive case 005: boolean byte char short int long float doubletype Class object
+     * @tc.desc Verify ClassIsPrimitive case 005: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -226,7 +226,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0600
      * @tc.name testClassIsPrimitive006
-     * @tc.desc Verify ClassIsPrimitive case 006: type
+     * @tc.desc Verify ClassIsPrimitive case 006: Class.from<MyClass007>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0700
      * @tc.name testClassIsPrimitive007
-     * @tc.desc Verify ClassIsPrimitive case 007: interface type Class object
+     * @tc.desc Verify ClassIsPrimitive case 007: Class.from<MyInterface008>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +254,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0800
      * @tc.name testClassIsPrimitive008
-     * @tc.desc Verify ClassIsPrimitive case 008: type Class object
+     * @tc.desc Verify ClassIsPrimitive case 008: Class.from<TestEnum009>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -267,7 +267,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_0900
      * @tc.name testClassIsPrimitive009
-     * @tc.desc Verify ClassIsPrimitive case 009: array type Class object
+     * @tc.desc Verify ClassIsPrimitive case 009: Class.from<Array<int>>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -286,7 +286,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1000
      * @tc.name testClassIsPrimitive010
-     * @tc.desc Verify ClassIsPrimitive case 010: Map Set type Class object
+     * @tc.desc Verify ClassIsPrimitive case 010: Class.from<Map<int, string>>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -305,7 +305,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1100
      * @tc.name testClassIsPrimitive011
-     * @tc.desc Verify ClassIsPrimitive case 011: type Class object
+     * @tc.desc Verify ClassIsPrimitive case 011: Class.from<int | string | boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -318,7 +318,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1200
      * @tc.name testClassIsPrimitive012
-     * @tc.desc Verify ClassIsPrimitive case 012: generic type Class object
+     * @tc.desc Verify ClassIsPrimitive case 012: Class.from<GenericClass013<int>>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -334,7 +334,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1300
      * @tc.name testClassIsPrimitive013
-     * @tc.desc Verify ClassIsPrimitive case 013: 10 PRIMITIVE_ static property call isPrimitive()return true
+     * @tc.desc Verify ClassIsPrimitive case 013: Class.from<int>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -348,7 +348,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1400
      * @tc.name testClassIsPrimitive014
-     * @tc.desc Verify ClassIsPrimitive case 014: type Class object call isPrimitive()return false
+     * @tc.desc Verify ClassIsPrimitive case 014: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -372,7 +372,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1500
      * @tc.name testClassIsPrimitive015
-     * @tc.desc Verify ClassIsPrimitive case 015: PRIMITIVE_VOID isPrimitive()should return true
+     * @tc.desc Verify ClassIsPrimitive case 015: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -384,7 +384,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1600
      * @tc.name testClassIsPrimitive016
-     * @tc.desc Verify ClassIsPrimitive case 016: PRIMITIVE_NUMBER isPrimitive()should return true Class.from<number>()return false
+     * @tc.desc Verify ClassIsPrimitive case 016: Class.from<number>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -398,7 +398,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1700
      * @tc.name testClassIsPrimitive017
-     * @tc.desc Verify ClassIsPrimitive case 017: isPrimitive()return should is boolean type
+     * @tc.desc Verify ClassIsPrimitive case 017: Class.from<boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -412,7 +412,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1800
      * @tc.name testClassIsPrimitive018
-     * @tc.desc Verify ClassIsPrimitive case 018: return should is booleaninstance
+     * @tc.desc Verify ClassIsPrimitive case 018: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -425,7 +425,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_1900
      * @tc.name testClassIsPrimitive019
-     * @tc.desc Verify ClassIsPrimitive case 019: verify PRIMITIVE_ property isPrimitive() is
+     * @tc.desc Verify ClassIsPrimitive case 019: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -453,7 +453,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2000
      * @tc.name testClassIsPrimitive020
-     * @tc.desc Verify ClassIsPrimitive case 020: Class object call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 020: Class.from<MyClass022>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -467,7 +467,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2100
      * @tc.name testClassIsPrimitive021
-     * @tc.desc Verify ClassIsPrimitive case 021: Class object call isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 021: Class.from<MyClass023>(), isPrimitive returns false, initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -482,7 +482,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2200
      * @tc.name testClassIsPrimitive022
-     * @tc.desc Verify ClassIsPrimitive case 022: isPrimitive()method call
+     * @tc.desc Verify ClassIsPrimitive case 022: Class.from<boolean>(), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -497,7 +497,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2300
      * @tc.name testClassIsPrimitive023
-     * @tc.desc Verify ClassIsPrimitive case 023: isPrimitive() method not
+     * @tc.desc Verify ClassIsPrimitive case 023: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -511,7 +511,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2400
      * @tc.name testClassIsPrimitive024
-     * @tc.desc Verify ClassIsPrimitive case 024: multiple when call isPrimitive()should return
+     * @tc.desc Verify ClassIsPrimitive case 024: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +532,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2500
      * @tc.name testClassIsPrimitive025
-     * @tc.desc Verify ClassIsPrimitive case 025: using Class.of(null)get Class object
+     * @tc.desc Verify ClassIsPrimitive case 025: Class.of(instance), isPrimitive returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -546,7 +546,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2600
      * @tc.name testClassIsPrimitive026
-     * @tc.desc Verify ClassIsPrimitive case 026: Class.ofAny(undefined) returns undefined
+     * @tc.desc Verify ClassIsPrimitive case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -560,7 +560,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2700
      * @tc.name testClassIsPrimitive027
-     * @tc.desc Verify ClassIsPrimitive case 027: isPrimitive() and Classmethod using
+     * @tc.desc Verify ClassIsPrimitive case 027: getName returns "i32", getDescriptor() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -581,7 +581,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2800
      * @tc.name testClassIsPrimitive028
-     * @tc.desc Verify ClassIsPrimitive case 028: isPrimitive() and type method
+     * @tc.desc Verify ClassIsPrimitive case 028: Class.from<MyInterface008>(), isInterface returns false, isEnum returns false, isPrimitive returns true, isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -605,7 +605,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_2900
      * @tc.name testClassIsPrimitive029
-     * @tc.desc Verify ClassIsPrimitive case 029: isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 029: Class.from<MyClass>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -620,7 +620,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3000
      * @tc.name testClassIsPrimitive030
-     * @tc.desc Verify ClassIsPrimitive case 030: in using isPrimitive() type
+     * @tc.desc Verify ClassIsPrimitive case 030: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -633,7 +633,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3100
      * @tc.name testClassIsPrimitive031
-     * @tc.desc Verify ClassIsPrimitive case 031: when isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 031: Class.from<boolean>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -648,7 +648,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3200
      * @tc.name testClassIsPrimitive032
-     * @tc.desc Verify ClassIsPrimitive case 032: call isPrimitive()should return
+     * @tc.desc Verify ClassIsPrimitive case 032: Class.from<MyClass>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -672,7 +672,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3300
      * @tc.name testClassIsPrimitive033
-     * @tc.desc Verify ClassIsPrimitive case 033: verify isPrimitive()
+     * @tc.desc Verify ClassIsPrimitive case 033: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -688,7 +688,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3400
      * @tc.name testClassIsPrimitive034
-     * @tc.desc Verify ClassIsPrimitive case 034: verify isPrimitive() in different API
+     * @tc.desc Verify ClassIsPrimitive case 034: Class.from<Map<int, string>>(), isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -704,7 +704,7 @@ export default function ClassIsPrimitiveTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISPRIMITIVE_3500
      * @tc.name testClassIsPrimitive035
-     * @tc.desc Verify ClassIsPrimitive case 035: in different isPrimitive() is
+     * @tc.desc Verify ClassIsPrimitive case 035: isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

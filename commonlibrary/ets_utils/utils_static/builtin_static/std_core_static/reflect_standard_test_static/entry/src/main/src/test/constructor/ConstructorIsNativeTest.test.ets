@@ -110,7 +110,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0100
      * @tc.name testConstructorIsNative001
-     * @tc.desc Verify ConstructorIsNative case 001: constructor return false
+     * @tc.desc Verify ConstructorIsNative case 001: Class.from<MyClass003>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -126,7 +126,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0200
      * @tc.name testConstructorIsNative002
-     * @tc.desc Verify ConstructorIsNative case 002: constructor return false
+     * @tc.desc Verify ConstructorIsNative case 002: Class.from<MyClass004>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -139,7 +139,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0300
      * @tc.name testConstructorIsNative003
-     * @tc.desc Verify ConstructorIsNative case 003: abstract class constructor return false
+     * @tc.desc Verify ConstructorIsNative case 003: Class.from<AbstractClass005>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,7 +152,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0400
      * @tc.name testConstructorIsNative004
-     * @tc.desc Verify ConstructorIsNative case 004: final constructor return false
+     * @tc.desc Verify ConstructorIsNative case 004: Class.from<FinalClass006>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -165,7 +165,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0500
      * @tc.name testConstructorIsNative005
-     * @tc.desc Verify ConstructorIsNative case 005: generic constructor return false
+     * @tc.desc Verify ConstructorIsNative case 005: Class.from<GenericClass007<int>>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -178,7 +178,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0600
      * @tc.name testConstructorIsNative006
-     * @tc.desc Verify ConstructorIsNative case 006: public private protectedconstructor return false
+     * @tc.desc Verify ConstructorIsNative case 006: Class.from<MyClass008>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -194,7 +194,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0700
      * @tc.name testConstructorIsNative007
-     * @tc.desc Verify ConstructorIsNative case 007: verify return type is boolean
+     * @tc.desc Verify ConstructorIsNative case 007: Class.from<MyClass001>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -212,7 +212,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0800
      * @tc.name testConstructorIsNative008
-     * @tc.desc Verify ConstructorIsNative case 008: different constructor isNative()
+     * @tc.desc Verify ConstructorIsNative case 008: Class.from<MyClass011>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -228,7 +228,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_0900
      * @tc.name testConstructorIsNative009
-     * @tc.desc Verify ConstructorIsNative case 009: constructor
+     * @tc.desc Verify ConstructorIsNative case 009: Class.from<MyClass012>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1000
      * @tc.name testConstructorIsNative010
-     * @tc.desc Verify ConstructorIsNative case 010: isNative() returns false for user-defined constructor
+     * @tc.desc Verify ConstructorIsNative case 010: Class.from<MyClass001>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +254,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1100
      * @tc.name testConstructorIsNative011
-     * @tc.desc Verify ConstructorIsNative case 011: verify modifier constructor native
+     * @tc.desc Verify ConstructorIsNative case 011: Class.from<MyClass014>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -270,7 +270,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1200
      * @tc.name testConstructorIsNative012
-     * @tc.desc Verify ConstructorIsNative case 012: verify different type constructor isNative()
+     * @tc.desc Verify ConstructorIsNative case 012: Class.from<AbstractClass015>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -287,7 +287,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1300
      * @tc.name testConstructorIsNative013
-     * @tc.desc Verify ConstructorIsNative case 013: verify inheritance constructor isNative()
+     * @tc.desc Verify ConstructorIsNative case 013: Class.from<ParentClass016>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +302,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1400
      * @tc.name testConstructorIsNative014
-     * @tc.desc Verify ConstructorIsNative case 014: verify constructor isNative()
+     * @tc.desc Verify ConstructorIsNative case 014: Class.from<MyClass017>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -318,7 +318,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1500
      * @tc.name testConstructorIsNative015
-     * @tc.desc Verify ConstructorIsNative case 015: verify isNative() and constructor property
+     * @tc.desc Verify ConstructorIsNative case 015: Class.from<MyClass018>(), isNative flag verified, parameter count verified, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -334,7 +334,7 @@ export default function ConstructorIsNativeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISNATIVE_1600
      * @tc.name testConstructorIsNative016
-     * @tc.desc Verify ConstructorIsNative case 016: isNative()
+     * @tc.desc Verify ConstructorIsNative case 016: Class.from<MyClass019>(), isNative flag verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -168,7 +168,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0100
      * @tc.name testClassIsInterface001
-     * @tc.desc Verify ClassIsInterface case 001: isInterface()method no parameters
+     * @tc.desc Verify ClassIsInterface case 001: Class.from<ArrayLike<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -184,7 +184,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0200
      * @tc.name testClassIsInterface002
-     * @tc.desc Verify ClassIsInterface case 002: interface return true
+     * @tc.desc Verify ClassIsInterface case 002: Class.from<MyInterface003>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -198,7 +198,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0300
      * @tc.name testClassIsInterface003
-     * @tc.desc Verify ClassIsInterface case 003: std.core interface
+     * @tc.desc Verify ClassIsInterface case 003: Class.from<JsonSerializable>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -212,7 +212,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0400
      * @tc.name testClassIsInterface004
-     * @tc.desc Verify ClassIsInterface case 004: multiple interface return false
+     * @tc.desc Verify ClassIsInterface case 004: Class.from<MyClass005>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -226,7 +226,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0500
      * @tc.name testClassIsInterface005
-     * @tc.desc Verify ClassIsInterface case 005: generic interface return true
+     * @tc.desc Verify ClassIsInterface case 005: Class.from<GenericInterface006<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -240,7 +240,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0600
      * @tc.name testClassIsInterface006
-     * @tc.desc Verify ClassIsInterface case 006: return false
+     * @tc.desc Verify ClassIsInterface case 006: Class.from<MyClass007>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -254,7 +254,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0700
      * @tc.name testClassIsInterface007
-     * @tc.desc Verify ClassIsInterface case 007: abstract class return false
+     * @tc.desc Verify ClassIsInterface case 007: Class.from<AbstractClass008>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -268,7 +268,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0800
      * @tc.name testClassIsInterface008
-     * @tc.desc Verify ClassIsInterface case 008: final return false
+     * @tc.desc Verify ClassIsInterface case 008: Class.from<FinalClass009>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -282,7 +282,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_0900
      * @tc.name testClassIsInterface009
-     * @tc.desc Verify ClassIsInterface case 009: return false
+     * @tc.desc Verify ClassIsInterface case 009: Class.from<TestEnum010>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -296,7 +296,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1000
      * @tc.name testClassIsInterface010
-     * @tc.desc Verify ClassIsInterface case 010: Array return false
+     * @tc.desc Verify ClassIsInterface case 010: Class.from<Array<int>>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -310,7 +310,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1100
      * @tc.name testClassIsInterface011
-     * @tc.desc Verify ClassIsInterface case 011: Map return false
+     * @tc.desc Verify ClassIsInterface case 011: Class.from<Map<string, int>>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -324,7 +324,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1200
      * @tc.name testClassIsInterface012
-     * @tc.desc Verify ClassIsInterface case 012: Set return false
+     * @tc.desc Verify ClassIsInterface case 012: Class.from<Set<int>>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -338,7 +338,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1300
      * @tc.name testClassIsInterface013
-     * @tc.desc Verify ClassIsInterface case 013: type should return false
+     * @tc.desc Verify ClassIsInterface case 013: Class.from<int>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -352,7 +352,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1400
      * @tc.name testClassIsInterface014
-     * @tc.desc Verify ClassIsInterface case 014: FixedArray type return false
+     * @tc.desc Verify ClassIsInterface case 014: Class.of(instance), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -367,7 +367,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1500
      * @tc.name testClassIsInterface015
-     * @tc.desc Verify ClassIsInterface case 015: type return false
+     * @tc.desc Verify ClassIsInterface case 015: Class.from<int | string>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -381,7 +381,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1600
      * @tc.name testClassIsInterface016
-     * @tc.desc Verify ClassIsInterface case 016: PRIMITIVE_BOOLEAN type return false
+     * @tc.desc Verify ClassIsInterface case 016: isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -397,7 +397,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1700
      * @tc.name testClassIsInterface017
-     * @tc.desc Verify ClassIsInterface case 017: inheritance interface interface return true
+     * @tc.desc Verify ClassIsInterface case 017: Class.from<ChildInterface018>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -411,7 +411,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1800
      * @tc.name testClassIsInterface018
-     * @tc.desc Verify ClassIsInterface case 018: interface return false
+     * @tc.desc Verify ClassIsInterface case 018: Class.from<MyClass019>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -425,7 +425,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_1900
      * @tc.name testClassIsInterface019
-     * @tc.desc Verify ClassIsInterface case 019: inheritance return false
+     * @tc.desc Verify ClassIsInterface case 019: Class.from<Child020>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -439,7 +439,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2000
      * @tc.name testClassIsInterface020
-     * @tc.desc Verify ClassIsInterface case 020: verify return is boolean type
+     * @tc.desc Verify ClassIsInterface case 020: Class.from<ArrayLike<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -453,7 +453,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2100
      * @tc.name testClassIsInterface021
-     * @tc.desc Verify ClassIsInterface case 021: Class object call return same
+     * @tc.desc Verify ClassIsInterface case 021: Class.from<ArrayLike<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -468,7 +468,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2200
      * @tc.name testClassIsInterface022
-     * @tc.desc Verify ClassIsInterface case 022: type different Classinstance return same
+     * @tc.desc Verify ClassIsInterface case 022: Class.from<ArrayLike<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -482,7 +482,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2300
      * @tc.name testClassIsInterface023
-     * @tc.desc Verify ClassIsInterface case 023: interface return true
+     * @tc.desc Verify ClassIsInterface case 023: Class.from<EmptyInterface025>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -496,7 +496,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2400
      * @tc.name testClassIsInterface024
-     * @tc.desc Verify ClassIsInterface case 024: property interface return true
+     * @tc.desc Verify ClassIsInterface case 024: Class.from<ReadonlyInterface026>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -510,7 +510,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2500
      * @tc.name testClassIsInterface025
-     * @tc.desc Verify ClassIsInterface case 025: interface return true
+     * @tc.desc Verify ClassIsInterface case 025: Class.from<FunctionInterface027>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -524,7 +524,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2600
      * @tc.name testClassIsInterface026
-     * @tc.desc Verify ClassIsInterface case 026: interface return true
+     * @tc.desc Verify ClassIsInterface case 026: Class.from<IndexSignatureInterface028>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -538,7 +538,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2700
      * @tc.name testClassIsInterface027
-     * @tc.desc Verify ClassIsInterface case 027: multiple generic parameters interface return true
+     * @tc.desc Verify ClassIsInterface case 027: Class.from<MultiGenericInterface029<string, int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -552,7 +552,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2800
      * @tc.name testClassIsInterface028
-     * @tc.desc Verify ClassIsInterface case 028: type generic interface return true
+     * @tc.desc Verify ClassIsInterface case 028: Class.from<ConstrainedInterface030<double>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -566,7 +566,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_2900
      * @tc.name testClassIsInterface029
-     * @tc.desc Verify ClassIsInterface case 029: type parameters interface return true
+     * @tc.desc Verify ClassIsInterface case 029: Class.from<DefaultGenericInterface031<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -580,7 +580,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3000
      * @tc.name testClassIsInterface030
-     * @tc.desc Verify ClassIsInterface case 030: union type string|int isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 030: Class.from<string | int>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -594,7 +594,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3100
      * @tc.name testClassIsInterface031
-     * @tc.desc Verify ClassIsInterface case 031: property interface return true
+     * @tc.desc Verify ClassIsInterface case 031: Class.from<OptionalInterface033>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -608,7 +608,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3200
      * @tc.name testClassIsInterface032
-     * @tc.desc Verify ClassIsInterface case 032: type isEnum returns true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 032: Class.from<TestEnum034>(), isInterface returns false, isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -622,7 +622,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3300
      * @tc.name testClassIsInterface033
-     * @tc.desc Verify ClassIsInterface case 033: abstract class isAbstractreturn true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 033: Class.from<AbstractClass035>(), isInterface returns false, isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -636,7 +636,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3400
      * @tc.name testClassIsInterface034
-     * @tc.desc Verify ClassIsInterface case 034: final isFinalreturn true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 034: Class.from<FinalClass036>(), isInterface returns false, isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -650,7 +650,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3500
      * @tc.name testClassIsInterface035
-     * @tc.desc Verify ClassIsInterface case 035: type isPrimitive returns true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 035: isInterface returns false, isPrimitive returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -663,7 +663,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3600
      * @tc.name testClassIsInterface036
-     * @tc.desc Verify ClassIsInterface case 036: type isUnionreturn true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 036: Class.from<int | string>(), isUnion returns true, isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -677,7 +677,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3700
      * @tc.name testClassIsInterface037
-     * @tc.desc Verify ClassIsInterface case 037: array isFixedArrayreturn true isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 037: Class.of(instance), isInterface returns false, isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -692,7 +692,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3800
      * @tc.name testClassIsInterface038
-     * @tc.desc Verify ClassIsInterface case 038: interface interface isInterface returns true
+     * @tc.desc Verify ClassIsInterface case 038: Class.from<MyClass040>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -708,7 +708,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_3900
      * @tc.name testClassIsInterface039
-     * @tc.desc Verify ClassIsInterface case 039: get isInterface returns false
+     * @tc.desc Verify ClassIsInterface case 039: Class.from<ChildClass041>(), isInterface returns false, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -724,7 +724,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4000
      * @tc.name testClassIsInterface040
-     * @tc.desc Verify ClassIsInterface case 040: via instance get Class after call isInterface
+     * @tc.desc Verify ClassIsInterface case 040: Class.of(instance), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -738,7 +738,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4100
      * @tc.name testClassIsInterface041
-     * @tc.desc Verify ClassIsInterface case 041: via type get Class after call isInterface
+     * @tc.desc Verify ClassIsInterface case 041: Class.from<MyInterface043>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -751,7 +751,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4200
      * @tc.name testClassIsInterface042
-     * @tc.desc Verify ClassIsInterface case 042: via Anytype get Class after call isInterface
+     * @tc.desc Verify ClassIsInterface case 042: isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -768,7 +768,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4300
      * @tc.name testClassIsInterface043
-     * @tc.desc Verify ClassIsInterface case 043: get isInterface
+     * @tc.desc Verify ClassIsInterface case 043: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -781,7 +781,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4400
      * @tc.name testClassIsInterface044
-     * @tc.desc Verify ClassIsInterface case 044: call interface return true
+     * @tc.desc Verify ClassIsInterface case 044: Class.from<CallableInterface046>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -795,7 +795,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4500
      * @tc.name testClassIsInterface045
-     * @tc.desc Verify ClassIsInterface case 045: interface return true
+     * @tc.desc Verify ClassIsInterface case 045: Class.from<ConstructableInterface047>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -809,7 +809,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4600
      * @tc.name testClassIsInterface046
-     * @tc.desc Verify ClassIsInterface case 046: when property method interface return true
+     * @tc.desc Verify ClassIsInterface case 046: Class.from<MixedInterface048>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -823,7 +823,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4700
      * @tc.name testClassIsInterface047
-     * @tc.desc Verify ClassIsInterface case 047: Iterableinterface return true
+     * @tc.desc Verify ClassIsInterface case 047: Class.from<Iterable<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -837,7 +837,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4800
      * @tc.name testClassIsInterface048
-     * @tc.desc Verify ClassIsInterface case 048: Iteratorinterface return true
+     * @tc.desc Verify ClassIsInterface case 048: Class.from<Iterator<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -851,7 +851,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_4900
      * @tc.name testClassIsInterface049
-     * @tc.desc Verify ClassIsInterface case 049: Comparableinterface return true
+     * @tc.desc Verify ClassIsInterface case 049: Class.from<Comparable<Object>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -865,7 +865,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_5000
      * @tc.name testClassIsInterface050
-     * @tc.desc Verify ClassIsInterface case 050: Cloneableinterface return true
+     * @tc.desc Verify ClassIsInterface case 050: Class.from<Cloneable052Marker>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -879,7 +879,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_5100
      * @tc.name testClassIsInterface051
-     * @tc.desc Verify ClassIsInterface case 051: Serializableinterface return true
+     * @tc.desc Verify ClassIsInterface case 051: Class.from<Serializable053Marker>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -895,7 +895,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_5200
      * @tc.name testClassIsInterface052
-     * @tc.desc Verify ClassIsInterface case 052: call isInterface
+     * @tc.desc Verify ClassIsInterface case 052: Class.from<NotInitializedClass055>(), isInterface returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -909,7 +909,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_5300
      * @tc.name testClassIsInterface053
-     * @tc.desc Verify ClassIsInterface case 053: when call isInterface
+     * @tc.desc Verify ClassIsInterface case 053: Class.from<ArrayLike<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -926,7 +926,7 @@ export default function ClassIsInterfaceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISINTERFACE_5400
      * @tc.name testClassIsInterface054
-     * @tc.desc Verify ClassIsInterface case 054: different type isInterface
+     * @tc.desc Verify ClassIsInterface case 054: Class.from<ArrayLike<int>>(), isInterface returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

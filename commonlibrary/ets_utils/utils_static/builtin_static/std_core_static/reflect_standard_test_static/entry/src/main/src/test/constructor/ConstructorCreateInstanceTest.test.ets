@@ -245,7 +245,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0100
      * @tc.name testConstructorCreateInstance001
-     * @tc.desc Verify ConstructorCreateInstance case 001: createInstance()method no parameters call constructor
+     * @tc.desc Verify ConstructorCreateInstance case 001: Class.from<MyClass001>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -260,7 +260,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0200
      * @tc.name testConstructorCreateInstance002
-     * @tc.desc Verify ConstructorCreateInstance case 002: createInstance()method parameters array
+     * @tc.desc Verify ConstructorCreateInstance case 002: Class.from<MyClass002>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -275,7 +275,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0300
      * @tc.name testConstructorCreateInstance003
-     * @tc.desc Verify ConstructorCreateInstance case 003: type parameters
+     * @tc.desc Verify ConstructorCreateInstance case 003: Class.from<MyClass003>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -289,7 +289,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0400
      * @tc.name testConstructorCreateInstance004
-     * @tc.desc Verify ConstructorCreateInstance case 004: null is parameters
+     * @tc.desc Verify ConstructorCreateInstance case 004: Class.from<MyClass004>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -303,7 +303,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0500
      * @tc.name testConstructorCreateInstance005
-     * @tc.desc Verify ConstructorCreateInstance case 005: undefined is parameters
+     * @tc.desc Verify ConstructorCreateInstance case 005: Class.from<MyClass005>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -317,7 +317,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0600
      * @tc.name testConstructorCreateInstance006
-     * @tc.desc Verify ConstructorCreateInstance case 006: error type parameters
+     * @tc.desc Verify ConstructorCreateInstance case 006: invalid input throws TypeError, Class.from<MyClass006>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -335,7 +335,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0700
      * @tc.name testConstructorCreateInstance007
-     * @tc.desc Verify ConstructorCreateInstance case 007: wrong parameter count throws TypeError
+     * @tc.desc Verify ConstructorCreateInstance case 007: invalid input throws TypeError, Class.from<MyClass007>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -353,7 +353,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0800
      * @tc.name testConstructorCreateInstance008
-     * @tc.desc Verify ConstructorCreateInstance case 008: too many parameters throws TypeError
+     * @tc.desc Verify ConstructorCreateInstance case 008: invalid input throws TypeError, Class.from<MyClass008>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -371,7 +371,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_0900
      * @tc.name testConstructorCreateInstance009
-     * @tc.desc Verify ConstructorCreateInstance case 009: success instance
+     * @tc.desc Verify ConstructorCreateInstance case 009: Class.from<MyClass009>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -386,7 +386,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1000
      * @tc.name testConstructorCreateInstance010
-     * @tc.desc Verify ConstructorCreateInstance case 010: using parameters instance
+     * @tc.desc Verify ConstructorCreateInstance case 010: Class.from<MyClass010>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -400,7 +400,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1100
      * @tc.name testConstructorCreateInstance011
-     * @tc.desc Verify ConstructorCreateInstance case 011: using multiple parameters instance
+     * @tc.desc Verify ConstructorCreateInstance case 011: Class.from<MyClass011>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -416,7 +416,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1200
      * @tc.name testConstructorCreateInstance012
-     * @tc.desc Verify ConstructorCreateInstance case 012: via privateconstructor instance
+     * @tc.desc Verify ConstructorCreateInstance case 012: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,7 +429,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1300
      * @tc.name testConstructorCreateInstance013
-     * @tc.desc Verify ConstructorCreateInstance case 013: via protectedconstructor instance
+     * @tc.desc Verify ConstructorCreateInstance case 013: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -442,7 +442,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1400
      * @tc.name testConstructorCreateInstance014
-     * @tc.desc Verify ConstructorCreateInstance case 014: abstract class constructor instance
+     * @tc.desc Verify ConstructorCreateInstance case 014: Class.from<ConcreteClass014>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -456,7 +456,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1500
      * @tc.name testConstructorCreateInstance015
-     * @tc.desc Verify ConstructorCreateInstance case 015: verify return type
+     * @tc.desc Verify ConstructorCreateInstance case 015: Class.from<MyClass015>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -471,7 +471,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1600
      * @tc.name testConstructorCreateInstance016
-     * @tc.desc Verify ConstructorCreateInstance case 016: verify instance property
+     * @tc.desc Verify ConstructorCreateInstance case 016: Class.from<MyClass016>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -485,7 +485,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1700
      * @tc.name testConstructorCreateInstance017
-     * @tc.desc Verify ConstructorCreateInstance case 017: generic instance
+     * @tc.desc Verify ConstructorCreateInstance case 017: Class.from<GenericClass017<int>>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -499,7 +499,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1800
      * @tc.name testConstructorCreateInstance018
-     * @tc.desc Verify ConstructorCreateInstance case 018: instance
+     * @tc.desc Verify ConstructorCreateInstance case 018: Class.from<ChildClass018>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -514,7 +514,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_1900
      * @tc.name testConstructorCreateInstance019
-     * @tc.desc Verify ConstructorCreateInstance case 019: error type parameters throw TypeError
+     * @tc.desc Verify ConstructorCreateInstance case 019: invalid input throws TypeError, Class.from<MyClass019>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -532,7 +532,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2000
      * @tc.name testConstructorCreateInstance020
-     * @tc.desc Verify ConstructorCreateInstance case 020: wrong parameter count throws TypeError
+     * @tc.desc Verify ConstructorCreateInstance case 020: invalid input throws TypeError, Class.from<MyClass020>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -550,7 +550,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2100
      * @tc.name testConstructorCreateInstance021
-     * @tc.desc Verify ConstructorCreateInstance case 021: failing constructor createInstance throws Error
+     * @tc.desc Verify ConstructorCreateInstance case 021: invalid call throws Error, Class.from<MyClass021>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -568,7 +568,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2200
      * @tc.name testConstructorCreateInstance022
-     * @tc.desc Verify ConstructorCreateInstance case 022: call constructor throw exception
+     * @tc.desc Verify ConstructorCreateInstance case 022: Class.from<MyClass022>(), createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -586,7 +586,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2300
      * @tc.name testConstructorCreateInstance023
-     * @tc.desc Verify ConstructorCreateInstance case 023: via different constructor instance
+     * @tc.desc Verify ConstructorCreateInstance case 023: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -599,7 +599,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2400
      * @tc.name testConstructorCreateInstance024
-     * @tc.desc Verify ConstructorCreateInstance case 024: verify different type constructor instance
+     * @tc.desc Verify ConstructorCreateInstance case 024: Class.from<FinalClass024>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -613,7 +613,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2500
      * @tc.name testConstructorCreateInstance025
-     * @tc.desc Verify ConstructorCreateInstance case 025: parameters constructor
+     * @tc.desc Verify ConstructorCreateInstance case 025: Class.from<MyClass025>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -640,7 +640,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2600
      * @tc.name testConstructorCreateInstance026
-     * @tc.desc Verify ConstructorCreateInstance case 026: using constructor multiple instance
+     * @tc.desc Verify ConstructorCreateInstance case 026: Class.from<MyClass026>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -660,7 +660,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2700
      * @tc.name testConstructorCreateInstance027
-     * @tc.desc Verify ConstructorCreateInstance case 027: verify constructor call
+     * @tc.desc Verify ConstructorCreateInstance case 027: Class.from<ChildClass027>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -675,7 +675,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2800
      * @tc.name testConstructorCreateInstance028
-     * @tc.desc Verify ConstructorCreateInstance case 028: verify parameters constructor
+     * @tc.desc Verify ConstructorCreateInstance case 028: Class.from<MyClass028>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -698,7 +698,7 @@ export default function ConstructorCreateInstanceTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_CREATEINSTANCE_2900
      * @tc.name testConstructorCreateInstance029
-     * @tc.desc Verify ConstructorCreateInstance case 029: Constructor.createInstance() Class.createInstance()
+     * @tc.desc Verify ConstructorCreateInstance case 029: Class.from<MyClass029>(), createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

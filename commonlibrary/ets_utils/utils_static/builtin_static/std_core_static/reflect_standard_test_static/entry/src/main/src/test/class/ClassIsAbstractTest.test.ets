@@ -287,7 +287,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0100
      * @tc.name testClassIsAbstract001
-     * @tc.desc Verify ClassIsAbstract case 001: isAbstract() with no arguments
+     * @tc.desc Verify ClassIsAbstract case 001: Class.from<AbstractClass001>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -300,7 +300,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0200
      * @tc.name testClassIsAbstract002
-     * @tc.desc Verify ClassIsAbstract case 002: Class.from<T>() then isAbstract() returns boolean
+     * @tc.desc Verify ClassIsAbstract case 002: Class.from<MyAbstractClass003>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -313,7 +313,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0300
      * @tc.name testClassIsAbstract003
-     * @tc.desc Verify ClassIsAbstract case 003: using Class.of()get instance object after call isAbstract
+     * @tc.desc Verify ClassIsAbstract case 003: Class.of(instance), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -327,7 +327,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0400
      * @tc.name testClassIsAbstract004
-     * @tc.desc Verify ClassIsAbstract case 004: Class.ofAny() then isAbstract() on wrapper Class
+     * @tc.desc Verify ClassIsAbstract case 004: isAbstract returns false, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -342,7 +342,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0500
      * @tc.name testClassIsAbstract005
-     * @tc.desc Verify ClassIsAbstract case 005: abstract class isAbstract() returns true
+     * @tc.desc Verify ClassIsAbstract case 005: Class.from<MyAbstractClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -360,7 +360,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0600
      * @tc.name testClassIsAbstract006
-     * @tc.desc Verify ClassIsAbstract case 006: abstract class with abstract method returns true
+     * @tc.desc Verify ClassIsAbstract case 006: Class.from<ClassWithAbstractMethod007>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -373,7 +373,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0700
      * @tc.name testClassIsAbstract007
-     * @tc.desc Verify ClassIsAbstract case 007: abstract class with multiple abstract methods returns true
+     * @tc.desc Verify ClassIsAbstract case 007: Class.from<MultiAbstractClass008>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -386,7 +386,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0800
      * @tc.name testClassIsAbstract008
-     * @tc.desc Verify ClassIsAbstract case 008: inheritance abstract class method is abstract class
+     * @tc.desc Verify ClassIsAbstract case 008: Class.from<Child009>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -399,7 +399,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_0900
      * @tc.name testClassIsAbstract009
-     * @tc.desc Verify ClassIsAbstract case 009: concrete class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 009: Class.from<NormalClass010>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -414,7 +414,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1000
      * @tc.name testClassIsAbstract010
-     * @tc.desc Verify ClassIsAbstract case 010: normal instance class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 010: Class.from<ConcreteClass011>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -427,7 +427,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1100
      * @tc.name testClassIsAbstract011
-     * @tc.desc Verify ClassIsAbstract case 011: class with only concrete methods returns false
+     * @tc.desc Verify ClassIsAbstract case 011: Class.from<ConcreteChild012>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -440,7 +440,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1200
      * @tc.name testClassIsAbstract012
-     * @tc.desc Verify ClassIsAbstract case 012: class with static members isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 012: Class.from<StaticClass013>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -453,7 +453,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1300
      * @tc.name testClassIsAbstract013
-     * @tc.desc Verify ClassIsAbstract case 013: final class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 013: Class.from<FinalClass014>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -466,7 +466,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1400
      * @tc.name testClassIsAbstract014
-     * @tc.desc Verify ClassIsAbstract case 014: interface Class isAbstract() returns true
+     * @tc.desc Verify ClassIsAbstract case 014: Class.from<MyInterface015>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +479,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1500
      * @tc.name testClassIsAbstract015
-     * @tc.desc Verify ClassIsAbstract case 015: enum Class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 015: Class.from<TestEnum016>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -492,7 +492,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1600
      * @tc.name testClassIsAbstract016
-     * @tc.desc Verify ClassIsAbstract case 016: PRIMITIVE isAbstract true, string isAbstract false
+     * @tc.desc Verify ClassIsAbstract case 016: Class.from<string>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -506,7 +506,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1700
      * @tc.name testClassIsAbstract017
-     * @tc.desc Verify ClassIsAbstract case 017: array type call isAbstract return false
+     * @tc.desc Verify ClassIsAbstract case 017: Class.of(instance), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -520,7 +520,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1800
      * @tc.name testClassIsAbstract018
-     * @tc.desc Verify ClassIsAbstract case 018: type call isAbstract return false
+     * @tc.desc Verify ClassIsAbstract case 018: Class.from<int | string>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -533,7 +533,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_1900
      * @tc.name testClassIsAbstract019
-     * @tc.desc Verify ClassIsAbstract case 019: Object Class isAbstract() returns false
+     * @tc.desc Verify ClassIsAbstract case 019: Class.from<MyClass021>(), isAbstract returns false, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -549,7 +549,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2000
      * @tc.name testClassIsAbstract020
-     * @tc.desc Verify ClassIsAbstract case 020: inheritance isAbstract
+     * @tc.desc Verify ClassIsAbstract case 020: Class.from<Level1022>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -563,7 +563,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2100
      * @tc.name testClassIsAbstract021
-     * @tc.desc Verify ClassIsAbstract case 021: empty abstract class isAbstract() returns true
+     * @tc.desc Verify ClassIsAbstract case 021: Class.from<EmptyAbstractClass023>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -576,7 +576,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2200
      * @tc.name testClassIsAbstract022
-     * @tc.desc Verify ClassIsAbstract case 022: abstract class with fields isAbstract() returns true
+     * @tc.desc Verify ClassIsAbstract case 022: Class.from<AbstractWithFields024>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -589,7 +589,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2300
      * @tc.name testClassIsAbstract023
-     * @tc.desc Verify ClassIsAbstract case 023: abstract class with mixed methods returns true
+     * @tc.desc Verify ClassIsAbstract case 023: Class.from<MixedClass025>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -602,7 +602,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2400
      * @tc.name testClassIsAbstract024
-     * @tc.desc Verify ClassIsAbstract case 024: abstract class implementing interface returns true
+     * @tc.desc Verify ClassIsAbstract case 024: Class.from<AbstractImpl026>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -615,7 +615,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2500
      * @tc.name testClassIsAbstract025
-     * @tc.desc Verify ClassIsAbstract case 025: nullcall Class.of after call isAbstract
+     * @tc.desc Verify ClassIsAbstract case 025: Class.of(instance), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -628,7 +628,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2600
      * @tc.name testClassIsAbstract026
-     * @tc.desc Verify ClassIsAbstract case 026: Class.ofAnyreturn undefined when
+     * @tc.desc Verify ClassIsAbstract case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -641,7 +641,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2700
      * @tc.name testClassIsAbstract027
-     * @tc.desc Verify ClassIsAbstract case 027: via Anytype after object call isAbstract
+     * @tc.desc Verify ClassIsAbstract case 027: Class.from<AbstractClass029>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -655,7 +655,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2800
      * @tc.name testClassIsAbstract028
-     * @tc.desc Verify ClassIsAbstract case 028: generic abstract class isAbstract() returns true
+     * @tc.desc Verify ClassIsAbstract case 028: Class.from<GenericAbstractClass030<int>>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -668,7 +668,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_2900
      * @tc.name testClassIsAbstract029
-     * @tc.desc Verify ClassIsAbstract case 029: type instance generic abstract class
+     * @tc.desc Verify ClassIsAbstract case 029: Class.from<GenericAbstract031<int>>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -683,7 +683,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3000
      * @tc.name testClassIsAbstract030
-     * @tc.desc Verify ClassIsAbstract case 030: type abstract class
+     * @tc.desc Verify ClassIsAbstract case 030: Class.from<ConditionalClass032>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -696,7 +696,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3100
      * @tc.name testClassIsAbstract031
-     * @tc.desc Verify ClassIsAbstract case 031: abstract class vs interface isAbstract/isInterface mutual exclusion
+     * @tc.desc Verify ClassIsAbstract case 031: Class.from<AbstractClass033>(), isInterface returns false, isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -713,7 +713,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3200
      * @tc.name testClassIsAbstract032
-     * @tc.desc Verify ClassIsAbstract case 032: verify not when abstract class final
+     * @tc.desc Verify ClassIsAbstract case 032: Class.from<AbstractClass034>(), isAbstract returns false, isFinal returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -729,7 +729,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3300
      * @tc.name testClassIsAbstract033
-     * @tc.desc Verify ClassIsAbstract case 033: isAbstract isEnum
+     * @tc.desc Verify ClassIsAbstract case 033: Class.from<TestEnum035>(), isEnum returns true, isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -746,7 +746,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3400
      * @tc.name testClassIsAbstract034
-     * @tc.desc Verify ClassIsAbstract case 034: abstract class createInstance throws
+     * @tc.desc Verify ClassIsAbstract case 034: invalid call throws Error, Class.from<AbstractClass036>(), isAbstract returns true, createInstance failure path
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -765,7 +765,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3500
      * @tc.name testClassIsAbstract035
-     * @tc.desc Verify ClassIsAbstract case 035: concrete class createInstance succeeds
+     * @tc.desc Verify ClassIsAbstract case 035: Class.from<ConcreteClass037>(), isAbstract returns false, createInstance succeeds
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -780,7 +780,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3600
      * @tc.name testClassIsAbstract036
-     * @tc.desc Verify ClassIsAbstract case 036: inheritance
+     * @tc.desc Verify ClassIsAbstract case 036: Class.from<ConcreteChild038>(), isAbstract returns false, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -797,7 +797,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3700
      * @tc.name testClassIsAbstract037
-     * @tc.desc Verify ClassIsAbstract case 037: abstract factory class isAbstract returns true
+     * @tc.desc Verify ClassIsAbstract case 037: Class.from<Factory039>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -813,7 +813,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3800
      * @tc.name testClassIsAbstract038
-     * @tc.desc Verify ClassIsAbstract case 038: not abstract class
+     * @tc.desc Verify ClassIsAbstract case 038: Class.from<ConcreteFactory040>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -826,7 +826,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_3900
      * @tc.name testClassIsAbstract039
-     * @tc.desc Verify ClassIsAbstract case 039: method
+     * @tc.desc Verify ClassIsAbstract case 039: Class.from<Template041>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -839,7 +839,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4000
      * @tc.name testClassIsAbstract040
-     * @tc.desc Verify ClassIsAbstract case 040: interface and
+     * @tc.desc Verify ClassIsAbstract case 040: Class.from<Strategy042>(), isInterface returns true, isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -854,7 +854,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4100
      * @tc.name testClassIsAbstract041
-     * @tc.desc Verify ClassIsAbstract case 041: isAbstract() return type is boolean
+     * @tc.desc Verify ClassIsAbstract case 041: Class.from<Observer043>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -869,7 +869,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4200
      * @tc.name testClassIsAbstract042
-     * @tc.desc Verify ClassIsAbstract case 042: same Class object returns same isAbstract() result
+     * @tc.desc Verify ClassIsAbstract case 042: Class.from<AbstractClass044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -887,7 +887,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4300
      * @tc.name testClassIsAbstract043
-     * @tc.desc Verify ClassIsAbstract case 043: via different get Class object return same
+     * @tc.desc Verify ClassIsAbstract case 043: Class.from<AbstractClass045>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -901,7 +901,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4400
      * @tc.name testClassIsAbstract044
-     * @tc.desc Verify ClassIsAbstract case 044: multiple
+     * @tc.desc Verify ClassIsAbstract case 044: Class.from<Abs1046>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -921,7 +921,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4500
      * @tc.name testClassIsAbstract045
-     * @tc.desc Verify ClassIsAbstract case 045: publicabstract class
+     * @tc.desc Verify ClassIsAbstract case 045: Class.from<PublicAbstract047>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -934,7 +934,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4600
      * @tc.name testClassIsAbstract046
-     * @tc.desc Verify ClassIsAbstract case 046: in abstract class
+     * @tc.desc Verify ClassIsAbstract case 046: Class.from<InnerAbstract048>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -947,7 +947,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4700
      * @tc.name testClassIsAbstract047
-     * @tc.desc Verify ClassIsAbstract case 047: abstract class inheritance
+     * @tc.desc Verify ClassIsAbstract case 047: Class.from<Base049>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -962,7 +962,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4800
      * @tc.name testClassIsAbstract048
-     * @tc.desc Verify ClassIsAbstract case 048: abstract class multiple interface when
+     * @tc.desc Verify ClassIsAbstract case 048: Class.from<AbstractImpl050>(), isInterface returns false, isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -976,7 +976,7 @@ export default function ClassIsAbstractTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISABSTRACT_4900
      * @tc.name testClassIsAbstract049
-     * @tc.desc Verify ClassIsAbstract case 049: abstract class interface method
+     * @tc.desc Verify ClassIsAbstract case 049: Class.from<PartialImpl051>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

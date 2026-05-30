@@ -321,7 +321,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0100
      * @tc.name testClassIsFuncObjAsync001
-     * @tc.desc Verify isFuncObjAsync case 001: async function declaration without parameters
+     * @tc.desc Verify ClassIsFuncObjAsync case 001: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -333,7 +333,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0200
      * @tc.name testClassIsFuncObjAsync002
-     * @tc.desc Verify isFuncObjAsync case 002: async function declaration with parameters
+     * @tc.desc Verify ClassIsFuncObjAsync case 002: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -345,7 +345,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0300
      * @tc.name testClassIsFuncObjAsync003
-     * @tc.desc Verify isFuncObjAsync case 003: async arrow function
+     * @tc.desc Verify ClassIsFuncObjAsync case 003: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -357,7 +357,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0400
      * @tc.name testClassIsFuncObjAsync004
-     * @tc.desc Verify isFuncObjAsync case 004: async function expression
+     * @tc.desc Verify ClassIsFuncObjAsync case 004: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -369,7 +369,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0500
      * @tc.name testClassIsFuncObjAsync005
-     * @tc.desc Verify isFuncObjAsync case 005: async function with return
+     * @tc.desc Verify ClassIsFuncObjAsync case 005: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -381,7 +381,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0600
      * @tc.name testClassIsFuncObjAsync006
-     * @tc.desc Verify isFuncObjAsync case 006: dedicated async function declaration
+     * @tc.desc Verify ClassIsFuncObjAsync case 006: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -393,7 +393,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0700
      * @tc.name testClassIsFuncObjAsync007
-     * @tc.desc Verify isFuncObjAsync case 007: async function without parameters
+     * @tc.desc Verify ClassIsFuncObjAsync case 007: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0800
      * @tc.name testClassIsFuncObjAsync008
-     * @tc.desc Verify isFuncObjAsync case 008: sync function declaration
+     * @tc.desc Verify ClassIsFuncObjAsync case 008: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -417,7 +417,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_0900
      * @tc.name testClassIsFuncObjAsync009
-     * @tc.desc Verify isFuncObjAsync case 009: sync arrow function
+     * @tc.desc Verify ClassIsFuncObjAsync case 009: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,7 +429,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1000
      * @tc.name testClassIsFuncObjAsync010
-     * @tc.desc Verify isFuncObjAsync case 010: sync function expression
+     * @tc.desc Verify ClassIsFuncObjAsync case 010: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -441,7 +441,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1100
      * @tc.name testClassIsFuncObjAsync011
-     * @tc.desc Verify isFuncObjAsync case 011: sync function with return
+     * @tc.desc Verify ClassIsFuncObjAsync case 011: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -453,7 +453,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1200
      * @tc.name testClassIsFuncObjAsync012
-     * @tc.desc Verify isFuncObjAsync case 012: sync function without parameters
+     * @tc.desc Verify ClassIsFuncObjAsync case 012: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -465,7 +465,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1300
      * @tc.name testClassIsFuncObjAsync013
-     * @tc.desc Verify isFuncObjAsync case 013: sync function returns Promise
+     * @tc.desc Verify ClassIsFuncObjAsync case 013: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -477,7 +477,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1400
      * @tc.name testClassIsFuncObjAsync014
-     * @tc.desc Verify isFuncObjAsync case 014: sync function returns Promise.resolve
+     * @tc.desc Verify ClassIsFuncObjAsync case 014: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -489,7 +489,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1500
      * @tc.name testClassIsFuncObjAsync015
-     * @tc.desc Verify isFuncObjAsync case 015: async instance method
+     * @tc.desc Verify ClassIsFuncObjAsync case 015: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -502,7 +502,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1600
      * @tc.name testClassIsFuncObjAsync016
-     * @tc.desc Verify isFuncObjAsync case 016: sync instance method
+     * @tc.desc Verify ClassIsFuncObjAsync case 016: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -515,7 +515,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1700
      * @tc.name testClassIsFuncObjAsync017
-     * @tc.desc Verify isFuncObjAsync case 017: static async method
+     * @tc.desc Verify ClassIsFuncObjAsync case 017: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -527,7 +527,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1800
      * @tc.name testClassIsFuncObjAsync018
-     * @tc.desc Verify isFuncObjAsync case 018: static sync method
+     * @tc.desc Verify ClassIsFuncObjAsync case 018: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -539,7 +539,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_1900
      * @tc.name testClassIsFuncObjAsync019
-     * @tc.desc Verify isFuncObjAsync case 019: constructor factory returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 019: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -552,7 +552,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2000
      * @tc.name testClassIsFuncObjAsync020
-     * @tc.desc Verify isFuncObjAsync case 020: property getter returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 020: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -566,7 +566,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2100
      * @tc.name testClassIsFuncObjAsync021
-     * @tc.desc Verify isFuncObjAsync case 021: property setter returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 021: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -579,7 +579,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2200
      * @tc.name testClassIsFuncObjAsync022
-     * @tc.desc Verify isFuncObjAsync case 022: public method on class with private method returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 022: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -592,7 +592,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2300
      * @tc.name testClassIsFuncObjAsync023
-     * @tc.desc Verify isFuncObjAsync case 023: inherited async method
+     * @tc.desc Verify ClassIsFuncObjAsync case 023: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -605,7 +605,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2400
      * @tc.name testClassIsFuncObjAsync024
-     * @tc.desc Verify isFuncObjAsync case 024: inherited async method on subclass
+     * @tc.desc Verify ClassIsFuncObjAsync case 024: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -618,7 +618,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2500
      * @tc.name testClassIsFuncObjAsync025
-     * @tc.desc Verify isFuncObjAsync case 025: override to sync method
+     * @tc.desc Verify ClassIsFuncObjAsync case 025: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -631,7 +631,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2600
      * @tc.name testClassIsFuncObjAsync026
-     * @tc.desc Verify isFuncObjAsync case 026: interface async method implementation
+     * @tc.desc Verify ClassIsFuncObjAsync case 026: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -644,7 +644,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2700
      * @tc.name testClassIsFuncObjAsync027
-     * @tc.desc Verify isFuncObjAsync case 027: sync overload
+     * @tc.desc Verify ClassIsFuncObjAsync case 027: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -657,7 +657,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2800
      * @tc.name testClassIsFuncObjAsync028
-     * @tc.desc Verify isFuncObjAsync case 028: async overload
+     * @tc.desc Verify ClassIsFuncObjAsync case 028: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -670,7 +670,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_2900
      * @tc.name testClassIsFuncObjAsync029
-     * @tc.desc Verify isFuncObjAsync case 029: final sync method
+     * @tc.desc Verify ClassIsFuncObjAsync case 029: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -683,7 +683,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3000
      * @tc.name testClassIsFuncObjAsync030
-     * @tc.desc Verify isFuncObjAsync case 030: final async method
+     * @tc.desc Verify ClassIsFuncObjAsync case 030: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -696,7 +696,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3100
      * @tc.name testClassIsFuncObjAsync031
-     * @tc.desc Verify isFuncObjAsync case 031: console.info builtin returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 031: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -708,7 +708,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3200
      * @tc.name testClassIsFuncObjAsync032
-     * @tc.desc Verify isFuncObjAsync case 032: async forms all true
+     * @tc.desc Verify ClassIsFuncObjAsync case 032: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -722,7 +722,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3300
      * @tc.name testClassIsFuncObjAsync033
-     * @tc.desc Verify isFuncObjAsync case 033: sync forms all false
+     * @tc.desc Verify ClassIsFuncObjAsync case 033: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -736,7 +736,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3400
      * @tc.name testClassIsFuncObjAsync034
-     * @tc.desc Verify isFuncObjAsync case 034: return type is boolean
+     * @tc.desc Verify ClassIsFuncObjAsync case 034: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -749,7 +749,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3500
      * @tc.name testClassIsFuncObjAsync035
-     * @tc.desc Verify isFuncObjAsync case 035: strict true false
+     * @tc.desc Verify ClassIsFuncObjAsync case 035: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -764,7 +764,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3600
      * @tc.name testClassIsFuncObjAsync036
-     * @tc.desc Verify isFuncObjAsync case 036: repeated calls
+     * @tc.desc Verify ClassIsFuncObjAsync case 036: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -781,7 +781,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3700
      * @tc.name testClassIsFuncObjAsync037
-     * @tc.desc Verify isFuncObjAsync case 037: null Function throws ClassCastError
+     * @tc.desc Verify ClassIsFuncObjAsync case 037: invalid input throws ClassCastError, isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -799,7 +799,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3800
      * @tc.name testClassIsFuncObjAsync038
-     * @tc.desc Verify isFuncObjAsync case 038: undefined Function throws ClassCastError
+     * @tc.desc Verify ClassIsFuncObjAsync case 038: invalid input throws ClassCastError, isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -817,7 +817,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_3900
      * @tc.name testClassIsFuncObjAsync039
-     * @tc.desc Verify isFuncObjAsync case 039: int cast to Function throws ClassCastError
+     * @tc.desc Verify ClassIsFuncObjAsync case 039: invalid input throws ClassCastError, isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -836,7 +836,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4000
      * @tc.name testClassIsFuncObjAsync040
-     * @tc.desc Verify isFuncObjAsync case 040: async await chain
+     * @tc.desc Verify ClassIsFuncObjAsync case 040: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +849,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4100
      * @tc.name testClassIsFuncObjAsync041
-     * @tc.desc Verify isFuncObjAsync case 041: async try catch
+     * @tc.desc Verify ClassIsFuncObjAsync case 041: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -861,7 +861,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4200
      * @tc.name testClassIsFuncObjAsync042
-     * @tc.desc Verify isFuncObjAsync case 042: empty async body
+     * @tc.desc Verify ClassIsFuncObjAsync case 042: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -873,7 +873,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4300
      * @tc.name testClassIsFuncObjAsync043
-     * @tc.desc Verify isFuncObjAsync case 043: async return void
+     * @tc.desc Verify ClassIsFuncObjAsync case 043: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -885,7 +885,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4400
      * @tc.name testClassIsFuncObjAsync044
-     * @tc.desc Verify isFuncObjAsync case 044: checkMixedAsync037 sync helper returns false
+     * @tc.desc Verify ClassIsFuncObjAsync case 044: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -897,7 +897,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4500
      * @tc.name testClassIsFuncObjAsync045
-     * @tc.desc Verify isFuncObjAsync case 045: lambda sync
+     * @tc.desc Verify ClassIsFuncObjAsync case 045: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -910,7 +910,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4600
      * @tc.name testClassIsFuncObjAsync046
-     * @tc.desc Verify isFuncObjAsync case 046: lambda async
+     * @tc.desc Verify ClassIsFuncObjAsync case 046: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -923,7 +923,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4700
      * @tc.name testClassIsFuncObjAsync047
-     * @tc.desc Verify isFuncObjAsync case 047: closure sync
+     * @tc.desc Verify ClassIsFuncObjAsync case 047: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -936,7 +936,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4800
      * @tc.name testClassIsFuncObjAsync048
-     * @tc.desc Verify isFuncObjAsync case 048: closure async
+     * @tc.desc Verify ClassIsFuncObjAsync case 048: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -949,7 +949,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_4900
      * @tc.name testClassIsFuncObjAsync049
-     * @tc.desc Verify isFuncObjAsync case 049: concrete abstract async method returns true
+     * @tc.desc Verify ClassIsFuncObjAsync case 049: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -962,7 +962,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5000
      * @tc.name testClassIsFuncObjAsync050
-     * @tc.desc Verify isFuncObjAsync case 050: abstract sync method
+     * @tc.desc Verify ClassIsFuncObjAsync case 050: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -975,7 +975,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5100
      * @tc.name testClassIsFuncObjAsync051
-     * @tc.desc Verify isFuncObjAsync case 051: generic sync function
+     * @tc.desc Verify ClassIsFuncObjAsync case 051: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -988,7 +988,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5200
      * @tc.name testClassIsFuncObjAsync052
-     * @tc.desc Verify isFuncObjAsync case 052: generic async function
+     * @tc.desc Verify ClassIsFuncObjAsync case 052: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1001,7 +1001,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5300
      * @tc.name testClassIsFuncObjAsync053
-     * @tc.desc Verify isFuncObjAsync case 053: function inspector
+     * @tc.desc Verify ClassIsFuncObjAsync case 053: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1014,7 +1014,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5400
      * @tc.name testClassIsFuncObjAsync054
-     * @tc.desc Verify isFuncObjAsync case 054: task queue classification
+     * @tc.desc Verify ClassIsFuncObjAsync case 054: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1031,7 +1031,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5500
      * @tc.name testClassIsFuncObjAsync055
-     * @tc.desc Verify isFuncObjAsync case 055: syncAdd036 false and asyncAdd036 true
+     * @tc.desc Verify ClassIsFuncObjAsync case 055: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1044,7 +1044,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5600
      * @tc.name testClassIsFuncObjAsync056
-     * @tc.desc Verify isFuncObjAsync case 056: bulk async detection
+     * @tc.desc Verify ClassIsFuncObjAsync case 056: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1072,7 +1072,7 @@ export default function ClassIsFuncObjAsyncTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_IS_FUNC_OBJ_ASYNC_5700
      * @tc.name testClassIsFuncObjAsync057
-     * @tc.desc Verify isFuncObjAsync case 057: mixed bulk detection
+     * @tc.desc Verify ClassIsFuncObjAsync case 057: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

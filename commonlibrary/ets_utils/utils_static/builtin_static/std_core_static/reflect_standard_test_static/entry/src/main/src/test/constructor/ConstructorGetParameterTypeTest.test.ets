@@ -93,7 +93,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0100
      * @tc.name testConstructorGetParameterType001
-     * @tc.desc Verify ConstructorGetParameterType case 001: getParameterType()method parameters
+     * @tc.desc Verify ConstructorGetParameterType case 001: Class.from<MyClass001>(), getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -111,7 +111,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0200
      * @tc.name testConstructorGetParameterType002
-     * @tc.desc Verify ConstructorGetParameterType case 002: parameters 0
+     * @tc.desc Verify ConstructorGetParameterType case 002: getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -124,7 +124,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0300
      * @tc.name testConstructorGetParameterType003
-     * @tc.desc Verify ConstructorGetParameterType case 003: after parameters
+     * @tc.desc Verify ConstructorGetParameterType case 003: getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -137,7 +137,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0400
      * @tc.name testConstructorGetParameterType004
-     * @tc.desc Verify ConstructorGetParameterType case 004: getParameterType(-1) throws
+     * @tc.desc Verify ConstructorGetParameterType case 004: invalid input throws TypeError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,7 +154,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0500
      * @tc.name testConstructorGetParameterType005
-     * @tc.desc Verify ConstructorGetParameterType case 005: parameters
+     * @tc.desc Verify ConstructorGetParameterType case 005: invalid input throws TypeError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -171,7 +171,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0600
      * @tc.name testConstructorGetParameterType006
-     * @tc.desc Verify ConstructorGetParameterType case 006: int type
+     * @tc.desc Verify ConstructorGetParameterType case 006: invalid input throws TypeError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -188,7 +188,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0700
      * @tc.name testConstructorGetParameterType007
-     * @tc.desc Verify ConstructorGetParameterType case 007: invalid null index
+     * @tc.desc Verify ConstructorGetParameterType case 007: invalid input throws ClassCastError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -205,7 +205,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0800
      * @tc.name testConstructorGetParameterType008
-     * @tc.desc Verify ConstructorGetParameterType case 008: undefined
+     * @tc.desc Verify ConstructorGetParameterType case 008: invalid input throws ClassCastError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -222,7 +222,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_0900
      * @tc.name testConstructorGetParameterType009
-     * @tc.desc Verify ConstructorGetParameterType case 009: non-integer index getParameterType throws
+     * @tc.desc Verify ConstructorGetParameterType case 009: parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +241,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1000
      * @tc.name testConstructorGetParameterType010
-     * @tc.desc Verify ConstructorGetParameterType case 010: return should parameters Class object
+     * @tc.desc Verify ConstructorGetParameterType case 010: Class.from<MyClass011>(), isPrimitive returns true, getName returns "i32", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,7 +258,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1100
      * @tc.name testConstructorGetParameterType011
-     * @tc.desc Verify ConstructorGetParameterType case 011: return different type parameters Class object
+     * @tc.desc Verify ConstructorGetParameterType case 011: Class.from<MyClass012>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -274,7 +274,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1200
      * @tc.name testConstructorGetParameterType012
-     * @tc.desc Verify ConstructorGetParameterType case 012: no parameters constructor throws TypeError
+     * @tc.desc Verify ConstructorGetParameterType case 012: invalid input throws TypeError, Class.from<MyClass013>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -292,7 +292,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1300
      * @tc.name testConstructorGetParameterType013
-     * @tc.desc Verify ConstructorGetParameterType case 013: out-of-range index throws TypeError
+     * @tc.desc Verify ConstructorGetParameterType case 013: invalid input throws TypeError, parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -309,7 +309,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1400
      * @tc.name testConstructorGetParameterType014
-     * @tc.desc Verify ConstructorGetParameterType case 014: get generic type parameters type
+     * @tc.desc Verify ConstructorGetParameterType case 014: Class.from<MyClass015>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -322,7 +322,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1500
      * @tc.name testConstructorGetParameterType015
-     * @tc.desc Verify ConstructorGetParameterType case 015: verify return type is Class or undefined
+     * @tc.desc Verify ConstructorGetParameterType case 015: getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -337,7 +337,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1600
      * @tc.name testConstructorGetParameterType016
-     * @tc.desc Verify ConstructorGetParameterType case 016: verify return Class object using method
+     * @tc.desc Verify ConstructorGetParameterType case 016: isInterface returns false, isPrimitive returns false, isFinal returns true, getName returns "std.core.String", parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -354,7 +354,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1700
      * @tc.name testConstructorGetParameterType017
-     * @tc.desc Verify ConstructorGetParameterType case 017: get 0 parameters type
+     * @tc.desc Verify ConstructorGetParameterType case 017: Class.from<MyClass018>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -367,7 +367,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1800
      * @tc.name testConstructorGetParameterType018
-     * @tc.desc Verify ConstructorGetParameterType case 018: get after parameters type
+     * @tc.desc Verify ConstructorGetParameterType case 018: Class.from<MyClass019>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -380,7 +380,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_1900
      * @tc.name testConstructorGetParameterType019
-     * @tc.desc Verify ConstructorGetParameterType case 019: parameters constructor
+     * @tc.desc Verify ConstructorGetParameterType case 019: invalid input throws TypeError, Class.from<MyClass020>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -399,7 +399,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2000
      * @tc.name testConstructorGetParameterType020
-     * @tc.desc Verify ConstructorGetParameterType case 020: getParameterType(0) returns std.core.String
+     * @tc.desc Verify ConstructorGetParameterType case 020: parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -412,7 +412,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2100
      * @tc.name testConstructorGetParameterType021
-     * @tc.desc Verify ConstructorGetParameterType case 021: verify modifier constructor get parameters type
+     * @tc.desc Verify ConstructorGetParameterType case 021: Class.from<MyClass022>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -429,7 +429,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2200
      * @tc.name testConstructorGetParameterType022
-     * @tc.desc Verify ConstructorGetParameterType case 022: verify different type constructor getParameterType()
+     * @tc.desc Verify ConstructorGetParameterType case 022: Class.from<AbstractClass023>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -444,7 +444,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2300
      * @tc.name testConstructorGetParameterType023
-     * @tc.desc Verify ConstructorGetParameterType case 023: using getParameterType() parameters type
+     * @tc.desc Verify ConstructorGetParameterType case 023: Class.from<MyClass024>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,7 +461,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2400
      * @tc.name testConstructorGetParameterType024
-     * @tc.desc Verify ConstructorGetParameterType case 024: verify getParameterType() and getParameterTypes()
+     * @tc.desc Verify ConstructorGetParameterType case 024: Class.from<MyClass025>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -479,7 +479,7 @@ export default function ConstructorGetParameterTypeTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERTYPE_2500
      * @tc.name testConstructorGetParameterType025
-     * @tc.desc Verify ConstructorGetParameterType case 025: verify different constructor in same parameters type different
+     * @tc.desc Verify ConstructorGetParameterType case 025: Class.from<MyClass026>(), parameter type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

@@ -118,14 +118,10 @@ export default function ConstructorEqualsTest(): void {
     afterAll(() => {
     });
 
-    
-
-    
-
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0100
      * @tc.name testConstructorEquals001
-     * @tc.desc Verify ConstructorEquals case 001: different constructor
+     * @tc.desc Verify ConstructorEquals case 001: Class.from<NoArgCtor003>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -140,7 +136,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0200
      * @tc.name testConstructorEquals002
-     * @tc.desc Verify ConstructorEquals case 002: different constructor
+     * @tc.desc Verify ConstructorEquals case 002: Class.from<ClassA004>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -154,7 +150,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0300
      * @tc.name testConstructorEquals003
-     * @tc.desc Verify ConstructorEquals case 003: different constructor is false
+     * @tc.desc Verify ConstructorEquals case 003: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -168,7 +164,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0400
      * @tc.name testConstructorEquals004
-     * @tc.desc Verify ConstructorEquals case 004: undefined is parameters
+     * @tc.desc Verify ConstructorEquals case 004: Class.from<MyClass001>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -183,7 +179,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0500
      * @tc.name testConstructorEquals005
-     * @tc.desc Verify ConstructorEquals case 005: same same constructor return true
+     * @tc.desc Verify ConstructorEquals case 005: Class.from<MyClass007>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -199,7 +195,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0600
      * @tc.name testConstructorEquals006
-     * @tc.desc Verify ConstructorEquals case 006: object and return true
+     * @tc.desc Verify ConstructorEquals case 006: Class.from<MyClass007>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -213,7 +209,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0700
      * @tc.name testConstructorEquals007
-     * @tc.desc Verify ConstructorEquals case 007: different constructor return false
+     * @tc.desc Verify ConstructorEquals case 007: Class.from<MyClass009>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -227,7 +223,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0800
      * @tc.name testConstructorEquals008
-     * @tc.desc Verify ConstructorEquals case 008: parameters type different constructor
+     * @tc.desc Verify ConstructorEquals case 008: Class.from<MyClass010>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -241,7 +237,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_0900
      * @tc.name testConstructorEquals009
-     * @tc.desc Verify ConstructorEquals case 009: parameters different constructor
+     * @tc.desc Verify ConstructorEquals case 009: Class.from<MyClass011>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -255,7 +251,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1000
      * @tc.name testConstructorEquals010
-     * @tc.desc Verify ConstructorEquals case 010: different constructor
+     * @tc.desc Verify ConstructorEquals case 010: Class.from<MyClass012>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -269,7 +265,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1100
      * @tc.name testConstructorEquals011
-     * @tc.desc Verify ConstructorEquals case 011: verify return type is boolean
+     * @tc.desc Verify ConstructorEquals case 011: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -286,7 +282,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1200
      * @tc.name testConstructorEquals012
-     * @tc.desc Verify ConstructorEquals case 012: verify return true or false
+     * @tc.desc Verify ConstructorEquals case 012: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +298,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1300
      * @tc.name testConstructorEquals013
-     * @tc.desc Verify ConstructorEquals case 013: x.equals(x)should return true
+     * @tc.desc Verify ConstructorEquals case 013: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -316,7 +312,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1400
      * @tc.name testConstructorEquals014
-     * @tc.desc Verify ConstructorEquals case 014: x.equals(y)should y.equals(x)
+     * @tc.desc Verify ConstructorEquals case 014: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -331,7 +327,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1500
      * @tc.name testConstructorEquals015
-     * @tc.desc Verify ConstructorEquals case 015: x.equals(y) y.equals(z) x.equals(z)
+     * @tc.desc Verify ConstructorEquals case 015: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -348,7 +344,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1600
      * @tc.name testConstructorEquals016
-     * @tc.desc Verify ConstructorEquals case 016: call equalsshould return same
+     * @tc.desc Verify ConstructorEquals case 016: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -365,7 +361,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1700
      * @tc.name testConstructorEquals017
-     * @tc.desc Verify ConstructorEquals case 017: equals() and different
+     * @tc.desc Verify ConstructorEquals case 017: Class.from<MyClass019>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -381,7 +377,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1800
      * @tc.name testConstructorEquals018
-     * @tc.desc Verify ConstructorEquals case 018: equals() returns true for same constructor reference
+     * @tc.desc Verify ConstructorEquals case 018: Class.from<MyClass001>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -396,7 +392,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_1900
      * @tc.name testConstructorEquals019
-     * @tc.desc Verify ConstructorEquals case 019: different constructor
+     * @tc.desc Verify ConstructorEquals case 019: Class.from<MyClass010>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -410,7 +406,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2000
      * @tc.name testConstructorEquals020
-     * @tc.desc Verify ConstructorEquals case 020: abstract class constructor
+     * @tc.desc Verify ConstructorEquals case 020: Class.from<AbstractClass022>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -424,7 +420,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2100
      * @tc.name testConstructorEquals021
-     * @tc.desc Verify ConstructorEquals case 021: final constructor
+     * @tc.desc Verify ConstructorEquals case 021: Class.from<FinalClass023>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -438,7 +434,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2200
      * @tc.name testConstructorEquals022
-     * @tc.desc Verify ConstructorEquals case 022: constructor
+     * @tc.desc Verify ConstructorEquals case 022: Class.from<ParentClass024>(), equals returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -452,7 +448,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2300
      * @tc.name testConstructorEquals023
-     * @tc.desc Verify ConstructorEquals case 023: from get constructor
+     * @tc.desc Verify ConstructorEquals case 023: Class.from<MyClass025>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -472,7 +468,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2400
      * @tc.name testConstructorEquals024
-     * @tc.desc Verify ConstructorEquals case 024: using equalsmethod constructor
+     * @tc.desc Verify ConstructorEquals case 024: Class.from<MyClass026>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -503,7 +499,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2500
      * @tc.name testConstructorEquals025
-     * @tc.desc Verify ConstructorEquals case 025: using equals constructor
+     * @tc.desc Verify ConstructorEquals case 025: Class.from<ClassA027>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -527,7 +523,7 @@ export default function ConstructorEqualsTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_EQUALS_2600
      * @tc.name testConstructorEquals026
-     * @tc.desc Verify ConstructorEquals case 026: verify parameters different constructor not
+     * @tc.desc Verify ConstructorEquals case 026: Class.from<MyClass028>(), equals returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

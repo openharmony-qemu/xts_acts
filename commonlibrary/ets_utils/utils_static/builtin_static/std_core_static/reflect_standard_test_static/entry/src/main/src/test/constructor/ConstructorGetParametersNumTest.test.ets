@@ -120,7 +120,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0100
      * @tc.name testConstructorGetParametersNum001
-     * @tc.desc Verify ConstructorGetParametersNum case 001: getParametersNum returns 2 for two-parameter constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 001: Class.from<MyClass001>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -137,7 +137,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0200
      * @tc.name testConstructorGetParametersNum002
-     * @tc.desc Verify ConstructorGetParametersNum case 002: getParametersNum returns 2 for multi-parameter constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 002: Class.from<MyClass003>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,7 +152,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0300
      * @tc.name testConstructorGetParametersNum003
-     * @tc.desc Verify ConstructorGetParametersNum case 003: get no parameters constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 003: Class.from<MyClass004>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -167,7 +167,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0400
      * @tc.name testConstructorGetParametersNum004
-     * @tc.desc Verify ConstructorGetParametersNum case 004: get parameters constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 004: Class.from<MyClass005>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -182,7 +182,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0500
      * @tc.name testConstructorGetParametersNum005
-     * @tc.desc Verify ConstructorGetParametersNum case 005: verify parameters type
+     * @tc.desc Verify ConstructorGetParametersNum case 005: Class.from<MyClass006>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -197,7 +197,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0600
      * @tc.name testConstructorGetParametersNum006
-     * @tc.desc Verify ConstructorGetParametersNum case 006: parameters constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 006: Class.from<MyClass007>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -212,7 +212,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0700
      * @tc.name testConstructorGetParametersNum007
-     * @tc.desc Verify ConstructorGetParametersNum case 007: generic parameters constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 007: Class.from<MyClass008>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -227,7 +227,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0800
      * @tc.name testConstructorGetParametersNum008
-     * @tc.desc Verify ConstructorGetParametersNum case 008: object type parameters constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 008: Class.from<MyClass009>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -242,7 +242,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_0900
      * @tc.name testConstructorGetParametersNum009
-     * @tc.desc Verify ConstructorGetParametersNum case 009: getParametersNum matches getParameterTypes length
+     * @tc.desc Verify ConstructorGetParametersNum case 009: Class.from<MyClass006>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -258,7 +258,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1000
      * @tc.name testConstructorGetParametersNum010
-     * @tc.desc Verify ConstructorGetParametersNum case 010: verify return not 0
+     * @tc.desc Verify ConstructorGetParametersNum case 010: Class.from<MyClass012>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -274,7 +274,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1100
      * @tc.name testConstructorGetParametersNum011
-     * @tc.desc Verify ConstructorGetParametersNum case 011: return 0
+     * @tc.desc Verify ConstructorGetParametersNum case 011: Class.from<MyClass012>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -287,7 +287,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1200
      * @tc.name testConstructorGetParametersNum012
-     * @tc.desc Verify ConstructorGetParametersNum case 012: verify parameters constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 012: Class.from<MyClass013>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -302,7 +302,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1300
      * @tc.name testConstructorGetParametersNum013
-     * @tc.desc Verify ConstructorGetParametersNum case 013: verify type is parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 013: Class.from<MyClass014>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -317,7 +317,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1400
      * @tc.name testConstructorGetParametersNum014
-     * @tc.desc Verify ConstructorGetParametersNum case 014: verify different constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 014: Class.from<MyClass015>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -331,7 +331,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1500
      * @tc.name testConstructorGetParametersNum015
-     * @tc.desc Verify ConstructorGetParametersNum case 015: getParametersNum returns 2 for child class constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 015: Class.from<ChildClass019>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -344,7 +344,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1600
      * @tc.name testConstructorGetParametersNum016
-     * @tc.desc Verify ConstructorGetParametersNum case 016: verify modifier constructor get parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 016: Class.from<MyClass017>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -359,7 +359,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1700
      * @tc.name testConstructorGetParametersNum017
-     * @tc.desc Verify ConstructorGetParametersNum case 017: verify different type constructor getParametersNum()
+     * @tc.desc Verify ConstructorGetParametersNum case 017: Class.from<AbstractClass018>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -374,7 +374,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1800
      * @tc.name testConstructorGetParametersNum018
-     * @tc.desc Verify ConstructorGetParametersNum case 018: verify inheritance constructor parameters
+     * @tc.desc Verify ConstructorGetParametersNum case 018: Class.from<ParentClass019>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -389,7 +389,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_1900
      * @tc.name testConstructorGetParametersNum019
-     * @tc.desc Verify ConstructorGetParametersNum case 019: verify constructor getParametersNum()
+     * @tc.desc Verify ConstructorGetParametersNum case 019: Class.from<MyClass020>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -403,7 +403,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_2000
      * @tc.name testConstructorGetParametersNum020
-     * @tc.desc Verify ConstructorGetParametersNum case 020: verify getParametersNum() and getParameterTypes().length
+     * @tc.desc Verify ConstructorGetParametersNum case 020: Class.from<MyClass021>(), parameter type verified, parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -419,7 +419,7 @@ export default function ConstructorGetParametersNumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_GETPARAMETERSNUM_2100
      * @tc.name testConstructorGetParametersNum021
-     * @tc.desc Verify ConstructorGetParametersNum case 021: using getParametersNum() different constructor
+     * @tc.desc Verify ConstructorGetParametersNum case 021: Class.from<MyClass022>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

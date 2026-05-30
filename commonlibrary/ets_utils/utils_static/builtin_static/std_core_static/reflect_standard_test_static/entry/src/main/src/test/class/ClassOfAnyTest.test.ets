@@ -1159,7 +1159,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0100
      * @tc.name testClassOfAny001
-     * @tc.desc Verify ClassOfAny case 001: parameters obj
+     * @tc.desc Verify ClassOfAny case 001: getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1174,7 +1174,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0200
      * @tc.name testClassOfAny002
-     * @tc.desc Verify ClassOfAny case 002: ofAny() requires a value argument
+     * @tc.desc Verify ClassOfAny case 002: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1186,7 +1186,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0300
      * @tc.name testClassOfAny003
-     * @tc.desc Verify ClassOfAny case 003: instance
+     * @tc.desc Verify ClassOfAny case 003: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1200,7 +1200,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0400
      * @tc.name testClassOfAny004
-     * @tc.desc Verify ClassOfAny case 004: Mapinstance
+     * @tc.desc Verify ClassOfAny case 004: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1214,7 +1214,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0500
      * @tc.name testClassOfAny005
-     * @tc.desc Verify ClassOfAny case 005: Arrayinstance
+     * @tc.desc Verify ClassOfAny case 005: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1228,7 +1228,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0600
      * @tc.name testClassOfAny006
-     * @tc.desc Verify ClassOfAny case 006: Setinstance
+     * @tc.desc Verify ClassOfAny case 006: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1242,7 +1242,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0700
      * @tc.name testClassOfAny007
-     * @tc.desc Verify ClassOfAny case 007: stringobject
+     * @tc.desc Verify ClassOfAny case 007: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1257,7 +1257,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0800
      * @tc.name testClassOfAny008
-     * @tc.desc Verify ClassOfAny case 008: numberobject
+     * @tc.desc Verify ClassOfAny case 008: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1272,7 +1272,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_0900
      * @tc.name testClassOfAny009
-     * @tc.desc Verify ClassOfAny case 009: booleanobject
+     * @tc.desc Verify ClassOfAny case 009: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1287,7 +1287,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1000
      * @tc.name testClassOfAny010
-     * @tc.desc Verify ClassOfAny case 010: null
+     * @tc.desc Verify ClassOfAny case 010: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1302,7 +1302,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1100
      * @tc.name testClassOfAny011
-     * @tc.desc Verify ClassOfAny case 011: undefined
+     * @tc.desc Verify ClassOfAny case 011: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1316,7 +1316,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1200
      * @tc.name testClassOfAny012
-     * @tc.desc Verify ClassOfAny case 012: empty object
+     * @tc.desc Verify ClassOfAny case 012: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1331,7 +1331,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1300
      * @tc.name testClassOfAny013
-     * @tc.desc Verify ClassOfAny case 013: literal-initialized interface PersonAny014 ofAny returns Class
+     * @tc.desc Verify ClassOfAny case 013: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1346,7 +1346,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1400
      * @tc.name testClassOfAny014
-     * @tc.desc Verify ClassOfAny case 014: FixedArrayinstance
+     * @tc.desc Verify ClassOfAny case 014: isFixedArray returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1361,7 +1361,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1500
      * @tc.name testClassOfAny015
-     * @tc.desc Verify ClassOfAny case 015: enum value ofAny returns Class
+     * @tc.desc Verify ClassOfAny case 015: isEnum returns true, getName returns expected qualified name
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1377,7 +1377,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1600
      * @tc.name testClassOfAny016
-     * @tc.desc Verify ClassOfAny case 016: function object ofAny returns Class
+     * @tc.desc Verify ClassOfAny case 016: isEnum returns false, isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1395,7 +1395,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1700
      * @tc.name testClassOfAny017
-     * @tc.desc Verify ClassOfAny case 017: arrow function ofAny returns Class
+     * @tc.desc Verify ClassOfAny case 017: isEnum returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1413,7 +1413,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1800
      * @tc.name testClassOfAny018
-     * @tc.desc Verify ClassOfAny case 018: async
+     * @tc.desc Verify ClassOfAny case 018: isFuncObjAsync classification verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1431,7 +1431,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_1900
      * @tc.name testClassOfAny019
-     * @tc.desc Verify ClassOfAny case 019: Class object
+     * @tc.desc Verify ClassOfAny case 019: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1446,7 +1446,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2000
      * @tc.name testClassOfAny020
-     * @tc.desc Verify ClassOfAny case 020: object
+     * @tc.desc Verify ClassOfAny case 020: Class.from<Target021>(), getLinker() returns non-null linker
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1464,7 +1464,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2100
      * @tc.name testClassOfAny021
-     * @tc.desc Verify ClassOfAny case 021: call return Class object
+     * @tc.desc Verify ClassOfAny case 021: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1479,7 +1479,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2200
      * @tc.name testClassOfAny022
-     * @tc.desc Verify ClassOfAny case 022: return Class object getName method return
+     * @tc.desc Verify ClassOfAny case 022: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1493,7 +1493,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2300
      * @tc.name testClassOfAny023
-     * @tc.desc Verify ClassOfAny case 023: return Class object call Classmethod
+     * @tc.desc Verify ClassOfAny case 023: getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1509,7 +1509,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2400
      * @tc.name testClassOfAny024
-     * @tc.desc Verify ClassOfAny case 024: object not instance when return undefined
+     * @tc.desc Verify ClassOfAny case 024: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1526,7 +1526,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2500
      * @tc.name testClassOfAny025
-     * @tc.desc Verify ClassOfAny case 025: return Class or undefined
+     * @tc.desc Verify ClassOfAny case 025: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1541,7 +1541,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2600
      * @tc.name testClassOfAny026
-     * @tc.desc Verify ClassOfAny case 026: MyClass instance returns Class with valid metadata
+     * @tc.desc Verify ClassOfAny case 026: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1557,7 +1557,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2700
      * @tc.name testClassOfAny027
-     * @tc.desc Verify ClassOfAny case 027: using instanceofverify return
+     * @tc.desc Verify ClassOfAny case 027: getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1573,7 +1573,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2800
      * @tc.name testClassOfAny028
-     * @tc.desc Verify ClassOfAny case 028: return Class object method
+     * @tc.desc Verify ClassOfAny case 028: isSubtypeOf relationship verified, getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1591,7 +1591,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_2900
      * @tc.name testClassOfAny029
-     * @tc.desc Verify ClassOfAny case 029: object call ofAnyreturn same
+     * @tc.desc Verify ClassOfAny case 029: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1608,7 +1608,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3000
      * @tc.name testClassOfAny030
-     * @tc.desc Verify ClassOfAny case 030: different type object return different Class object
+     * @tc.desc Verify ClassOfAny case 030: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1624,7 +1624,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3100
      * @tc.name testClassOfAny031
-     * @tc.desc Verify ClassOfAny case 031: LargeClass053 instance returns Class via ofAny
+     * @tc.desc Verify ClassOfAny case 031: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1639,7 +1639,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3200
      * @tc.name testClassOfAny032
-     * @tc.desc Verify ClassOfAny case 032: object
+     * @tc.desc Verify ClassOfAny case 032: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1658,7 +1658,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3300
      * @tc.name testClassOfAny033
-     * @tc.desc Verify ClassOfAny case 033: get object Class
+     * @tc.desc Verify ClassOfAny case 033: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1674,7 +1674,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3400
      * @tc.name testClassOfAny034
-     * @tc.desc Verify ClassOfAny case 034: ofAny static method via call
+     * @tc.desc Verify ClassOfAny case 034: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1689,7 +1689,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3500
      * @tc.name testClassOfAny035
-     * @tc.desc Verify ClassOfAny case 035: ofAny Anytype of Object null
+     * @tc.desc Verify ClassOfAny case 035: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1709,7 +1709,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3600
      * @tc.name testClassOfAny036
-     * @tc.desc Verify ClassOfAny case 036: ofAnyreturn Class undefined ofreturn Class
+     * @tc.desc Verify ClassOfAny case 036: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1728,7 +1728,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3700
      * @tc.name testClassOfAny037
-     * @tc.desc Verify ClassOfAny case 037: different scenario method
+     * @tc.desc Verify ClassOfAny case 037: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1745,7 +1745,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3800
      * @tc.name testClassOfAny038
-     * @tc.desc Verify ClassOfAny case 038: Class.from at compile time vs Class.ofAny at runtime
+     * @tc.desc Verify ClassOfAny case 038: Class.from<Map<int, string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1762,7 +1762,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_3900
      * @tc.name testClassOfAny039
-     * @tc.desc Verify ClassOfAny case 039: fromnot object instance
+     * @tc.desc Verify ClassOfAny case 039: Class.from<MyClass>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1779,7 +1779,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4000
      * @tc.name testClassOfAny040
-     * @tc.desc Verify ClassOfAny case 040: get generic instance Class
+     * @tc.desc Verify ClassOfAny case 040: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1794,7 +1794,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4100
      * @tc.name testClassOfAny041
-     * @tc.desc Verify ClassOfAny case 041: different generic parameters instance return same Class
+     * @tc.desc Verify ClassOfAny case 041: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1810,7 +1810,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4200
      * @tc.name testClassOfAny042
-     * @tc.desc Verify ClassOfAny case 042: get instance Class
+     * @tc.desc Verify ClassOfAny case 042: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1824,7 +1824,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4300
      * @tc.name testClassOfAny043
-     * @tc.desc Verify ClassOfAny case 043: instance when get type
+     * @tc.desc Verify ClassOfAny case 043: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1839,7 +1839,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4400
      * @tc.name testClassOfAny044
-     * @tc.desc Verify ClassOfAny case 044: get interface Class
+     * @tc.desc Verify ClassOfAny case 044: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1855,7 +1855,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4500
      * @tc.name testClassOfAny045
-     * @tc.desc Verify ClassOfAny case 045: multiple interface
+     * @tc.desc Verify ClassOfAny case 045: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1870,7 +1870,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4600
      * @tc.name testClassOfAny046
-     * @tc.desc Verify ClassOfAny case 046: type in different Class
+     * @tc.desc Verify ClassOfAny case 046: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1890,7 +1890,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4700
      * @tc.name testClassOfAny047
-     * @tc.desc Verify ClassOfAny case 047: is null
+     * @tc.desc Verify ClassOfAny case 047: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1905,7 +1905,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4800
      * @tc.name testClassOfAny048
-     * @tc.desc Verify ClassOfAny case 048: object call ofAny
+     * @tc.desc Verify ClassOfAny case 048: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1928,7 +1928,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_4900
      * @tc.name testClassOfAny049
-     * @tc.desc Verify ClassOfAny case 049: call object performance
+     * @tc.desc Verify ClassOfAny case 049: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1947,7 +1947,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_5000
      * @tc.name testClassOfAny050
-     * @tc.desc Verify ClassOfAny case 050: LargeClass053 instance ofAny returns Class
+     * @tc.desc Verify ClassOfAny case 050: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1962,7 +1962,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_5100
      * @tc.name testClassOfAny051
-     * @tc.desc Verify ClassOfAny case 051: object
+     * @tc.desc Verify ClassOfAny case 051: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1976,7 +1976,7 @@ export default function ClassOfAnyTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_OFANY_5200
      * @tc.name testClassOfAny052
-     * @tc.desc Verify ClassOfAny case 052: call ofAny
+     * @tc.desc Verify ClassOfAny case 052: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

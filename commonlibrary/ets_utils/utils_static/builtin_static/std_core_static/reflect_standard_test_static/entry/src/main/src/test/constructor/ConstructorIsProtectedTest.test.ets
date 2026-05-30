@@ -122,7 +122,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0100
      * @tc.name testConstructorIsProtected001
-     * @tc.desc Verify ConstructorIsProtected case 001: protected class has no accessible constructors
+     * @tc.desc Verify ConstructorIsProtected case 001: Class.from<MyClass003>(), isAbstract returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -136,7 +136,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0200
      * @tc.name testConstructorIsProtected002
-     * @tc.desc Verify ConstructorIsProtected case 002: publicconstructor return false
+     * @tc.desc Verify ConstructorIsProtected case 002: Class.from<MyClass012>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -152,7 +152,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0300
      * @tc.name testConstructorIsProtected003
-     * @tc.desc Verify ConstructorIsProtected case 003: privateconstructor return false
+     * @tc.desc Verify ConstructorIsProtected case 003: Class.from<MyClass005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -165,7 +165,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0400
      * @tc.name testConstructorIsProtected004
-     * @tc.desc Verify ConstructorIsProtected case 004: modifier constructor
+     * @tc.desc Verify ConstructorIsProtected case 004: Class.from<MyClass006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -179,7 +179,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0500
      * @tc.name testConstructorIsProtected005
-     * @tc.desc Verify ConstructorIsProtected case 005: protected constructor class has no accessible constructors
+     * @tc.desc Verify ConstructorIsProtected case 005: Class.from<MyClass007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -194,7 +194,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0600
      * @tc.name testConstructorIsProtected006
-     * @tc.desc Verify ConstructorIsProtected case 006: abstract class protectedconstructor
+     * @tc.desc Verify ConstructorIsProtected case 006: Class.from<AbstractClass008>(), isAbstract returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -208,7 +208,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0700
      * @tc.name testConstructorIsProtected007
-     * @tc.desc Verify ConstructorIsProtected case 007: final protectedconstructor
+     * @tc.desc Verify ConstructorIsProtected case 007: Class.from<FinalClass009>(), isFinal returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -222,7 +222,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0800
      * @tc.name testConstructorIsProtected008
-     * @tc.desc Verify ConstructorIsProtected case 008: verify return type is boolean
+     * @tc.desc Verify ConstructorIsProtected case 008: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -239,7 +239,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_0900
      * @tc.name testConstructorIsProtected009
-     * @tc.desc Verify ConstructorIsProtected case 009: isProtected and isPublic isPrivate
+     * @tc.desc Verify ConstructorIsProtected case 009: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -264,7 +264,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1000
      * @tc.name testConstructorIsProtected010
-     * @tc.desc Verify ConstructorIsProtected case 010: generic protectedconstructor
+     * @tc.desc Verify ConstructorIsProtected case 010: Class.from<GenericClass013<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -278,7 +278,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1100
      * @tc.name testConstructorIsProtected011
-     * @tc.desc Verify ConstructorIsProtected case 011: protectedconstructor
+     * @tc.desc Verify ConstructorIsProtected case 011: Class.from<ParentClass014>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -291,7 +291,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1200
      * @tc.name testConstructorIsProtected012
-     * @tc.desc Verify ConstructorIsProtected case 012: isProtected() returns false for public constructor
+     * @tc.desc Verify ConstructorIsProtected case 012: Class.from<MyClass004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -304,7 +304,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1300
      * @tc.name testConstructorIsProtected013
-     * @tc.desc Verify ConstructorIsProtected case 013: protectedconstructor and
+     * @tc.desc Verify ConstructorIsProtected case 013: Class.from<MyClass004>(), getName returns "constructor", constructor getName returns constructor, return type verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -319,7 +319,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1400
      * @tc.name testConstructorIsProtected014
-     * @tc.desc Verify ConstructorIsProtected case 014: verify different type constructor isProtected()
+     * @tc.desc Verify ConstructorIsProtected case 014: Class.from<AbstractClass017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -336,7 +336,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1500
      * @tc.name testConstructorIsProtected015
-     * @tc.desc Verify ConstructorIsProtected case 015: verify different constructor
+     * @tc.desc Verify ConstructorIsProtected case 015: Class.from<MyClass018>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1600
      * @tc.name testConstructorIsProtected016
-     * @tc.desc Verify ConstructorIsProtected case 016: verify isProtected() and constructor property
+     * @tc.desc Verify ConstructorIsProtected case 016: Class.from<MyClass019>(), parameter count verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -366,7 +366,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1700
      * @tc.name testConstructorIsProtected017
-     * @tc.desc Verify ConstructorIsProtected case 017: from constructor protectedconstructor
+     * @tc.desc Verify ConstructorIsProtected case 017: Class.from<MyClass020>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -386,7 +386,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1800
      * @tc.name testConstructorIsProtected018
-     * @tc.desc Verify ConstructorIsProtected case 018: constructor
+     * @tc.desc Verify ConstructorIsProtected case 018: Class.from<MyClass022>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -413,7 +413,7 @@ export default function ConstructorIsProtectedTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CONSTRUCTOR_ISPROTECTED_1900
      * @tc.name testConstructorIsProtected019
-     * @tc.desc Verify ConstructorIsProtected case 019: constructor
+     * @tc.desc Verify ConstructorIsProtected case 019: Class.from<MyClass022>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

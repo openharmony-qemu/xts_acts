@@ -251,7 +251,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0100
      * @tc.name testClassIsEnum001
-     * @tc.desc Verify ClassIsEnum case 001: isEnum() with no arguments on enum Class
+     * @tc.desc Verify ClassIsEnum case 001: Class.from<TestEnum001>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -264,7 +264,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0200
      * @tc.name testClassIsEnum002
-     * @tc.desc Verify ClassIsEnum case 002: enum Class isEnum true and not interface or abstract
+     * @tc.desc Verify ClassIsEnum case 002: Class.from<TestEnum003>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -279,7 +279,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0300
      * @tc.name testClassIsEnum003
-     * @tc.desc Verify ClassIsEnum case 003: string enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 003: Class.from<StringEnum004>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -293,7 +293,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0400
      * @tc.name testClassIsEnum004
-     * @tc.desc Verify ClassIsEnum case 004: int enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 004: Class.from<MixedEnum005>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -307,7 +307,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0500
      * @tc.name testClassIsEnum005
-     * @tc.desc Verify ClassIsEnum case 005: const enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 005: Class.from<ConstEnum006>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -321,7 +321,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0600
      * @tc.name testClassIsEnum006
-     * @tc.desc Verify ClassIsEnum case 006: empty enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 006: Class.from<EmptyEnum007>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -335,7 +335,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0700
      * @tc.name testClassIsEnum007
-     * @tc.desc Verify ClassIsEnum case 007: class Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 007: Class.from<MyClass008>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -349,7 +349,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0800
      * @tc.name testClassIsEnum008
-     * @tc.desc Verify ClassIsEnum case 008: interface Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 008: Class.from<MyInterface009>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -363,7 +363,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_0900
      * @tc.name testClassIsEnum009
-     * @tc.desc Verify ClassIsEnum case 009: Object Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 009: Class.from<Object>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -377,7 +377,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1000
      * @tc.name testClassIsEnum010
-     * @tc.desc Verify ClassIsEnum case 010: Array Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 010: Class.from<Array<string>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -391,7 +391,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1100
      * @tc.name testClassIsEnum011
-     * @tc.desc Verify ClassIsEnum case 011: FixedArray Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 011: Class.from<FixedArray<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -405,7 +405,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1200
      * @tc.name testClassIsEnum012
-     * @tc.desc Verify ClassIsEnum case 012: Map Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 012: Class.from<Map<string, int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -419,7 +419,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1300
      * @tc.name testClassIsEnum013
-     * @tc.desc Verify ClassIsEnum case 013: Set Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 013: Class.from<Set<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -433,7 +433,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1400
      * @tc.name testClassIsEnum014
-     * @tc.desc Verify ClassIsEnum case 014: primitive Class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 014: Class.from<int>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -447,7 +447,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1500
      * @tc.name testClassIsEnum015
-     * @tc.desc Verify ClassIsEnum case 015: abstract class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 015: Class.from<AbstractClass016>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -461,7 +461,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1600
      * @tc.name testClassIsEnum016
-     * @tc.desc Verify ClassIsEnum case 016: final class isEnum returns false
+     * @tc.desc Verify ClassIsEnum case 016: Class.from<FinalClass017>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -475,7 +475,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1700
      * @tc.name testClassIsEnum017
-     * @tc.desc Verify ClassIsEnum case 017: enum Class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 017: Class.from<BaseEnum018>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -487,7 +487,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1800
      * @tc.name testClassIsEnum018
-     * @tc.desc Verify ClassIsEnum case 018: enum implementing interface isEnum true on enum Class
+     * @tc.desc Verify ClassIsEnum case 018: Class.from<TestEnum019>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -501,7 +501,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_1900
      * @tc.name testClassIsEnum019
-     * @tc.desc Verify ClassIsEnum case 019: Class.of on enum instance isEnum true
+     * @tc.desc Verify ClassIsEnum case 019: Class.of(instance)
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -516,7 +516,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2000
      * @tc.name testClassIsEnum020
-     * @tc.desc Verify ClassIsEnum case 020: Class.ofAny on enum value returns enum Class
+     * @tc.desc Verify ClassIsEnum case 020: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -531,7 +531,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2100
      * @tc.name testClassIsEnum021
-     * @tc.desc Verify ClassIsEnum case 021: isEnum return type is boolean
+     * @tc.desc Verify ClassIsEnum case 021: Class.from<TestEnum022>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -545,7 +545,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2200
      * @tc.name testClassIsEnum022
-     * @tc.desc Verify ClassIsEnum case 022: typeof isEnum() is boolean
+     * @tc.desc Verify ClassIsEnum case 022: Class.from<TestEnum023>(), isEnum returns true
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -565,7 +565,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2300
      * @tc.name testClassIsEnum023
-     * @tc.desc Verify ClassIsEnum case 023: repeated isEnum on same Class returns consistent boolean
+     * @tc.desc Verify ClassIsEnum case 023: Class.from<TestEnum024>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -583,7 +583,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2400
      * @tc.name testClassIsEnum024
-     * @tc.desc Verify ClassIsEnum case 024: isEnum on non-enum does not throw
+     * @tc.desc Verify ClassIsEnum case 024: Class.from<MyClass023>(), isEnum returns false
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -596,7 +596,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2500
      * @tc.name testClassIsEnum025
-     * @tc.desc Verify ClassIsEnum case 025: Class.from enum isEnum true
+     * @tc.desc Verify ClassIsEnum case 025: Class.from<TestEnum026>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -610,7 +610,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2600
      * @tc.name testClassIsEnum026
-     * @tc.desc Verify ClassIsEnum case 026: Class.PRIMITIVE vs enum isEnum false
+     * @tc.desc Verify ClassIsEnum case 026: Class.from<TestEnum027>(), initialize() behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -625,7 +625,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2700
      * @tc.name testClassIsEnum027
-     * @tc.desc Verify ClassIsEnum case 027: enum Class isEnum true and isInterface false
+     * @tc.desc Verify ClassIsEnum case 027: Class.from<TestEnum028>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -639,7 +639,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2800
      * @tc.name testClassIsEnum028
-     * @tc.desc Verify ClassIsEnum case 028: interface Class isInterface true isEnum false
+     * @tc.desc Verify ClassIsEnum case 028: Class.from<MyInterface029>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -653,7 +653,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_2900
      * @tc.name testClassIsEnum029
-     * @tc.desc Verify ClassIsEnum case 029: union type Class isEnum false
+     * @tc.desc Verify ClassIsEnum case 029: Class.from<int | string>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -667,7 +667,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3000
      * @tc.name testClassIsEnum030
-     * @tc.desc Verify ClassIsEnum case 030: final enum isEnum true
+     * @tc.desc Verify ClassIsEnum case 030: Class.from<TestEnum031>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -682,7 +682,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3100
      * @tc.name testClassIsEnum031
-     * @tc.desc Verify ClassIsEnum case 031: enum class isEnum returns true
+     * @tc.desc Verify ClassIsEnum case 031: Class.from<TestEnum032>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -696,7 +696,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3200
      * @tc.name testClassIsEnum032
-     * @tc.desc Verify ClassIsEnum case 032: array type isEnum false
+     * @tc.desc Verify ClassIsEnum case 032: Class.from<Array<int>>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -710,7 +710,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3300
      * @tc.name testClassIsEnum033
-     * @tc.desc Verify ClassIsEnum case 033: multi-type union Class isEnum false isUnion true
+     * @tc.desc Verify ClassIsEnum case 033: Class.from<int | string | boolean>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -724,7 +724,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3400
      * @tc.name testClassIsEnum034
-     * @tc.desc Verify ClassIsEnum case 034: generic enum isEnum true
+     * @tc.desc Verify ClassIsEnum case 034: Class.from<TestEnum035>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -737,7 +737,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3500
      * @tc.name testClassIsEnum035
-     * @tc.desc Verify ClassIsEnum case 035: array of enum component isEnum on component
+     * @tc.desc Verify ClassIsEnum case 035: Class.from<FixedArray<TestEnum036>>(), getFixedArrayComponentType() result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -757,7 +757,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3600
      * @tc.name testClassIsEnum036
-     * @tc.desc Verify ClassIsEnum case 036: enum array fixed component isEnum true
+     * @tc.desc Verify ClassIsEnum case 036: Class.from<TestEnum037>(), getStaticFields result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -775,7 +775,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3700
      * @tc.name testClassIsEnum037
-     * @tc.desc Verify ClassIsEnum case 037: enum instance methods list non-empty
+     * @tc.desc Verify ClassIsEnum case 037: Class.from<TestEnum038>(), getInstanceMethods result verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -793,7 +793,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3800
      * @tc.name testClassIsEnum038
-     * @tc.desc Verify ClassIsEnum case 038: enum Class and its superclass both isEnum true
+     * @tc.desc Verify ClassIsEnum case 038: Class.from<TestEnum039>(), getSuper returns expected parent Class
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -809,7 +809,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_3900
      * @tc.name testClassIsEnum039
-     * @tc.desc Verify ClassIsEnum case 039: enum value Class comparison
+     * @tc.desc Verify ClassIsEnum case 039: Class.from<TestEnum040>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -822,7 +822,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_4000
      * @tc.name testClassIsEnum040
-     * @tc.desc Verify ClassIsEnum case 040: two enum Class references isEnum
+     * @tc.desc Verify ClassIsEnum case 040: Class.from<TestEnum041>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -835,7 +835,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_4100
      * @tc.name testClassIsEnum041
-     * @tc.desc Verify ClassIsEnum case 041: enum vs class isEnum distinction
+     * @tc.desc Verify ClassIsEnum case 041: behavior verified
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -849,7 +849,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_4200
      * @tc.name testClassIsEnum042
-     * @tc.desc Verify ClassIsEnum case 042: isEnum 10000 calls performance log
+     * @tc.desc Verify ClassIsEnum case 042: Class.from<TestEnum043>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -871,7 +871,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_4300
      * @tc.name testClassIsEnum043
-     * @tc.desc Verify ClassIsEnum case 043: isEnum after other Class API calls
+     * @tc.desc Verify ClassIsEnum case 043: Class.from<TestEnum044>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -890,7 +890,7 @@ export default function ClassIsEnumTest(): void {
     /**
      * @tc.number SUB_COMMONLIBRARY_UTIL_CLASS_ISENUM_4400
      * @tc.name testClassIsEnum044
-     * @tc.desc Verify ClassIsEnum case 044: isEnum after getName unchanged
+     * @tc.desc Verify ClassIsEnum case 044: Class.from<TestEnum045>()
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
