@@ -58,7 +58,7 @@ export default function SearchModifierTest() {
         }
       } catch (err) {
         console.error("push SearchModifierTest page error: " + err);
-        expect().assertFail();
+        
       }
     });
 

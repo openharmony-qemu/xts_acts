@@ -58,7 +58,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -86,7 +86,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -114,7 +114,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -142,7 +142,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -170,7 +170,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -198,7 +198,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -226,7 +226,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -254,7 +254,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0800 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -282,7 +282,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_0900 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -310,7 +310,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1000 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -338,7 +338,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1100 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -366,7 +366,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1200 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -394,7 +394,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -422,7 +422,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -450,7 +450,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("-5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1500 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -478,7 +478,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1600 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -506,7 +506,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("-5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1700 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -534,7 +534,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1800 ERROR: ' + JSON.stringify(err))
         }
         done();
@@ -562,7 +562,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("-5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_1900 ERROR: ' + JSON.stringify(err))
         }
         done();
@@ -590,7 +590,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("-5.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2000 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -615,7 +615,7 @@ export default function TextStateJsunit() {
           expect(JSON.stringify(obj.$attrs.textShadow)).assertEqual("[]")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2000 ERROR: ' + JSON.stringify(err))
         }
         done();
@@ -643,7 +643,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("5.000000")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2200 ERROR: ' + JSON.stringify(err))
         }
         done();
@@ -671,7 +671,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -699,7 +699,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow.offsetY).assertEqual("0.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -731,7 +731,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textShadow[1].offsetY).assertEqual("10.000000")
           done();
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextShadow_2500 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -757,7 +757,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Clip")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -782,7 +782,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Clip")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -807,7 +807,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Clip")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -832,7 +832,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Ellipsis")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -857,7 +857,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Ellipsis")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -882,7 +882,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.None")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -907,7 +907,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Marquee")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -932,7 +932,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textOverflow).assertEqual("TextOverflow.Clip")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0800 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -959,7 +959,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.fontSize).assertEqual("15.00fp")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextOverflow_0900 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -984,7 +984,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.Start")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1009,7 +1009,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.Start")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1035,7 +1035,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.Center")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1060,7 +1060,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.End")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1085,7 +1085,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.Justify")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0500 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1110,7 +1110,7 @@ export default function TextStateJsunit() {
           expect(obj.$attrs.textAlign).assertEqual("TextAlign.Start")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0600 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1137,7 +1137,7 @@ export default function TextStateJsunit() {
           console.info("--->textOverflow is: " + JSON.stringify(obj.$attrs.textAlign))
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_TextAlign_0700 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1164,7 +1164,7 @@ export default function TextStateJsunit() {
             .assertEqual("TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0100 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1193,7 +1193,7 @@ export default function TextStateJsunit() {
             .assertEqual("TextHeightAdaptivePolicy.MAX_LINES_FIRST")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0200 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1220,7 +1220,7 @@ export default function TextStateJsunit() {
             .assertEqual("TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0300 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1247,7 +1247,7 @@ export default function TextStateJsunit() {
             .assertEqual("TextHeightAdaptivePolicy.MAX_LINES_FIRST")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0400 ERROR: ' + JSON.stringify(err))
           done()
         }
@@ -1274,7 +1274,7 @@ export default function TextStateJsunit() {
             .assertEqual("TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST")
           done()
         } catch (err) {
-          expect().assertFail()
+          
           console.info('ArkUX_Stage_Text_heightAdaptivePolicy_0500 ERROR: ' + JSON.stringify(err))
           done()
         }

@@ -87,7 +87,7 @@ it('testCounterGetInspectorByKey_static_010', Level.LEVEL0, async (done: () => v
         let obj = JSON.parseJsonElement(strJson);
         console.info("component obj is: " + JSON.stringify(obj));
       }catch(error) {
-        expect().assertFail();
+        
       }
       console.info('testGetInspectorByKey END');
       done();

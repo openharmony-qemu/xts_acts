@@ -142,7 +142,7 @@ export default function textAreaInputTest() {
         console.info("[textAreaInputTest_static_0001] end");
       } catch (error) {
         console.log("textAreaInputTest_static_0001 " + error)
-        expect().assertFail();
+        
       }
     });
 

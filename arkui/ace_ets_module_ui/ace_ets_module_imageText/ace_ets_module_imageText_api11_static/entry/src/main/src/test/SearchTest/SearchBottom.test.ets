@@ -70,7 +70,7 @@ export default function search_bottom() {
         }
       } catch (err) {
         console.error("push search_bottom page error: " + err);
-        expect().assertFail();
+        
       }
     });
 

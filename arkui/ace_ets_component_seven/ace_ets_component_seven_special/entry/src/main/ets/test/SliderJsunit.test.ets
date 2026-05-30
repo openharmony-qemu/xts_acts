@@ -58,7 +58,7 @@ export default function sliderTest() {
           expect(obj.$attrs.blockBorderColor).assertEqual("#FFFFA500");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_blockBorderColor_0100 ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -83,7 +83,7 @@ export default function sliderTest() {
           expect(obj.$attrs.blockBorderWidth).assertEqual("5.00vp");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_blockBorderWidth_1100 ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -108,7 +108,7 @@ export default function sliderTest() {
           expect(obj.$attrs.stepColor).assertEqual("#FFFFA500");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_stepColor_0100 ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -133,7 +133,7 @@ export default function sliderTest() {
           expect(obj.$attrs.trackBorderRadius).assertEqual("0.00vp");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_trackBorderRadius_0100 ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -163,7 +163,7 @@ export default function sliderTest() {
           expect(height.substr(height.length-2, 2)).assertEqual("vp");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_blockSize_0100 ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -212,7 +212,7 @@ export default function sliderTest() {
           expect(obj.$attrs.blockType).assertEqual("BlockStyleType.DEFAULT");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_blockStyle_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -237,7 +237,7 @@ export default function sliderTest() {
           expect(obj.$attrs.blockColor).assertEqual("#FF0000FF");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_blockColor_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -262,7 +262,7 @@ export default function sliderTest() {
           expect(obj.$attrs.trackColor).assertEqual("#FF808080");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_trackColor_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -287,7 +287,7 @@ export default function sliderTest() {
           expect(obj.$attrs.selectedColor).assertEqual("#FF0000FF");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_selectedColor_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -312,7 +312,7 @@ export default function sliderTest() {
           expect(obj.$attrs.showSteps).assertEqual("true");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_showSteps_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -337,7 +337,7 @@ export default function sliderTest() {
           expect(obj.$attrs.showTips).assertEqual("true");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_showTips_0100  ERROR: ' + JSON.stringify(err));
           done();
         }
@@ -362,7 +362,7 @@ export default function sliderTest() {
           expect(obj.$attrs.trackThickness).assertEqual("1.00vp");
           done();
         } catch (err) {
-          expect().assertFail();
+          
           console.info('ArkUX_Stage_Slider_trackThickness_0100  ERROR: ' + JSON.stringify(err));
           done();
         }

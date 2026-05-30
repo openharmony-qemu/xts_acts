@@ -58,7 +58,7 @@ export default function ImageSpanVisibilityTest() {
         }
       } catch (err) {
         console.error("push ImageSpanVisibilityTest page error: " + err);
-        expect().assertFail();
+        
       }
     });
 

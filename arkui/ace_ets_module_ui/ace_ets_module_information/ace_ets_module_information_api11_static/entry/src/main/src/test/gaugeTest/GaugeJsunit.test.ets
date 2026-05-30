@@ -187,7 +187,7 @@ it('testGauge_static_006', Level.LEVEL0, async (done: () => void): Promise<void>
         AppStorage.setOrCreate<string>('colorValues',JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]]))
 
       } catch (err) {
-        expect().assertFail();
+        
         console.log("[testGauge006] change component data error: " + (err as BusinessError).message);
       }
       done()

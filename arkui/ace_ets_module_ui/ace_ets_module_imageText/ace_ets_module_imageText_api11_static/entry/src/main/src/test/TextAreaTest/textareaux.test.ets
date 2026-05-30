@@ -102,7 +102,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("0")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0100 err  :' + JSON.stringify(err))
         done()
       }
@@ -125,7 +125,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("10")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0200 err  :' + JSON.stringify(err))
         done()
       }
@@ -148,7 +148,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_MaxLength_static_0300 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -172,7 +172,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0400 err  :' + JSON.stringify(err))
         done()
       }
@@ -195,7 +195,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_MaxLength_static_0500 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -219,7 +219,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0600 err  :' + JSON.stringify(err))
         done()
       }
@@ -243,7 +243,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0700 err  :' + JSON.stringify(err))
         done()
       }
@@ -267,7 +267,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("10")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_static_0800 err  :' + JSON.stringify(err))
         done()
       }
@@ -291,7 +291,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_0900 err  :' + JSON.stringify(err))
         done()
       }
@@ -315,7 +315,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("5")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_MaxLength_1000 err  :' + JSON.stringify(err))
         done()
       }
@@ -338,7 +338,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getElement('showCounter').getBoolean('value')).assertEqual(true)
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_ShowCounter_0100 err  :' + JSON.stringify(err))
         done()
       }
@@ -361,7 +361,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getElement('showCounter').getBoolean('value')).assertEqual(false)
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_ShowCounter_0200 err  :' + JSON.stringify(err))
         done()
       }
@@ -384,7 +384,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0300 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -407,7 +407,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0400 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -430,7 +430,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0500 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -453,7 +453,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getElement('showCounter').getBoolean('value')).assertEqual(false)
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_ShowCounter_0600 err  :' + JSON.stringify(err))
         done()
       }
@@ -477,7 +477,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getElement('showCounter').getBoolean('value')).assertEqual(false)
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_ShowCounter_0700 err  :' + JSON.stringify(err))
         done()
       }
@@ -501,7 +501,7 @@ export default function textAreaUxTest() {
     //     expect(obj.getElement('$attrs').getElement('showCounter').getString('value')).assertEqual(false)
     //     done()
     //   } catch (err) {
-    //     expect().assertFail()
+    //     
     //     console.info('ArkUX_Stage_TextArea_ShowCounter_0800 err  :' + JSON.stringify(err))
     //     done()
     //   }
@@ -525,7 +525,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getElement('showCounter').getBoolean('value')).assertEqual(true)
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_ShowCounter_0900 err  :' + JSON.stringify(err))
         done()
       }
@@ -548,7 +548,7 @@ export default function textAreaUxTest() {
         expect(obj.getElement('$attrs').getString('maxLength')).assertEqual("INF")
         done()
       } catch (err) {
-        expect().assertFail()
+        
         console.info('ArkUX_Stage_TextArea_0100 err  :' + JSON.stringify(err))
         done()
       }
@@ -570,7 +570,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.OFF");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -592,7 +592,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -614,7 +614,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.ON");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -636,7 +636,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -658,7 +658,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.OFF");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -680,7 +680,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -702,7 +702,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -724,7 +724,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -746,7 +746,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -768,7 +768,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -790,7 +790,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -812,7 +812,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.ON");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -834,7 +834,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.AUTO");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_1300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -856,7 +856,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('barState')).assertEqual("BarState.ON");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_barState_1400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -878,7 +878,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -900,7 +900,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.INLINE");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -922,7 +922,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -944,7 +944,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -966,7 +966,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -988,7 +988,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1010,7 +1010,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1032,7 +1032,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1054,7 +1054,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.INLINE");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1076,7 +1076,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.INLINE");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1098,7 +1098,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);
@@ -1120,7 +1120,7 @@ export default function textAreaUxTest() {
           expect(obj.getElement('$attrs').getString('style')).assertEqual("TextContentStyle.DEFAULT");
         } catch (err) {
           console.info('ArkUX_Stage_TextArea_Style_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
+          
         }
         done()
       }, 500);

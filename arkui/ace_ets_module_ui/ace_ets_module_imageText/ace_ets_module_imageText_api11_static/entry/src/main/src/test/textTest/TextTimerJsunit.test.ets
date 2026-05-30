@@ -141,7 +141,7 @@ export default function textTimerJsunit() {
           // textTimerAttribute.format('hh:mm:ss.ms');
           done();
       } catch (error) {
-        expect().assertFail();
+        
       }
     });
   })

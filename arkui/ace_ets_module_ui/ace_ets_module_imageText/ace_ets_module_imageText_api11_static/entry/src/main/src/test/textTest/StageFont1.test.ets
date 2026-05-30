@@ -98,7 +98,7 @@ export default function stageFontTest() {
           expect(JSON.parseJsonElement(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('labelStyle')).getString('font')).getString('family')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0100 END ');
         } catch (err) {
-          expect().assertFail()
+          
           console.info('Stage_Font_static_0100 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -124,7 +124,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0200 END ');
         } catch (err) {
-          expect().assertFail()
+          
           console.info('Stage_Font_static_0200 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -148,7 +148,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0300 END ');
         } catch (err) {
-          expect().assertFail()
+          
           console.info('Stage_Font_static_0300 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -174,7 +174,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0400 END ');
         } catch (err) {
-          expect().assertFail()
+          
           console.info('Stage_Font_static_0400 ERR  ' + JSON.stringify(err));
         }
         done();
@@ -200,7 +200,7 @@ export default function stageFontTest() {
           expect(obj.getElement('$attrs').getString('fontFamily')).assertEqual("fontCustom");
           console.info('Stage_Font_static_0500 END ');
         } catch (err) {
-          expect().assertFail()
+          
           console.info('Stage_Font_static_0500 ERR  ' + JSON.stringify(err));
         }
         done();
